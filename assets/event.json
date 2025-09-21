@@ -1,4 +1,545 @@
 [   
+    {   "id": "Uma - Silence Suzuka Costume The Color of the Landscape",
+        "event_name": "The Color of the Landscape",
+        "type": "Uma",
+        "subtype": "Costume",
+        "source_name": "Silence Suzuka (Original)",
+        "options": [
+            {
+                "option_text": "You must really like green.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +20"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "You must really like white.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +20"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka original", "the color of the landscape costume"]
+    },
+    {   "id": "Uma - Silence Suzuka Costume Hobbies and Talents",
+        "event_name": "Hobbies and Talents",
+        "type": "Uma",
+        "subtype": "Costume",
+        "source_name": "Silence Suzuka (Original)",
+        "options": [
+            {
+                "option_text": "They want to get to know the real Suzuka.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +20"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Maybe we can change how you answer the questions.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10",
+                            "Wit +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka original", "hobbies and talents costume"]
+    },
+    {   "id": "Uma - Silence Suzuka Costume Umadol Special Class",
+        "event_name": "Umadol ☆ Special Class!",
+        "type": "Uma",
+        "subtype": "Costume",
+        "source_name": "Silence Suzuka (Original)",
+        "options": [
+            {
+                "option_text": "Amp it up!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10",
+                            "Power +10",
+                            "(random) Get Hot Topic status"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "D-do whatever seems right?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10",
+                            "Wit +10",
+                            "(random) Get Hot Topic status"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka original", "umadol special class costume"]
+    },
+    {   "id": "Uma - Silence Suzuka Random Teaching Suzuka's Style",
+        "event_name": "Teaching Suzuka's Style",
+        "type": "Uma",
+        "subtype": "Random",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "How about you run alongside them?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Why don't you teach them about your running style?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Wit +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "teaching suzuka's style"]
+    },
+    {   "id": "Uma - Silence Suzuka Random Party Time",
+        "event_name": "Party Time",
+        "type": "Uma",
+        "subtype": "Random",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "Yeah, let's go chow down!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "We should get in a good workout before eating.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +5",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "party time"]
+    },
+    {   "id": "Uma - Silence Suzuka Random On My Heels",
+        "event_name": "On My Heels",
+        "type": "Uma",
+        "subtype": "Random",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "All right, one stretch.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Skill points +15"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "All right, one counterclockwise lap.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Left-Handed hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "on my heels"]
+    },
+    {   "id": "Uma - Silence Suzuka Random White Temptation",
+        "event_name": "White Temptation",
+        "type": "Uma",
+        "subtype": "Random",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "What if we split it?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Skill points +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Don't worry about it. Time to indulge!",
+                "outcomes": [
+                    {
+                        "chance": 90,
+                        "effects": [
+                            "Energy +30",
+                            "Skill points +10"
+                        ]
+                    },
+                    {
+                        "chance": 10,
+                        "effects": [
+                            "Energy +30",
+                            "Skill points +10",
+                            "Speed -5",
+                            "Power +5", 
+                            "Get Slow Metabolism status"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "white temptation"]
+    },
+    {   "id": "Uma - Silence Suzuka Date My Little Snowscape",
+        "event_name": "My Little Snowscape",
+        "type": "Uma",
+        "subtype": "Date",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "You can do it!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Mind if I give it a go?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Wit +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "my little snowscape date"]
+    },
+    {   "id": "Uma - Silence Suzuka Date To Make You Happy",
+        "event_name": "To Make You Happy",
+        "type": "Uma",
+        "subtype": "Date",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "I'm happy as long as you can run without any worries weighing you down.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "I'm happy as long as you're careful not to run too much.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Guts +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "to make you happy date"]
+    },
+    {   "id": "Uma - Silence Suzuka Date Our Little Snowscape",
+        "event_name": "Our Little Snowscape",
+        "type": "Uma",
+        "subtype": "Date",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "I'm really happy. Thank you.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "The snow in your hometown must also be very pretty then.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Can I switch it on?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "our little snowscape date"]
+    },
+    {   "id": "Uma - Silence Suzuka Date How to Spend a Rainy Day",
+        "event_name": "How to Spend a Rainy Day",
+        "type": "Uma",
+        "subtype": "Date",
+        "source_name": "Silence Suzuka (Original)",
+        "options": [
+            {
+                "option_text": "What about studying?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "How about cooking something?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Wit +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "how to spend a rainy day date"]
+    },
+    {   "id": "Uma - Silence Suzuka Date Are They Compatible",
+        "event_name": "Are They Compatible?",
+        "type": "Uma",
+        "subtype": "Date",
+        "source_name": "Silence Suzuka (Original)",
+        "options": [
+            {
+                "option_text": "Want to try it with me?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +5",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Why don't you try it with Matikanefukukitaru?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "are they compatible date"]
+    },
+    {   "id": "Uma - Silence Suzuka Generic At Summer Camp Year 2",
+        "event_name": "At Summer Camp (Year 2)",
+        "type": "Uma",
+        "subtype": "Generic",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "Let's do some strength training on the beach!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Let's do a lap around the mountain!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "Year 2 August 1",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "at summer camp year 2"]
+    },
+    {   "id": "Uma - Silence Suzuka Generic Dance Lesson",
+        "event_name": "Dance Lesson",
+        "type": "Uma",
+        "subtype": "Generic",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "That's why we're rehearsing!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Wit +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Try responding to the cheers.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "dance lesson"]
+    },
+    {   "id": "Uma - Silence Suzuka Generic New Year's Resolutions",
+        "event_name": "New Year's Resolutions",
+        "type": "Uma",
+        "subtype": "Generic",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "Let's focus on upping your speed!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Let's make sure you're nice and rested first!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +20"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "First things first! Happy New Year!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Skill points +20"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "Year 2 January 1",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "new year's resolutions"]
+    },
+
+
     {   "id": "Uma - Gold Ship Costume The Red of the Protagonist",
         "event_name": "The Red of the Protagonist!",
         "type": "Uma",
@@ -276,7 +817,7 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1007_100701.png",
         "aliases": ["gold ship", "golshi", "this ones for keeps"]
     },
-    {   "id": "Uma - Gold Ship Killer Appetite",
+    {   "id": "Uma - Gold Ship Random Killer Appetite",
         "event_name": "Killer Appetite!",
         "type": "Uma",
         "subtype": "Random",
