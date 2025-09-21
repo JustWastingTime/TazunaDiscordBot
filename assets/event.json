@@ -428,6 +428,31 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
         "aliases": ["silence suzuka", "are they compatible date"]
     },
+    {   "id": "Uma - Silence Suzuka Secret After the Mainichi Okan: Onward to Light",
+        "event_name": "After the Mainichi Okan: Onward, to Light",
+        "type": "Uma",
+        "subtype": "Secret",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "Let's do some strength training on the beach!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "4 random stats +3",
+                            "Skill points +35",
+                            "Early Lead hint +1",
+                            "Yayoi Akikawa bond +4"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "Win the Mainichi Okan",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/thumb/chara_stand_1002_100201.png",
+        "aliases": ["silence suzuka", "after mainichi okan onward to light"]
+    },
     {   "id": "Uma - Silence Suzuka Generic At Summer Camp Year 2",
         "event_name": "At Summer Camp (Year 2)",
         "type": "Uma",
