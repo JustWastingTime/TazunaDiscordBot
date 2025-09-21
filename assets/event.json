@@ -5141,6 +5141,84 @@
     },
 
 
+
+
+    {   "id": "Card - Special Week Random Watch Where Youre Going",
+        "event_name": "Watch Where You're Going!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Special Week",
+        "options": [
+            {
+                "option_text": "Then you should probably save that energy for the race.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Extra Tank hint +1",
+                            "Special Week bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "You'd better hurry, then.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +15",
+                            "Special Week bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10001.png",
+        "aliases": ["special week supporter", "watch where youre going"]
+    },
+    {   "id": "Card - Special Week Random So Many Options",
+        "event_name": "So Many Options!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Special Week",
+        "options": [
+            {
+                "option_text": "You should treat yourself to something tasty.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Mood +1",
+                            "Special Week bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Go everywhere that pops into your head!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Stamina +15",
+                            "Skill points +15",
+                            "Special Week bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10001.png",
+        "aliases": ["special week supporter", "watch where youre going"]
+    },
+
+
+
     {   "id": "Generic - Failed Training Get Well Soon",
         "event_name": "Get Well Soon!",
         "type": "Generic",
@@ -5412,6 +5490,9 @@
         "thumbnail": "",
         "aliases": ["acupuncture", "acupuncturist"]
     },
+
+
+
 
     {   "id": "Racing - Victory G1",
         "event_name": "Victory! (G1)",
