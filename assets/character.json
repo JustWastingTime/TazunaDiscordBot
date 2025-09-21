@@ -52,9 +52,12 @@
             "Nakayama Racecourse"
         ],
         "races": [
-            "Hakodate Junior Stakes july 2 year 1",
-            "Kokura Junior Stakes september 1 year 1",
-            "Hopeful Stakes december 2 year 1"
+            "kisaragi sho february 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
         ],
         "aliases": ["special week original", "spechan", "spe", "special dreamer"],
         "url": "https://gametora.com/umamusume/characters/100101-special-week",
@@ -1906,6 +1909,70 @@
             "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Sprinting Gear hint +2"
             }
         ]
+    },
+    {   "id": "104001 - Gold City",
+        "character_name": "Gold City",
+        "type": "Original",
+        "costume": "Authentic 1928",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+                "speed": "",
+                "stamina": "",
+                "power": "10%",
+                "guts": "20%",
+                "wit": ""
+            } 
+        ],
+        "aptitudes": [
+            {
+                "Turf": "A",
+                "Dirt": "D"
+            },
+            {
+                "Sprint": "F",
+                "Mile": "A",
+                "Medium": "B",
+                "Long": "B"
+            },
+            {
+                "Front": "F",
+                "Pace": "A",
+                "Late": "A",
+                "End": "F"
+            }
+        ],
+        "unique": "KEEP IT REAL.",
+        "unique_explanation": "Increases speed by 0.25 for 6.0s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",
+        "skills": [
+            "Hanshin Racecourse",
+            "Watchful Eye",
+            "Slick Surge"
+        ],
+        "potential": [
+            "Slipstream",
+            "Keen Eye",
+            "Acceleration",
+            "On Your Left!"
+        ],
+        "event_skills": [
+            "Unyielding Spirit"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "japan cup november 2 year 3"
+        ],
+        "aliases": ["gold city original", "authentic 1928"],
+        "url": "https://gametora.com/umamusume/characters/104001-gold-city",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104001.png",
+        "review": "A good mile late surger gambling horse because she has On Your Left!"
     },
     {   "id": "104101 - Sakura Bakushin O",
         "character_name": "Sakura Bakushin O",
