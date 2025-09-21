@@ -5217,7 +5217,7 @@
         "aliases": ["special week supporter", "so many options"]
     },
     {   "id": "Card - Special Week Chain Setting Sun 1",
-        "event_name": "> Someday, I'll Be Just Like Her!",
+        "event_name": "❯ Someday, I'll Be Just Like Her!",
         "type": "Supporter Card",
         "subtype": "Random",
         "source_name": "Special Week (The Setting Sun And Rising Stars)",
@@ -5240,7 +5240,7 @@
         "aliases": ["special week supporter", "the setting sun and rising stars chain", "someday ill be just like her"]
     },
     {   "id": "Card - Special Week Chain Setting Sun 2",
-        "event_name": ">> Just a Little Closer",
+        "event_name": "❯❯ Just a Little Closer",
         "type": "Supporter Card",
         "subtype": "Random",
         "source_name": "Special Week (The Setting Sun And Rising Stars)",
@@ -5290,7 +5290,7 @@
         "aliases": ["special week supporter", "the setting sun and rising stars chain", "just a little closer"]
     },
     {   "id": "Card - Special Week Chain Setting Sun 3",
-        "event_name": "\\>\\>\\> Forms of Aspiration",
+        "event_name": "❯❯❯ Forms of Aspiration",
         "type": "Supporter Card",
         "subtype": "Random",
         "source_name": "Special Week (The Setting Sun And Rising Stars)",
