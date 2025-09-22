@@ -5541,7 +5541,7 @@
         "source_name": "Seiun Sky (Paint the Sky Red)",
         "options": [
             {
-                "option_text": "",
+                "option_text": "Were you carrying cleaning supplies or something?",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -5554,7 +5554,7 @@
                 ]
             },
             {
-                "option_text": "",
+                "option_text": "Hang on... Are you really just an ordinary housekeeper?",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -5578,7 +5578,7 @@
         "source_name": "Seiun Sky (Paint the Sky Red)",
         "options": [
             {
-                "option_text": "",
+                "option_text": "Seiun Sky is the culprit.",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -5591,7 +5591,7 @@
                 ]
             },
             {
-                "option_text": "",
+                "option_text": "Grass Wonder is the culprit.",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -5609,6 +5609,232 @@
         "aliases": ["seiun sky supporter ssr", "paint the sky red chain", "sudden murder mystery part 3"]
     },
 
+    {   "id": "Card - King Halo Random You May Socialize With Me",
+        "event_name": "You May Socialize With Me!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo",
+        "options": [
+            {
+                "option_text": "I'll take partner running.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -20",
+                            "Speed +10",
+                            "Power +10",
+                            "Wit +5",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "I'll take King Commendation practice.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood -1",
+                            "Guts +25",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10048.png",
+        "aliases": ["king halo supporter", "you may socialize with me"]
+    },
+    {   "id": "Card - King Halo Random You May Advise Me",
+        "event_name": "You May Advise Me!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo",
+        "options": [
+            {
+                "option_text": "What do you think of the saying \"Where there's a will, there's a way\"?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10",
+                            "Wit +5",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Any thoughts on timing your strategy in a race?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Homestretch Haste hint +1",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10048.png",
+        "aliases": ["king halo supporter", "you may advise me"]
+    },
+    {   "id": "Card - King Halo Chain First Rate Plan 1",
+        "event_name": "(>) First-Rate Coaching",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo (First-Rate Plan)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20020.png",
+        "aliases": ["king halo supporter sr", "first rate plan chain", "first rate coaching"]
+    },
+    {   "id": "Card - King Halo Chain First Rate Plan 2",
+        "event_name": "(>>) First-Rate Advice",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo (First-Rate Plan)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +15",
+                            "Skill points +15"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20020.png",
+        "aliases": ["king halo supporter sr", "first rate plan chain", "first rate advice"]
+    },
+    {   "id": "Card - King Halo Chain Tonight Waltz 1",
+        "event_name": "(>) A Captivating Invitation",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo (Tonight, We Waltz)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30056.png",
+        "aliases": ["king halo supporter ssr", "tonight we waltz chain", "a captivating invitation"]
+    },
+    {   "id": "Card - King Halo Chain Tonight Waltz 2",
+        "event_name": "(>>) Dancer's Pride",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo (Tonight, We Waltz)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -5",
+                            "Stamina +10",
+                            "Power +5",
+                            "Skill points +5",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +15",
+                            "Skill points +5",
+                            "King Halo bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30056.png",
+        "aliases": ["king halo supporter ssr", "tonight we waltz chain", "dancers pride"]
+    },
+    {   "id": "Card - King Halo Chain Tonight Waltz 3",
+        "event_name": "(>>>) Glittering Star of the Ball",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "King Halo (Tonight, We Waltz)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Power +25",
+                            "Blinding Flash hint +3"
+                        ]
+                    },
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Power +20",
+                            "Gap Closer hint +3"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30056.png",
+        "aliases": ["king halo supporter ssr", "tonight we waltz chain", "glittering star of the ball"]
+    },
 
     {   "id": "Generic - Failed Training Get Well Soon",
         "event_name": "Get Well Soon!",
