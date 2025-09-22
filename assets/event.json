@@ -5323,6 +5323,255 @@
         "aliases": ["special week supporter ssr", "the setting sun and rising stars chain", "forms of aspiration"]
     },
 
+    {   "id": "Card - Gold Ship Random Adventurer Gold Ship",
+        "event_name": "Adventurer Gold Ship",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship",
+        "options": [
+            {
+                "option_text": "E-endurance, | guess?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +15",
+                            "Gold Ship bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Persistence or something?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10",
+                            "Skill points +15",
+                            "Gold Ship bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10006.png",
+        "aliases": ["gold ship supporter", "adventurer gold ship"]
+    },
+    {   "id": "Card - Gold Ship Random Revive the Brand Golshis Yakisoba",
+        "event_name": "Revive the Brand! Golshi's Yakisoba",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship",
+        "options": [
+            {
+                "option_text": "Why don't you try improving the flavor of your yakisoba?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Stamina +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Why don't you try selling grilled akashiyaki dumplings?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Hanshin Racecourse hint +1",
+                            "Gold Ship bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10006.png",
+        "aliases": ["gold ship supporter", "revive the brand golshis yakisoba"]
+    },
+    {   "id": "Card - Gold Ship Chain Breakaway Battleship 1",
+        "event_name": "(>) Fervor! Air Basketball!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship (Breakaway Battleship)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Stamina +25"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30004.png",
+        "aliases": ["gold ship supporter ssr", "breakaway battleship chain", "fervor air basketball"]
+    },
+    {   "id": "Card - Gold Ship Chain Breakaway Battleship 2",
+        "event_name": "(>>) Respect the Salmon!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship (Breakaway Battleship)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Guts +25"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30004.png",
+        "aliases": ["gold ship supporter ssr", "breakaway battleship chain", "respect the salmon"]
+    },
+    {   "id": "Card - Gold Ship Chain Breakaway Battleship 3",
+        "event_name": "(>>>) Can't Spell \"Rival\" without \"Friend\"!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship (Breakaway Battleship)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10",
+                            "Corner Connoisseur hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30004.png",
+        "aliases": ["gold ship supporter ssr", "breakaway battleship chain", "cant spell rival without friend"]
+    },
+    {   "id": "Card - Gold Ship Chain That Time Strongest 1",
+        "event_name": "(>) Raising the Uma Lord's Castle",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship (That Time I Became the Strongest)",
+        "options": [
+            {
+                "option_text": "Try raising some funds?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Max Energy +4",
+                            "Gold Ship bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Maybe look for something you can use as the castle?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10",
+                            "Gold Ship bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30057.png",
+        "aliases": ["gold ship supporter ssr", "that time i became the strongest chain", "raising the uma lords castle"]
+    },
+    {   "id": "Card - Gold Ship Chain That Time Strongest 2",
+        "event_name": "(>>) Plotting the Uma Lord's Dungeon",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship (That Time I Became the Strongest)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -15",
+                            "Speed +5",
+                            "Stamina +5",
+                            "Long Straightaways hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30057.png",
+        "aliases": ["gold ship supporter ssr", "that time i became the strongest chain", "plotting the uma lords dungeon"]
+    },
+    {   "id": "Card - Gold Ship Chain That Time Strongest 3",
+        "event_name": "(>>>) Assembling the Uma Lord's Minions",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Gold Ship (That Time I Became the Strongest)",
+        "options": [
+            {
+                "option_text": "Th-the Four Paladins?",
+                "outcomes": [
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Speed +5",
+                            "Stamina +5",
+                            "Inside Scoop hint +3",
+                            "Gold Ship bond +5"
+                        ]
+                    },
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Speed +10",
+                            "Stamina +10",
+                            "Innate Experience hint +3",
+                            "Gold Ship bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "I have no clue...",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Maverick hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30057.png",
+        "aliases": ["gold ship supporter ssr", "that time i became the strongest chain", "assembling the uma lords minions"]
+    },
+
 
     {   "id": "Card - Seiun Sky Random Recruiting Cat Catchers",
         "event_name": "Recruiting Cat Catchers",
