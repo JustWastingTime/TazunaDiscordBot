@@ -39,11 +39,11 @@
         "effects": [
             "Friendship Bonus - 15/16/17/18/20%",
             "Mood Effect - 15/18/21/25/25%",
-            "Initial Friendship Gauge — 20/21/23/25/25",
+            "Initial Friendship Gauge - 20/21/23/25/25",
             "Race Bonus - 1/2/3/5/5%",
-            "Fan Bonus — 5/6/8/10/10%",
+            "Fan Bonus - 5/6/8/10/10%",
             "Specialty Priority - 35/38/42/46/50",
-            "Skill Point Bonus — 0/0/0/0/1"
+            "Skill Point Bonus - 0/0/0/0/1"
         ],
         "support_skills": [
             "Focus",
@@ -2533,7 +2533,7 @@
         "aliases": ["agnes tachyon", "experimental studies on subject a"]
     },
     {   "id": "20013 Eishin Flash",
-        "card_name": "5:00 a.m.—Right on Schedule",
+        "card_name": "5:00 a.m.-Right on Schedule",
         "character_name": "Eishin Flash",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
         "effects": [
@@ -3140,15 +3140,15 @@
         "character_name": "Silence Suzuka",
         "unique": "Increases mood effect when training together (15%)\nIncreases hint frequency (20%)",
         "effects": [
-            "Friendship Bonus — 25/27/30/32/35%",
-            "Mood Effect — 30/33/36/40/40%",
-            "Initial Speed — 0/0/0/15/30",
-            "Initial Friendship Gauge — 20/21/23/25/25",
-            "Race Bonus — 5%",
-            "Fan Bonus — 10/11/13/15/15%",
-            "Hint Frequency — +20%",
-            "Specialty Priority — 50/53/57/61/65",
-            "Skill Point Bonus — 0/1/1/1/1"
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Mood Effect - 30/33/36/40/40%",
+            "Initial Speed - 0/0/0/15/30",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 5%",
+            "Fan Bonus - 10/11/13/15/15%",
+            "Hint Frequency - +20%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Skill Point Bonus - 0/1/1/1/1"
         ],
         "support_skills": [
             "Focus",
@@ -3176,15 +3176,15 @@
         "character_name": "Tokai Teio",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Speed when beginning a Career playthrough (20)",
         "effects": [
-            "Friendship Bonus — 15/16/17/18/20%",
-            "Mood Effect — 40/44/48/52/60%",
-            "Power Bonus — 0/0/0/0/1",
-            "Initial Friendship Gauge — 20/21/23/25/25",
-            "Race Bonus — 0/0/0/5/10%",
-            "Fan Bonus — 0/0/0/10/10%",
-            "Hint Level — 2",
-            "Hint Frequency — 30/33/36/40/40",
-            "Specialty Priority — 20/25/28/31/35"
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Mood Effect - 40/44/48/52/60%",
+            "Power Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/10%",
+            "Hint Level - 2",
+            "Hint Frequency - 30/33/36/40/40",
+            "Specialty Priority - 20/25/28/31/35"
         ],
         "support_skills": [
             "Prudent Positioning",
