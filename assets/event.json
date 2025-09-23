@@ -7024,7 +7024,7 @@
         "source_name": "King Halo (Tonight, We Waltz)",
         "options": [
             {
-                "option_text": "",
+                "option_text": "Practice a dance that will capture everyone's attention.",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -7036,7 +7036,7 @@
                 ]
             },
             {
-                "option_text": "",
+                "option_text": "Assemble the ultimate outfit.",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -7059,7 +7059,7 @@
         "source_name": "King Halo (Tonight, We Waltz)",
         "options": [
             {
-                "option_text": "",
+                "option_text": "Bravo! Bravo!",
                 "outcomes": [
                     {
                         "chance": 100,
@@ -7074,7 +7074,7 @@
                 ]
             },
             {
-                "option_text": "",
+                "option_text": "It's almost curfew, you two...",
                 "outcomes": [
                     {
                         "chance": 100,
