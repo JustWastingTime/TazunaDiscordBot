@@ -5424,6 +5424,7 @@
         "aliases": ["special week supporter ssr", "the setting sun and rising stars chain", "forms of aspiration"]
     },
 
+
     {   "id": "Card - Silence Suzuka Random On And On",
         "event_name": "On and On",
         "type": "Supporter Card",
@@ -5565,6 +5566,404 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30002.png",
         "aliases": ["silence suzuka supporter ssr", "beyond this shining moment chain", "letters feelings wait for me okay"]
     },
+
+
+    {   "id": "Card - Tokai Teio Random My Way Or",
+        "event_name": "My Way, Or...",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Tokai Teio",
+        "options": [
+            {
+                "option_text": "You should run the way that best suits you!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Skill points +15",
+                            "Tokai Teio bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "But think of how good it'll feel to sprint after holding back.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +15",
+                            "Tokai Teio bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10003.png",
+        "aliases": ["tokai teio supporter", "my way or"]
+    },
+    {   "id": "Card - Tokai Teio Random My Weapon",
+        "event_name": "My Weapon",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Tokai Teio",
+        "options": [
+            {
+                "option_text": "Yeah, people who can do it all are so cool!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Guts +10",
+                            "Tokai Teio bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "I think you have plenty of weapons up your sleeve already.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Pace Chaser Straightaways hint +1",
+                            "Tokai Teio bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10003.png",
+        "aliases": ["tokai teio supporter", "my weapon"]
+    },
+    {   "id": "Card - Tokai Teio Chain Dream Big 1",
+        "event_name": "(>) Premonitions of a Performer",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Tokai Teio (Dream Big!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Speed +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30003.png",
+        "aliases": ["tokai teio supporter ssr", "dream big chain", "premonitions of a performer"]
+    },
+    {   "id": "Card - Tokai Teio Chain Dream Big 2",
+        "event_name": "(>>) Short Interlude",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Tokai Teio (Dream Big!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Speed +5",
+                            "Wit +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30003.png",
+        "aliases": ["tokai teio supporter ssr", "dream big chain", "short interlude"]
+    },
+    {   "id": "Card - Tokai Teio Chain Dream Big 3",
+        "event_name": "(>>>) Legendary Act",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Tokai Teio (Dream Big!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Speed +5",
+                            "Rushing Gale hint +1",
+                            "Tokai Teio bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30003.png",
+        "aliases": ["tokai teio supporter ssr", "dream big chain", "legendary act"]
+    },
+
+
+    {   "id": "Card - Maruzensky Random For an Adorable Younger Student",
+        "event_name": "For an Adorable Younger Student",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Maruzensky",
+        "options": [
+            {
+                "option_text": "Teach her how to use her knees properly.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Early Lead hint +1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Work on improving her baseline endurance.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +5",
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10004.png",
+        "aliases": ["maruzensky supporter", "for an adorable younger student"]
+    },
+    {   "id": "Card - Maruzensky Random Drive Destination",
+        "event_name": "Drive Destination",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Maruzensky",
+        "options": [
+            {
+                "option_text": "The beach.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Speed +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "A new town.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Wit +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10004.png",
+        "aliases": ["maruzensky supporter", "drive destination"]
+    },
+
+
+    {   "id": "Card - Oguri Cap Random How Should I Respond",
+        "event_name": "How Should I Respond?",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Oguri Cap",
+        "options": [
+            {
+                "option_text": "Why don't you show them how you train?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +5",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Think of it as a chance to work on your weaknesses.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Guts +15"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10005.png",
+        "aliases": ["oguri cap supporter", "how should i respond"]
+    },
+    {   "id": "Card - Oguri Cap Random Conquering the Crowds",
+        "event_name": "Conquering the Crowds",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Oguri Cap",
+        "options": [
+            {
+                "option_text": "Fight your way through the crowd.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +15"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Wait for the right moment to slip through.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Nakayama Racecourse hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10005.png",
+        "aliases": ["oguri cap supporter", "conquering the crowds"]
+    },
+    {   "id": "Card - Oguri Cap Chain Hugs for Me 1",
+        "event_name": "(>) A Plushie...",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Oguri Cap (Get Lots of Hugs for Me)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Max Energy +4",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30024.png",
+        "aliases": ["oguri cap supporter ssr", "get lots of hugs for me chain", "a plushie"]
+    },
+    {   "id": "Card - Oguri Cap Chain Hugs for Me 2",
+        "event_name": "(>>) How Should I Respond?",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Oguri Cap (Get Lots of Hugs for Me)",
+        "options": [
+            {
+                "option_text": "If you can't do it yourself, ask an adult for help.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +10",
+                            "Stamina to Spare hint +1",
+                            "Oguri Cap bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "I'll teach you a special phrase.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +5",
+                            "Skill points +10",
+                            "Outer Swell hint +1",
+                            "Oguri Cap bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30024.png",
+        "aliases": ["oguri cap supporter ssr", "get lots of hugs for me chain", "how should i respond"]
+    },
+    {   "id": "Card - Oguri Cap Chain Hugs for Me 3",
+        "event_name": "(>>>) What I Want to Say",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Oguri Cap (Get Lots of Hugs for Me)",
+        "options": [
+            {
+                "option_text": "I've taught you everything I can. You've got this.",
+                "outcomes": [
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Power +10",
+                            "Guts +5",
+                            "Skill points +10",
+                            "Oguri Cap bond +5",
+                            "Furious Feat hint +1"
+                        ]
+                    },
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Power +15",
+                            "Guts +10",
+                            "Skill points +15",
+                            "Oguri Cap bond +5",
+                            "Furious Feat hint +3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Is there anything you want to do?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +30"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30024.png",
+        "aliases": ["oguri cap supporter ssr", "get lots of hugs for me chain", "what i want to say"]
+    },
+
 
     {   "id": "Card - Gold Ship Random Adventurer Gold Ship",
         "event_name": "Adventurer Gold Ship",
@@ -5815,6 +6214,332 @@
         "aliases": ["gold ship supporter ssr", "that time i became the strongest chain", "assembling the uma lords minions"]
     },
 
+
+    {   "id": "Card - Vodka Random The Coolest Line",
+        "event_name": "The Coolest Line",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Vodka",
+        "options": [
+            {
+                "option_text": "Try making yourself look more threatening.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10",
+                            "Vodka bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Try striking an intimidating pose.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +15",
+                            "Vodka bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10007.png",
+        "aliases": ["vodka supporter", "the coolest line"]
+    },
+    {   "id": "Card - Vodka Random Enemies on Main Street",
+        "event_name": "Enemies on Main Street",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Vodka",
+        "options": [
+            {
+                "option_text": "Use the side roads.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Nimble Navigator hint +1",
+                            "Vodka bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Run as fast as you can.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +15",
+                            "Vodka bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10007.png",
+        "aliases": ["vodka supporter", "enemies on main street"]
+    },
+    {   "id": "Card - Vodka Chain Wild Rider 1",
+        "event_name": "(>) Gotta Follow My Heart",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Vodka (Wild Rider)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +15"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30005.png",
+        "aliases": ["vodka supporter ssr", "wild rider chain", "gotta follow my heart"]
+    },
+    {   "id": "Card - Vodka Chain Wild Rider 2",
+        "event_name": "(>>) A Vow to the Setting Sun",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Vodka (Wild Rider)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +15"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30005.png",
+        "aliases": ["vodka supporter ssr", "wild rider chain", "a vow to the setting sun"]
+    },
+    {   "id": "Card - Vodka Chain Wild Rider 3",
+        "event_name": "(>>>) Put That on the Record, Okay?",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Vodka (Wild Rider)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +30",
+                            "Breath of Fresh Air hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30005.png",
+        "aliases": ["vodka supporter ssr", "wild rider chain", "put that on the record okay"]
+    },
+
+
+    {   "id": "Card - Grass Wonder Random Library Vexation",
+        "event_name": "Library Vexation",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Grass Wonder",
+        "options": [
+            {
+                "option_text": "For now, why not focus on the book you did manage to find?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Wit +10",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Why don't we look for them together?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +5",
+                            "Wit +5",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10009.png",
+        "aliases": ["grass wonder supporter", "library vexation"]
+    },
+    {   "id": "Card - Grass Wonder Random A Friendly Daytime Discussion",
+        "event_name": "A Friendly Daytime Discussion",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Grass Wonder",
+        "options": [
+            {
+                "option_text": "You could throw them off by messing with their pace.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Frenzied Pace Chasers hint +1",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Try sticking close to them to make sure they can't run the way they want.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Target in Sight hint +1",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10009.png",
+        "aliases": ["grass wonder supporter", "a friendly daytime discussion"]
+    },
+    {   "id": "Card - Grass Wonder Chain Fairest Fleur 1",
+        "event_name": "(>) Quiet Passion",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Grass Wonder (Fairest Fleur)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Wit +5",
+                            "Skill points +15",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30006.png",
+        "aliases": ["grass wonder supporter ssr", "fairest fluer chain", "quiet passion"]
+    },
+    {   "id": "Card - Grass Wonder Chain Fairest Fleur 2",
+        "event_name": "(>>) A Moment's Respite",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Grass Wonder (Fairest Fleur)",
+        "options": [
+            {
+                "option_text": "I hope you're making time for breaks.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +15",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "You're not spreading yourself too thin, are you?",
+                "outcomes": [
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Energy -10",
+                            "Power +5",
+                            "Guts +5",
+                            "Wit +5",
+                            "Grass Wonder bond +5"
+                        ]
+                    },
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Power +5",
+                            "Guts +5",
+                            "Wit +10",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30006.png",
+        "aliases": ["grass wonder supporter ssr", "fairest fluer chain", "a moments respite"]
+    },
+    {   "id": "Card - Grass Wonder Chain Fairest Fleur 3",
+        "event_name": "(>>>) Hidden Petals",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Grass Wonder (Fairest Fleur)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Speed +5",
+                            "Guts +5",
+                            "Wit +5",
+                            "Updrafters hint +1",
+                            "Grass Wonder bond +5"
+                        ]
+                    },
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Speed +5",
+                            "Guts +10",
+                            "Wit +5",
+                            "Furious Feat hint +3",
+                            "Grass Wonder bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30006.png",
+        "aliases": ["grass wonder supporter ssr", "fairest fluer chain", "hidden petals"]
+    },
 
     {   "id": "Card - Seiun Sky Random Recruiting Cat Catchers",
         "event_name": "Recruiting Cat Catchers",
