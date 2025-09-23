@@ -6357,6 +6357,77 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30005.png",
         "aliases": ["vodka supporter ssr", "wild rider chain", "put that on the record okay"]
     },
+    
+
+    {   "id": "Card - Taiki Shuttle Random Yes Lets Hug",
+        "event_name": "Yes! Let's Hug ☆",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Taiki Shuttle",
+        "options": [
+            {
+                "option_text": "Speed.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Power.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10008.png",
+        "aliases": ["taiki shuttle supporter", "yes lets hug"]
+    },
+    {   "id": "Card - Taiki Shuttle Random Yeehaw Party Tonight",
+        "event_name": "Yeehaw! Party Tonight ☆",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Taiki Shuttle",
+        "options": [
+            {
+                "option_text": "Take the long way and run as fast as you can!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Speed +5",
+                            "Power +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Imagine yourself parting the crowd as you run!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Prepared to Pass hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10008.png",
+        "aliases": ["taiki shuttle supporter", "yeehaw party tonight"]
+    },
 
 
     {   "id": "Card - Grass Wonder Random Library Vexation",
