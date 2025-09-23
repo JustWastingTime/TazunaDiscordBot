@@ -134,10 +134,11 @@ Work in Progress.
 ## ⭐ Parsing images
 `/parse` accepts a screenshot of your uma, parses it into something readable, and generates an umalator link. There are some hiccups like skills not being properly read if there are ○ or ◎, so please double check your final umalator result.  
 
-To get the parser working, generate a free [OCR API key] (https://ocr.space/ocrapi/freekey) and paste it into your .env file. If you're using a host like Pella, add this key into the env tab instead.
+To get the parser working, generate a free [OCR API key](https://ocr.space/ocrapi/freekey) and paste it into your .env file. If you're using a host like Pella, add this key into the env tab instead.
 
-Example: ![Sample Uma Picture](./assets/readmeimg/parsesample.png)
-This is the result
-![Sample Uma Result](./assets/readmeimg/parsesampleresult.png)
-And the umalator link generated
+Example:  
+![Sample Uma Picture](./assets/readmeimg/parsesample.png)  
+This is the result  
+![Sample Uma Result](./assets/readmeimg/parsesampleresult.png)  
+And the umalator link generated  
 https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACu2QvU4DMRCEXwVN7WJ9R%2B6Eu1QI0SCloEAUVrxJLHL2yWsriqK8O1o4gVLS042%2B%2FZudC7a5FeGnAGdpoMEgiZ%2FmIwvcisigCb9keWae4WppbFD8lgPv4C6Ycg5wncG%2B5JYCHB6VGJzY1wMXOGxaSmcYCHvJScFcYtrDoMaJl2EfWO%2FT1aBN3urqNnk1BUvWwiB5bcZj8SJ3rzkFLjDIre5i%2Fekj7ZSZWb%2Bx6l6qn2LycIO1BnM%2BqSfbaWnfqsD13WhwihLyBNcPvYF8xONR4N5giezX8Qciul9EN6roiPq%2BW8S4iIGW0mAXMi7EDiuLd7VTfOX9WWPwcogwCFGqT1tezzXWpjlgrV%2B0svM3dIPf%2BRv8HVr3H9qfQrt%2BAiSBJtf7AgAA
