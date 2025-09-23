@@ -5423,7 +5423,148 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30025.png",
         "aliases": ["special week supporter ssr", "the setting sun and rising stars chain", "forms of aspiration"]
     },
-    
+
+    {   "id": "Card - Silence Suzuka Random On And On",
+        "event_name": "On and On",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "Of course.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10",
+                            "Stamina +5",
+                            "Silence Suzuka bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Sure! Now run as fast as you can!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +15",
+                            "Silence Suzuka bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10002.png",
+        "aliases": ["silence suzuka supporter", "on and on"]
+    },
+    {   "id": "Card - Silence Suzuka Random What Should I Do",
+        "event_name": "What Should I Do?",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Silence Suzuka",
+        "options": [
+            {
+                "option_text": "Why now do some partner running with her?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Stamina +5",
+                            "Wit +5",
+                            "Silence Suzuka bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Maybe the trick is hidden in that left-handed loop you're in.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Left-Handed hint +1",
+                            "Silence Suzuka bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10002.png",
+        "aliases": ["silence suzuka supporter", "what should i do"]
+    },
+    {   "id": "Card - Silence Suzuka Chain Shining Moment 1",
+        "event_name": "(>) Letters → ?",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Silence Suzuka (Beyond This Shining Moment)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30002.png",
+        "aliases": ["silence suzuka supporter ssr", "beyond this shining moment chain", "letters"]
+    },
+    {   "id": "Card - Silence Suzuka Chain Shining Moment 2",
+        "event_name": "(>>) Letters → Feelings → ?",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Silence Suzuka (Beyond This Shining Moment)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10",
+                            "Power +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30002.png",
+        "aliases": ["silence suzuka supporter ssr", "beyond this shining moment chain", "letters feelings"]
+    },
+    {   "id": "Card - Silence Suzuka Chain Shining Moment 3",
+        "event_name": "(>>) Letters → Feelings → Wait for Me, Okay?",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Silence Suzuka (Beyond This Shining Moment)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10",
+                            "Unrestrained hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30002.png",
+        "aliases": ["silence suzuka supporter ssr", "beyond this shining moment chain", "letters feelings wait for me okay"]
+    },
 
     {   "id": "Card - Gold Ship Random Adventurer Gold Ship",
         "event_name": "Adventurer Gold Ship",
