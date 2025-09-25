@@ -113,6 +113,14 @@
             "Left-Handed",
             "Early Lead"
         ],
+        "races": [
+            "yayoi sho march 1 year 2",
+            "kobe shimbun hai september 2 year 2",
+            "kinko sho march 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "mainichi okan october 1 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
         "aliases": ["silence suzuka original", "innocent silence"],
         "url": "https://gametora.com/umamusume/characters/100201-silence-suzuka",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1002_100201.png",
@@ -171,6 +179,14 @@
         ],
         "event_skills": [
             "Prepared to Pass"
+        ],
+        "races": [
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
         ],
         "aliases": ["tokai teio original", "peak joy"],
         "url": "https://gametora.com/umamusume/characters/100301-tokai-teio",
@@ -237,6 +253,14 @@
             "Stamina to Spare",
             "Corner Acceleration"
         ],
+        "races": [
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
         "aliases": ["tokai teio anime", "beyond the horizon"],
         "url": "https://gametora.com/umamusume/characters/100302-tokai-teio",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1003_100302.png",
@@ -300,6 +324,16 @@
         "event_skills": [
             "Huge Lead"
         ],
+        "races": [
+            "asahi hai futurity stakes december 1 year 1",
+            "spring stakes march 2 year 2",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
         "aliases": ["maruzenksy original", "maru", "supercar", "formula r"],
         "url": "https://gametora.com/umamusume/characters/100401-maruzensky",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1004_100401.png",
@@ -358,6 +392,13 @@
         ],
         "event_skills": [
             "Nakayama Racecourse"
+        ],
+        "races": [
+            "nhk mile cup may 1 year 2",
+            "mile championship november 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
         ],
         "aliases": ["oguri cap original", "starlight beat"],
         "url": "https://gametora.com/umamusume/characters/100601-oguri-cap",
@@ -424,6 +465,16 @@
             "Non-Standard Distance",
             "Gatekept"
         ],
+        "races": [
+            "hopeful stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
         "aliases": ["gold ship original", "golshi", "red strife"],
         "url": "https://gametora.com/umamusume/characters/100701-gold-ship",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1007_100701.png",
@@ -483,6 +534,17 @@
         "event_skills": [
             "Shifting Gears",
             "Nimble Navigator"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "tulip sho march 1 year 2",
+            "oka sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "shuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "victoria mile may 1 year 3",
+            "yasuda kinen june 1 year 3",
+            "tenno sho autumn october 2 year 3"
         ],
         "aliases": ["vodka original", "wild top gear"],
         "url": "https://gametora.com/umamusume/characters/100801-vodka",
@@ -548,6 +610,16 @@
             "Unyielding Spirit",
             "Steadfast"
         ],
+        "races": [
+            "tulip sho march 1 year 2",
+            "oka sho april 1 year 2",
+            "japanese oaks may 2 year 2",
+            "shuka sho october 2 year 2",
+            "queen elizabeth ii cup november 1 year 2",
+            "osaka hai march 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
         "aliases": ["daiwa scarlet original", "peak blue"],
         "url": "https://gametora.com/umamusume/characters/100901-daiwa-scarlet",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1009_100901.png",
@@ -610,6 +682,15 @@
         ],
         "event_skills": [
             "Prepared to Pass"
+        ],
+        "races": [
+            "shinzan kinen january 1 year 2",
+            "nhk mile cup may 1 year 2",
+            "unicorn stakes june 2 year 2",
+            "mile championship november 2 year 2",
+            "yasuda kinen june 1 year 3",
+            "sprinters stakes september 2 year 3",
+            "mile championship november 2 year 3"   
         ],
         "aliases": ["taiki shuttle original", "wild frontier"],
         "url": "https://gametora.com/umamusume/characters/101001-taiki-shuttle",
