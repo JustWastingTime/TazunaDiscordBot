@@ -9,7 +9,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize } from './utils.js';
+import { truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize } from './utils.js';
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
@@ -485,7 +485,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         });
     }
 
-    // "leaderboard" command
+    // leaderboard command to show current club rankings
     if (name === 'leaderboard') {
       // Defer so we have time to sync
       res.send({ type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE });
@@ -507,36 +507,24 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         let matchedServers = [];
 
         if (clubArg) {
-          // Exact name match first (case-insensitive)
           matchedServers = serversList.filter(s => s.name.toLowerCase() === clubArg.toLowerCase());
-
-          // If none, try contains (partial)
           if (matchedServers.length === 0) {
             matchedServers = serversList.filter(s => s.name.toLowerCase().includes(clubArg.toLowerCase()));
           }
-
           if (matchedServers.length === 0) {
-            await sendFollowup(token, {
-              content: `❌ Club "${clubArg}" not found.`
-            });
+            await sendFollowup(token, { content: `❌ Club "${clubArg}" not found.` });
             return;
           }
         } else {
-          // No clubname passed — try to resolve from guild or user's club (DM)
           if (guildId) {
             matchedServers = serversList.filter(s => s.id === guildId);
           }
-
           if (!guildId) {
-            // In DM — resolve from user's club field
             if (userId) {
               const user = usersList.find(u => u.id === userId);
-              if (user?.club) {
-                matchedServers = serversList.filter(s => s.name === user.club);
-              }
+              if (user?.club) matchedServers = serversList.filter(s => s.name === user.club);
             }
           }
-
           if (matchedServers.length === 0) {
             await sendFollowup(token, {
               content: "❌ Could not determine which club/server to pull leaderboard from. Try `/leaderboard clubname:\"YourClub\"`."
@@ -551,9 +539,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         const clubUsers = usersList.filter(u => targetClubs.includes(u.club));
 
         if (clubUsers.length === 0) {
-          await sendFollowup(token, {
-            content: `❌ No users found for club(s): ${targetClubs.join(", ")}.`
-          });
+          await sendFollowup(token, { content: `❌ No users found for club(s): ${targetClubs.join(", ")}.` });
           return;
         }
 
@@ -565,61 +551,113 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           sorted = [...clubUsers].sort((a, b) => (Number(a.rank_monthly) || 1e9) - (Number(b.rank_monthly) || 1e9));
         }
 
-        const top10 = sorted.slice(0, 10);
-
-        // Build leaderboard description (same format as before)
-        const description = top10.map(u => {
-          const rank = mode === "total" ? u.rank_total : u.rank_monthly;
-          const fans = mode === "total" ? u.fans_total : u.fans_monthly;
-          return `**#${rank}** ${u.name} — ⭐ ${Number(fans).toLocaleString()}`;
-        }).join("\n");
-
-        // Aggregate server stats for footer
+        // ---------- aggregated metrics ----------
         const parseNum = v => Number(v) || 0;
-
         const medians = matchedServers.map(s => parseNum(s.fans_median)).filter(n => n > 0);
         const totalFansSum = matchedServers.reduce((acc, s) => acc + parseNum(s.fans_guild_total), 0);
         const dailyVals = matchedServers.map(s => parseNum(s.daily_average)).filter(n => n > 0);
 
-        // Median-of-medians (if multiple) — fallback to 0 if empty
         let aggregatedMedian = 0;
         if (medians.length > 0) {
           medians.sort((a, b) => a - b);
           const mid = Math.floor(medians.length / 2);
-          aggregatedMedian = (medians.length % 2 === 1)
-            ? medians[mid]
-            : Math.round((medians[mid - 1] + medians[mid]) / 2);
+          aggregatedMedian = (medians.length % 2 === 1) ? medians[mid] : Math.round((medians[mid - 1] + medians[mid]) / 2);
         }
 
-        // Avg daily (rounded)
         const aggregatedDaily = dailyVals.length > 0
           ? Math.round(dailyVals.reduce((a, b) => a + b, 0) / dailyVals.length)
           : 0;
 
-        // Build footer text exactly as you requested
-        const footerText = `Median Fans: ${Number(aggregatedMedian).toLocaleString()}  •  Total Fans: ${Number(totalFansSum).toLocaleString()}  •  Daily Avg: ${Number(aggregatedDaily).toLocaleString()}`;
-
-        // Embed title: single club gets possessive title, multiple clubs aggregated
-        const title = matchedServers.length === 1
-          ? `🏆 ${matchedServers[0].name}'s Leaderboard (${mode === "total" ? "Total Fans" : "Monthly Fans"})`
-          : `🏆 Leaderboard — ${targetClubs.join(", ")} (${mode === "total" ? "Total Fans" : "Monthly Fans"})`;
-
-        const embed = {
-          title,
-          description: description || "No data available.",
-          color: 0xf1c40f,
-          footer: { text: footerText }
+        // ---------- formatting helpers ----------
+        const getColorEmoji = (col) => {
+          switch ((col || "").toLowerCase()) {
+            case "purple": return "🟣";
+            case "blue":   return "🔵";
+            case "green":  return "🟢";
+            case "yellow": return "🟡";
+            case "red":    return "🔴";
+            default:       return "⚪";
+          }
         };
 
-        await sendFollowup(token, { embeds: [embed] });
+        // Build aligned table as monospace string
+        const players = sorted; // show ALL players
+        const rows = players.map((u, idx) => {
+          const rankField = (mode === "total" ? u.rank_total : u.rank_monthly) || String(idx + 1);
+          const fansField = Number(mode === "total" ? u.fans_total : u.fans_monthly) || 0;
+          const dailyField = Number(u.daily_average) || 0;
+          return {
+            rank: `#${rankField}`,
+            name: u.name || "Unknown",
+            fans: fansField.toLocaleString(),
+            daily: dailyField.toLocaleString(),
+            colorEmoji: getColorEmoji(u.color)
+          };
+        });
+
+        // Determine column widths (bounded)
+        const rankWidth = Math.max(4, ...rows.map(r => r.rank.length));
+        const nameWidth = Math.min(28, Math.max(10, ...rows.map(r => r.name.length)));
+        const fansWidth = Math.max(10, ...rows.map(r => r.fans.length), "Total Fans".length);
+        const dailyWidth = Math.max(9, ...rows.map(r => r.daily.length), "Daily Avg".length);
+
+        // Header + separator
+        const header = [
+          padRight("Rank", rankWidth),
+          padRight("Name", nameWidth),
+          padLeft("Total Fans", fansWidth),
+          padLeft("Daily Avg", dailyWidth),
+          "Zone"
+        ].join("  ");
+
+        const sep = '-'.repeat(Math.min(120, header.length));
+
+        function padRight(s, w) { return String(s).padEnd(w, ' '); }
+        function padLeft(s, w)  { return String(s).padStart(w, ' '); }
+
+        const bodyLines = rows.map(r =>
+          `${padRight(r.rank, rankWidth)}  ${padRight(truncate(r.name, nameWidth), nameWidth)}  ${padLeft(r.fans, fansWidth)}  ${padLeft(r.daily, dailyWidth)}  ${r.colorEmoji}`
+        );
+
+        // Compose code-block table
+        const table = [
+          header,
+          sep,
+          ...bodyLines
+        ].join("\n");
+
+        // Title and footer
+        const title = matchedServers.length === 1
+          ? `## 🏆 ${matchedServers[0].name}'s Leaderboard (${mode === "total" ? "Total Fans" : "Monthly Fans"})`
+          : `## 🏆 Leaderboard — ${targetClubs.join(", ")} (${mode === "total" ? "Total Fans" : "Monthly Fans"})`;
+
+        const footerText = `-# Median Fans: ${Number(aggregatedMedian).toLocaleString()}  •  Total Fans: ${Number(totalFansSum).toLocaleString()}  •  Daily Avg: ${Number(aggregatedDaily).toLocaleString()}`;
+
+        const payload = {
+          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
+          components: [
+            {
+              type: MessageComponentTypes.CONTAINER,
+              color: "#f1c40f",
+              components: [
+                { type: MessageComponentTypes.TEXT_DISPLAY, content: title },
+                { type: MessageComponentTypes.TEXT_DISPLAY, content: "```" + table + "```" },
+                { type: MessageComponentTypes.TEXT_DISPLAY, content: footerText }
+              ]
+            }
+          ]
+        };
+
+        await sendFollowup(token, payload);
 
       } catch (err) {
-        console.error("Leaderboard command error:", err);
+        console.error("Leaderboard2 command error:", err);
         await sendFollowup(token, { content: "❌ Error fetching leaderboard." });
       }
 
       return;
     }
+
 
     // "trainer" command to lookup yourself or other trainers
     if (name === 'trainer') {

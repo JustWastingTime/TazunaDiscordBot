@@ -85,6 +85,12 @@ export function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Helper used above
+export function truncate(s, max) {
+  if (!s) return "";
+  return s.length > max ? s.slice(0, max - 1) + "…" : s;
+}
+
 export function getRarityImageLink(str) {
   if (str === 'SSR' || str === 'ssr')
   {
@@ -939,3 +945,4 @@ export function buildCMEmbed(cm) {
     ]
   };
 }
+
