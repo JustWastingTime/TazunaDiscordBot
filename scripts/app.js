@@ -638,12 +638,12 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           components: [
             {
               type: MessageComponentTypes.CONTAINER,
-              color: "#f1c40f",
-              components: [
+              accent_color: "15844367",
+              components: [ 
                 { type: MessageComponentTypes.TEXT_DISPLAY, content: title },
                 { type: MessageComponentTypes.TEXT_DISPLAY, content: "```" + table + "```" },
-                { type: MessageComponentTypes.TEXT_DISPLAY, content: footerText }
-              ]
+                { type: MessageComponentTypes.TEXT_DISPLAY, content: footerText },
+              ]              
             }
           ]
         };
@@ -657,8 +657,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
       return;
     }
-
-
+    
     // "trainer" command to lookup yourself or other trainers
     if (name === 'trainer') {
       res.send({
