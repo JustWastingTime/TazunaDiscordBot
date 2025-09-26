@@ -253,14 +253,6 @@
             "Stamina to Spare",
             "Corner Acceleration"
         ],
-        "races": [
-            "satsuki sho april 1 year 2",
-            "japanese derby may 2 year 2",
-            "kikuka sho october 2 year 2",
-            "tenno sho spring april 2 year 3",
-            "japan cup november 2 year 3",
-            "arima kinen december 2 year 3"
-        ],
         "aliases": ["tokai teio anime", "beyond the horizon"],
         "url": "https://gametora.com/umamusume/characters/100302-tokai-teio",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1003_100302.png",
@@ -814,15 +806,6 @@
             "Competitive Spirit",
             "Sharp Gaze"
         ],
-        "races": [
-            "asahi hai futurity stakes december 1 year 1",
-            "japanese derby may 2 year 2",
-            "japan cup november 2 year 2",
-            "arima kinen december 2 year 2",
-            "takarazuka kinen june 2 year 3",
-            "mainichi okan october 1 year 3",
-            "arima kinen december 2 year 3"   
-        ],
         "aliases": ["grass wonder fantasy", "saint jade healer", "healer grass"],
         "url": "https://gametora.com/umamusume/characters/101102-grass-wonder",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1011_101102.png",
@@ -1015,13 +998,6 @@
             "Calm in a Crowd",
             "Prudent Positioning"
         ],
-        "races": [
-            "kobe shimbun hai september 2 year 2",
-            "kikuka sho october 2 year 2",
-            "tenno sho spring april 2 year 3",
-            "takarazuka kinen june 2 year 3",
-            "tenno sho autumn october 2 year 3"  
-        ],
         "aliases": ["mejiro mcqueen anime", "end of the skies"],
         "url": "https://gametora.com/umamusume/characters/101302-mejiro-mcqueen",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1013_101302.png",
@@ -1146,15 +1122,6 @@
             "Wet Conditions",
             "Calm in a Crowd",
             "Go with the Flow"
-        ],
-        "races": [
-            "kyodo news hai february 1 year 2",
-            "nhk mile cup may 1 year 2",
-            "japanese derby may 2 year 2",
-            "mainichi okan october 1 year 2",
-            "takarazuka kinen june 2 year 3",
-            "japan cup november 2 year 3",
-            "arima kinen december 2 year 3" 
         ],
         "aliases": ["el condor pasa fantasy", "kukulkan warrior"],
         "url": "https://gametora.com/umamusume/characters/101402-el-condor-pasa",
@@ -1500,16 +1467,6 @@
             "Go with the Flow",
             "Up-Tempo"
         ],
-        "races": [
-            "hanshin juvenile fillies december 1 year 1",
-            "oka sho april 1 year 2",
-            "japanese oaks may 2 year 2",
-            "shuka sho october 2 year 2",
-            "osaka hai march 2 year 3",
-            "takarazuka kinen june 2 year 3",
-            "sapporo kinen august 2 year 3",
-            "tenno sho autumn october 2 year 3" 
-        ],
         "aliases": ["air groove wedding", "quercus civilis"],
         "url": "https://gametora.com/umamusume/characters/101802-air-groove",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1018_101802.png",
@@ -1778,15 +1735,6 @@
             "Straightaway Adept",
             "Pace Strategy",
             "Straightaway Acceleration"
-        ],
-        "races": [
-            "kikuka sho october 2 year 2",
-            "arima kinen december 2 year 2",
-            "hanshin daishoten march 2 year 3",
-            "tenno sho spring april 2 year 3",
-            "takarazuka kinen june 2 year 3",
-            "tenno sho autumn october 2 year 3",
-            "arima kinen december 2 year 3"
         ],
         "aliases": ["mayano top gun wedding", "sunlight bouquet"],
         "url": "https://gametora.com/umamusume/characters/102402-mayano-top-gun",
