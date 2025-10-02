@@ -659,8 +659,3 @@ export function generateUmaLatorLink(parsedUma, raceOptions = {}) {
   const finalOptions = { ...defaultOptions, ...raceOptions };
   return buildAdvancedUmaLatorHash(parsedUma, finalOptions);
 }
-
-// Keep this for backwards compatibility if needed elsewhere
-export function buildUmaLatorHash(parsedUma, raceOptions = {}) {
-  return generateUmaLatorLink(parsedUma, raceOptions);
-}

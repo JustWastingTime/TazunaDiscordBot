@@ -34,6 +34,8 @@ const events = cache.events;
 const skills = cache.skills;
 const races = cache.races;
 const champsmeets = cache.champsmeets;
+const legendraces = cache.legendraces;
+const misc = cache.misc;
 
 // Create an express app
 const app = express();
@@ -1048,6 +1050,35 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           content: "✅ Your application has been submitted!",
           flags: 64 // ephemeral
         },
+      });
+    }
+
+
+    if (name === "schedule") {
+      const url = misc[0]?.schedule ?? null;
+
+      if (!url) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: "❌ No schedule found." }
+        });
+      }
+
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
+          components: [
+            {
+              type: MessageComponentTypes.MEDIA_GALLERY,
+              items: [
+                {
+                  media: {url: url}
+                }
+              ]
+            }
+          ] 
+        }
       });
     }
 

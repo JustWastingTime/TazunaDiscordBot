@@ -373,9 +373,7 @@ export async function buildUmaLatorComparisonHash(parsedUma1, parsedUma2, raceOp
   return `https://alpha123.github.io/uma-tools/umalator-global/#${hash}`;
 }
 
-/**
- * Example usage with your parsed data
- */
+
 export async function generateUmalatorLink(parsedData) {
   // Example with custom race conditions
   const raceOptions = {
