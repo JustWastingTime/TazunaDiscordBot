@@ -1293,6 +1293,27 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         }
       });
     }
+
+    if (custom_id === "cm_select") {
+      const selectedId = values[0];
+      const cm = champsmeets.find(c => c.name === selectedId);
+
+      if (!cm) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: `❌ Champion's Meet not found.` }
+        });
+      }
+
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: {
+          content: `✅ You selected **${cm.name}**`,
+          embeds: buildCMEmbed(cm),
+          components: [] // remove the dropdown after selection
+        }
+      });
+    }
   }
 
 console.error('unknown interaction type', type);

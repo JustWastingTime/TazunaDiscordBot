@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Taurus Cup 2025",
+        "number": "1",
+        "track":
+        {
+            "racetrack": "Tokyo",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2400m",
+            "direction": "Left-Handed",
+            "ground": "Firm",
+            "season": "Spring",
+            "weather": "Sunny",
+            "similar": "Japanese Derby (Tokyo Yushun)"
+        },
+        "date": "<t:1755813600:F>",
+        "image": "https://img.game8.co/4241619/91e0d8bd34b3c6a3d3596fbe06122f50.png/show",
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthO7Ta65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZrBIAqF5cIC2zeNgTA72G5o%2B32%2Fe9ztDYrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLhJ9YHvVXJc%2F5ubQQnU1qFUdPJauQADWTaMttuQlIKP9G2XtNbxp6rnogL7UOXqxaVwN6KZlOcPWJw4nlOBgfOiFEc%2BLOq1VAKc6lXJE%2F1KD%2FgZ%2BBuf%2FeUisK9vX%2Bjdv0S%2FfQIrCWvgBwIAAA%3D%3D"
+    }
+]

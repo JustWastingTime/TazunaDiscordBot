@@ -8,7 +8,9 @@ const cache = {
   characters: [],
   users: [],
   races: [],
-  champsmeets: []
+  champsmeets: [],
+  legendraces: [],
+  misc: []
 };
 
 // GitHub raw URLs
@@ -18,7 +20,9 @@ const urls = {
   events: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/event.json',
   characters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/character.json',
   races: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/races.json',
-  champsmeets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/champsmeet.json'
+  champsmeets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/champsmeet.json',
+  legendraces: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/legendrace.json',
+  misc: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/misc.json',
 };
 
 // Function to fetch a JSON file

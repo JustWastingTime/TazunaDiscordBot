@@ -2,12 +2,13 @@
     {
         "id": "106158814788583424",
         "name": "Inusame",
-        "fans_total": "119313167",
-        "fans_monthly": "25173298",
-        "color": "blue",
-        "rank_total": "20",
-        "rank_monthly": "14",
-        "daily_average": "1728415",
+        "fans_total": "152383491",
+        "fans_monthly": "2687616",
+        "color": "purple",
+        "rank_total": "23",
+        "rank_monthly": "4",
+        "daily_average": "1973988",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -34,16 +35,17 @@
     {
         "id": "217274197553053696",
         "name": "Vivi",
-        "fans_total": "134873329",
-        "fans_monthly": "26795908",
+        "fans_total": "184453332",
+        "fans_monthly": "1447574",
         "color": "blue",
-        "rank_total": "12",
+        "rank_total": "9",
         "rank_monthly": "12",
-        "daily_average": "1839824",
+        "daily_average": "1063207",
+        "club": "Yggdrasil",
         "save_data": [
             {
-                "label": "Daiwa Scarlet Gemini CM",
-                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACqWRS2vDMBCE%2F8ucddBaVhzrlmPppZBj6UHEm9QktowemBLy34v8SEgvhfY2SKPZ2U9XHFzygV8aGJJbIoE%2B2G64cIDRUgoE5gam2JCutapULZACv7nwyjzARJ9YwNsDN3yEuaJzLtsFTt6lPqcKjGzjJ%2FtJB7bB9ZOMbceL1Tac58ubQOos5SCX4rGNuRdIyloSBMIwlSGSOSnaru0tTEVKYHBjnlBTKXBKMcCoUgmMbWhcB6N0kV94G%2Fn0BYM992eXINC0Idr%2BwLshtjHlGtjlSckf7dPpHo%2BAn%2BZze7kEmPfcVNa5aS1lMVUupCRdzKKgVWwWodYrtV3MupoF0XJCShM%2BZjDFb2Bk%2BQRmQ3cwVbVdwUzf%2BgBT%2FhPM7s9g8mbP25dq4aFXVHceM4bbNwMVWY6xAgAA"
+                "label": "vodka cm 3",
+                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACp2Qu2oDMRBF%2F%2BXWKkbatzqXIU3AZXAhvLOOsHe1rCRMMP73oH3EwUmV7mgemsu54eji5PmlhZZUkhIYvOnHC3vogkjAM7fQqpRFU2RV1ghEz2%2FOvzKP0GGKLDCZI7fcQd%2FQO5fGBU6Ti8OCVzbhgydomb4z3g1zOdie11HTcrpPd4HYG5k%2BcjF0NqRckEQ1SQj4cQ7T1LWAD6a3g4EuslxgdNf5gKykwCkGD51RLnC1vnU9dK7S7TCZwKdPaOyNtxBorQ9mOPJuDDbEFAK7dCdOnfldXdefy2d7uXjo95ST6pSzIaJyBVUlUESkNsjUAnKDrNigXqGkFSpatiRlG%2BRLS6bhw2JMPRl7uEqZfsgq02uTNbcWWXnCb1nLykMWD2cX%2F9a1%2F7euw%2F3%2BBZnc6Zp%2BAgAA"
             },
             {
                 "label": "",
@@ -64,46 +66,15 @@
         ]
     },
     {
-        "id": "355642968150900737",
-        "name": "Moot",
-        "fans_total": "123471763",
-        "fans_monthly": "23186932",
-        "color": "green",
-        "rank_total": "18",
-        "rank_monthly": "23",
-        "daily_average": "1592029",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
         "id": "811499544524619807",
         "name": "Banana",
-        "fans_total": "94293713",
-        "fans_monthly": "19780171",
-        "color": "green",
-        "rank_total": "29",
-        "rank_monthly": "24",
-        "daily_average": "1358119",
+        "fans_total": "136303462",
+        "fans_monthly": "2530931",
+        "color": "purple",
+        "rank_total": "25",
+        "rank_monthly": "5",
+        "daily_average": "1858906",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -130,56 +101,25 @@
     {
         "id": "265291353615761410",
         "name": "zzz",
-        "fans_total": "172611567",
-        "fans_monthly": "32283365",
-        "color": "blue",
-        "rank_total": "3",
-        "rank_monthly": "7",
-        "daily_average": "2216596",
+        "fans_total": "203316130",
+        "fans_monthly": "599077",
+        "color": "red",
+        "rank_total": "4",
+        "rank_monthly": "21",
+        "daily_average": "440007",
+        "club": "Yggdrasil",
         "save_data": [
             {
-                "label": "golshi gemini",
-                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACp2Qu04DMRBF%2F%2BXWLjzeZ9xRIgqQUqIUVnYSrGTXKz8UoSj%2FjrzxUgRo6I7H87g6V%2Bxd8oGfB2iSPZHAFMw4nzlAN1IKBOYBWrXUbJqqqzYCKfCbCy%2FMM3T0iQW82fPAB%2BgrRudyu8DRuzTlrQIXNvGD%2FcKBTXDTgtGOXFrNwPm%2BvAmk0VBe5FI82JhzgaTsJEEgzEsYUkuwaEY7GWiiTSUwu0s%2B0VFemGKArpte4GLD4EZo1Xd5xJvIx09ovNqTGy0EBhuimfb8NEcbU86Bp3wq%2BYP5WS0LHssnez4H6PccVXY5qpKSVqiqFZoCba0WoLWHqC%2BgVPmq10rTlkpLhN1dkXpQ9Lec5Vnk9JmLnIyrnPo%2B8i1ny9PJpd%2FlbP8tZ3e7fQFSLc8SbwIAAA%3D%3D"
+                "label": "falcon cancer",
+                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACo2Qy2rDMBBF%2F%2BWutdDItpJol2UplEKWJQsRT1yR2DKWRCgh%2F15ki5SGFLo7Gs3jcq44%2BDQFfmlhSK6JBIZg%2B%2FHMAaaRUiAwtzBKU7NpqlW1EUiB3314ZR5h4pRYYLIHbvkIc0XvfW4X6CafhrxV4MI2fvI0c2Ab%2FDBjdD2XVttyvi9vAqm3lBf5FI8u5lwgWWtJEAjjHIbUHCza3g0WRtcrgdFf5guStECXYoBR65XAxYXW9zB1VeWRyUbuvmDw5jqGQOtCtMOBt2N0MeUU2OZDaTraX9UdfsYfm0%2FufA4wHyApa52DbqSkuoCaoysppSpAWi1QVaXS1KXSNEuFZF2gUcsX6bKHNBH2iyn1YOpPR8uzSFpnXhzVGe%2BOlpG7ox0PJ5%2BeW9o9tbT9h6X97fYNJPFe3HYCAAA%3D"
             },
             {
-                "label": "taishin gemini",
-                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACq2Qu24CMRBF%2F%2BXWLjz7YnFHGVEkEmVEYbEDscDrlR9CEeLfI%2B%2BDBOp0x1fjmatzw8ElH%2FitgyLZEgn0QdvhwgGqllIgMHdQRUP1ui5X5VogBf5wYcs8QEWfWMDrA3d8hLrBOpfHBU7epT5vFbiyjl%2FsRw6sg%2BtHjMbyPKo7zvflXSBZTXmRS%2FFoYu4FkrWUBIEwjGWI1rlY1Nb0Oj%2BpEBjcNZ8YG55SDFDVqhG4mtA5C1W2Vf7ideTTNxTezdlZA4HOhKj7A2%2BGaGLKPbDLp5I%2F6qd0g98Fr%2FHZXC4B6hMkZT1WLaSkcoF6hnJJykfSFhM01ZQQtTNU8ww1tEBF2E%2BKihdFf%2BQU8knO%2BJzltJlnORkXOdX05SFnx%2F3Zpf%2BWs7%2FffwCC6%2FWwbwIAAA%3D%3D"
+                "label": "seiun cancer",
+                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACq2Ry2rDMBBF%2F%2BWutRjJluNql2UplEKWJQsRT1yR2DKWhCkh%2F17kRx9Zd3dmmNFcjm44%2BTQGfm5gJFWkBPpgu%2BHKAUYTCQTmBqYkVT2pXa1JIAV%2B8%2BGFeYCJY2KB0Z644TPMDZ33DYwSaEef%2BvyqwMQ2fvA4c2AbfD9PRNfxOmobzvfpLpA6K%2FNDPsWzizkXJCkiCYEwzGGk1IVAiLZzvYWpdqXA4Kf5AqlaoE0xwBS6FJhcaHyXC5VXRhu5%2FYTBq2sZAo0L0fYn3g%2FRxZRT4JAPpfFs%2F3T3%2BFl%2FbF%2Fc9Rpg3iGJ1BxUEZFaQdYrFMUKutxALyBp7Ui9bsmKNpASx8WLevDyy4iav2ozspSrkjrzYqTMuBkpl5VvIwfuLz79t5Pj%2Ff4FqzztE2QCAAA%3D"
             },
             {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "167102753989066752",
-        "name": "rice",
-        "fans_total": "94734520",
-        "fans_monthly": "16927200",
-        "color": "yellow",
-        "rank_total": "27",
-        "rank_monthly": "28",
-        "daily_average": "1162232",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
+                "label": "narita cancer",
+                "url": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACrWRTUsDMRCG%2F8t7zmGSdL9y61E8KHgUD6E7rcFms2wSipT%2Bd8nuYqsIevH2MJnMvDxzxi7kKfJdDyOpJiUwROvHI0eYikggMvcwqpZVV%2BlGdwI58mOI98wjTJoyC0x2xz3vYc7wIZR2gcMU8rDgiW165QlGlnE2hmHG5Dyvrbbnsp8uAtlbWQaFnPYulVyQVBFJCMRxDiNlWwvEZL0bLExdk8AYTvMGqVuBQ04RRrWdwMnFPngY3enyZbKJD%2B8weHBvwTsI9C4mO%2Bx4OyaXcsmBp7IqT3v7pbrFdcD38ps7HiPMMyRRNUftiGizgmoKKCKtV6i1WmGzVhpaQG6qFcrTyyJE%2FSZEzZf6FKL0jZCuuQppb4XQn4Vs%2F1%2FIDx7U6kHeCFmgKmYuH9H3swq8AgAA"
             },
             {
                 "label": "",
@@ -194,12 +134,13 @@
     {
         "id": "296147291566374914",
         "name": "Flac",
-        "fans_total": "122830871",
-        "fans_monthly": "24584321",
-        "color": "green",
+        "fans_total": "159710263",
+        "fans_monthly": "1706955",
+        "color": "blue",
         "rank_total": "19",
-        "rank_monthly": "16",
-        "daily_average": "1687975",
+        "rank_monthly": "10",
+        "daily_average": "1253716",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -226,44 +167,13 @@
     {
         "id": "77781522408538112",
         "name": "Nightfish",
-        "fans_total": "158112273",
-        "fans_monthly": "29012451",
-        "color": "blue",
-        "rank_total": "5",
-        "rank_monthly": "8",
-        "daily_average": "1992013",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "306827300073373707",
-        "name": "luuuc",
-        "fans_total": "94675313",
-        "fans_monthly": "18005577",
-        "color": "yellow",
-        "rank_total": "28",
-        "rank_monthly": "25",
-        "daily_average": "1236274",
+        "fans_total": "196393531",
+        "fans_monthly": "2487633",
+        "color": "purple",
+        "rank_total": "6",
+        "rank_monthly": "6",
+        "daily_average": "1827105",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -290,44 +200,13 @@
     {
         "id": "409587819661492224",
         "name": "D'1ne",
-        "fans_total": "99849565",
-        "fans_monthly": "32965088",
-        "color": "blue",
-        "rank_total": "25",
-        "rank_monthly": "6",
-        "daily_average": "2263404",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "335829406146625547",
-        "name": "Rudder",
-        "fans_total": "110987886",
-        "fans_monthly": "17489409",
-        "color": "yellow",
-        "rank_total": "23",
+        "fans_total": "131606425",
+        "fans_monthly": "0",
+        "color": "red",
+        "rank_total": "27",
         "rank_monthly": "26",
-        "daily_average": "1200834",
+        "daily_average": "0",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -354,12 +233,13 @@
     {
         "id": "174017194013753346",
         "name": "Chyai",
-        "fans_total": "101953515",
-        "fans_monthly": "24203045",
-        "color": "green",
-        "rank_total": "24",
-        "rank_monthly": "18",
-        "daily_average": "1661796",
+        "fans_total": "135523349",
+        "fans_monthly": "540122",
+        "color": "red",
+        "rank_total": "26",
+        "rank_monthly": "22",
+        "daily_average": "396706",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -386,12 +266,13 @@
     {
         "id": "215062981250121731",
         "name": "Allxtend",
-        "fans_total": "264835895",
-        "fans_monthly": "63125525",
-        "color": "purple",
+        "fans_total": "329119985",
+        "fans_monthly": "2008485",
+        "color": "blue",
         "rank_total": "1",
-        "rank_monthly": "1",
-        "daily_average": "4334238",
+        "rank_monthly": "8",
+        "daily_average": "1475183",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -418,16 +299,17 @@
     {
         "id": "967921401577242705",
         "name": "plnk",
-        "fans_total": "141118902",
-        "fans_monthly": "33193735",
-        "color": "blue",
-        "rank_total": "9",
-        "rank_monthly": "5",
-        "daily_average": "2279103",
+        "fans_total": "189413043",
+        "fans_monthly": "910621",
+        "color": "green",
+        "rank_total": "7",
+        "rank_monthly": "18",
+        "daily_average": "668829",
+        "club": "Yggdrasil",
         "save_data": [
             {
-                "label": "yay",
-                "url": "https://store.steampowered.com/app/1315270/PEE_WAR/"
+                "label": "",
+                "url": ""
             },
             {
                 "label": "",
@@ -450,44 +332,13 @@
     {
         "id": "327458365053861897",
         "name": "Paganist",
-        "fans_total": "132442604",
-        "fans_monthly": "24820297",
+        "fans_total": "154559374",
+        "fans_monthly": "2186752",
         "color": "blue",
-        "rank_total": "14",
-        "rank_monthly": "15",
-        "daily_average": "1704177",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "346257862915260418",
-        "name": "Trid",
-        "fans_total": "75950616",
-        "fans_monthly": "13815130",
-        "color": "red",
-        "rank_total": "30",
-        "rank_monthly": "29",
-        "daily_average": "948556",
+        "rank_total": "22",
+        "rank_monthly": "7",
+        "daily_average": "1606115",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -514,12 +365,13 @@
     {
         "id": "141593372040232960",
         "name": "IcyShadow",
-        "fans_total": "130999707",
-        "fans_monthly": "24185431",
+        "fans_total": "158263174",
+        "fans_monthly": "1007500",
         "color": "green",
-        "rank_total": "15",
-        "rank_monthly": "19",
-        "daily_average": "1660587",
+        "rank_total": "20",
+        "rank_monthly": "17",
+        "daily_average": "739984",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -546,12 +398,13 @@
     {
         "id": "134421068709363714",
         "name": "Caladerbo",
-        "fans_total": "130547272",
-        "fans_monthly": "27756183",
-        "color": "blue",
-        "rank_total": "16",
-        "rank_monthly": "11",
-        "daily_average": "1905757",
+        "fans_total": "157861677",
+        "fans_monthly": "0",
+        "color": "red",
+        "rank_total": "21",
+        "rank_monthly": "26",
+        "daily_average": "0",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -578,12 +431,13 @@
     {
         "id": "322776542826594314",
         "name": "SirPsycho",
-        "fans_total": "99785837",
-        "fans_monthly": "35634513",
+        "fans_total": "126497910",
+        "fans_monthly": "1189447",
         "color": "blue",
-        "rank_total": "26",
-        "rank_monthly": "3",
-        "daily_average": "2446688",
+        "rank_total": "28",
+        "rank_monthly": "15",
+        "daily_average": "873619",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -610,12 +464,13 @@
     {
         "id": "220047711137824769",
         "name": "MasajMacaulk",
-        "fans_total": "133024321",
-        "fans_monthly": "24101221",
-        "color": "green",
-        "rank_total": "13",
-        "rank_monthly": "20",
-        "daily_average": "1654805",
+        "fans_total": "163422213",
+        "fans_monthly": "877061",
+        "color": "yellow",
+        "rank_total": "17",
+        "rank_monthly": "19",
+        "daily_average": "644180",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -642,12 +497,13 @@
     {
         "id": "694195078633357313",
         "name": "NoRest",
-        "fans_total": "115121873",
-        "fans_monthly": "23941743",
-        "color": "green",
-        "rank_total": "22",
-        "rank_monthly": "21",
-        "daily_average": "1643855",
+        "fans_total": "151826113",
+        "fans_monthly": "1411994",
+        "color": "blue",
+        "rank_total": "24",
+        "rank_monthly": "13",
+        "daily_average": "1037075",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -674,12 +530,13 @@
     {
         "id": "229279100513157120",
         "name": "Ryukaze",
-        "fans_total": "137841141",
-        "fans_monthly": "23543605",
-        "color": "green",
-        "rank_total": "10",
-        "rank_monthly": "22",
-        "daily_average": "1616519",
+        "fans_total": "168090899",
+        "fans_monthly": "2102",
+        "color": "red",
+        "rank_total": "16",
+        "rank_monthly": "25",
+        "daily_average": "1544",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -706,12 +563,13 @@
     {
         "id": "242247483684552706",
         "name": "Babu",
-        "fans_total": "150405988",
-        "fans_monthly": "25200810",
+        "fans_total": "184004501",
+        "fans_monthly": "1449826",
         "color": "blue",
-        "rank_total": "8",
-        "rank_monthly": "13",
-        "daily_average": "1730304",
+        "rank_total": "10",
+        "rank_monthly": "11",
+        "daily_average": "1064861",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -738,44 +596,13 @@
     {
         "id": "301224730122387456",
         "name": "Noa",
-        "fans_total": "177965885",
-        "fans_monthly": "36836474",
-        "color": "blue",
-        "rank_total": "2",
-        "rank_monthly": "2",
-        "daily_average": "2529216",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "108335779918385152",
-        "name": "Lost",
-        "fans_total": "151330390",
-        "fans_monthly": "28221640",
-        "color": "blue",
-        "rank_total": "7",
-        "rank_monthly": "10",
-        "daily_average": "1937716",
+        "fans_total": "212110546",
+        "fans_monthly": "683237",
+        "color": "red",
+        "rank_total": "3",
+        "rank_monthly": "20",
+        "daily_average": "501821",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -802,12 +629,13 @@
     {
         "id": "140757170521112576",
         "name": "Halfwrong",
-        "fans_total": "128176409",
-        "fans_monthly": "24357495",
-        "color": "green",
-        "rank_total": "17",
-        "rank_monthly": "17",
-        "daily_average": "1795695",
+        "fans_total": "160556579",
+        "fans_monthly": "4297",
+        "color": "red",
+        "rank_total": "18",
+        "rank_monthly": "24",
+        "daily_average": "3156",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -834,12 +662,13 @@
     {
         "id": "109515996351430656",
         "name": "Flashwire",
-        "fans_total": "152193693",
-        "fans_monthly": "34168792",
+        "fans_total": "197133246",
+        "fans_monthly": "1771070",
         "color": "blue",
-        "rank_total": "6",
-        "rank_monthly": "4",
-        "daily_average": "2346051",
+        "rank_total": "5",
+        "rank_monthly": "9",
+        "daily_average": "1300807",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -866,12 +695,13 @@
     {
         "id": "236889503615156226",
         "name": "Parzival",
-        "fans_total": "135879794",
-        "fans_monthly": "28793841",
-        "color": "blue",
-        "rank_total": "11",
-        "rank_monthly": "9",
-        "daily_average": "2122753",
+        "fans_total": "176686057",
+        "fans_monthly": "3780451",
+        "color": "purple",
+        "rank_total": "12",
+        "rank_monthly": "2",
+        "daily_average": "2776648",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -898,44 +728,13 @@
     {
         "id": "246327374390624257",
         "name": "Honchkrow",
-        "fans_total": "158523837",
-        "fans_monthly": "17286454",
-        "color": "yellow",
-        "rank_total": "4",
-        "rank_monthly": "27",
-        "daily_average": "1868425",
-        "save_data": [
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            },
-            {
-                "label": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "308291753994354688",
-        "name": "wooper",
-        "fans_total": "116307054",
-        "fans_monthly": "12698568",
+        "fans_total": "187929156",
+        "fans_monthly": "282559",
         "color": "red",
-        "rank_total": "21",
-        "rank_monthly": "30",
-        "daily_average": "1385013",
+        "rank_total": "8",
+        "rank_monthly": "23",
+        "daily_average": "207533",
+        "club": "Yggdrasil",
         "save_data": [
             {
                 "label": "",
@@ -960,15 +759,410 @@
         ]
     },
     {
-        "id": "00000000000000000",
-        "name": "Stats",
-        "fans_total": "",
-        "fans_monthly": "",
-        "color": "purple",
-        "rank_total": "",
-        "rank_monthly": "",
-        "daily_average": "1729359",
-        "fans_median": "24702309",
-        "fans_guild_total": "792088222"
+        "id": "1",
+        "name": "Player 14",
+        "club": "TazunaBotTestServer",
+        "fans_total": "200000000",
+        "fans_monthly": "100000000",
+        "rank_total": "1",
+        "rank_monthly": "1",
+        "daily_average": "6866063",
+        "color": "purple"
+    },
+    {
+        "id": "23",
+        "name": "Player 13",
+        "club": "TazunaBotTestServer",
+        "fans_total": "173000000",
+        "fans_monthly": "73000000",
+        "rank_total": "2",
+        "rank_monthly": "2",
+        "daily_average": "5012226",
+        "color": "purple"
+    },
+    {
+        "id": "17",
+        "name": "Player 19",
+        "club": "TazunaBotTestServer",
+        "fans_total": "165000000",
+        "fans_monthly": "65000000",
+        "rank_total": "3",
+        "rank_monthly": "3",
+        "daily_average": "4462941",
+        "color": "purple"
+    },
+    {
+        "id": "7",
+        "name": "Player 16",
+        "club": "TazunaBotTestServer",
+        "fans_total": "160000000",
+        "fans_monthly": "60000000",
+        "rank_total": "4",
+        "rank_monthly": "4",
+        "daily_average": "4119638",
+        "color": "purple"
+    },
+    {
+        "id": "3",
+        "name": "Player 23",
+        "club": "TazunaBotTestServer",
+        "fans_total": "150000000",
+        "fans_monthly": "50000000",
+        "rank_total": "5",
+        "rank_monthly": "5",
+        "daily_average": "3433032",
+        "color": "purple"
+    },
+    {
+        "id": "19",
+        "name": "Player 3",
+        "club": "TazunaBotTestServer",
+        "fans_total": "150000000",
+        "fans_monthly": "50000000",
+        "rank_total": "5",
+        "rank_monthly": "5",
+        "daily_average": "3433032",
+        "color": "purple"
+    },
+    {
+        "id": "8",
+        "name": "Player 8",
+        "club": "TazunaBotTestServer",
+        "fans_total": "142000000",
+        "fans_monthly": "42000000",
+        "rank_total": "7",
+        "rank_monthly": "7",
+        "daily_average": "2883747",
+        "color": "blue"
+    },
+    {
+        "id": "21",
+        "name": "Player 21",
+        "club": "TazunaBotTestServer",
+        "fans_total": "135000000",
+        "fans_monthly": "35000000",
+        "rank_total": "8",
+        "rank_monthly": "8",
+        "daily_average": "2403122",
+        "color": "blue"
+    },
+    {
+        "id": "24",
+        "name": "Player 2",
+        "club": "TazunaBotTestServer",
+        "fans_total": "135000000",
+        "fans_monthly": "35000000",
+        "rank_total": "8",
+        "rank_monthly": "8",
+        "daily_average": "2403122",
+        "color": "blue"
+    },
+    {
+        "id": "10",
+        "name": "Player 6",
+        "club": "TazunaBotTestServer",
+        "fans_total": "133000000",
+        "fans_monthly": "33000000",
+        "rank_total": "10",
+        "rank_monthly": "10",
+        "daily_average": "2265801",
+        "color": "blue"
+    },
+    {
+        "id": "4",
+        "name": "Player 24",
+        "club": "TazunaBotTestServer",
+        "fans_total": "131000000",
+        "fans_monthly": "31000000",
+        "rank_total": "11",
+        "rank_monthly": "11",
+        "daily_average": "2128480",
+        "color": "blue"
+    },
+    {
+        "id": "12",
+        "name": "Player 18",
+        "club": "TazunaBotTestServer",
+        "fans_total": "130000000",
+        "fans_monthly": "30000000",
+        "rank_total": "12",
+        "rank_monthly": "12",
+        "daily_average": "2059819",
+        "color": "blue"
+    },
+    {
+        "id": "9",
+        "name": "Player 25",
+        "club": "TazunaBotTestServer",
+        "fans_total": "124000000",
+        "fans_monthly": "24000000",
+        "rank_total": "13",
+        "rank_monthly": "13",
+        "daily_average": "1647855",
+        "color": "blue"
+    },
+    {
+        "id": "14",
+        "name": "Player 5",
+        "club": "TazunaBotTestServer",
+        "fans_total": "123000000",
+        "fans_monthly": "23000000",
+        "rank_total": "14",
+        "rank_monthly": "14",
+        "daily_average": "1579195",
+        "color": "blue"
+    },
+    {
+        "id": "22",
+        "name": "Player 22",
+        "club": "TazunaBotTestServer",
+        "fans_total": "123000000",
+        "fans_monthly": "23000000",
+        "rank_total": "14",
+        "rank_monthly": "14",
+        "daily_average": "1579195",
+        "color": "blue"
+    },
+    {
+        "id": "15",
+        "name": "Player 15",
+        "club": "TazunaBotTestServer",
+        "fans_total": "122000000",
+        "fans_monthly": "22000000",
+        "rank_total": "16",
+        "rank_monthly": "16",
+        "daily_average": "1510534",
+        "color": "green"
+    },
+    {
+        "id": "5",
+        "name": "Player 7",
+        "club": "TazunaBotTestServer",
+        "fans_total": "121000000",
+        "fans_monthly": "21000000",
+        "rank_total": "17",
+        "rank_monthly": "17",
+        "daily_average": "1441873",
+        "color": "green"
+    },
+    {
+        "id": "13",
+        "name": "Player 1",
+        "club": "TazunaBotTestServer",
+        "fans_total": "120000000",
+        "fans_monthly": "20000000",
+        "rank_total": "18",
+        "rank_monthly": "18",
+        "daily_average": "1373213",
+        "color": "green"
+    },
+    {
+        "id": "20",
+        "name": "Player 20",
+        "club": "TazunaBotTestServer",
+        "fans_total": "120000000",
+        "fans_monthly": "20000000",
+        "rank_total": "18",
+        "rank_monthly": "18",
+        "daily_average": "1373213",
+        "color": "green"
+    },
+    {
+        "id": "29",
+        "name": "Player 27",
+        "club": "TazunaBotTestServer",
+        "fans_total": "120000000",
+        "fans_monthly": "20000000",
+        "rank_total": "18",
+        "rank_monthly": "18",
+        "daily_average": "2161721",
+        "color": "green"
+    },
+    {
+        "id": "25",
+        "name": "Player 10",
+        "club": "TazunaBotTestServer",
+        "fans_total": "118000000",
+        "fans_monthly": "18000000",
+        "rank_total": "21",
+        "rank_monthly": "21",
+        "daily_average": "1235891",
+        "color": "green"
+    },
+    {
+        "id": "18",
+        "name": "Player 11",
+        "club": "TazunaBotTestServer",
+        "fans_total": "117000000",
+        "fans_monthly": "17000000",
+        "rank_total": "22",
+        "rank_monthly": "22",
+        "daily_average": "1167231",
+        "color": "yellow"
+    },
+    {
+        "id": "30",
+        "name": "Player 30",
+        "club": "TazunaBotTestServer",
+        "fans_total": "115500000",
+        "fans_monthly": "15500000",
+        "rank_total": "23",
+        "rank_monthly": "23",
+        "daily_average": "1690561",
+        "color": "yellow"
+    },
+    {
+        "id": "6",
+        "name": "Player 28",
+        "club": "TazunaBotTestServer",
+        "fans_total": "115000000",
+        "fans_monthly": "15000000",
+        "rank_total": "24",
+        "rank_monthly": "24",
+        "daily_average": "1029909",
+        "color": "yellow"
+    },
+    {
+        "id": "27",
+        "name": "Player 17",
+        "club": "TazunaBotTestServer",
+        "fans_total": "114000000",
+        "fans_monthly": "14000000",
+        "rank_total": "25",
+        "rank_monthly": "25",
+        "daily_average": "1032114",
+        "color": "yellow"
+    },
+    {
+        "id": "11",
+        "name": "Player 26",
+        "club": "TazunaBotTestServer",
+        "fans_total": "112000000",
+        "fans_monthly": "12000000",
+        "rank_total": "26",
+        "rank_monthly": "26",
+        "daily_average": "823928",
+        "color": "red"
+    },
+    {
+        "id": "16",
+        "name": "Player 29",
+        "club": "TazunaBotTestServer",
+        "fans_total": "110000000",
+        "fans_monthly": "10000000",
+        "rank_total": "27",
+        "rank_monthly": "27",
+        "daily_average": "686606",
+        "color": "red"
+    },
+    {
+        "id": "28",
+        "name": "Player 9",
+        "club": "TazunaBotTestServer",
+        "fans_total": "110000000",
+        "fans_monthly": "10000000",
+        "rank_total": "27",
+        "rank_monthly": "27",
+        "daily_average": "737225",
+        "color": "red"
+    },
+    {
+        "id": "2",
+        "name": "Player 12",
+        "club": "TazunaBotTestServer",
+        "fans_total": "105000000",
+        "fans_monthly": "5000000",
+        "rank_total": "29",
+        "rank_monthly": "29",
+        "daily_average": "343303",
+        "color": "red"
+    },
+    {
+        "id": "26",
+        "name": "Player 4",
+        "club": "TazunaBotTestServer",
+        "fans_total": "102000000",
+        "fans_monthly": "2000000",
+        "rank_total": "30",
+        "rank_monthly": "30",
+        "daily_average": "137321",
+        "color": "red"
+    },
+    {
+        "id": "138856389178163200",
+        "name": "Minh",
+        "club": "Yggdrasil",
+        "fans_total": "171120353",
+        "fans_monthly": "1257150",
+        "rank_total": "15",
+        "rank_monthly": "14",
+        "daily_average": "999841",
+        "color": "blue"
+    },
+    {
+        "id": "85216838845218816",
+        "name": "riki",
+        "club": "Yggdrasil",
+        "fans_total": "176099195",
+        "fans_monthly": "0",
+        "rank_total": "14",
+        "rank_monthly": "26",
+        "daily_average": "0",
+        "color": "red"
+    },
+    {
+        "id": "353417702204899328",
+        "name": "cando0",
+        "club": "Yggdrasil",
+        "fans_total": "176353727",
+        "fans_monthly": "6020729",
+        "rank_total": "13",
+        "rank_monthly": "1",
+        "daily_average": "4490793",
+        "color": "purple"
+    },
+    {
+        "id": "817576892776841238",
+        "name": "Dimasazka",
+        "club": "Yggdrasil",
+        "fans_total": "176790108",
+        "fans_monthly": "3414967",
+        "rank_total": "11",
+        "rank_monthly": "3",
+        "daily_average": "3192007",
+        "color": "purple"
+    },
+    {
+        "id": "1191285287909871642",
+        "name": "Izuuu",
+        "club": "Yggdrasil",
+        "fans_total": "0",
+        "fans_monthly": "0",
+        "rank_total": "0",
+        "rank_monthly": "26",
+        "daily_average": "0",
+        "color": "red"
+    },
+    {
+        "id": "459929421772619787",
+        "name": "Mitsushi",
+        "club": "Yggdrasil",
+        "fans_total": "0",
+        "fans_monthly": "0",
+        "rank_total": "0",
+        "rank_monthly": "26",
+        "daily_average": "0",
+        "color": "red"
+    },
+    {
+        "id": "161650330373718016",
+        "name": "Yezi",
+        "club": "Yggdrasil",
+        "fans_total": "232869063",
+        "fans_monthly": "1024273",
+        "rank_total": "2",
+        "rank_monthly": "16",
+        "daily_average": "888214",
+        "color": "green"
     }
 ]
