@@ -1074,6 +1074,27 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
               items: [
                 {
                   media: {url: url}
+                },
+                {
+                  media: {url: "..\assets\badges\july1.png"}
+                },
+                {
+                  media: {url: url}
+                },
+                {
+                  media: {url: url}
+                },
+                {
+                  media: {url: url}
+                },
+                {
+                  media: {url: url}
+                },
+                {
+                  media: {url: url}
+                },
+                {
+                  media: {url: url}
                 }
               ]
             }
