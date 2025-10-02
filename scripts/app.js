@@ -1305,12 +1305,13 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         });
       }
 
+      const cmPayload = buildCMEmbed(cm);
+
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           content: `✅ You selected **${cm.name}**`,
-          embeds: buildCMEmbed(cm),
-          components: [] // remove the dropdown after selection
+          ...cmPayload
         }
       });
     }
