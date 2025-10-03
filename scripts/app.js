@@ -688,20 +688,6 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           return;
         }
 
-        const embed = {
-          title: `Trainer Profile: ${user.name}`,
-          color: getColor(user.color),
-          description: `You have mined **${Number(user.fans_monthly).toLocaleString()}** fans this month.\n\u200B`,
-          fields: [
-            { name: "👥 Total Fans", value: Number(user.fans_total).toLocaleString(), inline: true },
-            { name: "📈 Daily Gains (Avg)", value: Number(user.daily_average).toLocaleString(), inline: true },
-            { name: "🚦 Zone", value: capitalize(user.color), inline: true },
-            { name: "⭐ Current Rank", value: '# ' + Number(user.rank_total).toLocaleString(), inline: true },
-            { name: "〽️ Monthly Rank", value: '# ' + Number(user.rank_monthly).toLocaleString(), inline: true },
-          ],
-          footer: user.club ? { text: `Club: ${user.club}` } : undefined
-        };
-
         const buttons = (user.save_data || [])
           .filter(s => {
             try { return ['http:', 'https:', 'discord:'].includes(new URL(s.url).protocol); }
@@ -709,10 +695,60 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           })
           .map((s, i) => ({ type: 2, style: 5, label: s.label || `Slot ${i + 1}`, url: s.url }));
 
-        await sendFollowup(token, {
-          embeds: [embed],
-          components: buttons.length ? [{ type: 1, components: buttons }] : []
-        });
+        // Turn badges array into a single string
+        const badgeLine = (user.badges && user.badges.length > 0)
+          ? user.badges.join(" ")
+          : "—";
+
+        const payload = {
+          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
+          components: [
+            // Profile container (v2)
+            {
+              type: MessageComponentTypes.CONTAINER,
+              accent_color: getColor(user.color),
+              components: [
+                {
+                  type: MessageComponentTypes.TEXT_DISPLAY,
+                  content: `### Trainer Profile (${user.name})`
+                },
+                {
+                  type: MessageComponentTypes.TEXT_DISPLAY,
+                  content: `You have mined **${Number(user.fans_monthly).toLocaleString()}** fans this month for ${user.club}.\n`
+                },
+                {
+                  type: MessageComponentTypes.TEXT_DISPLAY,
+                  content: "```" + 
+                  `👥 Total Fans         ${Number(user.fans_total).toLocaleString()} \n` +
+                  `📈 Daily Gains (Avg)  ${Number(user.daily_average).toLocaleString()} \n` +
+                  `⭐ Current Rank       # ${Number(user.rank_total).toLocaleString()} \n` +
+                  `〽️ Monthly Rank       # ${Number(user.rank_monthly).toLocaleString()} \n` +
+                  "```"
+                },
+                {
+                  type: MessageComponentTypes.SEPARATOR,
+                  divider: true,
+                  spacing: "1"
+                },
+                {
+                  type: MessageComponentTypes.TEXT_DISPLAY,
+                  content: `Badges \n`
+                },
+                {
+                  type: MessageComponentTypes.TEXT_DISPLAY,
+                  content: `# ${badgeLine}`
+                },
+              ]
+            }
+          ]
+        };
+
+        await sendFollowup(token, payload);
+
+        //await sendFollowup(token, {
+          //embeds: [embed],
+          //components: buttons.length ? [{ type: 1, components: buttons }] : []
+        //});
 
       } catch (err) {
         console.error("Trainer command error:", err);
@@ -1072,27 +1108,6 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
             {
               type: MessageComponentTypes.MEDIA_GALLERY,
               items: [
-                {
-                  media: {url: url}
-                },
-                {
-                  media: {url: "..\assets\badges\july1.png"}
-                },
-                {
-                  media: {url: url}
-                },
-                {
-                  media: {url: url}
-                },
-                {
-                  media: {url: url}
-                },
-                {
-                  media: {url: url}
-                },
-                {
-                  media: {url: url}
-                },
                 {
                   media: {url: url}
                 }
