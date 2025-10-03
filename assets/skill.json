@@ -4025,6 +4025,34 @@
         "aliases": ["you and me one on one", "hishi amazon"],
         "horse": "Hishi Amazon (Original)"
     },
+    {   "skill_name": "Lights of Vaudeville",
+        "description": "Increases speed by 0.45 for 5.0s if first 30% of the pack (1st to 3rd place for Champ's Meet or 1st to 4th place in Team Trials) followed directly by another uma for more than 1s on the final straight.",
+        "inherited": "Increases speed by 0.25 for 3.0s if first 30% of the pack (1st to 3rd place for Champ's Meet or 1st to 4th place in Team Trials) followed directly by another uma for more than 1s on the final straight.",     
+        "skill_cost": "200",
+        "points_value": "180",
+        "points_ratio": "0.9",
+        "team_trials": "Okay",
+        "champs_meet": "Okay",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": ["lights of vaudeville", "fuji kiseki original"],
+        "horse": "Fuji Kiseki (Original)"
+    },
+    {   "skill_name": "A Kiss for Courage",
+        "description": "Increases speed by 0.35 for 5s if 1st to 3rd place in the second half of the race when recovering stamina with a skill.",
+        "inherited": "Increases speed by 0.15 for 5s if 1st to 3rd place in the second half of the race when recovering stamina with a skill.",     
+        "skill_cost": "200",
+        "points_value": "180",
+        "points_ratio": "0.9",
+        "team_trials": "Lacking (Unsure)",
+        "champs_meet": "Lacking (Unsure)",
+        "review": "Numbers seem low",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": ["a kiss for courage", "summer maruzensky"],
+        "horse": "Maruzensky (Summer)"
+    },
 
 
 
@@ -4100,7 +4128,7 @@
     },
     {   "skill_name": "Condor's Fury",
         "description": "Increases acceleration by 0.4 for 4s if between 4th to 7th (Champion's Meet) or 4th to 9th (Team Trials), when an overtake target exists during the final corner.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s if between 4th to 7th (Champion's Meet) or 4th to 9th (Team Trials), when an overtake target exists during the final corner",     
+        "inherited": "Increases acceleration by 0.2 for 2.4s if between 4th to 7th (Champion's Meet) or 4th to 9th (Team Trials), when an overtake target exists during the final corner.",     
         "skill_cost": "200",
         "points_value": "180",
         "points_ratio": "0.9",
@@ -4111,6 +4139,20 @@
         "category": "rainbowaccel",
         "aliases": ["condors fury", "el condor pasa fantasy"],
         "horse": "El Condor Pasa (Fantasy)"
+    },
+    {   "skill_name": "KEEP IT REAL.",
+        "description": "Increases acceleration by 0.3 for 6.0s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",
+        "inherited": "Increases acceleration by 0.1 for 3.6s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",     
+        "skill_cost": "200",
+        "points_value": "180",
+        "points_ratio": "0.9",
+        "team_trials": "Lacking (Unsure)",
+        "champs_meet": "Lacking (Unsure)",
+        "review": "Numbers seem very low for inherit.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": ["keep it real", "gold city original"],
+        "horse": "Gold City (Original)"
     },
 
 

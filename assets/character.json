@@ -301,7 +301,7 @@
             }
         ],
         "unique": "Red Shift/LP1211-M",
-        "unique_explanation": "Increases acceleration by 0.4 for 2.4s if 1st to 5th place on the final corner.",
+        "unique_explanation": "Increases acceleration by 0.4 for 4.0s if 1st to 5th place on the final corner.",
         "skills": [
             "Straightaway Adept",
             "Shifting Gears",
@@ -334,6 +334,157 @@
             {
                 "conditions": "Win the Radio Nikkei Sho",
                 "rewards": "Energy -15, All stats +3, Skill points +60, Mood +1, Get Hot Topic status"
+            }
+        ]
+    },
+    {   "id": "100401 - Summer Maruzensky",
+        "character_name": "Maruzensky",
+        "type": "Summer",
+        "costume": "Blasting Off ☆ Summer Night",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "15%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "15%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "D"
+            },
+            {
+            "Sprint": "B",
+            "Mile": "A",
+            "Medium": "B",
+            "Long": "C"
+            },
+            {
+            "Front": "A",
+            "Pace": "E",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "A Kiss for Courage",
+        "unique_explanation": "Increases speed by 0.35 for 5s if 1st to 3rd place in the second half of the race when recovering stamina with a skill.",
+        "skills": [
+            "Corner Recovery",
+            "Productive Plan",
+            "Moxie"
+        ],
+        "potential": [
+            "Triple 7s",
+            "Restless",
+            "Speed Eater",
+            "Mile Maven"
+        ],
+        "event_skills": [
+            "Huge Lead",
+            "Fast-Paced"
+        ],
+        "races": [
+            "asahi hai futurity stakes december 1 year 1",
+            "spring stakes march 2 year 2",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
+        "aliases": ["maruzenksy summer", "maru", "supercar", "blasting off summer night"],
+        "url": "https://gametora.com/umamusume/characters/100402-maruzensky",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1004_100402.png",
+        "review": "Best Front Runner until Valentine's Bourbon. Still a great Front Runner after since you want to run at least 2 in Champion's Meets (if you're doing a Front Runner comp).",
+        "secrets": [
+            {
+                "conditions": "Win the Radio Nikkei Sho",
+                "rewards": "Energy -15, All stats +3, Skill points +60, Mood +1, Get Hot Topic status"
+            }
+        ]
+    },
+    {   "id": "100501 - Fuji Kiseki",
+        "character_name": "Fuji Kiseki",
+        "type": "Original",
+        "costume": "Shooting Star Revue",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "20%",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "B",
+            "Mile": "A",
+            "Medium": "B",
+            "Long": "E"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "C",
+            "End": "G"
+            }
+        ],
+        "unique": "Lights of Vaudeville",
+        "unique_explanation": "Increases speed by 0.45 for 5.0s if first 30% of the pack (1st to 3rd place for Champ's Meet or 1st to 4th place in Team Trials) followed directly by another uma for more than 1s on the final straight.",
+        "skills": [
+            "Trick (Front)",
+            "Unyielding Spirit",
+            "Preferred Position"
+        ],
+        "potential": [
+            "Shifting Gears",
+            "Big-Sisterly",
+            "Mile Corners",
+            "Race Planner"
+        ],
+        "event_skills": [
+            "Disorient",
+            "Prepared to Pass",
+            "Unyielding Spirit",
+            "Preferred Position"
+        ],
+        "races": [
+            "asahi hai futurity stakes december 1 year 1",
+            "yayoi sho march 1 year 2",
+            "satsuki sho april 1 year 2",
+            "nhk mile cup may 1 year 2",
+            "kikuka sho october 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["fuji kiseki original", "shooting star revue"],
+        "url": "https://gametora.com/umamusume/characters/100501-fuji-kiseki",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1005_100501.png",
+        "review": "Is a strong mile runner. Decent as a parent uma.",
+        "secrets": [
+            {
+                "conditions": "Select the Triple Crown route and win the Satsuki Sho, Tokyo Yushun (Japanese Derby), and Kikuka Sho.",
+                "rewards": "Speed +10, Stamina +10, Power +10, Prepared to Pass hint +1"
+            },
+            {
+                "conditions": "Win 3 Sprint/Mile G1 races in Senior Year.",
+                "rewards": "Mood +1, Power +10, Wit +10, Unyielding Spirit hint +1"
+            },
+            {
+                "conditions": "Win the Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3) and Takarazuka Kinen (Year 3).",
+                "rewards": "Mood +1, Speed +10, Stamina +10, Guts +10, Preferred Position hint +1"
             }
         ]
     },
@@ -660,7 +811,7 @@
             }
         ],
         "unique": "Shooting for Victory!",
-        "unique_explanation": "Increases acceleration by 0.4 for 2.4s if first half of the pack but greater than 3rd place on the final corner.",
+        "unique_explanation": "Increases acceleration by 0.4 for 4.0s if first half of the pack but greater than 3rd place on the final corner.",
         "skills": [
             "Straightaway Adept",
             "Shifting Gears",
@@ -1126,7 +1277,7 @@
         "aliases": ["el condor pasa fantasy", "kukulkan warrior"],
         "url": "https://gametora.com/umamusume/characters/101402-el-condor-pasa",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1014_101402.png",
-        "review": "A Late Surger Mile uma with an okay inheritable. Acceleration skills are good but its a bit of an odd fit on her as she might need some velocity skills in the final corner to be in range of an overtake target as a Late Surger."
+        "review": "A Late Surger Mile uma with an okay inheritable. Decent late surger uma for gambling strategies."
     },
     {   "id": "101501 - TM Opera O",
         "character_name": "T.M. Opera O",
@@ -2179,7 +2330,7 @@
             }
         ],
         "unique": "KEEP IT REAL.",
-        "unique_explanation": "Increases speed by 0.25 for 6.0s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",
+        "unique_explanation": "Increases acceleration by 0.3 for 6.0s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",
         "skills": [
             "Hanshin Racecourse",
             "Watchful Eye",
@@ -2208,7 +2359,7 @@
         "aliases": ["gold city original", "authentic 1928"],
         "url": "https://gametora.com/umamusume/characters/104001-gold-city",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104001.png",
-        "review": "A good mile late surger gambling horse because she has On Your Left!"
+        "review": "A good mile late surger gambling horse because she has On Your Left! She will get buffs in the future making her an even stronger uma."
     },
     {   "id": "104101 - Sakura Bakushin O",
         "character_name": "Sakura Bakushin O",
