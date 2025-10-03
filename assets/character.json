@@ -64,6 +64,72 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1001_100101.png",
         "review": "Decent horse for medium and long. Comes with Gourmand for one guaranteed golden recovery. Lackluster parent but affinity is pretty decent."
     },
+    {   "id": "100102 - Special Week",
+        "character_name": "Special Week",
+        "type": "Summer",
+        "costume": "Hopping ♪ Vitamin Heart",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+                "speed": "",
+                "stamina": "10%",
+                "power": "10%",
+                "guts": "10%",
+                "wit": ""
+            } 
+        ],
+        "aptitudes": [
+            {
+                "Turf": "A",
+                "Dirt": "G"
+            },
+            {
+                "Sprint": "F",
+                "Mile": "C",
+                "Medium": "A",
+                "Long": "A"
+            },
+            {
+                "Front": "G",
+                "Pace": "A",
+                "Late": "A",
+                "End": "C"
+            }
+        ],
+        "unique": "Dazzl'n ♪ Diver",
+        "unique_explanation": "Recover HP by 5.5% and increases speed by 0.25 for 5.0s if between 2nd place and 80% of the pack (7th place in Champion's Meet or 10th place in Team Trials) and activated 2 skills during the mid-race.",
+        "skills": [
+            "Ramp Up",
+            "Position Pilfer",
+            "Thunderbolt Step"
+        ],
+        "potential": [
+            "Sunny Days",
+            "Fast & Furious",
+            "Tail Held High",
+            "It's On!"
+        ],
+        "event_skills": [
+            "Pace Strategy",
+            "Homestretch Haste",
+            "Corner Adept",
+            "Tokyo Racecourse",
+            "Nakayama Racecourse",
+            "Fighter"
+        ],
+        "races": [
+            "kisaragi sho february 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["special week summer", "spechan", "spe", "hopping vitamin heart"],
+        "url": "https://gametora.com/umamusume/characters/100102-special-week",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1001_100102.png",
+        "review": "Decent Late Surger for long as the unique helps out a lot."
+    },
     {   "id": "100201 - Silence Suzuka",
         "character_name": "Silence Suzuka",
         "type": "Original",
@@ -2224,6 +2290,94 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1035_103501.png",
         "review": "A very mediocre uma."
     },
+    {   "id": "103701 - Eishin Flash",
+        "character_name": "Eishin Flash",
+        "type": "Original",
+        "costume": "Meisterschaft",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "10%",
+            "guts": "",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "A",
+            "End": "C"
+            }
+        ],
+        "unique": "Schwarzes Schwert",
+        "unique_explanation": "Increases speed by 0.45 for 5.0s on the last straight, when between 40% to 80% of the pack for the entire race (not including first 5s of the race) and has never rushed. Otherwise, If 3rd place or lower, increases speed by 0.35 for 5.0s on the last straight if never rushed.",
+        "skills": [
+            "Go with the Flow",
+            "Late Surger Savvy",
+            "Medium Corners"
+        ],
+        "potential": [
+            "Homestretch Haste",
+            "Lane Legerdemain",
+            "Focus",
+            "In Body and Mind"
+        ],
+        "event_skills": [
+            "Standard Distance",
+            "Fighter",
+            "Tokyo Racecourse"
+        ],
+        "races": [
+            "keisei hai january 1 year 2",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "japan cup november 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["eishin flash original", "meisterschaft"],
+        "url": "https://gametora.com/umamusume/characters/103701-eishin-flash",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1037_103701.png",
+        "review": "Is just an okay uma. Is cute.",
+        "secrets": [
+            {
+            "conditions": "Win the Tokyo Yushun (Japanese Derby)",
+            "rewards": "Fighter hint +1"
+            },
+            {
+            "conditions": "Win the Kikuka Sho",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +45"
+            },
+            {
+            "conditions": "Win a G1 race on the Tokyo Racecourse 2 times and the Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Tokyo Racecourse hint +2"
+            },
+            {
+            "conditions": "Win a G1 race on the Tokyo Racecourse 3 times and the Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Power +10, Tokyo Racecourse hint +2"
+            },
+            {
+            "conditions": "Win a G1 race on the Tokyo Racecourse 5 times and the Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Stamina +10, Power +10, Tokyo Racecourse hint +2, Standard Distance hint +2"
+            }
+        ]
+    },
     {   "id": "103801 - Curren Chan",
         "character_name": "Curren Chan",
         "type": "Original",
@@ -2496,15 +2650,15 @@
         "review": "Has a lot of recovery as a runner. After buffs, she will have an insane amount of recovery but it is inconsistent. Sometimes useful as an inheritance for Pace Chasers who need more stamina recovery.",
         "secrets": [
             {
-            "conditions": "Win the Satsuki Sho.",
+            "conditions": "Win the Satsuki Sho",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
             },
             {
-            "conditions": "Win the Tokyo Yushun (Japanese Derby).",
+            "conditions": "Win the Tokyo Yushun (Japanese Derby)",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
             },
             {
-            "conditions": "Win the Kikuka Sho.",
+            "conditions": "Win the Kikuka Sho",
             "rewards": "All stats +3, Skill points +45, Get Shining Brightly status, Heal Under the Weather, Yayoi Akikawa bond +4"
             }
         ]
