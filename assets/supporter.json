@@ -220,7 +220,7 @@
             "Slick Surge",
             "Updrafters",
             "Mile Straightaways",
-            "Mediuym Straightaways"
+            "Medium Straightaways"
         ],
         "event_skills": [
             "Nimble Navigator"
@@ -4453,6 +4453,80 @@
         "category": "power",
         "aliases": [
             "bamboo memory head on fight"
+        ]
+    },
+
+    {   "id": "30044 Narita Brian",
+        "card_name": "Two Pieces",
+        "character_name": "Narita Brian",
+        "unique": "Increases Speed gain when training together (1)\nIncreases initial Speed when beginning a Career playthrough (20)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5%",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 0/0/0/2/3",
+            "Hint Frequency - 0/0/0/30/40%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Preferred Position",
+            "Outer Swell",
+            "Inside Scoop",
+            "Medium Straightaways",
+            "Medium Corners",
+            "Long Straightaways",
+            "Hydrate"
+        ],
+        "event_skills": [
+            "Shatterproof",
+            "Lone Wolf"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30044-narita-brian",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30044.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "narita brian two pieces"
+        ]
+    },
+
+
+
+    {   "id": "30048 Mejiro Ryan",
+        "card_name": "Winning Pitch",
+        "character_name": "Mejiro Ryan",
+        "unique": "Increases Power gain when training together (1)\nIncreases skill point gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Initial Friendship Gauge - 0/0/0/15/30",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Hint Level - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Rainy Days",
+            "Up-Tempo",
+            "Medium Straightaways"
+        ],
+        "event_skills": [
+            "Unyielding",
+            "Pace Chaser Savvy",
+            "Pace Strategy"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30048-mejiro-ryan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30048.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "mejiro ryan winning pitch"
         ]
     },
 

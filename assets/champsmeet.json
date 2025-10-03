@@ -74,5 +74,43 @@
         "date": "<t:1762207200:F> (Estimated)",
         "image": "",
         "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnda65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZq9QRQKy4UFtm8aA2F2sN2%2B7Yd%2B97gbDIrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLg11Ae%2BV8lx%2FW9uBiVQW4dS0clr5QIMZNkw2m5DUgo%2B0rdd0lrHn6qeiwrsQ5WrF5fC3YhmUp4%2FYHHieE4FBs6LUhz5sKjXUglwqlclT%2FQrPeBn4G989peLwL6%2BfaF3%2FxL99gn7t0r6BwIAAA%3D%3D"
+    },
+    {
+        "name": "Virgo Cup 2025",
+        "number": "5",
+        "track":
+        {
+            "racetrack": "Hanshin",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1600m",
+            "direction": "Right-Handed",
+            "ground": "Firm",
+            "season": "Autumn",
+            "weather": "Sunny",
+            "similar": "Mile Championship"
+        },
+        "date": "<t:1763935200:F> (Estimated)",
+        "image": "",
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvU7EMBCE32VqF%2FkhQNxdiWiQrkQUq3gTrDvbkXetCJ3u3ZHDIQRvQDczGs18F0ypZOEnB9s2Y9MbRKGwnllgh6YxEGYH2923wzj0D%2F1oUIRfkjwzr7CaCxtkmtjxDHtBSKnWDZacSqyrBhuTvnPetTBJirC9gfrAtyo5rv%2FN1aAEautQKjp7rVyAgaw7RtvtSErBR%2Fq2a9rq%2BGPVS1GBvaty8%2BJSuBnRTMrLByyOHE%2BpwMB5UYoTH1b1WioBjvWq5Jl%2BpQf8DPyNT%2F58FtjXty%2F07l%2BiXz8BsrA9NwcCAAA%3D"
+    },
+    {
+        "name": "Libra Cup 2025",
+        "number": "6",
+        "track":
+        {
+            "racetrack": "Kyoto",
+            "terrain": "Turf",
+            "distance_type": "Long",
+            "distance_meters": "3000m",
+            "direction": "Right-Handed",
+            "ground": "Firm",
+            "season": "Autumn",
+            "weather": "Sunny",
+            "similar": "Kikuka Sho"
+        },
+        "date": "<t:1766008800:F> (Estimated)",
+        "image": "",
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvWoDMRCE32VqFfeTS2x1LoObgMuQYjntXYQt6dCuOILxuwddHELyBulmhmHmu2JMJQs%2FO9i22bWNQRQKy4UFdmgaA2F2sN1jO%2ByH%2FqnfGxThlyRH5gVWc2GDTCM7nmCvCCnVusGcU4l11WBl0nfOmxYmSRG2N1Af%2BF4lx%2FW%2FuRmUQG0dSkUnr5ULMJBlw2i7DUkp%2BEjfdklrHd9VPRcV2IcqVy8uhbsRzaQ8f8DixPGcCgycF6U48mFRr6US4FSvSp7oV3rAz8Df%2BOwvF4F9fftC7%2F4l%2Bu0Tn3FECAcCAAA%3D"
     }
 ]
