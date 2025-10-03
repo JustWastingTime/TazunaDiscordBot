@@ -3000,7 +3000,21 @@
         "aliases": ["meisho doto original", "blue raging"],
         "url": "https://gametora.com/umamusume/characters/105801-meisho-doto",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1058_105801.png",
-        "review": "A Pace Chaser that relies on gambling. Okay uma but not consistent."
+        "review": "A Pace Chaser that relies on gambling. Okay uma but not consistent.",
+        "secrets": [
+            {
+            "conditions": "Participate in the Make Debut",
+            "rewards": "All stats +3, Skill points +20, Get Not Ready status, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Have at least 120000 fans before October 2 Year 2",
+            "rewards": "All stats +3, Skill points +20, Heal Not Ready status, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Satsuki Sho, Tenno Sho (Spring Year 3), Takarazuka Kinen (Year 3), and Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and Arima Kinen (Year 3)",
+            "rewards": "All stats +10, Skill points +20, Prepared to Pass hint +1, Up-Tempo hint +1"
+            }
+        ]
     },
     {   "id": "106001 - Nice Nature",
         "character_name": "Nice Nature",
