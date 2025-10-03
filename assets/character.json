@@ -64,7 +64,7 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1001_100101.png",
         "review": "Decent horse for medium and long. Comes with Gourmand for one guaranteed golden recovery. Lackluster parent but affinity is pretty decent."
     },
-    {   "id": "100102 - Special Week",
+    {   "id": "100102 - Special Week Summer",
         "character_name": "Special Week",
         "type": "Summer",
         "costume": "Hopping ♪ Vitamin Heart",
@@ -403,7 +403,7 @@
             }
         ]
     },
-    {   "id": "100401 - Summer Maruzensky",
+    {   "id": "100401 - Maruzensky Summer",
         "character_name": "Maruzensky",
         "type": "Summer",
         "costume": "Blasting Off ☆ Summer Night",
@@ -2938,6 +2938,69 @@
         "url": "https://gametora.com/umamusume/characters/105601-matikanefukukitaru",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1056_105601.png",
         "review": "Bad skills in general. Decent uma for Long Team Trials."
+    },
+    {   "id": "105801 - Meisho Doto",
+        "character_name": "Meisho Doto",
+        "type": "Original",
+        "costume": "Blue/Raging",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "20%",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "E"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "B",
+            "End": "E"
+            }
+        ],
+        "unique": "I Never Goof Up!",
+        "unique_explanation": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when overtaking during the late-race.",
+        "skills": [
+            "Pace Strategy",
+            "Medium Corners",
+            "Prepared to Pass"
+        ],
+        "potential": [
+            "Non-Standard Distance",
+            "Speed Star",
+            "Subdued Pace Chasers",
+            "Indomitable"
+        ],
+        "event_skills": [
+            "Tactical Tweak",
+            "Prepared to Pass",
+            "Up-Tempo"
+        ],
+        "races": [
+            "nikkei shinshun january 1 year 3",
+            "kinko sho march 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["meisho doto original", "blue raging"],
+        "url": "https://gametora.com/umamusume/characters/105801-meisho-doto",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1058_105801.png",
+        "review": "A Pace Chaser that relies on gambling. Okay uma but not consistent."
     },
     {   "id": "106001 - Nice Nature",
         "character_name": "Nice Nature",
