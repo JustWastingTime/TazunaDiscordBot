@@ -2140,6 +2140,72 @@
             "mejiro ardan tracen"
         ]
     },
+    {   "id": "10070 Tosen Jordan",
+        "card_name": "Tracen Academy",
+        "character_name": "Tosen Jordan",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Mood Effect - 15/18/21/25/25%",
+            "Stamina Bonus - 0/0/0/0/1",
+            "Initial Stamina - 15/16/18/20/20",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Specialty Priority - 35/38/42/46/50Z%"
+        ],
+        "support_skills": [
+            "Long Shot",
+            "Stamina to Spare",
+            "Position Pilfer",
+            "Medium Straightaways",
+            "Medium Corners",
+            "Pace Chaser Straightaways"
+        ],
+        "event_skills": [
+            "Lucky Seven"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10070-tosen-jordan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10070.png",
+        "rarity": "r",
+        "category": "stamina",
+        "aliases": [
+            "tosen jordan tracen"
+        ]
+    },
+    {   "id": "10072 Narita Brian",
+        "card_name": "Tracen Academy",
+        "character_name": "Narita Brian",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Speed Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Level - 2",
+            "Hint Frequency - 30/32/35/37/40%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Preferred Position",
+            "Outer Swell",
+            "Inside Scoop",
+            "Medium Straightaways",
+            "Medium Corners",
+            "Long Straightaways",
+            "Hydrate"
+        ],
+        "event_skills": [
+            "Lone Wolf"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10072-narita-brian",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10072.png",
+        "rarity": "r",
+        "category": "speed",
+        "aliases": [
+            "narita brian tracen"
+        ]
+    },
 
 
 
@@ -3065,14 +3131,13 @@
         "category": "guts",
         "aliases": ["seeking the pearl", "the worlds my oyster"]
     },
-
     {   "id": "20031 Shinko Windy",
         "card_name": "///WARNING GATE///",
         "character_name": "Shinko Windy",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
         "effects": [
             "Friendship Bonus - 20/21/22/23/25%",
-            "Mood Effect - 20/23/26/30/30",
+            "Mood Effect - 20/23/26/30/30%",
             "Speed Bonus - 0/0/0/1/1",
             "Training Effectiveness - 0/1/3/5/5%",
             "Initial Speed - 20/21/22/23/25",
@@ -3096,6 +3161,73 @@
         "category": "speed",
         "aliases": [
             "shinko windy warning gate"
+        ]
+    },
+    {   "id": "20034 Mejiro Ardan",
+        "card_name": "My Heart Will Go On",
+        "character_name": "Mejiro Ardan",
+        "unique": "Amplifies the effect of mood when training together (15%)\nIncreases the frequency at which hint events occur (20%)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 30/32/35/37/40%",
+            "Wit Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 0/1/3/5/5%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Level - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Wit Friendship Recovery - 3/3/3/3/4"
+        ],
+        "support_skills": [
+            "Left-Handed",
+            "Preferred Position",
+            "Soft Step",
+            "Pace Chaser Corners",
+            "Pace Chaser Savvy"
+        ],
+        "event_skills": [
+            "Hesitant Pace Chasers"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20034-mejiro-ardan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20034.png",
+        "rarity": "sr",
+        "category": "wit",
+        "aliases": [
+            "mejiro ardan my heart will go on"
+        ]
+    },
+    {   "id": "20035 Tosen Jordan",
+        "card_name": "Turf as Nails",
+        "character_name": "Tosen Jordan",
+        "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Mood Effect - 20/23/26/30/30",
+            "Stamina Bonus - 0/0/0/0/1",
+            "Initial Stamina - 15/16/18/20/20",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Level - 0/1/1/2/2",
+            "Hint Frequency - 0/20/25/30/30%",
+            "Specialty Priority - 35/38/42/46/50"
+        ],
+        "support_skills": [
+            "Long Shot",
+            "Stamina to Spare",
+            "Position Pilfer",
+            "Medium Straightaways",
+            "Medium Corners",
+            "Pace Chaser Straightaways"
+        ],
+        "event_skills": [
+            "Ramp Up",
+            "Lucky Seven"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20035-tosen-jordan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20035.png",
+        "rarity": "sr",
+        "category": "stamina",
+        "aliases": [
+            "tosen jordan turf as nails"
         ]
     },
 
@@ -3146,7 +3278,7 @@
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Race Bonus - 5%",
             "Fan Bonus - 10/11/13/15/15%",
-            "Hint Frequency - +20%",
+            "Hint Frequency - 20%",
             "Specialty Priority - 50/53/57/61/65",
             "Skill Point Bonus - 0/1/1/1/1"
         ],
@@ -4631,6 +4763,48 @@
         ]
     },
 
+
+
+
+
+
+    {   "id": "30054 Nice Nature",
+        "card_name": "Daring to Dream",
+        "character_name": "Nice Nature",
+        "unique": "Increases Wit gain when training together (1)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Training Effectiveness - 10/11/12/13/15%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Hint Levels - 1",
+            "Hint Frequency - 20%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Kokura Racecourse",
+            "Corner Acceleration",
+            "Lay Low",
+            "Go with the Flow",
+            "Hesitant Late Surgers",
+            "Murmur",
+            "A Small Breather",
+            "Sharp Gaze"
+        ],
+        "event_skills": [
+            "On Your Left!",
+            "Ramp Up"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30054-nice-nature",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30054.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "nice nature daring to dream"
+        ]
+    },
     {   "id": "30055 Seiun Sky",
         "card_name": "Paint the Sky Red",
         "character_name": "Seiun Sky",
@@ -4813,6 +4987,45 @@
         "category": "wit",
         "aliases": [
             "biwa hayahide our resounding steps"
+        ]
+    },
+    {   "id": "30062 Silence Suzuka",
+        "card_name": "Winning Dream",
+        "character_name": "Silence Suzuka",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Stamina when beginning a Career playthrough (20)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Stamina Bonus - 0/1/1/1/1",
+            "Initial Stamina - 25/27/30/32/35",
+            "Initial Friendship Gauge - 0/0/0/15/30",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Focus",
+            "Early Lead",
+            "Fast-Paced",
+            "Final Push",
+            "Rosy Outlook",
+            "Front Runner Straightaways",
+            "Front Runner Corners",
+            "Front Runner Savvy",
+            "Leader's Pride"
+        ],
+        "event_skills": [
+            "Concentration",
+            "Hydrate",
+            "Soft Step",
+            "Left-Handed"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30062-silence-suzuka",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30062.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "silence suzuka winning dream", "silence suzuka poverty", "silence suzuka welfare", "silence suzuka event"
         ]
     }
 
