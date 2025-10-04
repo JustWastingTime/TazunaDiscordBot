@@ -84,6 +84,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           s.card_name.toLowerCase().includes(q) ||
           s.character_name.toLowerCase().includes(q) ||
           s.rarity.toLowerCase().includes(q) ||
+          s.category.toLowerCase().includes(q) ||
           s.aliases?.some(a => a.toLowerCase().includes(q))
         );
       });
