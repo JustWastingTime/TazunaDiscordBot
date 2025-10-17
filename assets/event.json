@@ -6612,9 +6612,452 @@
         "aliases": ["grass wonder supporter ssr", "fairest fluer chain", "hidden petals"]
     },
 
+    {   "id": "Card - Mejiro McQueen Random To Maintain My Weight",
+        "event_name": "To Maintain My Weight",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Mejiro McQueen",
+        "options": [
+            {
+                "option_text": "She should do her best to stick to her diet until the race is over.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Stamina +15",
+                            "Mejiro McQueen bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "She should be fine if she runs more to burn off what she eats.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Max Energy +4",
+                            "Stamina +5",
+                            "Mejiro McQueen bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10010.png",
+        "aliases": ["mejiro mcqueen supporter", "to maintain my weight"]
+    },
+    {   "id": "Card - Mejiro McQueen Random To Reach the Greatest Heights",
+        "event_name": "To Reach the Greatest Heights",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Mejiro McQueen",
+        "options": [
+            {
+                "option_text": "Train your stamina and guts.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +5",
+                            "Guts +5",
+                            "Mejiro McQueen bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Focus on your start.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Early Lead hint +1",
+                            "Mejiro McQueen bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10010.png",
+        "aliases": ["mejiro mcqueen supporter", "to reach the greatest heights"]
+    },
+    {   "id": "Card - Mejiro McQueen Chain Your Team Ace 1",
+        "event_name": "(>) Expectations Are Power",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Mejiro McQueen (Your Team Ace)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30022.png",
+        "aliases": ["mejiro mcqueen supporter ssr", "your team ace chain", "expectations are power"]
+    },
+    {   "id": "Card - Mejiro McQueen Chain Your Team Ace 2",
+        "event_name": "(>>) Expectations Are Affection",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Mejiro McQueen (Your Team Ace)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Stamina +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30022.png",
+        "aliases": ["mejiro mcqueen supporter ssr", "your team ace chain", "expectations are affection"]
+    },
+    {   "id": "Card - Mejiro McQueen Chain Your Team Ace 3",
+        "event_name": "(>>>) Meeting Expectations",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Mejiro McQueen (Your Team Ace)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Stamina +10",
+                            "Cooldown hint +3"
+                        ]
+                    },
+                    {
+                        "chance": "Based on stats",
+                        "effects": [
+                            "Energy -10",
+                            "Deep Breaths hint +1"
+                        ]
+                    }
+                ]   
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30022.png",
+        "aliases": ["mejiro mcqueen supporter ssr", "your team ace chain", "meeting expectations"]
+    },
 
-    
+    {   "id": "Card - El Condor Pasa Random Blazing Fire!",
+        "event_name": "Blazing Fire!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "El Condor Pasa",
+        "options": [
+            {
+                "option_text": "You could eat a stamina-boosting meal.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10",
+                            "El Condor Pasa bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "You could try sprinting with a tire tied to you.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Power +20",
+                            "El Condor Pasa bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10011.png",
+        "aliases": ["el condor pasa supporter", "blazing fire"]
+    },
+    {   "id": "Card - El Condor Pasa Random Secret Notebook!",
+        "event_name": "Secret Notebook!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "El Condor Pasa",
+        "options": [
+            {
+                "option_text": "The El-Style Power Training Program.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10",
+                            "El Condor Pasa bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Tips for Race Running on a Clear Day.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Sunny Days hint +1",
+                            "El Condor Pasa bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10011.png",
+        "aliases": ["el condor pasa supporter", "secret notebook"]
+    },
+    {   "id": "Card - El Condor Pasa Chain Champions Passion 1",
+        "event_name": "(>) World Class",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "El Condor Pasa (Champion's Passion)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Guts +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30007.png",
+        "aliases": ["el condor pasa supporter ssr", "champions passion chain", "world class"]
+    },
+    {   "id": "Card - El Condor Pasa Chain Champions Passion 2",
+        "event_name": "(>>) Uma-me",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "El Condor Pasa (Champion's Passion)",
+        "options": [
+            {
+                "option_text": "Yeah, you need some original flavor!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +30",
+                            "El Condor Pasa bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "No, it's all down to the recipe!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina to Spare hint +1",
+                            "El Condor Pasa bond +5",
+                            "Event chain ended"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30007.png",
+        "aliases": ["el condor pasa supporter ssr", "champions passion chain", "uma me", "umame"]
+    },
+    {   "id": "Card - El Condor Pasa Chain Champions Passion 3",
+        "event_name": "(>>>) Luchadora El!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "El Condor Pasa (Champion's Passion)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +10",
+                            "Killer Tunes hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30007.png",
+        "aliases": ["el condor pasa supporter ssr", "champions passion chain", "luchadora el"]
+    },
 
+    {   "id": "Card - TM Opera O Random Etude to Victory",
+        "event_name": "Etude to Victory",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "TM Opera O",
+        "options": [
+            {
+                "option_text": "I think just running a victory lap would be better...",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood -1",
+                            "Speed +5",
+                            "Skill points +30",
+                            "TM Opera O bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "It was pretty good, yeah.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Power +5",
+                            "Skill points +15",
+                            "TM Opera O bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10012.png",
+        "aliases": ["tm opera o supporter", "etude to victory"]
+    },
+    {   "id": "Card - TM Opera O Random Beyond Our Limited Time",
+        "event_name": "Beyond Our Limited Time",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "TM Opera O",
+        "options": [
+            {
+                "option_text": "It's better to perform with everyting you've got within the time you're allotted.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Skill points +15",
+                            "TM Opera O bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "It's important to think outside the box.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Non-Standard Distance hint +1",
+                            "TM Opera O bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10012.png",
+        "aliases": ["tm opera o supporter", "beyond our limited time"]
+    },
+
+    {   "id": "Card - Symboli Rudolf Random The Emperor's Encouragement",
+        "event_name": "The Emperor's Encouragement",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Symboli Rudolf",
+        "options": [
+            {
+                "option_text": "We're focusing on moderate speed training.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "We're training hard to prepare for the worst case scenario.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Skill points +30"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10013.png",
+        "aliases": ["symboli rudolf supporter", "the emperors encouragement"]
+    },
+    {   "id": "Card - Symboli Rudolf Random The Student Council President's Thoughtfulness",
+        "event_name": "The Student Council President's Thoughtfulness",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Symboli Rudolf",
+        "options": [
+            {
+                "option_text": "Thanks! Now no storm will rain on our parade.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Rainy Days hint +1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "It must be tough always looking out for the school.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +15"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10013.png",
+        "aliases": ["symboli rudolf supporter", "the student council presidents thoughtfulness"]
+    },
 
     {   "id": "Card - Seiun Sky Random Recruiting Cat Catchers",
         "event_name": "Recruiting Cat Catchers",
@@ -6899,6 +7342,466 @@
         "conditions": "",
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30055.png",
         "aliases": ["seiun sky supporter ssr", "paint the sky red chain", "sudden murder mystery part 3"]
+    },
+
+    {   "id": "Card - Rice Shower Random A Page of Flower Shop Assistance",
+        "event_name": "A Page of Flower Shop Assistance",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Rice Shower",
+        "options": [
+            {
+                "option_text": "What me to help water the flowers?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +2",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Want me to bring out more flowers from the back?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10015.png",
+        "aliases": ["rice shower supporter", "a page of flower shop assistance"]
+    },
+    {   "id": "Card - Rice Shower Random A Page About Cloudy Weather",
+        "event_name": "A Page About Cloudy Weather",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Rice Shower",
+        "options": [
+            {
+                "option_text": "Rent out the gymnasium and run there!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Guts +5",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Make some sunshine dolls to ward off the rain!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Firm Conditions hint +1",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10015.png",
+        "aliases": ["rice shower supporter", "a page about cloudy weather"]
+    },
+    {   "id": "Card - Rice Shower Chain Showered In Joy 1",
+        "event_name": "(>) A Page from a Windy Day",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Rice Shower (Showered In Joy)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30023.png",
+        "aliases": ["rice shower supporter ssr", "showered in joy chain", "a page from a windy day"]
+    },
+    {   "id": "Card - Rice Shower Chain Showered In Joy 2",
+        "event_name": "(>>) A Page from a Day Spent with Friends",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Rice Shower (Showered In Joy)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +10",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30023.png",
+        "aliases": ["rice shower supporter ssr", "showered in joy chain", "a page from a day spent with friends"]
+    },
+    {   "id": "Card - Rice Shower Chain Showered In Joy 3",
+        "event_name": "(>>>) A Page from a Day of Hard Work",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Rice Shower (Showered In Joy)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Energy -10",
+                            "Extra Tank hint +1",
+                            "Rice Shower bond +5"
+                        ]
+                    },
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Energy -10",
+                            "Adrenaline Rush hint +1",
+                            "Rice Shower bond +5"
+                        ]
+                    },
+                    {
+                        "chance": "??",
+                        "effects": [
+                            "Energy -10",
+                            "Stamina +5",
+                            "Guts +5",
+                            "Adrenaline Rush hint +3",
+                            "Rice Shower bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30023.png",
+        "aliases": ["rice shower supporter ssr", "showered in joy chain", "a page from a day of hard work"]
+    },
+
+    {   "id": "Card - Winning Ticket Random Full-Power Muscles!",
+        "event_name": "Full-Power Muscles!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Winning Ticket",
+        "options": [
+            {
+                "option_text": "Heck yeah! No pain, no gain!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +5",
+                            "Skill points +15",
+                            "Winning Ticket bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Here, stay hydrated with this.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Mood +1",
+                            "Skill points +15",
+                            "Winning Ticket bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10016.png",
+        "aliases": ["winning ticket supporter", "full power muscles"]
+    },
+    {   "id": "Card - Winning Ticket Random Full-Power Racing!",
+        "event_name": "Full-Power Racing!",
+        "type": "Supporter Card",
+        "subtype": "Random",
+        "source_name": "Winning Ticket",
+        "options": [
+            {
+                "option_text": "Use the railing as a shortcut!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Late Surger Corners hint +1",
+                            "Winning Ticket bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Try to predict where she's going.",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Skill points +30",
+                            "Winning Ticket bond +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10016.png",
+        "aliases": ["winning ticket supporter", "full power racing"]
+    },
+    {   "id": "Card - Winning Ticket Chain BNWinner! 1",
+        "event_name": "(>) Username: W&T",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (BNWinner!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30012.png",
+        "aliases": ["winning ticket supporter ssr", "bnwinner chain", "username w t", "username wnt", "username w&t"]
+    },
+    {   "id": "Card - Winning Ticket Chain BNWinner! 2",
+        "event_name": "(>>) Everyone Was Sore for Days!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (BNWinner!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +5",
+                            "Guts +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30012.png",
+        "aliases": ["winning ticket supporter ssr", "bnwinner chain", "everyone was sore for days"]
+    },
+    {   "id": "Card - Winning Ticket Chain BNWinner! 3",
+        "event_name": "(>>>) We Are BNW!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (BNWinner!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Guts +10",
+                            "On Your Left! hint +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30012.png",
+        "aliases": ["winning ticket supporter ssr", "bnwinner chain", "we are bnw"]
+    },
+    {   "id": "Card - Winning Ticket Chain Dreams Do Come True! 1",
+        "event_name": "(>) Hot Derby Special!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (Dreams Do Come True!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +5",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30033.png",
+        "aliases": ["winning ticket supporter ssr", "dreams do come true chain", "hot derby special"]
+    },
+    {   "id": "Card - Winning Ticket Chain Dreams Do Come True! 2",
+        "event_name": "(>>) Special Rival Training!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (Dreams Do Come True!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -10",
+                            "Stamina +5",
+                            "Power +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30033.png",
+        "aliases": ["winning ticket supporter ssr", "dreams do come true chain", "special rival training"]
+    },
+    {   "id": "Card - Winning Ticket Chain Dreams Do Come True! 3",
+        "event_name": "(>>>) Dream-Fulfilling Challenge!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (Dreams Do Come True!)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy -30",
+                            "Stamina +5",
+                            "Power +5",
+                            "In Body and Mind hint +2"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30033.png",
+        "aliases": ["winning ticket supporter ssr", "dreams do come true chain", "dream fulfilling challenge"]
+    },
+    {   "id": "Card - Winning Ticket Chain Full-Blown Tantrum 1",
+        "event_name": "(>) Tickezo☆Expedition!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (Full-Blown Tantrum)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +5",
+                            "Stamina +5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30046.png",
+        "aliases": ["winning ticket supporter ssr", "full blown tantrum chain", "tickezo expedition"]
+    },
+    {   "id": "Card - Winning Ticket Chain Full-Blown Tantrum 2",
+        "event_name": "(>>) Tickezo☆Friendship!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (Full-Blown Tantrum)",
+        "options": [
+            {
+                "option_text": "Smile!",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Stamina +3",
+                            "Guts +3",
+                            "1,500,000 CC hint +1",
+                            "Winning Ticket bond +5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "option_text": "Why not take a second to compose yourself?",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Energy +10",
+                            "Maverick hint +3",
+                            "Winning Ticket bond +5",
+                            "Event chain ended"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30046.png",
+        "aliases": ["winning ticket supporter ssr", "full blown tantrum chain", "tickezo friendship"]
+    },
+    {   "id": "Card - Winning Ticket Chain Full-Blown Tantrum 3",
+        "event_name": "(>>>) Tickezo☆Night Fever!",
+        "type": "Supporter Card",
+        "subtype": "Chain",
+        "source_name": "Winning Ticket (Full-Blown Tantrum)",
+        "options": [
+            {
+                "option_text": "",
+                "outcomes": [
+                    {
+                        "chance": 100,
+                        "effects": [
+                            "Speed +8",
+                            "Stamina +8",
+                            "Guts +8",
+                            "Hard Worker hinty +1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": "",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30046.png",
+        "aliases": ["winning ticket supporter ssr", "full blown tantrum chain", "tickezo night fever"]
     },
 
     {   "id": "Card - King Halo Random You May Socialize With Me",
