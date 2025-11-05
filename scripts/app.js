@@ -9,7 +9,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize } from './utils.js';
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
@@ -36,6 +36,7 @@ const races = cache.races;
 const champsmeets = cache.champsmeets;
 const legendraces = cache.legendraces;
 const misc = cache.misc;
+const schedule = cache.schedule;
 
 // Create an express app
 const app = express();
@@ -1090,33 +1091,49 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       });
     }
 
-
     if (name === "schedule") {
-      const url = misc[0]?.schedule ?? null;
+      res.send({
+        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE
+      });
 
-      if (!url) {
-        return res.send({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: { content: "❌ No schedule found." }
-        });
-      }
+      try {
+        const schedules = schedule;
 
-      return res.send({
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
+        const components = schedules.map(event => ({
+          type: MessageComponentTypes.CONTAINER,
+          accent_color: scheduleColors[event.event_type] || scheduleColors.Default,
           components: [
             {
-              type: MessageComponentTypes.MEDIA_GALLERY,
-              items: [
-                {
-                  media: {url: url}
-                }
-              ]
+              type: MessageComponentTypes.TEXT_DISPLAY,
+              content: `### ${event.event_name}`
+            },
+            {
+              type: MessageComponentTypes.TEXT_DISPLAY,
+              content: `**Type:** ${event.event_type}`
+            },
+            {
+              type: MessageComponentTypes.TEXT_DISPLAY,
+              content: `${event.date}`
+            },
+            {
+              type: MessageComponentTypes.IMAGE_DISPLAY,
+              image_url: event.thumbnail
             }
-          ] 
-        }
-      });
+          ]
+        }));
+
+        const payload = {
+          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
+          components
+        };
+
+        await sendFollowup(token, payload);
+      } catch (err) {
+        console.error("Schedule command error:", err);
+        await sendFollowup(token, { content: "❌ Failed to load schedule." });
+      }
+
+      return;
     }
 
     console.error(`unknown command: ${name}`);

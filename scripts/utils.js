@@ -38,6 +38,16 @@ const raceGradeIcons = {
   default: '' // fallback
 };
 
+export const scheduleColors = {
+  "Anniversary": 0xFFD700,
+  "Scenario": 0x00BFFF,
+  "Banner": 0xFF69B4,
+  "Legend Races": 0xFFA500,
+  "Champions Meeting": 0xADFF2F,
+  "Story Event": 0x9370DB,
+  "Default": 0x808080
+};
+
 
 export async function DiscordRequest(endpoint, options) {
   // append endpoint to root API URL

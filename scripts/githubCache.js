@@ -22,6 +22,7 @@ const urls = {
   races: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/races.json',
   champsmeets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/champsmeet.json',
   legendraces: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/legendrace.json',
+  schedule: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/schedule.json',
   misc: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/main/assets/misc.json',
 };
 
@@ -48,7 +49,7 @@ async function updateCache() {
 // Initial fetch
 await updateCache();
 
-// Refresh every hour
-setInterval(updateCache, 1000 * 60 * 60); // 1 hour
+// Refresh every day
+setInterval(updateCache, 1000 * 60 * 60 * 24); // 1 day
 
 export default cache;
