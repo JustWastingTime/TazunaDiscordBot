@@ -1099,33 +1099,36 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       try {
         const schedules = schedule;
 
-        const components = schedules.slice(0, 5).map(event => ({
-          type: MessageComponentTypes.CONTAINER,
-          accent_color: scheduleColors[event.event_type] || scheduleColors.Default,
-          components: [
+        for (const event of schedules) {
+          const components = [
             {
-              type: MessageComponentTypes.SECTION,
+              type: MessageComponentTypes.CONTAINER,
+              accent_color: scheduleColors[event.event_type] || scheduleColors.Default,
               components: [
                 {
+                  type: MessageComponentTypes.MEDIA_GALLERY,
+                  items: [
+                    {
+                      media: { url: event.thumbnail }
+                    }
+                  ]
+                },
+                {
                   type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: `### ${event.event_name}\n**Type:** ${event.event_type}\n${event.date}`
+                  content: `${event.date}`
                 }
-              ],
-              accessory: {
-                type: MessageComponentTypes.IMAGE_DISPLAY,
-                url: event.thumbnail,
-                size: "SMALL" // compact thumbnail style
-              }
+              ]
             }
-          ]
-        }));
+          ];
 
-        const payload = {
-          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
-          components
-        };
+          const payload = {
+            flags: InteractionResponseFlags.IS_COMPONENTS_V2,
+            components
+          };
 
-        await sendFollowup(token, payload);
+          // Send one message per schedule item
+          await sendFollowup(token, payload);
+        }
       } catch (err) {
         console.error("Schedule command error:", err);
         await sendFollowup(token, { content: "❌ Failed to load schedule." });
@@ -1133,6 +1136,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
       return;
     }
+
 
 
     console.error(`unknown command: ${name}`);
