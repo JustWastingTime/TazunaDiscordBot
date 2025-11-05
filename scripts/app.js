@@ -1099,25 +1099,23 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       try {
         const schedules = schedule;
 
-        const components = schedules.map(event => ({
+        const components = schedules.slice(0, 5).map(event => ({
           type: MessageComponentTypes.CONTAINER,
           accent_color: scheduleColors[event.event_type] || scheduleColors.Default,
           components: [
             {
-              type: MessageComponentTypes.TEXT_DISPLAY,
-              content: `### ${event.event_name}`
-            },
-            {
-              type: MessageComponentTypes.TEXT_DISPLAY,
-              content: `**Type:** ${event.event_type}`
-            },
-            {
-              type: MessageComponentTypes.TEXT_DISPLAY,
-              content: `${event.date}`
-            },
-            {
-              type: MessageComponentTypes.IMAGE_DISPLAY,
-              image_url: event.thumbnail
+              type: MessageComponentTypes.SECTION,
+              components: [
+                {
+                  type: MessageComponentTypes.TEXT_DISPLAY,
+                  content: `### ${event.event_name}\n**Type:** ${event.event_type}\n${event.date}`
+                }
+              ],
+              accessory: {
+                type: MessageComponentTypes.IMAGE_DISPLAY,
+                url: event.thumbnail,
+                size: "SMALL" // compact thumbnail style
+              }
             }
           ]
         }));
@@ -1135,6 +1133,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
       return;
     }
+
 
     console.error(`unknown command: ${name}`);
     return res.status(400).json({ error: 'unknown command' });

@@ -9,44 +9,45 @@
         "date": "Begins on <t:1762466400:F>",
         "thumbnail": "https://img.game8.co/4322117/9afa6c1a4883c1cd99257e80619660b3.png/show"
     },
-    {   "event_name": "Half Anniversary Celebration Part 3",
-        "event_type": "Anniversary",
-        "date": "Begins on <t:1762466400:F> and ends on <t:1763416800:F>",
-        "thumbnail": "https://img.game8.co/4322118/fe9b56d27bd660f6ee2957fae03e357d.png/show"
-    },
     {   "event_name": "Makitanefukukitaru (Full Armor) + Riko Kashimoto (Pal) & Rice Shower (Power)",
         "event_type": "Banner",
-        "date": "Begins on <t:1762207200:F>",
+        "date": "<t:1762466400:F> - <t:1763416800:F>",
         "thumbnail": "https://img.game8.co/4322098/3d17658b0d810f544a96048253b873d7.png/show"
     },
+    {   "event_name": "Half Anniversary Celebration Part 3",
+        "event_type": "Anniversary",
+        "date": "Begins on <t:1762466400:F>",
+        "thumbnail": "https://img.game8.co/4322118/fe9b56d27bd660f6ee2957fae03e357d.png/show"
+    },   
     {   "event_name": "Hishi Akebono + Sakura Bakushin O (Speed) & Biko Pegasus (Speed)",
         "event_type": "Banner",
-        "date": "Begins on <t:1762207200:F>",
+        "date": "<t:1762898400:F> - <t:1763762400:F>",
         "thumbnail": "https://img.game8.co/4322101/97d3b4ee672cc41e1aafd43ddbe371e2.png/show"
     },
     {   "event_name": "Legend Races - Maruzensky, Fuji Kiseki, Mihono Bourbon",
         "event_type": "Legend Races",
-        "date": "Begins on <t:1762207200:F>",
+        "date": "<t:1763071200:F> - <t:1763848800:F>",
         "thumbnail": "https://img.game8.co/4322101/97d3b4ee672cc41e1aafd43ddbe371e2.png/show"
     },
     {   "event_name": "Champions Meeting - Virgo Cup",
         "event_type": "Champions Meeting",
-        "date": "Begins on <t:1762207200:F>",
+        "date": "<t:1763330400:F> - <t:1764194400:F>",
         "thumbnail": "https://img.game8.co/4322101/97d3b4ee672cc41e1aafd43ddbe371e2.png/show"
     },
     {   "event_name": "Agnes Digital + Ikuno Dictus (Guts) & Fine Motion (Power)",
         "event_type": "Banner",
-        "date": "Begins on <t:1762207200:F>",
+        "date": "<t:1763589600:F> - <t:1764367200:F>",
         "thumbnail": "https://img.game8.co/4322101/97d3b4ee672cc41e1aafd43ddbe371e2.png/show"
-    },
-    {   "event_name": "Halloween Makeover Story Event",
-        "event_type": "Story Event",
-        "date": "Begins on <t:1762207200:F>",
-        "thumbnail": "https://img.game8.co/4322105/3b1f490cac5e53f5fc50de2cea322ad5.png/show"
     },
     {   "event_name": "Rice Shower (Halloween) & Super Creek (Halloween) + Tamamo Cross (Power) & Zenno Rob Roy (Speed)",
         "event_type": "Banner",
-        "date": "Begins on <t:1762207200:F>",
+        "date": "<t:1764021600:F> - <t:1765058400:F>",
         "thumbnail": "https://img.game8.co/4322100/58367bca7d23eaf6818da189653648ff.png/show"
+    },
+    {   "event_name": "Halloween Makeover Story Event",
+        "event_type": "Story Event",
+        "date": "<t:1764021600:F> - <t:1765058400:F>",
+        "thumbnail": "https://img.game8.co/4322105/3b1f490cac5e53f5fc50de2cea322ad5.png/show"
     }
+    
 ]   
