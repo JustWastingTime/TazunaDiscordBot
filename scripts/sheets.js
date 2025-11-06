@@ -122,10 +122,10 @@ export async function syncUsers() {
         continue;
       }
 
-      // 2. Get thresholds (M21:P21)
+      // 2. Get thresholds (M23:P23) using dailies for better zone distribution
       const threshRes = await sheets.spreadsheets.values.get({
         spreadsheetId: server.sheetsid,
-        range: `${SHEET_NAME}!M21:P21`,
+        range: `${SHEET_NAME}!M23:P23`,
       });
       const thresholds = (threshRes.data.values?.[0] || []).map(v => cleanNumber(v));
 
@@ -159,10 +159,10 @@ export async function syncUsers() {
         // Assign color
         let color = "red";
         if (thresholds.length > 0) {
-          if (monthlyFans >= thresholds[0]) color = "purple";
-          else if (monthlyFans >= thresholds[1]) color = "blue";
-          else if (monthlyFans >= thresholds[2]) color = "green";
-          else if (monthlyFans >= thresholds[3]) color = "yellow";
+          if (growthDailyAvg >= thresholds[0]) color = "purple";
+          else if (growthDailyAvg >= thresholds[1]) color = "blue";
+          else if (growthDailyAvg >= thresholds[2]) color = "green";
+          else if (growthDailyAvg >= thresholds[3]) color = "yellow";
         }
         user.color = color;
 
