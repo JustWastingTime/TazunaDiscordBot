@@ -2094,6 +2094,68 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1027_102701.png",
         "review": "Champion's Meet meta parent for Late Surgers and End Closers. On tracks where the last spurt starts on a corner, her skill will be very very helpful. As a runner, she is mediocre. Her unique is also not that good for Team Trials (needs 8th position)."
     },
+    {   "id": "102801 - Hishi Akebono",
+        "character_name": "Hishi Akebono",
+        "type": "Original",
+        "costume": "Bono ☆ Alla Moda",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "20%",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "B",
+            "Medium": "F",
+            "Long": "G"
+            },
+            {
+            "Front": "B",
+            "Pace": "A",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "I'M☆FULL☆SPEED!!",
+        "unique_explanation": "Increases acceleration by 0.4 for 4.0s if 6th place (for Champion's Meet) or 8th place (for Team Trials), on a corner during the late-race.",
+        "skills": [
+            "Sunny Days",
+            "Hydrate",
+            "Meticulous Measures"
+        ],
+        "potential": [
+            "Pace Strategy",
+            "Killer Tunes",
+            "Medium Straightaways",
+            "Rising Dragon"
+        ],
+        "event_skills": [
+            "Wet Conditions"
+        ],
+        "races": [
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["hishi akebono original", "bono alla moda"],
+        "url": "https://gametora.com/umamusume/characters/102801-hishi-akebono",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1028_102801.png",
+        "review": "Champion's Meet meta parent for Late Surgers and End Closers. On tracks where the last spurt starts on a corner, her skill will be very very helpful. As a runner, she is mediocre. Her unique is also not that good for Team Trials (needs 8th position)."
+    },
     {   "id": "103001 - Rice Shower",
         "character_name": "Rice Shower",
         "type": "Original",
@@ -2938,6 +3000,69 @@
         "url": "https://gametora.com/umamusume/characters/105601-matikanefukukitaru",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1056_105601.png",
         "review": "Bad skills in general. Decent uma for Long Team Trials."
+    },
+    {   "id": "105602 - Matikanefukukitaru Full Armor",
+        "character_name": "Matikanefukukitaru",
+        "type": "Full Armor",
+        "costume": "Lucky Tidings",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "10%",
+            "power": "",
+            "guts": "10%",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "A",
+            "End": "F"
+            }
+        ],
+        "unique": "Bountiful Harvest",
+        "unique_explanation": "Increases speed by 0.35 for 5.0s when 4th to 9th in CM (5th to 12th in TT), being an overtake target by another uma for 2 seconds or more, in the second half of the race.",
+        "skills": [
+            "Right-Handed",
+            "Slick Surge",
+            "Pressure"
+        ],
+        "potential": [
+            "Inside Scoop",
+            "Overwhelming Pressure",
+            "Kyoto Racecourse",
+            "Innate Experience"
+        ],
+        "event_skills": [
+            "Hesitant Front Runners",
+            "Lucky Seven"
+        ],
+        "races": [
+            "yayoi sho march 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "kinko sho march 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "hakodate kinen july 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["matikanefukukitaru full armor", "machikane full armor", "lucky tidings"],
+        "url": "https://gametora.com/umamusume/characters/105602-matikanefukukitaru",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1056_105602.png",
+        "review": "Good Long distance uma. Decent for parenting as well."
     },
     {   "id": "105801 - Meisho Doto",
         "character_name": "Meisho Doto",
