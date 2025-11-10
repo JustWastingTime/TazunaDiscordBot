@@ -4068,11 +4068,23 @@
         "horse": "Meisho Doto (Original)"
     },
     {   "skill_name": "Schwarzes Schwert",
-        "description": "Increases speed by 0.45 for 5.0s on the last straight, when between 40% to 80% of the pack for the entire race (not including first 5s of the race) and has never rushed. Otherwise, If 3rd place or lower, increases speed by 0.35 for 5.0s on the last straight if never rushed.",
+        "description": "Condition 1 - Increases speed by 0.45 for 5.0s. Condition 2 - Increases speed by 0.35 for 5.0s",
         "inherited": "Increases speed by 0.25 for 3.0s on the last straight, when between 40% to 80% of the pack for the entire race (not including first 5s of the race) and has never rushed. Otherwise, If 3rd place or lower, increases speed by 0.15 for 3.0s on the last straight if never rushed.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
+        "conditions": 
+        [
+            [
+                "3rd or worse",
+                "40% or worse the entire race (4th or worse in CM, 5th or worse in TT)",
+                "80% or better the entire race (7th or better in CM, 10th or better in TT)",
+                "Haven't rushed",
+                "Final straight"
+            ],
+            [
+                "3rd or worse",
+                "Haven't rushed",
+                "Final straight"
+            ]
+        ],
         "team_trials": "Lacking",
         "champs_meet": "Lacking",
         "review": "Conditions are rather awkward. Numberswise, pretty good.",
@@ -4085,11 +4097,15 @@
 
 
     {   "skill_name": "Red Shift/LP1211-M",
-        "description": "Increases acceleration by 0.4 for 4.0s if 1st to 5th place on the final corner.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s if 1st to 5th place on the final corner.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions":
+        [
+            [
+                "1st to 5th",
+                "Final corner and beyond"
+            ]
+        ],
         "team_trials": "Highly Recommended",
         "champs_meet": "Highly Recommended",
         "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",

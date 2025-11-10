@@ -573,21 +573,27 @@ export function buildSupporterEmbed(supporter, skills, level) {
 }
 
 export function buildSkillEmbed(skill, supporterList) {
+  // Build condition field
+  let conditionValue = '';
+  if (skill.conditions && skill.conditions.length > 0) {
+    conditionValue = skill.conditions
+      .map((group, index) => {
+        if (skill.conditions.length > 1) {
+          return `**Condition ${index + 1}:**\n- ${group.join('\n- ')}`;
+        } else {
+          return `- ${group.join('\n- ')}`;
+        }
+      })
+      .join('\n\n');
+  } else {
+    conditionValue = '—';
+  }
+
   const fields = [
     {
-      name: 'Skill Cost',
-      value: skill.skill_cost + '\n \u200B',
-      inline: true
-    },
-    {
-      name: 'Points Value',
-      value: skill.points_value + '\n \u200B',
-      inline: true
-    },
-    {
-      name: 'Points Ratio',
-      value: skill.points_ratio + '\n \u200B',
-      inline: true
+      name: 'Conditions',
+      value: conditionValue + '\n\u200B',
+      inline: false
     },
     {
       name: 'Team Trial',
