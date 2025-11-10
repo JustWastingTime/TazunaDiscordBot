@@ -4068,8 +4068,8 @@
         "horse": "Meisho Doto (Original)"
     },
     {   "skill_name": "Schwarzes Schwert",
-        "description": "Condition 1 - Increases speed by 0.45 for 5.0s. Condition 2 - Increases speed by 0.35 for 5.0s",
-        "inherited": "Increases speed by 0.25 for 3.0s on the last straight, when between 40% to 80% of the pack for the entire race (not including first 5s of the race) and has never rushed. Otherwise, If 3rd place or lower, increases speed by 0.15 for 3.0s on the last straight if never rushed.",     
+        "description": "Condition 1 - Increases speed by 0.45 for 5.0s. Condition 2 - Increases speed by 0.35 for 5.0s.",
+        "inherited": "Condition 1 - Increases speed by 0.25 for 3.0s. Condition 2 - Increases speed by 0.15 for 3.0s.",     
         "conditions": 
         [
             [
