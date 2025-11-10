@@ -1,583 +1,809 @@
 [
     {   "skill_name" : "Right-Handed",
-        "description" : "Increases speed by a value of 40/60 on clockwise tracks.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Adds a flat speed value that can help you hit higher top speeds than your Champion's meeting rivals.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Clockwise course"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Adds a flat speed value that can help you hit higher top speeds. Take for the appropriate CMs.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["right", "clockwise", "右回り"]
+        "aliases": ["right", "clockwise", "右回り", "right turns"]
     },
     {   "skill_name" : "Left-Handed",
-        "description" : "Increases speed by a value of 40/60 on counter clockwise tracks.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Adds a flat speed value that can help you hit higher top speeds than your Champion's meeting rivals.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Counterclockwise course"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Adds a flat speed value that can help you hit higher top speeds. Take for the appropriate CMs.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["left", "counter clockwise", "左回り"]
+        "aliases": ["left", "counter clockwise", "左回り", "left turns"]
     },
     {   "skill_name": "Tokyo Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Tokyo Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Tokyo Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["tokyo"]
+        "aliases": ["tokyo", "東京レース場", "tokyo racetrack"]
     },
     {   "skill_name": "Nakayama Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Nakayama Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Nakayama Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["nakayama"]
+        "aliases": ["nakayama", "中山レース場", "nakayama racetrack"]
     },
     {   "skill_name": "Hanshin Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Hanshin Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Hanshin Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["hanshin"]
+        "aliases": ["hanshin", "阪神レース場", "hanshin racetrack"]
     },
     {   "skill_name": "Kyoto Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Kyoto Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Kyoto Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["kyoto"]
+        "aliases": ["kyoto", "京都レース場", "kyoto racetrack"]
     },
     {   "skill_name": "Chukyo Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Chukyo Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Chukyo Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["chukyo"]
+        "aliases": ["chukyo", "中京レース場", "chukyo racetrack"]
     },
     {   "skill_name": "Sapporo Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Sapporo Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Sapporo Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["sapporo"]
+        "aliases": ["sapporo", "札幌レース場", "sapporo racetrack"]
     },
     {   "skill_name": "Hakodate Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Hakodate Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Hakodate Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["hakodate"]
+        "aliases": ["hakodate", "函館レース場", "hakodate racetrack"]
     },
     {   "skill_name": "Fukushima Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Fukushima Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Fukushima Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["fukushima"]
+        "aliases": ["fukushima", "福島レース場", "fukushima racetrack"]
     },
     {   "skill_name": "Niigata Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Niigata Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Niigata Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["niigata"]
+        "aliases": ["niigata", "新潟レース場", "niigata racetrack"]
     },
     {   "skill_name": "Kokura Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Kokura Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Kokura Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["kokura"]
+        "aliases": ["kokura", "小倉レース場", "kokura racetrack"]
     },
     {   "skill_name": "Oi Racecourse",
-        "description": "Increases stamina by a value of 40/60 at Oi Racecourse.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Oi Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["oi"]
+        "aliases": ["oi", "大井レース場", "ooi racetrack"]
+    },
+    {   "skill_name": "Kawasaki Racecourse",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Kawasaki Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
+        "review": "A solid skill to take if you are not reaching the stamina treshold.",
+        "rarity": "normal",
+        "category": "stamina",
+        "aliases": ["kawasaki", "川崎レース場", "kawasaki racetrack"]
+    },
+    {   "skill_name": "Funabashi Racecourse",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Funabashi Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
+        "review": "A solid skill to take if you are not reaching the stamina treshold.",
+        "rarity": "normal",
+        "category": "stamina",
+        "aliases": ["funabashi", "船橋レース場", "funabashi racetrack"]
+    },
+    {   "skill_name": "Morioka Racecourse",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Morioka Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
+        "review": "A solid skill to take if you are not reaching the stamina treshold.",
+        "rarity": "normal",
+        "category": "stamina",
+        "aliases": ["morioka", "盛岡レース場", "morioka racetrack"]
+    },
+    {   "skill_name": "Longchamp Racecourse",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Longchamp Racecourse"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "A",
+        "review": "A solid skill to take if you are not reaching the stamina treshold.",
+        "rarity": "normal",
+        "category": "stamina",
+        "aliases": ["longchamp", "ロンシャンレース場", "longchamp racetrack"]
     },
     {   "skill_name": "Standard Distance",
-        "description": "Increases stamina by a value of 40/60 if the course's distance is a multiple of 400m.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "Lacking",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Racecourse length is a multiple of 400m"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["standard", "400"]
+        "aliases": ["standard", "400", "core distances", "根幹距離"]
     },
     {   "skill_name": "Non-Standard Distance",
-        "description": "Increases stamina by a value of 40/60 if the course's distance is not a multiple of 400m.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "Lacking",
-        "champs_meet": "Okay",
+        "description" : "Stamina stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Racecourse length is not a multiple of 400m"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "A",
         "review": "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity": "normal",
         "category": "stamina",
-        "aliases": ["nonstandard", "non standard"]
+        "aliases": ["nonstandard", "non standard", "non core distances", "非根幹距離"]
     },
     {   "skill_name": "Firm Conditions",
-        "description": "Increases power by a value of 40/60 if the track has a firm condition",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "Not Recommended",
-        "champs_meet": "Okay",
-        "review": "An okay take if power is lacking or nothing else is available.",
+        "description" : "Power stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Track condition is firm"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "A",
+        "review": "A solid skill to take for more acceleration or to trigger groundwork. Take in appropriate CM.",
         "rarity": "normal",
         "category": "power",
-        "aliases": ["firm"]
+        "aliases": ["firm", "good track condition", "良バ場"]
     },
     {   "skill_name": "Wet Conditions",
-        "description": "Increases power by a value of 40/60 if the track has a good/soft or heavy condition",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "Not Recommended",
-        "champs_meet": "Okay",
-        "review": "An okay take if power is lacking or nothing else is available.",
+        "description" : "Power stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Track condition is good, soft or heavy"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "A",
+        "review": "A solid skill to take for more acceleration or to trigger groundwork. Take in appropriate CM.",
         "rarity": "normal",
         "category": "power",
-        "aliases": ["wet", "soft", "good"]
+        "aliases": ["wet", "soft", "good", "bad track condition", "道悪"]
     },
     {   "skill_name" : "Spring Runner",
-        "description" : "Increases speed by a value of 40/60 during Spring.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Adds a flat speed value that can help you hit higher top speeds than your Champion's meeting rivals.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Spring"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "S",
+        "review" : "Adds a flat speed value that can help you hit higher top speeds. Take for the appropriate CMs.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["spring"]
+        "aliases": ["spring girl", "春ウマ娘"]
     },
     {   "skill_name" : "Summer Runner",
-        "description" : "Increases speed by a value of 40/60 during Summer.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Adds a flat speed value that can help you hit higher top speeds than your Champion's meeting rivals.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Summer"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "S",
+        "review" : "Adds a flat speed value that can help you hit higher top speeds. Take for the appropriate CMs.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["summer"]
+        "aliases": ["summer girl", "夏ウマ娘"]
     },
     {   "skill_name" : "Fall Runner",
-        "description" : "Increases speed by a value of 40/60 during Fall.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Adds a flat speed value that can help you hit higher top speeds than your Champion's meeting rivals.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Fall"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "S",
+        "review" : "Adds a flat speed value that can help you hit higher top speeds. Take for the appropriate CMs.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["fall"]
+        "aliases": ["fall", "autumn girl", "秋ウマ娘"]
     },
     {   "skill_name" : "Winter Runner",
-        "description" : "Increases speed by a value of 40/60 during Winter.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Adds a flat speed value that can help you hit higher top speeds than your Champion's meeting rivals.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Winter"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "S",
+        "review" : "Adds a flat speed value that can help you hit higher top speeds. Take for the appropriate CMs.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["winter"]
+        "aliases": ["winter girl", "冬ウマ娘"]
     },
     {   "skill_name" : "Sunny Days",
-        "description" : "Increases guts by a value of 40/60 during sunny weather.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Okay",
+        "description" : "Guts stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Sunny weather"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "B",
         "review" : "Adds a flat guts value that can help you hit thresholds if you are lacking.",
         "rarity" : "normal",
         "category" : "guts",
-        "aliases": ["sunny"]
+        "aliases": ["sunny", "晴れの日"]
+    },
+    {   "skill_name" : "Cloudy Days",
+        "description" : "Guts stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Cloudy weather"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "B",
+        "review" : "Adds a flat guts value that can help you hit thresholds if you are lacking.",
+        "rarity" : "normal",
+        "category" : "guts",
+        "aliases": ["cloudy", "曇りの日"]
     },
     {   "skill_name" : "Rainy Days",
-        "description" : "Increases guts by a value of 40/60 during rainy weather.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Okay",
+        "description" : "Guts stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Rainy weather"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "B",
         "review" : "Adds a flat guts value that can help you hit thresholds if you are lacking.",
         "rarity" : "normal",
         "category" : "guts",
-        "aliases": ["rainy"]
+        "aliases": ["rainy", "雨の日"]
     },
     {   "skill_name" : "Snowy Days",
-        "description" : "Increases guts by a value of 40/60 during snowy weather.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Okay",
+        "description" : "Guts stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Snowy weather"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "B",
         "review" : "Adds a flat guts value that can help you hit thresholds if you are lacking.",
         "rarity" : "normal",
         "category" : "guts",
-        "aliases": ["snowy"]
+        "aliases": ["snowy", "雪の日"]
     },
     {   "skill_name" : "Inner Post Proficiency",
-        "description" : "Increases wit by a value of 40/60 when starting at gate block 1 - 3",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Inconsistent and not a good stat to cap.",
+        "description" : "Wit stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Gate bracket 1 - 3"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "D",
+        "review" : "A gamble for wit. Unless you really need the extra wit, its usually not worth it.",
         "rarity" : "normal",
         "category" : "gate",
         "aliases": ["inner", "innerpost"]
     },
     {   "skill_name" : "Outer Post Proficiency",
-        "description" : "Increases speed by a value of 40/60 when starting at gate block 6 - 8.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "Lacking",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "Gate bracket 6 - 8"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "C",
         "review" : "In Champion's Meeting, there are only 9 horses while blocks will always be capped at 8. Due to allocation mechanics, 4 horses will be in gate block 6 - 8. In other words, you have a 4/9 chance of triggering this condition. Decent odds for gambling if you have extra skill points.",
         "rarity" : "normal",
         "category" : "speed",
         "aliases": ["outer", "outerpost"]
     },
     {   "skill_name" : "Maverick",
-        "description" : "Increases speed by a value of 40/60 when no other runners are using the same strategy.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
+        "description" : "Speed stat +60/+80.",
+        "conditions":
+        [
+            [
+                "No other uma using the same strategy"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "C",
         "review" : "Very unlikely for no other Uma to not use your strategy.",
         "rarity" : "normal",
         "category" : "speed",
         "aliases": ["maverick"]
     },
     {   "skill_name": "Competitive Spirit",
-        "description": "Increases power by a value of 40/60 when at least 5 other runners are using the same strategy.",
-        "skill_cost": "90/200",
-        "points_value": "129/174",
-        "points_ratio": "1.43/0.87",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "Very unlikely for 5 other Umas to  use your strategy for very miniscule gains.",
+        "description" : "Power stat +40/+60.",
+        "conditions":
+        [
+            [
+                "40% of runners or more using the same strategy (4 or more in CM, 5 in TT)"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "C",
+        "review": "Unlikely to trigger for miniscule gains.",
         "rarity": "normal",
         "category": "power",
-        "aliases": ["competitive"]
+        "aliases": ["competitive spirit", "対抗意識"]
     },
     {   "skill_name" : "Target in Sight",
-        "description" : "Increases guts by a value of 40/60 when the favorite is using the same strategy.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Not good value on a stat that you most likely will not cap.",
+        "description" : "Guts stat +40/+60.",
+        "conditions":
+        [
+            [
+                "When using the same strategy as the favorite"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "D",
+        "review" : "Gambling condition for guts. Not worth.",
         "rarity" : "normal",
         "category" : "guts",
-        "aliases": ["target"]
+        "aliases": ["target in sight", "徹底マーク", "eyes on you"]
     },
     {   "skill_name" : "Long Shot",
-        "description" : "Increases speed by a value of 40/60 when 4th favorite or below.",
-        "skill_cost" : "90/200",
-        "points_value" : "129/174",
-        "points_ratio" : "1.43/0.87",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Lacking",
-        "review" : "Favorites are inconsistent but a decent gamble on umas that are clearly lower than your ace.",
+        "description" : "Speed stat +40/+60.",
+        "conditions":
+        [
+            [
+                "When 4th favorite or worse"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "C",
+        "review" : "Favorites are an inconsistent factor to gamble on",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases": ["longshot", "underdog"]
+        "aliases": ["longshot", "underdog", "伏兵"]
     },
     {   "skill_name" : "Corner Adept",
-        "description" : "Increases speed by 0.15 on the first corner for 1.8s. 30s cooldown.",
-        "skill_cost" : "180",
-        "points_value" : "217",
-        "points_ratio" : "1.21",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger, decent value.",
+        "description" : "Increases speed by 0.15 for 2.4s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on corner 1/2/3/4"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger. Consistent source of points for TT. Might be a bit too pricy for what it does in CM.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["corner adept"],
+        "aliases": ["corner adept", "clever cornerer", "コーナー巧者"],
         "upgrade": "Professor of Curvature"
     },
     {   "skill_name" : "Corner Acceleration",
-        "description" : "Increases acceleration by 0.2 on the first corner for 1.8s. 30s cooldown.",
-        "skill_cost" : "180",
-        "points_value" : "217",
-        "points_ratio" : "1.21",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
+        "description" : "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on corner 1/2/3/4"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "D",
         "review" : "Easy to trigger for Team Trials but accelerating on the first corner is not very useful.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases": ["corner accel"],
+        "aliases": ["corner accel", "コーナー加速"],
         "upgrade": "Corner Connoisseur"
     },
     {   "skill_name" : "Corner Recovery",
-        "description" : "Recover HP by 1.5% on the first corner.",
-        "skill_cost" : "170",
-        "points_value" : "217",
-        "points_ratio" : "1.28",
-        "team_trials" : "⭕",
-        "champs_meet" : "⭕",
-        "review" : "Easy to trigger and is a very effective recovery.",
+        "description" : "Recover HP by 1.5%",
+        "conditions":
+        [
+            [
+                "Random point on corner 1/2/3/4"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Consistent and effective recovery that triggers on the first corner.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["corner reco"],
+        "aliases": ["corner reco", "コーナー回復"],
         "upgrade": "Swinging Maestro"
     },
     {   "skill_name" : "Straightaway Adept",
-        "description" : "Increases speed by 0.15 on the first corner for 0.9s. 30s cooldown.",
-        "skill_cost" : "180",
-        "points_value" : "217",
-        "points_ratio" : "1.21",
-        "team_trials" : "Okay",
-        "champs_meet" : "Lacking",
-        "review" : "Easy to trigger, but the duration is half of the corner variant, making it not as useful.",
+        "description" : "Increases speed by 0.15 for 2.4s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on any straight"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review" : "Easy to trigger. Consistent source of points for TT. On CMs with long straights, might be really helpful.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["straight"],
+        "aliases": ["straight adept", "straight skill", "直線巧者"],
         "upgrade": "Beeline Burst"
     },
     {   "skill_name" : "Straightaway Acceleration",
-        "description" : "Increases acceleration by 0.2 for 1.8s on a random straight.",
-        "skill_cost" : "180",
-        "points_value" : "217",
-        "points_ratio" : "1.21",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Easy to trigger for Team Trials but accelerating randomly is not very impactful.",
+        "description" : "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on any straight"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "Easy to trigger for Team Trials but accelerating randomly is not very impactful. On short distance CMs with a few straights, make it an okay gambling skill if cheap.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases": ["straight accel"],
+        "aliases": ["straight accel", "直線加速"],
         "upgrade": "Rushing Gale!"
     },
     {   "skill_name" : "Straightaway Recovery",
-        "description" : "Recover HP by 1.5% on any straight.",
-        "skill_cost" : "170",
-        "points_value" : "217",
-        "points_ratio" : "1.28",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
-        "review" : "It might trigger on an early or late activation, reducing the impact of the stamina recovery.",
+        "description" : "Recover HP by 1.5%",
+        "conditions":
+        [
+            [
+                "Random point on any straight"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "B",
+        "review" : "It might trigger on an early or late activation, largely reducing the impact of the stamina recovery.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["straight reco"],
+        "aliases": ["straight reco", "直線回復"],
         "upgrade": "Breath of Fresh Air"
     },
     {   "skill_name" : "Focus",
-        "description" : "Improved start reaction time by 0.9. Decreases chance of a late start.",
-        "skill_cost" : "140",
-        "points_value" : "129",
-        "points_ratio" : "0.92",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Okay",
-        "review" : "Very helpful for Front Runners. By starting well and placing well, your score in Team Trials can be boosted.",
+        "description" : "Improved start reaction time by 0.9x, decreasing chance of a late start.",
+        "conditions":
+        [
+            [
+                "Always activates (wit check)"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "B",
+        "review" : "By starting well and placing well, your score in TT can be boosted. For CM, only worth taking for Front Runners. Can also wotk to trigger Groundwork.",
         "rarity" : "normal",
         "category" : "focus",
-        "aliases": ["focus"],
+        "aliases": ["focus", "集中力"],
         "upgrade": "Concentration"
     },
     {   "skill_name" : "Lay Low",
-        "description" : "Recover HP by 1.5% if blocked for more than 1s, 5s into the race and in early race phase.",
-        "skill_cost" : "160",
-        "points_value" : "217",
-        "points_ratio" : "1.36",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Early race recovery is not useful. Conditions are also not ideal.",
+        "description" : "Recover HP by 1.5%",
+        "conditions":
+        [
+            [
+                "Blocked in front for 1s or more",
+                "Early race or Mid race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "D",
+        "review" : "Might trigger during the early race, wasting the stamina recovery.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["laylow"],
+        "aliases": ["laylow", "undercover", "隠れ蓑"],
         "upgrade": "Iron Will"
     },
     {   "skill_name" : "Prudent Positioning",
-        "description" : "Increases lane movement speed by 0.025 for 3s during the early race",
-        "skill_cost" : "120",
-        "points_value" : "129",
-        "points_ratio" : "1.07",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
-        "review" : "Doesn't do much. Take if cheap and no other options.",
+        "description" : "Increases lane movement speed by 0.035 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Combined with Dodging Danger lets a Front Runner zoom early race.",
         "rarity" : "normal",
         "category" : "flow",
-        "aliases": ["prudent"],
+        "aliases": ["prudent", "position sense", "ポジションセンス"],
         "upgrade": "Center Stage"
     },
     {   "skill_name" : "Ramp Up",
-        "description" : "Increases speed by 0.15 for 1.8s when overtaking in the mid-race. 30s cooldown.",
-        "skill_cost" : "170",
-        "points_value" : "217",
-        "points_ratio" : "1.28",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 0.15 for 1.8s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Overtaking",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Consistent velocity skill. Really useful when combined with Tail Held High, Slipstream and Playtime's Over!",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["ramp"],
+        "aliases": ["ramp up", "up the pace", "ペースアップ"],
         "upgrade": "It's On!"
     },
     {   "skill_name" : "Pace Strategy",
-        "description" : "Recover HP by 1.5% if overtaken during the mid-race.",
-        "skill_cost" : "170",
-        "points_value" : "217",
-        "points_ratio" : "1.28",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "❌",
+        "description" : "Recover HP by 1.5%.",
+        "conditions":
+        [
+            [
+                "Be overtaken",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
         "review" : "Being overtaken is not an ideal condition.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["pacereco"],
+        "aliases": ["pace reco", "keep the pace", "ペースキープ"],
         "upgrade": "Indomitable"
     },
     {   "skill_name" : "Calm in a Crowd",
-        "description" : "Recover HP by 1.5% if blocked by front and side for at least 1s.",
-        "skill_cost" : "170",
-        "points_value" : "217",
-        "points_ratio" : "1.28",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Unlikely to be boxed in completely for 1s, especially in Champion's Meeting where there are only 9 runners.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions":
+        [
+            [
+                "Surrounded",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "E",
+        "review" : "Unlikely to be boxed in completely for 1s, especially in CM where there are only 9 runners.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["calm"],
+        "aliases": ["calm in a crowd", "crowded calm", "ウマ込み冷静"],
         "upgrade": "Unruffled"
     },
     {   "skill_name" : "Nimble Navigator",
-        "description" : "Increases acceleration by 0.2 and lane movement speed by 0.005 for 3s on the final spurt if blocked for more than 1s.",
-        "skill_cost" : "150",
-        "points_value" : "174",
-        "points_ratio" : "1.16",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Most likely to lose anyways if already blocked for 1s in the final spurt.",
+        "description" : "Increases acceleration by 0.2 and lane movement speed by 0.005 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Behind another uma with at most 1 Length gap for 1s or more",
+                "Last Spurt",
+                "1% or more HP remaining"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Does not need to be blocked now, only behind an uma, making this skill much easier to trigger. Alongside with the lane movement buffs, becomes a strong acceleration if triggered.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases": ["nimblenav"],
+        "aliases": ["nimblenav", "slight detour", "垂れウマ回避"],
         "upgrade": "No Stopping Me!"
     },
     {   "skill_name" : "Go with the Flow",
-        "description" : "Increases lane movement speed by 0.025 for 3s during the late race",
-        "skill_cost" : "120",
-        "points_value" : "129",
-        "points_ratio" : "1.07",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
+        "description" : "Increases lane movement speed by 0.025 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "C",
         "review" : "Doesn't do much. Take if cheap and no other options.",
         "rarity" : "normal",
         "category" : "flow",
-        "aliases": ["go flow"],
+        "aliases": ["go flow", "improvise", "臨機応変"],
         "upgrade": "Lane Legerdemain"
     },
     {   "skill_name" : "Homestretch Haste",
-        "description" : "Increases speed by 0.15 for 1.8s when overtaking in the last spurt.",
-        "skill_cost" : "170",
-        "points_value" : "217",
-        "points_ratio" : "1.28",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Useful additional speed at the final spurt of the race. Might activate too late.",
+        "description" : "Increases speed by 0.15 for 2.4s.",
+        "conditions":
+        [
+            [
+                "Last spurt"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Useful additional speed at the final spurt of the race. Might trigger too late and be less effective.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["home haste"],
+        "aliases": ["home haste", "last leg", "末脚"],
         "upgrade": "In Body and Mind"
     },
     {   "skill_name" : "Early Lead",
-        "description" : "Increases acceleration by 0.2 for 1.2s, 5s into the race and in early race phase.",
-        "skill_cost" : "120",
-        "points_value" : "217",
-        "points_ratio" : "1.81",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
-        "review" : "5s wait time before this triggers might make this skill unnecessary.",
+        "description" : "Increases acceleration by 0.2 for 1.2s.",
+        "conditions":
+        [
+            [
+                "Front Runner",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "A necessary skill to have on Front Runners. Can now trigger Groundwork.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases": ["earlylead"],
+        "aliases": ["early lead", "frontrunner", "先駆け"],
         "upgrade": "Taking the Lead"
     },
     {   "skill_name" : "Fast-Paced",
-        "description" : "Increases speed by 0.15 for 1.8s if first half of the pack during mid-race. (Front Runner)",
-        "skill_cost" : "180",
-        "points_value" : "217",
-        "points_ratio" : "1.21",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Helps front runners maintain/regain their lead.",
+        "description" : "Increases speed by 0.15 for 1.8s.",
+        "conditions":
+        [
+            [
+                "Front Runner",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Helps front runners maintain/regain their lead during the mid race.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["fastpace", "fast paced", "fast pace"],
+        "aliases": ["fastpace", "fast paced", "fast pace", "急ぎ足"],
         "upgrade": "Escape Artist"
     },
     {   "skill_name" : "Final Push",
@@ -1988,142 +2214,179 @@
 
 
     {   "skill_name" : "Professor of Curvature",
-        "description" : "Increases speed by 0.35x on the first corner for 1.8s. 30s cooldown.",
-        "skill_cost" : "360",
-        "points_value" : "508",
-        "points_ratio" : "1.41",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Easy to trigger, good value.",
+        "description" : "Increases speed by 0.35 for 2.4s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger. Consistent source of points for TT. Might be a bit too pricy for what it does in CM.",
         "rarity" : "rare",
         "category" : "goldenvelocity",
-        "aliases": ["prof", "curvature"],
+        "aliases": ["prof", "curvature", "archline professor", "弧線のプロフェッサー"],
         "downgrade": "Corner Adept"
     },
     {   "skill_name": "Corner Connoisseur",
-        "description": "Increases acceleration by 0.4 on the first corner for 1.8s.",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials": "Lacking",
-        "champs_meet": "❌",
-        "review": "Easy to trigger for Team Trials but accelerating on the first corner is not very useful.",
+        "description" : "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on random corner"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "D",
+        "review" : "Easy to trigger for Team Trials but accelerating on random corners is not very useful.",
         "rarity": "rare",
         "category": "goldenaccel",
-        "aliases": ["corner connoisseur"],
+        "aliases": ["corner connoisseur", "curve sommelier", "曲線のソムリエ"],
         "downgrade": "Corner Acceleration"
     },
     {   "skill_name": "Swinging Maestro",
-        "description" : "Recover HP by 5.5% on the first corner.",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "⭕",
-        "champs_meet" : "⭕",
-        "review" : "Easy to trigger and is a very effective recovery.",
+        "description" : "Recover HP by 5.5%",
+        "conditions":
+        [
+            [
+                "Random point on corner 1/2/3/4"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "SS",
+        "review" : "Consistent and effective recovery that triggers on the first corner.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["swinging maestro"],
+        "aliases": ["swinging maestro", "arc maestro", "円弧のマエストロ"],
         "downgrade": "Corner Recovery"
     },
     {   "skill_name": "Beeline Burst",
-        "description" : "Increases speed by 0.35 on the first corner for 0.9s. 30s cooldown.",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "Okay",
-        "champs_meet" : "Lacking",
-        "review" : "Easy to trigger, but the duration is half of the corner variant, making it not as useful.",
+        "description" : "Increases speed by 0.35 for 2.4s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on any straight"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Easy to trigger. Consistent source of points for TT. On CMs with long straights, might be really helpful.",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["beeline burst"],
+        "aliases": ["beeline burst", "like the wind", "ハヤテ一文字"],
         "downgrade": "Straightaway Adept"
     },
     {   "skill_name": "Rushing Gale!",
-        "description" : "Increases acceleration by 0.4 for 1.8s on a random straight.",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Easy to trigger for Team Trials but accelerating randomly is not very impactful.",
+        "description" : "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on any straight"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "Easy to trigger for Team Trials but accelerating randomly is not very impactful. On short distance CMs with a few straights, make it an okay gambling skill if cheap.",
         "rarity": "rare",
         "category": "goldenaccel",
-        "aliases": ["rushing gale"],
+        "aliases": ["rushing gale", "gust of wind", "一陣の風"],
         "downgrade": "Straightaway Acceleration"
     },
     {   "skill_name": "Breath of Fresh Air",
-        "description" : "Recover HP by 5.5% on any straight.",
-        "skill_cost": "170",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
-        "review" : "It might trigger on an early or late activation, reducing the impact of the stamina recovery.",
+        "description" : "Recover HP by 5.5%",
+        "conditions":
+        [
+            [
+                "Random point on any straight"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "B",
+        "review" : "It might trigger on an early or late activation, largely reducing the impact of the stamina recovery.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["breath of fresh air", "bofa"],
+        "aliases": ["breath of fresh air", "bofa", "好転一息"],
         "downgrade": "Straightaway Recovery"
     },
     {   "skill_name": "Concentration",
-        "description" : "Improved start reaction time by 0.4. Decreases chance of a late start.",
-        "skill_cost": "280",
-        "points_value": "394",
-        "points_ratio": "1.41",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Okay",
-        "review" : "Very helpful for Front Runners. By starting well and placing well, your score in Team Trials can be boosted.",
+        "description" : "Improved start reaction time by 0.4x, decreasing chance of a late start.",
+        "conditions":
+        [
+            [
+                "Always activates (wit check)"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "B",
+        "review" : "By starting well and placing well, your score in TT can be boosted. For CM, only worth taking for Front Runners. Can also wotk to trigger Groundwork.",
         "rarity": "rare",
         "category": "goldenfocus",  
-        "aliases": ["concentration"],
+        "aliases": ["concentration", "コンセントレーション"],
         "downgrade": "Focus"
     },
     {   "skill_name": "Iron Will",
-        "description" : "Recover HP by 5.5% if blocked for more than 1s, 5s into the race and in early race phase.",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Early race recovery is not useful. Conditions are also not ideal.",
+        "description" : "Recover HP by 5.5%",
+        "conditions":
+        [
+            [
+                "Blocked in front for 1s or more",
+                "Early race or Mid race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "C",
+        "review" : "Might trigger during the early race, wasting the stamina recovery.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["iron will"],
+        "aliases": ["iron will", "will of steel", "鋼の意志"],
         "downgrade": "Lay Low"
     },
     {   "skill_name": "Center Stage",
-        "description" : "Increases lane movement speed by 0.035 for 3s during the early race",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
-        "review" : "Doesn't do much. Take if cheap and no other options.",
+        "description" : "Increases lane movement speed by 0.045 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
+        "review" : "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill.",
         "rarity": "rare",
         "category": "goldenflow",
-        "aliases": ["center stage"],
+        "aliases": ["center stage", "star of the show", "注目の踊り子"],
         "downgrade": "Prudent Positioning"
     },
     {   "skill_name": "It's On!",
-        "description" : "Increases speed by 0.35 for 1.8s when overtaking in the mid-race. 30s cooldown.",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 035 for 1.8s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Overtake",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Consistent velocity skill. Really useful when combined with Tail Held High, Slipstream and Playtime's Over!",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["its on"],
+        "aliases": ["its on", "now im pumped", "アガッてきた"],
         "downgrade": "Ramp Up"
     },
     {   "skill_name": "Indomitable",
-        "description" : "Recover HP by 5.5% if overtaken during the mid-race.",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "❌",
+        "description" : "Recover HP by 5.5%.",
+        "conditions":
+        [
+            [
+                "Be overtaken",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
         "review" : "Being overtaken is not an ideal condition.",
         "rarity": "rare",
         "category": "goldenrecovery",
@@ -2131,81 +2394,106 @@
         "downgrade": "Pace Strategy"
     },
     {   "skill_name": "Unruffled",
-        "description" : "Recover HP by 5.5% if blocked by front and side for at least 1s.",
-        "skill_cost": "170",
-        "points_value": "508",
-        "points_ratio": "1.49",      
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
+        "description" : "Recover HP by 5.5%.",
+        "conditions":
+        [
+            [
+                "Surrounded",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "E",
         "review" : "Unlikely to be boxed in completely for 1s, especially in Champion's Meeting where there are only 9 runners.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["unruffled"],
+        "aliases": ["unruffled", "where the wind blows", "どこ吹く風"],
         "downgrade": "Calm in a Crowd"
     },
     {   "skill_name": "No Stopping Me!",
-        "description" : "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3s on the final spurt if blocked for more than 1s.",
-        "skill_cost": "300",
-        "points_value": "394",
-        "points_ratio": "1.31",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Most likely to lose anyways if already blocked for 1s in the final spurt.",
+        "description" : "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Behind another uma with at most 1 Length gap for 1s or more",
+                "Last Spurt",
+                "1% or more HP remaining"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "SS",
+        "review" : "Does not need to be blocked now, only behind an uma, making this skill much easier to trigger. Alongside with the lane movement buffs, becomes a strong acceleration if triggered.",
         "rarity": "rare",
         "category": "goldenaccel",
-        "aliases": ["no stopping me"],
+        "aliases": ["no stopping me", "nonstop girl", "ノンストップガール"],
         "downgrade": "Nimble Navigator"
     },
     {   "skill_name": "Lane Legerdemain",
-        "description" : "Increases lane movement speed by 0.035 for 3s during the late race",
-        "skill_cost": "120",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
+        "description" : "Increases lane movement speed by 0.035 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "C",
         "review" : "Doesn't do much. Take if cheap and no other options.",
         "rarity": "rare",
         "category": "goldenflow",
-        "aliases": ["lane legerdemain"],
+        "aliases": ["lane legerdemain", "magician of the lane", "レーンの魔術師"],
         "downgrade": "Go with the Flow"
     },
     {   "skill_name" : "In Body and Mind",
-        "description" : "Increases speed by 0.35 for 1.8s when overtaking in the last spurt.",
-        "skill_cost" : "340",
-        "points_value" : "508",
-        "points_ratio" : "1.49",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Useful additional speed at the final spurt of the race. Might activate too late.",
+        "description" : "Increases speed by 0.35 for 2.4s.",
+        "conditions":
+        [
+            [
+                "Overtaking",
+                "Last spurt"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Useful additional speed at the final spurt of the race. Might trigger too late and be less effective.",
         "rarity" : "rare",
         "category" : "goldenvelocity",
-        "aliases": ["body and mind"],
+        "aliases": ["body and mind", "heart and soul", "全身全霊"],
         "downgrade": "Homestretch Haste"
     },
     {   "skill_name" : "Taking the Lead",
-        "description" : "Increases acceleration by 0.4 for 1.2s, 5s into the race and in early race phase. (Front Runner)",
-        "skill_cost" : "240",
-        "points_value" : "334",
-        "points_ratio" : "1.39",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
-        "review" : "5s wait time before this triggers might make this skill unnecessary.",
+        "description" : "Increases acceleration by 0.4 for 1.2s.",
+        "conditions":
+        [
+            [
+                "Front Runner",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "A necessary skill to have on Front Runners. Can now trigger Groundwork.",
         "rarity" : "rare",
         "category" : "goldenaccel",
-        "aliases": ["take lead"],
+        "aliases": ["take the lead", "taking lead", "fortune favors the fast", "先手必勝"],
         "downgrade": "Early Lead"
     },
     {   "skill_name" : "Escape Artist",
-        "description" : "Increases speed by 0.35 for 1.8s if first half of the pack during mid-race. (Front Runner)",
-        "skill_cost" : "360",
-        "points_value" : "508",
-        "points_ratio" : "1.41",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Helps front runners maintain/regain their lead.",
+        "description" : "Increases speed by 0.35 for 1.8s.",
+        "conditions":
+        [
+            [
+                "Front Runner",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Helps front runners maintain/regain their lead during the mid race.",
         "rarity" : "rare",
         "category" : "goldenvelocity",
-        "aliases": ["escpae artist"],
+        "aliases": ["escpae artist", "脱出術"],
         "downgrade": "Fast-Paced"
     },
     {   "skill_name" : "Unrestrained",
@@ -3328,40 +3616,49 @@
     },
 
     {   "skill_name" : "Corner Adept x",
-        "description" : "Reduces speed by 0.2 on the first corner for 1.8s. 30s cooldown.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-0.57",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "It is bad. Why are you reading this?",
+        "description" : "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on random corner"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity": "normal",
         "category" : "velocitynegative",
-        "aliases": ["corner x"]
+        "aliases": ["corner x", "clever cornerer x", "コーナー巧者 x"]
     },
     {   "skill_name" : "Corner Acceleration x",
-        "description" : "Reduces acceleration by 0.2 on the first corner for 1.8s. 30s cooldown.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-0.57",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "It is bad. Why are you reading this?",
+        "description" : "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
+        "conditions":
+        [
+            [
+                "Random point on random corner"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "accelnegative",
-        "aliases": ["corner accel x"]
+        "aliases": ["corner accel x", "コーナー加速 x"]
     },
     {   "skill_name" : "Corner Recovery x",
-        "description" : "Reduce HP by 2% on the first corner.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-0.60",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "It is bad. Why are you reading this?",
+        "description" : "Recover HP by 2%",
+        "conditions":
+        [
+            [
+                "Random point on corner 1/2/3/4"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "SS",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recoverynegative",
-        "aliases": ["corner reco x"]
+        "aliases": ["corner reco x", "ーナー回復 x"]
     },
     {   "skill_name" : "Ramp Revulsion",
         "description" : "Reduce HP by 2% on uphills.",

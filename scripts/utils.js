@@ -579,7 +579,7 @@ export function buildSkillEmbed(skill, supporterList) {
     conditionValue = skill.conditions
       .map((group, index) => {
         if (skill.conditions.length > 1) {
-          return `__Condition ${index + 1}:__\n- ${group.join('\n- ')}`;
+          return `__Condition ${index + 1}__\n- ${group.join('\n- ')}`;
         } else {
           return `- ${group.join('\n- ')}`;
         }
