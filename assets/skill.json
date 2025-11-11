@@ -1004,128 +1004,178 @@
         "upgrade": "Turbo Sprint"
     },
     {   "skill_name" : "Wait-and-See",
-        "description" : "Recover HP by 1.5% if last half of the pack during mid-race. (Sprint)",
-        "skill_cost" : "160",
-        "points_value" : "217",
-        "points_ratio" : "1.36",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
-        "review" : "Only for Late Surgers and End Closers. Okay recovery skill",
+        "description" : "Recover HP by 1.5%. Increases acceleration by 0.1 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["wait and see"]
+        "aliases": ["wait and see", "様子見"]
     },
     {   "skill_name": "Gap Closer",
-        "description": "Increases speed by 0.15 for 3.0s, if last half of the pack during late-race. (Sprint)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "Recommended",
-        "champs_meet": "Okay",
-        "review": "An okay speed boost for a late surger.",
+        "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review": "An okay speed and acceleration boost for a sprint Late Surger.",
         "rarity": "normal",
         "category": "velocity",
-        "aliases": ["gap closer"],
+        "aliases": ["gap closer", "draw forward", "詰め寄り"],
         "upgrade": "Blinding Flash"
     },
     {   "skill_name": "Productive Plan",
-        "description": "Increases speed by 0.15 for 3.0s, if in the lead during early-race. (Mile)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "Early race speed boost is not impactful as the uma has not reached the target speeds yet.",
+        "description": "Increases speed by 0.15 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
-        "aliases": ["productive plan"],
+        "aliases": ["productive plan", "positive planning", "積極策"],
         "upgrade": "Mile Maven"
     },
     {   "skill_name" : "Watchful Eye",
-        "description" : "Recover HP by 1.5% if last half of the pack, 5s into the race and in early race phase. (Mile)",
-        "skill_cost" : "160",
-        "points_value" : "217",
-        "points_ratio" : "1.36",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Early race recovery is not useful.",
+        "description": "Recover HP by 1.5%. Reduces speed of all umas ahead by 0.05.",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Second half of early race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review": "An effective mile debuff skill with a decent recovery.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["watchful eye"],
+        "aliases": ["watchful eye", "progress peak", "展開窺い"],
         "upgrade": "Keen Eye"
     },
     {   "skill_name": "Updrafters",
-        "description": "Increases acceleration by 0.2 for 3.0s, if last half of the pack during the late-race . (Mile)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "Okay",
-        "champs_meet": "Recommended",
-        "review": "Only usable by late surgers. Activates at a random point in the late race, so it may not be impactful",
+        "description": "Increases acceleration by 0.2 for 3.0s",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "SS",
+        "review": "Gambling acceleration skill for Late Surgers and End Closers. Might be ineffective if not triggering at the right moment.",
         "rarity": "normal",
         "category": "accel",
-        "aliases": ["updrafters"],
+        "aliases": ["updrafters", "updraft", "上昇気流"],
         "upgrade": "Furious Feat"
     },
     {   "skill_name" : "Rosy Outlook",
-        "description" : "Recover HP by 1.5% if in 1st place during mid-race. (Medium)",
-        "skill_cost" : "160",
-        "points_value" : "217",
-        "points_ratio" : "1.36",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
-        "review" : "Being first is not a consistent condition.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "1st - 3rd place",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "A",
+        "review" : "Somewhat consistent recovery for Front Runners. Gambling on Pace Chasers.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["rosy"],
+        "aliases": ["rosy outlook", "bright future", "前途洋々"],
         "upgrade": "Trackblazer"
     },
     {   "skill_name": "Up-Tempo",
-        "description": "Increases speed by 0.15 for 0.9s if first half of the pack during mid-race. (Medium)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "Okay",
-        "champs_meet": "Not Recommended",
-        "review": "Consistent but 0.9s duration is too short to be impactful.",
+        "description": "Increases speed by 0.15 for 2.4s.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review": "Consistent and somewhat impactful skill to take now that the duration is 2.4s.",
         "rarity": "normal",
         "category": "velocity",
-        "aliases": ["up tempo", "uptempo"],
+        "aliases": ["up tempo", "uptempo", "テンポアップ"],
         "upgrade": "Killer Tunes"
     },
     {   "skill_name": "Steadfast",
-        "description": "Increases speed by 0.15 for 3s if overtaken on the final corner. (Medium)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "Okay",
-        "champs_meet": "Not Recommended",
-        "review": "Consistent but might not be beneficial depending on the final corner/ last spurt mode.",
+        "description": "Increases speed by 0.15 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "Be overtaken",
+                "Final corner"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "B",
+        "review": "A bandaid when you lose the lead on the final corner. Could save you a win but probably not.",
         "rarity": "normal",
         "category": "velocity",
-        "aliases": ["steadfast"],
+        "aliases": ["steadfast", "stand your ground", "食い下がり"],
         "upgrade": "Unyielding"
     },
     {   "skill_name" : "Deep Breaths",
-        "description" : "Recover HP by 1.5% on any straight. (Long)",
-        "skill_cost" : "160",
-        "points_value" : "217",
-        "points_ratio" : "1.36",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
+        "description" : "Recover HP by 1.5%.",
+        "conditions":
+        [
+            [
+                "Long",
+                "Straight"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "B",
         "review" : "It might trigger on an early or late activation, reducing the impact of the stamina recovery.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["deep breath"],
+        "aliases": ["deep breaths", "深呼吸"],
         "upgrade": "Cooldown"
     },
     {   "skill_name": "Inside Scoop",
         "description": "Increases speed by 0.15 for 3s if beside the inner fence on the final corner. (Long)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "Lacking",
-        "champs_meet": "Recommended",
+        "description": "Increases acceleration by 0.2 for 3.0s",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "SS",
         "review": "Consistency for Team Trials is lacking but decent for Champion's Meeting Long.",
         "rarity": "normal",
         "category": "velocity",
@@ -1134,11 +1184,17 @@
     },
     {   "skill_name" : "Extra Tank",
         "description" : "Recover HP by 1.5% if hp drops to 0. (Long)",
-        "skill_cost" : "160",
-        "points_value" : "217",
-        "points_ratio" : "1.36",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
+        "description": "Increases acceleration by 0.2 for 3.0s",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "SS",
         "review" : "If hp drops to 0, you are already dead.",
         "rarity" : "normal",
         "category" : "recovery",
@@ -1147,11 +1203,17 @@
     },
     {   "skill_name" : "Trick (Front)",
         "description" : "Reduces HP by 1% for rushed umas behind, if first half of the pack.",
-        "skill_cost" : "140",
-        "points_value" : "217",
-        "points_ratio" : "1.55",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Recommended",
+        "description": "Increases acceleration by 0.2 for 3.0s",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "SS",
         "review" : "1% HP reduction doesn't do much if they are already rushed.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
@@ -1159,11 +1221,17 @@
     },
     {   "skill_name" : "Trick (Rear)",
         "description" : "Reduces HP by 1% for rushed umas ahead, if last half of the pack.",
-        "skill_cost" : "140",
-        "points_value" : "217",
-        "points_ratio" : "1.55",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Recommended",
+        "description": "Increases acceleration by 0.2 for 3.0s",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "SS",
         "review" : "1% HP reduction doesn't do much if they are already rushed.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
@@ -2748,107 +2816,146 @@
         "downgrade": "Sprinting Gear"
     },
     {   "skill_name": "Blinding Flash",
-        "description": "Increases speed by 0.35 for 3.0s, if last half of the pack during late-race. (Sprint)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials": "Recommended",
-        "champs_meet": "Okay",
-        "review": "An okay speed boost for a late surger.",
+        "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review": "An okay speed and acceleration boost for a sprint Late Surger.",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["blinding flash"],
+        "aliases": ["blinding flash", "jolt of energy", "電撃の煌めき"],
         "downgrade": "Gap Closer"
     },
     {   "skill_name": "Mile Maven",
-        "description": "Increases speed by 0.35 for 3.0s, if in the lead during early-race. (Mile)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "Early race speed boost is not impactful as the uma has not reached the target speeds yet.",
+        "description": "Increases speed by 0.35 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": ["mile maven"],
         "downgrade": "Productive Plan"
     },
     {   "skill_name": "Keen Eye",
-        "description" : "Recover HP by 5.5% if last half of the pack, 5s into the race and in early race phase. (Mile)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Early race recovery is not useful.",
+        "description": "Recover HP by 5.5%. Reduces speed of all umas ahead by 0.2.",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Second half of early race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review": "An effective mile debuff skill with a decent recovery.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["keen eye", "慧眼"],
+        "aliases": ["keen eye", "keen insight", "慧眼"],
         "downgrade": "Watchful Eye"
     },
     {   "skill_name": "Furious Feat",
-        "description": "Increases acceleration by 0.4 for 3.0s, if last half of the pack during the late-race . (Mile)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials": "Okay",
-        "champs_meet": "Recommended",
-        "review": "Only usable by late surgers. Activates at a random point in the late race, so it may not be impactful.",
+        "description": "Increases acceleration by 0.4 for 3.0s",
+        "conditions":
+        [
+            [
+                "Mile",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "SS",
+        "review": "Gambling acceleration skill for Late Surgers and End Closers. Might be ineffective if not triggering at the right moment.",
         "rarity": "rare",
         "category": "goldenaccel",
-        "aliases": ["furious feat"],
+        "aliases": ["furious feat", "big strides", "豪脚"],
         "downgrade": "Updrafters"
     },
     {   "skill_name": "Trackblazer",
-        "description" : "Recover HP by 5.5% if in 1st place during mid-race. (Medium)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
-        "review" : "Being first is not a consistent condition.",
+        "description" : "Recover HP by 5.5%.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "1st - 3rd place",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Somewhat consistent recovery for Front Runners. Gambling on Pace Chasers.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["trackblazer", "切り開く者"],
+        "aliases": ["trackblazer", "trailblazer", "切り開く者"],
         "downgrade": "Rosy Outlook"
     },
     {   "skill_name": "Killer Tunes",
-        "description": "Increases speed by 0.35 for 0.9s if first half of the pack during mid-race. (Medium)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials": "Okay",
-        "champs_meet": "Not Recommended",
-        "review": "Consistent but 0.9s duration is too short to be impactful.",
+        "description": "Increases speed by 0.35 for 2.4s.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review": "Consistent and somewhat impactful skill to take now that the duration is 2.4s.",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["killer tunes"],
+        "aliases": ["killer tunes", "killer tune", "キラーチューン"],
         "downgrade": "Up-Tempo"
     },
     {   "skill_name": "Unyielding",
-        "description": "Increases speed by 0.35 for 3s if overtaken on the final corner. (Medium)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials": "Okay",
-        "champs_meet": "Not Recommended",
-        "review": "Consistent but might not be beneficial depending on the final corner/ last spurt mode.",
+        "description": "Increases speed by 0.35 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "Be overtaken",
+                "Final corner"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "B",
+        "review": "A bandaid when you lose the lead on the final corner. Could save you a win but probably not.",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["unyielding"],
+        "aliases": ["unyielding", "to victory", "勝利への執念"],
         "downgrade": "Steadfast"
     },
     {   "skill_name": "Cooldown",
-        "description" : "Recover HP by 5.5% on any straight. (Long)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",         
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
+        "description" : "Recover HP by 5.5%.",
+        "conditions":
+        [
+            [
+                "Long",
+                "Straight"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "B",
         "review" : "It might trigger on an early or late activation, reducing the impact of the stamina recovery.",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["cooldown"],
+        "aliases": ["cooldown", "クールダウン"],
         "downgrade": "Deep Breaths"
     },
     {   "skill_name": "Innate Experience",
@@ -3754,7 +3861,7 @@
         "aliases": ["corner accel x", "コーナー加速 x"]
     },
     {   "skill_name" : "Corner Recovery x",
-        "description" : "Recover HP by 2%",
+        "description" : "Reduce HP by 2%",
         "conditions":
         [
             [
