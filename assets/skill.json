@@ -1164,290 +1164,361 @@
         "upgrade": "Cooldown"
     },
     {   "skill_name": "Inside Scoop",
-        "description": "Increases speed by 0.15 for 3s if beside the inner fence on the final corner. (Long)",
-        "description": "Increases acceleration by 0.2 for 3.0s",
+        "description": "Increases speed by 0.15 for 3.0s.",
         "conditions":
         [
             [
-                "Mile",
-                "50% or worse (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
+                "Long",
+                "Beside the inner fence",
+                "Final corner"
             ]
         ],
         "team_trials" : "A",
-        "champs_meet" : "SS",
-        "review": "Consistency for Team Trials is lacking but decent for Champion's Meeting Long.",
+        "champs_meet" : "A",
+        "review": "Useful on tracks where the final corner is right before last spurt mode. Take for the appropriate CMs.",
         "rarity": "normal",
         "category": "velocity",
-        "aliases": ["inside scoop", "内弁慶"],
+        "aliases": ["inside scoop", "king of the castle", "内弁慶"],
         "upgrade": "Innate Experience"
     },
     {   "skill_name" : "Extra Tank",
-        "description" : "Recover HP by 1.5% if hp drops to 0. (Long)",
-        "description": "Increases acceleration by 0.2 for 3.0s",
+        "description" : "Recover HP by 1.5%.",
         "conditions":
         [
             [
-                "Mile",
-                "50% or worse (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
+                "Long",
+                "HP drops to 30% or lower"
             ]
         ],
-        "team_trials" : "A",
-        "champs_meet" : "SS",
-        "review" : "If hp drops to 0, you are already dead.",
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases": ["extra tank"],
+        "aliases": ["extra tank", "backup belly", "別腹タンク"],
         "upgrade": "Adrenaline Rush"
     },
     {   "skill_name" : "Trick (Front)",
-        "description" : "Reduces HP by 1% for rushed umas behind, if first half of the pack.",
-        "description": "Increases acceleration by 0.2 for 3.0s",
+        "description" : "Reduces HP by 1% for rushed umas behind.",
         "conditions":
         [
             [
-                "Mile",
-                "50% or worse (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "1 or more rushed umas behind you",
+                "Mid race"
             ]
         ],
         "team_trials" : "A",
-        "champs_meet" : "SS",
-        "review" : "1% HP reduction doesn't do much if they are already rushed.",
+        "champs_meet" : "A",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["trick front"]
+        "aliases": ["trick front", "トリック（前）"]
     },
     {   "skill_name" : "Trick (Rear)",
-        "description" : "Reduces HP by 1% for rushed umas ahead, if last half of the pack.",
-        "description": "Increases acceleration by 0.2 for 3.0s",
+        "description" : "Reduces HP by 1% for rushed umas ahead.",
         "conditions":
         [
             [
-                "Mile",
                 "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "1 or more rushed umas ahead of you",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "",
+        "rarity" : "normal",
+        "category" : "recoverydebuff",
+        "aliases": ["trick rear", "トリック（後）"]
+    },
+    {   "skill_name" : "Frenzied Front Runners",
+        "description" : "Increased rush duration by 5.0s for Front Runners.",
+        "conditions":
+        [
+            [
+                "A rushed Front Runner exists.",
+                "You are not rushed."
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Extra 5s of rush may destroy an uma's stamina.",
+        "rarity" : "normal",
+        "category" : "frenzy",
+        "aliases": ["frenzy front", "frenzied front", "frantic runners", "逃げ駆け引き"]
+    },  
+    {   "skill_name" : "Frenzied Pace Chasers",
+        "description" : "Increased rush duration by 5.0s for Pace Chasers.",
+        "conditions":
+        [
+            [
+                "A rushed Pace Chaser exists.",
+                "You are not rushed."
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Extra 5s of rush may destroy an uma's stamina.",
+        "rarity" : "normal",
+        "category" : "frenzy",
+        "aliases": ["frenzy pace", "frenzied pace", "frantic leaders", "先行駆け引き"]
+    },
+    {   "skill_name" : "Frenzied Late Surgers",
+        "description" : "Increased rush duration by 5.0s for Late Surgers.",
+        "conditions":
+        [
+            [
+                "A rushed Late Surger exists.",
+                "You are not rushed."
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Extra 5s of rush may destroy an uma's stamina.",
+        "rarity" : "normal",
+        "category" : "frenzy",
+        "aliases": ["frenzy late", "frenzied late", "frantic betweeners", "差し駆け引き"]
+    },
+    {   "skill_name" : "Frenzied End Closers",
+        "description" : "Increased rush duration by 5.0s for End Closer.",
+        "conditions":
+        [
+            [
+                "A rushed End Closer exists.",
+                "You are not rushed."
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Extra 5s of rush may destroy an uma's stamina.",
+        "rarity" : "normal",
+        "category" : "frenzy",
+        "aliases": ["frenzy end", "frenzied end", "frantic chasers", "追込駆け引き"]
+    },
+    {   "skill_name" : "Subdued Front Runners",
+        "description" : "Reduces HP by 1% for Front Runners.",
+        "conditions":
+        [
+            [
+                "1 or more Front Runners excluding you",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other Front Runners.",
+        "rarity" : "normal",
+        "category" : "recoverydebuff",
+        "aliases": ["subdue front", "subdued front", "restrained runners", "逃げけん制"]
+    },
+    {   "skill_name" : "Flustered Front Runners",
+        "description" : "Reduces HP by 1% for Front Runners.",
+        "conditions":
+        [
+            [
+                "1 or more Front Runners excluding you",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other Front Runners.",
+        "rarity" : "normal",
+        "category" : "recoverydebuff",
+        "aliases": ["fluster front", "flustered front", "panicked runners", "逃げ焦り"]
+    },
+    {   "skill_name" : "Hesitant Front Runners",
+        "description" : "Reduces speed by 0.15 for Front Runners.",
+        "conditions":
+        [
+            [
+                "1 or more Front Runners excluding you",
                 "Late race"
             ]
         ],
         "team_trials" : "A",
-        "champs_meet" : "SS",
-        "review" : "1% HP reduction doesn't do much if they are already rushed.",
-        "rarity" : "normal",
-        "category" : "recoverydebuff",
-        "aliases": ["trick rear"]
-    },
-    {   "skill_name" : "Frenzied Front Runners",
-        "description" : "Increased rush duration by 5s for front runners.",
-        "skill_cost" : "130",
-        "points_value" : "174",
-        "points_ratio" : "1.34",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Extra 5s of rush may destroy an uma's stamina.",
-        "rarity" : "normal",
-        "category" : "frenzy",
-        "aliases": ["frenzy front"]
-    },  
-    {   "skill_name" : "Frenzied Pace Chasers",
-        "description" : "Increased rush duration by 5s for pace chasers.",
-        "skill_cost" : "130",
-        "points_value" : "174",
-        "points_ratio" : "1.34",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Extra 5s of rush may destroy an uma's stamina.",
-        "rarity" : "normal",
-        "category" : "frenzy",
-        "aliases": ["frenzy pace"]
-    },
-    {   "skill_name" : "Frenzied Late Surgers",
-        "description" : "Increased rush duration by 5s for late surgers.",
-        "skill_cost" : "130",
-        "points_value" : "174",
-        "points_ratio" : "1.34",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Extra 5s of rush may destroy an uma's stamina.",
-        "rarity" : "normal",
-        "category" : "frenzy",
-        "aliases": ["frenzy late"]
-    },
-    {   "skill_name" : "Frenzied End Closers",
-        "description" : "Increased rush duration by 5s for end closers.",
-        "skill_cost" : "130",
-        "points_value" : "174",
-        "points_ratio" : "1.34",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Extra 5s of rush may destroy an uma's stamina.",
-        "rarity" : "normal",
-        "category" : "frenzy",
-        "aliases": ["frenzy end"]
-    },
-    {   "skill_name" : "Subdued Front Runners",
-        "description" : "Reduces HP by 1% for front runners, 5s into the race during the early-race.",
-        "skill_cost" : "140",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from front runners.",
-        "rarity" : "normal",
-        "category" : "recoverydebuff",
-        "aliases": ["subdue front"]
-    },
-    {   "skill_name" : "Flustered Front Runners",
-        "description" : "Reduces HP by 1% for front runners, during the mid-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from front runners.",
-        "rarity" : "normal",
-        "category" : "recoverydebuff",
-        "aliases": ["fluster front"]
-    },
-    {   "skill_name" : "Hesitant Front Runners",
-        "description" : "Reduces speed by 0.15 for front runners, during the late-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces speed from front runners during the late race, which may be super impactful.",
+        "champs_meet" : "S",
+        "review" : "Easy to trigger and reduces speed during the late race, which may help your ace eke out a victory.",
         "rarity" : "normal",
         "category" : "velocitydebuff",
-        "aliases": ["hesitant front"]
+        "aliases": ["hesitant front", "faltering runners", "逃げためらい"]
     },
     {   "skill_name" : "Subdued Pace Chasers",
-        "description" : "Reduces HP by 1% for pace chasers, 5s into the race during the early-race.",
-        "skill_cost" : "140",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from pace chasers.",
+        "description" : "Reduces HP by 1% for Pace Chasers.",
+        "conditions":
+        [
+            [
+                "1 or more Pace Chasers excluding you",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other Pace Chasers.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["subdue pace"]
+        "aliases": ["subdue pace", "subdued pace", "restrained leaders", "先行けん制"]
     },
     {   "skill_name" : "Flustered Pace Chasers",
-        "description" : "Reduces HP by 1% for pace chasers, during the mid-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from pace chasers.",
+        "description" : "Reduces HP by 1% for Pace Chasers.",
+        "conditions":
+        [
+            [
+                "1 or more Pace Chasers excluding you",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other Pace Chasers.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["fluster pace"]
+        "aliases": ["fluster pace", "flustered pace", "panicked leaders", "先行焦り"]
     },
     {   "skill_name" : "Hesitant Pace Chasers",
-        "description" : "Reduces speed by 0.15 for pace chasers, during the late-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces speed from pace chasers during the late race, which may be super impactful.",
+        "description" : "Reduces speed by 0.15 for Pace Chasers.",
+        "conditions":
+        [
+            [
+                "1 or more Pace Chasers excluding you",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review" : "Easy to trigger and reduces speed during the late race, which may help your ace eke out a victory.",
         "rarity" : "normal",
         "category" : "velocitydebuff",
-        "aliases": ["hesitant pace"]
+        "aliases": ["hesitant pace", "faltering leaders", "先行ためらい"]
     },
     {   "skill_name" : "Subdued Late Surgers",
-        "description" : "Reduces HP by 1% for late surgers, 5s into the race during the early-race.",
-        "skill_cost" : "140",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from late surgers.",
+        "description" : "Reduces HP by 1% for Late Surgers.",
+        "conditions":
+        [
+            [
+                "1 or more Late Surgers excluding you",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other Late Surgers.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["subdue late"]
+        "aliases": ["subdue late", "subdued late", "restrained betweeners", "差しけん制"]
     },
     {   "skill_name" : "Flustered Late Surgers",
-        "description" : "Reduces HP by 1% for late surgers, during the mid-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from late surgers.",
+        "description" : "Reduces HP by 1% for Late Surgers.",
+        "conditions":
+        [
+            [
+                "1 or more Late Surgers excluding you",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other Late Surgers.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["fluster late"]
+        "aliases": ["fluster late", "flustered late", "panicked betweeners", "差し焦り"]
     },
     {   "skill_name" : "Hesitant Late Surgers",
-        "description" : "Reduces speed by 0.15 for late surgers, during the late-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces speed from late surgers during the late race, which may be super impactful.",
+        "description" : "Reduces speed by 0.15 for Late Surgers.",
+        "conditions":
+        [
+            [
+                "1 or more Late Surgers excluding you",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review" : "Easy to trigger and reduces speed during the late race, which may help your ace eke out a victory.",
         "rarity" : "normal",
         "category" : "velocitydebuff",
-        "aliases": ["hesitant late"]
+        "aliases": ["hesitant front", "faltering betweeners", "差しためらい"]
     },
     {   "skill_name" : "Subdued End Closers",
-        "description" : "Reduces HP by 1% for end closers, 5s into the race during the early-race.",
-        "skill_cost" : "140",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from end closers.",
+        "description" : "Reduces HP by 1% for End Closers.",
+        "conditions":
+        [
+            [
+                "1 or more End Closers excluding you",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other End Closers.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["subdue end"]
+        "aliases": ["subdue end", "subdued end", "restrained chasers", "追込けん制"]
     },
     {   "skill_name" : "Flustered End Closers",
-        "description" : "Reduces HP by 1% for end closers, during the mid-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces HP from end closers.",
+        "description" : "Reduces HP by 1% for End Closers.",
+        "conditions":
+        [
+            [
+                "1 or more End Closers excluding you",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Easy to trigger and reduces HP from other End Closers.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
-        "aliases": ["fluster end"]
+        "aliases": ["fluster end", "flustered end", "panicked chasers", "追込焦り"]
     },
     {   "skill_name" : "Hesitant End Closers",
-        "description" : "Reduces speed by 0.15 for end closers, during the late-race.",
-        "skill_cost" : "130",
-        "points_value" : "217",
-        "points_ratio" : "1.67",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Easy to trigger and reduces speed from end closers during the late race, which may be super impactful.",
+        "description" : "Reduces speed by 0.15 for End Closers.",
+        "conditions":
+        [
+            [
+                "1 or more End Closers excluding you",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review" : "Easy to trigger and reduces speed during the late race, which may help your ace eke out a victory.",
         "rarity" : "normal",
         "category" : "velocitydebuff",
-        "aliases": ["hesitant end"]
+        "aliases": ["hesitant end", "faltering chasers", "追込ためらい"]
     },
     {   "skill_name" : "Sprint Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (Sprint)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "Straight"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
         "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["sprint straightway"]
+        "aliases": ["sprint straightway", "short distance straights"]
     },
     {   "skill_name" : "Sprint Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Sprint)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "Random point on corner 1/2/3/4"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
         "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
         "rarity" : "normal",
         "category" : "velocity",
@@ -2959,29 +3030,38 @@
         "downgrade": "Deep Breaths"
     },
     {   "skill_name": "Innate Experience",
-        "description": "Increases speed by 0.35 for 3s if beside the inner fence on the final corner. (Long)",
-        "skill_cost": "320",
-        "points_value": "50",
-        "points_ratio": "1.59",
-        "team_trials": "Lacking",
-        "champs_meet": "Recommended",
-        "review": "Consistency for Team Trials is lacking but decent for Champion's Meeting Long.",
+        "description": "Increases speed by 0.35 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Long",
+                "Beside the inner fence",
+                "Final corner"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review": "Useful on tracks where the final corner is right before last spurt mode. Take for the appropriate CMs.",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["innate experience"],
+        "aliases": ["innate experience", "intrinsic experience", "内的体験"],
         "downgrade": "Inside Scoop"
     },
     {   "skill_name": "Adrenaline Rush",
-        "description" : "Recover HP by 5.5% if hp drops to 0. (Long)",
-        "skill_cost": "160",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "If hp drops to 0, you are already dead.",
+        "description" : "Recover HP by 5.5%.",
+        "conditions":
+        [
+            [
+                "Long",
+                "HP drops to 30% or lower"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review" : "",
         "rarity": "rare",
         "category": "goldenrecovery",
-        "aliases": ["adrenaline rush", "火事場のバ鹿力"],
+        "aliases": ["adrenaline rush", "fight or flight", "火事場のバ鹿力"],
         "downgrade": "Extra Tank"
     },
     {   "skill_name": "Staggering Lead",
