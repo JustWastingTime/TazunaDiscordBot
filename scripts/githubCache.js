@@ -15,15 +15,15 @@ const cache = {
 
 // GitHub raw URLs
 const urls = {
-  supporters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/supporter.json',
-  skills: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/skill.json',
-  events: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/event.json',
-  characters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/character.json',
-  races: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/races.json',
-  champsmeets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/champsmeet.json',
-  legendraces: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/legendrace.json',
-  schedule: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/schedule.json',
-  misc: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/refs/heads/main/assets/misc.json',
+  supporters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/supporter.json',
+  skills: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/skill.json',
+  events: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/event.json',
+  characters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/character.json',
+  races: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/races.json',
+  champsmeets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/champsmeet.json',
+  legendraces: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/legendrace.json',
+  schedule: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/schedule.json',
+  misc: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/misc.json',
 };
 
 // Function to fetch a JSON file
