@@ -1503,10 +1503,10 @@
         ],
         "team_trials" : "SS",
         "champs_meet" : "SS",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["sprint straightway", "short distance straights"]
+        "aliases": ["sprint straightway", "short distance straights", "短距離直線"]
     },
     {   "skill_name" : "Sprint Corners",
         "description" : "Increases speed by 0.15/0.25 for 3.0s.",
@@ -1519,70 +1519,97 @@
         ],
         "team_trials" : "SS",
         "champs_meet" : "SS",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases": ["sprint corners"]
+        "aliases": ["sprint corners", "short distance corners", "短距離コーナー"]
     },
     {   "skill_name": "Huge Lead",
-        "description": "Increases speed by 0.15 for 1.2s if in the lead by 12.5m during the mid-race. (Sprint)",
-        "skill_cost": "170",
-        "points_value": "262",
-        "points_ratio": "1.54",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "12.5m lead is an unrealistic condition to meet.",
+        "description": "Increases speed by 0.15 for 3.0s.",
+        "conditions":
+        [
+            [
+                "1st place",
+                "3 Lengths ahead or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "D",
+        "review": "3 lengths lead is a difficult condition to meet.",
         "rarity": "normal",
         "category": "velocity",
-        "aliases": ["huge lead"],
+        "aliases": ["huge lead", "big lead", "大きなリード"],
         "upgrade": "Staggering Lead"
     },
     {   "skill_name": "Countermeasure",
-        "description": "Increases acceleration by 0.2 for 3s, if first half of the pack but not first, on a random straight during the mid-race. (Sprint)",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials": "Not Recommended",
-        "champs_meet": "❌",
-        "review": "Mid-race acceleration is not very impactful.",
+        "description": "Increases acceleration by 0.2 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "2nd to 5th (CM), 2nd to 6th (TT)",
+                "Random straight",
+                "Second half of mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review": "If this skill triggers right before the late race starts, can help your uma zoom faster.",
         "rarity": "normal",
         "category": "accel",
-        "aliases": ["countermeasure"],
+        "aliases": ["countermeasure", "countermeasures", "善後策"],
         "upgrade": "Plan X"
     },
     {   "skill_name": "Meticulous Measures",
-        "description": "Increases lane movement speed by 0.025 and accekeration by 0.2 for 3.0s during the mid-race. (Sprint)",
-        "skill_cost": "140",
-        "points_value": "174",
-        "points_ratio": "1.24",
-        "team_trials": "Lacking",
-        "champs_meet": "Not Recommended",
-        "review": "Lane movement speed is not very impactful currently and mid-race acceleration is not very impactful.",
+        "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "D",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
         "rarity": "normal",
         "category": "flow",
-        "aliases": ["meticulous measures"],
+        "aliases": ["meticulous measures", "calculated preparations", "仕掛け準備"],
         "upgrade": "Perfect Prep!"
     },
     {   "skill_name": "Intimidate",
-        "description": "Reduces speed by 0.2 for 3.0s for all umas behind, if first three during the early-race, at least 5s into the race. (Sprint)",
-        "skill_cost": "170",
-        "points_value": "262",
-        "points_ratio": "1.54",
-        "team_trials": "Okay",
-        "champs_meet": "Okay",
-        "review": "Might not activate if early race is too short.",
+        "description": "Reduces speed by 0.2 for 3.0s for all umas behind.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review": "Strong speed debuff skill. Might not activate due to 5s buffer time.",
         "rarity": "normal",
         "category": "velocitydebuff",
-        "aliases": ["intimidate", "後方釘付"],
+        "aliases": ["intimidate", "final nail", "後方釘付"],
         "upgrade": "Adored by All"
     },
     {   "skill_name": "Stop Right There!",
         "description": "Reduces HP by 1% for all umas ahead, if last half of the pack, at least 5s into the race during the early-race. (Sprint)",
-        "skill_cost": "170",
-        "points_value": "262",
-        "points_ratio": "1.54",
-        "team_trials": "Lacking",
-        "champs_meet": "Lacking",
+        "description": "Increases speed by 0.15 for 3.0s.",
+        "conditions":
+        [
+            [
+                "1st place",
+                "3 Lengths ahead or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "D",
         "review": "Only works for sprint late surgers and end closers.",
         "rarity": "normal",
         "category": "recoverydebuff",
@@ -1590,25 +1617,33 @@
         "upgrade": "You've Got No Shot"
     },
     {   "skill_name" : "Mile Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (Mile)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Mile",
+                "Random straight"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases": ["mile straightway"]
     },
     {   "skill_name" : "Mile Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Mile)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Mile",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases": ["mile corners"]
@@ -1679,25 +1714,33 @@
         "upgrade": "Battle Formation"
     },
     {   "skill_name" : "Medium Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (Medium)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "Random straight"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases": ["medium straightway"]
     },
     {   "skill_name" : "Medium Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Medium)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Medium",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases": ["medium corners"]
@@ -1768,25 +1811,33 @@
         "upgrade": "Mystifying Murmur"
     },
     {   "skill_name" : "Long Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (Long)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Long",
+                "Random straight"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases": ["long straightway"]
     },
     {   "skill_name" : "Long Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Long)",
-        "skill_cost" : "100/210",
-        "points_value" : "217/262",
-        "points_ratio" : "2.17/1.25",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Long",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases": ["long corners"]
@@ -3065,55 +3116,76 @@
         "downgrade": "Extra Tank"
     },
     {   "skill_name": "Staggering Lead",
-        "description": "Increases speed by 0.35 for 1.2s if in the lead by 12.5m during the mid-race. (Sprint)",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials": "❌",
-        "champs_meet": "❌",
-        "review": "12.5m lead is an unrealistic condition to meet.",
+        "description": "Increases speed by 0.35 for 3.0s.",
+        "conditions":
+        [
+            [
+                "1st place",
+                "3 Lengths ahead or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "D",
+        "review": "3 lengths lead is a difficult condition to meet.",
         "rarity": "rare",
         "category": "goldenvelocity",
-        "aliases": ["huge lead"],
-        "downgrade": "Staggering Lead"
+        "aliases": ["staggering lead", "overwhelming lead", "圧倒的リード"],
+        "downgrade": "Huge Lead"
     },
     {   "skill_name": "Plan X",
-        "description": "Increases acceleration by 0.4 for 3s, if first half of the pack but not first, on a random straight during the mid-race. (Sprint)",
-        "skill_cost": "320",
-        "points_value": "508",
-        "points_ratio": "1.59",
-        "team_trials": "Not Recommended",
-        "champs_meet": "❌",
-        "review": "Mid-race acceleration is not very impactful.",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "2nd to 5th (CM), 2nd to 6th (TT)",
+                "Random straight",
+                "Second half of mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review": "If this skill triggers right before the late race starts, can help your uma zoom faster.",
         "rarity": "rare",
         "category": "goldenaccel",
-        "aliases": ["plan x"],
+        "aliases": ["plan x", "プランX"],
         "downgrade": "Countermeasure"
     },
     {   "skill_name": "Perfect Prep!",
-        "description": "Increases lane movement speed by 0.035 and accekeration by 0.4 for 3.0s during the mid-race. (Sprint)",
-        "skill_cost": "280",
-        "points_value": "394",
-        "points_ratio": "1.41",
-        "team_trials": "Lacking",
-        "champs_meet": "Not Recommended",
-        "review": "Lane movement speed is not very impactful currently and mid-race acceleration is not very impactful.",
+        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "D",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
         "rarity": "rare",
         "category": "goldenflow",
-        "aliases": ["perfect prep"],
+        "aliases": ["perfect prep", "flawless preparation", "準備万全"],
         "downgrade": "Meticulous Measures"
     },
     {   "skill_name": "Adored by All",
-        "description": "Heavily intimidate runners behind when positioned toward the front early-race. (Sprint)",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials": "Okay",
-        "champs_meet": "Okay",
-        "review": "Might not activate if early race is too short.",
+        "description": "Reduces speed by 0.25 for 3.0s for all umas behind.",
+        "conditions":
+        [
+            [
+                "Sprint",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review": "Strong speed debuff skill. Might not activate due to 5s buffer time.",
         "rarity": "rare",
         "category": "goldenvelocitydebuff",
-        "aliases": ["adored by all"],
+        "aliases": ["adored by all", "bewitching", "悩殺術"],
         "downgrade": "Intimidate"
     },
     {   "skill_name": "You've Got No Shot",
