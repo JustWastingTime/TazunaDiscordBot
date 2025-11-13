@@ -663,8 +663,8 @@
             ]
         ],
         "team_trials" : "B",
-        "champs_meet" : "S",
-        "review" : "Combined with Dodging Danger lets a Front Runner zoom early race.",
+        "champs_meet" : "SS",
+        "review" : "Combined with Dodging Danger lets a Front Runner zoom early race. Do not upgrade if using the combo.",
         "rarity" : "normal",
         "category" : "flow",
         "aliases" : ["prudent", "position sense", "ポジションセンス"],
@@ -1999,103 +1999,143 @@
         "aliases" : ["front runner straightway", "runners straights", "逃げ直線"]
     },
     {   "skill_name" : "Front Runner Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Front Runner)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["front corners"]
+        "aliases" : ["front runner corners", "runners corners", "逃げコーナー"]
     },
     {   "skill_name" : "Dodging Danger",
-        "description" : "Increases lane movement speed by 0.025 for 3.0s, if blocked in any direction longer than 1s, during the early-race. (Front Runner)",
-        "skill_cost": "110",
-        "points_value": "129",
-        "points_ratio": "1.17",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "Lane movement speed is not very impactful currently.",
+        "description" : "Increases lane movement speed by 0.025 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Blocked in any direction for 1s or more",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "SS",
+        "review" : "Combined with Prudent Positioning / Ignition Spirit WIT lets a Front Runner zoom early race. Do not upgrade if using the combo.",
         "rarity" : "normal",
         "category" : "flow",
-        "aliases" : ["sixth sense"],
+        "aliases" : ["dodging danger", "danger avoidance", "危険回避"],
         "upgrade": "Sixth Sense"
     },
     {   "skill_name" : "Leader's Pride",
-        "description" : "Increases speed by 0.15 for 3.0s when overtaken, at least 5s into the race, during the early-race. (Front Runner)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Recommended",
-        "review" : "Only take this on a front runner if you have groundwork (and the three skills to trigger it). With groundwork, you can hit your early target speed and this skill will help you fight for first position.",
+        "description" : "Increases speed by 0.15 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Be overtaken OR blocked from the side",
+                "Early race or Mid race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "A",
+        "review" : "Helps a Front Runner retake or contest the lead during the early - mid race. Works more consistently the longer the track.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["leaders pride"]
+        "aliases" : ["leaders pride", "lead pride", "先頭プライド"],
+        "upgrade" : "Top Runner (TO BE RENAMED)"
     },
     {   "skill_name" : "Moxie",
-        "description" : "Recover HP by 1.5% on an uphill at least 10s after the race starts. (Front Runner)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Uphill",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "A",
         "review" : "Map based skill. Useful when the uphill is in the middle of the race.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases" : ["moxie"],
+        "aliases" : ["moxie", "leave it to vigor", "勢い任せ"],
         "upgrade": "Restless"
     },
     {   "skill_name" : "Second Wind",
-        "description" : "Increases acceleration by 0.2 for 3.0s, if last half of the pack during the mid-race. (Front Runner)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Second half of the pack as a front runner? You are already dead.",
+        "description" : "Increases acceleration by 0.2 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "2nd or worse",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "E",
+        "review" : "Mid race acceleration is not great. Unlikely to catch up to the actual front with this.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["second wind", "二の矢"],
+        "aliases" : ["second wind", "next steps", "二の矢"],
         "upgrade": "Reignition"
     },
     {   "skill_name" : "Restart",
-        "description" : "Reduces acceleration by 0.1 for 3.0s to all umas ahead, if last half of the pack, 5s into race during the early-race. (Front Runner)",
-        "skill_cost": "130",
-        "points_value": "217",
-        "points_ratio": "1.67",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
-        "review" : "Hard to trigger due to the 5s penalty. Might be useful on a Haru Urara front runner debuff build.",
+        "description" : "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "2nd or worse",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "C",
+        "review" : "Might not trigger at the right moment due to the 5s buffer.",
         "rarity" : "normal",
         "category" : "acceldebuff",
         "aliases" : ["restart", "リスタート"]
     },
     {   "skill_name" : "Pace Chaser Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (Pace Chaser)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["pace straightway"]
+        "aliases" : ["pace chaser straightway", "leaders straights", "先行直線"]
     },
     {   "skill_name" : "Pace Chaser Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Pace Chaser)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["pace corners"]
+        "aliases" : ["pace chaser corners", "leaders corners", "先行コーナー"]
     },
     {   "skill_name" : "Shrewd Step",
         "description" : "Increases acceleration by 0.2 for 1.8s when changing lanes. (Pace Chaser)",
@@ -2163,25 +2203,33 @@
         "upgrade": "Dazzling Disorientation"
     },
     {   "skill_name" : "Late Surger Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (Late Surger)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases" : ["late straightway"]
     },
     {   "skill_name" : "Late Surger Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (Late Surger)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases" : ["late corners"]
@@ -2252,25 +2300,33 @@
         "upgrade": "All-Seeing Eyes"
     },
     {   "skill_name" : "End Closer Straightaways",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on any straight. (End Closer)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases" : ["end straightway"]
     },
     {   "skill_name" : "End Closer Corners",
-        "description" : "Increases speed by 0.15/0.25 for 3.0s on the first corner. (End Closer)",
-        "skill_cost" : "130/270",
-        "points_value" : "217/262",
-        "points_ratio" : "1.67/0.97",
-        "team_trials" : "⭕",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Cheap, easy to trigger. Good value. Take one level only for Team Trials.",
+        "description" : "Increases speed by 0.15/0.25 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Random corner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
         "aliases" : ["end corners"]
@@ -3558,42 +3614,76 @@
         "downgrade": "Smoke Screen"
     },
     {   "skill_name" : "Sixth Sense",
-        "description" : "Increases lane movement speed by 0.035 for 3.0s, if blocked in any direction longer than 1s, during the early-race. (Front Runner)",
-        "skill_cost": "220",
-        "points_value": "334",
-        "points_ratio": "1.52",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "Lane movement speed is not very impactful currently.",
+        "description" : "Increases lane movement speed by 0.035 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Blocked in any direction for 1s or more",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
+        "review" : "The speed from Sixth Sense is higher than Dodging Danger and instead bricks the combo with Prudent Positioning. If you're looking to do the Dodging Danger strat, avoid upgrading this skill.",
         "rarity" : "rare",
         "category" : "goldenflow",
-        "aliases" : ["dodging danger"],
-        "downgrade": "Sixth Sense"
+        "aliases" : ["sixth sense", "シックスセンス"],
+        "downgrade": "Dodging Danger"
+    },
+    {   "skill_name" : "Top Runner (TO BE RENAMED)",
+        "description" : "Increases speed by 0.35 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Be overtaken OR blocked from the side",
+                "Early race or Mid race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "A",
+        "review" : "Helps a Front Runner retake or contest the lead during the early - mid race. Works more consistently the longer the track.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["top runner", "トップランナー"],
+        "downgrade" : "Leader's Pride"
     },
     {   "skill_name" : "Restless",
-        "description" : "Recover HP by 5.5% on an uphill at least 10s after the race starts. (Front Runner)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
+        "description" : "Recover HP by 5.5%.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "Uphill",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "A",
         "review" : "Map based skill. Useful when the uphill is in the middle of the race.",
         "rarity" : "rare",
         "category" : "goldenrecovery",
-        "aliases" : ["restless"],
+        "aliases" : ["restless", "wild girl", "じゃじゃウマ娘"],
         "downgrade": "Moxie"
     },
     {   "skill_name" : "Reignition",
-        "description" : "Increases acceleration by 0.4 for 3.0s, if last half of the pack during the mid-race. (Front Runner)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Second half of the pack as a front runner? You are already dead.",
+        "description" : "Increases acceleration by 0.2 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Front Runner",
+                "2nd or worse",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "E",
+        "review" : "Mid race acceleration is not great. Unlikely to catch up to the actual front with this.",
         "rarity" : "rare",
         "category" : "goldenaccel",
-        "aliases" : ["reignition"],
+        "aliases" : ["reignition", "recombustion", "再燃焼"],
         "downgrade": "Second Wind"
     },
     {   "skill_name" : "Technician",
