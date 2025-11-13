@@ -529,7 +529,7 @@
         "conditions":
         [
             [
-                "Random point on corner 1/2/3/4"
+                "Random corner"
             ]
         ],
         "team_trials" : "A",
@@ -545,7 +545,7 @@
         "conditions":
         [
             [
-                "Random point on corner 1/2/3/4"
+                "Random corner"
             ]
         ],
         "team_trials" : "B",
@@ -577,7 +577,7 @@
         "conditions":
         [
             [
-                "Random point on any straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "A",
@@ -593,7 +593,7 @@
         "conditions":
         [
             [
-                "Random point on any straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "B",
@@ -609,7 +609,7 @@
         "conditions":
         [
             [
-                "Random point on any straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "A",
@@ -1498,7 +1498,7 @@
         [
             [
                 "Sprint",
-                "Straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "SS",
@@ -1514,7 +1514,7 @@
         [
             [
                 "Sprint",
-                "Random point on corner 1/2/3/4"
+                "Random corner"
             ]
         ],
         "team_trials" : "SS",
@@ -2411,7 +2411,7 @@
         "conditions":
         [
             [
-                "Random point on random corner"
+                "Random corner"
             ]
         ],
         "team_trials" : "SS",
@@ -2427,7 +2427,7 @@
         "conditions":
         [
             [
-                "Random point on random corner"
+                "Random corner"
             ]
         ],
         "team_trials" : "A",
@@ -2459,7 +2459,7 @@
         "conditions":
         [
             [
-                "Random point on any straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "S",
@@ -2475,7 +2475,7 @@
         "conditions":
         [
             [
-                "Random point on any straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "B",
@@ -2491,7 +2491,7 @@
         "conditions":
         [
             [
-                "Random point on any straight"
+                "Random straight"
             ]
         ],
         "team_trials" : "A",
