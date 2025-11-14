@@ -2138,68 +2138,90 @@
         "aliases" : ["pace chaser corners", "leaders corners", "先行コーナー"]
     },
     {   "skill_name" : "Shrewd Step",
-        "description" : "Increases acceleration by 0.2 for 1.8s when changing lanes. (Pace Chaser)",
-        "skill_cost": "120",
-        "points_value": "217",
-        "points_ratio": "1.81",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
+        "description" : "Increases acceleration by 0.2 for 3.0.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Changing lanes"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "C",
         "review" : "Easy to trigger for Team Trials. However this will likely trigger mid-race where acceleration is not impactful.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["shrewd step"],
+        "aliases" : ["shrewd step", "clever step", "巧みなステップ"],
         "upgrade": "Technician"
     },
     {   "skill_name" : "Straight Descent",
-        "description" : "Increases acceleration by 0.2 for 3.0s on a random downhill. (Pace Chaser)",
-        "skill_cost": "120",
-        "points_value": "217",
-        "points_ratio": "1.81",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Very impactful on tracks where the downhill is right before the last spurt, to carry over more speed and acceleration.",
+        "description" : "Increases acceleration by 0.2 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Random downhill"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "S",
+        "review" : "Very impactful on tracks where the downhill is right before the last spurt.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["straight descent"],
+        "aliases" : ["straight descent", "straight down", "直滑降"],
         "upgrade": "Determined Descent"
     },
     {   "skill_name" : "Hydrate",
-        "description" : "Recovers HP by 1.5% during the mid-race. (Pace Chaser)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Good and consistent recovery skill for a pace chaser.",
+        "description" : "Recovers HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Good and consistent recovery skill for a Pace Chaser.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases" : ["hydrate"],
+        "aliases" : ["hydrate", "nutritional supplements", "栄養補給"],
         "upgrade": "Gourmand"
     },
     {   "skill_name" : "Tactical Tweak",
-        "description" : "Increases acceleration by 0.2 for 3.0s, if last half of the pack during the mid-race. (Pace Chaser)",
-        "skill_cost": "120",
-        "points_value": "217",
-        "points_ratio": "1.81",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "Mid-race acceleration is not very impactful.",
+        "description" : "Increases acceleration by 0.2 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "40% or worse (5th or worse in CM, 6th or worse in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
+        "review" : "Mid race acceleration is not very impactful. An okay filler for TT points.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["tactical tweak", "まき直し"],
+        "aliases" : ["tactical tweak", "redo", "まき直し"],
         "upgrade": "Shatterproof"
     },
     {   "skill_name" : "Disorient",
-        "description" : "Reduces FoV by 3 for 3.0s for all umas behind you, if first half of the pack during the late-race. (Pace Chaser)",
-        "skill_cost": "110",
-        "points_value": "85",
-        "points_ratio": "0.77",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "❌",
+        "description" : "Reduces FoV by 3 for 3.0s for all umas behind you.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "E",
         "review" : "FoV is a useless stat to debuff. May help against umas that require FoV such as Nice Nature debuff build.",
         "rarity" : "normal",
         "category" : "visiondebuff",
-        "aliases" : ["disorient", "かく乱"],
+        "aliases" : ["disorient", "peturbation", "かく乱"],
         "upgrade": "Dazzling Disorientation"
     },
     {   "skill_name" : "Late Surger Straightaways",
@@ -2216,7 +2238,7 @@
         "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["late straightway"]
+        "aliases" : ["late surger straightway", "betweeners straights", "差し直線"]
     },
     {   "skill_name" : "Late Surger Corners",
         "description" : "Increases speed by 0.15/0.25 for 3.0s.",
@@ -2232,68 +2254,91 @@
         "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["late corners"]
+        "aliases" : ["late surger corners", "betweeners corners", "差しコーナー"]
     },
     {   "skill_name" : "Fighter",
-        "description" : "Increases acceleration by 0.2 for 3.0s when there is an overtake target, at least 5s into the race. (Late Surger)",
-        "skill_cost": "120",
-        "points_value": "217",
-        "points_ratio": "1.81",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "Mid-race acceleration is not very impactful.",
+        "description" : "Increases acceleration by 0.2 for 4.0s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Overtake target exists",
+                "Late race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
+        "review" : "Mid race acceleration is not very impactful.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["fighter"],
+        "aliases" : ["fighter", "hard worker", "がんばり屋"],
         "upgrade": "Hard Worker"
     },
     {   "skill_name" : "1,500,000 CC",
-        "description" : "Increases speed by 0.15 for 1.8s on a random uphill. (Late Surger)",
-        "skill_cost": "120",
-        "points_value": "217",
-        "points_ratio": "1.81",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Increases speed by 0.15 for 2.4s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Random uphill"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Cheap and consistent. Good for maps with uphills.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["10,000 bariki", "1500000 cc", "150万cc", "15000 cc"],
+        "aliases" : ["10000 bariki", "1500000 cc", "十万バリキ", "15000 cc", "100k horsepower"],
         "upgrade": "15,000,000 CC"
     },
     {   "skill_name" : "A Small Breather",
-        "description" : "Recover HP by 1.5% during the late-race. (Late Surger)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
-        "review" : "Late race recovery is ineffective due to last spurt mechanics. Only useful after 1st year anniversary update.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases" : ["a small breather", "小休憩"],
+        "aliases" : ["a small breather", "a little break", "小休憩"],
         "upgrade": "Relax"
     },
-    {    "skill_name" : "Studious",
-        "description" : "Increases FoV by 5 for 3.0s during the mid-race. (Late Surger)",
-        "skill_cost": "120",
-        "points_value": "85",
-        "points_ratio": "0.71",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Extra FoV makes your uma see further ahead, but narrows your immediate lateral vision. Increases your chances of getting boxed.",
+    {   "skill_name" : "Studious",
+        "description" : "Increases FoV by 5 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "D",
+        "review" : "Extra FoV is not very impactful unless you need for extra debuff range.",
         "rarity" : "normal",
         "category" : "vision",
-        "aliases" : ["studious", "読解力"],
+        "aliases" : ["studious", "reading comprehension", "読解力"],
         "upgrade": "The Bigger Picture"
     },
     {   "skill_name" : "Sharp Gaze",
-        "description" : "Reduces HP by 1% for all umas within PoV, if last half of the pack during the late-race. (Late Surger)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Strong stamina debuff that works well on late surgers like Nice Nature.",
+        "description" : "Reduces HP by 1% for all umas within PoV.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Strong stamina debuff.",
         "rarity" : "normal",
         "category" : "recoverydebuff",
         "aliases" : ["sharp gaze", "鋭い眼光"],
@@ -2313,7 +2358,7 @@
         "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["end straightway"]
+        "aliases" : ["end closer straightway", "chasers straights", "追込直線"]
     },
     {   "skill_name" : "End Closer Corners",
         "description" : "Increases speed by 0.15/0.25 for 3.0s.",
@@ -2329,169 +2374,219 @@
         "review" : "Cheap, easy to trigger. Good value. For TT, only take one level. For CM, take 2 if affordable.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["end corners"]
+        "aliases" : ["end closer corners", "chasers corners", "追込コーナー"]
     },
     {   "skill_name" : "I Can See Right Through You",
-        "description" : "Increases FoV by 5 for 3.0s when changing lanes. (End Closer)",
-        "skill_cost": "110",
-        "points_value": "85",
-        "points_ratio": "0.77",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
-        "review" : "Extra FoV makes your uma see further ahead, but narrows your immediate lateral vision. Increases your chances of getting boxed.",
+        "description" : "Increases FoV by 5 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Changing lanes"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "E",
+        "review" : "Extra FoV is not very impactful unless you need for extra debuff range.",
         "rarity" : "normal",
         "category" : "vision",
-        "aliases" : ["i can see right thru u"],
+        "aliases" : ["i can see right thru u", "see right through", "お見通し"],
         "upgrade": "The Coast Is Clear!"
     },
     {   "skill_name" : "After-School Stroll",
-        "description" : "Recover HP by 1.5% on a downhill, at least 10s after the race starts. (End Closer)",
-        "skill_cost": "170",
-        "points_value": "217",
-        "points_ratio": "1.28",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Downhill",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "B",
         "review" : "Map based skill. Useful when the downhill is in the middle of the race.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases" : ["after school stroll"],
+        "aliases" : ["after school stroll", "winding down", "下校の楽しみ"],
         "upgrade": "Go-Home Specialist"
     },
     {   "skill_name" : "Levelheaded",
-        "description" : "Recover HP by 1.5% when blocked in front for 1s, at least 10s after the race starts. (End Closer)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Okay",
-        "champs_meet" : "Lacking",
-        "review" : "Getting blocked as an end closer is pretty consistent. However, there are probably better recovery skills to take.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Blocked in front for 1s or more",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "C",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases" : ["levelheaded"],
+        "aliases" : ["levelheaded", "serene", "冷静"],
         "upgrade": "Serenity"
     },
     {   "skill_name" : "Strategist",
-        "description" : "Increases FoV by 5 if last half of the pack during late-race. (End Closer)",
-        "skill_cost": "110",
-        "points_value": "85",
-        "points_ratio": "0.77",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Extra FoV makes your uma see further ahead, but narrows your immediate lateral vision. Increases your chances of getting boxed.",
+        "description" : "Increases FoV by 5.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "D",
+        "review" : "Extra FoV is not very impactful unless you need for extra debuff range.",
         "rarity" : "normal",
         "category" : "vision",
-        "aliases" : ["strategist", "策士"],
+        "aliases" : ["strategist", "tactician", "策士"],
         "upgrade": "Crusader"
     },
     {   "skill_name" : "Intense Gaze",
-        "description" : "Reduces speed by 0.15 for 3.0s to all umas within FoV when not 1st place during late-race. (End Closer)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Okay",
-        "review" : "Limited by your FoV, which may not impact consistently. Better than nothing.",
+        "description" : "Reduces speed by 0.15 for 3.0s to all umas within FoV.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Not 1st place",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "Limited by your FoV, which may not impact consistently.",
         "rarity" : "normal",
         "category" : "velocitydebuff",
-        "aliases" : ["intense gaze", "まなざし"],
+        "aliases" : ["intense gaze", "sightlines", "まなざし"],
         "upgrade": "Petrifying Gaze"
     },
     {   "skill_name" : "Front Runner Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10. (Front Runner)",
-        "skill_cost": "110/130",
-        "points_value": "174/217",
-        "points_ratio": "1.58/0.90",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Okay",
-        "review" : "Consistent activation for Team Trials. Just take one level. For Champion's Meet, take if you need the extra wit.",
+        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "conditions" :
+        [
+            [
+                "Front Runner"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "S",
+        "review" : "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
         "rarity" : "normal",
         "category" : "gate",
-        "aliases" : ["front savvy"]
+        "aliases" : ["front runner savvy", "runners tricks", "逃げのコツ"]
     },
     {   "skill_name" : "Pace Chaser Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10. (Pace Chaser)",
-        "skill_cost": "110/130",
-        "points_value": "174/217",
-        "points_ratio": "1.58/0.90",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Okay",
-        "review" : "Consistent activation for Team Trials. Just take one level. For Champion's Meet, take if you need the extra wit.",
+        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "S",
+        "review" : "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
         "rarity" : "normal",
         "category" : "gate",
-        "aliases" : ["pace savvy"]
+        "aliases" : ["pace chaser savvy", "leaders tricks", "先行のコツ"]
     },
     {   "skill_name" : "Late Surger Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10. (Late Surger)",
-        "skill_cost": "110/130",
-        "points_value": "174/217",
-        "points_ratio": "1.58/0.90",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Okay",
-        "review" : "Consistent activation for Team Trials. Just take one level. For Champion's Meet, take if you need the extra wit.",
+        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "conditions" :
+        [
+            [
+                "Late Surger"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "S",
+        "review" : "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
         "rarity" : "normal",
         "category" : "gate",
-        "aliases" : ["late savvy"]
+        "aliases" : ["late surger savvy", "betweeners tricks", "差しのコツ"]
     },
     {   "skill_name" : "End Closer Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10. (End Closer)",
-        "skill_cost": "110/130",
-        "points_value": "174/217",
-        "points_ratio": "1.58/0.90",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Okay",
-        "review" : "Consistent activation for Team Trials. Just take one level. For Champion's Meet, take if you need the extra wit.",
+        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "conditions" :
+        [
+            [
+                "End Closer"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "S",
+        "review" : "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
         "rarity" : "normal",
         "category" : "gate",
-        "aliases" : ["end savvy"]
+        "aliases" : ["end closer savvy", "chasers tricks", "追込のコツ"]
     },
     {   "skill_name" : "Lucky Seven",
-        "description" : "Increases speed, stamina and power by a value of 40 when in bracket 7. 50% chance to trigger.",
-        "skill_cost": "110",
-        "points_value": "174",
-        "points_ratio": "1.58",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Relying on being in bracket 7 and a coin flip is a very bad gamble.",
+        "description" : "Increases speed, stamina and power stat by 40",
+        "conditions" :
+        [
+            [
+                "Bracket 7",
+                "50% chance to activate"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "E",
+        "review" : "Relying on being in bracket 7 is a big gamble. It also comes with a coinflip of activating even if you're in bracket 7.",
         "rarity" : "normal",
         "category" : "super7",
-        "aliases" : ["lucky 7", "lucky seven"],
+        "aliases" : ["lucky 7", "lucky seven", "ラッキーセブン"],
         "upgrade": "Super Lucky Seven"
     },
     {   "skill_name" : "Triple 7s",
-        "description" : "Recover HP by 1.5% when 777m remaining in the race.",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials" : "Okay",
-        "champs_meet" : "Okay",
-        "review" : "Consistent activation, only effective on tracks with less than 2400m. Helpful to control where Christmas Oguri triggers her unique skill.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "777m remaining"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "Consistent activation, but most effective on tracks shorter than 2400m.",
         "rarity" : "normal",
         "category" : "recovery",
-        "aliases" : ["triple 7", "777"]
+        "aliases" : ["triple 7", "777", "スリーセブン"]
     },
     {   "skill_name" : "Highlander",
-        "description" : "Increases acceleration by 0.2 for 3.0s on an uphill.",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Very impactful on tracks where the uphill is right before the last spurt, to carry over more speed and acceleration.",
+        "description" : "Increases acceleration by 0.2 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Random uphill"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "S",
+        "review" : "Very impactful on tracks where the uphill is right before the last spurt.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["highlander", "登山家"]
+        "aliases" : ["highlander", "mountain climber", "登山家"]
     },
     {   "skill_name" : "Uma Stan",
-        "description" : "Increases speed by 0.15 for 3.0s when there are 4 to 7 umas within 3 meters ahead/behind and/or within 3 lanes to either side.",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Lacking",
-        "review" : "Awkward to trigger due to bad conditions. May trigger in bad phases as it is unlikely to be near 4-7 horses at the speed part of final spurt.",
+        "description" : "Increases speed by 0.15 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "3 or more umas within 3 meters and/or 3 lanes",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Can break through PDM on some tracks. Consider taking mid race speed skills as well to continuously break PDM.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["uma stan", "ウマ好み"],
+        "aliases" : ["uma stan", "big fan", "ウマ好み"],
         "upgrade": "Uma Mania"
     },
     {   "skill_name" : "Groundwork",
@@ -3687,224 +3782,301 @@
         "downgrade": "Second Wind"
     },
     {   "skill_name" : "Technician",
-        "description" : "Increases acceleration by 0.3 for 1.8s when changing lanes. (Pace Chaser)",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
+        "description" : "Increases acceleration by 0.3 for 3.0.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Changing lanes"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "C",
         "review" : "Easy to trigger for Team Trials. However this will likely trigger mid-race where acceleration is not impactful.",
         "rarity" : "rare",
         "category" : "goldenaccel",
-        "aliases" : ["technician"],
+        "aliases" : ["technician", "技巧派"],
         "downgrade": "Shrewd Step"
     },
     {   "skill_name" : "Determined Descent",
-        "description" : "Increases acceleration by 0.3 for 3.0s on a random downhill. (Pace Chaser)",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Okay",
-        "champs_meet" : "Recommended",
-        "review" : "Very impactful on tracks where the downhill is right before the last spurt, to carry over more speed and acceleration.",
+        "description" : "Increases acceleration by 0.3 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Random downhill"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "S",
+        "review" : "Very impactful on tracks where the downhill is right before the last spurt.",
         "rarity" : "rare",
         "category" : "goldenaccel",
-        "aliases" : ["determined descent"],
+        "aliases" : ["determined descent", "straight down resolution", "決意の直滑降"],
         "downgrade": "Straight Descent"
     },
     {   "skill_name" : "Gourmand",
-        "description" : "Recovers HP by 5.5% during the mid-race. (Pace Chaser)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Good and consistent recovery skill for a pace chaser.",
+        "description" : "Recovers HP by 5.5%.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "SS",
+        "review" : "Good and consistent recovery skill for a Pace Chaser.",
         "rarity" : "rare",
         "category" : "goldenrecovery",
-        "aliases" : ["gourmand"],
+        "aliases" : ["gourmand", "big eater"],
         "downgrade": "Hydrate"
     },
     {   "skill_name" : "Shatterproof",
-        "description" : "Increases acceleration by 0.3 for 3.0s, if last half of the pack during the mid-race. (Pace Chaser)",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "Mid-race acceleration is not very impactful.",
+        "description" : "Increases acceleration by 0.3 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "40% or worse (5th or worse in CM, 6th or worse in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
+        "review" : "Mid race acceleration is not very impactful. An okay filler for TT points.",
         "rarity" : "rare",
         "category" : "goldenaccel",
-        "aliases" : ["Shatterproof"],
+        "aliases" : ["Shatterproof", "unbreakable spirit", "くじけぬ精神"],
         "downgrade": "Tactical Tweak"
     },
     {   "skill_name" : "Dazzling Disorientation",
-        "description" : "Reduces FoV by 3 for 3.0s for all umas behind you, if first half of the pack during the late-race. (Pace Chaser)",
-        "skill_cost": "220",
-        "points_value": "334",
-        "points_ratio": "1.52",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "❌",
+        "description" : "Reduces FoV by 5 for 3.0s for all umas behind you.",
+        "conditions" :
+        [
+            [
+                "Pace Chaser",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "E",
         "review" : "FoV is a useless stat to debuff. May help against umas that require FoV such as Nice Nature debuff build.",
         "rarity" : "rare",
         "category" : "goldenvisiondebuff",
-        "aliases" : ["dazzling disorient"],
+        "aliases" : ["dazzling disorientation", "glamorous peturbation", "幻惑のかく乱"],
         "downgrade": "Disorient"
     },
     {   "skill_name" : "Hard Worker",
-        "description" : "Increases acceleration by 0.3 for 3.0s when there is an overtake target, at least 5s into the race. (Late Surger)",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
+        "description" : "Increases acceleration by 0.3 for 4.0s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Overtake target exists",
+                "Late race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
         "review" : "Mid-race acceleration is not very impactful.",
         "rarity" : "rare",
         "category" : "goldenaccel",
-        "aliases" : ["hard worker"],
+        "aliases" : ["hard worker", "laborious", "努力家"],
         "downgrade": "Fighter"
     },
     {   "skill_name" : "15,000,000 CC",
-        "description" : "Increases speed by 0.35 for 1.8s on a random uphill. (Late Surger)",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Increases speed by 0.35 for 2.4s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Random uphill"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Cheap and consistent. Good for maps with uphills.",
         "rarity" : "rare",
         "category" : "goldenvelocity",
-        "aliases" : ["100,000 bariki", "15000000 cc", "15000 cc"],
+        "aliases" : ["100000 bariki", "15000000 cc", "15000 cc", "1m horsepower", "百万バリキ"],
         "downgrade": "1,500,000 CC"
     },
     {   "skill_name" : "Relax",
-        "description" : "Recover HP by 5.5% during the late-race. (Late Surger)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
-        "review" : "Late race recovery is ineffective due to last spurt mechanics. Only useful after 1st year anniversary update.",
+        "description" : "Recover HP by 5.5%.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review" : "",
         "rarity" : "rare",
         "category" : "goldenrecovery",
         "aliases" : ["relax"],
         "downgrade": "A Small Breather"
     },
     {    "skill_name" : "The Bigger Picture",
-        "description" : "Increases FoV by 15 for 3.0s during the mid-race. (Late Surger)",
-        "skill_cost": "240",
-        "points_value": "334",
-        "points_ratio": "1.39",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Extra FoV makes your uma see further ahead, but narrows your immediate lateral vision. Increases your chances of getting boxed.",
+        "description" : "Increases FoV by 15 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "D",
+        "review" : "Extra FoV is not very impactful unless you need for extra debuff range.",
         "rarity" : "rare",
         "category" : "goldenvision",
-        "aliases" : ["bigger picture"],
+        "aliases" : ["bigger picture", "seeing the big picture", "大局観"],
         "downgrade": "Studious"
     },
     {   "skill_name" : "All-Seeing Eyes",
-        "description" : "Reduces HP by 3% for all umas within PoV, if last half of the pack during the late-race. (Late Surger)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Strong stamina debuff that works well on late surgers like Nice Nature.",
+        "description" : "Reduces HP by 3% for all umas within PoV.",
+        "conditions" :
+        [
+            [
+                "Late Surger",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "S",
+        "review" : "Strong stamina debuff.",
         "rarity" : "rare",
         "category" : "goldenrecoverydebuff",
-        "aliases" : ["all seeing eyes"],
+        "aliases" : ["all seeing eyes", "watching all directions", "八方にらみ"],
         "downgrade": "Sharp Gaze"
     },
     {   "skill_name" : "The Coast Is Clear!",
-        "description" : "Increases FoV by 10 for 3.0s when changing lanes. (End Closer)",
-        "skill_cost": "220",
-        "points_value": "334",
-        "points_ratio": "1.52",
-        "team_trials" : "Okay",
-        "champs_meet" : "Not Recommended",
-        "review" : "Extra FoV makes your uma see further ahead, but narrows your immediate lateral vision. Increases your chances of getting boxed.",
+        "description" : "Increases FoV by 10 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Changing lanes"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "E",
+        "review" : "Extra FoV is not very impactful unless you need for extra debuff range.",
         "rarity" : "rare",
         "category" : "goldenvision",
-        "aliases" : ["coast is clear"],
+        "aliases" : ["coast is clear", "good visibility all clear", "視界良好 異常なし"],
         "downgrade": "I Can See Right Through You"
     },
     {   "skill_name" : "Go-Home Specialist",
-        "description" : "Recover HP by 5.5% on a downhill, at least 10s after the race starts. (End Closer)",
-        "skill_cost": "340",
-        "points_value": "508",
-        "points_ratio": "1.49",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Downhill",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "B",
         "review" : "Map based skill. Useful when the downhill is in the middle of the race.",
         "rarity" : "rare",
         "category" : "goldenrecovery",
-        "aliases" : ["go home specialist"],
+        "aliases" : ["go home specialist", "after school specialist", "下校後のスペシャリスト"],
         "downgrade": "After-School Stroll"
     },
     {   "skill_name" : "Serenity",
-        "description" : "Recover HP by 5.5% when blocked in front for 1s, at least 10s after the race starts. (End Closer)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "Okay",
-        "champs_meet" : "Lacking",
-        "review" : "Getting blocked as an end closer is pretty consistent. However, there are probably better recovery skills to take.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Blocked in front for 1s or more",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "C",
+        "review" : "",
         "rarity" : "rare",
         "category" : "goldenrecovery",
-        "aliases" : ["serenity"],
+        "aliases" : ["serenity", "calm and collected", "冷静沈着"],
         "downgrade": "Levelheaded"
     },
     {   "skill_name" : "Crusader",
-        "description" : "Increases FoV by 15 if last half of the pack during late-race. (End Closer)",
-        "skill_cost": "220",
-        "points_value": "334",
-        "points_ratio": "1.52",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Extra FoV makes your uma see further ahead, but narrows your immediate lateral vision. Increases your chances of getting boxed.",
+        "description" : "Increases FoV by 15.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "D",
+        "champs_meet" : "D",
+        "review" : "Extra FoV is not very impactful unless you need for extra debuff range.",
         "rarity" : "rare",
         "category" : "goldenvision",
-        "aliases" : ["crusader"],
+        "aliases" : ["crusader", "heavenly warrior", "天命士"],
         "downgrade": "Strategist"
     },
     {   "skill_name" : "Petrifying Gaze",
-        "description" : "Reduces speed by 0.25 for 3.0s to all umas within FoV when not 1st place during late-race. (End Closer)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Okay",
+        "description" : "Reduces speed by 0.25 for 3.0s to all umas within FoV.",
+        "conditions" :
+        [
+            [
+                "End Closer",
+                "Not 1st place",
+                "Late race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
         "review" : "Limited by your FoV, which may not impact consistently.",
         "rarity" : "rare",
         "category" : "goldenvelocitydebuff",
-        "aliases" : ["petrifying gaze"],
+        "aliases" : ["petrifying gaze", "passionate gaze", "熱いまなざし"],
         "downgrade": "Intense Gaze"
     },
     {   "skill_name" : "Super Lucky Seven",
-        "description" : "Increases speed, stamina and power by a value of 60 when in bracket 7. 50% chance to trigger.",
-        "skill_cost": "220",
-        "points_value": "334",
-        "points_ratio": "1.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Relying on being in bracket 7 and a coin flip is a very bad gamble.",
+        "description" : "Increases speed, stamina and power stat by 60",
+        "conditions" :
+        [
+            [
+                "Bracket 7",
+                "50% chance to activate"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "E",
+        "review" : "Relying on being in bracket 7 is a big gamble. It also comes with a coinflip of activating even if you're in bracket 7.",
         "rarity" : "rare",
         "category" : "goldensuper7",
         "aliases" : ["super lucky 7", "super lucky seven"],
         "downgrade": "Lucky Seven"
     },
     {   "skill_name" : "Uma Mania",
-        "description" : "Increases speed by 0.35 for 3.0s when there are 4 to 7 umas within 3 meters ahead/behind and/or within 3 lanes to either side.",
-        "skill_cost": "320",
-        "points_value": "217",
-        "points_ratio": "1.47",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Lacking",
-        "review" : "Awkward to trigger due to bad conditions. May trigger in bad phases as it is unlikely to be near 4-7 horses at the speed part of final spurt.",
+        "description" : "Increases speed by 0.35 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "3 or more umas within 3 meters and/or 3 lanes",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Can break through PDM on some tracks. Consider taking mid race speed skills as well to continuously break PDM.",
         "rarity" : "rare",
         "category" : "goldenvelocity",
-        "aliases" : ["uma mania"],
+        "aliases" : ["uma mania", "ウママニア"],
         "downgrade": "Uma Stan"
     },
     {   "skill_name" : "Trending in the Charts!",
