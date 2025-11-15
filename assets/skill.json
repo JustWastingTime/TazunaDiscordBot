@@ -2466,7 +2466,7 @@
         "upgrade": "Petrifying Gaze"
     },
     {   "skill_name" : "Front Runner Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "description" : "Wit +40/+60 and FoV +5/+10.",
         "conditions" :
         [
             [
@@ -2481,7 +2481,7 @@
         "aliases" : ["front runner savvy", "runners tricks", "逃げのコツ"]
     },
     {   "skill_name" : "Pace Chaser Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "description" : "Wit +40/+60 and FoV +5/+10.",
         "conditions" :
         [
             [
@@ -2496,7 +2496,7 @@
         "aliases" : ["pace chaser savvy", "leaders tricks", "先行のコツ"]
     },
     {   "skill_name" : "Late Surger Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "description" : "Wit +40/+60 and FoV +5/+10.",
         "conditions" :
         [
             [
@@ -2511,7 +2511,7 @@
         "aliases" : ["late surger savvy", "betweeners tricks", "差しのコツ"]
     },
     {   "skill_name" : "End Closer Savvy",
-        "description" : "Increases wit by a value of 40/60 and FoV by 5/10.",
+        "description" : "Wit +40/+60 and FoV +5/+10.",
         "conditions" :
         [
             [
@@ -2526,7 +2526,7 @@
         "aliases" : ["end closer savvy", "chasers tricks", "追込のコツ"]
     },
     {   "skill_name" : "Lucky Seven",
-        "description" : "Increases speed, stamina and power stat by 40",
+        "description" : "Speed, stamina and power stat +40",
         "conditions" :
         [
             [
@@ -2590,101 +2590,216 @@
         "upgrade": "Uma Mania"
     },
     {   "skill_name" : "Groundwork",
-        "description" : "Increases acceleration by 0.2 for 3.0s after activating 3 skills during the early-race.",
-        "skill_cost": "100",
-        "points_value": "217",
-        "points_ratio": "2.17",
-        "team_trials" : "Okay",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Front Runners only. Take Focus/Concentration and green skills to guarantee triggering groundwork, allowing your front runners to take the lead.",
+        "description" : "Increases acceleration by 0.2 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Activate 3 skills",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
         "rarity" : "normal",
         "category" : "accel",
-        "aliases" : ["groundwork", "地固め"]
+        "aliases" : ["groundwork", "地固め"],
+        "upgrade" : "Unshakable Stance"
     },
     {   "skill_name" : "Tail Held High",
-        "description" : "Increases speed by 0.15 for 3.0s after activating 3 skills during the mid-race.",
-        "skill_cost": "100",
-        "points_value": "217",
-        "points_ratio": "2.17",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 0.15 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Activate 3 skills mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Cheap and consistent. Use together with skills like Ramp Up, Slipstream and other mid-race skills.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["tail held high", "尻尾上がり"]
+        "aliases" : ["tail held high", "hold your tail high", "尻尾上がり"],
+        "upgrade" : "Tail of Victory"
     },
     {   "skill_name" : "Shake It Out",
-        "description" : "Recover HP by 1.5% after activating 3 skills during the late-race.",
-        "skill_cost": "100",
-        "points_value": "217",
-        "points_ratio": "2.17",
-        "team_trials" : "Lacking",
-        "champs_meet" : "❌",
-        "review" : "Late race recovery is ineffective due to last spurt mechanics. Only consider for Team Trials because of the super low cost.",
+        "description" : "Recover HP by 1.5%.",
+        "conditions" :
+        [
+            [
+                "Activate 3 skills late race or later"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recovery",
         "aliases" : ["shake it out", "ふり絞り"]
     },
     {   "skill_name" : "Sympathy",
-        "description" : "Increases speed by a value of 40 when there are at least 4 other umas with this skill.",
-        "skill_cost" : "70",
-        "points_value" : "129",
-        "points_ratio" : "1.84",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "Will never trigger.",
+        "description" : "Speed stat +40",
+        "conditions" :
+        [
+            [
+                "4 other umas have the same skill"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "E",
+        "review" : "Requires another player to also have sympathy which is unlikely and not beneficial.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases" : ["sympathy"]
+        "aliases" : ["sympathy", "シンパシー"],
+        "upgrade" : "Connection"
     },
     {   "skill_name" : "Lone Wolf",
-        "description" : "Increases speed by a value of 40 when there are no other umas with this skill.",
-        "skill_cost" : "70",
-        "points_value" : "129",
-        "points_ratio" : "1.84",
-        "team_trials" : "⭕",
-        "champs_meet" : "⭕",
-        "review" : "Either you trigger it and gain a cheap speed stat buff, or you prevent your enemy from triggering it. Only have 1 per team. Only consider if you have the stamina for it.",
+        "description" : "Speed +40.",
+        "conditions" :
+        [
+            [
+                "No other umas with the same skill"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Either you trigger it and gain a cheap speed stat buff, or you prevent your enemy from triggering it. Only have 1 per team.",
         "rarity" : "normal",
         "category" : "speed",
-        "aliases" : ["lonewolf"]
+        "aliases" : ["lonewolf", "一匹狼"]
     },
     {   "skill_name" : "Slipstream",
-        "description" : "Increases speed by 0.15 for 3.0s when there is another uma right in front of you for more than 3s, at least 10s into the race. 30s cooldown.",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 0.15 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Behind another uma for 3s or more",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Helps you in overtaking. Works well with Ramp Up and Tail Held High.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["slipstream", "スリップストリーム"]
+        "aliases" : ["slipstream", "スリップストリーム"],
+        "upgrade" : "In the Right Place!"
     },
     {   "skill_name" : "Playtime's Over!",
-        "description" : "Increases speed by 0.15 for 3.0s when there is another uma right behind you for more than 3s, at least 10s into the race. 30s cooldown.",
-        "skill_cost": "160",
-        "points_value": "217",
-        "points_ratio": "1.36",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases speed by 0.15 for 3.0s. 30s cooldown.",
+        "conditions" :
+        [
+            [
+                "Ahead of another uma for 3s or more",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "Helps preventing you from getting overtaken.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["playtime's over", "遊びはおしまいっ！"]
+        "aliases" : ["playtimes over", "遊びはおしまいっ！"],
+        "upgrade" : "Sorry, Gotta Go!"
     },
     {   "skill_name" : "Top Pick",
-        "description" : "Increases speed by 0.15 for 1.8s when blocked in side for more than 2s during the mid-race. (Dirt)",
-        "skill_cost": "180",
-        "points_value": "217",
-        "points_ratio": "1.21",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Increases speed by 0.15 for 2.4s.",
+        "conditions" :
+        [
+            [
+                "Dirt",
+                "Blocked from sides for 2s or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
         "review" : "Helpful skill to maintain/secure the lead on dirt tracks.",
         "rarity" : "normal",
         "category" : "velocity",
-        "aliases" : ["top pick"],
-        "downgrade": "Trending in the Charts!"
+        "aliases" : ["top pick", "recommendation" , "レコメンド"],
+        "upgrade": "Trending in the Charts!"
+    },
+
+    {   "skill_name" : "Ignited Spirit SPD",
+        "description" : "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "A",
+        "review" : "A bit costly, but can help when combined with other mid race speed skills.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["ignited spirit spd", "ignited spirit speed" , "aoharu ignition speed", "アオハル点火 速"],
+        "upgrade": "Burning Spirit SPD"
+    },
+    {   "skill_name" : "Ignited Spirit STA",
+        "description" : "Recover HP based on your team's total base stamina stat, increasing by 1.2% when below 1200, 1.35% at 1200 - 1799, 1.5% at 1800 - 2599, 1.65% at 2600 - 3599, and 1.8% if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "A bit costly without hints.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["ignited spirit sta", "ignited spirit stamina" , "aoharu ignition stamina", "アオハル点火 体"],
+        "upgrade": "Burning Spirit STA"
+    },
+    {   "skill_name" : "Ignited Spirit PWR",
+        "description" : "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "A bit costly, but is a late race acceleration that works on every style.",
+        "rarity" : "normal",
+        "category" : "accel",
+        "aliases" : ["ignited spirit pwr", "ignited spirit power", "aoharu ignition power", "アオハル点火 力"],
+        "upgrade": "Burning Spirit PWR"
+    },
+    {   "skill_name" : "Ignited Spirit GUTS",
+        "description" : "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["ignited spirit guts", "aoharu ignition guts", "アオハル点火 根"],
+        "upgrade": "Burning Spirit GUTS"
+    },
+    {   "skill_name" : "Ignited Spirit WIT",
+        "description" : "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "A",
+        "review" : "Combine with Dodging Danger on a Front Runner to zoom early. Do not upgrade to Burning Spirit WIT if so.",
+        "rarity" : "normal",
+        "category" : "flow",
+        "aliases" : ["ignited spirit wit", "ignited spirit wit" , "aoharu ignition wisdom", "アオハル点火 賢"],
+        "upgrade": "Burning Spirit WIT"
     },
 
 
@@ -4079,19 +4194,194 @@
         "aliases" : ["uma mania", "ウママニア"],
         "downgrade": "Uma Stan"
     },
+    {   "skill_name" : "Unshakable Stance",
+        "description" : "Increases acceleration by 0.4 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Activate 3 skills",
+                "Early race"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
+        "rarity" : "normal",
+        "category" : "accel",
+        "aliases" : ["unshakable stance", "盤石の構え"],
+        "downgrade" : "Groundwork"
+    },
+    {   "skill_name" : "Tail of Victory",
+        "description" : "Increases speed by 0.35 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Activate 3 skills mid race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Cheap and consistent. Use together with skills like Ramp Up, Slipstream and other mid-race skills.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["tail of victory", "尻尾の滝登り"],
+        "downgrade" : "Tail Held High"
+    },
+    {   "skill_name" : "Connection",
+        "description" : "Speed stat +60. Activates all sympathy skills.",
+        "conditions" :
+        [
+            [
+                "Turf",
+                "1 other uma has Sympathy."
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
+        "review" : "",
+        "rarity" : "rare",
+        "category" : "goldenspeed",
+        "aliases" : ["connection", "コネクト"],
+        "downgrade" : "Sympathy"
+    },
+    {   "skill_name" : "In the Right Place!",
+        "description" : "Increases speed by 0.35 for 3.0s.",
+        "conditions" :
+        [
+            [
+                "Behind another uma for 3s or more",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Helps you in overtaking. Works well with Ramp Up and Tail Held High.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["in the right place", "いいとこ入った！"],
+        "downgrade" : "Slipstream"
+    },
+    {   "skill_name" : "Sorry, Gotta Go!",
+        "description" : "Increases speed by 0.35 for 3.0s. 30s cooldown.",
+        "conditions" :
+        [
+            [
+                "Ahead of another uma for 3s or more",
+                "After at least 10s into a race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "Helps preventing you from getting overtaken.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["sorry gotta go", "お先に失礼っ"],
+        "downgrade" : "Playtime's Over!"
+    },
     {   "skill_name" : "Trending in the Charts!",
-        "description" : "Increases speed by 0.35 for 1.8s when blocked in side for more than 2s during the mid-race. (Dirt)",
-        "skill_cost": "360",
-        "points_value": "508",
-        "points_ratio": "1.41",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Increases speed by 0.35 for 2.4s.",
+        "conditions" :
+        [
+            [
+                "Dirt",
+                "Blocked from sides for 2s or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "",
+        "champs_meet" : "",
         "review" : "Helpful skill to maintain/secure the lead on dirt tracks.",
         "rarity" : "rare",
         "category" : "goldenvelocity",
-        "aliases" : ["trending in the charts"],
+        "aliases" : ["trending in the charts", "trending charts", "チャート急上昇"],
         "downgrade": "Top Pick"
     },
+
+
+
+    {   "skill_name" : "Burning Spirit SPD",
+        "description" : "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "A",
+        "review" : "A bit costly, but can help when combined with other mid race speed skills.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["burning spirit spd", "burning spirit speed" , "aoharu burning speed", "アオハル燃焼 速"],
+        "downgrade": "Ignited Spirit SPD"
+    },
+    {   "skill_name" : "Burning Spirit STA",
+        "description" : "Recover HP based on your team's total base stamina stat, increasing by 4.4% when below 1200, 4.95% at 1200 - 1799, 5.5% at 1800 - 2599, 6.05% at 2600 - 3599, and 6.6% if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "A",
+        "review" : "A bit costly without hints.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["burning spirit sta", "burning spirit stamina" , "aoharu burning stamina", "アオハル燃焼 体"],
+        "downgrade": "Ignited Spirit STA"
+    },
+    {   "skill_name" : "Burning Spirit PWR",
+        "description" : "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
+        "review" : "A bit costly, but is a late race acceleration that works on every style.",
+        "rarity" : "normal",
+        "category" : "accel",
+        "aliases" : ["burning spirit pwr", "burning spirit power", "aoharu burning power", "アオハル燃焼 力"],
+        "downgrade": "Ignited Spirit PWR"
+    },
+    {   "skill_name" : "Burning Spirit GUTS",
+        "description" : "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials" : "A",
+        "champs_meet" : "A",
+        "review" : "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
+        "rarity" : "normal",
+        "category" : "velocity",
+        "aliases" : ["burning spirit guts", "aoharu burning guts", "アオハル燃焼 根"],
+        "downgrade": "Ignited Spirit GUTS"
+    },
+    {   "skill_name" : "Burning Spirit WIT",
+        "description" : "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
+        "conditions" :
+        [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "D",
+        "review" : "The speed from Burning Spirit WIT is higher than Ignited Spirit WIT and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill",
+        "rarity" : "normal",
+        "category" : "flow",
+        "aliases" : ["burning spirit wit", "burning spirit wit" , "aoharu burning wisdom", "アオハル燃焼 賢"],
+        "downgrade": "Ignited Spirit WIT"
+    },
+
+
+
 
     {   "skill_name" : "Right-Handed x",
         "description" : "Reduces speed by a value of 40 on clockwise tracks.",
