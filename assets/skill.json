@@ -561,7 +561,7 @@
         "conditions" :
         [
             [
-                "Random point on corner 1/2/3/4"
+                "Random corner"
             ]
         ],
         "team_trials" : "S",
@@ -4382,330 +4382,470 @@
 
 
 
-
     {   "skill_name" : "Right-Handed x",
-        "description" : "Reduces speed by a value of 40 on clockwise tracks.",
-        "skill_cost" : "50",
-        "points_value" : "-129",
-        "points_ratio" : "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Clockwise course"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["right handed x"]
+        "aliases" : ["right handed x", "right turns x", "右回りx"]
     },
     {   "skill_name" : "Left-Handed x",
-        "description" : "Reduces speed by a value of 40 on counter clockwise tracks.",
-        "skill_cost" : "50",
-        "points_value" : "-129",
-        "points_ratio" : "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Counterclockwise course"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["left handed x"]
+        "aliases" : ["left handed x", "left turns x", "左回りx"]
     },
     {   "skill_name" : "Tokyo Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Tokyo Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Tokyo Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["tokyo x"]
+        "aliases" : ["tokyo racecourse x", "tokyo racetrack x", "東京レース場x"]
     },
     {   "skill_name" : "Nakayama Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Nakayama Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Nakayama Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["nakayama x"]
+        "aliases" : ["nakayama racecourse x", "nakayama racetrack x", "中山レース場x"]
     },
     {   "skill_name" : "Hanshin Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Hanshin Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Hanshin Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["hanshin x"]
+        "aliases" : ["hanshin racecourse x", "hanshin racetrack x", "阪神レース場x"]
     },
     {   "skill_name" : "Kyoto Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Kyoto Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Kyoto Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["kyoto x"]
+        "aliases" : ["kyoto racecourse x", "kyoto racetrack x", "京都レース場x"]
     },
     {   "skill_name" : "Chukyo Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Chukyo Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Chukyo Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["chukyo x"]
+        "aliases" : ["chukyo racecourse x", "chukyo racetrack x", "中京レース場x"]
     },
     {   "skill_name" : "Sapporo Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Sapporo Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Sapporo Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["sapporo x"]
+        "aliases" : ["sapporo racecourse x", "sapporo racetrack x", "札幌レース場x"]
     },
     {   "skill_name" : "Hakodate Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Hakodate Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Hakodate Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["hakodate x"]
+        "aliases" : ["hakodate racecourse x", "hakodate racetrack x", "函館レース場x"]
     },
     {   "skill_name" : "Fukushima Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Fukushima Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Fukushima Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["fukushima x"]
+        "aliases" : ["fukushima racecourse x", "fukushima racetrack x", "福島レース場"]
     },
     {   "skill_name" : "Niigata Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Niigata Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Niigata Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["niigata x"]
+        "aliases" : ["niigata racecourse x", "niigata racetrack x", "新潟レース場x"]
     },
     {   "skill_name" : "Kokura Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Kokura Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Kokura Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["kokura x"]
+        "aliases" : ["kokura racecourse x", "kokura racetrack x", "小倉レース場x"]
     },
-    {   "skill_name" : "Oi Racecourse x",
-        "description" : "Reduces stamina by a value of 40 at Oi Racecourse.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+    {   "skill_name" : "Ooi Racecourse x",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Ooi Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["oi x"]
+        "aliases" : ["ooi racecourse x", "oi racecourse x", "ooi racetrack x", "中山レース場x"]
+    },
+    {   "skill_name" : "Kawasaki Racecourse x",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Kawasaki Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
+        "rarity" : "normal",
+        "category" : "staminanegative",
+        "aliases" : ["kawasaki racecourse x", "kawasaki racetrack x", "川崎レース場x"]
+    },
+    {   "skill_name" : "Funabashi Racecourse x",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Funabashi Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
+        "rarity" : "normal",
+        "category" : "staminanegative",
+        "aliases" : ["funabashi racecourse x", "funabashi racetrack x", "船橋レース場x"]
+    },
+    {   "skill_name" : "Morioka Racecourse x",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Morioka Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
+        "rarity" : "normal",
+        "category" : "staminanegative",
+        "aliases" : ["morioka racecourse x", "morioka racetrack x", "盛岡レース場x"]
+    },
+    {   "skill_name" : "Longchamp Racecourse x",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Longchamp Racecourse"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
+        "rarity" : "normal",
+        "category" : "staminanegative",
+        "aliases" : ["longchamp racecourse x", "ロンシャンレース場x"]
     },
     {   "skill_name" : "Standard Distance x",
-        "description" : "Reduces stamina by a value of 40 if the course's distance is a multiple of 400m.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Racecourse length is a multiple of 400m"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["standard x"]
+        "aliases" : ["standard x", "core distances x", "根幹距離x"]
     },
     {   "skill_name" : "Non-Standard Distance x",
-        "description" : "Reduces stamina by a value of 40 if the course's distance is not a multiple of 400m.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "Racecourse length is not a multiple of 400m"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["nonstandard x", "non standard x"]
+        "aliases" : ["nonstandard x", "non standard x", "non core distances x", "非根幹距離x"]
     },
     {   "skill_name" : "Firm Conditions x",
-        "description" : "Reduces power by a value of 40 if the track has a firm condition",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Power stat -40.",
+        "conditions" :
+        [
+            [
+                "Track condition is firm"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "powernegative",
-        "aliases" : ["firm x"]
+        "aliases" : ["firm x", "good track condition x", "良バ場x"]
     },
     {   "skill_name" : "Wet Conditions x",
-        "description" : "Reduces power by a value of 40 if the track has a good/soft or heavy condition",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Power stat -40.",
+        "conditions" :
+        [
+            [
+                "Track condition is good, soft or heavy"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "powernegative",
-        "aliases" : ["wet x", "soft x", "good x"]
+        "aliases" : ["wet x", "soft x", "good x", "bad track condition x", "道悪x"]
     },
     {   "skill_name" : "Spring Runner x",
-        "description" : "Reduces speed by a value of 40 during Spring.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Spring"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["spring x"]
+        "aliases" : ["spring x", "spring girl x", "春ウマ娘x"]
     },
     {   "skill_name" : "Summer Runner x",
-        "description" : "Reduces speed by a value of 40 during Summer.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Summer"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["summer x"]
+        "aliases" : ["summer x", "summer girl x", "夏ウマ娘x"]
     },
     {   "skill_name" : "Fall Runner x",
-        "description" : "Reduces speed by a value of 40 during Fall.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Fall"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["fall x"]
+        "aliases" : ["fall x", "autumn girl x", "秋ウマ娘x"]
     },
     {   "skill_name" : "Winter Runner x",
-        "description" : "Reduces speed by a value of 40 during Winter.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.34",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Winter"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["winter x"]
+        "aliases" : ["winter x", "winter girl x", "冬ウマ娘"]
     },
     {   "skill_name" : "Rainy Days x",
-        "description" : "Reduces guts by a value of 40 during rainy weather.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Guts stat -40.",
+        "conditions" :
+        [
+            [
+                "Rainy weather"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "gutsnegative",
-        "aliases" : ["rainy x"]
+        "aliases" : ["rainy days x", "雨の日x"]
     },
     {   "skill_name" : "Inner Post Averseness",
-        "description" : "Reduces wit by a value of 40 when starting at gate block 1 - 3",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Wit stat -40.",
+        "conditions" :
+        [
+            [
+                "Gate bracket 1 - 3"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "gatenegative",
-        "aliases" : ["inner x", "innerpost x"]
+        "aliases" : ["inner x", "innerpost x", "inner gate affinity x", "内枠苦手"]
     },
     {   "skill_name" : "Outer Post Averseness",
-        "description" : "Reduces speed by a value of 40 when starting at gate block 6 - 8.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Gate bracket 6 - 8"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["outer x", "outerpost x"]
+        "aliases" : ["outer x", "outerpost x", "outer ate affinity x", "外枠苦手"]
     },
     {   "skill_name" : "Wallflower",
-        "description" : "Reduces power by a value of 40 when at least 5 other runners are using the same strategy.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-0.52",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Power stat -40.",
+        "conditions" :
+        [
+            [
+                "40% of runners or more using the same strategy (4 or more in CM, 5 in TT)"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "powernegative",
-        "aliases" : ["competitive x"]
+        "aliases" : ["competitive x", "wallflower", "introverted", "引っ込み思案"]
     },
     {   "skill_name" : "G1 Averseness",
-        "description" : "Reduces speed by a value of 40 when doing G1, URA, Team Trials and Champion's Meet races.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-2.58",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Speed stat -40.",
+        "conditions" :
+        [
+            [
+                "Major races (G1, EX, CM, TT, etc)"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "speednegative",
-        "aliases" : ["g1 x"]
+        "aliases" : ["g1 x", "g1 averseness", "g1 dislike"]
     },
     {   "skill_name" : "Paddock Fright",
-        "description" : "Reduces stamina by a value of 40 if uma is the favorite to win.",
-        "skill_cost": "50",
-        "points_value": "-129",
-        "points_ratio": "-2.58",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Stamina stat -40.",
+        "conditions" :
+        [
+            [
+                "When favorite to win"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["paddock x"]
+        "aliases" : ["paddock x", "paddock fright", "timid", "小心者"]
     },
 
     {   "skill_name" : "Corner Adept x",
@@ -4713,7 +4853,7 @@
         "conditions" :
         [
             [
-                "Random point on random corner"
+                "Random corner"
             ]
         ],
         "team_trials" : "F",
@@ -4728,7 +4868,7 @@
         "conditions" :
         [
             [
-                "Random point on random corner"
+                "Random corner"
             ]
         ],
         "team_trials" : "F",
@@ -4743,87 +4883,111 @@
         "conditions" :
         [
             [
-                "Random point on corner 1/2/3/4"
+                "Random corner"
             ]
         ],
-        "team_trials" : "S",
-        "champs_meet" : "SS",
+        "team_trials" : "F",
+        "champs_meet" : "F",
         "review" : "",
         "rarity" : "normal",
         "category" : "recoverynegative",
         "aliases" : ["corner reco x", "ーナー回復 x"]
     },
     {   "skill_name" : "Ramp Revulsion",
-        "description" : "Reduce HP by 2% on uphills.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-2.62",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Reduce HP by 2%",
+        "conditions" :
+        [
+            [
+                "Random uphill"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recoverynegative",
-        "aliases" : ["uphill x"]
+        "aliases" : ["uphill x", "ramp revulsion", "hill dislike", "坂苦手"]
     },
     {   "skill_name" : "Packphobia",
-        "description" : "Reduce HP by 2% when blocked in the front and at least one side, at least 2s into the race.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-2.62",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Reduce HP by 2%",
+        "conditions" :
+        [
+            [
+                "Blocked in front and side",
+                "After at least 2s into a race"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recoverynegative",
-        "aliases" : ["pack x"]
+        "aliases" : ["pack x", "packphobia", "crowd hater", "バ群嫌い"]
     },
     {   "skill_name" : "Defeatist",
-        "description" : "Reduces speed by 0.2 for 3.0s when positioned at the last 75% of the pack (by distance) during the last spurt on the final straight. 30s cooldown.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-2.62",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
+        "conditions" :
+        [
+            [
+                "Last 75% of the pack (by distance)",
+                "Last straight"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "velocitynegative",
-        "aliases" : ["defeat"]
+        "aliases" : ["defeatist", "resignation", "あきらめ癖"]
     },
     {   "skill_name" : "Reckless",
-        "description" : "Reduces speed by 0.2 for 3.0s when in 1st place, more than 1 length ahead of the uma behind, at the last 200m of the race . 30s cooldown.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-2.62",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
+        "conditions" :
+        [
+            [
+                "1st place",
+                "1 length ahead or more",
+                "Last 200m of the race"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "velocitynegative",
-        "aliases" : ["reckless"]
+        "aliases" : ["reckless", "negligience", "手抜き癖"]
     },
     {   "skill_name" : "Gatekept",
-        "description" : "Worsen start reaction time by 1.5. Increases chance of a late start.",
-        "skill_cost" : "70",
-        "points_value" : "-174",
-        "points_ratio" : "-0.50",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this? You can take this skill to lower your stats to enter the B rank Champion's Meet.",
+        "description" : "Worsen start reaction time by 1.5x, increasing chance of a late start.",
+        "conditions" :
+        [
+            [
+                "Always activates (wit check)"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "May take to reduce score when building a B grade CM horse.",
         "rarity" : "normal",
         "category" : "gatenegative",
-        "aliases" : ["gate x"]
+        "aliases" : ["gate x", "gate trouble", "ゲート難"]
     },
     {   "skill_name" : "Running Idle",
-        "description" : "Reduce HP by 2% when 1st place, more than 1 length ahead of the uma behind, at least 5s into the race.",
-        "skill_cost" : "100",
-        "points_value" : "-262",
-        "points_ratio" : "-2.62",
-        "team_trials" : "❌",
-        "champs_meet" : "❌",
-        "review" : "It is bad. Why are you reading this?",
+        "description" : "Reduce HP by 2%.",
+        "conditions" :
+        [
+            [
+                "1st place",
+                "1 length ahead or more",
+                "After at least 2s into a race"
+            ]
+        ],
+        "team_trials" : "F",
+        "champs_meet" : "F",
+        "review" : "",
         "rarity" : "normal",
         "category" : "recoverynegative",
-        "aliases" : ["running idle"]
+        "aliases" : ["running idle", "空回り"]
     },
 
 
@@ -5496,92 +5660,121 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "team_trials" : "S",
+        "champs_meet" : "SS",
         "review" : "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
-        "aliases" : ["red shift", "maruzensky"],
+        "aliases" : ["red shift", "maruzensky", "red flame gear", "紅焔ギア", "lp1211m"],
         "horse": "Maruzensky (Original)"
     },
     {   "skill_name" : "Shooting for Victory!",
-        "description" : "Increases acceleration by 0.4 for 4.0s if first half of the pack but greater than 3rd place on the final corner.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s if first half of the pack but greater than 3rd place on the final corner.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Highly Recommended",
-        "champs_meet" : "Highly Recommended",
+        "description" : "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",     
+        "conditions" :
+        [
+            [
+                "3rd to 4th (CM), 3rd to 5th (TT)",
+                "Second half of final corner"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "SS",
         "review" : "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
-        "aliases" : ["shooting for victory", "taiki shuttle"],
+        "aliases" : ["shooting for victory", "taiki shuttle", "victory shot", "ヴィクトリーショット"],
         "horse": "Taiki Shuttle (Original)"
     },
     {   "skill_name" : "Let's Pump Some Iron!",
-        "description" : "Increases acceleration by 0.4 for 4.0s if 6th place (for Champion's Meet) or 8th place (for Team Trials), on a corner during the late-race.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s if 6th place (for Champion's Meet) or 8th place (for Team Trials), on a corner during the late-race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Okay",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Only usable on Late Surgers and End Closers. Even on Late Surgers, it is hard to trigger as there are only 9 umas in Champion's Meet. Conditions to trigger are stricter but if it does trigger, its a powerful acceleration skill. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "description" : "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",         
+        "conditions" :
+        [
+            [
+                "6th (CM), 8th (TT)",
+                "Corner",
+                "Late race or beyond"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "SS",
+        "review" : "Powerful acceleration skill. Slightly hard to activate consistently since you need to be 6th on the corner. Best on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
-        "aliases" : ["lets pump some iron", "mejiro ryan"],
+        "aliases" : ["lets pump some iron", "mejiro ryan", "lets anabolic", "レッツアナボリック"],
         "horse": "Mejiro Ryan (Original)",
         "downgrade": "Feel the Burn!"
     },
     {   "skill_name" : "Feel the Burn!",
-        "description" : "Increases acceleration by 0.3 for 4.0s if 6th place (for Champion's Meet) or 8th place (for Team Trials), on a corner during the late-race.",   
-        "skill_cost": "0",
-        "points_value": "0",
-        "points_ratio": "0",
+        "description" : "Increases acceleration by 0.3 for 4.0s.",   
+        "conditions" :
+        [
+            [
+                "6th (CM), 8th (TT)",
+                "Corner",
+                "Late race or beyond"
+            ]
+        ],
         "team_trials" : "-",
         "champs_meet" : "-",
         "review" : "You can't inherit this.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
-        "aliases" : ["feel the burn", "mejiro ryan"],
+        "aliases" : ["feel the burn", "mejiro ryan", "burning muscles", "燃えろ筋肉"],
         "upgrade": "Let's Pump Some Iron!"
     },
     {   "skill_name" : "Angling and Scheming",
-        "description" : "Increases acceleration by 0.4 for 4.0s if 1st place, on a corner, during the late-race.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s if 1st place, on a corner, during the late-race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Okay",
-        "champs_meet" : "Highly Recommended",
-        "review" : "Only usable on Front Runners and Pace Chasers when there are no Front Runners. It is hard to trigger as you need to be in the lead in the late race or beyond. If you do manage to trigger it, its a super strong skill to help you maintain the lead. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "description" : "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",     
+        "conditions" :
+        [
+            [
+                "1st place",
+                "Corner",
+                "Late race or beyond"
+            ]
+        ],
+        "team_trials" : "SS",
+        "champs_meet" : "SS",
+        "review" : "Must have skill for all Front Runners. Need to be leading to trigger, so weaker Front Runners will not be able to trigger this. Best on tracks where the spurt begins on a corner. Please consult umalator to check if the skill is effective on the track you are building for.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
-        "aliases" : ["angling and scheming", "seiun sky"],
+        "aliases" : ["angling and scheming", "seiun sky", "アングリングxスキーミング"],
         "horse": "Seiun Sky (Original)"
     },
     {   "skill_name" : "Condor's Fury",
-        "description" : "Increases acceleration by 0.4 for 4s if between 4th to 7th (Champion's Meet) or 4th to 9th (Team Trials), when an overtake target exists during the final corner.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s if between 4th to 7th (Champion's Meet) or 4th to 9th (Team Trials), when an overtake target exists during the final corner.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Recommended",
-        "champs_meet" : "Recommended",
+        "description" : "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",     
+        "conditions" :
+        [
+            [
+                "4th to 7th (CM), 4th to 9th (TT)",
+                "Overtake target exists",
+                "Final corner"
+            ]
+        ],
+        "team_trials" : "S",
+        "champs_meet" : "S",
         "review" : "If the last spurt is on the final corner and you can overtake, this skill is pretty good on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
-        "aliases" : ["condors fury", "el condor pasa fantasy"],
+        "aliases" : ["condors fury", "el condor pasa fantasy", "condor onslaught", "コンドル猛撃波"],
         "horse": "El Condor Pasa (Fantasy)"
     },
     {   "skill_name" : "KEEP IT REAL.",
-        "description" : "Increases acceleration by 0.3 for 6.0s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",
-        "inherited": "Increases acceleration by 0.1 for 3.6s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Lacking (Unsure)",
-        "champs_meet" : "Lacking (Unsure)",
+        "description" : "Increases acceleration by 0.3 for 6.0s.",
+        "inherited": "Increases acceleration by 0.1 for 3.6s.",     
+        "conditions" :
+        [
+            [
+                "4th to 7th (CM), 5th to 10th (TT)",
+                "Overtake target exists",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
         "review" : "Numbers seem very low for inherit.",
         "rarity" : "unique",
         "category" : "rainbowaccel",
