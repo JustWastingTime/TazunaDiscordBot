@@ -5785,14 +5785,19 @@
 
 
     {   "skill_name" : "U=ma2",
-        "description" : "Recover HP by 5.5% when first 40% of the pack but third place or greater, on any corner, during the second half of the race.",
-        "inherited": "Recover HP by 1.5% when first 40% of the pack but third place or greater, on any corner, during the second half of the race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "200 SP for a basic recovery skill. Avoid unless you really need.",
+        "description" : "Recover HP by 5.5%. Increases speed by 0.25 for 4.0s.",
+        "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 2.4s.",     
+        "conditions" :
+        [
+            [
+                "3rd to 4th (CM), 3rd to 5th (TT)",
+                "Random corner",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "C",
+        "review" : "200 SP for a 1.5% recovery and inconsistent trigger conditions. Probably better uniques to inherit instead.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
         "aliases" : ["u=ma2", "agnes tachyon original"],
@@ -5800,100 +5805,133 @@
         "downgrade": "Introduction to Physiology"
     },
     {   "skill_name" : "Introduction to Physiology",
-        "description" : "Recover HP by 3.5% when first 40% of the pack but third place or greater, on any corner, during the second half of the race.",    
-        "skill_cost": "0",
-        "points_value": "0",
-        "points_ratio": "0",
+        "description" : "Recover HP by 3.5%. Increases speed by 0.15 for 4.0s.",   
+        "conditions" :
+        [
+            [
+                "3rd to 4th (CM), 3rd to 5th (TT)",
+                "Random corner",
+                "Second half of the race"
+            ]
+        ],
         "team_trials" : "-",
         "champs_meet" : "-",
         "review" : "You can't inherit this.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["introduction to physiology", "agnes tachyon original"],
+        "aliases" : ["introduction to physiology", "agnes tachyon original", "introduction my body"],
         "upgrade": "U=ma2"
     },
     {   "skill_name" : "Pure Heart",
-        "description" : "Recover HP by 5.5% when first 40% of the pack but second place or greater, during the mid-race.",
-        "inherited": "Recover HP by 1.5% when first 40% of the pack but second place or greater, during the mid-race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Lacking",
-        "champs_meet" : "Not Recommended",
-        "review" : "200 SP for a basic recovery skill. Avoid unless you really need.",
+        "description" : "Recover HP by 7.5%.",
+        "inherited": "Recover HP by 3.5%.",     
+        "conditions" :
+        [
+            [
+                "2nd to 4th (CM), 2nd to 5th (TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "3.5% recovery makes this better than the other stamina inherits. Condition is also pretty consistent for a Pace Chaser.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["pure heart", "super creek original"],
+        "aliases" : ["pure heart", "super creek original", "purity of heart", "ピュリティオブハート"],
         "horse": "Super Creek (Original)",
         "downgrade": "Clear Heart"
     },
     {   "skill_name" : "Clear Heart",
-        "description" : "Recover HP by 3.5% when first 40% of the pack but second place or greater, during the mid-race.",     
-        "skill_cost": "0",
-        "points_value": "0",
-        "points_ratio": "0",
+        "description" : "Recover HP by 5.5%.",     
+        "conditions" :
+        [
+            [
+                "2nd to 4th (CM), 2nd to 5th (TT)",
+                "Mid race"
+            ]
+        ],
         "team_trials" : "-",
         "champs_meet" : "-",
         "review" : "You can't inherit this.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["clear heart", "super creek original"],
+        "aliases" : ["clear heart", "super creek original", "クリアハート"],
         "upgrade": "Pure Heart"
     },
     {   "skill_name" : "Super-Duper Climax",
-        "description" : "Recover HP by 5.5% when last half of the pack, with at least 1 uma within 3m or 3 lanes, on the final corner.",
-        "inherited": "Recover HP by 1.5% when last half of the pack, with at least 1 uma within 3m or 3 lanes, on the final corner.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
+        "description" : "Recover HP by 5.5%.",
+        "inherited": "Recover HP by 1.5%.",     
+        "conditions" :
+        [
+            [
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "1 or more uma within 3m or 3 lanes",
+                "Final corner"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "C",
         "review" : "200 SP for a basic recovery skill. Avoid unless you really need.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["super duper climax", "haru urara original"],
+        "aliases" : ["super duper climax", "haru urara original", "exciting climax", "ワクワククライマックス"],
         "horse": "Haru Urara (Original)",
         "downgrade": "Super-Duper Stoked"
     },
     {   "skill_name" : "Super-Duper Stoked",
-        "description" : "Recover HP by 3.5% when last half of the pack, with at least 1 uma within 3m or 3 lanes, on the final corner.",
-        "skill_cost": "0",
-        "points_value": "0",
-        "points_ratio": "0",
+        "description" : "Recover HP by 3.5%.",
+        "conditions" :
+        [
+            [
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "1 or more uma within 3m or 3 lanes",
+                "Final corner"
+            ]
+        ],
         "team_trials" : "-",
         "champs_meet" : "-",
         "review" : "You can't inherit this.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["super duper stoked", "haru urara original"],
+        "aliases" : ["super duper stoked", "haru urara original", "ready steady go", "ワクワクよーいドン"],
         "upgrade": "Super-Duper Climax"
     },
     {   "skill_name" : "Superior Heal",
-        "description" : "Recover HP by 7.5% when overtaken, last 60% (4th place or higher for Champion's Meet, 5th place or higher for Team Trials) of the pack during the mid-race.",
-        "inherited": "Recover HP by 1.5% when overtaken, last 60% (4th place or higher for Champion's Meet, 5th place or higher for Team Trials) of the pack during the mid-race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "Not Recommended",
-        "champs_meet" : "Not Recommended",
-        "review" : "200 SP for a basic recovery skill. Avoid unless you really need.",
+        "description" : "Recover HP by 7.5%.",
+        "inherited": "Recover HP by 3.5%.",     
+        "conditions" :
+        [
+            [
+                "Overtaken", 
+                "40% or worse (4th or worse in CM, 5th or worse in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "B",
+        "champs_meet" : "B",
+        "review" : "3.5% recovery makes this better than the other stamina inherits. Condition is also pretty consistent for a Late Surger or End Closer.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["superior heal", "grass wonder fantasy", "healer grass"],
+        "aliases" : ["superior heal", "grass wonder fantasy", "healer grass", "gain superior heal", "ゲインヒールスペリアー"],
         "horse": "Grass Wonder (Fantasy)"
     },
     {   "skill_name" : "Dazzl'n ♪ Diver",
-        "description" : "Recover HP by 5.5% and increases speed by 0.25 for 5.0s if between 2nd place and 80% of the pack (7th place in Champion's Meet or 10th place in Team Trials) and activated 2 skills during the mid-race.",
-        "inherited": "Recover HP by 1.5% and increases speed by 0.05 for 3.0s if between 2nd place and 80% of the pack (7th place in Champion's Meet or 10th place in Team Trials) and activated 2 skills during the mid-race.",     
-        "skill_cost": "200",
-        "points_value": "180",
-        "points_ratio": "0.9",
-        "team_trials" : "-",
-        "champs_meet" : "-",
-        "review" : "",
+        "description" : "Recover HP by 5.5%.",
+        "inherited": "Recover HP by 1.5%.",     
+        "conditions" :
+        [
+            [
+                "2nd to 6th (CM), 2nd to 8th (TT)", 
+                "Activated 2 mid race skills",
+                "Mid race"
+            ]
+        ],
+        "team_trials" : "C",
+        "champs_meet" : "C",
+        "review" : "200 SP for a 1.5% recovery and requiring a setup. Probably better uniques to inherit instead.",
         "rarity" : "unique",
         "category" : "rainbowrecovery",
-        "aliases" : ["dazzln diver", "dazzlin diver", "dazzling diver", "special week summer", "summer special week"],
+        "aliases" : ["dazzln diver", "dazzlin diver", "dazzling diver", "special week summer", "summer special week", "wayakawa marine dive", "わやかわ♪マリンダイヴ"],
         "horse": "Special Week (Summer)"
     }
 
