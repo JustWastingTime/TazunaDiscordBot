@@ -6916,77 +6916,81 @@
         "upgrade": "Victoria por plancha ☆"
     },
     {   "skill_name": "This Dance is for Vittoria!",
-        "description": "Increases speed by 0.35 for 5.0s if 1st to 4th place, blocked on the sides for more than 2s, less than 1 length away from the uma in front and behind and on the final corner.",
-        "inherited": "Increases speed by 0.15 for 3.0s if 1st to 4th place, blocked on the sides for more than 2s, less than 1 length away from the uma in front and behind and on the final corner.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
+                "1st to 4th",
                 "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Final corner is map dependant. Increasing target speed on final corner may not be helpful. Way too many conditions to trigger consistently.",
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "Final corner speed boost may be lost if that is the acceleration phase. Decent skill depending on track.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "this dance is for vittoria",
-            "tm opera o"
+            "tm opera o",
+            "ヴィットーリアに捧ぐ舞踏"
         ],
         "horse": "TM Opera O (Original)"
     },
     {   "skill_name": "Behold Thine Emperor's Divine Might",
-        "description": "Increases speed by 0.45 for 5.0s on the last straight if you have already overtaken at least 3 umas since the late-race phase.",
-        "inherited": "Increases speed by 0.25 for 3.0s on the last straight if you have already overtaken at least 3 umas since the late-race phase.",
+        "description": "Increases speed by 0.45 for 5.0s on the final straight.",
+        "inherited": "Increases speed by 0.25 for 3.0s on the final straight.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtake 3 times",
+                "Late race and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Strong effect with a somewhat easy condition to trigger on Late Surgers and End Closers. Might struggle to trigger on Pace Chasers in Champion's Meet depending on the meta.",
+        "team_trials": "B",
+        "champs_meet": "S",
+        "review": "Strong effect with a somewhat easy condition to trigger on Late Surgers and End Closers. Harder to trigger on Pace Chasers.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "behold thine emperors divine might",
             "emperor divine might",
-            "symboli rudolf"
+            "symboli rudolf",
+            "thou witness the heavenly might of the emperor",
+            "汝皇帝の神威を見よ"
         ],
         "horse": "Symboli Rudolf (Original)"
     },
     {   "skill_name": "Blazing Pride",
-        "description": "Increases speed by 0.35 for 5.0s when overtaking, greater than 4th place on the final corner.",
-        "inherited": "Increases speed by 0.15 for 3.0s when overtaking, greater than 4th place on the final corner.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "3rd to 9th (CM), 3rd to 12th (TT)",
+                "Overtaking",
+                "Final corner"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Final corner is map dependant. Increasing target speed on final corner may not be helpful. Might be useful for Late Surgers.",
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "Final corner speed boost may be lost if that is the acceleration phase. Situationally good on a Late Surger.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "blazing pride",
-            "air groove"
+            "air groove",
+            "blaze of pride",
+            "ブレイズオブプライド"
         ],
         "horse": "Air Groove (Original)",
         "downgrade": "Empress's Pride"
     },
     {   "skill_name": "Empress's Pride",
-        "description": "Increases speed by 0.25 for 5.0s when overtaking, greater than 4th place on the final corner.",
+        "description": "Increases speed by 0.25 for 5.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "3rd to 9th (CM), 3rd to 12th (TT)",
+                "Overtaking",
+                "Final corner"
             ]
         ],
         "team_trials": "-",
@@ -6997,7 +7001,8 @@
         "aliases": [
             "empresss pride",
             "air groove",
-            "empress pride"
+            "empress pride",
+            "エンプレスプライド"
         ],
         "upgrade": "Blazing Pride"
     },
@@ -7006,14 +7011,14 @@
         "inherited": "Increases speed by 0.15 for 3.0s when overtaking, between 1st to 4th place, on the final corner.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 4th place",
+                "Overtaking",
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Final corner is map dependant. Increasing target speed on final corner may not be helpful. Might be useful for Front Runners.",
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "Final corner speed boost may be lost if that is the acceleration phase. Situationally good on a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7537,7 +7542,7 @@
             "eishin flash original"
         ],
         "horse": "Eishin Flash (Original)"
-    },
+    }
     
 
     
