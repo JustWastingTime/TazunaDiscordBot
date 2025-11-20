@@ -6807,8 +6807,8 @@
         "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd or worse",
                 "Overtaking",
+                "3rd or worse",
                 "Final straight"
             ]
         ],
@@ -6829,8 +6829,8 @@
         "description": "Increases speed by 0.25 for 5.0s.",
         "conditions": [
             [
-                "3rd or worse",
                 "Overtaking",
+                "3rd or worse",
                 "Final straight"
             ]
         ],
@@ -6965,8 +6965,8 @@
         "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 9th (CM), 3rd to 12th (TT)",
                 "Overtaking",
+                "3rd to 9th (CM), 3rd to 12th (TT)",
                 "Final corner"
             ]
         ],
@@ -6988,8 +6988,8 @@
         "description": "Increases speed by 0.25 for 5.0s.",
         "conditions": [
             [
-                "3rd to 9th (CM), 3rd to 12th (TT)",
                 "Overtaking",
+                "3rd to 9th (CM), 3rd to 12th (TT)",
                 "Final corner"
             ]
         ],
@@ -7011,8 +7011,8 @@
         "inherited": "Increases speed by 0.15 for 3.0s when overtaking, between 1st to 4th place, on the final corner.",
         "conditions": [
             [
-                "1st to 4th place",
                 "Overtaking",
+                "1st to 4th place",
                 "Final corner and beyond"
             ]
         ],
@@ -7029,41 +7029,66 @@
         "horse": "Biwa Hayahide (Original)"
     },
     {   "skill_name": "Flashy☆Landing",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when 1st to 3rd place, blocked on the sides for more than 2s, and on the final corner.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s when 1st to 3rd place, blocked on the sides for more than 2s, and on the final corner.",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 3rd place",
+                "Blocked in the sides for 2s or more",
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Better on Front Runners and Pace Chasers. Acceleration on the final corner is super impactful on specific maps, otherwise avoid. Check umalator if skill is good on the map before deciding.",
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "Better on Front Runners and Pace Chasers. Acceleration on the final corner is super impactful on specific tracks.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "flashy landing",
-            "mayano top gun"
+            "mayano top gun",
+            "inspiration landing",
+            "ひらめきランディング"
         ],
         "horse": "Mayano Top Gun (Original)",
-        "downgrade": ""
+        "downgrade": "1st Place Kiss☆"
     },
-    
-    {   "skill_name": "G00 1st. F∞;",
-        "description": "Increases speed by 0.35 for 5.0s when 1st to 3rd place, no late start and never rushed, on the last straight.",
-        "inherited": "Increases speed by 0.15 for 3.0s when 1st to 3rd place, no late start and never rushed, on the last straight.",
+    {   "skill_name": "1st Place Kiss☆",
+        "description": "Increases speed by 0.15 and acceleration by 0.2 for 5.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 3rd place",
+                "Blocked in the sides for 2s or more",
+                "Final corner and beyond"
             ]
         ],
         "team_trials": "-",
         "champs_meet": "-",
-        "review": "Effects are weak. Late Start or Rushed may happen and kill your race if you are relying on this skill.",
+        "review": "You can't inherit this.",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "first place kiss",
+            "mayano top gun",
+            "victory kiss",
+            "勝利のキッス"
+        ],
+        "horse": "Mayano Top Gun (Original)",
+        "upgrade": "Flashy☆Landing"
+    },
+    {   "skill_name": "G00 1st. F∞;",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "1st to 3rd place",
+                "Never 'Late Start'",
+                "Never 'Rushed'",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Effects are weak. Late Start or Rushed may happen and void this skill.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7074,55 +7099,59 @@
         "horse": "Mihono Bourbon (Original)"
     },
     {   "skill_name": "Blue Rose Closer",
-        "description": "Increases speed by 0.35 for 5.0s when overtaking, between 1st to 4th place, on the last straight.",
-        "inherited": "Increases speed by 0.15 for 3.0s when overtaking, between 1st to 4th place, on the last straight.",
+        "description": "Increases speed by 0.35 for 5.0s on the last straight.",
+        "inherited": "Increases speed by 0.15 for 3.0s on the last straight.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtaking",
+                "1st to 4th place",
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "B",
+        "champs_meet": "B",
         "review": "Easy to trigger. Effects are rather weak.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "blue rose closer",
-            "rice shower"
+            "rice shower",
+            "blue rose chaser",
+            "ブルーローズチェイサー"
         ],
         "horse": "Rice Shower (Original)"
     },
     {   "skill_name": "Our Ticket to Win!",
-        "description": "Increases speed by 0.35 for 5.0s when 1st to 5th place, blocked on the sides for more than 2s, and on the last straight.",
-        "inherited": "Increases speed by 0.15 for 3.0s when 1st to 5th place, blocked on the sides for more than 2s, and on the last straight.",
+        "description": "Increases speed by 0.35 for 5.0s on the last straight.",
+        "inherited": "Increases speed by 0.15 for 3.0s on the last straight.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 5th place",
+                "Blocked in the sides for 2s or more",
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "C",
+        "champs_meet": "C",
         "review": "Unlikely to be blocked on the sides on the last straight in Champion's Meet. Effects are also rather weak.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "our ticket to win",
-            "winning ticket"
+            "winning ticket",
+            "the ticket to victory for you",
+            "勝利のチケットを君にッ"
         ],
         "horse": "Winning Ticket (Original)",
         "downgrade": "V is for Victory!"
     },
     {   "skill_name": "V is for Victory!",
-        "description": "Increases speed by 0.25 for 5.0s when 1st to 5th place, blocked on the sides for more than 2s, and on the last straight.",
+        "description": "Increases speed by 0.25 for 5.0s on the last straight.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 5th place",
+                "Blocked in the sides for 2s or more",
+                "Final corner and beyond"
             ]
         ],
         "team_trials": "-",
@@ -7132,39 +7161,43 @@
         "category": "rainbowvelocity",
         "aliases": [
             "v is for victory",
-            "winning ticket"
+            "winning ticket",
+            "full power v sign",
+            "全力Vサインッ"
         ],
         "upgrade": "Our Ticket to Win!"
     },
     {   "skill_name": "Genius x Bakushin = Victory",
-        "description": "Increases speed by 0.35 for 5.0s when 1st to 3rd place, blocked on the sides for more than 2s, and in second half of the race.",
-        "inherited": "Increases speed by 0.15 for 3.0s when 1st to 3rd place, blocked on the sides for more than 2s, and in second half of the race.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 3rd place",
+                "Blocked in the sides for 2s or more",
+                "Second half of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Better on Front Runners. Skill triggers easily but may not trigger at the right moments due to the second half of the race condition. Effects are also rather weak.",
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Better on Front Runners. Skill triggers easily but may not trigger at the right moments. Effects are also rather weak.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "genius x bakushin victory",
-            "sakura bakushin o"
+            "sakura bakushin o",
+            "honor student x bakushin = big victory",
+            "優等生xバクシン=大勝利ッ"
         ],
         "horse": "Sakura Bakushin O (Original)",
         "downgrade": "Class Rep + Speed = Bakushin"
     },
     {   "skill_name": "Class Rep + Speed = Bakushin",
-        "description": "Increases speed by 0.25 for 5.0s when 1st to 3rd place, blocked on the sides for more than 2s, and in second half of the race.",
+        "description": "Increases speed by 0.25 for 5.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 3rd place",
+                "Blocked in the sides for 2s or more",
+                "Second half of the race"
             ]
         ],
         "team_trials": "-",
@@ -7173,29 +7206,33 @@
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
-            "class rep + speed bakushin",
-            "sakura bakushin o"
+            "class rep + speed = bakushin",
+            "sakura bakushin o", 
+            "class president + speed = bakushin",
+            "学級委員長+速さ=バクシン"
         ],
         "upgrade": "Genius x Bakushin = Victory"
     },
     {   "skill_name": "I See Victory in My Future!",
-        "description": "Increases speed by 0.35 for 5.0s when 3rd place or greater, blocked in front and in the late-race.",
-        "inherited": "Increases speed by 0.15 for 3.0s when 3rd place or greater, blocked in front and in the late-race.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "3rd place or worse",
+                "Blocked in front",
+                "Late race and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "C",
+        "champs_meet": "D",
         "review": "Weak effects alongside a front blocked condition is bad.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "i see victory in my future",
-            "matikanefukukitaru"
+            "matikanefukukitaru original",
+            "luck is coming",
+            "来ます来てます来させます"
         ],
         "horse": "Matikanefukukitaru (Original)",
         "downgrade": "Luck Be with Me!"
@@ -7204,9 +7241,9 @@
         "description": "Increases speed by 0.25 for 5.0s when 3rd place or greater, blocked in front and in the late-race.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "3rd place or worse",
+                "Blocked in front",
+                "Late race and beyond"
             ]
         ],
         "team_trials": "-",
@@ -7216,39 +7253,43 @@
         "category": "rainbowvelocity",
         "aliases": [
             "luck be with me",
-            "matikanefukukitaru"
+            "matikanefukukitaru original",
+            "come come",
+            "来てください来てください"
         ],
         "upgrade": "I See Victory in My Future!"
     },
     {   "skill_name": "Just a Little Farther!",
-        "description": "Increases speed by 0.35 for 5.0s when in 3rd place, less than 1 length away from uma behind, and in the late-race.",
-        "inherited": "Increases speed by 0.15 for 3.0s when in 3rd place, less than 1 length away from uma behind, and in the late-race.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "3rd place",
+                "1 length ahead or less",
+                "Late race and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "C",
+        "champs_meet": "C",
         "review": "Easy to trigger but isn't very strong.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "just a little farther",
-            "nice nature"
+            "nice nature",
+            "surely beyond",
+            "きっとその先へ"
         ],
         "horse": "Nice Nature (Original)",
         "downgrade": "I Can Win Sometimes, Right?"
     },
-    {   "skill_name": "I Can Win Sometimes, Right?",
-        "description": "Increases speed by 0.25 for 5.0s when in 3rd place, less than 1 length away from uma behind, and in the late-race.",
+    {   "skill_name": "I Can Win Sometimes, Right?",    
+        "description": "Increases speed by 0.25 for 5.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "3rd place",
+                "1 length ahead or less",
+                "Late race and beyond"
             ]
         ],
         "team_trials": "-",
@@ -7258,38 +7299,41 @@
         "category": "rainbowvelocity",
         "aliases": [
             "i can win sometimes right",
-            "nice nature"
+            "nice nature",
+            "you know sometimes even i can",
+            "アタシもたまにはね"
         ],
         "upgrade": "Just a Little Farther!"
     },
     {   "skill_name": "Prideful King",
-        "description": "Increases speed by 0.45 for 5.0s when in 5th place (for Champion's Meet) or 5th to 7th place (for Team Trials), did not get rushed and is 200m away from the race end.",
-        "inherited": "Increases speed by 0.25 for 3.0s when in 5th place (for Champion's Meet) or 5th to 7th place (for Team Trials), did not get rushed and is 200m away from the race end.",
+        "description": "Increases speed by 0.45 for 5.0s.",
+        "inherited": "Increases speed by 0.25 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
+                "4th to 6th (CM), 4th to 8th (TT)",
+                "Never rushed",
                 "Last 200m of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "A bit similar to Oguri Cap (Original)'s skill. Much more difficult to trigger. Avoid if possible.",
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "A bit similar to Oguri Cap (Original)'s skill. Much more difficult to consistently trigger.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "prideful king",
-            "king halo"
+            "king halo",
+            "pride of king"
         ],
         "horse": "King Halo (Original)",
         "downgrade": "Call Me KING"
     },
     {   "skill_name": "Call me KING",
-        "description": "Increases speed by 0.35 for 5.0s when in 5th place (for Champion's Meet) or 5th to 7th place (for Team Trials), did not get rushed and is 200m away from the race end.",
+        "description": "Increases speed by 0.35 for 5.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
+                "4th to 6th (CM), 4th to 8th (TT)",
+                "Never rushed",
                 "Last 200m of the race"
             ]
         ],
@@ -7305,38 +7349,38 @@
         "upgrade": "Prideful King"
     },
     {   "skill_name": "#LookatCurren",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when overtaking, if top 40% of the pack but not 1st or 2nd, between 50% to 65% of the race (by distance).",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s when overtaking, if top 40% of the pack but not 1st or 2nd, between 50% to 65% of the race (by distance).",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtaking",
+                "2nd to 4th (CM), 2nd to 5th (TT)",
+                "Between 50% to 65% of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Easy to trigger but the effect will occur in the mid-race, which isn't critical for winning.",
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Easy to trigger but the effect will occur in the mid-race, which may not be impactful.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "lookatcurren",
-            "curren chan"
+            "curren chan original"
         ],
         "horse": "Curren Chan (Original)"
     },
     {   "skill_name": "Nemesis",
-        "description": "Increases speed by 0.35 for 5.0s when overtake target exists, between 50% to 75% of the pack on the final corner.",
-        "inherited": "Increases speed by 0.15 for 3.0s when overtake target exists, between 50% to 75% of the pack on the final corner.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "4th to 7th (CM), 5th to 9th (TT)",
+                "Overtake target exists",
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "B",
+        "champs_meet": "B",
         "review": "Easy to trigger for Late Surgers and End Closers but weak effect.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7347,165 +7391,188 @@
         "horse": "Narita Taishin (Original)"
     },
     {   "skill_name": "SPARKLY☆STARDOM",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when 1st place, lesser than 1 length ahead of the uma behind, on a straight during the mid-race.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s when 1st place, lesser than 1 length ahead of the uma behind, on a straight during the mid-race.",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st place",
+                "1 length ahead or less",
+                "Straight",
+                "Mid race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "B",
+        "champs_meet": "B",
         "review": "Helps Front Runners maintain their lead.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "sparkly stardom",
-            "smart falcon"
+            "smart falcon original",
+            "sparkling stardom",
+            "キラキラSTARDOM"
         ],
         "horse": "Smart Falcon (Original)"
     },
     {   "skill_name": "Shadow Break",
-        "description": "Increases speed by 0.35 for 5.0s first 75% of the pack but not 1st place, with an overtake target uma closer to the fence than yours, on the final corner and beyond.",
-        "inherited": "Increases speed by 0.15 for 3.0s first 75% of the pack but not 1st place, with an overtake target uma closer to the fence than yours, on the final corner and beyond.",
+        "description": "Condition 1 - Increases speed by 0.35 for 5.0s. \n If Condition 2 is also true, increases speed by 0.45 instead.",
+        "inherited": "Condition 1 - Increases speed by 0.15 for 5.0s. \n If Condition 2 is also true, increases speed by 0.25 instead.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtaking an uma closer to the inner fence",
+                "2nd to 7th (CM), 2nd to 9th (TT)",
+                "Final corner"
+            ],
+            [
+                "Blocked in the sides for 2s or more",
+                "Mid race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Conditions are okay, not too difficult, but the effects are weak.",
+        "team_trials": "B",
+        "champs_meet": "S",
+        "review": "Triggering both conditions net you a noticeable speed boost for a wide range of positions. Not ideal on a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "shadow break",
-            "narita brian"
+            "narita brian original"
         ],
         "horse": "Narita Brian (Original)"
     },
     {   "skill_name": "Eternal Moments",
-        "description": "Increases speed by 0.35 for 5.0s when first half of the pack but not 1st or 2nd, has an overtake target and during the mid-race.",
-        "inherited": "Increases speed by 0.15 for 3.0s when first half of the pack but not 1st or 2nd, has an overtake target and during the mid-race.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
                 "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtake target exists",
+                "Mid race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Based on the stats, the effects are weak when inherited. Mid-race speed boost may help your Pace Chaser catch up to other umas before the last spurt, triggering skills with overtake conditions if available.",
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Consistent for non Front Runners. Effect is weak though.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "eternal moments",
-            "air groove wedding"
+            "air groove wedding",
+            "summer breeze the eternal moment",
+            "薫風永遠なる瞬間を"
         ],
         "horse": "Air Groove (Wedding)"
     },
     {   "skill_name": "Flowery☆Maneuver",
-        "description": "Increases speed by 0.35 for 5.0s when overtaking, if first 40% of the pack, on the final corner.\n Increases acceleration by 0.4 for 4.0s when overtaking, if between 50% to 80% of the pack, on the final corner.",
-        "inherited": "Increases speed by 0.15 for 3.0s when overtaking, if first 40% of the pack, on the final corner.\n Increases acceleration by 0.2 for 2.4s when overtaking, if between 50% to 80% of the pack, on the final corner.",
+        "description": "Condition 1 - Increases speed by 0.35 for 5.0s.\n Condition 2 - Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Condition 1 - Increases speed by 0.15 for 3.0s.\n Condition 2 - Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtaking",
+                "1st to 4th (CM), 1st to 5th (TT)",
+                "Final corner"
+            ],
+            [
+                "Overtaking",
+                "5th to 7th (CM), 6th to 10th (TT)",
+                "Final corner"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "B",
+        "champs_meet": "A",
         "review": "Flexible skill that can trigger speed boost for Front Runners and Pace Chasers or acceleration boost for Late Surgers and End Closers. Speed effect is viable on tracks with speed carry over into the final corner (check umalator). Acceleration is good on tracks where the Last Spurt is on the final corner (also check umalator).",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "flowery maneuver",
-            "mayano top gun wedding"
+            "mayano top gun wedding",
+            "フラワリーマニューバ"
         ],
         "horse": "Mayano Top Gun (Wedding)"
     },
     {   "skill_name": "You and Me! One-on-One!",
-        "description": "Increases speed by 0.35 for 5.0s for the final straight when overtaking and the uma behind is you closer to the inner fence, while being in the last 60% of the pack (4th place or higher for Champion's Meet, 5th place or higher for Team Trials) in the final corner and beyond.",
-        "inherited": "Increases speed by 0.15 for 3.0s for the final straight when overtaking and the uma behind is you closer to the inner fence, while being in the last 60% of the pack (4th place or higher for Champion's Meet, 5th place or higher for Team Trials) in the final corner and beyond.",
+        "description": "Increases speed by 0.35 for 5.0s on the final straight.",
+        "inherited": "Increases speed by 0.15 for 3.0s on the final straight.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtaking an uma closer to the inner fence",
+                "40% or worse (4th or worse in CM, 5th or worse in TT)",
+                "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Not consistent enough to trigger. Depending on the track, the last 60% of the pack condition may be hard to meet on the final straight.",
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Decent skill for Late Surger and End Closer.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "you and me one on one",
-            "hishi amazon"
+            "hishi amazon",
+            "one on one dead heat",
+            "タイマンデッドヒート"
         ],
         "horse": "Hishi Amazon (Original)"
     },
     {   "skill_name": "Lights of Vaudeville",
-        "description": "Increases speed by 0.45 for 5.0s if first 30% of the pack (1st to 3rd place for Champ's Meet or 1st to 4th place in Team Trials) followed directly by another uma for more than 1s on the final straight.",
-        "inherited": "Increases speed by 0.25 for 3.0s if first 30% of the pack (1st to 3rd place for Champ's Meet or 1st to 4th place in Team Trials) followed directly by another uma for more than 1s on the final straight.",
+        "description": "Increases speed by 0.45 for 5.0s.",
+        "inherited": "Increases speed by 0.25 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "30% or better (3rd or better in CM, 4th or better in TT)",
+                "2 lengths ahead of another uma for 1s or more",
+                "Final straight"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "B",
+        "champs_meet": "A",
         "review": "Similar to Oguri Cap (Original)'s skill but works on Front Runners as well.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
+            "vaudeville",
             "lights of vaudeville",
-            "fuji kiseki original"
+            "fuji kiseki original",
+            "glittering star vaudeville",
+            "煌星のヴォードヴィル"
         ],
         "horse": "Fuji Kiseki (Original)"
     },
     {   "skill_name": "A Kiss for Courage",
-        "description": "Increases speed by 0.35 for 5s if 1st to 3rd place in the second half of the race when recovering stamina with a skill.",
-        "inherited": "Increases speed by 0.15 for 5s if 1st to 3rd place in the second half of the race when recovering stamina with a skill.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "1st to 3rd place",
+                "Activated 1 or more recovery skill",
+                "Second half of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "Very easy to trigger, but the numbers are a bit low. Will update later.",
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "Very easy to trigger, but the numbers are a bit low. With the right recovery can be timed to boost effectively.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
             "a kiss for courage",
             "summer maruzensky",
-            "maruzensky summer"
+            "maruzensky summer",
+            "heartfelt smooch",
+            "グッときてChu"
         ],
         "horse": "Maruzensky (Summer)"
     },
     {   "skill_name": "I Never Goof Up!",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when overtaking during the late-race.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s when overtaking during the late-race.",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
         "conditions": [
             [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "1 length ahead/behind or less",
-                "Last 200m of the race"
+                "Overtaking",
+                "3rd to 9th (CM), 3rd to 12th (TT)",
+                "Corner",
+                "Late race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "team_trials": "B",
+        "champs_meet": "A",
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7516,25 +7583,19 @@
         "horse": "Meisho Doto (Original)"
     },
     {   "skill_name": "Schwarzes Schwert",
-        "description": "Condition 1 - Increases speed by 0.45 for 5.0s. Condition 2 - Increases speed by 0.35 for 5.0s.",
-        "inherited": "Condition 1 - Increases speed by 0.25 for 3.0s. Condition 2 - Increases speed by 0.15 for 3.0s.",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 5.0s.",
         "conditions": [
             [
                 "3rd or worse",
-                "40% or worse the entire race (4th or worse in CM, 5th or worse in TT)",
-                "80% or better the entire race (7th or better in CM, 10th or better in TT)",
-                "Haven't rushed",
-                "Final straight"
-            ],
-            [
-                "3rd or worse",
-                "Haven't rushed",
+                "Never 'Late Start'",
+                "Never 'Rushed'",
                 "Final straight"
             ]
         ],
-        "team_trials": "Lacking",
-        "champs_meet": "Lacking",
-        "review": "Conditions are rather awkward. Numberswise, pretty good.",
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Effects are weak. Late Start or Rushed may happen and void this skill.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7542,19 +7603,74 @@
             "eishin flash original"
         ],
         "horse": "Eishin Flash (Original)"
-    }
-    
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
+    },
+    {   "skill_name": "Bountiful Harvest",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "40% or worse (4th or worse in CM, 5th or worse in TT)",
+                "Be an overtake target for 2s or more",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Consistent but weak effect.",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "bountiful harvest",
+            "matikanefukukkitaru full armor",
+            "machikanefukukitaru full armor",
+            "grains become ripe",
+            "禾スナハチ登ル"
+        ],
+        "horse": "Matikanefukukitaru (Full Armor)"
+    },
+    {   "skill_name": "YUMMY☆SPEED!",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
+        "conditions": [
+            [
+                "3rd to 5th (CM), 3rd to 6th (TT)",
+                "70% or less HP remaining",
+                "Between 45% to 65% of the race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Activates somewhere in the mid race. Effects are a bit weak.",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "yummy speed",
+            "hishi akebono original",
+            "im full speed"
+        ],
+        "horse": "Hishi Akebono (Original)"
+    },
+    {   "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
+        "description": "Increases speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
+        "inherited": "Increases speed by 0.15 and lane movement speed by 0.015 for 3.0s.",
+        "conditions": [
+            [
+                "Overtake 2 times",
+                "Late race and beyond"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "omg the final sprint",
+            "agnes digital original",
+            "kyuute last spuuuurt",
+            "kyuute last spurt",
+            "尊み☆ﾗｽﾄｽﾊﾟﾄ"
+        ],
+        "horse": "Agnes Digital (Original)"
+    }  
 ]
