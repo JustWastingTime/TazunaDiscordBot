@@ -262,8 +262,8 @@ const REGISTER_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const SETCHANNEL_COMMAND = {
-  name: "setchannel",
+const SETCHANNELADMIN_COMMAND = {
+  name: "setchanneladmin",
   description: "Set a channel for the bot to send applications to",
   default_member_permissions: "8", // Admin only
   options: [
@@ -271,6 +271,22 @@ const SETCHANNEL_COMMAND = {
       type: 7, // CHANNEL
       name: "channel",
       description: "Pick a channel (mod only channel if available)",
+      required: true,
+    },
+  ],
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+const SETCHANNELLEADERBOARD_COMMAND = {
+  name: "setchannelleaderboard",
+  description: "Set a channel for the bot to send live leaderboard to",
+  default_member_permissions: "8", // Admin only
+  options: [
+    {
+      type: 7, // CHANNEL
+      name: "channel",
+      description: "Pick a channel (only for the bot to post)",
       required: true,
     },
   ],
@@ -315,6 +331,6 @@ const SCHEDULE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, EVENT_COMMAND, RACE_COMMAND, CM_COMMAND, LOG_COMMAND, TRAINER_COMMAND, LEADERBOARD_COMMAND, BANANA_COMMAND, PARSE_COMMAND, REGISTER_COMMAND, SETCHANNEL_COMMAND, APPLY_COMMAND, SCHEDULE_COMMAND];
+const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, EVENT_COMMAND, RACE_COMMAND, CM_COMMAND, LOG_COMMAND, TRAINER_COMMAND, LEADERBOARD_COMMAND, BANANA_COMMAND, PARSE_COMMAND, REGISTER_COMMAND, SETCHANNELADMIN_COMMAND, SETCHANNELLEADERBOARD_COMMAND, APPLY_COMMAND, SCHEDULE_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

@@ -13,6 +13,7 @@ import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSk
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
+import "./leaderboard.js";
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -963,7 +964,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     }
 
     // "setchannel" command to set an admin channel for application purposes
-    if (name === "setchannel") {
+    if (name === "setchanneladmin") {
       const member = req.body.member;
 
       // Convert permissions to BigInt (safe for large bitfields)
@@ -991,6 +992,43 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         config = {};
       }
       config.applicationChannel = channelId;
+      fs.writeFileSync("./config.json", JSON.stringify(config, null, 2));
+
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: { content: `✅ Saved channel <#${channelId}>` }
+      });
+    }
+
+    // "setchannel" command to set a live leaderboard channel 
+    if (name === "setchannelleaderboard") {
+      const member = req.body.member;
+
+      // Convert permissions to BigInt (safe for large bitfields)
+      const perms = BigInt(member.permissions || "0");
+      const ADMIN = 0x00000008n; // Administrator bit
+
+      const isAdmin = (perms & ADMIN) === ADMIN;
+      if (!isAdmin) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { 
+            content: "❌ You must be an admin to use this command.", 
+            flags: 64 // ephemeral
+          }
+        });
+      }
+
+      const channelId = options.find(o => o.name === "channel").value;
+
+      // Save channelId to config.json
+      let config = {};
+      try {
+        config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
+      } catch {
+        config = {};
+      }
+      config.leaderboardChannel = channelId;
       fs.writeFileSync("./config.json", JSON.stringify(config, null, 2));
 
       return res.send({

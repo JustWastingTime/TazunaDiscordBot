@@ -3673,7 +3673,7 @@
                 "Early race"
             ]
         ],
-        "team_trials": "SS",
+        "team_trials": "S",
         "champs_meet": "SS",
         "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
         "rarity": "normal",
@@ -3692,7 +3692,7 @@
                 "Early race"
             ]
         ],
-        "team_trials": "SS",
+        "team_trials": "S",
         "champs_meet": "SS",
         "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
         "rarity": "normal",
@@ -3836,9 +3836,9 @@
                 "Early race"
             ]
         ],
-        "team_trials": "C",
+        "team_trials": "S",
         "champs_meet": "D",
-        "review": "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill.",
+        "review": "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill. Its cheap and consistent, helps pad the TT scoring.",
         "rarity": "rare",
         "category": "goldenflow",
         "aliases": [
@@ -4218,9 +4218,9 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "D",
+        "team_trials": "S",
         "champs_meet": "D",
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
         "rarity": "rare",
         "category": "goldenvision",
         "aliases": [
@@ -4258,9 +4258,9 @@
                 "Changing lanes"
             ]
         ],
-        "team_trials": "D",
+        "team_trials": "A",
         "champs_meet": "E",
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
         "rarity": "rare",
         "category": "goldenvision",
         "aliases": [
