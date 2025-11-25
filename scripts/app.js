@@ -25,9 +25,11 @@ const __dirname = path.dirname(__filename);
 // Resolve paths relative to the current file
 const serversPath = path.join(__dirname, "..", "assets", "servers.json");
 const usersPath   = path.join(__dirname, "..", "assets", "users.json");
+const waitinglistPath   = path.join(__dirname, "..", "assets", "waitinglist.json");
 
 const servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
 const users   = JSON.parse(fs.readFileSync(usersPath, "utf8"));
+const waitinglist = JSON.parse(fs.readFileSync(waitinglistPath, "utf8"));
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -51,6 +53,11 @@ function getUsers() {
 function getServers() {
   return JSON.parse(fs.readFileSync(serversPath, "utf8"));
 }
+
+function getWaitingList() {
+  return JSON.parse(fs.readFileSync(waitinglistPath, "utf8"));
+}
+
 
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
@@ -700,7 +707,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
         // Turn badges array into a single string
         const badgeLine = (user.badges && user.badges.length > 0)
-          ? user.badges.join(" ")
+          ? user.badges.join("")
           : "—";
 
         const payload = {
@@ -994,9 +1001,29 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       config.applicationChannel = channelId;
       fs.writeFileSync("./config.json", JSON.stringify(config, null, 2));
 
+      const welcomeMessage = {
+        content: "📋 For club applicants, please input your name and id here",
+        components: [
+          {
+            type: 1, // Action row
+            components: [
+              {
+                type: 2, // Button
+                style: 1, // Blurple
+                label: "📝 Join Waiting List",
+                custom_id: "waitinglist_join_button"
+              }
+            ]
+          }
+        ]
+      };
+
+
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: { content: `✅ Saved channel <#${channelId}>` }
+        data: { 
+          content: welcomeMessage
+        }
       });
     }
 

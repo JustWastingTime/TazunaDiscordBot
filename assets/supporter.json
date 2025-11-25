@@ -5100,7 +5100,7 @@
         ]
     },
     {   "id": "30064 Tamamo Cross",
-        "card_name": "Halloween Night",
+        "card_name": "Beware! Halloween Night!",
         "character_name": "Tamamo Cross",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
         "effects": [
@@ -5132,11 +5132,11 @@
         "rarity": "ssr",
         "category": "power",
         "aliases": [
-            "tamamo cross halloween night", "tamamo cross halloween"
+            "tamamo cross beware halloween night", "tamamo cross halloween"
         ]
     },
     {   "id": "30065 Zenno Rob Roy",
-        "card_name": "Magical Hero",
+        "card_name": "Magical Heroine",
         "character_name": "Zenno Rob Roy",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
         "effects": [
@@ -5170,7 +5170,41 @@
         "rarity": "ssr",
         "category": "speed",
         "aliases": [
-            "zenno rob roy magical hero"
+            "zenno rob roy magical heroine"
+        ]
+    },
+    {   "id": "30066 Mihono Bourbon",
+        "card_name": "The Ghost Finds Halloween Magic",
+        "character_name": "Mihono Bourbon",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Speed when beginning a Career playthrough (20)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20",
+            "Mood Effect - 30/33/36/40/40",
+            "Speed Bonus - 0/1/1/1/1",
+            "Initial Wit - 0/0/0/15/30",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 10/12/15/17/20",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Snowy Days",
+            "Early Lead",
+            "Front Runner Straightaways",
+            "Front Runner Corners"
+        ],
+        "event_skills": [
+            "Taking the Lead",
+            "Moxie",
+            "Focus"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30066-mihono-bourbon",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30066.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "mihono bourbon the ghost finds halloween magic", "mihono bourbon poverty", "mihono bourbon welfare", "mihono bourbon event", "mihono bourbon halloween"
         ]
     }
 

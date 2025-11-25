@@ -1695,6 +1695,77 @@
                 }
             ]
     },
+    {   "id": "101901 - Agnes Digital",
+        "character_name": "Agnes Digital",
+        "type": "Original",
+        "costume": "Full-Color Fangirling",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "8%",
+            "stamina": "8%",
+            "power": "7%",
+            "guts": "",
+            "wit": "7%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "G"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "B"
+            }
+        ],
+        "unique": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
+        "unique_explanation": "",
+        "skills": [
+            "Uma Stan",
+            "Forward, March!",
+            "Late Surger Straightaways"
+        ],
+        "potential": [
+            "Wet Conditions",
+            "Superstan",
+            "Medium Straightaways",
+            "Lead the Charge!"
+        ],
+        "event_skills": [
+            "Top Pick",
+            "Acceleration",
+            "Homestretch Haste",
+            "Kyoto Racecourse",
+            "Mile Corners",
+            "Updrafters",
+            "Unyielding Spirit"
+        ],
+        "races": [
+            "nhk mile cup may 1 year 2",
+            "japan dirt derby july 1 year 2",
+            "mile championship november 2 year 2",
+            "tenno sho autumn october 2 year 3"
+        ],
+        "aliases": ["agnes digital original", "fullcolor fangirling"],
+        "url": "https://gametora.com/umamusume/characters/101901-agnes-digital",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1019_101901.png",
+        "review": "Flexible runner than can do turfs and dirt races. Pretty strong as a Late Surger.",
+        "secrets": [
+            {
+            "conditions": "Win the Hanshin Juvenile Fillies or the Asahi Hai Futurity Stakes, Oka Sho, NHK Mile Cup, Mile Championship, February Stakes, Victoria Mile and Yausda Kinen",
+            "rewards": "Speed +20, Power +20, Skill points +30, Updrafters hint +1, Unyielding Spirit hint +1"
+            }
+        ]
+    },
     {   "id": "102001 - Seiun Sky",
         "character_name": "Seiun Sky",
         "type": "Original",

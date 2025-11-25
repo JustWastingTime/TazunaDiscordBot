@@ -1,0 +1,83 @@
+[
+    {
+        "name": "3months",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "6months",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "9months",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "1year",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "fanabuse",
+        "emojis" :
+        [
+            "<:badge_fanabuse1:1442602638242877481>",
+            "<:badge_fanabuse2:1442601832814739647>",
+            "<:badge_fanabuse3:1442601844252610774>"
+        ]
+    },
+    {
+        "name": "finalpush",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "crownjan",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "secondjan",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    },
+    {
+        "name": "thirdjan",
+        "emojis" :
+        [
+            "<:badge_fanabuse_1:1442596596482052268>",
+            "<:badge_fanabuse_2:1442596608784072784>",
+            "<:badge_fanabuse_3:1442596619341140069>"
+        ]
+    }
+]
