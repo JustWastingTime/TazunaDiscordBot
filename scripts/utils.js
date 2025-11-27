@@ -762,7 +762,7 @@ export function buildUmaEmbed(uma, skills) {
           .join("\n") + '\n \u200B',  // ← put each aptitude group on a new line
         inline: false
       },
-      { name: "Unique Skill", value: `${formatCardSkill(uma.unique, skills)}` + '\n' + uma.unique_explanation + '\n \u200B', inline: false },
+      { name: "Unique Skill", value: `${formatCardSkill(uma.unique, skills)}` + '\n \u200B', inline: false },
       {
         name: "Skills",
         value: uma.skills?.length ? uma.skills.map(e => formatCardSkill(e, skills)).join("\n ") : "—",
@@ -788,14 +788,8 @@ export function buildUmaEmbed(uma, skills) {
               inline: false
             }
           ]
-        : []),
-      {
-        name: "Review",
-        value: uma.review?.length ? uma.review: "—",
-        inline: false
-      },
+        : [])
     ],
-    thumbnail: { url: uma.thumbnail },
     url: uma.url
   };
 }
