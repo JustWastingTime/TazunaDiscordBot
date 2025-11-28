@@ -1830,11 +1830,15 @@
         "aliases": ["agnes digital original", "fullcolor fangirling"],
         "url": "https://gametora.com/umamusume/characters/101901-agnes-digital",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1019_101901.png",
-        "review": "Flexible runner than can do turfs and dirt races. Pretty strong as a Late Surger.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Win the Hanshin Juvenile Fillies or the Asahi Hai Futurity Stakes, Oka Sho, NHK Mile Cup, Mile Championship, February Stakes, Victoria Mile and Yausda Kinen",
             "rewards": "Speed +20, Power +20, Skill points +30, Updrafters hint +1, Unyielding Spirit hint +1"
+            },
+            {
+            "conditions": "Participate in the Takarazuka Kinen (Year 2)",
+            "rewards": "1 random stat +4/5/10, Skill points +25/40/45"
             }
         ]
     },
@@ -1871,7 +1875,7 @@
             }
         ],
         "unique": "Angling and Scheming",
-        "unique_explanation": "Increases acceleration by 0.4 for 4.0s if 1st place, on a corner, during the late-race.",
+        "unique_explanation": "",
         "skills": [
             "Hesitant Pace Chasers",
             "Keeping the Lead",
@@ -1906,7 +1910,7 @@
         "aliases": ["seiun sky original", "reeling in the big one"],
         "url": "https://gametora.com/umamusume/characters/102001-seiun-sky",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1020_102001.png",
-        "review": "Meta parent for Front Runners. Her unique is good on Medium and Mile tracks and is desired for all Front Runners and Pace Chasers (during a no front track). She herself is not that good of a runner.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
@@ -1947,7 +1951,7 @@
             }
         ],
         "unique": "∴win Q.E.D.",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when overtaking, between 1st to 4th place, on the final corner.",
+        "unique_explanation": "",
         "skills": [
             "Wet Conditions",
             "Deep Breaths",
@@ -1961,6 +1965,7 @@
         ],
         "event_skills": [
             "Hanshin Racecourse",
+            "Straightaway Acceleration",
             "Prepared to Pass"
         ],
         "races": [
@@ -1976,8 +1981,16 @@
         "aliases": ["biwa hayahide original", "pf winning equation"],
         "url": "https://gametora.com/umamusume/characters/102301-biwa-hayahide",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1023_102301.png",
-        "review": "An uma with lots of stamina recovery (especially after buffs). Consistent for Team Trials. Nothing spectacular for Champion's Meet.",
+        "review": "",
         "secrets": [
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "Speed +10, Guts +10, Skill points +10, Straightaway Acceleration hint +1 || Speed +5, Guts +5"
+            },
+            {
+            "conditions": "Trigger the [Battle with a Raging Dragon] event and win any race on Hanshin racecourse",
+            "rewards": "Energy +20, Hanshin Racecourse hint +2"
+            },
             {
             "conditions": "Win the Takarazuka Kinen (Year 3)",
             "rewards": "All stats +3, Skill points +45, Yayoi Akikawa bond +4, (random) Prepared to Pass hint +1"
@@ -2017,7 +2030,7 @@
             }
         ],
         "unique": "Flashy☆Landing",
-        "unique_explanation": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when 1st to 3rd place, blocked on the sides for more than 2s, and on the final corner.",
+        "unique_explanation": "",
         "skills": [
             "Straightaway Recovery",
             "Leader's Pride",
@@ -2030,7 +2043,11 @@
             "No Stopping Me!"
         ],
         "event_skills": [
-            "Straightaway Adept"
+            "Straightaway Adept",
+            "Final Push",
+            "Head-On",
+            "Slick Surge",
+            "Straightaway Spurt"
         ],
         "races": [
             "kikuka sho october 2 year 2",
@@ -2044,7 +2061,13 @@
         "aliases": ["mayano top gun original", "scramble zone"],
         "url": "https://gametora.com/umamusume/characters/102401-mayano-top-gun",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1024_102401.png",
-        "review": "A very flexible uma that can run in any style, and with a bit of work, any length (even dirt races). She is an ideal investment option for F2P players as she is usable in almost all content. After buffs, her golden skills will also be much more useful and she will also unlock additional accelerations for all her styles. Is a good uma."
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win a G1 race as a Front Runner, Pace Chaser, Late Surger and End Closer",
+            "rewards": "All stats +5, Skill points +30, Final Push hint +1, Head-On hint +1, Slick Surge hint +1, Straightaway Spurt hint +1"
+            }
+        ]  
     },
     {   "id": "102402 - Mayano Top Gun Wedding",
         "character_name": "Mayano Top Gun",
@@ -2094,12 +2117,22 @@
         "event_skills": [
             "Straightaway Adept",
             "Pace Strategy",
-            "Straightaway Acceleration"
+            "Straightaway Acceleration",
+            "Final Push",
+            "Head-On",
+            "Slick Surge",
+            "Straightaway Spurt"
         ],
         "aliases": ["mayano top gun wedding", "sunlight bouquet"],
         "url": "https://gametora.com/umamusume/characters/102402-mayano-top-gun",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1024_102402.png",
-        "review": "Her unique is a bit unreliable due to the specific conditions. If she passes at the right time, she can accelerate into a win, if she doesn't, her speed boost may not do much. She is also a good hybrid debuffer uma as she has access to Mystifying Murmur."
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win a G1 race as a Front Runner, Pace Chaser, Late Surger and End Closer",
+            "rewards": "All stats +5, Skill points +30, Final Push hint +1, Head-On hint +1, Slick Surge hint +1, Straightaway Spurt hint +1"
+            }
+        ]
     },
     {   "id": "102601 - Mihono Bourbon",
         "character_name": "Mihono Bourbon",
@@ -2134,7 +2167,7 @@
             }
         ],
         "unique": "G00 1st.F∞;",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when 1st to 3rd place, no late start and never rushed, on the last straight.",
+        "unique_explanation": "",
         "skills": [
             "Rainy Days",
             "Early Lead",
@@ -2148,7 +2181,8 @@
         ],
         "event_skills": [
             "Wet Conditions",
-            "Final Push"
+            "Final Push",
+            "Straightaway Acceleration"
         ],
         "races": [
             "asahi hai futurity stakes december 1 year 1",
@@ -2163,7 +2197,7 @@
         "aliases": ["mihono bourbon original", "mb 19890425", "gundam"],
         "url": "https://gametora.com/umamusume/characters/102601-mihono-bourbon",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1026_102601.png",
-        "review": "A mediocre uma. Outclassed by other Front Runners for Champion's Meet. Okay for Team Trials.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Win the Tokyo Yushun (Japanese Derby)",
@@ -2171,7 +2205,7 @@
             },
             {
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
-            "rewards": "Guts +15"
+            "rewards": "All stats +3, Guts +15, Skill points +45, Straitaway Acceleration hint +2, Yayoi Akikawa bond +4"
             }
         ]
     },
@@ -2208,7 +2242,7 @@
             }
         ],
         "unique": "Let's Pump Some Iron!",
-        "unique_explanation": "Increases acceleration by 0.4 for 4.0s if 6th place (for Champion's Meet) or 8th place (for Team Trials), on a corner during the late-race.",
+        "unique_explanation": "",
         "skills": [
             "Rainy Days",
             "Up-Tempo",
@@ -2221,7 +2255,8 @@
             "Rising Dragon"
         ],
         "event_skills": [
-            "Wet Conditions"
+            "Wet Conditions",
+            "Slick Surge"
         ],
         "races": [
             "satsuki sho april 1 year 2",
@@ -2235,9 +2270,15 @@
         "aliases": ["mejiro ryan original", "down the line"],
         "url": "https://gametora.com/umamusume/characters/102701-mejiro-ryan",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1027_102701.png",
-        "review": "Champion's Meet meta parent for Late Surgers and End Closers. On tracks where the last spurt starts on a corner, her skill will be very very helpful. As a runner, she is mediocre. Her unique is also not that good for Team Trials (needs 8th position)."
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "Power +15, Slick Surge hint +2"
+            }
+        ]
     },
-    {   "id": "102801 - Hishi Akebono",
+    {   "id": "102801 - Hishi Akebono", 
         "character_name": "Hishi Akebono",
         "type": "Original",
         "costume": "Bono ☆ Alla Moda",
@@ -2270,34 +2311,35 @@
             }
         ],
         "unique": "I'M☆FULL☆SPEED!!",
-        "unique_explanation": "Increases acceleration by 0.4 for 4.0s if 6th place (for Champion's Meet) or 8th place (for Team Trials), on a corner during the late-race.",
+        "unique_explanation": "",
         "skills": [
             "Sunny Days",
             "Hydrate",
             "Meticulous Measures"
         ],
         "potential": [
-            "Pace Strategy",
-            "Killer Tunes",
-            "Medium Straightaways",
-            "Rising Dragon"
+            "Tactical Tweak",
+            "Perfect Prep!",
+            "Intimidate",
+            "Gourmand"
         ],
         "event_skills": [
-            "Wet Conditions"
+            "Stamina to Spare",
+            "Countermeasure"
         ],
         "races": [
-            "satsuki sho april 1 year 2",
-            "japanese derby may 2 year 2",
-            "kikuka sho october 2 year 2",
-            "arima kinen december 2 year 2",
-            "tenno sho spring april 2 year 3",
-            "takarazuka kinen june 2 year 3",
-            "arima kinen december 2 year 3"
+            "sprinters stakes september 2 year 2",
+            "swan stakes october 2 year 2",
+            "mile championship november 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "sprinters stakes september 2 year 3",
+            "mile championship november 2 year 3"
         ],
         "aliases": ["hishi akebono original", "bono alla moda"],
         "url": "https://gametora.com/umamusume/characters/102801-hishi-akebono",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1028_102801.png",
-        "review": "Champion's Meet meta parent for Late Surgers and End Closers. On tracks where the last spurt starts on a corner, her skill will be very very helpful. As a runner, she is mediocre. Her unique is also not that good for Team Trials (needs 8th position)."
+        "review": ""
     },
     {   "id": "103001 - Rice Shower",
         "character_name": "Rice Shower",
@@ -2463,7 +2505,7 @@
             }
         ],
         "unique": "U=ma2",
-        "unique_explanation": "Recover HP by 5.5% when first 40% of the pack but third place or greater, on any corner, during the second half of the race.",
+        "unique_explanation": "",
         "skills": [
             "Standard Distance",
             "Tether",
@@ -2476,7 +2518,8 @@
             "Race Planner"
         ],
         "event_skills": [
-            "Corner Adept"
+            "Corner Adept",
+            "Tactical Tweak"
         ],
         "races": [
             "yayoi sho march 1 year 2",
@@ -2491,11 +2534,15 @@
         "aliases": ["agnes tachyon original", "tachnology"],
         "url": "https://gametora.com/umamusume/characters/103201-agnes-tachyon",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1032_103201.png",
-        "review": "Kind of a mixed bag. Unique isn't good to inherit generally, only usable on Christmas Oguri. Her debuff is better on Late but she is a Pace Chaser. Not a spectactular Champion's Meet uma either.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Participate in the Satsuki Sho",
             "rewards": "If Mood Good or Better\nWit +5\n\nIf Mood Normal or worse\nWit +5, Objective race changed to NHK Mile Cup"
+            },
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "All stats +3, Tactical Tweak hint +2"
             }
         ]
     },
@@ -2532,7 +2579,7 @@
             }
         ],
         "unique": "Our Ticket to Win!",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when 1st to 5th place, blocked on the sides for more than 2s, and on the last straight.",
+        "unique_explanation": "",
         "skills": [
             "Firm Conditions",
             "Steadfast",
@@ -2545,7 +2592,12 @@
             "Fast & Furious"
         ],
         "event_skills": [
-            "Nimble Navigator"
+            "Nimble Navigator",
+            "Late Surger Straightaways",
+            "Late Surger Corners",
+            "Position Pilfer",
+            "Slick Surge",
+            "Outer Swell"
         ],
         "races": [
             "hopeful stakes december 1 year 1",
@@ -2562,10 +2614,16 @@
         ],
         "url": "https://gametora.com/umamusume/characters/103501-winning-ticket",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1035_103501.png",
-        "review": "A very mediocre uma."
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win races where Biwa Hayahide or Narita Taishin run",
+            "rewards": "7+ \nSpeed +15, Power +15, Skill points +15, Outer Swell hint +2\n\n4-6 \nSpeed +10, Power +10 \n\n1-3 \nSpeed +10"
+            }
+        ]
     },
     {   "id": "103701 - Eishin Flash",
-        "character_name": "Eishin Flash",
+        "character_name": "Eishin Flash",   
         "type": "Original",
         "costume": "Meisterschaft",
         "rarity": "⭐⭐⭐",
@@ -2597,7 +2655,7 @@
             }
         ],
         "unique": "Schwarzes Schwert",
-        "unique_explanation": "Increases speed by 0.45 for 5.0s on the last straight, when between 40% to 80% of the pack for the entire race (not including first 5s of the race) and has never rushed. Otherwise, If 3rd place or lower, increases speed by 0.35 for 5.0s on the last straight if never rushed.",
+        "unique_explanation": "",
         "skills": [
             "Go with the Flow",
             "Late Surger Savvy",
@@ -2628,7 +2686,7 @@
         "aliases": ["eishin flash original", "meisterschaft"],
         "url": "https://gametora.com/umamusume/characters/103701-eishin-flash",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1037_103701.png",
-        "review": "Is just an okay uma. Is cute.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Win the Tokyo Yushun (Japanese Derby)",
@@ -2685,7 +2743,7 @@
             }
         ],
         "unique": "#LookatCurren",
-        "unique_explanation": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when overtaking, if top 40% of the pack but not 1st or 2nd, between 50% to 65% of the race (by distance).",
+        "unique_explanation": "",
         "skills": [
             "Ramp Up",
             "Disorient",
@@ -2713,7 +2771,7 @@
         "aliases": ["curren chan original", "fille eclair"],
         "url": "https://gametora.com/umamusume/characters/103801-curren-chan",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1038_103801.png",
-        "review": "A decent consistent uma for Team Trials as a Sprint Pace Chaser. For Champion's Meet, her unique doesn't always trigger at the right moments to bring the acceleration into the spurt.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Reach May 2 Year 2",
@@ -2721,7 +2779,7 @@
             },
             {
             "conditions": "Win the Hakodate Sprint Stakes (Year 3), Keeneland Cup (Year 3), Centaur Stakes (Year 3)",
-            "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Sprinting Gear hint +2"
+            "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Guts +15, Sprinting Gear hint +2"
             }
         ]
     },
@@ -2758,7 +2816,7 @@
             }
         ],
         "unique": "KEEP IT REAL.",
-        "unique_explanation": "Increases acceleration by 0.3 for 6.0s when overtake target exists, between 40% to 80% of the pack (4 to 7 in Champion's Meet and 5 to 10 in Team Trials) in the second half of the race.",
+        "unique_explanation": "",
         "skills": [
             "Hanshin Racecourse",
             "Watchful Eye",
@@ -2787,7 +2845,7 @@
         "aliases": ["gold city original", "authentic 1928"],
         "url": "https://gametora.com/umamusume/characters/104001-gold-city",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104001.png",
-        "review": "A good mile late surger gambling horse because she has On Your Left! She will get buffs in the future making her an even stronger uma."
+        "review": ""
     },
     {   "id": "104101 - Sakura Bakushin O",
         "character_name": "Sakura Bakushin O",
@@ -2822,7 +2880,7 @@
             }
         ],
         "unique": "Genius x Bakushin = Victory",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when 1st to 3rd place, blocked on the sides for more than 2s, and in second half of the race.",
+        "unique_explanation": "",
         "skills": [
             "Flustered Front Runners",
             "Pace Chaser Straightaways",
@@ -2853,11 +2911,11 @@
         "aliases": ["sakura bakushin o original", "blossom in learning"],
         "url": "https://gametora.com/umamusume/characters/104101-sakura-bakushin-o",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1041_104101.png",
-        "review": "Good free option for Sprint Team Trials. She is better as a Pace Chaser than Front Runner, but she can do both. Fit appropriately into your Team Trial lineup depending on your available umas.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Win the Sprinters Stakes (Year 2) and the Sprinters Stakes (Year 3)",
-            "rewards": "Mood +3, All stats +3, Skill points +45, Moxie hint +1, Get Hot Topic status"
+            "rewards": "Mood +3, All stats +3, Speed +10, Skill points +45, Moxie hint +1, Get Hot Topic status"
             }
         ]
     },
@@ -2894,7 +2952,7 @@
             }
         ],
         "unique": "Pure Heart",
-        "unique_explanation": "Recover HP by 5.5% when first 40% of the pack but second place or greater, during the mid-race.",
+        "unique_explanation": "",
         "skills": [
             "Corner Recovery",
             "Deep Breaths",
@@ -2907,7 +2965,9 @@
             "Swinging Maestro"
         ],
         "event_skills": [
-            "Corner Recovery"
+            "Corner Recovery",
+            "Hydrate",
+            "Prepared to Pass"
         ],
         "races": [
             "sumire stakes february 2 year 2",
@@ -2921,7 +2981,7 @@
         "aliases": ["super creek original", "murmuring stream"],
         "url": "https://gametora.com/umamusume/characters/104501-super-creek",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1045_104501.png",
-        "review": "Has a lot of recovery as a runner. After buffs, she will have an insane amount of recovery but it is inconsistent. Sometimes useful as an inheritance for Pace Chasers who need more stamina recovery.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Participate in the Sumire Stakes",
@@ -2978,7 +3038,7 @@
             }
         ],
         "unique": "Give Mummy a Hug ♡",
-        "unique_explanation": "Recover HP by 5.5% when first 40% of the pack but second place or greater, during the mid-race.",
+        "unique_explanation": "",
         "skills": [
             "Corner Adept",
             "Murmur",
@@ -3057,7 +3117,7 @@
             }
         ],
         "unique": "SPARKLY☆STARDOM",
-        "unique_explanation": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when 1st place, lesser than 1 length ahead of the uma behind, on a straight during the mid-race.",
+        "unique_explanation": "",
         "skills": [
             "Prudent Positioning",
             "Front Runner Savvy",
@@ -3071,7 +3131,9 @@
         ],
         "event_skills": [
             "Leader's Pride",
-            "Top Pick"
+            "Top Pick",
+            "Kawasaki Racecourse",
+            "Promising Omen"
         ],
         "races": [
             "satsuki sho april 1 year 2",
@@ -3087,7 +3149,7 @@
         "aliases": ["smart falcon original", "love 4 ever"],
         "url": "https://gametora.com/umamusume/characters/104601-smart-falcon",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1046_104601.png",
-        "review": "Meta uma for Dirt Champion's Meet for a while. With enough work, she can also be a strong Turf Front Runner. Also good for Team Trials.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Random event",
@@ -3100,6 +3162,10 @@
             {
             "conditions": "Have at least 120000 fans before the finals",
             "rewards": "Mood +1, Guts +20, Top Pick hint +3"
+            },
+            {
+            "conditions": "Win the Kawasaki Kinen",
+            "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Promising Omen hint +1"
             }
         ]
     },
@@ -3136,7 +3202,7 @@
             }
         ],
         "unique": "Nemesis",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when overtake target exists, between 50% to 75% of the pack on the final corner.",
+        "unique_explanation": "",
         "skills": [
             "Lone Wolf",
             "Standing By",
@@ -3149,7 +3215,8 @@
             "Encroaching Shadow"
         ],
         "event_skills": [
-            "Standing By"
+            "Standing By",
+            "Early Start"
         ],
         "races": [
             "hopeful stakes december 1 year 1",
@@ -3164,8 +3231,12 @@
         "aliases": ["narita taishin original", "nevertheless"],
         "url": "https://gametora.com/umamusume/characters/105001-narita-taishin",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1050_105001.png",
-        "review": "Very strong End Closer uma as she has easy access to Encroaching Shadow. Training her is a pain though.",
+        "review": "",
         "secrets": [
+            {
+            "conditions": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho, Japan Cup (Year 2), Arima Kinen (Year 2), Tenno Sho (Spring), Takarazuka Kinen (Year 3), Tenno Sho (Autumn Year 3) and Arima Kinen (Year 3)",
+            "rewards": "7+ \nPower +30, Skill points +15, Early Start hint +2 \n\n4-6 \nPower +25 \n\n0-3 \nPower +10"
+            },
             {
             "conditions": "Win the Nikkei Sho",
             "rewards": "Practice Poor was healed\nMood +4, All stats +20, Skill points +70, Get Practice Perfect ◎ status\n\nPractice Poor was not healed\nMood +4, All stats +15, Skill points +70, Heal Practice Poor"
@@ -3205,7 +3276,7 @@
             }
         ],
         "unique": "Super-Duper Climax",
-        "unique_explanation": "Recover HP by 5.5% when last half of the pack, with at least 1 uma within 3m or 3 lanes, on the final corner.",
+        "unique_explanation": "",
         "skills": [
             "Lay Low",
             "Sprinting Gear",
@@ -3230,11 +3301,11 @@
         "aliases": ["haru urara original", "bestest prize"],
         "url": "https://gametora.com/umamusume/characters/105201-haru-urara",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1052_105201.png",
-        "review": "Honestly not a very good uma. For Team Trials, she will most likely be slot into Dirt, but her skills are mainly recoveries, which isn't that needed. She can also be used for weird strategies in Champion's Meet (like Front Urara to set a very slow pace). Even though, she is not very good, she is very cute, so that is a big plus point.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Win the Arima Kinen (Year 3)",
-            "rewards": "All stats +4, Skill points +63, Long Shot hint +1, Yayoi Akikawa bond +5"
+            "rewards": "All stats +9, Skill points +99, Long Shot hint +1, Yayoi Akikawa bond +5"
             }
         ]
     },
@@ -3271,7 +3342,7 @@
             }
         ],
         "unique": "I See Victory in My Future!",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when 3rd place or greater, blocked in front and in the late-race.",
+        "unique_explanation": "",
         "skills": [
             "Lucky Seven",
             "A Small Breather",
@@ -3284,7 +3355,8 @@
             "Super Lucky Seven"
         ],
         "event_skills": [
-            "Hesitant Front Runners"
+            "Hesitant Front Runners",
+            "Slick Surge"
         ],
         "races": [
             "yayoi sho march 1 year 2",
@@ -3298,7 +3370,13 @@
         "aliases": ["matikanefukukitaru original", "machikane original", "rising fortune"],
         "url": "https://gametora.com/umamusume/characters/105601-matikanefukukitaru",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1056_105601.png",
-        "review": "Bad skills in general. Decent uma for Long Team Trials."
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Kyoto Shimbun Hai, Kobe Shimbun Hai and Kikuka Sho",
+            "rewards": "Speed +25, Power +25, Slick Surge hint +2"
+            }
+        ]
     },
     {   "id": "105602 - Matikanefukukitaru Full Armor",
         "character_name": "Matikanefukukitaru",
@@ -3333,7 +3411,7 @@
             }
         ],
         "unique": "Bountiful Harvest",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when 4th to 9th in CM (5th to 12th in TT), being an overtake target by another uma for 2 seconds or more, in the second half of the race.",
+        "unique_explanation": "",
         "skills": [
             "Right-Handed",
             "Slick Surge",
@@ -3347,7 +3425,8 @@
         ],
         "event_skills": [
             "Hesitant Front Runners",
-            "Lucky Seven"
+            "Lucky Seven",
+            "Slick Surge"
         ],
         "races": [
             "yayoi sho march 1 year 2",
@@ -3361,7 +3440,13 @@
         "aliases": ["matikanefukukitaru full armor", "machikane full armor", "lucky tidings"],
         "url": "https://gametora.com/umamusume/characters/105602-matikanefukukitaru",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1056_105602.png",
-        "review": "Good Long distance uma. Decent for parenting as well."
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Kyoto Shimbun Hai, Kobe Shimbun Hai and Kikuka Sho",
+            "rewards": "Speed +25, Power +25, Slick Surge hint +2"
+            }
+        ]
     },
     {   "id": "105801 - Meisho Doto",
         "character_name": "Meisho Doto",
@@ -3396,7 +3481,7 @@
             }
         ],
         "unique": "I Never Goof Up!",
-        "unique_explanation": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s when overtaking during the late-race.",
+        "unique_explanation": "",
         "skills": [
             "Pace Strategy",
             "Medium Corners",
@@ -3424,15 +3509,15 @@
         "aliases": ["meisho doto original", "blue raging"],
         "url": "https://gametora.com/umamusume/characters/105801-meisho-doto",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1058_105801.png",
-        "review": "A Pace Chaser that relies on gambling. Okay uma but not consistent.",
+        "review": "",
         "secrets": [
             {
             "conditions": "Participate in the Make Debut",
-            "rewards": "All stats +3, Skill points +20, Get Not Ready status, Yayoi Akikawa bond +4"
+            "rewards": "All stats +3, Skill points +20, Get 'Not Ready' status, Yayoi Akikawa bond +4"
             },
             {
-            "conditions": "Have at least 120000 fans before October 2 Year 2",
-            "rewards": "All stats +3, Skill points +20, Heal Not Ready status, Yayoi Akikawa bond +4"
+            "conditions": "Have at least 15,000 fans before October 2 Year 2",
+            "rewards": "All stats +3, Skill points +20, Heal 'Not Ready' status, Yayoi Akikawa bond +4"
             },
             {
             "conditions": "Win the Satsuki Sho, Tenno Sho (Spring Year 3), Takarazuka Kinen (Year 3), and Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and Arima Kinen (Year 3)",
@@ -3473,7 +3558,7 @@
             }
         ],
         "unique": "Just a Little Farther!",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when in 3rd place, less than 1 length away from uma behind, and in the late-race.",
+        "unique_explanation": "",
         "skills": [
             "Kokura Racecourse",
             "Murmur",
@@ -3486,7 +3571,8 @@
             "All-Seeing Eyes"
         ],
         "event_skills": [
-            "Studious"
+            "Studious",
+            "Homestretch Haste"
         ],
         "races": [
             "kokura kinen august 1 year 2",
@@ -3504,8 +3590,12 @@
         ],
         "url": "https://gametora.com/umamusume/characters/106001-nice-nature",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1060_106001.png",
-        "review": "Pure evil. Pure debuffer. Does she actually win? Nobody knows, but -stamina for everyone.",
+        "review": "",
         "secrets": [
+            {
+            "conditions": "Win the Kyoto Shimbun Hai, Naruo Kinen (Year 2) and the Kokura Kinen (Year 2)",
+            "rewards": "Speed +25, Stamina +25, Homestretch Haste hint +2"
+            },
             {
             "conditions": "Place 3rd in any non-objective race.",
             "rewards": "3 random stats +3, Skill points +65"
@@ -3561,7 +3651,7 @@
             }
         ],
         "unique": "Prideful King",
-        "unique_explanation": "Increases speed by 0.45 for 5.0s when in 5th place (for Champion's Meet) or 5th to 7th place (for Team Trials), did not get rushed and is 200m away from the race end.",
+        "unique_explanation": "",
         "skills": [
             "Outer Post Proficiency",
             "Gap Closer",
@@ -3574,7 +3664,8 @@
             "The Bigger Picture"
         ],
         "event_skills": [
-            "Outer Swell"
+            "Outer Swell",
+            "Studious"
         ],
         "races": [
             "hopeful stakes december 1 year 1",
@@ -3589,8 +3680,12 @@
         "aliases": ["king halo original", "king of emeralds"],
         "url": "https://gametora.com/umamusume/characters/106101-king-halo",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1061_106101.png",
-        "review": "Honestly not a very good uma. Her unique is a walmart Oguri and her other skills don't really do much. Her career is also a bit on the more difficult side if you are new.",
+        "review": "",
         "secrets": [
+            {
+            "conditions": "Win a Sprint , Mile, Medium and Long Turf G1 race",
+            "rewards": "All stats +10, Skill points +20"
+            },
             {
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
