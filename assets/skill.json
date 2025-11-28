@@ -6514,6 +6514,28 @@
         ],
         "horse": "Special Week (Summer)"
     },
+    {   "skill_name": "Every Rose Has Its Fangs",
+        "description": "Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
+        "inherited": "Recover HP by 1.5%. Reduces HP of all umas ahead by 0.25%.",
+        "conditions": [
+            [
+                "2nd to 5th (CM), 2nd to 6th (TT)",
+                "Be an overtake target for 1s or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Okay cost for a recovery + debuff skill. But probably better uniques to inherit instead.",
+        "rarity": "unique",
+        "category": "rainbowrecovery",
+        "aliases": [
+            "every rose has its fangs",
+            "rice shower halloween",
+            "drain for rose"
+        ],
+        "horse": "Rice Shower (Halloween)"
+    },
     
 
     
@@ -7659,8 +7681,8 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "team_trials": "B",
+        "champs_meet": "B",
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7672,5 +7694,28 @@
             "尊み☆ﾗｽﾄｽﾊﾟﾄ"
         ],
         "horse": "Agnes Digital (Original)"
-    }  
+    },
+    {   "skill_name": "Give Mummy a Hug ♡",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
+        "conditions": [
+            [
+                "1st to 4th",
+                "1 length behind or more",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "give mummy a hug",
+            "super creek halloween",
+            "round and round mummy trick",
+            "ぐるぐるマミートリック"
+        ],
+        "horse": "Super Creek (Halloween)"
+    }
 ]
