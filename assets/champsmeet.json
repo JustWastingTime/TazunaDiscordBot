@@ -109,8 +109,27 @@
             "weather": "Sunny",
             "similar": "Kikuka Sho"
         },
-        "date": "<t:1766008800:F> (Estimated)",
+        "date": "<t:1797026400:F>, <t:1797026400:R> (Estimated)",
+        "image": "https://img.game8.co/4338848/80a608ffdaee4de7679b8fcbc042b643.png/show",
+        "umalator": "https://kachi-dev.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACt1UTYvbMBD9L3PWQc42NOi2pFBKux%2FUdHsoexissS0iS0YzwpSQ%2F15kp9kmPpdCL0J6M%2B%2FNe0LoCE3MiemTBVPpXaUVBMZh9MRgtlorYCIL5p3eva%2B2W729UzBG%2Fkw0PkRLYLSChA1ZasEcYYjRgtko6FLMoWgqmAilpzTvmZBjAHOnQNxA51YsQpXWJwV5wKoIxSytk%2BIKQAGPs4lqMxsSHFzA38cxTkV8V%2FZdFi5etYLJsY3D%2BcCSUKj7CQZqCoeYQYF1LBgauh%2FFSS4OoC6jcmrxCr2HN4Eb%2BBKXD857BvPjVUEbU0O2LshzZCcuBgZzPC3pNv9vuhGb4vUvxnt0Hf2jcJOTF0yujK1JxIWuVAC9j9PXzD3Zb%2FPTlZRJ3cCbK%2FhDnELvvF%2F1%2F1G4ZtTUFCsP0brWUVoR1%2FUbfgm076k57PsSYC2wbrgosBu%2Bv2UH06JnOingPk4vLklG%2F4wNDXig9BQ%2BJhz7c9PyIubCPuYg5x%2FAUyNkL5xy9fOkhTOvr4v8FwzlG1om%2FgJL1f8AqgQAAA%3D%3D"
+    },
+    {
+        "name": "Scorpio Cup 2025",
+        "number": "7",
+        "track":
+        {
+            "racetrack": "Tokyo",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2000m",
+            "direction": "Left-Handed",
+            "ground": "Soft",
+            "season": "Autumn",
+            "weather": "Rainy",
+            "similar": "Tenno Sho (Autumn)"
+        },
+        "date": "<t:1767218400:F>, <t:1767218400:R> (Estimated)",
         "image": "",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvWoDMRCE32VqFfeTS2x1LoObgMuQYjntXYQt6dCuOILxuwddHELyBulmhmHmu2JMJQs%2FO9i22bWNQRQKy4UFdmgaA2F2sN1jO%2ByH%2FqnfGxThlyRH5gVWc2GDTCM7nmCvCCnVusGcU4l11WBl0nfOmxYmSRG2N1Af%2BF4lx%2FW%2FuRmUQG0dSkUnr5ULMJBlw2i7DUkp%2BEjfdklrHd9VPRcV2IcqVy8uhbsRzaQ8f8DixPGcCgycF6U48mFRr6US4FSvSp7oV3rAz8Df%2BOwvF4F9fftC7%2F4l%2Bu0Tn3FECAcCAAA%3D"
+        "umalator": "https://kachi-dev.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACt1UwWrcMBD9lznrIG%2ByadAtbKGUNmmoaXooOQzW2BYra4xGwpRl%2F73I3m6663Mp9CKkN%2FPevCeEDtBwjkIfLZhK3%2BlbBUFwGD0JmK3WCoTIgrnV9%2B%2Bq7VZvbxSMLJ%2BIxke2BEYriNiQpRbMAQZmC2ajoIucQ9FUMBGmniKYmyKGwmHeJjfQqRWLUKX1UUEesCpCnFPrUnEFoEDG2US1mQ0lHFzA38eRpyJ%2BX%2FZdTlK8agWTE8vD6SApYqLuJxioKew5gwLrJGFo6GFMLuXiAOoyKscWL9AHeBO4gs9xZe%2B8FzA%2FXhW0HBuydUGeWVxyHATM4bik2%2Fy%2F6UZsite%2FGO%2FJdfSPwk0uvWB0ZWxNKbnQlQqg9zx9zdKT%2FTY%2F3RQzqSt4cwG%2F5yn0zvtV%2Fx%2BFS0ZNTbHyyNa1juKKuK5f8UugXU%2FNfteXAGuBdcNZQdzw%2FS07mBa90FGB9Dy9uJgy%2BmdsaMA9xS%2FhQ8SxPzUtL2Iu7DiHNP8GQp6aRPbMKVc%2FT1o48%2Fq6yH%2FGUL6hZeIvVIX3N6oEAAA%3D"
     }
 ]

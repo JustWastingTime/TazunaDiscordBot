@@ -1,53 +1,53 @@
 [   
-    {   "event_name": "Half Anniversary Celebration Part 2",
-        "event_type": "Anniversary",
-        "date": "Begins on <t:1762207200:F>",
-        "thumbnail": "https://img.game8.co/4322116/e8aa2301dd1fb76872c92cdd0a7d7092.png/show"
-    },
-    {   "event_name": "Unity Cup New Scenario",
-        "event_type": "Scenario",
-        "date": "Begins on <t:1762466400:F>",
-        "thumbnail": "https://img.game8.co/4322117/9afa6c1a4883c1cd99257e80619660b3.png/show"
-    },
-    {   "event_name": "Makitanefukukitaru (Full Armor) + Riko Kashimoto (Pal) & Rice Shower (Power)",
+    {   "event_name": "Kawakami Princess + Yaeno Muteki (Power) & Seiun Sky (Stamina)",
         "event_type": "Banner",
-        "date": "<t:1762466400:F> - <t:1763416800:F>",
-        "thumbnail": "https://img.game8.co/4322098/3d17658b0d810f544a96048253b873d7.png/show"
-    },
-    {   "event_name": "Half Anniversary Celebration Part 3",
-        "event_type": "Anniversary",
-        "date": "Begins on <t:1762466400:F>",
-        "thumbnail": "https://img.game8.co/4322118/fe9b56d27bd660f6ee2957fae03e357d.png/show"
-    },   
-    {   "event_name": "Hishi Akebono + Sakura Bakushin O (Speed) & Biko Pegasus (Speed)",
-        "event_type": "Banner",
-        "date": "<t:1762898400:F> - <t:1763762400:F>",
-        "thumbnail": "https://img.game8.co/4322101/97d3b4ee672cc41e1aafd43ddbe371e2.png/show"
-    },
-    {   "event_name": "Legend Races - Maruzensky, Fuji Kiseki, Mihono Bourbon",
+        "date": "<t:1764626400:F> - <t:1765404000:F>, <t:1764626400:R>",
+        "thumbnail": "https://img.game8.co/4352280/6b0bd61c95dffc489d73638e2a0ca28e.png/show"
+    }, 
+    {   "event_name": "Legend Races - Matikanefukukitaru, Seiun Sky, Biwa Hayahide",
         "event_type": "Legend Races",
-        "date": "<t:1763071200:F> - <t:1763848800:F>",
-        "thumbnail": "https://img.game8.co/4322104/36b1426b608ef454604cf4ee8d4bcadf.png/show"
+        "date": "<t:1764885600:F> - <t:1765663200:F>, <t:1764885600:R>",
+        "thumbnail": "https://img.game8.co/4352308/c735145036749cc2c9da698f7732f080.png/show"
     },
-    {   "event_name": "Champions Meeting - Virgo Cup",
+    {   "event_name": "Manhattan Cafe + Nakayama Festa (Stamina) & Sirius Symboli (Guts)",
+        "event_type": "Banner",
+        "date": "<t:1765231200:F> - <t:1765922400:F>, <t:1765231200:R>",
+        "thumbnail": "https://img.game8.co/4352283/54b14929f237a351a66f847e97f3165b.png/show"
+    }, 
+    {   "event_name": "Champions Meeting - Libra Cup",
         "event_type": "Champions Meeting",
-        "date": "<t:1763330400:F> - <t:1764194400:F>",
-        "thumbnail": "https://img.game8.co/4322115/3abcd31c06fbd13da4b33dd76c2a1983.png/show"
+        "date": "<t:1765490400:F> - <t:1766095200:F>, <t:1765490400:R>",
+        "thumbnail": "https://img.game8.co/4352318/50630a6857eaa8ae79e22a4573c4a94c.png/show"
     },
-    {   "event_name": "Agnes Digital + Ikuno Dictus (Guts) & Fine Motion (Power)",
+    {   "event_name": "Symboli Rudolf (Festival) & Gold City (Festival) + Narita Brian (Stamina) & Curren Chan (Wit)",
         "event_type": "Banner",
-        "date": "<t:1763589600:F> - <t:1764367200:F>",
-        "thumbnail": "https://img.game8.co/4322099/0f0af3982847e1b8e065d38c93ff9f40.png/show"
+        "date": "<t:1765749600:F> - <t:1766700000:F>, <t:1765749600:R>",
+        "thumbnail": "https://img.game8.co/4352281/433ee2a59bf4eb581436757d628888fd.png/show"
     },
-    {   "event_name": "Rice Shower (Halloween) & Super Creek (Halloween) + Tamamo Cross (Power) & Zenno Rob Roy (Speed)",
-        "event_type": "Banner",
-        "date": "<t:1764021600:F> - <t:1765058400:F>",
-        "thumbnail": "https://img.game8.co/4322100/58367bca7d23eaf6818da189653648ff.png/show"
-    },
-    {   "event_name": "Halloween Makeover Story Event",
+    {   "event_name": "Orchestra in Late Autumn Story Event",
         "event_type": "Story Event",
-        "date": "<t:1764021600:F> - <t:1765058400:F>",
-        "thumbnail": "https://img.game8.co/4322105/3b1f490cac5e53f5fc50de2cea322ad5.png/show"
+        "date": "<t:1765749600:F> - <t:1766700000:F>, <t:1765749600:R>",
+        "thumbnail": "https://img.game8.co/4352310/6c971ae9838f7b75a475d5b8e5ba2877.png/show"
+    },
+    {   "event_name": "Tosen Jordan + El Condor Pasa (Power) & Kitasan Black (Speed)",
+        "event_type": "Banner",
+        "date": "<t:1766095200:F> - <t:1767045600:F>, <t:1766095200:R>",
+        "thumbnail": "https://img.game8.co/4352284/a56bac09296055064214ad549052c374.png/show"
+    },
+    {   "event_name": "Legend Races - Air Groove, Eishin Flash, Agnes Digital",
+        "event_type": "Legend Races",
+        "date": "<t:1766440800:F> - <t:1767218400:F>, <t:1766440800:R>",
+        "thumbnail": "https://img.game8.co/4352309/6279f3defca9a6678c1df429f38412de.png/show"
+    },
+    {   "event_name": "Fuji Kiseki's Showtime Event",
+        "event_type": "Misc",
+        "date": "<t:1766613600:F> - <t:1767564000:F>, <t:1766613600:R>",
+        "thumbnail": "https://img.game8.co/4352306/cc3ab304dd857ac125eac2f89d4b7fd7.png/show"
+    },
+    {   "event_name": "Mejiro Dober + Daitaku Helios (Power) & Vodka (Speed)",
+        "event_type": "Banner",
+        "date": "<t:1766959200:F> - <t:1767823200:F>, <t:1766959200:R>",
+        "thumbnail": "https://img.game8.co/4352282/e12ff4b57e967c5df8faff56a169327c.png/show"
     }
     
 ]   
