@@ -2486,6 +2486,7 @@
         "category": "velocity",
         "aliases": [
             "uma stan",
+            "umastan",
             "big fan",
             "ウマ好み"
         ],
@@ -7689,6 +7690,7 @@
         "aliases": [
             "omg the final sprint",
             "agnes digital original",
+            "digitan",
             "kyuute last spuuuurt",
             "kyuute last spurt",
             "尊み☆ﾗｽﾄｽﾊﾟﾄ"
@@ -7717,5 +7719,27 @@
             "ぐるぐるマミートリック"
         ],
         "horse": "Super Creek (Halloween)"
+    },
+    {   "skill_name": "A Princess Must Seize Victory!",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "Blocked in the sides for 2s or more",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "a princess must seize victory",
+            "kawakami princess original",
+            "victory befitting a princess",
+            "姫たるもの勝利をこの手に"
+        ],
+        "horse": "Kawakami Princess (Original)"
     }
 ]

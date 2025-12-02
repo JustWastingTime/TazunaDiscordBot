@@ -761,7 +761,7 @@
         "potential": [
             "Straightaway Acceleration",
             "Breath of Fresh Air",
-            "Mile Straighaways",
+            "Mile Straightaways",
             "Furious Feat"
         ],
         "event_skills": [
@@ -922,7 +922,7 @@
         "potential": [
             "Productive Plan",
             "Changing Gears",
-            "Mile Straighaways",
+            "Mile Straightaways",
             "Mile Maven"
         ],
         "event_skills": [
@@ -1453,7 +1453,7 @@
             "Non-Standard Distance"
         ],
         "potential": [
-            "Straighaway Adept",
+            "Straightaway Adept",
             "Speed Star",
             "Stamina to Spare",
             "Killer Tunes"
@@ -1827,7 +1827,7 @@
             "mile championship november 2 year 2",
             "tenno sho autumn october 2 year 3"
         ],
-        "aliases": ["agnes digital original", "fullcolor fangirling"],
+        "aliases": ["agnes digital original", "fullcolor fangirling", "digitan"],
         "url": "https://gametora.com/umamusume/characters/101901-agnes-digital",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1019_101901.png",
         "review": "",
@@ -2446,7 +2446,7 @@
         "unique_explanation": "",
         "skills": [
             "Trick (Front)",
-            "Long Straighaways",
+            "Long Straightaways",
             "Stamina to Spare"
         ],
         "potential": [
@@ -2780,6 +2780,76 @@
             {
             "conditions": "Win the Hakodate Sprint Stakes (Year 3), Keeneland Cup (Year 3), Centaur Stakes (Year 3)",
             "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Guts +15, Sprinting Gear hint +2"
+            }
+        ]
+    },
+    {   "id": "103901 - Kawakami Princess",
+        "character_name": "Kawakami Princess",
+        "type": "Original",
+        "costume": "Princess of Pink",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "10%",
+            "guts": "20%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "D",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "F"
+            },
+            {
+            "Front": "G",
+            "Pace": "C",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "A Princess Must Seize Victory!",
+        "unique_explanation": "",
+        "skills": [
+            "Nimble Navigator",
+            "Unyielding Spirit",
+            "Outer Swell"
+        ],
+        "potential": [
+            "Late Surger Straightaways",
+            "No Stopping Me!",
+            "Standard Distance",
+            "Rising Dragon"
+        ],
+        "event_skills": [
+            "Prepared to Pass",
+            "Homestretch Haste",
+            "Outer Swell"
+        ],
+        "races": [
+            "japanese oaks may 2 year 2",
+            "shuka sho october 2 year 2",
+            "queen elizabeth ii cup november 1 year 2",
+            "kinko sho march 1 year 3",
+            "victoria mile may 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "queen elizabeth ii cup november 1 year 3"
+        ],
+        "aliases": ["kawakami princess original", "princess of pink"],
+        "url": "https://gametora.com/umamusume/characters/103901-kawakami-princess",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1039_103901.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Hanshin Juvenile Fillies, Oka Sho, Japanese Oaks, Shuka Sho, Victoria Mile, Queen Elizabeth II Cup (Year 2) and Queen Elizabeth II Cup (Year 3)",
+            "rewards": "Speed +15, Power +15, Skill points +25, Outer Swell hint +2"
             }
         ]
     },
