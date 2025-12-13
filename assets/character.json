@@ -1637,6 +1637,85 @@
             }
         ]
     },
+    {   "id": "101702 - Symboli Rudolf Festival",
+        "character_name": "Symboli Rudolf",
+        "type": "Original",
+        "costume": "Archer by Moonlight",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "8%",
+            "stamina": "14%",
+            "power": "",
+            "guts": "",
+            "wit": "8%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "B",
+            "Pace": "A",
+            "Late": "A",
+            "End": "C"
+            }
+        ],
+        "unique": "Arrows Whistle, Shadows Disperse",
+        "unique_explanation": "",
+        "skills": [
+            "Fall Runner",
+            "Inside Scoop",
+            "Stamina to Spare"
+        ],
+        "potential": [
+            "Straight Descent",
+            "Calm and Collected",
+            "Pace Chaser Straightaways",
+            "Fall Frenzy"
+        ],
+        "event_skills": [
+            "Rainy Days",
+            "Prepared to Pass",
+            "Pace Chaser Corners"
+        ],
+        "races": [
+            "saudi arabia royal cup october 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3" 
+        ],
+        "aliases": ["symboli rudolf festival", "archer by moonlight"],
+        "url": "https://gametora.com/umamusume/characters/101702-symboli-rudolf",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1017_101702.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win 0-6 G1 races.",
+            "rewards": "2 random stats +10"
+            },
+            {
+            "conditions": "Win 7 G1 races.",
+            "rewards": "Mood +1, 1 random stat +10"
+            },
+            {
+            "conditions": "Win 8 G1 races.",
+            "rewards": "Energy +30, Mood +3, 1 random stat +15"
+            }
+        ]
+    },
     {   "id": "101801 - Air Groove",
         "character_name": "Air Groove",
         "type": "Original",
@@ -2131,6 +2210,77 @@
             {
             "conditions": "Win a G1 race as a Front Runner, Pace Chaser, Late Surger and End Closer",
             "rewards": "All stats +5, Skill points +30, Final Push hint +1, Head-On hint +1, Slick Surge hint +1, Straightaway Spurt hint +1"
+            }
+        ]
+    },
+    {   "id": "102501 - Manhattan Cafe",
+        "character_name": "Manhattan Cafe",
+        "type": "Original",
+        "costume": "Creeping Shadow",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "30%",
+            "power": "",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "B",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "C",
+            "Late": "A",
+            "End": "C"
+            }
+        ],
+        "unique": "Chasing After You",
+        "unique_explanation": "",
+        "skills": [
+            "Rainy Days",
+            "Stamina Eater",
+            "A Small Breather"
+        ],
+        "potential": [
+            "Highlander",
+            "Relax",
+            "Passing Pro",
+            "Stamina Siphon"
+        ],
+        "event_skills": [
+            "Slick Surge",
+            "Long Straightaways",
+            "Long Corners"
+        ],
+        "races": [
+            "yayoi sho march 1 year 2",
+            "st lite kinen september 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["manhattan cafe original", "creeping shadow", "manhattan coughy"],
+        "url": "https://gametora.com/umamusume/characters/102501-manhattan-cafe",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1025_102501.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win 2+/4+/6+ Long races",
+            "rewards": "Stamina +510, Guts +0/10/10, Skill Points +0/0/10, Long Straightaways hint +1/2/2, Long Corners hint +0/0/2"
             }
         ]
     },
@@ -2917,6 +3067,72 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104001.png",
         "review": ""
     },
+    {   "id": "104001 - Gold City Festival",
+        "character_name": "Gold City",
+        "type": "Festival",
+        "costume": "Autumn Cosmos",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+                "speed": "8%",
+                "stamina": "",
+                "power": "8%",
+                "guts": "",
+                "wit": "14%"
+            } 
+        ],
+        "aptitudes": [
+            {
+                "Turf": "A",
+                "Dirt": "D"
+            },
+            {
+                "Sprint": "F",
+                "Mile": "A",
+                "Medium": "B",
+                "Long": "B"
+            },
+            {
+                "Front": "F",
+                "Pace": "A",
+                "Late": "A",
+                "End": "F"
+            }
+        ],
+        "unique": "Dancing in the Leaves",
+        "unique_explanation": "",
+        "skills": [
+            "Rainy Days",
+            "Opening Gambit",
+            "Be Still"
+        ],
+        "potential": [
+            "Late Surger Savvy",
+            "Battle Formation",
+            "Late Surger Corners",
+            "Lie In Wait"
+        ],
+        "event_skills": [
+            "Unyielding Spirit",
+            "1,500,000 CC",
+            "Slick Surge"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "japan cup november 2 year 3"
+        ],
+        "aliases": ["gold city festival", "autumn cosmos"],
+        "url": "https://gametora.com/umamusume/characters/104002-gold-city",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104002.png",
+        "review": ""
+    },
     {   "id": "104101 - Sakura Bakushin O",
         "character_name": "Sakura Bakushin O",
         "type": "Original",
@@ -3236,6 +3452,76 @@
             {
             "conditions": "Win the Kawasaki Kinen",
             "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Promising Omen hint +1"
+            }
+        ]
+    },
+    {   "id": "104801 - Tosen Jordan",
+        "character_name": "Tosen Jordan",
+        "type": "Original",
+        "costume": "Jokester ☆ Vibes",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "10%",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "B"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "B",
+            "End": "G"
+            }
+        ],
+        "unique": "Pop & Polish",
+        "unique_explanation": "",
+        "skills": [
+            "Long Shot",
+            "Slick Surge",
+            "Medium Straightaways"
+        ],
+        "potential": [
+            "Preferred Position",
+            "On Your Left",
+            "All I've Got",
+            "Race Planner"
+        ],
+        "event_skills": [
+            "Straightaway Acceleration",
+            "Fighter"
+        ],
+        "races": [
+            "hopeful stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "copa republica argentina classic november 1 year 1",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
+        "aliases": ["tosen jordan original", "jokester vibes"],
+        "url": "https://gametora.com/umamusume/characters/104801-tosen-jordan",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1048_104801.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Participate in the Copa Republica Argentina (Year 2)",
+            "rewards": "\"♡ 3D Nail Art\" was healed\nMood +1, 4 random stats +2/+3, Skill points +105\n\n\"♡ 3D Nail Art\" was not healed\n4 random stats +2/+3, Skill points +85"
             }
         ]
     },

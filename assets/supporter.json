@@ -75,7 +75,7 @@
             "Power Bonus - 0/0/0/0/1",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 1/1/1/2/2",
-            "Hint Frequency - 20/23/26/30/30",
+            "Hint Frequency - 20/23/26/30/30%",
             "Specialty Priority - 20/25/30/35/35"
         ],
         "support_skills": [
@@ -1196,7 +1196,7 @@
             "Speed Bonus - 0/0/0/0/1",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 1/1/1/2/2",
-            "Hint Frequency - 20/23/26/30/30",
+            "Hint Frequency - 20/23/26/30/30%",
             "Specialty Priority - 20/25/30/35/35"
         ],
         "support_skills": [
@@ -1612,7 +1612,7 @@
             "Speed Bonus - 0/0/0/0/1",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 1/1/1/2/2",
-            "Hint Frequency - 20/23/26/30/30",
+            "Hint Frequency - 20/23/26/30/30%",
             "Specialty Priority - 20/25/30/35/35"
         ],
         "support_skills": [
@@ -1743,7 +1743,7 @@
             "Race Bonus - 1/2/3/5/5%",
             "Fan Bonus - 5/6/8/10/10%",
             "Hint Levels - 1/1/1/2/2",
-            "Hint Frequency - 20/23/26/30/30"
+            "Hint Frequency - 20/23/26/30/30%"
         ],
         "support_skills": [
             "Corner Adept",
@@ -2107,7 +2107,77 @@
             "shinko windy tracen"
         ]
     },
-
+    {   "id": "10067 Nakayama Festa",
+        "card_name": "Tracen Academy",
+        "character_name": "Nakayama Festa",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Mood Effect - 15/18/21/25/25",
+            "Stamina Bonus - 0/0/0/0/1",
+            "Initial Stamina - 20/21/22/23/25",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/32/35/37/40%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Long Shot",
+            "Slick Surge",
+            "Outer Swell",
+            "Steadfast",
+            "Late Surger Straightaways",
+            "Sharp Gaze",
+            "Lucky Seven",
+            "All I've Got"
+        ],
+        "event_skills": [
+            "Nakayama Racecourse",
+            "Hanshin Racecourse"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10067-nakayama-festa",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10067.png",
+        "rarity": "r",
+        "category": "stamina",
+        "aliases": [
+            "nakayama festa tracen"
+        ]
+    },
+    {   "id": "10068 Inari One",
+        "card_name": "Tracen Academy",
+        "character_name": "Inari One",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Power Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Initial Power - 20/21/22/23/25",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%"
+        ],
+        "support_skills": [
+            "Spring Runner",
+            "Winter Runner",
+            "Target in Sight",
+            "Ramp Up",
+            "Sharp Gaze",
+            "Tail Held High",
+            "Forward, March!",
+            "Familiar Ground"
+        ],
+        "event_skills": [
+            "Kyoto Racecourse"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10068-inari-one",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10068.png",
+        "rarity": "r",
+        "category": "power",
+        "aliases": [
+            "inari one tracen"
+        ]
+    },
     {   "id": "10069 Mejiro Ardan",
         "card_name": "Tracen Academy",
         "character_name": "Mejiro Ardan",
@@ -2171,6 +2241,37 @@
             "tosen jordan tracen"
         ]
     },
+    {   "id": "10071 Sirius Symboli",
+        "card_name": "Tracen Academy",
+        "character_name": "Sirius Symboli",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Mood Effect - 25/27/30/32/35%",
+            "Speed Bonus - 0/0/0/0/1",
+            "Initial Guts - 15/16/18/20/20",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%"
+            
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Prepared to Pass",
+            "Medium Corners",
+            "Lone Wolf" 
+        ],
+        "event_skills": [
+            "Disorient"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10071-sirius-symboli",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10071.png",
+        "rarity": "r",
+        "category": "guts",
+        "aliases": [
+            "sirius symboli tracen"
+        ]
+    },
     {   "id": "10072 Narita Brian",
         "card_name": "Tracen Academy",
         "character_name": "Narita Brian",
@@ -2204,6 +2305,525 @@
         "category": "speed",
         "aliases": [
             "narita brian tracen"
+        ]
+    },
+    {   "id": "10073 Curren Chan",
+        "card_name": "Tracen Academy",
+        "character_name": "Curren Chan",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Mood Effect - 15/18/21/25/25%",
+            "Wit Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Wit Friendship Recovery - 2/2/2/2/3"
+        ],
+        "support_skills": [
+            "Sprinting Gear",
+            "Hesitant Late Surgers",
+            "Sprint Straightaways",
+            "Meticulous Measures",
+            "Disorient"
+        ],
+        "event_skills": [
+            "Intimidate"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10073-curren-chan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10073.png",
+        "rarity": "r",
+        "category": "wit",
+        "aliases": [
+            "curren chan tracen"
+        ]
+    },
+    {   "id": "10074 Anshinzawa Sasami",
+        "card_name": "Acupuncturist",
+        "character_name": "Anshinzawa Sasami",
+        "unique": "-",
+        "effects": [
+            "Mood Effect - 25/27/30/32/35%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Event Effectiveness - 5/10/15/20/25",
+            "Skill Point Bonus - 0/0/0/0/1"
+        ],
+        "support_skills": [],
+        "event_skills": [
+            "Wallflower",
+            "Corner Recovery x",
+            "Risky Business",
+            "Running Idle",
+            "Uma Stan"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10074-anshinzawa-sasami",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10074.png",
+        "rarity": "r",
+        "category": "pal",
+        "aliases": [
+            "anshinzawa sasami tracen"
+        ]
+    },  
+    {   "id": "10075 Admire Vega",
+        "card_name": "Tracen Academy",
+        "character_name": "Admire Vega",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Power Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5/6/7/8/10%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35%"
+        ],
+        "support_skills": [
+            "Masterful Gambit",
+            "Tether",
+            "End Closer Straightaways",
+            "Levelheaded",
+            "Strategist"
+        ],
+        "event_skills": [
+            "Subdued Pace Chasers"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10075-admire-vega",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10075.png",
+        "rarity": "r",
+        "category": "power",
+        "aliases": [
+            "admire vega tracen", "ayabe"
+        ]
+    },
+    {   "id": "10076 Mejiro Bright",
+        "card_name": "Tracen Academy",
+        "character_name": "Mejiro Bright",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Guts Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Extra Tank",
+            "Passing Pro",
+            "Pressure",
+            "Stamina Eater"
+        ],
+        "event_skills": [
+            "Deep Breaths"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10076-mejiro-bright",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10076.png",
+        "rarity": "r",
+        "category": "stamina",
+        "aliases": ["mejiro bright tracen"]
+    },
+    {   "id": "10077 Narita Top Road",
+        "card_name": "Tracen Academy",
+        "character_name": "Narita Top Road",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Power Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Non-Standard Distance",
+            "Firm Conditions",
+            "Inner Post Proficiency",
+            "Preferred Position",
+            "Prepared to Pass",
+            "Long Straightaways",
+            "All I've Got"
+        ],
+        "event_skills": [
+            "Up-Tempo"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10077-narita-top-road",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10077.png",
+        "rarity": "r",
+        "category": "speed",
+        "aliases": [
+            "narita top road tracen"
+        ]
+    },
+    {   "id": "10078 Mr. C.B.",
+        "card_name": "Tracen Academy",
+        "character_name": "Mr. C.B.",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Wit Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Wit Friendship Recovery - 2/2/2/2/3"
+        ],
+        "support_skills": [
+            "Rainy Days",
+            "Corner Acceleration",
+            "Homestretch Haste",
+            "Straightaway Spurt",
+            "Medium Corners",
+            "Strategist",
+            "Tail Held High"
+        ],
+        "event_skills": [
+            "Early Start"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10078-mr-cb",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10078.png",
+        "rarity": "r",
+        "category": "wit",
+        "aliases": [
+            "mr cb tracen", "mr c b"
+        ]
+    },
+    {   "id": "10079 Daiichi Ruby",
+        "card_name": "Tracen Academy",
+        "character_name": "Daiichi Ruby",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Training Effectiveness - 5%",
+            "Initial Power - 20/21/22/23/25",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Specialty Priority - 35/38/42/46/50",
+            "Skill Point Bonus - 0/0/0/0/1"
+        ],
+        "support_skills": [
+            "Slick Surge",
+            "Gap Closer",
+            "Subdued Front Runners",
+            "Flustered Front Runners",
+            "Hesitant Front Runners",
+            "Stop Right There!",
+            "Opening Gambit",
+            "Tether",
+            "Late Surger Straightaways",
+            "Lone Wolf",
+            "Fearless"
+        ],
+        "event_skills": [
+            "Gap Closer"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10079-daiichi-ruby",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10079.png",
+        "rarity": "r",
+        "category": "power",
+        "aliases": [
+            "daiichi ruby tracen"
+        ]
+    },
+    {   "id": "10080 K. S. Miracle",
+        "card_name": "Tracen Academy",
+        "character_name": "K. S. Miracle",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20",
+            "Guts Bonus - 0/0/0/0/1",
+            "Initial Guts - 20/21/22/23/25",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Specialty Priority - 35/38/42/46/50"
+        ],
+        "support_skills": [
+            "Updrafters",
+            "Sprint Corners",
+            "Countermeasure",
+            "Pace Chaser Straightaways",
+            "Pace Chaser Savvy",
+            "Attack Stance"
+        ],
+        "event_skills": [
+            "Light as a Feather"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10080-ksmiracle",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10080.png",
+        "rarity": "r",
+        "category": "guts",
+        "aliases": [
+            "k s miracle tracen", "ksmiracle"
+        ]
+    },
+    {   "id": "10081 Tsurumaru Tsuyoshi",
+        "card_name": "Tracen Academy",
+        "character_name": "Tsurumaru Tsuyoshi",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Mood Effect - 25/27/30/32/35%",
+            "Guts Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%"
+        ],
+        "support_skills": [
+            "Long Shot",
+            "Up-Tempo",
+            "Risky Business",
+            "Fighting Spirit",
+            "Full Throttle"
+        ],
+        "event_skills": [
+            "Fighter"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10081-tsurumaru-tsuyoshi",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10081.png",
+        "rarity": "r",
+        "category": "guts",
+        "aliases": [
+            "tsurumaru tsuyoshi tracen"
+        ]
+    },
+    {   "id": "10082 Symboli Kris S",
+        "card_name": "Tracen Academy",
+        "character_name": "Symboli Kris S",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Training Effectiveness - 5%",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/0/0/0/1"
+        ],
+        "support_skills": [
+            "Corner Recovery",
+            "Slick Surge",
+            "Long Straightaways",
+            "Passing Pro",
+            "Late Surger Corners",
+            "1,500,000 CC",
+            "Fearless",
+            "Devil-May-Care"
+        ],
+        "event_skills": [
+            "Cloudy Days"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10082-symboli-kris-s",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10082.png",
+        "rarity": "r",
+        "category": "stamina",
+        "aliases": ["symboli kris s tracen"]
+    },
+    {   "id": "10083 Light Hello",
+        "card_name": "Event Producer",
+        "character_name": "Light Hello",
+        "unique": "-",
+        "effects": [
+            "Training Effectiveness - 0/0/0/0/5%",  
+            "Initial Guts - 20/21/22/23/25",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Event Recovery - 30/32/35/37/40%",
+            "Event Effectiveness - 20/21/22/23/25",
+            "Failure Protection - 15/16/17/18/20%",
+            "Energy Cost Reduction - 5/6/8/10/10%"
+        ],
+        "support_skills": [
+        ],
+        "event_skills": [
+            "Maverick",
+            "Playtime's Over!",
+            "Front Runner Savvy",
+            "Pace Chaser Savvy"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10083-light-hello",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10083.png",
+        "rarity": "r",
+        "category": "pal",
+        "aliases": ["light hello tracen"]
+    },
+    {   "id": "10084 Tanino Gimlet",
+        "card_name": "Tracen Academy",
+        "character_name": "Tanino Gimlet",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Stamina Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%"
+        ],
+        "support_skills": [
+            "Firm Conditions",
+            "Straightaway Spurt",
+            "Updrafters",
+            "Hawkeye",
+            "Take the Chance",
+            "Eager"
+        ],
+        "event_skills": [
+            "End Closer Savvy"
+        ],
+        "url": "https://gametora.com/umamusume/supports/100784tanino-gimlet",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10084.png",
+        "rarity": "r",
+        "category": "power",
+        "aliases": [
+            "tanino gimlet tracen"
+        ]
+    },
+    {   "id": "10085 Sakura Laurel",
+        "card_name": "Tracen Academy",
+        "character_name": "Sakura Laurel",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Mood Effect - 25/27/30/32/35%",
+            "Guts Bonus - 0/0/0/0/1",
+            "Initial Stamina - 15/16/18/20/20",
+            "Initial Guts - 15/16/18/20/20",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 20/25/30/35/35%"
+        ],
+        "support_skills": [
+            "Spring Runner",
+            "Winter Runner",
+            "Sunny Days",
+            "Deep Breaths",
+            "Long Corners",
+            "Stamina Eater",
+            "A Small Breather",
+            "Free-Spirited",
+            "Devil-May-Care"
+        ],
+        "event_skills": [
+            "Subdued Pace Chasers"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10085-sakura-laurel",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10085.png",
+        "rarity": "r",
+        "category": "stamina",
+        "aliases": [
+            "sakura laurel tracen"
+        ]
+    },
+    {   "id": "10086 Yamanin Zephyr",
+        "card_name": "Tracen Academy",
+        "character_name": "Yamanin Zephyr",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Speed Bonus - 0/0/0/0/1",
+            "Guts Bonus - 1/1/1/1/1",
+            "Training Effectiveness - 5/6/7/8/10%",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Fall Runner",
+            "Long Shot",
+            "Corner Acceleration",
+            "Mile Corners",
+            "Shifting Gears",
+            "Unyielding Spirit",
+            "Medium Corners",
+            "Pace Chaser Savvy",
+            "Ambitions"
+        ],
+        "event_skills": [
+            "Ambitions"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10086-yamanin-zephyr",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10086.png",
+        "rarity": "r",
+        "category": "guts",
+        "aliases": [
+            "yamanin zephyr tracen"
+        ]
+    },
+    {   "id": "10087 Aston Machan",
+        "card_name": "Tracen Academy",
+        "character_name": "Aston Machan",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Speed Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/32/35/37/40%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Early Lead",
+            "Sprint Straightaways",
+            "Stop Right There!",
+            "Dodging Danger",
+            "Restart",
+            "Groundwork"
+        ],
+        "event_skills": [
+            "Light as a Feather"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10087-aston-machan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10087.png",
+        "rarity": "r",
+        "category": "speed",
+        "aliases": [
+            "aston machan tracen"
+        ]
+    },
+    {   "id": "10088 Mejiro Ramonu",
+        "card_name": "Tracen Academy",
+        "character_name": "Mejiro Ramonu",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 15/16/17/18/20%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/0/0/0/1",
+            "Wit Friendship Recovery - 2/2/2/2/3"
+        ],
+        "support_skills": [
+            "Straightaway Adept",
+            "Focus",
+            "Mile Straightaways",
+            "Shifting Gears",
+            "Mile Corners",
+            "Medium Straightaways",
+            "All I've Got",
+            "Firm Step",
+            "Graceful Step"
+        ],
+        "event_skills": [
+            "Medium Corners"
+        ],
+        "url": "https://gametora.com/umamusume/supports/10088-mejiro-ramonu",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10088.png",
+        "rarity": "r",
+        "category": "wit",
+        "aliases": [
+            "mejiro ramonu tracen"
         ]
     },
 
@@ -4618,8 +5238,46 @@
             "bamboo memory head on fight"
         ]
     },
-
-
+    {   "id": "30043 Nakayama Festa",
+        "card_name": "43, 8, 1",
+        "character_name": "Nakayama Festa",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Guts gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Stamina Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 0/0/0/5/10",
+            "Initial Stamina - 25/26/27/28/30",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Long Shot",
+            "Slick Surge",
+            "Outer Swell",
+            "Steadfast",
+            "Late Surger Straightaways",
+            "Sharp Gaze",
+            "Lucky Seven",
+            "All I've Got"
+        ],
+        "event_skills": [
+            "Come What May",
+            "Uma Stan",
+            "Nakayama Racecourse",
+            "Hanshin Racecourse"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30043-nakayama-festa",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30043.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "nakayama festa 43 8 1"
+        ]
+        },
     {   "id": "30044 Narita Brian",
         "card_name": "Two Pieces",
         "character_name": "Narita Brian",

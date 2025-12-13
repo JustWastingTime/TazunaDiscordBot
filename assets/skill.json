@@ -18,6 +18,24 @@
             "right turns"
         ]
     },
+    {   "skill_name": "Right-Handed Demon",
+        "description": "Speed and Power stat +60.",
+        "conditions": [
+            [
+                "Clockwise course"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "SS",
+        "review": "Adds a flat speed and power value that can help you hit higher top speeds and accel. Take for the appropriate CMs.",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "right demon",
+            "clockwise demon",
+            "右回りの鬼"
+        ]
+    },
     {   "skill_name": "Left-Handed",
         "description": "Speed stat +40/+60.",
         "conditions": [
@@ -54,6 +72,24 @@
             "春ウマ娘"
         ]
     },
+    {   "skill_name": "Spring Spectacle",
+        "description": "Speed and Power stat +60.",
+        "conditions": [
+            [
+                "Spring"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "SS",
+        "review": "Adds a flat speed and power value that can help you hit higher top speeds and accel. Take for the appropriate CMs.",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "spring spectacle",
+            "春一番",
+            "first breeze of spring"
+        ]
+    },
     {   "skill_name": "Summer Runner",
         "description": "Speed stat +40/+60.",
         "conditions": [
@@ -87,6 +123,24 @@
             "fall",
             "autumn girl",
             "秋ウマ娘"
+        ]
+    },
+    {   "skill_name": "Fall Frenzy",
+        "description": "Speed and Power stat +60.",
+        "conditions": [
+            [
+                "Fall"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "SS",
+        "review": "Adds a flat speed and power value that can help you hit higher top speeds and accel. Take for the appropriate CMs.",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "fall frenzy",
+            "the first storm",
+            "初嵐"
         ]
     },
     {   "skill_name": "Winter Runner",
@@ -211,7 +265,78 @@
             "一匹狼"
         ]
     },
-
+    {   "skill_name": "Towards the Scenery I Seek",
+        "description": "Speed +40.",
+        "conditions": [
+            [
+                "Always activates"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "towards the scenery i seek",
+            "scenery of dreams",
+            "夢の景色へ"
+        ]
+    },
+    {   "skill_name": "Show Me What Lies Beyond!",
+        "description": "Speed +40.",
+        "conditions": [
+            [
+                "Race contains Silence Suzuka"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "show me what lies beyond",
+            "running towards the unknown",
+            "未知への走りを見せてくれ"
+        ]
+    },
+    {   "skill_name": "Chin Up, Derby Umamusume!",
+        "description": "Speed +40.",
+        "conditions": [
+            [
+                "Always activates"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "chin up derby umamusume",
+            "proud derby girl",
+            "胸を張れダービーウマ娘"
+        ]
+    },
+    {   "skill_name": "Unchanging",
+        "description": "Speed +80.",
+        "conditions": [
+            [
+                "Winter"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "unchanging",
+            "unchanged",
+            "変わらぬままで"
+        ]
+    },
 
     {   "skill_name": "Right-Handed x",
         "description": "Speed stat -40.",
@@ -356,6 +481,42 @@
             "g1 x",
             "g1 averseness",
             "g1 dislike"
+        ]
+    },
+    {   "skill_name": "♡ 3D Nail Art",
+        "description": "Speed stat -40.",
+        "conditions": [
+            [
+                "Track condition is firm"
+            ]
+        ],
+        "team_trials": "F",
+        "champs_meet": "F",
+        "review": "",
+        "rarity": "normal",
+        "category": "speednegative",
+        "aliases": [
+            "3d nail art",
+            "uneven nail",
+            "凸凹ネイル"
+        ]
+    },
+    {   "skill_name": "Creeping Anxiety",
+        "description": "Speed stat -40.",
+        "conditions": [
+            [
+                "Always activate"
+            ]
+        ],
+        "team_trials": "F",
+        "champs_meet": "F",
+        "review": "",
+        "rarity": "normal",
+        "category": "speednegative",
+        "aliases": [
+            "creeping anxiety",
+            "spreading fear",
+            "拡がる恐れ"
         ]
     },
     
@@ -615,6 +776,21 @@
         "rarity" : "normal",
         "category" : "stamina",
         "aliases" : ["nonstandard", "non standard", "non core distances", "非根幹距離"]
+    },
+    {   "skill_name" : "Unquenched Thirst",
+        "description" : "Stamina stat +40.",
+        "conditions" :
+        [
+            [
+                "Kyoto Racecourse"
+            ]
+        ],
+        "team_trials" : "E",
+        "champs_meet" : "A",
+        "review" : "",
+        "rarity" : "normal",
+        "category" : "stamina",
+        "aliases" : ["unquenched thirst", "癒えない渇き"]
     },
 
 
@@ -7729,9 +7905,9 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
-        "review": "",
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Hard to trigger in CM as being blocked at the sides for 2s is unlikely.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [

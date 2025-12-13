@@ -1,11 +1,11 @@
 Skill Tier
-❌
-Not Recommended
-Lacking
-Okay
-Recommended
-Highly Recommended
-⭕
+❌ E
+Not Recommended D
+Lacking C
+Okay B 
+Recommended A
+Highly Recommended S
+⭕ SS
 
 To Do
 Finish event
@@ -13,7 +13,40 @@ Add Legend function
 Improve sheets flow
 Redo applications
 
-Relislyte/Mitsushi 427536434287 - 1.8m
+Badges
+3,6,9,12 months
+1 mil fan run
+final push
+months
+
+"conditions":
+        [
+            [
+                "1st to 5th",
+                "50% or better (5th or better in CM, 6th or better in TT)"
+                "50% or worse (6th or worse in CM, 7th or worse in TT)",
+                "Last 50% of the pack (by distance)",
+
+                "1 length ahead or more",
+                "Blocked in front for 1s or more",
+                "Overtake target exists",
+                "Be an overtake target for 1s or more",
+                "2 lengths ahead of another uma for 1s or more",
+                "1% or more HP remaining",
+                
+
+                "Never 'Late Start'",
+                "Never 'Rushed'",
+
+                "Final corner and beyond",
+                "Early race",
+                "After at least 5s into a race",
+                "Last 200m of the race",
+                "Between 50% to 60% of the race"
+                
+            ]
+        ],
+
 
 List Order
 Spe
