@@ -2494,7 +2494,7 @@
         "conditions": [
             [
                 "Pace Chaser",
-                "Random corner"
+                "Random straight"
             ]
         ],
         "team_trials": "SS",
@@ -2532,7 +2532,7 @@
         "conditions": [
             [
                 "Late Surger",
-                "Random corner"
+                "Random straight"
             ]
         ],
         "team_trials": "SS",
@@ -2614,7 +2614,7 @@
         "conditions": [
             [
                 "End Closer",
-                "Random corner"
+                "Random straight"
             ]
         ],
         "team_trials": "SS",
