@@ -998,7 +998,7 @@
         "rarity": "r",
         "category": "stamina",
         "aliases": [
-            "manhattan cafe tracen"
+            "manhattan cafe tracen", "coughy"
         ]
     },
     {   "id": "10032 Mihono Bourbon",
@@ -3093,7 +3093,7 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20008.png",
         "rarity": "sr",
         "category": "stamina",
-        "aliases": ["manhattan cafe", "my solo drawn to raindrop drums"]
+        "aliases": ["manhattan cafe", "my solo drawn to raindrop drums", "coughy"]
     },
     {   "id": "20009 Mihono Bourbon",
         "card_name": "Pal-Assisted Training",
