@@ -2270,7 +2270,7 @@
         "secrets": [
             {
             "conditions": "Win 2+/4+/6+ Long races",
-            "rewards": "Stamina +510, Guts +0/10/10, Skill Points +0/0/10, Long Straightaways hint +1/2/2, Long Corners hint +0/0/2"
+            "rewards": "Stamina +10, Guts +0/10/10, Skill Points +0/0/10, Long Straightaways hint +1/2/2, Long Corners hint +0/0/2"
             }
         ]
     },
@@ -3857,6 +3857,86 @@
             {
             "conditions": "Win the Satsuki Sho, Tenno Sho (Spring Year 3), Takarazuka Kinen (Year 3), and Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and Arima Kinen (Year 3)",
             "rewards": "All stats +10, Skill points +20, Prepared to Pass hint +1, Up-Tempo hint +1"
+            }
+        ]
+    },
+    {   "id": "105901 - Mejiro Dober",
+        "character_name": "Mejiro Dober",
+        "type": "Original",
+        "costume": "Off the Line",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "F"
+            },
+            {
+            "Front": "C",
+            "Pace": "B",
+            "Late": "A",
+            "End": "G"
+            }
+        ],
+        "unique": "Moving Past, and Beyond",
+        "unique_explanation": "",
+        "skills": [
+            "Kyoto Racecourse",
+            "Sharp Gaze",
+            "Soft Step"
+        ],
+        "potential": [
+            "Late Surger Straightaways",
+            "All-Seeing Eyes",
+            "Up-Tempo",
+            "Yodo Invicta"
+        ],
+        "event_skills": [
+            "Fall Runner",
+            "Unyielding Spirit",
+            "All I've Got"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "oka sho april 1 year 2",
+            "japanese oaks may 2 year 2",
+            "shuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "fuchu umamusume stakes october 1 year 3",
+            "queen elizabeth ii cup november 1 year 3"
+        ],
+        "aliases": ["mejiro dober original", "off the line"],
+        "url": "https://gametora.com/umamusume/characters/105901-mejiro-dober",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1059_105901.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Hanshin Juvenile Fillies",
+            "rewards": "Wit +10"
+            },
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
+            "rewards": "Mood +1, Speed +5, Stamina +5, Unyielding Spirit hint +2"
+            },
+            {
+            "conditions": "Win the Osaka Hai, Takarazuka Kinen (Year 3), Queen Elizabeth II Cup (year 3) and at least 2 other G1 races during Senior Year.",
+            "rewards": "Speed +20, Power +20, All I've Got hint +2"
             }
         ]
     },
