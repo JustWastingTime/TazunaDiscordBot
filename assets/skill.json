@@ -16,7 +16,8 @@
             "clockwise",
             "右回り",
             "right turns"
-        ]
+        ],
+        "upgrade": "Right-Handed Demon"
     },
     {   "skill_name": "Left-Handed",
         "description": "Speed stat +40/+60.",
@@ -52,7 +53,8 @@
         "aliases": [
             "spring girl",
             "春ウマ娘"
-        ]
+        ],
+        "upgrade": "Spring Spectacle"
     },
     {   "skill_name": "Summer Runner",
         "description": "Speed stat +40/+60.",
@@ -87,7 +89,8 @@
             "fall",
             "autumn girl",
             "秋ウマ娘"
-        ]
+        ],
+        "upgrade": "Fall Frenzy"
     },
     {   "skill_name": "Winter Runner",
         "description": "Speed stat +40/+60.",
@@ -272,15 +275,16 @@
             ]
         ],
         "team_trials": "E",
-        "champs_meet": "SS",
-        "review": "Adds a flat speed and power value that can help you hit higher top speeds and accel. Take for the appropriate CMs.",
+        "champs_meet": "S",
+        "review": "Adds a flat speed and power value that can help you hit higher top speeds and accel. Take for the appropriate CMs. Expensive though...",
         "rarity": "rare",
         "category": "goldenspeed",
         "aliases": [
             "fall frenzy",
             "the first storm",
             "初嵐"
-        ]
+        ],
+        "downgrade": "Fall Runner"
     },
     {   "skill_name": "Spring Spectacle",
         "description": "Speed and Power stat +60.",
@@ -298,7 +302,8 @@
             "spring spectacle",
             "春一番",
             "first breeze of spring"
-        ]
+        ],
+        "downgrade": "Spring Runner"
     },
     {   "skill_name": "Right-Handed Demon",
         "description": "Speed and Power stat +60.",
@@ -316,7 +321,8 @@
             "right demon",
             "clockwise demon",
             "右回りの鬼"
-        ]
+        ],
+        "downgrade": "Right-Handed"
     },
     {   "skill_name": "Connection",
         "description": "Speed stat +60. Activates all sympathy skills.",
@@ -6134,95 +6140,75 @@
         ],
         "horse": "Manhattan Cafe (Original)"
     },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    {   "skill_name": "Arrows Whistle, Shadows Disperse",
+        "description": "Increases speed by 0.35 on the final corner for 6.0s.",
+        "inherited": "Increases speed by 0.15 on the final corner for 3.6s.",
+        "conditions": [
+            [
+                "1st to 5th (CM), 1st to 6th (TT)",
+                "Be an overtake target for 2s or more",
+                "Late race and beyond"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "arrows whistle shadows disperse",
+            "symboli rudolf festival",
+            "翳り退くさざめきの矢",
+            "howling arrow piercing the darkness"
+        ],
+        "horse": "Symboli Rudolf (Festival)"
+    },
+    {   "skill_name": "Dancing in the Leaves",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
+        "conditions": [
+            [
+                "3rd to 6th (CM), 4th to 8th (TT)",
+                "Blocked at the sides for 2s or more",
+                "Final corner"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "dancing in the leaves",
+            "gold city festival",
+            "get down"
+        ],
+        "horse": "Gold City (Festival)"
+    },
+    {   "skill_name": "Pop & Polish",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.25 for 3.0s.",
+        "conditions": [
+            [
+                "1st to 4th (CM), 1st to 5th (TT)",
+                "Overtake target exists OR Be an overtake target for 1s or more",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "pop & polish",
+            "pop and polish",
+            "tosen jordan original",
+            "yeah vivid time"
+        ],
+        "horse": "Tosen Jordan (Original)"
+    },
 
-    {   "skill_name": "Ignited Spirit SPD",
-        "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
-        "conditions": [
-            [
-                "Mid race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "A",
-        "review": "A bit costly, but can help when combined with other mid race speed skills.",
-        "rarity": "normal",
-        "category": "velocity",
-        "aliases": [
-            "ignited spirit spd",
-            "ignited spirit speed",
-            "aoharu ignition speed",
-            "アオハル点火 速"
-        ],
-        "upgrade": "Burning Spirit SPD"
-    },
-    {   "skill_name": "Burning Spirit SPD",
-        "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
-        "conditions": [
-            [
-                "Mid race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "A",
-        "review": "A bit costly, but can help when combined with other mid race speed skills.",
-        "rarity": "normal",
-        "category": "velocity",
-        "aliases": [
-            "burning spirit spd",
-            "burning spirit speed",
-            "aoharu burning speed",
-            "アオハル燃焼 速"
-        ],
-        "downgrade": "Ignited Spirit SPD"
-    },
-    {   "skill_name": "Ignited Spirit GUTS",
-        "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "A",
-        "review": "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
-        "rarity": "normal",
-        "category": "velocity",
-        "aliases": [
-            "ignited spirit guts",
-            "aoharu ignition guts",
-            "アオハル点火 根"
-        ],
-        "upgrade": "Burning Spirit GUTS"
-    },
-    {   "skill_name": "Burning Spirit GUTS",
-        "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "A",
-        "review": "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
-        "rarity": "normal",
-        "category": "velocity",
-        "aliases": [
-            "burning spirit guts",
-            "aoharu burning guts",
-            "アオハル燃焼 根"
-        ],
-        "downgrade": "Ignited Spirit GUTS"
-    },
 
     {   "skill_name": "Corner Adept x",
         "description": "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
@@ -6281,7 +6267,29 @@
             "手抜き癖"
         ]
     },
+    {   "skill_name": "Blatant Fear",
+        "description": "Reduces speed by 0.3 for 5  .0s. 30s cooldown.",
+        "conditions": [
+            [
+                "Last 800m - 850m of the race"
+            ]
+        ],
+        "team_trials": "F",
+        "champs_meet": "F",
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocitynegative",
+        "aliases": [
+            "blatant fear",
+            "unfolding horror",
+            "鮮明になる畏怖"
+        ]
+    },
     
+    
+
+
+
     {   "skill_name": "Corner Acceleration",
         "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
@@ -6300,25 +6308,6 @@
         ],
         "upgrade": "Corner Connoisseur"
     },
-    {   "skill_name": "Corner Connoisseur",
-        "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "D",
-        "review": "Easy to trigger for Team Trials but accelerating on random corners is not very useful.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "corner connoisseur",
-            "curve sommelier",
-            "曲線のソムリエ"
-        ],
-        "downgrade": "Corner Acceleration"
-    },
     {   "skill_name": "Straightaway Acceleration",
         "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
@@ -6336,25 +6325,6 @@
             "直線加速"
         ],
         "upgrade": "Rushing Gale!"
-    },
-    {   "skill_name": "Rushing Gale!",
-        "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "rushing gale",
-            "gust of wind",
-            "一陣の風"
-        ],
-        "downgrade": "Straightaway Acceleration"
     },
     {   "skill_name": "Nimble Navigator",
         "description": "Increases acceleration by 0.2 and lane movement speed by 0.005 for 3.0s.",
@@ -6377,27 +6347,6 @@
         ],
         "upgrade": "No Stopping Me!"
     },
-    {   "skill_name": "No Stopping Me!",
-        "description": "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3.0s.",
-        "conditions": [
-            [
-                "Behind another uma with at most 1 Length gap for 1s or more",
-                "Last Spurt",
-                "1% or more HP remaining"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "SS",
-        "review": "Does not need to be blocked now, only behind an uma, making this skill much easier to trigger. Alongside with the lane movement buffs, becomes a strong acceleration if triggered.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "no stopping me",
-            "nonstop girl",
-            "ノンストップガール"
-        ],
-        "downgrade": "Nimble Navigator"
-    },
     {   "skill_name": "Early Lead",
         "description": "Increases acceleration by 0.2 for 1.2s.",
         "conditions": [
@@ -6417,27 +6366,6 @@
             "先駆け"
         ],
         "upgrade": "Taking the Lead"
-    },
-    {   "skill_name": "Taking the Lead",
-        "description": "Increases acceleration by 0.4 for 1.2s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Early race"
-            ]
-        ],
-        "team_trials": "SS",
-        "champs_meet": "SS",
-        "review": "A necessary skill to have on Front Runners. Can now trigger Groundwork.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "take the lead",
-            "taking lead",
-            "fortune favors the fast",
-            "先手必勝"
-        ],
-        "downgrade": "Early Lead"
     },
     {   "skill_name": "Final Push",
         "description": "Increases acceleration by 0.2 for 3.0s.",
@@ -6460,27 +6388,6 @@
         ],
         "upgrade": "Unrestrained"
     },
-    {   "skill_name": "Unrestrained",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "1st place",
-                "Final corner"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "B",
-        "review": "Being first is not a consistent condition. Skill is however conditionally useful on specific tracks.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "unrestrained",
-            "runaway",
-            "逃亡者"
-        ],
-        "downgrade": "Final Push"
-    },
     {   "skill_name": "Slick Surge",
         "description": "Increases acceleration by 0.2 for 1.8s.",
         "conditions": [
@@ -6501,27 +6408,6 @@
             "差し切り体勢"
         ],
         "upgrade": "On Your Left!"
-    },
-    {   "skill_name": "On Your Left!",
-        "description": "Increases acceleration by 0.4 for 1.8s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "SS",
-        "review": "Gambling acceleration skill for late surgers. Might be ineffective if not triggering at the right moment.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "on your left",
-            "switchup pro",
-            "乗り換え上手"
-        ],
-        "downgrade": "Slick Surge"
     },
     {   "skill_name": "Straightaway Spurt",
         "description": "Increases acceleration by 0.2 for 1.8s.",
@@ -6545,27 +6431,6 @@
         ],
         "upgrade": "Encroaching Shadow"
     },
-    {   "skill_name": "Encroaching Shadow",
-        "description": "Increases acceleration by 0.4 for 1.8s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Straights",
-                "Last spurt"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "SS",
-        "review": "Very strong acceleration skill for an End Closer on tracks where last spurt begins on a straight. Take in appropriate CM.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "encroaching shadow",
-            "imminent shadow",
-            "迫る影"
-        ],
-        "downgrade": "Straightaway Spurt"
-    },
     {   "skill_name": "Sprinting Gear",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
@@ -6584,26 +6449,6 @@
             "スプリントギア"
         ],
         "upgrade": "Turbo Sprint"
-    },
-    {   "skill_name": "Turbo Sprint",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Any straight"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
-        "rarity": "normal",
-        "category": "accel",
-        "aliases": [
-            "turbo sprint",
-            "sprint turbo",
-            "スプリントターボ"
-        ],
-        "downgrade": "Sprinting Gear"
     },
     {   "skill_name": "Updrafters",
         "description": "Increases acceleration by 0.2 for 3.0s",
@@ -6625,27 +6470,6 @@
             "上昇気流"
         ],
         "upgrade": "Furious Feat"
-    },
-    {   "skill_name": "Furious Feat",
-        "description": "Increases acceleration by 0.4 for 3.0s",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "SS",
-        "review": "Gambling acceleration skill for Late Surgers and End Closers. Might be ineffective if not triggering at the right moment.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "furious feat",
-            "big strides",
-            "豪脚"
-        ],
-        "downgrade": "Updrafters"
     },
     {   "skill_name": "Countermeasure",
         "description": "Increases acceleration by 0.2 for 3.0s.",
@@ -6669,27 +6493,6 @@
         ],
         "upgrade": "Plan X"
     },
-    {   "skill_name": "Plan X",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "2nd to 5th (CM), 2nd to 6th (TT)",
-                "Random straight",
-                "Second half of mid race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "If this skill triggers right before the late race starts, can help your uma zoom faster.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "plan x",
-            "プランX"
-        ],
-        "downgrade": "Countermeasure"
-    },
     {   "skill_name": "Acceleration",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
@@ -6710,27 +6513,6 @@
         ],
         "upgrade": "Step on the Gas!"
     },
-    {   "skill_name": "Step on the Gas!",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "Overtaking",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "C",
-        "review": "Mid-race acceleration is not very impactful.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "step on the gas",
-            "accel full throttle",
-            "アクセル全開！"
-        ],
-        "downgrade": "Acceleration"
-    },
     {   "skill_name": "Second Wind",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
@@ -6750,28 +6532,7 @@
             "next steps",
             "二の矢"
         ],
-        "upgrade": "Reignition (TO BE RENAMED)"
-    },
-    {   "skill_name": "Reignition (TO BE RENAMED)",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "2nd or worse",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "E",
-        "champs_meet": "E",
-        "review": "Mid race acceleration is not great. Unlikely to catch up to the actual front with this.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "reignition",
-            "recombustion",
-            "再燃焼"
-        ],
-        "downgrade": "Second Wind"
+        "upgrade": "Reignition"
     },
     {   "skill_name": "Shrewd Step",
         "description": "Increases acceleration by 0.2 for 3.0.",
@@ -6793,25 +6554,6 @@
         ],
         "upgrade": "Technician"
     },
-    {   "skill_name": "Technician",
-        "description": "Increases acceleration by 0.3 for 3.0.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Changing lanes"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "C",
-        "review": "Easy to trigger for Team Trials. However this will likely trigger mid-race where acceleration is not impactful.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "technician",
-            "技巧派"
-        ],
-        "downgrade": "Shrewd Step"
-    },
     {   "skill_name": "Straight Descent",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
@@ -6832,26 +6574,6 @@
         ],
         "upgrade": "Determined Descent"
     },
-    {   "skill_name": "Determined Descent",
-        "description": "Increases acceleration by 0.3 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Random downhill"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "S",
-        "review": "Very impactful on tracks where the downhill is right before the last spurt.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "determined descent",
-            "straight down resolution",
-            "決意の直滑降"
-        ],
-        "downgrade": "Straight Descent"
-    },   
     {   "skill_name": "Tactical Tweak",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
@@ -6872,27 +6594,6 @@
             "まき直し"
         ],
         "upgrade": "Shatterproof"
-    },
-    {   "skill_name": "Shatterproof",
-        "description": "Increases acceleration by 0.3 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "40% or worse (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "D",
-        "review": "Mid race acceleration is not very impactful. An okay filler for TT points.",
-        "rarity": "rare",
-        "category": "goldenaccel",
-        "aliases": [
-            "Shatterproof",
-            "unbreakable spirit",
-            "くじけぬ精神"
-        ],
-        "downgrade": "Tactical Tweak"
     },
     {   "skill_name": "Fighter",
         "description": "Increases acceleration by 0.2 for 4.0s.",
@@ -6916,6 +6617,396 @@
         ],
         "upgrade": "Hard Worker"
     },
+    {   "skill_name": "Highlander",
+        "description": "Increases acceleration by 0.2 for 3.0s.",
+        "conditions": [
+            [
+                "Random uphill"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "S",
+        "review": "Very impactful on tracks where the uphill is right before the last spurt.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "highlander",
+            "mountain climber",
+            "登山家"
+        ],
+        "upgrade": "Ultimate Hill Climber (TO BE RENAMED)"
+    },
+    {   "skill_name": "Groundwork",
+        "description": "Increases acceleration by 0.2 for 3.0s.",
+        "conditions": [
+            [
+                "Activate 3 skills",
+                "Early race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "SS",
+        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "groundwork",
+            "地固め"
+        ],
+        "upgrade": "Unshakable Stance (TO BE RENAMED)"
+    },
+    {   "skill_name": "Head-On",
+        "description": "Increases acceleration by 0.2 for 1.8s.",
+        "conditions": [
+            [
+                "Pace Chaser",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials": "SS",
+        "champs_meet": "SS",
+        "review": "Similar to Late Surger acceleration skills but for a Pace Chaser.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "headon",
+            "head on",
+            "head to head",
+            "真っ向勝負"
+        ],
+        "upgrade": "Neck and Neck"
+    },
+    {   "skill_name": "Take the Chance",
+        "description": "Increases acceleration by 0.2 for 1.8s.",
+        "conditions": [
+            [
+                "Medium",
+                "4th to 9th (CM), 5th to 12th (TT)",
+                "First half of the late race"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "take the chance",
+            "one chance",
+            "ワンチャンス"
+        ],
+        "upgrade": "From the Brink"
+    },
+
+
+    {   "skill_name": "Corner Connoisseur",
+        "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
+        "conditions": [
+            [
+                "Random corner"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "D",
+        "review": "Easy to trigger for Team Trials but accelerating on random corners is not very useful.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "corner connoisseur",
+            "curve sommelier",
+            "曲線のソムリエ"
+        ],
+        "downgrade": "Corner Acceleration"
+    },
+    {   "skill_name": "Rushing Gale!",
+        "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
+        "conditions": [
+            [
+                "Random straight"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "rushing gale",
+            "gust of wind",
+            "一陣の風"
+        ],
+        "downgrade": "Straightaway Acceleration"
+    },  
+    {   "skill_name": "No Stopping Me!",
+        "description": "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3.0s.",
+        "conditions": [
+            [
+                "Behind another uma with at most 1 Length gap for 1s or more",
+                "Last Spurt",
+                "1% or more HP remaining"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "SS",
+        "review": "Does not need to be blocked now, only behind an uma, making this skill much easier to trigger. Alongside with the lane movement buffs, becomes a strong acceleration if triggered.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "no stopping me",
+            "nonstop girl",
+            "ノンストップガール"
+        ],
+        "downgrade": "Nimble Navigator"
+    },    
+    {   "skill_name": "Taking the Lead",
+        "description": "Increases acceleration by 0.4 for 1.2s.",
+        "conditions": [
+            [
+                "Front Runner",
+                "Early race"
+            ]
+        ],
+        "team_trials": "SS",
+        "champs_meet": "SS",
+        "review": "A necessary skill to have on Front Runners. Can now trigger Groundwork.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "take the lead",
+            "taking lead",
+            "fortune favors the fast",
+            "先手必勝"
+        ],
+        "downgrade": "Early Lead"
+    },    
+    {   "skill_name": "Unrestrained",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
+        "conditions": [
+            [
+                "Front Runner",
+                "1st place",
+                "Final corner"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "B",
+        "review": "Being first is not a consistent condition. Skill is however conditionally useful on specific tracks.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "unrestrained",
+            "runaway",
+            "逃亡者"
+        ],
+        "downgrade": "Final Push"
+    },    
+    {   "skill_name": "On Your Left!",
+        "description": "Increases acceleration by 0.4 for 1.8s.",
+        "conditions": [
+            [
+                "Late Surger",
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "SS",
+        "review": "Gambling acceleration skill for late surgers. Might be ineffective if not triggering at the right moment.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "on your left",
+            "switchup pro",
+            "乗り換え上手"
+        ],
+        "downgrade": "Slick Surge"
+    },    
+    {   "skill_name": "Encroaching Shadow",
+        "description": "Increases acceleration by 0.4 for 1.8s.",
+        "conditions": [
+            [
+                "End Closer",
+                "Straights",
+                "Last spurt"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "SS",
+        "review": "Very strong acceleration skill for an End Closer on tracks where last spurt begins on a straight. Take in appropriate CM.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "encroaching shadow",
+            "imminent shadow",
+            "迫る影"
+        ],
+        "downgrade": "Straightaway Spurt"
+    },   
+    {   "skill_name": "Turbo Sprint",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
+        "conditions": [
+            [
+                "Sprint",
+                "Any straight"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "turbo sprint",
+            "sprint turbo",
+            "スプリントターボ"
+        ],
+        "downgrade": "Sprinting Gear"
+    },   
+    {   "skill_name": "Furious Feat",
+        "description": "Increases acceleration by 0.4 for 3.0s",
+        "conditions": [
+            [
+                "Mile",
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "SS",
+        "review": "Gambling acceleration skill for Late Surgers and End Closers. Might be ineffective if not triggering at the right moment.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "furious feat",
+            "big strides",
+            "豪脚"
+        ],
+        "downgrade": "Updrafters"
+    },   
+    {   "skill_name": "Plan X",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
+        "conditions": [
+            [
+                "Sprint",
+                "2nd to 5th (CM), 2nd to 6th (TT)",
+                "Random straight",
+                "Second half of mid race"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "If this skill triggers right before the late race starts, can help your uma zoom faster.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "plan x",
+            "プランX"
+        ],
+        "downgrade": "Countermeasure"
+    },    
+    {   "skill_name": "Step on the Gas!",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
+        "conditions": [
+            [
+                "Mile",
+                "Overtaking",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Mid-race acceleration is not very impactful.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "step on the gas",
+            "accel full throttle",
+            "アクセル全開！"
+        ],
+        "downgrade": "Acceleration"
+    },   
+    {   "skill_name": "Reignition",
+        "description": "Increases acceleration by 0.2 for 3.0s.",
+        "conditions": [
+            [
+                "Front Runner",
+                "2nd or worse",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "E",
+        "champs_meet": "E",
+        "review": "Mid race acceleration is not great. Unlikely to catch up to the actual front with this.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "reignition",
+            "recombustion",
+            "再燃焼"
+        ],
+        "downgrade": "Second Wind"
+    },   
+    {   "skill_name": "Technician",
+        "description": "Increases acceleration by 0.3 for 3.0.",
+        "conditions": [
+            [
+                "Pace Chaser",
+                "Changing lanes"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "C",
+        "review": "Easy to trigger for Team Trials. However this will likely trigger mid-race where acceleration is not impactful.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "technician",
+            "技巧派"
+        ],
+        "downgrade": "Shrewd Step"
+    },   
+    {   "skill_name": "Determined Descent",
+        "description": "Increases acceleration by 0.3 for 3.0s.",
+        "conditions": [
+            [
+                "Pace Chaser",
+                "Random downhill"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "S",
+        "review": "Very impactful on tracks where the downhill is right before the last spurt.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "determined descent",
+            "straight down resolution",
+            "決意の直滑降"
+        ],
+        "downgrade": "Straight Descent"
+    },      
+    {   "skill_name": "Shatterproof",
+        "description": "Increases acceleration by 0.3 for 3.0s.",
+        "conditions": [
+            [
+                "Pace Chaser",
+                "40% or worse (5th or worse in CM, 6th or worse in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "D",
+        "review": "Mid race acceleration is not very impactful. An okay filler for TT points.",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "Shatterproof",
+            "unbreakable spirit",
+            "くじけぬ精神"
+        ],
+        "downgrade": "Tactical Tweak"
+    },
     {   "skill_name": "Hard Worker",
         "description": "Increases acceleration by 0.3 for 4.0s.",
         "conditions": [
@@ -6938,104 +7029,28 @@
         ],
         "downgrade": "Fighter"
     },
-    {   "skill_name": "Highlander",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
+    {   "skill_name": "From the Brink",
+        "description": "Increases acceleration by 0.4 for 1.8s.",
         "conditions": [
             [
-                "Random uphill"
+                "Medium",
+                "4th to 9th (CM), 5th to 12th (TT)",
+                "First half of the late race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "S",
-        "review": "Very impactful on tracks where the uphill is right before the last spurt.",
-        "rarity": "normal",
-        "category": "accel",
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
         "aliases": [
-            "highlander",
-            "mountain climber",
-            "登山家"
+            "from the brink",
+            "rise from the ashes",
+            "起死回生"
         ],
-        "upgrade": "Ultimate Hill Climber (TO BE RENAMED)"
+        "downgrade": "Take the Chance"
     },
-    {   "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Random uphill"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "S",
-        "review": "Very impactful on tracks where the uphill is right before the last spurt.",
-        "rarity": "normal",
-        "category": "accel",
-        "aliases": [
-            "ultimate hill climber",
-            "究極のヒルクライマー"
-        ],
-        "downgrade": "Highlander"
-    },
-    {   "skill_name": "Groundwork",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Activate 3 skills",
-                "Early race"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "SS",
-        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
-        "rarity": "normal",
-        "category": "accel",
-        "aliases": [
-            "groundwork",
-            "地固め"
-        ],
-        "upgrade": "Unshakable Stance (TO BE RENAMED)"
-    },
-    {   "skill_name": "Unshakable Stance (TO BE RENAMED)",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Activate 3 skills",
-                "Early race"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "SS",
-        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
-        "rarity": "normal",
-        "category": "accel",
-        "aliases": [
-            "unshakable stance",
-            "盤石の構え"
-        ],
-        "downgrade": "Groundwork"
-    },
-    {   "skill_name": "Head-On",
-        "description": "Increases acceleration by 0.2 for 1.8s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Late race"
-            ]
-        ],
-        "team_trials": "SS",
-        "champs_meet": "SS",
-        "review": "Similar to Late Surger acceleration skills but for a Pace Chaser.",
-        "rarity": "normal",
-        "category": "accel",
-        "aliases": [
-            "headon",
-            "head on",
-            "head to head",
-            "真っ向勝負"
-        ],
-        "upgrade": "Neck and Neck (TO BE RENAMED)"
-    },
-    {   "skill_name": "Neck and Neck (TO BE RENAMED)",
+    {   "skill_name": "Neck and Neck",
         "description": "Increases acceleration by 0.4 for 1.8s.",
         "conditions": [
             [
@@ -7058,48 +7073,203 @@
     },
 
 
-    {   "skill_name": "Ignited Spirit PWR",
-        "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
+    {   "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
-                "Late race"
+                "Random uphill"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "S",
+        "review": "Very impactful on tracks where the uphill is right before the last spurt.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "ultimate hill climber",
+            "究極のヒルクライマー"
+        ],
+        "downgrade": "Highlander"
+    },
+    {   "skill_name": "Unshakable Stance (TO BE RENAMED)",
+        "description": "Increases acceleration by 0.4 for 3.0s.",
+        "conditions": [
+            [
+                "Activate 3 skills",
+                "Early race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "SS",
+        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "unshakable stance",
+            "盤石の構え"
+        ],
+        "downgrade": "Groundwork"
+    },
+    
+    {   "skill_name": "Feel the Burn!",
+        "description": "Increases acceleration by 0.3 for 4.0s.",
+        "conditions": [
+            [
+                "6th (CM), 8th (TT)",
+                "Corner",
+                "Late race or beyond"
+            ]
+        ],
+        "team_trials": "-",
+        "champs_meet": "-",
+        "review": "You can't inherit this.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "feel the burn",
+            "mejiro ryan",
+            "burning muscles",
+            "燃えろ筋肉"
+        ],
+        "upgrade": "Let's Pump Some Iron!"
+    },
+    {   "skill_name": "Red Shift/LP1211-M",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "1st to 5th",
+                "Final corner and beyond"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "SS",
+        "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "red shift",
+            "maruzensky",
+            "red flame gear",
+            "紅焔ギア",
+            "lp1211m"
+        ],
+        "horse": "Maruzensky (Original)"
+    },
+    {   "skill_name": "Shooting for Victory!",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "3rd to 4th (CM), 3rd to 5th (TT)",
+                "Second half of final corner"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "SS",
+        "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "shooting for victory",
+            "taiki shuttle",
+            "victory shot",
+            "ヴィクトリーショット"
+        ],
+        "horse": "Taiki Shuttle (Original)"
+    },
+    {   "skill_name": "Let's Pump Some Iron!",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "6th (CM), 8th (TT)",
+                "Corner",
+                "Late race or beyond"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "SS",
+        "review": "Powerful acceleration skill. Slightly hard to activate consistently since you need to be 6th on the corner. Best on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "lets pump some iron",
+            "mejiro ryan",
+            "lets anabolic",
+            "レッツアナボリック"
+        ],
+        "horse": "Mejiro Ryan (Original)",
+        "downgrade": "Feel the Burn!"
+    },
+    {   "skill_name": "Angling and Scheming",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "1st place",
+                "Corner",
+                "Late race or beyond"
+            ]
+        ],
+        "team_trials": "SS",
+        "champs_meet": "SS",
+        "review": "Must have skill for all Front Runners. Need to be leading to trigger, so weaker Front Runners will not be able to trigger this. Best on tracks where the spurt begins on a corner. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "angling and scheming",
+            "seiun sky",
+            "アングリングxスキーミング"
+        ],
+        "horse": "Seiun Sky (Original)"
+    },
+    {   "skill_name": "Condor's Fury",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "4th to 7th (CM), 4th to 9th (TT)",
+                "Overtake target exists",
+                "Final corner"
             ]
         ],
         "team_trials": "S",
         "champs_meet": "S",
-        "review": "A bit costly, but is a late race acceleration that works on every style.",
-        "rarity": "normal",
-        "category": "accel",
+        "review": "If the last spurt is on the final corner and you can overtake, this skill is pretty good on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
         "aliases": [
-            "ignited spirit pwr",
-            "ignited spirit power",
-            "aoharu ignition power",
-            "アオハル点火 力"
+            "condors fury",
+            "el condor pasa fantasy",
+            "condor onslaught",
+            "コンドル猛撃波"
         ],
-        "upgrade": "Burning Spirit PWR"
+        "horse": "El Condor Pasa (Fantasy)"
     },
-    {   "skill_name": "Burning Spirit PWR",
-        "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
+    {   "skill_name": "KEEP IT REAL.",
+        "description": "Increases acceleration by 0.3 for 6.0s.",
+        "inherited": "Increases acceleration by 0.1 for 3.6s.",
         "conditions": [
             [
-                "Late race"
+                "4th to 7th (CM), 5th to 10th (TT)",
+                "Overtake target exists",
+                "Second half of the race"
             ]
         ],
-        "team_trials": "S",
-        "champs_meet": "S",
-        "review": "A bit costly, but is a late race acceleration that works on every style.",
-        "rarity": "normal",
-        "category": "accel",
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Numbers seem very low for inherit.",
+        "rarity": "unique",
+        "category": "rainbowaccel",
         "aliases": [
-            "burning spirit pwr",
-            "burning spirit power",
-            "aoharu burning power",
-            "アオハル燃焼 力"
+            "keep it real",
+            "gold city original"
         ],
-        "downgrade": "Ignited Spirit PWR"
+        "horse": "Gold City (Original)"
     },
 
-
+    
     {   "skill_name": "Corner Acceleration x",
         "description": "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
@@ -7117,7 +7287,9 @@
             "コーナー加速 x"
         ]
     },
-    
+
+
+
 
 
     {   "skill_name": "Prudent Positioning",
@@ -7139,25 +7311,6 @@
         ],
         "upgrade": "Center Stage"
     },
-    {   "skill_name": "Center Stage",
-        "description": "Increases lane movement speed by 0.045 for 3.0s.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "D",
-        "review": "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill. Its cheap and consistent, helps pad the TT scoring.",
-        "rarity": "rare",
-        "category": "goldenflow",
-        "aliases": [
-            "center stage",
-            "star of the show",
-            "注目の踊り子"
-        ],
-        "downgrade": "Prudent Positioning"
-    },
     {   "skill_name": "Go with the Flow",
         "description": "Increases lane movement speed by 0.025 for 3.0s.",
         "conditions": [
@@ -7176,25 +7329,6 @@
             "臨機応変"
         ],
         "upgrade": "Lane Legerdemain"
-    },
-    {   "skill_name": "Lane Legerdemain",
-        "description": "Increases lane movement speed by 0.035 for 3.0s.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "C",
-        "review": "Doesn't do much. Take if cheap and no other options.",
-        "rarity": "rare",
-        "category": "goldenflow",
-        "aliases": [
-            "lane legerdemain",
-            "magician of the lane",
-            "レーンの魔術師"
-        ],
-        "downgrade": "Go with the Flow"
     },
     {   "skill_name": "Meticulous Measures",
         "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
@@ -7215,26 +7349,6 @@
             "仕掛け準備"
         ],
         "upgrade": "Perfect Prep!"
-    },
-    {   "skill_name": "Perfect Prep!",
-        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "D",
-        "champs_meet": "D",
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
-        "rarity": "rare",
-        "category": "goldenflow",
-        "aliases": [
-            "perfect prep",
-            "flawless preparation",
-            "準備万全"
-        ],
-        "downgrade": "Meticulous Measures"
     },
     {   "skill_name": "Thunderbolt Step",
         "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
@@ -7257,26 +7371,6 @@
         ],
         "upgrade": "Lightning Step"
     },
-    {   "skill_name": "Lightning Step",
-        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "D",
-        "champs_meet": "D",
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
-        "rarity": "rare",
-        "category": "goldenflow",
-        "aliases": [
-            "lightning step",
-            "ライトニングステップ"
-        ],
-        "downgrade": "Thunderbolt Step"
-    },
     {   "skill_name": "Dodging Danger",
         "description": "Increases lane movement speed by 0.025 for 3.0s.",
         "conditions": [
@@ -7298,26 +7392,6 @@
         ],
         "upgrade": "Sixth Sense"
     },
-    {   "skill_name": "Sixth Sense",
-        "description": "Increases lane movement speed by 0.035 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Blocked in any direction for 1s or more",
-                "Early race"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "D",
-        "review": "The speed from Sixth Sense is higher than Dodging Danger and instead bricks the combo with Prudent Positioning. If you're looking to do the Dodging Danger strat, avoid upgrading this skill.",
-        "rarity": "rare",
-        "category": "goldenflow",
-        "aliases": [
-            "sixth sense",
-            "シックスセンス"
-        ],
-        "downgrade": "Dodging Danger"
-    },
     {   "skill_name": "Forward, March!",
         "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 3.0s.",
         "conditions": [
@@ -7337,6 +7411,106 @@
             "前列狙い"
         ],
         "upgrade": "Lead the Charge!"
+    },
+
+
+    {   "skill_name": "Center Stage",
+        "description": "Increases lane movement speed by 0.045 for 3.0s.",
+        "conditions": [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "D",
+        "review": "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill. Its cheap and consistent, helps pad the TT scoring.",
+        "rarity": "rare",
+        "category": "goldenflow",
+        "aliases": [
+            "center stage",
+            "star of the show",
+            "注目の踊り子"
+        ],
+        "downgrade": "Prudent Positioning"
+    },
+    {   "skill_name": "Lane Legerdemain",
+        "description": "Increases lane movement speed by 0.035 for 3.0s.",
+        "conditions": [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "C",
+        "review": "Doesn't do much. Take if cheap and no other options.",
+        "rarity": "rare",
+        "category": "goldenflow",
+        "aliases": [
+            "lane legerdemain",
+            "magician of the lane",
+            "レーンの魔術師"
+        ],
+        "downgrade": "Go with the Flow"
+    },
+    {   "skill_name": "Perfect Prep!",
+        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
+        "conditions": [
+            [
+                "Sprint",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "D",
+        "champs_meet": "D",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
+        "rarity": "rare",
+        "category": "goldenflow",
+        "aliases": [
+            "perfect prep",
+            "flawless preparation",
+            "準備万全"
+        ],
+        "downgrade": "Meticulous Measures"
+    },
+    {   "skill_name": "Lightning Step",
+        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
+        "conditions": [
+            [
+                "Medium",
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "D",
+        "champs_meet": "D",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
+        "rarity": "rare",
+        "category": "goldenflow",
+        "aliases": [
+            "lightning step",
+            "ライトニングステップ"
+        ],
+        "downgrade": "Thunderbolt Step"
+    },
+    {   "skill_name": "Sixth Sense",
+        "description": "Increases lane movement speed by 0.035 for 3.0s.",
+        "conditions": [
+            [
+                "Front Runner",
+                "Blocked in any direction for 1s or more",
+                "Early race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "D",
+        "review": "The speed from Sixth Sense is higher than Dodging Danger and instead bricks the combo with Prudent Positioning. If you're looking to do the Dodging Danger strat, avoid upgrading this skill.",
+        "rarity": "rare",
+        "category": "goldenflow",
+        "aliases": [
+            "sixth sense",
+            "シックスセンス"
+        ],
+        "downgrade": "Dodging Danger"
     },
     {   "skill_name": "Lead the Charge!",
         "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 3.0s.",
@@ -7360,49 +7534,9 @@
     },
 
 
-    {   "skill_name": "Ignited Spirit WIT",
-        "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "A",
-        "review": "Combine with Dodging Danger on a Front Runner to zoom early. Do not upgrade to Burning Spirit WIT if so.",
-        "rarity": "normal",
-        "category": "flow",
-        "aliases": [
-            "ignited spirit wit",
-            "ignited spirit wit",
-            "aoharu ignition wisdom",
-            "アオハル点火 賢"
-        ],
-        "upgrade": "Burning Spirit WIT"
-    },
-    {   "skill_name": "Burning Spirit WIT",
-        "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "D",
-        "review": "The speed from Burning Spirit WIT is higher than Ignited Spirit WIT and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill",
-        "rarity": "normal",
-        "category": "flow",
-        "aliases": [
-            "burning spirit wit",
-            "burning spirit wit",
-            "aoharu burning wisdom",
-            "アオハル燃焼 賢"
-        ],
-        "downgrade": "Ignited Spirit WIT"
-    },
+    
 
-    
-    
+      
     {   "skill_name": "Focus",
         "description": "Improved start reaction time by 0.9x, decreasing chance of a late start.",
         "conditions": [
@@ -7459,6 +7593,45 @@
             "ゲート難"
         ]
     },
+    {   "skill_name": "Feelin' a Bit Silly",
+        "description": "Reduce acceleration by 18. Add a start delay of 0.1.",
+        "conditions": [
+            [
+                "Always activates"
+            ]
+        ],
+        "team_trials": "F",
+        "champs_meet": "F",
+        "review": "",
+        "rarity": "normal",
+        "category": "focusnegative",
+        "aliases": [
+            "feelin a bit silly",
+            "feeling a bit silly",
+            "超遊び癖",
+            "dilly dakky"
+        ]
+    },
+    {   "skill_name": "You're Not the Boss of Me!",
+        "description": "Wit stat -40. Add a start delay of 0.085.",
+        "conditions": [
+            [
+                "Always activates"
+            ]
+        ],
+        "team_trials": "F",
+        "champs_meet": "F",
+        "review": "",
+        "rarity": "normal",
+        "category": "focusnegative",
+        "aliases": [
+            "youre not the boss of me",
+            "dont tell me what to do",
+            "アタシに指図しないで"
+        ]
+    },
+
+
 
 
 
@@ -7481,25 +7654,6 @@
         ],
         "upgrade": "Clairvoyance"
     },
-    {   "skill_name": "Clairvoyance",
-        "description": "Increases FoV by 15.",
-        "conditions": [
-            [
-                "Medium",
-                "Early race"
-            ]
-        ],
-        "team_trials": "D",
-        "champs_meet": "E",
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
-        "rarity": "rare",
-        "category": "goldenvision",
-        "aliases": [
-            "clairvoyance",
-            "千里眼"
-        ],
-        "downgrade": "Hawkeye"
-    },
     {   "skill_name": "Studious",
         "description": "Increases FoV by 5 for 3.0s.",
         "conditions": [
@@ -7519,26 +7673,6 @@
             "読解力"
         ],
         "upgrade": "The Bigger Picture"
-    },
-    {   "skill_name": "The Bigger Picture",
-        "description": "Increases FoV by 15 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "D",
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
-        "rarity": "rare",
-        "category": "goldenvision",
-        "aliases": [
-            "bigger picture",
-            "seeing the big picture",
-            "大局観"
-        ],
-        "downgrade": "Studious"
     },
     {   "skill_name": "I Can See Right Through You",
         "description": "Increases FoV by 5 for 3.0s.",
@@ -7560,26 +7694,6 @@
         ],
         "upgrade": "The Coast Is Clear!"
     },
-    {   "skill_name": "The Coast Is Clear!",
-        "description": "Increases FoV by 10 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Changing lanes"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "E",
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
-        "rarity": "rare",
-        "category": "goldenvision",
-        "aliases": [
-            "coast is clear",
-            "good visibility all clear",
-            "視界良好 異常なし"
-        ],
-        "downgrade": "I Can See Right Through You"
-    },
     {   "skill_name": "Strategist",
         "description": "Increases FoV by 5.",
         "conditions": [
@@ -7600,6 +7714,65 @@
             "策士"
         ],
         "upgrade": "Crusader"
+    },
+    {   "skill_name": "Clairvoyance",
+        "description": "Increases FoV by 15.",
+        "conditions": [
+            [
+                "Medium",
+                "Early race"
+            ]
+        ],
+        "team_trials": "D",
+        "champs_meet": "E",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "rarity": "rare",
+        "category": "goldenvision",
+        "aliases": [
+            "clairvoyance",
+            "千里眼"
+        ],
+        "downgrade": "Hawkeye"
+    },
+    {   "skill_name": "The Bigger Picture",
+        "description": "Increases FoV by 15 for 3.0s.",
+        "conditions": [
+            [
+                "Late Surger",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "D",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
+        "rarity": "rare",
+        "category": "goldenvision",
+        "aliases": [
+            "bigger picture",
+            "seeing the big picture",
+            "大局観"
+        ],
+        "downgrade": "Studious"
+    },
+    {   "skill_name": "The Coast Is Clear!",
+        "description": "Increases FoV by 10 for 3.0s.",
+        "conditions": [
+            [
+                "End Closer",
+                "Changing lanes"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "E",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
+        "rarity": "rare",
+        "category": "goldenvision",
+        "aliases": [
+            "coast is clear",
+            "good visibility all clear",
+            "視界良好 異常なし"
+        ],
+        "downgrade": "I Can See Right Through You"
     },
     {   "skill_name": "Crusader",
         "description": "Increases FoV by 15.",
@@ -7627,6 +7800,84 @@
 
     
 
+    {   "skill_name": "Ignited Spirit SPD",
+        "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
+        "conditions": [
+            [
+                "Mid race"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "A bit costly, but can help when combined with other mid race speed skills.",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "ignited spirit spd",
+            "ignited spirit speed",
+            "aoharu ignition speed",
+            "アオハル点火 速"
+        ],
+        "upgrade": "Burning Spirit SPD"
+    },
+    {   "skill_name": "Ignited Spirit GUTS",
+        "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
+        "conditions": [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "A",
+        "review": "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "ignited spirit guts",
+            "aoharu ignition guts",
+            "アオハル点火 根"
+        ],
+        "upgrade": "Burning Spirit GUTS"
+    },
+    {   "skill_name": "Burning Spirit SPD",
+        "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
+        "conditions": [
+            [
+                "Mid race"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "A bit costly, but can help when combined with other mid race speed skills.",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "burning spirit spd",
+            "burning spirit speed",
+            "aoharu burning speed",
+            "アオハル燃焼 速"
+        ],
+        "downgrade": "Ignited Spirit SPD"
+    },
+    {   "skill_name": "Burning Spirit GUTS",
+        "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
+        "conditions": [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "A",
+        "review": "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "burning spirit guts",
+            "aoharu burning guts",
+            "アオハル燃焼 根"
+        ],
+        "downgrade": "Ignited Spirit GUTS"
+    },
     {   "skill_name": "Ignited Spirit STA",
         "description": "Recover HP based on your team's total base stamina stat, increasing by 1.2% when below 1200, 1.35% at 1200 - 1799, 1.5% at 1800 - 2599, 1.65% at 2600 - 3599, and 1.8% if 3600 or higher.",
         "conditions": [
@@ -7667,12 +7918,89 @@
         ],
         "downgrade": "Ignited Spirit STA"
     },
+    {   "skill_name": "Ignited Spirit PWR",
+        "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
+        "conditions": [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "S",
+        "review": "A bit costly, but is a late race acceleration that works on every style.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "ignited spirit pwr",
+            "ignited spirit power",
+            "aoharu ignition power",
+            "アオハル点火 力"
+        ],
+        "upgrade": "Burning Spirit PWR"
+    },
+    {   "skill_name": "Burning Spirit PWR",
+        "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
+        "conditions": [
+            [
+                "Late race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "S",
+        "review": "A bit costly, but is a late race acceleration that works on every style.",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "burning spirit pwr",
+            "burning spirit power",
+            "aoharu burning power",
+            "アオハル燃焼 力"
+        ],
+        "downgrade": "Ignited Spirit PWR"
+    },
+    {   "skill_name": "Ignited Spirit WIT",
+        "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
+        "conditions": [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "A",
+        "review": "Combine with Dodging Danger on a Front Runner to zoom early. Do not upgrade to Burning Spirit WIT if so.",
+        "rarity": "normal",
+        "category": "flow",
+        "aliases": [
+            "ignited spirit wit",
+            "ignited spirit wit",
+            "aoharu ignition wisdom",
+            "アオハル点火 賢"
+        ],
+        "upgrade": "Burning Spirit WIT"
+    },
+    {   "skill_name": "Burning Spirit WIT",
+        "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
+        "conditions": [
+            [
+                "Early race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "D",
+        "review": "The speed from Burning Spirit WIT is higher than Ignited Spirit WIT and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill",
+        "rarity": "normal",
+        "category": "flow",
+        "aliases": [
+            "burning spirit wit",
+            "burning spirit wit",
+            "aoharu burning wisdom",
+            "アオハル燃焼 賢"
+        ],
+        "downgrade": "Ignited Spirit WIT"
+    },
+    
 
-
-    
-    
-    
-    
+  
     
 
     {   "skill_name": "Hesitant Front Runners",
@@ -7773,28 +8101,6 @@
         ],
         "upgrade": "Adored by All"
     },
-    {   "skill_name": "Adored by All",
-        "description": "Reduces speed by 0.25 for 3.0s for all umas behind.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "Strong speed debuff skill. Might not activate due to 5s buffer time.",
-        "rarity": "rare",
-        "category": "goldenvelocitydebuff",
-        "aliases": [
-            "adored by all",
-            "bewitching",
-            "悩殺術"
-        ],
-        "downgrade": "Intimidate"
-    },
     {   "skill_name": "Speed Eater",
         "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.15 for 3.0s.",
         "conditions": [
@@ -7814,27 +8120,6 @@
             "スピードイーター"
         ],
         "upgrade": "Greed for Speed"
-    },
-    {   "skill_name": "Greed for Speed",
-        "description": "Reduces speed by 0.2 to 5 umas behind you and increases your speed by 0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "1st to 3rd place",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "A",
-        "review": "Debuffs your enemies and increases your speed as a Front Runner. Pretty decent.",
-        "rarity": "rare",
-        "category": "goldenvelocitydebuff",
-        "aliases": [
-            "greed for speed",
-            "speed greed",
-            "スピードグリード"
-        ],
-        "downgrade": "Speed Eater"
     },
     {   "skill_name": "Tether",
         "description": "Reduces speed by 0.15 for 3.0s to all umas ahead.",
@@ -7857,27 +8142,6 @@
         ],
         "upgrade": "Dominator"
     },
-    {   "skill_name": "Dominator",
-        "description": "Reduces speed by 0.25 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "S",
-        "review": "Very impacful speed debuff, as it occurs during the late-race. Only suitable for late surgers and end closers.",
-        "rarity": "rare",
-        "category": "goldenvelocitydebuff",
-        "aliases": [
-            "dominator",
-            "monopolizer",
-            "独占力"
-        ],
-        "downgrade": "Tether"
-    },
     {   "skill_name": "Intense Gaze",
         "description": "Reduces speed by 0.15 for 3.0s to all umas within FoV.",
         "conditions": [
@@ -7898,6 +8162,48 @@
             "まなざし"
         ],
         "upgrade": "Petrifying Gaze"
+    },
+    {   "skill_name": "Greed for Speed",
+        "description": "Reduces speed by 0.2 to 5 umas behind you and increases your speed by 0.25 for 3.0s.",
+        "conditions": [
+            [
+                "Mile",
+                "1st to 3rd place",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "A",
+        "review": "Debuffs your enemies and increases your speed as a Front Runner. Pretty decent.",
+        "rarity": "rare",
+        "category": "goldenvelocitydebuff",
+        "aliases": [
+            "greed for speed",
+            "speed greed",
+            "スピードグリード"
+        ],
+        "downgrade": "Speed Eater"
+    },
+    {   "skill_name": "Dominator",
+        "description": "Reduces speed by 0.25 for 3.0s to all umas ahead.",
+        "conditions": [
+            [
+                "Medium",
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "S",
+        "review": "Very impacful speed debuff, as it occurs during the late-race. Only suitable for late surgers and end closers.",
+        "rarity": "rare",
+        "category": "goldenvelocitydebuff",
+        "aliases": [
+            "dominator",
+            "monopolizer",
+            "独占力"
+        ],
+        "downgrade": "Tether"
     },
     {   "skill_name": "Petrifying Gaze",
         "description": "Reduces speed by 0.25 for 3.0s to all umas within FoV.",
@@ -7920,9 +8226,30 @@
         ],
         "downgrade": "Intense Gaze"
     },
-
-
-
+    {   "skill_name": "Adored by All",
+        "description": "Reduces speed by 0.25 for 3.0s for all umas behind.",
+        "conditions": [
+            [
+                "Sprint",
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "Early race",
+                "After at least 5s into a race"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Strong speed debuff skill. Might not activate due to 5s buffer time.",
+        "rarity": "rare",
+        "category": "goldenvelocitydebuff",
+        "aliases": [
+            "adored by all",
+            "bewitching",
+            "悩殺術"
+        ],
+        "downgrade": "Intimidate"
+    },
+    
+    
     {   "skill_name": "Opening Gambit",
         "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
         "conditions": [
@@ -7945,27 +8272,6 @@
         ],
         "upgrade": "Battle Formation"
     },
-    {   "skill_name": "Battle Formation",
-        "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Early race",
-                "After at least 3s into a race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "Reducing the Front Runners acceleration at the start of the race may be impactful, but the 3s buffer makes triggering it inconsistent.",
-        "rarity": "rare",
-        "category": "goldenacceldebuff",
-        "aliases": [
-            "battle formation",
-            "布陣"
-        ],
-        "downgrade": "Opening Gambit"
-    },
     {   "skill_name": "Restart",
         "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
         "conditions": [
@@ -7986,7 +8292,27 @@
             "リスタート"
         ]
     },
-    
+    {   "skill_name": "Battle Formation",
+        "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
+        "conditions": [
+            [
+                "Mile",
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Early race",
+                "After at least 3s into a race"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "Reducing the Front Runners acceleration at the start of the race may be impactful, but the 3s buffer makes triggering it inconsistent.",
+        "rarity": "rare",
+        "category": "goldenacceldebuff",
+        "aliases": [
+            "battle formation",
+            "布陣"
+        ],
+        "downgrade": "Opening Gambit"
+    },    
     
 
     {   "skill_name": "Frenzied Front Runners",
@@ -8070,7 +8396,6 @@
         ]
     },
 
-    
 
     {   "skill_name": "Trick (Front)",
         "description": "Reduces HP by 1% for rushed umas behind.",
@@ -8090,27 +8415,6 @@
             "trick front",
             "トリック前"
         ]
-    },
-    {   "skill_name": "Tantalizing Trick",
-        "description": "Reduces HP by 3% for rushed umas behind.",
-        "conditions": [
-            [
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "1 or more rushed umas behind you",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "A",
-        "review": "",
-        "rarity": "rare",
-        "category": "goldenrecoverydebuff",
-        "aliases": [
-            "tantalizing trick",
-            "captivating trick",
-            "見惚れるトリック"
-        ],
-        "downgrade": "Trick (Front)"
     },
     {   "skill_name": "Trick (Rear)",
         "description": "Reduces HP by 1% for rushed umas ahead.",
@@ -8317,6 +8621,67 @@
         ],
         "upgrade": "You've Got No Shot"
     },
+    {   "skill_name": "Murmur",
+        "description": "Reduces HP by 1% for all umas ahead.",
+        "conditions": [
+            [
+                "Medium",
+                "Blocked in front for 1s or more",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "A",
+        "review": "Consistent debuff that can cripple front runners and pace chasers. Most suitable for late surgers and end closers.",
+        "rarity": "normal",
+        "category": "recoverydebuff",
+        "aliases": [
+            "murmur",
+            "gentle whisper",
+            "ささやき"
+        ],
+        "upgrade": "Mystifying Murmur"
+    },
+    {   "skill_name": "Stamina Eater",
+        "description": "Reduces HP by 0.5% to 5 umas ahead of you and recovers your HP by 1.5%.",
+        "conditions": [
+            [
+                "Long",
+                "5th place or worse",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "S",
+        "review": "Stamina recovery + stamina debuff is a pretty good skill for CM.",
+        "rarity": "normal",
+        "category": "recoverydebuff",
+        "aliases": [
+            "stamina eater",
+            "スタミナイーター"
+        ],
+        "upgrade": "Stamina Siphon"
+    },
+    {   "skill_name": "Sharp Gaze",
+        "description": "Reduces HP by 1% for all umas within PoV.",
+        "conditions": [
+            [
+                "Late Surger",
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Late race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "A",
+        "review": "Strong stamina debuff.",
+        "rarity": "normal",
+        "category": "recoverydebuff",
+        "aliases": [
+            "sharp gaze",
+            "鋭い眼光"
+        ],
+        "upgrade": "All-Seeing Eyes"
+    },
     {   "skill_name": "You've Got No Shot",
         "description": "Reduces HP by 3% and acceleration by 0.2 for 1.2s for all umas ahead.",
         "conditions": [
@@ -8339,27 +8704,6 @@
         ],
         "downgrade": "Stop Right There!"
     },
-    {   "skill_name": "Murmur",
-        "description": "Reduces HP by 1% for all umas ahead.",
-        "conditions": [
-            [
-                "Medium",
-                "Blocked in front for 1s or more",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "A",
-        "review": "Consistent debuff that can cripple front runners and pace chasers. Most suitable for late surgers and end closers.",
-        "rarity": "normal",
-        "category": "recoverydebuff",
-        "aliases": [
-            "murmur",
-            "gentle whisper",
-            "ささやき"
-        ],
-        "upgrade": "Mystifying Murmur"
-    },
     {   "skill_name": "Mystifying Murmur",
         "description": "Reduces HP by 3% for all umas ahead.",
         "conditions": [
@@ -8380,26 +8724,6 @@
             "魅惑のささやき"
         ],
         "downgrade": "Murmur"
-    },
-    {   "skill_name": "Stamina Eater",
-        "description": "Reduces HP by 0.5% to 5 umas ahead of you and recovers your HP by 1.5%.",
-        "conditions": [
-            [
-                "Long",
-                "5th place or worse",
-                "Mid race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "S",
-        "review": "Stamina recovery + stamina debuff is a pretty good skill for CM.",
-        "rarity": "normal",
-        "category": "recoverydebuff",
-        "aliases": [
-            "stamina eater",
-            "スタミナイーター"
-        ],
-        "upgrade": "Stamina Siphon"
     },
     {   "skill_name": "Stamina Siphon",
         "description": "Reduces HP by 1% to 5 umas ahead of you and recovers your HP by 3.5%.",
@@ -8422,26 +8746,6 @@
         ],
         "downgrade": "Stamina Eater"
     },
-    {   "skill_name": "Sharp Gaze",
-        "description": "Reduces HP by 1% for all umas within PoV.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
-        "team_trials": "A",
-        "champs_meet": "A",
-        "review": "Strong stamina debuff.",
-        "rarity": "normal",
-        "category": "recoverydebuff",
-        "aliases": [
-            "sharp gaze",
-            "鋭い眼光"
-        ],
-        "upgrade": "All-Seeing Eyes"
-    },
     {   "skill_name": "All-Seeing Eyes",
         "description": "Reduces HP by 3% for all umas within PoV.",
         "conditions": [
@@ -8462,6 +8766,27 @@
             "八方にらみ"
         ],
         "downgrade": "Sharp Gaze"
+    },
+    {   "skill_name": "Tantalizing Trick",
+        "description": "Reduces HP by 3% for rushed umas behind.",
+        "conditions": [
+            [
+                "50% or better (5th or better in CM, 6th or better in TT)",
+                "1 or more rushed umas behind you",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "A",
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenrecoverydebuff",
+        "aliases": [
+            "tantalizing trick",
+            "captivating trick",
+            "見惚れるトリック"
+        ],
+        "downgrade": "Trick (Front)"
     },
 
 
@@ -8485,24 +8810,6 @@
         ],
         "upgrade": "Illusionist"
     },
-    {   "skill_name": "Illusionist",
-        "description": "Reduces FoV by 10 for 3.0s for all umas ahead.",
-        "conditions": [
-            [
-                "Long",
-                "Late race"
-            ]
-        ],
-        "team_trials": "D",
-        "champs_meet": "E",
-        "review": "FoV is a useless stat to debuff. May help against umas that require FoV such as Nice Nature debuff build.",
-        "rarity": "rare",
-        "category": "goldenvisiondebuff",
-        "aliases": [
-            "illusionist"
-        ],
-        "downgrade": "Smoke Screen"
-    },
     {   "skill_name": "Disorient",
         "description": "Reduces FoV by 3 for 3.0s for all umas behind you.",
         "conditions": [
@@ -8523,6 +8830,24 @@
             "かく乱"
         ],
         "upgrade": "Dazzling Disorientation"
+    },
+    {   "skill_name": "Illusionist",
+        "description": "Reduces FoV by 10 for 3.0s for all umas ahead.",
+        "conditions": [
+            [
+                "Long",
+                "Late race"
+            ]
+        ],
+        "team_trials": "D",
+        "champs_meet": "E",
+        "review": "FoV is a useless stat to debuff. May help against umas that require FoV such as Nice Nature debuff build.",
+        "rarity": "rare",
+        "category": "goldenvisiondebuff",
+        "aliases": [
+            "illusionist"
+        ],
+        "downgrade": "Smoke Screen"
     },
     {   "skill_name": "Dazzling Disorientation",
         "description": "Reduces FoV by 5 for 3.0s for all umas behind you.",
@@ -8549,169 +8874,7 @@
 
 
 
-    {   "skill_name": "Red Shift/LP1211-M",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "1st to 5th",
-                "Final corner and beyond"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "SS",
-        "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "red shift",
-            "maruzensky",
-            "red flame gear",
-            "紅焔ギア",
-            "lp1211m"
-        ],
-        "horse": "Maruzensky (Original)"
-    },
-    {   "skill_name": "Shooting for Victory!",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "3rd to 4th (CM), 3rd to 5th (TT)",
-                "Second half of final corner"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "SS",
-        "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "shooting for victory",
-            "taiki shuttle",
-            "victory shot",
-            "ヴィクトリーショット"
-        ],
-        "horse": "Taiki Shuttle (Original)"
-    },
-    {   "skill_name": "Let's Pump Some Iron!",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "6th (CM), 8th (TT)",
-                "Corner",
-                "Late race or beyond"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "SS",
-        "review": "Powerful acceleration skill. Slightly hard to activate consistently since you need to be 6th on the corner. Best on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "lets pump some iron",
-            "mejiro ryan",
-            "lets anabolic",
-            "レッツアナボリック"
-        ],
-        "horse": "Mejiro Ryan (Original)",
-        "downgrade": "Feel the Burn!"
-    },
-    {   "skill_name": "Feel the Burn!",
-        "description": "Increases acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "6th (CM), 8th (TT)",
-                "Corner",
-                "Late race or beyond"
-            ]
-        ],
-        "team_trials": "-",
-        "champs_meet": "-",
-        "review": "You can't inherit this.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "feel the burn",
-            "mejiro ryan",
-            "burning muscles",
-            "燃えろ筋肉"
-        ],
-        "upgrade": "Let's Pump Some Iron!"
-    },
-    {   "skill_name": "Angling and Scheming",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "1st place",
-                "Corner",
-                "Late race or beyond"
-            ]
-        ],
-        "team_trials": "SS",
-        "champs_meet": "SS",
-        "review": "Must have skill for all Front Runners. Need to be leading to trigger, so weaker Front Runners will not be able to trigger this. Best on tracks where the spurt begins on a corner. Please consult umalator to check if the skill is effective on the track you are building for.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "angling and scheming",
-            "seiun sky",
-            "アングリングxスキーミング"
-        ],
-        "horse": "Seiun Sky (Original)"
-    },
-    {   "skill_name": "Condor's Fury",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "4th to 7th (CM), 4th to 9th (TT)",
-                "Overtake target exists",
-                "Final corner"
-            ]
-        ],
-        "team_trials": "S",
-        "champs_meet": "S",
-        "review": "If the last spurt is on the final corner and you can overtake, this skill is pretty good on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "condors fury",
-            "el condor pasa fantasy",
-            "condor onslaught",
-            "コンドル猛撃波"
-        ],
-        "horse": "El Condor Pasa (Fantasy)"
-    },
-    {   "skill_name": "KEEP IT REAL.",
-        "description": "Increases acceleration by 0.3 for 6.0s.",
-        "inherited": "Increases acceleration by 0.1 for 3.6s.",
-        "conditions": [
-            [
-                "4th to 7th (CM), 5th to 10th (TT)",
-                "Overtake target exists",
-                "Second half of the race"
-            ]
-        ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "Numbers seem very low for inherit.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "keep it real",
-            "gold city original"
-        ],
-        "horse": "Gold City (Original)"
-    },
     
-    
-
-    
-    
-
     {   "skill_name": "Runaway",
         "description": "Changes strategu to Runaway (Great Escape)",
         "conditions": [
