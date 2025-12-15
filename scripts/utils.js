@@ -300,6 +300,10 @@ export function getSkillThumbnail(str)
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_10014.png';
   }
+  if (str === 'goldenspeed')
+  {
+    return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_10012.png';
+  }
 
   if (str === 'stamina')
   {
@@ -309,6 +313,10 @@ export function getSkillThumbnail(str)
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_10024.png';
   }
+  if (str === 'goldenstamina')
+  {
+    return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_10022.png';
+  }
 
   if (str === 'power')
   {
@@ -317,6 +325,10 @@ export function getSkillThumbnail(str)
   if (str === 'powernegative')
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_10034.png';
+  }
+  if (str === 'goldenpower')
+  {
+    return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_10032.png';
   }
 
   if (str === 'guts')
@@ -395,6 +407,10 @@ export function getSkillThumbnail(str)
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_20102.png';
   }
+  if (str === 'goldenvelocitynegative')
+  {
+    return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_20015.png';
+  }
 
   if (str === 'accel')
   {
@@ -455,7 +471,7 @@ export function getSkillThumbnail(str)
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_20091.png';
   }
-   if (str === 'goldenvision')
+  if (str === 'goldenvision')
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_20092.png';
   }
@@ -487,7 +503,7 @@ export function getSkillThumbnail(str)
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_30051.png';
   }
-    if (str === 'goldenrecoverydebuff')
+  if (str === 'goldenrecoverydebuff')
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_30052.png';
   }
@@ -499,6 +515,11 @@ export function getSkillThumbnail(str)
   if (str === 'goldenvisiondebuff')
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_30072.png';
+  }
+
+  if (str === 'runaway')
+  {
+    return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_40012.png';
   }
 }
 
