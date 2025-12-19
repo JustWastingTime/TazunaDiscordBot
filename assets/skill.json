@@ -3207,9 +3207,9 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "B",
-        "review": "A bandaid when you lose the lead on the final corner. Could save you a win but probably not.",
+        "team_trials": "B",
+        "champs_meet": "A",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -3282,6 +3282,7 @@
         "description": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
+                "Sprint",
                 "1st place",
                 "3 lengths ahead or more",
                 "Mid race"
@@ -4292,8 +4293,8 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "B",
+        "team_trials": "B",
+        "champs_meet": "A",
         "review": "A bandaid when you lose the lead on the final corner. Could save you a win but probably not.",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4329,6 +4330,7 @@
         "description": "Increases speed by 0.35 for 3.0s.",
         "conditions": [
             [
+                "Sprint",
                 "1st place",
                 "3 lengths ahead or more",
                 "Mid race"
@@ -6187,7 +6189,7 @@
     },
     {   "skill_name": "Pop & Polish",
         "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.25 for 3.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
         "conditions": [
             [
                 "1st to 4th (CM), 1st to 5th (TT)",
@@ -7188,7 +7190,7 @@
                 "Late race or beyond"
             ]
         ],
-        "team_trials": "S",
+        "team_trials": "B",
         "champs_meet": "SS",
         "review": "Powerful acceleration skill. Slightly hard to activate consistently since you need to be 6th on the corner. Best on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
         "rarity": "unique",
@@ -8874,7 +8876,7 @@
 
 
 
-    
+
     {   "skill_name": "Runaway",
         "description": "Changes strategu to Runaway (Great Escape)",
         "conditions": [
