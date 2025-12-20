@@ -6210,6 +6210,28 @@
         ],
         "horse": "Tosen Jordan (Original)"
     },
+    {   "skill_name": "Festive Miracle",
+        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s. Recover HP by 3.5%.",
+        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s. Recover HP by 0.5%.",
+        "conditions": [
+            [
+                "Activated 3 or more recovery skill",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "C",
+        "review": "Values are too low to inherit.",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "festive miracle",
+            "oguri cap christmas",
+            "聖夜のミラクルラン",
+            "christmas eve miracle run"
+        ],
+        "horse": "Oguri Cap (Christmas)"
+    },
 
 
     {   "skill_name": "Corner Adept x",
