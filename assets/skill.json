@@ -4081,7 +4081,7 @@
         "downgrade": "Straightaway Adept"
     },
     {   "skill_name": "It's On!",
-        "description": "Increases speed by 035 for 1.8s. 30s cooldown.",
+        "description": "Increases speed by 0.35 for 1.8s. 30s cooldown.",
         "conditions": [
             [
                 "Overtake",
