@@ -667,7 +667,7 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
           type: 3, // SELECT_MENU
           custom_id: "supporter_lookup_select",
           placeholder: "Lookup an available card",
-          options: supporters.map(s => ({
+          options: supporters.slice(0, 25).map(s => ({
             label: `${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`,
             value: s.id,
             emoji: getCustomEmoji(s.category)

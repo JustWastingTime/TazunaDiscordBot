@@ -166,11 +166,21 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       if (matches.length === 1)
       {
 
-        // Lookup supporters with this skill
-        const supporterMatches = supporters.filter(s =>
-          s.support_skills?.some(sk => sk.toLowerCase() === matches[0].skill_name.toLowerCase()) ||
-          s.event_skills?.some(sk => sk.toLowerCase() === matches[0].skill_name.toLowerCase())
-        );
+        // Lookup supporters with this skill, hide r cards
+        const supporterMatches = supporters.filter(s => {
+          if (s.rarity == "r") return false;
+
+          return (
+            s.support_skills?.some(sk => sk.toLowerCase() === matches[0].skill_name.toLowerCase()) ||
+            s.event_skills?.some(sk => sk.toLowerCase() === matches[0].skill_name.toLowerCase())
+          );
+        });
+
+        // Sort supporters by rarity (ssr first)
+        supporterMatches.sort((a, b) => {
+          const order = { ssr: 0, sr: 1 };
+          return order[a.rarity.toLowerCase()] - order[b.rarity.toLowerCase()];
+        });
 
         // Format supporter names into a list
         let supporterList = supporterMatches.length
@@ -1234,15 +1244,26 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       );
 
       // Lookup supporters with this skill
-      const supporterMatches = supporters.filter(s =>
-        s.support_skills?.some(sk => sk.toLowerCase() === skill.skill_name.toLowerCase()) ||
-        s.event_skills?.some(sk => sk.toLowerCase() === skill.skill_name.toLowerCase())
-      );
+      const supporterMatches = supporters.filter(s => {
+        if (s.rarity == "r") return false;
+        return (
+          s.support_skills?.some(sk => sk.toLowerCase() === skill.skill_name.toLowerCase()) ||
+          s.event_skills?.some(sk => sk.toLowerCase() === skill.skill_name.toLowerCase())
+        );
+      });
+
+      // Sort supporters by rarity (ssr first)
+      supporterMatches.sort((a, b) => {
+        const order = { ssr: 0, sr: 1 };
+        return order[a.rarity.toLowerCase()] - order[b.rarity.toLowerCase()];
+      });
 
       // Format supporter names into a list
       let supporterList = supporterMatches.length
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
+
+        
 
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
