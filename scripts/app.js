@@ -228,8 +228,8 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       });
     }
 
-    // "event" command
-    if (name === 'event') {
+    // "event" command DEPRECATED
+    /*if (name === 'event') {
       const eventQuery = data.options?.find(opt => opt.name === 'name')?.value?.toLowerCase();
       const query = eventQuery.toLowerCase().split(/\s+/); 
 
@@ -286,7 +286,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           ]
         }
       });
-    }
+    }*/
 
     if (name === 'uma') {
       const umaQuery = data.options?.find(opt => opt.name === 'name')?.value?.toLowerCase();
