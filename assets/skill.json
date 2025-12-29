@@ -7290,7 +7290,36 @@
         ],
         "horse": "Gold City (Original)"
     },
-
+    {   "skill_name": "Moving Past, and Beyond",
+        "description": "Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "5th to 6th (CM), 6th to 8th (TT)",
+                "Never 'Rushed'",
+                "Final corner",
+                "Mid race"
+            ],
+            [
+                "5th to 6th (CM), 6th to 8th (TT)",
+                "Never 'Rushed'",
+                "Corners",
+                "Late race or beyond"
+            ]
+        ],
+        "team_trials": "A",
+        "champs_meet": "S",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "mejiro dober original",
+            "moving past and beyond",
+            "彼方その先へ",
+            "beyond the other side"
+        ],
+        "horse": "Mejiro Dober (Original)"
+    },
     
     {   "skill_name": "Corner Acceleration x",
         "description": "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
