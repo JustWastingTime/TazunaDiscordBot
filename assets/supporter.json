@@ -3933,7 +3933,7 @@
             "Friendship Bonus - 15/16/18/20/20%",
             "Mood Effect - 40/45/50/55/60%",
             "Power Bonus - 0/1/1/1/1",
-            "Training Effectiveness - 0/0/0/5/10",
+            "Training Effectiveness - 0/0/0/5/10%",
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Hint Levels - 2",
             "Hint Frequency - 30/33/36/40/40%",
@@ -4430,7 +4430,7 @@
             "Friendship Bonus - 15/16/18/20/20%",
             "Mood Effect - 30/33/36/40/40%",
             "Speed Bonus - 0/1/1/1/1",
-            "Training Effectiveness - 0/0/0/5/10",
+            "Training Effectiveness - 0/0/0/5/10%",
             "Initial Speed - 15/16/18/20/20",
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Race Bonus - 5/6/7/8/10%",
@@ -5318,7 +5318,7 @@
             "Friendship Bonus - 15/16/18/20/20%",
             "Mood Effect - 20/23/26/30/30%",
             "Stamina Bonus - 0/1/1/1/1",
-            "Training Effectiveness - 0/0/0/5/10",
+            "Training Effectiveness - 0/0/0/5/10%",
             "Initial Stamina - 25/26/27/28/30",
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Hint Levels - 2/2/2/2/3",
@@ -5938,7 +5938,116 @@
         ]
     },
 
-
+    {   "id": "30068 Curren Chan",
+        "card_name": "Cutie Pie with Shining Eyes",
+        "character_name": "Curren Chan",
+        "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Wit Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5%",
+            "Initial Friendship Gauge - 0/0/0/15/30",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Sprinting Gear",
+            "Hesitant Late Surgers",
+            "Sprint Straightaways",
+            "Meticulous Measures",
+            "Disorient"
+        ],
+        "event_skills": [
+            "Perfect Prep!",
+            "Stop Right There!",
+            "Playtime's Over!",
+            "Meticulous Measures",
+            "Intimidate"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30068-curren-chan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30068.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "curren chan cutie pie with shining eyes"
+        ]
+    },
+    {   "id": "30069 Narita Brian",
+        "card_name": "The Whistling Arrow's Taunt",
+        "character_name": "Narita Brian",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which the character participates in their preferred training type (20)",
+        "effects": [
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Training Effectiveness - 5%",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Hint Levels - 1",
+            "Hint Frequency - 20%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Preferred Position",
+            "Outer Swell",
+            "Inside Scoop",
+            "Medium Straightaways",
+            "Medium Corners",
+            "Long Straightaways",
+            "Hydrate"
+        ],
+        "event_skills": [
+            "Beeline Burst",
+            "Up-Tempo",
+            "Lone Wolf"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30069-narita-brian",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30069.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "narita brian the whistling arrows taunt"
+        ]
+    },
+    {   "id": "30070 Yukino Bijin",
+        "card_name": "Dancing Light into the Night",
+        "character_name": "Yukino Bijin",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 0/0/0/5/10%",
+            "Initial Guts - 20/21/22/23/25",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Nakayama Racecourse",
+            "Winter Runner",
+            "Steadfast",
+            "Medium Corners"
+        ],
+        "event_skills": [
+            "Corner Connoisseur",
+            "Snowy Days",
+            "Playtime's Over!",
+            "Corner Acceleration"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30070-yukino-bijin",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30070.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "yukino bijin dancing light into the night", "yukino bijin welfare", "yukino bijin poverty", "yukino bijin event"
+        ]
+    },
     {   "id": "30071 Daitaku Helios",
         "card_name": "Make! Some! NOISE!",
         "character_name": "Daitaku Helios",
