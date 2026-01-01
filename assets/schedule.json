@@ -1,53 +1,47 @@
 [   
-    {   "event_name": "Kawakami Princess + Yaeno Muteki (Power) & Seiun Sky (Stamina)",
-        "event_type": "Banner",
-        "date": "<t:1764626400:F> - <t:1765404000:F>, <t:1764626400:R>",
-        "thumbnail": "https://img.game8.co/4352280/6b0bd61c95dffc489d73638e2a0ca28e.png/show"
-    }, 
-    {   "event_name": "Legend Races - Matikanefukukitaru, Seiun Sky, Biwa Hayahide",
-        "event_type": "Legend Races",
-        "date": "<t:1764885600:F> - <t:1765663200:F>, <t:1764885600:R>",
-        "thumbnail": "https://img.game8.co/4352308/c735145036749cc2c9da698f7732f080.png/show"
-    },
-    {   "event_name": "Manhattan Cafe + Nakayama Festa (Stamina) & Sirius Symboli (Guts)",
-        "event_type": "Banner",
-        "date": "<t:1765231200:F> - <t:1765922400:F>, <t:1765231200:R>",
-        "thumbnail": "https://img.game8.co/4352283/54b14929f237a351a66f847e97f3165b.png/show"
-    }, 
-    {   "event_name": "Champions Meeting - Libra Cup",
+    {   "event_name": "Champions Meeting - Scorpio Cup",
         "event_type": "Champions Meeting",
-        "date": "<t:1765490400:F> - <t:1766095200:F>, <t:1765490400:R>",
-        "thumbnail": "https://img.game8.co/4352318/50630a6857eaa8ae79e22a4573c4a94c.png/show"
+        "date": "<t:1767304800:F>, <t:1767304800:R>",
+        "thumbnail": "https://img.game8.co/4352307/9a309ae490dbbfa2eef1800e9987a1b3.png/show"
     },
-    {   "event_name": "Symboli Rudolf (Festival) & Gold City (Festival) + Narita Brian (Stamina) & Curren Chan (Wit)",
+    {   "event_name": "Oguri Cap (Christmas) & Biwa Hayahide (Christmas) + Mayano Top Gun (Speed) & Narita Taishin (Wit)",
         "event_type": "Banner",
-        "date": "<t:1765749600:F> - <t:1766700000:F>, <t:1765749600:R>",
-        "thumbnail": "https://img.game8.co/4352281/433ee2a59bf4eb581436757d628888fd.png/show"
+        "date": "<t:1767650400:F> - <t:1768946400:R>, <t:1767650400:R>",
+        "thumbnail": "https://img.game8.co/4376668/d1ac4980252a1d11bc3f9f88cf6e5e11.png/show"
     },
-    {   "event_name": "Orchestra in Late Autumn Story Event",
+    {   "event_name": "Hungry for a Miracle Story Event",
         "event_type": "Story Event",
-        "date": "<t:1765749600:F> - <t:1766700000:F>, <t:1765749600:R>",
-        "thumbnail": "https://img.game8.co/4352310/6c971ae9838f7b75a475d5b8e5ba2877.png/show"
+        "date": "<t:1767650400:F> - <t:1768946400:R>, <t:1767650400:R>",
+        "thumbnail": "https://img.game8.co/4376670/59335769b2b8e69f32adf7241b95af61.png/show"
     },
-    {   "event_name": "Tosen Jordan + El Condor Pasa (Power) & Kitasan Black (Speed)",
+    {   "event_name": "Fine Motion + Manhattan Cafe (Stamina) & Inari One (Power)",
         "event_type": "Banner",
-        "date": "<t:1766095200:F> - <t:1767045600:F>, <t:1766095200:R>",
-        "thumbnail": "https://img.game8.co/4352284/a56bac09296055064214ad549052c374.png/show"
+        "date": "<t:1768514400:F> - <t:1769205600:F>, <t:1768514400:R>",
+        "thumbnail": "https://img.game8.co/4376672/1c4710c5dbbe3914ea669fd572ea8162.png/show"
     },
-    {   "event_name": "Legend Races - Air Groove, Eishin Flash, Agnes Digital",
+    {   "event_name": "Tamamo Cross + Oguri Cap (Power) & Nice Nature (Wit) RERUN",
+        "event_type": "Banner",
+        "date": "<t:1769119200:F> - <t:1769896800:R>, <t:1769119200:R>",
+        "thumbnail": "https://img.game8.co/4376671/c110e884099d05f10168437f94491d10.png/show"
+    },
+    {   "event_name": "Legend Races - Nice Nature, Grass Wonder, Oguri Cap",
         "event_type": "Legend Races",
-        "date": "<t:1766440800:F> - <t:1767218400:F>, <t:1766440800:R>",
-        "thumbnail": "https://img.game8.co/4352309/6279f3defca9a6678c1df429f38412de.png/show"
+        "date": "<t:1769119200:F> - <t:1769896800:R>, <t:1769119200:R>",
+        "thumbnail": "https://img.game8.co/4376669/875b2c8c0a3c5fc31cd074e97185e96d.png/show"
     },
-    {   "event_name": "Fuji Kiseki's Showtime Event",
+    {   "event_name": "Champions Meeting - Sagittarius Cup",
+        "event_type": "Champions Meeting",
+        "date": "<t:1769205600:F>, <t:1769205600:R>",
+        "thumbnail": "https://img.game8.co/4376204/e6752f78e310ad7660958e9e1c063c74.png/show"
+    },    
+    {   "event_name": "New Beginnings Part 1",
         "event_type": "Misc",
-        "date": "<t:1766613600:F> - <t:1767564000:F>, <t:1766613600:R>",
-        "thumbnail": "https://img.game8.co/4352306/cc3ab304dd857ac125eac2f89d4b7fd7.png/show"
+        "date": "<t:1769551200:F>, <t:1769551200:R>",
+        "thumbnail": "https://img.game8.co/4376674/572278152832470c3c7723345ab7f4dc.png/show"
     },
-    {   "event_name": "Mejiro Dober + Daitaku Helios (Power) & Vodka (Speed)",
+    {   "event_name": "Haru Urara (New Year) & T. M. Opera O (New Year) + Matikanefukukitaru (Speed) & Admire Vega (Power)",
         "event_type": "Banner",
-        "date": "<t:1766959200:F> - <t:1767823200:F>, <t:1766959200:R>",
-        "thumbnail": "https://img.game8.co/4352282/e12ff4b57e967c5df8faff56a169327c.png/show"
+        "date": "<t:1769724000:R> - <t:1770674400:F>, <t:1769724000:R>",
+        "thumbnail": "https://img.game8.co/4376673/99f3d1aa132a486f1d8b75e504be3a04.png/show"
     }
-    
 ]   
