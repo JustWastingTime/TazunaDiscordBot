@@ -13,7 +13,7 @@ import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSk
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
-import "./leaderboard.js";
+import { updateLeaderboard } from "./leaderboard.js";
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -1040,6 +1040,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     // "setchannel" command to set a live leaderboard channel 
     if (name === "setchannelleaderboard") {
       const member = req.body.member;
+      const guildId = req.body.guild_id;
 
       // Convert permissions to BigInt (safe for large bitfields)
       const perms = BigInt(member.permissions || "0");
@@ -1056,21 +1057,62 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         });
       }
 
-      const channelId = options.find(o => o.name === "channel").value;
+      const channelId = options.find(o => o.name === "channel")?.value;
 
-      // Save channelId to config.json
-      let config = {};
-      try {
-        config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
-      } catch {
-        config = {};
+      if (!channelId) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: "❌ Channel not provided.",
+            flags: 64
+          }
+        });
       }
-      config.leaderboardChannel = channelId;
-      fs.writeFileSync("./config.json", JSON.stringify(config, null, 2));
+
+      // Load servers.json
+      const serversPath = path.join(__dirname, "..", "assets", "servers.json");
+
+      let servers = [];
+      try {
+        servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
+      } catch (err) {
+        console.error("Failed to read servers.json", err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: "❌ Failed to load server configuration.",
+            flags: 64
+          }
+        });
+      }
+
+      // Find server entry by Discord guild ID
+      const server = servers.find(s => s.id === guildId);
+
+      if (!server) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: "❌ This server is not registered in servers.json.",
+            flags: 64
+          }
+        });
+      }
+    
+      // Update leaderboard config
+      server.leaderboard_channel = channelId;
+      server.leaderboard_message_id = ""; // reset so updater recreates message
+
+      // Save back to file
+      fs.writeFileSync(serversPath, JSON.stringify(servers, null, 2));
+
+      await updateLeaderboard();
 
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: { content: `✅ Saved channel <#${channelId}>` }
+        data: {
+          content: `✅ Live leaderboard channel set to <#${channelId}>`
+        }
       });
     }
 

@@ -17,7 +17,6 @@ import { syncUsers } from "./sheets.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const configPath = path.join(__dirname, "..", "config.json");
 const serversPath = path.join(__dirname, "..", "assets", "servers.json");
 const usersPath = path.join(__dirname, "..", "assets", "users.json");
 
@@ -183,61 +182,75 @@ function buildLeaderboardPayload(clubNames, usersList, serversList) {
 
     // Final Discord components
     return {
-        flags: InteractionResponseFlags.IS_COMPONENTS_V2,
-        components: [
-        {
-            type: MessageComponentTypes.CONTAINER,
-            accent_color: "15844367",
-            components: [
-                { type: MessageComponentTypes.TEXT_DISPLAY, content: title },
-                { type: MessageComponentTypes.TEXT_DISPLAY, content: "```" + table + "```" },
-                { type: MessageComponentTypes.TEXT_DISPLAY, content: footerText },
-                { type: MessageComponentTypes.TEXT_DISPLAY, content: lastUpdatedLine }
-            ]
-        }
-        ]
-    };
+    embeds: [
+      {
+        title: `🏆 Leaderboard — ${targetClubs.join(", ")} (Monthly Fans)`,
+        description: "```" + table + "```",
+        color: 15844367,
+        footer: {
+          text:
+            `Median Fans: ${aggregatedMedian.toLocaleString()} • ` +
+            `Total Fans: ${totalFansSum.toLocaleString()} • ` +
+            `Daily Avg: ${aggregatedDaily.toLocaleString()}`
+        },
+        timestamp: new Date().toISOString()
+      }
+    ]
+  };
 }
 
 // ---------------------------------------------------------------------------
 // Main Updater Loop
 // ---------------------------------------------------------------------------
 
-async function updateLeaderboard() {
+export async function updateLeaderboard() {
   try {
     console.log("[LeaderboardUpdater] Syncing users...");
     await syncUsers();
 
-    const serversList = JSON.parse(fs.readFileSync(serversPath, "utf8"));
-    const usersList = JSON.parse(fs.readFileSync(usersPath, "utf8"));
-    const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    const servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
+    const users = JSON.parse(fs.readFileSync(usersPath, "utf8"));
 
-    const channelId = config.leaderboardChannel;
-    const clubs = config.leaderboardClubs || [];
+    let changed = false;
 
-    if (!channelId || clubs.length === 0) {
-      console.log("[LeaderboardUpdater] Missing channel or club list; skipping.");
-      return;
-    }
+    for (const server of servers) {
+      if (!server.leaderboard_channel) continue;
 
-    const payload = buildLeaderboardPayload(clubs, usersList, serversList);
+      console.log(`[LeaderboardUpdater] Updating ${server.name}`);
 
-    // If message doesn't exist in config, send a new one
-    if (!config.leaderboardMessageId) {
-      console.log("[LeaderboardUpdater] Creating new leaderboard message...");
-      const msg = await sendDiscordMessage(channelId, payload);
+      const payload = buildLeaderboardPayload(
+        [server.name], // ONE club per server
+        users,
+        servers
+      );
 
-      if (msg.id) {
-        config.leaderboardMessageId = msg.id;
-        fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+      // Create message if missing
+      if (!server.leaderboard_message_id) {
+        const msg = await sendDiscordMessage(
+          server.leaderboard_channel,
+          payload
+        );
+
+        if (msg?.id) {
+          server.leaderboard_message_id = msg.id;
+          changed = true;
+        }
+
+        continue;
       }
 
-      return;
+      // Otherwise edit existing
+      await editDiscordMessage(
+        server.leaderboard_channel,
+        server.leaderboard_message_id,
+        payload
+      );
     }
 
-    // Otherwise edit the existing one
-    console.log("[LeaderboardUpdater] Editing existing leaderboard message...");
-    await editDiscordMessage(channelId, config.leaderboardMessageId, payload);
+    // Persist updated message IDs
+    if (changed) {
+      fs.writeFileSync(serversPath, JSON.stringify(servers, null, 2));
+    }
 
   } catch (err) {
     console.error("[LeaderboardUpdater] ERROR:", err);
@@ -248,6 +261,5 @@ async function updateLeaderboard() {
 // Run interval (once per hour)
 // ---------------------------------------------------------------------------
 
-console.log("[LeaderboardUpdater] Started. Updating hourly.");
 updateLeaderboard();
 setInterval(updateLeaderboard, 1000 * 60 * 60);
