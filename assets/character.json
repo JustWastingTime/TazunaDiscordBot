@@ -638,6 +638,75 @@
             }
         ]
     },
+    {   "id": "100602 - Oguri Cap Christmas",
+        "character_name": "Oguri Cap",
+        "type": "Christmas",
+        "costume": "Ashen Miracle",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "15%",
+            "stamina": "15%",
+            "power": "",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "B"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "B"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Festive Miracle",
+        "unique_explanation": "",
+        "skills": [
+            "Shake It Out",
+            "Inside Scoop",
+            "Hydrate"
+        ],
+        "potential": [
+            "A Small Breather",
+            "Gourmand",
+            "Triple 7s",
+            "Innate Experience"
+        ],
+        "event_skills": [
+            "Nakayama Racecourse",
+            "Hydrate",
+            "Winter Runner"
+        ],
+        "aliases": ["oguri cap xmas christmas", "ashen miracle"],
+        "url": "https://gametora.com/umamusume/characters/100602-oguri-cap",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1006_100602.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Win the Kikuka Sho, Arima Kinen (Year 2), Osaka Hai and Tenno Sho (Spring)",
+                "rewards": "Speed +10, Stamina +10, Skill points +30, Hydrate hint +1"
+            },
+            {
+                "conditions": "Participate in the Tenno Sho (Spring)",
+                "rewards": "Energy -20/-15, Mood +1, 1 random stat +4/+10, Skill points +25/+45"
+            },
+            {
+                "conditions": "Do not participate in the Tenno Sho (Spring)",
+                "rewards": "Mood +1"
+            }
+        ]
+    },
     {   "id": "100701 - Gold Ship",
         "character_name": "Gold Ship",
         "type": "Original",
@@ -1977,6 +2046,104 @@
             }
         ]
     },
+    {   "id": "102201 - Fine Motion",
+        "character_name": "Fine Motion",
+        "type": "Original",
+        "costume": "Noble Seamair",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "15%",
+            "guts": "",
+            "wit": "15%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "C"
+            },
+            {
+            "Front": "D",
+            "Pace": "A",
+            "Late": "E",
+            "End": "C"
+            }
+        ],
+        "unique": "Fairy Tale",
+        "unique_explanation": "",
+        "skills": [
+            "Fall Runner",
+            "Prepared to Pass",
+            "Medium Corners"
+        ],
+        "potential": [
+            "Straight Descent",
+            "Speed Star",
+            "Right-Handed",
+            "Determined Descent"
+        ],
+        "event_skills": [
+            "Pace Chaser Corners",
+            "All I've Got",
+            "Standing By",
+            "Up-Tempo",
+            "Straight Descent",
+            "Updrafters",
+            "Preferred Position"
+        ],
+        "races": [
+            "oka sho april 1 year 2",
+            "japanese oaks may 2 year 2",
+            "shuka sho october 2 year 2",
+            "queen elizabeth ii cup november 1 year 2",
+            "osaka hai march 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "sapporo kinen august 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "queen elizabeth ii cup november 1 year 3",
+            "mile championship november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["fine motion original", "noble seamair"],
+        "url": "https://gametora.com/umamusume/characters/102201-fine-motion",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1020_102201.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Sapporo Kinen (Year 3) as an End Closer",
+            "rewards": "All stats +3, Skill points +35, Standing By hint +1, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Sapporo Kinen (Year 3) not as an End Closer",
+            "rewards": "4 random stats +3, Skill points +35, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Tenno Sho (Autumn Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +35, Up-Tempo hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Queen Elizabeth II Cup (Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +35, Straight Descent hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Mile Championship (Autumn Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +35, Updrafters hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Arima Kinen (Autumn Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +35, Preferred Position hint +2, Yayoi Akikawa bond +4"
+            }
+        ]
+    },
     {   "id": "102301 - Biwa Hayahide",
         "character_name": "Biwa Hayahide",
         "type": "Original",
@@ -2040,6 +2207,77 @@
         "aliases": ["biwa hayahide original", "pf winning equation"],
         "url": "https://gametora.com/umamusume/characters/102301-biwa-hayahide",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1023_102301.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "Speed +10, Guts +10, Skill points +10, Straightaway Acceleration hint +1 || Speed +5, Guts +5"
+            },
+            {
+            "conditions": "Trigger the [Battle with a Raging Dragon] event and win any race on Hanshin racecourse",
+            "rewards": "Energy +20, Hanshin Racecourse hint +2"
+            },
+            {
+            "conditions": "Win the Takarazuka Kinen (Year 3)",
+            "rewards": "All stats +3, Skill points +45, Yayoi Akikawa bond +4, (random) Prepared to Pass hint +1"
+            }
+        ]
+    },
+    {   "id": "102302 - Biwa Hayahide Christmas",
+        "character_name": "Biwa Hayahide",
+        "type": "Christmas",
+        "costume": "Rouge Caroler",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "12%",
+            "power": "12%",
+            "guts": "",
+            "wit": "6%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "E",
+            "Pace": "A",
+            "Late": "B",
+            "End": "E"
+            }
+        ],
+        "unique": "Presents from X",
+        "unique_explanation": "",
+        "skills": [
+            "Homestretch Haste",
+            "Passing Pro",
+            "Preferred Position"
+        ],
+        "potential": [
+            "Pace Chaser Savvy",
+            "VIP Pass",
+            "Pace Chaser Straightaways",
+            "In Body and Mind"
+        ],
+        "event_skills": [
+            "Hanshin Racecourse",
+            "Winter Runner",
+            "Pressure",
+            "Straightaway Acceleration",
+            "Prepared to Pass"
+        ],
+        "aliases": ["biwa hayahide xmas christmas", "rouge caroler"],
+        "url": "https://gametora.com/umamusume/characters/102302-biwa-hayahide",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1023_102302.png",
         "review": "",
         "secrets": [
             {
