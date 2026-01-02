@@ -5,7 +5,10 @@
         "sheetsid" : "1xyOJpbC-CdmUV1uSgOyEUT68WnxUGMXiNP5RonUuR4Y",
         "daily_average": "1669166",
         "fans_median": "27289648",
-        "fans_guild_total": "868241616"
+        "fans_guild_total": "868241616",
+        "application_channel": "",
+        "leaderboard_channel": "",
+        "leaderboard_message_id": ""
     },
     {
         "id": "1000000000000000",
@@ -13,6 +16,9 @@
         "sheetsid" : "YourSecondGuildSheetsHere",
         "daily_average": "100000",
         "fans_median": "1000000",
-        "fans_guild_total": "100000000"
+        "fans_guild_total": "100000000",
+        "application_channel": "",
+        "leaderboard_channel": "",
+        "leaderboard_message_id": ""
     }
 ]
