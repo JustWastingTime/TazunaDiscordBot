@@ -648,7 +648,7 @@ export function buildSkillEmbed(skill, supporterList) {
 
   return {
     title: skill.skill_name,
-    description: skill.description +'\n \u200B' + (skill.inherited ? `\n**Inherited**\n ${skill.inherited} \n \u200B` : ''),
+    description: skill.description +'\n \u200B' + (skill.inherited ? `\n**Inherited**\n${skill.inherited} \n \u200B` : ''),
     color: getSkillColor(skill.category),
     thumbnail: { url: getSkillThumbnail(skill.category)},
     fields: fields
