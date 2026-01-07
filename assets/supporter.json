@@ -6086,6 +6086,113 @@
         "aliases": [
             "daitaku helios make some noise"
         ]
+    },
+    {   "id": "30072 Mayano Top Gun",
+        "card_name": "Party Formation",
+        "character_name": "Mayano Top Gun",
+        "unique": "Increases Power gain when training together (1)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5%",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 2",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 0/0/0/40/80"
+        ],
+        "support_skills": [
+            "Non-Standard Distance",
+            "Corner Adept",
+            "Straightaway Adept",
+            "Straightaway Recovery",
+            "Nimble Navigator",
+            "Go with the Flow"
+        ],
+        "event_skills": [
+            "Restless",
+            "Head-On",
+            "Competitive Spirit",
+            "Straightaway Adept"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30072-mayano-top-gun",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30072.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "mayano top gun party formation", "christmas xmas mayano"
+        ]
+    },
+    {   "id": "30073 Narita Taishin",
+        "card_name": "Strict Shopper",
+        "character_name": "Narita Taishin",
+        "unique": "Increases Speed gain when training together (1)\nIncreases the frequency at which the character participates in their preferred training type (20)",
+        "effects": [
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Wit Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5/6/8/10/10",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Lay Low",
+            "Calm in a Crowd",
+            "Standing By",
+            "Masterful Gambit",
+            "End Closer Corners",
+            "Intense Gaze",
+            "Lone Wolf"
+        ],
+        "event_skills": [
+            "Sleeping Lion",
+            "Standing By",
+            "Soft Step",
+            "Passing Pro",
+            "Pressure"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30073-narita-taishin",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30073.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "narita taishin strict shopper", "christmas xmas taishin"
+        ]
+    },
+    {   "id": "30074 Marvelous Sunday",
+        "card_name": "Dazzling Day in the Snow",
+        "character_name": "Marvelous Sunday",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Stamina Bonus - 0/1/1/1/1",
+            "Initial Stamina - 25/27/30/32/35",
+            "Initial Power - 25/27/30/32/35",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%"
+        ],
+        "support_skills": [
+            "Straightaway Adept",
+            "Ramp Up",
+            "Hesitant Front Runners",
+            "Hesitant Pace Chasers",
+            "Tail Held High"
+        ],  
+        "event_skills": [
+            "Fast & Furious",
+            "Position Pilfer",
+            "Cloudy Days",
+            "Hanshin Racecourse"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30074-marvelous-sunday",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30074.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "marvelous sunday dazzling day in the snow", "marvelous sunday welfare", "marvelous sunday poverty", "marvelous sunday event"
+        ]
     }
-
 ]
