@@ -1775,7 +1775,7 @@
         ],
         "team_trials": "S",
         "champs_meet": "SS",
-        "review": "Consistent and effective recovery that triggers on the first corner.",
+        "review": "Consistent and effective recovery that triggers on corner 1 (may not be the first corner, refer to umalator).",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -1789,12 +1789,12 @@
         "description": "Recover HP by 1.5%.",
         "conditions": [
             [
-                "Random corner"
+                "Random point on corner 1/2/3/4"
             ]
         ],
         "team_trials": "S",
         "champs_meet": "S",
-        "review": "Consistent and effective recovery that triggers on the first corner.",
+        "review": "Consistent and effective recovery that triggers on corner 1 (may not be the first corner, refer to umalator).",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -1807,7 +1807,7 @@
         "description": "Reduce HP by 2%",
         "conditions": [
             [
-                "Random corner"
+                "Random point on corner 1/2/3/4"
             ]
         ],
         "team_trials": "F",
