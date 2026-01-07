@@ -6226,11 +6226,35 @@
         "category": "rainbowvelocity",
         "aliases": [
             "festive miracle",
-            "oguri cap christmas",
+            "oguri cap christmas xmas",
+            "xoguri",
             "聖夜のミラクルラン",
             "christmas eve miracle run"
         ],
         "horse": "Oguri Cap (Christmas)"
+    },
+    {   "skill_name": "Presents from X",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race",
+                "2nd to 4th (CM), 2nd to 5th (TT)",
+                "Mid race",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "presents from x",
+            "biwa hayahide christmas xmas",
+            "xbiwa"
+        ],
+        "horse": "Biwa Hayahide (Christmas)"
     },
 
 
