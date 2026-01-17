@@ -6176,8 +6176,8 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "team_trials": "C",
+        "champs_meet": "C",
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6198,8 +6198,8 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "team_trials": "C",
+        "champs_meet": "C",
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6245,8 +6245,8 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "team_trials": "B",
+        "champs_meet": "B",
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6256,6 +6256,56 @@
             "xbiwa"
         ],
         "horse": "Biwa Hayahide (Christmas)"
+    },
+    {   "skill_name": "Fairy Tale",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "2nd to 4th (CM), 2nd to 5th (TT)",
+                "Blocked at the sides for 2s or more",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials": "C",
+        "champs_meet": "B",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "fairy tale",
+            "fine motion original"
+        ],
+        "horse": "Fine Motion (Original)"
+    },
+    {   "skill_name": "White Lightning Comin' Through!",
+        "description": "Increases speed by 0.35 and acceleration by 0.1 for 5.0s.",
+        "inherited": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
+        "conditions": [
+            [
+                "6th to 7th (CM), 8th to 9th (TT)",
+                "Overtake target exists",
+                "Second half of the race",
+                "Straight"
+            ],
+            [
+                "2nd to 3rd (CM), 2nd to 4th (TT)",
+                "Second half of the race",
+                "Straight"
+            ]
+        ],
+        "team_trials": "B",
+        "champs_meet": "B",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "white lightning comin through",
+            "tamamo cross original",
+            "白い稲妻見せたるで",
+            "imma show you white lightning"
+        ],
+        "horse": "Tamamo Cross (Original)"
     },
 
 
