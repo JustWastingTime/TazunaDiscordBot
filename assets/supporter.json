@@ -171,7 +171,7 @@
             "Training Effectiveness - 5%",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Standing By",
@@ -244,7 +244,7 @@
             "Training Effectiveness - 5%",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Preferred Position",
@@ -543,7 +543,7 @@
             "Training Effectiveness - 5%",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Sapporo Racecourse",
@@ -1042,7 +1042,7 @@
             "Training Effectiveness - 5%",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Wet Conditions",
@@ -1262,7 +1262,7 @@
             "Race Bonus - 1/2/3/5/5%",
             "Fan Bonus - 5/6/8/10/10%",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Lay Low",
@@ -1295,7 +1295,7 @@
             "Race Bonus - 1/2/3/5/5%",
             "Fan Bonus - 5/6/8/10/10%",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Hanshin Racecourse",
@@ -1520,7 +1520,7 @@
             "Training Effectiveness - 5%",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Firm Conditions",
@@ -1870,7 +1870,7 @@
             "Training Effectiveness - 5%",
             "Initial Friendship Gauge - 15/16/18/20/20",
             "Hint Levels - 2",
-            "Hint Frequency - 30/32/35/37/40"
+            "Hint Frequency - 30/32/35/37/40%"
         ],
         "support_skills": [
             "Straightaway Adept",
@@ -2732,7 +2732,7 @@
             "Race Bonus - 1/2/3/5/5%",
             "Fan Bonus - 5/6/8/10/10%",
             "Hint Levels - 1/1/1/2/2",
-            "Hint Frequency - 20/23/26/30/30",
+            "Hint Frequency - 20/23/26/30/30%",
             "Specialty Priority - 20/25/30/35/35"
         ],
         "support_skills": [
@@ -3783,6 +3783,42 @@
             "shinko windy warning gate"
         ]
     },
+    {   "id": "20032 Inari One",
+        "card_name": "Laughing through the Mud",
+        "character_name": "Inari One",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Stamina gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 20/21/22/23/25%",
+            "Power Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 0/30/45/60/60"
+        ],
+        "support_skills": [
+            "Spring Runner",
+            "Winter Runner",
+            "Target in Sight",
+            "Ramp Up",
+            "Sharp Gaze",
+            "Tail Held High",
+            "Forward, March!",
+            "Familiar Ground"
+        ],
+        "event_skills": [
+            "Oi Racecourse",
+            "Kyoto Racecourse"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20032-inari-one",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20032.png",
+        "rarity": "sr",
+        "category": "power",
+        "aliases": [
+            "inari one laughing through the mud"
+        ]
+    },
     {   "id": "20034 Mejiro Ardan",
         "card_name": "My Heart Will Go On",
         "character_name": "Mejiro Ardan",
@@ -4011,7 +4047,7 @@
             "Race Bonus - 0/0/0/5/10%",
             "Fan Bonus - 0/0/0/10/10%",
             "Hint Levels - 2",
-            "Hint Frequency - 30/33/36/40/40",
+            "Hint Frequency - 30/33/36/40/40%",
             "Specialty Priority - 20/25/28/31/35"
         ],
         "support_skills": [
@@ -6193,6 +6229,42 @@
         "category": "power",
         "aliases": [
             "marvelous sunday dazzling day in the snow", "marvelous sunday welfare", "marvelous sunday poverty", "marvelous sunday event"
+        ]
+    },
+    {   "id": "30075 Manhattan Cafe",
+        "card_name": "My Solo Spun in Spiraling Runs",
+        "character_name": "Manhattan Cafe",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Stamina gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Stamina Bonus - 0/1/1/1/1",
+            "Initial Stamina - 15/16/18/20/20",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Rainy Days",
+            "Long Straightaways",
+            "Passing Pro",
+            "Stamina Eater",
+            "Highlander"
+        ],  
+        "event_skills": [
+            "Stamina Siphon",
+            "Long Corners",
+            "Non-Standard Distance"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30075-manhattan-cafe",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30075.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "manhattan cafe my solo spun in spiraling runs"
         ]
     }
 ]
