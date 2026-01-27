@@ -2046,6 +2046,85 @@
             }
         ]
     },
+    {   "id": "102101 - Tamamo Cross",
+        "character_name": "Tamamo Cross",
+        "type": "Original",
+        "costume": "Fast as Lightning",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "20%",
+            "power": "10%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "E",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "A"
+            }
+        ],
+        "unique": "White Lightning Comin' Through!",
+        "unique_explanation": "",
+        "skills": [
+            "Tail Held High",
+            "Thunderbolt Step",
+            "Position Pilfer"
+        ],
+        "potential": [
+            "Preferred Position",
+            "Fast & Furious",
+            "Straightaway Spurt",
+            "Tail Nine"
+        ],
+        "event_skills": [
+            "Hanshin Racecourse",
+            "Tail Held High",
+            "Kyoto Racecourse",
+            "Updrafters",
+            "Nakayama Racecourse",
+            "Up-Tempo"
+        ],
+        "races": [
+            "hanshin daishoten march 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["tamamo cross original", "fast as lightning"],
+        "url": "https://gametora.com/umamusume/characters/102101-tamamo-cross",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1020_102101.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3)) and the Takarazuka Kinen (Year 3)",
+            "rewards": "Speed +15, Guts +10, Tail Held High hint +2"
+            },
+            {
+            "conditions": "Win the Kyoto Kimpai",
+            "rewards": "Energy -15, 1 random stat +8, Skill points +35, Fans +500, Kyoto Racecourse hint +1, Updrafters hint +1"
+            },
+            {
+                "conditions": "Win the Nakayama Kimpai",
+                "rewards": "Energy -15, 1 random stat +8, Skill points +35, Fans +500, Nakayama Racecourse hint +1, Up-Tempo hint +1"
+            }
+        ]
+    },
     {   "id": "102201 - Fine Motion",
         "character_name": "Fine Motion",
         "type": "Original",
