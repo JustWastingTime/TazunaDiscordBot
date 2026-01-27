@@ -6266,5 +6266,41 @@
         "aliases": [
             "manhattan cafe my solo spun in spiraling runs"
         ]
+    },
+    {   "id": "30076 Silence Suzuka",
+        "card_name": "Searching for Unseen Sights",
+        "character_name": "Silence Suzuka",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Initial Friendship Gauge - 10",
+            "Hint Levels - 1/1/1/1/2",
+            "Hint Frequency - 20/22/25/27/30%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Focus",
+            "Early Lead",
+            "Fast-Paced",
+            "Final Push",
+            "Rosy Outlook",
+            "Front Runner Straightaways",
+            "Front Runner Corners",
+            "Front Runner Savvy",
+            "Leader's Pride"
+        ],  
+        "event_skills": [
+            "Trackblazer",
+            "Left-Handed"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30076-silence-suzuka",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30076.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "silence suzuka searching for unseen sights", "silence suzuka poverty", "silence suzuka welfare", "silence suzuka event"
+        ]
     }
 ]
