@@ -6081,7 +6081,7 @@
         "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
         "conditions": [
             [
-                "1st to 4th",
+                "2nd to 4th",
                 "1 length behind or more",
                 "Final straight"
             ]
@@ -6305,8 +6305,63 @@
             "白い稲妻見せたるで",
             "imma show you white lightning"
         ],
-        "horse": "Tamamo Cross (Original)"
+        "horse": "Tamamo Cross (Original)",
+        "url": "https://gametora.com/umamusume/skill-condition-viewer?skill=100211"
     },
+    {   "skill_name": "Barcarole of Blessings",
+        "description": "Condition 1 - Increases speed by 0.45 for 4.0s. \n Condition 2 - Increases speed by 0.35 for 4.0s.",
+        "inherited": "Condition 1 - Increases speed by 0.25 for 2.4s. \n Condition 2 - Increases speed by 0.15 for 2.4s.",
+        "conditions": [
+            [
+                "1st to 4th (CM), 1st to 5th (TT)",
+                "Activated 7 skills or more",
+                "Last 400m of the race"
+            ],
+            [
+                "1st to 4th (CM), 1st to 5th (TT)",
+                "Activated 6 skills or less",
+                "Last 400m of the race"
+            ]
+        ],
+        "team_trials": "S",
+        "champs_meet": "S",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "barcarole of blessings",
+            "tm opera o new year",
+            "恵福バルカローレ",
+            "blessed barcarolle"
+        ],
+        "horse": "T M Opera O (New Year)",
+        "url": "https://gametora.com/umamusume/skill-condition-viewer?skill=110151"
+    },
+    {   "skill_name": "114th Time's the Charm",
+        "description": "Increases speed by 0.2 - 0.4 for 4.0s - 8.0s based on the distance from the leader.",
+        "inherited": "Increases speed by 0.2 - 0.4 for 2.4s - 4.8s based on the distance from the leader.",
+        "conditions": [
+            [
+                "7m or more behind the first place",
+                "Final corner"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "114th times the charm",
+            "114 times",
+            "haru urara new year",
+            "113転び114起き",
+            "fall down 113 times, get up 114 times"
+        ],
+        "horse": "Haru Urara (New Year)",
+        "url": "https://gametora.com/umamusume/skill-condition-viewer?skill=110521"
+    },
+
 
 
     {   "skill_name": "Corner Adept x",
