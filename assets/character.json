@@ -1540,6 +1540,76 @@
             }
         ]
     },
+    {   "id": "101502 - TM Opera O New Year",
+        "character_name": "T.M. Opera O",
+        "type": "New Year",
+        "costume": "New Year, Same Radiance!",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "14%",
+            "stamina": "8%",
+            "power": "",
+            "guts": "",
+            "wit": "8%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "E"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "E",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "A",
+            "End": "G"
+            }
+        ],
+        "unique": "Barcarole of Blessings",
+        "unique_explanation": "",
+        "skills": [
+            "Pace Chaser Straightaways",
+            "Feature Act",
+            "Corner Recovery"
+        ],
+        "potential": [
+            "Inner Post Proficiency",
+            "Swinging Maestro",
+            "Winter Runner",
+            "Headliner"
+        ],
+        "event_skills": [
+            "Non-Standard Distance",
+            "Prepared to Pass",
+            "Tether"
+        ],
+        "races": [
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3" 
+        ],
+        "aliases": ["tm opera o new year", "new year same radiance"],
+        "url": "https://gametora.com/umamusume/characters/101502-tm-opera-o",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1015_101502.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Autumn Triple Crown in either year (Tenno Sho (Autumn), Japan Cup, Arima Kinen). Doable multiple times.",
+            "rewards": "Mood +1, All stats +10, Skill points +20"
+            }
+        ]
+    },
     {   "id": "101601 - Narita Brian",
         "character_name": "Narita Brian",
         "type": "Original",
@@ -3943,6 +4013,74 @@
         "aliases": ["haru urara original", "bestest prize"],
         "url": "https://gametora.com/umamusume/characters/105201-haru-urara",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1052_105201.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Arima Kinen (Year 3)",
+            "rewards": "All stats +9, Skill points +99, Long Shot hint +1, Yayoi Akikawa bond +5"
+            }
+        ]
+    },
+    {   "id": "105202 - Haru Urara New Year",
+        "character_name": "Haru Urara",
+        "type": "New year",
+        "costume": "New Year ♪ New Urara!",
+        "rarity": "⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "20%",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "G",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "A",
+            "Medium": "G",
+            "Long": "G"
+            },
+            {
+            "Front": "G",
+            "Pace": "G",
+            "Late": "A",
+            "End": "B"
+            }
+        ],
+        "unique": "114th Time's the Charm",
+        "unique_explanation": "",
+        "skills": [
+            "Prudent Positioning",
+            "Unyielding Spirit",
+            "Fighter"
+        ],
+        "potential": [
+            "Shake It Out",
+            "Center Stage",
+            "Snowy Days",
+            "Hard Worker"
+        ],
+        "event_skills": [
+            "Fighter",
+            "Pace Strategy",
+            "Long Shot"
+        ],
+        "races": [
+            "negishi stakes january 2 year 3",
+            "february stakes february 2 year 3",
+            "elm stakes august 1 year 3",
+            "jbc sprint november 1 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["haru urara new year", "New Year New Urara"],
+        "url": "https://gametora.com/umamusume/characters/105202-haru-urara",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1052_105202.png",
         "review": "",
         "secrets": [
             {
