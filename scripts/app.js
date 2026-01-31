@@ -13,6 +13,7 @@ import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSk
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
+import "./scheduler.js";
 import { updateLeaderboard } from "./leaderboard.js";
 
 import path from 'path';

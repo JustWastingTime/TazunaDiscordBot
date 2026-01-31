@@ -148,8 +148,14 @@ export async function syncUsers() {
         // Start with existing data if found, else create fresh
         let user = existing ? { ...existing } : { id: row[0], name: username, club: server.name };
 
+        // Compare fans_total between umamoe and sheets and keep the higher one
+        const jsonFans  = cleanNumber(user.fans_total);
+        const sheetFans = totalFans;
+
+        const finalFans = Math.max(jsonFans, sheetFans);
+        user.fans_total = finalFans.toString();
+
         // Overwrite only the synced fields
-        user.fans_total = totalFans.toString();
         user.fans_monthly = monthlyFans.toString();
         user.rank_total = rankTotal.toString();
         user.rank_monthly = rankMonthly.toString();
@@ -167,6 +173,23 @@ export async function syncUsers() {
         user.color = color;
 
         updatedUsers.push(user);
+
+        // 🔁 if JSON is higher, update the sheet
+        if (jsonFans > sheetFans) {
+          try {
+            const rowIndex = rows.indexOf(row) + 2;
+            await sheets.spreadsheets.values.update({
+              spreadsheetId: server.sheetsid,
+              range: `${SHEET_NAME}!E${rowIndex}`, // Column E = total fans
+              valueInputOption: "USER_ENTERED",
+              requestBody: {
+                values: [[jsonFans]],
+              },
+            });
+          } catch (err) {
+            console.warn(`⚠️ Failed to push fans for ${username}`, err.message);
+          }
+        }
       }
 
       // 4. Update server-wide stats (optional)
@@ -206,6 +229,6 @@ export async function syncUsers() {
   fs.writeFileSync(usersPath, JSON.stringify(users, null, 4));
   fs.writeFileSync(serversPath, JSON.stringify(servers, null, 4));
 
-  console.log(`✅ Synced ${users.length} users from ${servers.length} servers.`);
+  console.log(`[LeaderboardUpdater] Synced ${users.length} users from ${servers.length} servers.`);
   return users;
 }

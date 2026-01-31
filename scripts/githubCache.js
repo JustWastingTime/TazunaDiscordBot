@@ -29,20 +29,20 @@ const urls = {
 // Function to fetch a JSON file
 async function fetchJson(url) {
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  if (!res.ok) throw new Error(`[CacheUpdater] Failed to fetch ${url}: ${res.status}`);
   return await res.json();
 }
 
 // Function to update all cached data
 async function updateCache() {
   try {
-    console.log('Updating JSON cache from GitHub...');
+    console.log('[CacheUpdater] Updating JSON cache from GitHub...');
     for (const key of Object.keys(urls)) {
       cache[key] = await fetchJson(urls[key]);
     }
-    console.log('Cache updated successfully.');
+    console.log('[CacheUpdater] Cache updated successfully.');
   } catch (err) {
-    console.error('Error updating cache:', err);
+    console.error('[CacheUpdater] Error updating cache:', err);
   }
 }
 
