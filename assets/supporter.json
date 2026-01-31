@@ -6302,5 +6302,119 @@
         "aliases": [
             "silence suzuka searching for unseen sights", "silence suzuka poverty", "silence suzuka welfare", "silence suzuka event"
         ]
+    },
+    {   "id": "30077 Admire Vega",
+        "card_name": "Lucky Star in the Sky",
+        "character_name": "Admire Vega",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which hint events occur (20%)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Power Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 10/11/12/13/15%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Hint Levels - 1",
+            "Hint Frequency - 20%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Masterful Gambit",
+            "Tether",
+            "End Closer Straightaways",
+            "Levelheaded",
+            "Strategist"
+        ],  
+        "event_skills": [
+            "Daring Strike",
+            "Flustered Pace Chasers",
+            "Subdued Pace Chasers"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30077-admire-vega",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30077.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "admire vega lucky star in the sky"
+        ]
+    },
+    {   "id": "30078 Matikanefukukitaru ",
+        "card_name": "Touching Sleeves Is Good Luck! ♪",
+        "character_name": "Matikanefukukitaru",
+        "unique": "Amplifies the effect of mood when training together (15%)\nDecreases the probability of failure when training together (10%)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Training Effectiveness - 0/5/10/10/10%",
+            "Initial Speed - 10/15/20/25/30",
+            "Initial Stamina - 10/15/20/25/30",
+            "Initial Power - 10/15/20/25/30",
+            "Initial Guts - 10/15/20/25/30",
+            "Initial Wit - 10/15/20/25/30",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Energy Cost Reduction - 5/6/8/10/10%"
+        ],
+        "support_skills": [
+            "Hakodate Racecourse",
+            "Calm in a Crowd",
+            "Trick (Rear)",
+            "Late Surger Corners",
+            "A Small Breather",
+            "Lucky Seven",
+            "Triple 7s"
+        ],  
+        "event_skills": [
+            "Super Lucky Seven",
+            "Lucky Seven"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30078-matikanefukukitaru",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30078.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "matikanefukukitaru touching sleeves is good luck"
+        ]
+    },
+    {   "id": "30079 Meisho Doto ",
+        "card_name": "Leaping into the Unknown",
+        "character_name": "Meisho Doto",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which hint events occur (20%)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Training Effectiveness - 0/5/10/10/10%",
+            "Initial Speed - 10/15/20/25/30",
+            "Initial Stamina - 10/15/20/25/30",
+            "Initial Power - 10/15/20/25/30",
+            "Initial Guts - 10/15/20/25/30",
+            "Initial Wit - 10/15/20/25/30",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Energy Cost Reduction - 5/6/8/10/10%"
+        ],
+        "support_skills": [
+            "Non-Standard Distance",
+            "Firm Conditions",
+            "Inner Post Proficiency",
+            "Long Shot",
+            "Hawkeye",
+            "Late Surger Straightaways",
+            "Shake It Out"
+        ],  
+        "event_skills": [
+            "Killer Tunes",
+            "Medium Corners",
+            "Pace Chaser Corners"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30079-meisho-doto",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30079.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "meisho doto leaping into the unknown", "meisho doto welfare", "meisho doto poverty", "meisho doto event"
+        ]
     }
 ]
