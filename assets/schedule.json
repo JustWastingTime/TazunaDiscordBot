@@ -1,47 +1,44 @@
 [   
-    {   "event_name": "Champions Meeting - Scorpio Cup",
-        "event_type": "Champions Meeting",
-        "date": "<t:1767304800:F>, <t:1767304800:R>",
-        "thumbnail": "https://img.game8.co/4352307/9a309ae490dbbfa2eef1800e9987a1b3.png/show"
-    },
-    {   "event_name": "Oguri Cap (Christmas) & Biwa Hayahide (Christmas) + Mayano Top Gun (Speed) & Narita Taishin (Wit)",
+    {   "event_name": "Pretty Derby Scout RERUN + Sasami Anshinzawa (Pal) & Tamamo Cross (Guts)",
         "event_type": "Banner",
-        "date": "<t:1767650400:F> - <t:1768946400:R>, <t:1767650400:R>",
-        "thumbnail": "https://img.game8.co/4376668/d1ac4980252a1d11bc3f9f88cf6e5e11.png/show"
+        "date": "<t:1770328800:F> - <t:1771106400:F>, <t:1770328800:R>",
+        "thumbnail": "https://img.game8.co/4401930/542d253bf7299a32e596b1a6288c938f.png/show"
     },
-    {   "event_name": "Hungry for a Miracle Story Event",
-        "event_type": "Story Event",
-        "date": "<t:1767650400:F> - <t:1768946400:R>, <t:1767650400:R>",
-        "thumbnail": "https://img.game8.co/4376670/59335769b2b8e69f32adf7241b95af61.png/show"
-    },
-    {   "event_name": "Fine Motion + Manhattan Cafe (Stamina) & Inari One (Power)",
-        "event_type": "Banner",
-        "date": "<t:1768514400:F> - <t:1769205600:F>, <t:1768514400:R>",
-        "thumbnail": "https://img.game8.co/4376672/1c4710c5dbbe3914ea669fd572ea8162.png/show"
-    },
-    {   "event_name": "Tamamo Cross + Oguri Cap (Power) & Nice Nature (Wit) RERUN",
-        "event_type": "Banner",
-        "date": "<t:1769119200:F> - <t:1769896800:R>, <t:1769119200:R>",
-        "thumbnail": "https://img.game8.co/4376671/c110e884099d05f10168437f94491d10.png/show"
-    },
-    {   "event_name": "Legend Races - Nice Nature, Grass Wonder, Oguri Cap",
-        "event_type": "Legend Races",
-        "date": "<t:1769119200:F> - <t:1769896800:R>, <t:1769119200:R>",
-        "thumbnail": "https://img.game8.co/4376669/875b2c8c0a3c5fc31cd074e97185e96d.png/show"
-    },
-    {   "event_name": "Champions Meeting - Sagittarius Cup",
-        "event_type": "Champions Meeting",
-        "date": "<t:1769205600:F>, <t:1769205600:R>",
-        "thumbnail": "https://img.game8.co/4376204/e6752f78e310ad7660958e9e1c063c74.png/show"
-    },    
-    {   "event_name": "New Beginnings Part 1",
+    {   "event_name": "New Beginnings Part 2",
         "event_type": "Misc",
-        "date": "<t:1769551200:F>, <t:1769551200:R>",
-        "thumbnail": "https://img.game8.co/4376674/572278152832470c3c7723345ab7f4dc.png/show"
+        "date": "<t:1770562800:F>, <t:1770562800:R>",
+        "thumbnail": "https://img.game8.co/4401926/49bd3a4be431b4d70b63257b03d05172.png/show"
     },
-    {   "event_name": "Haru Urara (New Year) & T. M. Opera O (New Year) + Matikanefukukitaru (Speed) & Admire Vega (Power)",
+    {   "event_name": "Sakura Chiyono O + Tazuna Hayakawa (Pal) & Riko Kashimoto (Pal) RERUN",
         "event_type": "Banner",
-        "date": "<t:1769724000:R> - <t:1770674400:F>, <t:1769724000:R>",
-        "thumbnail": "https://img.game8.co/4376673/99f3d1aa132a486f1d8b75e504be3a04.png/show"
+        "date": "<t:1770847200:F> - <t:1771538400:F>, <t:1770847200:R>",
+        "thumbnail": "https://img.game8.co/4401925/7d55a736eae2d6efa4b4b4edd2c24a66.png/show"
+    },
+    {   "event_name": "Champions Meeting - Capricorn Cup",
+        "event_type": "Champions Meeting",
+        "date": "<t:1770933600:F>, <t:1770933600:R>",
+        "thumbnail": "https://img.game8.co/4383818/bfa1ef4a861c13b2b49116a9faec076b.png/show"
+    },
+    {   "event_name": "Mihono Bourbon (Valentines) & Eishin Flash (Valentines)+ (Power) + Nishino Flower (Wit) & Sakura Bakushin O (Guts)",
+        "event_type": "Banner",
+        "date": "<t:1771452000:F> - <t:1772402400:F>, <t:1771452000:R>",
+        "thumbnail": "https://img.game8.co/4401927/ba44fe70515c87bf876276d236045462.png/show"
+    },   
+    {   "event_name": "The Peak of Confection Story Event",
+        "event_type": "Story Event",
+        "date": "<t:1771452000:F> - <t:1772402400:F>, <t:1771452000:R>",
+        "thumbnail": "https://img.game8.co/4401924/cd1b47581e6993ec45abeacfa349e182.png/show"
+    },
+    {   "event_name": "Mejiro Ardan + Agnes Digital (Power) & Ines Fujin (Wit)",
+        "event_type": "Banner",
+        "date": "<t:1772056800:F> - <t:1772748000:F>, <t:1772056800:R>",
+        "thumbnail": "https://img.game8.co/4401928/4d86587833cf7bb823459d0341c5a5e1.png/show"
+    },
+    {   "event_name": "Legend Races - Hishi Amazon, Mejiro Dober, Gold City",
+        "event_type": "Legend Races",
+        "date": "<t:1772143200:F> - <t:1772920800:F>, <t:1772143200:R>",
+        "thumbnail": "https://img.game8.co/4401929/388d7e07e8481d486c324d7f02142e4e.png/show"
     }
+    
+    
 ]   
