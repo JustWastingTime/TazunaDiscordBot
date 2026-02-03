@@ -180,7 +180,7 @@ export async function syncUsers() {
             const rowIndex = rows.indexOf(row) + 2;
             await sheets.spreadsheets.values.update({
               spreadsheetId: server.sheetsid,
-              range: `${SHEET_NAME}!E${rowIndex}`, // Column E = total fans
+              range: `${SHEET_NAME}!J${rowIndex}`, // Column J = pending fans
               valueInputOption: "USER_ENTERED",
               requestBody: {
                 values: [[jsonFans]],
