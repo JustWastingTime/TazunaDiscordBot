@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 import { fileURLToPath } from "url";
+import { syncUsers } from "./sheets.js"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,6 +61,7 @@ export async function updateFansFromUmaMoe() {
 
   if (changed) {
     fs.writeFileSync(usersPath, JSON.stringify(users, null, 2));
+    await syncUsers();
     console.log("[UmaMoe] users.json updated");
   } else {
     console.log("[UmaMoe] No changes detected");
