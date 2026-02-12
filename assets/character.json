@@ -61,7 +61,7 @@
             "japan cup november 2 year 3",
             "arima kinen december 2 year 3"
         ],
-        "aliases": ["special week original", "spechan", "spe", "special dreamer"],
+        "aliases": ["special week original", "spechan", "spe", "special dreamer", "john pretty derby", "lil spica", "agemasen"],
         "url": "https://gametora.com/umamusume/characters/100101-special-week",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1001_100101.png",
         "review": "",
@@ -127,7 +127,7 @@
             "Stamina to Spare",
             "Slick Surge"
         ],
-        "aliases": ["special week summer", "spechan", "spe", "summer spe", "hopping vitamin heart"],
+        "aliases": ["special week summer", "spechan", "spe", "summer spe", "hopping vitamin heart", "john pretty derby", "lil spica", "agemasen"],
         "url": "https://gametora.com/umamusume/characters/100102-special-week",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1001_100102.png",
         "review": "",
@@ -767,7 +767,7 @@
             "tenno sho autumn october 2 year 3",
             "arima kinen december 2 year 3"
         ],
-        "aliases": ["gold ship original", "golshi", "red strife"],
+        "aliases": ["gold ship original", "golshi", "red strife", "gorushi"],
         "url": "https://gametora.com/umamusume/characters/100701-gold-ship",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1007_100701.png",
         "review": "",
@@ -1529,7 +1529,7 @@
             "japan cup november 2 year 3",
             "arima kinen december 2 year 3" 
         ],
-        "aliases": ["tm opera o original", "o sole so"],
+        "aliases": ["tm opera o original", "o sole so", "t m opera o", "opechan", "oppy"],
         "url": "https://gametora.com/umamusume/characters/101501-tm-opera-o",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1015_101501.png",
         "review": "",
@@ -1590,16 +1590,7 @@
             "Prepared to Pass",
             "Tether"
         ],
-        "races": [
-            "satsuki sho april 1 year 2",
-            "japanese derby may 2 year 2",
-            "arima kinen december 2 year 2",
-            "tenno sho spring april 2 year 3",
-            "takarazuka kinen june 2 year 3",
-            "japan cup november 2 year 3",
-            "arima kinen december 2 year 3" 
-        ],
-        "aliases": ["tm opera o new year", "new year same radiance"],
+        "aliases": ["tm opera o new year", "new year same radiance", "t m opera o", "opechan", "oppy"],
         "url": "https://gametora.com/umamusume/characters/101502-tm-opera-o",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1015_101502.png",
         "review": "",
@@ -2726,6 +2717,73 @@
             }
         ]
     },
+    {   "id": "102601 - Mihono Bourbon Valentines",
+        "character_name": "Mihono Bourbon",
+        "type": "Original",
+        "costume": "CODE: ICING",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "10%",
+            "power": "10%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "C",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "B"
+            },
+            {
+            "Front": "A",
+            "Pace": "E",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "Operation Cacao",
+        "unique_explanation": "",
+        "skills": [
+            "Focus",
+            "Fast-Paced",
+            "Extra Tank"
+        ],
+        "potential": [
+            "Front Runner Savvy",
+            "Escape Artist",
+            "Groundwork",
+            "Concentration"
+        ],
+        "event_skills": [
+            "Wet Conditions",
+            "Early Lead",
+            "Speed Eater",
+            "Final Push",
+            "Straightaway Acceleration"
+        ],
+        "aliases": ["mihono bourbon vaentines", "code icing", "gundam valentines"],
+        "url": "https://gametora.com/umamusume/characters/102602-mihono-bourbon",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1026_102602.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Tokyo Yushun (Japanese Derby)",
+            "rewards": "Final Push hint +1"
+            },
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "All stats +3, Guts +15, Skill points +45, Straitaway Acceleration hint +2, Yayoi Akikawa bond +4"
+            }
+        ]
+    },
     {   "id": "102701 - Mejiro Ryan",
         "character_name": "Mejiro Ryan",
         "type": "Original",
@@ -3063,6 +3121,80 @@
             }
         ]
     },
+    {   "id": "103301 - Admire Vega",
+        "character_name": "Admire Vega",
+        "type": "Original",
+        "costume": "Starry Nocturne",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "20%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "C"
+            },
+            {
+            "Front": "G",
+            "Pace": "C",
+            "Late": "B",
+            "End": "A"
+            }
+        ],
+        "unique": "Shooting Star of Dioskouroi",
+        "unique_explanation": "",
+        "skills": [
+            "Nimble Navigator",
+            "Tether",
+            "Levelheaded"
+        ],
+        "potential": [
+            "Masterful Gambit",
+            "Serenity",
+            "Subdued Pace Chasers",
+            "Sturm und Drang"
+        ],
+        "event_skills": [
+            "Masterful Gambit",
+            "Straightaway Adept",
+            "Straightaway Spurt",
+            "Medium Straightaways",
+            "Lay Low",
+            "End Closer Straightaways",
+            "End Closer Corners"
+        ],
+        "races": [
+            "hopeful stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "japan cup november 2 year 3"
+        ],
+        "aliases": ["admire vega original", "starry nocturne", "ayabe", "adobe"],
+        "url": "https://gametora.com/umamusume/characters/103301-admire-vega",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1033_103301.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win against any of the following characters: TM Opera O, Meisho Doto, Narita Top Road",
+            "rewards": "8+\nSpeed +15, Power +15, Skill points +20, End Closer Straightaways hint +2, End Closer Corners hint +2\n\n6-7\nSpeed +10, Power +10, End Closer Corners hint +2\n\n0-5\nPower +10, End Closer Corners hint +1"
+            }
+        ]
+    },
     {   "id": "103501 - Winning Ticket",
         "character_name": "Winning Ticket",
         "type": "Original",
@@ -3203,6 +3335,85 @@
         "aliases": ["eishin flash original", "meisterschaft"],
         "url": "https://gametora.com/umamusume/characters/103701-eishin-flash",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1037_103701.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Tokyo Yushun (Japanese Derby)",
+            "rewards": "Fighter hint +1"
+            },
+            {
+            "conditions": "Win the Kikuka Sho",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +45"
+            },
+            {
+            "conditions": "Win a G1 race on the Tokyo Racecourse 2 times and the Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Tokyo Racecourse hint +2"
+            },
+            {
+            "conditions": "Win a G1 race on the Tokyo Racecourse 3 times and the Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Power +10, Tokyo Racecourse hint +2"
+            },
+            {
+            "conditions": "Win a G1 race on the Tokyo Racecourse 5 times and the Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Stamina +10, Power +10, Tokyo Racecourse hint +2, Standard Distance hint +2"
+            }
+        ]
+    },
+    {   "id": "103702 - Eishin Flash Valentines",
+        "character_name": "Eishin Flash",   
+        "type": "Original",
+        "costume": "Precise Chocolatier",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "8%",
+            "power": "8%",
+            "guts": "",
+            "wit": "14%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "A",
+            "End": "C"
+            }
+        ],
+        "unique": "Guten Appetit ♪",
+        "unique_explanation": "",
+        "skills": [
+            "Long Shot",
+            "Position Pilfer",
+            "Tether"
+        ],
+        "potential": [
+            "Medium Straightaways",
+            "Dominator",
+            "Late Surger Corners",
+            "Flash Forward"
+        ],
+        "event_skills": [
+            "Standard Distance",
+            "Homestretch Haste",
+            "Murmur",
+            "Fighter",
+            "Tokyo Racecourse"
+        ],
+        "aliases": ["eishin flash valentines", "precise chocolatier"],
+        "url": "https://gametora.com/umamusume/characters/103702-eishin-flash",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1037_103702.png",
         "review": "",
         "secrets": [
             {
@@ -4025,7 +4236,7 @@
         "character_name": "Haru Urara",
         "type": "New year",
         "costume": "New Year ♪ New Urara!",
-        "rarity": "⭐",
+        "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
             "speed": "",
@@ -4640,6 +4851,85 @@
             {
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Skill points +75, Feature Act hint +1"
+            }
+        ]
+    },
+
+    {   "id": "107101 - Mejiro Ardan",
+        "character_name": "Mejiro Ardan",
+        "type": "Original",
+        "costume": "Crystalline",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "D"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "D",
+            "End": "G"
+            }
+        ],
+        "unique": "A Lifelong Dream, A Moment's Flight",
+        "unique_explanation": "",
+        "skills": [
+            "Left-Handed",
+            "Preferred Position",
+            "All I've Got"
+        ],
+        "potential": [
+            "Pace Chaser Corners",
+            "Race Planner",
+            "Soft Step",
+            "Come What May"
+        ],
+        "event_skills": [
+            "Prepared to Pass",
+            "Pace Chaser Savvy",
+            "All I've Got",
+            "Steadfast",
+            "Pressure",
+            "Ramp Up",
+            "Corner Recovery"
+        ],
+        "races": [
+            "aoba sho april 2 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "osaka hai march 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "mainichi okan october 1 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
+        "aliases": ["mejiro ardan original", "crystalline"],
+        "url": "https://gametora.com/umamusume/characters/107101-mejiro-ardan",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1071_107101.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Kikuka Sho",
+            "rewards": "All I've Got hint +1, Steadfast hint +2, Pressure hint +2, Ramp Up hint +2"
+            },
+            {
+            "conditions": "Win the Tenno Sho (Autumn Year 2)",
+            "rewards": "Corner Recovery hint +2"
             }
         ]
     }
