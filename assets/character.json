@@ -4551,5 +4551,96 @@
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
             }
         ]
+    },
+
+
+
+
+    {   "id": "106901 - Sakura Chiyono O",
+        "character_name": "Sakura Chiyono O",
+        "type": "Original",
+        "costume": "Strength in Full Bloom",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "",
+            "guts": "10%",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "E"
+            },
+            {
+            "Front": "B",
+            "Pace": "A",
+            "Late": "F",
+            "End": "G"
+            }
+        ],
+        "unique": "Ambition to Surpass the Sakura",
+        "unique_explanation": "",
+        "skills": [
+            "Spring Runner",
+            "Prepared to Pass",
+            "Medium Corners"
+        ],
+        "potential": [
+            "Corner Acceleration",
+            "Speed Star",
+            "Pace Chaser Savvy",
+            "Spring Spectacle"
+        ],
+        "event_skills": [
+            "Pace Chaser Savvy",
+            "Up-Tempo",
+            "Head-On",
+            "Feature Act"
+        ],
+        "races": [
+            "asahi hai futurity stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "tenno sho autumn october 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "tenno sho autumn october 2 year 3",
+            "japan cup november 2 year 3"
+        ],
+        "aliases": ["sakura chiyono o original", "strength in full bloom"],
+        "url": "https://gametora.com/umamusume/characters/106901-sakura-chiyono-o",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1069_106901.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Tenno Sho (Autumn Year 2)",
+            "rewards": "Top \nAll stats +3, Speed +45, Tazuna Hayakawa bond +4, Objective race changed to Yasuda Kinen \n\nBottom \nAll stats +3, Speed +45, Tazuna Hayakawa bond +4, Objective race changed to Takarazuka Kinen"
+            },
+            {
+            "conditions": "Place 2nd in the Tenno Sho (Autumn Year 2)",
+            "rewards": "Top \nAll stats +2, Speed +45, Tazuna Hayakawa bond +4, Objective race changed to Yasuda Kinen \n\nBottom \nAll stats +2, Speed +45, Tazuna Hayakawa bond +4, Objective race changed to Takarazuka Kinen"
+            },
+            {
+            "conditions": "Participate in the Tenno Sho (Autumn Year 2)",
+            "rewards": "Top \nAll stats +1, Speed +45, Tazuna Hayakawa bond +4, Objective race changed to Yasuda Kinen \n\nBottom \nAll stats +1, Speed +45, Tazuna Hayakawa bond +4, Objective race changed to Takarazuka Kinen"
+            },
+            {
+            "conditions": "Succeed an objective and win the Japan Cup (Year 3)",
+            "rewards": "All stats +3, Skill points +75, Head-On hint +3, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Arima Kinen (Year 3)",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +75, Feature Act hint +1"
+            }
+        ]
     }
 ]
