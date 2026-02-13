@@ -6416,5 +6416,149 @@
         "aliases": [
             "meisho doto leaping into the unknown", "meisho doto welfare", "meisho doto poverty", "meisho doto event"
         ]
+    },
+    {   "id": "30080 Sasami Anshinzawa",
+        "card_name": "This Might Sting!",
+        "character_name": "Sasami Anshinzawa",
+        "unique": "Sasami Anshinzawa random events are more likely to occur",
+        "effects": [
+            "Mood Effect - 40/45/50/55/60%",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Event Recovery - 0/0/0/30/60",
+            "Event Effectiveness - 10/20/30/40/50%",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [],
+        "event_skills": [
+            "Nothing Ventured",
+            "Wallflower",
+            "Corner Recovery x",
+            "Risky Business",
+            "Running Idle",
+            "Uma Stan"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30080-anshinzawa-sasami",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30080.png",
+        "rarity": "ssr",
+        "category": "pal",
+        "aliases": [
+            "sasami anshinzawa this might sting",
+            "anshinzawa sasami acupuncturist"
+        ]
+    },
+
+    {   "id": "30082 Nishino Flower",
+        "card_name": "Feelings in a Small Cup",
+        "character_name": "Nishino Flower",
+        "unique": "Gain Wit Bonus (3) when the bond gauge is full",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5%",
+            "Initial Wit - 0/0/0/15/30",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Levels - 1",
+            "Hint Frequency - 20",
+            "Specialty Priority - 35/40/45/50/50",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Hanshin Racecourse",
+            "Standard Distance",
+            "Firm Conditions",
+            "Updrafters",
+            "Pace Chaser Corners"
+            
+        ],
+        "event_skills": [
+            "Determined Descent",
+            "Shifting Gears"
+            
+        ],
+        "url": "https://gametora.com/umamusume/supports/30082-nishino-flower",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30082.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "nishino flower feelings in a small cup"
+        ]
+    },
+    {   "id": "30083 Sakura Bakushin O",
+        "card_name": "Super! Sonic! Flower Power!",
+        "character_name": "Sakura Bakushin O",
+        "unique": "When the bond gauge is 80 or higher and this card is in a facility different from its type, gain Increased Training (20)",
+        "effects": [
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Initial Guts - 0/0/0/15/30",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%"
+        ],
+        "support_skills": [
+            "Sprinting Gear",
+            "Frenzied Front Runners",
+            "Flustered Front Runners",
+            "Sprint Straightaways",
+            "Sprint Corners",
+            "Huge Lead",
+            "Countermeasure",
+            "Intimidate"
+        ],
+        "event_skills": [
+            "In High Spirits",
+            "Light as a Feather",
+            "Groundwork",
+            "Gap Closer"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30083-sakura-bakushin-o",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30083.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "sakura bakushin o super sonic flower power"
+        ]
+    },
+    {   "id": "30084 Tosen Jordan",
+        "card_name": "In my way",
+        "character_name": "Tosen Jordan",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which hint events occur (20%)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5%",
+            "Initial Speed - 25/27/30/32/35",
+            "Initial Power - 0/0/0/15/30",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Long Shot",
+            "Stamina to Spare",
+            "Position Pilfer",
+            "Medium Straightaways",
+            "Medium Corners",
+            "Pace Chaser Straightaway"
+        ],
+        "event_skills": [
+            "Breath of Fresh Air",
+            "Straightaway Recovery",
+            "Lucky Seven"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30084-tosen-jordan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30084.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "tosen jordan in my way", "tosen jordan welfare", "tosen jordan poverty", "tosen jordan event"
+        ]
     }
+
+
+
 ]
