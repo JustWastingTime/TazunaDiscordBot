@@ -620,7 +620,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
         // Determine column widths (bounded)
         const rankWidth = Math.max(4, ...rows.map(r => r.rank.length));
-        const nameWidth = Math.min(28, Math.max(10, ...rows.map(r => r.name.length)));
+        const nameWidth = Math.min(40, Math.max(10, ...rows.map(r => r.name.length)));
         const fansWidth = Math.max(10, ...rows.map(r => r.fans.length), "Total Fans".length);
         const dailyWidth = Math.max(9, ...rows.map(r => r.daily.length), "Daily Avg".length);
 
@@ -639,7 +639,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         function padLeft(s, w)  { return String(s).padStart(w, ' '); }
 
         const bodyLines = rows.map(r =>
-          `${padRight(r.rank, rankWidth)}  ${padRight(truncate(r.name, nameWidth), nameWidth)}  ${padLeft(r.fans, fansWidth)}  ${padLeft(r.daily, dailyWidth)}  ${r.colorEmoji}`
+          `${padRight(r.rank, rankWidth)}  ${padRight(truncate(r.name.replace(/！/g, '!'), nameWidth), nameWidth)}  ${padLeft(r.fans, fansWidth)}  ${padLeft(r.daily, dailyWidth)}  ${r.colorEmoji}`
         );
 
         // Compose code-block table
