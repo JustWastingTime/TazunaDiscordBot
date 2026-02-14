@@ -654,6 +654,7 @@ export function buildSkillEmbed(skill, supporterList) {
 
 export function buildSkillComponents(skill, includeDropdown = false, supporters) {
   const rows = [];
+  const buttonComponents = [];
 
   // Dropdown (if needed)
   if (includeDropdown) {
@@ -695,7 +696,7 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
   }
 
   // Skill Visualizer (link button)
-  if (skill.id) {
+  if (skill.gametora_id) {
     buttonComponents.push({
       type: 2,
       style: 5,
@@ -705,10 +706,15 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
   }
 
 
-  rows.push({
-    type: 1,
-    components: buttonComponents
-  });
+  // Only push row if buttons exist
+  if (buttonComponents.length > 0) {
+    rows.push({
+      type: 1,
+      components: buttonComponents
+    });
+  }
+
+  return rows;
 
 }
 
@@ -981,7 +987,7 @@ export function buildCMEmbed(cm) {
         components: [
           {
             type: 2, // Button
-            style: 5, // Link
+            style: 2, // Secondary
             label: "To Kachi",
             url: cm.kachi
           }
