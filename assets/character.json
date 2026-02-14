@@ -138,6 +138,7 @@
             }
         ]
     },
+
     {   "id": "100201 - Silence Suzuka",
         "character_name": "Silence Suzuka",
         "type": "Original",
@@ -211,6 +212,7 @@
             }
         ]
     },
+
     {   "id": "100301 - Tokai Teio",
         "character_name": "Tokai Teio",
         "type": "Original",
@@ -352,6 +354,7 @@
             }
         ]
     },
+
     {   "id": "100401 - Maruzensky",
         "character_name": "Maruzensky",
         "type": "Original",
@@ -422,7 +425,7 @@
             }
         ]
     },
-    {   "id": "100401 - Maruzensky Summer",
+    {   "id": "100402 - Maruzensky Summer",
         "character_name": "Maruzensky",
         "type": "Summer",
         "costume": "Blasting Off ☆ Summer Night",
@@ -482,6 +485,7 @@
             }
         ]
     },
+
     {   "id": "100501 - Fuji Kiseki",
         "character_name": "Fuji Kiseki",
         "type": "Original",
@@ -563,6 +567,7 @@
             }
         ]
     },
+
     {   "id": "100601 - Oguri Cap",
         "character_name": "Oguri Cap",
         "type": "Original",
@@ -707,6 +712,7 @@
             }
         ]
     },
+
     {   "id": "100701 - Gold Ship",
         "character_name": "Gold Ship",
         "type": "Original",
@@ -778,6 +784,7 @@
             }
         ]
     },
+
     {   "id": "100801 - Vodka",
         "character_name": "Vodka",
         "type": "Original",
@@ -859,6 +866,7 @@
             }
         ]
     },
+
     {   "id": "100901 - Daiwa Scarlet",
         "character_name": "Daiwa Scarlet",
         "type": "Original",
@@ -939,6 +947,7 @@
             }
         ]
     },
+
     {   "id": "101001 - Taiki Shuttle",
         "character_name": "Taiki Shuttle",
         "type": "Original",
@@ -1009,6 +1018,7 @@
             }
         ]
     },
+
     {   "id": "101101 - Grass Wonder",
         "character_name": "Grass Wonder",
         "type": "Original",
@@ -1143,6 +1153,7 @@
             }
         ]
     },
+
     {   "id": "101201 - Hishi Amazon",
         "character_name": "Hishi Amazon",
         "type": "Original",
@@ -1214,6 +1225,7 @@
             }
         ]
     },
+
     {   "id": "101301 - Mejiro McQueen",
         "character_name": "Mejiro McQueen",
         "type": "Original",
@@ -1341,6 +1353,7 @@
             }
         ]
     },
+
     {   "id": "101401 - El Condor Pasa",
         "character_name": "El Condor Pasa",
         "type": "Original",
@@ -1472,6 +1485,7 @@
             }
         ]
     },
+
     {   "id": "101501 - TM Opera O",
         "character_name": "T.M. Opera O",
         "type": "Original",
@@ -1601,6 +1615,7 @@
             }
         ]
     },
+
     {   "id": "101601 - Narita Brian",
         "character_name": "Narita Brian",
         "type": "Original",
@@ -1680,6 +1695,7 @@
             }
         ]
     },
+
     {   "id": "101701 - Symboli Rudolf",
         "character_name": "Symboli Rudolf",
         "type": "Original",
@@ -1826,6 +1842,7 @@
             }
         ]
     },
+
     {   "id": "101801 - Air Groove",
         "character_name": "Air Groove",
         "type": "Original",
@@ -1956,6 +1973,7 @@
                 }
             ]
     },
+
     {   "id": "101901 - Agnes Digital",
         "character_name": "Agnes Digital",
         "type": "Original",
@@ -2031,6 +2049,7 @@
             }
         ]
     },
+
     {   "id": "102001 - Seiun Sky",
         "character_name": "Seiun Sky",
         "type": "Original",
@@ -2107,6 +2126,7 @@
             }
         ]
     },
+
     {   "id": "102101 - Tamamo Cross",
         "character_name": "Tamamo Cross",
         "type": "Original",
@@ -2186,6 +2206,7 @@
             }
         ]
     },
+
     {   "id": "102201 - Fine Motion",
         "character_name": "Fine Motion",
         "type": "Original",
@@ -2284,6 +2305,7 @@
             }
         ]
     },
+
     {   "id": "102301 - Biwa Hayahide",
         "character_name": "Biwa Hayahide",
         "type": "Original",
@@ -2434,6 +2456,7 @@
             }
         ]
     },
+
     {   "id": "102401 - Mayano Top Gun",
         "character_name": "Mayano Top Gun",
         "type": "Original",
@@ -2571,6 +2594,7 @@
             }
         ]
     },
+
     {   "id": "102501 - Manhattan Cafe",
         "character_name": "Manhattan Cafe",
         "type": "Original",
@@ -2642,6 +2666,7 @@
             }
         ]
     },
+
     {   "id": "102601 - Mihono Bourbon",
         "character_name": "Mihono Bourbon",
         "type": "Original",
@@ -2784,6 +2809,7 @@
             }
         ]
     },
+
     {   "id": "102701 - Mejiro Ryan",
         "character_name": "Mejiro Ryan",
         "type": "Original",
@@ -2853,6 +2879,7 @@
             }
         ]
     },
+
     {   "id": "102801 - Hishi Akebono", 
         "character_name": "Hishi Akebono",
         "type": "Original",
@@ -2916,6 +2943,89 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1028_102801.png",
         "review": ""
     },
+
+    {   "id": "102901 - Yukino Bijin", 
+        "character_name": "Yukino Bijin",
+        "type": "Original",
+        "costume": "Cute Sweet Flower of Mutsu",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "",
+            "guts": "20%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "B"
+            },
+            {
+            "Sprint": "D",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "E"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "F",
+            "End": "G"
+            }
+        ],
+        "unique": "Chasing the Snowlight",
+        "unique_explanation": "",
+        "skills": [
+            "Nimble Navigator",
+            "Medium Straightaways",
+            "Straight Descent"
+        ],
+        "potential": [
+            "Snowy Days",
+            "No Stopping Me!",
+            "Pace Chaser Corners",
+            "Determined Descent"
+        ],
+        "event_skills": [
+            "Winter Runner",
+            "Downhill Speedster",
+            "Corner Acceleration",
+            "Head-On"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "oka sho april 1 year 2",
+            "japanese oaks may 2 year 2",
+            "queen stakes july 2 year 2",
+            "shuka sho october 2 year 2",
+            "osaka hai march 2 year 3",
+            "victoria mile may 1 year 3",
+            "queen elizabeth ii cup november 1 year 3",
+            "japan cup november 2 year 3"
+        ],
+        "aliases": ["yukino bijin original", "cute sweet flower of mutsu"],
+        "url": "https://gametora.com/umamusume/characters/102901-yukino-bijin",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1029_102901.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho) and the Hanshin Juvenile Fillies",
+            "rewards": "Guts +10, Wit +10, Skill points +10, Corner Acceleration hint +1, Head-On hint +1"
+            },
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho) and lose the Hanshin Juvenile Fillies",
+            "rewards": "Guts +10, Wit +10, Skill points +10"
+            },
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho) and the Hanshin Juvenile Fillies (Bad Result)",
+            "rewards": "Guts +5, Wit +5"
+            }
+        ]
+    },
+
     {   "id": "103001 - Rice Shower",
         "character_name": "Rice Shower",
         "type": "Original",
@@ -2949,7 +3059,7 @@
             }
         ],
         "unique": "Blue Rose Closer",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when overtaking, between 1st to 4th place, on the last straight.",
+        "unique_explanation": "",
         "skills": [
             "Subdued Pace Chasers",
             "Straight Descent",
@@ -3047,6 +3157,81 @@
             }
         ]   
     },
+
+    {   "id": "103101 - Ines Fujin",
+        "character_name": "Ines Fujin",
+        "type": "Original",
+        "costume": "Always Electrifying",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "15%",
+            "stamina": "",
+            "power": "",
+            "guts": "15%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "C"
+            },
+            {
+            "Front": "A",
+            "Pace": "C",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "All Charged! It's Go Time!",
+        "unique_explanation": "",
+        "skills": [
+            "Slipstream",
+            "Moxie",
+            "With All My Soul"
+        ],
+        "potential": [
+            "Tokyo Racecourse",
+            "Restless",
+            "Speed Eater",
+            "Wild Wind"
+        ],
+        "event_skills": [
+            "Playtime's Over!",
+            "Dodging Danger",
+            "Early Lead",
+            "Front Runner Straightaways"
+        ],
+        "races": [
+            "asahi hai futurity stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "osaka hai march 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["ines fujin original", "always electrifying"],
+        "url": "https://gametora.com/umamusume/characters/103101-ines-fujin",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1031_103101.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Get a win streak of G1 races as Front Runner",
+            "rewards": "7+ \nSpeed +15, Guts +15, Early Lead hint +2, Front Runner Straightaways hint +2 \n\n4+ \nSpeed +10, Guts +10\n\n1+ \nSpeed +10"
+            }
+        ]
+    },
+
     {   "id": "103201 - Agnes Tachyon",
         "character_name": "Agnes Tachyon",
         "type": "Original",
@@ -3121,6 +3306,7 @@
             }
         ]
     },
+
     {   "id": "103301 - Admire Vega",
         "character_name": "Admire Vega",
         "type": "Original",
@@ -3195,6 +3381,7 @@
             }
         ]
     },
+
     {   "id": "103501 - Winning Ticket",
         "character_name": "Winning Ticket",
         "type": "Original",
@@ -3271,6 +3458,7 @@
             }
         ]
     },
+
     {   "id": "103701 - Eishin Flash",
         "character_name": "Eishin Flash",   
         "type": "Original",
@@ -3438,6 +3626,7 @@
             }
         ]
     },
+
     {   "id": "103801 - Curren Chan",
         "character_name": "Curren Chan",
         "type": "Original",
@@ -3511,6 +3700,7 @@
             }
         ]
     },
+
     {   "id": "103901 - Kawakami Princess",
         "character_name": "Kawakami Princess",
         "type": "Original",
@@ -3581,6 +3771,7 @@
             }
         ]
     },
+
     {   "id": "104001 - Gold City",
         "character_name": "Gold City",
         "type": "Original",
@@ -3700,6 +3891,7 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104002.png",
         "review": ""
     },
+
     {   "id": "104101 - Sakura Bakushin O",
         "character_name": "Sakura Bakushin O",
         "type": "Original",
@@ -3772,6 +3964,9 @@
             }
         ]
     },
+
+
+
     {   "id": "104501 - Super Creek",
         "character_name": "Super Creek",
         "type": "Original",
@@ -3937,6 +4132,7 @@
             }
         ]
     },
+
     {   "id": "104601 - Smart Falcon",
         "character_name": "Smart Falcon",
         "type": "Original",
@@ -4022,6 +4218,8 @@
             }
         ]
     },
+
+
     {   "id": "104801 - Tosen Jordan",
         "character_name": "Tosen Jordan",
         "type": "Original",
@@ -4092,6 +4290,8 @@
             }
         ]
     },
+
+
     {   "id": "105001 - Narita Taishin",
         "character_name": "Narita Taishin",
         "type": "Original",
@@ -4166,6 +4366,7 @@
             }
         ]
     },
+
     {   "id": "105201 - Haru Urara",
         "character_name": "Haru Urara",
         "type": "Original",
@@ -4300,6 +4501,7 @@
             }
         ]
     },
+
     {   "id": "105601 - Matikanefukukitaru",
         "character_name": "Matikanefukukitaru",
         "type": "Original",
@@ -4439,6 +4641,7 @@
             }
         ]
     },
+
     {   "id": "105801 - Meisho Doto",
         "character_name": "Meisho Doto",
         "type": "Original",
@@ -4516,6 +4719,7 @@
             }
         ]
     },
+
     {   "id": "105901 - Mejiro Dober",
         "character_name": "Mejiro Dober",
         "type": "Original",
@@ -4596,6 +4800,7 @@
             }
         ]
     },
+
     {   "id": "106001 - Nice Nature",
         "character_name": "Nice Nature",
         "type": "Original",
@@ -4689,6 +4894,7 @@
             }
         ]
     },
+
     {   "id": "106101 - King Halo",
         "character_name": "King Halo",
         "type": "Original",
@@ -4765,8 +4971,160 @@
     },
 
 
-
-
+    {   "id": "106701 - Satono Diamond",
+        "character_name": "Satono Diamond",
+        "type": "Original",
+        "costume": "Natural Brilliance",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "15%",
+            "power": "",
+            "guts": "",
+            "wit": "15%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Eternal Encompassing Shine",
+        "unique_explanation": "",
+        "skills": [
+            "Right-Handed",
+            "Be Still",
+            "Medium Straightaways"
+        ],
+        "potential": [
+            "Feature Act",
+            "Lie in Wait",
+            "Firm Conditions",
+            "Right-Handed Demon"
+        ],
+        "event_skills": [
+            "Straightaway Adept",
+            "Deep Breaths",
+            "Fall Runner"
+        ],
+        "races": [
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "osaka hai march 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "kyoto daishoten october 1 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["satono diamond original", "natural brilliance"],
+        "url": "https://gametora.com/umamusume/characters/106701-satono-diamond",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1067_106701.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
+            "rewards": "Speed +10, Stamina +10, Guts +10, Fall Runner hint +2"
+            }
+        ]
+    },
+    {   "id": "106801 - Kitasan Black",
+        "character_name": "Kitasan Black",
+        "type": "Original",
+        "costume": "Gilded Shrine to Glory",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "10%",
+            "power": "",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "A",
+            "Pace": "B",
+            "Late": "C",
+            "End": "G"
+            }
+        ],
+        "unique": "Victory Cheer!",
+        "unique_explanation": "",
+        "skills": [
+            "Focus",
+            "Long Straightaways",
+            "Early Lead"
+        ],
+        "potential": [
+            "Medium Straightaways",
+            "Taking the Lead",
+            "Leader's Pride",
+            "Blast Forward"
+        ],
+        "event_skills": [
+            "Corner Adept",
+            "Corner Recovery",
+            "Spring Runner",
+            "Soft Step",
+            "Keeping the Lead",
+            "Prudent Positioning"
+        ],
+        "races": [
+            "st lite kinen september 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["kitasan black original", "gilded shrine to glory"],
+        "url": "https://gametora.com/umamusume/characters/106801-kitasan-black",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1068_106801.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Spring Triple Crown (Osaka Hai, Tenno Sho (Spring) and Takarazuka Kinen Year 3)",
+            "rewards": "Spring Runner hint +2, Soft Step hint +2"
+            },
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "All stats +13, Skill points +45, Mood +1, Keeping the Lead hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho) and Arima Kinen (Year 3)",
+            "rewards": "All stats +3, Skill points +45, Prudent Positioning hint +2, Yayoi Akikawa bond +4"
+            }
+        ]
+    },
     {   "id": "106901 - Sakura Chiyono O",
         "character_name": "Sakura Chiyono O",
         "type": "Original",
