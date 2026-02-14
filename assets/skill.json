@@ -17,7 +17,8 @@
             "右回り",
             "right turns"
         ],
-        "upgrade": "Right-Handed Demon"
+        "upgrade": "Right-Handed Demon",
+        "gametora_id": "200012"
     },
     {   "skill_name": "Left-Handed",
         "description": "Speed stat +40/+60.",
@@ -36,7 +37,8 @@
             "counter clockwise",
             "左回り",
             "left turns"
-        ]
+        ],
+        "gametora_id": "200022"
     },
     {   "skill_name": "Spring Runner",
         "description": "Speed stat +40/+60.",
@@ -54,7 +56,8 @@
             "spring girl",
             "春ウマ娘"
         ],
-        "upgrade": "Spring Spectacle"
+        "upgrade": "Spring Spectacle",
+        "gametora_id": "200172"
     },
     {   "skill_name": "Summer Runner",
         "description": "Speed stat +40/+60.",
@@ -71,7 +74,8 @@
         "aliases": [
             "summer girl",
             "夏ウマ娘"
-        ]
+        ],
+        "gametora_id": "200182"
     },
     {   "skill_name": "Fall Runner",
         "description": "Speed stat +40/+60.",
@@ -90,7 +94,8 @@
             "autumn girl",
             "秋ウマ娘"
         ],
-        "upgrade": "Fall Frenzy"
+        "upgrade": "Fall Frenzy",
+        "gametora_id": "200192"
     },
     {   "skill_name": "Winter Runner",
         "description": "Speed stat +40/+60.",
@@ -107,7 +112,8 @@
         "aliases": [
             "winter girl",
             "冬ウマ娘"
-        ]
+        ],
+        "gametora_id": "200202"
     },
     {   "skill_name": "Outer Post Proficiency",
         "description": "Speed stat +40/+60.",
@@ -124,7 +130,8 @@
         "aliases": [
             "outer",
             "outerpost"
-        ]
+        ],
+        "gametora_id": "200262"
     },
     {   "skill_name": "Maverick",
         "description": "Speed stat +60/+80.",
@@ -140,7 +147,8 @@
         "category": "speed",
         "aliases": [
             "maverick"
-        ]
+        ],
+        "gametora_id": "200272"
     },
     {   "skill_name": "Long Shot",
         "description": "Speed stat +40/+60.",
@@ -158,7 +166,8 @@
             "longshot",
             "underdog",
             "伏兵"
-        ]
+        ],
+        "gametora_id": "200302"
     },
     {   "skill_name": "Sympathy",
         "description": "Speed stat +40",
@@ -176,7 +185,8 @@
             "sympathy",
             "シンパシー"
         ],
-        "upgrade": "Connection"
+        "upgrade": "Connection",
+        "gametora_id": "201631"
     },
     {   "skill_name": "Lone Wolf",
         "description": "Speed +40.",
@@ -193,7 +203,8 @@
         "aliases": [
             "lonewolf",
             "一匹狼"
-        ]
+        ],
+        "gametora_id": "201641"
     },
     {   "skill_name": "Towards the Scenery I Seek",
         "description": "Speed +40.",
@@ -211,7 +222,8 @@
             "towards the scenery i seek",
             "scenery of dreams",
             "夢の景色へ"
-        ]
+        ],
+        "gametora_id": "300031"
     },
     {   "skill_name": "Show Me What Lies Beyond!",
         "description": "Speed +40.",
@@ -229,7 +241,8 @@
             "show me what lies beyond",
             "running towards the unknown",
             "未知への走りを見せてくれ"
-        ]
+        ],
+        "gametora_id": "300071"
     },
     {   "skill_name": "Chin Up, Derby Umamusume!",
         "description": "Speed +40.",
@@ -247,7 +260,8 @@
             "chin up derby umamusume",
             "proud derby girl",
             "胸を張れダービーウマ娘"
-        ]
+        ],
+        "gametora_id": "300111"
     },
     {   "skill_name": "Unchanging",
         "description": "Speed +80.",
@@ -265,7 +279,9 @@
             "unchanging",
             "unchanged",
             "変わらぬままで"
-        ]
+        ],
+        "gametora_id": "300021",
+        "umalator": false
     },
     {   "skill_name": "Fall Frenzy",
         "description": "Speed and Power stat +60.",
@@ -284,7 +300,8 @@
             "the first storm",
             "初嵐"
         ],
-        "downgrade": "Fall Runner"
+        "downgrade": "Fall Runner",
+        "gametora_id": "200194"
     },
     {   "skill_name": "Spring Spectacle",
         "description": "Speed and Power stat +60.",
@@ -303,7 +320,8 @@
             "春一番",
             "first breeze of spring"
         ],
-        "downgrade": "Spring Runner"
+        "downgrade": "Spring Runner",
+        "gametora_id": "200174"
     },
     {   "skill_name": "Right-Handed Demon",
         "description": "Speed and Power stat +60.",
@@ -322,7 +340,8 @@
             "clockwise demon",
             "右回りの鬼"
         ],
-        "downgrade": "Right-Handed"
+        "downgrade": "Right-Handed",
+        "gametora_id": "200014"
     },
     {   "skill_name": "Connection",
         "description": "Speed stat +60. Activates all sympathy skills.",
@@ -341,7 +360,8 @@
             "connection",
             "コネクト"
         ],
-        "downgrade": "Sympathy"
+        "downgrade": "Sympathy",
+        "gametora_id": "201632"
     },
     
     {   "skill_name": "Right-Handed x",
@@ -360,7 +380,8 @@
             "right handed x",
             "right turns x",
             "右回りx"
-        ]
+        ],
+        "gametora_id": "200013"
     },
     {   "skill_name": "Left-Handed x",
         "description": "Speed stat -40.",
@@ -378,7 +399,8 @@
             "left handed x",
             "left turns x",
             "左回りx"
-        ]
+        ],
+        "gametora_id": "200023"
     },
     {   "skill_name": "Spring Runner x",
         "description": "Speed stat -40.",
@@ -396,7 +418,8 @@
             "spring x",
             "spring girl x",
             "春ウマ娘x"
-        ]
+        ],
+        "gametora_id": "200173"
     },
     {   "skill_name": "Summer Runner x",
         "description": "Speed stat -40.",
@@ -414,7 +437,8 @@
             "summer x",
             "summer girl x",
             "夏ウマ娘x"
-        ]
+        ],
+        "gametora_id": "200183"
     },
     {   "skill_name": "Fall Runner x",
         "description": "Speed stat -40.",
@@ -432,7 +456,8 @@
             "fall x",
             "autumn girl x",
             "秋ウマ娘x"
-        ]
+        ],
+        "gametora_id": "200193"
     },
     {   "skill_name": "Winter Runner x",
         "description": "Speed stat -40.",
@@ -450,7 +475,8 @@
             "winter x",
             "winter girl x",
             "冬ウマ娘"
-        ]
+        ],
+        "gametora_id": "200203"
     },
     {   "skill_name": "Outer Post Averseness",
         "description": "Speed stat -40.",
@@ -469,7 +495,8 @@
             "outerpost x",
             "outer ate affinity x",
             "外枠苦手"
-        ]
+        ],
+        "gametora_id": "200263"
     },
     {   "skill_name": "G1 Averseness",
         "description": "Speed stat -40.",
@@ -487,7 +514,8 @@
             "g1 x",
             "g1 averseness",
             "g1 dislike"
-        ]
+        ],
+        "gametora_id": "200311"
     },
     {   "skill_name": "♡ 3D Nail Art",
         "description": "Speed stat -40.",
@@ -505,7 +533,8 @@
             "3d nail art",
             "uneven nail",
             "凸凹ネイル"
-        ]
+        ],
+        "gametora_id": "201801"
     },
     {   "skill_name": "Creeping Anxiety",
         "description": "Speed stat -40.",
@@ -523,7 +552,8 @@
             "creeping anxiety",
             "spreading fear",
             "拡がる恐れ"
-        ]
+        ],
+        "gametora_id": "300041"
     },
     
     
@@ -543,7 +573,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["tokyo", "東京レース場", "tokyo racetrack"]
+        "aliases" : ["tokyo", "東京レース場", "tokyo racetrack"],
+        "gametora_id": "200032"
     },
     {   "skill_name" : "Nakayama Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -558,7 +589,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["nakayama", "中山レース場", "nakayama racetrack"]
+        "aliases" : ["nakayama", "中山レース場", "nakayama racetrack"],
+        "gametora_id": "200042"
     },
     {   "skill_name" : "Hanshin Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -573,7 +605,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["hanshin", "阪神レース場", "hanshin racetrack"]
+        "aliases" : ["hanshin", "阪神レース場", "hanshin racetrack"],
+        "gametora_id": "200052"
     },
     {   "skill_name" : "Kyoto Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -588,7 +621,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["kyoto", "京都レース場", "kyoto racetrack"]
+        "aliases" : ["kyoto", "京都レース場", "kyoto racetrack"],
+        "gametora_id": "200062"
     },
     {   "skill_name" : "Chukyo Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -603,7 +637,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["chukyo", "中京レース場", "chukyo racetrack"]
+        "aliases" : ["chukyo", "中京レース場", "chukyo racetrack"],
+        "gametora_id": "200072"
     },
     {   "skill_name" : "Sapporo Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -618,7 +653,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["sapporo", "札幌レース場", "sapporo racetrack"]
+        "aliases" : ["sapporo", "札幌レース場", "sapporo racetrack"],
+        "gametora_id": "200082"
     },
     {   "skill_name" : "Hakodate Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -633,7 +669,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["hakodate", "函館レース場", "hakodate racetrack"]
+        "aliases" : ["hakodate", "函館レース場", "hakodate racetrack"],
+        "gametora_id": "200092"
     },
     {   "skill_name" : "Fukushima Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -648,7 +685,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["fukushima", "福島レース場", "fukushima racetrack"]
+        "aliases" : ["fukushima", "福島レース場", "fukushima racetrack"],
+        "gametora_id": "200102"
     },
     {   "skill_name" : "Niigata Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -663,7 +701,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["niigata", "新潟レース場", "niigata racetrack"]
+        "aliases" : ["niigata", "新潟レース場", "niigata racetrack"],
+        "gametora_id": "200112"
     },
     {   "skill_name" : "Kokura Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -678,7 +717,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["kokura", "小倉レース場", "kokura racetrack"]
+        "aliases" : ["kokura", "小倉レース場", "kokura racetrack"],
+        "gametora_id": "200122"
     },
     {   "skill_name" : "Standard Distance",
         "description" : "Stamina stat +40/+60.",
@@ -693,7 +733,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["standard", "400", "core distances", "根幹距離"]
+        "aliases" : ["standard", "400", "core distances", "根幹距離"],
+        "gametora_id": "200132"
     },
     {   "skill_name" : "Non-Standard Distance",
         "description" : "Stamina stat +40/+60.",
@@ -708,7 +749,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["nonstandard", "non standard", "non core distances", "非根幹距離"]
+        "aliases" : ["nonstandard", "non standard", "non core distances", "非根幹距離"],
+        "gametora_id": "200142"
     },
     {   "skill_name" : "Oi Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -723,7 +765,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["oi", "大井レース場", "ooi racetrack"]
+        "aliases" : ["oi", "大井レース場", "ooi racetrack"],
+        "gametora_id": "200952"
     },
     {   "skill_name" : "Unquenched Thirst",
         "description" : "Stamina stat +40.",
@@ -738,7 +781,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["unquenched thirst", "癒えない渇き"]
+        "aliases" : ["unquenched thirst", "癒えない渇き"],
+        "gametora_id": "300011"
     },
     {   "skill_name" : "Hoiya! Have a Good Run!",
         "description" : "Stamina stat +40.",
@@ -753,7 +797,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["hoiya have a good run", "ほんにゃか快走祈願", "pray for a fast run"]
+        "aliases" : ["hoiya have a good run", "ほんにゃか快走祈願", "pray for a fast run"],
+        "gametora_id": "300081"
     },
     {   "skill_name" : "Long Race Enthusiast",
         "description" : "Stamina stat +60.",
@@ -769,7 +814,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["long race enthusiast", "長距離レースへの想い", "long distance racing passion"]
+        "aliases" : ["long race enthusiast", "長距離レースへの想い", "long distance racing passion"],
+        "gametora_id": "1200021"
     },
     {   "skill_name" : "Kawasaki Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -784,7 +830,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["kawasaki", "川崎レース場", "kawasaki racetrack"]
+        "aliases" : ["kawasaki", "川崎レース場", "kawasaki racetrack"],
+        "gametora_id": "202202"
     },
     {   "skill_name" : "Funabashi Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -799,7 +846,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["funabashi", "船橋レース場", "funabashi racetrack"]
+        "aliases" : ["funabashi", "船橋レース場", "funabashi racetrack"],
+        "gametora_id": "202212"
     },
     {   "skill_name" : "Morioka Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -814,7 +862,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["morioka", "盛岡レース場", "morioka racetrack"]
+        "aliases" : ["morioka", "盛岡レース場", "morioka racetrack"],
+        "gametora_id": "202222"
     },
     {   "skill_name" : "Longchamp Racecourse",
         "description" : "Stamina stat +40/+60.",
@@ -829,7 +878,8 @@
         "review" : "A solid skill to take if you are not reaching the stamina treshold.",
         "rarity" : "normal",
         "category" : "stamina",
-        "aliases" : ["longchamp", "ロンシャンレース場", "longchamp racetrack"]
+        "aliases" : ["longchamp", "ロンシャンレース場", "longchamp racetrack"],
+        "gametora_id": "202732"
     },
     {   "skill_name" : "Yodo Invicta",
         "description" : "Speed, Stamina & Wit stat +60.",
@@ -844,7 +894,8 @@
         "review" : "",
         "rarity" : "rare",
         "category" : "goldenstamina",
-        "aliases" : ["kyoto golden", "yodo invicta", "淀の申し子", "child of yodo"]
+        "aliases" : ["kyoto golden", "yodo invicta", "淀の申し子", "child of yodo"],
+        "gametora_id": "200064"
     },
     {   "skill_name" : "For the Team",
         "description" : "Stamina stat +80.",
@@ -859,7 +910,8 @@
         "review" : "",
         "rarity" : "rare",
         "category" : "goldenstamina",
-        "aliases" : ["for the team", "チームの一員として", "as a member of the team"]
+        "aliases" : ["for the team", "チームの一員として", "as a member of the team"],
+        "gametora_id": "300121"
     },
 
     {   "skill_name" : "Tokyo Racecourse x",
@@ -1584,7 +1636,8 @@
             "innerpost x",
             "inner gate affinity x",
             "内枠苦手"
-        ]
+        ],
+        "gametora_id": "200253"
     },
     
 
