@@ -954,6 +954,29 @@ export function buildRaceEmbed(race, charactersJSON) {
 }
 
 export function buildCMEmbed(cm) {
+  const buttons = [];
+
+  // Umalator (safe assumption: usually under 512)
+  if (cm.umalator && cm.umalator.length <= 512) {
+    buttons.push({
+      type: 2,
+      style: 5,
+      label: "To Umalator",
+      url: cm.umalator
+    });
+  }
+
+   // Kachi (guard against 512 limit)
+  if (cm.kachi && cm.kachi.length <= 512) {
+    buttons.push({
+      type: 2,
+      style: 5,
+      label: "To Umalator v2",
+      url: cm.kachi
+    });
+  }
+
+
   return {
     embeds: [
       {
@@ -970,25 +993,14 @@ export function buildCMEmbed(cm) {
         url: cm.url
       }
     ],
-    components: [
-      {
-        type: 1,
-        components: [
+    components: buttons.length
+      ? [
           {
-            type: 2, // Button
-            style: 5, // Link
-            label: "To Umalator",
-            url: cm.umalator
-          },
-          {
-            type: 2, // Button
-            style: 2, // Secondary
-            label: "To Kachi",
-            url: cm.kachi
+            type: 1,
+            components: buttons
           }
         ]
-      }
-    ]
+      : []
   };
 }
 
