@@ -5,12 +5,12 @@ console.log("[UmaMoe] Running UMA MOE sync on startup");
 updateFansFromUmaMoe();
 
 cron.schedule(
-  "12 0 * * *",
+  "12 22 * * *",
   () => {
     console.log("[UmaMoe] Running UMA MOE sync auto daily");
     updateFansFromUmaMoe();
   },
   {
-    timezone: "Asia/Tokyo"
+    timezone: "Asia/Jakarta"
   }
 );
