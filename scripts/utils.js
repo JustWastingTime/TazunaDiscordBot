@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import fs from 'fs';
+import { url } from 'inspector';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -651,7 +652,8 @@ export function buildSkillEmbed(skill, supporterList) {
     description: skill.description +'\n \u200B' + (skill.inherited ? `\n**Inherited**\n${skill.inherited} \n \u200B` : ''),
     color: getSkillColor(skill.category),
     thumbnail: { url: getSkillThumbnail(skill.category)},
-    fields: fields
+    fields: fields,
+    url: "https://gametora.com/umamusume/skill-condition-viewer?skill=" + skill.gametora_id
   }
 }
 
