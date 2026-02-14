@@ -618,12 +618,7 @@ export function buildSkillEmbed(skill, supporterList) {
       inline: false
     },
     {
-      name: 'Team Trial',
-      value: skill.team_trials + '\n \u200B',
-      inline: true
-    },
-    {
-      name: "Champion's Meeting",
+      name: "Rating",
       value: skill.champs_meet + '\n \u200B',
       inline: true
     },
@@ -681,35 +676,40 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
 
   // Upgrade button (if skill has one)
   if (skill.upgrade) {
-    rows.push({
-      type: 1,
-      components: [
-        {
-          type: 2,
-          style: 1,
-          label: `Upgrade → ${skill.upgrade}`,
-          custom_id: `upgrade_${skill.upgrade}`
-        }
-      ]
+    buttonComponents.push({
+      type: 2,
+      style: 1,
+      label: `Upgrade → ${skill.upgrade}`,
+      custom_id: `upgrade_${skill.upgrade}`
     });
   }
 
   // Downgrade button (if skill has one)
   if (skill.downgrade) {
-    rows.push({
-      type: 1,
-      components: [
-        {
-          type: 2,
-          style: 1,
-          label: `Downgrade → ${skill.downgrade}`,
-          custom_id: `downgrade_${skill.downgrade}`
-        }
-      ]
+    buttonComponents.push({
+      type: 2,
+      style: 1,
+      label: `Downgrade → ${skill.downgrade}`,
+      custom_id: `downgrade_${skill.downgrade}`
     });
   }
 
-  return rows;
+  // Skill Visualizer (link button)
+  if (skill.id) {
+    buttonComponents.push({
+      type: 2,
+      style: 5,
+      label: "Skill Visualizer",
+      url: `https://alpha123.github.io/uma-tools/skill-visualizer-global/#cid=10701,sid=${skill.gametora_id}`
+    });
+  }
+
+
+  rows.push({
+    type: 1,
+    components: buttonComponents
+  });
+
 }
 
 export function buildEventEmbed(event, eventList) {
@@ -961,17 +961,29 @@ export function buildCMEmbed(cm) {
           { name: "Similar to", value: cm.track.similar ?? "—" }
         ],
         image: { url: cm.image },
+        url: cm.url
       }
     ],
     components: [
       {
-        type: 1, // Action row
+        type: 2,
         components: [
           {
             type: 2, // Button
             style: 5, // Link
             label: "To Umalator",
             url: cm.umalator
+          }
+        ]
+      },
+      {
+        type: 2, // 
+        components: [
+          {
+            type: 2, // Button
+            style: 5, // Link
+            label: "To Kachi",
+            url: cm.kachi
           }
         ]
       }
