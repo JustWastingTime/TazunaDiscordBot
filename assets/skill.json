@@ -1706,7 +1706,8 @@
             "agnes tachyon original",
             "introduction my body"
         ],
-        "upgrade": "U=ma2"
+        "upgrade": "U=ma2",
+        "gametora_id": "10321"
     },
     {   "skill_name": "Clear Heart",
         "description": "Recover HP by 5.5%.",
@@ -1726,7 +1727,8 @@
             "super creek original",
             "クリアハート"
         ],
-        "upgrade": "Pure Heart"
+        "upgrade": "Pure Heart",
+        "gametora_id": "10451"
     },
     {   "skill_name": "Super-Duper Stoked",
         "description": "Recover HP by 3.5%.",
@@ -1748,7 +1750,8 @@
             "ready steady go",
             "ワクワクよーいドン"
         ],
-        "upgrade": "Super-Duper Climax"
+        "upgrade": "Super-Duper Climax",
+        "gametora_id": "10521"
     },
     {   "skill_name": "U=ma2",
         "description": "Recover HP by 5.5%. Increases speed by 0.25 for 4.0s.",
@@ -1770,7 +1773,8 @@
             "agnes tachyon original"
         ],
         "horse": "Agnes Tachyon (Original)",
-        "downgrade": "Introduction to Physiology"
+        "downgrade": "Introduction to Physiology",
+        "gametora_id": "100321"
     },
     {   "skill_name": "Pure Heart",
         "description": "Recover HP by 7.5%.",
@@ -1793,7 +1797,8 @@
             "ピュリティオブハート"
         ],
         "horse": "Super Creek (Original)",
-        "downgrade": "Clear Heart"
+        "downgrade": "Clear Heart",
+        "gametora_id": "100451"
     },
     {   "skill_name": "Super-Duper Climax",
         "description": "Recover HP by 5.5%.",
@@ -1817,7 +1822,8 @@
             "ワクワククライマックス"
         ],
         "horse": "Haru Urara (Original)",
-        "downgrade": "Super-Duper Stoked"
+        "downgrade": "Super-Duper Stoked",
+        "gametora_id": "100521"
     },
     {   "skill_name": "Swinging Maestro",
         "description": "Recover HP by 5.5%",
@@ -2716,7 +2722,8 @@
             "gain superior heal",
             "ゲインヒールスペリアー"
         ],
-        "horse": "Grass Wonder (Fantasy)"
+        "horse": "Grass Wonder (Fantasy)",
+        "gametora_id": "110111"
     },
     {   "skill_name": "Dazzl'n ♪ Diver",
         "description": "Recover HP by 5.5%.",
@@ -2742,7 +2749,8 @@
             "wayakawa marine dive",
             "わやかわ♪マリンダイヴ"
         ],
-        "horse": "Special Week (Summer)"
+        "horse": "Special Week (Summer)",
+        "gametora_id": "110011"
     },
     {   "skill_name": "Every Rose Has Its Fangs",
         "description": "Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
@@ -2764,7 +2772,8 @@
             "rice shower halloween",
             "drain for rose"
         ],
-        "horse": "Rice Shower (Halloween)"
+        "horse": "Rice Shower (Halloween)",
+        "gametora_id": "110301"
     },
     {   "skill_name": "Lie in Wait",
         "description": "Recover HP by 5.5%.",
@@ -4993,7 +5002,8 @@
             "its going to be me",
             "絶対はボクだ"
         ],
-        "horse": "Tokai Teio (Anime Collab)"
+        "horse": "Tokai Teio (Anime Collab)",
+        "gametora_id": "110031"
     },
     {   "skill_name": "Legacy of the Strong",
         "description": "Increases speed by 0.35 for 6.0s.",
@@ -5018,7 +5028,8 @@
             "for the strongest name",
             "最強の名を懸けて"
         ],
-        "horse": "Mejiro McQueen (Anime Collab)"
+        "horse": "Mejiro McQueen (Anime Collab)",
+        "gametora_id": "110131"
     },
     {   "skill_name": "Warning Shot!",
         "description": "Increases speed by 0.15 for 6.0s.",
@@ -5038,7 +5049,8 @@
             "warning shot",
             "波乱注意砲！"
         ],
-        "upgrade": "Anchors Aweigh!"
+        "upgrade": "Anchors Aweigh!",
+        "gametora_id": "10071"
     },
     {   "skill_name": "Xceleration",
         "description": "Increases speed by 0.25 for 5.0s.",
@@ -5060,7 +5072,8 @@
             "accelerator x",
             "アクセルX"
         ],
-        "upgrade": "Cut and Drive!"
+        "upgrade": "Cut and Drive!",
+        "gametora_id": "10081"
     },
     {   "skill_name": "Red Ace",
         "description": "Condition 1 or 2 - Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -5086,7 +5099,8 @@
             "daiwa scarlet",
             "レッドエース"
         ],
-        "upgrade": "Resplendent Red Ace"
+        "upgrade": "Resplendent Red Ace",
+        "gametora_id": "10091"
     },
     {   "skill_name": "Focused Mind",
         "description": "Increases speed by 0.25 for 5.0s.",
@@ -5108,7 +5122,8 @@
             "desire to win",
             "精神一到"
         ],
-        "upgrade": "Where There's a Will, There's a Way"
+        "upgrade": "Where There's a Will, There's a Way",
+        "gametora_id": "10111"
     },
     {   "skill_name": "Corazón ☆ Ardiente",
         "description": "Increases speed by 0.15 and acceleration by 0.2 for 5.0s.",
@@ -5130,7 +5145,8 @@
             "hot blooded amigo",
             "熱血アミーゴ"
         ],
-        "upgrade": "Victoria por plancha ☆"
+        "upgrade": "Victoria por plancha ☆",
+        "gametora_id": "10141"
     },
     {   "skill_name": "Empress's Pride",
         "description": "Increases speed by 0.25 for 5.0s.",
@@ -5152,7 +5168,8 @@
             "empress pride",
             "エンプレスプライド"
         ],
-        "upgrade": "Blazing Pride"
+        "upgrade": "Blazing Pride",
+        "gametora_id": "10181"
     },
     {   "skill_name": "1st Place Kiss☆",
         "description": "Increases speed by 0.15 and acceleration by 0.2 for 5.0s.",
@@ -5175,7 +5192,8 @@
             "勝利のキッス"
         ],
         "horse": "Mayano Top Gun (Original)",
-        "upgrade": "Flashy☆Landing"
+        "upgrade": "Flashy☆Landing",
+        "gametora_id": "10241"
     },
     {   "skill_name": "V is for Victory!",
         "description": "Increases speed by 0.25 for 5.0s on the last straight.",
@@ -5197,7 +5215,8 @@
             "full power v sign",
             "全力Vサインッ"
         ],
-        "upgrade": "Our Ticket to Win!"
+        "upgrade": "Our Ticket to Win!",
+        "gametora_id": "10351"
     },
     {   "skill_name": "Class Rep + Speed = Bakushin",
         "description": "Increases speed by 0.25 for 5.0s.",
@@ -5219,7 +5238,8 @@
             "class president + speed = bakushin",
             "学級委員長+速さ=バクシン"
         ],
-        "upgrade": "Genius x Bakushin = Victory"
+        "upgrade": "Genius x Bakushin = Victory",
+        "gametora_id": "10411"
     },
     {   "skill_name": "Luck Be with Me!",
         "description": "Increases speed by 0.25 for 5.0s when 3rd place or greater, blocked in front and in the late-race.",
@@ -5241,7 +5261,8 @@
             "come come",
             "来てください来てください"
         ],
-        "upgrade": "I See Victory in My Future!"
+        "upgrade": "I See Victory in My Future!",
+        "gametora_id": "10561"
     },
     {   "skill_name": "I Can Win Sometimes, Right?",    
         "description": "Increases speed by 0.25 for 5.0s.",
@@ -5263,7 +5284,8 @@
             "you know sometimes even i can",
             "アタシもたまにはね"
         ],
-        "upgrade": "Just a Little Farther!"
+        "upgrade": "Just a Little Farther!",
+        "gametora_id": "10601"
     },
     {   "skill_name": "Call me King",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5283,7 +5305,8 @@
             "call me king",
             "king halo"
         ],
-        "upgrade": "Prideful King"
+        "upgrade": "Prideful King",
+        "gametora_id": "10611"
     },
     {   "skill_name": "Shooting Star",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 5.0s.",
@@ -5305,7 +5328,8 @@
             "special week",
             "シューティングスター"
         ],
-        "horse": "Special Week (Original)"
+        "horse": "Special Week (Original)",
+        "gametora_id": "100011"
     },
     {   "skill_name": "The View from the Lead is Mine!",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5328,7 +5352,8 @@
             "im not giving up the lead",
             "先頭の景色は譲らない"
         ],
-        "horse": "Silence Suzuka (Original)"
+        "horse": "Silence Suzuka (Original)",
+        "gametora_id": "100021"
     },
     {   "skill_name": "Sky-High Teio Step",
         "description": "Increases speed by 0.45 for 5.0s on the final straight.",
@@ -5353,7 +5378,8 @@
             "ultimate teio step",
             "究極テイオーステップ"
         ],
-        "horse": "Tokai Teio (Original)"
+        "horse": "Tokai Teio (Original)",
+        "gametora_id": "100031"
     },
     {   "skill_name": "Triumphant Pulse",
         "description": "Increases speed by 0.45 for 5.0s.",
@@ -5375,7 +5401,8 @@
             "the beat of victory",
             "勝利の鼓動"
         ],
-        "horse": "Oguri Cap (Original)"
+        "horse": "Oguri Cap (Original)",
+        "gametora_id": "100061"
     },
     {   "skill_name": "Anchors Aweigh!",
         "description": "Increases speed by 0.25 for 6.0s.",
@@ -5398,7 +5425,8 @@
             "不沈艦抜錨ォッ"
         ],
         "horse": "Gold Ship (Original)",
-        "downgrade": "Warning Shot!"
+        "downgrade": "Warning Shot!",
+        "gametora_id": "100071"
     },
     {   "skill_name": "Cut and Drive!",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5422,7 +5450,8 @@
             "カッティングxDRIVE"
         ],
         "horse": "Vodka (Original)",
-        "downgrade": "Xceleration"
+        "downgrade": "Xceleration",
+        "gametora_id": "100081"
     },
     {   "skill_name": "Resplendent Red Ace",
         "description": "Condition 1 or 2 - Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -5451,7 +5480,8 @@
             "ブリリアントレッドエース"
         ],
         "horse": "Daiwa Scarlet (Original)",
-        "downgrade": "Red Ace"
+        "downgrade": "Red Ace",
+        "gametora_id": "100091"
     },
     {   "skill_name": "Where There's a Will, There's a Way",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5474,7 +5504,8 @@
             "精神一到何事か成らざらん"
         ],
         "horse": "Grass Wonder (Original)",
-        "downgrade": "Focused Mind"
+        "downgrade": "Focused Mind",
+        "gametora_id": "100111"
     },
     {   "skill_name": "The Duty of Dignity Calls",
         "description": "Increases speed by 0.35 for 5.0s if first 30% of the pack (by distance) on the final corner.",
@@ -5496,7 +5527,8 @@
             "fulfilling your noble duty",
             "貴顕の使命を果たすべく"
         ],
-        "horse": "Mejiro McQueen (Original)"
+        "horse": "Mejiro McQueen (Original)",
+        "gametora_id": "100131"
     },
     {   "skill_name": "Victoria por plancha ☆",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -5520,7 +5552,8 @@
             "プランチャガナドール"
         ],
         "horse": "El Condor Pasa (Original)",
-        "downgrade": "Corazón ☆ Ardiente"
+        "downgrade": "Corazón ☆ Ardiente",
+        "gametora_id": "100141"
     },
     {   "skill_name": "This Dance is for Vittoria!",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5542,7 +5575,8 @@
             "tm opera o",
             "ヴィットーリアに捧ぐ舞踏"
         ],
-        "horse": "TM Opera O (Original)"
+        "horse": "TM Opera O (Original)",
+        "gametora_id": "100151"
     },
     {   "skill_name": "Behold Thine Emperor's Divine Might",
         "description": "Increases speed by 0.45 for 5.0s on the final straight.",
@@ -5565,7 +5599,8 @@
             "thou witness the heavenly might of the emperor",
             "汝皇帝の神威を見よ"
         ],
-        "horse": "Symboli Rudolf (Original)"
+        "horse": "Symboli Rudolf (Original)",
+        "gametora_id": "100171"
     },
     {   "skill_name": "Blazing Pride",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5589,7 +5624,8 @@
             "ブレイズオブプライド"
         ],
         "horse": "Air Groove (Original)",
-        "downgrade": "Empress's Pride"
+        "downgrade": "Empress's Pride",
+        "gametora_id": "100181"
     },
     {   "skill_name": "∴win Q.E.D.",
         "description": "Increases speed by 0.35 for 5.0s when overtaking, between 1st to 4th place, on the final corner.",
@@ -5611,7 +5647,8 @@
             "win q.e.d",
             "biwa hayahide"
         ],
-        "horse": "Biwa Hayahide (Original)"
+        "horse": "Biwa Hayahide (Original)",
+        "gametora_id": "100231"
     },
     {   "skill_name": "Flashy☆Landing",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -5635,7 +5672,8 @@
             "ひらめきランディング"
         ],
         "horse": "Mayano Top Gun (Original)",
-        "downgrade": "1st Place Kiss☆"
+        "downgrade": "1st Place Kiss☆",
+        "gametora_id": "100241"
     },
     {   "skill_name": "G00 1st. F∞;",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5658,7 +5696,8 @@
             "gundam bourbon",
             "mihono bourbon"
         ],
-        "horse": "Mihono Bourbon (Original)"
+        "horse": "Mihono Bourbon (Original)",
+        "gametora_id": "100261"
     },
     {   "skill_name": "Blue Rose Closer",
         "description": "Increases speed by 0.35 for 5.0s on the last straight.",
@@ -5681,7 +5720,8 @@
             "blue rose chaser",
             "ブルーローズチェイサー"
         ],
-        "horse": "Rice Shower (Original)"
+        "horse": "Rice Shower (Original)",
+        "gametora_id": "100301"
     },
     {   "skill_name": "Our Ticket to Win!",
         "description": "Increases speed by 0.35 for 5.0s on the last straight.",
@@ -5705,7 +5745,8 @@
             "勝利のチケットを君にッ"
         ],
         "horse": "Winning Ticket (Original)",
-        "downgrade": "V is for Victory!"
+        "downgrade": "V is for Victory!",
+        "gametora_id": "100351"
     },
     {   "skill_name": "Genius x Bakushin = Victory",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5729,7 +5770,8 @@
             "優等生xバクシン=大勝利ッ"
         ],
         "horse": "Sakura Bakushin O (Original)",
-        "downgrade": "Class Rep + Speed = Bakushin"
+        "downgrade": "Class Rep + Speed = Bakushin",
+        "gametora_id": "100411"
     },
     {   "skill_name": "I See Victory in My Future!",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5753,7 +5795,8 @@
             "来ます来てます来させます"
         ],
         "horse": "Matikanefukukitaru (Original)",
-        "downgrade": "Luck Be with Me!"
+        "downgrade": "Luck Be with Me!",
+        "gametora_id": "100561"
     },
     {   "skill_name": "Just a Little Farther!",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5777,7 +5820,8 @@
             "きっとその先へ"
         ],
         "horse": "Nice Nature (Original)",
-        "downgrade": "I Can Win Sometimes, Right?"
+        "downgrade": "I Can Win Sometimes, Right?",
+        "gametora_id": "100601"
     },
     {   "skill_name": "Prideful King",
         "description": "Increases speed by 0.45 for 5.0s.",
@@ -5800,7 +5844,8 @@
             "pride of king"
         ],
         "horse": "King Halo (Original)",
-        "downgrade": "Call Me KING"
+        "downgrade": "Call Me King",
+        "gametora_id": "100611"
     },
     {   "skill_name": "#LookatCurren",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -5821,7 +5866,8 @@
             "lookatcurren",
             "curren chan original"
         ],
-        "horse": "Curren Chan (Original)"
+        "horse": "Curren Chan (Original)",
+        "gametora_id": "100381"
     },
     {   "skill_name": "Nemesis",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5842,7 +5888,8 @@
             "nemesis",
             "narita taishin"
         ],
-        "horse": "Narita Taishin (Original)"
+        "horse": "Narita Taishin (Original)",
+        "gametora_id": "100501"
     },
     {   "skill_name": "SPARKLY☆STARDOM",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -5866,7 +5913,8 @@
             "sparkling stardom",
             "キラキラSTARDOM"
         ],
-        "horse": "Smart Falcon (Original)"
+        "horse": "Smart Falcon (Original)",
+        "gametora_id": "100461"
     },
     {   "skill_name": "Shadow Break",
         "description": "Condition 1 - Increases speed by 0.35 for 5.0s. \n If Condition 2 is also true, increases speed by 0.45 instead.",
@@ -5891,7 +5939,8 @@
             "shadow break",
             "narita brian original"
         ],
-        "horse": "Narita Brian (Original)"
+        "horse": "Narita Brian (Original)",
+        "gametora_id": "100161"
     },
     {   "skill_name": "Eternal Moments",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -5914,7 +5963,8 @@
             "summer breeze the eternal moment",
             "薫風永遠なる瞬間を"
         ],
-        "horse": "Air Groove (Wedding)"
+        "horse": "Air Groove (Wedding)",
+        "gametora_id": "110181"
     },
     {   "skill_name": "Flowery☆Maneuver",
         "description": "Condition 1 - Increases speed by 0.35 for 5.0s.\n Condition 2 - Increases acceleration by 0.4 for 4.0s.",
@@ -5941,7 +5991,8 @@
             "mayano top gun wedding",
             "フラワリーマニューバ"
         ],
-        "horse": "Mayano Top Gun (Wedding)"
+        "horse": "Mayano Top Gun (Wedding)",
+        "gametora_id": "110241"
     },
     {   "skill_name": "You and Me! One-on-One!",
         "description": "Increases speed by 0.35 for 5.0s on the final straight.",
@@ -5965,7 +6016,8 @@
             "one on one dead heat",
             "タイマンデッドヒート"
         ],
-        "horse": "Hishi Amazon (Original)"
+        "horse": "Hishi Amazon (Original)",
+        "gametora_id": "100121"
     },
     {   "skill_name": "Lights of Vaudeville",
         "description": "Increases speed by 0.45 for 5.0s.",
@@ -5989,7 +6041,8 @@
             "glittering star vaudeville",
             "煌星のヴォードヴィル"
         ],
-        "horse": "Fuji Kiseki (Original)"
+        "horse": "Fuji Kiseki (Original)",
+        "gametora_id": "100051"
     },
     {   "skill_name": "A Kiss for Courage",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6013,7 +6066,8 @@
             "heartfelt smooch",
             "グッときてChu"
         ],
-        "horse": "Maruzensky (Summer)"
+        "horse": "Maruzensky (Summer)",
+        "gametora_id": "110041"
     },
     {   "skill_name": "I Never Goof Up!",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -6035,7 +6089,8 @@
             "i never goof up",
             "meisho doto original"
         ],
-        "horse": "Meisho Doto (Original)"
+        "horse": "Meisho Doto (Original)",
+        "gametora_id": "100581"
     },
     {   "skill_name": "Schwarzes Schwert",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6057,7 +6112,8 @@
             "schwarzes schwert",
             "eishin flash original"
         ],
-        "horse": "Eishin Flash (Original)"
+        "horse": "Eishin Flash (Original)",
+        "gametora_id": "100371"
     },
     {   "skill_name": "Bountiful Harvest",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6081,7 +6137,8 @@
             "grains become ripe",
             "禾スナハチ登ル"
         ],
-        "horse": "Matikanefukukitaru (Full Armor)"
+        "horse": "Matikanefukukitaru (Full Armor)",
+        "gametora_id": "110561"
     },
     {   "skill_name": "YUMMY☆SPEED!",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -6103,7 +6160,8 @@
             "hishi akebono original",
             "im full speed"
         ],
-        "horse": "Hishi Akebono (Original)"
+        "horse": "Hishi Akebono (Original)",
+        "gametora_id": "100281"
     },
     {   "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
         "description": "Increases speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
@@ -6127,7 +6185,8 @@
             "kyuute last spurt",
             "尊み☆ﾗｽﾄｽﾊﾟﾄ"
         ],
-        "horse": "Agnes Digital (Original)"
+        "horse": "Agnes Digital (Original)",
+        "gametora_id": "100191"
     },
     {   "skill_name": "Give Mummy a Hug ♡",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -6150,7 +6209,8 @@
             "round and round mummy trick",
             "ぐるぐるマミートリック"
         ],
-        "horse": "Super Creek (Halloween)"
+        "horse": "Super Creek (Halloween)",
+        "gametora_id": "110451"
     },
     {   "skill_name": "A Princess Must Seize Victory!",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6172,7 +6232,8 @@
             "victory befitting a princess",
             "姫たるもの勝利をこの手に"
         ],
-        "horse": "Kawakami Princess (Original)"
+        "horse": "Kawakami Princess (Original)",
+        "gametora_id": "100391"
     },
     {   "skill_name": "Chasing After You",
         "description": "Reduces speed by 0.05 to 5 umas ahead of you and increases your speed by 0.25 for 6.0s.",
@@ -6194,7 +6255,8 @@
             "coughy original",
             "アナタヲオイカケテ"
         ],
-        "horse": "Manhattan Cafe (Original)"
+        "horse": "Manhattan Cafe (Original)",
+        "gametora_id": "100251"
     },
     {   "skill_name": "Arrows Whistle, Shadows Disperse",
         "description": "Increases speed by 0.35 on the final corner for 6.0s.",
@@ -6217,7 +6279,8 @@
             "翳り退くさざめきの矢",
             "howling arrow piercing the darkness"
         ],
-        "horse": "Symboli Rudolf (Festival)"
+        "horse": "Symboli Rudolf (Festival)",
+        "gametora_id": "110171"
     },
     {   "skill_name": "Dancing in the Leaves",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -6239,7 +6302,8 @@
             "gold city festival",
             "get down"
         ],
-        "horse": "Gold City (Festival)"
+        "horse": "Gold City (Festival)",
+        "gametora_id": "110401"
     },
     {   "skill_name": "Pop & Polish",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6262,7 +6326,8 @@
             "tosen jordan original",
             "yeah vivid time"
         ],
-        "horse": "Tosen Jordan (Original)"
+        "horse": "Tosen Jordan (Original)",
+        "gametora_id": "100481"
     },
     {   "skill_name": "Festive Miracle",
         "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s. Recover HP by 3.5%.",
@@ -6285,7 +6350,8 @@
             "聖夜のミラクルラン",
             "christmas eve miracle run"
         ],
-        "horse": "Oguri Cap (Christmas)"
+        "horse": "Oguri Cap (Christmas)",
+        "gametora_id": "110061"
     },
     {   "skill_name": "Presents from X",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6308,7 +6374,8 @@
             "biwa hayahide christmas xmas",
             "xbiwa"
         ],
-        "horse": "Biwa Hayahide (Christmas)"
+        "horse": "Biwa Hayahide (Christmas)",
+        "gametora_id": "110231"
     },
     {   "skill_name": "Fairy Tale",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -6329,7 +6396,8 @@
             "fairy tale",
             "fine motion original"
         ],
-        "horse": "Fine Motion (Original)"
+        "horse": "Fine Motion (Original)",
+        "gametora_id": "100221"
     },
     {   "skill_name": "White Lightning Comin' Through!",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 5.0s.",
@@ -6359,7 +6427,7 @@
             "imma show you white lightning"
         ],
         "horse": "Tamamo Cross (Original)",
-        "url": "https://gametora.com/umamusume/skill-condition-viewer?skill=100211"
+        "gametora_id": "100211"
     },
     {   "skill_name": "Barcarole of Blessings",
         "description": "Condition 1 - Increases speed by 0.45 for 4.0s. \n Condition 2 - Increases speed by 0.35 for 4.0s.",
@@ -6388,7 +6456,7 @@
             "blessed barcarolle"
         ],
         "horse": "T M Opera O (New Year)",
-        "url": "https://gametora.com/umamusume/skill-condition-viewer?skill=110151"
+        "gametora_id": "110151"
     },
     {   "skill_name": "114th Time's the Charm",
         "description": "Increases speed by 0.2 - 0.4 for 4.0s - 8.0s based on the distance from the leader.",
@@ -6412,7 +6480,7 @@
             "fall down 113 times, get up 114 times"
         ],
         "horse": "Haru Urara (New Year)",
-        "url": "https://gametora.com/umamusume/skill-condition-viewer?skill=110521"
+        "gametora_id": "110521"
     },
 
 
@@ -7336,7 +7404,8 @@
             "burning muscles",
             "燃えろ筋肉"
         ],
-        "upgrade": "Let's Pump Some Iron!"
+        "upgrade": "Let's Pump Some Iron!",
+        "gametora_id": "10271"
     },
     {   "skill_name": "Red Shift/LP1211-M",
         "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -7359,7 +7428,8 @@
             "紅焔ギア",
             "lp1211m"
         ],
-        "horse": "Maruzensky (Original)"
+        "horse": "Maruzensky (Original)",
+        "gametora_id": "100041"
     },
     {   "skill_name": "Shooting for Victory!",
         "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -7381,7 +7451,8 @@
             "victory shot",
             "ヴィクトリーショット"
         ],
-        "horse": "Taiki Shuttle (Original)"
+        "horse": "Taiki Shuttle (Original)",
+        "gametora_id": "100101"
     },
     {   "skill_name": "Let's Pump Some Iron!",
         "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -7405,7 +7476,8 @@
             "レッツアナボリック"
         ],
         "horse": "Mejiro Ryan (Original)",
-        "downgrade": "Feel the Burn!"
+        "downgrade": "Feel the Burn!",
+        "gametora_id": "100271"
     },
     {   "skill_name": "Angling and Scheming",
         "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -7427,7 +7499,8 @@
             "seiun sky",
             "アングリングxスキーミング"
         ],
-        "horse": "Seiun Sky (Original)"
+        "horse": "Seiun Sky (Original)",
+        "gametora_id": "100201"
     },
     {   "skill_name": "Condor's Fury",
         "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -7450,7 +7523,8 @@
             "condor onslaught",
             "コンドル猛撃波"
         ],
-        "horse": "El Condor Pasa (Fantasy)"
+        "horse": "El Condor Pasa (Fantasy)",
+        "gametora_id": "110141"
     },
     {   "skill_name": "KEEP IT REAL.",
         "description": "Increases acceleration by 0.3 for 6.0s.",
@@ -7471,7 +7545,8 @@
             "keep it real",
             "gold city original"
         ],
-        "horse": "Gold City (Original)"
+        "horse": "Gold City (Original)",
+        "gametora_id": "100401"
     },
     {   "skill_name": "Moving Past, and Beyond",
         "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -7501,7 +7576,8 @@
             "彼方その先へ",
             "beyond the other side"
         ],
-        "horse": "Mejiro Dober (Original)"
+        "horse": "Mejiro Dober (Original)",
+        "gametora_id": "100591"
     },
     
     {   "skill_name": "Corner Acceleration x",
