@@ -972,19 +972,14 @@ export function buildCMEmbed(cm) {
     ],
     components: [
       {
-        type: 2,
+        type: 1,
         components: [
           {
             type: 2, // Button
             style: 5, // Link
             label: "To Umalator",
             url: cm.umalator
-          }
-        ]
-      },
-      {
-        type: 2, // 
-        components: [
+          },
           {
             type: 2, // Button
             style: 2, // Secondary
