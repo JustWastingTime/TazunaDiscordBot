@@ -151,7 +151,7 @@ function buildLeaderboardPayload(clubNames, usersList, serversList) {
   const header = [
     padRight("Rank", rankWidth),
     padRight("Name", nameWidth),
-    padLeft("Total Fans", fansWidth),
+    padLeft("Total Fans", fansWidth), 
     padLeft("Daily Avg", dailyWidth),
     "Zone"
   ].join("  ");
@@ -161,7 +161,7 @@ function buildLeaderboardPayload(clubNames, usersList, serversList) {
   // Body
   const bodyLines = rows.map(r =>
     `${padRight(r.rank, rankWidth)}  ` +
-    `${padRight(truncate(r.name.replace(/！/g, '!'), nameWidth), nameWidth)}  ` +
+    `${padRight(truncate(r.name.replace(/！/g, '!').replace(/@/g, ''), nameWidth), nameWidth)}  ` +
     `${padLeft(r.fans, fansWidth)}  ` +
     `${padLeft(r.daily, dailyWidth)}  ` +
     `${r.colorEmoji}`
