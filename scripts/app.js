@@ -639,7 +639,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         function padLeft(s, w)  { return String(s).padStart(w, ' '); }
 
         const bodyLines = rows.map(r =>
-          `${padRight(r.rank, rankWidth)}  ${padRight(truncate(r.name.replace(/！/g, '!'), nameWidth), nameWidth)}  ${padLeft(r.fans, fansWidth)}  ${padLeft(r.daily, dailyWidth)}  ${r.colorEmoji}`
+          `${padRight(r.rank, rankWidth)}  ${padRight(truncate(r.name.replace(/！/g, '!').replace(/@/g, ''), nameWidth), nameWidth)}  ${padLeft(r.fans, fansWidth)}  ${padLeft(r.daily, dailyWidth)}  ${r.colorEmoji}`
         );
 
         // Compose code-block table
