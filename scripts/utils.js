@@ -618,21 +618,18 @@ export function buildSkillEmbed(skill, supporterList) {
       inline: false
     },
     {
-      name: "Rating",
-      value: skill.champs_meet + '\n \u200B',
-      inline: true
-    },
-    {
       name: 'Review',
       value: skill.review + '\n \u200B',
-      inline: false
-    },
-    { 
+      inline: true
+    }
+  ]
+  if (!skill.horse) {
+    fields.push({
       name: 'Available On', 
       value: supporterList + '\n \u200B', 
       inline: false 
-    }
-  ]
+    })
+  }
 
   if (skill.horse) {
     fields.push({
