@@ -2744,7 +2744,7 @@
     },
     {   "id": "102601 - Mihono Bourbon Valentines",
         "character_name": "Mihono Bourbon",
-        "type": "Original",
+        "type": "Valentines",
         "costume": "CODE: ICING",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -3549,7 +3549,7 @@
     },
     {   "id": "103702 - Eishin Flash Valentines",
         "character_name": "Eishin Flash",   
-        "type": "Original",
+        "type": "Valentines",
         "costume": "Precise Chocolatier",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
