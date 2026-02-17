@@ -3261,7 +3261,7 @@
         "upgrade": "Killer Tunes"
     },
     {   "skill_name": "Steadfast",
-        "description": "Increases speed by 0.15 for 3.0s.",
+        "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
         "conditions": [
             [
                 "Medium",
@@ -4347,7 +4347,7 @@
         "downgrade": "Up-Tempo"
     },
     {   "skill_name": "Unyielding",
-        "description": "Increases speed by 0.35 for 3.0s.",
+        "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
         "conditions": [
             [
                 "Medium",
