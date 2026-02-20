@@ -1258,15 +1258,14 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
 
     // "resource" command
     if (name === 'resource') {
-      const query = data.options?.find(opt => opt.name === "name")?.value?.toLowerCase();
+      const query = data.options?.find(opt => opt.name === "mode")?.value?.toLowerCase();
 
       // Find matches
       const matches = resources.filter(c => {
         if (!query) return true;
 
         return (
-          c.name.toLowerCase().includes(query) ||
-          c.number.toLowerCase().includes(query)
+          c.name.toLowerCase().includes(query)
         );
       });
 
