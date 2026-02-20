@@ -927,7 +927,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["tokyo racecourse x", "tokyo racetrack x", "東京レース場x"]
+        "aliases" : ["tokyo racecourse x", "tokyo racetrack x", "東京レース場x"],
+        "gametora_id": "200033"
     },
     {   "skill_name" : "Nakayama Racecourse x",
         "description" : "Stamina stat -40.",
@@ -942,7 +943,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["nakayama racecourse x", "nakayama racetrack x", "中山レース場x"]
+        "aliases" : ["nakayama racecourse x", "nakayama racetrack x", "中山レース場x"],
+        "gametora_id": "200043"
     },
     {   "skill_name" : "Hanshin Racecourse x",
         "description" : "Stamina stat -40.",
@@ -957,7 +959,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["hanshin racecourse x", "hanshin racetrack x", "阪神レース場x"]
+        "aliases" : ["hanshin racecourse x", "hanshin racetrack x", "阪神レース場x"],
+        "gametora_id": "200053"
     },
     {   "skill_name" : "Kyoto Racecourse x",
         "description" : "Stamina stat -40.",
@@ -972,7 +975,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["kyoto racecourse x", "kyoto racetrack x", "京都レース場x"]
+        "aliases" : ["kyoto racecourse x", "kyoto racetrack x", "京都レース場x"],
+        "gametora_id": "200063"
     },
     {   "skill_name" : "Chukyo Racecourse x",
         "description" : "Stamina stat -40.",
@@ -987,7 +991,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["chukyo racecourse x", "chukyo racetrack x", "中京レース場x"]
+        "aliases" : ["chukyo racecourse x", "chukyo racetrack x", "中京レース場x"],
+        "gametora_id": "200073"
     },
     {   "skill_name" : "Sapporo Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1002,7 +1007,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["sapporo racecourse x", "sapporo racetrack x", "札幌レース場x"]
+        "aliases" : ["sapporo racecourse x", "sapporo racetrack x", "札幌レース場x"],
+        "gametora_id": "200083"
     },
     {   "skill_name" : "Hakodate Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1017,7 +1023,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["hakodate racecourse x", "hakodate racetrack x", "函館レース場x"]
+        "aliases" : ["hakodate racecourse x", "hakodate racetrack x", "函館レース場x"],
+        "gametora_id": "200093"
     },
     {   "skill_name" : "Fukushima Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1032,7 +1039,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["fukushima racecourse x", "fukushima racetrack x", "福島レース場"]
+        "aliases" : ["fukushima racecourse x", "fukushima racetrack x", "福島レース場"],
+        "gametora_id": "200103"
     },
     {   "skill_name" : "Niigata Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1047,7 +1055,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["niigata racecourse x", "niigata racetrack x", "新潟レース場x"]
+        "aliases" : ["niigata racecourse x", "niigata racetrack x", "新潟レース場x"],
+        "gametora_id": "200113"
     },
     {   "skill_name" : "Kokura Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1062,7 +1071,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["kokura racecourse x", "kokura racetrack x", "小倉レース場x"]
+        "aliases" : ["kokura racecourse x", "kokura racetrack x", "小倉レース場x"],
+        "gametora_id": "200123"
     },
     {   "skill_name" : "Standard Distance x",
         "description" : "Stamina stat -40.",
@@ -1077,7 +1087,9 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["standard x", "core distances x", "根幹距離x"]
+        "aliases" : ["standard x", "core distances x", "根幹距離x"],
+        "gametora_id": "200133"
+
     },
     {   "skill_name" : "Non-Standard Distance x",
         "description" : "Stamina stat -40.",
@@ -1092,7 +1104,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["nonstandard x", "non standard x", "non core distances x", "非根幹距離x"]
+        "aliases" : ["nonstandard x", "non standard x", "non core distances x", "非根幹距離x"],
+        "gametora_id": "200143"
     },
     {   "skill_name": "Paddock Fright",
         "description": "Stamina stat -40.",
@@ -1111,14 +1124,15 @@
             "paddock fright",
             "timid",
             "小心者"
-        ]
+        ],
+        "gametora_id": "200321"
     },
-    {   "skill_name" : "Ooi Racecourse x",
+    {   "skill_name" : "Oi Racecourse x",
         "description" : "Stamina stat -40.",
         "conditions" :
         [
             [
-                "Ooi Racecourse"
+                "Oi Racecourse"
             ]
         ],
         "team_trials" : "F",
@@ -1126,7 +1140,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["ooi racecourse x", "oi racecourse x", "ooi racetrack x", "中山レース場x"]
+        "aliases" : ["ooi racecourse x", "oi racecourse x", "ooi racetrack x", "中山レース場x"],
+        "gametora_id": "200953"
     },
     {   "skill_name" : "Kawasaki Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1141,7 +1156,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["kawasaki racecourse x", "kawasaki racetrack x", "川崎レース場x"]
+        "aliases" : ["kawasaki racecourse x", "kawasaki racetrack x", "川崎レース場x"],
+        "gametora_id": "202203"
     },
     {   "skill_name" : "Funabashi Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1156,7 +1172,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["funabashi racecourse x", "funabashi racetrack x", "船橋レース場x"]
+        "aliases" : ["funabashi racecourse x", "funabashi racetrack x", "船橋レース場x"],
+        "gametora_id": "202213"
     },
     {   "skill_name" : "Morioka Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1171,7 +1188,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["morioka racecourse x", "morioka racetrack x", "盛岡レース場x"]
+        "aliases" : ["morioka racecourse x", "morioka racetrack x", "盛岡レース場x"],
+        "gametora_id": "202223"
     },
     {   "skill_name" : "Longchamp Racecourse x",
         "description" : "Stamina stat -40.",
@@ -1186,7 +1204,8 @@
         "review" : "",
         "rarity" : "normal",
         "category" : "staminanegative",
-        "aliases" : ["longchamp racecourse x", "ロンシャンレース場x"]
+        "aliases" : ["longchamp racecourse x", "ロンシャンレース場x"],
+        "gametora_id": "202733"
     },
     
     
@@ -6482,6 +6501,98 @@
         "horse": "Haru Urara (New Year)",
         "gametora_id": "110521"
     },
+    {   "skill_name": "Ambition to Surpass the Sakura",
+        "description": "Increases speed by 0.35 for 5.0s.",
+        "inherited": "Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "1st to 4th (CM), 1st to 5th (TT)",
+                "1 length behind or more",
+                "Last 300m of the race"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "ambition to surpass the sakura",
+            "sakura chiyono o original",
+            "憧れは桜を越える",
+            "longing beyond the sakura"
+        ],
+        "horse": "Sakura Chiyono O (Original)",
+        "gametora_id": "100691"
+    },
+    {   "skill_name": "A Lifelong Dream, A Moment's Flight",
+        "description": "Increases speed by 0.45 for 4.0s. Reduces HP by 1%",
+        "inherited": "Increases speed by 0.25 for 2.4s. Reduces HP by 1%",
+        "conditions": [
+            [
+                "1 length behind or more",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "a lifelong dream a moments flight",
+            "mejiro ardan original",
+            "一期の夢刹那の飛翔",
+            "a lifetimes dream a moments flight"
+        ],
+        "horse": "Mejiro Ardan (Original)",
+        "gametora_id": "100711"
+    },
+    {   "skill_name": "Operation Cacao",
+        "description": "Increases speed by 0.35 for 5.0s. Recover HP by 1.5%.",
+        "inherited": "Increases speed by 0.15 for 3.0s. Recover HP by 0.35%.",
+        "conditions": [
+            [
+                "1st to 4th,",
+                "3 lengths ahead or less",
+                "Corner",
+                "Mid race"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "operation cacao",
+            "mihono bourbon valentines",
+            "オペレーションcacao"
+        ],
+        "horse": "Mihono Bourbon (Valentines)",
+        "gametora_id": "110261"
+    },
+    {   "skill_name": "Guten Appetit ♪",
+        "description": "Increases speed by 0.35 for 6.0s.",
+        "inherited": "Increases speed by 0.15 for 3.6s.",
+        "conditions": [
+            [
+                "Overtake 3 times on the final corner and beyond",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "guten appetit ♪",
+            "eishin flash valentines"
+        ],
+        "horse": "Eishin Flash (Valentines)",
+        "gametora_id": "110371"
+    },
 
 
 
@@ -6501,7 +6612,8 @@
             "corner x",
             "clever cornerer x",
             "コーナー巧者 x"
-        ]
+        ],
+        "gametora_id": "200333"
     },
     {   "skill_name": "Defeatist",
         "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
@@ -6520,7 +6632,8 @@
             "defeatist",
             "resignation",
             "あきらめ癖"
-        ]
+        ],
+        "gametora_id": "200411"
     },
     {   "skill_name": "Reckless",
         "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
@@ -6540,10 +6653,11 @@
             "reckless",
             "negligience",
             "手抜き癖"
-        ]
+        ],
+        "gametora_id": "200421"
     },
     {   "skill_name": "Blatant Fear",
-        "description": "Reduces speed by 0.3 for 5  .0s. 30s cooldown.",
+        "description": "Reduces speed by 0.3 for 5.0s. 30s cooldown.",
         "conditions": [
             [
                 "Last 800m - 850m of the race"
@@ -6558,7 +6672,8 @@
             "blatant fear",
             "unfolding horror",
             "鮮明になる畏怖"
-        ]
+        ],
+        "gametora_id": "300051"
     },
     
     
@@ -7578,6 +7693,40 @@
         ],
         "horse": "Mejiro Dober (Original)",
         "gametora_id": "100591"
+    },
+    {   "skill_name": "Budding Blossom",
+        "description": "Condition 1 and 2 or 1 and 3 - Increases acceleration by 0.4 for 4.0s.",
+        "inherited": "Condition 1 and 2 or 1 and 3 - Increases acceleration by 0.2 for 2.4s.",
+        "conditions": [
+            [
+                "Blocked at the  sides for 2s or more",
+                "Corner",
+                "Mid race"
+            ],
+            [
+                "3rd to 4th (CM), 3rd to 5th (TT)",
+                "Second half of final corner",
+                "Late race and beyond"
+            ],
+            [
+                "3rd to 4th (CM), 3rd to 5th (TT)",
+                "Final straight",
+                "Late race and beyond"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "nishino flower original",
+            "budding blossom",
+            "つぼみほころぶ時",
+            "when the flower bud opens"
+        ],
+        "horse": "Nishino Flower (Original)",
+        "gametora_id": "100511"
     },
     
     {   "skill_name": "Corner Acceleration x",
