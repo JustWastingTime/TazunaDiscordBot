@@ -10,7 +10,8 @@ const cache = {
   races: [],
   champsmeets: [],
   legendraces: [],
-  misc: []
+  misc: [],
+  resources: []
 };
 
 // GitHub raw URLs
@@ -24,6 +25,7 @@ const urls = {
   legendraces: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/legendrace.json',
   schedule: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/schedule.json',
   misc: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/misc.json',
+  resources: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/resources.json',
 };
 
 // Function to fetch a JSON file

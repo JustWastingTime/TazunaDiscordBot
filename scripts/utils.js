@@ -963,17 +963,6 @@ export function buildCMEmbed(cm) {
     });
   }
 
-   // Kachi (guard against 512 limit)
-  if (cm.kachi && cm.kachi.length <= 512) {
-    buttons.push({
-      type: 2,
-      style: 5,
-      label: "To Umalator v2",
-      url: cm.kachi
-    });
-  }
-
-
   return {
     embeds: [
       {
@@ -988,6 +977,35 @@ export function buildCMEmbed(cm) {
         ],
         image: { url: cm.image },
         url: cm.url
+      }
+    ],
+    components: buttons.length
+      ? [
+          {
+            type: 1,
+            components: buttons
+          }
+        ]
+      : []
+  };
+}
+
+export function buildResourceEmbed(r) {
+  const buttons = [];
+  buttons.push({
+    type: 2,
+    style: 5,
+    label: "View Resource",
+    url: r.url
+  });
+  
+
+  return {
+    embeds: [
+      {
+        title: r.name,
+        description: r.description,
+        url: r.url
       }
     ],
     components: buttons.length

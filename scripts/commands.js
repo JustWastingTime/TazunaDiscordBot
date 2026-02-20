@@ -331,6 +331,35 @@ const SCHEDULE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, LOG_COMMAND, TRAINER_COMMAND, LEADERBOARD_COMMAND, BANANA_COMMAND, PARSE_COMMAND, REGISTER_COMMAND, SETCHANNELADMIN_COMMAND, SETCHANNELLEADERBOARD_COMMAND, SCHEDULE_COMMAND];
+const RESOURCE_COMMAND = {
+  name: 'resource',
+  description: 'Get the link to a specific resource',
+  options: [
+    {
+      type: 3,
+      name: 'mode',
+      description: 'Resource options',
+      required: true,
+      choices: [
+        { "name": "bible", "value": "bible" },
+        { "name": "club finder", "value": "club_finder" },
+        { "name": "friend finder", "value": "friend_finder" },
+        { "name": "guides", "value": "guides" },
+        { "name": "rating optimizer", "value": "rating_optimizer" },
+        { "name": "screenshot combiner", "value": "screenshot_combiner" },
+        { "name": "skill sheet", "value": "skill_sheet" },
+        { "name": "stamina calculator", "value": "stamina_calculator" },
+        { "name": "technical document", "value": "technical_document" },
+        { "name": "timeline", "value": "timeline" },
+        { "name": "umalator", "value": "umalator" }
+      ]
+    }
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, LOG_COMMAND, TRAINER_COMMAND, LEADERBOARD_COMMAND, BANANA_COMMAND, PARSE_COMMAND, REGISTER_COMMAND, SETCHANNELADMIN_COMMAND, SETCHANNELLEADERBOARD_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

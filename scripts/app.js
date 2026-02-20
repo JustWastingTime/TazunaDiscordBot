@@ -9,7 +9,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed } from './utils.js';
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
@@ -41,6 +41,7 @@ const champsmeets = cache.champsmeets;
 const legendraces = cache.legendraces;
 const misc = cache.misc;
 const schedule = cache.schedule;
+const resources = cache.resources;
 
 // Create an express app
 const app = express();
@@ -1255,7 +1256,38 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       return;
     }
 
+    // "resource" command
+    if (name === 'resource') {
+      const query = data.options?.find(opt => opt.name === "name")?.value?.toLowerCase();
 
+      // Find matches
+      const matches = resources.filter(c => {
+        if (!query) return true;
+
+        return (
+          c.name.toLowerCase().includes(query) ||
+          c.number.toLowerCase().includes(query)
+        );
+      });
+
+
+      // No matches
+      if (matches.length === 0) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: `❌ Resource "${query}" not found.` }
+        });
+      }
+
+      // One match → embed
+      if (matches.length === 1) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: buildResourceEmbed(matches[0])
+          
+        });
+      }
+    }
 
     console.error(`unknown command: ${name}`);
     return res.status(400).json({ error: 'unknown command' });

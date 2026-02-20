@@ -1,0 +1,47 @@
+[
+    {   "name": "bible",
+        "description": "Reference document for all things Uma Musume.",
+        "url": "https://docs.google.com/document/d/11X2P7pLuh-k9E7PhRiD20nDX22rNWtCpC1S4IMx_8pQ/edit?tab=t.0#heading=h.3q8sqsvs8ced"
+    },
+    {   "name": "club_finder",
+        "description": "A tool to find or track your club data.",
+        "url": "https://uma.moe/circles"
+    },
+    {   "name": "friend_finder",
+        "description": "A tool to lookup friends for parent (with affinity) and support cards.",
+        "url": "https://uma.moe/database"
+    },
+    {   "name": "guides",
+        "description": "Bunch of guides including, Champ's Meet, Team Trials and other things.",
+        "url": "https://uma.guide/"
+    },
+    {   "name": "rating_optimizer",
+        "description": "A tool to optimize picking your skills for maxing ratings.",
+        "url": "https://daftuyda.moe/optimizer"
+    },
+    {   "name": "screenshot_combiner",
+        "description": "A tool that combines your skill screenshots into one big screenshot.",
+        "url": "https://lt900ed.github.io/receipt_factor/"
+    },
+    {   "name": "skill_sheet",
+        "description": "A spreadsheet with skills, their ratings and cost effectiveness.",
+        "url": "https://docs.google.com/spreadsheets/d/1oB3eTvKqREtJDWJL0q80O_VjBcpOmRl5xE0z5fZKgFY/edit?gid=634506155#gid=634506155"
+    },
+    {   "name": "stamina_calculator",
+        "description": "A spreadsheet to calculate the needed stamina for a given race.",
+        "url": "https://docs.google.com/spreadsheets/d/1x6go-4Er40nbC3WgsXqHD5GkyzC_zbJ141C96OodVew"
+    },
+    {   "name": "technical_document",
+        "description": "Technical document for the more advanced players.",
+        "url": "https://docs.google.com/document/d/15VzW9W2tXBBTibBRbZ8IVpW6HaMX8H0RP03kq6Az7Xg/edit?tab=t.0"
+    },
+    {   "name": "timeline",
+        "description": "A timeline of upcoming events, CM, legend races and banners.",
+        "url": "https://uma.moe/timeline"
+    },
+    {   "name": "umalator",
+        "description": "An updated race-skill simulator with uma saving, screenshot support and more.",
+        "url": "https://dev.umalator.app/v2/"
+    }
+    
+]
