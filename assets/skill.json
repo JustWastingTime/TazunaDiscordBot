@@ -7329,8 +7329,32 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Easy to trigger but isn't very strong.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7354,8 +7378,32 @@
                 "Last 200m of the race"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "A bit similar to Oguri Cap (Original)'s skill. Much more difficult to consistently trigger.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7378,8 +7426,32 @@
                 "Between 50% to 65% of the race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Easy to trigger but the effect will occur in the mid-race, which may not be impactful.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7400,8 +7472,32 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Easy to trigger for Late Surgers and End Closers but weak effect.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7423,8 +7519,32 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Helps Front Runners maintain their lead.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7451,8 +7571,32 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "S",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Triggering both conditions net you a noticeable speed boost for a wide range of positions. Not ideal on a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7473,8 +7617,32 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Consistent for non Front Runners. Effect is weak though.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7502,8 +7670,32 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Flexible skill that can trigger speed boost for Front Runners and Pace Chasers or acceleration boost for Late Surgers and End Closers. Speed effect is viable on tracks with speed carry over into the final corner (check umalator). Acceleration is good on tracks where the Last Spurt is on the final corner (also check umalator).",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7525,8 +7717,32 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Decent skill for Late Surger and End Closer.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7550,8 +7766,32 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Similar to Oguri Cap (Original)'s skill but works on Front Runners as well.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7575,8 +7815,32 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Very easy to trigger, but the numbers are a bit low. With the right recovery can be timed to boost effectively.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7602,8 +7866,32 @@
                 "Late race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7625,8 +7913,32 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Effects are weak. Late Start or Rushed may happen and void this skill.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7672,8 +7984,32 @@
                 "Between 45% to 65% of the race"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Activates somewhere in the mid race. Effects are a bit weak.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7694,8 +8030,32 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7720,8 +8080,32 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7744,53 +8128,6 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
-        "review": "Hard to trigger in CM as being blocked at the sides for 2s is unlikely.",
-        "rarity": "unique",
-        "category": "rainbowvelocity",
-        "aliases": [
-            "a princess must seize victory",
-            "kawakami princess original og",
-            "victory befitting a princess",
-            "姫たるもの勝利をこの手に"
-        ],
-        "horse": "Kawakami Princess (Original)",
-        "gametora_id": "100391"
-    },
-    {   "skill_name": "Chasing After You",
-        "description": "Reduces speed by 0.05 to 5 umas ahead of you and increases your speed by 0.25 for 6.0s.",
-        "inherited": "Reduces speed by 0.025 to 5 umas ahead of you and increases your speed by 0.05 for 3.6s.",
-        "conditions": [
-            [
-                "4th to 6th (CM), 5th to 8th (TT)",
-                "Second half of the race"
-            ]
-        ],
-        "team_trials": "C",
-        "champs_meet": "C",
-        "review": "Effects are small when inherited.",
-        "rarity": "unique",
-        "category": "rainbowvelocity",
-        "aliases": [
-            "chasing after you",
-            "manhattan cafe original og",
-            "coughy original og",
-            "アナタヲオイカケテ"
-        ],
-        "horse": "Manhattan Cafe (Original)",
-        "gametora_id": "100251"
-    },
-    {   "skill_name": "Arrows Whistle, Shadows Disperse",
-        "description": "Increases speed by 0.35 on the final corner for 6.0s.",
-        "inherited": "Increases speed by 0.15 on the final corner for 3.6s.",
-        "conditions": [
-            [
-                "1st to 5th (CM), 1st to 6th (TT)",
-                "Be an overtake target for 2s or more",
-                "Late race and beyond"
-            ]
-        ],
         "effect":
         [
             {
@@ -7817,7 +8154,65 @@
         "preconditions": 
         [
         ],
-        
+        "review": "Hard to trigger in CM as being blocked at the sides for 2s is unlikely.",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "a princess must seize victory",
+            "kawakami princess original og",
+            "victory befitting a princess",
+            "姫たるもの勝利をこの手に"
+        ],
+        "horse": "Kawakami Princess (Original)",
+        "gametora_id": "100391"
+    },
+    {   "skill_name": "Chasing After You",
+        "description": "Chase after an unseen friend when in midpack in the second half of the race, moderately increasing velocity steadily and very slightly intimidating runners ahead..",
+        "effect":
+        [
+            {
+                "description": "Reduces speed by 0.05 to 5 umas ahead of you and increases your target speed by 0.25 for 6.0s.",
+                "inherited": "Reduces speed by 0.025 to 5 umas ahead of you and increases your target speed by 0.05 for 3.6s.",
+                "conditions": 
+                [
+                    "4th to 6th (CM), 5th to 8th (TT)",
+                    "Second half of the race"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        "review": "Effects are small when inherited.",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "chasing after you",
+            "manhattan cafe original og",
+            "coughy original og",
+            "アナタヲオイカケテ"
+        ],
+        "horse": "Manhattan Cafe (Original)",
+        "gametora_id": "100251"
+    },
+    {   "skill_name": "Arrows Whistle, Shadows Disperse",
+        "description": "Increase velocity with a blazing spirit when pressured by another runner in the front part of the pack on the final corner or later.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 on the final corner for 6.0s.",
+                "inherited": "Increases target speed by 0.15 on the final corner for 3.6s.",
+                "conditions": 
+                [
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Be an overtake target for ≥2s",
+                    "Final corner and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7831,17 +8226,23 @@
         "gametora_id": "110171"
     },
     {   "skill_name": "Dancing in the Leaves",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "3rd to 6th (CM), 4th to 8th (TT)",
-                "Blocked at the sides for 2s or more",
-                "Final corner"
-            ]
+        "description": "Increase ability to break out of the pack when engaged in a challenge in midpack on the final corner.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd to 6th (CM), 4th to 8th (TT)",
+                    "Blocked at the sides for ≥2s",
+                    "Final corner"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7854,17 +8255,33 @@
         "gametora_id": "110401"
     },
     {   "skill_name": "Pop & Polish",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 4th (CM), 1st to 5th (TT)",
-                "Overtake target exists OR Be an overtake target for 1s or more",
-                "Final straight"
-            ]
+        "description": "Get hyped and increase velocity when pressured by or passing another runner while well-positioned on the final straight.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "2nd to 3rd (CM), 2nd to 4th (TT)",
+                    "Be an overtake target for ≥2s",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 2nd",
+                    "Succesfully overtook another uma",
+                    "Final straight"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7878,16 +8295,22 @@
         "gametora_id": "100481"
     },
     {   "skill_name": "Festive Miracle",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s. Recover HP by 3.5%.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s. Recover HP by 0.5%.",
-        "conditions": [
-            [
-                "Activated 3 or more recovery skill",
-                "Second half of the race"
-            ]
+        "description": "Control breathing and kick forward hard toward victory in the second half of the race after recovering endurance with skills at least 3 times.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s. Recover HP by 3.5%.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s. Recover HP by 0.5%.",
+                "conditions": 
+                [
+                    "Activated ≥3 recovery skills",
+                    "Second half of the race"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "preconditions": 
+        [
+        ],
         "review": "Values are too low to inherit.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7902,18 +8325,24 @@
         "gametora_id": "110061"
     },
     {   "skill_name": "Presents from X",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race",
-                "2nd to 4th (CM), 2nd to 5th (TT)",
-                "Mid race",
-                "Second half of the race"
-            ]
+        "description": "Increase velocity by deriving a path to victory mid-race after staying well-positioned from the start of the race up until the second half.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race",
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Mid race",
+                    "Second half of the race"
+                ]
+            }
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7926,17 +8355,23 @@
         "gametora_id": "110231"
     },
     {   "skill_name": "Fairy Tale",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "2nd to 4th (CM), 2nd to 5th (TT)",
-                "Blocked at the sides for 2s or more",
-                "Second half of the race"
-            ]
+        "description": "Increase velocity with the excitement of running when engaged in a challenge while well-positioned in the second half of the race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Blocked at the sides for ≥2s",
+                    "Second half of the race"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "B",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7949,23 +8384,34 @@
         "gametora_id": "100221"
     },
     {   "skill_name": "White Lightning Comin' Through!",
-        "description": "Increases speed by 0.35 and acceleration by 0.1 for 5.0s.",
-        "inherited": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
-        "conditions": [
-            [
-                "6th to 7th (CM), 8th to 9th (TT)",
-                "Overtake target exists",
-                "Second half of the race",
-                "Straight"
-            ],
-            [
-                "2nd to 3rd (CM), 2nd to 4th (TT)",
-                "Second half of the race",
-                "Straight"
-            ]
+        "description": "Bolt down the track like lightning when well-positioned or aiming for the front from midpack on a straight in the second half of the race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "conditions": 
+                [
+                    "6th to 7th (CM), 8th to 9th (TT)",
+                    "Overtake target exists",
+                    "Any straight",
+                    "Second half of the race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "conditions": 
+                [
+                    "2nd to 3rd (CM), 2nd to 4th (TT)",
+                    "Any straight",
+                    "Second half of the race"     
+                ]
+            }
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7979,23 +8425,34 @@
         "gametora_id": "100211"
     },
     {   "skill_name": "Barcarole of Blessings",
-        "description": "Condition 1\nIncreases speed by 0.45 for 4.0s. \n\n Condition 2\nIncreases speed by 0.35 for 4.0s.",
-        "inherited": "Condition 1\nIncreases speed by 0.25 for 2.4s. \n\n Condition 2\nIncreases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "1st to 4th (CM), 1st to 5th (TT)",
-                "Activated 7 skills or more",
-                "Last 400m of the race"
-            ],
-            [
-                "1st to 4th (CM), 1st to 5th (TT)",
-                "Activated 6 skills or less",
-                "Last 400m of the race"
-            ]
+        "description": "Increase velocity for a moderate duration when in the front part of the pack with 400m remaining. If at least 7 skills have been activated, greatly increase velocity for a moderate duration instead.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.45 for 4.0s.",
+                "inherited": "Increases target speed by 0.25 for 2.4s.",
+                "conditions": 
+                [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Activated ≥7 skills",
+                    "At the last 400m of the race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 4.0s.",
+                "inherited": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": 
+                [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Activated 6 skills or less",
+                    "At the last 400m of the race"
+                ]
+            }
         ],
-        "team_trials": "S",
-        "champs_meet": "S",
-        "review": "",
+        "preconditions": 
+        [
+        ],
+        "review": "A good inherit on medium and long maps.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -8010,41 +8467,22 @@
         "gametora_id": "110151"
     },
     {   "skill_name": "114th Time's the Charm",
-        "description": "Increases speed by 0.2 - 0.4 for 4.0s - 8.0s based on the distance from the leader.",
-        "inherited": "Increases speed by 0.2 - 0.4 for 2.4s - 4.8s based on the distance from the leader.",
-        "conditions": [
-            [
-                "7m or more behind the first place",
-                "Final corner"
-            ]
-        ],
+        "description": "Give max effort when far from the lead on the final corner, moderately increasing velocity steadily for a duration proportional to distance from the lead.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.2 - 0.4 for 4.0s - 8.0s based on the distance from the leader.",
+                "inherited": "Increases target speed by 0.04 - 0.08 for 2.4s - 4.8s based on the distance from the leader.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "≥7m behind 1st place",
+                    "Final corner"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -8079,7 +8517,6 @@
         "preconditions": 
         [
         ],
-        
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -8188,7 +8625,7 @@
                 "conditions": 
                 [
                     "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
+                    "≥5m behind 1st place",
                     "Final straight"
                 ]
             },
@@ -8198,7 +8635,7 @@
                 "conditions": 
                 [
                     "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
+                    "≥5m behind 1st place",
                     "Final straight"
                 ]
             }
@@ -8269,7 +8706,7 @@
                 "conditions": 
                 [
                     "2nd to 5th",
-                    "≤5 lengths behind 1st place",
+                    "≤5m behind 1st place",
                     "Just entered final straight"
                 ]
             },
@@ -8279,7 +8716,7 @@
                 "conditions": 
                 [
                     "2nd to 5th",
-                    ">5 lengths behind 1st place",
+                    ">5m behind 1st place",
                     "Just entered final straight"
                 ]
             }
