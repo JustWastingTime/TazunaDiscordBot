@@ -6511,8 +6511,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Decent skill with somewhat consistent conditions. Not ideal for a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6538,8 +6552,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "A long duration speed boost but the conditions are not consistently triggerable.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6560,8 +6588,22 @@
                 "Between 50% to 60% of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6582,8 +6624,22 @@
                 "Last 200m of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6610,8 +6666,22 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6632,8 +6702,22 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6655,8 +6739,22 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6678,8 +6776,22 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6701,8 +6813,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6725,8 +6851,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6748,8 +6888,22 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6771,8 +6925,22 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6794,8 +6962,22 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6817,8 +6999,22 @@
                 "Last 200m of the race"
             ]
         ],
-        "team_trials": "-",
-        "champs_meet": "-",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "You can't inherit this.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6839,8 +7035,22 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Easy to trigger but isn't very strong.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6862,8 +7072,22 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Effect is weak. Need to be first to trigger.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6887,8 +7111,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Decent skill with somewhat consistent conditions. Not ideal for a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6911,8 +7149,22 @@
                 "Last 200m of the race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "S",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Consistent skill with very easy conditions. Not ideal for a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6934,8 +7186,22 @@
                 "Between 50% to 60% of the race"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Easy to trigger for Late Surgers and End Closers but the speed increase is too low.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6959,8 +7225,22 @@
                 "Last 200m of the race"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Inconsistent conditions for a very mediocre effect.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6989,8 +7269,22 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Better on Front Runners. Skill triggers easily but may not trigger at the right moments due to the second half of the race condition. Values are also a bit low to inherit.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7014,8 +7308,22 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "An okay speed skill on non Front Runners.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7037,8 +7345,22 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Final corner is map dependant. Situationally useful for Front Runners and Pace Chasers.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7061,8 +7383,22 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "May help your losing Front Runner to catch up if they're second. Last straight acceleration can also be very good on specific tracks.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7086,8 +7422,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Final corner speed boost may be lost if that is the acceleration phase. Decent skill depending on track.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7108,8 +7458,22 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "S",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Strong effect with a somewhat easy condition to trigger on Late Surgers and End Closers. Harder to trigger on Pace Chasers.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7133,8 +7497,22 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Final corner speed boost may be lost if that is the acceleration phase. Situationally good on a Late Surger.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7158,8 +7536,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Final corner speed boost may be lost if that is the acceleration phase. Situationally good on a Front Runner.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7181,8 +7573,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "A",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Better on Front Runners and Pace Chasers. Acceleration on the final corner is super impactful on specific tracks.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7207,8 +7613,22 @@
                 "Final straight"
             ]
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Effects are weak. Late Start or Rushed may happen and void this skill.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7230,8 +7650,22 @@
                 "Final corner and beyond"
             ]
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
         "review": "Easy to trigger. Effects are rather weak.",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7245,18 +7679,26 @@
         "gametora_id": "100301"
     },
     {   "skill_name": "Our Ticket to Win!",
-        "description": "Increases speed by 0.35 for 5.0s on the last straight.",
-        "inherited": "Increases speed by 0.15 for 3.0s on the last straight.",
-        "conditions": [
-            [
-                "1st to 5th place",
-                "Blocked in the sides for 2s or more",
-                "Final corner and beyond"
-            ]
+        "description": "Increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "Precondition is true",
+                    "1st to 5th place",
+                    "Final straight"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
-        "review": "Unlikely to be blocked on the sides on the last straight in Champion's Meet. Effects are also rather weak.",
+        "preconditions": 
+        [
+            "Blocked at the sides for ≥2s",
+            "Final corner and beyond"
+        ],
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7270,18 +7712,24 @@
         "gametora_id": "100351"
     },
     {   "skill_name": "Genius x Bakushin = Victory",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 3rd place",
-                "Blocked in the sides for 2s or more",
-                "Second half of the race"
-            ]
+        "description": "Increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 3rd place",
+                    "Blocked at the sides for ≥2s",
+                    "Second half of the race"
+                ]
+            }
         ],
-        "team_trials": "B",
-        "champs_meet": "B",
-        "review": "Better on Front Runners. Skill triggers easily but may not trigger at the right moments. Effects are also rather weak.",
+        "preconditions": 
+        [
+        ],
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7295,18 +7743,24 @@
         "gametora_id": "100411"
     },
     {   "skill_name": "I See Victory in My Future!",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "3rd place or worse",
-                "Blocked in front",
-                "Late race and beyond"
-            ]
+        "description": "Clear a path forward with the power of divination when the way ahead is jammed late-race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "3rd to 9th (CM), 3rd to 12th (TT)",
+                    "Blocked in front",
+                    "Late race and beyond"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "D",
-        "review": "Weak effects alongside a front blocked condition is bad.",
+        "preconditions": 
+        [
+        ],
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7320,15 +7774,7 @@
         "gametora_id": "100561"
     },
     {   "skill_name": "Just a Little Farther!",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "3rd place",
-                "1 length ahead or less",
-                "Late race and beyond"
-            ]
-        ],
+        "description": "Increase velocity with flaring fighting spirit when positioned 3rd and about to lose late-race.",
         "effect":
         [
             {
@@ -7336,26 +7782,16 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "3rd place",
+                    "≤1 length ahead", 
+                    "Late race and beyond"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Easy to trigger but isn't very strong.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7369,42 +7805,24 @@
         "gametora_id": "100601"
     },
     {   "skill_name": "Prideful King",
-        "description": "Increases speed by 0.45 for 5.0s.",
-        "inherited": "Increases speed by 0.25 for 3.0s.",
-        "conditions": [
-            [
-                "4th to 6th (CM), 4th to 8th (TT)",
-                "Never rushed",
-                "Last 200m of the race"
-            ]
-        ],
+        "description": "Greatly increase velocity in a true display of skill with 200m remaining after racing calmly.",
         "effect":
         [
-            {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
-                "conditions": 
-                [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
                 "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": 
                 [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "4th to 6th (CM), 4th to 8th (TT)",
+                    "No 'Rushed'",  
+                    "At the last 200m of the race"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "A bit similar to Oguri Cap (Original)'s skill. Much more difficult to consistently trigger.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7417,42 +7835,24 @@
         "gametora_id": "100611"
     },
     {   "skill_name": "#LookatCurren",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "Overtaking",
-                "2nd to 4th (CM), 2nd to 5th (TT)",
-                "Between 50% to 65% of the race"
-            ]
-        ],
+        "description": "Gain momentum and begin to advance when passing another runner while well-positioned around halfway through the race.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Overtake another uma", 
+                    "Between 50% to 65% of the race"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Easy to trigger but the effect will occur in the mid-race, which may not be impactful.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7463,15 +7863,7 @@
         "gametora_id": "100381"
     },
     {   "skill_name": "Nemesis",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "4th to 7th (CM), 5th to 9th (TT)",
-                "Overtake target exists",
-                "Final corner and beyond"
-            ]
-        ],
+        "description": "Increase velocity with smoldering ambition when moving up from midpack on the final corner or later.",
         "effect":
         [
             {
@@ -7479,26 +7871,16 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "4th to 7th (CM), 5th to 9th (TT)",
+                    "Overtake target exists",
+                    "Final corner and beyond"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Easy to trigger for Late Surgers and End Closers but weak effect.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7509,43 +7891,25 @@
         "gametora_id": "100501"
     },
     {   "skill_name": "SPARKLY☆STARDOM",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "1st place",
-                "1 length ahead or less",
-                "Straight",
-                "Mid race"
-            ]
-        ],
+        "description": "Become empowered to keep the spotlight when positioned toward the front and close to the runner behind on a straight mid-race.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "1st to 2nd place",
+                    "≤1 length ahead",
+                    "Any straight",
+                    "Mid race"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Helps Front Runners maintain their lead.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7582,7 +7946,7 @@
                     "Overtake another uma",
                     "The uma behind is closer to the inner fence" ,
                     "Final corner",
-                    "\n"
+                    ""
                 ]
             }
         ],
@@ -8487,7 +8851,7 @@
                     "1st to 2nd",
                     "On corner 3",
                     "Second half of the race",
-                    "\n"
+                    null
                 ]
             }
         ],
