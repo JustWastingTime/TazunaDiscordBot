@@ -6827,8 +6827,30 @@
                 "Just entered final straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases speed by 0.45 for 5.0s.",
+                "inherited": "Increases speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "2nd to 5th",
+                    "5 lengths behind 1st place or less",
+                    "Just entered final straight"
+                ]
+            },
+            {
+                "description": "Increases speed by 0.35 for 5.0s.",
+                "inherited": "Increases speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "2nd to 5th",
+                    "5 lengths behind 1st place or less",
+                    "Just entered final straight"
+                ]
+            }
+        ],
+        "preconditions": [],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
