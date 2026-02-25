@@ -625,7 +625,7 @@ export function buildSkillEmbed(skill, supporterList) {
       }
 
       fields.push({
-        name: skill.effect.length > 1 ? `Trigger ${index + 1}` : "Trigger",
+        name: skill.effect.length > 1 ? `Condition ${index + 1}` : "Condition",
         value: value + "\n\u200B",
         inline: true
       });
