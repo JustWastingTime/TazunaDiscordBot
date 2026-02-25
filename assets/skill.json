@@ -6604,8 +6604,8 @@
         "gametora_id": "100211"
     },
     {   "skill_name": "Barcarole of Blessings",
-        "description": "Condition 1 - Increases speed by 0.45 for 4.0s. \n Condition 2 - Increases speed by 0.35 for 4.0s.",
-        "inherited": "Condition 1 - Increases speed by 0.25 for 2.4s. \n Condition 2 - Increases speed by 0.15 for 2.4s.",
+        "description": "Condition 1\nIncreases speed by 0.45 for 4.0s. \n\n Condition 2\nIncreases speed by 0.35 for 4.0s.",
+        "inherited": "Condition 1\nIncreases speed by 0.25 for 2.4s. \n\n Condition 2\nIncreases speed by 0.15 for 2.4s.",
         "conditions": [
             [
                 "1st to 4th (CM), 1st to 5th (TT)",
@@ -6667,8 +6667,8 @@
         "conditions": [
             [
                 "1st to 4th (CM), 1st to 5th (TT)",
-                "1 length behind or more",
-                "Last 300m of the race"
+                "1 length behind or less",
+                "Less than 300m of the race remaining"
             ]
         ],
         "team_trials": "",
@@ -6806,14 +6806,41 @@
         "aliases": [
             "victory cheer",
             "kitasan black original og",
-            "kitasan black og",
             "勝ち鬨ワッショイ",
             "shout of victory"
         ],
         "horse": "Kitasan Black (Original)",
         "gametora_id": "100681"
     },
-
+    {   "skill_name": "Eternal Encompassing Shine",
+        "description": "Condition 1 - Increases speed by 0.45 for 5.0s.\nCondition 2 - Increases speed by 0.35 for 5.0s.",
+        "inherited": "Condition 1 - Increases speed by 0.25 for 3.0s.\nCondition 2 - Increases speed by 0.15 for 3.0s.",
+        "conditions": [
+            [
+                "2nd to 5th",
+                "5 lengths behind 1st place or less",
+                "Just entered final straight"
+            ],
+            [
+                "2nd to 5th",
+                "More than 5 lengths behind 1st place",
+                "Just entered final straight"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "eternal encompassing shine",
+            "satono diamond original og",
+            "晦冥を照らせ永遠の耀き",
+            "brilliance illuminating the darkness"
+        ],
+        "horse": "Satono Diamond (Original)",
+        "gametora_id": "100671"
+    },
 
 
     {   "skill_name": "Corner Adept x",
