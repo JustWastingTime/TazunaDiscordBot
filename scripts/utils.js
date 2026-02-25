@@ -595,62 +595,79 @@ export function buildSupporterEmbed(supporter, skills, level) {
 }
 
 export function buildSkillEmbed(skill, supporterList) {
-  // Build condition field
-  let conditionValue = '';
-  if (skill.conditions && skill.conditions.length > 0) {
-    conditionValue = skill.conditions
-      .map((group, index) => {
-        if (skill.conditions.length > 1) {
-          return `__Condition ${index + 1}__\n- ${group.join('\n- ')}`;
-        } else {
-          return `- ${group.join('\n- ')}`;
-        }
-      })
-      .join('\n\n');
-  } else {
-    conditionValue = '—';
-  }
+  const fields = [];
 
-  const fields = [
-    {
-      name: 'Conditions',
-      value: conditionValue + '\n\u200B',
-      inline: false
-    }
-  ]
-
-  if (skill.review != "") {
+  // ===== Preconditions =====
+  if (skill.preconditions && skill.preconditions.length > 0) {
     fields.push({
-      name: 'Review', 
-      value: skill.review + '\n \u200B', 
-      inline: true 
-    })
+      name: "Preconditions",
+      value: skill.preconditions.map(p => `- ${p}`).join("\n") + "\n\u200B",
+      inline: false
+    });
   }
-  
+
+  // ===== Effects =====
+  if (skill.effect && skill.effect.length > 0) {
+    skill.effect.forEach((effect, index) => {
+      let value = "";
+
+      // Conditions
+      if (effect.conditions && effect.conditions.length > 0) {
+        value += effect.conditions.map(c => `- ${c}`).join("\n");
+      }
+
+      // Effect description
+      value += `\n\n**Effect:**\n${effect.description}`;
+
+      // Inherited effect (if exists)
+      if (effect.inherited) {
+        value += `\n\n**Inherited:**\n${effect.inherited}`;
+      }
+
+      fields.push({
+        name: skill.effect.length > 1 ? `Trigger ${index + 1}` : "Trigger",
+        value: value + "\n\u200B",
+        inline: true
+      });
+    });
+  }
+
+  // ===== Review =====
+  if (skill.review && skill.review !== "") {
+    fields.push({
+      name: "Review",
+      value: skill.review + "\n\u200B",
+      inline: false
+    });
+  }
+
+  // ===== Availability =====
   if (!skill.horse) {
     fields.push({
-      name: 'Available On', 
-      value: supporterList + '\n \u200B', 
-      inline: false 
-    })
+      name: "Available On",
+      value: supporterList + "\n\u200B",
+      inline: false
+    });
   }
 
   if (skill.horse) {
     fields.push({
-      name: 'Inherited from',
+      name: "Inherited from",
       value: skill.horse,
       inline: false
-    })
+    });
   }
 
   return {
-    title: skill.skill_name,
-    description: skill.description +'\n \u200B' + (skill.inherited ? `\n**Inherited**\n${skill.inherited} \n \u200B` : ''),
+    description: skill.description + "\n\u200B",
     color: getSkillColor(skill.category),
-    thumbnail: { url: getSkillThumbnail(skill.category)},
-    fields: fields,
-    url: "https://gametora.com/umamusume/skill-condition-viewer?skill=" + skill.gametora_id
-  }
+    author: {
+      icon_url: getSkillThumbnail(skill.category),
+      name: skill.skill_name,
+      url: "https://gametora.com/umamusume/skill-condition-viewer?skill=" + skill.gametora_id
+    },
+    fields: fields
+  };
 }
 
 export function buildSkillComponents(skill, includeDropdown = false, supporters) {
