@@ -7708,15 +7708,7 @@
         "gametora_id": "110241"
     },
     {   "skill_name": "You and Me! One-on-One!",
-        "description": "Increases speed by 0.35 for 5.0s on the final straight.",
-        "inherited": "Increases speed by 0.15 for 3.0s on the final straight.",
-        "conditions": [
-            [
-                "Overtaking an uma closer to the inner fence",
-                "40% or worse (4th or worse in CM, 5th or worse in TT)",
-                "Final corner and beyond"
-            ]
-        ],
+        "description": "Increase velocity on the final straight after passing another runner on the outside toward the back on the final corner or later.",
         "effect":
         [
             {
@@ -7724,26 +7716,18 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
                     "Final straight"
                 ]
             }
         ],
         "preconditions": 
         [
+            "4th to 9th (CM), 5th to 12th (TT)",
+            "Overtake another uma",
+            "The uma behind is closer to the inner fence",
+            "Final corner and beyond"
         ],
-        "review": "Decent skill for Late Surger and End Closer.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7757,34 +7741,16 @@
         "gametora_id": "100121"
     },
     {   "skill_name": "Lights of Vaudeville",
-        "description": "Increases speed by 0.45 for 5.0s.",
-        "inherited": "Increases speed by 0.25 for 3.0s.",
-        "conditions": [
-            [
-                "30% or better (3rd or better in CM, 4th or better in TT)",
-                "2 lengths ahead of another uma for 1s or more",
-                "Final straight"
-            ]
-        ],
+        "description": "Greatly increase velocity with a dazzling display when just breaking out of the pack toward the front on the final straight.",
         "effect":
         [
-            {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
-                "conditions": 
-                [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
                 "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": 
                 [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
+                    "3rd to 9th (CM), 4th to 12th (TT)",
+                    "≤5m ahead of another uma for ≥1s",
                     "Final straight"
                 ]
             }
@@ -7792,7 +7758,7 @@
         "preconditions": 
         [
         ],
-        "review": "Similar to Oguri Cap (Original)'s skill but works on Front Runners as well.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7806,15 +7772,7 @@
         "gametora_id": "100051"
     },
     {   "skill_name": "A Kiss for Courage",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 3rd place",
-                "Activated 1 or more recovery skill",
-                "Second half of the race"
-            ]
-        ],
+        "description": "Increase velocity enthusiastically when positioned toward the front in the second half of the race after recovering endurance with a skill.",
         "effect":
         [
             {
@@ -7822,19 +7780,9 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "1st to 3rd place",
+                    "Activated ≥1 recovery skills",
+                    "Second half of the race"
                 ]
             }
         ],
@@ -7856,36 +7804,18 @@
         "gametora_id": "110041"
     },
     {   "skill_name": "I Never Goof Up!",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "Overtaking",
-                "3rd to 9th (CM), 3rd to 12th (TT)",
-                "Corner",
-                "Late race"
-            ]
-        ],
+        "description": "Aim for the front with unwavering determination when passing another runner from midpack or further back on a corner late-race.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "3rd to 9th (CM), 3rd to 12th (TT)",
+                    "Overtake another uma",
+                    "Any corner",
+                    "Late race and beyond"
                 ]
             }
         ],
@@ -7903,16 +7833,7 @@
         "gametora_id": "100581"
     },
     {   "skill_name": "Schwarzes Schwert",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 5.0s.",
-        "conditions": [
-            [
-                "3rd or worse",
-                "Never 'Late Start'",
-                "Never 'Rushed'",
-                "Final straight"
-            ]
-        ],
+        "description": "Increase velocity in a dash for the lead after running calmly and according to plan up until the final straight.",
         "effect":
         [
             {
@@ -7920,18 +7841,9 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
+                    "3rd to 9th (CM), 3rd to 12th (TT)",
+                    "No 'Late Start'",
+                    "No 'Rushed'",
                     "Final straight"
                 ]
             }
@@ -7939,7 +7851,7 @@
         "preconditions": 
         [
         ],
-        "review": "Effects are weak. Late Start or Rushed may happen and void this skill.",
+        "review": "Late Start or Rushed may happen and void this skill.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7950,18 +7862,24 @@
         "gametora_id": "100371"
     },
     {   "skill_name": "Bountiful Harvest",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "40% or worse (4th or worse in CM, 5th or worse in TT)",
-                "Be an overtake target for 2s or more",
-                "Second half of the race"
-            ]
+        "description": "Increase velocity with a surge of great fortune when pressured by another runner toward the back in the second half of the race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Be an overtake target for ≥2s",
+                    "Second half of the race"
+                ]
+            }
         ],
-        "team_trials": "C",
-        "champs_meet": "C",
-        "review": "Consistent but weak effect.",
+        "preconditions": 
+        [
+        ],
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7975,42 +7893,24 @@
         "gametora_id": "110561"
     },
     {   "skill_name": "YUMMY☆SPEED!",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "70% or less HP remaining",
-                "Between 45% to 65% of the race"
-            ]
-        ],
+        "description": "Kick forward hard with renewed vigor when starting to get tired while well-positioned halfway through the race.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "3rd to 5th (CM), 3rd to 6th (TT)",
+                    "≤70% HP remainig",
+                    "Between 45% to 60% of the race"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Activates somewhere in the mid race. Effects are a bit weak.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -8022,34 +7922,15 @@
         "gametora_id": "100281"
     },
     {   "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
-        "description": "Increases speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
-        "inherited": "Increases speed by 0.15 and lane movement speed by 0.015 for 3.0s.",
-        "conditions": [
-            [
-                "Overtake 2 times",
-                "Late race and beyond"
-            ]
-        ],
+        "description": "Increase velocity and navigation with the pure euphoria of being within breathing distance of precious waifus after passing another runner 2 times late-race.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and lane movement speed by 0.015 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Overtake ≥2 times since late race"
                 ]
             }
         ],
@@ -8071,34 +7952,16 @@
         "gametora_id": "100191"
     },
     {   "skill_name": "Give Mummy a Hug ♡",
-        "description": "Increases speed by 0.25 and acceleration by 0.3 for 5.0s.",
-        "inherited": "Increases speed by 0.05 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "2nd to 4th",
-                "1 length behind or more",
-                "Final straight"
-            ]
-        ],
+        "description": "Increase ability to break out of the pack when well-positioned and close to the runner ahead on the final straight.",
         "effect":
         [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
+                    "2nd to 4th",
+                    "≤1 length behind",
                     "Final straight"
                 ]
             }
@@ -8120,14 +7983,7 @@
         "gametora_id": "110451"
     },
     {   "skill_name": "A Princess Must Seize Victory!",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Blocked in the sides for 2s or more",
-                "Final straight"
-            ]
-        ],
+        "description": "Increase velocity with pretty princess power when engaged in a challenge on the final straight.",
         "effect":
         [
             {
@@ -8135,18 +7991,7 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
+                    "Blocked at the sides for ≥2s",
                     "Final straight"
                 ]
             }
@@ -8154,7 +7999,7 @@
         "preconditions": 
         [
         ],
-        "review": "Hard to trigger in CM as being blocked at the sides for 2s is unlikely.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -8274,7 +8119,7 @@
                 "conditions": 
                 [
                     "1st to 2nd",
-                    "Succesfully overtook another uma",
+                    "Overtake another uma",
                     "Final straight"
                 ]
             }
