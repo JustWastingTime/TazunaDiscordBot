@@ -1681,7 +1681,8 @@
             "lucky seven",
             "ラッキーセブン"
         ],
-        "upgrade": "Super Lucky Seven"
+        "upgrade": "Super Lucky Seven",
+        "gametora_id": "201562"
     },
     {   "skill_name": "Super Lucky Seven",
         "description": "Increases speed, stamina and power stat by 60",
@@ -1700,7 +1701,8 @@
             "super lucky 7",
             "super lucky seven"
         ],
-        "downgrade": "Lucky Seven"
+        "downgrade": "Lucky Seven",
+        "gametora_id": "201561"
     },
 
 
@@ -1722,7 +1724,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "introduction to physiology",
-            "agnes tachyon original",
+            "agnes tachyon original og",
             "introduction my body"
         ],
         "upgrade": "U=ma2",
@@ -1743,7 +1745,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "clear heart",
-            "super creek original",
+            "super creek original og",
             "クリアハート"
         ],
         "upgrade": "Pure Heart",
@@ -1765,7 +1767,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "super duper stoked",
-            "haru urara original",
+            "haru urara original og",
             "ready steady go",
             "ワクワクよーいドン"
         ],
@@ -1789,7 +1791,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "u=ma2",
-            "agnes tachyon original"
+            "agnes tachyon original og"
         ],
         "horse": "Agnes Tachyon (Original)",
         "downgrade": "Introduction to Physiology",
@@ -1811,7 +1813,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "pure heart",
-            "super creek original",
+            "super creek original og",
             "purity of heart",
             "ピュリティオブハート"
         ],
@@ -1836,7 +1838,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "super duper climax",
-            "haru urara original",
+            "haru urara original og",
             "exciting climax",
             "ワクワククライマックス"
         ],
@@ -1861,7 +1863,8 @@
             "arc maestro",
             "円弧のマエストロ"
         ],
-        "downgrade": "Corner Recovery"
+        "downgrade": "Corner Recovery",
+        "gametora_id": "200351"
     },
     {   "skill_name": "Corner Recovery",
         "description": "Recover HP by 1.5%.",
@@ -1879,7 +1882,8 @@
             "corner reco",
             "コーナー回復"
         ],
-        "upgrade": "Swinging Maestro"
+        "upgrade": "Swinging Maestro",
+        "gametora_id": "200352"
     },
     {   "skill_name": "Corner Recovery x",
         "description": "Reduce HP by 2%",
@@ -1896,7 +1900,8 @@
         "aliases": [
             "corner reco x",
             "ーナー回復 x"
-        ]
+        ],
+        "gametora_id": "200353"
     },
     {   "skill_name": "Breath of Fresh Air",
         "description": "Recover HP by 5.5%",
@@ -1915,7 +1920,8 @@
             "bofa",
             "好転一息"
         ],
-        "downgrade": "Straightaway Recovery"
+        "downgrade": "Straightaway Recovery",
+        "gametora_id": "200381"
     },
     {   "skill_name": "Straightaway Recovery",
         "description": "Recover HP by 1.5%.",
@@ -1933,7 +1939,8 @@
             "straight reco",
             "直線回復"
         ],
-        "upgrade": "Breath of Fresh Air"
+        "upgrade": "Breath of Fresh Air",
+        "gametora_id": "200382"
     },
     {   "skill_name": "Ramp Revulsion",
         "description": "Reduce HP by 2%",
@@ -1952,7 +1959,8 @@
             "ramp revulsion",
             "hill dislike",
             "坂苦手"
-        ]
+        ],
+        "gametora_id": "200391"
     },
     {   "skill_name": "Packphobia",
         "description": "Reduce HP by 2%",
@@ -1972,7 +1980,8 @@
             "packphobia",
             "crowd hater",
             "バ群嫌い"
-        ]
+        ],
+        "gametora_id": "200401"
     },
     {   "skill_name": "Iron Will",
         "description": "Recover HP by 5.5%",
@@ -1993,7 +2002,8 @@
             "will of steel",
             "鋼の意志"
         ],
-        "downgrade": "Lay Low"
+        "downgrade": "Lay Low",
+        "gametora_id": "200441"
     },
     {   "skill_name": "Lay Low",
         "description": "Recover HP by 1.5%",
@@ -2014,7 +2024,8 @@
             "undercover",
             "隠れ蓑"
         ],
-        "upgrade": "Iron Will"
+        "upgrade": "Iron Will",
+        "gametora_id": "200442"
     },
     {   "skill_name": "Indomitable",
         "description": "Recover HP by 5.5%.",
@@ -2032,7 +2043,8 @@
         "aliases": [
             "indomitable"
         ],
-        "downgrade": "Pace Strategy"
+        "downgrade": "Pace Strategy",
+        "gametora_id": "200471"
     },
     {   "skill_name": "Pace Strategy",
         "description": "Recover HP by 1.5%.",
@@ -2052,7 +2064,8 @@
             "keep the pace",
             "ペースキープ"
         ],
-        "upgrade": "Indomitable"
+        "upgrade": "Indomitable",
+        "gametora_id": "200472"
     },
     {   "skill_name": "Unruffled",
         "description": "Recover HP by 5.5%.",
@@ -2072,7 +2085,8 @@
             "where the wind blows",
             "どこ吹く風"
         ],
-        "downgrade": "Calm in a Crowd"
+        "downgrade": "Calm in a Crowd",
+        "gametora_id": "200481"
     },
     {   "skill_name": "Calm in a Crowd",
         "description": "Recover HP by 1.5%.",
@@ -2092,7 +2106,8 @@
             "crowded calm",
             "ウマ込み冷静"
         ],
-        "upgrade": "Unruffled"
+        "upgrade": "Unruffled",
+        "gametora_id": "200482"
     },
     {   "skill_name": "Running Idle",
         "description": "Reduce HP by 2%.",
@@ -2111,7 +2126,8 @@
         "aliases": [
             "running idle",
             "空回り"
-        ]
+        ],
+        "gametora_id": "200521"
     },
     {   "skill_name": "Calm and Collected",
         "description": "Recover HP by 5.5%.",
@@ -2132,7 +2148,8 @@
             "calm and composed",
             "余裕綽々"
         ],
-        "downgrade": "Stamina to Spare"
+        "downgrade": "Stamina to Spare",
+        "gametora_id": "200561"
     },
     {   "skill_name": "Stamina to Spare",
         "description": "Recover HP by 1.5%.",
@@ -2153,7 +2170,8 @@
             "stamina keep",
             "スタミナキープ"
         ],
-        "upgrade": "Calm and Collected"
+        "upgrade": "Calm and Collected",
+        "gametora_id": "200562"
     },
     {   "skill_name": "Race Planner",
         "description": "Recover HP by 5.5%.",
@@ -2173,7 +2191,8 @@
             "race planner",
             "レースプランナー"
         ],
-        "downgrade": "Preferred Position"
+        "downgrade": "Preferred Position",
+        "gametora_id": "200571"
     },
     {   "skill_name": "Preferred Position",
         "description": "Recover HP by 1.5%.",
@@ -2194,7 +2213,8 @@
             "favorite place",
             "好位追走"
         ],
-        "upgrade": "Race Planner"
+        "upgrade": "Race Planner",
+        "gametora_id": "200572"
     },
     {   "skill_name": "Sleeping Lion",
         "description": "Recover HP by 5.5%.",
@@ -2214,7 +2234,8 @@
             "sleeping lion",
             "眠れる獅子"
         ],
-        "downgrade": "Standing By"
+        "downgrade": "Standing By",
+        "gametora_id": "200621"
     },
     {   "skill_name": "Standing By",
         "description": "Recover HP by 1.5%.",
@@ -2235,7 +2256,8 @@
             "on standby",
             "後方待機"
         ],
-        "upgrade": "Sleeping Lion"
+        "upgrade": "Sleeping Lion",
+        "gametora_id": "200622"
     },   
     {   "skill_name": "Wait-and-See",
         "description": "Recover HP by 1.5%. Increases acceleration by 0.1 for 3.0s.",
@@ -2254,7 +2276,8 @@
         "aliases": [
             "wait and see",
             "様子見"
-        ]
+        ],
+        "gametora_id": "200662"
     },
     {   "skill_name": "Keen Eye",
         "description": "Recover HP by 5.5%. Reduces speed of all umas ahead by 0.2.",
@@ -2275,7 +2298,8 @@
             "keen insight",
             "慧眼"
         ],
-        "downgrade": "Watchful Eye"
+        "downgrade": "Watchful Eye",
+        "gametora_id": "200691"
     },
     {   "skill_name": "Watchful Eye",
         "description": "Recover HP by 1.5%. Reduces speed of all umas ahead by 0.05.",
@@ -2296,7 +2320,8 @@
             "progress peak",
             "展開窺い"
         ],
-        "upgrade": "Keen Eye"
+        "upgrade": "Keen Eye",
+        "gametora_id": "200692"
     },
     {   "skill_name": "Trackblazer",
         "description": "Recover HP by 5.5%.",
@@ -2317,7 +2342,8 @@
             "trailblazer",
             "切り開く者"
         ],
-        "downgrade": "Rosy Outlook"
+        "downgrade": "Rosy Outlook",
+        "gametora_id": "200711"
     },
     {   "skill_name": "Rosy Outlook",
         "description": "Recover HP by 1.5%.",
@@ -2338,7 +2364,8 @@
             "bright future",
             "前途洋々"
         ],
-        "upgrade": "Trackblazer"
+        "upgrade": "Trackblazer",
+        "gametora_id": "200712"
     },
     {   "skill_name": "Cooldown",
         "description": "Recover HP by 5.5%.",
@@ -2357,7 +2384,8 @@
             "cooldown",
             "クールダウン"
         ],
-        "downgrade": "Deep Breaths"
+        "downgrade": "Deep Breaths",
+        "gametora_id": "200741"
     },
     {   "skill_name": "Deep Breaths",
         "description": "Recover HP by 1.5%.",
@@ -2376,7 +2404,8 @@
             "deep breaths",
             "深呼吸"
         ],
-        "upgrade": "Cooldown"
+        "upgrade": "Cooldown",
+        "gametora_id": "200742"
     },
     {   "skill_name": "Adrenaline Rush",
         "description": "Recover HP by 5.5%.",
@@ -2396,7 +2425,8 @@
             "fight or flight",
             "火事場のバ鹿力"
         ],
-        "downgrade": "Extra Tank"
+        "downgrade": "Extra Tank",
+        "gametora_id": "200761"
     },
     {   "skill_name": "Extra Tank",
         "description": "Recover HP by 1.5%.",
@@ -2416,7 +2446,8 @@
             "backup belly",
             "別腹タンク"
         ],
-        "upgrade": "Adrenaline Rush"
+        "upgrade": "Adrenaline Rush",
+        "gametora_id": "200762"
     },
     {   "skill_name": "Miraculous Step",
         "description": "Recover HP by 5.5%.",
@@ -2437,7 +2468,8 @@
             "miracle step",
             "神業ステップ"
         ],
-        "downgrade": "Soft Step"
+        "downgrade": "Soft Step",
+        "gametora_id": "201141"
     },
     {   "skill_name": "Soft Step",
         "description": "Recover HP by 1.5%.",
@@ -2458,7 +2490,8 @@
             "light step",
             "軽やかステップ"
         ],
-        "upgrade": "Miraculous Step"
+        "upgrade": "Miraculous Step",
+        "gametora_id": "201142"
     },
     {   "skill_name": "Passing Pro",
         "description": "Recover HP by 1.5%.",
@@ -2479,7 +2512,8 @@
             "pass expert",
             "パス上手"
         ],
-        "upgrade": "VIP Pass"
+        "upgrade": "VIP Pass",
+        "gametora_id": "201202"
     },
     {   "skill_name": "Restless",
         "description": "Recover HP by 5.5%.",
@@ -2500,7 +2534,8 @@
             "wild girl",
             "じゃじゃウマ娘"
         ],
-        "downgrade": "Moxie"
+        "downgrade": "Moxie",
+        "gametora_id": "201281"
     },
     {   "skill_name": "Moxie",
         "description": "Recover HP by 1.5%.",
@@ -2521,7 +2556,8 @@
             "leave it to vigor",
             "勢い任せ"
         ],
-        "upgrade": "Restless"
+        "upgrade": "Restless",
+        "gametora_id": "201282"
     },
     {   "skill_name": "Gourmand",
         "description": "Recovers HP by 5.5%.",
@@ -2540,7 +2576,8 @@
             "gourmand",
             "big eater"
         ],
-        "downgrade": "Hydrate"
+        "downgrade": "Hydrate",
+        "gametora_id": "201351"
     },
     {   "skill_name": "Hydrate",
         "description": "Recovers HP by 1.5%.",
@@ -2560,7 +2597,8 @@
             "nutritional supplements",
             "栄養補給"
         ],
-        "upgrade": "Gourmand"
+        "upgrade": "Gourmand",
+        "gametora_id": "201352"
     },
     {   "skill_name": "Relax",
         "description": "Recover HP by 5.5%.",
@@ -2578,7 +2616,8 @@
         "aliases": [
             "relax"
         ],
-        "downgrade": "A Small Breather"
+        "downgrade": "A Small Breather",
+        "gametora_id": "201421"
     },
     {   "skill_name": "A Small Breather",
         "description": "Recover HP by 1.5%.",
@@ -2598,7 +2637,8 @@
             "a little break",
             "小休憩"
         ],
-        "upgrade": "Relax"
+        "upgrade": "Relax",
+        "gametora_id": "201422"
     },
     {   "skill_name": "Go-Home Specialist",
         "description": "Recover HP by 1.5%.",
@@ -2619,7 +2659,8 @@
             "after school specialist",
             "下校後のスペシャリスト"
         ],
-        "downgrade": "After-School Stroll"
+        "downgrade": "After-School Stroll",
+        "gametora_id": "201481"
     },
     {   "skill_name": "After-School Stroll",
         "description": "Recover HP by 1.5%.",
@@ -2640,7 +2681,8 @@
             "winding down",
             "下校の楽しみ"
         ],
-        "upgrade": "Go-Home Specialist"
+        "upgrade": "Go-Home Specialist",
+        "gametora_id": "201482"
     },
     {   "skill_name": "Serenity",
         "description": "Recover HP by 1.5%.",
@@ -2661,7 +2703,8 @@
             "calm and collected",
             "冷静沈着"
         ],
-        "downgrade": "Levelheaded"
+        "downgrade": "Levelheaded",
+        "gametora_id": "201491"
     },
     {   "skill_name": "Levelheaded",
         "description": "Recover HP by 1.5%.",
@@ -2682,7 +2725,8 @@
             "serene",
             "冷静"
         ],
-        "upgrade": "Serenity"
+        "upgrade": "Serenity",
+        "gametora_id": "201492"
     },   
     {   "skill_name": "Triple 7s",
         "description": "Recover HP by 1.5%.",
@@ -2700,7 +2744,8 @@
             "triple 7",
             "777",
             "スリーセブン"
-        ]
+        ],
+        "gametora_id": "201571"
     },
     {   "skill_name": "Shake It Out",
         "description": "Recover HP by 1.5%.",
@@ -2717,7 +2762,8 @@
         "aliases": [
             "shake it out",
             "ふり絞り"
-        ]
+        ],
+        "gametora_id": "201621"
     },
     {   "skill_name": "Superior Heal",
         "description": "Recover HP by 7.5%.",
@@ -2813,7 +2859,8 @@
             "concealed readiness",
             "潜伏態勢"
         ],
-        "downgrade": "Be Still"
+        "downgrade": "Be Still",
+        "gametora_id": "201691"
     },
     {   "skill_name": "Be Still",
         "description": "Recover HP by 1.5%.",
@@ -2834,7 +2881,8 @@
             "quiet breathing",
             "静かな呼吸"
         ],
-        "upgrade": "Lie In Wait"
+        "upgrade": "Lie In Wait",
+        "gametora_id": "201692"
     },
     {   "skill_name": "VIP Pass",
         "description": "Recover HP by 5.5%.",
@@ -2854,7 +2902,8 @@
             "vip pass",
             "VIP顔パス"
         ],
-        "downgrade": "Passing Pro"
+        "downgrade": "Passing Pro",
+        "gametora_id": "201201"
     },
     {   "skill_name": "Familiar Ground",
         "description": "Recover HP by 1.5%.",
@@ -2875,7 +2924,8 @@
             "砂塵慣れ",
             "sandstorm practice"
         ],
-        "upgrade": "Master of the Sands"
+        "upgrade": "Master of the Sands",
+        "gametora_id": "202002"
     },
     {   "skill_name": "Cheers of a Fellow Dreamer",
         "description": "Recover HP by 5.5%.",
@@ -2893,7 +2943,8 @@
             "cheers of a fellow dreamer",
             "憧れのエール",
             "cheers of admiration"
-        ]
+        ],
+        "gametora_id": "300101"
     },
     {   "skill_name": "Ready, Go!",
         "description": "Recover HP by 3.5%. Increases speed by 0.15 for 5.0s.",
@@ -2911,13 +2962,14 @@
         "category": "rainbowrecovery",
         "aliases": [
             "ready go",
-            "mambo original",
-            "matikanetannhauser original",
-            "machikanetannhauser original",
+            "mambo original og",
+            "matikanetannhauser original og",
+            "machikanetannhauser original og",
             "ready bang",
             "レディーどんっ"
         ],
-        "upgrade": "Go, Go, Mun!"
+        "upgrade": "Go, Go, Mun!",
+        "gametora_id": "10621"
     },
     {   "skill_name": "Go, Go, Mun!",
         "description": "Recover HP by 5.5%. Increases speed by 0.25 for 5.0s.",
@@ -2936,13 +2988,14 @@
         "category": "rainbowrecovery",
         "aliases": [
             "go go mun",
-            "mambo original",
-            "matikanetannhauser original",
-            "machikanetannhauser original",
+            "mambo original og",
+            "matikanetannhauser original og",
+            "machikanetannhauser original og",
             "bang bam mun",
             "どんっパッむんっ"
         ],
-        "downgrade": "Ready, Go!"
+        "downgrade": "Ready, Go!",
+        "gametora_id": "100621"
     },
     {   "skill_name": "Of Calm Mind",
         "description": "Recover HP by 7.5%. Reduces speed by 0.15 for 1.2s.",
@@ -2963,7 +3016,8 @@
             "泰然自若",
             "self possessed"
         ],
-        "downgrade": "Free-Spirited"
+        "downgrade": "Free-Spirited",
+        "gametora_id": "202071"
     },
     {   "skill_name": "Free Spirited",
         "description": "Recover HP by 3.5%. Reduces speed by 0.15 for 1.2s.",
@@ -2984,7 +3038,8 @@
             "マイペース",
             "my own pace"
         ],
-        "upgrade": "Of Calm Mind"
+        "upgrade": "Of Calm Mind",
+        "gametora_id": "202072"
     },
     {   "skill_name": "Keep Pushing Ahead",
         "description": "Recover HP by 5.5%. Increases speed by 0.25 for 6.0s.",
@@ -3002,10 +3057,11 @@
         "category": "rainbowrecovery",
         "aliases": [
             "keep pushing ahead",
-            "mejiro palmer original",
+            "mejiro palmer original og",
             "the breakaway record",
             "ぶっちぎりロード"
-        ]
+        ],
+        "gametora_id": "100641"
     },
     {   "skill_name": "Master of the Sands",
         "description": "Recover HP by 5.5%. Increases speed by 0.35 for 1.8s.",
@@ -3026,7 +3082,8 @@
             "砂の玄人",
             "sand expert"
         ],
-        "downgrade": "Familiar Ground"
+        "downgrade": "Familiar Ground",
+        "gametora_id": "202001"
     },
     
 
@@ -3050,7 +3107,8 @@
             "clever cornerer",
             "コーナー巧者"
         ],
-        "upgrade": "Professor of Curvature"
+        "upgrade": "Professor of Curvature",
+        "gametora_id": "200332"
     },
     {   "skill_name": "Straightaway Adept",
         "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
@@ -3069,7 +3127,8 @@
             "straight skill",
             "直線巧者"
         ],
-        "upgrade": "Beeline Burst"
+        "upgrade": "Beeline Burst",
+        "gametora_id": "200362"
     },
     {   "skill_name": "Ramp Up",
         "description": "Increases speed by 0.15 for 1.8s. 30s cooldown.",
@@ -3089,7 +3148,8 @@
             "up the pace",
             "ペースアップ"
         ],
-        "upgrade": "It's On!"
+        "upgrade": "It's On!",
+        "gametora_id": "200462"
     },
     {   "skill_name": "Homestretch Haste",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3108,7 +3168,8 @@
             "last leg",
             "末脚"
         ],
-        "upgrade": "In Body and Mind"
+        "upgrade": "In Body and Mind",
+        "gametora_id": "200512"
     },
     {   "skill_name": "Fast-Paced",
         "description": "Increases speed by 0.15 for 1.8s.",
@@ -3130,7 +3191,8 @@
             "fast pace",
             "急ぎ足"
         ],
-        "upgrade": "Escape Artist"
+        "upgrade": "Escape Artist",
+        "gametora_id": "200542"
     },
     {   "skill_name": "Prepared to Pass",
         "description": "Increases speed by 0.15 for 1.8s.",
@@ -3151,7 +3213,8 @@
             "抜け出し準備",
             "passing preparations"
         ],
-        "upgrade": "Speed Star"
+        "upgrade": "Speed Star",
+        "gametora_id": "200582"
     },
     {   "skill_name": "Position Pilfer",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3172,7 +3235,8 @@
             "position swiper",
             "位置取り押し上げ"
         ],
-        "upgrade": "Fast & Furious"
+        "upgrade": "Fast & Furious",
+        "gametora_id": "200592"
     },
     {   "skill_name": "Outer Swell",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3193,7 +3257,8 @@
             "outside pass ready",
             "外差し準備"
         ],
-        "upgrade": "Rising Dragon"
+        "upgrade": "Rising Dragon",
+        "gametora_id": "200612"
     },
     {   "skill_name": "Masterful Gambit",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3214,7 +3279,8 @@
             "outstanding stratagem",
             "仕掛け抜群"
         ],
-        "upgrade": "Sturm und Drang"
+        "upgrade": "Sturm und Drang",
+        "gametora_id": "200632"
     },
     {   "skill_name": "Gap Closer",
         "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
@@ -3235,7 +3301,8 @@
             "draw forward",
             "詰め寄り"
         ],
-        "upgrade": "Blinding Flash"
+        "upgrade": "Blinding Flash",
+        "gametora_id": "200672"
     },
     {   "skill_name": "Productive Plan",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3256,7 +3323,8 @@
             "positive planning",
             "積極策"
         ],
-        "upgrade": "Mile Maven"
+        "upgrade": "Mile Maven",
+        "gametora_id": "200682"
     },
     {   "skill_name": "Up-Tempo",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3277,7 +3345,8 @@
             "uptempo",
             "テンポアップ"
         ],
-        "upgrade": "Killer Tunes"
+        "upgrade": "Killer Tunes",
+        "gametora_id": "200722"
     },
     {   "skill_name": "Steadfast",
         "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
@@ -3298,7 +3367,8 @@
             "stand your ground",
             "食い下がり"
         ],
-        "upgrade": "Unyielding"
+        "upgrade": "Unyielding",
+        "gametora_id": "200732"
     },
     {   "skill_name": "Inside Scoop",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3319,7 +3389,8 @@
             "king of the castle",
             "内弁慶"
         ],
-        "upgrade": "Innate Experience"
+        "upgrade": "Innate Experience",
+        "gametora_id": "200752"
     },
     {   "skill_name": "Sprint Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3338,7 +3409,8 @@
             "sprint straightway",
             "short distance straights",
             "短距離直線"
-        ]
+        ],
+        "gametora_id": "200962"
     },
     {   "skill_name": "Sprint Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3357,7 +3429,8 @@
             "sprint corners",
             "short distance corners",
             "短距離コーナー"
-        ]
+        ],
+        "gametora_id": "200972"
     },
     {   "skill_name": "Huge Lead",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3379,7 +3452,8 @@
             "big lead",
             "大きなリード"
         ],
-        "upgrade": "Staggering Lead"
+        "upgrade": "Staggering Lead",
+        "gametora_id": "200982"
     },
     {   "skill_name": "Mile Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3398,7 +3472,8 @@
             "mile straightway",
             "mile straights",
             "マイル直線"
-        ]
+        ],
+        "gametora_id": "201032"
     },
     {   "skill_name": "Mile Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3416,7 +3491,8 @@
         "aliases": [
             "mile corners",
             "マイルコーナー"
-        ]
+        ],
+        "gametora_id": "201042"
     },
     {   "skill_name": "Shifting Gears",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3437,7 +3513,8 @@
             "gear shift",
             "ギアシフト"
         ],
-        "upgrade": "Changing Gears"
+        "upgrade": "Changing Gears",
+        "gametora_id": "201052"
     },
     {   "skill_name": "Unyielding Spirit",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3458,7 +3535,8 @@
             "rival spirit",
             "負けん気"
         ],
-        "upgrade": "Big-Sisterly"
+        "upgrade": "Big-Sisterly",
+        "gametora_id": "201072"
     },
     {   "skill_name": "Medium Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3477,7 +3555,8 @@
             "medium straightway",
             "medium distance straights",
             "中距離直線"
-        ]
+        ],
+        "gametora_id": "201102"
     },
     {   "skill_name": "Medium Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3496,7 +3575,8 @@
             "medium corners",
             "medium distance corners",
             "中距離コーナー"
-        ]
+        ],
+        "gametora_id": "201112"
     },
     {   "skill_name": "Long Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3515,7 +3595,8 @@
             "long straightway",
             "long distance straights",
             "長距離直線"
-        ]
+        ],
+        "gametora_id": "201172"
     },
     {   "skill_name": "Long Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3534,7 +3615,8 @@
             "long corners",
             "long distance corners",
             "長距離コーナー"
-        ]
+        ],
+        "gametora_id":"201182"
     },
     {   "skill_name": "Keeping the Lead",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3556,7 +3638,8 @@
             "keep the lead",
             "リードキープ"
         ],
-        "upgrade": "Vanguard Spirit"
+        "upgrade": "Vanguard Spirit",
+        "gametora_id": "201192"
     },
     {   "skill_name": "Pressure",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3577,7 +3660,8 @@
             "press the attack",
             "追い上げ"
         ],
-        "upgrade": "Overwhelming Pressure"
+        "upgrade": "Overwhelming Pressure",
+        "gametora_id": "201212"
     },
     {   "skill_name": "Front Runner Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3596,7 +3680,8 @@
             "front runner straightway",
             "runners straights",
             "逃げ直線"
-        ]
+        ],
+        "gametora_id": "201242"
     },
     {   "skill_name": "Front Runner Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3615,7 +3700,8 @@
             "front runner corners",
             "runners corners",
             "逃げコーナー"
-        ]
+        ],
+        "gametora_id": "201252"
     },
     {   "skill_name": "Leader's Pride",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3637,7 +3723,8 @@
             "lead pride",
             "先頭プライド"
         ],
-        "upgrade": "Top Runner"
+        "upgrade": "Top Runner",
+        "gametora_id": "201272"
     },
     {   "skill_name": "Pace Chaser Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3656,7 +3743,8 @@
             "pace chaser straightway",
             "leaders straights",
             "先行直線"
-        ]
+        ],
+        "gametora_id": "201312"
     },
     {   "skill_name": "Pace Chaser Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3675,7 +3763,8 @@
             "pace chaser corners",
             "leaders corners",
             "先行コーナー"
-        ]
+        ],
+        "gametora_id": "201322"
     },
     {   "skill_name": "Late Surger Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3694,7 +3783,8 @@
             "late surger straightway",
             "betweeners straights",
             "差し直線"
-        ]
+        ],
+        "gametora_id": "201382"
     },
     {   "skill_name": "Late Surger Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3713,7 +3803,8 @@
             "late surger corners",
             "betweeners corners",
             "差しコーナー"
-        ]
+        ],
+        "gametora_id": "201392"
     },
     {   "skill_name": "1,500,000 CC",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3735,7 +3826,8 @@
             "15000 cc",
             "100k horsepower"
         ],
-        "upgrade": "15,000,000 CC"
+        "upgrade": "15,000,000 CC",
+        "gametora_id": "201412"
     },
     {   "skill_name": "End Closer Straightaways",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3754,7 +3846,8 @@
             "end closer straightway",
             "chasers straights",
             "追込直線"
-        ]
+        ],
+        "gametora_id": "201452"
     },
     {   "skill_name": "End Closer Corners",
         "description": "Increases speed by 0.15/0.25 for 3.0s.",
@@ -3773,7 +3866,8 @@
             "end closer corners",
             "chasers corners",
             "追込コーナー"
-        ]
+        ],
+        "gametora_id": "201462"
     },
     {   "skill_name": "Uma Stan",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3794,7 +3888,8 @@
             "big fan",
             "ウマ好み"
         ],
-        "upgrade": "Superstan"
+        "upgrade": "Superstan",
+        "gametora_id": "201591"
     },
     {   "skill_name": "Tail Held High",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3813,7 +3908,8 @@
             "hold your tail high",
             "尻尾上がり"
         ],
-        "upgrade": "Tail Nine"
+        "upgrade": "Tail Nine",
+        "gametora_id": "201611"
     },
     {   "skill_name": "Slipstream",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -3832,7 +3928,8 @@
             "slipstream",
             "スリップストリーム"
         ],
-        "upgrade": "In the Right Place!"
+        "upgrade": "In the Right Place!",
+        "gametora_id": "201651"
     },
     {   "skill_name": "Playtime's Over!",
         "description": "Increases speed by 0.15 for 3.0s. 30s cooldown.",
@@ -3851,7 +3948,8 @@
             "playtimes over",
             "遊びはおしまいっ！"
         ],
-        "upgrade": "See Ya Later!"
+        "upgrade": "See Ya Later!",
+        "gametora_id": "201661"
     }, 
     {   "skill_name": "Top Pick",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3872,7 +3970,8 @@
             "recommendation",
             "レコメンド"
         ],
-        "upgrade": "Trending in the Charts!"
+        "upgrade": "Trending in the Charts!",
+        "gametora_id": "201672"
     },
     {   "skill_name": "All I've Got",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3894,7 +3993,8 @@
             "all that there is",
             "ありったけ"
         ],
-        "upgrade": "Come What May"
+        "upgrade": "Come What May",
+        "gametora_id": "201702"
     },
     {   "skill_name": "Feature Act",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3915,7 +4015,8 @@
             "kageuchi",
             "影打"
         ],
-        "upgrade": "Headliner"
+        "upgrade": "Headliner",
+        "gametora_id": "202012"
     },
     {   "skill_name": "Early Start",
         "description": "Increases speed by 0.05 for 4.0s.",
@@ -3936,7 +4037,8 @@
             "early gambit",
             "早仕掛け"
         ],
-        "upgrade": "Daring Strike"
+        "upgrade": "Daring Strike",
+        "gametora_id": "202022"
     },
     {   "skill_name": "Risky Business",
         "description": "Increases speed by 0.25 for 1.8s. Lose HP by a random amount.",
@@ -3955,7 +4057,8 @@
             "questionable strategy",
             "あやしげな作戦"
         ],
-        "upgrade": "Nothing Ventured"
+        "upgrade": "Nothing Ventured",
+        "gametora_id": "202032"
     },
     {   "skill_name": "Light as a Feather",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -3976,7 +4079,8 @@
             "nimble step",
             "軽い足取り"
         ],
-        "upgrade": "In High Spirits"
+        "upgrade": "In High Spirits",
+        "gametora_id": "202042"
     },
     {   "skill_name": "Fighting Spirit",
         "description": "Recover HP by 0.5%. Increases speed by 0.15 for 2.4s.",
@@ -3997,7 +4101,8 @@
             "fighting spirit",
             "闘争心"
         ],
-        "upgrade": "Burning Soul"
+        "upgrade": "Burning Soul",
+        "gametora_id": "202092"
     },
     {   "skill_name": "Eager",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -4018,7 +4123,8 @@
             "tumbling forward",
             "前のめり"
         ],
-        "upgrade": "Elated"
+        "upgrade": "Elated",
+        "gametora_id": "202102"
     },
     {   "skill_name": "Pumped",
         "description": "Increases speed by 0.15 for 1.8s.",
@@ -4039,7 +4145,8 @@
             "sufficient spirit",
             "気合十分"
         ],
-        "upgrade": "Full of Vigor"
+        "upgrade": "Full of Vigor",
+        "gametora_id": "202112"
     },
     {   "skill_name": "Fearless",
         "description": "Increases speed by 0.15 and acceleration by 0.05 for 2.4s.",
@@ -4060,7 +4167,8 @@
             "fearless heart",
             "恐れぬ心"
         ],
-        "upgrade": "Dauntless"
+        "upgrade": "Dauntless",
+        "gametora_id": "202122"
     },
     {   "skill_name": "With All My Soul",
         "description": "Reduces speed by 0.035 to 5 umas behind you and increases your speed by 0.15 for 1.8s.",
@@ -4081,7 +4189,8 @@
             "with verve",
             "気迫を込めて"
         ],
-        "upgrade": "Wild Wind"
+        "upgrade": "Wild Wind",
+        "gametora_id": "202132"
     },
     {   "skill_name": "Full Throttle",
         "description": "Increases speed by 0.25 for 2.4s. Reduces HP by 2%.",
@@ -4100,7 +4209,8 @@
             "full throttle",
             "フルスロットル"
         ],
-        "upgrade": "Keep Going!"
+        "upgrade": "Keep Going!",
+        "gametora_id": "202152"
     },
     {   "skill_name": "Downhill Speedster",
         "description": "Increases speed by 0.15 for 2.4s.",
@@ -4119,7 +4229,8 @@
             "downhill adept",
             "下り坂巧者"
         ],
-        "upgrade": "Supreme Downhiller"
+        "upgrade": "Supreme Downhiller",
+        "gametora_id": "202172"
     },
 
     {   "skill_name": "Professor of Curvature",
@@ -4140,7 +4251,8 @@
             "archline professor",
             "弧線のプロフェッサー"
         ],
-        "downgrade": "Corner Adept"
+        "downgrade": "Corner Adept",
+        "gametora_id": "200331"
     }, 
     {   "skill_name": "Beeline Burst",
         "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
@@ -4159,7 +4271,8 @@
             "like the wind",
             "ハヤテ一文字"
         ],
-        "downgrade": "Straightaway Adept"
+        "downgrade": "Straightaway Adept",
+        "gametora_id": "200361"
     },
     {   "skill_name": "It's On!",
         "description": "Increases speed by 0.35 for 1.8s. 30s cooldown.",
@@ -4179,7 +4292,8 @@
             "now im pumped",
             "アガッてきた"
         ],
-        "downgrade": "Ramp Up"
+        "downgrade": "Ramp Up",
+        "gametora_id": "200461"
     },  
     {   "skill_name": "In Body and Mind",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4199,7 +4313,8 @@
             "heart and soul",
             "全身全霊"
         ],
-        "downgrade": "Homestretch Haste"
+        "downgrade": "Homestretch Haste",
+        "gametora_id": "200511"
     }, 
     {   "skill_name": "Escape Artist",
         "description": "Increases speed by 0.35 for 1.8s.",
@@ -4219,7 +4334,8 @@
             "escpae artist",
             "脱出術"
         ],
-        "downgrade": "Fast-Paced"
+        "downgrade": "Fast-Paced",
+        "gametora_id": "200541"
     },
     {   "skill_name": "Speed Star",
         "description": "Increases speed by 0.35 for 1.8s.",
@@ -4239,7 +4355,8 @@
             "speed star",
             "スピードスター"
         ],
-        "downgrade": "Prepared to Pass"
+        "downgrade": "Prepared to Pass",
+        "gametora_id": "200581"
     },
     {   "skill_name": "Fast & Furious",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4260,7 +4377,8 @@
             "quick and decisive",
             "迅速果断"
         ],
-        "downgrade": "Position Pilfer"
+        "downgrade": "Position Pilfer",
+        "gametora_id": "200591"
     },
     {   "skill_name": "Rising Dragon",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4280,7 +4398,8 @@
             "rising dragon",
             "昇り龍"
         ],
-        "downgrade": "Outer Swell"
+        "downgrade": "Outer Swell",
+        "gametora_id": "200611"
     },
     {   "skill_name": "Sturm und Drang",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4302,7 +4421,8 @@
             "storm and stress",
             "疾風怒濤"
         ],
-        "downgrade": "Masterful Gambit"
+        "downgrade": "Masterful Gambit",
+        "gametora_id": "200631"
     },
     {   "skill_name": "Blinding Flash",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
@@ -4323,7 +4443,8 @@
             "jolt of energy",
             "電撃の煌めき"
         ],
-        "downgrade": "Gap Closer"
+        "downgrade": "Gap Closer",
+        "gametora_id": "200671"
     },
     {   "skill_name": "Mile Maven",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4342,7 +4463,8 @@
         "aliases": [
             "mile maven"
         ],
-        "downgrade": "Productive Plan"
+        "downgrade": "Productive Plan",
+        "gametora_id": "200681"
     },
     {   "skill_name": "Killer Tunes",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4363,7 +4485,8 @@
             "killer tune",
             "キラーチューン"
         ],
-        "downgrade": "Up-Tempo"
+        "downgrade": "Up-Tempo",
+        "gametora_id": "200721"
     },
     {   "skill_name": "Unyielding",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
@@ -4384,7 +4507,8 @@
             "to victory",
             "勝利への執念"
         ],
-        "downgrade": "Steadfast"
+        "downgrade": "Steadfast",
+        "gametora_id": "200731"
     },
     {   "skill_name": "Innate Experience",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4405,7 +4529,8 @@
             "intrinsic experience",
             "内的体験"
         ],
-        "downgrade": "Inside Scoop"
+        "downgrade": "Inside Scoop",
+        "gametora_id": "200751"
     },
     {   "skill_name": "Staggering Lead",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4427,7 +4552,8 @@
             "overwhelming lead",
             "圧倒的リード"
         ],
-        "downgrade": "Huge Lead"
+        "downgrade": "Huge Lead",
+        "gametora_id": "200981"
     },
     {   "skill_name": "Changing Gears",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4448,7 +4574,8 @@
             "gear change",
             "ギアチェンジ"
         ],
-        "downgrade": "Shifting Gears"
+        "downgrade": "Shifting Gears",
+        "gametora_id": "201051"
     },
     {   "skill_name": "Big-Sisterly",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4469,7 +4596,8 @@
             "big sister disposition",
             "姉御肌"
         ],
-        "downgrade": "Unyielding Spirit"
+        "downgrade": "Unyielding Spirit",
+        "gametora_id": "201071"
     },
     {   "skill_name": "Vanguard Spirit",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4491,7 +4619,8 @@
             "vanguards wisdom",
             "先陣の心得"
         ],
-        "downgrade": "Keeping the Lead"
+        "downgrade": "Keeping the Lead",
+        "gametora_id": "201191"
     },
     {   "skill_name": "Overwhelming Pressure",
         "description": "Increases speed by 0.15 for 3.0s.",
@@ -4512,7 +4641,8 @@
             "tempestuous pressure",
             "怒涛の追い上げ"
         ],
-        "downgrade": "Pressure"
+        "downgrade": "Pressure",
+        "gametora_id": "201211"
     },
     {   "skill_name": "15,000,000 CC",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4534,7 +4664,8 @@
             "1m horsepower",
             "百万バリキ"
         ],
-        "downgrade": "1,500,000 CC"
+        "downgrade": "1,500,000 CC",
+        "gametora_id": "201411"
     },
     {   "skill_name": "Trending in the Charts!",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4555,7 +4686,8 @@
             "trending charts",
             "チャート急上昇"
         ],
-        "downgrade": "Top Pick"
+        "downgrade": "Top Pick",
+        "gametora_id": "201671"
     },
     {   "skill_name": "Superstan",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4574,7 +4706,8 @@
             "uma mania",
             "ウママニア"
         ],
-        "downgrade": "Uma Stan"
+        "downgrade": "Uma Stan",
+        "gametora_id": "201592"
     },
     {   "skill_name": "Come What May",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4596,7 +4729,8 @@
             "prepared to die",
             "決死の覚悟"
         ],
-        "downgrade": "All I've Got"
+        "downgrade": "All I've Got",
+        "gametora_id": "201701"
     },
     {   "skill_name": "Tail Nine",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4615,7 +4749,8 @@
             "tail of victory",
             "尻尾の滝登り"
         ],
-        "downgrade": "Tail Held High"
+        "downgrade": "Tail Held High",
+        "gametora_id": "201612"
     },
     {   "skill_name": "Dream Run",
         "description": "Increases speed by 0.35 for 5.0s.",
@@ -4632,7 +4767,8 @@
         "aliases": [
             "dream run",
             "夢の走り"
-        ]
+        ],
+        "gametora_id": "300061"
     },
     {   "skill_name": "Headliner",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4653,7 +4789,8 @@
             "shinuchi",
             "真打"
         ],
-        "downgrade": "Feature Act"
+        "downgrade": "Feature Act",
+        "gametora_id": "202011"
     },
     {   "skill_name": "Daring Strike",
         "description": "Increases speed by 0.25 for 4.0s.",
@@ -4674,7 +4811,8 @@
             "daring attack",
             "強攻策"
         ],
-        "downgrade": "Early Start"
+        "downgrade": "Early Start",
+        "gametora_id": "202021"
     },
     {   "skill_name": "Nothing Ventured",
         "description": "Increases speed by 0.45 for 1.8s. Lose HP by a random amount.",
@@ -4693,7 +4831,8 @@
             "gamester",
             "博打うち"
         ],
-        "downgrade": "Risky Business"
+        "downgrade": "Risky Business", 
+        "gametora_id": "202031"
     },
     {   "skill_name": "Flash Forward",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4712,7 +4851,8 @@
             "flash forward",
             "photon flash",
             "光芒一閃"
-        ]
+        ],
+        "gametora_id": "201103"
     },
     {   "skill_name": "In High Spirits",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4732,7 +4872,8 @@
             "in high spirits",
             "意気衝天"
         ],
-        "downgrade": "Light as a Feather"
+        "downgrade": "Light as a Feather", 
+        "gametora_id": "202041"
     },
     {   "skill_name": "Blast Forward",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4751,7 +4892,8 @@
             "blast forward",
             "flash of wind",
             "烈風一閃"
-        ]
+        ],
+        "gametora_id": "201173"
     },
     {   "skill_name": "Top Runner",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4772,7 +4914,8 @@
             "top runner",
             "トップランナー"
         ],
-        "downgrade": "Leader's Pride"
+        "downgrade": "Leader's Pride",
+        "gametora_id": "201271"
     },
     {   "skill_name": "Burning Soul",
         "description": "Recover HP by 3.5%. Increases speed by 0.35 for 2.4s.",
@@ -4794,7 +4937,8 @@
             "burning spirit",
             "気炎万丈"
         ],
-        "downgrade": "Fighting Spirit"
+        "downgrade": "Fighting Spirit",
+        "gametora_id": "202091"
     },
     {   "skill_name": "Elated",
         "description": "Increases speed by 0.35 for 2.4s.",
@@ -4815,7 +4959,8 @@
             "elation",
             "高揚感"
         ],
-        "downgrade": "Eager"
+        "downgrade": "Eager",
+        "gametora_id": "202101"
     },
     {   "skill_name": "Full of Vigor",
         "description": "Increases speed by 0.35 for 1.8s.",
@@ -4836,7 +4981,8 @@
             "unstoppable force",
             "破竹の勢い"
         ],
-        "downgrade": "Pumped"
+        "downgrade": "Pumped",
+        "gametora_id": "202111"
     },
     {   "skill_name": "Dauntless",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 2.4s.",
@@ -4857,7 +5003,8 @@
             "daredevil",
             "大胆不敵"
         ],
-        "downgrade": "Fearless"
+        "downgrade": "Fearless",
+        "gametora_id": "202121"
     },
     {   "skill_name": "Wild Wind",
         "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.35 for 1.8s.",
@@ -4878,7 +5025,8 @@
             "wild whirlwind",
             "荒ぶる旋風"
         ],
-        "downgrade": "With All My Soul"
+        "downgrade": "With All My Soul",
+        "gametora_id": "202131"
     },
     {   "skill_name": "See Ya Later!",
         "description": "Increases speed by 0.35 for 3.0s. 30s cooldown.",
@@ -4898,7 +5046,8 @@
             "sorry gotta go",
             "お先に失礼っ"
         ],
-        "downgrade": "Playtime's Over!"
+        "downgrade": "Playtime's Over!",
+        "gametora_id": "201662"
     },
     {   "skill_name": "Keep Going!",
         "description": "Increases speed by 0.45 for 2.4s. Reduces HP by 2%.",
@@ -4918,7 +5067,8 @@
             "pushing forward",
             "勇往邁進"
         ],
-        "downgrade": "Full Throttle"
+        "downgrade": "Full Throttle",
+        "gametora_id": "202151"
     },
     {   "skill_name": "Moonlit Flash",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4936,7 +5086,8 @@
         "aliases": [
             "moonlit flash",
             "月影一閃"
-        ]
+        ],
+        "gametora_id": "201453"
     },
     {   "skill_name": "Refraction Arc",
         "description": "Increases speed by 0.35 for 3.0s.",
@@ -4955,7 +5106,8 @@
             "refraction arc",
             "photon slash",
             "光芒円刃"
-        ]
+        ],
+        "gametora_id": "201113"
     },
 
 
@@ -5064,7 +5216,7 @@
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
-            "gold ship",
+            "gold ship original og",
             "warning shot",
             "波乱注意砲！"
         ],
@@ -5087,7 +5239,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "xceleration",
-            "vodka",
+            "vodka original og",
             "accelerator x",
             "アクセルX"
         ],
@@ -5115,7 +5267,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "red ace",
-            "daiwa scarlet",
+            "daiwa scarlet original og",
             "レッドエース"
         ],
         "upgrade": "Resplendent Red Ace",
@@ -5137,7 +5289,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "focused mind",
-            "grass wonder",
+            "grass wonder original og",
             "desire to win",
             "精神一到"
         ],
@@ -5160,7 +5312,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "corazon ardiente",
-            "el condor pasa",
+            "el condor pasa original og",
             "hot blooded amigo",
             "熱血アミーゴ"
         ],
@@ -5183,7 +5335,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "empresss pride",
-            "air groove",
+            "air groove original og",
             "empress pride",
             "エンプレスプライド"
         ],
@@ -5206,7 +5358,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "first place kiss",
-            "mayano top gun",
+            "mayano top gun original og",
             "victory kiss",
             "勝利のキッス"
         ],
@@ -5230,7 +5382,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "v is for victory",
-            "winning ticket",
+            "winning ticket original og",
             "full power v sign",
             "全力Vサインッ"
         ],
@@ -5253,7 +5405,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "class rep + speed = bakushin",
-            "sakura bakushin o", 
+            "sakura bakushin o original og", 
             "class president + speed = bakushin",
             "学級委員長+速さ=バクシン"
         ],
@@ -5276,7 +5428,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "luck be with me",
-            "matikanefukukitaru original",
+            "matikanefukukitaru original og",
             "come come",
             "来てください来てください"
         ],
@@ -5299,7 +5451,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "i can win sometimes right",
-            "nice nature",
+            "nice nature nn original og",
             "you know sometimes even i can",
             "アタシもたまにはね"
         ],
@@ -5322,7 +5474,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "call me king",
-            "king halo"
+            "king halo original og"
         ],
         "upgrade": "Prideful King",
         "gametora_id": "10611"
@@ -5344,7 +5496,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "shooting star",
-            "special week",
+            "special week original og",
             "シューティングスター"
         ],
         "horse": "Special Week (Original)",
@@ -5367,7 +5519,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "view from lead is mine",
-            "silence suzuka",
+            "silence suzuka original og",
             "im not giving up the lead",
             "先頭の景色は譲らない"
         ],
@@ -5393,7 +5545,7 @@
         "aliases": [
             "skyhigh teio step",
             "sky high",
-            "tokai teio",
+            "tokai teio original og",
             "ultimate teio step",
             "究極テイオーステップ"
         ],
@@ -5416,7 +5568,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "triumphant pulse",
-            "oguri cap",
+            "oguri cap original og",
             "the beat of victory",
             "勝利の鼓動"
         ],
@@ -5439,7 +5591,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "anchors aweigh",
-            "gold ship",
+            "gold ship original og",
             "unsinkable ship anchored",
             "不沈艦抜錨ォッ"
         ],
@@ -5464,7 +5616,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "cut and drive",
-            "vodka",
+            "vodka original og",
             "cutting x drive",
             "カッティングxDRIVE"
         ],
@@ -5494,7 +5646,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "resplendent red ace",
-            "daiwa scarlet",
+            "daiwa scarlet original og",
             "brilliant red ace",
             "ブリリアントレッドエース"
         ],
@@ -5519,7 +5671,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "where theres a will theres a way",
-            "grass wonder",
+            "grass wonder original og",
             "精神一到何事か成らざらん"
         ],
         "horse": "Grass Wonder (Original)",
@@ -5542,7 +5694,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "duty of dignity calls",
-            "mejiro mcqueen",
+            "mejiro mcqueen original og",
             "fulfilling your noble duty",
             "貴顕の使命を果たすべく"
         ],
@@ -5566,7 +5718,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "victoria por plancha",
-            "el condor pasa",
+            "el condor pasa original og",
             "plancha ganador",
             "プランチャガナドール"
         ],
@@ -5591,7 +5743,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "this dance is for vittoria",
-            "tm opera o",
+            "tm opera o original og",
             "ヴィットーリアに捧ぐ舞踏"
         ],
         "horse": "TM Opera O (Original)",
@@ -5614,7 +5766,7 @@
         "aliases": [
             "behold thine emperors divine might",
             "emperor divine might",
-            "symboli rudolf",
+            "symboli rudolf original og",
             "thou witness the heavenly might of the emperor",
             "汝皇帝の神威を見よ"
         ],
@@ -5638,7 +5790,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "blazing pride",
-            "air groove",
+            "air groove original og",
             "blaze of pride",
             "ブレイズオブプライド"
         ],
@@ -5664,7 +5816,7 @@
         "aliases": [
             "win qed",
             "win q.e.d",
-            "biwa hayahide"
+            "biwa hayahide original og"
         ],
         "horse": "Biwa Hayahide (Original)",
         "gametora_id": "100231"
@@ -5686,7 +5838,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "flashy landing",
-            "mayano top gun",
+            "mayano top gun original og",
             "inspiration landing",
             "ひらめきランディング"
         ],
@@ -5713,7 +5865,7 @@
         "aliases": [
             "g00 1st f infinity",
             "gundam bourbon",
-            "mihono bourbon"
+            "mihono bourbon original og"
         ],
         "horse": "Mihono Bourbon (Original)",
         "gametora_id": "100261"
@@ -5735,7 +5887,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "blue rose closer",
-            "rice shower",
+            "rice shower original og",
             "blue rose chaser",
             "ブルーローズチェイサー"
         ],
@@ -5759,7 +5911,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "our ticket to win",
-            "winning ticket",
+            "winning ticket original og",
             "the ticket to victory for you",
             "勝利のチケットを君にッ"
         ],
@@ -5784,7 +5936,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "genius x bakushin victory",
-            "sakura bakushin o",
+            "sakura bakushin o original og",
             "honor student x bakushin = big victory",
             "優等生xバクシン=大勝利ッ"
         ],
@@ -5809,7 +5961,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "i see victory in my future",
-            "matikanefukukitaru original",
+            "matikanefukukitaru original og",
             "luck is coming",
             "来ます来てます来させます"
         ],
@@ -5834,7 +5986,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "just a little farther",
-            "nice nature",
+            "nice nature nn original og",
             "surely beyond",
             "きっとその先へ"
         ],
@@ -5859,7 +6011,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "prideful king",
-            "king halo",
+            "king halo original og",
             "pride of king"
         ],
         "horse": "King Halo (Original)",
@@ -5883,7 +6035,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "lookatcurren",
-            "curren chan original"
+            "curren chan original og"
         ],
         "horse": "Curren Chan (Original)",
         "gametora_id": "100381"
@@ -5905,7 +6057,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "nemesis",
-            "narita taishin"
+            "narita taishin original og"
         ],
         "horse": "Narita Taishin (Original)",
         "gametora_id": "100501"
@@ -5928,7 +6080,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "sparkly stardom",
-            "smart falcon original",
+            "smart falcon original og",
             "sparkling stardom",
             "キラキラSTARDOM"
         ],
@@ -5956,7 +6108,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "shadow break",
-            "narita brian original"
+            "narita brian original og"
         ],
         "horse": "Narita Brian (Original)",
         "gametora_id": "100161"
@@ -6030,8 +6182,8 @@
         "category": "rainbowvelocity",
         "aliases": [
             "you and me one on one",
-            "hishi amazon",
-            "hishiama",
+            "hishi amazon original og",
+            "hishiama original og",
             "one on one dead heat",
             "タイマンデッドヒート"
         ],
@@ -6056,7 +6208,7 @@
         "aliases": [
             "vaudeville",
             "lights of vaudeville",
-            "fuji kiseki original",
+            "fuji kiseki original og",
             "glittering star vaudeville",
             "煌星のヴォードヴィル"
         ],
@@ -6081,6 +6233,7 @@
         "aliases": [
             "a kiss for courage",
             "summer maruzensky",
+            "smaru",
             "maruzensky summer",
             "heartfelt smooch",
             "グッときてChu"
@@ -6106,7 +6259,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "i never goof up",
-            "meisho doto original"
+            "meisho doto original og"
         ],
         "horse": "Meisho Doto (Original)",
         "gametora_id": "100581"
@@ -6129,7 +6282,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "schwarzes schwert",
-            "eishin flash original"
+            "eishin flash original og"
         ],
         "horse": "Eishin Flash (Original)",
         "gametora_id": "100371"
@@ -6176,7 +6329,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "yummy speed",
-            "hishi akebono original",
+            "hishi akebono original og",
             "im full speed"
         ],
         "horse": "Hishi Akebono (Original)",
@@ -6198,8 +6351,8 @@
         "category": "rainbowvelocity",
         "aliases": [
             "omg the final sprint",
-            "agnes digital original",
-            "digitan",
+            "agnes digital original og",
+            "digitan original og",
             "kyuute last spuuuurt",
             "kyuute last spurt",
             "尊み☆ﾗｽﾄｽﾊﾟﾄ"
@@ -6225,6 +6378,7 @@
         "aliases": [
             "give mummy a hug",
             "super creek halloween",
+            "mummy creek",
             "round and round mummy trick",
             "ぐるぐるマミートリック"
         ],
@@ -6247,7 +6401,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "a princess must seize victory",
-            "kawakami princess original",
+            "kawakami princess original og",
             "victory befitting a princess",
             "姫たるもの勝利をこの手に"
         ],
@@ -6270,8 +6424,8 @@
         "category": "rainbowvelocity",
         "aliases": [
             "chasing after you",
-            "manhattan cafe original",
-            "coughy original",
+            "manhattan cafe original og",
+            "coughy original og",
             "アナタヲオイカケテ"
         ],
         "horse": "Manhattan Cafe (Original)",
@@ -6342,7 +6496,7 @@
         "aliases": [
             "pop & polish",
             "pop and polish",
-            "tosen jordan original",
+            "tosen jordan original og",
             "yeah vivid time"
         ],
         "horse": "Tosen Jordan (Original)",
@@ -6413,7 +6567,8 @@
         "category": "rainbowvelocity",
         "aliases": [
             "fairy tale",
-            "fine motion original"
+            "fine motion original og",
+            "fm original og"
         ],
         "horse": "Fine Motion (Original)",
         "gametora_id": "100221"
@@ -6441,7 +6596,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "white lightning comin through",
-            "tamamo cross original",
+            "tamamo cross original og",
             "白い稲妻見せたるで",
             "imma show you white lightning"
         ],
@@ -6471,10 +6626,12 @@
         "aliases": [
             "barcarole of blessings",
             "tm opera o new year",
+            "nyopera o",
+            "ny opera o",
             "恵福バルカローレ",
             "blessed barcarolle"
         ],
-        "horse": "T M Opera O (New Year)",
+        "horse": "TM Opera O (New Year)",
         "gametora_id": "110151"
     },
     {   "skill_name": "114th Time's the Charm",
@@ -6495,6 +6652,9 @@
             "114th times the charm",
             "114 times",
             "haru urara new year",
+            "nyaru urara",
+            "ny haru urara",
+            "nyharu urara",
             "113転び114起き",
             "fall down 113 times, get up 114 times"
         ],
@@ -6518,7 +6678,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "ambition to surpass the sakura",
-            "sakura chiyono o original",
+            "sakura chiyono o original og",
             "憧れは桜を越える",
             "longing beyond the sakura"
         ],
@@ -6541,7 +6701,7 @@
         "category": "rainbowvelocity",
         "aliases": [
             "a lifelong dream a moments flight",
-            "mejiro ardan original",
+            "mejiro ardan original og",
             "一期の夢刹那の飛翔",
             "a lifetimes dream a moments flight"
         ],
@@ -6592,6 +6752,66 @@
         ],
         "horse": "Eishin Flash (Valentines)",
         "gametora_id": "110371"
+    },
+    {   "skill_name": "Shooting Star of Dioskouroi",
+        "description": "Condition 1 - Increases speed by 0.35 for 5.0s.\nCondition 2 - Increases speed by 0.45 for 5.0s.",
+        "inherited": "Condition 1 - Increases speed by 0.15 for 3.0s.\nCondition 2 - Increases speed by 0.25 for 3.0s.",
+        "conditions": [
+            [
+                "1st to 6th (CM), 1st to 9th (TT)",
+                "5 lengths behind 1st place or more",
+                "Final straight"
+            ],
+            [
+                "7th to 9th (CM), 10th to 12th (TT)",
+                "5 lengths behind 1st place or more",
+                "Final straight"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "shooting star of dioskouroi",
+            "admire vega original og",
+            "ayabe original og",
+            "ディオスクロイの流星",
+            "meteor of dioscuri"
+        ],
+        "horse": "Admire Vega (Original)",
+        "gametora_id": "100331"
+    },
+    {   "skill_name": "Victory Cheer!",
+        "description": "Condition 1 - Increases speed by 0.25 and acceleration by 0.3 for 5.0s.\nCondition 2 - Increases speed by 0.25 for 5.0s.",
+        "inherited": "Condition 1 - Increases speed by 0.05 and acceleration by 0.1 for 3.0s.\nCondition 2 - Increases speed by 0.05 for 3.0s.",
+        "conditions": [
+            [
+                "1st to 2nd",
+                "Straight on the opposite of the audience",
+                "Late race"
+            ],
+            [
+                "1st to 2nd",
+                "On corner 3",
+                "Second half of the race"
+            ]
+        ],
+        "team_trials": "",
+        "champs_meet": "",
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "victory cheer",
+            "kitasan black original og",
+            "kitasan black og",
+            "勝ち鬨ワッショイ",
+            "shout of victory"
+        ],
+        "horse": "Kitasan Black (Original)",
+        "gametora_id": "100681"
     },
 
 
@@ -7658,7 +7878,7 @@
         "category": "rainbowaccel",
         "aliases": [
             "keep it real",
-            "gold city original"
+            "gold city original og"
         ],
         "horse": "Gold City (Original)",
         "gametora_id": "100401"
@@ -7686,7 +7906,7 @@
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
-            "mejiro dober original",
+            "mejiro dober original og",
             "moving past and beyond",
             "彼方その先へ",
             "beyond the other side"
@@ -7720,7 +7940,7 @@
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
-            "nishino flower original",
+            "nishino flower original og",
             "budding blossom",
             "つぼみほころぶ時",
             "when the flower bud opens"
@@ -8355,7 +8575,8 @@
             "aoharu ignition stamina",
             "アオハル点火 体"
         ],
-        "upgrade": "Burning Spirit STA"
+        "upgrade": "Burning Spirit STA",
+        "gametora_id": "210022"
     },
     {   "skill_name": "Burning Spirit STA",
         "description": "Recover HP based on your team's total base stamina stat, increasing by 4.4% when below 1200, 4.95% at 1200 - 1799, 5.5% at 1800 - 2599, 6.05% at 2600 - 3599, and 6.6% if 3600 or higher.",
@@ -8375,7 +8596,8 @@
             "aoharu burning stamina",
             "アオハル燃焼 体"
         ],
-        "downgrade": "Ignited Spirit STA"
+        "downgrade": "Ignited Spirit STA",
+        "gametora_id": "210021"
     },
     {   "skill_name": "Ignited Spirit PWR",
         "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
