@@ -7603,16 +7603,7 @@
         "gametora_id": "100241"
     },
     {   "skill_name": "G00 1st. F∞;",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 3rd place",
-                "Never 'Late Start'",
-                "Never 'Rushed'",
-                "Final straight"
-            ]
-        ],
+        "description": "Increase velocity when positioned toward the front after making it to the final straight without faltering.",
         "effect":
         [
             {
@@ -7620,16 +7611,17 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "3rd place",
-                    "≤1 length ahead", 
-                    "Late race and beyond"
+                    "1st to 3rd place",
+                    "No 'Late Start'",
+                    "No 'Rushed'",
+                    "Final straight"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Effects are weak. Late Start or Rushed may happen and void this skill.",
+        "review": "Late Start or Rushed may happen and void this skill.",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7641,15 +7633,7 @@
         "gametora_id": "100261"
     },
     {   "skill_name": "Blue Rose Closer",
-        "description": "Increases speed by 0.35 for 5.0s on the last straight.",
-        "inherited": "Increases speed by 0.15 for 3.0s on the last straight.",
-        "conditions": [
-            [
-                "Overtaking",
-                "1st to 4th place",
-                "Final corner and beyond"
-            ]
-        ],
+        "description": "Increase velocity with strong willpower on the final straight after passing another runner in the front part of the pack on the final corner or later.",
         "effect":
         [
             {
@@ -7657,16 +7641,17 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "3rd place",
-                    "≤1 length ahead", 
-                    "Late race and beyond"
+                    "Final straight"
                 ]
             }
         ],
         "preconditions": 
         [
+            "1st to 4th place",
+            "Overtake another uma",
+            "Final corner and beyond"
         ],
-        "review": "Easy to trigger. Effects are rather weak.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
