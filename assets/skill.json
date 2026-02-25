@@ -213,8 +213,33 @@
                 "Always activates"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "speed",
@@ -232,8 +257,33 @@
                 "Silence Suzuka"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "speed",
@@ -251,8 +301,33 @@
                 "Always activates"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "speed",
@@ -270,8 +345,33 @@
                 "Winter"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenspeed",
@@ -351,8 +451,33 @@
                 "1 other uma has Sympathy."
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenspeed",
@@ -1274,8 +1399,33 @@
                 "Silence Suzuka"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "power",
@@ -1293,8 +1443,33 @@
                 "Mile"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "power",
@@ -1311,8 +1486,33 @@
                 "Track condition is firm"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenpower",
@@ -1607,8 +1807,33 @@
                 "Always activates"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "gate",
@@ -1626,8 +1851,33 @@
                 "Medium"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "gate",
@@ -2415,8 +2665,33 @@
                 "HP drops to 30% or lower"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
@@ -2436,8 +2711,33 @@
                 "HP drops to 30% or lower"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "recovery",
@@ -2608,8 +2908,33 @@
                 "Late race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
@@ -2627,8 +2952,33 @@
                 "Late race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "recovery",
@@ -2754,8 +3104,33 @@
                 "Activate 3 skills late race or later"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "recovery",
@@ -2934,8 +3309,33 @@
                 "Silence Suzuka"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
@@ -3006,8 +3406,33 @@
                 "First half of the mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
@@ -3028,8 +3453,33 @@
                 "First half of the mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "recovery",
@@ -3050,8 +3500,33 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "unique",
         "category": "rainbowrecovery",
@@ -3269,8 +3744,33 @@
                 "Late race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -3313,8 +3813,33 @@
                 "Early race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -3628,8 +4153,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -3960,8 +4510,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "Helpful skill to maintain/secure the lead on dirt tracks.",
         "rarity": "normal",
         "category": "velocity",
@@ -3983,8 +4558,33 @@
                 "Last spurt"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4005,8 +4605,33 @@
                 "Second half of mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4027,8 +4652,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4069,8 +4719,33 @@
                 "Second half of the mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4092,8 +4767,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4113,8 +4813,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4135,8 +4860,33 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4157,8 +4907,33 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4179,8 +4954,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4200,8 +5000,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4219,8 +5044,33 @@
                 "Downhill"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4410,8 +5260,33 @@
                 "Late race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4455,8 +5330,33 @@
                 "Early race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4609,8 +5509,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4676,8 +5601,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "Helpful skill to maintain/secure the lead on dirt tracks.",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4719,8 +5669,33 @@
                 "Last spurt"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4759,8 +5734,33 @@
                 "Last straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4779,8 +5779,33 @@
                 "Second half of mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4801,8 +5826,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4842,8 +5892,33 @@
                 "Random straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4863,8 +5938,33 @@
                 "Second half of the mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4883,8 +5983,33 @@
                 "Random straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4927,8 +6052,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4949,8 +6099,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4971,8 +6146,33 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -4993,8 +6193,33 @@
                 "Second half of the race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -5015,8 +6240,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -5057,8 +6307,33 @@
                 "Mid race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -5078,8 +6353,33 @@
                 "Random straight"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -5097,8 +6397,33 @@
                 "Random corner"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -5118,8 +6443,33 @@
                 "Downhill"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -6441,8 +7791,33 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6643,8 +8018,33 @@
                 "Final corner"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6662,17 +8062,24 @@
         "gametora_id": "110521"
     },
     {   "skill_name": "Ambition to Surpass the Sakura",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 4th (CM), 1st to 5th (TT)",
-                "1 length behind or less",
-                "Less than 300m of the race remaining"
-            ]
+        "description": "Increase velocity with blossoming ambition when well-positioned and close to the runner ahead with 300m or less remaining.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "≤1 length behind",
+                    "≤300m of the race remaining"
+                ]
+            }
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6686,16 +8093,22 @@
         "gametora_id": "100691"
     },
     {   "skill_name": "A Lifelong Dream, A Moment's Flight",
-        "description": "Increases speed by 0.45 for 4.0s. Reduces HP by 1%",
-        "inherited": "Increases speed by 0.25 for 2.4s. Reduces HP by 1%",
-        "conditions": [
-            [
-                "1 length behind or more",
-                "Final straight"
-            ]
+        "description": "Seize the moment when close to the runner behind on the final straight, slightly consuming endurance to greatly increase velocity for a moderate duration.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.45 for 4.0s. Reduces HP by 1%.",
+                "inherited": "Increases target speed by 0.25 for 2.4s. Reduces HP by 1%.",
+                "conditions": 
+                [
+                    "≤1 length ahead",
+                    "Final straight"
+                ]
+            }
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6709,18 +8122,24 @@
         "gametora_id": "100711"
     },
     {   "skill_name": "Operation Cacao",
-        "description": "Increases speed by 0.35 for 5.0s. Recover HP by 1.5%.",
-        "inherited": "Increases speed by 0.15 for 3.0s. Recover HP by 0.35%.",
-        "conditions": [
-            [
-                "1st to 4th,",
-                "3 lengths ahead or less",
-                "Corner",
-                "Mid race"
-            ]
+        "description": "Take a slight breather and increase velocity when in the front part of the pack and detecting another runner coming from behind on a corner mid-race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s. Recover HP by 1.5%.",
+                "inherited": "Increases target speed by 0.15 for 3.0s. Recover HP by 0.35%.",
+                "conditions": 
+                [
+                    "1st to 4th",
+                    "≤3 lengths ahead",
+                    "Any corner",
+                    "Mid race"
+                ]
+            }
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6733,16 +8152,22 @@
         "gametora_id": "110261"
     },
     {   "skill_name": "Guten Appetit ♪",
-        "description": "Increases speed by 0.35 for 6.0s.",
-        "inherited": "Increases speed by 0.15 for 3.6s.",
-        "conditions": [
-            [
-                "Overtake 3 times on the final corner and beyond",
-                "Final straight"
-            ]
+        "description": "Increase velocity continuously with a patissiere's pride on the final straight after passing another runner 3 times on the final corner or later.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 6.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.6s.",
+                "conditions": 
+                [
+                    "Overtake ≥3 times on the final corner and beyond",
+                    "Final straight"
+                ]   
+            }
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -7355,8 +8780,33 @@
                 "First half of the late race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "normal",
         "category": "accel",
@@ -7706,8 +9156,33 @@
                 "First half of the late race"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "rare",
         "category": "goldenaccel",
@@ -7994,8 +9469,33 @@
                 "Late race and beyond"
             ]
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": 
+        [
+        ],
+        
         "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
