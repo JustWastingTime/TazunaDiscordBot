@@ -6850,7 +6850,11 @@
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": 
+        [
+            "test pre 1",
+            "test pre 2"
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
