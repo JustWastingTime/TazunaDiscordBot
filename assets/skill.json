@@ -6813,20 +6813,7 @@
         "gametora_id": "100681"
     },
     {   "skill_name": "Eternal Encompassing Shine",
-        "description": "Condition 1 - Increases speed by 0.45 for 5.0s.\nCondition 2 - Increases speed by 0.35 for 5.0s.",
-        "inherited": "Condition 1 - Increases speed by 0.25 for 3.0s.\nCondition 2 - Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "2nd to 5th",
-                "5 lengths behind 1st place or less",
-                "Just entered final straight"
-            ],
-            [
-                "2nd to 5th",
-                "More than 5 lengths behind 1st place",
-                "Just entered final straight"
-            ]
-        ],
+        "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",
         "effect":
         [
             {
@@ -6855,7 +6842,7 @@
             "test pre 1",
             "test pre 2"
         ],
-        "review": "",
+        "review": "If you're in a good position on the last straight, your speed will increase",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
