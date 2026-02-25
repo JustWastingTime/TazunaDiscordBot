@@ -616,13 +616,17 @@ export function buildSkillEmbed(skill, supporterList) {
       name: 'Conditions',
       value: conditionValue + '\n\u200B',
       inline: false
-    },
-    {
-      name: 'Review',
-      value: skill.review + '\n \u200B',
-      inline: true
     }
   ]
+
+  if (skill.review != "") {
+    fields.push({
+      name: 'Review', 
+      value: skill.review + '\n \u200B', 
+      inline: true 
+    })
+  }
+  
   if (!skill.horse) {
     fields.push({
       name: 'Available On', 
@@ -698,7 +702,7 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
       type: 2,
       style: 5,
       label: "Skill Visualizer",
-      url: `https://alpha123.github.io/uma-tools/skill-visualizer-global/#cid=10701,sid=${skill.gametora_id}`
+      url: `https://alpha123.github.io/uma-tools/skill-visualizer-global/#cid=10602,sid=${skill.gametora_id}`
     });
   }
 
