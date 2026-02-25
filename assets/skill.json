@@ -6754,22 +6754,33 @@
         "gametora_id": "110371"
     },
     {   "skill_name": "Shooting Star of Dioskouroi",
-        "description": "Condition 1 - Increases speed by 0.35 for 5.0s.\nCondition 2 - Increases speed by 0.45 for 5.0s.",
-        "inherited": "Condition 1 - Increases speed by 0.15 for 3.0s.\nCondition 2 - Increases speed by 0.25 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 6th (CM), 1st to 9th (TT)",
-                "5 lengths behind 1st place or more",
-                "Final straight"
-            ],
-            [
-                "7th to 9th (CM), 10th to 12th (TT)",
-                "5 lengths behind 1st place or more",
-                "Final straight"
-            ]
+        "description": "Increase velocity with guidance from the stars when far from the lead on the final straight. If positioned around the very back, greatly increase velocity instead.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 6th (CM), 1st to 9th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": 
+                [
+                    "7th to 9th (CM), 10th to 12th (TT)",
+                    "≥5 lengths behind 1st place",
+                    "Final straight"
+                ]
+            }
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6784,22 +6795,33 @@
         "gametora_id": "100331"
     },
     {   "skill_name": "Victory Cheer!",
-        "description": "Condition 1 - Increases speed by 0.25 and acceleration by 0.3 for 5.0s.\nCondition 2 - Increases speed by 0.25 for 5.0s.",
-        "inherited": "Condition 1 - Increases speed by 0.05 and acceleration by 0.1 for 3.0s.\nCondition 2 - Increases speed by 0.05 for 3.0s.",
-        "conditions": [
-            [
-                "1st to 2nd",
-                "Straight on the opposite of the audience",
-                "Late race"
-            ],
-            [
-                "1st to 2nd",
-                "On corner 3",
-                "Second half of the race"
-            ]
+        "description": "Moderately increase velocity when positioned toward the front on the third corner in the second half of the race. Or, kick forward hard when toward the front on the backstretch late-race.",
+        "effect":
+        [
+            {
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 2nd",
+                    "Straight on the opposite of the audience",
+                    "Late race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.0s.",
+                "conditions": 
+                [
+                    "1st to 2nd",
+                    "On corner 3",
+                    "Second half of the race"
+                ]
+            }
         ],
-        "team_trials": "",
-        "champs_meet": "",
+        "preconditions": 
+        [
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -6817,32 +6839,30 @@
         "effect":
         [
             {
-                "description": "Increases speed by 0.45 for 5.0s.",
-                "inherited": "Increases speed by 0.25 for 3.0s.",
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": 
                 [
                     "2nd to 5th",
-                    "5 lengths behind 1st place or less",
+                    "≤5 lengths behind 1st place",
                     "Just entered final straight"
                 ]
             },
             {
-                "description": "Increases speed by 0.35 for 5.0s.",
-                "inherited": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
                     "2nd to 5th",
-                    "5 lengths behind 1st place or less",
+                    ">5 lengths behind 1st place",
                     "Just entered final straight"
                 ]
             }
         ],
         "preconditions": 
         [
-            "test pre 1",
-            "test pre 2"
         ],
-        "review": "If you're in a good position on the last straight, your speed will increase",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
