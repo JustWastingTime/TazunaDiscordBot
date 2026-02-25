@@ -7558,46 +7558,39 @@
         "gametora_id": "100461"
     },
     {   "skill_name": "Shadow Break",
-        "description": "Condition 1 - Increases speed by 0.35 for 5.0s. \n If Condition 2 is also true, increases speed by 0.45 instead.",
-        "inherited": "Condition 1 - Increases speed by 0.15 for 5.0s. \n If Condition 2 is also true, increases speed by 0.25 instead.",
-        "conditions": [
-            [
-                "Overtaking an uma closer to the inner fence",
-                "2nd to 7th (CM), 2nd to 9th (TT)",
-                "Final corner"
-            ],
-            [
-                "Blocked in the sides for 2s or more",
-                "Mid race"
-            ]
-        ],
+        "description": "Increase velocity with beastly strength when passing another runner on the outside on the final corner or later. If the skill user engaged in a challenge mid-race, greatly increase velocity instead.",
         "effect":
         [
-            {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
-                "conditions": 
-                [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
                 "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": 
                 [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Precondition is true",
+                    "2nd to 7th (CM), 2nd to 9th (TT)",
+                    "Overtake another uma",
+                    "The uma behind is closer to the inner fence" ,
+                    "Final corner"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": 
+                [
+                    "2nd to 7th (CM), 2nd to 9th (TT)",
+                    "Overtake another uma",
+                    "The uma behind is closer to the inner fence" ,
+                    "Final corner"
                 ]
             }
         ],
         "preconditions": 
         [
+            "Blocked at the sides for ≥2s",
+            "Mid race"
         ],
-        "review": "Triggering both conditions net you a noticeable speed boost for a wide range of positions. Not ideal on a Front Runner.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7608,15 +7601,7 @@
         "gametora_id": "100161"
     },
     {   "skill_name": "Eternal Moments",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "inherited": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "3rd to 5th (CM), 3rd to 6th (TT)",
-                "Overtake target exists",
-                "Mid race"
-            ]
-        ],
+        "description": "Increase velocity when starting to make a move from a position toward the front mid-race.",
         "effect":
         [
             {
@@ -7624,26 +7609,16 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": 
-                [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "3rd to 5th (CM), 3rd to 6th (TT)",
+                    "Overtake target exists",
+                    "Mid race"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Consistent for non Front Runners. Effect is weak though.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7656,20 +7631,7 @@
         "gametora_id": "110181"
     },
     {   "skill_name": "Flowery☆Maneuver",
-        "description": "Condition 1 - Increases speed by 0.35 for 5.0s.\n Condition 2 - Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Condition 1 - Increases speed by 0.15 for 3.0s.\n Condition 2 - Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "Overtaking",
-                "1st to 4th (CM), 1st to 5th (TT)",
-                "Final corner"
-            ],
-            [
-                "Overtaking",
-                "5th to 7th (CM), 6th to 10th (TT)",
-                "Final corner"
-            ]
-        ],
+        "description": "Increase velocity when passing another runner toward the front on the final corner. If passing toward the back, increase acceleration instead.",
         "effect":
         [
             {
@@ -7677,26 +7639,26 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Overtake another uma", 
+                    "Final corner"
                 ]
             },
             {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4.",
                 "conditions": 
                 [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "5th to 7th (CM), 6th to 10th (TT)",
+                    "Overtake another uma", 
+                    "Final corner"
                 ]
             }
         ],
         "preconditions": 
         [
         ],
-        "review": "Flexible skill that can trigger speed boost for Front Runners and Pace Chasers or acceleration boost for Late Surgers and End Closers. Speed effect is viable on tracks with speed carry over into the final corner (check umalator). Acceleration is good on tracks where the Last Spurt is on the final corner (also check umalator).",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -7716,6 +7678,7 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": 
                 [
+                    "Precondition is true",
                     "Final straight"
                 ]
             }
