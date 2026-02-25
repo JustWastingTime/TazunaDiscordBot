@@ -7581,7 +7581,8 @@
                     "2nd to 7th (CM), 2nd to 9th (TT)",
                     "Overtake another uma",
                     "The uma behind is closer to the inner fence" ,
-                    "Final corner"
+                    "Final corner",
+                    "\n"
                 ]
             }
         ],
@@ -8485,7 +8486,8 @@
                 [
                     "1st to 2nd",
                     "On corner 3",
-                    "Second half of the race"
+                    "Second half of the race",
+                    "\n"
                 ]
             }
         ],
