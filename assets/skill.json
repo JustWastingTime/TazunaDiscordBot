@@ -2186,7 +2186,11 @@
             "円弧のマエストロ"
         ],
         "downgrade": "Corner Recovery",
-        "gametora_id": "200351"
+        "gametora_id": "200351",
+        "characters": 
+        [
+            "<:spe_01:1476644802346090597>"
+        ]
     },
     {   "skill_name": "Corner Recovery",
         "description": "Slightly recover endurance on a corner with efficient turning.",
