@@ -2526,23 +2526,15 @@
         "upgrade": "Calm and Collected",
         "gametora_id": "200562"
     },
-    {
-        "skill_name": "Race Planner",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Race Planner",
+        "description": "Decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2557,23 +2549,15 @@
         "downgrade": "Preferred Position",
         "gametora_id": "200571"
     },
-    {
-        "skill_name": "Preferred Position",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Preferred Position",
+        "description": "Slightly decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2589,23 +2573,15 @@
         "upgrade": "Race Planner",
         "gametora_id": "200572"
     },
-    {
-        "skill_name": "Sleeping Lion",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "End Closer",
-                "Last 25% of the pack (by distance)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Sleeping Lion",
+        "description": "Decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "End Closer",
                     "Last 25% of the pack (by distance)",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2620,23 +2596,15 @@
         "downgrade": "Standing By",
         "gametora_id": "200621"
     },
-    {
-        "skill_name": "Standing By",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "End Closer",
-                "Last 25% of the pack (by distance)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Standing By",
+        "description": "Slightly decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "End Closer",
                     "Last 25% of the pack (by distance)",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2652,23 +2620,15 @@
         "upgrade": "Sleeping Lion",
         "gametora_id": "200622"
     },
-    {
-        "skill_name": "Wait-and-See",
-        "description": "Recover HP by 1.5%. Increases acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Wait-and-See",
+        "description": "Slightly decrease fatigue and very slightly increase acceleration when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%. Increases acceleration by 0.1 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Mid race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
