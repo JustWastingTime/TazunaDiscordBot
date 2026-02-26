@@ -641,14 +641,6 @@ export function buildSkillEmbed(skill, supporterList) {
     });
   }
 
-  // ===== Availability =====
-  if (!skill.horse) {
-    fields.push({
-      name: "Available On",
-      value: supporterList + "\n\u200B",
-      inline: false
-    });
-  }
 
   if (skill.horse) {
     fields.push({
@@ -682,7 +674,7 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
         {
           type: 3, // SELECT_MENU
           custom_id: "supporter_lookup_select",
-          placeholder: "Lookup an available card",
+          placeholder: "Lookup Supporters with this skill",
           options: supporters.slice(0, 25).map(s => ({
             label: `${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`,
             value: s.id,
