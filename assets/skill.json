@@ -2186,11 +2186,7 @@
             "円弧のマエストロ"
         ],
         "downgrade": "Corner Recovery",
-        "gametora_id": "200351",
-        "characters": 
-        [
-            "<:spe_01:1476644802346090597>"
-        ]
+        "gametora_id": "200351"
     },
     {   "skill_name": "Corner Recovery",
         "description": "Slightly recover endurance on a corner with efficient turning.",
@@ -2213,14 +2209,8 @@
         "upgrade": "Swinging Maestro",
         "gametora_id": "200352"
     },
-    {
-        "skill_name": "Corner Recovery x",
-        "description": "Reduce HP by 2%",
-        "conditions": [
-            [
-                "Random point on corner 1/2/3/4"
-            ]
-        ],
+    {   "skill_name": "Corner Recovery x",
+        "description": "Moderately lose endurance on a corner with inefficient turning.",
         "effect": [
             {
                 "description": "Reduce HP by 2%",
@@ -2239,24 +2229,18 @@
         ],
         "gametora_id": "200353"
     },
-    {
-        "skill_name": "Breath of Fresh Air",
-        "description": "Recover HP by 5.5%",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Breath of Fresh Air",
+        "description": "Recover endurance on a straight.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%",
                 "conditions": [
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "It might trigger on an early or late activation, largely reducing the impact of the stamina recovery.",
+        "review": "Tracks often start with a straight, greatly diminishing the value of this recovery.",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -2267,24 +2251,18 @@
         "downgrade": "Straightaway Recovery",
         "gametora_id": "200381"
     },
-    {
-        "skill_name": "Straightaway Recovery",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Straightaway Recovery",
+        "description": "Slightly recover endurance on a straight.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "It might trigger on an early or late activation, largely reducing the impact of the stamina recovery.",
+        "review": "Tracks often start with a straight, greatly diminishing the value of this recovery.",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -2294,19 +2272,14 @@
         "upgrade": "Breath of Fresh Air",
         "gametora_id": "200382"
     },
-    {
-        "skill_name": "Ramp Revulsion",
-        "description": "Reduce HP by 2%",
-        "conditions": [
-            [
-                "Random uphill"
-            ]
-        ],
+    {   "skill_name": "Ramp Revulsion",
+        "description": "Moderately increase fatigue on an uphill.",
         "effect": [
             {
                 "description": "Reduce HP by 2%",
-                "conditions": [
-                    "Random uphill"
+                "conditions": 
+                [
+                    "Random point on a random uphill"
                 ]
             }
         ],
@@ -2322,21 +2295,14 @@
         ],
         "gametora_id": "200391"
     },
-    {
-        "skill_name": "Packphobia",
-        "description": "Reduce HP by 2%",
-        "conditions": [
-            [
-                "Blocked in front and side",
-                "After at least 2s into a race"
-            ]
-        ],
+    {   "skill_name": "Packphobia",
+        "description": "Moderately lose endurance when surrounded.",
         "effect": [
             {
                 "description": "Reduce HP by 2%",
                 "conditions": [
-                    "Blocked in front and side",
-                    "After at least 2s into a race"
+                    "Surrounded",
+                    "After ≥2s into a race"
                 ]
             }
         ],
@@ -2352,28 +2318,20 @@
         ],
         "gametora_id": "200401"
     },
-    {
-        "skill_name": "Iron Will",
-        "description": "Recover HP by 5.5%",
-        "conditions": [
-            [
-                "Blocked in front for 1s or more",
-                "Early race or Mid race",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Iron Will",
+        "description": "Recover endurance when the way ahead is jammed early-race or mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%",
                 "conditions": [
-                    "Blocked in front for 1s or more",
+                    "Blocked in front for ≥1s",
                     "Early race or Mid race",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Might trigger during the early race, wasting the stamina recovery.",
+        "review": "Might trigger during the early race, diminishing the value of the stamina recovery.",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -2384,28 +2342,20 @@
         "downgrade": "Lay Low",
         "gametora_id": "200441"
     },
-    {
-        "skill_name": "Lay Low",
-        "description": "Recover HP by 1.5%",
-        "conditions": [
-            [
-                "Blocked in front for 1s or more",
-                "Early race or Mid race",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Lay Low",
+        "description": "Slightly recover endurance when the way ahead is jammed early-race or mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%",
                 "conditions": [
-                    "Blocked in front for 1s or more",
+                    "Blocked in front for ≥1s",
                     "Early race or Mid race",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Might trigger during the early race, wasting the stamina recovery.",
+        "review": "Might trigger during the early race, diminishing the value of the stamina recovery.",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -2416,20 +2366,13 @@
         "upgrade": "Iron Will",
         "gametora_id": "200442"
     },
-    {
-        "skill_name": "Indomitable",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Be overtaken",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Indomitable",
+        "description": "Recover endurance when passed by another runner mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
-                    "Be overtaken",
+                    "Be overtaken by another uma",
                     "Mid race"
                 ]
             }
@@ -2444,20 +2387,13 @@
         "downgrade": "Pace Strategy",
         "gametora_id": "200471"
     },
-    {
-        "skill_name": "Pace Strategy",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Be overtaken",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Pace Strategy",
+        "description": "Slightly recover endurance when passed by another runner mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "Be overtaken",
+                    "Be overtaken by another uma",
                     "Mid race"
                 ]
             }
@@ -2474,15 +2410,8 @@
         "upgrade": "Indomitable",
         "gametora_id": "200472"
     },
-    {
-        "skill_name": "Unruffled",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Surrounded",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Unruffled",
+        "description": "Recover endurance when surrounded mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -2493,7 +2422,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Unlikely to be boxed in completely for 1s, especially in Champion's Meeting where there are only 9 runners.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -2504,15 +2433,8 @@
         "downgrade": "Calm in a Crowd",
         "gametora_id": "200481"
     },
-    {
-        "skill_name": "Calm in a Crowd",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Surrounded",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Calm in a Crowd",
+        "description": "Slightly recover endurance when surrounded mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -2523,7 +2445,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Unlikely to be boxed in completely for 1s, especially in CM where there are only 9 runners.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -2534,23 +2456,15 @@
         "upgrade": "Unruffled",
         "gametora_id": "200482"
     },
-    {
-        "skill_name": "Running Idle",
-        "description": "Reduce HP by 2%.",
-        "conditions": [
-            [
-                "1st place",
-                "1 length ahead or more",
-                "After at least 2s into a race"
-            ]
-        ],
+    {   "skill_name": "Running Idle",
+        "description": "Moderately increase fatigue when in the lead by too large of a margin.",
         "effect": [
             {
                 "description": "Reduce HP by 2%.",
                 "conditions": [
                     "1st place",
-                    "1 length ahead or more",
-                    "After at least 2s into a race"
+                    "≥1 length ahead",
+                    "After ≥2s into a race"
                 ]
             }
         ],
@@ -2564,28 +2478,20 @@
         ],
         "gametora_id": "200521"
     },
-    {
-        "skill_name": "Calm and Collected",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Second half of Early race"
-            ]
-        ],
+    {   "skill_name": "Calm and Collected",
+        "description": "Decrease fatigue upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Second half of Early race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in second half of early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Triggering at the second half of the early race is less likely to overflow, so the skill is now more usable.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -2596,28 +2502,20 @@
         "downgrade": "Stamina to Spare",
         "gametora_id": "200561"
     },
-    {
-        "skill_name": "Stamina to Spare",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Second half of Early race"
-            ]
-        ],
+    {   "skill_name": "Stamina to Spare",
+        "description": "Slightly recover endurance when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Second half of Early race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in second half of early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Triggering at the second half of the early race is less likely to overflow, so the skill is now more usable.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
