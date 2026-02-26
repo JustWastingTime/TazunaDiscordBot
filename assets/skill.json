@@ -619,6 +619,9 @@
         ],
         "gametora_id": "300041"
     },
+
+
+
     {   "skill_name": "Tokyo Racecourse",
         "description": "Increase performance at Tokyo Racecourse.",
         "effect": [
@@ -920,7 +923,7 @@
             {
                 "description": "Stamina stat +40.",
                 "conditions": [
-                    "Silence Suzuka"
+                    "Silence Suzuka exists"
                 ]
             }
         ],
@@ -1084,6 +1087,7 @@
         ],
         "gametora_id": "300121"
     },
+
     {   "skill_name": "Tokyo Racecourse x",
         "description": "Moderately decrease performance at Tokyo Racecourse.",
         "effect": [
@@ -1126,14 +1130,8 @@
         ],
         "gametora_id": "200043"
     },
-    {
-        "skill_name": "Hanshin Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Hanshin Racecourse"
-            ]
-        ],
+    {   "skill_name": "Hanshin Racecourse x",
+        "description": "Moderately decrease performance at Hanshin Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1153,14 +1151,8 @@
         ],
         "gametora_id": "200053"
     },
-    {
-        "skill_name": "Kyoto Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Kyoto Racecourse"
-            ]
-        ],
+    {   "skill_name": "Kyoto Racecourse x",
+        "description": "Moderately decrease performance at Kyoto Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1180,14 +1172,8 @@
         ],
         "gametora_id": "200063"
     },
-    {
-        "skill_name": "Chukyo Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Chukyo Racecourse"
-            ]
-        ],
+    {   "skill_name": "Chukyo Racecourse x",
+        "description": "Moderately decrease performance at Chukyo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1207,14 +1193,8 @@
         ],
         "gametora_id": "200073"
     },
-    {
-        "skill_name": "Sapporo Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Sapporo Racecourse"
-            ]
-        ],
+    {   "skill_name": "Sapporo Racecourse x",
+        "description": "Moderately decrease performance at Sapporo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1234,14 +1214,8 @@
         ],
         "gametora_id": "200083"
     },
-    {
-        "skill_name": "Hakodate Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Hakodate Racecourse"
-            ]
-        ],
+    {   "skill_name": "Hakodate Racecourse x",
+        "description": "Moderately decrease performance at Hakodate Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1261,14 +1235,8 @@
         ],
         "gametora_id": "200093"
     },
-    {
-        "skill_name": "Fukushima Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Fukushima Racecourse"
-            ]
-        ],
+    {   "skill_name": "Fukushima Racecourse x",
+        "description": "Moderately decrease performance at Fukushima Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1288,14 +1256,8 @@
         ],
         "gametora_id": "200103"
     },
-    {
-        "skill_name": "Niigata Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Niigata Racecourse"
-            ]
-        ],
+    {   "skill_name": "Niigata Racecourse x",
+        "description": "Moderately decrease performance at Niigata Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1315,14 +1277,8 @@
         ],
         "gametora_id": "200113"
     },
-    {
-        "skill_name": "Kokura Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Kokura Racecourse"
-            ]
-        ],
+    {   "skill_name": "Kokura Racecourse x",
+        "description": "Moderately decrease performance at Kokura Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1342,14 +1298,8 @@
         ],
         "gametora_id": "200123"
     },
-    {
-        "skill_name": "Standard Distance x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Racecourse length is a multiple of 400m"
-            ]
-        ],
+    {   "skill_name": "Standard Distance x",
+        "description": "Moderately decrease performance over standard distances (multiples of 400m).",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1369,14 +1319,8 @@
         ],
         "gametora_id": "200133"
     },
-    {
-        "skill_name": "Non-Standard Distance x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Racecourse length is not a multiple of 400m"
-            ]
-        ],
+    {   "skill_name": "Non-Standard Distance x",
+        "description": "Moderately decrease performance over non-standard distances (not multiples of 400m).",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1397,14 +1341,8 @@
         ],
         "gametora_id": "200143"
     },
-    {
-        "skill_name": "Paddock Fright",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "When favorite to win"
-            ]
-        ],
+    {   "skill_name": "Paddock Fright",
+        "description": "Moderately decrease performance when the favourite.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1425,14 +1363,8 @@
         ],
         "gametora_id": "200321"
     },
-    {
-        "skill_name": "Oi Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Oi Racecourse"
-            ]
-        ],
+    {   "skill_name": "Oi Racecourse x",
+        "description": "Moderately decrease performance at Oi Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1453,14 +1385,8 @@
         ],
         "gametora_id": "200953"
     },
-    {
-        "skill_name": "Kawasaki Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Kawasaki Racecourse"
-            ]
-        ],
+    {   "skill_name": "Kawasaki Racecourse x",
+        "description": "Moderately decrease performance at Kawasaki Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1480,14 +1406,8 @@
         ],
         "gametora_id": "202203"
     },
-    {
-        "skill_name": "Funabashi Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Funabashi Racecourse"
-            ]
-        ],
+    {   "skill_name": "Funabashi Racecourse x",
+        "description": "Moderately decrease performance at Funabashi Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1507,14 +1427,8 @@
         ],
         "gametora_id": "202213"
     },
-    {
-        "skill_name": "Morioka Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Morioka Racecourse"
-            ]
-        ],
+    {   "skill_name": "Morioka Racecourse x",
+        "description": "Moderately decrease performance at Morioka Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1534,14 +1448,8 @@
         ],
         "gametora_id": "202223"
     },
-    {
-        "skill_name": "Longchamp Racecourse x",
-        "description": "Stamina stat -40.",
-        "conditions": [
-            [
-                "Longchamp Racecourse"
-            ]
-        ],
+    {   "skill_name": "Longchamp Racecourse x",
+        "description": "Moderately decrease performance at Longchamp Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1560,14 +1468,11 @@
         ],
         "gametora_id": "202733"
     },
-    {
-        "skill_name": "Firm Conditions",
-        "description": "Power stat +40/+60.",
-        "conditions": [
-            [
-                "Track condition is firm"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Firm Conditions",
+        "description": "Increase performance on firm ground.",
         "effect": [
             {
                 "description": "Power stat +40/+60.",
@@ -1577,7 +1482,7 @@
             }
         ],
         "preconditions": [],
-        "review": "A solid skill to take for more acceleration or to trigger groundwork. Take in appropriate CM.",
+        "review": "",
         "rarity": "normal",
         "category": "power",
         "aliases": [
@@ -1586,14 +1491,8 @@
             "良バ場"
         ]
     },
-    {
-        "skill_name": "Wet Conditions",
-        "description": "Power stat +40/+60.",
-        "conditions": [
-            [
-                "Track condition is good, soft or heavy"
-            ]
-        ],
+    {   "skill_name": "Wet Conditions",
+        "description": "Increase performance on good, soft and heavy ground.",
         "effect": [
             {
                 "description": "Power stat +40/+60.",
@@ -1603,7 +1502,7 @@
             }
         ],
         "preconditions": [],
-        "review": "A solid skill to take for more acceleration or to trigger groundwork. Take in appropriate CM.",
+        "review": "",
         "rarity": "normal",
         "category": "power",
         "aliases": [
@@ -1614,14 +1513,8 @@
             "道悪"
         ]
     },
-    {
-        "skill_name": "Competitive Spirit",
-        "description": "Power stat +40/+60.",
-        "conditions": [
-            [
-                "40% of runners or more using the same strategy (4 or more in CM, 5 in TT)"
-            ]
-        ],
+    {   "skill_name": "Competitive Spirit",
+        "description": "Increase performance when many other runners are using the same strategy.",
         "effect": [
             {
                 "description": "Power stat +40/+60.",
@@ -1631,7 +1524,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Unlikely to trigger for miniscule gains.",
+        "review": "",
         "rarity": "normal",
         "category": "power",
         "aliases": [
@@ -1639,31 +1532,13 @@
             "対抗意識"
         ]
     },
-    {
-        "skill_name": "As a Friend and Rival",
-        "description": "Power stat +40",
-        "conditions": [
-            [
-                "Silence Suzuka"
-            ]
-        ],
+    {   "skill_name": "As a Friend and Rival",
+        "description": "Moderately increase Silence Suzuka's performance through the happiness felt seeing a friend find their running style.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Power stat +40.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Silence Suzuka exists"
                 ]
             }
         ],
@@ -1677,32 +1552,14 @@
             "as a friend as a rival"
         ]
     },
-    {
-        "skill_name": "Mile Race Enthusiast",
-        "description": "Power stat +60",
-        "conditions": [
-            [
-                "Turf",
-                "Mile"
-            ]
-        ],
+    {   "skill_name": "Mile Race Enthusiast",
+        "description": "Increase proficiency in Mile Turf races. This skill is exclusive to the event.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Power stat +60.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Turf",
+                    "Mile"
                 ]
             }
         ],
@@ -1716,31 +1573,13 @@
             "mile racing passion"
         ]
     },
-    {
-        "skill_name": "Firm Course Menace",
-        "description": "Power & Speed stat +60.",
-        "conditions": [
-            [
-                "Track condition is firm"
-            ]
-        ],
+    {   "skill_name": "Firm Course Menace",
+        "description": "Increase performance on firm ground, boosting Power and Speed.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Speed and Power stat +60.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Track condition is firm"
                 ]
             }
         ],
@@ -1755,14 +1594,9 @@
             "良バ場の鬼"
         ]
     },
-    {
-        "skill_name": "Firm Conditions x",
-        "description": "Power stat -40.",
-        "conditions": [
-            [
-                "Track condition is firm"
-            ]
-        ],
+
+    {   "skill_name": "Firm Conditions x",
+        "description": "Moderately decrease performance on firm ground.",
         "effect": [
             {
                 "description": "Power stat -40.",
@@ -1781,14 +1615,8 @@
             "良バ場x"
         ]
     },
-    {
-        "skill_name": "Wet Conditions x",
-        "description": "Power stat -40.",
-        "conditions": [
-            [
-                "Track condition is good, soft or heavy"
-            ]
-        ],
+    {   "skill_name": "Wet Conditions x",
+        "description": "Moderately decrease performance on good, soft and heavy ground.",
         "effect": [
             {
                 "description": "Power stat -40.",
@@ -1809,14 +1637,8 @@
             "道悪x"
         ]
     },
-    {
-        "skill_name": "Wallflower",
-        "description": "Power stat -40.",
-        "conditions": [
-            [
-                "40% of runners or more using the same strategy (4 or more in CM, 5 in TT)"
-            ]
-        ],
+    {   "skill_name": "Wallflower",
+        "description": "Moderately decrease performance when many other runners are using the same strategy.",
         "effect": [
             {
                 "description": "Power stat -40.",
@@ -1836,14 +1658,11 @@
             "引っ込み思案"
         ]
     },
-    {
-        "skill_name": "Sunny Days",
-        "description": "Guts stat +40/+60.",
-        "conditions": [
-            [
-                "Sunny weather"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Sunny Days",
+        "description": "Increase performance in sunny weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -1853,7 +1672,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Adds a flat guts value that can help you hit thresholds if you are lacking.",
+        "review": "",
         "rarity": "normal",
         "category": "guts",
         "aliases": [
@@ -1861,14 +1680,8 @@
             "晴れの日"
         ]
     },
-    {
-        "skill_name": "Cloudy Days",
-        "description": "Guts stat +40/+60.",
-        "conditions": [
-            [
-                "Cloudy weather"
-            ]
-        ],
+    {   "skill_name": "Cloudy Days",
+        "description": "Increase performance in cloudy weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -1878,7 +1691,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Adds a flat guts value that can help you hit thresholds if you are lacking.",
+        "review": "",
         "rarity": "normal",
         "category": "guts",
         "aliases": [
@@ -1886,14 +1699,8 @@
             "曇りの日"
         ]
     },
-    {
-        "skill_name": "Rainy Days",
-        "description": "Guts stat +40/+60.",
-        "conditions": [
-            [
-                "Rainy weather"
-            ]
-        ],
+    {   "skill_name": "Rainy Days",
+        "description": "Increase performance in rainy weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -1903,7 +1710,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Adds a flat guts value that can help you hit thresholds if you are lacking.",
+        "review": "",
         "rarity": "normal",
         "category": "guts",
         "aliases": [
@@ -1911,14 +1718,8 @@
             "雨の日"
         ]
     },
-    {
-        "skill_name": "Snowy Days",
-        "description": "Guts stat +40/+60.",
-        "conditions": [
-            [
-                "Snowy weather"
-            ]
-        ],
+    {   "skill_name": "Snowy Days",
+        "description": "Increase performance in snowy weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -1928,7 +1729,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Adds a flat guts value that can help you hit thresholds if you are lacking.",
+        "review": "",
         "rarity": "normal",
         "category": "guts",
         "aliases": [
@@ -1936,14 +1737,8 @@
             "雪の日"
         ]
     },
-    {
-        "skill_name": "Target in Sight",
-        "description": "Guts stat +40/+60.",
-        "conditions": [
-            [
-                "When using the same strategy as the favorite"
-            ]
-        ],
+    {   "skill_name": "Target in Sight",
+        "description": "Increase performance when the favorite is using the same strategy",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -1953,7 +1748,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Gambling condition for guts. Not worth.",
+        "review": "",
         "rarity": "normal",
         "category": "guts",
         "aliases": [
@@ -1962,14 +1757,9 @@
             "eyes on you"
         ]
     },
-    {
-        "skill_name": "Rainy Days x",
-        "description": "Guts stat -40.",
-        "conditions": [
-            [
-                "Rainy weather"
-            ]
-        ],
+
+    {   "skill_name": "Rainy Days x",
+        "description": "Moderately decrease performance in rainy weather.",
         "effect": [
             {
                 "description": "Guts stat -40.",
@@ -1987,14 +1777,8 @@
             "雨の日x"
         ]
     },
-    {
-        "skill_name": "99 problems",
-        "description": "Guts & Wit stat -40.",
-        "conditions": [
-            [
-                "Always activates"
-            ]
-        ],
+    {   "skill_name": "99 problems",
+        "description": "Get overwhelmed by powerful opponents, moderately decreasing Guts and Wit.",
         "effect": [
             {
                 "description": "Guts & Wit stat -40.",
@@ -2011,14 +1795,11 @@
             "99 problems"
         ]
     },
-    {
-        "skill_name": "Inner Post Proficiency",
-        "description": "Wit stat +40/+60.",
-        "conditions": [
-            [
-                "Gate bracket 1 - 3"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Inner Post Proficiency",
+        "description": "Increase performance in brackets 1–3.",
         "effect": [
             {
                 "description": "Wit stat +40/+60.",
@@ -2028,7 +1809,7 @@
             }
         ],
         "preconditions": [],
-        "review": "A gamble for wit. Unless you really need the extra wit, its usually not worth it.",
+        "review": "",
         "rarity": "normal",
         "category": "gate",
         "aliases": [
@@ -2036,24 +1817,18 @@
             "innerpost"
         ]
     },
-    {
-        "skill_name": "Front Runner Savvy",
-        "description": "Wit +40/+60 and FoV +5/+10.",
-        "conditions": [
-            [
-                "Front Runner"
-            ]
-        ],
+    {   "skill_name": "Front Runner Savvy",
+        "description": "Increase ability to get into a good position.",
         "effect": [
             {
-                "description": "Wit +40/+60 and FoV +5/+10.",
+                "description": "Wit stat +40/+60 and FoV +5/+10.",
                 "conditions": [
                     "Front Runner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
+        "review": "Consistent activation for TT. Just take one level.",
         "rarity": "normal",
         "category": "gate",
         "aliases": [
@@ -2062,24 +1837,18 @@
             "逃げのコツ"
         ]
     },
-    {
-        "skill_name": "Pace Chaser Savvy",
-        "description": "Wit +40/+60 and FoV +5/+10.",
-        "conditions": [
-            [
-                "Pace Chaser"
-            ]
-        ],
+    {   "skill_name": "Pace Chaser Savvy",
+        "description": "Increase ability to get into a good position.",
         "effect": [
             {
-                "description": "Wit +40/+60 and FoV +5/+10.",
+                "description": "Wit stat +40/+60 and FoV +5/+10.",
                 "conditions": [
                     "Pace Chaser"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
+        "review": "Consistent activation for TT. Just take one level.",
         "rarity": "normal",
         "category": "gate",
         "aliases": [
@@ -2088,24 +1857,18 @@
             "先行のコツ"
         ]
     },
-    {
-        "skill_name": "Late Surger Savvy",
-        "description": "Wit +40/+60 and FoV +5/+10.",
-        "conditions": [
-            [
-                "Late Surger"
-            ]
-        ],
+    {   "skill_name": "Late Surger Savvy",
+        "description": "Increase ability to get into a good position.",
         "effect": [
             {
-                "description": "Wit +40/+60 and FoV +5/+10.",
+                "description": "Wit stat +40/+60 and FoV +5/+10.",
                 "conditions": [
                     "Late Surger"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
+        "review": "Consistent activation for TT. Just take one level.",
         "rarity": "normal",
         "category": "gate",
         "aliases": [
@@ -2114,24 +1877,18 @@
             "差しのコツ"
         ]
     },
-    {
-        "skill_name": "End Closer Savvy",
-        "description": "Wit +40/+60 and FoV +5/+10.",
-        "conditions": [
-            [
-                "End Closer"
-            ]
-        ],
+    {   "skill_name": "End Closer Savvy",
+        "description": "Increase ability to get into a good position as an end closer.",
         "effect": [
             {
-                "description": "Wit +40/+60 and FoV +5/+10.",
+                "description": "Wit stat +40/+60 and FoV +5/+10.",
                 "conditions": [
                     "End Closer"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent activation for TT. Just take one level. For CM, take if you need the extra wit.",
+        "review": "Consistent activation for TT. Just take one level.",
         "rarity": "normal",
         "category": "gate",
         "aliases": [
@@ -2140,9 +1897,8 @@
             "追込のコツ"
         ]
     },
-    {
-        "skill_name": "Restraint",
-        "description": "Wit +60. Decrease Rushed chance by 3.",
+    {   "skill_name": "Restraint",
+        "description": "Increase Wit and moderately decrease the chance of being Rushed.",
         "conditions": [
             [
                 "Always activates"
@@ -2150,21 +1906,9 @@
         ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Wit stat +60. Decrease Rushed chance by 3.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Always activates"
                 ]
             }
         ],
@@ -2178,32 +1922,14 @@
             "自制心"
         ]
     },
-    {
-        "skill_name": "Medium Race Enthusiast",
-        "description": "Wit +60.",
-        "conditions": [
-            [
-                "Turf",
-                "Medium"
-            ]
-        ],
+    {   "skill_name": "Medium Race Enthusiast",
+        "description": "Increase proficiency in Medium Turf races. This skill is exclusive to the event.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Wit stat +60.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Turf",
+                    "Medium"
                 ]
             }
         ],
@@ -2217,14 +1943,8 @@
             "中距離レースへの想い"
         ]
     },
-    {
-        "skill_name": "Inner Post Averseness",
-        "description": "Wit stat -40.",
-        "conditions": [
-            [
-                "Gate bracket 1 - 3"
-            ]
-        ],
+    {   "skill_name": "Inner Post Averseness",
+        "description": "Moderately decrease performance in brackets 1–3.",
         "effect": [
             {
                 "description": "Wit stat -40.",
@@ -2245,15 +1965,11 @@
         ],
         "gametora_id": "200253"
     },
-    {
-        "skill_name": "Lucky Seven",
-        "description": "Speed, stamina and power stat +40",
-        "conditions": [
-            [
-                "Bracket 7",
-                "50% chance to activate"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Lucky Seven",
+        "description": "Moderately good things may happen when in bracket 7.",
         "effect": [
             {
                 "description": "Speed, stamina and power stat +40",
@@ -2264,7 +1980,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Relying on being in bracket 7 is a big gamble. It also comes with a coinflip of activating even if you're in bracket 7.",
+        "review": "Gambles on being in bracket 7 and an extra coin flip to activate.",
         "rarity": "normal",
         "category": "super7",
         "aliases": [
@@ -2275,15 +1991,8 @@
         "upgrade": "Super Lucky Seven",
         "gametora_id": "201562"
     },
-    {
-        "skill_name": "Super Lucky Seven",
-        "description": "Increases speed, stamina and power stat by 60",
-        "conditions": [
-            [
-                "Bracket 7",
-                "50% chance to activate"
-            ]
-        ],
+    {   "skill_name": "Super Lucky Seven",
+        "description": "Good things may happen when in bracket 7.",
         "effect": [
             {
                 "description": "Increases speed, stamina and power stat by 60",
@@ -2294,7 +2003,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Relying on being in bracket 7 is a big gamble. It also comes with a coinflip of activating even if you're in bracket 7.",
+        "review": "Gambles on being in bracket 7 and an extra coin flip to activate.",
         "rarity": "rare",
         "category": "goldensuper7",
         "aliases": [
@@ -2304,22 +2013,17 @@
         "downgrade": "Lucky Seven",
         "gametora_id": "201561"
     },
-    {
-        "skill_name": "Introduction to Physiology",
-        "description": "Recover HP by 3.5%. Increases speed by 0.15 for 4.0s.",
-        "conditions": [
-            [
-                "3rd to 4th (CM), 3rd to 5th (TT)",
-                "Random corner",
-                "Second half of the race"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Introduction to Physiology",
+        "description": "Moderately recover endurance and slightly increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race. ",
         "effect": [
             {
                 "description": "Recover HP by 3.5%. Increases speed by 0.15 for 4.0s.",
                 "conditions": [
                     "3rd to 4th (CM), 3rd to 5th (TT)",
-                    "Random corner",
+                    "Any corner",
                     "Second half of the race"
                 ]
             }
@@ -2336,21 +2040,14 @@
         "upgrade": "U=ma2",
         "gametora_id": "10321"
     },
-    {
-        "skill_name": "Clear Heart",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "2nd to 4th (CM), 2nd to 5th (TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Clear Heart",
+        "description": "Recover endurance when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "2nd to 4th (CM), 2nd to 5th (TT)",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2366,22 +2063,14 @@
         "upgrade": "Pure Heart",
         "gametora_id": "10451"
     },
-    {
-        "skill_name": "Super-Duper Stoked",
-        "description": "Recover HP by 3.5%.",
-        "conditions": [
-            [
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "1 or more uma within 3m or 3 lanes",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Super-Duper Stoked",
+        "description": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner. ",
         "effect": [
             {
                 "description": "Recover HP by 3.5%.",
                 "conditions": [
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "1 or more uma within 3m or 3 lanes",
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "≥1 uma within 3m or 3 lanes",
                     "Final corner"
                 ]
             }
@@ -2399,23 +2088,15 @@
         "upgrade": "Super-Duper Climax",
         "gametora_id": "10521"
     },
-    {
-        "skill_name": "U=ma2",
-        "description": "Recover HP by 5.5%. Increases speed by 0.25 for 4.0s.",
-        "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 2.4s.",
-        "conditions": [
-            [
-                "3rd to 4th (CM), 3rd to 5th (TT)",
-                "Random corner",
-                "Second half of the race"
-            ]
-        ],
+    {   "skill_name": "U=ma2",
+        "description": "Recover endurance and moderately increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Increases speed by 0.25 for 4.0s.",
+                "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 2.4s.",
                 "conditions": [
                     "3rd to 4th (CM), 3rd to 5th (TT)",
-                    "Random corner",
+                    "Any corner",
                     "Second half of the race"
                 ]
             }
@@ -2432,22 +2113,15 @@
         "downgrade": "Introduction to Physiology",
         "gametora_id": "100321"
     },
-    {
-        "skill_name": "Pure Heart",
-        "description": "Recover HP by 7.5%.",
-        "inherited": "Recover HP by 3.5%.",
-        "conditions": [
-            [
-                "2nd to 4th (CM), 2nd to 5th (TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Pure Heart",
+        "description": "Greatly recover endurance when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 7.5%.",
+                "inherited": "Recover HP by 3.5%.",
                 "conditions": [
                     "2nd to 4th (CM), 2nd to 5th (TT)",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2465,23 +2139,15 @@
         "downgrade": "Clear Heart",
         "gametora_id": "100451"
     },
-    {
-        "skill_name": "Super-Duper Climax",
-        "description": "Recover HP by 5.5%.",
-        "inherited": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "1 or more uma within 3m or 3 lanes",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Super-Duper Climax",
+        "description": "Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
+                "inherited": "Recover HP by 1.5%.",
                 "conditions": [
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "1 or more uma within 3m or 3 lanes",
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "≥1 uma within 3m or 3 lanes",
                     "Final corner"
                 ]
             }
@@ -2500,14 +2166,8 @@
         "downgrade": "Super-Duper Stoked",
         "gametora_id": "100521"
     },
-    {
-        "skill_name": "Swinging Maestro",
-        "description": "Recover HP by 5.5%",
-        "conditions": [
-            [
-                "Random point on corner 1/2/3/4"
-            ]
-        ],
+    {   "skill_name": "Swinging Maestro",
+        "description": "Recover endurance on a corner with efficient turning.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%",
@@ -2517,7 +2177,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Consistent and effective recovery that triggers on corner 1 (may not be the first corner, refer to umalator).",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -2528,14 +2188,8 @@
         "downgrade": "Corner Recovery",
         "gametora_id": "200351"
     },
-    {
-        "skill_name": "Corner Recovery",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Random point on corner 1/2/3/4"
-            ]
-        ],
+    {   "skill_name": "Corner Recovery",
+        "description": "Slightly recover endurance on a corner with efficient turning.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -2545,7 +2199,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Consistent and effective recovery that triggers on corner 1 (may not be the first corner, refer to umalator).",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
