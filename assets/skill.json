@@ -45,7 +45,7 @@
         "gametora_id": "200022"
     },
     {   "skill_name": "Spring Runner",
-        "description": "Increase performance in spring. ",
+        "description": "Increase performance in spring.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -2017,7 +2017,7 @@
 
 
     {   "skill_name": "Introduction to Physiology",
-        "description": "Moderately recover endurance and slightly increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race. ",
+        "description": "Moderately recover endurance and slightly increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race.",
         "effect": [
             {
                 "description": "Recover HP by 3.5%. Increases speed by 0.15 for 4.0s.",
@@ -2064,7 +2064,7 @@
         "gametora_id": "10451"
     },
     {   "skill_name": "Super-Duper Stoked",
-        "description": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner. ",
+        "description": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
         "effect": [
             {
                 "description": "Recover HP by 3.5%.",
@@ -2462,7 +2462,7 @@
             {
                 "description": "Reduce HP by 2%.",
                 "conditions": [
-                    "1st place",
+                    "1st",
                     "≥1 length ahead",
                     "After ≥2s into a race"
                 ]
@@ -2642,23 +2642,15 @@
         ],
         "gametora_id": "200662"
     },
-    {
-        "skill_name": "Keen Eye",
-        "description": "Recover HP by 5.5%. Reduces speed of all umas ahead by 0.2.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Second half of early race"
-            ]
-        ],
+    {   "skill_name": "Keen Eye",
+        "description": "Decrease fatigue, then moderately decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Reduces speed of all umas ahead by 0.2.",
                 "conditions": [
                     "Mile",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Second half of early race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in second half of early race"
                 ]
             }
         ],
@@ -2674,23 +2666,15 @@
         "downgrade": "Watchful Eye",
         "gametora_id": "200691"
     },
-    {
-        "skill_name": "Watchful Eye",
-        "description": "Recover HP by 1.5%. Reduces speed of all umas ahead by 0.05.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Second half of early race"
-            ]
-        ],
+    {   "skill_name": "Watchful Eye",
+        "description": "Slightly decrease fatigue, then very slightly decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%. Reduces speed of all umas ahead by 0.05.",
                 "conditions": [
                     "Mile",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Second half of early race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in second half of early race"
                 ]
             }
         ],
@@ -2706,23 +2690,15 @@
         "upgrade": "Keen Eye",
         "gametora_id": "200692"
     },
-    {
-        "skill_name": "Trackblazer",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Medium",
-                "1st - 3rd place",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Trackblazer",
+        "description": "Decrease fatigue when positioned toward the front mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Medium",
-                    "1st - 3rd place",
-                    "Mid race"
+                    "1st to 3rd",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2738,23 +2714,15 @@
         "downgrade": "Rosy Outlook",
         "gametora_id": "200711"
     },
-    {
-        "skill_name": "Rosy Outlook",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Medium",
-                "1st - 3rd place",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Rosy Outlook",
+        "description": "Slightly decrease fatigue when positioned toward the front mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Medium",
-                    "1st - 3rd place",
-                    "Mid race"
+                    "1st to 3rd",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -2770,21 +2738,14 @@
         "upgrade": "Trackblazer",
         "gametora_id": "200712"
     },
-    {
-        "skill_name": "Cooldown",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Long",
-                "Straight"
-            ]
-        ],
+    {   "skill_name": "Cooldown",
+        "description": "Decrease fatigue by taking a breather upon entering a straight.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Long",
-                    "Straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -2799,21 +2760,14 @@
         "downgrade": "Deep Breaths",
         "gametora_id": "200741"
     },
-    {
-        "skill_name": "Deep Breaths",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Long",
-                "Straight"
-            ]
-        ],
+    {   "skill_name": "Deep Breaths",
+        "description": "Slightly decrease fatigue by taking a breather upon entering a straight.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Long",
-                    "Straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -2828,32 +2782,14 @@
         "upgrade": "Cooldown",
         "gametora_id": "200742"
     },
-    {
-        "skill_name": "Adrenaline Rush",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Long",
-                "HP drops to 30% or lower"
-            ]
-        ],
+    {   "skill_name": "Adrenaline Rush",
+        "description": "Regain the energy to run when close to exhausting strength.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 5.5%",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "≤30% HP remaining"
                 ]
             }
         ],
@@ -2869,32 +2805,14 @@
         "downgrade": "Extra Tank",
         "gametora_id": "200761"
     },
-    {
-        "skill_name": "Extra Tank",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Long",
-                "HP drops to 30% or lower"
-            ]
-        ],
+    {   "skill_name": "Extra Tank",
+        "description": "Slightly regain the energy to run when close to exhausting strength.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "≤30% HP remaining"
                 ]
             }
         ],
@@ -2910,23 +2828,15 @@
         "upgrade": "Adrenaline Rush",
         "gametora_id": "200762"
     },
-    {
-        "skill_name": "Miraculous Step",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Medium",
-                "Changing lanes",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Miraculous Step",
+        "description": "Decrease fatigue when moving sideways.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Medium",
                     "Changing lanes",
-                    "After at least 10s into a race"
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -2942,23 +2852,15 @@
         "downgrade": "Soft Step",
         "gametora_id": "201141"
     },
-    {
-        "skill_name": "Soft Step",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Medium",
-                "Changing lanes",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Soft Step",
+        "description": "Slightly decrease fatigue when moving sideways.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Medium",
                     "Changing lanes",
-                    "After at least 10s into a race"
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -2974,23 +2876,15 @@
         "upgrade": "Miraculous Step",
         "gametora_id": "201142"
     },
-    {
-        "skill_name": "Passing Pro",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Long",
-                "Overtake target exists",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Passing Pro",
+        "description": "Slightly decrease fatigue when determined to pass another runner.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Long",
                     "Overtake target exists",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -3006,28 +2900,20 @@
         "upgrade": "VIP Pass",
         "gametora_id": "201202"
     },
-    {
-        "skill_name": "Restless",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Uphill",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Restless",
+        "description": "Reduce fatigue on an uphill.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Front Runner",
                     "Uphill",
-                    "After at least 10s into a race"
+                    "After ≥10s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Map based skill. Useful when the uphill is in the middle of the race.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -3038,28 +2924,20 @@
         "downgrade": "Moxie",
         "gametora_id": "201281"
     },
-    {
-        "skill_name": "Moxie",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Uphill",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Moxie",
+        "description": "Slightly reduce fatigue on an uphill.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Front Runner",
                     "Uphill",
-                    "After at least 10s into a race"
+                    "After ≥10s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Map based skill. Useful when the uphill is in the middle of the race.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -3070,21 +2948,14 @@
         "upgrade": "Restless",
         "gametora_id": "201282"
     },
-    {
-        "skill_name": "Gourmand",
-        "description": "Recovers HP by 5.5%.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Gourmand",
+        "description": "Recover endurance mid-race.",
         "effect": [
             {
-                "description": "Recovers HP by 5.5%.",
+                "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Pace Chaser",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -3099,21 +2970,14 @@
         "downgrade": "Hydrate",
         "gametora_id": "201351"
     },
-    {
-        "skill_name": "Hydrate",
-        "description": "Recovers HP by 1.5%.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Hydrate",
+        "description": "Slightly recover endurance mid-race.",
         "effect": [
             {
-                "description": "Recovers HP by 1.5%.",
+                "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Pace Chaser",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -3129,32 +2993,14 @@
         "upgrade": "Gourmand",
         "gametora_id": "201352"
     },
-    {
-        "skill_name": "Relax",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "Relax",
+        "description": "Recover endurance late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 5.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Late Surger",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -3168,32 +3014,14 @@
         "downgrade": "A Small Breather",
         "gametora_id": "201421"
     },
-    {
-        "skill_name": "A Small Breather",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "A Small Breather",
+        "description": "Slightly recover endurance late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Late Surger",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -3209,28 +3037,20 @@
         "upgrade": "Relax",
         "gametora_id": "201422"
     },
-    {
-        "skill_name": "Go-Home Specialist",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "End Closer",
-                "Downhill",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Go-Home Specialist",
+        "description": "Reduce fatigue on a downhill.",
         "effect": [
             {
-                "description": "Recover HP by 1.5%.",
+                "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "End Closer",
                     "Downhill",
-                    "After at least 10s into a race"
+                    "After ≥10s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Map based skill. Useful when the downhill is in the middle of the race.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -3241,28 +3061,20 @@
         "downgrade": "After-School Stroll",
         "gametora_id": "201481"
     },
-    {
-        "skill_name": "After-School Stroll",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "End Closer",
-                "Downhill",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "After-School Stroll",
+        "description": "Slightly reduce fatigue on a downhill.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "End Closer",
                     "Downhill",
-                    "After at least 10s into a race"
+                    "After ≥10s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Map based skill. Useful when the downhill is in the middle of the race.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -3273,23 +3085,15 @@
         "upgrade": "Go-Home Specialist",
         "gametora_id": "201482"
     },
-    {
-        "skill_name": "Serenity",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "End Closer",
-                "Blocked in front for 1s or more",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Serenity",
+        "description": "Regain composure by calming down when the way ahead is jammed.",
         "effect": [
             {
-                "description": "Recover HP by 1.5%.",
+                "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "End Closer",
-                    "Blocked in front for 1s or more",
-                    "After at least 10s into a race"
+                    "Blocked in front for ≥1s",
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -3305,23 +3109,15 @@
         "downgrade": "Levelheaded",
         "gametora_id": "201491"
     },
-    {
-        "skill_name": "Levelheaded",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "End Closer",
-                "Blocked in front for 1s or more",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Levelheaded",
+        "description": "Slightly regain composure by calming down when the way ahead is jammed.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "End Closer",
-                    "Blocked in front for 1s or more",
-                    "After at least 10s into a race"
+                    "Blocked in front for ≥1s",
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -3337,24 +3133,18 @@
         "upgrade": "Serenity",
         "gametora_id": "201492"
     },
-    {
-        "skill_name": "Triple 7s",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "777m remaining"
-            ]
-        ],
+    {   "skill_name": "Triple 7s",
+        "description": "Slightly gain energy with 777m remaining.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "777m remaining"
+                   "At the last 777m of the race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent activation, but most effective on tracks shorter than 2400m.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -3364,31 +3154,13 @@
         ],
         "gametora_id": "201571"
     },
-    {
-        "skill_name": "Shake It Out",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Activate 3 skills late race or later"
-            ]
-        ],
+    {   "skill_name": "Shake It Out",
+        "description": "Slightly recover endurance after activating many skills late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Activated ≥3 skills during the late race and beyond"
                 ]
             }
         ],
@@ -3402,29 +3174,21 @@
         ],
         "gametora_id": "201621"
     },
-    {
-        "skill_name": "Superior Heal",
-        "description": "Recover HP by 7.5%.",
-        "inherited": "Recover HP by 3.5%.",
-        "conditions": [
-            [
-                "Overtaken",
-                "40% or worse (4th or worse in CM, 5th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Superior Heal",
+        "description": "Greatly recover endurance with a gentle light when overtaken toward the back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 7.5%.",
+                "inherited": "Recover HP by 3.5%.",
                 "conditions": [
-                    "Overtaken",
-                    "40% or worse (4th or worse in CM, 5th or worse in TT)",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Be overtaken by another uma",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "3.5% recovery makes this better than the other stamina inherits. Condition is also pretty consistent for a Late Surger or End Closer.",
+        "review": "3.5% recovery makes this better than the other stamina inherits. Though being overtaken is not great.",
         "rarity": "unique",
         "category": "rainbowrecovery",
         "aliases": [
@@ -3437,29 +3201,21 @@
         "horse": "Grass Wonder (Fantasy)",
         "gametora_id": "110111"
     },
-    {
-        "skill_name": "Dazzl'n ♪ Diver",
-        "description": "Recover HP by 5.5%.",
-        "inherited": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "2nd to 6th (CM), 2nd to 8th (TT)",
-                "Activated 2 mid race skills",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Dazzl'n ♪ Diver",
+        "description": "Recover endurance by relaxing after activating 2 skills when positioned midpack mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
+                "inherited": "Recover HP by 1.5%.",
                 "conditions": [
                     "2nd to 6th (CM), 2nd to 8th (TT)",
-                    "Activated 2 mid race skills",
+                    "Activated ≥2 skills during the mid race",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "200 SP for a 1.5% recovery and requiring a setup. Probably better uniques to inherit instead.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowrecovery",
         "aliases": [
@@ -3474,29 +3230,21 @@
         "horse": "Special Week (Summer)",
         "gametora_id": "110011"
     },
-    {
-        "skill_name": "Every Rose Has Its Fangs",
-        "description": "Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
-        "inherited": "Recover HP by 1.5%. Reduces HP of all umas ahead by 0.25%.",
-        "conditions": [
-            [
-                "2nd to 5th (CM), 2nd to 6th (TT)",
-                "Be an overtake target for 1s or more",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Every Rose Has Its Fangs",
+        "description": "Suck endurance from runners ahead when well-positioned and pressured by another runner mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
+                "inherited": "Recover HP by 1.5%. Reduces HP of all umas ahead by 0.25%.",
                 "conditions": [
                     "2nd to 5th (CM), 2nd to 6th (TT)",
-                    "Be an overtake target for 1s or more",
+                    "Be an overtake target for ≥1s",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Okay cost for a recovery + debuff skill. But probably better uniques to inherit instead.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowrecovery",
         "aliases": [
@@ -3507,23 +3255,15 @@
         "horse": "Rice Shower (Halloween)",
         "gametora_id": "110301"
     },
-    {
-        "skill_name": "Lie in Wait",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, inclisive (5th or worse in CM, 6th or worse in TT)",
-                "Second half of early race"
-            ]
-        ],
+    {   "skill_name": "Lie in Wait",
+        "description": "Recover endurance when positioned toward the back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, inclisive (5th or worse in CM, 6th or worse in TT)",
-                    "Second half of early race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in second half of early race"
                 ]
             }
         ],
@@ -3539,23 +3279,15 @@
         "downgrade": "Be Still",
         "gametora_id": "201691"
     },
-    {
-        "skill_name": "Be Still",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Second half of early race"
-            ]
-        ],
+    {   "skill_name": "Be Still",
+        "description": "Slightly recover endurance when positioned toward the back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                    "Second half of early race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in second half of early race"
                 ]
             }
         ],
@@ -3571,23 +3303,15 @@
         "upgrade": "Lie In Wait",
         "gametora_id": "201692"
     },
-    {
-        "skill_name": "VIP Pass",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Long",
-                "Overtake target exists",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "VIP Pass",
+        "description": "Decrease fatigue when determined to pass another runner.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Long",
                     "Overtake target exists",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -3602,28 +3326,20 @@
         "downgrade": "Passing Pro",
         "gametora_id": "201201"
     },
-    {
-        "skill_name": "Familiar Ground",
-        "description": "Recover HP by 1.5%.",
-        "conditions": [
-            [
-                "Dirt",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Familiar Ground",
+        "description": "Slightly recover endurance when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Dirt",
-                    "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                    "Mid race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Good recovery skills for Late Surgers and End Closers on dirt tracks.",
+        "review": "Good recovery skill for Late Surgers and End Closers on dirt tracks.",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -3634,31 +3350,14 @@
         "upgrade": "Master of the Sands",
         "gametora_id": "202002"
     },
-    {
-        "skill_name": "Cheers of a Fellow Dreamer",
-        "description": "Recover HP by 5.5%.",
-        "conditions": [
-            [
-                "Silence Suzuka"
-            ]
-        ],
+    {   "skill_name": "Cheers of a Fellow Dreamer",
+        "description": "Recover Silence Suzuka's endurance on a corner in the second half of the race through a friend's cheers of support.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 5.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Silence Suzuka exists",
+                    "At the last 800 to 850m of the race for a player character"
                 ]
             }
         ],
@@ -3673,16 +3372,8 @@
         ],
         "gametora_id": "300101"
     },
-    {
-        "skill_name": "Ready, Go!",
-        "description": "Recover HP by 3.5%. Increases speed by 0.15 for 5.0s.",
-        "conditions": [
-            [
-                "3rd to 6th (CM), 3rd to 8th (TT)",
-                "Mid race",
-                "Second half of the race"
-            ]
-        ],
+    {   "skill_name": "Ready, Go!",
+        "description": "Moderately recover endurance and slightly increase velocity with newfound resolve when in midpack around halfway through the race.",
         "effect": [
             {
                 "description": "Recover HP by 3.5%. Increases speed by 0.15 for 5.0s.",
@@ -3708,20 +3399,12 @@
         "upgrade": "Go, Go, Mun!",
         "gametora_id": "10621"
     },
-    {
-        "skill_name": "Go, Go, Mun!",
-        "description": "Recover HP by 5.5%. Increases speed by 0.25 for 5.0s.",
-        "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 3.0s.",
-        "conditions": [
-            [
-                "3rd to 6th (CM), 3rd to 8th (TT)",
-                "Mid race",
-                "Second half of the race"
-            ]
-        ],
+    {   "skill_name": "Go, Go, Mun!",
+        "description": "Recover endurance and moderately increase velocity with newfound resolve when in midpack around halfway through the race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Increases speed by 0.25 for 5.0s.",
+                "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 3.0s.",
                 "conditions": [
                     "3rd to 6th (CM), 3rd to 8th (TT)",
                     "Mid race",
@@ -3742,35 +3425,18 @@
             "どんっパッむんっ"
         ],
         "downgrade": "Ready, Go!",
+        "horse": "Matikanetannhauser (Original)",
         "gametora_id": "100621"
     },
-    {
-        "skill_name": "Of Calm Mind",
-        "description": "Recover HP by 7.5%. Reduces speed by 0.15 for 1.2s.",
-        "conditions": [
-            [
-                "Long",
-                "4th to 7th (CM), 5th to 10th (TT)",
-                "First half of the mid race"
-            ]
-        ],
+    {   "skill_name": "Of Calm Mind",
+        "description": "If positioned in the midpack around when the mid-race starts, slightly decrease velocity and greatly recover endurance.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 7.5%. Reduces speed by 0.15 for 1.2s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "4th to 7th (CM), 5th to 10th (TT)",
+                    "Random point in first half of mid race"
                 ]
             }
         ],
@@ -3786,33 +3452,15 @@
         "downgrade": "Free-Spirited",
         "gametora_id": "202071"
     },
-    {
-        "skill_name": "Free Spirited",
-        "description": "Recover HP by 3.5%. Reduces speed by 0.15 for 1.2s.",
-        "conditions": [
-            [
-                "Long",
-                "4th to 7th (CM), 5th to 10th (TT)",
-                "First half of the mid race"
-            ]
-        ],
+    {   "skill_name": "Free Spirited",
+        "description": "If positioned in the midpack around when the mid-race starts, slightly decrease velocity and moderately recover endurance",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 3.5%. Reduces speed by 0.15 for 1.2s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "4th to 7th (CM), 5th to 10th (TT)",
+                    "Random point in first half of mid race"
                 ]
             }
         ],
@@ -3828,33 +3476,15 @@
         "upgrade": "Of Calm Mind",
         "gametora_id": "202072"
     },
-    {
-        "skill_name": "Keep Pushing Ahead",
-        "description": "Recover HP by 5.5%. Increases speed by 0.25 for 6.0s.",
-        "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 3.6s.",
-        "conditions": [
-            [
-                "1st to 2nd the entire race",
-                "Second half of the race"
-            ]
-        ],
+    {   "skill_name": "Keep Pushing Ahead",
+        "description": "If positioned toward the front from the start of the race until the second half of the race, good vibes recover endurance and moderately increase velocity steadily.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Recover HP by 5.5%. Increases speed by 0.25 for 6.0s.",
+                "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 3.6s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Has been 1st to 2nd (CM), 1st to 2nd (TT) the entire race" ,
+                    "Second half of the race"
                 ]
             }
         ],
@@ -3868,30 +3498,23 @@
             "the breakaway record",
             "ぶっちぎりロード"
         ],
+        "horse": "Mejiro Palmer (Original)",
         "gametora_id": "100641"
     },
-    {
-        "skill_name": "Master of the Sands",
-        "description": "Recover HP by 5.5%. Increases speed by 0.35 for 1.8s.",
-        "conditions": [
-            [
-                "Dirt",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Master of the Sands",
+        "description": "Recover endurance and increase velocity when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Increases speed by 0.35 for 1.8s.",
                 "conditions": [
                     "Dirt",
-                    "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                    "Mid race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Good recovery skills for Late Surgers and End Closers on dirt tracks.",
+        "review": "Good recovery skill for Late Surgers and End Closers on dirt tracks.",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -3902,24 +3525,21 @@
         "downgrade": "Familiar Ground",
         "gametora_id": "202001"
     },
-    {
-        "skill_name": "Corner Adept",
-        "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Corner Adept",
+        "description": "Slightly increase velocity on a corner with skilled turning.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
                 "conditions": [
-                    "Random corner"
+                    "Random point on all corners"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger. Consistent source of points for TT. Might be a bit too pricy for what it does in CM.",
+        "review": "Easy to trigger. Can activate twice in longer tracks. Consistent source of points for TT.",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -3930,24 +3550,18 @@
         "upgrade": "Professor of Curvature",
         "gametora_id": "200332"
     },
-    {
-        "skill_name": "Straightaway Adept",
-        "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Straightaway Adept",
+        "description": "Slightly increase velocity on a straight.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
                 "conditions": [
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger. Consistent source of points for TT. On CMs with long straights, might be really helpful.",
+        "review": "Easy to trigger. Consistent source of points for TT.",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -3958,20 +3572,13 @@
         "upgrade": "Beeline Burst",
         "gametora_id": "200362"
     },
-    {
-        "skill_name": "Ramp Up",
-        "description": "Increases speed by 0.15 for 1.8s. 30s cooldown.",
-        "conditions": [
-            [
-                "Overtaking",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Ramp Up",
+        "description": "Slightly increase velocity when passing another runner mid-race.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 1.8s. 30s cooldown.",
                 "conditions": [
-                    "Overtaking",
+                    "Overtake another uma",
                     "Mid race"
                 ]
             }
@@ -3988,19 +3595,14 @@
         "upgrade": "It's On!",
         "gametora_id": "200462"
     },
-    {
-        "skill_name": "Homestretch Haste",
-        "description": "Increases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "Last spurt"
-            ]
-        ],
+    {   "skill_name": "Homestretch Haste",
+        "description": "Slightly increase velocity in the last spurt.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "Last spurt"
+                    "Character is in their last spurt mode",
+                    "Random point in last spurt phase"
                 ]
             }
         ],
@@ -4016,23 +3618,15 @@
         "upgrade": "In Body and Mind",
         "gametora_id": "200512"
     },
-    {
-        "skill_name": "Fast-Paced",
-        "description": "Increases speed by 0.15 for 1.8s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Fast-Paced",
+        "description": "Slightly increase ability to go to the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 1.8s.",
+                "description": "Increases speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -4049,28 +3643,20 @@
         "upgrade": "Escape Artist",
         "gametora_id": "200542"
     },
-    {
-        "skill_name": "Prepared to Pass",
-        "description": "Increases speed by 0.15 for 1.8s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Prepared to Pass",
+        "description": "Slightly increase ability to break out of the pack on the final corner.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Final corner"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "An okay speed boost for a pace chaser. Might not be beneficial depending on the final corner/ last spurt mode.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4081,28 +3667,20 @@
         "upgrade": "Speed Star",
         "gametora_id": "200582"
     },
-    {
-        "skill_name": "Position Pilfer",
-        "description": "Increases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Position Pilfer",
+        "description": "Slightly increase velocity mid-race.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Mid race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent effect. Can help Late Surgers move up to trigger dueling mechanics with Pace Chasers.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4113,28 +3691,21 @@
         "upgrade": "Fast & Furious",
         "gametora_id": "200592"
     },
-    {
-        "skill_name": "Outer Swell",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Overtaking an uma that is closer to the inner fence than you",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Outer Swell",
+        "description": "Slightly increase velocity when passing another runner on the outside on the final corner.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Late Surger",
-                    "Overtaking an uma that is closer to the inner fence than you",
+                    "Overtake another uma",
+                    "The uma behind is closer to the inner fence",
                     "Final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "An okay speed boost for a Late Surger. Might not be beneficial depending on the final corner/ last spurt mode.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4145,33 +3716,15 @@
         "upgrade": "Rising Dragon",
         "gametora_id": "200612"
     },
-    {
-        "skill_name": "Masterful Gambit",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Last 50% of the pack (by distance)",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "Masterful Gambit",
+        "description": "Slightly move up in preparation to close the gap when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "End Closer",
+                    "Last 50% of the pack (by distance)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -4187,23 +3740,15 @@
         "upgrade": "Sturm und Drang",
         "gametora_id": "200632"
     },
-    {
-        "skill_name": "Gap Closer",
-        "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "Gap Closer",
+        "description": "Slightly increase spurting ability when positioned toward the back late-race.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -5705,24 +5250,19 @@
         "upgrade": "Supreme Downhiller",
         "gametora_id": "202172"
     },
-    {
-        "skill_name": "Professor of Curvature",
-        "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
-        ],
+
+    {   "skill_name": "Professor of Curvature",
+        "description": "Increase velocity on a corner with skilled turning.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
                 "conditions": [
-                    "Random corner"
+                    "Random point on all corners"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger. Consistent source of points for TT. Might be a bit too pricy for what it does in CM.",
+        "review": "Easy to trigger. Can activate twice in longer tracks. Consistent source of points for TT.",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5734,24 +5274,18 @@
         "downgrade": "Corner Adept",
         "gametora_id": "200331"
     },
-    {
-        "skill_name": "Beeline Burst",
-        "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Beeline Burst",
+        "description": "Increase velocity on a straight..",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
                 "conditions": [
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger. Consistent source of points for TT. On CMs with long straights, might be really helpful.",
+        "review": "Easy to trigger. Consistent source of points for TT.",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5762,20 +5296,13 @@
         "downgrade": "Straightaway Adept",
         "gametora_id": "200361"
     },
-    {
-        "skill_name": "It's On!",
-        "description": "Increases speed by 0.35 for 1.8s. 30s cooldown.",
-        "conditions": [
-            [
-                "Overtake",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "It's On!",
+        "description": "Increase velocity when passing another runner mid-race.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 1.8s. 30s cooldown.",
                 "conditions": [
-                    "Overtake",
+                    "Overtake another uma",
                     "Mid race"
                 ]
             }
@@ -5792,21 +5319,14 @@
         "downgrade": "Ramp Up",
         "gametora_id": "200461"
     },
-    {
-        "skill_name": "In Body and Mind",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Overtaking",
-                "Last spurt"
-            ]
-        ],
+    {   "skill_name": "In Body and Mind",
+        "description": "Increase velocity in the last spurt.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "Overtaking",
-                    "Last spurt"
+                    "Character is in their last spurt mode",
+                    "Random point in last spurt phase"
                 ]
             }
         ],
@@ -5822,23 +5342,15 @@
         "downgrade": "Homestretch Haste",
         "gametora_id": "200511"
     },
-    {
-        "skill_name": "Escape Artist",
-        "description": "Increases speed by 0.35 for 1.8s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Escape Artist",
+        "description": "Increase ability to go to the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 1.8s.",
+                "description": "Increases speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -5853,28 +5365,20 @@
         "downgrade": "Fast-Paced",
         "gametora_id": "200541"
     },
-    {
-        "skill_name": "Speed Star",
-        "description": "Increases speed by 0.35 for 1.8s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Speed Star",
+        "description": "Increase ability to break out of the pack on the final corner.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Final corner"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "An okay speed boost for a pace chaser. Might not be beneficial depending on the final corner/ last spurt mode.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5884,28 +5388,20 @@
         "downgrade": "Prepared to Pass",
         "gametora_id": "200581"
     },
-    {
-        "skill_name": "Fast & Furious",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Fast & Furious",
+        "description": "Increase velocity mid-race.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Mid race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent effect. Can help Late Surgers move up to trigger dueling mechanics with Pace Chasers.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5916,28 +5412,21 @@
         "downgrade": "Position Pilfer",
         "gametora_id": "200591"
     },
-    {
-        "skill_name": "Rising Dragon",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Overtaking an uma that is closer to the inner fence than you",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Rising Dragon",
+        "description": "Increase velocity when passing another runner on the outside on the final corner.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Late Surger",
-                    "Overtaking an uma that is closer to the inner fence than you",
+                    "Overtake another uma",
+                    "The uma behind is closer to the inner fence",
                     "Final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "An okay speed boost for a Late Surger. Might not be beneficial depending on the final corner/ last spurt mode.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5947,33 +5436,15 @@
         "downgrade": "Outer Swell",
         "gametora_id": "200611"
     },
-    {
-        "skill_name": "Sturm und Drang",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Last 50% of the pack (by distance)",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "Sturm und Drang",
+        "description": "Move up in preparation to close the gap when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "End Closer",
+                    "Last 50% of the pack (by distance)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -5990,23 +5461,15 @@
         "downgrade": "Masterful Gambit",
         "gametora_id": "200631"
     },
-    {
-        "skill_name": "Blinding Flash",
+    {   "skill_name": "Blinding Flash",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
         "effect": [
             {
                 "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -7237,8 +6700,10 @@
         ],
         "downgrade": "Slipstream"
     },
-    {
-        "skill_name": "Certain Victory",
+
+
+
+    {   "skill_name": "Certain Victory",
         "description": "Greatly increase velocity with an indomitable fighting spirit on the final straight after being on the heels of another runner toward the front on the final corner or later.",
         "effect": [
             {
@@ -7251,7 +6716,7 @@
             }
         ],
         "preconditions": [
-            "1st to 5th place",
+            "1st to 5th",
             "Overtake target exists for ≥2s",
             "Final corner"
         ],
@@ -7268,15 +6733,14 @@
         "horse": "Tokai Teio (Anime Collab)",
         "gametora_id": "110031"
     },
-    {
-        "skill_name": "Legacy of the Strong",
+    {   "skill_name": "Legacy of the Strong",
         "description": "Increase velocity continuously when pressured by another runner and running out of energy toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.6s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "Be an overtake target for ≥1s",
                     "≤1 length ahead",
                     "≤45% HP remaining",
@@ -7297,8 +6761,7 @@
         "horse": "Mejiro McQueen (Anime Collab)",
         "gametora_id": "110131"
     },
-    {
-        "skill_name": "Warning Shot!",
+    {   "skill_name": "Warning Shot!",
         "description": "Slightly increase velocity with a long spurt starting halfway through the race.",
         "effect": [
             {
@@ -7321,8 +6784,7 @@
         "upgrade": "Anchors Aweigh!",
         "gametora_id": "10071"
     },
-    {
-        "skill_name": "Xceleration",
+    {   "skill_name": "Xceleration",
         "description": "Become stronger at challenging rivals and moderately increase velocity when positioned toward the front with 200m or less remaining.",
         "effect": [
             {
@@ -7347,8 +6809,7 @@
         "upgrade": "Cut and Drive!",
         "gametora_id": "10081"
     },
-    {
-        "skill_name": "Red Ace",
+    {   "skill_name": "Red Ace",
         "description": "Slightly swell with the determination to be number one when positioned toward the front in the second half of the race.",
         "effect": [
             {
@@ -7380,8 +6841,7 @@
         "upgrade": "Resplendent Red Ace",
         "gametora_id": "10091"
     },
-    {
-        "skill_name": "Focused Mind",
+    {   "skill_name": "Focused Mind",
         "description": "Moderately increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
         "effect": [
             {
@@ -7406,8 +6866,7 @@
         "upgrade": "Where There's a Will, There's a Way",
         "gametora_id": "10111"
     },
-    {
-        "skill_name": "Corazón ☆ Ardiente",
+    {   "skill_name": "Corazón ☆ Ardiente",
         "description": "Slightly hang on to the advantage when positioned toward the front with energy to spare on the final straight.",
         "effect": [
             {
@@ -7432,8 +6891,7 @@
         "upgrade": "Victoria por plancha ☆",
         "gametora_id": "10141"
     },
-    {
-        "skill_name": "Empress's Pride",
+    {   "skill_name": "Empress's Pride",
         "description": "Moderately increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
         "effect": [
             {
@@ -7458,14 +6916,13 @@
         "upgrade": "Blazing Pride",
         "gametora_id": "10181"
     },
-    {
-        "skill_name": "1st Place Kiss☆",
+    {   "skill_name": "1st Place Kiss☆",
         "description": "Slightly increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.2 for 5.0s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "Blocked at the sides for ≥2s",
                     "Final corner and beyond"
                 ]
@@ -7485,15 +6942,14 @@
         "upgrade": "Flashy☆Landing",
         "gametora_id": "10241"
     },
-    {
-        "skill_name": "V is for Victory!",
+    {   "skill_name": "V is for Victory!",
         "description": "Moderately increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
                 "conditions": [
                     "Precondition is true",
-                    "1st to 5th place",
+                    "1st to 5th",
                     "Final straight"
                 ]
             }
@@ -7514,14 +6970,13 @@
         "upgrade": "Our Ticket to Win!",
         "gametora_id": "10351"
     },
-    {
-        "skill_name": "Class Rep + Speed = Bakushin",
+    {   "skill_name": "Class Rep + Speed = Bakushin",
         "description": "Moderately increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "Blocked at the sides for ≥2s",
                     "Second half of the race"
                 ]
@@ -7540,8 +6995,7 @@
         "upgrade": "Genius x Bakushin = Victory",
         "gametora_id": "10411"
     },
-    {
-        "skill_name": "Luck Be with Me!",
+    {   "skill_name": "Luck Be with Me!",
         "description": "Moderately clear a path forward with the power of divination when the way ahead is jammed late-race.",
         "effect": [
             {
@@ -7566,14 +7020,13 @@
         "upgrade": "I See Victory in My Future!",
         "gametora_id": "10561"
     },
-    {
-        "skill_name": "I Can Win Sometimes, Right?",
+    {   "skill_name": "I Can Win Sometimes, Right?",
         "description": "Moderately increase velocity with an arousal of fighting spirit when positioned 3rd and about to lose late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
                 "conditions": [
-                    "3rd place",
+                    "3rd",
                     "≤1 length ahead",
                     "Late race and beyond"
                 ]
@@ -7592,8 +7045,7 @@
         "upgrade": "Just a Little Farther!",
         "gametora_id": "10601"
     },
-    {
-        "skill_name": "Call me King",
+    {   "skill_name": "Call me King",
         "description": "Increase velocity in a true display of skill with 200m remaining after racing calmly.",
         "effect": [
             {
@@ -7616,8 +7068,7 @@
         "upgrade": "Prideful King",
         "gametora_id": "10611"
     },
-    {
-        "skill_name": "Shooting Star",
+    {   "skill_name": "Shooting Star",
         "description": "Ride the momentum to increase velocity and very slightly increase acceleration after passing another runner toward the front late-race.",
         "effect": [
             {
@@ -7642,8 +7093,7 @@
         "horse": "Special Week (Original)",
         "gametora_id": "100011"
     },
-    {
-        "skill_name": "The View from the Lead is Mine!",
+    {   "skill_name": "The View from the Lead is Mine!",
         "description": "Increase velocity by drawing on all remaining strength when in the lead by a fair margin in the second half of the race.",
         "effect": [
             {
@@ -7669,8 +7119,7 @@
         "horse": "Silence Suzuka (Original)",
         "gametora_id": "100021"
     },
-    {
-        "skill_name": "Sky-High Teio Step",
+    {   "skill_name": "Sky-High Teio Step",
         "description": "Greatly increase velocity with flashy footwork when closing the gap to runners ahead on the final straight.",
         "effect": [
             {
@@ -7698,8 +7147,7 @@
         "horse": "Tokai Teio (Original)",
         "gametora_id": "100031"
     },
-    {
-        "skill_name": "Triumphant Pulse",
+    {   "skill_name": "Triumphant Pulse",
         "description": "Greatly increase ability to break out of the pack by opening up a path when positioned toward the front with 200m remaining.",
         "effect": [
             {
@@ -7724,8 +7172,7 @@
         "horse": "Oguri Cap (Original)",
         "gametora_id": "100061"
     },
-    {
-        "skill_name": "Anchors Aweigh!",
+    {   "skill_name": "Anchors Aweigh!",
         "description": "Moderately increase velocity steadily with a long spurt starting halfway through the race.",
         "effect": [
             {
@@ -7751,8 +7198,7 @@
         "downgrade": "Warning Shot!",
         "gametora_id": "100071"
     },
-    {
-        "skill_name": "Cut and Drive!",
+    {   "skill_name": "Cut and Drive!",
         "description": "Become stronger at challenging rivals and increase velocity when positioned toward the front with 200m or less remaining.",
         "effect": [
             {
@@ -7779,8 +7225,7 @@
         "downgrade": "Xceleration",
         "gametora_id": "100081"
     },
-    {
-        "skill_name": "Resplendent Red Ace",
+    {   "skill_name": "Resplendent Red Ace",
         "description": "Swell with the determination to be number one when positioned toward the front in the second half of the race.",
         "effect": [
             {
@@ -7816,8 +7261,7 @@
         "downgrade": "Red Ace",
         "gametora_id": "100091"
     },
-    {
-        "skill_name": "Where There's a Will, There's a Way",
+    {   "skill_name": "Where There's a Will, There's a Way",
         "description": "Increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
         "effect": [
             {
@@ -7843,8 +7287,7 @@
         "downgrade": "Focused Mind",
         "gametora_id": "100111"
     },
-    {
-        "skill_name": "The Duty of Dignity Calls",
+    {   "skill_name": "The Duty of Dignity Calls",
         "description": "Increase velocity with the determination to not be overtaken when positioned toward the front on the final corner.",
         "effect": [
             {
@@ -7869,8 +7312,7 @@
         "horse": "Mejiro McQueen (Original)",
         "gametora_id": "100131"
     },
-    {
-        "skill_name": "Victoria por plancha ☆",
+    {   "skill_name": "Victoria por plancha ☆",
         "description": "Hang onto the advantage when positioned toward the front with energy to spare on the final straight",
         "effect": [
             {
@@ -7897,8 +7339,7 @@
         "downgrade": "Corazón ☆ Ardiente",
         "gametora_id": "100141"
     },
-    {
-        "skill_name": "This Dance is for Vittoria!",
+    {   "skill_name": "This Dance is for Vittoria!",
         "description": "Increase velocity with royal brilliance when positioned toward the front and close to the runner ahead or behind on the final corner or later.",
         "effect": [
             {
@@ -7923,8 +7364,7 @@
         "horse": "TM Opera O (Original)",
         "gametora_id": "100151"
     },
-    {
-        "skill_name": "Behold Thine Emperor's Divine Might",
+    {   "skill_name": "Behold Thine Emperor's Divine Might",
         "description": "Greatly increase velocity on the final straight after passing another runner 3 times late-race.",
         "effect": [
             {
@@ -7950,8 +7390,7 @@
         "horse": "Symboli Rudolf (Original)",
         "gametora_id": "100171"
     },
-    {
-        "skill_name": "Blazing Pride",
+    {   "skill_name": "Blazing Pride",
         "description": "Increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
         "effect": [
             {
@@ -7978,8 +7417,7 @@
         "downgrade": "Empress's Pride",
         "gametora_id": "100181"
     },
-    {
-        "skill_name": "∴win Q.E.D.",
+    {   "skill_name": "∴win Q.E.D.",
         "description": "Increase velocity by deriving the winning equation when passing another runner toward the front on the final corner or later.",
         "effect": [
             {
@@ -8004,15 +7442,14 @@
         "horse": "Biwa Hayahide (Original)",
         "gametora_id": "100231"
     },
-    {
-        "skill_name": "Flashy☆Landing",
+    {   "skill_name": "Flashy☆Landing",
         "description": "Increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
                 "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "Blocked at the sides for ≥2s",
                     "Final corner and beyond"
                 ]
@@ -8032,15 +7469,14 @@
         "downgrade": "1st Place Kiss☆",
         "gametora_id": "100241"
     },
-    {
-        "skill_name": "G00 1st. F∞;",
+    {   "skill_name": "G00 1st. F∞;",
         "description": "Increase velocity when positioned toward the front after making it to the final straight without faltering.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "No 'Late Start'",
                     "No 'Rushed'",
                     "Final straight"
@@ -8059,8 +7495,7 @@
         "horse": "Mihono Bourbon (Original)",
         "gametora_id": "100261"
     },
-    {
-        "skill_name": "Blue Rose Closer",
+    {   "skill_name": "Blue Rose Closer",
         "description": "Increase velocity with strong willpower on the final straight after passing another runner in the front part of the pack on the final corner or later.",
         "effect": [
             {
@@ -8072,7 +7507,7 @@
             }
         ],
         "preconditions": [
-            "1st to 4th place",
+            "1st to 4th",
             "Overtake another uma",
             "Final corner and beyond"
         ],
@@ -8088,8 +7523,7 @@
         "horse": "Rice Shower (Original)",
         "gametora_id": "100301"
     },
-    {
-        "skill_name": "Our Ticket to Win!",
+    {   "skill_name": "Our Ticket to Win!",
         "description": "Increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
         "effect": [
             {
@@ -8097,7 +7531,7 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Precondition is true",
-                    "1st to 5th place",
+                    "1st to 5th",
                     "Final straight"
                 ]
             }
@@ -8119,15 +7553,14 @@
         "downgrade": "V is for Victory!",
         "gametora_id": "100351"
     },
-    {
-        "skill_name": "Genius x Bakushin = Victory",
+    {   "skill_name": "Genius x Bakushin = Victory",
         "description": "Increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "Blocked at the sides for ≥2s",
                     "Second half of the race"
                 ]
@@ -8147,8 +7580,7 @@
         "downgrade": "Class Rep + Speed = Bakushin",
         "gametora_id": "100411"
     },
-    {
-        "skill_name": "I See Victory in My Future!",
+    {   "skill_name": "I See Victory in My Future!",
         "description": "Clear a path forward with the power of divination when the way ahead is jammed late-race.",
         "effect": [
             {
@@ -8175,15 +7607,14 @@
         "downgrade": "Luck Be with Me!",
         "gametora_id": "100561"
     },
-    {
-        "skill_name": "Just a Little Farther!",
+    {   "skill_name": "Just a Little Farther!",
         "description": "Increase velocity with flaring fighting spirit when positioned 3rd and about to lose late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "3rd place",
+                    "3rd",
                     "≤1 length ahead",
                     "Late race and beyond"
                 ]
@@ -8203,8 +7634,7 @@
         "downgrade": "I Can Win Sometimes, Right?",
         "gametora_id": "100601"
     },
-    {
-        "skill_name": "Prideful King",
+    {   "skill_name": "Prideful King",
         "description": "Greatly increase velocity in a true display of skill with 200m remaining after racing calmly.",
         "effect": [
             {
@@ -8230,8 +7660,7 @@
         "downgrade": "Call Me King",
         "gametora_id": "100611"
     },
-    {
-        "skill_name": "#LookatCurren",
+    {   "skill_name": "#LookatCurren",
         "description": "Gain momentum and begin to advance when passing another runner while well-positioned around halfway through the race.",
         "effect": [
             {
@@ -8255,8 +7684,7 @@
         "horse": "Curren Chan (Original)",
         "gametora_id": "100381"
     },
-    {
-        "skill_name": "Nemesis",
+    {   "skill_name": "Nemesis",
         "description": "Increase velocity with smoldering ambition when moving up from midpack on the final corner or later.",
         "effect": [
             {
@@ -8280,15 +7708,14 @@
         "horse": "Narita Taishin (Original)",
         "gametora_id": "100501"
     },
-    {
-        "skill_name": "SPARKLY☆STARDOM",
+    {   "skill_name": "SPARKLY☆STARDOM",
         "description": "Become empowered to keep the spotlight when positioned toward the front and close to the runner behind on a straight mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
                 "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
-                    "1st to 2nd place",
+                    "1st to 2nd",
                     "≤1 length ahead",
                     "Any straight",
                     "Mid race"
@@ -8308,8 +7735,7 @@
         "horse": "Smart Falcon (Original)",
         "gametora_id": "100461"
     },
-    {
-        "skill_name": "Shadow Break",
+    {   "skill_name": "Shadow Break",
         "description": "Increase velocity with beastly strength when passing another runner on the outside on the final corner or later. If the skill user engaged in a challenge mid-race, greatly increase velocity instead.",
         "effect": [
             {
@@ -8348,8 +7774,7 @@
         "horse": "Narita Brian (Original)",
         "gametora_id": "100161"
     },
-    {
-        "skill_name": "Eternal Moments",
+    {   "skill_name": "Eternal Moments",
         "description": "Increase velocity when starting to make a move from a position toward the front mid-race.",
         "effect": [
             {
@@ -8375,8 +7800,7 @@
         "horse": "Air Groove (Wedding)",
         "gametora_id": "110181"
     },
-    {
-        "skill_name": "Flowery☆Maneuver",
+    {   "skill_name": "Flowery☆Maneuver",
         "description": "Increase velocity when passing another runner toward the front on the final corner. If passing toward the back, increase acceleration instead.",
         "effect": [
             {
@@ -8410,8 +7834,7 @@
         "horse": "Mayano Top Gun (Wedding)",
         "gametora_id": "110241"
     },
-    {
-        "skill_name": "You and Me! One-on-One!",
+    {   "skill_name": "You and Me! One-on-One!",
         "description": "Increase velocity on the final straight after passing another runner on the outside toward the back on the final corner or later.",
         "effect": [
             {
@@ -8442,8 +7865,7 @@
         "horse": "Hishi Amazon (Original)",
         "gametora_id": "100121"
     },
-    {
-        "skill_name": "Lights of Vaudeville",
+    {   "skill_name": "Lights of Vaudeville",
         "description": "Greatly increase velocity with a dazzling display when just breaking out of the pack toward the front on the final straight.",
         "effect": [
             {
@@ -8470,15 +7892,14 @@
         "horse": "Fuji Kiseki (Original)",
         "gametora_id": "100051"
     },
-    {
-        "skill_name": "A Kiss for Courage",
+    {   "skill_name": "A Kiss for Courage",
         "description": "Increase velocity enthusiastically when positioned toward the front in the second half of the race after recovering endurance with a skill.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 3rd place",
+                    "1st to 3rd",
                     "Activated ≥1 recovery skills",
                     "Second half of the race"
                 ]
@@ -8499,8 +7920,7 @@
         "horse": "Maruzensky (Summer)",
         "gametora_id": "110041"
     },
-    {
-        "skill_name": "I Never Goof Up!",
+    {   "skill_name": "I Never Goof Up!",
         "description": "Aim for the front with unwavering determination when passing another runner from midpack or further back on a corner late-race.",
         "effect": [
             {
@@ -8525,8 +7945,7 @@
         "horse": "Meisho Doto (Original)",
         "gametora_id": "100581"
     },
-    {
-        "skill_name": "Schwarzes Schwert",
+    {   "skill_name": "Schwarzes Schwert",
         "description": "Increase velocity in a dash for the lead after running calmly and according to plan up until the final straight.",
         "effect": [
             {
@@ -8551,8 +7970,7 @@
         "horse": "Eishin Flash (Original)",
         "gametora_id": "100371"
     },
-    {
-        "skill_name": "Bountiful Harvest",
+    {   "skill_name": "Bountiful Harvest",
         "description": "Increase velocity with a surge of great fortune when pressured by another runner toward the back in the second half of the race.",
         "effect": [
             {
@@ -8579,8 +7997,7 @@
         "horse": "Matikanefukukitaru (Full Armor)",
         "gametora_id": "110561"
     },
-    {
-        "skill_name": "YUMMY☆SPEED!",
+    {   "skill_name": "YUMMY☆SPEED!",
         "description": "Kick forward hard with renewed vigor when starting to get tired while well-positioned halfway through the race.",
         "effect": [
             {
@@ -8605,8 +8022,7 @@
         "horse": "Hishi Akebono (Original)",
         "gametora_id": "100281"
     },
-    {
-        "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
+    {   "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
         "description": "Increase velocity and navigation with the pure euphoria of being within breathing distance of precious waifus after passing another runner 2 times late-race.",
         "effect": [
             {
@@ -8632,8 +8048,7 @@
         "horse": "Agnes Digital (Original)",
         "gametora_id": "100191"
     },
-    {
-        "skill_name": "Give Mummy a Hug ♡",
+    {   "skill_name": "Give Mummy a Hug ♡",
         "description": "Increase ability to break out of the pack when well-positioned and close to the runner ahead on the final straight.",
         "effect": [
             {
@@ -8660,8 +8075,7 @@
         "horse": "Super Creek (Halloween)",
         "gametora_id": "110451"
     },
-    {
-        "skill_name": "A Princess Must Seize Victory!",
+    {   "skill_name": "A Princess Must Seize Victory!",
         "description": "Increase velocity with pretty princess power when engaged in a challenge on the final straight.",
         "effect": [
             {
@@ -8686,8 +8100,7 @@
         "horse": "Kawakami Princess (Original)",
         "gametora_id": "100391"
     },
-    {
-        "skill_name": "Chasing After You",
+    {   "skill_name": "Chasing After You",
         "description": "Chase after an unseen friend when in midpack in the second half of the race, moderately increasing velocity steadily and very slightly intimidating runners ahead..",
         "effect": [
             {
@@ -8712,8 +8125,7 @@
         "horse": "Manhattan Cafe (Original)",
         "gametora_id": "100251"
     },
-    {
-        "skill_name": "Arrows Whistle, Shadows Disperse",
+    {   "skill_name": "Arrows Whistle, Shadows Disperse",
         "description": "Increase velocity with a blazing spirit when pressured by another runner in the front part of the pack on the final corner or later.",
         "effect": [
             {
@@ -8739,8 +8151,7 @@
         "horse": "Symboli Rudolf (Festival)",
         "gametora_id": "110171"
     },
-    {
-        "skill_name": "Dancing in the Leaves",
+    {   "skill_name": "Dancing in the Leaves",
         "description": "Increase ability to break out of the pack when engaged in a challenge in midpack on the final corner.",
         "effect": [
             {
@@ -8765,8 +8176,7 @@
         "horse": "Gold City (Festival)",
         "gametora_id": "110401"
     },
-    {
-        "skill_name": "Pop & Polish",
+    {   "skill_name": "Pop & Polish",
         "description": "Get hyped and increase velocity when pressured by or passing another runner while well-positioned on the final straight.",
         "effect": [
             {
@@ -8801,8 +8211,7 @@
         "horse": "Tosen Jordan (Original)",
         "gametora_id": "100481"
     },
-    {
-        "skill_name": "Festive Miracle",
+    {   "skill_name": "Festive Miracle",
         "description": "Control breathing and kick forward hard toward victory in the second half of the race after recovering endurance with skills at least 3 times.",
         "effect": [
             {
@@ -8828,8 +8237,7 @@
         "horse": "Oguri Cap (Christmas)",
         "gametora_id": "110061"
     },
-    {
-        "skill_name": "Presents from X",
+    {   "skill_name": "Presents from X",
         "description": "Increase velocity by deriving a path to victory mid-race after staying well-positioned from the start of the race up until the second half.",
         "effect": [
             {
@@ -8855,8 +8263,7 @@
         "horse": "Biwa Hayahide (Christmas)",
         "gametora_id": "110231"
     },
-    {
-        "skill_name": "Fairy Tale",
+    {   "skill_name": "Fairy Tale",
         "description": "Increase velocity with the excitement of running when engaged in a challenge while well-positioned in the second half of the race.",
         "effect": [
             {
@@ -8881,8 +8288,7 @@
         "horse": "Fine Motion (Original)",
         "gametora_id": "100221"
     },
-    {
-        "skill_name": "White Lightning Comin' Through!",
+    {   "skill_name": "White Lightning Comin' Through!",
         "description": "Bolt down the track like lightning when well-positioned or aiming for the front from midpack on a straight in the second half of the race.",
         "effect": [
             {
@@ -8918,8 +8324,7 @@
         "horse": "Tamamo Cross (Original)",
         "gametora_id": "100211"
     },
-    {
-        "skill_name": "Barcarole of Blessings",
+    {   "skill_name": "Barcarole of Blessings",
         "description": "Increase velocity for a moderate duration when in the front part of the pack with 400m remaining. If at least 7 skills have been activated, greatly increase velocity for a moderate duration instead.",
         "effect": [
             {
@@ -8956,8 +8361,7 @@
         "horse": "TM Opera O (New Year)",
         "gametora_id": "110151"
     },
-    {
-        "skill_name": "114th Time's the Charm",
+    {   "skill_name": "114th Time's the Charm",
         "description": "Give max effort when far from the lead on the final corner, moderately increasing velocity steadily for a duration proportional to distance from the lead.",
         "effect": [
             {
@@ -8986,8 +8390,7 @@
         "horse": "Haru Urara (New Year)",
         "gametora_id": "110521"
     },
-    {
-        "skill_name": "Ambition to Surpass the Sakura",
+    {   "skill_name": "Ambition to Surpass the Sakura",
         "description": "Increase velocity with blossoming ambition when well-positioned and close to the runner ahead with 300m or less remaining.",
         "effect": [
             {
@@ -9013,8 +8416,7 @@
         "horse": "Sakura Chiyono O (Original)",
         "gametora_id": "100691"
     },
-    {
-        "skill_name": "A Lifelong Dream, A Moment's Flight",
+    {   "skill_name": "A Lifelong Dream, A Moment's Flight",
         "description": "Seize the moment when close to the runner behind on the final straight, slightly consuming endurance to greatly increase velocity for a moderate duration.",
         "effect": [
             {
@@ -9039,8 +8441,7 @@
         "horse": "Mejiro Ardan (Original)",
         "gametora_id": "100711"
     },
-    {
-        "skill_name": "Operation Cacao",
+    {   "skill_name": "Operation Cacao",
         "description": "Take a slight breather and increase velocity when in the front part of the pack and detecting another runner coming from behind on a corner mid-race.",
         "effect": [
             {
@@ -9066,8 +8467,7 @@
         "horse": "Mihono Bourbon (Valentines)",
         "gametora_id": "110261"
     },
-    {
-        "skill_name": "Guten Appetit ♪",
+    {   "skill_name": "Guten Appetit ♪",
         "description": "Increase velocity continuously with a patissiere's pride on the final straight after passing another runner 3 times on the final corner or later.",
         "effect": [
             {
@@ -9090,8 +8490,7 @@
         "horse": "Eishin Flash (Valentines)",
         "gametora_id": "110371"
     },
-    {
-        "skill_name": "Shooting Star of Dioskouroi",
+    {   "skill_name": "Shooting Star of Dioskouroi",
         "description": "Increase velocity with guidance from the stars when far from the lead on the final straight. If positioned around the very back, greatly increase velocity instead.",
         "effect": [
             {
@@ -9127,8 +8526,7 @@
         "horse": "Admire Vega (Original)",
         "gametora_id": "100331"
     },
-    {
-        "skill_name": "Victory Cheer!",
+    {   "skill_name": "Victory Cheer!",
         "description": "Moderately increase velocity when positioned toward the front on the third corner in the second half of the race. Or, kick forward hard when toward the front on the backstretch late-race.",
         "effect": [
             {
@@ -9163,8 +8561,7 @@
         "horse": "Kitasan Black (Original)",
         "gametora_id": "100681"
     },
-    {
-        "skill_name": "Eternal Encompassing Shine",
+    {   "skill_name": "Eternal Encompassing Shine",
         "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",
         "effect": [
             {
@@ -9199,8 +8596,8 @@
         "horse": "Satono Diamond (Original)",
         "gametora_id": "100671"
     },
-    {
-        "skill_name": "Corner Adept x",
+
+    {   "skill_name": "Corner Adept x",
         "description": "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
         "conditions": [
             [
