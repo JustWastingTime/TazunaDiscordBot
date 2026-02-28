@@ -3532,9 +3532,9 @@
         "description": "Slightly increase velocity on a corner with skilled turning.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
+                "description": "Increases target speed by 0.15 for 2.4s. 30s cooldown.",
                 "conditions": [
-                    "Random point on all corners"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -3554,7 +3554,7 @@
         "description": "Slightly increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s. 30s cooldown.",
+                "description": "Increases target speed by 0.15 for 2.4s. 30s cooldown.",
                 "conditions": [
                     "Random point on a random straight"
                 ]
@@ -3576,7 +3576,7 @@
         "description": "Slightly increase velocity when passing another runner mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 1.8s. 30s cooldown.",
+                "description": "Increases target speed by 0.15 for 1.8s. 30s cooldown.",
                 "conditions": [
                     "Overtake another uma",
                     "Mid race"
@@ -3599,7 +3599,7 @@
         "description": "Slightly increase velocity in the last spurt.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Character is in their last spurt mode",
                     "Random point in last spurt phase"
@@ -3622,7 +3622,7 @@
         "description": "Slightly increase ability to go to the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Front Runner",
                     "1st to 5th (CM), 1st to 6th (TT)",
@@ -3647,7 +3647,7 @@
         "description": "Slightly increase ability to break out of the pack on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 1.8s.",
+                "description": "Increases target speed by 0.15 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
                     "1st to 5th (CM), 1st to 6th (TT)",
@@ -3671,7 +3671,7 @@
         "description": "Slightly increase velocity mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Late Surger",
                     "6th to 9th (CM), 7th to 12th (TT)",
@@ -3695,7 +3695,7 @@
         "description": "Slightly increase velocity when passing another runner on the outside on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Late Surger",
                     "Overtake another uma",
@@ -3744,7 +3744,7 @@
         "description": "Slightly increase spurting ability when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "Sprint",
                     "6th to 9th (CM), 7th to 12th (TT)",
@@ -3753,7 +3753,7 @@
             }
         ],
         "preconditions": [],
-        "review": "An okay speed and acceleration boost for a sprint Late Surger.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -3764,33 +3764,16 @@
         "upgrade": "Blinding Flash",
         "gametora_id": "200672"
     },
-    {
-        "skill_name": "Productive Plan",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Early race"
-            ]
-        ],
+    {   "skill_name": "Productive Plan",
+        "description": "Slightly widen the margin when positioned toward the front early-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 5.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Mile",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -3806,28 +3789,20 @@
         "upgrade": "Mile Maven",
         "gametora_id": "200682"
     },
-    {
-        "skill_name": "Up-Tempo",
-        "description": "Increases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Up-Tempo",
+        "description": "Slightly increase positioning ability when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Medium",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent and somewhat impactful skill to take now that the duration is 2.4s.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -3838,22 +3813,14 @@
         "upgrade": "Killer Tunes",
         "gametora_id": "200722"
     },
-    {
-        "skill_name": "Steadfast",
-        "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "Be overtaken",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Steadfast",
+        "description": "Slightly increase ability to fight back when passed by another runner on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "Medium",
-                    "Be overtaken",
+                    "Be overtaken by another uma",
                     "Final corner"
                 ]
             }
@@ -3870,28 +3837,20 @@
         "upgrade": "Unyielding",
         "gametora_id": "200732"
     },
-    {
-        "skill_name": "Inside Scoop",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Beside the inner fence",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Inside Scoop",
+        "description": "Slightly increase velocity when positioned toward the inner fence on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Long",
-                    "Beside the inner fence",
+                    "Right beside the inner fence",
                     "Final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Useful on tracks where the final corner is right before last spurt mode. Take for the appropriate CMs.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -3902,21 +3861,14 @@
         "upgrade": "Innate Experience",
         "gametora_id": "200752"
     },
-    {
-        "skill_name": "Sprint Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Sprint Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -3931,21 +3883,14 @@
         ],
         "gametora_id": "200962"
     },
-    {
-        "skill_name": "Sprint Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Sprint Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -3960,24 +3905,15 @@
         ],
         "gametora_id": "200972"
     },
-    {
-        "skill_name": "Huge Lead",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "1st place",
-                "3 lengths ahead or more",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Huge Lead",
+        "description": "Slightly increase ability to maintain the lead when leading by a large margin mid-race",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "1st place",
-                    "3 lengths ahead or more",
+                    "1st",
+                    "≥3 length ahead",
                     "Mid race"
                 ]
             }
@@ -3994,21 +3930,14 @@
         "upgrade": "Staggering Lead",
         "gametora_id": "200982"
     },
-    {
-        "skill_name": "Mile Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Mile Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Mile",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4023,21 +3952,14 @@
         ],
         "gametora_id": "201032"
     },
-    {
-        "skill_name": "Mile Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Mile Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Mile",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4051,28 +3973,20 @@
         ],
         "gametora_id": "201042"
     },
-    {
-        "skill_name": "Shifting Gears",
-        "description": "Increases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Shifting Gears",
+        "description": "Slightly increase passing ability when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Mile",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race speed boost can help break Pace Down mechanics and put you in a better position for late race zooming.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4083,28 +3997,20 @@
         "upgrade": "Changing Gears",
         "gametora_id": "201052"
     },
-    {
-        "skill_name": "Unyielding Spirit",
-        "description": "Increases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "Mile",
-                "Overtake target exists",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Unyielding Spirit",
+        "description": "Slightly increase passing ability.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Mile",
                     "Overtake target exists",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Cheap and consistent skill. With optimal timing, and other skills triggering, can help you zoom.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4115,21 +4021,14 @@
         "upgrade": "Big-Sisterly",
         "gametora_id": "201072"
     },
-    {
-        "skill_name": "Medium Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Medium Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Medium",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4144,21 +4043,14 @@
         ],
         "gametora_id": "201102"
     },
-    {
-        "skill_name": "Medium Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Medium Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Medium",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4173,21 +4065,14 @@
         ],
         "gametora_id": "201112"
     },
-    {
-        "skill_name": "Long Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Long Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Long",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4202,21 +4087,14 @@
         ],
         "gametora_id": "201172"
     },
-    {
-        "skill_name": "Long Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Long Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Long",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4231,34 +4109,16 @@
         ],
         "gametora_id": "201182"
     },
-    {
-        "skill_name": "Keeping the Lead",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "1st place",
-                "1 length ahead or more",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Keeping the Lead",
+        "description": "Slightly increase ability to maintain the lead when leading by a fair margin mid-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "1st",
+                    "≥1 length ahead",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -4274,28 +4134,20 @@
         "upgrade": "Vanguard Spirit",
         "gametora_id": "201192"
     },
-    {
-        "skill_name": "Pressure",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Overtaking",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "Pressure",
+        "description": "Slightly increase velocity when passing another runner late-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Long",
-                    "Overtaking",
+                    "Overtake another uma",
                     "Late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Overtake tends to happen at the beginning of the last spurt mode, where acceleration skills are triggering. During this phase, you are unlikely to be at top speed yet, rendering this skill to be useless.",
+        "review": "Might trigger during acceleration when the skill user is not at top speed yet.",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4306,21 +4158,14 @@
         "upgrade": "Overwhelming Pressure",
         "gametora_id": "201212"
     },
-    {
-        "skill_name": "Front Runner Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Front Runner Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4335,21 +4180,14 @@
         ],
         "gametora_id": "201242"
     },
-    {
-        "skill_name": "Front Runner Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Front Runner Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4364,30 +4202,30 @@
         ],
         "gametora_id": "201252"
     },
-    {
-        "skill_name": "Leader's Pride",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Be overtaken OR blocked from the side",
-                "Early race or Mid race",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Leader's Pride",
+        "description": "Slightly increase ability to pass or challenge another runner early-race or mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "Be overtaken OR blocked from the side",
-                    "Early race or Mid race",
-                    "After at least 5s into a race"
+                    "Be overtaken by another uma",
+                    "Early race or mid race",
+                    "After ≥5s into a race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Front Runner",
+                    "Blocked at the sides for ≥2s",
+                    "Early race or mid race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Helps a Front Runner retake or contest the lead during the early - mid race. Works more consistently the longer the track.",
+        "review": "Helps a Front Runner retake or contest the lead during the early - mid race.",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4398,21 +4236,14 @@
         "upgrade": "Top Runner",
         "gametora_id": "201272"
     },
-    {
-        "skill_name": "Pace Chaser Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Pace Chaser Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Pace Chaser",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4427,21 +4258,14 @@
         ],
         "gametora_id": "201312"
     },
-    {
-        "skill_name": "Pace Chaser Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Pace Chaser Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Pace Chaser",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4456,21 +4280,14 @@
         ],
         "gametora_id": "201322"
     },
-    {
-        "skill_name": "Late Surger Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "Late Surger Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Late Surger",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4485,21 +4302,14 @@
         ],
         "gametora_id": "201382"
     },
-    {
-        "skill_name": "Late Surger Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "Late Surger Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "Late Surger",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4514,26 +4324,19 @@
         ],
         "gametora_id": "201392"
     },
-    {
-        "skill_name": "1,500,000 CC",
-        "description": "Increases speed by 0.15 for 2.4s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Random uphill"
-            ]
-        ],
+    {   "skill_name": "1,500,000 CC",
+        "description": "Slightly increase velocity on an uphill.",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Late Surger",
-                    "Random uphill"
+                    "Random point on a random uphill"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Cheap and consistent. Good for maps with uphills.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4546,21 +4349,14 @@
         "upgrade": "15,000,000 CC",
         "gametora_id": "201412"
     },
-    {
-        "skill_name": "End Closer Straightaways",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Random straight"
-            ]
-        ],
+    {   "skill_name": "End Closer Straightaways",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "End Closer",
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -4575,21 +4371,14 @@
         ],
         "gametora_id": "201452"
     },
-    {
-        "skill_name": "End Closer Corners",
-        "description": "Increases speed by 0.15/0.25 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Random corner"
-            ]
-        ],
+    {   "skill_name": "End Closer Corners",
+        "description": "Increase velocity on a corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15/0.25 for 3.0s.",
+                "description": "Increases target speed by 0.15/0.25 for 3.0s.",
                 "conditions": [
                     "End Closer",
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -4604,26 +4393,19 @@
         ],
         "gametora_id": "201462"
     },
-    {
-        "skill_name": "Uma Stan",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "3 or more umas within 3 meters and/or 3 lanes",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Uma Stan",
+        "description": "Slightly increase velocity when close to many runners.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "3 or more umas within 3 meters and/or 3 lanes",
-                    "After at least 5s into a race"
+                    "≥3 uma within 3m or 3 lanes",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Can break through PDM on some tracks. Consider taking mid race speed skills as well to continuously break PDM.",
+        "review": "Consider taking for CMs where a specific style is \"meta\" and you are using that style.",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4635,19 +4417,13 @@
         "upgrade": "Superstan",
         "gametora_id": "201591"
     },
-    {
-        "skill_name": "Tail Held High",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Activate 3 skills mid race"
-            ]
-        ],
+    {   "skill_name": "Tail Held High",
+        "description": "Slightly increase velocity after activating many skills mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "Activate 3 skills mid race"
+                    "Activated ≥3 skills during the mid race"
                 ]
             }
         ],
@@ -4663,21 +4439,14 @@
         "upgrade": "Tail Nine",
         "gametora_id": "201611"
     },
-    {
-        "skill_name": "Slipstream",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Behind another uma for 3s or more",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Slipstream",
+        "description": "Slightly decrease wind resistance when following directly behind another runner.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Behind another uma for 3s or more",
-                    "After at least 10s into a race"
+                    "Right behind another uma for ≥3s",
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -4692,21 +4461,14 @@
         "upgrade": "In the Right Place!",
         "gametora_id": "201651"
     },
-    {
-        "skill_name": "Playtime's Over!",
-        "description": "Increases speed by 0.15 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Ahead of another uma for 3s or more",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "Playtime's Over!",
+        "description": "Slightly increase velocity when followed by another runner directly behind for a long time.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s. 30s cooldown.",
+                "description": "Increases target speed by 0.15 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Ahead of another uma for 3s or more",
-                    "After at least 10s into a race"
+                    "Right in front of another uma for ≥3s",
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -4721,9 +4483,8 @@
         "upgrade": "See Ya Later!",
         "gametora_id": "201661"
     },
-    {
-        "skill_name": "Top Pick",
-        "description": "Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "Top Pick",
+        "description": "Slightly increase velocity when engaged in a challenge mid-race.",
         "conditions": [
             [
                 "Dirt",
@@ -4763,9 +4524,8 @@
         "upgrade": "Trending in the Charts!",
         "gametora_id": "201672"
     },
-    {
-        "skill_name": "All I've Got",
-        "description": "Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "All I've Got",
+        "description": "Slightly increase velocity when well-positioned on a straight in the last spurt.",
         "conditions": [
             [
                 "Medium",
@@ -4806,9 +4566,8 @@
         "upgrade": "Come What May",
         "gametora_id": "201702"
     },
-    {
-        "skill_name": "Feature Act",
-        "description": "Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "Feature Act",
+        "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
         "conditions": [
             [
                 "Long",
@@ -4848,9 +4607,8 @@
         "upgrade": "Headliner",
         "gametora_id": "202012"
     },
-    {
-        "skill_name": "Early Start",
-        "description": "Increases speed by 0.05 for 4.0s.",
+    {   "skill_name": "Early Start",
+        "description": "Very slightly increase velocity for a medium duration when positioned toward the back mid-race.",
         "conditions": [
             [
                 "End Closer",
@@ -4890,9 +4648,8 @@
         "upgrade": "Daring Strike",
         "gametora_id": "202022"
     },
-    {
-        "skill_name": "Risky Business",
-        "description": "Increases speed by 0.25 for 1.8s. Lose HP by a random amount.",
+    {   "skill_name": "Risky Business",
+        "description": "Moderately increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
         "conditions": [
             [
                 "Second half of the race"
@@ -4918,9 +4675,8 @@
         "upgrade": "Nothing Ventured",
         "gametora_id": "202032"
     },
-    {
-        "skill_name": "Light as a Feather",
-        "description": "Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "Light as a Feather",
+        "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
         "conditions": [
             [
                 "Sprint",
@@ -4960,9 +4716,8 @@
         "upgrade": "In High Spirits",
         "gametora_id": "202042"
     },
-    {
-        "skill_name": "Fighting Spirit",
-        "description": "Recover HP by 0.5%. Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "Fighting Spirit",
+        "description": "When engaged in a challenge midpack mid-race, very slightly recover endurance and slightly increase velocity.",
         "conditions": [
             [
                 "Medium",
@@ -5002,9 +4757,8 @@
         "upgrade": "Burning Soul",
         "gametora_id": "202092"
     },
-    {
-        "skill_name": "Eager",
-        "description": "Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "Eager",
+        "description": "When positioned toward the back mid-race, slightly increase velocity.",
         "conditions": [
             [
                 "Medium",
@@ -5044,9 +4798,8 @@
         "upgrade": "Elated",
         "gametora_id": "202102"
     },
-    {
-        "skill_name": "Pumped",
-        "description": "Increases speed by 0.15 for 1.8s.",
+    {   "skill_name": "Pumped",
+        "description": "When positioned toward the back on the final corner, slightly increase velocity.",
         "conditions": [
             [
                 "Mile",
@@ -5086,9 +4839,8 @@
         "upgrade": "Full of Vigor",
         "gametora_id": "202112"
     },
-    {
-        "skill_name": "Fearless",
-        "description": "Increases speed by 0.15 and acceleration by 0.05 for 2.4s.",
+    {   "skill_name": "Fearless",
+        "description": "When positioned in the midpack during the second half of the race, slightly increase velocity and very minimally increase acceleration.",
         "conditions": [
             [
                 "Late Surger",
@@ -5128,9 +4880,8 @@
         "upgrade": "Dauntless",
         "gametora_id": "202122"
     },
-    {
-        "skill_name": "With All My Soul",
-        "description": "Reduces speed by 0.035 to 5 umas behind you and increases your speed by 0.15 for 1.8s.",
+    {   "skill_name": "With All My Soul",
+        "description": "When positioned toward the front mid-race, slightly increase velocity and minimally decrease the velocity of runners behind the skill user.",
         "conditions": [
             [
                 "Medium",
@@ -5170,9 +4921,8 @@
         "upgrade": "Wild Wind",
         "gametora_id": "202132"
     },
-    {
-        "skill_name": "Full Throttle",
-        "description": "Increases speed by 0.25 for 2.4s. Reduces HP by 2%.",
+    {   "skill_name": "Full Throttle",
+        "description": "Greatly consume endurance mid-race and moderately increase velocity.",
         "conditions": [
             [
                 "Late surgers",
@@ -5210,9 +4960,8 @@
         "upgrade": "Keep Going!",
         "gametora_id": "202152"
     },
-    {
-        "skill_name": "Downhill Speedster",
-        "description": "Increases speed by 0.15 for 2.4s.",
+    {   "skill_name": "Downhill Speedster",
+        "description": "Slightly increase velocity on downhills.",
         "conditions": [
             [
                 "Downhill"
@@ -5255,9 +5004,9 @@
         "description": "Increase velocity on a corner with skilled turning.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
+                "description": "Increases target speed by 0.35 for 2.4s. 30s cooldown.",
                 "conditions": [
-                    "Random point on all corners"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -5278,7 +5027,7 @@
         "description": "Increase velocity on a straight..",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s. 30s cooldown.",
+                "description": "Increases target speed by 0.35 for 2.4s. 30s cooldown.",
                 "conditions": [
                     "Random point on a random straight"
                 ]
@@ -5300,7 +5049,7 @@
         "description": "Increase velocity when passing another runner mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 1.8s. 30s cooldown.",
+                "description": "Increases target speed by 0.35 for 1.8s. 30s cooldown.",
                 "conditions": [
                     "Overtake another uma",
                     "Mid race"
@@ -5323,7 +5072,7 @@
         "description": "Increase velocity in the last spurt.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Character is in their last spurt mode",
                     "Random point in last spurt phase"
@@ -5346,7 +5095,7 @@
         "description": "Increase ability to go to the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Front Runner",
                     "1st to 5th (CM), 1st to 6th (TT)",
@@ -5369,7 +5118,7 @@
         "description": "Increase ability to break out of the pack on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 1.8s.",
+                "description": "Increases target speed by 0.35 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
                     "1st to 5th (CM), 1st to 6th (TT)",
@@ -5392,7 +5141,7 @@
         "description": "Increase velocity mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Late Surger",
                     "6th to 9th (CM), 7th to 12th (TT)",
@@ -5462,10 +5211,10 @@
         "gametora_id": "200631"
     },
     {   "skill_name": "Blinding Flash",
-        "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
+        "description": "Increase spurting ability when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
                     "Sprint",
                     "6th to 9th (CM), 7th to 12th (TT)",
@@ -5474,7 +5223,7 @@
             }
         ],
         "preconditions": [],
-        "review": "An okay speed and acceleration boost for a sprint Late Surger.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5485,33 +5234,16 @@
         "downgrade": "Gap Closer",
         "gametora_id": "200671"
     },
-    {
-        "skill_name": "Mile Maven",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Early race"
-            ]
-        ],
+    {   "skill_name": "Mile Maven",
+        "description": "Widen the margin when positioned toward the front early-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Mile",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -5525,28 +5257,20 @@
         "downgrade": "Productive Plan",
         "gametora_id": "200681"
     },
-    {
-        "skill_name": "Killer Tunes",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Killer Tunes",
+        "description": "Increase positioning ability when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Medium",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent and somewhat impactful skill to take now that the duration is 2.4s.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5557,28 +5281,20 @@
         "downgrade": "Up-Tempo",
         "gametora_id": "200721"
     },
-    {
-        "skill_name": "Unyielding",
-        "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "Be overtaken",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Unyielding",
+        "description": "Increase ability to fight back when passed by another runner on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 and acceleration by 0.1 for 3.0s.",
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
                     "Medium",
-                    "Be overtaken",
+                    "Be overtaken by another uma",
                     "Final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "A bandaid when you lose the lead on the final corner. Could save you a win but probably not.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5589,28 +5305,20 @@
         "downgrade": "Steadfast",
         "gametora_id": "200731"
     },
-    {
-        "skill_name": "Innate Experience",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Beside the inner fence",
-                "Final corner"
-            ]
-        ],
+    {   "skill_name": "Innate Experience",
+        "description": "Increase velocity when near the inner rail on the final corner.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Long",
-                    "Beside the inner fence",
+                    "Right beside the inner fence",
                     "Final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Useful on tracks where the final corner is right before last spurt mode. Take for the appropriate CMs.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5621,24 +5329,15 @@
         "downgrade": "Inside Scoop",
         "gametora_id": "200751"
     },
-    {
-        "skill_name": "Staggering Lead",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "1st place",
-                "3 lengths ahead or more",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Staggering Lead",
+        "description": "Increase ability to maintain the lead when leading by a large margin mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "1st place",
-                    "3 lengths ahead or more",
+                    "1st",
+                    "≥3 length ahead",
                     "Mid race"
                 ]
             }
@@ -5655,28 +5354,20 @@
         "downgrade": "Huge Lead",
         "gametora_id": "200981"
     },
-    {
-        "skill_name": "Changing Gears",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Changing Gears",
+        "description": "Increase passing ability when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Mile",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Mid race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race speed boost can help break Pace Down mechanics and put you in a better position for late race zooming.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5687,23 +5378,15 @@
         "downgrade": "Shifting Gears",
         "gametora_id": "201051"
     },
-    {
-        "skill_name": "Big-Sisterly",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Mile",
-                "Overtake target exists",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Big-Sisterly",
+        "description": "Increase passing ability.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Mile",
                     "Overtake target exists",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -5719,34 +5402,16 @@
         "downgrade": "Unyielding Spirit",
         "gametora_id": "201071"
     },
-    {
-        "skill_name": "Vanguard Spirit",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "1st place",
-                "1 length ahead or more",
-                "Mid race"
-            ]
-        ],
+    {   "skill_name": "Vanguard Spirit",
+        "description": "Increase ability to maintain the lead when leading by a fair margin mid-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "1st",
+                    "≥1 length ahead",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -5762,28 +5427,20 @@
         "downgrade": "Keeping the Lead",
         "gametora_id": "201191"
     },
-    {
-        "skill_name": "Overwhelming Pressure",
-        "description": "Increases speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Overtaking",
-                "Late race"
-            ]
-        ],
+    {   "skill_name": "Overwhelming Pressure",
+        "description": "Increase velocity when passing another runner late-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Long",
-                    "Overtaking",
+                    "Overtake another uma",
                     "Late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Overtake tends to happen at the beginning of the last spurt mode, where acceleration skills are triggering. During this phase, you are unlikely to be at top speed yet, rendering this skill to be useless.",
+        "review": "Might trigger during acceleration when the skill user is not at top speed yet.",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5794,26 +5451,19 @@
         "downgrade": "Pressure",
         "gametora_id": "201211"
     },
-    {
-        "skill_name": "15,000,000 CC",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Random uphill"
-            ]
-        ],
+    {   "skill_name": "15,000,000 CC",
+        "description": "Increase velocity on an uphill.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Late Surger",
-                    "Random uphill"
+                    "Random point on a random uphill"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Cheap and consistent. Good for maps with uphills.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5826,8 +5476,7 @@
         "downgrade": "1,500,000 CC",
         "gametora_id": "201411"
     },
-    {
-        "skill_name": "Trending in the Charts!",
+    {   "skill_name": "Trending in the Charts!",
         "description": "Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -5868,26 +5517,19 @@
         "downgrade": "Top Pick",
         "gametora_id": "201671"
     },
-    {
-        "skill_name": "Superstan",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "3 or more umas within 3 meters and/or 3 lanes",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Superstan",
+        "description": "Increase velocity when close to many runners.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "3 or more umas within 3 meters and/or 3 lanes",
-                    "After at least 5s into a race"
+                    "≥3 uma within 3m or 3 lanes",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Can break through PDM on some tracks. Consider taking mid race speed skills as well to continuously break PDM.",
+        "review": "Consider taking for CMs where a specific style is \"meta\" and you are using that style.",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5897,8 +5539,7 @@
         "downgrade": "Uma Stan",
         "gametora_id": "201592"
     },
-    {
-        "skill_name": "Come What May",
+    {   "skill_name": "Come What May",
         "description": "Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -5940,19 +5581,13 @@
         "downgrade": "All I've Got",
         "gametora_id": "201701"
     },
-    {
-        "skill_name": "Tail Nine",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Activate 3 skills mid race"
-            ]
-        ],
+    {   "skill_name": "Tail Nine",
+        "description": "Increase velocity after activating many skills mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "Activate 3 skills mid race"
+                    "Activated ≥3 skills during the mid race"
                 ]
             }
         ],
@@ -5968,8 +5603,7 @@
         "downgrade": "Tail Held High",
         "gametora_id": "201612"
     },
-    {
-        "skill_name": "Dream Run",
+    {   "skill_name": "Dream Run",
         "description": "Increases speed by 0.35 for 5.0s.",
         "conditions": [
             [
@@ -6006,8 +5640,7 @@
         ],
         "gametora_id": "300061"
     },
-    {
-        "skill_name": "Headliner",
+    {   "skill_name": "Headliner",
         "description": "Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -6048,8 +5681,7 @@
         "downgrade": "Feature Act",
         "gametora_id": "202011"
     },
-    {
-        "skill_name": "Daring Strike",
+    {   "skill_name": "Daring Strike",
         "description": "Increases speed by 0.25 for 4.0s.",
         "conditions": [
             [
@@ -6090,8 +5722,7 @@
         "downgrade": "Early Start",
         "gametora_id": "202021"
     },
-    {
-        "skill_name": "Nothing Ventured",
+    {   "skill_name": "Nothing Ventured",
         "description": "Increases speed by 0.45 for 1.8s. Lose HP by a random amount.",
         "conditions": [
             [
@@ -6118,8 +5749,7 @@
         "downgrade": "Risky Business",
         "gametora_id": "202031"
     },
-    {
-        "skill_name": "Flash Forward",
+    {   "skill_name": "Flash Forward",
         "description": "Increases speed by 0.35 for 3.0s.",
         "conditions": [
             [
@@ -6158,8 +5788,7 @@
         ],
         "gametora_id": "201103"
     },
-    {
-        "skill_name": "In High Spirits",
+    {   "skill_name": "In High Spirits",
         "description": "Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -6199,8 +5828,7 @@
         "downgrade": "Light as a Feather",
         "gametora_id": "202041"
     },
-    {
-        "skill_name": "Blast Forward",
+    {   "skill_name": "Blast Forward",
         "description": "Increases speed by 0.35 for 3.0s.",
         "conditions": [
             [
@@ -6239,30 +5867,30 @@
         ],
         "gametora_id": "201173"
     },
-    {
-        "skill_name": "Top Runner",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Be overtaken OR blocked from the side",
-                "Early race or Mid race",
-                "After at least 5s into a race"
-            ]
-        ],
+    {   "skill_name": "Top Runner",
+        "description": "Increase ability to pass or challenge another runner early-race or mid-race.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "Be overtaken OR blocked from the side",
-                    "Early race or Mid race",
-                    "After at least 5s into a race"
+                    "Be overtaken by another uma",
+                    "Early race or mid race",
+                    "After ≥5s into a race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Front Runner",
+                    "Blocked at the sides for ≥2s",
+                    "Early race or mid race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Helps a Front Runner retake or contest the lead during the early - mid race. Works more consistently the longer the track.",
+        "review": "Helps a Front Runner retake or contest the lead during the early - mid race.",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -6272,8 +5900,7 @@
         "downgrade": "Leader's Pride",
         "gametora_id": "201271"
     },
-    {
-        "skill_name": "Burning Soul",
+    {   "skill_name": "Burning Soul",
         "description": "Recover HP by 3.5%. Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -6315,8 +5942,7 @@
         "downgrade": "Fighting Spirit",
         "gametora_id": "202091"
     },
-    {
-        "skill_name": "Elated",
+    {   "skill_name": "Elated",
         "description": "Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -6357,8 +5983,7 @@
         "downgrade": "Eager",
         "gametora_id": "202101"
     },
-    {
-        "skill_name": "Full of Vigor",
+    {   "skill_name": "Full of Vigor",
         "description": "Increases speed by 0.35 for 1.8s.",
         "conditions": [
             [
@@ -6399,8 +6024,7 @@
         "downgrade": "Pumped",
         "gametora_id": "202111"
     },
-    {
-        "skill_name": "Dauntless",
+    {   "skill_name": "Dauntless",
         "description": "Increases speed by 0.35 and acceleration by 0.1 for 2.4s.",
         "conditions": [
             [
@@ -6441,8 +6065,7 @@
         "downgrade": "Fearless",
         "gametora_id": "202121"
     },
-    {
-        "skill_name": "Wild Wind",
+    {   "skill_name": "Wild Wind",
         "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.35 for 1.8s.",
         "conditions": [
             [
@@ -6483,8 +6106,7 @@
         "downgrade": "With All My Soul",
         "gametora_id": "202131"
     },
-    {
-        "skill_name": "See Ya Later!",
+    {   "skill_name": "See Ya Later!",
         "description": "Increases speed by 0.35 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -6513,8 +6135,7 @@
         "downgrade": "Playtime's Over!",
         "gametora_id": "201662"
     },
-    {
-        "skill_name": "Keep Going!",
+    {   "skill_name": "Keep Going!",
         "description": "Increases speed by 0.45 for 2.4s. Reduces HP by 2%.",
         "conditions": [
             [
@@ -6554,8 +6175,7 @@
         "downgrade": "Full Throttle",
         "gametora_id": "202151"
     },
-    {
-        "skill_name": "Moonlit Flash",
+    {   "skill_name": "Moonlit Flash",
         "description": "Increases speed by 0.35 for 3.0s.",
         "conditions": [
             [
@@ -6593,8 +6213,7 @@
         ],
         "gametora_id": "201453"
     },
-    {
-        "skill_name": "Refraction Arc",
+    {   "skill_name": "Refraction Arc",
         "description": "Increases speed by 0.35 for 3.0s.",
         "conditions": [
             [
@@ -6633,8 +6252,7 @@
         ],
         "gametora_id": "201113"
     },
-    {
-        "skill_name": "Supreme Downhiller (TO BE RENAMED)",
+    {   "skill_name": "Supreme Downhiller (TO BE RENAMED)",
         "description": "Increases speed by 0.35 for 2.4s.",
         "conditions": [
             [
@@ -6672,21 +6290,14 @@
         ],
         "downgrade": "Downhill Speedster"
     },
-    {
-        "skill_name": "In the Right Place! (TO BE RENAMED)",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Behind another uma for 3s or more",
-                "After at least 10s into a race"
-            ]
-        ],
+    {   "skill_name": "In the Right Place! (TO BE RENAMED)",
+        "description": "Decrease wind resistance when following directly behind another runner",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Behind another uma for 3s or more",
-                    "After at least 10s into a race"
+                    "Right behind another uma for ≥3s",
+                    "After ≥10s into a race"
                 ]
             }
         ],
@@ -6698,7 +6309,8 @@
             "in the right place",
             "いいとこ入った！"
         ],
-        "downgrade": "Slipstream"
+        "downgrade": "Slipstream",
+        "gametora_id": "201652"
     },
 
 
@@ -8623,8 +8235,7 @@
         ],
         "gametora_id": "200333"
     },
-    {
-        "skill_name": "Defeatist",
+    {   "skill_name": "Defeatist",
         "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -8652,8 +8263,7 @@
         ],
         "gametora_id": "200411"
     },
-    {
-        "skill_name": "Reckless",
+    {   "skill_name": "Reckless",
         "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -8683,8 +8293,7 @@
         ],
         "gametora_id": "200421"
     },
-    {
-        "skill_name": "Blatant Fear",
+    {   "skill_name": "Blatant Fear",
         "description": "Reduces speed by 0.3 for 5.0s. 30s cooldown.",
         "conditions": [
             [
@@ -8710,8 +8319,7 @@
         ],
         "gametora_id": "300051"
     },
-    {
-        "skill_name": "Corner Acceleration",
+    {   "skill_name": "Corner Acceleration",
         "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -8736,8 +8344,7 @@
         ],
         "upgrade": "Corner Connoisseur"
     },
-    {
-        "skill_name": "Straightaway Acceleration",
+    {   "skill_name": "Straightaway Acceleration",
         "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -8762,8 +8369,7 @@
         ],
         "upgrade": "Rushing Gale!"
     },
-    {
-        "skill_name": "Nimble Navigator",
+    {   "skill_name": "Nimble Navigator",
         "description": "Increases acceleration by 0.2 and lane movement speed by 0.005 for 3.0s.",
         "conditions": [
             [
@@ -8793,8 +8399,7 @@
         ],
         "upgrade": "No Stopping Me!"
     },
-    {
-        "skill_name": "Early Lead",
+    {   "skill_name": "Early Lead",
         "description": "Increases acceleration by 0.2 for 1.2s.",
         "conditions": [
             [
@@ -8822,8 +8427,7 @@
         ],
         "upgrade": "Taking the Lead"
     },
-    {
-        "skill_name": "Final Push",
+    {   "skill_name": "Final Push",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -8853,8 +8457,7 @@
         ],
         "upgrade": "Unrestrained"
     },
-    {
-        "skill_name": "Slick Surge",
+    {   "skill_name": "Slick Surge",
         "description": "Increases acceleration by 0.2 for 1.8s.",
         "conditions": [
             [
@@ -8884,8 +8487,7 @@
         ],
         "upgrade": "On Your Left!"
     },
-    {
-        "skill_name": "Straightaway Spurt",
+    {   "skill_name": "Straightaway Spurt",
         "description": "Increases acceleration by 0.2 for 1.8s.",
         "conditions": [
             [
@@ -8916,8 +8518,7 @@
         ],
         "upgrade": "Encroaching Shadow"
     },
-    {
-        "skill_name": "Sprinting Gear",
+    {   "skill_name": "Sprinting Gear",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -8944,8 +8545,7 @@
         ],
         "upgrade": "Turbo Sprint"
     },
-    {
-        "skill_name": "Updrafters",
+    {   "skill_name": "Updrafters",
         "description": "Increases acceleration by 0.2 for 3.0s",
         "conditions": [
             [
@@ -8975,8 +8575,7 @@
         ],
         "upgrade": "Furious Feat"
     },
-    {
-        "skill_name": "Countermeasure",
+    {   "skill_name": "Countermeasure",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9008,8 +8607,7 @@
         ],
         "upgrade": "Plan X"
     },
-    {
-        "skill_name": "Acceleration",
+    {   "skill_name": "Acceleration",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9038,8 +8636,7 @@
         ],
         "upgrade": "Step on the Gas!"
     },
-    {
-        "skill_name": "Second Wind",
+    {   "skill_name": "Second Wind",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9069,8 +8666,7 @@
         ],
         "upgrade": "Reignition"
     },
-    {
-        "skill_name": "Shrewd Step",
+    {   "skill_name": "Shrewd Step",
         "description": "Increases acceleration by 0.2 for 3.0.",
         "conditions": [
             [
@@ -9098,8 +8694,7 @@
         ],
         "upgrade": "Technician"
     },
-    {
-        "skill_name": "Straight Descent",
+    {   "skill_name": "Straight Descent",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9127,8 +8722,7 @@
         ],
         "upgrade": "Determined Descent"
     },
-    {
-        "skill_name": "Tactical Tweak",
+    {   "skill_name": "Tactical Tweak",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9158,8 +8752,7 @@
         ],
         "upgrade": "Shatterproof"
     },
-    {
-        "skill_name": "Fighter",
+    {   "skill_name": "Fighter",
         "description": "Increases acceleration by 0.2 for 4.0s.",
         "conditions": [
             [
@@ -9189,8 +8782,7 @@
         ],
         "upgrade": "Hard Worker"
     },
-    {
-        "skill_name": "Highlander",
+    {   "skill_name": "Highlander",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9216,8 +8808,7 @@
         ],
         "upgrade": "Ultimate Hill Climber (TO BE RENAMED)"
     },
-    {
-        "skill_name": "Groundwork",
+    {   "skill_name": "Groundwork",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9244,8 +8835,7 @@
         ],
         "upgrade": "Unshakable Stance (TO BE RENAMED)"
     },
-    {
-        "skill_name": "Head-On",
+    {   "skill_name": "Head-On",
         "description": "Increases acceleration by 0.2 for 1.8s.",
         "conditions": [
             [
@@ -9276,8 +8866,7 @@
         ],
         "upgrade": "Neck and Neck"
     },
-    {
-        "skill_name": "Take the Chance",
+    {   "skill_name": "Take the Chance",
         "description": "Increases acceleration by 0.2 for 1.8s.",
         "conditions": [
             [
@@ -9317,8 +8906,7 @@
         ],
         "upgrade": "From the Brink"
     },
-    {
-        "skill_name": "Corner Connoisseur",
+    {   "skill_name": "Corner Connoisseur",
         "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -9344,8 +8932,7 @@
         ],
         "downgrade": "Corner Acceleration"
     },
-    {
-        "skill_name": "Rushing Gale!",
+    {   "skill_name": "Rushing Gale!",
         "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -9371,8 +8958,7 @@
         ],
         "downgrade": "Straightaway Acceleration"
     },
-    {
-        "skill_name": "No Stopping Me!",
+    {   "skill_name": "No Stopping Me!",
         "description": "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3.0s.",
         "conditions": [
             [
@@ -9402,8 +8988,7 @@
         ],
         "downgrade": "Nimble Navigator"
     },
-    {
-        "skill_name": "Taking the Lead",
+    {   "skill_name": "Taking the Lead",
         "description": "Increases acceleration by 0.4 for 1.2s.",
         "conditions": [
             [
@@ -9432,8 +9017,7 @@
         ],
         "downgrade": "Early Lead"
     },
-    {
-        "skill_name": "Unrestrained",
+    {   "skill_name": "Unrestrained",
         "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
@@ -9463,8 +9047,7 @@
         ],
         "downgrade": "Final Push"
     },
-    {
-        "skill_name": "On Your Left!",
+    {   "skill_name": "On Your Left!",
         "description": "Increases acceleration by 0.4 for 1.8s.",
         "conditions": [
             [
@@ -9494,8 +9077,7 @@
         ],
         "downgrade": "Slick Surge"
     },
-    {
-        "skill_name": "Encroaching Shadow",
+    {   "skill_name": "Encroaching Shadow",
         "description": "Increases acceleration by 0.4 for 1.8s.",
         "conditions": [
             [
@@ -9525,8 +9107,7 @@
         ],
         "downgrade": "Straightaway Spurt"
     },
-    {
-        "skill_name": "Turbo Sprint",
+    {   "skill_name": "Turbo Sprint",
         "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
@@ -9554,8 +9135,7 @@
         ],
         "downgrade": "Sprinting Gear"
     },
-    {
-        "skill_name": "Furious Feat",
+    {   "skill_name": "Furious Feat",
         "description": "Increases acceleration by 0.4 for 3.0s",
         "conditions": [
             [
@@ -9585,8 +9165,7 @@
         ],
         "downgrade": "Updrafters"
     },
-    {
-        "skill_name": "Plan X",
+    {   "skill_name": "Plan X",
         "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
@@ -9617,8 +9196,7 @@
         ],
         "downgrade": "Countermeasure"
     },
-    {
-        "skill_name": "Step on the Gas!",
+    {   "skill_name": "Step on the Gas!",
         "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
@@ -9648,8 +9226,7 @@
         ],
         "downgrade": "Acceleration"
     },
-    {
-        "skill_name": "Reignition",
+    {   "skill_name": "Reignition",
         "description": "Increases acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -9679,8 +9256,7 @@
         ],
         "downgrade": "Second Wind"
     },
-    {
-        "skill_name": "Technician",
+    {   "skill_name": "Technician",
         "description": "Increases acceleration by 0.3 for 3.0.",
         "conditions": [
             [
@@ -9707,8 +9283,7 @@
         ],
         "downgrade": "Shrewd Step"
     },
-    {
-        "skill_name": "Determined Descent",
+    {   "skill_name": "Determined Descent",
         "description": "Increases acceleration by 0.3 for 3.0s.",
         "conditions": [
             [
@@ -9736,8 +9311,7 @@
         ],
         "downgrade": "Straight Descent"
     },
-    {
-        "skill_name": "Shatterproof",
+    {   "skill_name": "Shatterproof",
         "description": "Increases acceleration by 0.3 for 3.0s.",
         "conditions": [
             [
@@ -9767,8 +9341,7 @@
         ],
         "downgrade": "Tactical Tweak"
     },
-    {
-        "skill_name": "Hard Worker",
+    {   "skill_name": "Hard Worker",
         "description": "Increases acceleration by 0.3 for 4.0s.",
         "conditions": [
             [
@@ -9798,8 +9371,7 @@
         ],
         "downgrade": "Fighter"
     },
-    {
-        "skill_name": "From the Brink",
+    {   "skill_name": "From the Brink",
         "description": "Increases acceleration by 0.4 for 1.8s.",
         "conditions": [
             [
@@ -9839,8 +9411,7 @@
         ],
         "downgrade": "Take the Chance"
     },
-    {
-        "skill_name": "Neck and Neck",
+    {   "skill_name": "Neck and Neck",
         "description": "Increases acceleration by 0.4 for 1.8s.",
         "conditions": [
             [
@@ -9870,8 +9441,7 @@
         ],
         "downgrade": "Head-On"
     },
-    {
-        "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
+    {   "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
         "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
@@ -9896,8 +9466,7 @@
         ],
         "downgrade": "Highlander"
     },
-    {
-        "skill_name": "Unshakable Stance (TO BE RENAMED)",
+    {   "skill_name": "Unshakable Stance (TO BE RENAMED)",
         "description": "Increases acceleration by 0.4 for 3.0s.",
         "conditions": [
             [
@@ -9924,8 +9493,7 @@
         ],
         "downgrade": "Groundwork"
     },
-    {
-        "skill_name": "Feel the Burn!",
+    {   "skill_name": "Feel the Burn!",
         "description": "Increases acceleration by 0.3 for 4.0s.",
         "conditions": [
             [
@@ -9957,8 +9525,7 @@
         "upgrade": "Let's Pump Some Iron!",
         "gametora_id": "10271"
     },
-    {
-        "skill_name": "Red Shift/LP1211-M",
+    {   "skill_name": "Red Shift/LP1211-M",
         "description": "Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -9990,8 +9557,7 @@
         "horse": "Maruzensky (Original)",
         "gametora_id": "100041"
     },
-    {
-        "skill_name": "Shooting for Victory!",
+    {   "skill_name": "Shooting for Victory!",
         "description": "Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -10022,8 +9588,7 @@
         "horse": "Taiki Shuttle (Original)",
         "gametora_id": "100101"
     },
-    {
-        "skill_name": "Let's Pump Some Iron!",
+    {   "skill_name": "Let's Pump Some Iron!",
         "description": "Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -10057,8 +9622,7 @@
         "downgrade": "Feel the Burn!",
         "gametora_id": "100271"
     },
-    {
-        "skill_name": "Angling and Scheming",
+    {   "skill_name": "Angling and Scheming",
         "description": "Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -10090,8 +9654,7 @@
         "horse": "Seiun Sky (Original)",
         "gametora_id": "100201"
     },
-    {
-        "skill_name": "Condor's Fury",
+    {   "skill_name": "Condor's Fury",
         "description": "Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -10124,8 +9687,7 @@
         "horse": "El Condor Pasa (Fantasy)",
         "gametora_id": "110141"
     },
-    {
-        "skill_name": "KEEP IT REAL.",
+    {   "skill_name": "KEEP IT REAL.",
         "description": "Increases acceleration by 0.3 for 6.0s.",
         "inherited": "Increases acceleration by 0.1 for 3.6s.",
         "conditions": [
@@ -10156,8 +9718,7 @@
         "horse": "Gold City (Original)",
         "gametora_id": "100401"
     },
-    {
-        "skill_name": "Moving Past, and Beyond",
+    {   "skill_name": "Moving Past, and Beyond",
         "description": "Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -10202,8 +9763,7 @@
         "horse": "Mejiro Dober (Original)",
         "gametora_id": "100591"
     },
-    {
-        "skill_name": "Budding Blossom",
+    {   "skill_name": "Budding Blossom",
         "description": "Condition 1 and 2 or 1 and 3 - Increases acceleration by 0.4 for 4.0s.",
         "inherited": "Condition 1 and 2 or 1 and 3 - Increases acceleration by 0.2 for 2.4s.",
         "conditions": [
@@ -10256,8 +9816,7 @@
         "horse": "Nishino Flower (Original)",
         "gametora_id": "100511"
     },
-    {
-        "skill_name": "Corner Acceleration x",
+    {   "skill_name": "Corner Acceleration x",
         "description": "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
         "conditions": [
             [
@@ -10281,8 +9840,7 @@
             "コーナー加速 x"
         ]
     },
-    {
-        "skill_name": "Prudent Positioning",
+    {   "skill_name": "Prudent Positioning",
         "description": "Increases lane movement speed by 0.035 for 3.0s.",
         "conditions": [
             [
@@ -10308,8 +9866,7 @@
         ],
         "upgrade": "Center Stage"
     },
-    {
-        "skill_name": "Go with the Flow",
+    {   "skill_name": "Go with the Flow",
         "description": "Increases lane movement speed by 0.025 for 3.0s.",
         "conditions": [
             [
@@ -10335,8 +9892,7 @@
         ],
         "upgrade": "Lane Legerdemain"
     },
-    {
-        "skill_name": "Meticulous Measures",
+    {   "skill_name": "Meticulous Measures",
         "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
         "conditions": [
             [
@@ -10364,8 +9920,7 @@
         ],
         "upgrade": "Perfect Prep!"
     },
-    {
-        "skill_name": "Thunderbolt Step",
+    {   "skill_name": "Thunderbolt Step",
         "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
         "conditions": [
             [
@@ -10395,8 +9950,7 @@
         ],
         "upgrade": "Lightning Step"
     },
-    {
-        "skill_name": "Dodging Danger",
+    {   "skill_name": "Dodging Danger",
         "description": "Increases lane movement speed by 0.025 for 3.0s.",
         "conditions": [
             [
@@ -10426,8 +9980,7 @@
         ],
         "upgrade": "Sixth Sense"
     },
-    {
-        "skill_name": "Forward, March!",
+    {   "skill_name": "Forward, March!",
         "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 3.0s.",
         "conditions": [
             [
@@ -10455,8 +10008,7 @@
         ],
         "upgrade": "Lead the Charge!"
     },
-    {
-        "skill_name": "Center Stage",
+    {   "skill_name": "Center Stage",
         "description": "Increases lane movement speed by 0.045 for 3.0s.",
         "conditions": [
             [
@@ -10482,8 +10034,7 @@
         ],
         "downgrade": "Prudent Positioning"
     },
-    {
-        "skill_name": "Lane Legerdemain",
+    {   "skill_name": "Lane Legerdemain",
         "description": "Increases lane movement speed by 0.035 for 3.0s.",
         "conditions": [
             [
@@ -10509,8 +10060,7 @@
         ],
         "downgrade": "Go with the Flow"
     },
-    {
-        "skill_name": "Perfect Prep!",
+    {   "skill_name": "Perfect Prep!",
         "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
         "conditions": [
             [
@@ -10538,8 +10088,7 @@
         ],
         "downgrade": "Meticulous Measures"
     },
-    {
-        "skill_name": "Lightning Step",
+    {   "skill_name": "Lightning Step",
         "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
         "conditions": [
             [
@@ -10568,8 +10117,7 @@
         ],
         "downgrade": "Thunderbolt Step"
     },
-    {
-        "skill_name": "Sixth Sense",
+    {   "skill_name": "Sixth Sense",
         "description": "Increases lane movement speed by 0.035 for 3.0s.",
         "conditions": [
             [
@@ -10598,8 +10146,7 @@
         ],
         "downgrade": "Dodging Danger"
     },
-    {
-        "skill_name": "Lead the Charge!",
+    {   "skill_name": "Lead the Charge!",
         "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 3.0s.",
         "conditions": [
             [
@@ -10627,8 +10174,7 @@
         ],
         "downgrade": "Forward, March!"
     },
-    {
-        "skill_name": "Focus",
+    {   "skill_name": "Focus",
         "description": "Improved start reaction time by 0.9x, decreasing chance of a late start.",
         "conditions": [
             [
@@ -10653,8 +10199,7 @@
         ],
         "upgrade": "Concentration"
     },
-    {
-        "skill_name": "Concentration",
+    {   "skill_name": "Concentration",
         "description": "Improved start reaction time by 0.4x, decreasing chance of a late start.",
         "conditions": [
             [
@@ -10679,8 +10224,7 @@
         ],
         "downgrade": "Focus"
     },
-    {
-        "skill_name": "Gatekept",
+    {   "skill_name": "Gatekept",
         "description": "Worsen start reaction time by 1.5x, increasing chance of a late start.",
         "conditions": [
             [
@@ -10705,8 +10249,7 @@
             "ゲート難"
         ]
     },
-    {
-        "skill_name": "Feelin' a Bit Silly",
+    {   "skill_name": "Feelin' a Bit Silly",
         "description": "Reduce acceleration by 18. Add a start delay of 0.1.",
         "conditions": [
             [
@@ -10732,8 +10275,7 @@
             "dilly dakky"
         ]
     },
-    {
-        "skill_name": "You're Not the Boss of Me!",
+    {   "skill_name": "You're Not the Boss of Me!",
         "description": "Wit stat -40. Add a start delay of 0.085.",
         "conditions": [
             [
@@ -10758,8 +10300,7 @@
             "アタシに指図しないで"
         ]
     },
-    {
-        "skill_name": "Hawkeye",
+    {   "skill_name": "Hawkeye",
         "description": "Increases FoV by 10.",
         "conditions": [
             [
@@ -10786,8 +10327,7 @@
         ],
         "upgrade": "Clairvoyance"
     },
-    {
-        "skill_name": "Studious",
+    {   "skill_name": "Studious",
         "description": "Increases FoV by 5 for 3.0s.",
         "conditions": [
             [
@@ -10815,8 +10355,7 @@
         ],
         "upgrade": "The Bigger Picture"
     },
-    {
-        "skill_name": "I Can See Right Through You",
+    {   "skill_name": "I Can See Right Through You",
         "description": "Increases FoV by 5 for 3.0s.",
         "conditions": [
             [
@@ -10844,8 +10383,7 @@
         ],
         "upgrade": "The Coast Is Clear!"
     },
-    {
-        "skill_name": "Strategist",
+    {   "skill_name": "Strategist",
         "description": "Increases FoV by 5.",
         "conditions": [
             [
@@ -10875,8 +10413,7 @@
         ],
         "upgrade": "Crusader"
     },
-    {
-        "skill_name": "Clairvoyance",
+    {   "skill_name": "Clairvoyance",
         "description": "Increases FoV by 15.",
         "conditions": [
             [
@@ -10903,8 +10440,7 @@
         ],
         "downgrade": "Hawkeye"
     },
-    {
-        "skill_name": "The Bigger Picture",
+    {   "skill_name": "The Bigger Picture",
         "description": "Increases FoV by 15 for 3.0s.",
         "conditions": [
             [
@@ -10932,8 +10468,7 @@
         ],
         "downgrade": "Studious"
     },
-    {
-        "skill_name": "The Coast Is Clear!",
+    {   "skill_name": "The Coast Is Clear!",
         "description": "Increases FoV by 10 for 3.0s.",
         "conditions": [
             [
@@ -10961,8 +10496,7 @@
         ],
         "downgrade": "I Can See Right Through You"
     },
-    {
-        "skill_name": "Crusader",
+    {   "skill_name": "Crusader",
         "description": "Increases FoV by 15.",
         "conditions": [
             [
@@ -10992,8 +10526,7 @@
         ],
         "downgrade": "Strategist"
     },
-    {
-        "skill_name": "Ignited Spirit SPD",
+    {   "skill_name": "Ignited Spirit SPD",
         "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
         "conditions": [
             [
@@ -11020,8 +10553,7 @@
         ],
         "upgrade": "Burning Spirit SPD"
     },
-    {
-        "skill_name": "Ignited Spirit GUTS",
+    {   "skill_name": "Ignited Spirit GUTS",
         "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
         "conditions": [
             [
@@ -11047,8 +10579,7 @@
         ],
         "upgrade": "Burning Spirit GUTS"
     },
-    {
-        "skill_name": "Burning Spirit SPD",
+    {   "skill_name": "Burning Spirit SPD",
         "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
         "conditions": [
             [
@@ -11075,8 +10606,7 @@
         ],
         "downgrade": "Ignited Spirit SPD"
     },
-    {
-        "skill_name": "Burning Spirit GUTS",
+    {   "skill_name": "Burning Spirit GUTS",
         "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
         "conditions": [
             [
@@ -11102,8 +10632,7 @@
         ],
         "downgrade": "Ignited Spirit GUTS"
     },
-    {
-        "skill_name": "Ignited Spirit STA",
+    {   "skill_name": "Ignited Spirit STA",
         "description": "Recover HP based on your team's total base stamina stat, increasing by 1.2% when below 1200, 1.35% at 1200 - 1799, 1.5% at 1800 - 2599, 1.65% at 2600 - 3599, and 1.8% if 3600 or higher.",
         "conditions": [
             [
@@ -11131,8 +10660,7 @@
         "upgrade": "Burning Spirit STA",
         "gametora_id": "210022"
     },
-    {
-        "skill_name": "Burning Spirit STA",
+    {   "skill_name": "Burning Spirit STA",
         "description": "Recover HP based on your team's total base stamina stat, increasing by 4.4% when below 1200, 4.95% at 1200 - 1799, 5.5% at 1800 - 2599, 6.05% at 2600 - 3599, and 6.6% if 3600 or higher.",
         "conditions": [
             [
@@ -11160,8 +10688,7 @@
         "downgrade": "Ignited Spirit STA",
         "gametora_id": "210021"
     },
-    {
-        "skill_name": "Ignited Spirit PWR",
+    {   "skill_name": "Ignited Spirit PWR",
         "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
         "conditions": [
             [
@@ -11188,8 +10715,7 @@
         ],
         "upgrade": "Burning Spirit PWR"
     },
-    {
-        "skill_name": "Burning Spirit PWR",
+    {   "skill_name": "Burning Spirit PWR",
         "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
         "conditions": [
             [
@@ -11216,8 +10742,7 @@
         ],
         "downgrade": "Ignited Spirit PWR"
     },
-    {
-        "skill_name": "Ignited Spirit WIT",
+    {   "skill_name": "Ignited Spirit WIT",
         "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
         "conditions": [
             [
@@ -11244,8 +10769,7 @@
         ],
         "upgrade": "Burning Spirit WIT"
     },
-    {
-        "skill_name": "Burning Spirit WIT",
+    {   "skill_name": "Burning Spirit WIT",
         "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
         "conditions": [
             [
@@ -11272,8 +10796,7 @@
         ],
         "downgrade": "Ignited Spirit WIT"
     },
-    {
-        "skill_name": "Hesitant Front Runners",
+    {   "skill_name": "Hesitant Front Runners",
         "description": "Reduces speed by 0.15 for Front Runners.",
         "conditions": [
             [
@@ -11300,8 +10823,7 @@
             "逃げためらい"
         ]
     },
-    {
-        "skill_name": "Hesitant Pace Chasers",
+    {   "skill_name": "Hesitant Pace Chasers",
         "description": "Reduces speed by 0.15 for Pace Chasers.",
         "conditions": [
             [
@@ -11328,8 +10850,7 @@
             "先行ためらい"
         ]
     },
-    {
-        "skill_name": "Hesitant Late Surgers",
+    {   "skill_name": "Hesitant Late Surgers",
         "description": "Reduces speed by 0.15 for Late Surgers.",
         "conditions": [
             [
@@ -11356,8 +10877,7 @@
             "差しためらい"
         ]
     },
-    {
-        "skill_name": "Hesitant End Closers",
+    {   "skill_name": "Hesitant End Closers",
         "description": "Reduces speed by 0.15 for End Closers.",
         "conditions": [
             [
@@ -11384,8 +10904,7 @@
             "追込ためらい"
         ]
     },
-    {
-        "skill_name": "Intimidate",
+    {   "skill_name": "Intimidate",
         "description": "Reduces speed by 0.2 for 3.0s for all umas behind.",
         "conditions": [
             [
@@ -11417,8 +10936,7 @@
         ],
         "upgrade": "Adored by All"
     },
-    {
-        "skill_name": "Speed Eater",
+    {   "skill_name": "Speed Eater",
         "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.15 for 3.0s.",
         "conditions": [
             [
@@ -11447,8 +10965,7 @@
         ],
         "upgrade": "Greed for Speed"
     },
-    {
-        "skill_name": "Tether",
+    {   "skill_name": "Tether",
         "description": "Reduces speed by 0.15 for 3.0s to all umas ahead.",
         "conditions": [
             [
@@ -11478,8 +10995,7 @@
         ],
         "upgrade": "Dominator"
     },
-    {
-        "skill_name": "Intense Gaze",
+    {   "skill_name": "Intense Gaze",
         "description": "Reduces speed by 0.15 for 3.0s to all umas within FoV.",
         "conditions": [
             [
@@ -11509,8 +11025,7 @@
         ],
         "upgrade": "Petrifying Gaze"
     },
-    {
-        "skill_name": "Greed for Speed",
+    {   "skill_name": "Greed for Speed",
         "description": "Reduces speed by 0.2 to 5 umas behind you and increases your speed by 0.25 for 3.0s.",
         "conditions": [
             [
@@ -11540,8 +11055,7 @@
         ],
         "downgrade": "Speed Eater"
     },
-    {
-        "skill_name": "Dominator",
+    {   "skill_name": "Dominator",
         "description": "Reduces speed by 0.25 for 3.0s to all umas ahead.",
         "conditions": [
             [
@@ -11571,8 +11085,7 @@
         ],
         "downgrade": "Tether"
     },
-    {
-        "skill_name": "Petrifying Gaze",
+    {   "skill_name": "Petrifying Gaze",
         "description": "Reduces speed by 0.25 for 3.0s to all umas within FoV.",
         "conditions": [
             [
@@ -11602,8 +11115,7 @@
         ],
         "downgrade": "Intense Gaze"
     },
-    {
-        "skill_name": "Adored by All",
+    {   "skill_name": "Adored by All",
         "description": "Reduces speed by 0.25 for 3.0s for all umas behind.",
         "conditions": [
             [
@@ -11635,8 +11147,7 @@
         ],
         "downgrade": "Intimidate"
     },
-    {
-        "skill_name": "Opening Gambit",
+    {   "skill_name": "Opening Gambit",
         "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
         "conditions": [
             [
@@ -11668,8 +11179,7 @@
         ],
         "upgrade": "Battle Formation"
     },
-    {
-        "skill_name": "Restart",
+    {   "skill_name": "Restart",
         "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
         "conditions": [
             [
@@ -11699,8 +11209,7 @@
             "リスタート"
         ]
     },
-    {
-        "skill_name": "Battle Formation",
+    {   "skill_name": "Battle Formation",
         "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
         "conditions": [
             [
@@ -11731,8 +11240,7 @@
         ],
         "downgrade": "Opening Gambit"
     },
-    {
-        "skill_name": "Frenzied Front Runners",
+    {   "skill_name": "Frenzied Front Runners",
         "description": "Increased rush duration by 5.0s for Front Runners.",
         "conditions": [
             [
@@ -11760,8 +11268,7 @@
             "逃げ駆け引き"
         ]
     },
-    {
-        "skill_name": "Frenzied Pace Chasers",
+    {   "skill_name": "Frenzied Pace Chasers",
         "description": "Increased rush duration by 5.0s for Pace Chasers.",
         "conditions": [
             [
@@ -11789,8 +11296,7 @@
             "先行駆け引き"
         ]
     },
-    {
-        "skill_name": "Frenzied Late Surgers",
+    {   "skill_name": "Frenzied Late Surgers",
         "description": "Increased rush duration by 5.0s for Late Surgers.",
         "conditions": [
             [
@@ -11818,8 +11324,7 @@
             "差し駆け引き"
         ]
     },
-    {
-        "skill_name": "Frenzied End Closers",
+    {   "skill_name": "Frenzied End Closers",
         "description": "Increased rush duration by 5.0s for End Closer.",
         "conditions": [
             [
@@ -11847,8 +11352,7 @@
             "追込駆け引き"
         ]
     },
-    {
-        "skill_name": "Trick (Front)",
+    {   "skill_name": "Trick (Front)",
         "description": "Reduces HP by 1% for rushed umas behind.",
         "conditions": [
             [
@@ -11876,8 +11380,7 @@
             "トリック前"
         ]
     },
-    {
-        "skill_name": "Trick (Rear)",
+    {   "skill_name": "Trick (Rear)",
         "description": "Reduces HP by 1% for rushed umas ahead.",
         "conditions": [
             [
@@ -11905,8 +11408,7 @@
             "トリック後"
         ]
     },
-    {
-        "skill_name": "Subdued Front Runners",
+    {   "skill_name": "Subdued Front Runners",
         "description": "Reduces HP by 1% for Front Runners.",
         "conditions": [
             [
@@ -11936,8 +11438,7 @@
             "逃げけん制"
         ]
     },
-    {
-        "skill_name": "Flustered Front Runners",
+    {   "skill_name": "Flustered Front Runners",
         "description": "Reduces HP by 1% for Front Runners.",
         "conditions": [
             [
@@ -11965,8 +11466,7 @@
             "逃げ焦り"
         ]
     },
-    {
-        "skill_name": "Subdued Pace Chasers",
+    {   "skill_name": "Subdued Pace Chasers",
         "description": "Reduces HP by 1% for Pace Chasers.",
         "conditions": [
             [
@@ -11996,8 +11496,7 @@
             "先行けん制"
         ]
     },
-    {
-        "skill_name": "Flustered Pace Chasers",
+    {   "skill_name": "Flustered Pace Chasers",
         "description": "Reduces HP by 1% for Pace Chasers.",
         "conditions": [
             [
@@ -12025,8 +11524,7 @@
             "先行焦り"
         ]
     },
-    {
-        "skill_name": "Subdued Late Surgers",
+    {   "skill_name": "Subdued Late Surgers",
         "description": "Reduces HP by 1% for Late Surgers.",
         "conditions": [
             [
@@ -12056,8 +11554,7 @@
             "差しけん制"
         ]
     },
-    {
-        "skill_name": "Flustered Late Surgers",
+    {   "skill_name": "Flustered Late Surgers",
         "description": "Reduces HP by 1% for Late Surgers.",
         "conditions": [
             [
@@ -12085,8 +11582,7 @@
             "差し焦り"
         ]
     },
-    {
-        "skill_name": "Subdued End Closers",
+    {   "skill_name": "Subdued End Closers",
         "description": "Reduces HP by 1% for End Closers.",
         "conditions": [
             [
@@ -12116,8 +11612,7 @@
             "追込けん制"
         ]
     },
-    {
-        "skill_name": "Flustered End Closers",
+    {   "skill_name": "Flustered End Closers",
         "description": "Reduces HP by 1% for End Closers.",
         "conditions": [
             [
@@ -12145,8 +11640,7 @@
             "追込焦り"
         ]
     },
-    {
-        "skill_name": "Stop Right There!",
+    {   "skill_name": "Stop Right There!",
         "description": "Reduces HP by 1% and acceleration by 0.05 for 1.2s for all umas ahead.",
         "conditions": [
             [
@@ -12178,8 +11672,7 @@
         ],
         "upgrade": "You've Got No Shot"
     },
-    {
-        "skill_name": "Murmur",
+    {   "skill_name": "Murmur",
         "description": "Reduces HP by 1% for all umas ahead.",
         "conditions": [
             [
@@ -12209,8 +11702,7 @@
         ],
         "upgrade": "Mystifying Murmur"
     },
-    {
-        "skill_name": "Stamina Eater",
+    {   "skill_name": "Stamina Eater",
         "description": "Reduces HP by 0.5% to 5 umas ahead of you and recovers your HP by 1.5%.",
         "conditions": [
             [
@@ -12239,8 +11731,7 @@
         ],
         "upgrade": "Stamina Siphon"
     },
-    {
-        "skill_name": "Sharp Gaze",
+    {   "skill_name": "Sharp Gaze",
         "description": "Reduces HP by 1% for all umas within PoV.",
         "conditions": [
             [
@@ -12269,8 +11760,7 @@
         ],
         "upgrade": "All-Seeing Eyes"
     },
-    {
-        "skill_name": "You've Got No Shot",
+    {   "skill_name": "You've Got No Shot",
         "description": "Reduces HP by 3% and acceleration by 0.2 for 1.2s for all umas ahead.",
         "conditions": [
             [
@@ -12302,8 +11792,7 @@
         ],
         "downgrade": "Stop Right There!"
     },
-    {
-        "skill_name": "Mystifying Murmur",
+    {   "skill_name": "Mystifying Murmur",
         "description": "Reduces HP by 3% for all umas ahead.",
         "conditions": [
             [
@@ -12333,8 +11822,7 @@
         ],
         "downgrade": "Murmur"
     },
-    {
-        "skill_name": "Stamina Siphon",
+    {   "skill_name": "Stamina Siphon",
         "description": "Reduces HP by 1% to 5 umas ahead of you and recovers your HP by 3.5%.",
         "conditions": [
             [
@@ -12364,8 +11852,7 @@
         ],
         "downgrade": "Stamina Eater"
     },
-    {
-        "skill_name": "All-Seeing Eyes",
+    {   "skill_name": "All-Seeing Eyes",
         "description": "Reduces HP by 3% for all umas within PoV.",
         "conditions": [
             [
@@ -12395,8 +11882,7 @@
         ],
         "downgrade": "Sharp Gaze"
     },
-    {
-        "skill_name": "Tantalizing Trick",
+    {   "skill_name": "Tantalizing Trick",
         "description": "Reduces HP by 3% for rushed umas behind.",
         "conditions": [
             [
@@ -12426,8 +11912,7 @@
         ],
         "downgrade": "Trick (Front)"
     },
-    {
-        "skill_name": "Smoke Screen",
+    {   "skill_name": "Smoke Screen",
         "description": "Reduces FoV by 5 for 3.0s for all umas ahead.",
         "conditions": [
             [
@@ -12454,8 +11939,7 @@
         ],
         "upgrade": "Illusionist"
     },
-    {
-        "skill_name": "Disorient",
+    {   "skill_name": "Disorient",
         "description": "Reduces FoV by 3 for 3.0s for all umas behind you.",
         "conditions": [
             [
@@ -12485,8 +11969,7 @@
         ],
         "upgrade": "Dazzling Disorientation"
     },
-    {
-        "skill_name": "Illusionist",
+    {   "skill_name": "Illusionist",
         "description": "Reduces FoV by 10 for 3.0s for all umas ahead.",
         "conditions": [
             [
@@ -12512,8 +11995,7 @@
         ],
         "downgrade": "Smoke Screen"
     },
-    {
-        "skill_name": "Dazzling Disorientation",
+    {   "skill_name": "Dazzling Disorientation",
         "description": "Reduces FoV by 5 for 3.0s for all umas behind you.",
         "conditions": [
             [
@@ -12543,8 +12025,7 @@
         ],
         "downgrade": "Disorient"
     },
-    {
-        "skill_name": "Runaway",
+    {   "skill_name": "Runaway",
         "description": "Changes strategu to Runaway (Great Escape)",
         "conditions": [
             [
