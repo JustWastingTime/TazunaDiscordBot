@@ -7003,6 +7003,30 @@
         "horse": "Fuji Kiseki (Original)",
         "gametora_id": "100051"
     },
+    {   "skill_name": "KEEP IT REAL.",
+        "description": "Moderately increase acceleration steadily with a wink when starting to make a move from midpack in the second half of the race.",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.3 for 6.0s.",
+                "inherited": "Increases acceleration by 0.1 for 3.6s.",
+                "conditions": [
+                    "4th to 6th (CM), 5th to 8th (TT)",
+                    "Overtake target exists",
+                    "Second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "keep it real",
+            "gold city original og"
+        ],
+        "horse": "Gold City (Original)",
+        "gametora_id": "100401"
+    },
     {   "skill_name": "A Kiss for Courage",
         "description": "Increase velocity enthusiastically when positioned toward the front in the second half of the race after recovering endurance with a skill.",
         "effect": [
@@ -8866,27 +8890,20 @@
         "gametora_id": "100271"
     },
     {   "skill_name": "Angling and Scheming",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "1st place",
-                "Corner",
-                "Late race or beyond"
-            ]
-        ],
+        "description": "Increase acceleration at an opportune moment when in the lead on a corner late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
-                    "1st place",
-                    "Corner",
-                    "Late race or beyond"
+                    "1st",
+                    "Any corner",
+                    "Late race and beyond"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Must have skill for all Front Runners. Need to be leading to trigger, so weaker Front Runners will not be able to trigger this. Best on tracks where the spurt begins on a corner. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
@@ -8898,18 +8915,11 @@
         "gametora_id": "100201"
     },
     {   "skill_name": "Condor's Fury",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "4th to 7th (CM), 4th to 9th (TT)",
-                "Overtake target exists",
-                "Final corner"
-            ]
-        ],
+        "description": "Increase acceleration with blazing passion when aiming for the front from midpack on the final corner.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
                     "4th to 7th (CM), 4th to 9th (TT)",
                     "Overtake target exists",
@@ -8918,7 +8928,7 @@
             }
         ],
         "preconditions": [],
-        "review": "If the last spurt is on the final corner and you can overtake, this skill is pretty good on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
@@ -8930,66 +8940,28 @@
         "horse": "El Condor Pasa (Fantasy)",
         "gametora_id": "110141"
     },
-    {   "skill_name": "KEEP IT REAL.",
-        "description": "Increases acceleration by 0.3 for 6.0s.",
-        "inherited": "Increases acceleration by 0.1 for 3.6s.",
-        "conditions": [
-            [
-                "4th to 7th (CM), 5th to 10th (TT)",
-                "Overtake target exists",
-                "Second half of the race"
-            ]
-        ],
-        "effect": [
-            {
-                "description": "Increases acceleration by 0.3 for 6.0s.",
-                "conditions": [
-                    "4th to 7th (CM), 5th to 10th (TT)",
-                    "Overtake target exists",
-                    "Second half of the race"
-                ]
-            }
-        ],
-        "preconditions": [],
-        "review": "Numbers seem very low for inherit.",
-        "rarity": "unique",
-        "category": "rainbowaccel",
-        "aliases": [
-            "keep it real",
-            "gold city original og"
-        ],
-        "horse": "Gold City (Original)",
-        "gametora_id": "100401"
-    },
     {   "skill_name": "Moving Past, and Beyond",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "5th to 6th (CM), 6th to 8th (TT)",
-                "Never 'Rushed'",
-                "Final corner",
-                "Mid race"
-            ],
-            [
-                "5th to 6th (CM), 6th to 8th (TT)",
-                "Never 'Rushed'",
-                "Not final corner",
-                "Late race or beyond"
-            ]
-        ],
+        "description": "Having run the race calmly, increase acceleration with hardened determination when making a move mid-race, or on a crucial corner late-race whilst in midpack.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
                     "5th to 6th (CM), 6th to 8th (TT)",
-                    "Never 'Rushed'",
-                    "Final corner",
-                    "Mid race",
-                    "5th to 6th (CM), 6th to 8th (TT)",
-                    "Never 'Rushed'",
+                    "Any corner",
                     "Not final corner",
-                    "Late race or beyond"
+                    "Never 'Rushed'",
+                    "Late race and beyond"
+                ]
+            },
+            {
+                "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
+                "conditions": [
+                    "5th to 6th (CM), 6th to 8th (TT)",
+                    "Final corner",
+                    "Never 'Rushed'",
+                    "Mid race"
                 ]
             }
         ],
@@ -9007,46 +8979,34 @@
         "gametora_id": "100591"
     },
     {   "skill_name": "Budding Blossom",
-        "description": "Condition 1 and 2 or 1 and 3 - Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Condition 1 and 2 or 1 and 3 - Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "Blocked at the  sides for 2s or more",
-                "Corner",
-                "Mid race"
-            ],
-            [
-                "3rd to 4th (CM), 3rd to 5th (TT)",
-                "Second half of final corner",
-                "Late race and beyond"
-            ],
-            [
-                "3rd to 4th (CM), 3rd to 5th (TT)",
-                "Final straight",
-                "Late race and beyond"
-            ]
-        ],
+        "description": "If the skill user engaged in a challenge on a mid-race corner, increase acceleration when well-positioned late-race at least halfway through the final corner.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Precondition is true",
+                    "3rd to 4th (CM), 3rd to 5th (TT)",
+                    "Second half of final corner",
+                    "Late race and beyond"
                 ]
             },
             {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Precondition is true",
+                    "3rd to 4th (CM), 3rd to 5th (TT)",
+                    "Final straight",
+                    "Late race and beyond"
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": [
+            "Blocked at the sides for ≥2s",
+            "Any corner",
+            "Mid race"
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
@@ -9059,18 +9019,44 @@
         "horse": "Nishino Flower (Original)",
         "gametora_id": "100511"
     },
-    {   "skill_name": "Corner Acceleration x",
-        "description": "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
+    {   "skill_name": "Louder! Tracen Cheer!",
+        "description": "If the skill user stays toward the very back during the first half of the race without being rushed, unleash fighting spirit to increase acceleration on the final straight.",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
+                "conditions": [
+                    "Final straight"
+                ]
+            }
         ],
+        "preconditions": [
+            "Has been 6th to 9th (CM), 8th to 12th (TT) the entire race",
+            "No 'Rushed'",
+            "Second half of the race"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "king halo cheerleader",
+            "king halo cheer leader",
+            "louder tracen cheer",
+            "轟トレセン応援団",
+            "roaring racen cheerleading squad"
+        ],
+        "horse": "King Halo (Cheerleader)",
+        "gametora_id": "110611"
+    },
+
+
+    {   "skill_name": "Corner Acceleration x",
+        "description": "Moderately decrease acceleration on a corner with awkward turning.",
         "effect": [
             {
                 "description": "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -9081,8 +9067,12 @@
         "aliases": [
             "corner accel x",
             "コーナー加速 x"
-        ]
+        ],
+        "gametora_id": "200343"
     },
+
+
+
     {   "skill_name": "Prudent Positioning",
         "description": "Increases lane movement speed by 0.035 for 3.0s.",
         "conditions": [
