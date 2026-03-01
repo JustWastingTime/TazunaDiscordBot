@@ -4041,6 +4041,7 @@
             "medium distance straights",
             "中距離直線"
         ],
+        "upgrade": "Flash Forward",
         "gametora_id": "201102"
     },
     {   "skill_name": "Medium Corners",
@@ -4063,6 +4064,7 @@
             "medium distance corners",
             "中距離コーナー"
         ],
+        "upgrade": "Refraction Arc",
         "gametora_id": "201112"
     },
     {   "skill_name": "Long Straightaways",
@@ -4369,6 +4371,7 @@
             "chasers straights",
             "追込直線"
         ],
+        "upgrade": "Moonlit Flash",
         "gametora_id": "201452"
     },
     {   "skill_name": "End Closer Corners",
@@ -4748,29 +4751,12 @@
     },
     {   "skill_name": "Full Throttle",
         "description": "Greatly consume endurance mid-race and moderately increase velocity.",
-        "conditions": [
-            [
-                "Late surgers",
-                "Mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 for 2.4s. Lose HP by 2%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Late Surger",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -4787,28 +4773,11 @@
     },
     {   "skill_name": "Downhill Speedster",
         "description": "Slightly increase velocity on downhills.",
-        "conditions": [
-            [
-                "Downhill"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Random point on a random downhill"
                 ]
             }
         ],
@@ -4849,7 +4818,7 @@
         "gametora_id": "200331"
     },
     {   "skill_name": "Beeline Burst",
-        "description": "Increase velocity on a straight..",
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s. 30s cooldown.",
@@ -5396,29 +5365,12 @@
         "gametora_id": "201612"
     },
     {   "skill_name": "Dream Run",
-        "description": "Increases speed by 0.35 for 5.0s.",
-        "conditions": [
-            [
-                "Last straight"
-            ]
-        ],
+        "description": "Increase velocity on the final straight due to a strong desire to cross the finish line carrying everyone's hopes and dreams.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Last straight"
                 ]
             }
         ],
@@ -5482,11 +5434,6 @@
     },
     {   "skill_name": "Nothing Ventured",
         "description": "Greatly increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
-        "conditions": [
-            [
-                "Second half of the race"
-            ]
-        ],
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 1.8s. Lose HP by a random amount.",
@@ -5508,30 +5455,13 @@
         "gametora_id": "202031"
     },
     {   "skill_name": "Flash Forward",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "Random straight"
-            ]
-        ],
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -5544,6 +5474,7 @@
             "photon flash",
             "光芒一閃"
         ],
+        "downgrade": "Medium Straightaways",
         "gametora_id": "201103"
     },
     {   "skill_name": "In High Spirits",
@@ -5570,30 +5501,13 @@
         "gametora_id": "202041"
     },
     {   "skill_name": "Blast Forward",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Long",
-                "Random straight"
-            ]
-        ],
+        "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -5786,30 +5700,13 @@
         "gametora_id": "201662"
     },
     {   "skill_name": "Keep Going!",
-        "description": "Increases speed by 0.45 for 2.4s. Reduces HP by 2%.",
-        "conditions": [
-            [
-                "Late surgers",
-                "Mid race"
-            ]
-        ],
+        "description": "Greatly consume endurance mid-race and greatly increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.45 for 2.4s. Lose HP by 2%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Late Surger",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -5826,30 +5723,13 @@
         "gametora_id": "202151"
     },
     {   "skill_name": "Moonlit Flash",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Random straight"
-            ]
-        ],
+        "description": "Increase velocity on straights.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "End Closer",
+                    "Random point on a random straight"
                 ]
             }
         ],
@@ -5861,33 +5741,17 @@
             "moonlit flash",
             "月影一閃"
         ],
+        "downgrade": "End Closer Straightaways",
         "gametora_id": "201453"
     },
     {   "skill_name": "Refraction Arc",
-        "description": "Increases speed by 0.35 for 3.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "Random corner"
-            ]
-        ],
+        "description": "Increase velocity on corners.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -5900,32 +5764,17 @@
             "photon slash",
             "光芒円刃"
         ],
+        "downgrade": "Medium Corners",
         "gametora_id": "201113"
     },
+
     {   "skill_name": "Supreme Downhiller (TO BE RENAMED)",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Downhill"
-            ]
-        ],
+        "description": "Increase velocity on downhills.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Random point on a random downhill"
                 ]
             }
         ],
@@ -7858,19 +7707,39 @@
         "horse": "Satono Diamond (Original)",
         "gametora_id": "100671"
     },
+    {   "skill_name": "Lovely Spring Breeze",
+        "description": "From the midpack in the second half of the race, slightly increase velocity steadily for a duration based on remaining endurance.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for ~5.0s (duration based on remaining endurance).",
+                "inherited": "Increases target speed by 0.035 for ~3.0s (duration based on remaining endurance).",
+                "conditions": [
+                    "4th to 7th (CM), 5th to 10th (TT)",
+                    "Second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "lovely spring breeze",
+            "mejiro bright original og",
+            "麗しき花信風"
+        ],
+        "horse": "Mejiro Bright (Original)",
+        "gametora_id": "100741"
+    },
+
 
     {   "skill_name": "Corner Adept x",
-        "description": "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
-        ],
+        "description": "Moderately decrease velocity on a corner with clumsy turning.",
         "effect": [
             {
                 "description": "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
                 "conditions": [
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
@@ -7886,19 +7755,13 @@
         "gametora_id": "200333"
     },
     {   "skill_name": "Defeatist",
-        "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Last 75% of the pack (by distance)",
-                "Final straight"
-            ]
-        ],
+        "description": "Moderately increase urge to give up when positioned around the very back on the final straight.",
         "effect": [
             {
                 "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Last 75% of the pack (by distance)",
-                    "Final straight"
+                    "Last 25% of the pack (by distance)",
+                    "Random point on the final straight"
                 ]
             }
         ],
@@ -7914,21 +7777,14 @@
         "gametora_id": "200411"
     },
     {   "skill_name": "Reckless",
-        "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "1st place",
-                "1 length ahead or more",
-                "Last 200m of the race"
-            ]
-        ],
+        "description": "Moderately increase carelessness when in the lead with around 200m remaining.",
         "effect": [
             {
                 "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "1st place",
-                    "1 length ahead or more",
-                    "Last 200m of the race"
+                    "1st",
+                    "≥1 length ahead",
+                    "200m of the race remaining"
                 ]
             }
         ],
@@ -7944,17 +7800,12 @@
         "gametora_id": "200421"
     },
     {   "skill_name": "Blatant Fear",
-        "description": "Reduces speed by 0.3 for 5.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Last 800m - 850m of the race"
-            ]
-        ],
+        "description": "Greatly decrease velocity on a corner in the second half of the race due to Trainer's obvious anxiety.",
         "effect": [
             {
-                "description": "Reduces speed by 0.3 for 5.0s. 30s cooldown.",
+                "description": "Reduces speed by 0.3 for 5.0s.",
                 "conditions": [
-                    "Last 800m - 850m of the race"
+                    "At the last 800m to 850m of the race"
                 ]
             }
         ],
@@ -7969,77 +7820,65 @@
         ],
         "gametora_id": "300051"
     },
+
+
+
     {   "skill_name": "Corner Acceleration",
-        "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
-        ],
+        "description": "Slightly increase acceleration on a corner with masterful turning.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials but accelerating on the first corner is not very useful.",
+        "review": "Easy to trigger for Team Trials but accelerating on the first corner is often not very useful.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
             "corner accel",
             "コーナー加速"
         ],
-        "upgrade": "Corner Connoisseur"
+        "upgrade": "Corner Connoisseur",
+        "gametora_id": "200342"
     },
     {   "skill_name": "Straightaway Acceleration",
-        "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
+        "description": "Slightly increase acceleration on a straight.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
+        "review": "Easy to trigger for Team Trials but accelerating randomly can be impactful or even harmful. Gamble on it activating at the late race.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
             "straight accel",
             "直線加速"
         ],
-        "upgrade": "Rushing Gale!"
+        "upgrade": "Rushing Gale!",
+        "gametora_id": "200372"
     },
     {   "skill_name": "Nimble Navigator",
-        "description": "Increases acceleration by 0.2 and lane movement speed by 0.005 for 3.0s.",
-        "conditions": [
-            [
-                "Behind another uma with at most 1 Length gap for 1s or more",
-                "Last Spurt",
-                "1% or more HP remaining"
-            ]
-        ],
+        "description": "Slightly increase maneuverability when the way ahead is blocked in the last spurt.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 and lane movement speed by 0.005 for 3.0s.",
                 "conditions": [
-                    "Behind another uma with at most 1 Length gap for 1s or more",
-                    "Last Spurt",
-                    "1% or more HP remaining"
+                    "Right behind another uma for ≥1s",
+                    "≥1% HP remaining",
+                    "Character is in their last spurt mode"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Does not need to be blocked now, only behind an uma, making this skill much easier to trigger. Alongside with the lane movement buffs, becomes a strong acceleration if triggered.",
+        "review": "",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8047,16 +7886,11 @@
             "slight detour",
             "垂れウマ回避"
         ],
-        "upgrade": "No Stopping Me!"
+        "upgrade": "No Stopping Me!",
+        "gametora_id": "200492"
     },
     {   "skill_name": "Early Lead",
-        "description": "Increases acceleration by 0.2 for 1.2s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Early race"
-            ]
-        ],
+        "description": "Slightly increase ability to go to the front early-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.2s.",
@@ -8067,7 +7901,7 @@
             }
         ],
         "preconditions": [],
-        "review": "A necessary skill to have on Front Runners. Can now trigger Groundwork.",
+        "review": "A necessary skill to have on Front Runners. Can trigger Groundwork.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8075,29 +7909,23 @@
             "frontrunner",
             "先駆け"
         ],
-        "upgrade": "Taking the Lead"
+        "upgrade": "Taking the Lead",
+        "gametora_id": "200532"
     },
     {   "skill_name": "Final Push",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "1st place",
-                "Final corner"
-            ]
-        ],
+        "description": "Slightly increase ability to keep the lead on the final corner.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "1st place",
-                    "Final corner"
+                    "1st",
+                    "Random point on the final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Being first is not a consistent condition. Skill is however conditionally useful on specific tracks.",
+        "review": "",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8105,29 +7933,23 @@
             "press forward ready",
             "押し切り準備"
         ],
-        "upgrade": "Unrestrained"
+        "upgrade": "Unrestrained",
+        "gametora_id": "200552"
     },
     {   "skill_name": "Slick Surge",
-        "description": "Increases acceleration by 0.2 for 1.8s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly increase acceleration late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Gambling acceleration skill for late surgers. Might be ineffective if not triggering at the right moment.",
+        "review": "Gambling acceleration skill for late surgers.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8135,24 +7957,18 @@
             "between the lines",
             "差し切り体勢"
         ],
-        "upgrade": "On Your Left!"
+        "upgrade": "On Your Left!",
+        "gametora_id": "200602"
     },
     {   "skill_name": "Straightaway Spurt",
-        "description": "Increases acceleration by 0.2 for 1.8s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Straight",
-                "Last spurt"
-            ]
-        ],
+        "description": "Slightly increase acceleration on a straight in the last spurt.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
                     "End Closer",
-                    "Straight",
-                    "Last spurt"
+                    "Any straight",
+                    "Character is in their last spurt mode"
                 ]
             }
         ],
@@ -8166,56 +7982,45 @@
             "straight shot",
             "直線一気"
         ],
-        "upgrade": "Encroaching Shadow"
+        "upgrade": "Encroaching Shadow",
+        "gametora_id": "200642"
     },
     {   "skill_name": "Sprinting Gear",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Any straight"
-            ]
-        ],
+        "description": "Slightly increase acceleration on a straight.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "Any straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
+        "review": "Easy to trigger for Team Trials but accelerating randomly can be impactful or even harmful. Gamble on it activating at the late race.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
             "sprinting gear",
             "スプリントギア"
         ],
-        "upgrade": "Turbo Sprint"
+        "upgrade": "Turbo Sprint",
+        "gametora_id": "200652"
     },
     {   "skill_name": "Updrafters",
-        "description": "Increases acceleration by 0.2 for 3.0s",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly increase passing ability when positioned toward the back late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s",
                 "conditions": [
                     "Mile",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Gambling acceleration skill for Late Surgers and End Closers. Might be ineffective if not triggering at the right moment.",
+        "review": "Gambling acceleration skill for Late Surgers and End Closers.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8223,26 +8028,18 @@
             "updraft",
             "上昇気流"
         ],
-        "upgrade": "Furious Feat"
+        "upgrade": "Furious Feat",
+        "gametora_id": "200702"
     },
     {   "skill_name": "Countermeasure",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "2nd to 5th (CM), 2nd to 6th (TT)",
-                "Random straight",
-                "Second half of mid race"
-            ]
-        ],
+        "description": "Slightly increase passing ability when positioned toward the front upon approaching late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Sprint",
                     "2nd to 5th (CM), 2nd to 6th (TT)",
-                    "Random straight",
-                    "Second half of mid race"
+                    "Random point in second half of mid race"
                 ]
             }
         ],
@@ -8255,23 +8052,17 @@
             "countermeasures",
             "善後策"
         ],
-        "upgrade": "Plan X"
+        "upgrade": "Plan X",
+        "gametora_id": "200992"
     },
     {   "skill_name": "Acceleration",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "Overtaking",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase acceleration when passing another runner mid-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Mile",
-                    "Overtaking",
+                    "Overtake another uma",
                     "Mid race"
                 ]
             }
@@ -8284,24 +8075,18 @@
             "acceleration",
             "アクセラレーション"
         ],
-        "upgrade": "Step on the Gas!"
+        "upgrade": "Step on the Gas!",
+        "gametora_id": "201062"
     },
     {   "skill_name": "Second Wind",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "2nd or worse",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase acceleration when not in the lead mid-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Front Runner",
                     "2nd or worse",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -8314,16 +8099,11 @@
             "next steps",
             "二の矢"
         ],
-        "upgrade": "Reignition"
+        "upgrade": "Reignition",
+        "gametora_id": "201292"
     },
     {   "skill_name": "Shrewd Step",
-        "description": "Increases acceleration by 0.2 for 3.0.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Changing lanes"
-            ]
-        ],
+        "description": "Slightly increase ability to navigate smoothly.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0.",
@@ -8342,22 +8122,17 @@
             "clever step",
             "巧みなステップ"
         ],
-        "upgrade": "Technician"
+        "upgrade": "Technician",
+        "gametora_id": "201332"
     },
     {   "skill_name": "Straight Descent",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Random downhill"
-            ]
-        ],
+        "description": "Slightly improve running on a downhill.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Pace Chaser",
-                    "Random downhill"
+                    "Random point on a random downhill"
                 ]
             }
         ],
@@ -8370,29 +8145,23 @@
             "straight down",
             "直滑降"
         ],
-        "upgrade": "Determined Descent"
+        "upgrade": "Determined Descent",
+        "gametora_id": "201342"
     },
     {   "skill_name": "Tactical Tweak",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "40% or worse (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase acceleration when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Pace Chaser",
-                    "40% or worse (5th or worse in CM, 6th or worse in TT)",
-                    "Mid race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race acceleration is not very impactful. An okay filler for TT points.",
+        "review": "Being behind as a Pace Chaser is often not ideal.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8400,24 +8169,18 @@
             "redo",
             "まき直し"
         ],
-        "upgrade": "Shatterproof"
+        "upgrade": "Shatterproof",
+        "gametora_id": "201362"
     },
     {   "skill_name": "Fighter",
-        "description": "Increases acceleration by 0.2 for 4.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Overtake target exists",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly increase acceleration for a medium duration when trying to pass another runner.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 4.0s.",
                 "conditions": [
                     "Late Surger",
                     "Overtake target exists",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -8430,20 +8193,16 @@
             "hard worker",
             "がんばり屋"
         ],
-        "upgrade": "Hard Worker"
+        "upgrade": "Hard Worker",
+        "gametora_id": "201402"
     },
     {   "skill_name": "Highlander",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Random uphill"
-            ]
-        ],
+        "description": "Slightly improve running on an uphill.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
-                    "Random uphill"
+                    "Random point on a random uphill"
                 ]
             }
         ],
@@ -8456,56 +8215,44 @@
             "mountain climber",
             "登山家"
         ],
-        "upgrade": "Ultimate Hill Climber (TO BE RENAMED)"
+        "upgrade": "Ultimate Hill Climber (TO BE RENAMED)",
+        "gametora_id": "201581"
     },
     {   "skill_name": "Groundwork",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Activate 3 skills",
-                "Early race"
-            ]
-        ],
+        "description": "Slightly increase acceleration after activating many skills early-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
-                    "Activate 3 skills",
-                    "Early race"
+                    "Activated ≥3 skills during the early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
+        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc. Crucial for Front Runners.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
             "groundwork",
             "地固め"
         ],
-        "upgrade": "Unshakable Stance (TO BE RENAMED)"
+        "upgrade": "Unshakable Stance (TO BE RENAMED)",
+        "gametora_id": "201601"
     },
     {   "skill_name": "Head-On",
-        "description": "Increases acceleration by 0.2 for 1.8s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly increase acceleration when positioned toward the front late-race. ",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Late race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Similar to Late Surger acceleration skills but for a Pace Chaser.",
+        "review": "Good acceleration skill for Pace Chasers. Gambling.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8514,34 +8261,18 @@
             "head to head",
             "真っ向勝負"
         ],
-        "upgrade": "Neck and Neck"
+        "upgrade": "Neck and Neck",
+        "gametora_id": "201902"
     },
     {   "skill_name": "Take the Chance",
-        "description": "Increases acceleration by 0.2 for 1.8s.",
-        "conditions": [
-            [
-                "Medium",
-                "4th to 9th (CM), 5th to 12th (TT)",
-                "First half of the late race"
-            ]
-        ],
+        "description": "If positioned toward the back late-race, slightly increase acceleration.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in first half of the late race"
                 ]
             }
         ],
@@ -8554,25 +8285,24 @@
             "one chance",
             "ワンチャンス"
         ],
-        "upgrade": "From the Brink"
+        "upgrade": "From the Brink",
+        "gametora_id": "202082"
     },
+
+
+
     {   "skill_name": "Corner Connoisseur",
-        "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random corner"
-            ]
-        ],
+        "description": "Increase acceleration on a corner with masterful turning.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Random corner"
+                    "Random point on a random corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials but accelerating on random corners is not very useful.",
+        "review": "Easy to trigger for Team Trials but accelerating on the first corner is often not very useful.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8580,25 +8310,21 @@
             "curve sommelier",
             "曲線のソムリエ"
         ],
-        "downgrade": "Corner Acceleration"
+        "downgrade": "Corner Acceleration",
+        "gametora_id": "200341"
     },
     {   "skill_name": "Rushing Gale!",
-        "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Random straight"
-            ]
-        ],
+        "description": "Increase acceleration on a straight",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Random straight"
+                    "Random point on a random straight"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
+        "review": "Easy to trigger for Team Trials but accelerating randomly can be impactful or even harmful. Gamble on it activating at the late race.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8606,29 +8332,23 @@
             "gust of wind",
             "一陣の風"
         ],
-        "downgrade": "Straightaway Acceleration"
+        "downgrade": "Straightaway Acceleration",
+        "gametora_id": "200371"
     },
     {   "skill_name": "No Stopping Me!",
-        "description": "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3.0s.",
-        "conditions": [
-            [
-                "Behind another uma with at most 1 Length gap for 1s or more",
-                "Last Spurt",
-                "1% or more HP remaining"
-            ]
-        ],
+        "description": "Slightly increase maneuverability when the way ahead is blocked in the last spurt.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 and lane movement speed by 0.025 for 3.0s.",
                 "conditions": [
-                    "Behind another uma with at most 1 Length gap for 1s or more",
-                    "Last Spurt",
-                    "1% or more HP remaining"
+                    "Right behind another uma for ≥1s",
+                    "≥1% HP remaining",
+                    "Character is in their last spurt mode"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Does not need to be blocked now, only behind an uma, making this skill much easier to trigger. Alongside with the lane movement buffs, becomes a strong acceleration if triggered.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8636,16 +8356,11 @@
             "nonstop girl",
             "ノンストップガール"
         ],
-        "downgrade": "Nimble Navigator"
+        "downgrade": "Nimble Navigator",
+        "gametora_id": "200491"
     },
     {   "skill_name": "Taking the Lead",
-        "description": "Increases acceleration by 0.4 for 1.2s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Early race"
-            ]
-        ],
+        "description":"Increase ability to go to the front early-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.2s.",
@@ -8656,38 +8371,34 @@
             }
         ],
         "preconditions": [],
-        "review": "A necessary skill to have on Front Runners. Can now trigger Groundwork.",
+        "review": "A necessary skill to have on Front Runners. Can trigger Groundwork.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
             "take the lead",
             "taking lead",
+            "ttl",
             "fortune favors the fast",
+            "fftf",
             "先手必勝"
         ],
-        "downgrade": "Early Lead"
+        "downgrade": "Early Lead",
+        "gametora_id": "200531"
     },
     {   "skill_name": "Unrestrained",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "1st place",
-                "Final corner"
-            ]
-        ],
+        "description": "Increase ability to keep the lead on the final corner.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
                     "Front Runner",
-                    "1st place",
-                    "Final corner"
+                    "1st",
+                    "Random point on the final corner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Being first is not a consistent condition. Skill is however conditionally useful on specific tracks.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8695,29 +8406,23 @@
             "runaway",
             "逃亡者"
         ],
-        "downgrade": "Final Push"
+        "downgrade": "Final Push",
+        "gametora_id": "200551"
     },
     {   "skill_name": "On Your Left!",
-        "description": "Increases acceleration by 0.4 for 1.8s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Increase acceleration late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Gambling acceleration skill for late surgers. Might be ineffective if not triggering at the right moment.",
+        "review": "Gambling acceleration skill for late surgers.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8725,24 +8430,18 @@
             "switchup pro",
             "乗り換え上手"
         ],
-        "downgrade": "Slick Surge"
+        "downgrade": "Slick Surge",
+        "gametora_id": "200601"
     },
     {   "skill_name": "Encroaching Shadow",
-        "description": "Increases acceleration by 0.4 for 1.8s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Straights",
-                "Last spurt"
-            ]
-        ],
+        "description":"Increase acceleration on a straight in the last spurt.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
                 "conditions": [
                     "End Closer",
-                    "Straights",
-                    "Last spurt"
+                    "Any straight",
+                    "Character is in their last spurt mode"
                 ]
             }
         ],
@@ -8755,16 +8454,11 @@
             "imminent shadow",
             "迫る影"
         ],
-        "downgrade": "Straightaway Spurt"
+        "downgrade": "Straightaway Spurt",
+        "gametora_id": "200641"
     },
     {   "skill_name": "Turbo Sprint",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Any straight"
-            ]
-        ],
+        "description": "Increase acceleration on a straight.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
@@ -8775,7 +8469,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials but accelerating randomly is not very impactful. An okay gambling skill if cheap and on tracks with few straights.",
+        "review": "Easy to trigger for Team Trials but accelerating randomly can be impactful or even harmful. Gamble on it activating at the late race.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -8783,29 +8477,23 @@
             "sprint turbo",
             "スプリントターボ"
         ],
-        "downgrade": "Sprinting Gear"
+        "downgrade": "Sprinting Gear",
+        "gametora_id": "200651"
     },
     {   "skill_name": "Furious Feat",
-        "description": "Increases acceleration by 0.4 for 3.0s",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Increase passing ability when positioned toward the back late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s",
                 "conditions": [
                     "Mile",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Gambling acceleration skill for Late Surgers and End Closers. Might be ineffective if not triggering at the right moment.",
+        "review": "Gambling acceleration skill for Late Surgers and End Closers.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8813,26 +8501,18 @@
             "big strides",
             "豪脚"
         ],
-        "downgrade": "Updrafters"
+        "downgrade": "Updrafters",
+        "gametora_id": "200701"
     },
     {   "skill_name": "Plan X",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "2nd to 5th (CM), 2nd to 6th (TT)",
-                "Random straight",
-                "Second half of mid race"
-            ]
-        ],
+        "description": "Increase passing ability when positioned toward the front upon approaching late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
                     "Sprint",
                     "2nd to 5th (CM), 2nd to 6th (TT)",
-                    "Random straight",
-                    "Second half of mid race"
+                    "Random point in second half of mid race"
                 ]
             }
         ],
@@ -8844,23 +8524,17 @@
             "plan x",
             "プランX"
         ],
-        "downgrade": "Countermeasure"
+        "downgrade": "Countermeasure",
+        "gametora_id": "200991"
     },
     {   "skill_name": "Step on the Gas!",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "Overtaking",
-                "Mid race"
-            ]
-        ],
+        "description": "Increase acceleration when passing another runner mid-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
                     "Mile",
-                    "Overtaking",
+                    "Overtake another uma",
                     "Mid race"
                 ]
             }
@@ -8874,24 +8548,18 @@
             "accel full throttle",
             "アクセル全開！"
         ],
-        "downgrade": "Acceleration"
+        "downgrade": "Acceleration",
+        "gametora_id": "201061"
     },
     {   "skill_name": "Reignition",
-        "description": "Increases acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "2nd or worse",
-                "Mid race"
-            ]
-        ],
+        "description": "Increase acceleration when not in the lead mid-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Front Runner",
                     "2nd or worse",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -8904,16 +8572,11 @@
             "recombustion",
             "再燃焼"
         ],
-        "downgrade": "Second Wind"
+        "downgrade": "Second Wind",
+        "gametora_id": "201291"
     },
     {   "skill_name": "Technician",
-        "description": "Increases acceleration by 0.3 for 3.0.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Changing lanes"
-            ]
-        ],
+        "description": "Moderately increase ability to navigate smoothly.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 3.0.",
@@ -8931,22 +8594,17 @@
             "technician",
             "技巧派"
         ],
-        "downgrade": "Shrewd Step"
+        "downgrade": "Shrewd Step",
+        "gametora_id": "201331"
     },
     {   "skill_name": "Determined Descent",
-        "description": "Increases acceleration by 0.3 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "Random downhill"
-            ]
-        ],
+        "description": "Moderately improve running on a downhill.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 3.0s.",
                 "conditions": [
                     "Pace Chaser",
-                    "Random downhill"
+                    "Random point on a random downhill"
                 ]
             }
         ],
@@ -8959,29 +8617,23 @@
             "straight down resolution",
             "決意の直滑降"
         ],
-        "downgrade": "Straight Descent"
+        "downgrade": "Straight Descent",
+        "gametora_id": "201341"
     },
     {   "skill_name": "Shatterproof",
-        "description": "Increases acceleration by 0.3 for 3.0s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "40% or worse (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+        "description": "Moderately increase acceleration when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 3.0s.",
                 "conditions": [
                     "Pace Chaser",
-                    "40% or worse (5th or worse in CM, 6th or worse in TT)",
-                    "Mid race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race acceleration is not very impactful. An okay filler for TT points.",
+        "review": "Being behind as a Pace Chaser is often not ideal.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -8989,24 +8641,18 @@
             "unbreakable spirit",
             "くじけぬ精神"
         ],
-        "downgrade": "Tactical Tweak"
+        "downgrade": "Tactical Tweak",
+        "gametora_id": "201361"
     },
     {   "skill_name": "Hard Worker",
-        "description": "Increases acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Overtake target exists",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Moderately increase acceleration for a medium duration when trying to pass another runner.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 4.0s.",
                 "conditions": [
                     "Late Surger",
                     "Overtake target exists",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -9019,34 +8665,18 @@
             "laborious",
             "努力家"
         ],
-        "downgrade": "Fighter"
+        "downgrade": "Fighter",
+        "gametora_id": "201401"
     },
     {   "skill_name": "From the Brink",
-        "description": "Increases acceleration by 0.4 for 1.8s.",
-        "conditions": [
-            [
-                "Medium",
-                "4th to 9th (CM), 5th to 12th (TT)",
-                "First half of the late race"
-            ]
-        ],
+        "description": "If positioned toward the back late-race, increase acceleration.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases acceleration by 0.4 for 1.8s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in first half of the late race"
                 ]
             }
         ],
@@ -9059,29 +8689,23 @@
             "rise from the ashes",
             "起死回生"
         ],
-        "downgrade": "Take the Chance"
+        "downgrade": "Take the Chance",
+        "gametora_id": "202081"
     },
     {   "skill_name": "Neck and Neck",
-        "description": "Increases acceleration by 0.4 for 1.8s.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Increase acceleration when positioned toward the front late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Late race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Similar to Late Surger acceleration skills but for a Pace Chaser.",
+        "review": "Good acceleration skill for Pace Chasers. Gambling.",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -9089,20 +8713,16 @@
             "fierce competition",
             "鍔迫り合い"
         ],
-        "downgrade": "Head-On"
+        "downgrade": "Head-On",
+        "gametora_id": "201901"
     },
     {   "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Random uphill"
-            ]
-        ],
+        "description": "Moderately increase acceleration on an uphill.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
-                    "Random uphill"
+                    "Random point on a random uphill"
                 ]
             }
         ],
@@ -9114,51 +8734,42 @@
             "ultimate hill climber",
             "究極のヒルクライマー"
         ],
-        "downgrade": "Highlander"
+        "downgrade": "Highlander",
+        "gametora_id": "201582"
     },
     {   "skill_name": "Unshakable Stance (TO BE RENAMED)",
-        "description": "Increases acceleration by 0.4 for 3.0s.",
-        "conditions": [
-            [
-                "Activate 3 skills",
-                "Early race"
-            ]
-        ],
+        "description": "Increase acceleration after activating many skills early-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
-                    "Activate 3 skills",
-                    "Early race"
+                    "Activated ≥3 skills during the early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc.",
+        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc. Crucial for Front Runners.",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
             "unshakable stance",
             "盤石の構え"
         ],
-        "downgrade": "Groundwork"
+        "downgrade": "Groundwork",
+        "gametora_id": "201602"
     },
+
+
+
     {   "skill_name": "Feel the Burn!",
-        "description": "Increases acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "6th (CM), 8th (TT)",
-                "Corner",
-                "Late race or beyond"
-            ]
-        ],
+        "description": "Moderately increase acceleration in an attempt to move up on a corner late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 4.0s.",
                 "conditions": [
                     "6th (CM), 8th (TT)",
-                    "Corner",
-                    "Late race or beyond"
+                    "Any corner",
+                    "Late race and beyond"
                 ]
             }
         ],
@@ -9176,17 +8787,11 @@
         "gametora_id": "10271"
     },
     {   "skill_name": "Red Shift/LP1211-M",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "1st to 5th",
-                "Final corner and beyond"
-            ]
-        ],
+        "description": "Increase acceleration by shifting gears when positioned toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
                     "1st to 5th",
                     "Final corner and beyond"
@@ -9194,7 +8799,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
@@ -9208,17 +8813,11 @@
         "gametora_id": "100041"
     },
     {   "skill_name": "Shooting for Victory!",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "3rd to 4th (CM), 3rd to 5th (TT)",
-                "Second half of final corner"
-            ]
-        ],
+        "description": "Increase acceleration with a pow, a wow, and a bang when well-positioned upon approaching the final straight.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
                     "3rd to 4th (CM), 3rd to 5th (TT)",
                     "Second half of final corner"
@@ -9226,7 +8825,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Very powerful acceleration skill on tracks where the Last Spurt is on or slightly before the final corner. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
@@ -9239,31 +8838,25 @@
         "gametora_id": "100101"
     },
     {   "skill_name": "Let's Pump Some Iron!",
-        "description": "Increases acceleration by 0.4 for 4.0s.",
-        "inherited": "Increases acceleration by 0.2 for 2.4s.",
-        "conditions": [
-            [
-                "6th (CM), 8th (TT)",
-                "Corner",
-                "Late race or beyond"
-            ]
-        ],
+        "description": "Increase acceleration in an attempt to move up on a corner late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
+                "inherited": "Increases acceleration by 0.2 for 2.4s.",
                 "conditions": [
                     "6th (CM), 8th (TT)",
-                    "Corner",
-                    "Late race or beyond"
+                    "Any corner",
+                    "Late race and beyond"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Powerful acceleration skill. Slightly hard to activate consistently since you need to be 6th on the corner. Best on Late Surgers and End Closers. Please consult umalator to check if the skill is effective on the track you are building for.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
             "lets pump some iron",
+            "pump iron",
             "mejiro ryan",
             "lets anabolic",
             "レッツアナボリック"
