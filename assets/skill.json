@@ -9041,6 +9041,7 @@
         "aliases": [
             "king halo cheerleader",
             "king halo cheer leader",
+            "cheer halo",
             "louder tracen cheer",
             "轟トレセン応援団",
             "roaring racen cheerleading squad"
@@ -9074,17 +9075,12 @@
 
 
     {   "skill_name": "Prudent Positioning",
-        "description": "Increases lane movement speed by 0.035 for 3.0s.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
+        "description": "Increase navigation early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 for 3.0s.",
                 "conditions": [
-                    "Early race"
+                    "Random point in early race"
                 ]
             }
         ],
@@ -9097,20 +9093,16 @@
             "position sense",
             "ポジションセンス"
         ],
-        "upgrade": "Center Stage"
+        "upgrade": "Center Stage",
+        "gametora_id": "200452"
     },
     {   "skill_name": "Go with the Flow",
-        "description": "Increases lane movement speed by 0.025 for 3.0s.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
+        "description": "Moderately increase navigation late-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.025 for 3.0s.",
                 "conditions": [
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -9123,27 +9115,22 @@
             "improvise",
             "臨機応変"
         ],
-        "upgrade": "Lane Legerdemain"
+        "upgrade": "Lane Legerdemain",
+        "gametora_id": "200502"
     },
     {   "skill_name": "Meticulous Measures",
-        "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Mid race"
-            ]
-        ],
+        "description": "Moderately prepare to make for the finish line for a medium duration mid-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
                 "conditions": [
                     "Sprint",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take if its really cheap.",
         "rarity": "normal",
         "category": "flow",
         "aliases": [
@@ -9151,29 +9138,23 @@
             "calculated preparations",
             "仕掛け準備"
         ],
-        "upgrade": "Perfect Prep!"
+        "upgrade": "Perfect Prep!",
+        "gametora_id": "201002"
     },
     {   "skill_name": "Thunderbolt Step",
-        "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+        "description": "Moderately avoid becoming surrounded for a medium duration when positioned toward the back mid-race",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
                 "conditions": [
                     "Medium",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Mid race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take if its really cheap.",
         "rarity": "normal",
         "category": "flow",
         "aliases": [
@@ -9181,23 +9162,25 @@
             "inazuma step",
             "イナズマステップ"
         ],
-        "upgrade": "Lightning Step"
+        "upgrade": "Lightning Step",
+        "gametora_id": "201132"
     },
     {   "skill_name": "Dodging Danger",
-        "description": "Increases lane movement speed by 0.025 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Blocked in any direction for 1s or more",
-                "Early race"
-            ]
-        ],
+        "description": "Moderately avoid becoming surrounded early-race.",
         "effect": [
             {
-                "description": "Increases lane movement speed by 0.025 for 3.0s.",
+                "description": "Increases lane movement speed by 0.025 for 3.0s. Changes lane by 50% of the track.",
                 "conditions": [
                     "Front Runner",
-                    "Blocked in any direction for 1s or more",
+                    "Blocked in front for ≥1s",
+                    "Early race"
+                ]
+            },
+            {
+                "description": "Increases lane movement speed by 0.025 for 3.0s. Changes lane by 50% of the track.",
+                "conditions": [
+                    "Front Runner",
+                    "Blocked at the sides for ≥1s",
                     "Early race"
                 ]
             }
@@ -9211,22 +9194,17 @@
             "danger avoidance",
             "危険回避"
         ],
-        "upgrade": "Sixth Sense"
+        "upgrade": "Sixth Sense",
+        "gametora_id": "201262"
     },
     {   "skill_name": "Forward, March!",
-        "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 3.0s.",
-        "conditions": [
-            [
-                "Dirt",
-                "Late race"
-            ]
-        ],
+        "description": "Moderately prepare to aim for the front late-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Dirt",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -9239,25 +9217,21 @@
             "front row aim",
             "前列狙い"
         ],
-        "upgrade": "Lead the Charge!"
+        "upgrade": "Lead the Charge!",
+        "gametora_id": "201682"
     },
     {   "skill_name": "Center Stage",
-        "description": "Increases lane movement speed by 0.045 for 3.0s.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
+        "description": "Greatly increase navigation early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.045 for 3.0s.",
                 "conditions": [
-                    "Early race"
+                    "Random point in early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill. Its cheap and consistent, helps pad the TT scoring.",
+        "review": "The speed from Center Stage is higher than Prudent Positioning and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill. Otherwise, it's cheap and consistent, helps pad the TT scoring.",
         "rarity": "rare",
         "category": "goldenflow",
         "aliases": [
@@ -9265,25 +9239,21 @@
             "star of the show",
             "注目の踊り子"
         ],
-        "downgrade": "Prudent Positioning"
+        "downgrade": "Prudent Positioning",
+        "gametora_id": "200451"
     },
     {   "skill_name": "Lane Legerdemain",
-        "description": "Increases lane movement speed by 0.035 for 3.0s.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
+        "description": "Increase navigation late-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 for 3.0s.",
                 "conditions": [
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Doesn't do much. Take if cheap and no other options.",
+        "review": "Doesn't do much. Cheap and consistent for TT.",
         "rarity": "rare",
         "category": "goldenflow",
         "aliases": [
@@ -9291,27 +9261,22 @@
             "magician of the lane",
             "レーンの魔術師"
         ],
-        "downgrade": "Go with the Flow"
+        "downgrade": "Go with the Flow",
+        "gametora_id": "200501"
     },
     {   "skill_name": "Perfect Prep!",
-        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "Sprint",
-                "Mid race"
-            ]
-        ],
+        "description": "Prepare to make for the finish line for a medium duration mid-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
                 "conditions": [
                     "Sprint",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take if its really cheap.",
         "rarity": "rare",
         "category": "goldenflow",
         "aliases": [
@@ -9319,52 +9284,48 @@
             "flawless preparation",
             "準備万全"
         ],
-        "downgrade": "Meticulous Measures"
+        "downgrade": "Meticulous Measures",
+        "gametora_id": "201001"
     },
     {   "skill_name": "Lightning Step",
-        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+        "description": "Avoid becoming surrounded for a medium duration when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
                 "conditions": [
                     "Medium",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Mid race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take only if its really cheap and you have no other options.",
+        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take if its really cheap.",
         "rarity": "rare",
         "category": "goldenflow",
         "aliases": [
             "lightning step",
             "ライトニングステップ"
         ],
-        "downgrade": "Thunderbolt Step"
+        "downgrade": "Thunderbolt Step",
+        "gametora_id": "201131"
     },
     {   "skill_name": "Sixth Sense",
-        "description": "Increases lane movement speed by 0.035 for 3.0s.",
-        "conditions": [
-            [
-                "Front Runner",
-                "Blocked in any direction for 1s or more",
-                "Early race"
-            ]
-        ],
+        "description": "Avoid becoming surrounded early-race.",
         "effect": [
             {
-                "description": "Increases lane movement speed by 0.035 for 3.0s.",
+                "description": "Increases lane movement speed by 0.035 for 3.0s. Changes lane by 50% of the track.",
                 "conditions": [
                     "Front Runner",
                     "Blocked in any direction for 1s or more",
+                    "Early race"
+                ]
+            },
+            {
+                "description": "Increases lane movement speed by 0.035 for 3.0s. Changes lane by 50% of the track.",
+                "conditions": [
+                    "Front Runner",
+                    "Blocked at the sides for ≥1s",
                     "Early race"
                 ]
             }
@@ -9377,22 +9338,17 @@
             "sixth sense",
             "シックスセンス"
         ],
-        "downgrade": "Dodging Danger"
+        "downgrade": "Dodging Danger",
+        "gametora_id": "201261"
     },
     {   "skill_name": "Lead the Charge!",
-        "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 3.0s.",
-        "conditions": [
-            [
-                "Dirt",
-                "Late race"
-            ]
-        ],
+        "description": "Prepare to aim for the front late-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 3.0s.",
                 "conditions": [
                     "Dirt",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -9405,15 +9361,14 @@
             "aim for the front row",
             "狙うは最前列！"
         ],
-        "downgrade": "Forward, March!"
+        "downgrade": "Forward, March!",
+        "gametora_id": "201681"
     },
+
+
+
     {   "skill_name": "Focus",
-        "description": "Improved start reaction time by 0.9x, decreasing chance of a late start.",
-        "conditions": [
-            [
-                "Always activates (wit check)"
-            ]
-        ],
+        "description": "Slightly decrease time lost to slow starts.",
         "effect": [
             {
                 "description": "Improved start reaction time by 0.9x, decreasing chance of a late start.",
@@ -9423,22 +9378,18 @@
             }
         ],
         "preconditions": [],
-        "review": "By starting well and placing well, your score in TT can be boosted. For CM, only worth taking for Front Runners. Can also wotk to trigger Groundwork.",
+        "review": "By starting well and placing well, your score in TT can be boosted. For CM, only worth taking for Front Runners. Can trigger Groundwork.",
         "rarity": "normal",
         "category": "focus",
         "aliases": [
             "focus",
             "集中力"
         ],
-        "upgrade": "Concentration"
+        "upgrade": "Concentration",
+        "gametora_id": "200432"
     },
     {   "skill_name": "Concentration",
-        "description": "Improved start reaction time by 0.4x, decreasing chance of a late start.",
-        "conditions": [
-            [
-                "Always activates (wit check)"
-            ]
-        ],
+        "description": "Decrease time lost to slow starts.",
         "effect": [
             {
                 "description": "Improved start reaction time by 0.4x, decreasing chance of a late start.",
@@ -9448,22 +9399,19 @@
             }
         ],
         "preconditions": [],
-        "review": "By starting well and placing well, your score in TT can be boosted. For CM, only worth taking for Front Runners. Can also wotk to trigger Groundwork.",
+        "review": "By starting well and placing well, your score in TT can be boosted. For CM, only worth taking for Front Runners. Can trigger Groundwork.",
         "rarity": "rare",
         "category": "goldenfocus",
         "aliases": [
             "concentration",
             "コンセントレーション"
         ],
-        "downgrade": "Focus"
+        "downgrade": "Focus",
+        "gametora_id": "200431"
     },
+
     {   "skill_name": "Gatekept",
-        "description": "Worsen start reaction time by 1.5x, increasing chance of a late start.",
-        "conditions": [
-            [
-                "Always activates (wit check)"
-            ]
-        ],
+        "description": "Moderately increase time lost to slow starts.",
         "effect": [
             {
                 "description": "Worsen start reaction time by 1.5x, increasing chance of a late start.",
@@ -9480,10 +9428,11 @@
             "gate x",
             "gate trouble",
             "ゲート難"
-        ]
+        ],
+        "gametora_id": "200433"
     },
     {   "skill_name": "Feelin' a Bit Silly",
-        "description": "Reduce acceleration by 18. Add a start delay of 0.1.",
+        "description": "Greatly decrease the racer's proficiency in starting races. Effects include slow starts and reduced starting acceleration. Removed at the end of the Career playthrough.",
         "conditions": [
             [
                 "Always activates"
@@ -9506,15 +9455,11 @@
             "feeling a bit silly",
             "超遊び癖",
             "dilly dakky"
-        ]
+        ],
+        "gametora_id": "1100011"
     },
     {   "skill_name": "You're Not the Boss of Me!",
-        "description": "Wit stat -40. Add a start delay of 0.085.",
-        "conditions": [
-            [
-                "Always activates"
-            ]
-        ],
+        "description": "Increase time lost to slow starts and moderately decrease Wit.",
         "effect": [
             {
                 "description": "Wit stat -40. Add a start delay of 0.085.",
@@ -9531,54 +9476,46 @@
             "youre not the boss of me",
             "dont tell me what to do",
             "アタシに指図しないで"
-        ]
-    },
-    {   "skill_name": "Hawkeye",
-        "description": "Increases FoV by 10.",
-        "conditions": [
-            [
-                "Medium",
-                "Early race"
-            ]
         ],
+        "gametora_id": "202141"
+    },
+
+
+    {   "skill_name": "Hawkeye",
+        "description": "Moderately widen field of view with heightened observation early-race.",
         "effect": [
             {
                 "description": "Increases FoV by 10.",
                 "conditions": [
                     "Medium",
-                    "Early race"
+                    "Random point in early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "normal",
         "category": "vision",
         "aliases": [
             "hawkeye",
             "ホークアイ"
         ],
-        "upgrade": "Clairvoyance"
+        "upgrade": "Clairvoyance",
+        "gametora_id": "201122"
     },
     {   "skill_name": "Studious",
-        "description": "Increases FoV by 5 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly widen field of view with heightened observation mid-race.",
         "effect": [
             {
                 "description": "Increases FoV by 5 for 3.0s.",
                 "conditions": [
                     "Late Surger",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "normal",
         "category": "vision",
         "aliases": [
@@ -9586,16 +9523,11 @@
             "reading comprehension",
             "読解力"
         ],
-        "upgrade": "The Bigger Picture"
+        "upgrade": "The Bigger Picture",
+        "gametora_id": "201432"
     },
     {   "skill_name": "I Can See Right Through You",
-        "description": "Increases FoV by 5 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Changing lanes"
-            ]
-        ],
+        "description": "Slightly widen field of view with situational awareness when moving sideways.",
         "effect": [
             {
                 "description": "Increases FoV by 5 for 3.0s.",
@@ -9606,7 +9538,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "normal",
         "category": "vision",
         "aliases": [
@@ -9614,29 +9546,23 @@
             "see right through",
             "お見通し"
         ],
-        "upgrade": "The Coast Is Clear!"
+        "upgrade": "The Coast Is Clear!",
+        "gametora_id": "201472"
     },
     {   "skill_name": "Strategist",
-        "description": "Increases FoV by 5.",
-        "conditions": [
-            [
-                "End Closer",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly widen field of view when positioned toward the back late-race.",
         "effect": [
             {
                 "description": "Increases FoV by 5.",
                 "conditions": [
                     "End Closer",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "normal",
         "category": "vision",
         "aliases": [
@@ -9644,54 +9570,44 @@
             "tactician",
             "策士"
         ],
-        "upgrade": "Crusader"
+        "upgrade": "Crusader",
+        "gametora_id": "201502"
     },
     {   "skill_name": "Clairvoyance",
-        "description": "Increases FoV by 15.",
-        "conditions": [
-            [
-                "Medium",
-                "Early race"
-            ]
-        ],
+        "description": "Widen field of view with heightened observation early-race.",
         "effect": [
             {
                 "description": "Increases FoV by 15.",
                 "conditions": [
                     "Medium",
-                    "Early race"
+                    "Random point in early race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "rare",
         "category": "goldenvision",
         "aliases": [
             "clairvoyance",
             "千里眼"
         ],
-        "downgrade": "Hawkeye"
+        "downgrade": "Hawkeye",
+        "gametora_id": "201121"
     },
     {   "skill_name": "The Bigger Picture",
-        "description": "Increases FoV by 15 for 3.0s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "Mid race"
-            ]
-        ],
+        "description": "Widen field of view with heightened observation mid-race.",
         "effect": [
             {
                 "description": "Increases FoV by 15 for 3.0s.",
                 "conditions": [
                     "Late Surger",
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "rare",
         "category": "goldenvision",
         "aliases": [
@@ -9699,16 +9615,11 @@
             "seeing the big picture",
             "大局観"
         ],
-        "downgrade": "Studious"
+        "downgrade": "Studious",
+        "gametora_id": "201431"
     },
     {   "skill_name": "The Coast Is Clear!",
-        "description": "Increases FoV by 10 for 3.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "Changing lanes"
-            ]
-        ],
+        "description": "Moderately widen field of view with situational awareness when moving sideways.",
         "effect": [
             {
                 "description": "Increases FoV by 10 for 3.0s.",
@@ -9719,7 +9630,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Its cheap and consistent, helping pad your TT scores.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "rare",
         "category": "goldenvision",
         "aliases": [
@@ -9727,29 +9638,23 @@
             "good visibility all clear",
             "視界良好 異常なし"
         ],
-        "downgrade": "I Can See Right Through You"
+        "downgrade": "I Can See Right Through You",
+        "gametora_id": "201471"
     },
     {   "skill_name": "Crusader",
-        "description": "Increases FoV by 15.",
-        "conditions": [
-            [
-                "End Closer",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Widen field of view when positioned toward the back late-race.",
         "effect": [
             {
                 "description": "Increases FoV by 15.",
                 "conditions": [
                     "End Closer",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra FoV is not very impactful unless you need for extra debuff range.",
+        "review": "Extra FoV is not very impactful unless you need for extra debuff range. Cheap and consistent for TT.",
         "rarity": "rare",
         "category": "goldenvision",
         "aliases": [
@@ -9757,20 +9662,19 @@
             "heavenly warrior",
             "天命士"
         ],
-        "downgrade": "Strategist"
+        "downgrade": "Strategist",
+        "gametora_id": "201501"
     },
+
+
+
     {   "skill_name": "Ignited Spirit SPD",
-        "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
-        "conditions": [
-            [
-                "Mid race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race. ",
         "effect": [
             {
-                "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
+                "description": "Increases target speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
                 "conditions": [
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -9784,10 +9688,11 @@
             "aoharu ignition speed",
             "アオハル点火 速"
         ],
-        "upgrade": "Burning Spirit SPD"
+        "upgrade": "Burning Spirit SPD",
+        "gametora_id": "210012"
     },
     {   "skill_name": "Ignited Spirit GUTS",
-        "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
+        "description": "Burn bright with team spirit, very slightly increasing vigor in proportion to the total Guts of racing team members late-race.",
         "conditions": [
             [
                 "Late race"
@@ -9795,14 +9700,14 @@
         ],
         "effect": [
             {
-                "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
+                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
                 "conditions": [
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -9810,20 +9715,16 @@
             "aoharu ignition guts",
             "アオハル点火 根"
         ],
-        "upgrade": "Burning Spirit GUTS"
+        "upgrade": "Burning Spirit GUTS",
+        "gametora_id": "210042"
     },
     {   "skill_name": "Burning Spirit SPD",
-        "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
-        "conditions": [
-            [
-                "Mid race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, increasing velocity in proportion to the total Speed of racing team members mid-race",
         "effect": [
             {
-                "description": "Increases speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
+                "description": "Increases target speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
                 "conditions": [
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -9837,25 +9738,21 @@
             "aoharu burning speed",
             "アオハル燃焼 速"
         ],
-        "downgrade": "Ignited Spirit SPD"
+        "downgrade": "Ignited Spirit SPD",
+        "gametora_id": "210011"
     },
     {   "skill_name": "Burning Spirit GUTS",
-        "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, increasing vigor in proportion to the total Guts of racing team members late-race.",
         "effect": [
             {
-                "description": "Increases speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
+                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
                 "conditions": [
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Unless youre running 3 Guts build aces, its unlikely for you to hit the highest guts threshold.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -9863,27 +9760,23 @@
             "aoharu burning guts",
             "アオハル燃焼 根"
         ],
-        "downgrade": "Ignited Spirit GUTS"
+        "downgrade": "Ignited Spirit GUTS",
+        "gametora_id": "210041"
     },
     {   "skill_name": "Ignited Spirit STA",
-        "description": "Recover HP based on your team's total base stamina stat, increasing by 1.2% when below 1200, 1.35% at 1200 - 1799, 1.5% at 1800 - 2599, 1.65% at 2600 - 3599, and 1.8% if 3600 or higher.",
-        "conditions": [
-            [
-                "Mid race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, slightly recovering endurance in proportion to the total Stamina of racing team members mid-race.",
         "effect": [
             {
                 "description": "Recover HP based on your team's total base stamina stat, increasing by 1.2% when below 1200, 1.35% at 1200 - 1799, 1.5% at 1800 - 2599, 1.65% at 2600 - 3599, and 1.8% if 3600 or higher.",
                 "conditions": [
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
         "review": "A bit costly without hints.",
         "rarity": "normal",
-        "category": "velocity",
+        "category": "stamina",
         "aliases": [
             "ignited spirit sta",
             "ignited spirit stamina",
@@ -9894,24 +9787,19 @@
         "gametora_id": "210022"
     },
     {   "skill_name": "Burning Spirit STA",
-        "description": "Recover HP based on your team's total base stamina stat, increasing by 4.4% when below 1200, 4.95% at 1200 - 1799, 5.5% at 1800 - 2599, 6.05% at 2600 - 3599, and 6.6% if 3600 or higher.",
-        "conditions": [
-            [
-                "Mid race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, recovering endurance in proportion to the total Stamina of racing team members mid-race",
         "effect": [
             {
                 "description": "Recover HP based on your team's total base stamina stat, increasing by 4.4% when below 1200, 4.95% at 1200 - 1799, 5.5% at 1800 - 2599, 6.05% at 2600 - 3599, and 6.6% if 3600 or higher.",
                 "conditions": [
-                    "Mid race"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
         "review": "A bit costly without hints.",
-        "rarity": "normal",
-        "category": "velocity",
+        "rarity": "rare",
+        "category": "goldenstamina",
         "aliases": [
             "burning spirit sta",
             "burning spirit stamina",
@@ -9922,17 +9810,12 @@
         "gametora_id": "210021"
     },
     {   "skill_name": "Ignited Spirit PWR",
-        "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, slightly increasing acceleration in proportion to the total Power of racing team members late-race.",
         "effect": [
             {
                 "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
                 "conditions": [
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -9946,47 +9829,39 @@
             "aoharu ignition power",
             "アオハル点火 力"
         ],
-        "upgrade": "Burning Spirit PWR"
+        "upgrade": "Burning Spirit PWR",
+        "gametora_id": "210032"
     },
     {   "skill_name": "Burning Spirit PWR",
-        "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, increasing acceleration in proportion to the total Power of racing team members late-race.",
         "effect": [
             {
                 "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
                 "conditions": [
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
         "review": "A bit costly, but is a late race acceleration that works on every style.",
-        "rarity": "normal",
-        "category": "accel",
+        "rarity": "rare",
+        "category": "goldenaccel",
         "aliases": [
             "burning spirit pwr",
             "burning spirit power",
             "aoharu burning power",
             "アオハル燃焼 力"
         ],
-        "downgrade": "Ignited Spirit PWR"
+        "downgrade": "Ignited Spirit PWR",
+        "gametora_id": "210031"
     },
     {   "skill_name": "Ignited Spirit WIT",
-        "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, slightly increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
                 "conditions": [
-                    "Early race"
+                    "Random point in early race"
                 ]
             }
         ],
@@ -10000,49 +9875,90 @@
             "aoharu ignition wisdom",
             "アオハル点火 賢"
         ],
-        "upgrade": "Burning Spirit WIT"
+        "upgrade": "Burning Spirit WIT",
+        "gametora_id": "210052"
     },
     {   "skill_name": "Burning Spirit WIT",
-        "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
-        "conditions": [
-            [
-                "Early race"
-            ]
-        ],
+        "description": "Burn bright with team spirit, increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
                 "conditions": [
-                    "Early race"
+                    "Random point in early race"
                 ]
             }
         ],
         "preconditions": [],
         "review": "The speed from Burning Spirit WIT is higher than Ignited Spirit WIT and instead bricks the combo with Dodging Danger. If you're looking to do the Dodging Danger strat, avoid upgrading this skill",
-        "rarity": "normal",
-        "category": "flow",
+        "rarity": "rare",
+        "category": "goldenflow",
         "aliases": [
             "burning spirit wit",
             "burning spirit wit",
             "aoharu burning wisdom",
             "アオハル燃焼 賢"
         ],
-        "downgrade": "Ignited Spirit WIT"
+        "downgrade": "Ignited Spirit WIT",
+        "gametora_id": "210051"
     },
-    {   "skill_name": "Hesitant Front Runners",
-        "description": "Reduces speed by 0.15 for Front Runners.",
-        "conditions": [
-            [
-                "1 or more Front Runners excluding you",
-                "Late race"
-            ]
-        ],
+
+
+
+    {   "skill_name": "Glittering Star",
+        "description": "Very slightly control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins.",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 for Front Runners.",
+                "description": "Increases target speed by ~0.05 and acceleration by ~0.1 for 1.2s. Recover HP by ~0.5%. (Multiplier based on number of career wins)",
+                "conditions": [
+                    "Random point in second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "glittering star",
+            "glittering stars",
+            "綺羅星"
+        ],
+        "upgrade": "Radiant Star",
+        "gametora_id": "210062"
+    },
+    {   "skill_name": "Radiant Star",
+        "description": "Control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins. ",
+        "effect": [
+            {
+                "description": "Increases target speed by ~0.25 and acceleration by ~0.3 for 1.2s. Recover HP by ~3.5%. (Scaling based on number of career wins)",
+                "conditions": [
+                    "Random point in second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "golden velocity",
+        "aliases": [
+            "radiant star",
+            "the first star",
+            "一番星"
+        ],
+        "downgrade": "Glittering Star",
+        "gametora_id": "210061"
+    },
+
+
+
+    {   "skill_name": "Hesitant Front Runners",
+        "description": "Slightly decrease velocity of front runners late-race",
+        "effect": [
+            {
+                "description": "Reduces speed by 0.15 for 3.0s for all enemy Front Runners.",
                 "conditions": [
                     "1 or more Front Runners excluding you",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10054,22 +9970,17 @@
             "hesitant front",
             "faltering runners",
             "逃げためらい"
-        ]
+        ],
+        "gametora_id": "200851"
     },
     {   "skill_name": "Hesitant Pace Chasers",
-        "description": "Reduces speed by 0.15 for Pace Chasers.",
-        "conditions": [
-            [
-                "1 or more Pace Chasers excluding you",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly decrease velocity of pace chasers late-race",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 for Pace Chasers.",
+                "description": "Reduces speed by 0.15 for 3.0s for all enemy Pace Chasers.",
                 "conditions": [
                     "1 or more Pace Chasers excluding you",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10081,22 +9992,17 @@
             "hesitant pace",
             "faltering leaders",
             "先行ためらい"
-        ]
+        ],
+        "gametora_id": "200881"
     },
     {   "skill_name": "Hesitant Late Surgers",
-        "description": "Reduces speed by 0.15 for Late Surgers.",
-        "conditions": [
-            [
-                "1 or more Late Surgers excluding you",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly decrease velocity of late surgers late-race",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 for Late Surgers.",
+                "description": "Reduces speed by 0.15 for 3.0s for all enemy Late Surgers.",
                 "conditions": [
                     "1 or more Late Surgers excluding you",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10108,22 +10014,17 @@
             "hesitant front",
             "faltering betweeners",
             "差しためらい"
-        ]
+        ],
+        "gametora_id": "200911"
     },
     {   "skill_name": "Hesitant End Closers",
-        "description": "Reduces speed by 0.15 for End Closers.",
-        "conditions": [
-            [
-                "1 or more End Closers excluding you",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly decrease velocity of end closers late-race",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 for End Closers.",
+                "description": "Reduces speed by 0.15 for 3.0s for all enemy End Closers.",
                 "conditions": [
                     "1 or more End Closers excluding you",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10135,26 +10036,19 @@
             "hesitant end",
             "faltering chasers",
             "追込ためらい"
-        ]
+        ],
+        "gametora_id": "200941"
     },
     {   "skill_name": "Intimidate",
-        "description": "Reduces speed by 0.2 for 3.0s for all umas behind.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Moderately intimidate runners behind when positioned toward the front early-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.2 for 3.0s for all umas behind.",
+                "description": "Reduces speed by 0.2 for 3.0s for all enemy umas behind.",
                 "conditions": [
                     "Sprint",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -10167,7 +10061,8 @@
             "final nail",
             "後方釘付"
         ],
-        "upgrade": "Adored by All"
+        "upgrade": "Adored by All",
+        "gametora_id": "201012"
     },
     {   "skill_name": "Speed Eater",
         "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.15 for 3.0s.",
