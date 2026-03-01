@@ -4485,35 +4485,18 @@
     },
     {   "skill_name": "Top Pick",
         "description": "Slightly increase velocity when engaged in a challenge mid-race.",
-        "conditions": [
-            [
-                "Dirt",
-                "Blocked from sides for 2s or more",
-                "Mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Dirt",
+                    "Blocked at the sides for ≥2s",
+                    "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Helpful skill to maintain/secure the lead on dirt tracks.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4526,31 +4509,14 @@
     },
     {   "skill_name": "All I've Got",
         "description": "Slightly increase velocity when well-positioned on a straight in the last spurt.",
-        "conditions": [
-            [
-                "Medium",
-                "2nd to 5th (CM), 2nd to 7th (TT)",
-                "Straight",
-                "Last spurt"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "2nd to 5th (CM), 2nd to 7th (TT)",
+                    "Any straight",
+                    "Last spurt"
                 ]
             }
         ],
@@ -4568,30 +4534,13 @@
     },
     {   "skill_name": "Feature Act",
         "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
-        "conditions": [
-            [
-                "Long",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Second half of mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in second half of mid race"
                 ]
             }
         ],
@@ -4609,30 +4558,13 @@
     },
     {   "skill_name": "Early Start",
         "description": "Very slightly increase velocity for a medium duration when positioned toward the back mid-race.",
-        "conditions": [
-            [
-                "End Closer",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.05 for 4.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "End Closer",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -4650,21 +4582,16 @@
     },
     {   "skill_name": "Risky Business",
         "description": "Moderately increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
-        "conditions": [
-            [
-                "Second half of the race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases speed by 0.25 for 1.8s. Lose HP by a random amount.",
+                "description": "Increases target speed by 0.25 for 1.8s. Lose HP by a random amount.",
                 "conditions": [
                     "Second half of the race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "HP loss is a dice roll where you can lose a large amount, all for a short speed boost. Not worth.",
+        "review": "HP loss is a dice roll where you can lose a large amount, all for a short speed boost.",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4677,30 +4604,13 @@
     },
     {   "skill_name": "Light as a Feather",
         "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Second half of the mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Sprint",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in second half of the mid race"
                 ]
             }
         ],
@@ -4718,31 +4628,14 @@
     },
     {   "skill_name": "Fighting Spirit",
         "description": "When engaged in a challenge midpack mid-race, very slightly recover endurance and slightly increase velocity.",
-        "conditions": [
-            [
-                "Medium",
-                "3th to 7th (CM), 4th to 10th (TT)",
-                "Blocked at the sides for 2s or more",
-                "Mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s. Recover HP by 0.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "3th to 7th (CM), 4th to 10th (TT)",
+                    "Blocked at the sides for ≥2s",
+                    "Mid race"
                 ]
             }
         ],
@@ -4759,30 +4652,13 @@
     },
     {   "skill_name": "Eager",
         "description": "When positioned toward the back mid-race, slightly increase velocity.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -4800,30 +4676,13 @@
     },
     {   "skill_name": "Pumped",
         "description": "When positioned toward the back on the final corner, slightly increase velocity.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Final corner"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 1.8s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Mile",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in final corner"
                 ]
             }
         ],
@@ -4841,30 +4700,13 @@
     },
     {   "skill_name": "Fearless",
         "description": "When positioned in the midpack during the second half of the race, slightly increase velocity and very minimally increase acceleration.",
-        "conditions": [
-            [
-                "Late Surger",
-                "3rd to 7th (CM), 4th to 10th (TT)",
-                "Second half of the race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 and acceleration by 0.05 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Late Surger",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
+                    "Random point in second half of the race"
                 ]
             }
         ],
@@ -4882,30 +4724,13 @@
     },
     {   "skill_name": "With All My Soul",
         "description": "When positioned toward the front mid-race, slightly increase velocity and minimally decrease the velocity of runners behind the skill user.",
-        "conditions": [
-            [
-                "Medium",
-                "1st to 3rd",
-                "Mid race"
-            ]
-        ],
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 1.8s. Decreases current speed by 0.035 for 1.8s of 5 closest runners behind the skill user.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "1st to 3rd",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -5477,36 +5302,20 @@
         "gametora_id": "201411"
     },
     {   "skill_name": "Trending in the Charts!",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Dirt",
-                "Blocked from sides for 2s or more",
-                "Mid race"
-            ]
-        ],
+        "description": "Increase velocity when engaged in a challenge mid-race.",
+
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Dirt",
+                    "Blocked at the sides for ≥2s",
+                    "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Helpful skill to maintain/secure the lead on dirt tracks.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5540,32 +5349,15 @@
         "gametora_id": "201592"
     },
     {   "skill_name": "Come What May",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Medium",
-                "2nd to 5th (CM), 2nd to 7th (TT)",
-                "Straight",
-                "Last spurt"
-            ]
-        ],
+        "description": "Increase velocity when well-positioned on a straight in the last spurt.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "2nd to 5th (CM), 2nd to 7th (TT)",
+                    "Any straight",
+                    "Last spurt"
                 ]
             }
         ],
@@ -5641,31 +5433,14 @@
         "gametora_id": "300061"
     },
     {   "skill_name": "Headliner",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Long",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Second half of mid race"
-            ]
-        ],
+        "description": "Increase velocity when positioned toward the front upon approaching late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Long",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in second half of mid race"
                 ]
             }
         ],
@@ -5682,31 +5457,14 @@
         "gametora_id": "202011"
     },
     {   "skill_name": "Daring Strike",
-        "description": "Increases speed by 0.25 for 4.0s.",
-        "conditions": [
-            [
-                "End Closer",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+        "description": "Moderately increase velocity for a medium duration when positioned toward the back mid-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.25 for 4.0s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "End Closer",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -5723,7 +5481,7 @@
         "gametora_id": "202021"
     },
     {   "skill_name": "Nothing Ventured",
-        "description": "Increases speed by 0.45 for 1.8s. Lose HP by a random amount.",
+        "description": "Greatly increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
         "conditions": [
             [
                 "Second half of the race"
@@ -5731,14 +5489,14 @@
         ],
         "effect": [
             {
-                "description": "Increases speed by 0.45 for 1.8s. Lose HP by a random amount.",
+                "description": "Increases target speed by 0.45 for 1.8s. Lose HP by a random amount.",
                 "conditions": [
                     "Second half of the race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "HP loss is a dice roll where you can lose a large amount, all for a very small speed boost. Not worth.",
+        "review": "HP loss is a dice roll where you can lose a large amount, all for a very small speed boost.",
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
@@ -5789,31 +5547,14 @@
         "gametora_id": "201103"
     },
     {   "skill_name": "In High Spirits",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Second half of the mid race"
-            ]
-        ],
+        "description": "Increase velocity when positioned toward the front upon approaching late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Sprint",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in second half of the mid race"
                 ]
             }
         ],
@@ -5901,32 +5642,15 @@
         "gametora_id": "201271"
     },
     {   "skill_name": "Burning Soul",
-        "description": "Recover HP by 3.5%. Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Medium",
-                "3th to 7th (CM), 4th to 10th (TT)",
-                "Blocked at the sides for 2s or more",
-                "Mid race"
-            ]
-        ],
+        "description": "When engaged in a challenge midpack mid-race, moderately recover endurance and moderately increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s. Recover HP by 3.5%.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "3th to 7th (CM), 4th to 10th (TT)",
+                    "Blocked at the sides for ≥2s",
+                    "Mid race"
                 ]
             }
         ],
@@ -5943,31 +5667,14 @@
         "gametora_id": "202091"
     },
     {   "skill_name": "Elated",
-        "description": "Increases speed by 0.35 for 2.4s.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Mid race"
-            ]
-        ],
+        "description": "When positioned toward the back mid-race, increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -5984,31 +5691,14 @@
         "gametora_id": "202101"
     },
     {   "skill_name": "Full of Vigor",
-        "description": "Increases speed by 0.35 for 1.8s.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, inclusive (5th or worse in CM, 6th or worse in TT)",
-                "Final corner"
-            ]
-        ],
+        "description": "When positioned toward the back on the final corner,  increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 1.8s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Mile",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in final corner"
                 ]
             }
         ],
@@ -6025,31 +5715,14 @@
         "gametora_id": "202111"
     },
     {   "skill_name": "Dauntless",
-        "description": "Increases speed by 0.35 and acceleration by 0.1 for 2.4s.",
-        "conditions": [
-            [
-                "Late Surger",
-                "3rd to 7th (CM), 4th to 10th (TT)",
-                "Second half of the race"
-            ]
-        ],
+        "description": "When positioned in the midpack during the second half of the race, increase velocity and very slightly increase acceleration.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 2.4s.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Late Surger",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
+                    "Random point in second half of the race"
                 ]
             }
         ],
@@ -6066,31 +5739,14 @@
         "gametora_id": "202121"
     },
     {   "skill_name": "Wild Wind",
-        "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.35 for 1.8s.",
-        "conditions": [
-            [
-                "Medium",
-                "1st to 3rd",
-                "Mid race"
-            ]
-        ],
+        "description": "When positioned toward the front mid-race, increase velocity and slightly decrease the velocity of runners behind the skill user.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.35 for 1.8s. Decreases current speed by 0.15 for 1.8s of 5 closest runners behind the skill user.",
                 "conditions": [
-                    "1st to 6th (CM), 1st to 9th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
-                ]
-            },
-            {
-                "description": "Increases target speed by 0.45 for 5.0s.",
-                "inherited": "Increases target speed by 0.25 for 3.0s.",
-                "conditions": [
-                    "7th to 9th (CM), 10th to 12th (TT)",
-                    "≥5 lengths behind 1st place",
-                    "Final straight"
+                    "Medium",
+                    "1st to 3rd",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -6107,19 +5763,13 @@
         "gametora_id": "202131"
     },
     {   "skill_name": "See Ya Later!",
-        "description": "Increases speed by 0.35 for 3.0s. 30s cooldown.",
-        "conditions": [
-            [
-                "Ahead of another uma for 3s or more",
-                "After at least 10s into a race"
-            ]
-        ],
+        "description": "Increase velocity when followed by another runner directly behind for a long time.",
         "effect": [
             {
-                "description": "Increases speed by 0.35 for 3.0s. 30s cooldown.",
+                "description": "Increases target speed by 0.35 for 3.0s. 30s cooldown.",
                 "conditions": [
-                    "Ahead of another uma for 3s or more",
-                    "After at least 10s into a race"
+                    "Right in front of another uma for ≥3s",
+                    "After ≥10s into a race"
                 ]
             }
         ],
