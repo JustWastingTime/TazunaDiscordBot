@@ -612,7 +612,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
           const dailyField = Number(u.daily_average) || 0;
           return {
             rank: `#${rankField}`,
-            name: u.name || "Unknown",
+            name: u.lb_name || u.name || "Unknown",
             fans: fansField.toLocaleString(),
             daily: dailyField.toLocaleString(),
             colorEmoji: getColorEmoji(u.color)

@@ -134,7 +134,7 @@ function buildLeaderboardPayload(clubNames, usersList, serversList) {
 
     return {
       rank: `#${rankField}`,
-      name: u.name || "Unknown",
+      name: u.lb_name || u.name || "Unknown",
       fans: fansField.toLocaleString(),
       daily: dailyField.toLocaleString(),
       colorEmoji: getColorEmoji(u.color)
