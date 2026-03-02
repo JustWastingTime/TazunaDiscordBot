@@ -7755,6 +7755,135 @@
         "horse": "Mejiro Bright (Original)",
         "gametora_id": "100741"
     },
+    {   "skill_name": "Ravissant",
+        "description": "When passing another racer at the front part of the pack on the final corner or later, perform a dazzling display that greatly increases velocity for a moderate duration.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 4.0s.",
+                "inherited": "Increases target speed by 0.25 for 2.4s.",
+                "conditions": [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Overtake another uma",
+                    "Final corner and beyond"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "ravissant",
+            "fuji kiseki ballroom",
+            "ravisasante"
+        ],
+        "horse": "Fuji Kiseki (Ballroom)",
+        "gametora_id": "110051"
+    },
+    {   "skill_name": "Break It Down!",
+        "description": "If positioned toward the front on a straight late-race, increase velocity with high spirits. If the straight is on the backstretch, also increase acceleration very slightly.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and acceleration by 0.2 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.07 for 3.0s.",
+                "conditions": [
+                    "1st to 2nd",
+                    "Any straight",
+                    "Straight on the opposite of the audience",
+                    "Late race and beyond"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "1st to 2nd",
+                    "Any straight",
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "break it down",
+            "seiun sky ballroom",
+            "do ya breakin"
+        ],
+        "horse": "Seiun Sky (Ballroom)",
+        "gametora_id": "110201"
+    },
+    {   "skill_name": "Peerless Dance of Flowering Flames",
+        "description": "If the skill user passes another runner on the final corner or later, increase velocity with fiery fighting spirit when in the front part of the pack with 300m remaining.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Precondition is true",
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "≤300m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Overtake another uma",
+            "Final corner and beyond"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "peerless dance of flowering flames",
+            "yaeno muteki original og",
+            "烈火繚乱無敵之舞",
+            "dazzling fire invincible dance"
+        ],
+        "horse": "Yaeno Muteki (Original)",
+        "gametora_id": "100721"
+    },
+    {   "skill_name": "Go☆Go☆Goal!",
+        "description": "If the skill user passes another runner on the final corner or later, increase velocity from the midpack onward on the final straight. If the skill user isn't one of the top favorites, muster resolve to keep steadily increasing velocity.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 6.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.6s.",
+                "conditions": [
+                    "Precondition is true",
+                    "4th to 6th (CM), 5th to 8th (TT)",
+                    "Final straight",
+                    "When ≥4th favorite"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Precondition is true",
+                    "4th to 6th (CM), 5th to 8th (TT)",
+                    "Final straight",
+                    "When ≤3rd favorite"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Overtake another uma",
+            "Final corner and beyond"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "go go goal",
+            "nice nature cheerleader",
+            "cheer nature",
+            "go go for it"
+        ],
+        "horse": "Nice Nature (Cheerleader)",
+        "gametora_id": "110601"
+    },
 
 
     {   "skill_name": "Corner Adept x",
@@ -10043,7 +10172,7 @@
         "description": "Moderately intimidate runners behind when positioned toward the front early-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.2 for 3.0s for all enemy umas behind.",
+                "description": "Reduces currentspeed by 0.2 for 3.0s for all enemy umas behind.",
                 "conditions": [
                     "Sprint",
                     "1st to 5th (CM), 1st to 6th (TT)",
@@ -10065,21 +10194,14 @@
         "gametora_id": "201012"
     },
     {   "skill_name": "Speed Eater",
-        "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.15 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "1st to 3rd place",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly steal velocity from runners behind when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 to 5 umas behind you and increases your speed by 0.15 for 3.0s.",
+                "description": "Reduces current speed by 0.15 to 5 umas behind you and increases your taregt speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Mile",
-                    "1st to 3rd place",
-                    "Mid race"
+                    "1st to 3rd",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -10091,24 +10213,18 @@
             "speed eater",
             "スピードイーター"
         ],
-        "upgrade": "Greed for Speed"
+        "upgrade": "Greed for Speed",
+        "gametora_id": "201082"
     },
     {   "skill_name": "Tether",
-        "description": "Reduces speed by 0.15 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly decrease velocity of runners ahead when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 for 3.0s to all umas ahead.",
+                "description": "Reduces current speed by 0.15 for 3.0s to all enemy umas ahead.",
                 "conditions": [
                     "Medium",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10121,24 +10237,18 @@
             "binding chains",
             "束縛"
         ],
-        "upgrade": "Dominator"
+        "upgrade": "Dominator",
+        "gametora_id": "201152"
     },
     {   "skill_name": "Intense Gaze",
-        "description": "Reduces speed by 0.15 for 3.0s to all umas within FoV.",
-        "conditions": [
-            [
-                "End Closer",
-                "Not 1st place",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly unnerve runners in focus late-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.15 for 3.0s to all umas within FoV.",
+                "description": "Reduces current speed by 0.15 for 3.0s to all enemy umas within FoV.",
                 "conditions": [
                     "End Closer",
-                    "Not 1st place",
-                    "Late race"
+                    "2nd or worse",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10151,24 +10261,18 @@
             "sightlines",
             "まなざし"
         ],
-        "upgrade": "Petrifying Gaze"
+        "upgrade": "Petrifying Gaze",
+        "gametora_id": "201512"
     },
     {   "skill_name": "Greed for Speed",
-        "description": "Reduces speed by 0.2 to 5 umas behind you and increases your speed by 0.25 for 3.0s.",
-        "conditions": [
-            [
-                "Mile",
-                "1st to 3rd place",
-                "Mid race"
-            ]
-        ],
+        "description": "Moderately steal velocity from runners behind when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.2 to 5 umas behind you and increases your speed by 0.25 for 3.0s.",
+                "description": "Reduces current speed by 0.2 to 5 umas behind you and increases your target speed by 0.25 for 3.0s.",
                 "conditions": [
                     "Mile",
-                    "1st to 3rd place",
-                    "Mid race"
+                    "1st to 3rd",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -10181,24 +10285,18 @@
             "speed greed",
             "スピードグリード"
         ],
-        "downgrade": "Speed Eater"
+        "downgrade": "Speed Eater",
+        "gametora_id": "201081"
     },
     {   "skill_name": "Dominator",
-        "description": "Reduces speed by 0.25 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Medium",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Decrease velocity of runners ahead when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.25 for 3.0s to all umas ahead.",
+                "description": "Reduces current speed by 0.25 for 3.0s to all enemy umas ahead.",
                 "conditions": [
                     "Medium",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10211,24 +10309,18 @@
             "monopolizer",
             "独占力"
         ],
-        "downgrade": "Tether"
+        "downgrade": "Tether",
+        "gametora_id": "201151"
     },
     {   "skill_name": "Petrifying Gaze",
-        "description": "Reduces speed by 0.25 for 3.0s to all umas within FoV.",
-        "conditions": [
-            [
-                "End Closer",
-                "Not 1st place",
-                "Late race"
-            ]
-        ],
+        "description": "Unnerve runners in focus late-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.25 for 3.0s to all umas within FoV.",
+                "description": "Reduces current speed by 0.25 for 3.0s to all enemy umas within FoV.",
                 "conditions": [
                     "End Closer",
-                    "Not 1st place",
-                    "Late race"
+                    "2nd or worse",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10241,26 +10333,19 @@
             "passionate gaze",
             "熱いまなざし"
         ],
-        "downgrade": "Intense Gaze"
+        "downgrade": "Intense Gaze",
+        "gametora_id": "201511"
     },
     {   "skill_name": "Adored by All",
-        "description": "Reduces speed by 0.25 for 3.0s for all umas behind.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Intimidate runners behind when positioned toward the front early-race.",
         "effect": [
             {
-                "description": "Reduces speed by 0.25 for 3.0s for all umas behind.",
+                "description": "Reduces current speed by 0.25 for 3.0s for all enemy umas behind.",
                 "conditions": [
                     "Sprint",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -10273,31 +10358,26 @@
             "bewitching",
             "悩殺術"
         ],
-        "downgrade": "Intimidate"
+        "downgrade": "Intimidate",
+        "gametora_id": "201011"
     },
+
+
     {   "skill_name": "Opening Gambit",
-        "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Early race",
-                "After at least 3s into a race"
-            ]
-        ],
+        "description": "Slightly dull movement for runners ahead when positioned toward the back early-race.",
         "effect": [
             {
-                "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
+                "description": "Reduces acceleration by 0.1 for 3.0s to all enemy umas ahead.",
                 "conditions": [
                     "Mile",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Early race",
-                    "After at least 3s into a race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in early race",
+                    "After ≥3s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Reducing the Front Runners acceleration at the start of the race may be impactful, but the 3s buffer makes triggering it inconsistent.",
+        "review": "Reducing the Front Runners acceleration at the start of the race may be impactful, but the 3s buffer makes triggering it inconsistent.May also cause your uma to trigger PDM.",
         "rarity": "normal",
         "category": "acceldebuff",
         "aliases": [
@@ -10305,26 +10385,19 @@
             "opener",
             "布石"
         ],
-        "upgrade": "Battle Formation"
+        "upgrade": "Battle Formation",
+        "gametora_id": "201092"
     },
     {   "skill_name": "Restart",
-        "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Front Runner",
-                "2nd or worse",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly dull movement for runners ahead when not in the lead early-race.",
         "effect": [
             {
-                "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
+                "description": "Reduces acceleration by 0.1 for 3.0s to all enemy umas ahead.",
                 "conditions": [
                     "Front Runner",
                     "2nd or worse",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -10335,58 +10408,48 @@
         "aliases": [
             "restart",
             "リスタート"
-        ]
+        ],
+        "gametora_id": "201302"
     },
     {   "skill_name": "Battle Formation",
-        "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
-        "conditions": [
-            [
-                "Mile",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Early race",
-                "After at least 3s into a race"
-            ]
-        ],
+        "description": "Dull movement for runners ahead when positioned toward the back early-race.",
         "effect": [
             {
-                "description": "Reduces acceleration by 0.1 for 3.0s to all umas ahead.",
+                "description": "Reduces acceleration by 0.2 for 3.0s to all enemy umas ahead.",
                 "conditions": [
                     "Mile",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Early race",
-                    "After at least 3s into a race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in early race",
+                    "After ≥3s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Reducing the Front Runners acceleration at the start of the race may be impactful, but the 3s buffer makes triggering it inconsistent.",
+        "review": "Reducing the Front Runners acceleration at the start of the race may be impactful, but the 3s buffer makes triggering it inconsistent.May also cause your uma to trigger PDM.",
         "rarity": "rare",
         "category": "goldenacceldebuff",
         "aliases": [
             "battle formation",
             "布陣"
         ],
-        "downgrade": "Opening Gambit"
+        "downgrade": "Opening Gambit",
+        "gametora_id": "201091"
     },
+
+
     {   "skill_name": "Frenzied Front Runners",
-        "description": "Increased rush duration by 5.0s for Front Runners.",
-        "conditions": [
-            [
-                "A rushed Front Runner exists.",
-                "You are not rushed."
-            ]
-        ],
+        "description": "Increase time needed for front runners to calm down when they become rushed.",
         "effect": [
             {
-                "description": "Increased rush duration by 5.0s for Front Runners.",
+                "description": "Increased rush duration by 5.0s for enemy Front Runners.",
                 "conditions": [
-                    "A rushed Front Runner exists.",
-                    "You are not rushed."
+                    "≥1 Front Runner currently 'Rushed'",
+                    "Currently not 'Rushed'."
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra 5s of rush may destroy an uma's stamina.",
+        "review": "",
         "rarity": "normal",
         "category": "frenzy",
         "aliases": [
@@ -10394,27 +10457,22 @@
             "frenzied front",
             "frantic runners",
             "逃げ駆け引き"
-        ]
+        ],
+        "gametora_id": "200791"
     },
     {   "skill_name": "Frenzied Pace Chasers",
-        "description": "Increased rush duration by 5.0s for Pace Chasers.",
-        "conditions": [
-            [
-                "A rushed Pace Chaser exists.",
-                "You are not rushed."
-            ]
-        ],
+        "description": "Increase time needed for pace chasers to calm down when they become rushed.",
         "effect": [
             {
-                "description": "Increased rush duration by 5.0s for Pace Chasers.",
+                "description": "Increased rush duration by 5.0s for enemy Pace Chasers.",
                 "conditions": [
-                    "A rushed Pace Chaser exists.",
-                    "You are not rushed."
+                    "≥1 Pace Chaser currently 'Rushed'",
+                    "Currently not 'Rushed'."
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra 5s of rush may destroy an uma's stamina.",
+        "review": "",
         "rarity": "normal",
         "category": "frenzy",
         "aliases": [
@@ -10422,27 +10480,22 @@
             "frenzied pace",
             "frantic leaders",
             "先行駆け引き"
-        ]
+        ],
+        "gametora_id": "200801"
     },
     {   "skill_name": "Frenzied Late Surgers",
-        "description": "Increased rush duration by 5.0s for Late Surgers.",
-        "conditions": [
-            [
-                "A rushed Late Surger exists.",
-                "You are not rushed."
-            ]
-        ],
+        "description": "Increase time needed for late surgers to calm down when they become rushed.",
         "effect": [
             {
-                "description": "Increased rush duration by 5.0s for Late Surgers.",
+                "description": "Increased rush duration by 5.0s for enemy Late Surgers.",
                 "conditions": [
-                    "A rushed Late Surger exists.",
+                    "≥1 Late Surger currently 'Rushed'",
                     "You are not rushed."
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra 5s of rush may destroy an uma's stamina.",
+        "review": "",
         "rarity": "normal",
         "category": "frenzy",
         "aliases": [
@@ -10450,27 +10503,22 @@
             "frenzied late",
             "frantic betweeners",
             "差し駆け引き"
-        ]
+        ],
+        "gametora_id": "200811"
     },
     {   "skill_name": "Frenzied End Closers",
-        "description": "Increased rush duration by 5.0s for End Closer.",
-        "conditions": [
-            [
-                "A rushed End Closer exists.",
-                "You are not rushed."
-            ]
-        ],
+        "description": "Increase time needed for end closers to calm down when they become rushed.",
         "effect": [
             {
-                "description": "Increased rush duration by 5.0s for End Closer.",
+                "description": "Increased rush duration by 5.0s for enemy End Closers.",
                 "conditions": [
-                    "A rushed End Closer exists.",
+                    "≥1 End Closer currently 'Rushed'",
                     "You are not rushed."
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Extra 5s of rush may destroy an uma's stamina.",
+        "review": "",
         "rarity": "normal",
         "category": "frenzy",
         "aliases": [
@@ -10478,23 +10526,19 @@
             "frenzied end",
             "frantic chasers",
             "追込駆け引き"
-        ]
-    },
-    {   "skill_name": "Trick (Front)",
-        "description": "Reduces HP by 1% for rushed umas behind.",
-        "conditions": [
-            [
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "1 or more rushed umas behind you",
-                "Mid race"
-            ]
         ],
+        "gametora_id": "200821"
+    },
+
+
+    {   "skill_name": "Trick (Front)",
+        "description": "Slightly increase fatigue for rushed runners behind when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for rushed umas behind.",
+                "description": "Reduces HP by 1% for rushed enemy umas behind.",
                 "conditions": [
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "1 or more rushed umas behind you",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "≥1 enemy umas currently 'Rushed' behind you",
                     "Mid race"
                 ]
             }
@@ -10506,23 +10550,17 @@
         "aliases": [
             "trick front",
             "トリック前"
-        ]
+        ],
+        "gametora_id": "200771"
     },
     {   "skill_name": "Trick (Rear)",
-        "description": "Reduces HP by 1% for rushed umas ahead.",
-        "conditions": [
-            [
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "1 or more rushed umas ahead of you",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for rushed runners ahead when positioned toward the back mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for rushed umas ahead.",
+                "description": "Reduces HP by 1% for rushed enemy umas ahead.",
                 "conditions": [
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "1 or more rushed umas ahead of you",
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "≥1 enemy umas currently 'Rushed' ahead of you",
                     "Mid race"
                 ]
             }
@@ -10534,29 +10572,23 @@
         "aliases": [
             "trick rear",
             "トリック後"
-        ]
+        ],
+        "gametora_id": "200781"
     },
     {   "skill_name": "Subdued Front Runners",
-        "description": "Reduces HP by 1% for Front Runners.",
-        "conditions": [
-            [
-                "1 or more Front Runners excluding you",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for front runners early-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for Front Runners.",
+                "description": "Reduces HP by 1% for enemy Front Runners.",
                 "conditions": [
-                    "1 or more Front Runners excluding you",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "≥1 enemy Front Runner excluding you",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other Front Runners.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10564,27 +10596,22 @@
             "subdued front",
             "restrained runners",
             "逃げけん制"
-        ]
+        ],
+        "gametora_id": "200831"
     },
     {   "skill_name": "Flustered Front Runners",
-        "description": "Reduces HP by 1% for Front Runners.",
-        "conditions": [
-            [
-                "1 or more Front Runners excluding you",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for front runners mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for Front Runners.",
+                "description": "Reduces HP by 1% for enemy Front Runners.",
                 "conditions": [
-                    "1 or more Front Runners excluding you",
+                    "≥1 enemy Front Runner excluding you",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other Front Runners.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10592,29 +10619,23 @@
             "flustered front",
             "panicked runners",
             "逃げ焦り"
-        ]
+        ],
+        "gametora_id": "200841"
     },
     {   "skill_name": "Subdued Pace Chasers",
-        "description": "Reduces HP by 1% for Pace Chasers.",
-        "conditions": [
-            [
-                "1 or more Pace Chasers excluding you",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for pace chasers early-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for Pace Chasers.",
+                "description": "Reduces HP by 1% for enemy Pace Chasers.",
                 "conditions": [
-                    "1 or more Pace Chasers excluding you",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "≥1 enemy Pace Chaser excluding you",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other Pace Chasers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10622,27 +10643,22 @@
             "subdued pace",
             "restrained leaders",
             "先行けん制"
-        ]
+        ],
+        "gametora_id": "200861"
     },
     {   "skill_name": "Flustered Pace Chasers",
-        "description": "Reduces HP by 1% for Pace Chasers.",
-        "conditions": [
-            [
-                "1 or more Pace Chasers excluding you",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for pace chasers mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for Pace Chasers.",
+                "description": "Reduces HP by 1% for enemy Pace Chasers.",
                 "conditions": [
-                    "1 or more Pace Chasers excluding you",
+                    "≥1 enemy Pace Chaser excluding you",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other Pace Chasers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10650,29 +10666,23 @@
             "flustered pace",
             "panicked leaders",
             "先行焦り"
-        ]
+        ],
+        "gametora_id": "200871"
     },
     {   "skill_name": "Subdued Late Surgers",
-        "description": "Reduces HP by 1% for Late Surgers.",
-        "conditions": [
-            [
-                "1 or more Late Surgers excluding you",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for late surgers early-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for Late Surgers.",
+                "description": "Reduces HP by 1% for enemy Late Surgers.",
                 "conditions": [
-                    "1 or more Late Surgers excluding you",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "≥1 enemy Late Surger excluding you",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other Late Surgers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10680,27 +10690,22 @@
             "subdued late",
             "restrained betweeners",
             "差しけん制"
-        ]
+        ],
+        "gametora_id": "200891"
     },
     {   "skill_name": "Flustered Late Surgers",
-        "description": "Reduces HP by 1% for Late Surgers.",
-        "conditions": [
-            [
-                "1 or more Late Surgers excluding you",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for late surgers mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for Late Surgers.",
+                "description": "Reduces HP by 1% for enemy Late Surgers.",
                 "conditions": [
-                    "1 or more Late Surgers excluding you",
+                    "≥1 enemy Late Surger excluding you",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other Late Surgers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10708,29 +10713,23 @@
             "flustered late",
             "panicked betweeners",
             "差し焦り"
-        ]
+        ],
+        "gametora_id": "200901"
     },
     {   "skill_name": "Subdued End Closers",
-        "description": "Reduces HP by 1% for End Closers.",
-        "conditions": [
-            [
-                "1 or more End Closers excluding you",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for end closers early-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for End Closers.",
+                "description": "Reduces HP by 1% for enemy End Closers.",
                 "conditions": [
-                    "1 or more End Closers excluding you",
+                    "≥1 enemy End Closer excluding you",
                     "Early race",
-                    "After at least 5s into a race"
+                    "After ≥5s into a race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other End Closers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10738,27 +10737,22 @@
             "subdued end",
             "restrained chasers",
             "追込けん制"
-        ]
+        ],
+        "gametora_id": "200921"
     },
     {   "skill_name": "Flustered End Closers",
-        "description": "Reduces HP by 1% for End Closers.",
-        "conditions": [
-            [
-                "1 or more End Closers excluding you",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly increase fatigue for end closers mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for End Closers.",
+                "description": "Reduces HP by 1% for enemy End Closers.",
                 "conditions": [
-                    "1 or more End Closers excluding you",
+                    "≥1 enemy End Closer excluding you",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger and reduces HP from other End Closers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10766,26 +10760,19 @@
             "flustered end",
             "panicked chasers",
             "追込焦り"
-        ]
+        ],
+        "gametora_id": "200931"
     },
     {   "skill_name": "Stop Right There!",
-        "description": "Reduces HP by 1% and acceleration by 0.05 for 1.2s for all umas ahead.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Slightly cause panic in and very slightly dull movement for runners ahead when positioned toward the back early-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% and acceleration by 0.05 for 1.2s for all umas ahead.",
+                "description": "Reduces HP by 1% and acceleration by 0.05 for 1.2s for all enemy umas ahead.",
                 "conditions": [
                     "Sprint",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -10798,29 +10785,23 @@
             "no running allowed",
             "抜け駆け禁止"
         ],
-        "upgrade": "You've Got No Shot"
+        "upgrade": "You've Got No Shot",
+        "gametora_id": "201022"
     },
     {   "skill_name": "Murmur",
-        "description": "Reduces HP by 1% for all umas ahead.",
-        "conditions": [
-            [
-                "Medium",
-                "Blocked in front for 1s or more",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly disturb runners directly ahead mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for all umas ahead.",
+                "description": "Reduces HP by 1% for all enemy umas ahead.",
                 "conditions": [
                     "Medium",
-                    "Blocked in front for 1s or more",
+                    "Blocked in front for ≥1s",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent debuff that can cripple front runners and pace chasers. Most suitable for late surgers and end closers.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
@@ -10828,53 +10809,41 @@
             "gentle whisper",
             "ささやき"
         ],
-        "upgrade": "Mystifying Murmur"
+        "upgrade": "Mystifying Murmur",
+        "gametora_id": "201162"
     },
     {   "skill_name": "Stamina Eater",
-        "description": "Reduces HP by 0.5% to 5 umas ahead of you and recovers your HP by 1.5%.",
-        "conditions": [
-            [
-                "Long",
-                "5th place or worse",
-                "Mid race"
-            ]
-        ],
+        "description": "Very slightly steal endurance from runners ahead when positioned toward the back mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 0.5% to 5 umas ahead of you and recovers your HP by 1.5%.",
+                "description": "Reduces HP by 0.5% to 5 enemy umas ahead of you and recovers your HP by 1.5%.",
                 "conditions": [
                     "Long",
-                    "5th place or worse",
+                    "5th to 9th (CM), 5th to 12th (TT)",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Stamina recovery + stamina debuff is a pretty good skill for CM.",
+        "review": "",
         "rarity": "normal",
         "category": "recoverydebuff",
         "aliases": [
             "stamina eater",
             "スタミナイーター"
         ],
-        "upgrade": "Stamina Siphon"
+        "upgrade": "Stamina Siphon",
+        "gametora_id": "201222"
     },
     {   "skill_name": "Sharp Gaze",
-        "description": "Reduces HP by 1% for all umas within PoV.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly startle other runners late-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% for all umas within PoV.",
+                "description": "Reduces HP by 1% for all enemy umas within PoV.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -10886,26 +10855,20 @@
             "sharp gaze",
             "鋭い眼光"
         ],
-        "upgrade": "All-Seeing Eyes"
+        "upgrade": "All-Seeing Eyes",
+        "gametora_id": "201442"
     },
+
     {   "skill_name": "You've Got No Shot",
-        "description": "Reduces HP by 3% and acceleration by 0.2 for 1.2s for all umas ahead.",
-        "conditions": [
-            [
-                "Sprint",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Early race",
-                "After at least 5s into a race"
-            ]
-        ],
+        "description": "Cause panic in and moderately dull movement for runners ahead when positioned toward the back early-race.",
         "effect": [
             {
-                "description": "Reduces HP by 3% and acceleration by 0.2 for 1.2s for all umas ahead.",
+                "description": "Reduces HP by 3% and acceleration by 0.2 for 1.2s for all enemy umas ahead.",
                 "conditions": [
                     "Sprint",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Early race",
-                    "After at least 5s into a race"
+                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "Random point in early race",
+                    "After ≥5s into a race"
                 ]
             }
         ],
@@ -10918,29 +10881,23 @@
             "escape prohibition",
             "逃亡禁止令"
         ],
-        "downgrade": "Stop Right There!"
+        "downgrade": "Stop Right There!",
+        "gametora_id": "201021"
     },
     {   "skill_name": "Mystifying Murmur",
-        "description": "Reduces HP by 3% for all umas ahead.",
-        "conditions": [
-            [
-                "Medium",
-                "Blocked in front for 1s or more",
-                "Mid race"
-            ]
-        ],
+        "description": "Disturb runners directly ahead mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 3% for all umas ahead.",
+                "description": "Reduces HP by 3% for all enemy umas ahead.",
                 "conditions": [
                     "Medium",
-                    "Blocked in front for 1s or more",
+                    "Blocked in front for ≥1s",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Consistent debuff that can cripple front runners and pace chasers. Most suitable for late surgers and end closers.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecoverydebuff",
         "aliases": [
@@ -10948,29 +10905,23 @@
             "charming whisper",
             "魅惑のささやき"
         ],
-        "downgrade": "Murmur"
+        "downgrade": "Murmur",
+        "gametora_id": "201161"
     },
     {   "skill_name": "Stamina Siphon",
-        "description": "Reduces HP by 1% to 5 umas ahead of you and recovers your HP by 3.5%.",
-        "conditions": [
-            [
-                "Long",
-                "5th place or worse",
-                "Mid race"
-            ]
-        ],
+        "description": "Slightly steal endurance from runners ahead when positioned toward the back mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 1% to 5 umas ahead of you and recovers your HP by 3.5%.",
+                "description": "Reduces HP by 1% to 5 enemy umas ahead of you and recovers your HP by 3.5%.",
                 "conditions": [
                     "Long",
-                    "5th place or worse",
+                    "5th to 9th (CM), 5th to 12th (TT)",
                     "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Stamina recovery + stamina debuff is a pretty good skill for CM.",
+        "review": "Stamina recovery + stamina debuff is a pretty good skill for long CM.",
         "rarity": "rare",
         "category": "goldenrecoverydebuff",
         "aliases": [
@@ -10978,24 +10929,18 @@
             "stamina greed",
             "スタミナグリード"
         ],
-        "downgrade": "Stamina Eater"
+        "downgrade": "Stamina Eater",
+        "gametora_id": "201221"
     },
     {   "skill_name": "All-Seeing Eyes",
-        "description": "Reduces HP by 3% for all umas within PoV.",
-        "conditions": [
-            [
-                "Late Surger",
-                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Startle other runners late-race.",
         "effect": [
             {
-                "description": "Reduces HP by 3% for all umas within PoV.",
+                "description": "Reduces HP by 3% for all enemy umas within PoV.",
                 "conditions": [
                     "Late Surger",
-                    "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
-                    "Late race"
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -11008,23 +10953,17 @@
             "watching all directions",
             "八方にらみ"
         ],
-        "downgrade": "Sharp Gaze"
+        "downgrade": "Sharp Gaze",
+        "gametora_id": "201441"
     },
     {   "skill_name": "Tantalizing Trick",
-        "description": "Reduces HP by 3% for rushed umas behind.",
-        "conditions": [
-            [
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "1 or more rushed umas behind you",
-                "Mid race"
-            ]
-        ],
+        "description": "Increase fatigue for rushed runners behind when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Reduces HP by 3% for rushed umas behind.",
+                "description": "Reduces HP by 3% for rushed enemy umas behind.",
                 "conditions": [
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "1 or more rushed umas behind you",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "≥1 enemy umas currently 'Rushed' behind you",
                     "Mid race"
                 ]
             }
@@ -11038,22 +10977,19 @@
             "captivating trick",
             "見惚れるトリック"
         ],
-        "downgrade": "Trick (Front)"
+        "downgrade": "Trick (Front)",
+        "gametora_id": "200772"
     },
+
+
     {   "skill_name": "Smoke Screen",
-        "description": "Reduces FoV by 5 for 3.0s for all umas ahead.",
-        "conditions": [
-            [
-                "Long",
-                "Late race"
-            ]
-        ],
+        "description": "Moderately narrow the field of view for runners ahead late-race.",
         "effect": [
             {
-                "description": "Reduces FoV by 5 for 3.0s for all umas ahead.",
+                "description": "Reduces FoV by 5 for 3.0s for all enemy umas ahead.",
                 "conditions": [
                     "Long",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -11065,24 +11001,18 @@
             "smoke screen",
             "目くらまし"
         ],
-        "upgrade": "Illusionist"
+        "upgrade": "Illusionist",
+        "gametora_id": "201232"
     },
     {   "skill_name": "Disorient",
-        "description": "Reduces FoV by 3 for 3.0s for all umas behind you.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Slightly narrow the field of view for runners behind when positioned toward the front late-race.",
         "effect": [
             {
-                "description": "Reduces FoV by 3 for 3.0s for all umas behind you.",
+                "description": "Reduces FoV by 3 for 3.0s for all enemy umas behind you.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Late race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -11095,10 +11025,11 @@
             "peturbation",
             "かく乱"
         ],
-        "upgrade": "Dazzling Disorientation"
+        "upgrade": "Dazzling Disorientation",
+        "gametora_id": "201372"
     },
     {   "skill_name": "Illusionist",
-        "description": "Reduces FoV by 10 for 3.0s for all umas ahead.",
+        "description": "Narrow the field of view for runners ahead late-race. ",
         "conditions": [
             [
                 "Long",
@@ -11110,7 +11041,7 @@
                 "description": "Reduces FoV by 10 for 3.0s for all umas ahead.",
                 "conditions": [
                     "Long",
-                    "Late race"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -11121,24 +11052,18 @@
         "aliases": [
             "illusionist"
         ],
-        "downgrade": "Smoke Screen"
+        "downgrade": "Smoke Screen",
+        "gametora_id": "201231"
     },
     {   "skill_name": "Dazzling Disorientation",
-        "description": "Reduces FoV by 5 for 3.0s for all umas behind you.",
-        "conditions": [
-            [
-                "Pace Chaser",
-                "50% or better (5th or better in CM, 6th or better in TT)",
-                "Late race"
-            ]
-        ],
+        "description": "Moderately narrow the field of view for runners behind when positioned toward the front late-race.",
         "effect": [
             {
-                "description": "Reduces FoV by 5 for 3.0s for all umas behind you.",
+                "description": "Reduces FoV by 5 for 3.0s for all enemy umas behind you.",
                 "conditions": [
                     "Pace Chaser",
-                    "50% or better (5th or better in CM, 6th or better in TT)",
-                    "Late race"
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
@@ -11151,10 +11076,14 @@
             "glamorous peturbation",
             "幻惑のかく乱"
         ],
-        "downgrade": "Disorient"
+        "downgrade": "Disorient",
+        "gametora_id": "201371"
     },
+
+
+
     {   "skill_name": "Runaway",
-        "description": "Changes strategu to Runaway (Great Escape)",
+        "description": "Attempt to gain an especially large lead and keep it until the finish.",
         "conditions": [
             [
                 "Front Runner"
@@ -11162,14 +11091,14 @@
         ],
         "effect": [
             {
-                "description": "Changes strategu to Runaway (Great Escape)",
+                "description": "Changes strategy to Runaway (Great Escape)",
                 "conditions": [
                     "Front Runner"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Changing strategy to Runaway means you run even farther ahead as a Front Runner at the cost of more HP consumption. Good for blocking normal Front Runners from triggering Angling & Scheming. Hard to compete as an ace, due to the stamina requirements.",
+        "review": "Changing strategy to Runaway means you run even farther ahead as a Front Runner at the cost of more HP consumption.",
         "rarity": "rare",
         "category": "runaway",
         "aliases": [
@@ -11177,6 +11106,54 @@
             "great escape",
             "oonige",
             "大逃げ"
-        ]
+        ],
+        "gametora_id": "202051"
+    },
+
+
+
+    {   "skill_name": "Carnival Bonus",
+        "description": "Increase attributes by +*x*% in the Racing Carnival. *y*% chance to also raise runner's mood to Great. This skill will disappear when the event ends.",
+        "effect": [
+            {
+                "description": "All stats increase by *x*% during Carnival. Increases mood to Great by *y*% chance.",
+                "conditions": [
+                    "Always activates"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "carnival",
+        "aliases": [
+            "carnival bonus"
+        ],
+        "gametora_id": "1000011"
+    },
+
+
+
+    {   "skill_name": "Best In Japan",
+        "description": "Everyone's expectations strongly inspire the skill user, increasing velocity on the final corner.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Long",
+                    "Random point in the final corner"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "best in japan",
+            "日本一のウマ娘",
+            "#1 horsegirl in japan"
+        ],
+        "gametora_id": "202061"
     }
 ]
