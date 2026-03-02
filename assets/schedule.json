@@ -1,44 +1,62 @@
 [   
-    {   "event_name": "Pretty Derby Scout RERUN + Sasami Anshinzawa (Pal) & Tamamo Cross (Guts)",
-        "event_type": "Banner",
-        "date": "<t:1770328800:F> - <t:1771106400:F>, <t:1770328800:R>",
-        "thumbnail": "https://img.game8.co/4401930/542d253bf7299a32e596b1a6288c938f.png/show"
+    {   "event_name": "1st Anniversary Celebration Part 1",
+        "event_type": "Anniversary",
+        "date": "<t:1772463600:F>, <t:1772463600:R>",
+        "thumbnail": "https://img.game8.co/4428146/40edd44a971c65c3412ee132cd3ab8bf.png/show"
     },
-    {   "event_name": "New Beginnings Part 2",
-        "event_type": "Misc",
-        "date": "<t:1770562800:F>, <t:1770562800:R>",
-        "thumbnail": "https://img.game8.co/4401926/49bd3a4be431b4d70b63257b03d05172.png/show"
-    },
-    {   "event_name": "Sakura Chiyono O + Tazuna Hayakawa (Pal) & Riko Kashimoto (Pal) RERUN",
-        "event_type": "Banner",
-        "date": "<t:1770847200:F> - <t:1771538400:F>, <t:1770847200:R>",
-        "thumbnail": "https://img.game8.co/4401925/7d55a736eae2d6efa4b4b4edd2c24a66.png/show"
-    },
-    {   "event_name": "Champions Meeting - Capricorn Cup",
+    {   "event_name": "Champions Meeting - Aquarius Cup",
         "event_type": "Champions Meeting",
-        "date": "<t:1770933600:F>, <t:1770933600:R>",
-        "thumbnail": "https://img.game8.co/4383818/bfa1ef4a861c13b2b49116a9faec076b.png/show"
+        "date": "<t:1772463600:F>, <t:1772463600:R>",
+        "thumbnail": "https://img.game8.co/4428148/fb81f520da9c2747b38600d559146053.png/show"
     },
-    {   "event_name": "Mihono Bourbon (Valentines) & Eishin Flash (Valentines)+ (Power) + Nishino Flower (Wit) & Sakura Bakushin O (Guts)",
+    {   "event_name": "Admire Vega + Kawakami Princess (Speed SSR) and Fine Motion (Wit SSR)",
         "event_type": "Banner",
-        "date": "<t:1771452000:F> - <t:1772402400:F>, <t:1771452000:R>",
-        "thumbnail": "https://img.game8.co/4401927/ba44fe70515c87bf876276d236045462.png/show"
-    },   
-    {   "event_name": "The Peak of Confection Story Event",
+        "date": "<t:1772748000:F> - <t:1773439200:F>, <t:1772748000:R>",
+        "thumbnail": "https://img.game8.co/4428154/6c7bf64358e2fce705aedf954589d598.png/show"
+    },
+    {   "event_name": "1st Anniversary Celebration Part 2",
+        "event_type": "Anniversary",
+        "date": "<t:1773352800:F>, <t:1773352800:R>",
+        "thumbnail": "https://img.game8.co/4428153/69da5fe3e51e37d3f9194fe13e1df0e7.png/show"
+    },
+    {   "event_name": "Kitasan Black and Matikane Tannhauser + Narita Top Road (Speed SSR), Sakura Bakushin O (Power SR),   Admire Vega (Guts SR), Mejiro Ryan (Stamina SR), Mejiro Ardan (Wit SR)",
+        "event_type": "Banner",
+        "date": "<t:1773352800:F> - <t:1774303200:F>, <t:1773352800:R>",
+        "thumbnail": "https://img.game8.co/4428147/a2e3656899150df148f621dd94d69612.png/show"
+    },
+    {   "event_name": "Flying Run-Up! Story Event",
         "event_type": "Story Event",
-        "date": "<t:1771452000:F> - <t:1772402400:F>, <t:1771452000:R>",
-        "thumbnail": "https://img.game8.co/4401924/cd1b47581e6993ec45abeacfa349e182.png/show"
+        "date": "<t:1773352800:F> - <t:1774303200:F>, <t:1773352800:R>",
+        "thumbnail": "https://img.game8.co/4428150/3e8918152195cf5a0f0c002d913d18bb.png/show"
     },
-    {   "event_name": "Mejiro Ardan + Agnes Digital (Power) & Ines Fujin (Wit)",
+    {   "event_name": "Satono Diamond + Marvelous Sunday (Guts SSR) and Curren Chan (Speed SR)",
         "event_type": "Banner",
-        "date": "<t:1772056800:F> - <t:1772748000:F>, <t:1772056800:R>",
-        "thumbnail": "https://img.game8.co/4401928/4d86587833cf7bb823459d0341c5a5e1.png/show"
+        "date": "<t:1774216800:F> - <t:1775167200:F>, <t:1774216800:R>",
+        "thumbnail": "https://img.game8.co/4428155/6c3dc602ebddb582798dc1c66feb6db3.png/show"
     },
-    {   "event_name": "Legend Races - Hishi Amazon, Mejiro Dober, Gold City",
+    {   "event_name": "1st Anniversary Celebration Part 3",
+        "event_type": "Anniversary",
+        "date": "<t:1774303200:F>, <t:1774303200:R>",
+        "thumbnail": "https://img.game8.co/4428152/ab6b30cbae480d49f1246cc721d96b99.png/show"
+    },
+    {   "event_name": "Legend Races - Agnes Tachyon, Narita Taishin, Narita Brian",
         "event_type": "Legend Races",
-        "date": "<t:1772143200:F> - <t:1772920800:F>, <t:1772143200:R>",
-        "thumbnail": "https://img.game8.co/4401929/388d7e07e8481d486c324d7f02142e4e.png/show"
+        "date": "<t:1774303200:F>, <t:1774303200:R>",
+        "thumbnail": "https://img.game8.co/4428149/80fba30aee33553b330b41d8deb5bc51.png/show"
+    },
+    {   "event_name": "1st Anniversary Celebration Part 4",
+        "event_type": "Anniversary",
+        "date": "<t:1774562400:F>, <t:1774562400:R>",
+        "thumbnail": "https://img.game8.co/4428156/a79ee4c0b5ce26c33a389ee853acde3e.png/show"
+    },
+    {   "event_name": "Mejiro Bright + Curren Chan (Wit SSR) and Zenno Rob Roy (Speed SSR)",
+        "event_type": "Banner",
+        "date": "<t:1774562400:F> - <<t:1775512800:F>, <t:1774562400:R>",
+        "thumbnail": "https://img.game8.co/4428157/17fa78d2c2a42980dd954d51eb37a26a.png/show"
+    },
+    {   "event_name": "Champions Meeting - Pisces Cup",
+        "event_type": "Champions Meeting",
+        "date": "<t:1774562400:F>, <t:1774562400:R>",
+        "thumbnail": "https://img.game8.co/4428151/f4c26ffc495f25f3d08da3b5f9a3ecd8.png/show"
     }
-    
-    
 ]   
