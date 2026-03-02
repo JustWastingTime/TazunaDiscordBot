@@ -2562,7 +2562,7 @@
             }
         ],
         "unique": "Flowery☆Maneuver",
-        "unique_explanation": "Increases speed by 0.35 for 5.0s when overtaking, if first 40% of the pack, on the final corner.\n Increases acceleration by 0.4 for 4.0s when overtaking, if between 50% to 80% of the pack, on the final corner.",
+        "unique_explanation": "",
         "skills": [
             "Corner Recovery",
             "Shrewd Step",
@@ -4970,6 +4970,91 @@
         ]
     },
 
+    {   "id": "106201 - Matikanetannhauser",
+        "character_name": "Matikanetannhauser",
+        "type": "Original",
+        "costume": "Clippety-Tippety-Clop",
+        "rarity": "⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "20%",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "D",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "A",
+            "End": "E"
+            }
+        ],
+        "unique": "Go, Go, Mun!",
+        "unique_explanation": "",
+        "skills": [
+            "Calm in a Crowd",
+            "Pressure",
+            "Slick Surge"
+        ],
+        "potential": [
+            "Shake It Out",
+            "Unruffled",
+            "Homestretch Haste",
+            "Overwhelming Pressure"
+        ],
+        "event_skills": [
+            "Pace Strategy",
+            "Mile Corners",
+            "Inside Scoop",
+            "Updrafters",
+            "All I've Got"
+        ],
+        "races": [
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "diamond stakes february 2 year 3",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["matikanetannhauser original og", "clippety-tippety-clop", "mambo original og"],
+        "url": "https://gametora.com/umamusume/characters/106201-matikanetannhauser",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1062_106201.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Participate in the Mile Championship (Year 2) and beat Daitaku Helios",
+            "rewards": "Power +20, Mile corners hint +1"
+            },
+            {
+            "conditions": "Participate in the Arima Kinen (Year 2) and beat Nice Nature",
+            "rewards": "Stamina +20, Inside Scoop hint +1"
+            },
+            {
+            "conditions": "Participate in the Yasuda Kinen (Year 3) and beat Ikuno Dictus",
+            "rewards": "Guts +20, Updrafters hint +1"
+            },
+            {
+            "conditions": "Participate in the All Comers (Year 3) and beat Twin Turbo",
+            "rewards": "Speed +20, All I've Got hint +1"
+            }
+        ]
+    },
 
     {   "id": "106701 - Satono Diamond",
         "character_name": "Satono Diamond",
@@ -5043,6 +5128,7 @@
             }
         ]
     },
+
     {   "id": "106801 - Kitasan Black",
         "character_name": "Kitasan Black",
         "type": "Original",
@@ -5125,6 +5211,7 @@
             }
         ]
     },
+
     {   "id": "106901 - Sakura Chiyono O",
         "character_name": "Sakura Chiyono O",
         "type": "Original",
@@ -5288,6 +5375,94 @@
             {
             "conditions": "Win the Tenno Sho (Autumn Year 2)",
             "rewards": "Corner Recovery hint +2"
+            }
+        ]
+    },
+
+    {   "id": "107401 - Mejiro Bright",
+        "character_name": "Mejiro Bright",
+        "type": "Original",
+        "costume": "Brunissage Line",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "14%",
+            "power": "",
+            "guts": "8%",
+            "wit": "8%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "D",
+            "Late": "A",
+            "End": "A"
+            }
+        ],
+        "unique": "Lovely Spring Breeze",
+        "unique_explanation": "",
+        "skills": [
+            "Pace -Right Handed",
+            "End Closer Corners",
+            "Free-Spirited"
+        ],
+        "potential": [
+            "Pressure",
+            "Indomitable",
+            "Stamina Eater",
+            "Of Calm Mind"
+        ],
+        "event_skills": [
+            "Wet Conditions",
+            "Inside Scoop",
+            "Steadfast",
+            "Non-Standard Distance",
+            "Long Corners",
+            "Passing Pro",
+            "Smoke Screen"
+        ],
+        "races": [
+            "hopeful stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "stayer stakes december 1 year 2",
+            "tenno sho spring april 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["mejiro bright original", "brunissage line"],
+        "url": "https://gametora.com/umamusume/characters/107401-mejiro-bright",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1074_107401.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Tenno Sho Spring and Tenno Sho Autumn (Year 3)",
+            "rewards": "Speed +10, Stamina +10, Inside Scoop hint +2"
+            },
+            {
+            "conditions": "Win the Queen Elizabeth II Cup (Year 2) and Queen Elizabeth II Cup (Year 3)",
+            "rewards": "Speed +10, Skill points +10, Steadfast hint +2"
+            },
+            {
+            "conditions": "Win the Takarazuka Kinen (Year 3) and Arima Kinen (Year 3)",
+            "rewards": "Guts +10, Skill points +10, Non-Standard Distance hint +2"
+            },
+            {
+            "conditions": "Win 2+/4+/6+ Long races",
+            "rewards": "2-3 \nStamina +10, Long Corners hint +1 \n\n4-5 \nStamina +10, Guts +5, Wit +5, Long Corners hint +2 \n\n6+ \nStamina +10, Guts +10, Long Corners hint +3, Passing Pro hint +2, Smoke Screen hint +1"
             }
         ]
     }
