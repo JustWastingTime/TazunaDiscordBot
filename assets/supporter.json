@@ -2532,7 +2532,7 @@
         "character_name": "K. S. Miracle",
         "unique": "-",
         "effects": [
-            "Friendship Bonus - 15/16/17/18/20",
+            "Friendship Bonus - 15/16/17/18/20%",
             "Guts Bonus - 0/0/0/0/1",
             "Initial Guts - 20/21/22/23/25",
             "Initial Friendship Gauge - 15/16/18/20/20",
@@ -2830,7 +2830,7 @@
 
 
     {   "id": "20001 Fuji Kiseki",
-        "card_name": "Well, Look Who’s Home",
+        "card_name": "Well, Look Who's Home",
         "character_name": "Fuji Kiseki",
         "unique": "Increases skill point gain when training together (1)\nIncreases initial Wit when beginning a Career playthrough (20)",
         "effects": [
@@ -3418,7 +3418,7 @@
         "aliases": ["mejiro dober", "ignore the stares"]
     },
     {   "id": "20019 Nice Nature",
-        "card_name": "It’s Just Water",
+        "card_name": "It's Just Water",
         "character_name": "Nice Nature",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases initial Guts when beginning a Career playthrough (20)",
         "effects": [
@@ -3484,7 +3484,7 @@
         "aliases": ["king halo", "first rate plan"]
     },
     {   "id": "20021 Kiryuin Aoi",
-        "card_name": "Trainer’s Teamwork",
+        "card_name": "Trainer's Teamwork",
         "character_name": "Aoi Kiryuin",
         "unique": "Decreases the probability of failure when training together (10%)\nDecreases Energy consumed when training together (5%)",
         "effects": [
@@ -3511,8 +3511,40 @@
         "category": "pal",
         "aliases": ["kiryuin aoi", "trainers teamwork"]
     },
-
-
+    {   "id": "20022 Tamamo Cross",
+        "card_name": "Now Dat's What I Call Grilled Squid!",
+        "character_name": "Tamamo Cross",
+        "unique": "Increases skill point gain when training together (1)\nIncreases initial Guts when beginning a Career playthrough (20)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Guts Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 10/11/12/13/15%",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/32/35/37/40%",
+            "Specialty Priority - 0/30/45/60/60" 
+        ],
+        "support_skills": [
+            "Rosy Outlook",
+            "Frenzied Late Surgers",
+            "Flustered Late Surgers",
+            "Medium Corners",
+            "Thunderbolt Step",
+            "Soft Step",
+            "1,500,000 CC"
+        ],
+        "event_skills": [
+            "Pace Chaser Corners",
+            "Late Surger Corners",
+            "Calm in a Crowd"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20022-tamamo-cross",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20022.png",
+        "rarity": "sr",
+        "category": "guts",
+        "aliases": ["tamamo cross", "now dats what i call grilled squid"]
+    },
     {   "id": "20023 Sweep Tosho",
         "card_name": "Lamplit Training of a Witch-to-Be",
         "character_name": "Sweep Tosho",
@@ -3751,6 +3783,41 @@
         "category": "guts",
         "aliases": ["seeking the pearl", "the worlds my oyster"]
     },
+    {   "id": "20030 Ines Fujin",
+        "card_name": "You Earned It!",
+        "character_name": "Ines Fujin",
+        "unique": "Amplifies the effect of mood when training together (15%)\nDecreases the probability of failure when training together (10%)",
+        "effects": [
+            "Friendship Bonus - 20/21/22/23/25%",
+            "Mood Effect - 0/10/15/20/20%",
+            "Wit Bonus - 0/0/0/0/1",
+            "Initial Wit - 15",
+            "Initial Friendship Gauge - 15",
+            "Hint Levels - 2",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Wit Friendship Recovery - 3/3/3/3/4"
+        ],
+        "support_skills": [
+            "Steadfast",
+            "Speed Eater",
+            "Moxie",
+            "Slipstream",
+            "Playtime's Over!"
+        ],
+        "event_skills": [
+            "Medium Straightaways",
+            "Sympathy",
+            "Standard Distance",
+            "Final Push",
+            "Fast-Paced"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20030-ines-fujin",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20030.png",
+        "rarity": "sr",
+        "category": "wit",
+        "aliases": ["ines fujin", "you earned it"]
+    },
     {   "id": "20031 Shinko Windy",
         "card_name": "///WARNING GATE///",
         "character_name": "Shinko Windy",
@@ -3780,7 +3847,7 @@
         "rarity": "sr",
         "category": "speed",
         "aliases": [
-            "shinko windy warning gate"
+            "shinko windy", "warning gate"
         ]
     },
     {   "id": "20032 Inari One",
@@ -3816,9 +3883,10 @@
         "rarity": "sr",
         "category": "power",
         "aliases": [
-            "inari one laughing through the mud"
+            "inari one", "laughing through the mud"
         ]
     },
+
     {   "id": "20034 Mejiro Ardan",
         "card_name": "My Heart Will Go On",
         "character_name": "Mejiro Ardan",
@@ -3849,7 +3917,7 @@
         "rarity": "sr",
         "category": "wit",
         "aliases": [
-            "mejiro ardan my heart will go on"
+            "mejiro ardan", "my heart will go on"
         ]
     },
     {   "id": "20035 Tosen Jordan",
@@ -3883,12 +3951,44 @@
         "rarity": "sr",
         "category": "stamina",
         "aliases": [
-            "tosen jordan turf as nails"
+            "tosen jordan", "turf as nails"
         ]
     },
 
-
-    {  "id": "20038 Sirius Symboli",
+    {   "id": "20037 Fine Motion",
+        "card_name": "Grma, Ramen ♪",
+        "character_name": "Fine Motion",
+        "unique": "Increases Power gain when training together (1)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
+        "effects": [
+            "Friendship Bonus - 20/21/22/23/25%",
+            "Training Effectiveness - 5/6/7/8/10%",
+            "Race Bonus - 5%",
+            "Fan Bonus - 10/11/12/13/15%",
+            "Hint Levels - 0/1/1/2/2",
+            "Hint Frequency - 0/20/25/30/30%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/0/0/0/1"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Fall Runner",
+            "Outer Post Proficiency",
+            "Straightaway Acceleration",
+            "Nimble Navigator"
+        ],
+        "event_skills": [
+            "Steadfast",
+            "Corner Adept"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20037-fine-motion",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20037.png",
+        "rarity": "sr",
+        "category": "power",
+        "aliases": [
+            "fine motion grma ramen"
+        ]
+    },
+    {   "id": "20038 Sirius Symboli",
         "card_name": "The Brightest Star Shines On",
         "character_name": "Sirius Symboli",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Speed when beginning a Career playthrough (20)",
@@ -3917,10 +4017,10 @@
         "rarity": "sr",
         "category": "guts",
         "aliases": [
-            "sirius symboli one star unreachable"
+            "sirius symboli", "one star unreachable"
         ]
     },
-    {  "id": "20039 Vodka",
+    {   "id": "20039 Vodka",
         "card_name": "An Annoying Supervisor",
         "character_name": "Vodka",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which hint events occur (20%)",
@@ -3955,7 +4055,7 @@
         "rarity": "sr",
         "category": "speed",
         "aliases": [
-            "vodka an annoying supervisor"
+            "vodka", "an annoying supervisor"
         ]
     },
 
@@ -4187,7 +4287,7 @@
         "aliases": ["grass wonder", "fairest fleur"]
     },
     {   "id": "30007 El Condor Pasa",
-        "card_name": "Champion’s Passion",
+        "card_name": "Champion's Passion",
         "character_name": "El Condor Pasa",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases the frequency at which the character participates in their preferred training type (20)",
         "effects": [
@@ -4348,7 +4448,7 @@
             "Speed Eater",
             "Moxie",
             "Slipstream",
-            "Playtime’s Over!" 
+            "Playtime's Over!" 
         ],
         "event_skills": [
             "Restless",
@@ -5142,6 +5242,7 @@
             "rice shower happiness just around the bend"
         ]
     },
+
     {   "id": "30036 Kashimoto Riko",
         "card_name": "Planned Perfection",
         "character_name": "Kashimoto Riko",
@@ -5944,7 +6045,7 @@
         "character_name": "Mihono Bourbon",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Speed when beginning a Career playthrough (20)",
         "effects": [
-            "Friendship Bonus - 15/16/18/20/20",
+            "Friendship Bonus - 15/16/18/20/20%",
             "Mood Effect - 30/33/36/40/40",
             "Speed Bonus - 0/1/1/1/1",
             "Initial Wit - 0/0/0/15/30",
@@ -6593,8 +6694,45 @@
         "aliases": [
             "tosen jordan in my way", "tosen jordan welfare", "tosen jordan poverty", "tosen jordan event"
         ]
+    },
+    {   "id": "30085 Agnes Digital",
+        "card_name": "A Fan's Joy",
+        "character_name": "Agnes Digital",
+        "unique": "If there are at least 5 different types of support cards in your deck, gain Increased Training (15)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Stamina Bonus - 0/1/1/1/1",
+            "Power Bonus - 1",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Left-Handed",
+            "Mile Straightaways",
+            "Late Surger Straightaways",
+            "Uma Stan",
+            "Forward, March!",
+            "All I've Got"
+        ],
+        "event_skills": [
+            "Hydrate",
+            "Focus",
+            "Lead the Charge!",
+            "Uma Stan",
+            "Rainy Days",
+            "Wet Conditions"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30085-agnes-digital",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30085.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "agnes digital", "a fans joy"
+        ]
     }
-
-
-
 ]
