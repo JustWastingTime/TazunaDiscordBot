@@ -9,7 +9,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, loadJsonSafe } from './utils.js';
 import { getSpreadsheetId, getSpreadsheetIdForUser, logPending, syncUsers } from "./sheets.js"; 
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
@@ -28,9 +28,13 @@ const serversPath = path.join(__dirname, "..", "assets", "servers.json");
 const usersPath   = path.join(__dirname, "..", "assets", "users.json");
 const waitinglistPath   = path.join(__dirname, "..", "assets", "waitinglist.json");
 
-const servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
-const users   = JSON.parse(fs.readFileSync(usersPath, "utf8"));
-const waitinglist = JSON.parse(fs.readFileSync(waitinglistPath, "utf8"));
+const servers = loadJsonSafe(serversPath);
+const users   = loadJsonSafe(usersPath);
+const waitinglist = loadJsonSafe(waitinglistPath, []);
+
+if (servers.length === 0 || users.length === 0) {
+  console.warn("⚠️ servers.json or users.json missing/empty. Add them to assets/ (or use a Railway Volume) for leaderboard/sheets features.");
+}
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -49,15 +53,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 function getUsers() {
-  return JSON.parse(fs.readFileSync(usersPath, "utf8"));
+  return loadJsonSafe(usersPath, users);
 }
 
 function getServers() {
-  return JSON.parse(fs.readFileSync(serversPath, "utf8"));
+  return loadJsonSafe(serversPath, servers);
 }
 
 function getWaitingList() {
-  return JSON.parse(fs.readFileSync(waitinglistPath, "utf8"));
+  return loadJsonSafe(waitinglistPath, waitinglist);
 }
 
 

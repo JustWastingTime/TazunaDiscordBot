@@ -9,6 +9,7 @@ import {
 } from 'discord-interactions';
 
 import { syncUsers } from "./sheets.js";
+import { loadJsonSafe } from "./utils.js";
 
 // ---------------------------------------------------------------------------
 // Path resolution
@@ -208,8 +209,8 @@ export async function updateLeaderboard() {
     console.log("[LeaderboardUpdater] Syncing users...");
     await syncUsers();
 
-    const servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
-    const users = JSON.parse(fs.readFileSync(usersPath, "utf8"));
+    const servers = loadJsonSafe(serversPath);
+    const users = loadJsonSafe(usersPath);
 
     let changed = false;
 

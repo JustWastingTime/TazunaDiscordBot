@@ -19,6 +19,18 @@ try {
 }
 
 export { skillCategoryEmotes };
+
+/** Load JSON file, return defaultValue if file doesn't exist (e.g. ENOENT). */
+export function loadJsonSafe(filePath, defaultValue = []) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (e) {
+    if (e.code === "ENOENT" || e.code === "ENOTDIR") {
+      return defaultValue;
+    }
+    throw e;
+  }
+}
 const rankCategoryEmotes = {
   A: '<:RankA:1412694937203511336>',
   B: '<:RankB:1412694961358372894>',

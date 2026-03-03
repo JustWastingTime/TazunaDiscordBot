@@ -2,6 +2,7 @@ import { google } from "googleapis";
 import fs from "fs";
 import path from 'path';
 import { fileURLToPath } from "url";
+import { loadJsonSafe } from "./utils.js";
 
 // ESM-friendly __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -11,8 +12,8 @@ const __dirname = path.dirname(__filename);
 const serversPath = path.join(__dirname, "..", "assets", "servers.json");
 const usersPath   = path.join(__dirname, "..", "assets", "users.json");
 
-let servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
-let users   = JSON.parse(fs.readFileSync(usersPath, "utf8"));
+let servers = loadJsonSafe(serversPath);
+let users   = loadJsonSafe(usersPath);
 
 const auth = new google.auth.GoogleAuth({
   keyFile: "./assets/credentials.json",
@@ -98,8 +99,8 @@ export async function logPending(discordId, value) {
 export async function syncUsers() {
 
   // In case you updated users and servers json manually without restarting the bot
-  servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
-  users   = JSON.parse(fs.readFileSync(usersPath, "utf8"));
+  servers = loadJsonSafe(serversPath, servers);
+  users   = loadJsonSafe(usersPath, users);
 
   let updatedUsers = [];
 

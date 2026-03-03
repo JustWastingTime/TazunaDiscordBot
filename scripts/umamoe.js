@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 import { fileURLToPath } from "url";
-import { syncUsers } from "./sheets.js"; 
+import { syncUsers } from "./sheets.js";
+import { loadJsonSafe } from "./utils.js"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,8 +14,8 @@ const usersPath   = path.join(__dirname, "..", "assets", "users.json");
 export async function updateFansFromUmaMoe() {
   console.log("[UmaMoe] Starting daily fan update");
 
-  const servers = JSON.parse(fs.readFileSync(serversPath, "utf8"));
-  const users   = JSON.parse(fs.readFileSync(usersPath, "utf8"));
+  const servers = loadJsonSafe(serversPath);
+  const users   = loadJsonSafe(usersPath);
 
   let changed = false;
 
