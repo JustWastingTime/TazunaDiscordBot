@@ -1,5 +1,13 @@
 import 'dotenv/config';
 import express from 'express';
+
+// Validate required env vars at startup (fail fast with clear message)
+const PUBLIC_KEY = process.env.PUBLIC_KEY || process.env.DISCORD_PUBLIC_KEY;
+if (!PUBLIC_KEY) {
+  console.error("Missing required env var: PUBLIC_KEY (Discord Application Public Key)");
+  console.error("Add it in Railway: Project → Service → Variables → PUBLIC_KEY = <your public key>");
+  process.exit(1);
+}
 import fs from 'fs';
 import {
   ButtonStyleTypes,
@@ -69,7 +77,7 @@ function getWaitingList() {
  * Interactions endpoint URL where Discord will send HTTP requests
  * Parse request body and verifies incoming requests using discord-interactions package
  */
-app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async function (req, res) {
+app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, res) {
   // Interaction id, type and data
   const { id, type, data, message, token } = req.body;
 
@@ -1591,6 +1599,79 @@ async function sendFollowup(token, payload) {
   return response;
 }
 
+// --- Terms of Service & Privacy Policy (for Discord verification / discovery) ---
+const termsHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service – Tazuna Bot</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #333; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .updated { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Terms of Service</h1>
+  <p class="updated">Last updated: March 2025</p>
+  <p>By inviting and using <strong>Tazuna</strong> (“the Bot”) in your Discord server, you agree to these terms.</p>
+  <ul>
+    <li>You must comply with <a href="https://discord.com/terms">Discord’s Terms of Service</a> and <a href="https://discord.com/guidelines">Community Guidelines</a>.</li>
+    <li>You may not use the Bot for spam, abuse, or to violate any applicable laws.</li>
+    <li>The Bot is provided “as is.” We do not guarantee uptime or specific features.</li>
+    <li>We may update or discontinue the Bot with reasonable notice where possible.</li>
+  </ul>
+  <p>If you do not agree, please remove the Bot from your server.</p>
+</body>
+</html>
+`;
+
+const privacyHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy – Tazuna Bot</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #333; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .updated { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.25rem; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: March 2025</p>
+  <p>This policy describes what data <strong>Tazuna</strong> (“the Bot”) collects and how it is used.</p>
+  <h2>Data we collect</h2>
+  <ul>
+    <li><strong>Discord data:</strong> User IDs, usernames, server (guild) IDs, and channel IDs when you use commands or when your server uses leaderboard/sheets features.</li>
+    <li><strong>Saved data:</strong> If you use the save command, we store the labels and URLs (e.g. Umalator links) you provide, associated with your Discord user ID.</li>
+    <li><strong>Server data:</strong> For servers that use leaderboards or Google Sheets sync, we store server configuration (e.g. sheet IDs, channel IDs) and fan/rank data synced from your sheet.</li>
+    <li><strong>Images:</strong> Images you upload for profile parsing are sent to a third-party OCR service for text extraction; we do not store the image content long-term.</li>
+  </ul>
+  <h2>How we use it</h2>
+  <p>Data is used to provide Bot features (leaderboards, trainer lookups, saved links, sheet sync, image parsing) and to operate the service.</p>
+  <h2>Storage & sharing</h2>
+  <p>Data is stored on the Bot’s hosting infrastructure and, where configured, in Google Sheets. We do not sell your data. We may share data only as required by law or to protect the service.</p>
+  <h2>Your rights</h2>
+  <p>You can stop using the Bot and remove it from your server at any time. Data tied to your user or server may remain in our storage until we purge it; you can request deletion by contacting the Bot developer.</p>
+  <h2>Changes</h2>
+  <p>We may update this policy; the “Last updated” date will be revised. Continued use of the Bot after changes constitutes acceptance.</p>
+</body>
+</html>
+`;
+
+app.get('/terms', (req, res) => {
+  res.type('html').send(termsHtml);
+});
+
+app.get('/privacy', (req, res) => {
+  res.type('html').send(privacyHtml);
+});
 
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);

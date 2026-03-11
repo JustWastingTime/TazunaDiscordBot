@@ -1,0 +1,25 @@
+[
+    {
+        "id": "1441129742240710678",
+        "name": "Dust Bunny",
+        "sheetsid": "1wKRoIy-k90xnd5uUV51YI2fFtZyr9vhstUKQ8PH8W70",
+        "daily_average": "1501129",
+        "fans_median": "3002259",
+        "fans_guild_total": "92084294",
+        "application_channel": "1441337880759767082",
+        "leaderboard_channel": "1441333056744194048",
+        "leaderboard_message_id": "1456284411749208201",
+        "umamoe_link": "https://uma.moe/api/v4/circles?circle_id=883948934"
+    },
+    {
+        "id": "1416320822846689333",
+        "name": "TazunaBotTestServer",
+        "sheetsid": "1xyOJpbC-CdmUV1uSgOyEUT68WnxUGMXiNP5RonUuR4Y",
+        "daily_average": "1613525",
+        "fans_median": "22500000",
+        "fans_guild_total": "895500000",
+        "application_channel": "",
+        "leaderboard_channel": "1456208632030040187",
+        "leaderboard_message_id": "1456284131267837954"
+    }
+]
