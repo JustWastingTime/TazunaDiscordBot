@@ -1,0 +1,38 @@
+[   
+    {   "id": "Eat My Dust",
+        "rank": "gold",
+        "conditions": "Win 15 Dirt races. (Trackblazer only)",
+        "reward": "2 random stats +10",
+        "aliases": ["eat my dust", "mant", "trackblazer", "dirt"]
+    },
+    {   "id": "Heroine",
+        "rank": "gold",
+        "conditions": "Get the \"Lady\" epithet and win the Queen Elizabeth II Cup (Year 2). (Trackblazer only)",
+        "reward": "2 random stats +10",
+        "aliases": ["heroine", "mant", "trackblazer", "lady", "tiara", "mile", "medium"]
+    },
+    {   "id": "Goddess",
+        "rank": "gold",
+        "conditions": "Get the \"Lady\" epithet and win the Victoria Mile, Hanshin Juvenile Fillies, Queen Elizabeth II Cup twice. (Trackblazer only)",
+        "reward": "2 random stats +15",
+        "aliases": ["goddess", "mant", "trackblazer", "lady", "tiara", "mile", "medium"]
+    },
+    {   "id": "Dirt G1 Dominator",
+        "rank": "gold",
+        "conditions": "Win 9 Dirt G1 races. (Trackblazer only)",
+        "reward": "Top Pick hint +1",
+        "aliases": ["dirt g1 dominator", "mant", "trackblazer", "dirt", "g1"]
+    },
+    {   "id": "Incredible",
+        "rank": "gold",
+        "conditions": "Get the \"Stunning\" epithet and win either the Japan Cup (Year 2) or the Arima Kinen (Year 2). (Trackblazer only)",
+        "reward": "2 random stats +15",
+        "aliases": ["incredible", "mant", "trackblazer", "stunning", "crown", "medium", "long"]
+    },
+    {   "id": "Phenomenal",
+        "rank": "gold",
+        "conditions": "Get the \"Stunning\" epithet and win either the Japan Cup (Year 2) or the Arima Kinen (Year 2). (Trackblazer only)",
+        "reward": "2 random stats +15",
+        "aliases": ["incredible", "mant", "trackblazer", "stunning", "crown", "medium", "long"]
+    },
+]
