@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, loadJsonSafe } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, loadJsonSafe, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX } from './utils.js';
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
 
@@ -39,6 +39,7 @@ const legendraces = cache.legendraces;
 const misc = cache.misc;
 const schedule = cache.schedule;
 const resources = cache.resources;
+const epithets = loadJsonSafe(path.join(__dirname, '..', 'assets', 'epithets.json'), []);
 
 // Create an express app
 const app = express();
@@ -576,6 +577,48 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
     }
 
+    // "epithet" command
+    if (name === 'epithet') {
+      const nameOpt = data.options?.find(opt => opt.name === 'name')?.value?.trim?.() || '';
+      const queryTerms = nameOpt ? nameOpt.toLowerCase().split(/\s+/) : [];
+
+      const matches = epithets.filter(e => {
+        if (queryTerms.length === 0) return true;
+        const id = (e.id || '').toLowerCase();
+        const conditions = (e.conditions || '').toLowerCase();
+        const reward = (e.reward || '').toLowerCase();
+        const aliases = (e.aliases || []).map(a => String(a).toLowerCase());
+        return queryTerms.every(q =>
+          id.includes(q) ||
+          conditions.includes(q) ||
+          reward.includes(q) ||
+          aliases.some(a => a.includes(q))
+        );
+      });
+
+      if (matches.length === 0) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: `❌ No epithet found${nameOpt ? ` for "${nameOpt}"` : ''}.` }
+        });
+      }
+
+      // Single match → detail view (including when search is exact/specific)
+      if (matches.length === 1) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: buildEpithetEmbed(matches[0])
+        });
+      }
+
+      // Multiple matches → list with pagination
+      const listPayload = buildEpithetListPayload(matches, 0, nameOpt || null);
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: listPayload
+      });
+    }
+
     console.error(`unknown command: ${name}`);
     return res.status(400).json({ error: 'unknown command' });
   }
@@ -849,6 +892,35 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           content: `✅ You selected **${cm.name}**`,
           ...cmPayload
         }
+      });
+    }
+
+    // Epithet list pagination
+    if (custom_id.startsWith(EPITHET_PAGINATION_ID_PREFIX)) {
+      const after = custom_id.slice(EPITHET_PAGINATION_ID_PREFIX.length);
+      const sep = after.indexOf('_');
+      const page = Math.max(0, parseInt(sep >= 0 ? after.slice(0, sep) : after, 10) || 0);
+      const queryEnc = sep >= 0 ? after.slice(sep + 1) : '';
+      const queryTerms = queryEnc ? queryEnc.toLowerCase().split(/\s+/) : [];
+
+      const matches = epithets.filter(e => {
+        if (queryTerms.length === 0) return true;
+        const id = (e.id || '').toLowerCase();
+        const conditions = (e.conditions || '').toLowerCase();
+        const reward = (e.reward || '').toLowerCase();
+        const aliases = (e.aliases || []).map(a => String(a).toLowerCase());
+        return queryTerms.every(q =>
+          id.includes(q) ||
+          conditions.includes(q) ||
+          reward.includes(q) ||
+          aliases.some(a => a.includes(q))
+        );
+      });
+
+      const listPayload = buildEpithetListPayload(matches, page, queryEnc || null);
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: listPayload
       });
     }
   }
