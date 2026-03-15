@@ -723,7 +723,7 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
       type: 2,
       style: 5,
       label: "Skill Visualizer",
-      url: `https://alpha123.github.io/uma-tools/skill-visualizer-global/#cid=10602,sid=${skill.gametora_id}`
+      url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10914&sid=${skill.gametora_id}`
     });
   }
 

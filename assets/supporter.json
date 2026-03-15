@@ -4058,9 +4058,142 @@
             "vodka", "an annoying supervisor"
         ]
     },
+    {   "id": "20040 Mejiro Ryan",
+        "card_name": "Hot Hearts and Cool Drinks",
+        "character_name": "Mejiro Ryan",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Guts gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Stamina Bonus - 0/0/0/0/1",
+            "Initial Friendship Gauge - 0/10/15/20/20",
+            "Race Bonus - 5%",
+            "Fan Bonus - 10/11/12/13/15%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Slick Surge",
+            "Up-Tempo",
+            "Medium Straightaways"
+        ],
+        "event_skills": [
+            "Late Surger Straightaways",
+            "Pace Strategy"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20040-mejiro-ryan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20040.png",
+        "rarity": "sr",
+        "category": "stamina",
+        "aliases": [
+            "mejiro ryan", "hot hearts and cool drinks"
+        ]
+    },
+    {   "id": "20041 Admire Vega",
+        "card_name": "Aim for the Brightest",
+        "character_name": "Admire Vega",
+        "unique": "Increases Speed gain when training together (1)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Power Bonus - 0/0/0/0/1",
+            "Initial Guts - 0/10/15/20/20",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Masterful Gambit",
+            "Tether",
+            "End Closer Straightaways",
+            "Levelheaded",
+            "Strategist"
+        ],
+        "event_skills": [
+            "End Closer Savvy",
+            "Subdued Pace Chasers"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20041-admire-vega",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20041.png",
+        "rarity": "sr",
+        "category": "guts",
+        "aliases": [
+            "admire vega", "aim for the brightest", "ayabe"
+        ]
+    },
+    {   "id": "20042 Sakura Bakushin O",
+        "card_name": "The Perfect Morning Greeting!",
+        "character_name": "Sakura Bakushin O",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases the frequency at which the character participates in their preferred training type (20)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Power Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 0/10/15/20/20",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Specialty Priority - 35/38/42/46/50"
+        ],
+        "support_skills": [
+            "Sprinting Gear",
+            "Frenzied Front Runners",
+            "Flustered Front Runners",
+            "Sprint Straightaways",
+            "Sprint Corners",
+            "Huge Lead",
+            "Countermeasure",
+            "Intimidate"
+        ],
+        "event_skills": [
+            "Tail Held High",
+            "Gap Closer"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20042-sakura-bakushin-o",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20042.png",
+        "rarity": "sr",
+        "category": "power",
+        "aliases": [
+            "sakura bakushin o", "perfect morning greeting"
+        ]
+    },
+    {   "id": "20043 Special Week",
+        "card_name": "At the End of the Day",
+        "character_name": "Special Week",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Power when beginning a Career playthrough (20)",
+        "effects": [
+            "Friendship Bonus - 20/21/22/23/25%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Stamina Bonus - 0/0/0/0/1",
+            "Initial Stamina - 0/10/15/20/20",
+            "Race Bonus - 1/2/3/4/5%",
+            "Fan Bonus - 5/6/7/8/10%",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/32/35/37/40%"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Homestretch Haste",
+            "Stamina to Spare",
+            "Steadfast",
+            "Pace Chaser Straightaways",
+            "Hydrate",
+            "Tactical Tweak"
+        ],
+        "event_skills": [
+            "Heel Drag",
+            "Extra Tank"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20043-special-week",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20043.png",
+        "rarity": "sr",
+        "category": "power",
+        "aliases": [
+            "special week", "at the end of the day", "special week poverty", "special week welfafe", "special week event"
+        ]
+    },
 
-
-
+    
     {   "id": "30001 Special Week",
         "card_name": "The Brightest Star in Japan!",
         "character_name": "Special Week",
@@ -6733,6 +6866,116 @@
         "category": "power",
         "aliases": [
             "agnes digital", "a fans joy"
+        ]
+    },
+    {   "id": "30086 Narita Top Road",
+        "card_name": "Peachy Silhouette",
+        "character_name": "Narita Top Road",
+        "unique": "Gain Increased Training (1) per 10000 fans, up to (20) for 200000 fans",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Speed Bonus - 1",
+            "Power Bonus - 0/1/1/1/1",
+            "Initial Friendship Gauge - 15",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Non-Standard Distance",
+            "Firm Conditions",
+            "Inner Post Proficiency",
+            "Preferred Position",
+            "Prepared to Pass",
+            "Long Straightaways",
+            "All I've Got"
+        ],
+        "event_skills": [
+            "Firm Course Menace",
+            "Pace Chaser Savvy",
+            "Pressure",
+            "Up-Tempo"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30086-narita-top-road",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30086.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "narita top road", "peachy silhouette", "ntr"
+        ]
+    },
+    {   "id": "30087 Mejiro Bright",
+        "card_name": "Little by Little",
+        "character_name": "Mejiro Bright",
+        "unique": "Gain Stamina Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Initial Stamina - 0/0/0/15/30",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 35/40/45/50/50"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Extra Tank",
+            "Passing Pro",
+            "Pressure",
+            "Stamina Eater"
+        ],
+        "event_skills": [
+            "Overwhelming Pressure",
+            "Early Start",
+            "Deep Breaths"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30087-mejiro-bright",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30087.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "mejiro bright", "little by little", "mejiro bright poverty", "mejiro bright welfare", "mejiro bright event"
+        ]
+    },
+    {   "id": "30088 Satono Diamond",
+        "card_name": "SPECIAL DREAMERS!",
+        "character_name": "Satono Diamond",
+        "unique": "Increases Training Effectiveness (10%) if deck has at least 4 different types of Support Cards",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Wit Bonus - 0/1/1/1/1",
+            "Initial Wit - 0/0/0/15/30",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1",
+            "Hint Frequency - 20%",
+            "Specialty Priority - 10/12/15/17/20",
+            "Skill Point Bonus - 1",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Position Pilfer",
+            "Pressure",
+            "Late Surger Straightaways",
+            "Late Surger Corners",
+            "Late Surger Savvy",
+            "Be Still"
+        ],
+        "event_skills": [
+            "Lie in Wait",
+            "Be Still",
+            "Sympathy",
+            "Hesitant Front Runners"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30088-satono-diamond",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30088.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "satono diamond", "special dreamers", "satono diamond poverty", "satono diamond welfare", "satono diamond event"
         ]
     }
 ]
