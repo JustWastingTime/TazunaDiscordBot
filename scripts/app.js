@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, loadJsonSafe, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX } from './utils.js';
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
 
@@ -39,7 +39,7 @@ const legendraces = cache.legendraces;
 const misc = cache.misc;
 const schedule = cache.schedule;
 const resources = cache.resources;
-const epithets = loadJsonSafe(path.join(__dirname, '..', 'assets', 'epithets.json'), []);
+const epithets = cache.epithets;
 
 // Create an express app
 const app = express();
