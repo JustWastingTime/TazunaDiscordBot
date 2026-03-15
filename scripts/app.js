@@ -18,7 +18,9 @@ import {
   verifyKeyMiddleware,
 } from 'discord-interactions';
 import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, loadJsonSafe } from './utils.js';
+import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
+
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -26,6 +28,11 @@ import { fileURLToPath } from "url";
 // ESM-friendly __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+
+if (servers.length === 0 || users.length === 0) {
+  console.warn("⚠️ servers.json or users.json missing/empty. Add them to assets/ (or use a Railway Volume) for leaderboard/sheets features.");
+}
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -42,6 +49,7 @@ const resources = cache.resources;
 const app = express();
 // Get port, or default to 3000
 const PORT = process.env.PORT || 3000;
+
 
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
@@ -211,66 +219,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         }
       });
     }
-
-    // "event" command DEPRECATED
-    /*if (name === 'event') {
-      const eventQuery = data.options?.find(opt => opt.name === 'name')?.value?.toLowerCase();
-      const query = eventQuery.toLowerCase().split(/\s+/); 
-
-      // Find the skills that match
-      const matches = events.filter(s => {
-        return query.every(q =>
-          s.event_name.toLowerCase().includes(q) ||
-          s.source_name?.toLowerCase().includes(q) ||
-          s.aliases?.some(a => a.toLowerCase().includes(q))
-        );
-      });
-
-      if (matches.length === 0) {
-        return res.send({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: { content: `❌ Event ${eventQuery} not found` }
-        });
-      }
-
-      // If only 1 result
-      if (matches.length === 1)
-      {
-        return res.send({
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: { 
-          embeds: [buildEventEmbed(matches[0], events)],
-        }
-        });
-      }
-
-      // If multiple matches → return a dropdown menu
-      return res.send({
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          content: `🔎 Found ${matches.length} matches. Pick one:`,
-          components: [
-            {
-              type: 1, // Action row
-              components: [
-                {
-                  type: 3, // String Select
-                  custom_id: "event_select",
-                  placeholder: "Choose an Event",
-                  options: matches.map(s => ({
-                    label:  s.event_name.length > 100 
-                      ? s.event_name.slice(0, 97) + "..." 
-                      : s.event_name,// must be <=100 chars
-                    value: s.id, // send the source back
-                     description: s.source_name + " - " + s.subtype
-                  }))
-                }
-              ]
-            }
-          ]
-        }
-      });
-    }*/
 
     if (name === 'uma') {
       const umaQuery = data.options?.find(opt => opt.name === 'name')?.value?.toLowerCase();
@@ -464,105 +412,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         }
       });
     }
-    
-    // "trainer" command to lookup yourself or other trainers
-    if (name === 'trainer') {
-      res.send({
-        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE
-      });
-
-      try {
-        const trainerQuery = data.options?.find(opt => opt.name === "name")?.value;
-        const userId = req.body.context === 0 ? req.body.member.user.id : req.body.user.id;
-
-        // Always sync before reading
-        await syncUsers();
-
-        // Load updated users.json
-        const users = JSON.parse(fs.readFileSync(usersPath, "utf8"));
-
-        let user;
-        if (trainerQuery) {
-          user = users.find(u => u.name.toLowerCase() === trainerQuery.toLowerCase());
-        } else {
-          user = users.find(u => u.id === userId);
-        }
-
-        if (!user) {
-          await sendFollowup(token, { content: "❌ Trainer not found." });
-          return;
-        }
-
-        const buttons = (user.save_data || [])
-          .filter(s => {
-            try { return ['http:', 'https:', 'discord:'].includes(new URL(s.url).protocol); }
-            catch { return false; }
-          })
-          .map((s, i) => ({ type: 2, style: 5, label: s.label || `Slot ${i + 1}`, url: s.url }));
-
-        // Turn badges array into a single string
-        const badgeLine = (user.badges && user.badges.length > 0)
-          ? user.badges.join("")
-          : "—";
-
-        const payload = {
-          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
-          components: [
-            // Profile container (v2)
-            {
-              type: MessageComponentTypes.CONTAINER,
-              accent_color: getColor(user.color),
-              components: [
-                {
-                  type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: `### Trainer Profile (${user.name})`
-                },
-                {
-                  type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: `You have mined **${Number(user.fans_monthly).toLocaleString()}** fans this month for ${user.club}.\n`
-                },
-                {
-                  type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: "```" + 
-                  `👥 Total Fans         ${Number(user.fans_total).toLocaleString()} \n` +
-                  `📈 Daily Gains (Avg)  ${Number(user.daily_average).toLocaleString()} \n` +
-                  `⭐ Current Rank       # ${Number(user.rank_total).toLocaleString()} \n` +
-                  `〽️ Monthly Rank       # ${Number(user.rank_monthly).toLocaleString()} \n` +
-                  "```"
-                },
-                {
-                  type: MessageComponentTypes.SEPARATOR,
-                  divider: true,
-                  spacing: "1"
-                },
-                {
-                  type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: `Badges \n`
-                },
-                {
-                  type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: `# ${badgeLine}`
-                },
-              ]
-            }
-          ]
-        };
-
-        await sendFollowup(token, payload);
-
-        //await sendFollowup(token, {
-          //embeds: [embed],
-          //components: buttons.length ? [{ type: 1, components: buttons }] : []
-        //});
-
-      } catch (err) {
-        console.error("Trainer command error:", err);
-        await sendFollowup(token, { content: "❌ Error fetching trainer data." });
-      }
-
-      return;
-    }
-
 
     // "parse" command
     if (name === "parse") {
@@ -653,7 +502,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
       return; // <- important to prevent falling through to unknown command handler
     }
-
 
     if (name === "schedule") {
       res.send({
