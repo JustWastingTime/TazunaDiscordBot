@@ -1044,3 +1044,76 @@ export function buildResourceEmbed(r) {
   };
 }
 
+const EPITHET_RANK_COLORS = {
+  gold: 0xFFD700,
+  silver: 0xC0C0C0,
+  bronze: 0xCD7F32,
+  default: 0x9B59B6
+};
+
+/** Single epithet detail embed (rank, conditions, reward). */
+export function buildEpithetEmbed(e) {
+  const rank = (e.rank || '').toLowerCase();
+  const color = EPITHET_RANK_COLORS[rank] ?? EPITHET_RANK_COLORS.default;
+  const rankLabel = rank ? capitalize(rank) : '—';
+  return {
+    embeds: [
+      {
+        title: e.id || 'Epithet',
+        color,
+        fields: [
+          { name: 'Rank', value: rankLabel, inline: true },
+          { name: 'Conditions', value: e.conditions || '—', inline: false },
+          { name: 'Reward', value: e.reward || '—', inline: false }
+        ]
+      }
+    ]
+  };
+}
+
+const EPITHET_LIST_PAGE_SIZE = 10;
+const EPITHET_PAGINATION_ID_PREFIX = 'epithet_p_';
+const EPITHET_PAGINATION_QUERY_MAX = 80;
+
+/** Build list embed + pagination buttons for epithets. query encoded in custom_id (max 80 chars). */
+export function buildEpithetListPayload(matches, page, query) {
+  const totalPages = Math.max(1, Math.ceil(matches.length / EPITHET_LIST_PAGE_SIZE));
+  const safePage = Math.max(0, Math.min(page, totalPages - 1));
+  const start = safePage * EPITHET_LIST_PAGE_SIZE;
+  const slice = matches.slice(start, start + EPITHET_LIST_PAGE_SIZE);
+  const queryEnc = query ? String(query).slice(0, EPITHET_PAGINATION_QUERY_MAX) : '';
+  const prefix = `${EPITHET_PAGINATION_ID_PREFIX}${safePage}_${queryEnc}`;
+
+  const description = slice
+    .map((e, i) => {
+      const cond = (e.conditions || '—').length > 80 ? (e.conditions || '—').slice(0, 77) + '…' : (e.conditions || '—');
+      const rew = (e.reward || '—').length > 60 ? (e.reward || '—').slice(0, 57) + '…' : (e.reward || '—');
+      return `**${start + i + 1}. ${e.id}** • ${cond}\n• ${rew}`;
+    })
+    .join('\n\n');
+
+  const title = query ? `Epithets matching "${query}"` : 'All epithets';
+  const embed = {
+    title,
+    description: description || 'No epithets on this page.',
+    color: 0x9B59B6,
+    footer: { text: `Page ${safePage + 1} of ${totalPages} • ${matches.length} epithet(s)` }
+  };
+
+  const prevId = `${EPITHET_PAGINATION_ID_PREFIX}${safePage - 1}_${queryEnc}`;
+  const nextId = `${EPITHET_PAGINATION_ID_PREFIX}${safePage + 1}_${queryEnc}`;
+  const components = [
+    {
+      type: 1,
+      components: [
+        { type: 2, style: 2, custom_id: prevId, label: 'Previous', disabled: safePage <= 0 },
+        { type: 2, style: 2, custom_id: nextId, label: 'Next', disabled: safePage >= totalPages - 1 }
+      ]
+    }
+  ];
+
+  return { embeds: [embed], components };
+}
+
+export { EPITHET_PAGINATION_ID_PREFIX, EPITHET_LIST_PAGE_SIZE };
+
