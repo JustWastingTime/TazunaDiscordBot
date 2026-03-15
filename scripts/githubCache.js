@@ -4,7 +4,6 @@ import fetch from 'node-fetch';
 const cache = {
   supporters: [],
   skills: [],
-  events: [],
   characters: [],
   users: [],
   races: [],
@@ -19,7 +18,6 @@ const cache = {
 const urls = {
   supporters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/supporter.json',
   skills: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/skill.json',
-  events: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/event.json',
   characters: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/character.json',
   races: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/races.json',
   champsmeets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/champsmeet.json',
