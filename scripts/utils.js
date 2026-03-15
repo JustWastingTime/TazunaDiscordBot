@@ -1086,9 +1086,11 @@ export function buildEpithetListPayload(matches, page, query) {
 
   const description = slice
     .map((e, i) => {
-      const cond = (e.conditions || '—').length > 80 ? (e.conditions || '—').slice(0, 77) + '…' : (e.conditions || '—');
-      const rew = (e.reward || '—').length > 60 ? (e.reward || '—').slice(0, 57) + '…' : (e.reward || '—');
-      return `**${start + i + 1}. ${e.id}** • ${cond}\n• ${rew}`;
+      //const cond = (e.conditions || '—').length > 80 ? (e.conditions || '—').slice(0, 77) + '…' : (e.conditions || '—');
+      //const rew = (e.reward || '—').length > 60 ? (e.reward || '—').slice(0, 57) + '…' : (e.reward || '—');
+      const cond = e.conditions || '—';
+      const rew = e.reward || '—';
+      return `**${e.id}** ${cond}\n Reward: ${rew}`;
     })
     .join('\n\n');
 
