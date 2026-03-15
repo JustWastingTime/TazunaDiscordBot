@@ -223,6 +223,22 @@ const RESOURCE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, PARSE_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND];
+const EPITHET_COMMAND = {
+  name: 'epithet',
+  description: 'Look up epithets: list all, filter by keyword, or view one.',
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Filter by epithet name/alias (e.g. "dirt"). Leave empty to list all.',
+      required: false
+    }
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, PARSE_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
