@@ -31,8 +31,20 @@
     },
     {   "id": "Phenomenal",
         "rank": "gold",
-        "conditions": "Get the \"Stunning\" epithet and win either the Japan Cup (Year 2) or the Arima Kinen (Year 2). (Trackblazer only)",
+        "conditions": "Get the \"Stunning\" epithet and win any two of the Tenno Sho (Spring), Takarazuka Kinen, Japan Cup, Tenno Sho (Autumn), Osaka Hai and Arima Kinen. (Trackblazer only)",
         "reward": "2 random stats +15",
-        "aliases": ["incredible", "mant", "trackblazer", "stunning", "crown", "medium", "long"]
+        "aliases": ["phenomenal", "mant", "trackblazer", "stunning", "crown", "medium", "long"]
     },
+    {   "id": "Breakneck Miler",
+        "rank": "gold",
+        "conditions": "Win the NHK Mile Cup, Yasuda Kinen and Mile Championship. (Trackblazer only)",
+        "reward": "2 random stats +15",
+        "aliases": ["breakneck miler", "mant", "trackblazer", "mile"]
+    },
+    {   "id": "Mile a Minute",
+        "rank": "gold",
+        "conditions": "Win the NHK Mile Cup, Oka Sho, Yasuda Kinen, Victoria Mile, Mile Championship and Hanshin Juvenile Fillies or Asahi Hai Futurity Stakes. (Trackblazer only)",
+        "reward": "Mile Straightaways hint +1",
+        "aliases": ["mile a minute", "mant", "trackblazer", "mile"]
+    }
 ]
