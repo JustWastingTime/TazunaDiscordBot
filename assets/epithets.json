@@ -1,50 +1,1804 @@
-[   
-    {   "id": "Eat My Dust",
-        "rank": "gold",
-        "conditions": "Win 15 Dirt races. (Trackblazer only)",
-        "reward": "2 random stats +10",
-        "aliases": ["eat my dust", "mant", "trackblazer", "dirt"]
+[
+    {
+        "id": "Make Debut",
+        "rank": "bronze",
+        "conditions": "● Participate in the Make Debut",
+        "reward": "—",
+        "aliases": [
+            "make debut",
+            "bronze"
+        ]
     },
-    {   "id": "Heroine",
-        "rank": "gold",
-        "conditions": "Get the \"Lady\" epithet and win the Queen Elizabeth II Cup (Year 2). (Trackblazer only)",
-        "reward": "2 random stats +10",
-        "aliases": ["heroine", "mant", "trackblazer", "lady", "tiara", "mile", "medium"]
+    {
+        "id": "Graded Giant",
+        "rank": "bronze",
+        "conditions": "● Win a graded race",
+        "reward": "—",
+        "aliases": [
+            "graded giant",
+            "bronze"
+        ]
     },
-    {   "id": "Goddess",
-        "rank": "gold",
-        "conditions": "Get the \"Lady\" epithet and win the Victoria Mile, Hanshin Juvenile Fillies, Queen Elizabeth II Cup twice. (Trackblazer only)",
-        "reward": "2 random stats +15",
-        "aliases": ["goddess", "mant", "trackblazer", "lady", "tiara", "mile", "medium"]
+    {
+        "id": "G2 Winner",
+        "rank": "bronze",
+        "conditions": "● Win a G2 race",
+        "reward": "—",
+        "aliases": [
+            "g2 winner",
+            "bronze"
+        ]
     },
-    {   "id": "Dirt G1 Dominator",
-        "rank": "gold",
-        "conditions": "Win 9 Dirt G1 races. (Trackblazer only)",
-        "reward": "Top Pick hint +1",
-        "aliases": ["dirt g1 dominator", "mant", "trackblazer", "dirt", "g1"]
+    {
+        "id": "Eye of the Storm",
+        "rank": "bronze",
+        "conditions": "● Win a G1 race without having won any other graded races before",
+        "reward": "—",
+        "aliases": [
+            "eye of the storm",
+            "bronze",
+            "g1"
+        ]
     },
-    {   "id": "Incredible",
-        "rank": "gold",
-        "conditions": "Get the \"Stunning\" epithet and win either the Japan Cup (Year 2) or the Arima Kinen (Year 2). (Trackblazer only)",
-        "reward": "2 random stats +15",
-        "aliases": ["incredible", "mant", "trackblazer", "stunning", "crown", "medium", "long"]
+    {
+        "id": "Miss All Turf",
+        "rank": "bronze",
+        "conditions": "● Enter at least 10 races<br>● Only enter Turf races<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "miss all turf",
+            "bronze",
+            "turf"
+        ]
     },
-    {   "id": "Phenomenal",
-        "rank": "gold",
-        "conditions": "Get the \"Stunning\" epithet and win any two of the Tenno Sho (Spring), Takarazuka Kinen, Japan Cup, Tenno Sho (Autumn), Osaka Hai and Arima Kinen. (Trackblazer only)",
-        "reward": "2 random stats +15",
-        "aliases": ["phenomenal", "mant", "trackblazer", "stunning", "crown", "medium", "long"]
+    {
+        "id": "Sixth Sense",
+        "rank": "bronze",
+        "conditions": "● Enter at least 10 races<br>● Don't fail a single training<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "sixth sense",
+            "bronze"
+        ]
     },
-    {   "id": "Breakneck Miler",
-        "rank": "gold",
-        "conditions": "Win the NHK Mile Cup, Yasuda Kinen and Mile Championship. (Trackblazer only)",
-        "reward": "2 random stats +15",
-        "aliases": ["breakneck miler", "mant", "trackblazer", "mile"]
+    {
+        "id": "Consistent",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 10 races<br>● Have a win rate of 80%",
+        "reward": "—",
+        "aliases": [
+            "consistent",
+            "bronze"
+        ]
     },
-    {   "id": "Mile a Minute",
+    {
+        "id": "Unstoppable",
+        "rank": "bronze",
+        "conditions": "● Don't lose any race lower than Open (OP)<br>● Win 5 graded races in a row",
+        "reward": "—",
+        "aliases": [
+            "unstoppable",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Place Perfect",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 10 races<br>● Always get 3rd place or better in races<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "place perfect",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Long Shot",
+        "rank": "bronze",
+        "conditions": "● Win a graded race being the 6th to 9th most popular",
+        "reward": "—",
+        "aliases": [
+            "long shot",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Oaks Umamusume",
+        "rank": "bronze",
+        "conditions": "● Win the Japanese Oaks",
+        "reward": "—",
+        "aliases": [
+            "oaks umamusume",
+            "bronze",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Derby Umamusume",
+        "rank": "bronze",
+        "conditions": "● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "derby umamusume",
+            "bronze",
+            "derby"
+        ]
+    },
+    {
+        "id": "Divine Speed",
+        "rank": "bronze",
+        "conditions": "● Reach 600 or more speed<br>● Win 6 races as a Front Runner",
+        "reward": "—",
+        "aliases": [
+            "divine speed",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Late Bloomer",
+        "rank": "bronze",
+        "conditions": "● Win your first G1 race in the third year of training (Senior class)",
+        "reward": "—",
+        "aliases": [
+            "late bloomer",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Rampaging Racer",
+        "rank": "bronze",
+        "conditions": "● Win three races in which you were rushing",
+        "reward": "—",
+        "aliases": [
+            "rampaging racer",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Peak Condition",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 10 races<br>● Have a Mood level of Great for all races<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "peak condition",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Nascent",
+        "rank": "bronze",
+        "conditions": "● Win the Junior Make Debut with a difference of at least 7 lengths",
+        "reward": "—",
+        "aliases": [
+            "nascent",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Sakura Seeker",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Oka Sho<br>● Win the Oka Sho",
+        "reward": "—",
+        "aliases": [
+            "sakura seeker",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Oaks Obsessed",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Japanese Oaks<br>● Win the Japanese Oaks",
+        "reward": "—",
+        "aliases": [
+            "oaks obsessed",
+            "bronze",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Satsuki Spirit",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Satsuki Sho<br>● Win the Satsuki Sho",
+        "reward": "—",
+        "aliases": [
+            "satsuki spirit",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Derby Dreamer",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Tokyo Yushun (Japanese Derby)<br>● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "derby dreamer",
+            "bronze",
+            "derby"
+        ]
+    },
+    {
+        "id": "Kikuka Krazy",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Kikuka Sho<br>● Win the Kikuka Sho",
+        "reward": "—",
+        "aliases": [
+            "kikuka krazy",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Apple Far from the Tree",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from parents that did not win any graded races<br>● Win at least one G1 race",
+        "reward": "—",
+        "aliases": [
+            "apple far from the tree",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Crownless Monarch",
+        "rank": "bronze",
+        "conditions": "● Participate in at least one G1 race, but don't win any of them<br>● Complete the Career with at least C rank",
+        "reward": "—",
+        "aliases": [
+            "crownless monarch",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Unexpected",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent with sprint-distance aptitude of A or higher<br>● Win a G1 race with a length of 3000m or more once",
+        "reward": "—",
+        "aliases": [
+            "unexpected",
+            "bronze",
+            "sprint",
+            "g1"
+        ]
+    },
+    {
+        "id": "Bronze Collector",
+        "rank": "bronze",
+        "conditions": "● Finish at 3rd place in 3 G1 races",
+        "reward": "—",
+        "aliases": [
+            "bronze collector",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Undeniable",
+        "rank": "bronze",
+        "conditions": "● Win at least two graded races by a large distance",
+        "reward": "—",
+        "aliases": [
+            "undeniable",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Dirt Devil",
+        "rank": "bronze",
+        "conditions": "● Win 10 dirt races",
+        "reward": "—",
+        "aliases": [
+            "dirt devil",
+            "bronze",
+            "dirt"
+        ]
+    },
+    {
+        "id": "Unyielding",
+        "rank": "bronze",
+        "conditions": "● Win a race after having lost 5 consecutive races",
+        "reward": "—",
+        "aliases": [
+            "unyielding",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Miss Cloudy",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 4 races with cloudy weather and win 3 of them",
+        "reward": "—",
+        "aliases": [
+            "miss cloudy",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Rainy Runner",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 4 races with rainy weather and win 3 of them",
+        "reward": "—",
+        "aliases": [
+            "rainy runner",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Snow Queen",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 3 races with snowfall and win 2 of them",
+        "reward": "—",
+        "aliases": [
+            "snow queen",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Powerhouse",
+        "rank": "bronze",
+        "conditions": "● Reach 600 or more power<br>● Reach 600 or more guts<br>● Win a G1 race as a Late Surger or End Closer",
+        "reward": "—",
+        "aliases": [
+            "powerhouse",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Shared Smarts",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from parents with 600 or more wit<br>● Reach 600 or more wit",
+        "reward": "—",
+        "aliases": [
+            "shared smarts",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Mismatched",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from parents with 1200 or more wit<br>● Inherit memories from a parent with 400 or less wit",
+        "reward": "—",
+        "aliases": [
+            "mismatched",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Quiz Queen",
+        "rank": "bronze",
+        "conditions": "● Reach wit training level 4",
+        "reward": "—",
+        "aliases": [
+            "quiz queen",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Power Lifter",
+        "rank": "bronze",
+        "conditions": "● Reach power training level 5",
+        "reward": "—",
+        "aliases": [
+            "power lifter",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Guts of Steel",
+        "rank": "bronze",
+        "conditions": "● Reach guts training level 5",
+        "reward": "—",
+        "aliases": [
+            "guts of steel",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Miss Dolphin",
+        "rank": "bronze",
+        "conditions": "● Train stamina 35 times",
+        "reward": "—",
+        "aliases": [
+            "miss dolphin",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Eccentric",
+        "rank": "bronze",
+        "conditions": "● Win the Junior Make Debut without having done any training",
+        "reward": "—",
+        "aliases": [
+            "eccentric",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Jinx Breaker",
+        "rank": "bronze",
+        "conditions": "● Win the Aoba Sho<br>● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "jinx breaker",
+            "bronze",
+            "derby"
+        ]
+    },
+    {
+        "id": "Gold Hunter",
+        "rank": "bronze",
+        "conditions": "● Win any two of the following: Kyoto Kimpai, Nakayama Kimpai, and Kinko Sho",
+        "reward": "—",
+        "aliases": [
+            "gold hunter",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Well-Traveled",
+        "rank": "bronze",
+        "conditions": "● Win a graded race once in each of the 10 central race courses",
+        "reward": "—",
+        "aliases": [
+            "well-traveled",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Straightaway Supreme",
+        "rank": "bronze",
+        "conditions": "● Win the Ibis Summer Dash<br>● Win the Lumiere Autumn Dash<br>● Win the Idaten Stakes",
+        "reward": "—",
+        "aliases": [
+            "straightaway supreme",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Visiting the Greats",
+        "rank": "bronze",
+        "conditions": "● Win the Shinzan Kinen<br>● Win the Kyodo News Hai<br>● Win the Yayoi Sho<br>● Win the St. Lite Kinen |}",
+        "reward": "—",
+        "aliases": [
+            "visiting the greats",
+            "bronze"
+        ]
+    },
+    {
+        "id": "G1 Winner",
+        "rank": "silver",
+        "conditions": "● Win a G1 race",
+        "reward": "—",
+        "aliases": [
+            "g1 winner",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Monstrous Debut",
+        "rank": "silver",
+        "conditions": "● Be undefeated since your Debut and win 5 races in a row, including 3 G1 races",
+        "reward": "—",
+        "aliases": [
+            "monstrous debut",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Superb Stayer",
+        "rank": "silver",
+        "conditions": "● Win 4 G1 races with a length of 2400m or higher",
+        "reward": "—",
+        "aliases": [
+            "superb stayer",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Yokozuna",
+        "rank": "silver",
+        "conditions": "● Win a total of 6 G1 or G2 races with a difference of at least 3 lengths as a Front Runner or Pace Chaser",
+        "reward": "—",
+        "aliases": [
+            "yokozuna",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Turf Sorceress",
+        "rank": "silver",
+        "conditions": "● Reach 800 or more speed<br>● Participate in at least 15 turf races",
+        "reward": "—",
+        "aliases": [
+            "turf sorceress",
+            "silver",
+            "turf"
+        ]
+    },
+    {
+        "id": "Turf Terror",
+        "rank": "silver",
+        "conditions": "● Win 15 turf races",
+        "reward": "—",
+        "aliases": [
+            "turf terror",
+            "silver",
+            "turf"
+        ]
+    },
+    {
+        "id": "Silver Collector",
+        "rank": "silver",
+        "conditions": "● Finish at 2nd place in 3 G1 races",
+        "reward": "—",
+        "aliases": [
+            "silver collector",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Next-Gen Grandmaster",
+        "rank": "silver",
+        "conditions": "● Inherit memories from a parent that won the Arima Kinen and Takarazuka Kinen<br>● Win the Arima Kinen<br>● Win the Takarazuka Kinen",
+        "reward": "—",
+        "aliases": [
+            "next-gen grandmaster",
+            "silver"
+        ]
+    },
+    {
+        "id": "December Domination",
+        "rank": "silver",
+        "conditions": "● Win the Hopeful Stakes<br>● Win the Arima Kinen twice",
+        "reward": "—",
+        "aliases": [
+            "december domination",
+            "silver"
+        ]
+    },
+    {
+        "id": "Tenno Sweep",
+        "rank": "silver",
+        "conditions": "● Win the Tenno Sho (Spring)<br>● Win the Tenno Sho (Autumn)",
+        "reward": "—",
+        "aliases": [
+            "tenno sweep",
+            "silver"
+        ]
+    },
+    {
+        "id": "Double Tiara",
+        "rank": "silver",
+        "conditions": "● Win any two of the following: Oka Sho, Japanese Oaks, Shuka Sho",
+        "reward": "—",
+        "aliases": [
+            "double tiara",
+            "silver",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Triple Tiara",
+        "rank": "silver",
+        "conditions": "● Win the Oka Sho<br>● Win the Japanese Oaks<br>● Win the Shuka Sho",
+        "reward": "—",
+        "aliases": [
+            "triple tiara",
+            "silver",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Double Crown",
+        "rank": "silver",
+        "conditions": "● Win any two of the following: Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho",
+        "reward": "—",
+        "aliases": [
+            "double crown",
+            "silver",
+            "derby"
+        ]
+    },
+    {
+        "id": "Triple Crown",
+        "rank": "silver",
+        "conditions": "● Win the Satsuki Sho<br>● Win the Tokyo Yushun (Japanese Derby)<br>● Win the Kikuka Sho",
+        "reward": "—",
+        "aliases": [
+            "triple crown",
+            "silver",
+            "derby"
+        ]
+    },
+    {
+        "id": "Senior Autumn Triple Crown",
+        "rank": "silver",
+        "conditions": "● Win the Tenno Sho (Autumn)<br>● Win the Japan Cup<br>● Win the Arima Kinen",
+        "reward": "—",
+        "aliases": [
+            "senior autumn triple crown",
+            "silver"
+        ]
+    },
+    {
+        "id": "Senior Spring Triple Crown",
+        "rank": "silver",
+        "conditions": "● Win the Osaka Hai<br>● Win the Tenno Sho (Spring)<br>● Win the Takarazuka Kinen",
+        "reward": "—",
+        "aliases": [
+            "senior spring triple crown",
+            "silver"
+        ]
+    },
+    {
+        "id": "Impeccable",
+        "rank": "silver",
+        "conditions": "● Clear all training objectives<br>● Be undefeated<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "impeccable",
+            "silver"
+        ]
+    },
+    {
+        "id": "Iron Uma",
+        "rank": "silver",
+        "conditions": "● Participate in 20 races",
+        "reward": "—",
+        "aliases": [
+            "iron uma",
+            "silver"
+        ]
+    },
+    {
+        "id": "Rising Star",
+        "rank": "silver",
+        "conditions": "● Win the Takarazuka Kinen (Year 2)",
+        "reward": "—",
+        "aliases": [
+            "rising star",
+            "silver"
+        ]
+    },
+    {
+        "id": "Speed Queen",
+        "rank": "silver",
+        "conditions": "● Reach 1200 or more Speed",
+        "reward": "—",
+        "aliases": [
+            "speed queen",
+            "silver"
+        ]
+    },
+    {
+        "id": "Miler in the Making",
+        "rank": "silver",
+        "conditions": "● Win the Yasuda Kinen (Year 2)",
+        "reward": "—",
+        "aliases": [
+            "miler in the making",
+            "silver"
+        ]
+    },
+    {
+        "id": "Divergent Double Crown",
+        "rank": "silver",
+        "conditions": "● Win the NHK Mile Cup<br>● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "divergent double crown",
+            "silver",
+            "mile",
+            "derby"
+        ]
+    },
+    {
+        "id": "Hanshin Harmony",
+        "rank": "silver",
+        "conditions": "● Win the Hanshin Juvenile Fillies or the Asahi Hai Futurity Stakes<br>● Win the Osaka Hai<br>● Win the Oka Sho<br>● Win the Takarazuka Kinen",
+        "reward": "—",
+        "aliases": [
+            "hanshin harmony",
+            "silver"
+        ]
+    },
+    {
+        "id": "Speed Star",
+        "rank": "silver",
+        "conditions": "● Win the Takamatsunomiya Kinen<br>● Win the Sprinters Stakes<br>● Win the Yasuda Kinen<br>● Win the Mile Championship",
+        "reward": "—",
+        "aliases": [
+            "speed star",
+            "silver",
+            "mile",
+            "sprint"
+        ]
+    },
+    {
+        "id": "Oi Overlord",
+        "rank": "silver",
+        "conditions": "● Win 4 G1 races held at the Ooi racecourse",
+        "reward": "—",
+        "aliases": [
+            "oi overlord",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Fighting Spirit",
+        "rank": "silver",
+        "conditions": "● Win a G1 race at a Mood level of Awful",
+        "reward": "—",
+        "aliases": [
+            "fighting spirit",
+            "silver",
+            "g1"
+        ]
+    },
+    {
+        "id": "Skill Collector",
+        "rank": "silver",
+        "conditions": "● Learn at least 15 skills",
+        "reward": "—",
+        "aliases": [
+            "skill collector",
+            "silver"
+        ]
+    },
+    {
+        "id": "Trainaholic",
+        "rank": "silver",
+        "conditions": "● Raise all trainings to level 3 or higher<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "trainaholic",
+            "silver"
+        ]
+    },
+    {
+        "id": "Two-Way Runner",
+        "rank": "silver",
+        "conditions": "● Win at least one G1 turf race<br>● Win at least one G1 dirt race",
+        "reward": "—",
+        "aliases": [
+            "two-way runner",
+            "silver",
+            "dirt",
+            "turf",
+            "g1"
+        ]
+    },
+    {
+        "id": "All-Rounder",
+        "rank": "silver",
+        "conditions": "● Win 3 turf G1 races<br>● Win 3 dirt G1 races",
+        "reward": "—",
+        "aliases": [
+            "all-rounder",
+            "silver",
+            "dirt",
+            "turf",
+            "g1"
+        ]
+    },
+    {
+        "id": "Sprinter Stayer",
+        "rank": "silver",
+        "conditions": "● Win a sprint-distance G1 race<br>● Win a long-distance G1 race",
+        "reward": "—",
+        "aliases": [
+            "sprinter stayer",
+            "silver",
+            "sprint",
+            "long",
+            "g1"
+        ]
+    },
+    {
+        "id": "Freestyle",
+        "rank": "silver",
+        "conditions": "● Win at least one graded race as a Front Runner<br>● Win at least one graded race as a Pace Chaser<br>● Win at least one graded race as a Late Surger<br>● Win at least one graded race as an End Closer",
+        "reward": "—",
+        "aliases": [
+            "freestyle",
+            "silver"
+        ]
+    },
+    {
+        "id": "Super Uma",
+        "rank": "silver",
+        "conditions": "● Win a sprint-distance G1 race<br>● Win a mile-distance G1 race<br>● Win a medium-distance G1 race<br>● Win a long-distance G1 race<br>● Win a dirt G1 race",
+        "reward": "—",
+        "aliases": [
+            "super uma",
+            "silver",
+            "dirt",
+            "mile",
+            "sprint",
+            "medium",
+            "long",
+            "g1"
+        ]
+    },
+    {
+        "id": "Power & Perseverance",
+        "rank": "silver",
+        "conditions": "● Reach 1000 or more power<br>● Reach 1000 or more guts",
+        "reward": "—",
+        "aliases": [
+            "power & perseverance",
+            "silver"
+        ]
+    },
+    {
+        "id": "Nepo Uma",
+        "rank": "silver",
+        "conditions": "● Inherit memories from a parent that won the Classic Triple Crown medal<br>● Inherit memories from a parent that won the Triple Tiara medal<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "nepo uma",
+            "silver",
+            "tiara",
+            "crown",
+            "triple"
+        ]
+    },
+    {
+        "id": "Lossless Lineage",
+        "rank": "silver",
+        "conditions": "● Inherit memories from a parent that was undefeated<br>● Participate in at least 10 races<br>● Be undefeated<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "lossless lineage",
+            "silver"
+        ]
+    },
+    {
+        "id": "Mutation",
+        "rank": "silver",
+        "conditions": "● Inherit memories from a parent with a rank of C or lower<br>● Complete the Career with a rank of A or higher",
+        "reward": "—",
+        "aliases": [
+            "mutation",
+            "silver"
+        ]
+    },
+    {
+        "id": "Rebellious Phase",
+        "rank": "silver",
+        "conditions": "● Inherit memories from parents with 1200 or more wit<br>● Reach 400 or less wit<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "rebellious phase",
+            "silver"
+        ]
+    },
+    {
+        "id": "Hearts United",
+        "rank": "silver",
+        "conditions": "● Trigger at least three Unity Trainings in the same turn<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "hearts united",
+            "silver",
+            "unity cup",
+            "unity",
+            "character"
+        ]
+    },
+    {
+        "id": "Team Player",
+        "rank": "silver",
+        "conditions": "● Trigger at least Unity Trainings Trainings<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "team player",
+            "silver",
+            "unity cup",
+            "unity",
+            "character"
+        ]
+    },
+    {
+        "id": "Finals Champion",
         "rank": "gold",
-        "conditions": "Win the NHK Mile Cup, Oka Sho, Yasuda Kinen, Victoria Mile, Mile Championship and Hanshin Juvenile Fillies or Asahi Hai Futurity Stakes. (Trackblazer only)",
-        "reward": "Mile Straightaways hint +1",
-        "aliases": ["mile a minute", "mant", "trackblazer", "mile"]
+        "conditions": "● Win the URA Finals Final",
+        "reward": "—",
+        "aliases": [
+            "finals champion",
+            "gold",
+            "ura finale",
+            "ura",
+            "character"
+        ]
+    },
+    {
+        "id": "Legendary Diva",
+        "rank": "gold",
+        "conditions": "● Win at least 5 G1 races<br>● Win the URA Finals<br>● Earn a total of at least 320,000 fans",
+        "reward": "—",
+        "aliases": [
+            "legendary diva",
+            "gold",
+            "ura finale",
+            "g1",
+            "ura",
+            "character"
+        ]
+    },
+    {
+        "id": "The GOAT",
+        "rank": "gold",
+        "conditions": "● Win at least 7 G1 races<br>● Have an overall race win rate of 85% or higher<br>● Earn a total of at least 320,000 fans<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "the goat",
+            "gold",
+            "g1"
+        ]
+    },
+    {
+        "id": "G1 Hunter",
+        "rank": "gold",
+        "conditions": "● Win 7 G1 races",
+        "reward": "—",
+        "aliases": [
+            "g1 hunter",
+            "gold",
+            "g1"
+        ]
+    },
+    {
+        "id": "Record Holder",
+        "rank": "gold",
+        "conditions": "● Without losing any races inbetween, win at least 7 G1 races",
+        "reward": "—",
+        "aliases": [
+            "record holder",
+            "gold",
+            "g1"
+        ]
+    },
+    {
+        "id": "Epoch Pioneer",
+        "rank": "gold",
+        "conditions": "● Win 10 G1 races",
+        "reward": "—",
+        "aliases": [
+            "epoch pioneer",
+            "gold",
+            "g1"
+        ]
+    },
+    {
+        "id": "Undefeated",
+        "rank": "gold",
+        "conditions": "● Participate in at least 12 races<br>● Win every race you participate in<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "undefeated",
+            "gold"
+        ]
+    },
+    {
+        "id": "Way of Kings",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won the Satsuki Sho, Tokyo Yushun (Japanese Derby), and Kikuka Sho<br>● Win the Satsuki Sho<br>● Win the Tokyo Yushun (Japanese Derby)<br>● Win the Kikuka Sho",
+        "reward": "—",
+        "aliases": [
+            "way of kings",
+            "gold",
+            "derby"
+        ]
+    },
+    {
+        "id": "Way of Queens",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won the Oka Sho, Japanese Oaks, and Shuka Sho<br>● Win the Oka Sho<br>● Win the Japanese Oaks<br>● Win the Shuka Sho",
+        "reward": "—",
+        "aliases": [
+            "way of queens",
+            "gold",
+            "oaks"
+        ]
+    },
+    {
+        "id": "True Way of Kings",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won the Satsuki Sho, Tokyo Yushun (Japanese Derby), and Kikuka Sho while being undefeated<br>● Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho while being undefeated",
+        "reward": "—",
+        "aliases": [
+            "true way of kings",
+            "gold",
+            "derby"
+        ]
+    },
+    {
+        "id": "True Way of Queens",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won the Oka Sho, Japanese Oaks, and Shuka Sho while being undefeated<br>● Win the Oka Sho, Japanese Oaks and Shuka Sho while being undefeated",
+        "reward": "—",
+        "aliases": [
+            "true way of queens",
+            "gold",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Fan Favorite",
+        "rank": "gold",
+        "conditions": "● Earn a total of at least 500,000 fans",
+        "reward": "—",
+        "aliases": [
+            "fan favorite",
+            "gold"
+        ]
+    },
+    {
+        "id": "Sensation Succession",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent with at least 460,000 fans<br>● Earn a total of at least 480,000 fans",
+        "reward": "—",
+        "aliases": [
+            "sensation succession",
+            "gold"
+        ]
+    },
+    {
+        "id": "Skill Savant",
+        "rank": "gold",
+        "conditions": "● Activate at least 13 skills in a single race",
+        "reward": "—",
+        "aliases": [
+            "skill savant",
+            "gold"
+        ]
+    },
+    {
+        "id": "Skill Master",
+        "rank": "gold",
+        "conditions": "● Learn at least 20 skills",
+        "reward": "—",
+        "aliases": [
+            "skill master",
+            "gold"
+        ]
+    },
+    {
+        "id": "Stamina Stockpile",
+        "rank": "gold",
+        "conditions": "● Win 7 graded races with a length of 2400m or higher<br>● Reach 1200 or more Stamina",
+        "reward": "—",
+        "aliases": [
+            "stamina stockpile",
+            "gold"
+        ]
+    },
+    {
+        "id": "Mile Queen",
+        "rank": "gold",
+        "conditions": "● Win 3 mile-length races with a difference of at least 5 lengths",
+        "reward": "—",
+        "aliases": [
+            "mile queen",
+            "gold",
+            "mile"
+        ]
+    },
+    {
+        "id": "Mile Magnet",
+        "rank": "gold",
+        "conditions": "● Win the Oka Sho while being the most popular<br>● Win the NHK Mile Cup while being the most popular<br>● Win the Victoria Mile while being the most popular<br>● Win the Mile Championship while being the most popular<br>● Win the Yasuda Kinen while being the most popular",
+        "reward": "—",
+        "aliases": [
+            "mile magnet",
+            "gold",
+            "mile"
+        ]
+    },
+    {
+        "id": "Super Sprinter",
+        "rank": "gold",
+        "conditions": "● Win 7 graded races with a length of 1400m or less<br>● Reach 1200 or more Speed<br>● Reach 1200 or more Power",
+        "reward": "—",
+        "aliases": [
+            "super sprinter",
+            "gold"
+        ]
+    },
+    {
+        "id": "Steely Mentality",
+        "rank": "gold",
+        "conditions": "● Win 5 G1 races with a Mood level of Bad or worse",
+        "reward": "—",
+        "aliases": [
+            "steely mentality",
+            "gold",
+            "g1"
+        ]
+    },
+    {
+        "id": "Golden Cleat",
+        "rank": "gold",
+        "conditions": "● Inherit memories from parents with 1200 or more speed<br>● Reach 1200 or more Speed",
+        "reward": "—",
+        "aliases": [
+            "golden cleat",
+            "gold"
+        ]
+    },
+    {
+        "id": "Muscle Machine",
+        "rank": "gold",
+        "conditions": "● Inherit memories from parents with 1200 or more power<br>● Reach 1200 or more Power",
+        "reward": "—",
+        "aliases": [
+            "muscle machine",
+            "gold"
+        ]
+    },
+    {
+        "id": "Perpetual Motion",
+        "rank": "gold",
+        "conditions": "● Inherit memories from parents with 1200 or more stamina<br>● Reach 1200 or more Stamina",
+        "reward": "—",
+        "aliases": [
+            "perpetual motion",
+            "gold"
+        ]
+    },
+    {
+        "id": "Inspired Intellect",
+        "rank": "gold",
+        "conditions": "● Inherit memories from parents with 1200 or more wit<br>● Reach 1200 or more Wit",
+        "reward": "—",
+        "aliases": [
+            "inspired intellect",
+            "gold"
+        ]
+    },
+    {
+        "id": "Got Guts",
+        "rank": "gold",
+        "conditions": "● Inherit memories from parents with 1200 or more guts<br>● Reach 1200 or more Guts",
+        "reward": "—",
+        "aliases": [
+            "got guts",
+            "gold"
+        ]
+    },
+    {
+        "id": "Steamy Solidarity",
+        "rank": "gold",
+        "conditions": "● Win the Hot springs ticket from the lottery<br>● Win the URA Finals",
+        "reward": "—",
+        "aliases": [
+            "steamy solidarity",
+            "gold",
+            "ura finale",
+            "ura",
+            "character"
+        ]
+    },
+    {
+        "id": "Spirit Burst",
+        "rank": "gold",
+        "conditions": "● Trigger 10 Spirit Bursts",
+        "reward": "—",
+        "aliases": [
+            "spirit burst",
+            "gold",
+            "unity cup",
+            "unity",
+            "character"
+        ]
+    },
+    {
+        "id": "Team Player Star Slayer",
+        "rank": "gold",
+        "conditions": "● Win the Unity Cup Finals<br>● Win the URA Finale Finals<br>● Reach Team Rank S",
+        "reward": "—",
+        "aliases": [
+            "team player star slayer",
+            "gold",
+            "unity cup",
+            "ura finale",
+            "unity",
+            "character"
+        ]
+    },
+    {
+        "id": "Dream Team",
+        "rank": "gold",
+        "conditions": "● Trigger at least 65 Aoharu Special Trainings<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "dream team",
+            "gold",
+            "unity cup",
+            "unity",
+            "character"
+        ]
+    },
+    {
+        "id": "Witness to Legend",
+        "rank": "gold",
+        "conditions": "● Receive the team title \"Legend\"",
+        "reward": "—",
+        "aliases": [
+            "witness to legend",
+            "gold",
+            "unity cup",
+            "unity",
+            "character"
+        ]
+    },
+    {
+        "id": "Unbreakable\n|● Win the Tokyo Yushun (Japanese Derby), and the Tenno Sho (Autumn) twice<br>● Enter all races with a mood level of perfect<br>● Don't fail a single training",
+        "rank": "gold",
+        "conditions": "Mejiro Ardan only",
+        "reward": "—",
+        "aliases": [
+            "unbreakable\n|● win the tokyo yushun (japanese derby), and the tenno sho (autumn) twice<br>● enter all races with a mood level of perfect<br>● don't fail a single training",
+            "gold"
+        ]
+    },
+    {
+        "id": "Brightest Star\n|● Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Takarazuka Kinen as most popular<br>● Place higher than TM Opera O at least 3 times<br>● Place higher than Narita Top Road at least 3 times<br>● Place higher than Meisho Doto at least 3 times",
+        "rank": "gold",
+        "conditions": "Admire Vega only",
+        "reward": "—",
+        "aliases": [
+            "brightest star\n|● win the satsuki sho, tokyo yushun (japanese derby) and takarazuka kinen as most popular<br>● place higher than tm opera o at least 3 times<br>● place higher than narita top road at least 3 times<br>● place higher than meisho doto at least 3 times",
+            "gold"
+        ]
+    },
+    {
+        "id": "Blooming Sakura",
+        "rank": "gold",
+        "conditions": "● Inherit the memories of a parent who won the Asahi Hai Futurity Stakes and reached 1200 or more speed<br>● Win the Asahi Hai Futurity Stakes, Satsuki Sho, Tokyo Yushun (Japanese Derby), and Japan Cup.",
+        "reward": "—",
+        "aliases": [
+            "blooming sakura",
+            "gold",
+            "derby",
+            "ura",
+            "character"
+        ]
+    },
+    {
+        "id": "Generation King",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent whose parents won a total of at least 11 G1 races<br>● Place higher than Special Week 3 times<br>● Place higher than Seiun Sky 3 times<br>● Place higher than Grass Wonder 3 times<br>● Place higher than El Condor Pasa 3 times",
+        "reward": "—",
+        "aliases": [
+            "generation king",
+            "gold",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Supporting Star",
+        "rank": "gold",
+        "conditions": "● Finish 3rd in at least 3 G1 races<br>● Earn a total of at least 320,000 fans",
+        "reward": "—",
+        "aliases": [
+            "supporting star",
+            "gold",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Coolheaded Beauty",
+        "rank": "gold",
+        "conditions": "● Win the Hanshin Juvenile Fillies as a Late Surger while being most popular<br>● Win the Oka Sho as a Late Surger while being most popular<br>● Win the Japanese Oaks as a Late Surger while being most popular<br>● Win the Shuka Sho as a Late Surger while being most popular<br>● Win the Queen Elizabeth II Cup twice<br>●Earn a total of at least 240000 fans",
+        "reward": "—",
+        "aliases": [
+            "coolheaded beauty",
+            "gold",
+            "oaks",
+            "character"
+        ]
+    },
+    {
+        "id": "Unrelenting Challenger",
+        "rank": "gold",
+        "conditions": "● Without losing any races in between, win 9 or more graded races including the Tenno Sho (Spring), Takarazuka Kinen and Arima Kinen",
+        "reward": "—",
+        "aliases": [
+            "unrelenting challenger",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Fortune's Smile",
+        "rank": "gold",
+        "conditions": "● Participate in at least 15 G1 or G2 races with a Mood level of Great<br>● Win at least 3 G2 or higher races in a row, including the Kikuka Sho",
+        "reward": "—",
+        "aliases": [
+            "fortune's smile",
+            "gold",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Hard-Trying Haru Urara",
+        "rank": "gold",
+        "conditions": "● Earn a total of at least 550,000 fans",
+        "reward": "—",
+        "aliases": [
+            "hard-trying haru urara",
+            "gold",
+            "ura",
+            "character"
+        ]
+    },
+    {
+        "id": "Comeback Champion",
+        "rank": "gold",
+        "conditions": "● Win the Satsuki Sho as an End Closer, overtaking at least 4 people in the last straight<br>● Win the Tenno Sho (Spring) as an End Closer<br>● Reach 1200 or more Guts",
+        "reward": "—",
+        "aliases": [
+            "comeback champion",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "L Hater",
+        "rank": "gold",
+        "conditions": "● Win the Japan Cup<br>● Win the Tenno Sho (Spring)<br>● Win the Tenno Sho (Autumn) with a Mood level of Perfect twice<br>● Win against Gold Ship at least 3 times",
+        "reward": "—",
+        "aliases": [
+            "l hater",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Sand Falcon",
+        "rank": "gold",
+        "conditions": "● Without losing any races in between, win at least 9 dirt graded races as a Front Runner, including the JBC Classic, Teio Sho, and Tokyo Daishoten",
+        "reward": "—",
+        "aliases": [
+            "sand falcon",
+            "gold",
+            "dirt",
+            "character"
+        ]
+    },
+    {
+        "id": "Speedy Stayer",
+        "rank": "gold",
+        "conditions": "● Win the Kikuka Sho with difference of at least 5 lengths<br>● Win 6 graded races with a length of 2400m or higher, including the Tenno Sho (Spring)",
+        "reward": "—",
+        "aliases": [
+            "speedy stayer",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Bakushin King",
+        "rank": "gold",
+        "conditions": "● Win 11 races with a length of 1400m or lower<br>● Win the Sprinters Stakes (Year 3) with a difference of at least 4 lengths while being the most popular",
+        "reward": "—",
+        "aliases": [
+            "bakushin king",
+            "gold",
+            "sprint",
+            "ura",
+            "character"
+        ]
+    },
+    {
+        "id": "Beauty of the Century",
+        "rank": "gold",
+        "conditions": "● Win the Hanshin Juvenile Fillies<br>● Be at a Mood level of Perfect and don't have either the Slow Metabolism, Skin Outbreak or Slacker condition for all races<br>● Raise the level of all trainings to at least 3<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "beauty of the century",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Precocious Princess",
+        "rank": "gold",
+        "conditions": "● Inherit the memories of a parent who won the Takamatsunomiya Kinen<br>● Win the Japanese Oaks, Shuka Sho and Queen Elizabeth II Cup while being undefeated",
+        "reward": "—",
+        "aliases": [
+            "precocious princess",
+            "gold",
+            "oaks",
+            "character"
+        ]
+    },
+    {
+        "id": "Sprint Sweetheart",
+        "rank": "gold",
+        "conditions": "● Win at least 9 races with a length of of 1200m, including the Sprinters Stakes and Takamatsunomiya Kinen<br>● Earn a total of at least 240,000 fans",
+        "reward": "—",
+        "aliases": [
+            "sprint sweetheart",
+            "gold",
+            "sprint",
+            "character"
+        ]
+    },
+    {
+        "id": "Blinding Flash",
+        "rank": "gold",
+        "conditions": "● Win the Tokyo Yushun (Japanese Derby) as a Late Surger<br>● Win the Tenno Sho (Autumn) as a Late Surger<br>● Complete the Career with the Fast Learner condition",
+        "reward": "—",
+        "aliases": [
+            "blinding flash",
+            "gold",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Herald of a New Age",
+        "rank": "gold",
+        "conditions": "● Win the Yayoi Sho as the most popular<br>● Win the Satsuki Sho as the most popular<br>● Win the Tokyo Yushun (Japanese Derby) as the most popular<br>● Win the Kikuka Sho as the most popular<br>● Win the Arima Kinen (Year 2)<br>● Earn a total of at least 240,000 fans",
+        "reward": "—",
+        "aliases": [
+            "herald of a new age",
+            "gold",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Faster Than Light",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent with at least S rank<br>● Win the Hopeful Stakes, Yayoi Sho, and Satsuki Sho without losing any other races<br>● Reach 1200 or more Speed",
+        "reward": "—",
+        "aliases": [
+            "faster than light",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Sable Assassin",
+        "rank": "gold",
+        "conditions": "● Participate in at least 23 graded races<br>● Win the Kikuka Sho as the 2nd most or most popular<br>● Win the Tenno Sho (Spring) as the 2nd most or most popular<br>● Earn a total of at least 320,000 fans",
+        "reward": "—",
+        "aliases": [
+            "sable assassin",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Colossus",
+        "rank": "gold",
+        "conditions": "● Win the Yasuda Kinen<br>● Win the Mile Championship<br>● Win the Sprinters Stakes twice<br>● Reach 1200 or more Power",
+        "reward": "—",
+        "aliases": [
+            "colossus",
+            "gold",
+            "mile",
+            "sprint",
+            "character"
+        ]
+    },
+    {
+        "id": "Mesmerizing Muscle",
+        "rank": "gold",
+        "conditions": "● Win a G1 race against a Mejiro at least once<br>● Win the Kikuka Sho<br>● Win the Takarazuka Kinen<br>● Win the Arima Kinen<br>● Earn a total of at least 240,000 fans",
+        "reward": "—",
+        "aliases": [
+            "mesmerizing muscle",
+            "gold",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Incline Invicta",
+        "rank": "gold",
+        "conditions": "● Win the Asahi Hai Futurity Stakes, Satsuki Sho, and Tokyo Yushun (Japanese Derby) while being undefeated and the most popular as a Front Runner<br>● Reach 1200 or more Stamina",
+        "reward": "—",
+        "aliases": [
+            "incline invicta",
+            "gold",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Looming Shadow",
+        "rank": "gold",
+        "conditions": "●Win the Kikuka Sho as a Late Surger<br>● Win the Arima Kinen twice as a Late Surger<br>● Win the Tenno Sho (Spring) as a Late Surger<br>● Reach 1200 or more Stamina",
+        "reward": "—",
+        "aliases": [
+            "looming shadow",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Free Spirit",
+        "rank": "gold",
+        "conditions": "● Win a G1 race as a Front Runner<br>● Win a G1 race as a Pace Chaser<br>● Win a G1 race as a Late Surger<br>● Win a G1 race as an End Closer",
+        "reward": "—",
+        "aliases": [
+            "free spirit",
+            "gold",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Victory Derived",
+        "rank": "gold",
+        "conditions": "● Finish 2nd or better in every race you participate in<br>● Win the Kikuka Sho<br>● Win the Tenno Sho (Spring)<br>● Win the Takarazuka Kinen<br>● Clear all training objectives<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "victory derived",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Capricious Clover",
+        "rank": "gold",
+        "conditions": "● Win the Shuka Sho, Queen Elizabeth II Cup, and Arima Kinen (Classic) while being undefeated and most popular<br>● Win the Shuka Sho with a difference of at least 3 1/2 lengths",
+        "reward": "—",
+        "aliases": [
+            "capricious clover",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Now That's White Lightning!",
+        "rank": "gold",
+        "conditions": "● Win at least 8 graded races, including the Tenno Sho (Spring), Takarazuka Kinen (Senior), Tenno Sho (Autumn) (Senior)<br>● Earn a total of at least 240000 fans",
+        "reward": "—",
+        "aliases": [
+            "now that's white lightning!",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Trickster",
+        "rank": "gold",
+        "conditions": "● Win the Satsuki Sho as a Front Runner<br>● Win the Kikuka Sho as a Front Runner while staying in the lead from the 200m mark to the goal line<br>● Win the Arima Kinen (Year 2) as a Front Runner<br>● Win the Tenno Sho (Spring) as a Front Runner",
+        "reward": "—",
+        "aliases": [
+            "trickster",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "All-Around Otaku",
+        "rank": "gold",
+        "conditions": "Win the following races:<br>● Japan Dirt Derby<br> ● Mile Championship<br> ● February Stakes<br> ● Yasuda Kinen<br> ● Tenno Sho (Autumn)<br> ● Arima Kinen (Senior)",
+        "reward": "—",
+        "aliases": [
+            "all-around otaku",
+            "gold",
+            "dirt",
+            "mile",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Empress",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won the Japanese Oaks<br>● Earn a total of at least 320,000 fans<br>● Win the Japanese Oaks<br>● Win the Tenno Sho (Autumn)",
+        "reward": "—",
+        "aliases": [
+            "empress",
+            "gold",
+            "oaks",
+            "character"
+        ]
+    },
+    {
+        "id": "Emperor",
+        "rank": "gold",
+        "conditions": "● Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho while being undefeated<br>● Win the Japan Cup<br>● Win the Tenno Sho (Spring)<br>● Win the Arima Kinen twice",
+        "reward": "—",
+        "aliases": [
+            "emperor",
+            "gold",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Monster in the Shadows",
+        "rank": "gold",
+        "conditions": "● Win the Satsuki Sho with a difference of at least 3 1/2 lengths<br>● Win the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths<br>● Win the Kikuka Sho with a difference of at least 7 lengths<br>● Win the Arima Kinen twice",
+        "reward": "—",
+        "aliases": [
+            "monster in the shadows",
+            "gold",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Centurial Overlord",
+        "rank": "gold",
+        "conditions": "● Without losing any races in between, win at least 8 races including the Tenno Sho (Spring), Takarazuka Kinen, Tenno Sho (Autumn), Japan Cup, and Arima Kinen",
+        "reward": "—",
+        "aliases": [
+            "centurial overlord",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Phantom Bird",
+        "rank": "gold",
+        "conditions": "● Finish 2nd or better in every race<br>● Win the Japan Cup (Year 2) as a Pace Chaser<br>● Earn a total of at least 320,000 fans<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "phantom bird",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Best Actress",
+        "rank": "gold",
+        "conditions": "● Win the Kikuka Sho<br>● Win the Tenno Sho (Spring)<br>● Reach 1200 or more Stamina<br>● Earn a total of at least 320,000 fans",
+        "reward": "—",
+        "aliases": [
+            "best actress",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Queen of the Amazon",
+        "rank": "gold",
+        "conditions": "● Without losing any races in between, win at least 6 graded races in which you are the most popular as a End Closer, and overtake 5 others on the last straight in at least 2 of them",
+        "reward": "—",
+        "aliases": [
+            "queen of the amazon",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Mightiest Miler",
+        "rank": "gold",
+        "conditions": "● Win 5 graded races, including the Unicorn Stakes and Yasuda Kinen, with one of them being in rainy weather<br>● Win the Mile Championship with a difference of at least 5 lengths",
+        "reward": "—",
+        "aliases": [
+            "mightiest miler",
+            "gold",
+            "mile",
+            "character"
+        ]
+    },
+    {
+        "id": "Miss Perfect",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won the Satsuki Sho<br>● Finish 2nd or better in every race you participate in<br>● Win 10 graded races, including the Oka Sho, Shuka Sho and Queen Elizabeth II Cup",
+        "reward": "—",
+        "aliases": [
+            "miss perfect",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Extraordinary Empress",
+        "rank": "gold",
+        "conditions": "● Win 7 G1 races, including the Tokyo Yushun (Japanese Derby), Yasuda Kinen, Japan Cup, Tenno Sho (Autumn), and Victoria Mile",
+        "reward": "—",
+        "aliases": [
+            "extraordinary empress",
+            "gold",
+            "mile",
+            "g1",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Unpredictable",
+        "rank": "gold",
+        "conditions": "● Win at least 6 G1 races, including the Satsuki Sho, Kikuka Sho, and Takarazuka Kinen<br>● Earn a total of at least 480,000 fans",
+        "reward": "—",
+        "aliases": [
+            "unpredictable",
+            "gold",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Ideal Idol",
+        "rank": "gold",
+        "conditions": "● Participate in at least 6 G1 races while being the 1st popular<br>● Win the Mile Championship<br>● Win the Yasuda Kinen<br>● Win the Arima Kinen<br>● Earn a total of at least 240,000 fans",
+        "reward": "—",
+        "aliases": [
+            "ideal idol",
+            "gold",
+            "mile",
+            "g1",
+            "character"
+        ]
+    },
+    {
+        "id": "Enchanting Triple Crown",
+        "rank": "gold",
+        "conditions": "● Win the Make Debut with a difference of at least 8 lengths<br>● Win the Asahi Hai Futurity Stakes as the most popular<br>● Win the Satsuki Sho as the most popular<br>● Win the Tokyo Yushun (Japanese Derby) as the most popular<br>●Win the Kikuka Sho as the most popular",
+        "reward": "—",
+        "aliases": [
+            "enchanting triple crown",
+            "gold",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Hot Rod",
+        "rank": "gold",
+        "conditions": "● Win 8 consecutive races while being undefeated<br>● Have an average win length difference of at least 7 lengths",
+        "reward": "—",
+        "aliases": [
+            "hot rod",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Monarch",
+        "rank": "gold",
+        "conditions": "● Inherit memories from a parent that won at least 7 G1 races<br>● Be the most popular in at least 4 G1 races<br>● Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Arima Kinen (Year 3) while being undefeated",
+        "reward": "—",
+        "aliases": [
+            "monarch",
+            "gold",
+            "g1",
+            "derby",
+            "character"
+        ]
+    },
+    {
+        "id": "Otherworldly Front-Runner",
+        "rank": "gold",
+        "conditions": "● Without losing any races in between, win at least 6 graded races while using the Front Runner strategy and being the most popular, with one of them being the Takarazuka Kinen<br>● Win the Takarazuka Kinen while staying in the lead from the 200m mark to the goal line",
+        "reward": "—",
+        "aliases": [
+            "otherworldly front-runner",
+            "gold",
+            "character"
+        ]
+    },
+    {
+        "id": "Ruler of Japan",
+        "rank": "gold",
+        "conditions": "● Win the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths while also being the most popular<br>● Win the Tenno Sho (Spring)<br>● Win the Tenno Sho (Autumn)<br>● Win the Japan Cup",
+        "reward": "—",
+        "aliases": [
+            "ruler of japan",
+            "gold",
+            "derby",
+            "character"
+        ]
     }
 ]
