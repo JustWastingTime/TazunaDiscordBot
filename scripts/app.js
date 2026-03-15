@@ -29,11 +29,6 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-if (servers.length === 0 || users.length === 0) {
-  console.warn("⚠️ servers.json or users.json missing/empty. Add them to assets/ (or use a Railway Volume) for leaderboard/sheets features.");
-}
-
 const characters = cache.characters;
 const supporters = cache.supporters;
 const events = cache.events;
