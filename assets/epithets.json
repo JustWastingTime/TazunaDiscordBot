@@ -958,6 +958,43 @@
         "conditions": "Trigger at least 50 Aoharu Special Trainings and complete the Career.",
         "reward": "",
         "aliases": ["team player"]
-    }
+    },
+
     
+    {   "id": "Kokura Constable",
+        "rank": "bronze",
+        "conditions": "Win three graded races that are held in Kokura. (Trackblazer only)",
+        "reward": "2 random stats +5",
+        "aliases": ["kokura constable"]
+    },
+    {   "id": "West Japan Whiz",
+        "rank": "bronze",
+        "conditions": "Win three graded races that are held in either Chukyo, Hanshin or Kyoto. (Trackblazer only)",
+        "reward": "2 random stats +5",
+        "aliases": ["west japan whiz"]
+    },
+    {   "id": "Kanto Conqueror",
+        "rank": "bronze",
+        "conditions": "Win three graded races that are held in either Tokyo, Nakayama or Ooi. (Trackblazer only)",
+        "reward": "2 random stats +5",
+        "aliases": ["kanto conqueror"]
+    },
+    {   "id": "Tohoku Top Dog",
+        "rank": "bronze",
+        "conditions": "Win three graded races that are held in either Fukushima or Niigata. (Trackblazer only)",
+        "reward": "2 random stats +5",
+        "aliases": ["tohoku top dog"]
+    },
+    {   "id": "Hokkaido Hotshot",
+        "rank": "bronze",
+        "conditions": "Win three graded races that are held in either Sapporo or Hakodate. (Trackblazer only)",
+        "reward": "2 random stats +5",
+        "aliases": ["hokkaido hotshot"]
+    },
+    {   "id": "Pro Racer",
+        "rank": "bronze",
+        "conditions": "Win 10 races of grade Open or higher. (Trackblazer only)",
+        "reward": "2 random stats +5",
+        "aliases": ["pro racer"]
+    }
 ]
