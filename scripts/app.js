@@ -46,6 +46,9 @@ const app = express();
 // Get port, or default to 3000
 const PORT = process.env.PORT || 3000;
 
+// Serve static assets (including guide images)
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
+
 
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
@@ -575,6 +578,60 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           
         });
       }
+    }
+
+    // "qp" command
+    if (name === 'qp') {
+      const guideKey = data.options?.find(opt => opt.name === "guide")?.value;
+
+      const qpGuides = {
+        training_basics: {
+          title: "Sample Race Schedule",
+          filename: "sample_schedule.png",
+        },
+        race_bonus_and_hammers: {
+          title: "Race Bonus and Hammers",
+          filename: "race_bonus_and_hammers.png",
+        },
+        consecutive_race_penalty: {
+          title: "Consecutive Race Penalty",
+          filename: "consecutive_race_penalty.png",
+        },
+        mood_energy_mant: {
+          title: "Trackblazer Mood & Energy Events",
+          filename: "mood_energy_mant.png",
+        },
+        unique_levels: {
+          title: "Unique Levels",
+          filename: "unique_levels.png",
+        },
+      };
+
+      const guide = qpGuides[guideKey];
+
+      if (!guide) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: "❌ Unknown guide selected." }
+        });
+      }
+
+      const protocol = req.get('x-forwarded-proto') || req.protocol || 'http';
+      const host = req.get('host');
+      const baseUrl = host ? `${protocol}://${host}` : '';
+      const imageUrl = `${baseUrl}/assets/guides/${guide.filename}`;
+
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: guide.title,
+          embeds: [
+            {
+              image: { url: imageUrl }
+            }
+          ]
+        }
+      });
     }
 
     // "epithet" command

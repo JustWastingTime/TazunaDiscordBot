@@ -152,7 +152,6 @@ const CM_COMMAND = {
   contexts: [0, 1, 2],
 }; 
 
-
 const TRAINER_COMMAND = {
   name: 'trainer',
   description: 'Look up a trainer in the club',
@@ -168,7 +167,6 @@ const TRAINER_COMMAND = {
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };
-
 
 const PARSE_COMMAND = {
   name: 'parse',
@@ -239,6 +237,29 @@ const EPITHET_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, PARSE_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND];
+const QP_COMMAND = {
+  name: 'qp',
+  description: 'Show a quick picture guide',
+  options: [
+    {
+      type: 3,
+      name: 'guide',
+      description: 'Which guide image to show',
+      required: true,
+      choices: [
+        { name: 'Sample Race Schedule', value: 'sample_schedule' },
+        { name: 'Race Bonus and Hammers', value: 'race_bonus_and_hammers' },
+        { name: 'Consecutive Race Penalty', value: 'consecutive_race_penalty' },
+        { name: 'Trackblazer Mood & Energy Events', value: 'mood_energy_mant' },
+        { name: 'Unique Levels', value: 'unique_levels' }
+      ]
+    }
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, PARSE_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND, QP_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
