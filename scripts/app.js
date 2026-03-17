@@ -624,9 +624,9 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: guide.title,
           embeds: [
             {
+              title: guide.title,
               image: { url: imageUrl }
             }
           ]
