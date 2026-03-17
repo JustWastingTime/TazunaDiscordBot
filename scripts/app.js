@@ -585,7 +585,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       const guideKey = data.options?.find(opt => opt.name === "guide")?.value;
 
       const qpGuides = {
-        training_basics: {
+        sample_schedule: {
           title: "Sample Race Schedule",
           filename: "sample_schedule.png",
         },
