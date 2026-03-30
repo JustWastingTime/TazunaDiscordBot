@@ -195,7 +195,7 @@
             "similar": ""
         },
         "date": "<t:1774562400:F>, <t:1774562400:R>",
-        "image": "",
+        "image": "https://uma.guide/img/guides/article/cm11-guide/cm11-track.png",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2Pu2rEMBBF%2F%2BXWKmzHgWS6LdMFtlxSCGvsiLU0RjPChMX%2FHpQHIfmEdPcxnOHeMEktyk8B1HeP%2FeiwFKk5gEaHnb29cgHdOSh7lQzqHSwmBg0O6tO2soLuu86hJt%2BDbpBqc7RGBBx0Y27woZ2o%2BRSz%2F7ab7I3%2B0PRSTUFjk3vUIOnLqBVvvLyBcOZ8lQqHENV8nvi0WbQauHXtVS2z%2F5We8AP4EyeR8DniGtdVQZcXh1nKxOHckmfRaFGygm7H8bFu%2BK%2FrjnfEz1AqBwIAAA%3D%3D"
     },
     {   "name": "Aries Cup 2026",
@@ -214,6 +214,24 @@
         },
         "date": "",
         "image": "",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthO3Da6hZ5CL4UcSw%2BLtXaEbcloV5gS8u9Fbkpp%2F6C3N8My%2B67oYk7CJwdbV221NwhC8zKxwLZVZSDMDrZ5qNtDu3vcHQyy8GuUF%2BYFVlPmrTkFfb5wNwpsT5OwQaKOHfewV8wxlg2DIcUcyiuDlUkvnDYWJolhQ%2FUz30%2FJcZGqbgZ5proMxay91yILGMiyudXN5qk0%2B0DfcYlrGX8qPGQV2H3B1YuL8z2IJlIePmBx5jDGDAPnRSl0fFzUay4GOJdXOfX0qz3iZ%2BBvPfppEti39y%2F15l%2Bq3z4BieJqRBwCAAA%3D"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT5zB0HdlekCV4YUwlo74iyt0a4wh%2FG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN36c4OU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfyl6xxaDif4Ddx0TGpGwEEWIrP19kQ05FTCd1x4NfuT8dRU4M%2BGa5LI%2BSuI1qA0PeBxo3LnBoeYREMZ6Lpo0hbJbvZVq2P41V7xI%2FhTZ%2Bb4OeKe5lngX98cRq4DxZs1LyxJExeB3%2Fb9WNf%2F13X7BwrC7wgHAgAA"
+    },
+    {   "name": "Taurus Cup 2026",
+        "number": "13",
+        "track":
+        {
+            "racetrack": "Nakayama",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2400m",
+            "direction": "Left-Handed",
+            "ground": "Firm",
+            "season": "Spring",
+            "weather": "Sunny",
+            "similar": "Japanese Derby (Tokyo Yushun)"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA"
     }
 ]
