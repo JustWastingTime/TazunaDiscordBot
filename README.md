@@ -1,6 +1,6 @@
 # TazunaBot
 
-A Discord bot for managing your umamusume club and other nifty uma commands. 
+A Discord bot for looking up uma information such as skills, races and support cards. Club and leaderboard features have been moved to a new bot.
 Any questions? Join the discord https://discord.gg/5BW4gSUVSz
 ---
 
@@ -94,42 +94,25 @@ Here are the features of the bot. Some of them are still a Work in Progress.
 `/supporter` - Looks up information on a specific Supporter Card. Able to accept rarity as input; if you're looking for Kitasan Black SSR, you can type /supporter Kitasan SSR and it will work. Also able to limit the result to a specific Limit Break.  
 ![Accepts name and limit break as a parameter](./assets/readmeimg/tutorial07.png)
 
-`/event` - Looks up information on a specific supporter event, uma event or generic event. (This is slowly getting updated, is a WIP)  
-![Accepts event name or uma name as a parameter](./assets/readmeimg/tutorial08.png)
-
 `/race` - Looks up information on a specific race. Can filter by year and grade  
 ![Accepts name, year and grade as a parameter](./assets/readmeimg/tutorial09.png)
 
 `/cm` - Looks up information on a specific Champion's Meeting  
 ![Accepts name as a parameter](./assets/readmeimg/tutorial04.png)
 
-`/parse` - Parses an image of your uma's final result page and tries to generate an umalator link (This is a WIP and is not functional yet)  
+`/parse` - Parses an image of your uma's final result page and tries to generate an umalator link (This will be deprecated soon for Moomoolator's OCR)  
 ![Accepts am image as a parameter](./assets/readmeimg/tutorial10.png)
 
-`/trainer` - Looks up information on a specific trainer in your club. Leaving it blank shows your profile. [REQUIRES SHEET SETUP]  
-![Accepts name as a parameter](./assets/readmeimg/tutorial11.png)
+`/resource` - Shows the links to nifty uma tools such as stamina calculator, banner timeline, etc.
 
-`/leaderboard` - Looks up the current club members' rankings. Can change mode between monthly and total. Default is monthly. [REQUIRES SHEET SETUP]  
-![Accepts name as a parameter](./assets/readmeimg/tutorial12.png)
+`/epithet` - Lists specific epithets and their conditions. For example, use `/epithet mile` to see only mile related epithets. Can also do `/epithet mant mile` to filter the epithet list to Trackblazer scenario only.
 
-`/log` - Allows users to upload their fancount into the google sheets. [REQUIRES SHEET SETUP]  
-![Accepts name as a parameter](./assets/readmeimg/tutorial13.png)
+`/qp` - Shows a quick picture guide on a specific topic such as race bonus and hammers value or racing penalty in trackblazer.
 
-`/register` - Saves an umalator link into your trainer profile for easy access and comparison with club mates. Only 5 save slots. [REQUIRES SHEET SETUP]  
-![Accepts label, slot and a url as a parameter](./assets/readmeimg/tutorial14.png)
 
-`/apply` - Allows new users to apply to your guild and setup a profile. Needs their uma name, uma id and total fan count as input. [REQUIRES SHEET SETUP]  
-![Accepts name, id and fan count as a parameter](./assets/readmeimg/tutorial15.png)
-
-`/setchannel` - Sets the channel in which new member applicants will appear in. A user (ideally an admin/moderator only channel) will approve this applicant before the trainer profile is added to the sheets and bot. (Work in Progress) [REQUIRES SHEET SETUP]  
-![Accepts name as a parameter](./assets/readmeimg/tutorial16.png)
-
-## ⭐ Setting up the sheets
-Create a copy of this sheet https://docs.google.com/spreadsheets/d/1xyOJpbC-CdmUV1uSgOyEUT68WnxUGMXiNP5RonUuR4Y/
-If your club runs a dynamic quota based on medians, use the first sheet. If your club runs a fixed daily quota, delete the first sheet and rename the "Fixed Quota version" sheet to "Data".
 
 ## ⭐ Changing the emojis
-Work in Progress.  
+Upload the emojis to your discord bot's dashboard and replace the skillemotes.json. If `skillemotes.json` does not exist, duplicate `skillemotes.example.json` and rename it. Feel free to use your own custom emojis.
 
 ## ⭐ Parsing images
 `/parse` accepts a screenshot of your uma, parses it into something readable, and generates an umalator link. There are some hiccups like skills not being properly read if there are ○ or ◎, so please double check your final umalator result.  
@@ -142,3 +125,5 @@ This is the result
 ![Sample Uma Result](./assets/readmeimg/parsesampleresult.png)  
 And the umalator link generated  
 https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACu2QvU4DMRCEXwVN7WJ9R%2B6Eu1QI0SCloEAUVrxJLHL2yWsriqK8O1o4gVLS042%2B%2FZudC7a5FeGnAGdpoMEgiZ%2FmIwvcisigCb9keWae4WppbFD8lgPv4C6Ycg5wncG%2B5JYCHB6VGJzY1wMXOGxaSmcYCHvJScFcYtrDoMaJl2EfWO%2FT1aBN3urqNnk1BUvWwiB5bcZj8SJ3rzkFLjDIre5i%2Fekj7ZSZWb%2Bx6l6qn2LycIO1BnM%2BqSfbaWnfqsD13WhwihLyBNcPvYF8xONR4N5giezX8Qciul9EN6roiPq%2BW8S4iIGW0mAXMi7EDiuLd7VTfOX9WWPwcogwCFGqT1tezzXWpjlgrV%2B0svM3dIPf%2BRv8HVr3H9qfQrt%2BAiSBJtf7AgAA
+
+* This will be deprecated soon.
