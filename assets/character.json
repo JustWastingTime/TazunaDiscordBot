@@ -567,6 +567,77 @@
             }
         ]
     },
+    {   "id": "100502 - Fuji Kiseki Ballroom",
+        "character_name": "Fuji Kiseki",
+        "type": "Original",
+        "costume": "Succès Étoilé",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "8%",
+            "stamina": "",
+            "power": "14%",
+            "guts": "",
+            "wit": "8%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "B",
+            "Mile": "A",
+            "Medium": "B",
+            "Long": "E"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "C",
+            "End": "G"
+            }
+        ],
+        "unique": "Ravissant",
+        "unique_explanation": "",
+        "skills": [
+            "Trick (Front)",
+            "Mile Corners",
+            "Preferred Position"
+        ],
+        "potential": [
+            "Shrewd Step",
+            "Tantalizing Trick",
+            "Head-On",
+            "Speed Star"
+        ],
+        "event_skills": [
+            "Disorient",
+            "Right-Handed",
+            "Prepared to Pass",
+            "Unyielding Spirit",
+            "Preferred Position"
+        ],
+        "aliases": ["fuji kiseki ballroom", "succes etoile"],
+        "url": "https://gametora.com/umamusume/characters/100502-fuji-kiseki",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1005_100502.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Select the Triple Crown route and win the Satsuki Sho, Tokyo Yushun (Japanese Derby), and Kikuka Sho.",
+                "rewards": "Speed +10, Stamina +10, Power +10, Prepared to Pass hint +1"
+            },
+            {
+                "conditions": "Win 3 Sprint/Mile G1 races in Senior Year.",
+                "rewards": "Mood +1, Power +10, Wit +10, Unyielding Spirit hint +1"
+            },
+            {
+                "conditions": "Win the Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3) and Takarazuka Kinen (Year 3).",
+                "rewards": "Mood +1, Speed +10, Stamina +10, Guts +10, Preferred Position hint +1"
+            }
+        ]
+    },
 
     {   "id": "100601 - Oguri Cap",
         "character_name": "Oguri Cap",
@@ -2121,8 +2192,75 @@
         "review": "",
         "secrets": [
             {
-            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
-            "rewards": "Mood +1, Speed +5, Power +5, Fast-Paced hint +2"
+                "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho)",
+                "rewards": "Mood +1, Speed +5, Power +5, Fast-Paced hint +2"
+            }
+        ]
+    },
+    {   "id": "102002 - Seiun Sky Ballroom",
+        "character_name": "Seiun Sky",
+        "type": "Ballroom",
+        "costume": "Soirée des Chatons",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "8%",
+            "stamina": "",
+            "power": "8%",
+            "guts": "14%",
+            "wit": "%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "A",
+            "Pace": "B",
+            "Late": "D",
+            "End": "E"
+            }
+        ],
+        "unique": "Break It Down!",
+        "unique_explanation": "",
+        "skills": [
+            "Spring Runner",
+            "Rosy Outlook",
+            "Fast-Paced"
+        ],
+        "potential": [
+            "Leader's Pride",
+            "Escape Artist",
+            "Early Lead",
+            "Top Runner"
+        ],
+        "event_skills": [
+            "Subdued Late Surgers",
+            "Deep Breaths",
+            "Front Runner Straightaways",
+            "Shake It Out",
+            "Highlander",
+            "Steadfast",
+            "Hesitant Late Surgers",
+            "Right-Handed",
+            "Fast-Paced"
+        ],
+        "aliases": ["seiun sky ballroom", "soirée des chatons", "soiree des chatons"],
+        "url": "https://gametora.com/umamusume/characters/102002-seiun-sky",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1020_102002.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho)",
+                "rewards": "Mood +1, Speed +5, Power +5, Fast-Paced hint +2"
             }
         ]
     },
