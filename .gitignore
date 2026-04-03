@@ -1,8 +1,2 @@
-.env
-assets/credentials.json
 node_modules/
-
-# local overrides
-skillemotes.json
-assets/users.json
-assets/servers.json
+.env
