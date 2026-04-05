@@ -210,9 +210,9 @@
             "ground": "Firm",
             "season": "Spring",
             "weather": "Sunny",
-            "similar": "Satsuki Sho, Hopeful Stakes, Tenno Sho (Autumn)"
+            "similar": "Satsuki Sho, Hopeful Stakes"
         },
-        "date": "",
+        "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT5zB0HdlekCV4YUwlo74iyt0a4wh%2FG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN36c4OU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfyl6xxaDif4Ddx0TGpGwEEWIrP19kQ05FTCd1x4NfuT8dRU4M%2BGa5LI%2BSuI1qA0PeBxo3LnBoeYREMZ6Lpo0hbJbvZVq2P41V7xI%2FhTZ%2Bb4OeKe5lngX98cRq4DxZs1LyxJExeB3%2Fb9WNf%2F13X7BwrC7wgHAgAA"
     },
@@ -220,7 +220,7 @@
         "number": "13",
         "track":
         {
-            "racetrack": "Nakayama",
+            "racetrack": "Tokyo",
             "terrain": "Turf",
             "distance_type": "Medium",
             "distance_meters": "2400m",
@@ -228,10 +228,82 @@
             "ground": "Firm",
             "season": "Spring",
             "weather": "Sunny",
-            "similar": "Japanese Derby (Tokyo Yushun)"
+            "similar": "Japanese Derby (Tokyo Yushun), Japanese Oaks, Japan Cup"
         },
         "date": "",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA"
+    },
+    {   "name": "Gemini Cup 2026",
+        "number": "14",
+        "track":
+        {
+            "racetrack": "Tokyo",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1600m",
+            "direction": "Left-Handed",
+            "ground": "Firm",
+            "season": "Spring",
+            "weather": "Sunny",
+            "similar": "NHK Mile Cup, Yasuda Kinen"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA"
+    },
+    {   "name": "Cancer Cup 2026",
+        "number": "15",
+        "track":
+        {
+            "racetrack": "Hanshin",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2200m",
+            "direction": "Right-Handed",
+            "ground": "Good",
+            "season": "Summer",
+            "weather": "Cloudy",
+            "similar": "Takarazuka Kinen"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PQU7EMAxF7%2FLXWXQqQJDdLNkhzRKxiBq3WNPEVeyoQlXvjtIBITgCu%2B9n61l%2FwyC1KD1H%2BFP31D04TEVqjvC9w0rB3qkcWSmo5CMaJ7qxkJaZFP6%2B6xxqCif4DVJtZGtGwEEXoibv24laSJzD97jI2uyPLU%2FVFP6uxZU1Svoa1Eowmj7gcaF8lQqHyGohD3RejK1Garv2qpYx%2FKJn%2FAj%2B4CRyK6lXnmeFf31zGKUMFC%2BNvIiysWSF3%2Fb9aNf%2F13b7J%2BdYrPwHAgAA"
+    },
+    {   "name": "Leo Cup 2026",
+        "number": "16",
+        "track":
+        {
+            "racetrack": "Nakayama",
+            "terrain": "Turf",
+            "distance_type": "Sprint",
+            "distance_meters": "1200m",
+            "direction": "Right-Handed",
+            "ground": "Firm",
+            "season": "Summer",
+            "weather": "Sunny",
+            "similar": "Sprinters Stakes"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFbbJQVB3ZbrAlSGFsNaOOEtrtCtMMP73sE5CSD4h3ZtZ8cTsGLlVoacI33eXrneYK7di0WGjoG9UTxYKwgV%2BcNCU6QQJeV1I4C9d59By6OF3cNMpqRkBB1mJzDbYE9GQUwnfceXN7I%2FGc1OBfzDckkTOX0G0BqX5HR43KnducIhJNJSRrqsmbZHsZl%2B1OoVf7RU%2Fgj91Zo6fI%2B5pWQT%2B5dVh4jpSvFnzzJI0cRH4%2FTjOdcN%2FXXd8ACrYoscHAgAA"
+    },
+    {   "name": "Virgo Cup 2026",
+        "number": "17",
+        "track":
+        {
+            "racetrack": "Ooi",
+            "terrain": "Dirt",
+            "distance_type": "Sprint",
+            "distance_meters": "2000m",
+            "direction": "Right-Handed",
+            "ground": "Good",
+            "season": "Autumn",
+            "weather": "Sunny",
+            "similar": "Sprinters Stakes"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbY3gTDdlukCW4YthDV2xFoaoxlhgvHdgzYJITlCuvczfMPbMUotys8B1Pd9d3KYi9QcQIPDxt7euIB6B2WvkkEnB4uJ7736tC6soMeuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0Z%2Banqsp6KHJLWqQ9GXUijee30G4cL5JhUOIaj6PfF4tWg3cuvaqlsn%2FSs%2F4AfyJk8jnSL3FZVHQ69VhkjJyuLTkRTRalKyg%2FTju64b%2Fuu74AIpADhkHAgAA"
     }
 ]
