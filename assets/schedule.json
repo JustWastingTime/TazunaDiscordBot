@@ -1,62 +1,57 @@
 [   
-    {   "event_name": "1st Anniversary Celebration Part 1",
-        "event_type": "Anniversary",
-        "date": "<t:1772463600:F>, <t:1772463600:R>",
-        "thumbnail": "https://img.game8.co/4428146/40edd44a971c65c3412ee132cd3ab8bf.png/show"
-    },
-    {   "event_name": "Champions Meeting - Aquarius Cup",
-        "event_type": "Champions Meeting",
-        "date": "<t:1772463600:F>, <t:1772463600:R>",
-        "thumbnail": "https://img.game8.co/4428148/fb81f520da9c2747b38600d559146053.png/show"
-    },
-    {   "event_name": "Admire Vega + Kawakami Princess (Speed SSR) and Fine Motion (Wit SSR)",
+    {   "event_name": "Fuji Kiseki (Ballroom) and Seiun Sky (Ballroom) + Symboli Rudolf (Stamina SSR) and Sirius Symboli (Wit SSR)",
         "event_type": "Banner",
-        "date": "<t:1772748000:F> - <t:1773439200:F>, <t:1772748000:R>",
-        "thumbnail": "https://img.game8.co/4428154/6c7bf64358e2fce705aedf954589d598.png/show"
+        "date": "<t:1775426400:F> - <t:1776549600:F>, <t:1775426400:R>",
+        "thumbnail": "https://img.game8.co/4459271/632fab9e41c3effcb76d4397bb2abe7e.png/show"
     },
-    {   "event_name": "1st Anniversary Celebration Part 2",
-        "event_type": "Anniversary",
-        "date": "<t:1773352800:F>, <t:1773352800:R>",
-        "thumbnail": "https://img.game8.co/4428153/69da5fe3e51e37d3f9194fe13e1df0e7.png/show"
-    },
-    {   "event_name": "Kitasan Black and Matikane Tannhauser + Narita Top Road (Speed SSR), Sakura Bakushin O (Power SR),   Admire Vega (Guts SR), Mejiro Ryan (Stamina SR), Mejiro Ardan (Wit SR)",
-        "event_type": "Banner",
-        "date": "<t:1773352800:F> - <t:1774303200:F>, <t:1773352800:R>",
-        "thumbnail": "https://img.game8.co/4428147/a2e3656899150df148f621dd94d69612.png/show"
-    },
-    {   "event_name": "Flying Run-Up! Story Event",
+    {   "event_name": "Tonight at the Ligne Droite Story Event",
         "event_type": "Story Event",
-        "date": "<t:1773352800:F> - <t:1774303200:F>, <t:1773352800:R>",
-        "thumbnail": "https://img.game8.co/4428150/3e8918152195cf5a0f0c002d913d18bb.png/show"
+        "date": "<t:1775426400:F> - <t:1776549600:F>, <t:1775426400:R>",
+        "thumbnail": "https://img.game8.co/4459303/1d2c189a26313fe09d71a15e42aa6389.png/show"
     },
-    {   "event_name": "Satono Diamond + Marvelous Sunday (Guts SSR) and Curren Chan (Speed SR)",
+    {   "event_name": "Top Umadol Project",
+        "event_type": "Misc",
+        "date": "<t:1775512800:F>, <t:1775512800:R>",
+        "thumbnail": "https://pbs.twimg.com/media/HE2hy4FbAAAVdgJ?format=jpg&name=small"
+    },
+    {   "event_name": "Nishino Flower + Daiwa Scarlet (Power SSR) and Sweep Tosho (Wit SR)",
         "event_type": "Banner",
-        "date": "<t:1774216800:F> - <t:1775167200:F>, <t:1774216800:R>",
-        "thumbnail": "https://img.game8.co/4428155/6c3dc602ebddb582798dc1c66feb6db3.png/show"
+        "date": "<t:1776031200:F> - <t:1776722400:F>, <t:1776031200:R>",
+        "thumbnail": "https://img.game8.co/4459273/ef21c5cd6541e122fee97d8bed5e14f7.png/show"
     },
-    {   "event_name": "1st Anniversary Celebration Part 3",
-        "event_type": "Anniversary",
-        "date": "<t:1774303200:F>, <t:1774303200:R>",
-        "thumbnail": "https://img.game8.co/4428152/ab6b30cbae480d49f1246cc721d96b99.png/show"
+    {   "event_name": "Racing Carnival",
+        "event_type": "Misc",
+        "date": "<t:1776376800:F>, <t:1776376800:R>",
+        "thumbnail": "https://img.game8.co/4401922/22acafcb82e3a64373396acd0771517c.png/show"
     },
-    {   "event_name": "Legend Races - Agnes Tachyon, Narita Taishin, Narita Brian",
-        "event_type": "Legend Races",
-        "date": "<t:1774303200:F>, <t:1774303200:R>",
-        "thumbnail": "https://img.game8.co/4428149/80fba30aee33553b330b41d8deb5bc51.png/show"
-    },
-    {   "event_name": "1st Anniversary Celebration Part 4",
-        "event_type": "Anniversary",
-        "date": "<t:1774562400:F>, <t:1774562400:R>",
-        "thumbnail": "https://img.game8.co/4428156/a79ee4c0b5ce26c33a389ee853acde3e.png/show"
-    },
-    {   "event_name": "Mejiro Bright + Curren Chan (Wit SSR) and Zenno Rob Roy (Speed SSR)",
+    {   "event_name": "Yaeno Muteki + Twin Turbo SSR and Ines Fujin SSR",
         "event_type": "Banner",
-        "date": "<t:1774562400:F> - <<t:1775512800:F>, <t:1774562400:R>",
-        "thumbnail": "https://img.game8.co/4428157/17fa78d2c2a42980dd954d51eb37a26a.png/show"
+        "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
+        "thumbnail": "https://img.game8.co/4459274/18c5d663efd8e073b77bd3afcc858c5d.png/show"
     },
-    {   "event_name": "Champions Meeting - Pisces Cup",
+    {   "event_name": "Champions Meeting - Aries Cup",
         "event_type": "Champions Meeting",
-        "date": "<t:1774562400:F>, <t:1774562400:R>",
-        "thumbnail": "https://img.game8.co/4428151/f4c26ffc495f25f3d08da3b5f9a3ecd8.png/show"
+        "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
+        "thumbnail": "https://img.game8.co/4459304/10a5f2dcada7e78155f9ae7ec4862533.png/show"
+    },
+    {   "event_name": "Goldshi Week Celebration",
+        "event_type": "Misc",
+        "date": "<t:1777240800:F> - <t:1778191200:F>, <t:1777240800:R>",
+        "thumbnail": "https://img.game8.co/4459294/ab19ae5b5cb31aa2dd34369299f7e032.png/show"
+    },
+    {   "event_name": "Nice Nature (Cheerleader) and King Halo (Cheerleader) + Bamboo Memory (Guts SSR) and Seeking the Pearl (Speed SSR)",
+        "event_type": "Banner",
+        "date": "<t:1777240800:F> - <t:1778277600:F>, <t:1777240800:R>",
+        "thumbnail": "https://img.game8.co/4459270/46aef9f90c5bea71ac906bb7930a1d33.png/show"
+    },
+    {   "event_name": "Tracen Cheer Squad Droite Story Event",
+        "event_type": "Story Event",
+        "date": "<t:1777240800:F> - <t:1778277600:F>, <t:1777240800:R>",
+        "thumbnail": "https://img.game8.co/4459302/a17216679015f59b47e8cd60f6e655a4.png/show"
+    },
+    {   "event_name": "Ines Fujin + Mr. C.B. (Wit SSR) and Tokai Teio (Stamina SR)",
+        "event_type": "Banner",
+        "date": "<t:1777586400:F> - <t:1778450400:F>, <t:1777586400:R>",
+        "thumbnail": "https://img.game8.co/4459272/52da48f6dd8a9b82083630d4fd573c39.png/show"
     }
 ]   
