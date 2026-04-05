@@ -294,13 +294,13 @@
         {
             "racetrack": "Ooi",
             "terrain": "Dirt",
-            "distance_type": "Sprint",
+            "distance_type": "Medium",
             "distance_meters": "2000m",
             "direction": "Right-Handed",
             "ground": "Good",
             "season": "Autumn",
             "weather": "Sunny",
-            "similar": "Sprinters Stakes"
+            "similar": "Japan Dirt Derby, Tokyo Daishoten"
         },
         "date": "",
         "image": "",
