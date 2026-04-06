@@ -7784,8 +7784,8 @@
         "description": "If positioned toward the front on a straight late-race, increase velocity with high spirits. If the straight is on the backstretch, also increase acceleration very slightly.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 and acceleration by 0.2 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 and acceleration by 0.07 for 3.0s.",
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "1st to 2nd",
                     "Any straight",
@@ -8421,11 +8421,11 @@
         "description": "If positioned toward the back late-race, slightly increase acceleration.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.2 for 1.8s.",
+                "description": "Increases acceleration by 0.2 for 1.2s.",
                 "conditions": [
                     "Medium",
                     "4th to 9th (CM), 5th to 12th (TT)",
-                    "Random point in first half of the late race"
+                    "Random point in the late race"
                 ]
             }
         ],
@@ -8825,11 +8825,11 @@
         "description": "If positioned toward the back late-race, increase acceleration.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.4 for 1.8s.",
+                "description": "Increases acceleration by 0.4 for 1.2s.",
                 "conditions": [
                     "Medium",
                     "4th to 9th (CM), 5th to 12th (TT)",
-                    "Random point in first half of the late race"
+                    "Random point in the late race"
                 ]
             }
         ],
