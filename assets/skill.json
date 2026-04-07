@@ -4587,14 +4587,14 @@
         "description": "Moderately increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
         "effect": [
             {
-                "description": "Increases target speed by 0.25 for 1.8s. Lose HP by a random amount.",
+                "description": "Increases target speed by 0.25 for 1.8s. 10% chance to lose 4% HP, 30% chance to lose 2% HP and 60% chance nothing happens.",
                 "conditions": [
                     "Second half of the race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "HP loss is a dice roll where you can lose a large amount, all for a short speed boost.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -5436,7 +5436,7 @@
         "description": "Greatly increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
         "effect": [
             {
-                "description": "Increases target speed by 0.45 for 1.8s. Lose HP by a random amount.",
+                "description": "Increases target speed by 0.45 for 1.8s. 10% chance to lose 4% HP, 30% chance to lose 2% HP and 60% chance nothing happens.",
                 "conditions": [
                     "Second half of the race"
                 ]
