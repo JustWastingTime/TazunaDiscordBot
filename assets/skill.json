@@ -9829,7 +9829,7 @@
         ],
         "effect": [
             {
-                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.04 and 0.1 when below 1200, 0.045 and 0.09 at 1200 - 1799, 0.05 and 0.1 at 1800 - 2599, 0.055 and 0.11 at 2600 - 3599, and 0.06 and 0.2 if 3600 or higher.",
+                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s. Increasing by; \n0.04 and 0.8 when below 1200\n0.045 and 0.09 at 1200 - 1799\n0.05 and 0.1 at 1800 - 2599\n0.055 and 0.11 at 2600 - 3599\n0.06 and 0.12 if 3600 or higher.",
                 "conditions": [
                     "Random point in late race"
                 ]
