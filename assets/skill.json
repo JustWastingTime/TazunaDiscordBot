@@ -9801,7 +9801,7 @@
         "description": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race. ",
         "effect": [
             {
-                "description": "Increases target speed based on your team's total base speed stat for 1.8s, increasing by 0.12 when below 1200, 0.135 at 1200 - 1799, 0.15 at 1800 - 2599, 0.165 at 2600 - 3599, and 0.18 if 3600 or higher.",
+                "description": "Increases target speed based on your team's total base speed stat for 1.8s.\nTotal < 1200 : 0.12 speed\n1200 <= Total < 1800 : 0.135 speed\n1800 <= Total < 260 : 0.15 speed\n2600 <= Total < 3600 : 0.165 speed\n3600 <= Total : 0.18 speed",
                 "conditions": [
                     "Random point in mid race"
                 ]
@@ -9829,7 +9829,7 @@
         ],
         "effect": [
             {
-                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s. Increasing by; \n0.04 and 0.8 when below 1200\n0.045 and 0.09 at 1200 - 1799\n0.05 and 0.1 at 1800 - 2599\n0.055 and 0.11 at 2600 - 3599\n0.06 and 0.12 if 3600 or higher.",
+                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s.\nTotal < 1200 : 0.04 speed and 0.08 accel\n1200 <= Total < 1800 : 0.045 speed and 0.09 accel\n1800 <= Total < 260 : 0.05 speed and 0.1 accel\n2600 <= Total < 3600 : 0.055 speed and 0.11 accel\n3600 <= Total : 0.06 speed and 0.12 accel",
                 "conditions": [
                     "Random point in late race"
                 ]
@@ -9851,7 +9851,7 @@
         "description": "Burn bright with team spirit, increasing velocity in proportion to the total Speed of racing team members mid-race",
         "effect": [
             {
-                "description": "Increases target speed based on your team's total base speed stat for 1.8s, increasing by 0.28 when below 1200, 0.315 at 1200 - 1799, 0.35 at 1800 - 2599, 0.385 at 2600 - 3599, and 0.42 if 3600 or higher.",
+                "description": "Increases target speed based on your team's total base speed stat for 1.8s.\nTotal < 1200 : 0.28 speed\n1200 <= Total < 1800 : 0.315 speed\n1800 <= Total < 260 : 0.35 speed\n2600 <= Total < 3600 : 0.385 speed\n3600 <= Total : 0.42 speed",
                 "conditions": [
                     "Random point in mid race"
                 ]
@@ -9874,7 +9874,7 @@
         "description": "Burn bright with team spirit, increasing vigor in proportion to the total Guts of racing team members late-race.",
         "effect": [
             {
-                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s, increasing by 0.2 and 0.24 when below 1200, 0.225 and 0.27 at 1200 - 1799, 0.25 and 0.3 at 1800 - 2599, 0.275 and 0.33 at 2600 - 3599, and 0.3 and 0.36 if 3600 or higher.",
+                "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s.\nTotal < 1200 : 0.2 speed and 0.24 accel\n1200 <= Total < 1800 : 0.225 speed and 0.27 accel\n1800 <= Total < 260 : 0.25 speed and 0.3 accel\n2600 <= Total < 3600 : 0.275 speed and 0.33 accel\n3600 <= Total : 0.3 speed and 0.36 accel",
                 "conditions": [
                     "Random point in late race"
                 ]
@@ -9896,7 +9896,7 @@
         "description": "Burn bright with team spirit, slightly recovering endurance in proportion to the total Stamina of racing team members mid-race.",
         "effect": [
             {
-                "description": "Recover HP based on your team's total base stamina stat, increasing by 1.2% when below 1200, 1.35% at 1200 - 1799, 1.5% at 1800 - 2599, 1.65% at 2600 - 3599, and 1.8% if 3600 or higher.",
+                "description": "Recover HP based on your team's total base stamina stat.\nTotal < 1200 : 1.2% HP\n1200 <= Total < 1800 : 1.35% HP\n1800 <= Total < 260 : 1.5% HP\n2600 <= Total < 3600 : 1.65% HP\n3600 <= Total : 1.8% HP",
                 "conditions": [
                     "Random point in mid race"
                 ]
@@ -9919,7 +9919,7 @@
         "description": "Burn bright with team spirit, recovering endurance in proportion to the total Stamina of racing team members mid-race",
         "effect": [
             {
-                "description": "Recover HP based on your team's total base stamina stat, increasing by 4.4% when below 1200, 4.95% at 1200 - 1799, 5.5% at 1800 - 2599, 6.05% at 2600 - 3599, and 6.6% if 3600 or higher.",
+                "description": "Recover HP based on your team's total base stamina stat.\nTotal < 1200 : 4.4% HP\n1200 <= Total < 1800 : 4.95% HP\n1800 <= Total < 260 : 5.5% HP\n2600 <= Total < 3600 : 6.05% HP\n3600 <= Total : 6.6% HP",
                 "conditions": [
                     "Random point in mid race"
                 ]
@@ -9942,7 +9942,7 @@
         "description": "Burn bright with team spirit, slightly increasing acceleration in proportion to the total Power of racing team members late-race.",
         "effect": [
             {
-                "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.16 when below 1200, 0.18 at 1200 - 1799, 0.2 at 1800 - 2599, 0.22 at 2600 - 3599, and 0.24 if 3600 or higher.",
+                "description": "Increases acceleration based on your team's total base power stat for 1.2s.\nTotal < 1200 : 0.16 accel\n1200 <= Total < 1800 : 0.18 accel\n1800 <= Total < 260 : 0.2 accel\n2600 <= Total < 3600 : 0.22 accel\n3600 <= Total : 0.24 accel",
                 "conditions": [
                     "Random point in late race"
                 ]
@@ -9965,7 +9965,7 @@
         "description": "Burn bright with team spirit, increasing acceleration in proportion to the total Power of racing team members late-race.",
         "effect": [
             {
-                "description": "Increases acceleration based on your team's total base power stat for 1.2s, increasing by 0.32 when below 1200, 0.36 at 1200 - 1799, 0.4 at 1800 - 2599, 0.44 at 2600 - 3599, and 0.48 if 3600 or higher.",
+                "description": "Increases acceleration based on your team's total base power stat for 1.2s.\nTotal < 1200 : 0.32 accel\n1200 <= Total < 1800 : 0.36 accel\n1800 <= Total < 260 : 0.4 accel\n2600 <= Total < 3600 : 0.44 accel\n3600 <= Total : 0.48 accel",
                 "conditions": [
                     "Random point in late race"
                 ]
@@ -9988,7 +9988,7 @@
         "description": "Burn bright with team spirit, slightly increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
         "effect": [
             {
-                "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.012 and 4 when below 1200, 0.0135 and 4.5 at 1200 - 1799, 0.015 and 5 at 1800 - 2599, 0.0165 and 5.5 at 2600 - 3599, and 0.018 and 6 if 3600 or higher.",
+                "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s.\nTotal < 1200 : 0.012 lane movement speed and 4 FoV\n1200 <= Total < 1800 : 0.0135 lane movement speed and 4.5 FoV\n1800 <= Total < 260 : 0.015 lane movement speed and 5 FoV\n2600 <= Total < 3600 : 0.0165 lane movement speed and 5.5 FoV\n3600 <= Total : 0.018 lane movement speed and 6 FoV",
                 "conditions": [
                     "Random point in early race"
                 ]
@@ -10011,7 +10011,7 @@
         "description": "Burn bright with team spirit, increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
         "effect": [
             {
-                "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s, increasing by 0.028 and 12 when below 1200, 0.0315 and 13.5 at 1200 - 1799, 0.035 and 15 at 1800 - 2599, 0.0385 and 16.5 at 2600 - 3599, and 0.042 and 18 if 3600 or higher.",
+                "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s.\nTotal < 1200 : 0.028 lane movement speed and 12 FoV\n1200 <= Total < 1800 : 0.0315 lane movement speed and 13.5 FoV\n1800 <= Total < 260 : 0.035 lane movement speed and 15 FoV\n2600 <= Total < 3600 : 0.0385 lane movement speed and 16.5 FoV\n3600 <= Total : 0.042 lane movement speed and 18 FoV",
                 "conditions": [
                     "Random point in early race"
                 ]
