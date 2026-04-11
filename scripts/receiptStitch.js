@@ -6,8 +6,8 @@ import sharp from 'sharp';
 
 const MAX_IMAGES = 8;
 const MAX_PERMUTATIONS = 5040; // 7!
-const COARSE_STEP = 6;
-const BAD_MAE = 22;
+/** Above this mean abs diff (0–255) on grayscale band, treat match as failed. */
+const BAD_MAE = 38;
 
 function luminanceAt(data, w, x, y) {
   const i = (y * w + x) * 4;
@@ -76,7 +76,7 @@ async function trimLetterbox(buf) {
 
 async function toResizePng(buf, targetWidth) {
   return sharp(buf)
-    .resize({ width: targetWidth, fit: 'fill' })
+    .resize({ width: targetWidth })
     .png()
     .toBuffer();
 }
@@ -88,12 +88,15 @@ async function loadGray(buf) {
 
 /**
  * Best vertical overlap: bottom `overlap` rows of `top` vs top `overlap` rows of `bottom`.
- * Uses horizontal center band for robustness.
+ * Uses a wide center band; `hShift` nudges horizontally for slight crop misalignment.
  */
-function scoreOverlap(top, bot, overlap, x0, bandW) {
+function scoreOverlap(top, bot, overlap, x0, bandW, hShift) {
   const { gray: g0, w: w0, h: h0 } = top;
   const { gray: g1, w: w1, h: h1 } = bot;
-  if (overlap > h0 || overlap > h1 || overlap < 8) return Number.POSITIVE_INFINITY;
+  if (overlap > h0 || overlap > h1 || overlap < 4) return Number.POSITIVE_INFINITY;
+
+  const xT = Math.max(0, Math.min(w0 - bandW, x0 + hShift));
+  const xB = Math.max(0, Math.min(w1 - bandW, x0 + hShift));
 
   let sum = 0;
   const n = overlap * bandW;
@@ -102,39 +105,53 @@ function scoreOverlap(top, bot, overlap, x0, bandW) {
     const row0 = (y0 + dy) * w0;
     const row1 = dy * w1;
     for (let dx = 0; dx < bandW; dx++) {
-      const a = g0[row0 + x0 + dx];
-      const b = g1[row1 + x0 + dx];
+      const a = g0[row0 + xT + dx];
+      const b = g1[row1 + xB + dx];
       sum += Math.abs(a - b);
     }
   }
   return sum / n;
 }
 
+/** Minimum MAE over small horizontal shifts (px). */
+function scoreOverlapBestShift(top, bot, overlap, x0, bandW) {
+  let best = Number.POSITIVE_INFINITY;
+  for (let hShift = -20; hShift <= 20; hShift += 2) {
+    const s = scoreOverlap(top, bot, overlap, x0, bandW, hShift);
+    if (s < best) best = s;
+  }
+  return best;
+}
+
 function findBestOverlap(top, bot) {
   const w = Math.min(top.w, bot.w);
   const h0 = top.h;
   const h1 = bot.h;
-  const bandW = Math.max(32, Math.floor(w * 0.65));
+  const hMin = Math.min(h0, h1);
+  const bandW = Math.max(48, Math.floor(w * 0.78));
   const x0 = Math.floor((w - bandW) / 2);
 
-  const maxO = Math.min(Math.floor(Math.min(h0, h1) * 0.62), 1400);
-  const minO = Math.max(24, Math.floor(Math.min(h0, h1) * 0.06));
+  const maxO = Math.min(Math.floor(hMin * 0.78), 2600);
+  const minO = Math.max(6, Math.floor(hMin * 0.008));
+
+  const coarseStep = Math.max(3, Math.floor((maxO - minO) / 48));
 
   let bestO = minO;
   let bestScore = Number.POSITIVE_INFINITY;
 
-  for (let o = minO; o <= maxO; o += COARSE_STEP) {
-    const s = scoreOverlap(top, bot, o, x0, bandW);
+  for (let o = minO; o <= maxO; o += coarseStep) {
+    const s = scoreOverlapBestShift(top, bot, o, x0, bandW);
     if (s < bestScore) {
       bestScore = s;
       bestO = o;
     }
   }
 
-  const refineLo = Math.max(minO, bestO - COARSE_STEP);
-  const refineHi = Math.min(maxO, bestO + COARSE_STEP);
+  const refineRadius = Math.min(120, Math.max(36, coarseStep * 4));
+  const refineLo = Math.max(minO, bestO - refineRadius);
+  const refineHi = Math.min(maxO, bestO + refineRadius);
   for (let o = refineLo; o <= refineHi; o++) {
-    const s = scoreOverlap(top, bot, o, x0, bandW);
+    const s = scoreOverlapBestShift(top, bot, o, x0, bandW);
     if (s < bestScore) {
       bestScore = s;
       bestO = o;
@@ -185,12 +202,13 @@ function permuteOrder(n, pairCost) {
 
 /**
  * @param {string[]} urls - HTTPS image URLs (e.g. Discord CDN)
- * @param {{ autoOrder?: boolean, trimEdges?: boolean }} opts
+ * @param {{ autoOrder?: boolean, trimEdges?: boolean }} opts — set `trimEdges: true` only if borders are uniform (trim can desync stacked shots).
  * @returns {Promise<{ buffer: Buffer, filename: string, mime: string, overlaps: number[], order: number[] }>}
  */
 export async function stitchScreenshots(urls, opts = {}) {
   const autoOrder = opts.autoOrder !== false;
-  const trimEdges = opts.trimEdges !== false;
+  /** Default off: per-image trim shifts content differently and breaks overlap alignment. */
+  const trimEdges = opts.trimEdges === true;
 
   if (!urls?.length) {
     throw new Error('No images provided.');

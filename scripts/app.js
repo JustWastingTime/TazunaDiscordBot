@@ -533,7 +533,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         try {
           const { buffer, filename, mime, overlaps, order } = await stitchScreenshots(urls, {
             autoOrder,
-            trimEdges: true,
           });
           const orderNote =
             urls.length > 7
