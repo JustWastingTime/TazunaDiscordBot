@@ -523,6 +523,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
       const autoOrderOpt = data.options?.find((o) => o.name === 'auto_order')?.value;
       const autoOrder = autoOrderOpt !== false;
+      const fullWindow = data.options?.find((o) => o.name === 'full_window')?.value === true;
 
       res.send({
         type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
@@ -533,6 +534,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         try {
           const { buffer, filename, mime, overlaps, order } = await stitchScreenshots(urls, {
             autoOrder,
+            cropDetailsPanel: !fullWindow,
           });
           const orderNote =
             urls.length > 7
@@ -544,7 +546,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             ? `Detected **${overlaps.length}** overlap(s).`
             : 'Some segments had weak overlap; result may need a retake with clearer overlap.';
           await sendFollowup(token, {
-            content: `✅ ${ov}${orderNote}\n_Algorithm: grayscale band matching in-bot — for pixel-perfect receipts use the [web tool](https://lt900ed.github.io/receipt_factor/)._`,
+            content: `✅ ${ov}${orderNote}\n${fullWindow ? '' : 'Wide screenshots: cropped to the left details column (receipt-style). Use the full_window option if that crop is wrong.\n'}Overlap matching is heuristic; for template-based parity use the [web tool](https://lt900ed.github.io/receipt_factor/).`,
             attachments: [{ id: 0, filename }],
             files: [{ buffer, filename, mime }],
           });

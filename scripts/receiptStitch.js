@@ -9,6 +9,87 @@ const MAX_PERMUTATIONS = 5040; // 7!
 /** Above this mean abs diff (0–255) on grayscale band, treat match as failed. */
 const BAD_MAE = 38;
 
+/**
+ * PC / Steam landscape shots: details modal on the left, blurred menu on the right.
+ * Crop to the high-detail column so overlap is not driven by identical blur + so output matches receipt-style strip.
+ */
+async function cropUmaDetailsStrip(buf) {
+  const meta = await sharp(buf).metadata();
+  const W = meta.width || 0;
+  const H = meta.height || 0;
+  if (W < 500 || H < 400) return buf;
+
+  const isLandscape = W > H * 0.95;
+  if (!isLandscape) return buf;
+
+  const scanW = Math.min(960, W);
+  const { data, info } = await sharp(buf)
+    .resize({ width: scanW })
+    .greyscale()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+
+  const w = info.width;
+  const h = info.height;
+  const g = new Uint8Array(data);
+  const skipTop = Math.min(90, Math.floor(h * 0.055));
+
+  const colVar = new Float32Array(w);
+  for (let x = 0; x < w; x++) {
+    let sum = 0;
+    let sum2 = 0;
+    let n = 0;
+    for (let y = skipTop; y < h; y += 3) {
+      const v = g[y * w + x];
+      sum += v;
+      sum2 += v * v;
+      n++;
+    }
+    const mean = sum / n;
+    colVar[x] = sum2 / n - mean * mean;
+  }
+
+  let refMax = 0;
+  const refL = Math.floor(w * 0.06);
+  const refR = Math.floor(w * 0.34);
+  for (let x = refL; x < refR; x++) {
+    refMax = Math.max(refMax, colVar[x]);
+  }
+
+  if (refMax < 220) {
+    const cw = Math.min(W, Math.floor(W * 0.47));
+    return sharp(buf).extract({ left: 0, top: 0, width: cw, height: H }).png().toBuffer();
+  }
+
+  const threshold = Math.max(110, refMax * 0.2);
+  const runNeed = Math.max(18, Math.floor(w * 0.022));
+  let rightScan = Math.floor(w * 0.46);
+  let run = 0;
+  for (let x = Math.floor(w * 0.28); x < Math.floor(w * 0.58); x++) {
+    if (colVar[x] < threshold) {
+      run++;
+      if (run >= runNeed) {
+        rightScan = x - runNeed + 1;
+        break;
+      }
+    } else {
+      run = 0;
+    }
+  }
+
+  const minPanelOrig = Math.floor(W * 0.24);
+  const maxPanelOrig = Math.floor(W * 0.56);
+  let cropW = Math.round((rightScan * W) / scanW);
+  cropW = Math.min(maxPanelOrig, Math.max(minPanelOrig, cropW));
+  cropW = Math.min(W, cropW);
+
+  if (cropW < minPanelOrig) {
+    cropW = Math.min(W, Math.floor(W * 0.47));
+  }
+
+  return sharp(buf).extract({ left: 0, top: 0, width: cropW, height: H }).png().toBuffer();
+}
+
 function luminanceAt(data, w, x, y) {
   const i = (y * w + x) * 4;
   return 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
@@ -116,7 +197,7 @@ function scoreOverlap(top, bot, overlap, x0, bandW, hShift) {
 /** Minimum MAE over small horizontal shifts (px). */
 function scoreOverlapBestShift(top, bot, overlap, x0, bandW) {
   let best = Number.POSITIVE_INFINITY;
-  for (let hShift = -20; hShift <= 20; hShift += 2) {
+  for (let hShift = -36; hShift <= 36; hShift += 2) {
     const s = scoreOverlap(top, bot, overlap, x0, bandW, hShift);
     if (s < best) best = s;
   }
@@ -128,7 +209,7 @@ function findBestOverlap(top, bot) {
   const h0 = top.h;
   const h1 = bot.h;
   const hMin = Math.min(h0, h1);
-  const bandW = Math.max(48, Math.floor(w * 0.78));
+  const bandW = Math.max(64, Math.floor(w * 0.94));
   const x0 = Math.floor((w - bandW) / 2);
 
   const maxO = Math.min(Math.floor(hMin * 0.78), 2600);
@@ -202,13 +283,14 @@ function permuteOrder(n, pairCost) {
 
 /**
  * @param {string[]} urls - HTTPS image URLs (e.g. Discord CDN)
- * @param {{ autoOrder?: boolean, trimEdges?: boolean }} opts — set `trimEdges: true` only if borders are uniform (trim can desync stacked shots).
+ * @param {{ autoOrder?: boolean, trimEdges?: boolean, cropDetailsPanel?: boolean }} opts — `cropDetailsPanel` (default true): on landscape shots, crop to the left details column like receipt output.
  * @returns {Promise<{ buffer: Buffer, filename: string, mime: string, overlaps: number[], order: number[] }>}
  */
 export async function stitchScreenshots(urls, opts = {}) {
   const autoOrder = opts.autoOrder !== false;
   /** Default off: per-image trim shifts content differently and breaks overlap alignment. */
   const trimEdges = opts.trimEdges === true;
+  const cropDetailsPanel = opts.cropDetailsPanel !== false;
 
   if (!urls?.length) {
     throw new Error('No images provided.');
@@ -229,6 +311,9 @@ export async function stitchScreenshots(urls, opts = {}) {
   let bufs = fetched;
   if (trimEdges) {
     bufs = await Promise.all(bufs.map((b) => trimLetterbox(b)));
+  }
+  if (cropDetailsPanel) {
+    bufs = await Promise.all(bufs.map((b) => cropUmaDetailsStrip(b)));
   }
 
   const widths = await Promise.all(bufs.map((b) => sharp(b).metadata().then((m) => m.width || 0)));

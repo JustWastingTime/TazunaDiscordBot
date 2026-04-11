@@ -295,6 +295,12 @@ const STITCH_COMMAND = {
       description: 'Try to reorder shots for best vertical match (up to 7 images)',
       required: false,
     },
+    {
+      type: 5,
+      name: 'full_window',
+      description: 'Use full screenshot width (skip cropping the left details panel)',
+      required: false,
+    },
   ],
   type: 1,
   integration_types: [0, 1],
