@@ -19,9 +19,6 @@ import {
 } from 'discord-interactions';
 import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX } from './utils.js';
 import cache from './githubCache.js';
-import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
-import { stitchScreenshots } from './receiptStitch.js';
-
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -501,62 +498,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       })();
 
       return; // <- important to prevent falling through to unknown command handler
-    }
-
-    // "stitch" — vertical scroll screenshot combiner (overlap heuristic; not the web tool's OpenCV pipeline)
-    if (name === 'stitch') {
-      const optNames = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'image_7', 'image_8'];
-      const urls = [];
-      for (const on of optNames) {
-        const aid = data.options?.find((o) => o.name === on)?.value;
-        if (!aid) continue;
-        const att = data.resolved?.attachments?.[aid];
-        if (att?.url) urls.push(att.url);
-      }
-
-      if (urls.length < 2) {
-        return res.send({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: { content: '❌ Attach at least **2** images (`image_1` … `image_8`). Same tips as [レシート因子メーカー](https://lt900ed.github.io/receipt_factor/): overlapping scroll captures work best.' },
-        });
-      }
-
-      const autoOrderOpt = data.options?.find((o) => o.name === 'auto_order')?.value;
-      const autoOrder = autoOrderOpt !== false;
-      const fullWindow = data.options?.find((o) => o.name === 'full_window')?.value === true;
-
-      res.send({
-        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
-        data: { content: 'Stitching screenshots…' },
-      });
-
-      (async () => {
-        try {
-          const { buffer, filename, mime, overlaps, order } = await stitchScreenshots(urls, {
-            autoOrder,
-            cropDetailsPanel: !fullWindow,
-          });
-          const orderNote =
-            urls.length > 7
-              ? '\n*(8 images: order is attachment order; auto-sort supports up to 7.)*'
-              : autoOrder
-                ? `\n*Image order used: ${order.map((i) => i + 1).join(' → ')}.*`
-                : '';
-          const ov = overlaps.every((o) => o > 0)
-            ? `Detected **${overlaps.length}** overlap(s).`
-            : 'Some segments had weak overlap; result may need a retake with clearer overlap.';
-          await sendFollowup(token, {
-            content: `✅ ${ov}${orderNote}\n${fullWindow ? '' : 'Wide screenshots: cropped to the left details column (receipt-style). Use the full_window option if that crop is wrong.\n'}Overlap matching is heuristic; for template-based parity use the [web tool](https://lt900ed.github.io/receipt_factor/).`,
-            attachments: [{ id: 0, filename }],
-            files: [{ buffer, filename, mime }],
-          });
-        } catch (err) {
-          console.error('stitch error:', err);
-          await sendFollowup(token, { content: `❌ Stitch failed: ${err.message}` });
-        }
-      })();
-
-      return;
     }
 
     if (name === "schedule") {
