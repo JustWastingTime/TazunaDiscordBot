@@ -237,6 +237,70 @@ const EPITHET_COMMAND = {
   contexts: [0, 1, 2],
 };
 
+const STITCH_COMMAND = {
+  name: 'stitch',
+  description: 'Combine 2–8 overlapping Uma screenshots vertically (trim + overlap detect)',
+  options: [
+    {
+      type: 11,
+      name: 'image_1',
+      description: 'First screenshot',
+      required: true,
+    },
+    {
+      type: 11,
+      name: 'image_2',
+      description: 'Second screenshot',
+      required: false,
+    },
+    {
+      type: 11,
+      name: 'image_3',
+      description: 'Third screenshot',
+      required: false,
+    },
+    {
+      type: 11,
+      name: 'image_4',
+      description: 'Fourth screenshot',
+      required: false,
+    },
+    {
+      type: 11,
+      name: 'image_5',
+      description: 'Fifth screenshot',
+      required: false,
+    },
+    {
+      type: 11,
+      name: 'image_6',
+      description: 'Sixth screenshot',
+      required: false,
+    },
+    {
+      type: 11,
+      name: 'image_7',
+      description: 'Seventh screenshot',
+      required: false,
+    },
+    {
+      type: 11,
+      name: 'image_8',
+      description: 'Eighth screenshot',
+      required: false,
+    },
+    {
+      type: 5,
+      name: 'auto_order',
+      description: 'Try to reorder shots for best vertical match (up to 7 images)',
+      required: false,
+    },
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
 const QP_COMMAND = {
   name: 'qp',
   description: 'Show a quick picture guide',
@@ -260,6 +324,6 @@ const QP_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, PARSE_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND, QP_COMMAND];
+const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, PARSE_COMMAND, STITCH_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND, QP_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

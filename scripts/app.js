@@ -20,6 +20,7 @@ import {
 import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX } from './utils.js';
 import cache from './githubCache.js';
 import { parseWithOcrSpace, parseUmaProfile, buildUmaParsedEmbed, generateUmaLatorLink, shortenUrl } from './parser.js';
+import { stitchScreenshots } from './receiptStitch.js';
 
 
 import path from 'path';
@@ -500,6 +501,61 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       })();
 
       return; // <- important to prevent falling through to unknown command handler
+    }
+
+    // "stitch" — vertical scroll screenshot combiner (overlap heuristic; not the web tool's OpenCV pipeline)
+    if (name === 'stitch') {
+      const optNames = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6', 'image_7', 'image_8'];
+      const urls = [];
+      for (const on of optNames) {
+        const aid = data.options?.find((o) => o.name === on)?.value;
+        if (!aid) continue;
+        const att = data.resolved?.attachments?.[aid];
+        if (att?.url) urls.push(att.url);
+      }
+
+      if (urls.length < 2) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: '❌ Attach at least **2** images (`image_1` … `image_8`). Same tips as [レシート因子メーカー](https://lt900ed.github.io/receipt_factor/): overlapping scroll captures work best.' },
+        });
+      }
+
+      const autoOrderOpt = data.options?.find((o) => o.name === 'auto_order')?.value;
+      const autoOrder = autoOrderOpt !== false;
+
+      res.send({
+        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+        data: { content: 'Stitching screenshots…' },
+      });
+
+      (async () => {
+        try {
+          const { buffer, filename, mime, overlaps, order } = await stitchScreenshots(urls, {
+            autoOrder,
+            trimEdges: true,
+          });
+          const orderNote =
+            urls.length > 7
+              ? '\n*(8 images: order is attachment order; auto-sort supports up to 7.)*'
+              : autoOrder
+                ? `\n*Image order used: ${order.map((i) => i + 1).join(' → ')}.*`
+                : '';
+          const ov = overlaps.every((o) => o > 0)
+            ? `Detected **${overlaps.length}** overlap(s).`
+            : 'Some segments had weak overlap; result may need a retake with clearer overlap.';
+          await sendFollowup(token, {
+            content: `✅ ${ov}${orderNote}\n_Algorithm: grayscale band matching in-bot — for pixel-perfect receipts use the [web tool](https://lt900ed.github.io/receipt_factor/)._`,
+            attachments: [{ id: 0, filename }],
+            files: [{ buffer, filename, mime }],
+          });
+        } catch (err) {
+          console.error('stitch error:', err);
+          await sendFollowup(token, { content: `❌ Stitch failed: ${err.message}` });
+        }
+      })();
+
+      return;
     }
 
     if (name === "schedule") {
@@ -987,19 +1043,31 @@ return res.status(400).json({ error: 'unknown interaction type' });
 });
 
 async function sendFollowup(token, payload) {
-  const response = await fetch(
-    `https://discord.com/api/v10/webhooks/${process.env.APP_ID}/${token}`, 
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    }
-  );
+  const file = payload.files?.[0];
+  const jsonPayload = { ...payload };
+  delete jsonPayload.files;
+
+  let response;
+  if (file?.buffer) {
+    const form = new FormData();
+    form.append('payload_json', JSON.stringify(jsonPayload));
+    form.append('files[0]', new Blob([file.buffer], { type: file.mime || 'application/octet-stream' }), file.filename);
+    response = await fetch(`https://discord.com/api/v10/webhooks/${process.env.APP_ID}/${token}`, {
+      method: 'POST',
+      body: form,
+    });
+  } else {
+    response = await fetch(`https://discord.com/api/v10/webhooks/${process.env.APP_ID}/${token}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(jsonPayload),
+    });
+  }
 
   if (!response.ok) {
     const errText = await response.text();
-    console.error("Follow-up failed:", response.status, errText);
-  } 
+    console.error('Follow-up failed:', response.status, errText);
+  }
 
   return response;
 }
