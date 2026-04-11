@@ -168,46 +168,42 @@ async function loadGray(buf) {
 }
 
 /**
- * MAE between bottom `overlap` rows of `top` and `overlap` rows of `bot` starting at row `skipB`.
- * Second shots repeat header/stats at y=0 — skipB slides past that so we match the real scroll overlap.
+ * Best vertical overlap: bottom `overlap` rows of `top` vs top `overlap` rows of `bottom`.
+ * Uses a wide center band; `hShift` nudges horizontally for slight crop misalignment.
  */
-function scoreOverlapSliding(top, bot, overlap, skipB, x0, bandW, hShift, stride) {
+function scoreOverlap(top, bot, overlap, x0, bandW, hShift) {
   const { gray: g0, w: w0, h: h0 } = top;
   const { gray: g1, w: w1, h: h1 } = bot;
-  if (overlap < 4 || overlap > h0 || skipB < 0 || skipB + overlap > h1) return Number.POSITIVE_INFINITY;
+  if (overlap > h0 || overlap > h1 || overlap < 4) return Number.POSITIVE_INFINITY;
 
-  const st = stride || 1;
   const xT = Math.max(0, Math.min(w0 - bandW, x0 + hShift));
   const xB = Math.max(0, Math.min(w1 - bandW, x0 + hShift));
 
   let sum = 0;
-  let n = 0;
-  const yT0 = h0 - overlap;
-  for (let dy = 0; dy < overlap; dy += st) {
-    const row0 = (yT0 + dy) * w0;
-    const row1 = (skipB + dy) * w1;
-    for (let dx = 0; dx < bandW; dx += st) {
-      sum += Math.abs(g0[row0 + xT + dx] - g1[row1 + xB + dx]);
-      n++;
+  const n = overlap * bandW;
+  const y0 = h0 - overlap;
+  for (let dy = 0; dy < overlap; dy++) {
+    const row0 = (y0 + dy) * w0;
+    const row1 = dy * w1;
+    for (let dx = 0; dx < bandW; dx++) {
+      const a = g0[row0 + xT + dx];
+      const b = g1[row1 + xB + dx];
+      sum += Math.abs(a - b);
     }
   }
-  return n > 0 ? sum / n : Number.POSITIVE_INFINITY;
+  return sum / n;
 }
 
-function scoreOverlapSlidingBestShift(top, bot, overlap, skipB, x0, bandW, stride) {
+/** Minimum MAE over small horizontal shifts (px). */
+function scoreOverlapBestShift(top, bot, overlap, x0, bandW) {
   let best = Number.POSITIVE_INFINITY;
-  const st = stride || 1;
-  const hStep = st > 1 ? 4 : 2;
-  for (let hShift = -36; hShift <= 36; hShift += hStep) {
-    const s = scoreOverlapSliding(top, bot, overlap, skipB, x0, bandW, hShift, st);
+  for (let hShift = -36; hShift <= 36; hShift += 2) {
+    const s = scoreOverlap(top, bot, overlap, x0, bandW, hShift);
     if (s < best) best = s;
   }
   return best;
 }
 
-/**
- * @returns {{ overlap: number, skipTopOfBottom: number, mae: number }}
- */
 function findBestOverlap(top, bot) {
   const w = Math.min(top.w, bot.w);
   const h0 = top.h;
@@ -216,48 +212,37 @@ function findBestOverlap(top, bot) {
   const bandW = Math.max(64, Math.floor(w * 0.94));
   const x0 = Math.floor((w - bandW) / 2);
 
-  const maxO = Math.min(Math.floor(hMin * 0.82), 2800);
+  const maxO = Math.min(Math.floor(hMin * 0.78), 2600);
   const minO = Math.max(6, Math.floor(hMin * 0.008));
-  const sMax = Math.min(Math.floor(h1 * 0.5), h1 - minO - 4);
 
-  const coarseO = Math.max(4, Math.floor((maxO - minO) / 36));
-  const coarseS = Math.max(6, Math.floor(sMax / 32));
+  const coarseStep = Math.max(3, Math.floor((maxO - minO) / 48));
 
   let bestO = minO;
-  let bestS = 0;
   let bestScore = Number.POSITIVE_INFINITY;
 
-  const coarseStride = 2;
-  for (let skipB = 0; skipB <= sMax; skipB += coarseS) {
-    for (let o = minO; o <= maxO; o += coarseO) {
-      if (skipB + o > h1) break;
-      const sc = scoreOverlapSlidingBestShift(top, bot, o, skipB, x0, bandW, coarseStride);
-      if (sc < bestScore) {
-        bestScore = sc;
-        bestO = o;
-        bestS = skipB;
-      }
+  for (let o = minO; o <= maxO; o += coarseStep) {
+    const s = scoreOverlapBestShift(top, bot, o, x0, bandW);
+    if (s < bestScore) {
+      bestScore = s;
+      bestO = o;
     }
   }
 
-  const rO = Math.min(72, Math.max(32, coarseO * 3));
-  const rS = Math.min(48, Math.max(18, coarseS * 3));
-  for (let skipB = Math.max(0, bestS - rS); skipB <= Math.min(sMax, bestS + rS); skipB++) {
-    for (let o = Math.max(minO, bestO - rO); o <= Math.min(maxO, bestO + rO); o++) {
-      if (skipB + o > h1) continue;
-      const sf = scoreOverlapSlidingBestShift(top, bot, o, skipB, x0, bandW, 1);
-      if (sf < bestScore) {
-        bestScore = sf;
-        bestO = o;
-        bestS = skipB;
-      }
+  const refineRadius = Math.min(120, Math.max(36, coarseStep * 4));
+  const refineLo = Math.max(minO, bestO - refineRadius);
+  const refineHi = Math.min(maxO, bestO + refineRadius);
+  for (let o = refineLo; o <= refineHi; o++) {
+    const s = scoreOverlapBestShift(top, bot, o, x0, bandW);
+    if (s < bestScore) {
+      bestScore = s;
+      bestO = o;
     }
   }
 
   if (bestScore > BAD_MAE) {
-    return { overlap: 0, skipTopOfBottom: 0, mae: bestScore };
+    return { overlap: 0, mae: bestScore };
   }
-  return { overlap: bestO, skipTopOfBottom: bestS, mae: bestScore };
+  return { overlap: bestO, mae: bestScore };
 }
 
 function factorial(n) {
@@ -299,7 +284,7 @@ function permuteOrder(n, pairCost) {
 /**
  * @param {string[]} urls - HTTPS image URLs (e.g. Discord CDN)
  * @param {{ autoOrder?: boolean, trimEdges?: boolean, cropDetailsPanel?: boolean }} opts — `cropDetailsPanel` (default true): on landscape shots, crop to the left details column like receipt output.
- * @returns {Promise<{ buffer: Buffer, filename: string, mime: string, overlaps: number[], skips: number[], order: number[] }>}
+ * @returns {Promise<{ buffer: Buffer, filename: string, mime: string, overlaps: number[], order: number[] }>}
  */
 export async function stitchScreenshots(urls, opts = {}) {
   const autoOrder = opts.autoOrder !== false;
@@ -363,21 +348,16 @@ export async function stitchScreenshots(urls, opts = {}) {
   }
 
   const overlaps = [];
-  const skips = [];
   for (let k = 0; k < n - 1; k++) {
     const a = grays[order[k]];
     const b = grays[order[k + 1]];
-    const r = findBestOverlap(a, b);
-    overlaps.push(r.overlap);
-    skips.push(r.skipTopOfBottom);
+    const { overlap } = findBestOverlap(a, b);
+    overlaps.push(overlap);
   }
 
   const metas = await Promise.all(pngs.map((p) => sharp(p).metadata()));
   const heights = order.map((i) => metas[i].height || 0);
-  let totalH = heights[0];
-  for (let k = 0; k < n - 1; k++) {
-    totalH += heights[k + 1] - skips[k] - overlaps[k];
-  }
+  const totalH = heights[0] + overlaps.reduce((acc, o, k) => acc + heights[k + 1] - o, 0);
 
   const channels = 4;
   const out = Buffer.alloc(targetW * totalH * channels, 0);
@@ -403,15 +383,9 @@ export async function stitchScreenshots(urls, opts = {}) {
   let y = 0;
   for (let k = 0; k < n; k++) {
     const idx = order[k];
-    const srcTop = k === 0 ? 0 : skips[k - 1];
-    const drawH = heights[k] - srcTop;
-    const piece = await sharp(pngs[idx])
-      .extract({ left: 0, top: srcTop, width: targetW, height: drawH })
-      .png()
-      .toBuffer();
-    await blitPngAt(piece, y);
+    await blitPngAt(pngs[idx], y);
     if (k < n - 1) {
-      y += drawH - overlaps[k];
+      y += heights[k] - overlaps[k];
     }
   }
 
@@ -429,5 +403,5 @@ export async function stitchScreenshots(urls, opts = {}) {
     mime = 'image/jpeg';
   }
 
-  return { buffer, filename, mime, overlaps, skips, order };
+  return { buffer, filename, mime, overlaps, order };
 }
