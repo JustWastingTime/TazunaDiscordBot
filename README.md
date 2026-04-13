@@ -5,6 +5,7 @@ Any questions? Join the discord https://discord.gg/5BW4gSUVSz
 
 Current version is up for public, you don't have to self host anymore. The bot is currently hosted on a 5$ per month server. Please consider donating to help keep it online.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K5C7U3C)
+
 ---
 
 ## 🚀 Getting Started
