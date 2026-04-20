@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
 import cache from './githubCache.js';
 
 import path from 'path';
@@ -38,6 +38,12 @@ const misc = cache.misc;
 const schedule = cache.schedule;
 const resources = cache.resources;
 const epithets = cache.epithets;
+
+// Bug report destination (overridable via env)
+const BUG_REPORT_GUILD_ID = process.env.BUG_REPORT_GUILD_ID || '1416320822846689333';
+const BUG_REPORT_CHANNEL_ID = process.env.BUG_REPORT_CHANNEL_ID || '1495734291253035028';
+const SUPPORT_INVITE_URL = process.env.SUPPORT_INVITE_URL || 'https://discord.gg/5BW4gSUVSz';
+const KOFI_URL = process.env.KOFI_URL || 'https://ko-fi.com/justwastingtime';
 
 // Create an express app
 const app = express();
@@ -672,6 +678,134 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: listPayload
       });
+    }
+
+    // "donate" command
+    if (name === 'donate') {
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          embeds: [
+            {
+              title: '☕ Support Tazuna',
+              description:
+                "Tazuna runs on a paid server, and every month it costs real money to keep the bot online, fast, and updated.\n\n" +
+                "If the bot has been useful to you and you'd like to help cover hosting costs, any contribution is hugely appreciated — no pressure, the bot will always be free to use!\n\n" +
+                "Thank you for your support! 💚",
+              color: 0x13A10E,
+              footer: { text: 'Donations are entirely voluntary and never unlock paid features.' }
+            }
+          ],
+          components: [
+            {
+              type: 1, // Action row
+              components: [
+                {
+                  type: 2,     // Button
+                  style: 5,    // Link
+                  label: 'Support on Ko-fi',
+                  url: KOFI_URL,
+                  emoji: { name: '☕' }
+                }
+              ]
+            }
+          ]
+        }
+      });
+    }
+
+    // "bugreport" command
+    if (name === 'bugreport') {
+      const descriptionText = data.options?.find(opt => opt.name === 'description')?.value;
+      const imageAttachmentId = data.options?.find(opt => opt.name === 'image')?.value;
+      const imageAttachment = imageAttachmentId
+        ? data.resolved?.attachments?.[imageAttachmentId]
+        : null;
+
+      if (!descriptionText || !descriptionText.trim()) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Please provide a description of the bug.'
+          }
+        });
+      }
+
+      // Acknowledge immediately so we have time to post to the report channel
+      res.send({
+        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+        data: { flags: InteractionResponseFlags.EPHEMERAL }
+      });
+
+      (async () => {
+        try {
+          const user = req.body.member?.user || req.body.user;
+          const userTag = user?.username
+            ? (user.discriminator && user.discriminator !== '0'
+                ? `${user.username}#${user.discriminator}`
+                : user.username)
+            : 'Unknown user';
+          const userId = user?.id || 'unknown';
+          const guildId = req.body.guild_id || null;
+          const channelId = req.body.channel_id || req.body.channel?.id || null;
+
+          const reportEmbed = {
+            title: '🐞 New Bug Report',
+            description: descriptionText.length > 4000
+              ? descriptionText.slice(0, 3997) + '...'
+              : descriptionText,
+            color: 0xE74C3C,
+            fields: [
+              { name: 'Reporter', value: `${userTag} (<@${userId}>)`, inline: false },
+              { name: 'User ID', value: userId, inline: true },
+              ...(guildId
+                ? [{ name: 'Origin Guild', value: guildId, inline: true }]
+                : [{ name: 'Origin', value: 'DM / User-install', inline: true }]),
+              ...(channelId
+                ? [{ name: 'Origin Channel', value: channelId, inline: true }]
+                : [])
+            ],
+            timestamp: new Date().toISOString()
+          };
+
+          if (imageAttachment?.url) {
+            reportEmbed.image = { url: imageAttachment.url };
+            reportEmbed.fields.push({
+              name: 'Attachment',
+              value: `[${imageAttachment.filename || 'image'}](${imageAttachment.url})`,
+              inline: false
+            });
+          }
+
+          try {
+            await DiscordRequest(`channels/${BUG_REPORT_CHANNEL_ID}/messages`, {
+              method: 'POST',
+              body: { embeds: [reportEmbed] }
+            });
+          } catch (postErr) {
+            console.error('Failed to post bug report to channel:', postErr);
+            await sendFollowup(token, {
+              flags: InteractionResponseFlags.EPHEMERAL,
+              content: '⚠️ Your report was received but I could not forward it to the developer. Please join the support server and report it directly: ' + SUPPORT_INVITE_URL
+            });
+            return;
+          }
+
+          await sendFollowup(token, {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: `✅ Your bug report has been received. If you have any questions, feel free to join the discord server ${SUPPORT_INVITE_URL}`
+          });
+        } catch (err) {
+          console.error('Bug report handler error:', err);
+          await sendFollowup(token, {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong submitting your bug report. Please try again later.'
+          });
+        }
+      })();
+
+      return;
     }
 
     console.error(`unknown command: ${name}`);

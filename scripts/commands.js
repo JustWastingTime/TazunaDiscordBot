@@ -244,6 +244,36 @@ const QP_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND, QP_COMMAND];
+const DONATE_COMMAND = {
+  name: 'donate',
+  description: 'Support the bot — hosting isn\'t free!',
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const BUGREPORT_COMMAND = {
+  name: 'bugreport',
+  description: 'Report a bug or issue to the developer',
+  options: [
+    {
+      type: 3, // STRING
+      name: 'description',
+      description: 'Describe the bug or issue you encountered',
+      required: true,
+    },
+    {
+      type: 11, // ATTACHMENT
+      name: 'image',
+      description: 'Optional screenshot illustrating the issue',
+      required: false,
+    }
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND, QP_COMMAND, DONATE_COMMAND, BUGREPORT_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
