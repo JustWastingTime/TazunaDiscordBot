@@ -2427,19 +2427,115 @@
             },
             {
             "conditions": "Pick the Tenno Sho (Autumn Year 3) as an objective and win",
-            "rewards": "All stats +3, Skill points +35, Up-Tempo hint +2, Yayoi Akikawa bond +4"
+            "rewards": "All stats +3, Skill points +45, Up-Tempo hint +2, Yayoi Akikawa bond +4"
             },
             {
             "conditions": "Pick the Queen Elizabeth II Cup (Year 3) as an objective and win",
-            "rewards": "All stats +3, Skill points +35, Straight Descent hint +2, Yayoi Akikawa bond +4"
+            "rewards": "All stats +3, Skill points +45, Straight Descent hint +2, Yayoi Akikawa bond +4"
             },
             {
             "conditions": "Pick the Mile Championship (Autumn Year 3) as an objective and win",
-            "rewards": "All stats +3, Skill points +35, Updrafters hint +2, Yayoi Akikawa bond +4"
+            "rewards": "All stats +3, Skill points +45, Updrafters hint +2, Yayoi Akikawa bond +4"
             },
             {
             "conditions": "Pick the Arima Kinen (Autumn Year 3) as an objective and win",
-            "rewards": "All stats +3, Skill points +35, Preferred Position hint +2, Yayoi Akikawa bond +4"
+            "rewards": "All stats +3, Skill points +45, Preferred Position hint +2, Head-On hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Arima Kinen (Autumn Year 3) as an optional race and win",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +45, Preferred Position hint +2"
+            }
+        ]
+    },
+    {   "id": "102202 - Fine Motion Wedding",
+        "character_name": "Fine Motion",
+        "type": "Original",
+        "costume": "Titania",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "",
+            "guts": "10%",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "C"
+            },
+            {
+            "Front": "D",
+            "Pace": "A",
+            "Late": "E",
+            "End": "C"
+            }
+        ],
+        "unique": "Best Day Ever",
+        "unique_explanation": "",
+        "skills": [
+            "Firm Conditions",
+            "Head-On",
+            "Shifting Gears"
+        ],
+        "potential": [
+            "Mile Corners",
+            "Changing Gears",
+            "Fall Runner",
+            "Neck and Neck"
+        ],
+        "event_skills": [
+            "Pace Chaser Corners",
+            "All I've Got",
+            "Mile Straightaways",
+            "Prepared to Pass",
+            "Standing By",
+            "Up-Tempo",
+            "Straight Descent",
+            "Updrafters",
+            "Preferred Position",
+            "Head-On"
+        ],
+        "aliases": ["fine motion wedding", "titania", "fm wedding"],
+        "url": "https://gametora.com/umamusume/characters/102202-fine-motion",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1020_102202.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Sapporo Kinen (Year 3) as an End Closer",
+            "rewards": "All stats +3, Skill points +35, Standing By hint +1, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Sapporo Kinen (Year 3) not as an End Closer",
+            "rewards": "4 random stats +3, Skill points +35, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Tenno Sho (Autumn Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +45, Up-Tempo hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Queen Elizabeth II Cup (Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +45, Straight Descent hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Mile Championship (Autumn Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +45, Updrafters hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Arima Kinen (Autumn Year 3) as an objective and win",
+            "rewards": "All stats +3, Skill points +45, Preferred Position hint +2, Head-On hint +2, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Pick the Arima Kinen (Autumn Year 3) as an optional race and win",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +45, Preferred Position hint +2"
             }
         ]
     },
@@ -3838,6 +3934,72 @@
             }
         ]
     },
+    {   "id": "103801 - Curren Chan Wedding",
+        "character_name": "Curren Chan",
+        "type": "Original",
+        "costume": "Ma Chérie of the New Moon",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "10%",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "D",
+            "Medium": "G",
+            "Long": "G"
+            },
+            {
+            "Front": "B",
+            "Pace": "A",
+            "Late": "E",
+            "End": "G"
+            }
+        ],
+        "unique": "One True Color",
+        "unique_explanation": "",
+        "skills": [
+            "Hesitant Front Runners",
+            "Pace Chaser Corners",
+            "Intimidate"
+        ],
+        "potential": [
+            "Sprinting Gear",
+            "Adored by All",
+            "Pace Chaser Savvy",
+            "Turbo Sprint"
+        ],
+        "event_skills": [
+            "Frenzied Late Surgers",
+            "Sprint Corners",
+            "Disorient",
+            "Sprinting Gear"
+        ],
+        "aliases": ["curren chan wedding", "ma cherie of the new moon"],
+        "url": "https://gametora.com/umamusume/characters/103802-curren-chan",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1038_103802.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Reach May 2 Year 2",
+            "rewards": "Mood +1"
+            },
+            {
+            "conditions": "Win the Hakodate Sprint Stakes (Year 3), Keeneland Cup (Year 3), Centaur Stakes (Year 3)",
+            "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Guts +15, Sprinting Gear hint +2"
+            }
+        ]
+    },
 
     {   "id": "103901 - Kawakami Princess",
         "character_name": "Kawakami Princess",
@@ -4505,6 +4667,89 @@
         ]
     },
 
+    {   "id": "105101 - Nishino Flower",
+        "character_name": "Nishino Flower",
+        "type": "Original",
+        "costume": "Layered Petals",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "15%",
+            "stamina": "",
+            "power": "15%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "A",
+            "Medium": "E",
+            "Long": "G"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "A",
+            "End": "G"
+            }
+        ],
+        "unique": "Budding Blossom",
+        "unique_explanation": "",
+        "skills": [
+            "Straightaway Adept",
+            "Acceleration",
+            "Straight Descent"
+        ],
+        "potential": [
+            "Sprinting Gear",
+            "Beeline Burst",
+            "Late Surger Corners",
+            "Determined Descent"
+        ],
+        "event_skills": [
+            "Firm Conditions",
+            "Corner Adept",
+            "Updrafters",
+            "Shifting Gears",
+            "Steadfast",
+            "Head-On"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "oka sho april 1 year 2",
+            "japanese oaks may 2 year 2",
+            "sprinters stakes september 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "milers cup april 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "sprinters stakes september 2 year 3",
+        ],
+        "aliases": ["nishino flower original", "layered petals"],
+        "url": "https://gametora.com/umamusume/characters/105101-nishino-flower",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1051_105101.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Hanshin Juvenile Fillies, Oka Sho, Milers Cup, Yasuda Kinen, Mile Championship (Year 2) and Mile Championship (Year 3)",
+            "rewards": "Speed +15, Power +15, Wit +15, Updrafters hint +2, Shifting Gears hint +2"
+            },
+            {
+            "conditions": "Win the Queen Elizabeth II Cup",
+            "rewards": "Energy -15, 1 random stat +10, Speed +20, Skill points +45, Steadfast hint +1"
+            },
+            {
+            "conditions": "Win the Takarazuka Kinen (Year 3)",
+            "rewards": "Energy -15, 1 random stat +10, Stamina +20, Skill points +45, Head-On hint +1"
+            },
+        ]
+    },
+
     {   "id": "105201 - Haru Urara",
         "character_name": "Haru Urara",
         "type": "Original",
@@ -5000,10 +5245,98 @@
         "aliases": [
             "nice nature original",
             "oisuu",
+            "nn",
             "poinsettia ribbon"
         ],
         "url": "https://gametora.com/umamusume/characters/106001-nice-nature",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1060_106001.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Kyoto Shimbun Hai, Naruo Kinen (Year 2) and the Kokura Kinen (Year 2)",
+            "rewards": "Speed +25, Stamina +25, Homestretch Haste hint +2"
+            },
+            {
+            "conditions": "Place 3rd in any non-objective race.",
+            "rewards": "3 random stats +3, Skill points +65"
+            },
+            {
+            "conditions": "Participate in the Satsuki Sho and beat Tokai Teio.",
+            "rewards": "1 random stat +9, Skill points +45"
+            },
+            {
+            "conditions": "Participate in the Satsuki Sho and lose to Tokai Teio.",
+            "rewards": "1 random stat +5, Skill points +35"
+            },
+            {
+            "conditions": "Participate in the Tokyo Yushun (Japanese Derby) and beat Tokai Teio.",
+            "rewards": "1 random stat +9, Skill points +45"
+            },
+            {
+            "conditions": "Participate in the Tokyo Yushun (Japanese Derby) and lose to Tokai Teio.",
+            "rewards": "1 random stat +5, Skill points +35"
+            }
+        ]
+    },
+    {   "id": "106002 - Nice Nature Cheerleader",
+        "character_name": "Nice Nature",
+        "type": "Cheerleader",
+        "costume": "Run & Win",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "10%",
+            "power": "10%",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "F",
+            "Pace": "B",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Go☆Go☆Goal!",
+        "unique_explanation": "",
+        "skills": [
+            "Nimble Navigator",
+            "Tether",
+            "Late Surger Savvy"
+        ],
+        "potential": [
+            "Take the Chance",
+            "Dominator",
+            "Long Shot",
+            "No Stopping Me!"
+        ],
+        "event_skills": [
+            "Studious",
+            "Fighter",
+            "Fearless",
+            "Homestretch Haste"
+        ],
+        "aliases": [
+            "nice nature cheerleader",
+            "oisuu",
+            "nn",
+            "run and win"
+        ],
+        "url": "https://gametora.com/umamusume/characters/106002-nice-nature",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1060_106002.png",
         "review": "",
         "secrets": [
             {
@@ -5107,6 +5440,72 @@
             }
         ]
     },
+    {   "id": "106102 - King Halo Cheerleader",
+        "character_name": "King Halo",
+        "type": "Cheerleader",
+        "costume": "Cheerleader in Noble White",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "10%",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "B",
+            "Medium": "B",
+            "Long": "C"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Louder! Tracen Cheer!",
+        "unique_explanation": "",
+        "skills": [
+            "Spring Runner",
+            "Gap Closer",
+            "Outer Swell"
+        ],
+        "potential": [
+            "Watchful Eye",
+            "Rising Dragon",
+            "Late Surger Straightaways",
+            "Spring Spectacle"
+        ],
+        "event_skills": [
+            "Outer Swell",
+            "Studious",
+            "Pumped",
+            "Unyielding Spirit"
+        ],
+        "aliases": ["king halo cheerleader", "cheerleader in noble white"],
+        "url": "https://gametora.com/umamusume/characters/106102-king-halo",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1061_106102.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win a Sprint , Mile, Medium and Long Turf G1 race",
+            "rewards": "All stats +10, Skill points +20"
+            },
+            {
+            "conditions": "Win the Arima Kinen (Year 3)",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
+            }
+        ]
+    },
 
     {   "id": "106201 - Matikanetannhauser",
         "character_name": "Matikanetannhauser",
@@ -5190,6 +5589,76 @@
             {
             "conditions": "Participate in the All Comers (Year 3) and beat Twin Turbo",
             "rewards": "Speed +20, All I've Got hint +1"
+            }
+        ]
+    },
+
+    {   "id": "106401 - Mejiro Palmer",
+        "character_name": "Mejiro Palmer",
+        "type": "Original",
+        "costume": "Line Breakthrough",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "10%",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "A",
+            "Pace": "E",
+            "Late": "F",
+            "End": "G"
+            }
+        ],
+        "unique": "Keep Pushing Ahead",
+        "unique_explanation": "",
+        "skills": [
+            "Playtime's Over!",
+            "Front Runner Straightaways",
+            "Keeping the Lead"
+        ],
+        "potential": [
+            "Early Lead",
+            "See Ya Later!",
+            "Long Shot",
+            "Vanguard Spirit"
+        ],
+        "event_skills": [
+            "Front Runner Savvy",
+            "Sympathy",
+            "Runaway"
+        ],
+        "races": [
+            "hakodate kinen july 1 year 2",
+            "nikkei shinshun hai january 1 year 3",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["mejiro palmer original og", "line breakthrough"],
+        "url": "https://gametora.com/umamusume/characters/106401-mejiro-palmer",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1064_106401.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Arima Kinen (Year 2), Takarazuka Kinen (Year 3) and Arima Kinen (Year 3)",
+            "rewards": "Speed +10, Guts +10, Runaway hint +1"
             }
         ]
     },
@@ -5513,6 +5982,79 @@
             {
             "conditions": "Win the Tenno Sho (Autumn Year 2)",
             "rewards": "Corner Recovery hint +2"
+            }
+        ]
+    },
+
+    {   "id": "107201 - Yaeno Muteki",
+        "character_name": "Yaeno Muteki",
+        "type": "Original",
+        "costume": "Blazed Head, Covered Fists",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "20%",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "E"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "E"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "A",
+            "End": "G"
+            }
+        ],
+        "unique": "Peerless Dance of Flowering Flames",
+        "unique_explanation": "",
+        "skills": [
+            "Ramp Up",
+            "Steadfast",
+            "Pace Chaser Corners"
+        ],
+        "potential": [
+            "Fighting Spirit",
+            "It's On",
+            "Corner Acceleration",
+            "Unyielding"
+        ],
+        "event_skills": [
+            "Standard Distance",
+            "Playtime's Over!",
+            "Ramp Up",
+            "Homestretch Haste",
+        ],
+        "races": [
+            "mainichi hai march 2 year 2",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "osaka hai march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
+        "aliases": ["yaeno muteki original", "blazed head covered fists"],
+        "url": "https://gametora.com/umamusume/characters/107201-yaeno-muteki",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1072_107201.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win against any of the following characters 8 times: Oguri Cap, Super Creek, Inari One"
+            "rewards": "All stats +10, Ramp Up hint +1, Homestretch Haste hint +1"
             }
         ]
     },
