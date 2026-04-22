@@ -4728,7 +4728,7 @@
             "takamatsunomiya kinen march 2 year 3",
             "milers cup april 2 year 3",
             "yasuda kinen june 1 year 3",
-            "sprinters stakes september 2 year 3",
+            "sprinters stakes september 2 year 3"
         ],
         "aliases": ["nishino flower original", "layered petals"],
         "url": "https://gametora.com/umamusume/characters/105101-nishino-flower",
@@ -4746,7 +4746,7 @@
             {
             "conditions": "Win the Takarazuka Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Stamina +20, Skill points +45, Head-On hint +1"
-            },
+            }
         ]
     },
 
@@ -6053,7 +6053,7 @@
         "review": "",
         "secrets": [
             {
-            "conditions": "Win against any of the following characters 8 times: Oguri Cap, Super Creek, Inari One"
+            "conditions": "Win against any of the following characters 8 times: Oguri Cap, Super Creek, Inari One",
             "rewards": "All stats +10, Ramp Up hint +1, Homestretch Haste hint +1"
             }
         ]
