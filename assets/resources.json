@@ -3,17 +3,13 @@
         "description": "Reference document for all things Uma Musume.",
         "url": "https://docs.google.com/document/d/11X2P7pLuh-k9E7PhRiD20nDX22rNWtCpC1S4IMx_8pQ/edit?tab=t.0#heading=h.3q8sqsvs8ced"
     },
-    {   "name": "club_finder",
-        "description": "A tool to find or track your club data.",
-        "url": "https://uma.moe/circles"
-    },
     {   "name": "friend_finder",
         "description": "A tool to lookup friends for parent (with affinity) and support cards.",
         "url": "https://uma.moe/database"
     },
-    {   "name": "guides",
-        "description": "Bunch of guides including, Champ's Meet, Team Trials and other things.",
-        "url": "https://uma.guide/"
+    {   "name": "pull_planner",
+        "description": "A tool to calculate how much carats you can save by a certain banner and for pull planning.",
+        "url": "https://umatracker.com/"
     },
     {   "name": "rating_optimizer",
         "description": "A tool to optimize picking your skills for maxing ratings.",
@@ -37,6 +33,10 @@
     },
     {   "name": "timeline",
         "description": "A timeline of upcoming events, CM, legend races and banners.",
+        "url": "https://uma.moe/timeline"
+    },
+    {   "name": "trophy_hunter",
+        "description": "A sheet to help you hunt down trophies for Completionist title.",
         "url": "https://uma.moe/timeline"
     },
     {   "name": "umalator",

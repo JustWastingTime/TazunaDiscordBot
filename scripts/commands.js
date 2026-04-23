@@ -187,15 +187,15 @@ const RESOURCE_COMMAND = {
       required: true,
       choices: [
         { "name": "bible", "value": "bible" },
-        { "name": "club finder", "value": "club_finder" },
         { "name": "friend finder", "value": "friend_finder" },
-        { "name": "guides", "value": "guides" },
+        { "name": "pull planner", "value": "pull_planner" },
         { "name": "rating optimizer", "value": "rating_optimizer" },
         { "name": "screenshot combiner", "value": "screenshot_combiner" },
         { "name": "skill sheet", "value": "skill_sheet" },
         { "name": "stamina calculator", "value": "stamina_calculator" },
         { "name": "technical document", "value": "technical_document" },
         { "name": "timeline", "value": "timeline" },
+        { "name": "trophy hunter", "value": "trophy_hunter" },
         { "name": "umalator", "value": "umalator" }
       ]
     }
