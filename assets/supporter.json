@@ -7453,7 +7453,10 @@
             "Soft Step",
             "Tactical Tweak"
         ],
-        "event_skills": [],
+        "event_skills": [
+            "Unyielding",
+            "Steadfast"
+        ],
         "url": "https://gametora.com/umamusume/supports/30096-kawakami-princess",
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30096.png",
         "rarity": "ssr",
