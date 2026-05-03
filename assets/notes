@@ -1,19 +1,634 @@
-bashin_diff_behind<=1 "≤1 length ahead",
+bashin_diff_behind<=1   "≤1 length ahead",
+bashin_diff_behind>=1   "≥1 length ahead",                                                          
 corner==0   "Not a corner"
 hp_per<=45  "≤45% HP remaining",
 is_finalcorner==1   "Final corner and beyond"
 is_overtake==1  
 order_rate>=20 (CM >= 2 | LoH >= 2)
 order_rate<=50 (CM <= 5 | LoH <= 6) 
+order>=2    "2nd or worse",
 order<=5    "1st to 5th"
-overtake_target_no_order_up_time>=2 "Overtake target exists for ≥2s"
-overtake_target_time>=1 "Be an overtake target for ≥1s"
+overtake_target_no_order_up_time>=2     "Overtake target exists for ≥2s"
+overtake_target_time>=1     "Be an overtake target for ≥1s"
 remain_distance<=305    "≤305m of the race remaining",
 remain_distance>=300    "≥300m of the race remaining",
 slope==0    "Not a slope"
 slope==1    "Uphill"
 slope==2    "Downhill"
-slope==0 @slope==2 "Not an uphill"
+slope==0 @slope==2  "Not an uphill"
 phase>=0    "Early race and beyond"
 phase>=1    "Mid race and beyond"
 phase>=2    "Late race and beyond"
+
+"conditions":
+        [
+            [
+                "Precondition is true",
+                "1st to 5th",
+                                                                             
+                
+                "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)",
+                "Last 50% of the pack (by distance)",
+
+                "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race"                 order_rate_in40_continue==1
+                "Has been 6th to 9th (CM), 8th to 12th (TT) the entire race"                order_rate_out70_continue==1
+
+                "≥1 length ahead",                                                          bashin_diff_behind>=1
+                "≤1 length ahead",                                                          bashin_diff_behind<=1
+                "≥1 length behind",                                                         bashin_diff_infront>=1
+                "≤1 length behind",                                                         bashin_diff_infront<=1
+                "≤5m ahead of another uma for ≥1s",                                         behind_near_lane_time_set1>=1
+                "Right behind another uma for ≥3s",                                         front_near_lane_time>=3
+                "Right in front of another uma for ≥3s",                                    behind_near_lane_time>=3
+                
+                "Blocked in front",                                                         blocked_front==1
+                "Blocked in front for ≥1s",                                                 blocked_front_continuetime>=1
+                "Blocked at the sides for ≥2s",                                             blocked_side_continuetime>=2
+                "≥1 uma within 3m or 3 lanes",                                              near_count>=1
+                "Surrounded",                                                               surrounded==1               
+
+                "Overtake target exists",                                                   is_overtake==1
+                "Overtake target exists for ≥2s",                                           overtake_target_no_order_up_time>=2
+                "Be an overtake target for ≥2s",                                            overtake_target_time>=2
+                "Overtake another uma",                                                     change_order_onetime<0
+                "Be overtaken by another uma",                                              change_order_onetime>0
+
+                "The uma behind is closer to the inner fence"                               is_behind_in==1
+                
+                
+                
+                "≤5m behind 1st place",                                                     distance_diff_top<=5
+                "≥5m behind 1st place",                                                     distance_diff_top>=5
+                "<5m behind 1st place",                                                     distance_diff_top<5
+                ">5m behind 1st place",                                                     distance_diff_top>5
+
+                "First 30% of the pack (by distance)",                                      distance_diff_rate<=30
+                "Last 25% of the pack (by distance)",                                       distance_diff_rate>=75
+
+                "Overtake ≥2 times since late race",                                        change_order_up_end_after>=2
+                "Overtake ≥3 times on the final corner and beyond",                         change_order_up_finalcorner_after>=3
+
+                "Activated ≥7 skills",                                                      activate_count_all>=7
+                "Activated 6 skills or less",                                               activate_count_all<=6
+                "Activated ≥3 recovery skills",                                             activate_count_heal>=3
+                "Activated ≥3 skills during the early race",                                activate_count_start>=3
+                "Activated ≥2 skills during the mid race",                                  activate_count_middle>=2
+                "Activated ≥3 skills during the late race and beyond",                      activate_count_end_after>=3
+
+                "Right beside the inner fence",                                             lane_type==0
+                "Inner lane",                                                               lane_type<=0.2
+                "Middle lane",                                                              lane_type>=0.2 & lane_type<=0.4
+                "Outer lane",                                                               lane_type>=0.4 & lane_type<=0.6
+                "Outside lane",                                                             lane_type>0.6
+
+                "Straight on the opposite of the audience",                                 straight_front_type==2
+                "Straight in front of the audience",                                        straight_front_type==1
+
+                "Any corner",                                                               corner!=0
+                "On corner 1/2/3/4",                                                        corner==1/2/3/4
+                "Any straight",                                                             corner==0
+
+                "Uphill",                                                                   slope==1
+                "Downhill",                                                                 slope==2
+
+                "Random point on corner 1/2/3/4",                                           corner_random==1/2/3/4
+                "Random point on corner 1",                                                 corner_random==1
+                "Random point on a random corner"                                           all_corner_random==1
+                "Random point on a random straight",                                        straight_random==1
+
+                "Random point on a random uphill",                                          up_slope_random==1
+
+                "Final corner and beyond",                                                  is_finalcorner==1
+                "Final corner",                                                             is_finalcorner==1 &corner!=0
+                "Random point in the final corner"                                          is_finalcorner_random==1
+                "Final straight",                                                           is_finalcorner==1 &corner==0
+                "Just entered final straight",                                              is_last_straight_onetime==1
+                
+                "Moved closer to the fence",                                                is_move_lane==1
+                "Moved further from the fence",                                             is_move_lane==2
+                "Changing lanes",                                                           is_move_lane==1 @is_move_lane==2
+
+                "1% or more HP remaining",
+                "≤70% HP remaining",                                                        hp_per<=70
+                "≥30% HP remaining",                                                        hp_per>=30
+
+                "No 'Late Start'",                                                          is_badstart==0
+                "No 'Rushed'",                                                              temptation_count==0
+                "Currently not 'Rushed'.",                                                  is_temptation==0
+                "≥1 Front Runner currently 'Rushed'",                                       running_style_temptation_count_nige>=1
+                "≥1 enemy umas currently 'Rushed' behind you",                              temptation_count_behind>=1
+
+                "Character is in their last spurt mode",                                    is_lastspurt==1
+
+                "Early/Mid/Late race",                                                      phase==0/1/2,
+                "Last spurt",                                                               phase==3
+                "Early/Mid/Late race and beyond",                                           phase>=0/1/2,
+                "Early race or mid race",                                                   phase<=1
+                "Random point in early/mid/late race",                                      phase_random==0/1/2
+                "Random point in last spurt phase",                                         phase_random==3
+                "Random point in second half of early race",                                phase_laterhalf_random==0
+
+                
+
+                "After ≥5s into a race",                                                    accumulatetime>=5
+                "Between 45% to 60% of the race",                                           distance_rate>=45 &distance_rate<=60
+                "≤200m of the race remaining",                                              remain_distance<=200
+                "At the last 400m of the race",                                             remain_distance<=401 &remain_distance>=399
+                "At the last 800 to 850m of the race for a player character",               remain_distance_viewer_id>=800 &remain_distance_viewer_id<=850
+                "Second half of the race"                                                   distance_rate>=50
+
+                "When ≥4th favorite",                                                       popularity>=4
+                "When ≤3rd favorite",                                                       popularity<4
+            ]
+        ]
+
+≥≤
+
+"effect":
+[
+    {
+        "description": "Increases target speed by 0.35 for 5.0s.",
+        "inherited": "Increases target speed by 0.15 for 3.0s.",
+        "conditions": 
+        [
+            "1st to 6th (CM), 1st to 9th (TT)",
+            "≥5 lengths behind 1st place",
+            "Final straight"
+        ]
+    },
+    {
+        "description": "Increases target speed by 0.45 for 5.0s.",
+        "inherited": "Increases target speed by 0.25 for 3.0s.",
+        "conditions": 
+        [
+            "7th to 9th (CM), 10th to 12th (TT)",
+            "≥5 lengths behind 1st place",
+            "Final straight"
+        ]
+    }
+],
+"preconditions": 
+[
+],
+
+{   "id": "Make Debut",
+        "rank": "bronze",
+        "conditions": "Participate in the Make Debut",
+        "reward": "",
+        "aliases": ["make debut"]
+    },
+    {
+        "id": "Graded Giant",
+        "rank": "bronze",
+        "conditions": "● Win a graded race",
+        "reward": "—",
+        "aliases": [
+            "graded giant",
+            "bronze"
+        ]
+    },
+    {
+        "id": "G2 Winner",
+        "rank": "bronze",
+        "conditions": "● Win a G2 race",
+        "reward": "—",
+        "aliases": [
+            "g2 winner",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Eye of the Storm",
+        "rank": "bronze",
+        "conditions": "● Win a G1 race without having won any other graded races before",
+        "reward": "—",
+        "aliases": [
+            "eye of the storm",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Miss All Turf",
+        "rank": "bronze",
+        "conditions": "● Enter at least 10 races<br>● Only enter Turf races<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "miss all turf",
+            "bronze",
+            "turf"
+        ]
+    },
+    {
+        "id": "Sixth Sense",
+        "rank": "bronze",
+        "conditions": "● Enter at least 10 races<br>● Don't fail a single training<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "sixth sense",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Consistent",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 10 races<br>● Have a win rate of 80%",
+        "reward": "—",
+        "aliases": [
+            "consistent",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Unstoppable",
+        "rank": "bronze",
+        "conditions": "● Don't lose any race lower than Open (OP)<br>● Win 5 graded races in a row",
+        "reward": "—",
+        "aliases": [
+            "unstoppable",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Place Perfect",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 10 races<br>● Always get 3rd place or better in races<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "place perfect",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Long Shot",
+        "rank": "bronze",
+        "conditions": "● Win a graded race being the 6th to 9th most popular",
+        "reward": "—",
+        "aliases": [
+            "long shot",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Oaks Umamusume",
+        "rank": "bronze",
+        "conditions": "● Win the Japanese Oaks",
+        "reward": "—",
+        "aliases": [
+            "oaks umamusume",
+            "bronze",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Derby Umamusume",
+        "rank": "bronze",
+        "conditions": "● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "derby umamusume",
+            "bronze",
+            "derby"
+        ]
+    },
+    {
+        "id": "Divine Speed",
+        "rank": "bronze",
+        "conditions": "● Reach 600 or more speed<br>● Win 6 races as a Front Runner",
+        "reward": "—",
+        "aliases": [
+            "divine speed",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Late Bloomer",
+        "rank": "bronze",
+        "conditions": "● Win your first G1 race in the third year of training (Senior class)",
+        "reward": "—",
+        "aliases": [
+            "late bloomer",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Rampaging Racer",
+        "rank": "bronze",
+        "conditions": "● Win three races in which you were rushing",
+        "reward": "—",
+        "aliases": [
+            "rampaging racer",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Peak Condition",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 10 races<br>● Have a Mood level of Great for all races<br>● Complete the Career",
+        "reward": "—",
+        "aliases": [
+            "peak condition",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Nascent",
+        "rank": "bronze",
+        "conditions": "● Win the Junior Make Debut with a difference of at least 7 lengths",
+        "reward": "—",
+        "aliases": [
+            "nascent",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Sakura Seeker",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Oka Sho<br>● Win the Oka Sho",
+        "reward": "—",
+        "aliases": [
+            "sakura seeker",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Oaks Obsessed",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Japanese Oaks<br>● Win the Japanese Oaks",
+        "reward": "—",
+        "aliases": [
+            "oaks obsessed",
+            "bronze",
+            "oaks"
+        ]
+    },
+    {
+        "id": "Satsuki Spirit",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Satsuki Sho<br>● Win the Satsuki Sho",
+        "reward": "—",
+        "aliases": [
+            "satsuki spirit",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Derby Dreamer",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Tokyo Yushun (Japanese Derby)<br>● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "derby dreamer",
+            "bronze",
+            "derby"
+        ]
+    },
+    {
+        "id": "Kikuka Krazy",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent that won the Kikuka Sho<br>● Win the Kikuka Sho",
+        "reward": "—",
+        "aliases": [
+            "kikuka krazy",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Apple Far from the Tree",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from parents that did not win any graded races<br>● Win at least one G1 race",
+        "reward": "—",
+        "aliases": [
+            "apple far from the tree",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Crownless Monarch",
+        "rank": "bronze",
+        "conditions": "● Participate in at least one G1 race, but don't win any of them<br>● Complete the Career with at least C rank",
+        "reward": "—",
+        "aliases": [
+            "crownless monarch",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Unexpected",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from a parent with sprint-distance aptitude of A or higher<br>● Win a G1 race with a length of 3000m or more once",
+        "reward": "—",
+        "aliases": [
+            "unexpected",
+            "bronze",
+            "sprint",
+            "g1"
+        ]
+    },
+    {
+        "id": "Bronze Collector",
+        "rank": "bronze",
+        "conditions": "● Finish at 3rd place in 3 G1 races",
+        "reward": "—",
+        "aliases": [
+            "bronze collector",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Undeniable",
+        "rank": "bronze",
+        "conditions": "● Win at least two graded races by a large distance",
+        "reward": "—",
+        "aliases": [
+            "undeniable",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Dirt Devil",
+        "rank": "bronze",
+        "conditions": "● Win 10 dirt races",
+        "reward": "—",
+        "aliases": [
+            "dirt devil",
+            "bronze",
+            "dirt"
+        ]
+    },
+    {
+        "id": "Unyielding",
+        "rank": "bronze",
+        "conditions": "● Win a race after having lost 5 consecutive races",
+        "reward": "—",
+        "aliases": [
+            "unyielding",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Miss Cloudy",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 4 races with cloudy weather and win 3 of them",
+        "reward": "—",
+        "aliases": [
+            "miss cloudy",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Rainy Runner",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 4 races with rainy weather and win 3 of them",
+        "reward": "—",
+        "aliases": [
+            "rainy runner",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Snow Queen",
+        "rank": "bronze",
+        "conditions": "● Participate in at least 3 races with snowfall and win 2 of them",
+        "reward": "—",
+        "aliases": [
+            "snow queen",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Powerhouse",
+        "rank": "bronze",
+        "conditions": "● Reach 600 or more power<br>● Reach 600 or more guts<br>● Win a G1 race as a Late Surger or End Closer",
+        "reward": "—",
+        "aliases": [
+            "powerhouse",
+            "bronze",
+            "g1"
+        ]
+    },
+    {
+        "id": "Shared Smarts",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from parents with 600 or more wit<br>● Reach 600 or more wit",
+        "reward": "—",
+        "aliases": [
+            "shared smarts",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Mismatched",
+        "rank": "bronze",
+        "conditions": "● Inherit memories from parents with 1200 or more wit<br>● Inherit memories from a parent with 400 or less wit",
+        "reward": "—",
+        "aliases": [
+            "mismatched",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Quiz Queen",
+        "rank": "bronze",
+        "conditions": "● Reach wit training level 4",
+        "reward": "—",
+        "aliases": [
+            "quiz queen",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Power Lifter",
+        "rank": "bronze",
+        "conditions": "● Reach power training level 5",
+        "reward": "—",
+        "aliases": [
+            "power lifter",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Guts of Steel",
+        "rank": "bronze",
+        "conditions": "● Reach guts training level 5",
+        "reward": "—",
+        "aliases": [
+            "guts of steel",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Miss Dolphin",
+        "rank": "bronze",
+        "conditions": "● Train stamina 35 times",
+        "reward": "—",
+        "aliases": [
+            "miss dolphin",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Eccentric",
+        "rank": "bronze",
+        "conditions": "● Win the Junior Make Debut without having done any training",
+        "reward": "—",
+        "aliases": [
+            "eccentric",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Jinx Breaker",
+        "rank": "bronze",
+        "conditions": "● Win the Aoba Sho<br>● Win the Tokyo Yushun (Japanese Derby)",
+        "reward": "—",
+        "aliases": [
+            "jinx breaker",
+            "bronze",
+            "derby"
+        ]
+    },
+    {
+        "id": "Gold Hunter",
+        "rank": "bronze",
+        "conditions": "● Win any two of the following: Kyoto Kimpai, Nakayama Kimpai, and Kinko Sho",
+        "reward": "—",
+        "aliases": [
+            "gold hunter",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Well-Traveled",
+        "rank": "bronze",
+        "conditions": "● Win a graded race once in each of the 10 central race courses",
+        "reward": "—",
+        "aliases": [
+            "well-traveled",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Straightaway Supreme",
+        "rank": "bronze",
+        "conditions": "● Win the Ibis Summer Dash<br>● Win the Lumiere Autumn Dash<br>● Win the Idaten Stakes",
+        "reward": "—",
+        "aliases": [
+            "straightaway supreme",
+            "bronze"
+        ]
+    },
+    {
+        "id": "Visiting the Greats",
+        "rank": "bronze",
+        "conditions": "● Win the Shinzan Kinen<br>● Win the Kyodo News Hai<br>● Win the Yayoi Sho<br>● Win the St. Lite Kinen |}",
+        "reward": "—",
+        "aliases": [
+            "visiting the greats",
+            "bronze"
+        ]
+    }
