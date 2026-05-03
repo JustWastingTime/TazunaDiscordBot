@@ -4306,6 +4306,41 @@
             "reckless witch training"
         ]
     },
+    {   "id": "20047 Tokai Teio",
+        "card_name": "Step! Smile! Wink!",
+        "character_name": "Tokai Teio",
+        "unique": "Increases initial Stamina when beginning a Career playthrough (20)\nIncreases initial Guts when beginning a Career playthrough (20)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Training Effectiveness - 5/6/7/8/10%",
+            "Initial Friendship Gauge - 0/10/15/20/20",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Skill Point Bonus - 0/0/0/0/1"
+        ],
+        "support_skills": [
+            "Prudent Positioning",
+            "Nimble Navigator",
+            "Go with the Flow",
+            "Thunderbolt Step",
+            "Soft Step",
+            "Shrewd Step"
+        ],
+        "event_skills": [
+            "Medium Corners",
+            "Pace Chaser Straightaways"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20047-tokai-teio",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20047.png",
+        "rarity": "sr",
+        "category": "stamina",
+        "aliases": [
+            "tokai teio",
+            "step smile wink"
+        ]
+    },
 
     
     {   "id": "30001 Special Week",
