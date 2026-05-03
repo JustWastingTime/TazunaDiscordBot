@@ -7884,6 +7884,104 @@
         "horse": "Nice Nature (Cheerleader)",
         "gametora_id": "110601"
     },
+    {   "skill_name": "All Charged! It's Go Time!",
+        "description": "Moderately increase velocity when positioned toward the front with about 300m remaining. If coming out of an uphill, greatly increase velocity instead.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "Precondition is true",
+                    "≤299m of the race remaining",
+                    "≥295m of the race remaining",
+                    "1st to 2nd",
+                    "Not an uphill"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "≤299m of the race remaining",
+                    "≥295m of the race remaining",
+                    "1st to 2nd"
+                ]
+            }
+        ],
+        "preconditions": [
+            "≤305m of the race remaining",
+            "≥300m of the race remaining",
+            "Uphill"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "all charged its go time",
+            "ines fujin original",
+            "charge complete full speed ahead"
+        ],
+        "horse": "Ines Fujin (Original)",
+        "gametora_id": "100311"
+    },
+    {   "skill_name": "Best Day Ever",
+        "description": "If well-positioned late-race on the final corner or later, increase velocity. If there's a large distance left to the finish, also increase acceleration very slightly with perfect form.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "conditions": [
+                    "≥401m of the race remaining",
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Final corner and beyond",
+                    "Late race and beyond"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Final corner and beyond",
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "best day ever",
+            "fine motion wedding"
+        ],
+        "horse": "Fine Motion (Wedding)",
+        "gametora_id": "110221"
+    },
+    {   "skill_name": "One True Color",
+        "description": "If positioned toward the front with 350m or less remaining and there is another Umamusume close behind, the determination to stay ahead makes it easier to break out of the pack.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
+                "conditions": [
+                    "≤350m of the race remaining",
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "≤1 length ahead"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "one true color",
+            "curren chan wedding"
+        ],
+        "horse": "Curren Chan (Wedding)",
+        "gametora_id": "110381"
+    },
 
 
     {   "skill_name": "Corner Adept x",
@@ -8507,7 +8605,8 @@
         "aliases": [
             "no stopping me",
             "nonstop girl",
-            "ノンストップガール"
+            "ノンストップガール",
+            "nsm"
         ],
         "downgrade": "Nimble Navigator",
         "gametora_id": "200491"

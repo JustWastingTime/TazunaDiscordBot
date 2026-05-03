@@ -1,69 +1,19 @@
-Skill Tier
-❌ E
-Not Recommended D
-Lacking C
-Okay B 
-Recommended A
-Highly Recommended S
-⭕ SS
-
-To Do
-Finish event
-Add Legend function
-Improve sheets flow
-Redo applications
-
-Badges
-3,6,9,12 months
-1 mil fan run
-final push
-months
-
-"conditions":
-        [
-            [
-                "1st to 5th",
-                "50% or better (5th or better in CM, 6th or better in TT)"
-                "50% or worse (6th or worse in CM, 7th or worse in TT)",
-                "Last 50% of the pack (by distance)",
-
-                "1 length ahead or more",
-                "Blocked in front for 1s or more",
-                "Overtake target exists",
-                "Be an overtake target for 1s or more",
-                "2 lengths ahead of another uma for 1s or more",
-                "1% or more HP remaining",
-                
-
-                "Never 'Late Start'",
-                "Never 'Rushed'",
-
-                "Final corner and beyond",
-                "Early race",
-                "After at least 5s into a race",
-                "Last 200m of the race",
-                "Between 50% to 60% of the race"
-                
-            ]
-        ],
-
-
-List Order
-Spe
-Suzuka
-Teio
-Maruzensky
-Oguri
-Gold Ship
-Vodka
-Daiwa Scarlet
-Taiki Shuttle
-Grass Wonder
-Hishi Amazon
-McQueen
-El Condor Pasa
-TM Opera O
-Narita Brian
-Symboli Rudolf
-Air Groove
-Seiun Sky
+bashin_diff_behind<=1 "≤1 length ahead",
+corner==0   "Not a corner"
+hp_per<=45  "≤45% HP remaining",
+is_finalcorner==1   "Final corner and beyond"
+is_overtake==1  
+order_rate>=20 (CM >= 2 | LoH >= 2)
+order_rate<=50 (CM <= 5 | LoH <= 6) 
+order<=5    "1st to 5th"
+overtake_target_no_order_up_time>=2 "Overtake target exists for ≥2s"
+overtake_target_time>=1 "Be an overtake target for ≥1s"
+remain_distance<=305    "≤305m of the race remaining",
+remain_distance>=300    "≥300m of the race remaining",
+slope==0    "Not a slope"
+slope==1    "Uphill"
+slope==2    "Downhill"
+slope==0 @slope==2 "Not an uphill"
+phase>=0    "Early race and beyond"
+phase>=1    "Mid race and beyond"
+phase>=2    "Late race and beyond"
