@@ -1,57 +1,37 @@
 [   
-    {   "event_name": "Fuji Kiseki (Ballroom) and Seiun Sky (Ballroom) + Symboli Rudolf (Stamina SSR) and Sirius Symboli (Wit SSR)",
+    {   "event_name": "Tenno Sho (Spring) Legend Races",
+        "event_type": "Legend Races",
+        "date": "<t:1778191200:F> - <t:1778968800:F>, <t:1778191200:R>",
+        "thumbnail": "https://img.game8.co/4486957/0d5f5c7c43347726be2b6c3b79279982.png/show"
+    },
+    {   "event_name": "Mejiro Palmer + Matikanefukukitaru (Speed SSR) and Rice Shower (Power SSR)",
         "event_type": "Banner",
-        "date": "<t:1775426400:F> - <t:1776549600:F>, <t:1775426400:R>",
-        "thumbnail": "https://img.game8.co/4459271/632fab9e41c3effcb76d4397bb2abe7e.png/show"
+        "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
+        "thumbnail": "https://img.game8.co/4486958/9ef48cb400b268fa6bb1e99f5572934c.png/show"
     },
-    {   "event_name": "Tonight at the Ligne Droite Story Event",
-        "event_type": "Story Event",
-        "date": "<t:1775426400:F> - <t:1776549600:F>, <t:1775426400:R>",
-        "thumbnail": "https://img.game8.co/4459303/1d2c189a26313fe09d71a15e42aa6389.png/show"
-    },
-    {   "event_name": "Top Umadol Project",
-        "event_type": "Misc",
-        "date": "<t:1775512800:F>, <t:1775512800:R>",
-        "thumbnail": "https://pbs.twimg.com/media/HE2hy4FbAAAVdgJ?format=jpg&name=small"
-    },
-    {   "event_name": "Nishino Flower + Daiwa Scarlet (Power SSR) and Sweep Tosho (Wit SR)",
-        "event_type": "Banner",
-        "date": "<t:1776031200:F> - <t:1776722400:F>, <t:1776031200:R>",
-        "thumbnail": "https://img.game8.co/4459273/ef21c5cd6541e122fee97d8bed5e14f7.png/show"
-    },
-    {   "event_name": "Racing Carnival",
-        "event_type": "Misc",
-        "date": "<t:1776376800:F>, <t:1776376800:R>",
-        "thumbnail": "https://img.game8.co/4401922/22acafcb82e3a64373396acd0771517c.png/show"
-    },
-    {   "event_name": "Yaeno Muteki + Twin Turbo SSR and Ines Fujin SSR",
-        "event_type": "Banner",
-        "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
-        "thumbnail": "https://img.game8.co/4459274/18c5d663efd8e073b77bd3afcc858c5d.png/show"
-    },
-    {   "event_name": "Champions Meeting - Aries Cup",
+    {   "event_name": "Champions Meeting - Taurus Cup",
         "event_type": "Champions Meeting",
-        "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
-        "thumbnail": "https://img.game8.co/4459304/10a5f2dcada7e78155f9ae7ec4862533.png/show"
+        "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
+        "thumbnail": "https://img.game8.co/4486959/d40dab0f6c62ba3ebec676b2b7c62c7d.png/show"
     },
-    {   "event_name": "Goldshi Week Celebration",
-        "event_type": "Misc",
-        "date": "<t:1777240800:F> - <t:1778191200:F>, <t:1777240800:R>",
-        "thumbnail": "https://img.game8.co/4459294/ab19ae5b5cb31aa2dd34369299f7e032.png/show"
-    },
-    {   "event_name": "Nice Nature (Cheerleader) and King Halo (Cheerleader) + Bamboo Memory (Guts SSR) and Seeking the Pearl (Speed SSR)",
-        "event_type": "Banner",
-        "date": "<t:1777240800:F> - <t:1778277600:F>, <t:1777240800:R>",
-        "thumbnail": "https://img.game8.co/4459270/46aef9f90c5bea71ac906bb7930a1d33.png/show"
-    },
-    {   "event_name": "Tracen Cheer Squad Droite Story Event",
+    {   "event_name": "The Promised Hour: Silks & Three Riddles Story Event",
         "event_type": "Story Event",
-        "date": "<t:1777240800:F> - <t:1778277600:F>, <t:1777240800:R>",
-        "thumbnail": "https://img.game8.co/4459302/a17216679015f59b47e8cd60f6e655a4.png/show"
+        "date": "<t:1779141600:F> - <t:1780092000:F>, <t:1779141600:R>",
+        "thumbnail": "https://img.game8.co/4486956/493e332ff8990b98ccc1394eab904553.png/show"
     },
-    {   "event_name": "Ines Fujin + Mr. C.B. (Wit SSR) and Tokai Teio (Stamina SR)",
+    {   "event_name": "Curren Chan and Fine Motion (Wedding alts) + Haru Urara (Power SSR) and Ikuno Dictus (Stamina SSR)",
         "event_type": "Banner",
-        "date": "<t:1777586400:F> - <t:1778450400:F>, <t:1777586400:R>",
-        "thumbnail": "https://img.game8.co/4459272/52da48f6dd8a9b82083630d4fd573c39.png/show"
+        "date": "<t:1779141600:F> - <t:1780092000:F>, <t:1779141600:R>",
+        "thumbnail": "https://img.game8.co/4486960/ddfe30fcd1cc8e8f1d5e29fbdce0e656.png/show"
+    },
+    {   "event_name": "Inari One + Admire Vega (Power SSR) and Sakura Chiyono O (Stamina SSR)",
+        "event_type": "Banner",
+        "date": "<t:1780005600:F> - <t:1780869600:F>, <t:1780005600:R>",
+        "thumbnail": "https://img.game8.co/4486962/80044692977caf4500c274a01569c150.png/show"
+    },
+    {   "event_name": "Champions Meeting - Gemini Cup",
+        "event_type": "Champions Meeting",
+        "date": "<t:1780264800:F> - <t:1781128800:F>, <t:1780264800:R>",
+        "thumbnail": "https://img.game8.co/4486961/2516670a8db23d1c6b0fab5eaf82fc0f.png/show"
     }
 ]   

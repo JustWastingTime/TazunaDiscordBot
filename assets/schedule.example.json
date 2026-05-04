@@ -1,0 +1,37 @@
+[   
+    {   "event_name": "Fuji Kiseki (Ballroom) and Seiun Sky (Ballroom) + Symboli Rudolf (Stamina SSR) and Sirius Symboli (Wit SSR)",
+        "event_type": "Banner",
+        "date": "<t:1775426400:F> - <t:1776549600:F>, <t:1775426400:R>",
+        "thumbnail": "https://img.game8.co/4459271/632fab9e41c3effcb76d4397bb2abe7e.png/show"
+    },
+
+    {   "event_name": "Tonight at the Ligne Droite Story Event",
+        "event_type": "Story Event",
+        "date": "<t:1775426400:F> - <t:1776549600:F>, <t:1775426400:R>",
+        "thumbnail": "https://img.game8.co/4459303/1d2c189a26313fe09d71a15e42aa6389.png/show"
+    },
+    
+    {   "event_name": "Top Umadol Project",
+        "event_type": "Misc",
+        "date": "<t:1775512800:F>, <t:1775512800:R>",
+        "thumbnail": "https://pbs.twimg.com/media/HE2hy4FbAAAVdgJ?format=jpg&name=small"
+    },
+
+    {   "event_name": "Racing Carnival",
+        "event_type": "Misc",
+        "date": "<t:1776376800:F>, <t:1776376800:R>",
+        "thumbnail": "https://img.game8.co/4401922/22acafcb82e3a64373396acd0771517c.png/show"
+    },
+
+    {   "event_name": "Champions Meeting - Aries Cup",
+        "event_type": "Champions Meeting",
+        "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
+        "thumbnail": "https://img.game8.co/4459304/10a5f2dcada7e78155f9ae7ec4862533.png/show"
+    },
+
+    {   "event_name": "Goldshi Week Celebration",
+        "event_type": "Misc",
+        "date": "<t:1777240800:F> - <t:1778191200:F>, <t:1777240800:R>",
+        "thumbnail": "https://img.game8.co/4459294/ab19ae5b5cb31aa2dd34369299f7e032.png/show"
+    }
+]   
