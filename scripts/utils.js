@@ -722,12 +722,6 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
     buttonComponents.push({
       type: 2,
       style: 5,
-      label: "CM 12 Visualizer",
-      url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10504&sid=${skill.gametora_id}`
-    });
-    buttonComponents.push({
-      type: 2,
-      style: 5,
       label: "CM 13 Visualizer",
       url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10606&sid=${skill.gametora_id}`
     });
@@ -737,12 +731,12 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
       label: "CM 14 Visualizer",
       url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10602&sid=${skill.gametora_id}`
     });
-    /*buttonComponents.push({
+    buttonComponents.push({
       type: 2,
       style: 5,
       label: "CM 15 Visualizer",
       url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10906&sid=${skill.gametora_id}`
-    });*/
+    });
     /*buttonComponents.push({
       type: 2,
       style: 5,
