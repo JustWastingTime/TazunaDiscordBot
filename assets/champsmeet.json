@@ -230,8 +230,8 @@
             "weather": "Sunny",
             "similar": "Japanese Derby (Tokyo Yushun), Japanese Oaks, Japan Cup"
         },
-        "date": "",
-        "image": "",
+        "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
+        "image": "https://uma.guide/img/guides/article/cm13/cm13-track.png",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA"
     },
     {   "name": "Gemini Cup 2026",
@@ -248,7 +248,7 @@
             "weather": "Sunny",
             "similar": "NHK Mile Cup, Yasuda Kinen"
         },
-        "date": "",
+        "date": "<t:1780264800:F> - <t:1781128800:F>, <t:1780264800:R>",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA"
     },
