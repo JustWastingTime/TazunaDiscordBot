@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
 import cache from './githubCache.js';
 
 import path from 'path';
@@ -105,7 +105,8 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: { 
-          embeds: [buildSupporterEmbed(matches[0], skills, level)]
+          embeds: [buildSupporterEmbed(matches[0], skills, level)],
+          components: buildSupporterComponents(matches[0], level)
           }
         });
       }
@@ -125,7 +126,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
                   placeholder: "Choose a supporter",
                   options: matches.slice(0, 25).map(s => ({
                     label:  s.card_name + ' (' + s.rarity.toUpperCase() +')' , // must be <=100 chars
-                    value: `${s.id}|${level}`, // send the supporter id back on select
+                    value: `${s.id}|${level ?? ""}`, // send supporter id and LB on select
                     description: s.character_name,
                     emoji: getCustomEmoji(s.category)
                   }))
@@ -818,14 +819,69 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
     if (custom_id === "supporter_select") {
       const [selectedId, levelStr] = values[0].split("|");
       const supporter = supporters.find(s => s.id === selectedId);
-      const level = levelStr ? Number(levelStr) : undefined;
+      const level = levelStr !== "" ? Number(levelStr) : undefined;
 
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           content: `✅ You selected **${supporter.card_name}**`,
           embeds: [buildSupporterEmbed(supporter, skills, level)],
-          components: [] // remove the dropdown after selection
+          components: buildSupporterComponents(supporter, level)
+        }
+      });
+    }
+
+    // Handling selecting a skill from support card skill dropdown
+    if (custom_id === "supporter_skill_select") {
+      const [meta, selectedTitle] = values[0].split("::");
+      const [supporterId, levelStr] = meta.split("|");
+      const supporter = supporters.find(s => s.id === supporterId);
+      const level = levelStr !== "" ? Number(levelStr) : undefined;
+
+      const skill = skills.find(s =>
+        s.skill_name.toLowerCase() === selectedTitle.toLowerCase()
+      );
+
+      if (!supporter || !skill) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: {
+            content: "❌ Could not find the selected supporter skill.",
+            components: supporter ? buildSupporterComponents(supporter, level) : []
+          }
+        });
+      }
+
+      // Lookup supporters with this skill, hide r cards
+      const supporterMatches = supporters.filter(s => {
+        if (s.rarity == "r") return false;
+
+        return (
+          s.support_skills?.some(sk => sk.toLowerCase() === skill.skill_name.toLowerCase()) ||
+          s.event_skills?.some(sk => sk.toLowerCase() === skill.skill_name.toLowerCase())
+        );
+      });
+
+      // Sort supporters by rarity (ssr first)
+      supporterMatches.sort((a, b) => {
+        const order = { ssr: 0, sr: 1 };
+        return order[a.rarity.toLowerCase()] - order[b.rarity.toLowerCase()];
+      });
+
+      // Format supporter names into a list
+      const supporterList = supporterMatches.length
+        ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
+        : 'None';
+
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: {
+          content: `✅ You selected **${skill.skill_name}**`,
+          embeds: [buildSupporterEmbed(supporter, skills, level), buildSkillEmbed(skill, supporterList)],
+          components: [
+            ...buildSupporterComponents(supporter, level),
+            ...buildSkillComponents(skill, false, supporterMatches)
+          ]
         }
       });
     }
