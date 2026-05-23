@@ -4450,6 +4450,44 @@
             "going for gold"
         ]
     },
+    {   "id": "20050 Seiun Sky",
+        "card_name": "ゆるっと、まにまに",
+        "character_name": "Seiun Sky",
+        "unique": "Increases the effectiveness of training performed together (5%)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Training Effectiveness - 5%",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Levels - 0/1/1/2/2",
+            "Hint Frequency - 0/20/25/30/30%",
+            "Specialty Priority - 35/38/42/46/50",
+            "Skill Point Bonus - 0/0/0/0/1",
+            "Wit Friendship Recovery - 3/3/3/3/4"
+        ],
+        "support_skills": [
+            "Early Lead",
+            "Fast-Paced",
+            "Hesitant Pace Chasers",
+            "Frenzied Late Surgers",
+            "Front Runner Savvy",
+            "Groundwork"
+        ],
+        "event_skills": [
+            "Hesitant Late Surgers",
+            "Second Wind",
+            "Keeping the Lead"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20050-seiun-sky",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20050.png",
+        "rarity": "sr",
+        "category": "wit",
+        "aliases": [
+            "seiun sky",
+            "yurutto manimani",
+            "RENAME"
+        ]
+    },
 
     
     {   "id": "30001 Special Week",
@@ -4524,7 +4562,51 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30002.png",
         "rarity": "ssr",
         "category": "speed",
-        "aliases": ["silence", "suzuka", "shining moment"]
+        "aliases": ["silence", "suzuka", "shining moment"],
+        "events":[
+            {
+                "name": "Letters → ?",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Bond +5, Restart Hint +1"
+                ]
+            },
+            {
+                "name": "Letters → Feelings → ?",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Power +10, Bond +5, Mood +1, Focus Hint +1"
+                ]
+            },
+            {
+                "name": "Letters → Feelings → Wait for Me, Okay?",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Unrestrained Hint +2"
+                ]
+            },
+            {
+                "name": "On and On",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +10, Stamina +5, Bond +5",
+                    "Speed +15, Bond +5"
+                ]
+            },
+            {
+                "name": "What Should I Do? ",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +10, Stamina +5, Bond +5",
+                    "Speed +15, Bond +5"
+                ]
+            }
+        ]
     },
     {   "id": "30003 Tokai Teio",
         "card_name": "Dream Big!",
