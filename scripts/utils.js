@@ -607,18 +607,26 @@ export function buildSupporterEmbed(supporter, skills, level) {
 }
 
 export function buildSupporterComponents(supporter, level) {
+  const truncateForSelect = (text, max = 100) => {
+    if (!text) return "";
+    return text.length > max ? text.slice(0, max - 1) + "…" : text;
+  };
+
   const allSkills = [
     ...(supporter.support_skills || []),
     ...(supporter.event_skills || [])
   ];
   const dedupedSkills = [...new Set(allSkills)];
+  const events = supporter.events || [];
 
-  if (dedupedSkills.length === 0) {
+  if (dedupedSkills.length === 0 && events.length === 0) {
     return [];
   }
 
-  return [
-    {
+  const rows = [];
+
+  if (dedupedSkills.length > 0) {
+    rows.push({
       type: 1,
       components: [
         {
@@ -626,13 +634,91 @@ export function buildSupporterComponents(supporter, level) {
           custom_id: "supporter_skill_select",
           placeholder: "Select a skill",
           options: dedupedSkills.slice(0, 25).map(skillName => ({
-            label: skillName,
+            label: truncateForSelect(skillName, 100),
             value: `${supporter.id}|${level ?? ""}::${skillName}`
           }))
         }
       ]
-    }
-  ];
+    });
+  }
+
+  if (events.length > 0) {
+    rows.push({
+      type: 1,
+      components: [
+        {
+          type: 3,
+          custom_id: "supporter_event_select",
+          placeholder: "Select an event",
+          options: events.slice(0, 25).map((event, index) => {
+            const results = Array.isArray(event.results) ? event.results : [];
+            const preview = results
+              .slice(0, 2)
+              .map((r, i) => `Result ${i + 1}: ${r}`)
+              .join(" | ");
+            return {
+              label: truncateForSelect(event.name || `Event ${index + 1}`, 100),
+              value: `${supporter.id}|${level ?? ""}::${index}`,
+              description: truncateForSelect(preview || "No result text", 100)
+            };
+          })
+        }
+      ]
+    });
+  }
+
+  return rows;
+}
+
+export function buildSupporterEventEmbed(supporter, event, eventIndex = 0) {
+  const fields = [];
+  const results = Array.isArray(event?.results) ? event.results : [];
+
+  if (event?.type) {
+    fields.push({
+      name: "Type",
+      value: String(event.type),
+      inline: true
+    });
+  }
+
+  const triggerRaw = event?.trigger ?? event?.triggers ?? event?.conditions;
+  if (triggerRaw) {
+    const triggerText = Array.isArray(triggerRaw)
+      ? triggerRaw.map(t => `- ${t}`).join("\n")
+      : String(triggerRaw);
+    fields.push({
+      name: "Trigger",
+      value: triggerText,
+      inline: false
+    });
+  }
+
+  if (results.length > 0) {
+    results.forEach((result, idx) => {
+      fields.push({
+        name: `Result ${idx + 1}`,
+        value: String(result),
+        inline: false
+      });
+    });
+  } else {
+    fields.push({
+      name: "Results",
+      value: "No results listed.",
+      inline: false
+    });
+  }
+
+  return {
+    title: event?.name || `Event ${eventIndex + 1}`,
+    color: getCardColor(supporter.category),
+    author: {
+      name: `${supporter.character_name} (${supporter.card_name})`,
+      icon_url: getCardTypeImageLink(supporter.category)
+    },
+    fields
+  };
 }
 
 export function buildSkillEmbed(skill, supporterList) {

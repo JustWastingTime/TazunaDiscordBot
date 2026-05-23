@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
 import cache from './githubCache.js';
 
 import path from 'path';
@@ -882,6 +882,35 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             ...buildSupporterComponents(supporter, level),
             ...buildSkillComponents(skill, false, supporterMatches)
           ]
+        }
+      });
+    }
+
+    // Handling selecting an event from supporter's event dropdown
+    if (custom_id === "supporter_event_select") {
+      const [meta, selectedEventIndexRaw] = values[0].split("::");
+      const [supporterId, levelStr] = meta.split("|");
+      const supporter = supporters.find(s => s.id === supporterId);
+      const level = levelStr !== "" ? Number(levelStr) : undefined;
+      const selectedEventIndex = Number(selectedEventIndexRaw);
+      const event = supporter?.events?.[selectedEventIndex];
+
+      if (!supporter || !event) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: {
+            content: "❌ Could not find the selected supporter event.",
+            components: supporter ? buildSupporterComponents(supporter, level) : []
+          }
+        });
+      }
+
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: {
+          content: `✅ You selected **${event.name || `Event ${selectedEventIndex + 1}`}**`,
+          embeds: [buildSupporterEmbed(supporter, skills, level), buildSupporterEventEmbed(supporter, event, selectedEventIndex)],
+          components: buildSupporterComponents(supporter, level)
         }
       });
     }

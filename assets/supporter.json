@@ -7138,6 +7138,198 @@
             "team sirius poverty",
             "team sirius event",
             "team sirius welfare"
+        ],
+        "events":[
+            {
+                "name": "I Shall Have the Last Laugh (Mejiro Mcqueen)",
+                "type": "date",
+                "results": 
+                [
+                    "Maximum Energy +4, Stamina +11, Guts +11, Wit +11, Bond +5, Risky Business hint +2"
+                ]
+            },
+            {
+                "name": "The Secret to Her Success (Rice Shower)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +30, Skill points +17, Bond +5, Target in Sight hint +2"
+                ]
+            },
+            {
+                "name": "Common Threads, Dreams Entwined (Winning Ticket)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +12, Mood +1, Power +17, Bond +5"
+                ]
+            },
+            {
+                "name": "It's Tough Being a Little Sister (Narita Brian)",
+                "type": "date",
+                "results": 
+                [
+                    "Speed +23, Skill points +23, Bond +5, Heal \"Practice Poor\""
+                ]
+            },
+            {
+                "name": "The Scenery that Lies Beyond (Silence Suzuka)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy -5, Speed +17, Power +17, Skill points +17, Bond +5"
+                ]
+            },
+            {
+                "name": "I Want to Share My Dream (Special Week)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +48, Bond +5"
+                ]
+            },
+            {
+                "name": "The Meaning of Support",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +24, Speed +11, Stamina +11, Power +11, Bond +5, Best in Japan hint +1, Get \"Pure Passion: Team Sirius\" status"
+                ]
+            },
+            {
+                "name": "Watch Where You're Going!",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Extra Tank hint +1",
+                    "Guts +17, Bond +5"
+                ]
+            },
+            { 
+                "name": "So Many Options!",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +11, Stamina +5, Bond +5",
+                    "Speed +17, Bond +5"
+                ]
+            },
+            {
+                "name": "On and On",
+                "type": "event",
+                "results": 
+                [
+                    "Extra Tank hint +1, Bond +5",
+                    "Guts +17, Bond +5"
+                ]
+            },
+            {
+                "name": "What Should I Do?",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +5, Stamina +5, Wit +5, Bond +5",
+                    "Bond +5, Left-Handed hint +1"
+                ]
+            },
+            {
+                "name": "To Maintain My Weight",
+                "type": "event",
+                "results": 
+                [
+                    "Energy -10, Stamina +17, Bond +5",
+                    "Maximum Energy +4, Stamina +5, Bond +5"
+                ]
+            },
+            {
+                "name": "To Reach the Greatest Heights",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +5, Guts +5, Bond +5",
+                    "Bond +5, Early Lead hint +1"
+                ]
+            },
+            {
+                "name": "A Page of Flower Shop Assistance",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +2, Bond +5",
+                    "Stamina +11, Bond +5"
+                ]
+            },
+            {
+                "name": "A Page About Cloudy Weather",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +5, Guts +5, Bond +5",
+                    "Bond +5, Firm Conditions hint +1"
+                ]
+            },
+            {
+                "name": "Full-Power Muscles!",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +5, Skill points +17, Bond +5",
+                    "Mood +1, Skill points +17, Bond +5"
+                ]
+            },
+            {
+                "name": "Full-Power Racing!",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Late Surger Corners hint +1",
+                    "Skill points +34, Bond +5"
+                ]
+            },
+            {
+                "name": "Student Council Member!",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Speed +5, Bond +5",
+                    "Maximum Energy +4, Bond +5"
+                ]
+            },
+            {
+                "name": "Lone Wolf",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +3, Stamina +3, Power +3, Bond +5",
+                    "Bond +5, Lone Wolf hint +1"
+                ]
+            },
+            {
+                "name": "We're All Shining Stars",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +6, Stamina +, Power +5, Bond +5, Get \"Pure Passion: Team Sirius\" status, Can start dating"
+                ]
+            },
+            {
+                "name": "Teamwork Makes the Dream Work!",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +12, Bond +5",
+                    "Speed +11, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "The Luckiest Racer in Japan",
+                "type": "special",
+                "coindition": "Dating before the first New Year's",
+                "results": 
+                [
+                    "Speed +8, Stamina +8, Power +8, Corner Recovery hint +1, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "30082 Nishino Flower",
