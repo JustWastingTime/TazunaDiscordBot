@@ -7324,7 +7324,7 @@
             {
                 "name": "The Luckiest Racer in Japan",
                 "type": "special",
-                "coindition": "Dating before the first New Year's",
+                "condition": "Dating before the first New Year's",
                 "results": 
                 [
                     "Speed +8, Stamina +8, Power +8, Corner Recovery hint +1, Bond +5"

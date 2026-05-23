@@ -611,6 +611,21 @@ export function buildSupporterComponents(supporter, level) {
     if (!text) return "";
     return text.length > max ? text.slice(0, max - 1) + "…" : text;
   };
+  const getSupporterEventTitle = (event, index, allEvents) => {
+    const baseTitle = event?.name || `Event ${index + 1}`;
+    if (String(event?.type || "").toLowerCase() !== "chain") {
+      return baseTitle;
+    }
+
+    let chainStep = 0;
+    for (let i = 0; i <= index; i++) {
+      if (String(allEvents?.[i]?.type || "").toLowerCase() === "chain") {
+        chainStep += 1;
+      }
+    }
+
+    return `(${ "❯".repeat(Math.max(1, chainStep)) }) ${baseTitle}`;
+  };
 
   const allSkills = [
     ...(supporter.support_skills || []),
@@ -657,7 +672,7 @@ export function buildSupporterComponents(supporter, level) {
               .map((r, i) => `Result ${i + 1}: ${r}`)
               .join(" | ");
             return {
-              label: truncateForSelect(event.name || `Event ${index + 1}`, 100),
+              label: truncateForSelect(getSupporterEventTitle(event, index, events), 100),
               value: `${supporter.id}|${level ?? ""}::${index}`,
               description: truncateForSelect(preview || "No result text", 100)
             };
@@ -673,23 +688,28 @@ export function buildSupporterComponents(supporter, level) {
 export function buildSupporterEventEmbed(supporter, event, eventIndex = 0) {
   const fields = [];
   const results = Array.isArray(event?.results) ? event.results : [];
+  const allEvents = supporter?.events || [];
+  const baseTitle = event?.name || `Event ${eventIndex + 1}`;
+  let title = baseTitle;
 
-  if (event?.type) {
-    fields.push({
-      name: "Type",
-      value: String(event.type),
-      inline: true
-    });
+  if (String(event?.type || "").toLowerCase() === "chain") {
+    let chainStep = 0;
+    for (let i = 0; i <= eventIndex; i++) {
+      if (String(allEvents?.[i]?.type || "").toLowerCase() === "chain") {
+        chainStep += 1;
+      }
+    }
+    title = `(${ "❯".repeat(Math.max(1, chainStep)) }) ${baseTitle}`;
   }
 
-  const triggerRaw = event?.trigger ?? event?.triggers ?? event?.conditions;
-  if (triggerRaw) {
-    const triggerText = Array.isArray(triggerRaw)
-      ? triggerRaw.map(t => `- ${t}`).join("\n")
-      : String(triggerRaw);
+  const conditionRaw = event?.condition ?? event?.conditions ?? event?.trigger ?? event?.triggers;
+  if (conditionRaw) {
+    const conditionText = Array.isArray(conditionRaw)
+      ? conditionRaw.map(t => `- ${t}`).join("\n")
+      : String(conditionRaw);
     fields.push({
-      name: "Trigger",
-      value: triggerText,
+      name: "Condition",
+      value: conditionText,
       inline: false
     });
   }
@@ -711,7 +731,7 @@ export function buildSupporterEventEmbed(supporter, event, eventIndex = 0) {
   }
 
   return {
-    title: event?.name || `Event ${eventIndex + 1}`,
+    title,
     color: getCardColor(supporter.category),
     author: {
       name: `${supporter.character_name} (${supporter.card_name})`,
