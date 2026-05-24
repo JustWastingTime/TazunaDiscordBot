@@ -3768,7 +3768,7 @@
         "description": "Slightly widen the margin when positioned toward the front early-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for 5.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "1st to 5th (CM), 1st to 6th (TT)",
@@ -5032,7 +5032,7 @@
         "description": "Widen the margin when positioned toward the front early-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 5.0s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "1st to 5th (CM), 1st to 6th (TT)",
