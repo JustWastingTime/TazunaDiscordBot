@@ -7982,6 +7982,32 @@
         "horse": "Curren Chan (Wedding)",
         "gametora_id": "110381"
     },
+    {   "skill_name": "Now We're Cruisin'!",
+        "description": "When competing for the lead if positioned in the midpack or further for the first half of the race, show off some Edo spirit and greatly increase velocity.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "Precondition is true",
+                    ">0 Showdowns during the final straight"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Has been 4th to 9th (CM), 5th to 12th (TT) the entire race",
+            "Second half of the race"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "now were cruisin",
+            "inari one original"
+        ],
+        "horse": "Inari One (Original)",
+        "gametora_id": "110341"
+    },
 
 
     {   "skill_name": "Corner Adept x",

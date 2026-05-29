@@ -3616,6 +3616,76 @@
         ]
     },
 
+    {   "id": "103401 - Inari One",
+        "character_name": "Inari One",
+        "type": "Original",
+        "costume": "Edomurasaki",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "10%",
+            "power": "20%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "B",
+            "End": "A"
+            }
+        ],
+        "unique": "Now We're Cruisin'!",
+        "unique_explanation": "",
+        "skills": [
+            "Tail Held High",
+            "End Closer Straightaways",
+            "Familiar Ground"
+        ],
+        "potential": [
+            "Winter Runner",
+            "Tail Nine",
+            "Straightaway Spurt",
+            "Master of the Sands"
+        ],
+        "event_skills": [
+            "Ramp Up",
+            "Forward, March!",
+            "Tail Held High",
+            "Eager",
+            "All I've Got",
+            "Fighting Spirit"
+        ],
+        "races": [
+            "japan dirt derby july 1 year 2",
+            "tokyo daishoten december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "mainichi okan october 1 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["inari one original", "edomurasaki"],
+        "url": "https://gametora.com/umamusume/characters/103401-inari-one",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1034_103401.png",
+        "review": "",
+        "secrets": [
+        ]
+    },
+
     {   "id": "103501 - Winning Ticket",
         "character_name": "Winning Ticket",
         "type": "Original",
