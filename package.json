@@ -11,7 +11,9 @@
   "scripts": {
     "start": "node scripts/app.js",
     "register": "node scripts/commands.js",
-    "dev": "nodemon scripts/app.js"
+    "dev": "nodemon scripts/app.js",
+    "render-course-map": "node scripts/courseMapRenderer.js",
+    "render-cm-map": "node scripts/renderCmMapPreview.js"
   },
   "author": "vivi",
   "license": "MIT",

@@ -248,6 +248,30 @@
             "weather": "Sunny",
             "similar": "NHK Mile Cup, Yasuda Kinen"
         },
+        "map": {
+            "name": "Tokyo 1600m (counterclockwise)",
+            "elevation": [
+                { "start": 0, "end": 325, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 325, "end": 400, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
+                { "start": 400, "end": 450, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 450, "end": 700, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
+                { "start": 700, "end": 1150, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 1150, "end": 1300, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
+                { "start": 1300, "end": 1600, "label": "Flat", "type": "flat", "color": "#c9ec39" }
+            ],
+            "layout": [
+                { "start": 0, "end": 550, "label": "Straight", "color": "#b8d4ea" },
+                { "start": 550, "end": 825, "label": "Corner 3", "color": "#edccae" },
+                { "start": 825, "end": 1075, "label": "Corner 4", "color": "#edccae" },
+                { "start": 1075, "end": 1600, "label": "Straight", "color": "#b8d4ea" }
+            ],
+            "zones": [
+                { "start": 0, "end": 267, "label": "Opening leg", "color": "#00a88f", "textColor": "#ffffff" },
+                { "start": 267, "end": 1067, "label": "Middle leg", "color": "#e3d95f" },
+                { "start": 1067, "end": 1333, "label": "Final leg", "color": "#cf81bb" },
+                { "start": 1333, "end": 1600, "label": "Last spurt", "color": "#bf6ea8" }
+            ]
+        },
         "date": "<t:1780264800:F> - <t:1781128800:F>, <t:1780264800:R>",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA"
@@ -265,6 +289,34 @@
             "season": "Summer",
             "weather": "Cloudy",
             "similar": "Takarazuka Kinen"
+        },
+        "map": {
+            "name": "Hanshin 2200m (inner) (clockwise)",
+            "elevation": [
+                { "start": 0, "end": 290, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
+                { "start": 290, "end": 295, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 295, "end": 420, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
+                { "start": 420, "end": 1400, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 1400, "end": 1995, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
+                { "start": 1995, "end": 2000, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 2000, "end": 2125, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
+                { "start": 2125, "end": 2200, "label": "Flat", "type": "flat", "color": "#c9ec39" }
+            ],
+            "layout": [
+                { "start": 0, "end": 520, "label": "Straight", "color": "#b8d4ea" },
+                { "start": 520, "end": 710, "label": "Corner 1", "color": "#edccae" },
+                { "start": 710, "end": 900, "label": "Corner 2", "color": "#edccae" },
+                { "start": 900, "end": 1250, "label": "Straight", "color": "#b8d4ea" },
+                { "start": 1250, "end": 1550, "label": "Corner 3", "color": "#edccae" },
+                { "start": 1550, "end": 1850, "label": "Corner 4", "color": "#edccae" },
+                { "start": 1850, "end": 2200, "label": "Straight", "color": "#b8d4ea" }
+            ],
+            "zones": [
+                { "start": 0, "end": 367, "label": "Opening leg", "color": "#00a88f", "textColor": "#ffffff" },
+                { "start": 367, "end": 1467, "label": "Middle leg", "color": "#e3d95f" },
+                { "start": 1467, "end": 1833, "label": "Final leg", "color": "#cf81bb" },
+                { "start": 1833, "end": 2200, "label": "Last spurt", "color": "#bf6ea8" }
+            ]
         },
         "date": "",
         "image": "",
