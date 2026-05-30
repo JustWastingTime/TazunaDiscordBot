@@ -5735,7 +5735,7 @@
                 "description": "Increases target speed by 0.15 for 2.4s. Recover HP by 0.5%.",
                 "conditions": [
                     "Medium",
-                    "3th to 7th (CM), 4th to 10th (TT)",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
                     "Blocked at the sides for ≥2s",
                     "Mid race"
                 ]
@@ -6837,7 +6837,7 @@
                 "description": "Increases target speed by 0.35 for 2.4s. Recover HP by 3.5%.",
                 "conditions": [
                     "Medium",
-                    "3th to 7th (CM), 4th to 10th (TT)",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
                     "Blocked at the sides for ≥2s",
                     "Mid race"
                 ]
@@ -10053,9 +10053,9 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 1
+                "type": "box",
+                "phase": "late",
+                "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10169,14 +10169,15 @@
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "box",
-                    "target": "layout",
-                    "match": "straight",
-                    "trigger_behavior": "asap"
-                }
+              {
+                "type": "box",
+                "phase": "late",
+                "target": "layout",
+                "match": "straight",
+                "trigger_behavior": "asap"
+              }
             ]
-        }
+          }
     },
     {   "skill_name": "Sprinting Gear",
         "description": "Slightly increase acceleration on a straight.",
@@ -10602,9 +10603,9 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 1
+                "type": "box",
+                "phase": "late",
+                "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10720,14 +10721,15 @@
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "box",
-                    "target": "layout",
-                    "match": "straight",
-                    "trigger_behavior": "asap"
-                }
+              {
+                "type": "box",
+                "phase": "late",
+                "target": "layout",
+                "match": "straight",
+                "trigger_behavior": "asap"
+              }
             ]
-        }
+          }
     },
     {   "skill_name": "Turbo Sprint",
         "description": "Increase acceleration on a straight.",
