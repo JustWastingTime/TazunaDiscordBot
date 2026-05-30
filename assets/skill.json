@@ -2299,7 +2299,6 @@
         "category": "rainbowrecovery",
         "aliases": [
             "introduction to physiology",
-            "agnes tachyon original og",
             "introduction my body"
         ],
         "upgrade": "U=ma2",
@@ -2335,11 +2334,24 @@
         "category": "rainbowrecovery",
         "aliases": [
             "clear heart",
-            "super creek original og",
             "クリアハート"
         ],
         "upgrade": "Pure Heart",
-        "gametora_id": "10451"
+        "gametora_id": "10451",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "mid",
+                        "middle leg"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Super-Duper Stoked",
         "description": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
@@ -2359,7 +2371,6 @@
         "category": "rainbowrecovery",
         "aliases": [
             "super duper stoked",
-            "haru urara original og",
             "ready steady go",
             "ワクワクよーいドン"
         ],
@@ -2372,7 +2383,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -2396,6 +2408,7 @@
         "category": "rainbowrecovery",
         "aliases": [
             "u=ma2",
+            "uma2",
             "agnes tachyon original og"
         ],
         "horse": "Agnes Tachyon (Original)",
@@ -2439,7 +2452,21 @@
         ],
         "horse": "Super Creek (Original)",
         "downgrade": "Clear Heart",
-        "gametora_id": "100451"
+        "gametora_id": "100451",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "mid",
+                        "middle leg"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Super-Duper Climax",
         "description": "Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
@@ -2474,7 +2501,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
