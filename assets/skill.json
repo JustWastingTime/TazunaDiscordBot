@@ -10738,12 +10738,17 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "exclude_select": "last",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 },
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "select": "last",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
                 }
             ]
         }

@@ -95,9 +95,13 @@ function collectSkillConditionText(skill, includeDescriptions = false) {
   return sources.map((v) => lower(v)).filter(Boolean);
 }
 
-function pushUniqueBox(markers, start, end, color = "#d11f2a") {
+function pushUniqueBox(markers, start, end, color = "#d11f2a", triggerBehavior) {
   const exists = markers.some((m) => m.type === "box" && m.start === start && m.end === end);
-  if (!exists) markers.push({ type: "box", start, end, color, fillOpacity: 0.16 });
+  if (!exists) {
+    const marker = { type: "box", start, end, color, fillOpacity: 0.16 };
+    if (triggerBehavior) marker.trigger_behavior = triggerBehavior;
+    markers.push(marker);
+  }
 }
 
 function pushUniqueLine(markers, distance, color = "#d11f2a") {
@@ -142,6 +146,10 @@ function findZoneByLabel(mapData, candidates) {
 
 function inferAutoPhaseWindow(skill, mapData) {
   const texts = collectSkillConditionText(skill, false);
+  return inferPhaseWindowFromTexts(texts, mapData);
+}
+
+function inferPhaseWindowFromTexts(texts, mapData) {
   if (!texts.length) return null;
 
   const earlyZone = findZoneByLabel(mapData, ["opening", "early"]);
@@ -184,6 +192,140 @@ function inferAutoPhaseWindow(skill, mapData) {
     if (earlyZone) return { start: earlyZone.start, end: earlyZone.end };
   }
 
+  return null;
+}
+
+function inferMarkersFromConditionSet(conditionTexts, mapData) {
+  const texts = (conditionTexts ?? []).map((t) => lower(t)).filter(Boolean);
+  if (!texts.length) return [];
+
+  const markers = [];
+  const phaseWindow = inferPhaseWindowFromTexts(texts, mapData);
+  const clipStart = phaseWindow?.start ?? 0;
+  const clipEnd = phaseWindow?.end ?? mapData.length;
+  const triggerBehavior = texts.some((t) => t.includes("random point")) ? "random" : "asap";
+
+  const addClippedBox = (start, end) => {
+    const clippedStart = Math.max(start, clipStart);
+    const clippedEnd = Math.min(end, clipEnd);
+    if (clippedEnd > clippedStart) {
+      pushUniqueBox(markers, clippedStart, clippedEnd, "#d11f2a", triggerBehavior);
+    }
+  };
+
+  const cornerSegments = (mapData.layout ?? []).filter((s) => lower(s.label).includes("corner"));
+  const straightSegments = (mapData.layout ?? []).filter((s) => lower(s.label).includes("straight"));
+  const finalCorner = cornerSegments.length ? cornerSegments[cornerSegments.length - 1] : null;
+  const finalStraight = straightSegments.length ? straightSegments[straightSegments.length - 1] : null;
+
+  const mentionsCorner = texts.some((t) => t.includes("corner"));
+  const mentionsFinalCorner = texts.some((t) => t.includes("final corner"));
+  const mentionsNotFinalCorner = texts.some((t) => t.includes("not final corner"));
+  const mentionsStraight = texts.some((t) => t.includes("straight"));
+  const mentionsFinalStraight = texts.some((t) => t.includes("final straight"));
+
+  if (phaseWindow?.forceFullRange && (mentionsCorner || mentionsStraight)) {
+    addClippedBox(clipStart, clipEnd);
+  } else {
+    if (mentionsCorner) {
+      let selected = cornerSegments;
+      if (mentionsFinalCorner && !mentionsNotFinalCorner) {
+        selected = finalCorner ? [finalCorner] : [];
+      }
+      if (mentionsNotFinalCorner && selected.length > 0) {
+        selected = selected.slice(0, Math.max(0, selected.length - 1));
+      }
+      for (const segment of selected) addClippedBox(segment.start, segment.end);
+    }
+
+    if (mentionsStraight) {
+      const selected = mentionsFinalStraight ? (finalStraight ? [finalStraight] : []) : straightSegments;
+      for (const segment of selected) addClippedBox(segment.start, segment.end);
+    }
+  }
+
+  for (const text of texts) {
+    if (text.includes("opening leg") || text.includes("early leg")) {
+      for (const segment of mapData.zones) {
+        if (lower(segment.label).includes("opening") || lower(segment.label).includes("early")) {
+          addClippedBox(segment.start, segment.end);
+        }
+      }
+    }
+    if (text.includes("middle leg") || text.includes("mid leg")) {
+      for (const segment of mapData.zones) {
+        if (lower(segment.label).includes("middle") || lower(segment.label).includes("mid")) {
+          addClippedBox(segment.start, segment.end);
+        }
+      }
+    }
+    if (text.includes("final leg") || text.includes("late leg") || text.includes("late race")) {
+      for (const segment of mapData.zones) {
+        if (lower(segment.label).includes("final") || lower(segment.label).includes("late")) {
+          addClippedBox(segment.start, segment.end);
+        }
+      }
+    }
+    if (text.includes("last spurt")) {
+      for (const segment of mapData.zones) {
+        if (lower(segment.label).includes("spurt")) {
+          addClippedBox(segment.start, segment.end);
+        }
+      }
+    }
+    if (text.includes("uphill")) {
+      for (const segment of mapData.elevation) {
+        if (segment.type === "uphill" || lower(segment.label).includes("uphill")) {
+          addClippedBox(segment.start, segment.end);
+        }
+      }
+    }
+    if (text.includes("downhill")) {
+      for (const segment of mapData.elevation) {
+        if (segment.type === "downhill" || lower(segment.label).includes("downhill")) {
+          addClippedBox(segment.start, segment.end);
+        }
+      }
+    }
+
+    const remainingMatch = text.match(/(\d+)\s*m(?:eters?)?\s*remaining/);
+    if (remainingMatch) {
+      const remaining = Number(remainingMatch[1]);
+      if (Number.isFinite(remaining)) pushUniqueLine(markers, mapData.length - remaining);
+    }
+
+    const afterMatch = text.match(/after\s*(\d+)\s*m(?:eters?)?/);
+    if (afterMatch) {
+      const afterMeters = Number(afterMatch[1]);
+      if (Number.isFinite(afterMeters)) pushUniqueLine(markers, afterMeters);
+    }
+  }
+
+  return markers;
+}
+
+function phaseWindowFromName(mapData, phaseName) {
+  const phase = lower(phaseName);
+  const earlyZone = findZoneByLabel(mapData, ["opening", "early"]);
+  const midZone = findZoneByLabel(mapData, ["middle", "mid"]);
+  const lateZone = findZoneByLabel(mapData, ["late", "final"]);
+  const spurtZone = findZoneByLabel(mapData, ["spurt"]);
+  const cornerSegments = (mapData.layout ?? []).filter((segment) => lower(segment.label).includes("corner"));
+  const finalCorner = cornerSegments.length ? cornerSegments[cornerSegments.length - 1] : null;
+
+  if (phase === "early") return earlyZone ? { start: earlyZone.start, end: earlyZone.end } : null;
+  if (phase === "mid" || phase === "middle") return midZone ? { start: midZone.start, end: midZone.end } : null;
+  if (phase === "late") return lateZone ? { start: lateZone.start, end: lateZone.end } : null;
+  if (phase === "spurt" || phase === "last_spurt") return spurtZone ? { start: spurtZone.start, end: spurtZone.end } : null;
+  if (phase === "late_and_beyond") {
+    const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;
+    return { start, end: mapData.length };
+  }
+  if (phase === "final_corner_and_beyond") {
+    const start = finalCorner?.start ?? (lateZone?.start ?? mapData.length * 0.75);
+    return { start, end: mapData.length };
+  }
+  if (phase === "second_half") return { start: mapData.length * 0.5, end: mapData.length };
   return null;
 }
 
@@ -276,6 +418,11 @@ function markersFromActivationMap(skill, mapData) {
       if (Number.isFinite(ratioEnd)) clipEnd = Math.min(1, ratioEnd) * mapData.length;
       if (Number.isFinite(absoluteStart)) clipStart = absoluteStart;
       if (Number.isFinite(absoluteEnd)) clipEnd = absoluteEnd;
+      const explicitPhaseWindow = phaseWindowFromName(mapData, trigger.phase);
+      if (explicitPhaseWindow) {
+        clipStart = Math.max(clipStart, explicitPhaseWindow.start);
+        clipEnd = Math.min(clipEnd, explicitPhaseWindow.end);
+      }
       if (autoPhaseWindow && trigger.disable_auto_phase_clip !== true) {
         clipStart = Math.max(clipStart, autoPhaseWindow.start);
         clipEnd = Math.min(clipEnd, autoPhaseWindow.end);
@@ -300,6 +447,7 @@ function markersFromActivationMap(skill, mapData) {
       const labels = Array.isArray(trigger.labels) ? trigger.labels.map((v) => lower(v)) : [];
       const cornerNumbers = Array.isArray(trigger.corner_numbers) ? trigger.corner_numbers.map((v) => Number(v)) : [];
       const selectMode = lower(trigger.select ?? "");
+      const excludeSelectMode = lower(trigger.exclude_select ?? "");
       const localStartRatio = Number(trigger.clip_within_segment_start_ratio ?? trigger.local_start_ratio);
       const localEndRatio = Number(trigger.clip_within_segment_end_ratio ?? trigger.local_end_ratio);
       const applyLocalClip = Number.isFinite(localStartRatio) || Number.isFinite(localEndRatio);
@@ -323,13 +471,19 @@ function markersFromActivationMap(skill, mapData) {
           : selectMode === "first"
             ? (matchingSegments.length ? [matchingSegments[0]] : [])
             : matchingSegments;
+      const filteredSegments =
+        excludeSelectMode === "last"
+          ? selectedSegments.slice(0, Math.max(0, selectedSegments.length - 1))
+          : excludeSelectMode === "first"
+            ? selectedSegments.slice(1)
+            : selectedSegments;
 
-      if (autoPhaseWindow?.forceFullRange && selectedSegments.length > 0 && trigger.disable_auto_phase_clip !== true) {
+      if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && trigger.disable_auto_phase_clip !== true) {
         pushUniqueBox(markers, clipStart, clipEnd, color);
         continue;
       }
 
-      for (const segment of selectedSegments) {
+      for (const segment of filteredSegments) {
         if (!applyLocalClip) {
           pushClippedBox(segment.start, segment.end);
           continue;
@@ -347,109 +501,22 @@ function markersFromActivationMap(skill, mapData) {
 
 export function inferSkillMarkers(skill, mapData) {
   if (!skill || !mapData) return [];
-
-  const conditions = collectSkillConditionText(skill, true);
   const markers = [];
-
-  for (const condition of conditions) {
-    // Direction-only / course-only checks should not create activation overlays.
-    if (
-      condition.includes("counterclockwise") ||
-      condition.includes("clockwise") ||
-      condition.includes("left-handed") ||
-      condition.includes("right-handed")
-    ) {
-      continue;
-    }
-
-    if (condition.includes("corner")) {
-      const cornerNumberMatch = condition.match(/corner\s*([1-4])/);
-      if (cornerNumberMatch) {
-        const cornerLabel = `corner ${cornerNumberMatch[1]}`;
-        for (const segment of mapData.layout) {
-          if (lower(segment.label).includes(cornerLabel)) {
-            pushUniqueBox(markers, segment.start, segment.end);
-          }
-        }
-      } else {
-        for (const segment of mapData.layout) {
-          if (lower(segment.label).includes("corner")) {
-            pushUniqueBox(markers, segment.start, segment.end);
-          }
-        }
+  if (Array.isArray(skill.effect) && skill.effect.length > 0) {
+    for (const effect of skill.effect) {
+      const branchTexts = Array.isArray(effect?.conditions) ? effect.conditions : [];
+      const branchMarkers = inferMarkersFromConditionSet(branchTexts, mapData);
+      for (const marker of branchMarkers) {
+        if (marker.type === "box") pushUniqueBox(markers, marker.start, marker.end, marker.color, marker.trigger_behavior);
+        if (marker.type === "line") pushUniqueLine(markers, marker.distance, marker.color);
       }
     }
-
-    if (condition.includes("straight")) {
-      for (const segment of mapData.layout) {
-        if (lower(segment.label).includes("straight")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    if (condition.includes("opening leg") || condition.includes("early leg")) {
-      for (const segment of mapData.zones) {
-        if (lower(segment.label).includes("opening") || lower(segment.label).includes("early")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    if (condition.includes("middle leg") || condition.includes("mid leg")) {
-      for (const segment of mapData.zones) {
-        if (lower(segment.label).includes("middle") || lower(segment.label).includes("mid")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    if (condition.includes("final leg") || condition.includes("late leg")) {
-      for (const segment of mapData.zones) {
-        if (lower(segment.label).includes("final") || lower(segment.label).includes("late")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    if (condition.includes("last spurt")) {
-      for (const segment of mapData.zones) {
-        if (lower(segment.label).includes("spurt")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    if (condition.includes("uphill")) {
-      for (const segment of mapData.elevation) {
-        if (segment.type === "uphill" || lower(segment.label).includes("uphill")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    if (condition.includes("downhill")) {
-      for (const segment of mapData.elevation) {
-        if (segment.type === "downhill" || lower(segment.label).includes("downhill")) {
-          pushUniqueBox(markers, segment.start, segment.end);
-        }
-      }
-    }
-
-    const remainingMatch = condition.match(/(\d+)\s*m(?:eters?)?\s*remaining/);
-    if (remainingMatch) {
-      const remaining = Number(remainingMatch[1]);
-      if (Number.isFinite(remaining)) {
-        pushUniqueLine(markers, mapData.length - remaining);
-      }
-    }
-
-    const afterMatch = condition.match(/after\s*(\d+)\s*m(?:eters?)?/);
-    if (afterMatch) {
-      const afterMeters = Number(afterMatch[1]);
-      if (Number.isFinite(afterMeters)) {
-        pushUniqueLine(markers, afterMeters);
-      }
+  } else {
+    const fallbackTexts = collectSkillConditionText(skill, true);
+    const fallbackMarkers = inferMarkersFromConditionSet(fallbackTexts, mapData);
+    for (const marker of fallbackMarkers) {
+      if (marker.type === "box") pushUniqueBox(markers, marker.start, marker.end, marker.color, marker.trigger_behavior);
+      if (marker.type === "line") pushUniqueLine(markers, marker.distance, marker.color);
     }
   }
 
