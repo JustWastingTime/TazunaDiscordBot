@@ -10053,9 +10053,9 @@
             "show_chart": true,
             "triggers": [
                 {
-                "type": "box",
-                "phase": "late",
-                "trigger_behavior": "asap"
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10171,7 +10171,7 @@
             "triggers": [
               {
                 "type": "box",
-                "phase": "late",
+                "phase": "late_and_beyond",
                 "target": "layout",
                 "match": "straight",
                 "trigger_behavior": "asap"
@@ -10603,9 +10603,9 @@
             "show_chart": true,
             "triggers": [
                 {
-                "type": "box",
-                "phase": "late",
-                "trigger_behavior": "asap"
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10723,7 +10723,7 @@
             "triggers": [
               {
                 "type": "box",
-                "phase": "late",
+                "phase": "late_and_beyond",
                 "target": "layout",
                 "match": "straight",
                 "trigger_behavior": "asap"
