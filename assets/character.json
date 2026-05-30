@@ -4335,7 +4335,91 @@
         ]
     },
 
-
+    {   "id": "104401 - Sweep Tosho",
+        "character_name": "Sweep Tosho",
+        "type": "Original",
+        "costume": "Platanus Witch",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "20%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "D"
+            },
+            {
+            "Front": "G",
+            "Pace": "G",
+            "Late": "A",
+            "End": "A"
+            }
+        ],
+        "unique": "Victory belongs to me—Strelitzia! ☆",
+        "unique_explanation": "",
+        "skills": [
+            "Trick (Rear)",
+            "After-School Stroll",
+            "Take the Chance"
+        ],
+        "potential": [
+            "Intense Gaze",
+            "Go-Home Specialist",
+            "Straightaway Spurt",
+            "Petrifying Gaze"
+        ],
+        "event_skills": [
+            "Slipstream",
+            "End Closer Corners",
+            "You're Not the Boss of Me!",
+            "Restraint"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "oka sho april 1 year 2",
+            "japanese oaks may 2 year 2",
+            "shuka sho october 2 year 2",
+            "queen elizabeth ii cup november 1 year 2",
+            "yasuda kinen june 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "queen elizabeth ii cup november 1 year 3"
+        ],
+        "aliases": ["sweep tosho original", "Platanus Witch", "yada yada monster"],
+        "url": "https://gametora.com/umamusume/characters/104401-sweep-tosho",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1044_104401.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
+            "rewards": "Speed +15, End Closer hints +2"
+            },
+            {
+                "conditions": "Participate in the Make Debut",
+                "rewards": "Obtain \"You're Not the Boss of Me!\""
+            },
+            {
+                "conditions": "Win the Takarazuka Kinen (Year 3)",
+                "rewards": "All stats +3, Skill points +45, Restraint hint +3, Heal \"You're Not the Boss of Me!\", Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "Selfish Magical Girl",
+            "condition": "Win the Tulip Sho and Shuka Sho as a End Closer\nWin the Takarazuka Kinen (Year 3), Queen Elizabeth II Cup (Year 3) and Arima Kinen (Year 3) as a Late Surger or End Closer"
+        }
+    },
 
     {   "id": "104501 - Super Creek",
         "character_name": "Super Creek",
