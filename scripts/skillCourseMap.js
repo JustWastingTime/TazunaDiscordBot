@@ -132,6 +132,48 @@ function inferTextTrackRequirements(skill) {
   return requirements;
 }
 
+function findZoneByLabel(mapData, candidates) {
+  if (!mapData?.zones) return null;
+  return mapData.zones.find((segment) => {
+    const label = lower(segment.label);
+    return candidates.some((candidate) => label.includes(candidate));
+  }) ?? null;
+}
+
+function inferAutoPhaseWindow(skill, mapData) {
+  const texts = collectSkillConditionText(skill, false);
+  if (!texts.length) return null;
+
+  const earlyZone = findZoneByLabel(mapData, ["opening", "early"]);
+  const midZone = findZoneByLabel(mapData, ["middle", "mid"]);
+  const lateZone = findZoneByLabel(mapData, ["late", "final"]);
+  const spurtZone = findZoneByLabel(mapData, ["spurt"]);
+
+  // "Late race and beyond" means from late-race start to race end.
+  if (texts.some((t) => t.includes("late race and beyond"))) {
+    const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;
+    return { start, end: mapData.length };
+  }
+
+  if (texts.some((t) => t.includes("second half of the race"))) {
+    return { start: mapData.length * 0.5, end: mapData.length };
+  }
+
+  if (texts.some((t) => t.includes("late race"))) {
+    if (lateZone) return { start: lateZone.start, end: lateZone.end };
+  }
+
+  if (texts.some((t) => t.includes("mid race"))) {
+    if (midZone) return { start: midZone.start, end: midZone.end };
+  }
+
+  if (texts.some((t) => t.includes("early race"))) {
+    if (earlyZone) return { start: earlyZone.start, end: earlyZone.end };
+  }
+
+  return null;
+}
+
 function requirementsFromActivationMap(activationMap) {
   const req = activationMap?.requirements;
   if (!req) return null;
@@ -190,6 +232,7 @@ function markersFromActivationMap(skill, mapData) {
   if (!activationMap || !Array.isArray(activationMap.triggers)) return [];
 
   const markers = [];
+  const autoPhaseWindow = inferAutoPhaseWindow(skill, mapData);
   for (const trigger of activationMap.triggers) {
     const color = trigger.color ?? "#d11f2a";
     if (trigger.type === "line") {
@@ -220,6 +263,10 @@ function markersFromActivationMap(skill, mapData) {
       if (Number.isFinite(ratioEnd)) clipEnd = Math.min(1, ratioEnd) * mapData.length;
       if (Number.isFinite(absoluteStart)) clipStart = absoluteStart;
       if (Number.isFinite(absoluteEnd)) clipEnd = absoluteEnd;
+      if (autoPhaseWindow && trigger.disable_auto_phase_clip !== true) {
+        clipStart = Math.max(clipStart, autoPhaseWindow.start);
+        clipEnd = Math.min(clipEnd, autoPhaseWindow.end);
+      }
 
       const pushClippedBox = (start, end) => {
         const clippedStart = Math.max(start, clipStart);
