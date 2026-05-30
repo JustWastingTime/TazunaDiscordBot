@@ -5,6 +5,8 @@ const cache = {
   supporters: [],
   skills: [],
   characters: [],
+  schedule: [],
+  events: [],
   users: [],
   races: [],
   champsmeets: [],
@@ -35,16 +37,35 @@ async function fetchJson(url) {
   return await res.json();
 }
 
+let updateInFlight = null;
+
 // Function to update all cached data
 async function updateCache() {
-  try {
+  if (updateInFlight) return updateInFlight;
+
+  updateInFlight = (async () => {
     console.log('[CacheUpdater] Updating JSON cache from GitHub...');
+    const nextData = {};
     for (const key of Object.keys(urls)) {
-      cache[key] = await fetchJson(urls[key]);
+      nextData[key] = await fetchJson(urls[key]);
+    }
+
+    // Mutate arrays in place so existing references keep seeing fresh data.
+    for (const key of Object.keys(nextData)) {
+      if (!Array.isArray(cache[key])) cache[key] = [];
+      cache[key].length = 0;
+      cache[key].push(...nextData[key]);
     }
     console.log('[CacheUpdater] Cache updated successfully.');
+  })();
+
+  try {
+    await updateInFlight;
   } catch (err) {
     console.error('[CacheUpdater] Error updating cache:', err);
+    throw err;
+  } finally {
+    updateInFlight = null;
   }
 }
 
@@ -54,4 +75,5 @@ await updateCache();
 // Refresh every day
 setInterval(updateCache, 1000 * 60 * 60 * 24); // 1 day
 
+export { updateCache };
 export default cache;

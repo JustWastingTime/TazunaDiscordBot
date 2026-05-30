@@ -18,7 +18,7 @@ import {
   verifyKeyMiddleware,
 } from 'discord-interactions';
 import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
-import cache from './githubCache.js';
+import cache, { updateCache } from './githubCache.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
   getUpcomingChampionsMeet,
@@ -144,6 +144,12 @@ const BUG_REPORT_GUILD_ID = process.env.BUG_REPORT_GUILD_ID || '1416320822846689
 const BUG_REPORT_CHANNEL_ID = process.env.BUG_REPORT_CHANNEL_ID || '1495734291253035028';
 const SUPPORT_INVITE_URL = process.env.SUPPORT_INVITE_URL || 'https://discord.gg/5BW4gSUVSz';
 const KOFI_URL = process.env.KOFI_URL || 'https://ko-fi.com/justwastingtime';
+const BOT_OWNER_IDS = new Set(
+  String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean)
+);
 
 function formatErrorForEmbed(errorLike) {
   if (!errorLike) return 'No error payload provided.';
@@ -213,6 +219,42 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
    */
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name, options } = data;
+    const invokingUserId = req.body.member?.user?.id || req.body.user?.id;
+
+    if (name === 'refreshcache') {
+      if (!invokingUserId || !BOT_OWNER_IDS.has(invokingUserId)) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ You are not allowed to use this command.'
+          }
+        });
+      }
+
+      res.send({
+        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+        data: { flags: InteractionResponseFlags.EPHEMERAL }
+      });
+
+      (async () => {
+        try {
+          await updateCache();
+          await sendFollowup(token, {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '✅ Cache refreshed.'
+          });
+        } catch (err) {
+          console.error('Manual cache refresh failed:', err);
+          await sendFollowup(token, {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Cache refresh failed.'
+          });
+        }
+      })();
+
+      return;
+    }
 
     // "supporter" command
     if (name === 'supporter') {
