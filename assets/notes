@@ -191,6 +191,19 @@ phase>=2    "Late race and beyond"
   ]
 }
 
+"activation_map": { // Second half, any corner
+    "show_chart": true,
+    "triggers": [
+        {
+            "type": "box",
+            "target": "layout",
+            "match": "corner",
+            "clip_start_ratio": 0.5,
+            "clip_end_ratio": 1
+        }
+    ]
+}
+
 {   "id": "Make Debut",
         "rank": "bronze",
         "conditions": "Participate in the Make Debut",

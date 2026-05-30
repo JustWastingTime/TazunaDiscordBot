@@ -20,7 +20,10 @@
             "right turns"
         ],
         "upgrade": "Right-Handed Demon",
-        "gametora_id": "200012"
+        "gametora_id": "200012",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Left-Handed",
         "description": "Increase performance on left-handed tracks.",
@@ -42,7 +45,10 @@
             "左回り",
             "left turns"
         ],
-        "gametora_id": "200022"
+        "gametora_id": "200022",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Spring Runner",
         "description": "Increase performance in spring.",
@@ -63,7 +69,10 @@
             "春ウマ娘"
         ],
         "upgrade": "Spring Spectacle",
-        "gametora_id": "200172"
+        "gametora_id": "200172",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Summer Runner",
         "description": "Increase performance in summer.",
@@ -83,7 +92,10 @@
             "summer girl",
             "夏ウマ娘"
         ],
-        "gametora_id": "200182"
+        "gametora_id": "200182",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Fall Runner",
         "description": "Increase performance in fall.",
@@ -105,7 +117,10 @@
             "秋ウマ娘"
         ],
         "upgrade": "Fall Frenzy",
-        "gametora_id": "200192"
+        "gametora_id": "200192",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Winter Runner",
         "description": "Increase performance in winter.",
@@ -125,7 +140,10 @@
             "winter girl",
             "冬ウマ娘"
         ],
-        "gametora_id": "200202"
+        "gametora_id": "200202",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Outer Post Proficiency",
         "description": "Increase performance in brackets 6–8.",
@@ -145,7 +163,10 @@
             "outer",
             "outerpost"
         ],
-        "gametora_id": "200262"
+        "gametora_id": "200262",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Maverick",
         "description": "Increase performance when no other runners are using the same strategy.",
@@ -164,7 +185,10 @@
         "aliases": [
             "maverick"
         ],
-        "gametora_id": "200272"
+        "gametora_id": "200272",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Long Shot",
         "description": "Increase performance when 4th favorite or below.",
@@ -185,7 +209,10 @@
             "underdog",
             "伏兵"
         ],
-        "gametora_id": "200302"
+        "gametora_id": "200302",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Sympathy",
         "description": "Moderately increase performance when many runners share a sympathetic heart.",
@@ -206,7 +233,10 @@
             "シンパシー"
         ],
         "upgrade": "Connection",
-        "gametora_id": "201631"
+        "gametora_id": "201631",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Lone Wolf",
         "description": "Moderately increase performance when no other runners have the heart of a lone wolf.",
@@ -226,7 +256,10 @@
             "lonewolf",
             "一匹狼"
         ],
-        "gametora_id": "201641"
+        "gametora_id": "201641",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Towards the Scenery I Seek",
         "description": "Moderately increase performance in pursuit of that long sought-after scenery.",
@@ -247,7 +280,10 @@
             "scenery of dreams",
             "夢の景色へ"
         ],
-        "gametora_id": "300031"
+        "gametora_id": "300031",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Show Me What Lies Beyond!",
         "description": "Moderately increase Silence Suzuka's performance thanks to the desire to see her running reach new heights.",
@@ -269,7 +305,10 @@
             "running towards the unknown",
             "未知への走りを見せてくれ"
         ],
-        "gametora_id": "300071"
+        "gametora_id": "300071",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Chin Up, Derby Umamusume!",
         "description": "Feel closer to being Japan's top racer, moderately increasing performance.",
@@ -295,7 +334,10 @@
             "proud derby girl",
             "胸を張れダービーウマ娘"
         ],
-        "gametora_id": "300111"
+        "gametora_id": "300111",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Unchanging",
         "description": "Greatly increase performance with the same ambition of days past.",
@@ -317,7 +359,10 @@
             "変わらぬままで"
         ],
         "gametora_id": "300021",
-        "umalator": false
+        "umalator": false,
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Fall Frenzy",
         "description": "Increase performance in fall, boosting Speed and Power.",
@@ -339,7 +384,10 @@
             "初嵐"
         ],
         "downgrade": "Fall Runner",
-        "gametora_id": "200194"
+        "gametora_id": "200194",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Spring Spectacle",
         "description": "Increase performance in spring, boosting Speed and Power.",
@@ -361,7 +409,10 @@
             "first breeze of spring"
         ],
         "downgrade": "Spring Runner",
-        "gametora_id": "200174"
+        "gametora_id": "200174",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Right-Handed Demon",
         "description": "Increase proficiency in right-handed tracks, increasing Speed and Power.",
@@ -383,7 +434,10 @@
             "右回りの鬼"
         ],
         "downgrade": "Right-Handed",
-        "gametora_id": "200014"
+        "gametora_id": "200014",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Connection",
         "description": "Speed stat +60. Activates all sympathy skills.",
@@ -405,9 +459,11 @@
             "コネクト"
         ],
         "downgrade": "Sympathy",
-        "gametora_id": "201632"
+        "gametora_id": "201632",
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
     {   "skill_name": "Right-Handed x",
         "description": "Moderately decrease performance on right-handed tracks.",
         "effect": [
@@ -427,7 +483,10 @@
             "right turns x",
             "右回りx"
         ],
-        "gametora_id": "200013"
+        "gametora_id": "200013",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Left-Handed x",
         "description": "Moderately decrease performance on left-handed tracks.",
@@ -448,7 +507,10 @@
             "left turns x",
             "左回りx"
         ],
-        "gametora_id": "200023"
+        "gametora_id": "200023",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Spring Runner x",
         "description": "Moderately decrease performance in spring.",
@@ -469,7 +531,10 @@
             "spring girl x",
             "春ウマ娘x"
         ],
-        "gametora_id": "200173"
+        "gametora_id": "200173",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Summer Runner x",
         "description": "Moderately decrease performance in summer.",
@@ -490,7 +555,10 @@
             "summer girl x",
             "夏ウマ娘x"
         ],
-        "gametora_id": "200183"
+        "gametora_id": "200183",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Fall Runner x",
         "description": "Moderately decrease performance in fall.",
@@ -511,7 +579,10 @@
             "autumn girl x",
             "秋ウマ娘x"
         ],
-        "gametora_id": "200193"
+        "gametora_id": "200193",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Winter Runner x",
         "description": "Moderately decrease performance in winter.",
@@ -532,7 +603,10 @@
             "winter girl x",
             "冬ウマ娘"
         ],
-        "gametora_id": "200203"
+        "gametora_id": "200203",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Outer Post Averseness",
         "description": "Moderately decrease performance in brackets 6–8.",
@@ -554,7 +628,10 @@
             "outer ate affinity x",
             "外枠苦手"
         ],
-        "gametora_id": "200263"
+        "gametora_id": "200263",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "G1 Averseness",
         "description": "Moderately decrease performance in G1 or otherwise important races.",
@@ -575,7 +652,10 @@
             "g1 averseness",
             "g1 dislike"
         ],
-        "gametora_id": "200311"
+        "gametora_id": "200311",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "♡ 3D Nail Art",
         "description": "Moderately decrease performance on firm ground.",
@@ -596,7 +676,10 @@
             "uneven nail",
             "凸凹ネイル"
         ],
-        "gametora_id": "201801"
+        "gametora_id": "201801",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Creeping Anxiety",
         "description": "Moderately decrease performance due to Trainer's anxiety.",
@@ -617,10 +700,11 @@
             "spreading fear",
             "拡がる恐れ"
         ],
-        "gametora_id": "300041"
+        "gametora_id": "300041",
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
-
     {   "skill_name": "Tokyo Racecourse",
         "description": "Increase performance at Tokyo Racecourse.",
         "effect": [
@@ -640,7 +724,10 @@
             "東京レース場",
             "tokyo racetrack"
         ],
-        "gametora_id": "200032"
+        "gametora_id": "200032",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Nakayama Racecourse",
         "description": "Increase performance at Nakayama Racecourse.",
@@ -661,7 +748,10 @@
             "中山レース場",
             "nakayama racetrack"
         ],
-        "gametora_id": "200042"
+        "gametora_id": "200042",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Hanshin Racecourse",
         "description": "Increase performance at Hanshin Racecourse.",
@@ -682,7 +772,10 @@
             "阪神レース場",
             "hanshin racetrack"
         ],
-        "gametora_id": "200052"
+        "gametora_id": "200052",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Kyoto Racecourse",
         "description": "Increase performance at Kyoto Racecourse.",
@@ -703,7 +796,10 @@
             "京都レース場",
             "kyoto racetrack"
         ],
-        "gametora_id": "200062"
+        "gametora_id": "200062",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Chukyo Racecourse",
         "description": "Increase performance at Chukyo Racecourse.",
@@ -724,7 +820,10 @@
             "中京レース場",
             "chukyo racetrack"
         ],
-        "gametora_id": "200072"
+        "gametora_id": "200072",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Sapporo Racecourse",
         "description": "Increase performance at Sapporo Racecourse.",
@@ -745,7 +844,10 @@
             "札幌レース場",
             "sapporo racetrack"
         ],
-        "gametora_id": "200082"
+        "gametora_id": "200082",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Hakodate Racecourse",
         "description": "Increase performance at Hakodate Racecourse.",
@@ -766,7 +868,10 @@
             "函館レース場",
             "hakodate racetrack"
         ],
-        "gametora_id": "200092"
+        "gametora_id": "200092",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Fukushima Racecourse",
         "description": "Increase performance at Fukushima Racecourse.",
@@ -787,7 +892,10 @@
             "福島レース場",
             "fukushima racetrack"
         ],
-        "gametora_id": "200102"
+        "gametora_id": "200102",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Niigata Racecourse",
         "description": "Increase performance at Niigata Racecourse.",
@@ -808,7 +916,10 @@
             "新潟レース場",
             "niigata racetrack"
         ],
-        "gametora_id": "200112"
+        "gametora_id": "200112",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Kokura Racecourse",
         "description": "Increase performance at Kokura Racecourse.",
@@ -829,7 +940,10 @@
             "小倉レース場",
             "kokura racetrack"
         ],
-        "gametora_id": "200122"
+        "gametora_id": "200122",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Standard Distance",
         "description": "Increase performance over standard distances (multiples of 400m).",
@@ -851,7 +965,10 @@
             "core distances",
             "根幹距離"
         ],
-        "gametora_id": "200132"
+        "gametora_id": "200132",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Non-Standard Distance",
         "description": "Increase performance over non-standard distances (not multiples of 400m).",
@@ -873,7 +990,10 @@
             "non core distances",
             "非根幹距離"
         ],
-        "gametora_id": "200142"
+        "gametora_id": "200142",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Oi Racecourse",
         "description": "Increase performance at Oi Racecourse.",
@@ -894,7 +1014,10 @@
             "大井レース場",
             "ooi racetrack"
         ],
-        "gametora_id": "200952"
+        "gametora_id": "200952",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Unquenched Thirst",
         "description": "Moderately increase performance with the desire to race at Kyoto Racecourse.",
@@ -914,7 +1037,10 @@
             "unquenched thirst",
             "癒えない渇き"
         ],
-        "gametora_id": "300011"
+        "gametora_id": "300011",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Hoiya! Have a Good Run!",
         "description": "Moderately increase Silence Suzuka's performance thanks to a charm that guarantees a satisfying run.",
@@ -935,7 +1061,10 @@
             "ほんにゃか快走祈願",
             "pray for a fast run"
         ],
-        "gametora_id": "300081"
+        "gametora_id": "300081",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Long Race Enthusiast",
         "description": "Increase proficiency in Long Turf races. This skill is exclusive to the event.",
@@ -957,7 +1086,10 @@
             "長距離レースへの想い",
             "long distance racing passion"
         ],
-        "gametora_id": "1200021"
+        "gametora_id": "1200021",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Kawasaki Racecourse",
         "description": "Increase performance at Kawasaki Racecourse.",
@@ -978,7 +1110,10 @@
             "川崎レース場",
             "kawasaki racetrack"
         ],
-        "gametora_id": "202202"
+        "gametora_id": "202202",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Funabashi Racecourse",
         "description": "Increase performance at Funabashi Racecourse.",
@@ -999,7 +1134,10 @@
             "船橋レース場",
             "funabashi racetrack"
         ],
-        "gametora_id": "202212"
+        "gametora_id": "202212",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Morioka Racecourse",
         "description": "Increase performance at Morioka Racecourse.",
@@ -1020,7 +1158,10 @@
             "盛岡レース場",
             "morioka racetrack"
         ],
-        "gametora_id": "202222"
+        "gametora_id": "202222",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Longchamp Racecourse",
         "description": "Increase performance at Longchamp Racecourse.",
@@ -1041,7 +1182,10 @@
             "ロンシャンレース場",
             "longchamp racetrack"
         ],
-        "gametora_id": "202732"
+        "gametora_id": "202732",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Yodo Invicta",
         "description": "Increase performance at Kyoto Racecourse, boosting Stamina and Wit.",
@@ -1063,7 +1207,10 @@
             "淀の申し子",
             "child of yodo"
         ],
-        "gametora_id": "200064"
+        "gametora_id": "200064",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "For the Team",
         "description": "The whole team feels super determined to win this special race, greatly increasing performance.",
@@ -1084,9 +1231,11 @@
             "チームの一員として",
             "as a member of the team"
         ],
-        "gametora_id": "300121"
+        "gametora_id": "300121",
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
     {   "skill_name": "Tokyo Racecourse x",
         "description": "Moderately decrease performance at Tokyo Racecourse.",
         "effect": [
@@ -1106,7 +1255,10 @@
             "tokyo racetrack x",
             "東京レース場x"
         ],
-        "gametora_id": "200033"
+        "gametora_id": "200033",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Nakayama Racecourse x",
         "description": "Moderately decrease performance at Nakayama Racecourse.",
@@ -1127,7 +1279,10 @@
             "nakayama racetrack x",
             "中山レース場x"
         ],
-        "gametora_id": "200043"
+        "gametora_id": "200043",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Hanshin Racecourse x",
         "description": "Moderately decrease performance at Hanshin Racecourse.",
@@ -1148,7 +1303,10 @@
             "hanshin racetrack x",
             "阪神レース場x"
         ],
-        "gametora_id": "200053"
+        "gametora_id": "200053",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Kyoto Racecourse x",
         "description": "Moderately decrease performance at Kyoto Racecourse.",
@@ -1169,7 +1327,10 @@
             "kyoto racetrack x",
             "京都レース場x"
         ],
-        "gametora_id": "200063"
+        "gametora_id": "200063",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Chukyo Racecourse x",
         "description": "Moderately decrease performance at Chukyo Racecourse.",
@@ -1190,7 +1351,10 @@
             "chukyo racetrack x",
             "中京レース場x"
         ],
-        "gametora_id": "200073"
+        "gametora_id": "200073",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Sapporo Racecourse x",
         "description": "Moderately decrease performance at Sapporo Racecourse.",
@@ -1211,7 +1375,10 @@
             "sapporo racetrack x",
             "札幌レース場x"
         ],
-        "gametora_id": "200083"
+        "gametora_id": "200083",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Hakodate Racecourse x",
         "description": "Moderately decrease performance at Hakodate Racecourse.",
@@ -1232,7 +1399,10 @@
             "hakodate racetrack x",
             "函館レース場x"
         ],
-        "gametora_id": "200093"
+        "gametora_id": "200093",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Fukushima Racecourse x",
         "description": "Moderately decrease performance at Fukushima Racecourse.",
@@ -1253,7 +1423,10 @@
             "fukushima racetrack x",
             "福島レース場"
         ],
-        "gametora_id": "200103"
+        "gametora_id": "200103",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Niigata Racecourse x",
         "description": "Moderately decrease performance at Niigata Racecourse.",
@@ -1274,7 +1447,10 @@
             "niigata racetrack x",
             "新潟レース場x"
         ],
-        "gametora_id": "200113"
+        "gametora_id": "200113",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Kokura Racecourse x",
         "description": "Moderately decrease performance at Kokura Racecourse.",
@@ -1295,7 +1471,10 @@
             "kokura racetrack x",
             "小倉レース場x"
         ],
-        "gametora_id": "200123"
+        "gametora_id": "200123",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Standard Distance x",
         "description": "Moderately decrease performance over standard distances (multiples of 400m).",
@@ -1316,7 +1495,10 @@
             "core distances x",
             "根幹距離x"
         ],
-        "gametora_id": "200133"
+        "gametora_id": "200133",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Non-Standard Distance x",
         "description": "Moderately decrease performance over non-standard distances (not multiples of 400m).",
@@ -1338,7 +1520,10 @@
             "non core distances x",
             "非根幹距離x"
         ],
-        "gametora_id": "200143"
+        "gametora_id": "200143",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Paddock Fright",
         "description": "Moderately decrease performance when the favourite.",
@@ -1360,7 +1545,10 @@
             "timid",
             "小心者"
         ],
-        "gametora_id": "200321"
+        "gametora_id": "200321",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Oi Racecourse x",
         "description": "Moderately decrease performance at Oi Racecourse.",
@@ -1382,7 +1570,10 @@
             "ooi racetrack x",
             "中山レース場x"
         ],
-        "gametora_id": "200953"
+        "gametora_id": "200953",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Kawasaki Racecourse x",
         "description": "Moderately decrease performance at Kawasaki Racecourse.",
@@ -1403,7 +1594,10 @@
             "kawasaki racetrack x",
             "川崎レース場x"
         ],
-        "gametora_id": "202203"
+        "gametora_id": "202203",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Funabashi Racecourse x",
         "description": "Moderately decrease performance at Funabashi Racecourse.",
@@ -1424,7 +1618,10 @@
             "funabashi racetrack x",
             "船橋レース場x"
         ],
-        "gametora_id": "202213"
+        "gametora_id": "202213",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Morioka Racecourse x",
         "description": "Moderately decrease performance at Morioka Racecourse.",
@@ -1445,7 +1642,10 @@
             "morioka racetrack x",
             "盛岡レース場x"
         ],
-        "gametora_id": "202223"
+        "gametora_id": "202223",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Longchamp Racecourse x",
         "description": "Moderately decrease performance at Longchamp Racecourse.",
@@ -1465,10 +1665,11 @@
             "longchamp racecourse x",
             "ロンシャンレース場x"
         ],
-        "gametora_id": "202733"
+        "gametora_id": "202733",
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
-
     {   "skill_name": "Firm Conditions",
         "description": "Increase performance on firm ground.",
         "effect": [
@@ -1487,7 +1688,10 @@
             "firm",
             "good track condition",
             "良バ場"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Wet Conditions",
         "description": "Increase performance on good, soft and heavy ground.",
@@ -1509,7 +1713,10 @@
             "good",
             "bad track condition",
             "道悪"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Competitive Spirit",
         "description": "Increase performance when many other runners are using the same strategy.",
@@ -1528,7 +1735,10 @@
         "aliases": [
             "competitive spirit",
             "対抗意識"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "As a Friend and Rival",
         "description": "Moderately increase Silence Suzuka's performance through the happiness felt seeing a friend find their running style.",
@@ -1548,7 +1758,10 @@
             "as a friend and rival",
             "友としてライバルとして",
             "as a friend as a rival"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Mile Race Enthusiast",
         "description": "Increase proficiency in Mile Turf races. This skill is exclusive to the event.",
@@ -1569,7 +1782,10 @@
             "mile race enthusiast",
             "マイルレースへの想い",
             "mile racing passion"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Firm Course Menace",
         "description": "Increase performance on firm ground, boosting Power and Speed.",
@@ -1590,9 +1806,11 @@
             "firm course meance",
             "good track demon",
             "良バ場の鬼"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
     {   "skill_name": "Firm Conditions x",
         "description": "Moderately decrease performance on firm ground.",
         "effect": [
@@ -1611,7 +1829,10 @@
             "firm x",
             "good track condition x",
             "良バ場x"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Wet Conditions x",
         "description": "Moderately decrease performance on good, soft and heavy ground.",
@@ -1633,7 +1854,10 @@
             "good x",
             "bad track condition x",
             "道悪x"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Wallflower",
         "description": "Moderately decrease performance when many other runners are using the same strategy.",
@@ -1654,10 +1878,11 @@
             "wallflower",
             "introverted",
             "引っ込み思案"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
-
     {   "skill_name": "Sunny Days",
         "description": "Increase performance in sunny weather.",
         "effect": [
@@ -1675,7 +1900,10 @@
         "aliases": [
             "sunny",
             "晴れの日"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Cloudy Days",
         "description": "Increase performance in cloudy weather.",
@@ -1694,7 +1922,10 @@
         "aliases": [
             "cloudy",
             "曇りの日"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Rainy Days",
         "description": "Increase performance in rainy weather.",
@@ -1713,7 +1944,10 @@
         "aliases": [
             "rainy",
             "雨の日"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Snowy Days",
         "description": "Increase performance in snowy weather.",
@@ -1732,7 +1966,10 @@
         "aliases": [
             "snowy",
             "雪の日"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Target in Sight",
         "description": "Increase performance when the favorite is using the same strategy",
@@ -1752,7 +1989,10 @@
             "target in sight",
             "徹底マーク",
             "eyes on you"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Rainy Days x",
         "description": "Moderately decrease performance in rainy weather.",
@@ -1771,7 +2011,10 @@
         "aliases": [
             "rainy days x",
             "雨の日x"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "99 problems",
         "description": "Get overwhelmed by powerful opponents, moderately decreasing Guts and Wit.",
@@ -1789,9 +2032,11 @@
         "category": "gutsnegative",
         "aliases": [
             "99 problems"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
-
     {   "skill_name": "Inner Post Proficiency",
         "description": "Increase performance in brackets 1–3.",
         "effect": [
@@ -1809,7 +2054,10 @@
         "aliases": [
             "inner",
             "innerpost"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Front Runner Savvy",
         "description": "Increase ability to get into a good position.",
@@ -1829,7 +2077,10 @@
             "front runner savvy",
             "runners tricks",
             "逃げのコツ"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Pace Chaser Savvy",
         "description": "Increase ability to get into a good position.",
@@ -1849,7 +2100,10 @@
             "pace chaser savvy",
             "leaders tricks",
             "先行のコツ"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Late Surger Savvy",
         "description": "Increase ability to get into a good position.",
@@ -1869,7 +2123,10 @@
             "late surger savvy",
             "betweeners tricks",
             "差しのコツ"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "End Closer Savvy",
         "description": "Increase ability to get into a good position as an end closer.",
@@ -1889,7 +2146,10 @@
             "end closer savvy",
             "chasers tricks",
             "追込のコツ"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Restraint",
         "description": "Increase Wit and moderately decrease the chance of being Rushed.",
@@ -1914,7 +2174,10 @@
             "restraint",
             "self control",
             "自制心"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Medium Race Enthusiast",
         "description": "Increase proficiency in Medium Turf races. This skill is exclusive to the event.",
@@ -1935,10 +2198,13 @@
             "medium race enthusiast",
             "medium distance racing passion",
             "中距離レースへの想い"
-        ]
+        ],
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Inner Post Averseness",
-        "description": "Moderately decrease performance in brackets 1–3.",
+        "description": "Moderately decrease performance in brackets 1-3.",
         "effect": [
             {
                 "description": "Wit stat -40.",
@@ -1957,7 +2223,10 @@
             "inner gate affinity x",
             "内枠苦手"
         ],
-        "gametora_id": "200253"
+        "gametora_id": "200253",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Lucky Seven",
         "description": "Moderately good things may happen when in bracket 7.",
@@ -1980,7 +2249,10 @@
             "ラッキーセブン"
         ],
         "upgrade": "Super Lucky Seven",
-        "gametora_id": "201562"
+        "gametora_id": "201562",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Super Lucky Seven",
         "description": "Good things may happen when in bracket 7.",
@@ -2002,7 +2274,10 @@
             "super lucky seven"
         ],
         "downgrade": "Lucky Seven",
-        "gametora_id": "201561"
+        "gametora_id": "201561",
+        "activation_map": {
+            "show_chart": false
+        }
     },
 
 
@@ -2037,7 +2312,8 @@
                     "target": "layout",
                     "match": "corner",
                     "clip_start_ratio": 0.5,
-                    "clip_end_ratio": 1
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -2133,7 +2409,8 @@
                     "target": "layout",
                     "match": "corner",
                     "clip_start_ratio": 0.5,
-                    "clip_end_ratio": 1
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -3855,8 +4132,6 @@
         "downgrade": "Familiar Ground",
         "gametora_id": "202001"
     },
-
-
     {   "skill_name": "Corner Adept",
         "description": "Slightly increase velocity on a corner with skilled turning.",
         "effect": [
@@ -4128,9 +4403,13 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 50
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "late",
+                        "final"
+                    ],
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -4182,7 +4461,21 @@
             "積極策"
         ],
         "upgrade": "Mile Maven",
-        "gametora_id": "200682"
+        "gametora_id": "200682",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Up-Tempo",
         "description": "Slightly increase positioning ability when positioned toward the front mid-race.",
@@ -5721,9 +6014,13 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 50
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "late",
+                        "final"
+                    ],
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5773,7 +6070,21 @@
             "mile maven"
         ],
         "downgrade": "Productive Plan",
-        "gametora_id": "200681"
+        "gametora_id": "200681",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Killer Tunes",
         "description": "Increase positioning ability when positioned toward the front mid-race.",
@@ -6652,7 +6963,6 @@
         "downgrade": "Slipstream",
         "gametora_id": "201652"
     },
-
     {   "skill_name": "Certain Victory",
         "description": "Greatly increase velocity with an indomitable fighting spirit on the final straight after being on the heels of another runner toward the front on the final corner or later.",
         "effect": [
@@ -9359,7 +9669,6 @@
         "horse": "Inari One (Original)",
         "gametora_id": "110341"
     },
-
     {   "skill_name": "Corner Adept x",
         "description": "Moderately decrease velocity on a corner with clumsy turning.",
         "effect": [
@@ -9492,8 +9801,6 @@
             ]
         }
     },
-
-
     {   "skill_name": "Corner Acceleration",
         "description": "Slightly increase acceleration on a corner with masterful turning.",
         "effect": [
@@ -10574,7 +10881,6 @@
             ]
         }
     },
-
     {   "skill_name": "Feel the Burn!",
         "description": "Moderately increase acceleration in an attempt to move up on a corner late-race.",
         "effect": [
@@ -10932,7 +11238,6 @@
         "horse": "King Halo (Cheerleader)",
         "gametora_id": "110611"
     },
-
     {   "skill_name": "Corner Acceleration x",
         "description": "Moderately decrease acceleration on a corner with awkward turning.",
         "effect": [
@@ -10963,8 +11268,6 @@
             ]
         }
     },
-
-
     {   "skill_name": "Prudent Positioning",
         "description": "Increase navigation early-race.",
         "effect": [
