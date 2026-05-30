@@ -145,6 +145,44 @@ const BUG_REPORT_CHANNEL_ID = process.env.BUG_REPORT_CHANNEL_ID || '149573429125
 const SUPPORT_INVITE_URL = process.env.SUPPORT_INVITE_URL || 'https://discord.gg/5BW4gSUVSz';
 const KOFI_URL = process.env.KOFI_URL || 'https://ko-fi.com/justwastingtime';
 
+function formatErrorForEmbed(errorLike) {
+  if (!errorLike) return 'No error payload provided.';
+  if (errorLike instanceof Error) {
+    return `${errorLike.name}: ${errorLike.message}\n${errorLike.stack || ''}`.trim();
+  }
+  if (typeof errorLike === 'object') {
+    try {
+      return JSON.stringify(errorLike, null, 2);
+    } catch (_) {
+      return String(errorLike);
+    }
+  }
+  return String(errorLike);
+}
+
+async function postOpsNotice(title, description, color = 0xE74C3C) {
+  const text = String(description || 'No details').slice(0, 3900);
+  try {
+    await DiscordRequest(`channels/${BUG_REPORT_CHANNEL_ID}/messages`, {
+      method: 'POST',
+      body: {
+        embeds: [{
+          title,
+          description: `\`\`\`\n${text}\n\`\`\``,
+          color,
+          fields: [
+            { name: 'Host', value: process.env.HOSTNAME || 'unknown', inline: true },
+            { name: 'Node', value: process.version, inline: true },
+            { name: 'Time', value: new Date().toISOString(), inline: true }
+          ]
+        }]
+      }
+    });
+  } catch (notifyErr) {
+    console.error('Failed to post ops notice:', notifyErr);
+  }
+}
+
 // Create an express app
 const app = express();
 // Get port, or default to 3000
@@ -1371,6 +1409,25 @@ app.get('/privacy', (req, res) => {
   res.type('html').send(privacyHtml);
 });
 
+let shuttingDownFromFatal = false;
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught exception:', err);
+  if (shuttingDownFromFatal) return;
+  shuttingDownFromFatal = true;
+  postOpsNotice('🚨 Tazuna fatal crash (uncaughtException)', formatErrorForEmbed(err))
+    .finally(() => process.exit(1));
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled rejection:', reason);
+  if (shuttingDownFromFatal) return;
+  shuttingDownFromFatal = true;
+  postOpsNotice('🚨 Tazuna fatal crash (unhandledRejection)', formatErrorForEmbed(reason))
+    .finally(() => process.exit(1));
+});
+
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
+  postOpsNotice('✅ Tazuna bot started', `Listening on port ${PORT}`, 0x2ECC71);
 });

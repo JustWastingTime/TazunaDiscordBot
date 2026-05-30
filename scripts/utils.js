@@ -551,7 +551,15 @@ export function formatCardSkill(skillName, skillsJSON)
 }
 
 export function buildSupporterEmbed(supporter, skills, level) {
-  const effects = supporter.effects.map(e => {
+  if (!supporter || typeof supporter !== "object") {
+    return {
+      title: "Supporter not found",
+      description: "The selected supporter could not be loaded. Please run the command again.",
+      color: 0xE74C3C
+    };
+  }
+
+  const effects = (supporter.effects || []).map(e => {
     if (level !== undefined) {
       // Example: "Friendship Bonus – 20/21/23/25/25%"
       const [label, values] = e.split(/–|-/).map(s => s.trim());
@@ -924,6 +932,14 @@ export function buildEventEmbed(event, eventList) {
 }
 
 export function buildUmaEmbed(uma, skills) {
+  if (!uma || typeof uma !== "object") {
+    return {
+      title: "Uma not found",
+      description: "The selected character could not be loaded. Please run the command again.",
+      color: 0xE74C3C
+    };
+  }
+
   const epithetValue = uma.epithet
     ? (typeof uma.epithet === "string"
         ? uma.epithet
@@ -939,18 +955,18 @@ export function buildUmaEmbed(uma, skills) {
       { name: "Rarity", value: uma.rarity + '\n \u200B', inline: true },
       {
         name: "Stat Bonuses",
-        value: Object.entries(uma.stat_bonuses[0])
+        value: Object.entries(uma.stat_bonuses?.[0] || {})
           .filter(([_, v]) => v) // only show non-empty
           .map(([k, v]) => {
             const emoji = getCustomEmoji(k);
             return emoji ? `<:${emoji.name}:${emoji.id}> ${v}` : `${k}: ${v}`;
           })
-          .join(" ") + '\n \u200B' || "— + '\n \u200B'",
+          .join(" ") + '\n \u200B' || "—\n \u200B",
         inline: true
       },
       {
         name: "Aptitudes",
-        value: uma.aptitudes
+        value: (uma.aptitudes || [])
           .map(group =>
             Object.entries(group)
               .map(([k, v]) => `${k}: ${getRankEmoji(v)}`)
