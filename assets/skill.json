@@ -3555,7 +3555,15 @@
             "神業ステップ"
         ],
         "downgrade": "Soft Step",
-        "gametora_id": "201141"
+        "gametora_id": "201141",
+        "activation_map": {
+            "show_chart": true,
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Soft Step",
         "description": "Slightly decrease fatigue when moving sideways.",
@@ -3579,7 +3587,15 @@
             "軽やかステップ"
         ],
         "upgrade": "Miraculous Step",
-        "gametora_id": "201142"
+        "gametora_id": "201142",
+        "activation_map": {
+            "show_chart": true,
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Passing Pro",
         "description": "Slightly decrease fatigue when determined to pass another runner.",
@@ -3603,7 +3619,15 @@
             "パス上手"
         ],
         "upgrade": "VIP Pass",
-        "gametora_id": "201202"
+        "gametora_id": "201202",
+        "activation_map": {
+            "show_chart": true,
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Restless",
         "description": "Reduce fatigue on an uphill.",
@@ -3627,7 +3651,18 @@
             "じゃじゃウマ娘"
         ],
         "downgrade": "Moxie",
-        "gametora_id": "201281"
+        "gametora_id": "201281",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "uphill",
+                "trigger_behavior": "asap"
+              }
+            ]
+          }
     },
     {   "skill_name": "Moxie",
         "description": "Slightly reduce fatigue on an uphill.",
@@ -3651,7 +3686,18 @@
             "勢い任せ"
         ],
         "upgrade": "Restless",
-        "gametora_id": "201282"
+        "gametora_id": "201282",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "uphill",
+                "trigger_behavior": "asap"
+              }
+            ]
+          }
     },
     {   "skill_name": "Gourmand",
         "description": "Recover endurance mid-race.",
@@ -3673,7 +3719,21 @@
             "big eater"
         ],
         "downgrade": "Hydrate",
-        "gametora_id": "201351"
+        "gametora_id": "201351",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Hydrate",
         "description": "Slightly recover endurance mid-race.",
@@ -3696,7 +3756,21 @@
             "栄養補給"
         ],
         "upgrade": "Gourmand",
-        "gametora_id": "201352"
+        "gametora_id": "201352",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Relax",
         "description": "Recover endurance late-race.",
@@ -3717,7 +3791,17 @@
             "relax"
         ],
         "downgrade": "A Small Breather",
-        "gametora_id": "201421"
+        "gametora_id": "201421",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "A Small Breather",
         "description": "Slightly recover endurance late-race.",
@@ -3740,7 +3824,17 @@
             "小休憩"
         ],
         "upgrade": "Relax",
-        "gametora_id": "201422"
+        "gametora_id": "201422",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Go-Home Specialist",
         "description": "Reduce fatigue on a downhill.",
@@ -4074,7 +4168,15 @@
             "VIP顔パス"
         ],
         "downgrade": "Passing Pro",
-        "gametora_id": "201201"
+        "gametora_id": "201201",
+        "activation_map": {
+            "show_chart": true,
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Familiar Ground",
         "description": "Slightly recover endurance when positioned toward the back mid-race.",
