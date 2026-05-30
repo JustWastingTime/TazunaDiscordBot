@@ -3066,7 +3066,21 @@
             "レースプランナー"
         ],
         "downgrade": "Preferred Position",
-        "gametora_id": "200571"
+        "gametora_id": "200571",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Preferred Position",
         "description": "Slightly decrease fatigue mid-race.",
@@ -3090,7 +3104,21 @@
             "好位追走"
         ],
         "upgrade": "Race Planner",
-        "gametora_id": "200572"
+        "gametora_id": "200572",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Sleeping Lion",
         "description": "Decrease fatigue mid-race.",
@@ -3118,9 +3146,13 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 25
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -3152,9 +3184,13 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 25
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
                 }
             ]
         }
