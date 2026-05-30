@@ -105,7 +105,8 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
     embed.image = { url: `${baseUrl}/assets/generated/skill-maps/${fileName}` };
   }
 
-  const suffix = overlay.doesNotWork ? `Map overlay: ${activeCm.name} • DOES NOT WORK` : `Map overlay: ${activeCm.name}`;
+  const mapStatus = overlay.doesNotWork ? `Map overlay: ${activeCm.name} • DOES NOT WORK` : `Map overlay: ${activeCm.name}`;
+  const suffix = `${mapStatus} • Report any errors using /bugreport`;
   embed.footer = embed.footer?.text
     ? { text: `${embed.footer.text} • ${suffix}` }
     : { text: suffix };
