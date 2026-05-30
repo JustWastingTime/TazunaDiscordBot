@@ -148,6 +148,14 @@ function inferAutoPhaseWindow(skill, mapData) {
   const midZone = findZoneByLabel(mapData, ["middle", "mid"]);
   const lateZone = findZoneByLabel(mapData, ["late", "final"]);
   const spurtZone = findZoneByLabel(mapData, ["spurt"]);
+  const cornerSegments = (mapData.layout ?? []).filter((segment) => lower(segment.label).includes("corner"));
+  const finalCorner = cornerSegments.length ? cornerSegments[cornerSegments.length - 1] : null;
+
+  // "Final corner and beyond" means from start of last corner to race end.
+  if (texts.some((t) => t.includes("final corner and beyond"))) {
+    const start = finalCorner?.start ?? (lateZone?.start ?? mapData.length * 0.75);
+    return { start, end: mapData.length, forceFullRange: true };
+  }
 
   // "Late race and beyond" means from late-race start to race end.
   if (texts.some((t) => t.includes("late race and beyond"))) {
@@ -310,6 +318,11 @@ function markersFromActivationMap(skill, mapData) {
           : selectMode === "first"
             ? (matchingSegments.length ? [matchingSegments[0]] : [])
             : matchingSegments;
+
+      if (autoPhaseWindow?.forceFullRange && selectedSegments.length > 0 && trigger.disable_auto_phase_clip !== true) {
+        pushUniqueBox(markers, clipStart, clipEnd, color);
+        continue;
+      }
 
       for (const segment of selectedSegments) {
         if (!applyLocalClip) {
