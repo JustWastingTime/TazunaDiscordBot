@@ -80,17 +80,17 @@ function lower(value) {
   return String(value ?? "").toLowerCase();
 }
 
-function collectSkillConditionText(skill) {
+function collectSkillConditionText(skill, includeDescriptions = false) {
   const sources = [];
 
   if (Array.isArray(skill.preconditions)) sources.push(...skill.preconditions);
   if (Array.isArray(skill.effect)) {
     for (const effect of skill.effect) {
       if (Array.isArray(effect.conditions)) sources.push(...effect.conditions);
-      if (effect.description) sources.push(effect.description);
+      if (includeDescriptions && effect.description) sources.push(effect.description);
     }
   }
-  if (skill.description) sources.push(skill.description);
+  if (includeDescriptions && skill.description) sources.push(skill.description);
 
   return sources.map((v) => lower(v)).filter(Boolean);
 }
@@ -106,10 +106,184 @@ function pushUniqueLine(markers, distance, color = "#d11f2a") {
   if (!exists) markers.push({ type: "line", distance: normalized, color });
 }
 
+function inferTextTrackRequirements(skill) {
+  const texts = collectSkillConditionText(skill, false);
+  const requirements = {
+    distanceTypes: new Set(),
+    terrains: new Set(),
+    directions: new Set(),
+  };
+
+  for (const text of texts) {
+    const distanceTypeMatches = text.match(/\b(sprint|mile|medium|long)\b/g) ?? [];
+    for (const match of distanceTypeMatches) requirements.distanceTypes.add(match);
+
+    const terrainMatches = text.match(/\b(turf|dirt)\b/g) ?? [];
+    for (const match of terrainMatches) requirements.terrains.add(match);
+
+    if (text.includes("counterclockwise") || text.includes("left-handed") || text.includes("left handed")) {
+      requirements.directions.add("counterclockwise");
+    }
+    if (text.includes("clockwise") || text.includes("right-handed") || text.includes("right handed")) {
+      requirements.directions.add("clockwise");
+    }
+  }
+
+  return requirements;
+}
+
+function requirementsFromActivationMap(activationMap) {
+  const req = activationMap?.requirements;
+  if (!req) return null;
+  return {
+    distanceTypes: new Set((req.distance_types ?? req.distanceTypes ?? []).map((v) => lower(v))),
+    terrains: new Set((req.terrains ?? req.terrain ?? []).map((v) => lower(v))),
+    directions: new Set((req.directions ?? req.direction ?? []).map((v) => lower(v))),
+    racetracks: new Set((req.racetracks ?? req.racetrack ?? []).map((v) => lower(v))),
+    grounds: new Set((req.grounds ?? req.ground ?? []).map((v) => lower(v))),
+    seasons: new Set((req.seasons ?? req.season ?? []).map((v) => lower(v))),
+    weathers: new Set((req.weathers ?? req.weather ?? []).map((v) => lower(v))),
+  };
+}
+
+function evaluateTrackCompatibility(cmTrack, requirements) {
+  if (!requirements) return { doesNotWork: false, reasons: [] };
+
+  const track = {
+    distanceType: lower(cmTrack?.distance_type),
+    terrain: lower(cmTrack?.terrain),
+    direction: normalizeDirection(cmTrack?.direction),
+    racetrack: lower(cmTrack?.racetrack),
+    ground: lower(cmTrack?.ground),
+    season: lower(cmTrack?.season),
+    weather: lower(cmTrack?.weather),
+  };
+
+  const reasons = [];
+  if (requirements.distanceTypes?.size && !requirements.distanceTypes.has(track.distanceType)) {
+    reasons.push("distance type mismatch");
+  }
+  if (requirements.terrains?.size && !requirements.terrains.has(track.terrain)) {
+    reasons.push("terrain mismatch");
+  }
+  if (requirements.directions?.size && !requirements.directions.has(track.direction)) {
+    reasons.push("direction mismatch");
+  }
+  if (requirements.racetracks?.size && !requirements.racetracks.has(track.racetrack)) {
+    reasons.push("racetrack mismatch");
+  }
+  if (requirements.grounds?.size && !requirements.grounds.has(track.ground)) {
+    reasons.push("ground mismatch");
+  }
+  if (requirements.seasons?.size && !requirements.seasons.has(track.season)) {
+    reasons.push("season mismatch");
+  }
+  if (requirements.weathers?.size && !requirements.weathers.has(track.weather)) {
+    reasons.push("weather mismatch");
+  }
+
+  return { doesNotWork: reasons.length > 0, reasons };
+}
+
+function markersFromActivationMap(skill, mapData) {
+  const activationMap = skill?.activation_map;
+  if (!activationMap || !Array.isArray(activationMap.triggers)) return [];
+
+  const markers = [];
+  for (const trigger of activationMap.triggers) {
+    const color = trigger.color ?? "#d11f2a";
+    if (trigger.type === "line") {
+      if (Number.isFinite(Number(trigger.distance))) {
+        pushUniqueLine(markers, Number(trigger.distance), color);
+        continue;
+      }
+      const mode = lower(trigger.distance_mode ?? trigger.distanceMode ?? "absolute");
+      const value = Number(trigger.value);
+      if (!Number.isFinite(value)) continue;
+      if (mode === "remaining") {
+        pushUniqueLine(markers, mapData.length - value, color);
+      } else {
+        pushUniqueLine(markers, value, color);
+      }
+      continue;
+    }
+
+    if (trigger.type === "box") {
+      const ratioStart = Number(trigger.clip_start_ratio ?? trigger.start_ratio);
+      const ratioEnd = Number(trigger.clip_end_ratio ?? trigger.end_ratio);
+      const absoluteStart = Number(trigger.clip_start ?? trigger.start_m ?? trigger.range_start);
+      const absoluteEnd = Number(trigger.clip_end ?? trigger.end_m ?? trigger.range_end);
+
+      let clipStart = 0;
+      let clipEnd = mapData.length;
+      if (Number.isFinite(ratioStart)) clipStart = Math.max(0, ratioStart) * mapData.length;
+      if (Number.isFinite(ratioEnd)) clipEnd = Math.min(1, ratioEnd) * mapData.length;
+      if (Number.isFinite(absoluteStart)) clipStart = absoluteStart;
+      if (Number.isFinite(absoluteEnd)) clipEnd = absoluteEnd;
+
+      const pushClippedBox = (start, end) => {
+        const clippedStart = Math.max(start, clipStart);
+        const clippedEnd = Math.min(end, clipEnd);
+        if (clippedEnd > clippedStart) {
+          pushUniqueBox(markers, clippedStart, clippedEnd, color);
+        }
+      };
+
+      if (Number.isFinite(Number(trigger.start)) && Number.isFinite(Number(trigger.end))) {
+        pushClippedBox(Number(trigger.start), Number(trigger.end));
+        continue;
+      }
+
+      const target = lower(trigger.target ?? "layout");
+      const source = target === "elevation" ? mapData.elevation : target === "zones" ? mapData.zones : mapData.layout;
+      const match = lower(trigger.match ?? "");
+      const labels = Array.isArray(trigger.labels) ? trigger.labels.map((v) => lower(v)) : [];
+      const cornerNumbers = Array.isArray(trigger.corner_numbers) ? trigger.corner_numbers.map((v) => Number(v)) : [];
+      const selectMode = lower(trigger.select ?? "");
+      const localStartRatio = Number(trigger.clip_within_segment_start_ratio ?? trigger.local_start_ratio);
+      const localEndRatio = Number(trigger.clip_within_segment_end_ratio ?? trigger.local_end_ratio);
+      const applyLocalClip = Number.isFinite(localStartRatio) || Number.isFinite(localEndRatio);
+
+      const matchingSegments = [];
+      for (const segment of source) {
+        const label = lower(segment.label);
+        let ok = false;
+
+        if (match && label.includes(match)) ok = true;
+        if (!ok && labels.length && labels.some((v) => label.includes(v))) ok = true;
+        if (!ok && cornerNumbers.length && cornerNumbers.some((n) => label.includes(`corner ${n}`))) ok = true;
+        if (!ok && !match && !labels.length && !cornerNumbers.length) ok = true;
+
+        if (ok) matchingSegments.push(segment);
+      }
+
+      const selectedSegments =
+        selectMode === "last"
+          ? (matchingSegments.length ? [matchingSegments[matchingSegments.length - 1]] : [])
+          : selectMode === "first"
+            ? (matchingSegments.length ? [matchingSegments[0]] : [])
+            : matchingSegments;
+
+      for (const segment of selectedSegments) {
+        if (!applyLocalClip) {
+          pushClippedBox(segment.start, segment.end);
+          continue;
+        }
+        const segmentLength = segment.end - segment.start;
+        const localStart = Number.isFinite(localStartRatio) ? segment.start + Math.max(0, localStartRatio) * segmentLength : segment.start;
+        const localEnd = Number.isFinite(localEndRatio) ? segment.start + Math.min(1, localEndRatio) * segmentLength : segment.end;
+        pushClippedBox(localStart, localEnd);
+      }
+    }
+  }
+
+  return markers;
+}
+
 export function inferSkillMarkers(skill, mapData) {
   if (!skill || !mapData) return [];
 
-  const conditions = collectSkillConditionText(skill);
+  const conditions = collectSkillConditionText(skill, true);
   const markers = [];
 
   for (const condition of conditions) {
@@ -215,6 +389,52 @@ export function inferSkillMarkers(skill, mapData) {
   }
 
   return markers;
+}
+
+export function resolveSkillActivationOverlay(skill, cm, mapData) {
+  if (!skill || !mapData) {
+    return { shouldShowChart: false, markers: [], doesNotWork: false, reasons: [] };
+  }
+
+  const activationMap = skill.activation_map;
+  const explicitRequirements = requirementsFromActivationMap(activationMap);
+  const fallbackRequirements = inferTextTrackRequirements(skill);
+  const requirements = explicitRequirements ?? fallbackRequirements;
+  const compatibility = evaluateTrackCompatibility(cm?.track, requirements);
+
+  const explicitMarkers = markersFromActivationMap(skill, mapData);
+  const markers = explicitMarkers.length > 0 ? explicitMarkers : inferSkillMarkers(skill, mapData);
+  const hasActivationWindow = markers.length > 0;
+
+  const explicitShow = activationMap?.show_chart;
+  if (compatibility.doesNotWork) {
+    if (!hasActivationWindow) {
+      // Passive/always-on or non-spatial skills should not show map warnings.
+      return {
+        shouldShowChart: false,
+        markers: [],
+        doesNotWork: false,
+        reasons: [],
+        usedActivationMap: Boolean(activationMap),
+      };
+    }
+    return {
+      shouldShowChart: true,
+      markers: [],
+      doesNotWork: true,
+      reasons: compatibility.reasons,
+      usedActivationMap: Boolean(activationMap),
+    };
+  }
+
+  const shouldShowChart = explicitShow === false ? false : explicitShow === true ? true : hasActivationWindow;
+  return {
+    shouldShowChart,
+    markers,
+    doesNotWork: false,
+    reasons: [],
+    usedActivationMap: Boolean(activationMap),
+  };
 }
 
 export function buildSkillMapCacheKey({ cmNumber, skillId, mapData, markers }) {

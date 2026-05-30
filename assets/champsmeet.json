@@ -266,7 +266,7 @@
                 { "start": 1075, "end": 1600, "label": "Straight", "color": "#b8d4ea" }
             ],
             "zones": [
-                { "start": 0, "end": 267, "label": "Opening leg", "color": "#00a88f", "textColor": "#ffffff" },
+                { "start": 0, "end": 267, "label": "Opening leg", "color": "#00a88f" },
                 { "start": 267, "end": 1067, "label": "Middle leg", "color": "#e3d95f" },
                 { "start": 1067, "end": 1333, "label": "Final leg", "color": "#cf81bb" },
                 { "start": 1333, "end": 1600, "label": "Last spurt", "color": "#bf6ea8" }
@@ -312,7 +312,7 @@
                 { "start": 1850, "end": 2200, "label": "Straight", "color": "#b8d4ea" }
             ],
             "zones": [
-                { "start": 0, "end": 367, "label": "Opening leg", "color": "#00a88f", "textColor": "#ffffff" },
+                { "start": 0, "end": 367, "label": "Opening leg", "color": "#00a88f"},
                 { "start": 367, "end": 1467, "label": "Middle leg", "color": "#e3d95f" },
                 { "start": 1467, "end": 1833, "label": "Final leg", "color": "#cf81bb" },
                 { "start": 1833, "end": 2200, "label": "Last spurt", "color": "#bf6ea8" }

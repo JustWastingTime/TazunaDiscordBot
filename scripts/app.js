@@ -23,7 +23,7 @@ import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
   getUpcomingChampionsMeet,
   getCourseMapDataFromCm,
-  inferSkillMarkers,
+  resolveSkillActivationOverlay,
   buildSkillMapCacheKey,
   ensureDirectory,
   resolveSkillMapOutputPath,
@@ -80,14 +80,14 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
   const mapData = getCourseMapDataFromCm(activeCm);
   if (!mapData) return embed;
 
-  const markers = inferSkillMarkers(skill, mapData);
-  if (markers.length === 0) return embed;
+  const overlay = resolveSkillActivationOverlay(skill, activeCm, mapData);
+  if (!overlay.shouldShowChart) return embed;
 
   const cacheKey = buildSkillMapCacheKey({
     cmNumber: activeCm.number,
     skillId: skill.gametora_id ?? skill.skill_name,
     mapData,
-    markers,
+    markers: overlay.markers,
   });
   const fileName = `cm${activeCm.number}-${cacheKey}.png`;
   const outputPath = resolveSkillMapOutputPath(PROJECT_ROOT, fileName);
@@ -96,7 +96,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
     await renderCourseMapPng(mapData, outputPath, {
       width: 1500,
       height: 360,
-      skillMarkers: markers,
+      skillMarkers: overlay.markers,
     });
   }
 
@@ -105,7 +105,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
     embed.image = { url: `${baseUrl}/assets/generated/skill-maps/${fileName}` };
   }
 
-  const suffix = `Map overlay: ${activeCm.name}`;
+  const suffix = overlay.doesNotWork ? `Map overlay: ${activeCm.name} • DOES NOT WORK` : `Map overlay: ${activeCm.name}`;
   embed.footer = embed.footer?.text
     ? { text: `${embed.footer.text} • ${suffix}` }
     : { text: suffix };

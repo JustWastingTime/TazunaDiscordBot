@@ -171,6 +171,26 @@ phase>=2    "Late race and beyond"
 [
 ],
 
+"activation_map": {
+  "show_chart": true,
+  "requirements": {
+    "distance_types": ["medium"],
+    "terrains": ["turf"],
+    "directions": ["counterclockwise"],
+    "racetracks": ["tokyo"],
+    "grounds": ["firm"],
+    "seasons": ["spring"],
+    "weathers": ["sunny"]
+  },
+  "triggers": [
+    { "type": "box", "target": "layout", "match": "corner" },
+    { "type": "box", "target": "layout", "corner_numbers": [3, 4] },
+    { "type": "line", "distance_mode": "remaining", "value": 200 },
+    { "type": "line", "distance": 900 },
+    { "type": "box", "start": 267, "end": 1067 }
+  ]
+}
+
 {   "id": "Make Debut",
         "rank": "bronze",
         "conditions": "Participate in the Make Debut",

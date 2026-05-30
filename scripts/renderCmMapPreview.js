@@ -1,5 +1,5 @@
 import path from "path";
-import cache from "./githubCache.js";
+import fs from "fs/promises";
 import { getCourseMapDataFromCm } from "./skillCourseMap.js";
 import { renderCourseMapPng } from "./courseMapRenderer.js";
 
@@ -9,7 +9,9 @@ async function main() {
     throw new Error("Usage: node scripts/renderCmMapPreview.js <cm-number> [cm-number...]");
   }
 
-  const targets = cache.champsmeets.filter((cm) => cmNumbers.includes(String(cm.number)));
+  const champsmeetPath = path.resolve("assets", "champsmeet.json");
+  const champsmeets = JSON.parse(await fs.readFile(champsmeetPath, "utf8"));
+  const targets = champsmeets.filter((cm) => cmNumbers.includes(String(cm.number)));
   if (targets.length === 0) {
     throw new Error(`No CM entries matched: ${cmNumbers.join(", ")}`);
   }

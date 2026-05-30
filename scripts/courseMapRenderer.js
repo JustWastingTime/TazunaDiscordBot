@@ -13,7 +13,8 @@ const DEFAULT_COLORS = {
   tick: "#9ea7b7",
   meterText: "#6f7888",
   segmentBorder: "rgba(255, 255, 255, 0.12)",
-  activationLine: "#d11f2a",
+  activationLine: "#ff4d6d",
+  activationBoxStroke: "#ff5c7a",
 };
 
 function clamp(value, min, max) {
@@ -52,6 +53,33 @@ function computeTickStep(length) {
   if (length <= 2000) return 200;
   if (length <= 3000) return 300;
   return 400;
+}
+
+function mergeTouchingBoxMarkers(markers, length) {
+  const tolerance = 0.0001;
+  const normalized = markers
+    .map((marker) => {
+      const start = clamp(Number(marker.start ?? 0), 0, length);
+      const end = clamp(Number(marker.end ?? 0), 0, length);
+      if (end <= start) return null;
+      return { ...marker, type: "box", start, end };
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.start - b.start);
+
+  const merged = [];
+  for (const marker of normalized) {
+    const prev = merged[merged.length - 1];
+    const sameColor = prev && (prev.color ?? DEFAULT_COLORS.activationBoxStroke) === (marker.color ?? DEFAULT_COLORS.activationBoxStroke);
+    if (prev && sameColor && marker.start <= prev.end + tolerance) {
+      prev.end = Math.max(prev.end, marker.end);
+      prev.fillOpacity = Math.max(Number(prev.fillOpacity ?? 0.1), Number(marker.fillOpacity ?? 0.1));
+      prev.strokeWidth = Math.max(Number(prev.strokeWidth ?? 2.2), Number(marker.strokeWidth ?? 2.2));
+      continue;
+    }
+    merged.push({ ...marker });
+  }
+  return merged;
 }
 
 function buildSvg(mapData, options) {
@@ -149,13 +177,25 @@ function buildSvg(mapData, options) {
     );
   }
 
-  const markers = Array.isArray(options.skillMarkers) ? options.skillMarkers : [];
-  for (const marker of markers) {
+  const rawMarkers = Array.isArray(options.skillMarkers) ? options.skillMarkers : [];
+  const lineMarkers = [];
+  const boxMarkers = [];
+  for (const marker of rawMarkers) {
+    const markerType = marker.type ?? (marker.start != null && marker.end != null ? "box" : "line");
+    if (markerType === "box") {
+      boxMarkers.push(marker);
+    } else {
+      lineMarkers.push(marker);
+    }
+  }
+  const mergedBoxMarkers = mergeTouchingBoxMarkers(boxMarkers, length);
+
+  for (const marker of [...mergedBoxMarkers, ...lineMarkers]) {
     // Supports two marker styles:
     // - line: { type: "line", distance: 420, color?: "#d11f2a", width?: 4 }
     // - box:  { type: "box", start: 267, end: 1067, color?: "#d11f2a", fillOpacity?: 0.18 }
     const markerType = marker.type ?? (marker.start != null && marker.end != null ? "box" : "line");
-    const color = marker.color ?? DEFAULT_COLORS.activationLine;
+    const color = marker.color ?? (markerType === "box" ? DEFAULT_COLORS.activationBoxStroke : DEFAULT_COLORS.activationLine);
 
     if (markerType === "box") {
       const start = clamp(Number(marker.start ?? 0), 0, length);
@@ -163,10 +203,10 @@ function buildSvg(mapData, options) {
       if (end <= start) continue;
       const x = xFromDistance(start);
       const w = xFromDistance(end) - x;
-      const fillOpacity = clamp(Number(marker.fillOpacity ?? 0.18), 0, 1);
-      const strokeWidth = Number(marker.strokeWidth ?? 2);
+      const fillOpacity = clamp(Number(marker.fillOpacity ?? 0.1), 0, 1);
+      const strokeWidth = Number(marker.strokeWidth ?? 2.2);
       parts.push(
-        `<rect x="${x.toFixed(2)}" y="${(trackTop - 12).toFixed(2)}" width="${w.toFixed(2)}" height="${(trackEndY - trackTop + 24).toFixed(2)}" fill="${color}" fill-opacity="${fillOpacity}" stroke="${color}" stroke-width="${strokeWidth}"/>`
+        `<rect x="${x.toFixed(2)}" y="${(trackTop - 12).toFixed(2)}" width="${w.toFixed(2)}" height="${(trackEndY - trackTop + 24).toFixed(2)}" rx="4" ry="4" fill="${color}" fill-opacity="${fillOpacity}" stroke="${color}" stroke-width="${strokeWidth}"/>`
       );
       continue;
     }

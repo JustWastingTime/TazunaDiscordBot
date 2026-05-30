@@ -13,7 +13,9 @@
     "register": "node scripts/commands.js",
     "dev": "nodemon scripts/app.js",
     "render-course-map": "node scripts/courseMapRenderer.js",
-    "render-cm-map": "node scripts/renderCmMapPreview.js"
+    "render-cm-map": "node scripts/renderCmMapPreview.js",
+    "render-skill-map": "node scripts/renderSkillMapPreview.js",
+    "generate-activation-maps": "node scripts/generateActivationMaps.js"
   },
   "author": "vivi",
   "license": "MIT",
