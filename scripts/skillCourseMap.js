@@ -180,6 +180,12 @@ function inferPhaseWindowFromTexts(texts, mapData) {
     return { start: mapData.length * 0.5, end: mapData.length };
   }
 
+  if (texts.some((t) => t.includes("early race or mid race"))) {
+    if (earlyZone && midZone) return { start: earlyZone.start, end: midZone.end };
+    if (earlyZone) return { start: earlyZone.start, end: earlyZone.end };
+    if (midZone) return { start: midZone.start, end: midZone.end };
+  }
+
   if (texts.some((t) => t.includes("late race"))) {
     if (lateZone) return { start: lateZone.start, end: lateZone.end };
   }
@@ -423,7 +429,9 @@ function markersFromActivationMap(skill, mapData) {
         clipStart = Math.max(clipStart, explicitPhaseWindow.start);
         clipEnd = Math.min(clipEnd, explicitPhaseWindow.end);
       }
-      if (autoPhaseWindow && trigger.disable_auto_phase_clip !== true) {
+      const hasExplicitPhase = Boolean(trigger.phase);
+      const useAutoPhaseClip = !hasExplicitPhase && trigger.disable_auto_phase_clip !== true && trigger.apply_auto_phase_clip !== false;
+      if (autoPhaseWindow && useAutoPhaseClip) {
         clipStart = Math.max(clipStart, autoPhaseWindow.start);
         clipEnd = Math.min(clipEnd, autoPhaseWindow.end);
       }
@@ -478,7 +486,7 @@ function markersFromActivationMap(skill, mapData) {
             ? selectedSegments.slice(1)
             : selectedSegments;
 
-      if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && trigger.disable_auto_phase_clip !== true) {
+      if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip) {
         pushUniqueBox(markers, clipStart, clipEnd, color);
         continue;
       }
@@ -534,8 +542,9 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
   const requirements = explicitRequirements ?? fallbackRequirements;
   const compatibility = evaluateTrackCompatibility(cm?.track, requirements);
 
-  const explicitMarkers = markersFromActivationMap(skill, mapData);
-  const markers = explicitMarkers.length > 0 ? explicitMarkers : inferSkillMarkers(skill, mapData);
+  const hasExplicitActivationMap = Boolean(activationMap && Array.isArray(activationMap.triggers));
+  const explicitMarkers = hasExplicitActivationMap ? markersFromActivationMap(skill, mapData) : [];
+  const markers = hasExplicitActivationMap ? explicitMarkers : inferSkillMarkers(skill, mapData);
   const rawConditionTexts = collectSkillConditionText(skill, false);
   const isRandomPointSkill = rawConditionTexts.some((text) => text.includes("random point"));
   const defaultBehavior = isRandomPointSkill ? "random" : "asap";

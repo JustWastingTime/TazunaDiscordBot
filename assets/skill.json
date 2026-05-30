@@ -4049,7 +4049,21 @@
             "位置取り押し上げ"
         ],
         "upgrade": "Fast & Furious",
-        "gametora_id": "200592"
+        "gametora_id": "200592",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Outer Swell",
         "description": "Slightly increase velocity when passing another runner on the outside on the final corner.",
@@ -4789,7 +4803,23 @@
             "先頭プライド"
         ],
         "upgrade": "Top Runner",
-        "gametora_id": "201272"
+        "gametora_id": "201272",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early",
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Pace Chaser Straightaways",
         "description": "Increase velocity on a straight.",
@@ -5612,7 +5642,21 @@
             "迅速果断"
         ],
         "downgrade": "Position Pilfer",
-        "gametora_id": "200591"
+        "gametora_id": "200591",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Rising Dragon",
         "description": "Increase velocity when passing another runner on the outside on the final corner.",
@@ -6294,7 +6338,23 @@
             "トップランナー"
         ],
         "downgrade": "Leader's Pride",
-        "gametora_id": "201271"
+        "gametora_id": "201271",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early",
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Burning Soul",
         "description": "When engaged in a challenge midpack mid-race, moderately recover endurance and moderately increase velocity.",
@@ -8110,7 +8170,18 @@
             "グッときてChu"
         ],
         "horse": "Maruzensky (Summer)",
-        "gametora_id": "110041"
+        "gametora_id": "110041",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "I Never Goof Up!",
         "description": "Aim for the front with unwavering determination when passing another runner from midpack or further back on a corner late-race.",
@@ -9904,7 +9975,21 @@
             "地固め"
         ],
         "upgrade": "Unshakable Stance (TO BE RENAMED)",
-        "gametora_id": "201601"
+        "gametora_id": "201601",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Head-On",
         "description": "Slightly increase acceleration when positioned toward the front late-race. ",
@@ -10473,7 +10558,21 @@
             "盤石の構え"
         ],
         "downgrade": "Groundwork",
-        "gametora_id": "201602"
+        "gametora_id": "201602",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
 
     {   "skill_name": "Feel the Burn!",
@@ -10727,21 +10826,14 @@
             "mejiro dober original og",
             "moving past and beyond",
             "彼方その先へ",
-            "beyond the other side"
+            "beyond the other side",
+            "mpb"
         ],
         "horse": "Mejiro Dober (Original)",
         "gametora_id": "100591",
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "box",
-                    "target": "layout",
-                    "match": "corner",
-                    "exclude_select": "last",
-                    "phase": "late_and_beyond",
-                    "trigger_behavior": "asap"
-                },
                 {
                     "type": "box",
                     "target": "layout",
