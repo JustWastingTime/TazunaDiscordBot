@@ -934,6 +934,15 @@ export function buildEventEmbed(event, eventList) {
 }
 
 export function buildUmaEmbed(uma, skills) {
+  const epithetValue = uma.epithet
+    ? (typeof uma.epithet === "string"
+        ? uma.epithet
+        : [
+            uma.epithet.name ? `**${uma.epithet.name}**` : null,
+            uma.epithet.condition || null
+          ].filter(Boolean).join("\n"))
+    : null;
+
   return {
     title: `${uma.character_name} (${uma.type})`,
     fields: [
@@ -960,6 +969,15 @@ export function buildUmaEmbed(uma, skills) {
           .join("\n") + '\n \u200B',  // ← put each aptitude group on a new line
         inline: false
       },
+      ...(epithetValue
+        ? [
+            {
+              name: "Epithet",
+              value: `${epithetValue}\n \u200B`,
+              inline: false
+            }
+          ]
+        : []),
       { name: "Unique Skill", value: `${formatCardSkill(uma.unique, skills)}` + '\n \u200B', inline: false },
       {
         name: "Skills",
