@@ -26,6 +26,20 @@ function firstNumberFromText(text) {
   return match ? Number(match[1]) : null;
 }
 
+function extractRemainingDistanceMeters(text) {
+  const normalized = lower(text);
+
+  // last 777m of the race / 200m or less remaining / 777m remaining
+  const direct = normalized.match(/(?:last\s+)?(\d+)\s*m(?:eters?)?\s*(?:remaining|of the race|or less remaining)?/);
+  if (direct) return Number(direct[1]);
+
+  // with 200m or less remaining
+  const withRemaining = normalized.match(/with\s+(\d+)\s*m(?:eters?)?\s*or less remaining/);
+  if (withRemaining) return Number(withRemaining[1]);
+
+  return null;
+}
+
 function buildActivationMapForSkill(skill) {
   const texts = collectTexts(skill);
   const allText = texts.join(" | ");
@@ -76,6 +90,16 @@ function buildActivationMapForSkill(skill) {
     });
   }
 
+  // Final straight == last straight in map.
+  if (allText.includes("final straight")) {
+    triggers.push({
+      type: "box",
+      target: "layout",
+      match: "straight",
+      select: "last",
+    });
+  }
+
   // Second half of early/opening leg => local 50%-100% window on opening leg segment.
   if (allText.includes("second half of early race")) {
     triggers.push({
@@ -100,15 +124,13 @@ function buildActivationMapForSkill(skill) {
 
   // Remaining-distance threshold -> line at (length - value).
   for (const text of texts) {
-    if (text.includes("remaining") || text.includes("last ") || text.includes("or less remaining")) {
-      const meters = firstNumberFromText(text);
-      if (Number.isFinite(meters) && meters > 0) {
-        triggers.push({
-          type: "line",
-          distance_mode: "remaining",
-          value: meters,
-        });
-      }
+    const meters = extractRemainingDistanceMeters(text);
+    if (Number.isFinite(meters) && meters > 0) {
+      triggers.push({
+        type: "line",
+        distance_mode: "remaining",
+        value: meters,
+      });
     }
   }
 

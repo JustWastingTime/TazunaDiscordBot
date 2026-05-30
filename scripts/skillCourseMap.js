@@ -163,6 +163,11 @@ function inferAutoPhaseWindow(skill, mapData) {
     return { start, end: mapData.length };
   }
 
+  if (texts.some((t) => t.includes("last spurt")) || texts.some((t) => t.includes("spurt mode"))) {
+    const start = lateZone?.start ?? (spurtZone?.start ?? mapData.length * 0.75);
+    return { start, end: mapData.length };
+  }
+
   if (texts.some((t) => t.includes("second half of the race"))) {
     return { start: mapData.length * 0.5, end: mapData.length };
   }
@@ -464,6 +469,14 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
 
   const explicitMarkers = markersFromActivationMap(skill, mapData);
   const markers = explicitMarkers.length > 0 ? explicitMarkers : inferSkillMarkers(skill, mapData);
+  const rawConditionTexts = collectSkillConditionText(skill, false);
+  const isRandomPointSkill = rawConditionTexts.some((text) => text.includes("random point"));
+  const defaultBehavior = isRandomPointSkill ? "random" : "asap";
+  const normalizedMarkers = markers.map((marker) => (
+    marker.type === "box" && !marker.trigger_behavior
+      ? { ...marker, trigger_behavior: defaultBehavior }
+      : marker
+  ));
   const hasActivationWindow = markers.length > 0;
 
   const explicitShow = activationMap?.show_chart;
@@ -490,7 +503,7 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
   const shouldShowChart = explicitShow === false ? false : explicitShow === true ? true : hasActivationWindow;
   return {
     shouldShowChart,
-    markers,
+    markers: normalizedMarkers,
     doesNotWork: false,
     reasons: [],
     usedActivationMap: Boolean(activationMap),

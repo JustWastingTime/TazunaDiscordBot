@@ -126,6 +126,14 @@ function buildSvg(mapData, options) {
   const boundaryLabels = [];
   parts.push(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">`,
+    `<defs>
+      <pattern id="randomStripe" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(35)">
+        <line x1="0" y1="0" x2="0" y2="10" stroke="#8ebeff" stroke-opacity="0.55" stroke-width="3"/>
+      </pattern>
+      <pattern id="asapHatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="#ff6f8a" stroke-opacity="0.35" stroke-width="2"/>
+      </pattern>
+    </defs>`,
     `<rect x="0" y="0" width="${width}" height="${height}" fill="${DEFAULT_COLORS.background}" />`,
     `<text x="${width / 2}" y="46" text-anchor="middle" fill="${DEFAULT_COLORS.title}" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(title)}</text>`
   );
@@ -203,11 +211,28 @@ function buildSvg(mapData, options) {
       if (end <= start) continue;
       const x = xFromDistance(start);
       const w = xFromDistance(end) - x;
+      const behavior = String(marker.trigger_behavior ?? marker.behavior ?? "random").toLowerCase();
       const fillOpacity = clamp(Number(marker.fillOpacity ?? 0.1), 0, 1);
       const strokeWidth = Number(marker.strokeWidth ?? 2.2);
-      parts.push(
-        `<rect x="${x.toFixed(2)}" y="${(trackTop - 12).toFixed(2)}" width="${w.toFixed(2)}" height="${(trackEndY - trackTop + 24).toFixed(2)}" rx="4" ry="4" fill="${color}" fill-opacity="${fillOpacity}" stroke="${color}" stroke-width="${strokeWidth}"/>`
-      );
+      const boxY = trackTop - 12;
+      const boxH = trackEndY - trackTop + 24;
+
+      // "random": solid translucent zone
+      // "asap": lighter fill + hatch overlay + stronger outline
+      if (behavior === "asap") {
+        parts.push(
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="${color}" fill-opacity="${Math.min(fillOpacity, 0.08)}" stroke="none"/>`,
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#asapHatch)" fill-opacity="0.4" stroke="${color}" stroke-width="${Math.max(strokeWidth, 2.4)}"/>`,
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">ASAP</text>`
+        );
+      } else {
+        const randomColor = "#6faef8";
+        parts.push(
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#d9ecff" fill-opacity="0.22" stroke="none"/>`,
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#randomStripe)" fill-opacity="0.55" stroke="${randomColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#7fb8ff" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">RANDOM</text>`
+        );
+      }
       continue;
     }
 
@@ -266,8 +291,8 @@ async function runCli() {
     skillMarkers: [
       { type: "line", distance: 420, color: "#d11f2a" },
       { type: "line", distance: 1120, color: "#d11f2a" },
-      { type: "box", start: 267, end: 1067, color: "#d11f2a", fillOpacity: 0.16 },
-      { type: "box", start: 1067, end: 1600, color: "#d11f2a", fillOpacity: 0.16 },
+      { type: "box", start: 267, end: 1067, color: "#ff5c7a", fillOpacity: 0.13, trigger_behavior: "random" },
+      { type: "box", start: 1067, end: 1600, color: "#ff5c7a", fillOpacity: 0.13, trigger_behavior: "asap" },
     ],
   });
 

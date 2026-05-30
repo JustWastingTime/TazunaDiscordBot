@@ -6826,9 +6826,10 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 30
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last"
                 }
             ]
         }
@@ -7373,9 +7374,10 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 30
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last"
                 }
             ]
         }
@@ -9607,7 +9609,7 @@
                 "conditions": [
                     "End Closer",
                     "Any straight",
-                    "Character is in their last spurt mode"
+                    "Character is in their late race spurt mode"
                 ]
             }
         ],
@@ -9622,7 +9624,18 @@
             "直線一気"
         ],
         "upgrade": "Encroaching Shadow",
-        "gametora_id": "200642"
+        "gametora_id": "200642",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Sprinting Gear",
         "description": "Slightly increase acceleration on a straight.",
@@ -10134,7 +10147,7 @@
                 "conditions": [
                     "End Closer",
                     "Any straight",
-                    "Character is in their last spurt mode"
+                    "Character is in their late race spurt mode"
                 ]
             }
         ],
@@ -10148,7 +10161,18 @@
             "迫る影"
         ],
         "downgrade": "Straightaway Spurt",
-        "gametora_id": "200641"
+        "gametora_id": "200641",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Turbo Sprint",
         "description": "Increase acceleration on a straight.",
