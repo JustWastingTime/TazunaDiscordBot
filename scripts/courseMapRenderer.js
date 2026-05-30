@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 const DEFAULT_COLORS = {
   background: "#2b2d31",
   title: "#24b7ff",
+  warning: "#ff4d6d",
   axis: "#8b96a8",
   tick: "#9ea7b7",
   meterText: "#6f7888",
@@ -90,6 +91,7 @@ function buildSvg(mapData, options) {
   const trackWidth = width - margin.left - margin.right;
   const trackTop = margin.top;
   const title = mapData.name ?? `Course ${mapData.length}m`;
+  const warningText = options.warningText ? String(options.warningText) : "";
   const backgroundOpacity = clamp(Number(options.backgroundOpacity ?? 0), 0, 1);
   const length = Number(mapData.length);
   const rowBottom = trackTop + rowHeight * 3 + rowGap * 2;
@@ -138,6 +140,11 @@ function buildSvg(mapData, options) {
     `<rect x="0" y="0" width="${width}" height="${height}" fill="${DEFAULT_COLORS.background}" fill-opacity="${backgroundOpacity}"/>`,
     `<text x="${width / 2}" y="46" text-anchor="middle" fill="${DEFAULT_COLORS.title}" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(title)}</text>`
   );
+  if (warningText) {
+    parts.push(
+      `<text x="${width / 2}" y="72" text-anchor="middle" fill="${DEFAULT_COLORS.warning}" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(warningText)}</text>`
+    );
+  }
 
   for (const row of rows) {
     for (const segment of row.segments) {

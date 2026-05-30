@@ -97,6 +97,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
       width: 1500,
       height: 360,
       skillMarkers: overlay.markers,
+      warningText: overlay.doesNotWork ? 'DOES NOT WORK' : undefined,
     });
   }
 
@@ -105,8 +106,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
     embed.image = { url: `${baseUrl}/assets/generated/skill-maps/${fileName}` };
   }
 
-  const mapStatus = overlay.doesNotWork ? `Map overlay: ${activeCm.name} • DOES NOT WORK` : `Map overlay: ${activeCm.name}`;
-  const suffix = `${mapStatus} • Report any errors using /bugreport`;
+  const suffix = `Map overlay: ${activeCm.name} • Report any errors using /bugreport`;
   embed.footer = embed.footer?.text
     ? { text: `${embed.footer.text} • ${suffix}` }
     : { text: suffix };
