@@ -2683,7 +2683,18 @@
             "hill dislike",
             "坂苦手"
         ],
-        "gametora_id": "200391"
+        "gametora_id": "200391",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "uphill",
+                "trigger_behavior": "random"
+              }
+            ]
+          }
     },
     {   "skill_name": "Packphobia",
         "description": "Moderately lose endurance when surrounded.",
