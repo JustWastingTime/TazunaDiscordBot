@@ -2741,7 +2741,23 @@
             "鋼の意志"
         ],
         "downgrade": "Lay Low",
-        "gametora_id": "200441"
+        "gametora_id": "200441",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early",
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Lay Low",
         "description": "Slightly recover endurance when the way ahead is jammed early-race or mid-race.",
@@ -2765,7 +2781,23 @@
             "隠れ蓑"
         ],
         "upgrade": "Iron Will",
-        "gametora_id": "200442"
+        "gametora_id": "200442",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "opening leg",
+                        "early",
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Indomitable",
         "description": "Recover endurance when passed by another runner mid-race.",
@@ -2786,7 +2818,21 @@
             "indomitable"
         ],
         "downgrade": "Pace Strategy",
-        "gametora_id": "200471"
+        "gametora_id": "200471",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Pace Strategy",
         "description": "Slightly recover endurance when passed by another runner mid-race.",
@@ -2809,7 +2855,21 @@
             "ペースキープ"
         ],
         "upgrade": "Indomitable",
-        "gametora_id": "200472"
+        "gametora_id": "200472",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Unruffled",
         "description": "Recover endurance when surrounded mid-race.",
@@ -2832,7 +2892,21 @@
             "どこ吹く風"
         ],
         "downgrade": "Calm in a Crowd",
-        "gametora_id": "200481"
+        "gametora_id": "200481",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Calm in a Crowd",
         "description": "Slightly recover endurance when surrounded mid-race.",
@@ -2855,7 +2929,21 @@
             "ウマ込み冷静"
         ],
         "upgrade": "Unruffled",
-        "gametora_id": "200482"
+        "gametora_id": "200482",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Running Idle",
         "description": "Moderately increase fatigue when in the lead by too large of a margin.",
