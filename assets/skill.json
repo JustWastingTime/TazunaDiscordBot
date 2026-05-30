@@ -3215,7 +3215,21 @@
             "wait and see",
             "様子見"
         ],
-        "gametora_id": "200662"
+        "gametora_id": "200662",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Keen Eye",
         "description": "Decrease fatigue, then moderately decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
@@ -3327,7 +3341,21 @@
             "切り開く者"
         ],
         "downgrade": "Rosy Outlook",
-        "gametora_id": "200711"
+        "gametora_id": "200711",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Rosy Outlook",
         "description": "Slightly decrease fatigue when positioned toward the front mid-race.",
@@ -3351,7 +3379,21 @@
             "前途洋々"
         ],
         "upgrade": "Trackblazer",
-        "gametora_id": "200712"
+        "gametora_id": "200712",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Cooldown",
         "description": "Decrease fatigue by taking a breather upon entering a straight.",
@@ -3380,7 +3422,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -3417,7 +3460,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -3451,13 +3495,6 @@
         "gametora_id": "200761",
         "activation_map": {
             "show_chart": true,
-            "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 30
-                }
-            ],
             "requirements": {
                 "distance_types": [
                     "long"
@@ -3489,13 +3526,6 @@
         "gametora_id": "200762",
         "activation_map": {
             "show_chart": true,
-            "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 30
-                }
-            ],
             "requirements": {
                 "distance_types": [
                     "long"
@@ -10044,6 +10074,7 @@
         "category": "accel",
         "aliases": [
             "nimblenav",
+            "nimnav",
             "slight detour",
             "垂れウマ回避"
         ],
