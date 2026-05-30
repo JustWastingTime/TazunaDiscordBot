@@ -779,16 +779,6 @@ export function buildSkillEmbed(skill, supporterList) {
     });
   }
 
-  // ===== Review =====
-  if (skill.review && skill.review !== "") {
-    fields.push({
-      name: "Review",
-      value: skill.review + "\n\u200B",
-      inline: false
-    });
-  }
-
-
   if (skill.horse) {
     fields.push({
       name: "Inherited from",
