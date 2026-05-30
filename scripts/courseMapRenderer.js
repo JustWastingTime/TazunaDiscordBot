@@ -90,6 +90,7 @@ function buildSvg(mapData, options) {
   const trackWidth = width - margin.left - margin.right;
   const trackTop = margin.top;
   const title = mapData.name ?? `Course ${mapData.length}m`;
+  const backgroundOpacity = clamp(Number(options.backgroundOpacity ?? 0), 0, 1);
   const length = Number(mapData.length);
   const rowBottom = trackTop + rowHeight * 3 + rowGap * 2;
   const axisY = rowBottom + 32;
@@ -128,13 +129,13 @@ function buildSvg(mapData, options) {
     `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">`,
     `<defs>
       <pattern id="randomStripe" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(35)">
-        <line x1="0" y1="0" x2="0" y2="10" stroke="#8ebeff" stroke-opacity="0.55" stroke-width="3"/>
+        <line x1="0" y1="0" x2="0" y2="10" stroke="#639de6" stroke-opacity="0.62" stroke-width="3"/>
       </pattern>
       <pattern id="asapHatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
         <line x1="0" y1="0" x2="0" y2="8" stroke="#ff6f8a" stroke-opacity="0.35" stroke-width="2"/>
       </pattern>
     </defs>`,
-    `<rect x="0" y="0" width="${width}" height="${height}" fill="${DEFAULT_COLORS.background}" />`,
+    `<rect x="0" y="0" width="${width}" height="${height}" fill="${DEFAULT_COLORS.background}" fill-opacity="${backgroundOpacity}"/>`,
     `<text x="${width / 2}" y="46" text-anchor="middle" fill="${DEFAULT_COLORS.title}" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(title)}</text>`
   );
 
@@ -226,11 +227,11 @@ function buildSvg(mapData, options) {
           `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">ASAP</text>`
         );
       } else {
-        const randomColor = "#6faef8";
+        const randomColor = "#4f88d4";
         parts.push(
-          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#d9ecff" fill-opacity="0.22" stroke="none"/>`,
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#bfdcff" fill-opacity="0.24" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#randomStripe)" fill-opacity="0.55" stroke="${randomColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#7fb8ff" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">RANDOM</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#5f98e3" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">RANDOM</text>`
         );
       }
       continue;
