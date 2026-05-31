@@ -11374,7 +11374,9 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -11412,7 +11414,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -11447,7 +11451,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -11484,7 +11490,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
