@@ -217,6 +217,50 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
   }
 
   /**
+   * Handle slash command autocomplete requests
+   * See https://discord.com/developers/docs/interactions/application-commands#autocomplete
+   */
+  if (type === InteractionType.APPLICATION_COMMAND_AUTOCOMPLETE) {
+    const focused = data.options?.find(opt => opt.focused);
+    const rawQuery = typeof focused?.value === 'string' ? focused.value : '';
+    const query = rawQuery.trim().toLowerCase();
+
+    // Only start suggesting once the user has typed at least 3 characters.
+    if (data.name !== 'skill' || query.length < 3) {
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices: [] }
+      });
+    }
+
+    const terms = query.split(/\s+/);
+    const matches = skills.filter(s => {
+      return terms.every(q =>
+        s.skill_name.toLowerCase().includes(q) ||
+        s.aliases?.some(a => a.toLowerCase().includes(q))
+      );
+    });
+
+    // Surface skills whose name starts with the query first, then alphabetical.
+    matches.sort((a, b) => {
+      const aStarts = a.skill_name.toLowerCase().startsWith(query) ? 0 : 1;
+      const bStarts = b.skill_name.toLowerCase().startsWith(query) ? 0 : 1;
+      if (aStarts !== bStarts) return aStarts - bStarts;
+      return a.skill_name.localeCompare(b.skill_name);
+    });
+
+    const choices = matches.slice(0, 25).map(s => ({
+      name: s.skill_name.length > 100 ? s.skill_name.slice(0, 100) : s.skill_name,
+      value: s.skill_name.length > 100 ? s.skill_name.slice(0, 100) : s.skill_name
+    }));
+
+    return res.send({
+      type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+      data: { choices }
+    });
+  }
+
+  /**
    * Handle slash command requests
    * See https://discord.com/developers/docs/interactions/application-commands#slash-commands
    */

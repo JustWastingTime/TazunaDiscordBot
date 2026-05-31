@@ -57,7 +57,8 @@ const SKILL_COMMAND = {
       type: 3,
       name: 'name',
       description: 'Name of the skill',
-      required: true
+      required: true,
+      autocomplete: true
     },
   ],
   type: 1,
