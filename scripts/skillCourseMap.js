@@ -96,7 +96,14 @@ function collectSkillConditionText(skill, includeDescriptions = false) {
 }
 
 function pushUniqueBox(markers, start, end, color = "#d11f2a", triggerBehavior) {
-  const exists = markers.some((m) => m.type === "box" && m.start === start && m.end === end);
+  const exists = markers.some(
+    (m) =>
+      m.type === "box" &&
+      m.start === start &&
+      m.end === end &&
+      (m.color ?? "#d11f2a") === (color ?? "#d11f2a") &&
+      (m.trigger_behavior ?? "") === (triggerBehavior ?? "")
+  );
   if (!exists) {
     const marker = { type: "box", start, end, color, fillOpacity: 0.16 };
     if (triggerBehavior) marker.trigger_behavior = triggerBehavior;
@@ -323,6 +330,7 @@ function phaseWindowFromName(mapData, phaseName) {
   if (phase === "mid" || phase === "middle") return midZone ? { start: midZone.start, end: midZone.end } : null;
   if (phase === "late") return lateZone ? { start: lateZone.start, end: lateZone.end } : null;
   if (phase === "spurt" || phase === "last_spurt") return spurtZone ? { start: spurtZone.start, end: spurtZone.end } : null;
+  if (phase === "first_half") return { start: 0, end: mapData.length * 0.5 };
   if (phase === "late_and_beyond") {
     const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;
     return { start, end: mapData.length };
@@ -401,6 +409,31 @@ function markersFromActivationMap(skill, mapData) {
         pushUniqueLine(markers, Number(trigger.distance), color);
         continue;
       }
+
+      const target = lower(trigger.target ?? "");
+      const match = lower(trigger.match ?? "");
+      const selectMode = lower(trigger.select ?? "");
+      const linePosition = lower(trigger.line_position ?? trigger.position ?? "start");
+      if (target === "layout" || target === "elevation" || target === "zones") {
+        const source = target === "elevation" ? mapData.elevation : target === "zones" ? mapData.zones : mapData.layout;
+        const matching = source.filter((segment) => {
+          if (!match) return true;
+          return lower(segment.label).includes(match);
+        });
+        const selected =
+          selectMode === "last"
+            ? (matching.length ? [matching[matching.length - 1]] : [])
+            : selectMode === "first"
+              ? (matching.length ? [matching[0]] : [])
+              : matching;
+        if (selected.length > 0) {
+          const segment = selected[0];
+          const distance = linePosition === "end" ? segment.end : segment.start;
+          pushUniqueLine(markers, distance, color);
+          continue;
+        }
+      }
+
       const mode = lower(trigger.distance_mode ?? trigger.distanceMode ?? "absolute");
       const value = Number(trigger.value);
       if (!Number.isFinite(value)) continue;

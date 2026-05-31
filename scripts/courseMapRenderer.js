@@ -16,6 +16,7 @@ const DEFAULT_COLORS = {
   segmentBorder: "rgba(255, 255, 255, 0.12)",
   activationLine: "#ff4d6d",
   activationBoxStroke: "#ff5c7a",
+  preconditionBoxStroke: "#d9b84a",
 };
 
 function clamp(value, min, max) {
@@ -136,6 +137,9 @@ function buildSvg(mapData, options) {
       <pattern id="asapHatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
         <line x1="0" y1="0" x2="0" y2="8" stroke="#ff6f8a" stroke-opacity="0.35" stroke-width="2"/>
       </pattern>
+      <pattern id="preconditionHatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="10" stroke="#e8cf7a" stroke-opacity="0.4" stroke-width="2"/>
+      </pattern>
     </defs>`,
     `<rect x="0" y="0" width="${width}" height="${height}" fill="${DEFAULT_COLORS.background}" fill-opacity="${backgroundOpacity}"/>`,
     `<text x="${width / 2}" y="46" text-anchor="middle" fill="${DEFAULT_COLORS.title}" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(title)}</text>`
@@ -232,6 +236,13 @@ function buildSvg(mapData, options) {
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="${color}" fill-opacity="${Math.min(fillOpacity, 0.08)}" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#asapHatch)" fill-opacity="0.4" stroke="${color}" stroke-width="${Math.max(strokeWidth, 2.4)}"/>`,
           `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">ASAP</text>`
+        );
+      } else if (behavior === "precondition") {
+        const preColor = "#d9b84a";
+        parts.push(
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#f7e6a4" fill-opacity="0.2" stroke="none"/>`,
+          `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#preconditionHatch)" fill-opacity="0.45" stroke="${preColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#e5c767" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">PRECONDITION</text>`
         );
       } else {
         const randomColor = "#4f88d4";

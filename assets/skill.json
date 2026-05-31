@@ -11626,7 +11626,26 @@
             "roaring racen cheerleading squad"
         ],
         "horse": "King Halo (Cheerleader)",
-        "gametora_id": "110611"
+        "gametora_id": "110611",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "first_half",
+                    "trigger_behavior": "precondition",
+                    "disable_auto_phase_clip": true
+                },
+                {
+                    "type": "line",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "line_position": "start"
+                }
+            ]
+        }
     },
     {   "skill_name": "Corner Acceleration x",
         "description": "Moderately decrease acceleration on a corner with awkward turning.",
