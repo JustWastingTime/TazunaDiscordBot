@@ -11658,6 +11658,8 @@
             ]
         }
     },
+
+
     {   "skill_name": "Prudent Positioning",
         "description": "Increase navigation early-race.",
         "effect": [
@@ -11678,7 +11680,17 @@
             "ポジションセンス"
         ],
         "upgrade": "Center Stage",
-        "gametora_id": "200452"
+        "gametora_id": "200452",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Go with the Flow",
         "description": "Moderately increase navigation late-race.",
@@ -11733,7 +11745,22 @@
             "仕掛け準備"
         ],
         "upgrade": "Perfect Prep!",
-        "gametora_id": "201002"
+        "gametora_id": "201002",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Thunderbolt Step",
         "description": "Moderately avoid becoming surrounded for a medium duration when positioned toward the back mid-race",
@@ -11757,7 +11784,22 @@
             "イナズマステップ"
         ],
         "upgrade": "Lightning Step",
-        "gametora_id": "201132"
+        "gametora_id": "201132",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Dodging Danger",
         "description": "Moderately avoid becoming surrounded early-race.",
@@ -11789,7 +11831,17 @@
             "危険回避"
         ],
         "upgrade": "Sixth Sense",
-        "gametora_id": "201262"
+        "gametora_id": "201262",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Forward, March!",
         "description": "Moderately prepare to aim for the front late-race.",
@@ -11849,7 +11901,17 @@
             "注目の踊り子"
         ],
         "downgrade": "Prudent Positioning",
-        "gametora_id": "200451"
+        "gametora_id": "200451",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Lane Legerdemain",
         "description": "Increase navigation late-race.",
@@ -11904,7 +11966,22 @@
             "準備万全"
         ],
         "downgrade": "Meticulous Measures",
-        "gametora_id": "201001"
+        "gametora_id": "201001",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Lightning Step",
         "description": "Avoid becoming surrounded for a medium duration when positioned toward the back mid-race.",
@@ -11927,7 +12004,22 @@
             "ライトニングステップ"
         ],
         "downgrade": "Thunderbolt Step",
-        "gametora_id": "201131"
+        "gametora_id": "201131",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Sixth Sense",
         "description": "Avoid becoming surrounded early-race.",
@@ -11958,7 +12050,17 @@
             "シックスセンス"
         ],
         "downgrade": "Dodging Danger",
-        "gametora_id": "201261"
+        "gametora_id": "201261",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Lead the Charge!",
         "description": "Prepare to aim for the front late-race.",
@@ -11998,6 +12100,8 @@
             }
         }
     },
+
+
     {   "skill_name": "Focus",
         "description": "Slightly decrease time lost to slow starts.",
         "effect": [
@@ -12017,7 +12121,10 @@
             "集中力"
         ],
         "upgrade": "Concentration",
-        "gametora_id": "200432"
+        "gametora_id": "200432",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Concentration",
         "description": "Decrease time lost to slow starts.",
@@ -12038,7 +12145,10 @@
             "コンセントレーション"
         ],
         "downgrade": "Focus",
-        "gametora_id": "200431"
+        "gametora_id": "200431",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Gatekept",
         "description": "Moderately increase time lost to slow starts.",
@@ -12059,7 +12169,10 @@
             "gate trouble",
             "ゲート難"
         ],
-        "gametora_id": "200433"
+        "gametora_id": "200433",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Feelin' a Bit Silly",
         "description": "Greatly decrease the racer's proficiency in starting races. Effects include slow starts and reduced starting acceleration. Removed at the end of the Career playthrough.",
@@ -12086,7 +12199,10 @@
             "超遊び癖",
             "dilly dakky"
         ],
-        "gametora_id": "1100011"
+        "gametora_id": "1100011",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "You're Not the Boss of Me!",
         "description": "Increase time lost to slow starts and moderately decrease Wit.",
@@ -12107,8 +12223,13 @@
             "dont tell me what to do",
             "アタシに指図しないで"
         ],
-        "gametora_id": "202141"
+        "gametora_id": "202141",
+        "activation_map": {
+            "show_chart": false
+        }
     },
+
+
     {   "skill_name": "Hawkeye",
         "description": "Moderately widen field of view with heightened observation early-race.",
         "effect": [
@@ -12129,7 +12250,17 @@
             "ホークアイ"
         ],
         "upgrade": "Clairvoyance",
-        "gametora_id": "201122"
+        "gametora_id": "201122",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Studious",
         "description": "Slightly widen field of view with heightened observation mid-race.",
@@ -12152,7 +12283,17 @@
             "読解力"
         ],
         "upgrade": "The Bigger Picture",
-        "gametora_id": "201432"
+        "gametora_id": "201432",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "I Can See Right Through You",
         "description": "Slightly widen field of view with situational awareness when moving sideways.",
