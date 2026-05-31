@@ -11107,7 +11107,18 @@
             "決意の直滑降"
         ],
         "downgrade": "Straight Descent",
-        "gametora_id": "201341"
+        "gametora_id": "201341",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Shatterproof",
         "description": "Moderately increase acceleration when positioned toward the back mid-race.",
@@ -11131,7 +11142,17 @@
             "くじけぬ精神"
         ],
         "downgrade": "Tactical Tweak",
-        "gametora_id": "201361"
+        "gametora_id": "201361",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Hard Worker",
         "description": "Moderately increase acceleration for a medium duration when trying to pass another runner.",
@@ -11155,7 +11176,16 @@
             "努力家"
         ],
         "downgrade": "Fighter",
-        "gametora_id": "201401"
+        "gametora_id": "201401",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "From the Brink",
         "description": "If positioned toward the back late-race, increase acceleration.",
@@ -11179,7 +11209,22 @@
             "起死回生"
         ],
         "downgrade": "Take the Chance",
-        "gametora_id": "202081"
+        "gametora_id": "202081",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Neck and Neck",
         "description": "Increase acceleration when positioned toward the front late-race.",
@@ -11234,7 +11279,18 @@
             "究極のヒルクライマー"
         ],
         "downgrade": "Highlander",
-        "gametora_id": "201582"
+        "gametora_id": "201582",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "uphill",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Unshakable Stance (TO BE RENAMED)",
         "description": "Increase acceleration after activating many skills early-race.",
@@ -11262,15 +11318,14 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "labels": [
-                        "opening leg",
-                        "early"
-                    ],
+                    "phase": "early",
                     "trigger_behavior": "asap"
                 }
             ]
         }
     },
+
+
     {   "skill_name": "Feel the Burn!",
         "description": "Moderately increase acceleration in an attempt to move up on a corner late-race.",
         "effect": [
@@ -11301,7 +11356,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -11338,7 +11395,9 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
