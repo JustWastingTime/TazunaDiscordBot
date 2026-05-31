@@ -36,6 +36,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '..');
+const MAP_RENDERER_CACHE_VERSION = 'v2';
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -88,6 +89,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
     skillId: skill.gametora_id ?? skill.skill_name,
     mapData,
     markers: overlay.markers,
+    rendererVersion: MAP_RENDERER_CACHE_VERSION,
   });
   const fileName = `cm${activeCm.number}-${cacheKey}.png`;
   const outputPath = resolveSkillMapOutputPath(PROJECT_ROOT, fileName);
@@ -122,6 +124,7 @@ async function resolveCmMapImageUrl(cm, req) {
     skillId: "cm-map",
     mapData,
     markers: [],
+    rendererVersion: MAP_RENDERER_CACHE_VERSION,
   });
   const fileName = `cm${cm.number}-${cacheKey}.png`;
   const outputPath = resolveSkillMapOutputPath(PROJECT_ROOT, fileName);

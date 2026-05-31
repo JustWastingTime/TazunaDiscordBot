@@ -620,10 +620,11 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
   };
 }
 
-export function buildSkillMapCacheKey({ cmNumber, skillId, mapData, markers }) {
+export function buildSkillMapCacheKey({ cmNumber, skillId, mapData, markers, rendererVersion }) {
   const payload = {
     cm: String(cmNumber ?? ""),
     skill: String(skillId ?? ""),
+    rendererVersion: String(rendererVersion ?? ""),
     map: mapData,
     markers,
   };
