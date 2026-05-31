@@ -4699,11 +4699,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "zones",
-                    "labels": [
-                        "late",
-                        "final"
-                    ],
+                    "phase": "late",
                     "trigger_behavior": "random"
                 }
             ]
@@ -4731,7 +4727,22 @@
             "詰め寄り"
         ],
         "upgrade": "Blinding Flash",
-        "gametora_id": "200672"
+        "gametora_id": "200672",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Productive Plan",
         "description": "Slightly widen the margin when positioned toward the front early-race.",
@@ -6310,11 +6321,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "zones",
-                    "labels": [
-                        "late",
-                        "final"
-                    ],
+                    "phase": "late",
                     "trigger_behavior": "random"
                 }
             ]
@@ -6342,7 +6349,22 @@
             "電撃の煌めき"
         ],
         "downgrade": "Gap Closer",
-        "gametora_id": "200671"
+        "gametora_id": "200671",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Mile Maven",
         "description": "Widen the margin when positioned toward the front early-race.",
@@ -10273,7 +10295,17 @@
             "差し切り体勢"
         ],
         "upgrade": "On Your Left!",
-        "gametora_id": "200602"
+        "gametora_id": "200602",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Straightaway Spurt",
         "description": "Slightly increase acceleration on a straight in the last spurt.",
@@ -10371,7 +10403,22 @@
             "上昇気流"
         ],
         "upgrade": "Furious Feat",
-        "gametora_id": "200702"
+        "gametora_id": "200702",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Countermeasure",
         "description": "Slightly increase passing ability when positioned toward the front upon approaching late-race.",
@@ -10618,7 +10665,17 @@
             "真っ向勝負"
         ],
         "upgrade": "Neck and Neck",
-        "gametora_id": "201902"
+        "gametora_id": "201902",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Take the Chance",
         "description": "If positioned toward the back late-race, slightly increase acceleration.",
@@ -10826,7 +10883,17 @@
             "乗り換え上手"
         ],
         "downgrade": "Slick Surge",
-        "gametora_id": "200601"
+        "gametora_id": "200601",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Encroaching Shadow",
         "description": "Increase acceleration on a straight in the last spurt.",
@@ -10909,7 +10976,22 @@
             "豪脚"
         ],
         "downgrade": "Updrafters",
-        "gametora_id": "200701"
+        "gametora_id": "200701",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Plan X",
         "description": "Increase passing ability when positioned toward the front upon approaching late-race.",
@@ -11121,7 +11203,17 @@
             "鍔迫り合い"
         ],
         "downgrade": "Head-On",
-        "gametora_id": "201901"
+        "gametora_id": "201901",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
         "description": "Moderately increase acceleration on an uphill.",
@@ -11608,7 +11700,17 @@
             "臨機応変"
         ],
         "upgrade": "Lane Legerdemain",
-        "gametora_id": "200502"
+        "gametora_id": "200502",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Meticulous Measures",
         "description": "Moderately prepare to make for the finish line for a medium duration mid-race.",
@@ -11710,7 +11812,22 @@
             "前列狙い"
         ],
         "upgrade": "Lead the Charge!",
-        "gametora_id": "201682"
+        "gametora_id": "201682",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
     },
     {   "skill_name": "Center Stage",
         "description": "Greatly increase navigation early-race.",
@@ -11754,7 +11871,17 @@
             "レーンの魔術師"
         ],
         "downgrade": "Go with the Flow",
-        "gametora_id": "200501"
+        "gametora_id": "200501",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Perfect Prep!",
         "description": "Prepare to make for the finish line for a medium duration mid-race.",
@@ -11854,7 +11981,22 @@
             "狙うは最前列！"
         ],
         "downgrade": "Forward, March!",
-        "gametora_id": "201681"
+        "gametora_id": "201681",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
     },
     {   "skill_name": "Focus",
         "description": "Slightly decrease time lost to slow starts.",
@@ -12057,7 +12199,17 @@
             "策士"
         ],
         "upgrade": "Crusader",
-        "gametora_id": "201502"
+        "gametora_id": "201502",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Clairvoyance",
         "description": "Widen field of view with heightened observation early-race.",
@@ -12149,7 +12301,17 @@
             "天命士"
         ],
         "downgrade": "Strategist",
-        "gametora_id": "201501"
+        "gametora_id": "201501",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ignited Spirit SPD",
         "description": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race. ",
@@ -12199,7 +12361,17 @@
             "アオハル点火 根"
         ],
         "upgrade": "Burning Spirit GUTS",
-        "gametora_id": "210042"
+        "gametora_id": "210042",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Burning Spirit SPD",
         "description": "Burn bright with team spirit, increasing velocity in proportion to the total Speed of racing team members mid-race",
@@ -12244,7 +12416,17 @@
             "アオハル燃焼 根"
         ],
         "downgrade": "Ignited Spirit GUTS",
-        "gametora_id": "210041"
+        "gametora_id": "210041",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ignited Spirit STA",
         "description": "Burn bright with team spirit, slightly recovering endurance in proportion to the total Stamina of racing team members mid-race.",
@@ -12313,7 +12495,17 @@
             "アオハル点火 力"
         ],
         "upgrade": "Burning Spirit PWR",
-        "gametora_id": "210032"
+        "gametora_id": "210032",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Burning Spirit PWR",
         "description": "Burn bright with team spirit, increasing acceleration in proportion to the total Power of racing team members late-race.",
@@ -12336,7 +12528,17 @@
             "アオハル燃焼 力"
         ],
         "downgrade": "Ignited Spirit PWR",
-        "gametora_id": "210031"
+        "gametora_id": "210031",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ignited Spirit WIT",
         "description": "Burn bright with team spirit, slightly increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
@@ -12448,7 +12650,17 @@
             "faltering runners",
             "逃げためらい"
         ],
-        "gametora_id": "200851"
+        "gametora_id": "200851",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Hesitant Pace Chasers",
         "description": "Slightly decrease velocity of pace chasers late-race",
@@ -12470,7 +12682,17 @@
             "faltering leaders",
             "先行ためらい"
         ],
-        "gametora_id": "200881"
+        "gametora_id": "200881",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Hesitant Late Surgers",
         "description": "Slightly decrease velocity of late surgers late-race",
@@ -12492,7 +12714,17 @@
             "faltering betweeners",
             "差しためらい"
         ],
-        "gametora_id": "200911"
+        "gametora_id": "200911",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Hesitant End Closers",
         "description": "Slightly decrease velocity of end closers late-race",
@@ -12514,7 +12746,17 @@
             "faltering chasers",
             "追込ためらい"
         ],
-        "gametora_id": "200941"
+        "gametora_id": "200941",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Intimidate",
         "description": "Moderately intimidate runners behind when positioned toward the front early-race.",
@@ -12586,7 +12828,22 @@
             "束縛"
         ],
         "upgrade": "Dominator",
-        "gametora_id": "201152"
+        "gametora_id": "201152",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Intense Gaze",
         "description": "Slightly unnerve runners in focus late-race.",
@@ -12610,7 +12867,17 @@
             "まなざし"
         ],
         "upgrade": "Petrifying Gaze",
-        "gametora_id": "201512"
+        "gametora_id": "201512",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Greed for Speed",
         "description": "Moderately steal velocity from runners behind when positioned toward the front mid-race.",
@@ -12658,7 +12925,22 @@
             "独占力"
         ],
         "downgrade": "Tether",
-        "gametora_id": "201151"
+        "gametora_id": "201151",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Petrifying Gaze",
         "description": "Unnerve runners in focus late-race.",
@@ -12682,7 +12964,17 @@
             "熱いまなざし"
         ],
         "downgrade": "Intense Gaze",
-        "gametora_id": "201511"
+        "gametora_id": "201511",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Adored by All",
         "description": "Intimidate runners behind when positioned toward the front early-race.",
@@ -12802,7 +13094,18 @@
             "frantic runners",
             "逃げ駆け引き"
         ],
-        "gametora_id": "200791"
+        "gametora_id": "200791",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "trigger_behavior": "random",
+                    "disable_auto_phase_clip": true
+                }
+            ]
+        }
     },
     {   "skill_name": "Frenzied Pace Chasers",
         "description": "Increase time needed for pace chasers to calm down when they become rushed.",
@@ -12825,7 +13128,18 @@
             "frantic leaders",
             "先行駆け引き"
         ],
-        "gametora_id": "200801"
+        "gametora_id": "200801",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "trigger_behavior": "random",
+                    "disable_auto_phase_clip": true
+                }
+            ]
+        }
     },
     {   "skill_name": "Frenzied Late Surgers",
         "description": "Increase time needed for late surgers to calm down when they become rushed.",
@@ -12848,7 +13162,18 @@
             "frantic betweeners",
             "差し駆け引き"
         ],
-        "gametora_id": "200811"
+        "gametora_id": "200811",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "trigger_behavior": "random",
+                    "disable_auto_phase_clip": true
+                }
+            ]
+        }
     },
     {   "skill_name": "Frenzied End Closers",
         "description": "Increase time needed for end closers to calm down when they become rushed.",
@@ -12871,7 +13196,18 @@
             "frantic chasers",
             "追込駆け引き"
         ],
-        "gametora_id": "200821"
+        "gametora_id": "200821",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "trigger_behavior": "random",
+                    "disable_auto_phase_clip": true
+                }
+            ]
+        }
     },
     {   "skill_name": "Trick (Front)",
         "description": "Slightly increase fatigue for rushed runners behind when positioned toward the front mid-race.",
@@ -12893,7 +13229,17 @@
             "trick front",
             "トリック前"
         ],
-        "gametora_id": "200771"
+        "gametora_id": "200771",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Trick (Rear)",
         "description": "Slightly increase fatigue for rushed runners ahead when positioned toward the back mid-race.",
@@ -12915,7 +13261,17 @@
             "trick rear",
             "トリック後"
         ],
-        "gametora_id": "200781"
+        "gametora_id": "200781",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Subdued Front Runners",
         "description": "Slightly increase fatigue for front runners early-race.",
@@ -12939,7 +13295,17 @@
             "restrained runners",
             "逃げけん制"
         ],
-        "gametora_id": "200831"
+        "gametora_id": "200831",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Flustered Front Runners",
         "description": "Slightly increase fatigue for front runners mid-race.",
@@ -12962,7 +13328,17 @@
             "panicked runners",
             "逃げ焦り"
         ],
-        "gametora_id": "200841"
+        "gametora_id": "200841",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Subdued Pace Chasers",
         "description": "Slightly increase fatigue for pace chasers early-race.",
@@ -12986,7 +13362,17 @@
             "restrained leaders",
             "先行けん制"
         ],
-        "gametora_id": "200861"
+        "gametora_id": "200861",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Flustered Pace Chasers",
         "description": "Slightly increase fatigue for pace chasers mid-race.",
@@ -13009,7 +13395,17 @@
             "panicked leaders",
             "先行焦り"
         ],
-        "gametora_id": "200871"
+        "gametora_id": "200871",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Subdued Late Surgers",
         "description": "Slightly increase fatigue for late surgers early-race.",
@@ -13033,7 +13429,17 @@
             "restrained betweeners",
             "差しけん制"
         ],
-        "gametora_id": "200891"
+        "gametora_id": "200891",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Flustered Late Surgers",
         "description": "Slightly increase fatigue for late surgers mid-race.",
@@ -13056,7 +13462,17 @@
             "panicked betweeners",
             "差し焦り"
         ],
-        "gametora_id": "200901"
+        "gametora_id": "200901",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Subdued End Closers",
         "description": "Slightly increase fatigue for end closers early-race.",
@@ -13080,7 +13496,17 @@
             "restrained chasers",
             "追込けん制"
         ],
-        "gametora_id": "200921"
+        "gametora_id": "200921",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Flustered End Closers",
         "description": "Slightly increase fatigue for end closers mid-race.",
@@ -13103,7 +13529,17 @@
             "panicked chasers",
             "追込焦り"
         ],
-        "gametora_id": "200931"
+        "gametora_id": "200931",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Stop Right There!",
         "description": "Slightly cause panic in and very slightly dull movement for runners ahead when positioned toward the back early-race.",
@@ -13128,7 +13564,22 @@
             "抜け駆け禁止"
         ],
         "upgrade": "You've Got No Shot",
-        "gametora_id": "201022"
+        "gametora_id": "201022",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Murmur",
         "description": "Slightly disturb runners directly ahead mid-race.",
@@ -13152,7 +13603,22 @@
             "ささやき"
         ],
         "upgrade": "Mystifying Murmur",
-        "gametora_id": "201162"
+        "gametora_id": "201162",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Stamina Eater",
         "description": "Very slightly steal endurance from runners ahead when positioned toward the back mid-race.",
@@ -13175,7 +13641,22 @@
             "スタミナイーター"
         ],
         "upgrade": "Stamina Siphon",
-        "gametora_id": "201222"
+        "gametora_id": "201222",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Sharp Gaze",
         "description": "Slightly startle other runners late-race.",
@@ -13198,7 +13679,17 @@
             "鋭い眼光"
         ],
         "upgrade": "All-Seeing Eyes",
-        "gametora_id": "201442"
+        "gametora_id": "201442",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "You've Got No Shot",
         "description": "Cause panic in and moderately dull movement for runners ahead when positioned toward the back early-race.",
@@ -13223,7 +13714,22 @@
             "逃亡禁止令"
         ],
         "downgrade": "Stop Right There!",
-        "gametora_id": "201021"
+        "gametora_id": "201021",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Mystifying Murmur",
         "description": "Disturb runners directly ahead mid-race.",
@@ -13247,7 +13753,22 @@
             "魅惑のささやき"
         ],
         "downgrade": "Murmur",
-        "gametora_id": "201161"
+        "gametora_id": "201161",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Stamina Siphon",
         "description": "Slightly steal endurance from runners ahead when positioned toward the back mid-race.",
@@ -13271,7 +13792,22 @@
             "スタミナグリード"
         ],
         "downgrade": "Stamina Eater",
-        "gametora_id": "201221"
+        "gametora_id": "201221",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "All-Seeing Eyes",
         "description": "Startle other runners late-race.",
@@ -13295,7 +13831,17 @@
             "八方にらみ"
         ],
         "downgrade": "Sharp Gaze",
-        "gametora_id": "201441"
+        "gametora_id": "201441",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Tantalizing Trick",
         "description": "Increase fatigue for rushed runners behind when positioned toward the front mid-race.",
@@ -13341,7 +13887,22 @@
             "目くらまし"
         ],
         "upgrade": "Illusionist",
-        "gametora_id": "201232"
+        "gametora_id": "201232",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Disorient",
         "description": "Slightly narrow the field of view for runners behind when positioned toward the front late-race.",
@@ -13365,7 +13926,17 @@
             "かく乱"
         ],
         "upgrade": "Dazzling Disorientation",
-        "gametora_id": "201372"
+        "gametora_id": "201372",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Illusionist",
         "description": "Narrow the field of view for runners ahead late-race. ",
@@ -13392,7 +13963,22 @@
             "illusionist"
         ],
         "downgrade": "Smoke Screen",
-        "gametora_id": "201231"
+        "gametora_id": "201231",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Dazzling Disorientation",
         "description": "Moderately narrow the field of view for runners behind when positioned toward the front late-race.",
@@ -13416,7 +14002,17 @@
             "幻惑のかく乱"
         ],
         "downgrade": "Disorient",
-        "gametora_id": "201371"
+        "gametora_id": "201371",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Runaway",
         "description": "Attempt to gain an especially large lead and keep it until the finish.",
@@ -13443,7 +14039,10 @@
             "oonige",
             "大逃げ"
         ],
-        "gametora_id": "202051"
+        "gametora_id": "202051",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Carnival Bonus",
         "description": "Increase attributes by +*x*% in the Racing Carnival. *y*% chance to also raise runner's mood to Great. This skill will disappear when the event ends.",
@@ -13462,7 +14061,10 @@
         "aliases": [
             "carnival bonus"
         ],
-        "gametora_id": "1000011"
+        "gametora_id": "1000011",
+        "activation_map": {
+            "show_chart": false
+        }
     },
     {   "skill_name": "Best In Japan",
         "description": "Everyone's expectations strongly inspire the skill user, increasing velocity on the final corner.",
@@ -13492,7 +14094,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
