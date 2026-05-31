@@ -12175,7 +12175,16 @@
             "お見通し"
         ],
         "upgrade": "The Coast Is Clear!",
-        "gametora_id": "201472"
+        "gametora_id": "201472",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Strategist",
         "description": "Slightly widen field of view when positioned toward the back late-race.",
@@ -12231,7 +12240,17 @@
             "千里眼"
         ],
         "downgrade": "Hawkeye",
-        "gametora_id": "201121"
+        "gametora_id": "201121",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "The Bigger Picture",
         "description": "Widen field of view with heightened observation mid-race.",
@@ -12254,7 +12273,17 @@
             "大局観"
         ],
         "downgrade": "Studious",
-        "gametora_id": "201431"
+        "gametora_id": "201431",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "The Coast Is Clear!",
         "description": "Moderately widen field of view with situational awareness when moving sideways.",
@@ -12277,7 +12306,16 @@
             "視界良好 異常なし"
         ],
         "downgrade": "I Can See Right Through You",
-        "gametora_id": "201471"
+        "gametora_id": "201471",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Crusader",
         "description": "Widen field of view when positioned toward the back late-race.",
@@ -12313,6 +12351,8 @@
             ]
         }
     },
+
+
     {   "skill_name": "Ignited Spirit SPD",
         "description": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race. ",
         "effect": [
@@ -12334,15 +12374,20 @@
             "アオハル点火 速"
         ],
         "upgrade": "Burning Spirit SPD",
-        "gametora_id": "210012"
+        "gametora_id": "210012",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ignited Spirit GUTS",
         "description": "Burn bright with team spirit, very slightly increasing vigor in proportion to the total Guts of racing team members late-race.",
-        "conditions": [
-            [
-                "Late race"
-            ]
-        ],
         "effect": [
             {
                 "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s.\nTotal < 1200 : 0.04 speed and 0.08 accel\n1200 <= Total < 1800 : 0.045 speed and 0.09 accel\n1800 <= Total < 260 : 0.05 speed and 0.1 accel\n2600 <= Total < 3600 : 0.055 speed and 0.11 accel\n3600 <= Total : 0.06 speed and 0.12 accel",
@@ -12394,7 +12439,17 @@
             "アオハル燃焼 速"
         ],
         "downgrade": "Ignited Spirit SPD",
-        "gametora_id": "210011"
+        "gametora_id": "210011",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Burning Spirit GUTS",
         "description": "Burn bright with team spirit, increasing vigor in proportion to the total Guts of racing team members late-race.",
