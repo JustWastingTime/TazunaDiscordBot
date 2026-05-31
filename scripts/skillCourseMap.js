@@ -413,6 +413,7 @@ function markersFromActivationMap(skill, mapData) {
     }
 
     if (trigger.type === "box") {
+      const triggerBehavior = trigger.trigger_behavior ?? trigger.behavior;
       const ratioStart = Number(trigger.clip_start_ratio ?? trigger.start_ratio);
       const ratioEnd = Number(trigger.clip_end_ratio ?? trigger.end_ratio);
       const absoluteStart = Number(trigger.clip_start ?? trigger.start_m ?? trigger.range_start);
@@ -440,7 +441,7 @@ function markersFromActivationMap(skill, mapData) {
         const clippedStart = Math.max(start, clipStart);
         const clippedEnd = Math.min(end, clipEnd);
         if (clippedEnd > clippedStart) {
-          pushUniqueBox(markers, clippedStart, clippedEnd, color);
+          pushUniqueBox(markers, clippedStart, clippedEnd, color, triggerBehavior);
         }
       };
 
@@ -487,7 +488,7 @@ function markersFromActivationMap(skill, mapData) {
             : selectedSegments;
 
       if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip) {
-        pushUniqueBox(markers, clipStart, clipEnd, color);
+        pushUniqueBox(markers, clipStart, clipEnd, color, triggerBehavior);
         continue;
       }
 
