@@ -11588,12 +11588,26 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "phase": "mid",
+                    "trigger_behavior": "precondition",
+                    "disable_auto_phase_clip": true
                 },
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "select": "last",
+                    "phase": "late_and_beyond",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
