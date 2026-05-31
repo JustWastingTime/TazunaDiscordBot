@@ -11534,6 +11534,14 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
+                    "exclude_select": "last",
+                    "phase": "late",
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
                     "select": "last",
                     "phase": "mid",
                     "trigger_behavior": "asap"
@@ -11661,6 +11669,7 @@
             ]
         }
     },
+
     {   "skill_name": "Corner Acceleration x",
         "description": "Moderately decrease acceleration on a corner with awkward turning.",
         "effect": [
