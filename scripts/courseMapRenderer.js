@@ -72,8 +72,12 @@ function mergeTouchingBoxMarkers(markers, length) {
   const merged = [];
   for (const marker of normalized) {
     const prev = merged[merged.length - 1];
-    const sameColor = prev && (prev.color ?? DEFAULT_COLORS.activationBoxStroke) === (marker.color ?? DEFAULT_COLORS.activationBoxStroke);
-    if (prev && sameColor && marker.start <= prev.end + tolerance) {
+    const prevColor = prev?.color ?? DEFAULT_COLORS.activationBoxStroke;
+    const markerColor = marker?.color ?? DEFAULT_COLORS.activationBoxStroke;
+    const prevBehavior = String(prev?.trigger_behavior ?? prev?.behavior ?? "random").toLowerCase();
+    const markerBehavior = String(marker?.trigger_behavior ?? marker?.behavior ?? "random").toLowerCase();
+    const sameStyle = prev && prevColor === markerColor && prevBehavior === markerBehavior;
+    if (prev && sameStyle && marker.start <= prev.end + tolerance) {
       prev.end = Math.max(prev.end, marker.end);
       prev.fillOpacity = Math.max(Number(prev.fillOpacity ?? 0.1), Number(marker.fillOpacity ?? 0.1));
       prev.strokeWidth = Math.max(Number(prev.strokeWidth ?? 2.2), Number(marker.strokeWidth ?? 2.2));
