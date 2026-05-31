@@ -12449,7 +12449,17 @@
             "アオハル点火 体"
         ],
         "upgrade": "Burning Spirit STA",
-        "gametora_id": "210022"
+        "gametora_id": "210022",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Burning Spirit STA",
         "description": "Burn bright with team spirit, recovering endurance in proportion to the total Stamina of racing team members mid-race",
@@ -12472,7 +12482,17 @@
             "アオハル燃焼 体"
         ],
         "downgrade": "Ignited Spirit STA",
-        "gametora_id": "210021"
+        "gametora_id": "210021",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ignited Spirit PWR",
         "description": "Burn bright with team spirit, slightly increasing acceleration in proportion to the total Power of racing team members late-race.",
@@ -12561,7 +12581,17 @@
             "アオハル点火 賢"
         ],
         "upgrade": "Burning Spirit WIT",
-        "gametora_id": "210052"
+        "gametora_id": "210052",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Burning Spirit WIT",
         "description": "Burn bright with team spirit, increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
@@ -12584,7 +12614,17 @@
             "アオハル燃焼 賢"
         ],
         "downgrade": "Ignited Spirit WIT",
-        "gametora_id": "210051"
+        "gametora_id": "210051",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Glittering Star",
         "description": "Very slightly control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins.",
@@ -12606,7 +12646,18 @@
             "綺羅星"
         ],
         "upgrade": "Radiant Star",
-        "gametora_id": "210062"
+        "gametora_id": "210062",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Radiant Star",
         "description": "Control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins. ",
@@ -12641,6 +12692,8 @@
             ]
         }
     },
+
+
     {   "skill_name": "Hesitant Front Runners",
         "description": "Slightly decrease velocity of front runners late-race",
         "effect": [
