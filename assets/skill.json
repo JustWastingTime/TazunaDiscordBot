@@ -12628,7 +12628,18 @@
             "一番星"
         ],
         "downgrade": "Glittering Star",
-        "gametora_id": "210061"
+        "gametora_id": "210061",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Hesitant Front Runners",
         "description": "Slightly decrease velocity of front runners late-race",
@@ -12781,7 +12792,22 @@
             "後方釘付"
         ],
         "upgrade": "Adored by All",
-        "gametora_id": "201012"
+        "gametora_id": "201012",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Speed Eater",
         "description": "Slightly steal velocity from runners behind when positioned toward the front mid-race.",
@@ -12804,7 +12830,22 @@
             "スピードイーター"
         ],
         "upgrade": "Greed for Speed",
-        "gametora_id": "201082"
+        "gametora_id": "201082",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Tether",
         "description": "Slightly decrease velocity of runners ahead when positioned toward the back late-race.",
@@ -12901,7 +12942,22 @@
             "スピードグリード"
         ],
         "downgrade": "Speed Eater",
-        "gametora_id": "201081"
+        "gametora_id": "201081",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Dominator",
         "description": "Decrease velocity of runners ahead when positioned toward the back late-race.",
@@ -12999,7 +13055,22 @@
             "悩殺術"
         ],
         "downgrade": "Intimidate",
-        "gametora_id": "201011"
+        "gametora_id": "201011",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Opening Gambit",
         "description": "Slightly dull movement for runners ahead when positioned toward the back early-race.",
@@ -13024,7 +13095,22 @@
             "布石"
         ],
         "upgrade": "Battle Formation",
-        "gametora_id": "201092"
+        "gametora_id": "201092",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Restart",
         "description": "Slightly dull movement for runners ahead when not in the lead early-race.",
@@ -13047,7 +13133,17 @@
             "restart",
             "リスタート"
         ],
-        "gametora_id": "201302"
+        "gametora_id": "201302",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Battle Formation",
         "description": "Dull movement for runners ahead when positioned toward the back early-race.",
@@ -13071,7 +13167,22 @@
             "布陣"
         ],
         "downgrade": "Opening Gambit",
-        "gametora_id": "201091"
+        "gametora_id": "201091",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Frenzied Front Runners",
         "description": "Increase time needed for front runners to calm down when they become rushed.",
@@ -14014,6 +14125,7 @@
             ]
         }
     },
+
     {   "skill_name": "Runaway",
         "description": "Attempt to gain an especially large lead and keep it until the finish.",
         "conditions": [
