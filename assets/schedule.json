@@ -1,37 +1,42 @@
 [   
-    {   "event_name": "Tenno Sho (Spring) Legend Races",
+    {   "event_name": "Sweep Tosho + Taiki Shuttle (Speed SSR) and Oguri Cap (Guts SR)",
+        "event_type": "Banner",
+        "date": "<t:1780610400:F> - <t:1781474400:F>, <t:1780610400:R>",
+        "thumbnail": "https://img.game8.co/4519487/dee6f0219d93231dd6eda91749d98862.png/show"
+    },
+    {   "event_name": "Fuji Kiseki's Showtime Event",
+        "event_type": "Misc",
+        "date": "<t:1780610400:F> - <t:1781474400:F>, <t:1780610400:R>",
+        "thumbnail": "https://img.game8.co/4352306/cc3ab304dd857ac125eac2f89d4b7fd7.png/show"
+    },
+    {   "event_name": "Takarazuka Kinen Legend Races",
         "event_type": "Legend Races",
-        "date": "<t:1778191200:F> - <t:1778968800:F>, <t:1778191200:R>",
-        "thumbnail": "https://img.game8.co/4486957/0d5f5c7c43347726be2b6c3b79279982.png/show"
+        "date": "<t:1780869600:F>, <t:1780869600:R>",
+        "thumbnail": "https://img.game8.co/4519486/55c3043a9217205be26287dc04764249.png/show"
     },
-    {   "event_name": "Mejiro Palmer + Matikanefukukitaru (Speed SSR) and Rice Shower (Power SSR)",
+    {   "event_name": "Taiki Shuttle and Mejiro Dober (Summer Camp alts) + El Condor Pasa (Guts SSR) and Matikanetannhauser (Wit SSR)",
         "event_type": "Banner",
-        "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
-        "thumbnail": "https://img.game8.co/4486958/9ef48cb400b268fa6bb1e99f5572934c.png/show"
+        "date": "<t:1781215200:F> - <t:1782165600:F>, <t:1781215200:R>",
+        "thumbnail": "https://img.game8.co/4519485/3cdf3b22bfcea8f029b20ae5f55951f6.png/show"
     },
-    {   "event_name": "Champions Meeting - Taurus Cup",
-        "event_type": "Champions Meeting",
-        "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
-        "thumbnail": "https://img.game8.co/4486959/d40dab0f6c62ba3ebec676b2b7c62c7d.png/show"
-    },
-    {   "event_name": "The Promised Hour: Silks & Three Riddles Story Event",
+    {   "event_name": "Search! Solve! Summer! Story Event",
         "event_type": "Story Event",
-        "date": "<t:1779141600:F> - <t:1780092000:F>, <t:1779141600:R>",
-        "thumbnail": "https://img.game8.co/4486956/493e332ff8990b98ccc1394eab904553.png/show"
+        "date": "<t:1781215200:F> - <t:1782165600:F>, <t:1781215200:R>",
+        "thumbnail": "https://img.game8.co/4519491/19fee06eb5effdc5e189d3224f58c309.png/show"
     },
-    {   "event_name": "Curren Chan and Fine Motion (Wedding alts) + Haru Urara (Power SSR) and Ikuno Dictus (Stamina SSR)",
+    {   "event_name": "Air Shakur + Air Groove (Power SSR) and Gold City (Wit SR)",
         "event_type": "Banner",
-        "date": "<t:1779141600:F> - <t:1780092000:F>, <t:1779141600:R>",
-        "thumbnail": "https://img.game8.co/4486960/ddfe30fcd1cc8e8f1d5e29fbdce0e656.png/show"
+        "date": "<t:1781820000:F> - <t:1782597600:F>, <t:1781820000:R>",
+        "thumbnail": "https://img.game8.co/4519489/3d74e1276adbcde083552ff003722938.png/show"
     },
-    {   "event_name": "Inari One + Admire Vega (Power SSR) and Sakura Chiyono O (Stamina SSR)",
-        "event_type": "Banner",
-        "date": "<t:1780005600:F> - <t:1780869600:F>, <t:1780005600:R>",
-        "thumbnail": "https://img.game8.co/4486962/80044692977caf4500c274a01569c150.png/show"
-    },
-    {   "event_name": "Champions Meeting - Gemini Cup",
+    {   "event_name": "Champions Meeting - Cancer Cup",
         "event_type": "Champions Meeting",
-        "date": "<t:1780264800:F> - <t:1781128800:F>, <t:1780264800:R>",
-        "thumbnail": "https://img.game8.co/4486961/2516670a8db23d1c6b0fab5eaf82fc0f.png/show"
+        "date": "<t:1782079200:F> - <t:1782856800:F>, <t:1782079200:R>",
+        "thumbnail": "https://img.game8.co/4519488/9333428858333d33ccdd85f8baaa27ad.png/show"
+    },
+    {   "event_name": "Seiun Sky and Narita Brian + Throne (Group SSR) and El Condor Pasa (Speed SR)",
+        "event_type": "Banner",
+        "date": "<t:1782424800:F> - <t:1783202400:F>, <t:1782424800:R>",
+        "thumbnail": "https://img.game8.co/4519490/269b57e373e093c4e1d948b0c8f3539d.png/show"
     }
 ]   
