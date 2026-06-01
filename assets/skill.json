@@ -4716,7 +4716,17 @@
             "急ぎ足"
         ],
         "upgrade": "Escape Artist",
-        "gametora_id": "200542"
+        "gametora_id": "200542",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Prepared to Pass",
         "description": "Slightly increase ability to break out of the pack on the final corner.",
@@ -4748,7 +4758,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -4936,7 +4947,14 @@
                     ],
                     "trigger_behavior": "random"
                 }
-            ]
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "mile"
+                ]
+            }
         }
     },
     {   "skill_name": "Up-Tempo",
@@ -4961,7 +4979,22 @@
             "テンポアップ"
         ],
         "upgrade": "Killer Tunes",
-        "gametora_id": "200722"
+        "gametora_id": "200722",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Steadfast",
         "description": "Slightly increase ability to fight back when passed by another runner on the final corner.",
@@ -4993,7 +5026,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ],
             "requirements": {
@@ -5033,7 +5067,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ],
             "requirements": {
@@ -5070,7 +5105,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5107,7 +5143,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5140,7 +5177,22 @@
             "大きなリード"
         ],
         "upgrade": "Staggering Lead",
-        "gametora_id": "200982"
+        "gametora_id": "200982",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Mile Straightaways",
         "description": "Increase velocity on a straight.",
@@ -5169,7 +5221,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5205,7 +5258,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5237,7 +5291,22 @@
             "ギアシフト"
         ],
         "upgrade": "Changing Gears",
-        "gametora_id": "201052"
+        "gametora_id": "201052",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Unyielding Spirit",
         "description": "Slightly increase passing ability.",
@@ -5261,7 +5330,21 @@
             "負けん気"
         ],
         "upgrade": "Big-Sisterly",
-        "gametora_id": "201072"
+        "gametora_id": "201072",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Medium Straightaways",
         "description": "Increase velocity on a straight.",
@@ -5291,7 +5374,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5329,7 +5413,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5366,7 +5451,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5403,7 +5489,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5436,7 +5523,22 @@
             "リードキープ"
         ],
         "upgrade": "Vanguard Spirit",
-        "gametora_id": "201192"
+        "gametora_id": "201192",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Pressure",
         "description": "Slightly increase velocity when passing another runner late-race.",
@@ -5460,7 +5562,22 @@
             "追い上げ"
         ],
         "upgrade": "Overwhelming Pressure",
-        "gametora_id": "201212"
+        "gametora_id": "201212",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Front Runner Straightaways",
         "description": "Increase velocity on a straight.",
@@ -5489,7 +5606,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5521,7 +5639,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5603,7 +5722,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5635,7 +5755,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5667,7 +5788,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5699,7 +5821,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5727,7 +5850,18 @@
             "100k horsepower"
         ],
         "upgrade": "15,000,000 CC",
-        "gametora_id": "201412"
+        "gametora_id": "201412",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "uphill",
+                "trigger_behavior": "random"
+              }
+            ]
+        }
     },
     {   "skill_name": "End Closer Straightaways",
         "description": "Increase velocity on a straight.",
@@ -5757,7 +5891,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5789,7 +5924,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -5816,7 +5952,16 @@
             "ウマ好み"
         ],
         "upgrade": "Superstan",
-        "gametora_id": "201591"
+        "gametora_id": "201591",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "trigger_behavior": "asap"
+              }
+            ]
+        }
     },
     {   "skill_name": "Tail Held High",
         "description": "Slightly increase velocity after activating many skills mid-race.",
@@ -5838,7 +5983,17 @@
             "尻尾上がり"
         ],
         "upgrade": "Tail Nine",
-        "gametora_id": "201611"
+        "gametora_id": "201611",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Slipstream",
         "description": "Slightly decrease wind resistance when following directly behind another runner.",
@@ -5860,7 +6015,16 @@
             "スリップストリーム"
         ],
         "upgrade": "In the Right Place!",
-        "gametora_id": "201651"
+        "gametora_id": "201651",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Playtime's Over!",
         "description": "Slightly increase velocity when followed by another runner directly behind for a long time.",
@@ -5882,7 +6046,16 @@
             "遊びはおしまいっ！"
         ],
         "upgrade": "See Ya Later!",
-        "gametora_id": "201661"
+        "gametora_id": "201661",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Top Pick",
         "description": "Slightly increase velocity when engaged in a challenge mid-race.",
@@ -5906,7 +6079,22 @@
             "レコメンド"
         ],
         "upgrade": "Trending in the Charts!",
-        "gametora_id": "201672"
+        "gametora_id": "201672",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
     },
     {   "skill_name": "All I've Got",
         "description": "Slightly increase velocity when well-positioned on a straight in the last spurt.",
@@ -5917,7 +6105,7 @@
                     "Medium",
                     "2nd to 5th (CM), 2nd to 7th (TT)",
                     "Any straight",
-                    "Last spurt"
+                    "Character is in their late race spurt mode"
                 ]
             }
         ],
@@ -5931,7 +6119,24 @@
             "ありったけ"
         ],
         "upgrade": "Come What May",
-        "gametora_id": "201702"
+        "gametora_id": "201702",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Feature Act",
         "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
@@ -6328,7 +6533,21 @@
             "全身全霊"
         ],
         "downgrade": "Homestretch Haste",
-        "gametora_id": "200511"
+        "gametora_id": "200511",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "target": "zones",
+                    "labels": [
+                        "last_spurt"
+                    ],
+                    "trigger_behavior": "random"
+                  }
+            ]
+        }
     },
     {   "skill_name": "Escape Artist",
         "description": "Increase ability to go to the front mid-race.",
@@ -6351,7 +6570,17 @@
             "脱出術"
         ],
         "downgrade": "Fast-Paced",
-        "gametora_id": "200541"
+        "gametora_id": "200541",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Speed Star",
         "description": "Increase ability to break out of the pack on the final corner.",
@@ -6382,7 +6611,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -6568,7 +6798,12 @@
                     ],
                     "trigger_behavior": "random"
                 }
-            ]
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
         }
     },
     {   "skill_name": "Killer Tunes",
@@ -6593,7 +6828,22 @@
             "キラーチューン"
         ],
         "downgrade": "Up-Tempo",
-        "gametora_id": "200721"
+        "gametora_id": "200721",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Unyielding",
         "description": "Increase ability to fight back when passed by another runner on the final corner.",
@@ -6625,7 +6875,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ],
             "requirements": {
@@ -6665,7 +6916,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ],
             "requirements": {
@@ -6698,7 +6950,22 @@
             "圧倒的リード"
         ],
         "downgrade": "Huge Lead",
-        "gametora_id": "200981"
+        "gametora_id": "200981",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Changing Gears",
         "description": "Increase passing ability when positioned toward the front mid-race.",
@@ -6722,7 +6989,22 @@
             "ギアチェンジ"
         ],
         "downgrade": "Shifting Gears",
-        "gametora_id": "201051"
+        "gametora_id": "201051",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Big-Sisterly",
         "description": "Increase passing ability.",
@@ -6746,7 +7028,21 @@
             "姉御肌"
         ],
         "downgrade": "Unyielding Spirit",
-        "gametora_id": "201071"
+        "gametora_id": "201071",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Vanguard Spirit",
         "description": "Increase ability to maintain the lead when leading by a fair margin mid-race.",
@@ -6771,7 +7067,22 @@
             "先陣の心得"
         ],
         "downgrade": "Keeping the Lead",
-        "gametora_id": "201191"
+        "gametora_id": "201191",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Overwhelming Pressure",
         "description": "Increase velocity when passing another runner late-race.",
@@ -6795,7 +7106,22 @@
             "怒涛の追い上げ"
         ],
         "downgrade": "Pressure",
-        "gametora_id": "201211"
+        "gametora_id": "201211",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "15,000,000 CC",
         "description": "Increase velocity on an uphill.",
@@ -6820,7 +7146,18 @@
             "百万バリキ"
         ],
         "downgrade": "1,500,000 CC",
-        "gametora_id": "201411"
+        "gametora_id": "201411",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "uphill",
+                "trigger_behavior": "random"
+              }
+            ]
+        }
     },
     {   "skill_name": "Trending in the Charts!",
         "description": "Increase velocity when engaged in a challenge mid-race.",
@@ -6844,7 +7181,22 @@
             "チャート急上昇"
         ],
         "downgrade": "Top Pick",
-        "gametora_id": "201671"
+        "gametora_id": "201671",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
     },
     {   "skill_name": "Superstan",
         "description": "Increase velocity when close to many runners.",
@@ -6866,7 +7218,16 @@
             "ウママニア"
         ],
         "downgrade": "Uma Stan",
-        "gametora_id": "201592"
+        "gametora_id": "201592",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "trigger_behavior": "asap"
+              }
+            ]
+        }
     },
     {   "skill_name": "Come What May",
         "description": "Increase velocity when well-positioned on a straight in the last spurt.",
@@ -6891,7 +7252,24 @@
             "決死の覚悟"
         ],
         "downgrade": "All I've Got",
-        "gametora_id": "201701"
+        "gametora_id": "201701",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Tail Nine",
         "description": "Increase velocity after activating many skills mid-race.",
@@ -6913,7 +7291,17 @@
             "尻尾の滝登り"
         ],
         "downgrade": "Tail Held High",
-        "gametora_id": "201612"
+        "gametora_id": "201612",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Dream Run",
         "description": "Increase velocity on the final straight due to a strong desire to cross the finish line carrying everyone's hopes and dreams.",
@@ -7033,7 +7421,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -7093,7 +7482,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -7310,7 +7700,16 @@
             "お先に失礼っ"
         ],
         "downgrade": "Playtime's Over!",
-        "gametora_id": "201662"
+        "gametora_id": "201662",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Keep Going!",
         "description": "Greatly consume endurance mid-race and greatly increase velocity.",
