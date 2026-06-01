@@ -4503,7 +4503,18 @@
             "ぶっちぎりロード"
         ],
         "horse": "Mejiro Palmer (Original)",
-        "gametora_id": "100641"
+        "gametora_id": "100641",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Master of the Sands",
         "description": "Recover endurance and increase velocity when positioned toward the back mid-race.",
@@ -4527,8 +4538,25 @@
             "sand expert"
         ],
         "downgrade": "Familiar Ground",
-        "gametora_id": "202001"
+        "gametora_id": "202001",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
     },
+
+
     {   "skill_name": "Corner Adept",
         "description": "Slightly increase velocity on a corner with skilled turning.",
         "effect": [
@@ -4556,7 +4584,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -4588,7 +4617,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -4614,7 +4644,17 @@
             "ペースアップ"
         ],
         "upgrade": "It's On!",
-        "gametora_id": "200462"
+        "gametora_id": "200462",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Homestretch Haste",
         "description": "Slightly increase velocity in the last spurt.",
@@ -4637,7 +4677,21 @@
             "末脚"
         ],
         "upgrade": "In Body and Mind",
-        "gametora_id": "200512"
+        "gametora_id": "200512",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "target": "zones",
+                    "labels": [
+                        "last_spurt"
+                    ],
+                    "trigger_behavior": "random"
+                  }
+            ]
+        }
     },
     {   "skill_name": "Fast-Paced",
         "description": "Slightly increase ability to go to the front mid-race.",
@@ -6181,7 +6235,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -6213,7 +6268,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -6239,7 +6295,17 @@
             "アガッてきた"
         ],
         "downgrade": "Ramp Up",
-        "gametora_id": "200461"
+        "gametora_id": "200461",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "In Body and Mind",
         "description": "Increase velocity in the last spurt.",
