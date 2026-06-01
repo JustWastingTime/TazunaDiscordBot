@@ -10952,7 +10952,23 @@
             "スプリントターボ"
         ],
         "downgrade": "Sprinting Gear",
-        "gametora_id": "200651"
+        "gametora_id": "200651",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Furious Feat",
         "description": "Increase passing ability when positioned toward the back late-race.",
