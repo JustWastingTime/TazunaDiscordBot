@@ -336,6 +336,27 @@
             "weather": "Sunny",
             "similar": "Sprinters Stakes"
         },
+        "map": {
+            "name": "Tokyo 1600m (counterclockwise)",
+            "elevation": [
+                { "start": 0, "end": 200, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
+                { "start": 200, "end": 1025, "label": "Flat", "type": "flat", "color": "#c9ec39" },
+                { "start": 1025, "end": 1135, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
+                { "start": 1135, "end": 1200, "label": "Flat", "type": "flat", "color": "#c9ec39" }
+            ],
+            "layout": [
+                { "start": 0, "end": 300, "label": "", "color": "#b2beb5" },
+                { "start": 300, "end": 650, "label": "Corner 3", "color": "#edccae" },
+                { "start": 650, "end": 900, "label": "Corner 4", "color": "#edccae" },
+                { "start": 900, "end": 1200, "label": "Straight", "color": "#b8d4ea" }
+            ],
+            "zones": [
+                { "start": 0, "end": 200, "label": "Early Race", "color": "#00a88f" },
+                { "start": 200, "end": 800, "label": "Mid Race", "color": "#e3d95f" },
+                { "start": 800, "end": 1000, "label": "Late Race", "color": "#cf81bb" },
+                { "start": 1000, "end": 1200, "label": "Last spurt", "color": "#bf6ea8" }
+            ]
+        },
         "date": "",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFbbJQVB3ZbrAlSGFsNaOOEtrtCtMMP73sE5CSD4h3ZtZ8cTsGLlVoacI33eXrneYK7di0WGjoG9UTxYKwgV%2BcNCU6QQJeV1I4C9d59By6OF3cNMpqRkBB1mJzDbYE9GQUwnfceXN7I%2FGc1OBfzDckkTOX0G0BqX5HR43KnducIhJNJSRrqsmbZHsZl%2B1OoVf7RU%2Fgj91Zo6fI%2B5pWQT%2B5dVh4jpSvFnzzJI0cRH4%2FTjOdcN%2FXXd8ACrYoscHAgAA"

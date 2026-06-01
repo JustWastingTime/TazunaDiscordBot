@@ -22,6 +22,7 @@ import cache, { updateCache } from './githubCache.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
   getUpcomingChampionsMeet,
+  getSelectableChampionsMeets,
   getCourseMapDataFromCm,
   resolveSkillActivationOverlay,
   buildSkillMapCacheKey,
@@ -37,6 +38,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const MAP_RENDERER_CACHE_VERSION = 'v2';
+
+// Champions Meets offered in the skill-map dropdown are limited to this range so
+// users can't trigger image generation for an unbounded number of CMs.
+// Adjust SKILL_MAP_MAX_CM_NUMBER (or the env var) to decide the highest CM shown.
+const SKILL_MAP_MIN_CM_NUMBER = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 14);
+const SKILL_MAP_MAX_CM_NUMBER = Number(process.env.SKILL_MAP_MAX_CM_NUMBER ?? 16);
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -73,16 +80,83 @@ function getSupporterMatchesForSkill(skillName) {
   return matches;
 }
 
-async function buildSkillEmbedWithMap(skill, supporterList, req) {
+// Builds the dropdown row that lets the user switch which Champions Meet map is
+// shown under a skill. Returns null when there is nothing meaningful to pick.
+function buildSkillCmDropdownRow(skill, selectableCms, selectedCmNumber) {
+  if (!Array.isArray(selectableCms) || selectableCms.length < 2) return null;
+
+  const identifier = skill.gametora_id ?? skill.skill_name;
+  const options = selectableCms.slice(0, 25).map((cm) => {
+    const num = Number(cm.number);
+    const shortName = String(cm.name ?? '').replace(/\s*\d{4}\s*$/, '').trim() || `CM ${num}`;
+    const track = cm.track ?? {};
+    const subtitle = [track.racetrack, track.distance_meters, track.distance_type]
+      .filter(Boolean)
+      .join(' - ');
+    return {
+      label: `CM${num} - ${shortName}`.slice(0, 100),
+      value: `${num}::${identifier}`,
+      description: subtitle ? subtitle.slice(0, 100) : undefined,
+      default: Number(selectedCmNumber) === num,
+    };
+  });
+
+  return {
+    type: 1,
+    components: [
+      {
+        type: 3,
+        custom_id: 'skill_cm_select',
+        placeholder: 'Select a Champions Meet map',
+        options,
+      },
+    ],
+  };
+}
+
+// Returns { embed, mapComponents } where mapComponents holds the optional
+// Champions Meet selector row. selectedCmNumber forces a specific CM map.
+async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumber = null) {
   const embed = buildSkillEmbed(skill, supporterList);
-  const activeCm = getUpcomingChampionsMeet(champsmeets);
-  if (!activeCm) return embed;
+  const result = { embed, mapComponents: [] };
+
+  const selectableCms = getSelectableChampionsMeets(champsmeets, {
+    fromCmNumber: SKILL_MAP_MIN_CM_NUMBER,
+    maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
+  });
+  if (selectableCms.length === 0) return result;
+
+  // Resolve which CM to display: an explicit selection wins, otherwise the
+  // current upcoming CM (if it's selectable), otherwise the first selectable.
+  let activeCm = null;
+  if (selectedCmNumber != null) {
+    activeCm = selectableCms.find((cm) => Number(cm.number) === Number(selectedCmNumber)) ?? null;
+  }
+  if (!activeCm) {
+    const upcoming = getUpcomingChampionsMeet(champsmeets);
+    activeCm =
+      (upcoming && selectableCms.find((cm) => Number(cm.number) === Number(upcoming.number))) ||
+      selectableCms[0];
+  }
 
   const mapData = getCourseMapDataFromCm(activeCm);
-  if (!mapData) return embed;
+  if (!mapData) return result;
 
   const overlay = resolveSkillActivationOverlay(skill, activeCm, mapData);
-  if (!overlay.shouldShowChart) return embed;
+
+  // Skills explicitly configured to show a chart keep the CM switcher even on a
+  // CM that produces no overlay, so the user can switch back to a working CM.
+  const chartCapable =
+    skill.activation_map?.show_chart === true ||
+    (Array.isArray(skill.activation_map?.triggers) && skill.activation_map.triggers.length > 0);
+
+  if (!overlay.shouldShowChart) {
+    if (chartCapable) {
+      const dropdownRow = buildSkillCmDropdownRow(skill, selectableCms, activeCm.number);
+      if (dropdownRow) result.mapComponents.push(dropdownRow);
+    }
+    return result;
+  }
 
   const cacheKey = buildSkillMapCacheKey({
     cmNumber: activeCm.number,
@@ -112,7 +186,11 @@ async function buildSkillEmbedWithMap(skill, supporterList, req) {
   embed.footer = embed.footer?.text
     ? { text: `${embed.footer.text} • ${suffix}` }
     : { text: suffix };
-  return embed;
+
+  const dropdownRow = buildSkillCmDropdownRow(skill, selectableCms, activeCm.number);
+  if (dropdownRow) result.mapComponents.push(dropdownRow);
+
+  return result;
 }
 
 async function resolveCmMapImageUrl(cm, req) {
@@ -400,13 +478,16 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         // Creating components if the skill has cards or upgraded version
         let components = [];
 
-        const skillEmbed = await buildSkillEmbedWithMap(matches[0], supporterList, req);
+        const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(matches[0], supporterList, req);
 
         return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: { 
           embeds: [skillEmbed],
-          components: buildSkillComponents(matches[0], supporterMatches.length, supporterMatches)
+          components: [
+            ...buildSkillComponents(matches[0], supporterMatches.length, supporterMatches),
+            ...mapComponents
+          ]
         }
         });
       }
@@ -1079,7 +1160,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
 
-      const skillEmbed = await buildSkillEmbedWithMap(skill, supporterList, req);
+      const { embed: skillEmbed } = await buildSkillEmbedWithMap(skill, supporterList, req);
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
@@ -1138,14 +1219,53 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         : 'None';
 
         
-      const skillEmbed = await buildSkillEmbedWithMap(skill, supporterList, req);
+      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(skill, supporterList, req);
 
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           content: `✅ You selected **${skill.skill_name}**`,
           embeds: [skillEmbed],
-          components: buildSkillComponents(skill, supporterMatches.length, supporterMatches)
+          components: [
+            ...buildSkillComponents(skill, supporterMatches.length, supporterMatches),
+            ...mapComponents
+          ]
+        }
+      });
+    }
+
+    // Handling switching the Champions Meet map shown under a skill
+    if (custom_id === "skill_cm_select") {
+      const [cmNumberRaw, identifier] = String(values[0] ?? "").split("::");
+      const selectedCmNumber = Number(cmNumberRaw);
+      const skill = skills.find(s =>
+        String(s.gametora_id ?? "") === identifier ||
+        s.skill_name.toLowerCase() === String(identifier ?? "").toLowerCase()
+      );
+
+      if (!skill) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: { content: "❌ Could not find the selected skill." }
+        });
+      }
+
+      const supporterMatches = getSupporterMatchesForSkill(skill.skill_name);
+      const supporterList = supporterMatches.length
+        ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
+        : 'None';
+
+      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumber);
+
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: {
+          content: `✅ You selected **${skill.skill_name}**`,
+          embeds: [skillEmbed],
+          components: [
+            ...buildSkillComponents(skill, supporterMatches.length, supporterMatches),
+            ...mapComponents
+          ]
         }
       });
     }
@@ -1185,12 +1305,15 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
 
-      const skillEmbed = await buildSkillEmbedWithMap(upgradedSkill, supporterList, req);
+      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(upgradedSkill, supporterList, req);
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           embeds: [skillEmbed],
-          components: buildSkillComponents(upgradedSkill, supporterMatches.length, supporterMatches)
+          components: [
+            ...buildSkillComponents(upgradedSkill, supporterMatches.length, supporterMatches),
+            ...mapComponents
+          ]
         }
       });
     }
@@ -1217,12 +1340,15 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
 
-      const skillEmbed = await buildSkillEmbedWithMap(downgradedSkill, supporterList, req);
+      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(downgradedSkill, supporterList, req);
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           embeds: [skillEmbed],
-          components: buildSkillComponents(downgradedSkill, supporterMatches.length, supporterMatches)
+          components: [
+            ...buildSkillComponents(downgradedSkill, supporterMatches.length, supporterMatches),
+            ...mapComponents
+          ]
         }
       });
     }
@@ -1289,7 +1415,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           ).join('\n')
         : 'None';
 
-      const skillEmbed = await buildSkillEmbedWithMap(skill, supporterList, req);
+      const { embed: skillEmbed } = await buildSkillEmbedWithMap(skill, supporterList, req);
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {

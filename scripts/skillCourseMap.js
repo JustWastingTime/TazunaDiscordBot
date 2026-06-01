@@ -14,6 +14,16 @@ function extractUnixTimestamp(value) {
   return Number(match[1]);
 }
 
+function extractUnixTimestamps(value) {
+  const matches = String(value ?? "").matchAll(/<t:(\d+):/g);
+  const list = [];
+  for (const m of matches) {
+    const n = Number(m[1]);
+    if (Number.isFinite(n)) list.push(n);
+  }
+  return list;
+}
+
 function normalizeDirection(value) {
   const v = String(value ?? "").toLowerCase();
   if (v.includes("left") || v.includes("counterclockwise")) return "counterclockwise";
@@ -25,13 +35,27 @@ export function getUpcomingChampionsMeet(champsmeets, nowSec = Math.floor(Date.n
   if (!Array.isArray(champsmeets) || champsmeets.length === 0) return null;
 
   const withTs = champsmeets
-    .map((cm) => ({ cm, ts: extractUnixTimestamp(cm.date) }))
-    .filter((item) => Number.isFinite(item.ts))
-    .sort((a, b) => a.ts - b.ts);
+    .map((cm) => {
+      const stamps = extractUnixTimestamps(cm.date);
+      if (stamps.length === 0) return null;
+      const start = Math.min(...stamps);
+      const end = Math.max(...stamps);
+      return { cm, start, end };
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.start - b.start);
 
   if (withTs.length > 0) {
-    const upcoming = withTs.find((item) => item.ts >= nowSec);
+    // 1) A CM whose date range currently contains "now" is the active one.
+    const running = withTs.find((item) => item.start <= nowSec && nowSec <= item.end);
+    if (running) return running.cm;
+
+    // 2) Otherwise the next CM that hasn't started yet.
+    const upcoming = withTs.find((item) => item.start >= nowSec);
     if (upcoming) return upcoming.cm;
+
+    // 3) Otherwise the most recently started CM (latest in the past).
+    return withTs[withTs.length - 1].cm;
   }
 
   return champsmeets[champsmeets.length - 1] ?? null;
@@ -74,6 +98,21 @@ export function getCourseMapDataFromCm(cm) {
     layout,
     zones,
   };
+}
+
+// Returns the Champions Meets that can be offered in the skill map dropdown:
+// those that have renderable map data and whose number falls within the
+// [fromCmNumber, maxCmNumber] window. Sorted ascending by CM number.
+export function getSelectableChampionsMeets(champsmeets, { fromCmNumber = 0, maxCmNumber = Infinity } = {}) {
+  if (!Array.isArray(champsmeets)) return [];
+  return champsmeets
+    .filter((cm) => {
+      const num = Number(cm?.number);
+      if (!Number.isFinite(num)) return false;
+      if (num < fromCmNumber || num > maxCmNumber) return false;
+      return !!getCourseMapDataFromCm(cm);
+    })
+    .sort((a, b) => Number(a.number) - Number(b.number));
 }
 
 function lower(value) {
