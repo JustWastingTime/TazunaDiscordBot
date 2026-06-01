@@ -12166,10 +12166,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "corner",
-                    "select": "last",
-                    "phase": "late_and_beyond",
+                    "phase": "final_corner_and_beyond",
                     "trigger_behavior": "asap"
                 }
             ]
