@@ -2694,7 +2694,7 @@
                 "trigger_behavior": "random"
               }
             ]
-          }
+        }
     },
     {   "skill_name": "Packphobia",
         "description": "Moderately lose endurance when surrounded.",
@@ -3858,7 +3858,18 @@
             "下校後のスペシャリスト"
         ],
         "downgrade": "After-School Stroll",
-        "gametora_id": "201481"
+        "gametora_id": "201481",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "downhill",
+                "trigger_behavior": "asap"
+              }
+            ]
+        }
     },
     {   "skill_name": "After-School Stroll",
         "description": "Slightly reduce fatigue on a downhill.",
@@ -3882,7 +3893,18 @@
             "下校の楽しみ"
         ],
         "upgrade": "Go-Home Specialist",
-        "gametora_id": "201482"
+        "gametora_id": "201482",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "downhill",
+                "trigger_behavior": "asap"
+              }
+            ]
+        }
     },
     {   "skill_name": "Serenity",
         "description": "Regain composure by calming down when the way ahead is jammed.",
@@ -3906,7 +3928,16 @@
             "冷静沈着"
         ],
         "downgrade": "Levelheaded",
-        "gametora_id": "201491"
+        "gametora_id": "201491",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "trigger_behavior": "asap"
+              }
+            ]
+        }
     },
     {   "skill_name": "Levelheaded",
         "description": "Slightly regain composure by calming down when the way ahead is jammed.",
@@ -3930,7 +3961,16 @@
             "冷静"
         ],
         "upgrade": "Serenity",
-        "gametora_id": "201492"
+        "gametora_id": "201492",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "trigger_behavior": "asap"
+              }
+            ]
+        }
     },
     {   "skill_name": "Triple 7s",
         "description": "Slightly gain energy with 777m remaining.",
@@ -3959,11 +3999,6 @@
                     "type": "line",
                     "distance_mode": "remaining",
                     "value": 777
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 777
                 }
             ]
         }
@@ -3986,7 +4021,17 @@
             "shake it out",
             "ふり絞り"
         ],
-        "gametora_id": "201621"
+        "gametora_id": "201621",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Superior Heal",
         "description": "Greatly recover endurance with a gentle light when overtaken toward the back mid-race.",
@@ -4013,7 +4058,17 @@
             "ゲインヒールスペリアー"
         ],
         "horse": "Grass Wonder (Fantasy)",
-        "gametora_id": "110111"
+        "gametora_id": "110111",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Dazzl'n ♪ Diver",
         "description": "Recover endurance by relaxing after activating 2 skills when positioned midpack mid-race.",
@@ -4042,7 +4097,17 @@
             "わやかわ♪マリンダイヴ"
         ],
         "horse": "Special Week (Summer)",
-        "gametora_id": "110011"
+        "gametora_id": "110011",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Every Rose Has Its Fangs",
         "description": "Suck endurance from runners ahead when well-positioned and pressured by another runner mid-race.",
@@ -4067,7 +4132,17 @@
             "drain for rose"
         ],
         "horse": "Rice Shower (Halloween)",
-        "gametora_id": "110301"
+        "gametora_id": "110301",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Lie in Wait",
         "description": "Recover endurance when positioned toward the back upon approaching mid-race.",
@@ -4098,12 +4173,10 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "labels": [
-                        "opening leg",
-                        "early"
-                    ],
+                    "phase": "early",
                     "clip_within_segment_start_ratio": 0.5,
-                    "clip_within_segment_end_ratio": 1
+                    "clip_within_segment_end_ratio": 1,
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -4137,10 +4210,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "labels": [
-                        "opening leg",
-                        "early"
-                    ],
+                    "phase": "early",
                     "clip_within_segment_start_ratio": 0.5,
                     "clip_within_segment_end_ratio": 1
                 }
@@ -4200,7 +4270,22 @@
             "sandstorm practice"
         ],
         "upgrade": "Master of the Sands",
-        "gametora_id": "202002"
+        "gametora_id": "202002",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
     },
     {   "skill_name": "Cheers of a Fellow Dreamer",
         "description": "Recover Silence Suzuka's endurance on a corner in the second half of the race through a friend's cheers of support.",
@@ -4224,14 +4309,7 @@
         ],
         "gametora_id": "300101",
         "activation_map": {
-            "show_chart": true,
-            "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 800
-                }
-            ]
+            "show_chart": false
         }
     },
     {   "skill_name": "Ready, Go!",
@@ -4259,7 +4337,19 @@
             "レディーどんっ"
         ],
         "upgrade": "Go, Go, Mun!",
-        "gametora_id": "10621"
+        "gametora_id": "10621",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Go, Go, Mun!",
         "description": "Recover endurance and moderately increase velocity with newfound resolve when in midpack around halfway through the race.",
@@ -4288,7 +4378,19 @@
         ],
         "downgrade": "Ready, Go!",
         "horse": "Matikanetannhauser (Original)",
-        "gametora_id": "100621"
+        "gametora_id": "100621",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Of Calm Mind",
         "description": "If positioned in the midpack around when the mid-race starts, slightly decrease velocity and greatly recover endurance.",
@@ -10119,7 +10221,7 @@
         }
     },
 
-    
+
     {   "skill_name": "Corner Acceleration",
         "description": "Slightly increase acceleration on a corner with masterful turning.",
         "effect": [
@@ -13376,7 +13478,7 @@
         "description": "Slightly steal velocity from runners behind when positioned toward the front mid-race.",
         "effect": [
             {
-                "description": "Reduces current speed by 0.15 to 5 umas behind you and increases your taregt speed by 0.15 for 3.0s.",
+                "description": "Reduces current speed by 0.15 to 5 umas behind you and increases your target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "1st to 3rd",
