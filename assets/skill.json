@@ -10460,7 +10460,8 @@
                     "target": "layout",
                     "match": "corner",
                     "select": "last",
-                    "phase": "late_and_beyond"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 },
                 {
                     "type": "line",
@@ -10499,7 +10500,9 @@
                 {
                     "type": "box",
                     "distance_mode": "remaining",
-                    "value": 350
+                    "remaining_start": 350,
+                    "remaining_end": 0, 
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10518,7 +10521,7 @@
         ],
         "preconditions": [
             "Has been 4th to 9th (CM), 5th to 12th (TT) the entire race",
-            "Second half of the race"
+            "Till second half of the race"
         ],
         "review": "",
         "rarity": "unique",
@@ -10534,7 +10537,8 @@
             "triggers": [
                 {
                     "type": "box",
-                    "clip_start_ratio": 0.5,
+                    "clip_start_ratio": 0,
+                    "clip_end_ratio": 0.5,
                     "trigger_behavior": "precondition"
                 },
                 {
@@ -12464,7 +12468,7 @@
         "preconditions": [
             "Has been 6th to 9th (CM), 8th to 12th (TT) the entire race",
             "No 'Rushed'",
-            "Second half of the race"
+            "Till second half of the race"
         ],
         "review": "",
         "rarity": "unique",
