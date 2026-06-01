@@ -855,23 +855,10 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters)
     buttonComponents.push({
       type: 2,
       style: 5,
-      label: "CM 14 Visualizer",
+      label: "Umalator's Visualizer",
       url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10602&sid=${skill.gametora_id}`
     });
-    buttonComponents.push({
-      type: 2,
-      style: 5,
-      label: "CM 15 Visualizer",
-      url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10906&sid=${skill.gametora_id}`
-    });
-    buttonComponents.push({
-      type: 2,
-      style: 5,
-      label: "CM 16 Visualizer",
-      url: `https://umalator.app/umalator-global/skill-visualizer/v2/#cid=10501&sid=${skill.gametora_id}`
-    });
   }
-
 
   // Only push row if buttons exist
   if (buttonComponents.length > 0) {

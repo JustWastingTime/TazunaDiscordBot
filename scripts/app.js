@@ -114,6 +114,28 @@ function buildSkillCmDropdownRow(skill, selectableCms, selectedCmNumber) {
   };
 }
 
+// Inserts map selector rows before the skill button row (upgrade/downgrade/
+// visualizer links), while keeping other dropdown rows above them.
+function composeSkillComponents(baseComponents, mapComponents) {
+  const base = Array.isArray(baseComponents) ? baseComponents : [];
+  const mapRows = Array.isArray(mapComponents) ? mapComponents : [];
+  if (mapRows.length === 0) return base;
+
+  const firstButtonRowIndex = base.findIndex((row) =>
+    Array.isArray(row?.components) && row.components.some((component) => component?.type === 2)
+  );
+
+  if (firstButtonRowIndex === -1) {
+    return [...base, ...mapRows];
+  }
+
+  return [
+    ...base.slice(0, firstButtonRowIndex),
+    ...mapRows,
+    ...base.slice(firstButtonRowIndex),
+  ];
+}
+
 // Returns { embed, mapComponents } where mapComponents holds the optional
 // Champions Meet selector row. selectedCmNumber forces a specific CM map.
 async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumber = null) {
@@ -484,10 +506,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: { 
           embeds: [skillEmbed],
-          components: [
-            ...buildSkillComponents(matches[0], supporterMatches.length, supporterMatches),
-            ...mapComponents
-          ]
+          components: composeSkillComponents(
+            buildSkillComponents(matches[0], supporterMatches.length, supporterMatches),
+            mapComponents
+          )
         }
         });
       }
@@ -1226,10 +1248,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         data: {
           content: `✅ You selected **${skill.skill_name}**`,
           embeds: [skillEmbed],
-          components: [
-            ...buildSkillComponents(skill, supporterMatches.length, supporterMatches),
-            ...mapComponents
-          ]
+          components: composeSkillComponents(
+            buildSkillComponents(skill, supporterMatches.length, supporterMatches),
+            mapComponents
+          )
         }
       });
     }
@@ -1262,10 +1284,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         data: {
           content: `✅ You selected **${skill.skill_name}**`,
           embeds: [skillEmbed],
-          components: [
-            ...buildSkillComponents(skill, supporterMatches.length, supporterMatches),
-            ...mapComponents
-          ]
+          components: composeSkillComponents(
+            buildSkillComponents(skill, supporterMatches.length, supporterMatches),
+            mapComponents
+          )
         }
       });
     }
@@ -1310,10 +1332,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           embeds: [skillEmbed],
-          components: [
-            ...buildSkillComponents(upgradedSkill, supporterMatches.length, supporterMatches),
-            ...mapComponents
-          ]
+          components: composeSkillComponents(
+            buildSkillComponents(upgradedSkill, supporterMatches.length, supporterMatches),
+            mapComponents
+          )
         }
       });
     }
@@ -1345,10 +1367,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           embeds: [skillEmbed],
-          components: [
-            ...buildSkillComponents(downgradedSkill, supporterMatches.length, supporterMatches),
-            ...mapComponents
-          ]
+          components: composeSkillComponents(
+            buildSkillComponents(downgradedSkill, supporterMatches.length, supporterMatches),
+            mapComponents
+          )
         }
       });
     }
