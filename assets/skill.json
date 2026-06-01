@@ -11014,7 +11014,24 @@
             "プランX"
         ],
         "downgrade": "Countermeasure",
-        "gametora_id": "200991"
+        "gametora_id": "200991",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "mid",
+                    "trigger_behavior": "random",
+                    "clip_start_ratio": 0.5
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Step on the Gas!",
         "description": "Increase acceleration when passing another runner mid-race.",
@@ -11038,7 +11055,23 @@
             "アクセル全開！"
         ],
         "downgrade": "Acceleration",
-        "gametora_id": "201061"
+        "gametora_id": "201061",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Reignition",
         "description": "Increase acceleration when not in the lead mid-race.",
@@ -11062,7 +11095,18 @@
             "再燃焼"
         ],
         "downgrade": "Second Wind",
-        "gametora_id": "201291"
+        "gametora_id": "201291",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Technician",
         "description": "Moderately increase ability to navigate smoothly.",
@@ -11084,7 +11128,16 @@
             "技巧派"
         ],
         "downgrade": "Shrewd Step",
-        "gametora_id": "201331"
+        "gametora_id": "201331",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Determined Descent",
         "description": "Moderately improve running on a downhill.",
