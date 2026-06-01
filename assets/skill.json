@@ -10184,7 +10184,18 @@
             "麗しき花信風"
         ],
         "horse": "Mejiro Bright (Original)",
-        "gametora_id": "100741"
+        "gametora_id": "100741",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Ravissant",
         "description": "When passing another racer at the front part of the pack on the final corner or later, perform a dazzling display that greatly increases velocity for a moderate duration.",
@@ -10216,8 +10227,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond"
                 }
             ]
         }
@@ -10255,7 +10265,19 @@
             "do ya breakin"
         ],
         "horse": "Seiun Sky (Ballroom)",
-        "gametora_id": "110201"
+        "gametora_id": "110201",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Peerless Dance of Flowering Flames",
         "description": "If the skill user passes another runner on the final corner or later, increase velocity with fiery fighting spirit when in the front part of the pack with 300m remaining.",
@@ -10291,18 +10313,15 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
                 },
                 {
-                    "type": "line",
+                    "type": "box",
                     "distance_mode": "remaining",
-                    "value": 300
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 300
+                    "remaining_start": 300,
+                    "remaining_end": 0, 
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10352,8 +10371,15 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
