@@ -517,8 +517,30 @@ function markersFromActivationMap(skill, mapData) {
         }
       };
 
-      if (Number.isFinite(Number(trigger.start)) && Number.isFinite(Number(trigger.end))) {
-        pushClippedBox(Number(trigger.start), Number(trigger.end));
+      const directRangeMode = lower(trigger.distance_mode ?? trigger.distanceMode ?? "absolute");
+      const rawStart = Number(
+        trigger.start ??
+        trigger.start_m ??
+        trigger.range_start ??
+        trigger.value_start ??
+        trigger.value_from ??
+        trigger.remaining_start
+      );
+      const rawEnd = Number(
+        trigger.end ??
+        trigger.end_m ??
+        trigger.range_end ??
+        trigger.value_end ??
+        trigger.value_to ??
+        trigger.remaining_end ??
+        trigger.value
+      );
+      if (Number.isFinite(rawStart) && Number.isFinite(rawEnd)) {
+        const startDistance = directRangeMode === "remaining" ? mapData.length - rawStart : rawStart;
+        const endDistance = directRangeMode === "remaining" ? mapData.length - rawEnd : rawEnd;
+        const normalizedStart = Math.min(startDistance, endDistance);
+        const normalizedEnd = Math.max(startDistance, endDistance);
+        pushClippedBox(normalizedStart, normalizedEnd);
         continue;
       }
 

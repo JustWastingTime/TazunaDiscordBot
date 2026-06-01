@@ -10401,39 +10401,20 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
+                    "type": "box",
                     "distance_mode": "remaining",
-                    "value": 305
+                    "remaining_start": 305,
+                    "remaining_end": 300,
+                    "target": "elevation",
+                    "match": "uphill",
+                    "trigger_behavior": "precondition"
                 },
                 {
-                    "type": "line",
+                    "type": "box",
                     "distance_mode": "remaining",
-                    "value": 300
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 299
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 295
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 299
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 295
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 300
+                    "remaining_start": 299,
+                    "remaining_end": 295,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10478,7 +10459,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "phase": "late_and_beyond"
                 },
                 {
                     "type": "line",
@@ -10515,12 +10497,7 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 350
-                },
-                {
-                    "type": "line",
+                    "type": "box",
                     "distance_mode": "remaining",
                     "value": 350
                 }
@@ -10551,7 +10528,24 @@
             "inari one original"
         ],
         "horse": "Inari One (Original)",
-        "gametora_id": "110341"
+        "gametora_id": "110341",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Corner Adept x",
         "description": "Moderately decrease velocity on a corner with clumsy turning.",
@@ -10579,7 +10573,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10609,9 +10604,11 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 25
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10645,11 +10642,6 @@
                     "type": "line",
                     "distance_mode": "remaining",
                     "value": 200
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 200
                 }
             ]
         }
@@ -10678,9 +10670,11 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
+                    "type": "box",
                     "distance_mode": "remaining",
-                    "value": 800
+                    "remaining_start": 850,
+                    "remaining_end": 800,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
