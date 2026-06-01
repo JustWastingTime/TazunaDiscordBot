@@ -10118,6 +10118,8 @@
             ]
         }
     },
+
+    
     {   "skill_name": "Corner Acceleration",
         "description": "Slightly increase acceleration on a corner with masterful turning.",
         "effect": [
@@ -10144,7 +10146,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10175,7 +10178,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10236,7 +10240,18 @@
             "先駆け"
         ],
         "upgrade": "Taking the Lead",
-        "gametora_id": "200532"
+        "gametora_id": "200532",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "early",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Final Push",
         "description": "Slightly increase ability to keep the lead on the final corner.",
@@ -10268,7 +10283,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10371,7 +10387,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -10442,7 +10459,24 @@
             "善後策"
         ],
         "upgrade": "Plan X",
-        "gametora_id": "200992"
+        "gametora_id": "200992",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "mid",
+                    "trigger_behavior": "random",
+                    "clip_start_ratio": 0.5
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Acceleration",
         "description": "Slightly increase acceleration when passing another runner mid-race.",
@@ -10465,7 +10499,23 @@
             "アクセラレーション"
         ],
         "upgrade": "Step on the Gas!",
-        "gametora_id": "201062"
+        "gametora_id": "201062",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
     },
     {   "skill_name": "Second Wind",
         "description": "Slightly increase acceleration when not in the lead mid-race.",
@@ -10489,7 +10539,18 @@
             "二の矢"
         ],
         "upgrade": "Reignition",
-        "gametora_id": "201292"
+        "gametora_id": "201292",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Shrewd Step",
         "description": "Slightly increase ability to navigate smoothly.",
@@ -10512,7 +10573,16 @@
             "巧みなステップ"
         ],
         "upgrade": "Technician",
-        "gametora_id": "201332"
+        "gametora_id": "201332",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Straight Descent",
         "description": "Slightly improve running on a downhill.",
@@ -10535,7 +10605,18 @@
             "直滑降"
         ],
         "upgrade": "Determined Descent",
-        "gametora_id": "201342"
+        "gametora_id": "201342",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Tactical Tweak",
         "description": "Slightly increase acceleration when positioned toward the back mid-race.",
@@ -10559,7 +10640,17 @@
             "まき直し"
         ],
         "upgrade": "Shatterproof",
-        "gametora_id": "201362"
+        "gametora_id": "201362",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Fighter",
         "description": "Slightly increase acceleration for a medium duration when trying to pass another runner.",
@@ -10583,7 +10674,16 @@
             "がんばり屋"
         ],
         "upgrade": "Hard Worker",
-        "gametora_id": "201402"
+        "gametora_id": "201402",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Highlander",
         "description": "Slightly improve running on an uphill.",
@@ -10605,7 +10705,18 @@
             "登山家"
         ],
         "upgrade": "Ultimate Hill Climber (TO BE RENAMED)",
-        "gametora_id": "201581"
+        "gametora_id": "201581",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "uphill",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Groundwork",
         "description": "Slightly increase acceleration after activating many skills early-race.",
@@ -10633,10 +10744,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "labels": [
-                        "opening leg",
-                        "early"
-                    ],
+                    "phase": "early",
                     "trigger_behavior": "asap"
                 }
             ]
@@ -10699,7 +10807,22 @@
             "ワンチャンス"
         ],
         "upgrade": "From the Brink",
-        "gametora_id": "202082"
+        "gametora_id": "202082",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Corner Connoisseur",
         "description": "Increase acceleration on a corner with masterful turning.",
@@ -10728,7 +10851,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10760,7 +10884,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -10824,7 +10949,18 @@
             "先手必勝"
         ],
         "downgrade": "Early Lead",
-        "gametora_id": "200531"
+        "gametora_id": "200531",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "early",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Unrestrained",
         "description": "Increase ability to keep the lead on the final corner.",
@@ -10856,7 +10992,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ]
         }
