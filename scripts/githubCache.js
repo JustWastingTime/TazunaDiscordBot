@@ -1,4 +1,11 @@
 import fetch from 'node-fetch';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ASSETS_DIR = path.resolve(__dirname, '..', 'assets');
 
 // In-memory cache
 const cache = {
@@ -30,11 +37,30 @@ const urls = {
   epithets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/epithets.json',
 };
 
+const localFiles = {
+  supporters: 'supporter.json',
+  skills: 'skill.json',
+  characters: 'character.json',
+  races: 'races.json',
+  champsmeets: 'champsmeet.json',
+  legendraces: 'legendrace.json',
+  schedule: 'schedule.json',
+  misc: 'misc.json',
+  resources: 'resources.json',
+  epithets: 'epithets.json',
+};
+
 // Function to fetch a JSON file
 async function fetchJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`[CacheUpdater] Failed to fetch ${url}: ${res.status}`);
   return await res.json();
+}
+
+async function readLocalJson(fileName) {
+  const filePath = path.join(ASSETS_DIR, fileName);
+  const raw = await fs.readFile(filePath, 'utf8');
+  return JSON.parse(raw);
 }
 
 let updateInFlight = null;
@@ -44,10 +70,17 @@ async function updateCache() {
   if (updateInFlight) return updateInFlight;
 
   updateInFlight = (async () => {
-    console.log('[CacheUpdater] Updating JSON cache from GitHub...');
+    const localSetting = String(process.env.USE_LOCAL_ASSETS ?? '').toLowerCase().trim();
+    const useLocalAssets = (localSetting === '1' || localSetting === 'true' || localSetting === 'yes');
+
+    console.log(`[CacheUpdater] Updating JSON cache from ${useLocalAssets ? 'local assets' : 'GitHub'}...`);
     const nextData = {};
     for (const key of Object.keys(urls)) {
-      nextData[key] = await fetchJson(urls[key]);
+      if (useLocalAssets) {
+        nextData[key] = await readLocalJson(localFiles[key]);
+      } else {
+        nextData[key] = await fetchJson(urls[key]);
+      }
     }
 
     // Mutate arrays in place so existing references keep seeing fresh data.
