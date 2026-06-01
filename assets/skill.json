@@ -10460,13 +10460,16 @@
                     "target": "layout",
                     "match": "corner",
                     "select": "last",
-                    "phase": "final_corner_and_beyond",
+                    "phase": "late_and_beyond",
                     "trigger_behavior": "asap"
                 },
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 401
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10537,9 +10540,10 @@
             "triggers": [
                 {
                     "type": "box",
-                    "clip_start_ratio": 0,
-                    "clip_end_ratio": 0.5,
-                    "trigger_behavior": "precondition"
+                    "target": "layout",
+                    "phase": "first_half",
+                    "trigger_behavior": "precondition",
+                    "disable_auto_phase_clip": true
                 },
                 {
                     "type": "box",
