@@ -581,7 +581,14 @@ function markersFromActivationMap(skill, mapData) {
             ? selectedSegments.slice(1)
             : selectedSegments;
 
-      if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip) {
+      // When the trigger explicitly selects segments (match/labels/corner_numbers/
+      // select), honor that selection precisely. The forceFullRange shortcut is
+      // only for vague triggers that should fill the inferred phase window.
+      const hasExplicitSelection = Boolean(
+        match || labels.length || cornerNumbers.length || selectMode || excludeSelectMode
+      );
+
+      if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip && !hasExplicitSelection) {
         pushUniqueBox(markers, clipStart, clipEnd, color, triggerBehavior);
         continue;
       }
