@@ -70,7 +70,11 @@
                 "conditions": "Win the Satsuki Sho, Kikuka Sho, Japan Cup (Year 2), Takarazuka Kinen (Year 3), Arima Kinen (Year 3)",
                 "rewards": "Speed +30, Power +30, Stamina to Spare hint +2, Slick Surge hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Ruler of Japan",
+            "condition": "Win the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths while also being the most popular\nWin the Tenno Sho (Spring)\nWin the Tenno Sho (Autumn)\nWin the Japan Cup"
+        }
     },
     {   "id": "100102 - Special Week Summer",
         "character_name": "Special Week",
@@ -136,7 +140,11 @@
                 "conditions": "Win the Satsuki Sho, Kikuka Sho, Japan Cup (Year 2), Takarazuka Kinen (Year 3), Arima Kinen (Year 3)",
                 "rewards": "Speed +30, Power +30, Stamina to Spare hint +2, Slick Surge hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Ruler of Japan",
+            "condition": "Win the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths while also being the most popular\nWin the Tenno Sho (Spring)\nWin the Tenno Sho (Autumn)\nWin the Japan Cup"
+        }
     },
 
     {   "id": "100201 - Silence Suzuka",
@@ -210,7 +218,11 @@
                 "conditions": "Get a win streak of 6+ graded races and win the Tenno Sho (Autumn Year 3).",
                 "rewards": "All stats +7, Runaway hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Otherworldly Front-Runner",
+            "condition": "Without losing any races inbetween, win at least 6 graded races while using the Front Runner strategy and being the most popular, with one of them being the Takarazuka Kinen\nWin the Takarazuka Kinen while staying in the lead from the 200m mark to the goal line"
+        }
     },
 
     {   "id": "100301 - Tokai Teio",
@@ -285,7 +297,11 @@
                 "conditions": "Win the Osaka Cup, Tenno Sho (Spring) and Takarazuka Kinen in Senior Year.",
                 "rewards": "Speed +25, Power +25"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Monarch",
+            "condition": "Inherit memories from a parent that won at least 7 G1 races\nBe the most popular in at least 4 G1 races\nWin the Satsuki Sho and Tokyo Yushun (Japanese Derby) while being undefeated\nWin the Arima Kinen (Year 3)"
+        }
     },
     {   "id": "100302 - Tokai Teio Anime",
         "character_name": "Tokai Teio",
@@ -352,7 +368,11 @@
                 "conditions": "Win the Osaka Cup, Tenno Sho (Spring) and Takarazuka Kinen in Senior Year.",
                 "rewards": "Speed +25, Power +25"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Monarch",
+            "condition": "Inherit memories from a parent that won at least 7 G1 races\nBe the most popular in at least 4 G1 races\nWin the Satsuki Sho and Tokyo Yushun (Japanese Derby) while being undefeated\nWin the Arima Kinen (Year 3)"
+        }
     },
 
     {   "id": "100401 - Maruzensky",
@@ -423,7 +443,11 @@
                 "conditions": "Win the Radio Nikkei Sho",
                 "rewards": "Energy -15, All stats +3, Skill points +60, Mood +1, Get Hot Topic status"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Hot Rod",
+            "condition": "Win 8 consecutive races while being undefeated\nHave an average win length difference of at least 7 lengths"
+        }
     },
     {   "id": "100402 - Maruzensky Summer",
         "character_name": "Maruzensky",
@@ -483,7 +507,11 @@
                 "conditions": "Win the Radio Nikkei Sho",
                 "rewards": "Energy -15, All stats +3, Skill points +60, Mood +1, Get Hot Topic status"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Hot Rod",
+            "condition": "Win 8 consecutive races while being undefeated\nHave an average win length difference of at least 7 lengths"
+        }
     },
 
     {   "id": "100501 - Fuji Kiseki",
@@ -565,7 +593,11 @@
                 "conditions": "Win the Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3) and Takarazuka Kinen (Year 3).",
                 "rewards": "Mood +1, Speed +10, Stamina +10, Guts +10, Preferred Position hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Enchanting Triple Crown",
+            "condition": "Win the Make Debut with a difference of at least 8 lengths\nWin the Asahi Hai Futurity Stakes as the most popular\nWin the Satsuki Sho as the most popular\nWin the Tokyo Yushun (Japanese Derby) as the most popular\nWin the Kikuka Sho as the most popular"
+        }
     },
     {   "id": "100502 - Fuji Kiseki Ballroom",
         "character_name": "Fuji Kiseki",
@@ -636,7 +668,11 @@
                 "conditions": "Win the Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3) and Takarazuka Kinen (Year 3).",
                 "rewards": "Mood +1, Speed +10, Stamina +10, Guts +10, Preferred Position hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Enchanting Triple Crown",
+            "condition": "Win the Make Debut with a difference of at least 8 lengths\nWin the Asahi Hai Futurity Stakes as the most popular\nWin the Satsuki Sho as the most popular\nWin the Tokyo Yushun (Japanese Derby) as the most popular\nWin the Kikuka Sho as the most popular"
+        }
     },
 
     {   "id": "100601 - Oguri Cap",
@@ -712,7 +748,11 @@
                 "conditions": "Do not participate in the Tenno Sho (Spring)",
                 "rewards": "Mood +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Ideal Idol",
+            "condition": "Participate in at least 6 G1 races while being the 1st popular\nWin the Mile Championship\nWin the Yasuda Kinen\nWin the Arima Kinen\nEarn a total of at least 240,000 fans"
+        }
     },
     {   "id": "100602 - Oguri Cap Christmas",
         "character_name": "Oguri Cap",
@@ -781,7 +821,11 @@
                 "conditions": "Do not participate in the Tenno Sho (Spring)",
                 "rewards": "Mood +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Ideal Idol",
+            "condition": "Participate in at least 6 G1 races while being the 1st popular\nWin the Mile Championship\nWin the Yasuda Kinen\nWin the Arima Kinen\nEarn a total of at least 240,000 fans"
+        }
     },
 
     {   "id": "100701 - Gold Ship",
@@ -853,7 +897,11 @@
                 "conditions": "Win Takarazuka Kinen Year 2 and 3",
                 "rewards": "All stats +3, Mood +1, Skill points +45, Yayoi Akikawa bond +4 || All stats +3, Mood +1, Skill points +45, (random) Get Charming status, (random) Obtain Gatekept skill, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Unpredictable",
+            "condition": "Win at least 6 G1 races, including the Satsuki Sho, Kikuka Sho, and Takarazuka Kinen\nEarn a total of at least 480,000 fans"
+        }
     },
 
     {   "id": "100801 - Vodka",
@@ -935,7 +983,11 @@
                 "conditions": "Win the Yasuda Kinen twice",
                 "rewards": "All stats +3, Skill points +45, Nimble Navigator hint +1, Get Practice Perfect status, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Extraordinary Empress",
+            "condition": "Win 7 G1 races, including the Tokyo Yushun (Japanese Derby), Yasuda Kinen, Japan Cup, Tenno Sho (Autumn), and Victoria Mile"
+        }
     },
 
     {   "id": "100901 - Daiwa Scarlet",
@@ -1016,7 +1068,11 @@
                 "conditions": "Win the Tenno Sho (Autumn Year 3)",
                 "rewards": "Steadfast hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Miss Perfect",
+            "condition": "Inherit memories from a parent that won the Satsuki Sho\nFinish 2nd or better in every race you participate in\nWin 10 graded races, including the Oka Sho, Shuka Sho and Queen Elizabeth II Cup"
+        }
     },
 
     {   "id": "101001 - Taiki Shuttle",
@@ -1087,7 +1143,11 @@
             "conditions": "Win the Mile Championship (Year 2), Kinko Sho, Takarazuka Kinen, Mainichi Okan (Year 3), and Tenno Sho (Autumn Year 3).",
             "rewards": "Speed +25, Power +25, Guts +25, All I've Got hint +2, Head-On hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Mightiest Miler",
+            "condition": "Win 5 graded races, including the Unicorn Stakes and Yasuda Kinen, with one of them being in rainy weather\nWin the Mile Championship with a difference of at least 5 lengths"
+        }
     },
 
     {   "id": "101101 - Grass Wonder",
@@ -1159,7 +1219,11 @@
                 "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
                 "rewards": "Speed +15, Power +15, Wit +15, Up-Tempo hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Phoenix",
+            "condition": "Win the Asahi Hai Futurity Stakes with a Mood level of Good or lower\nWin the Arima Kinen (Year 2) with a Mood level of Good or lower\nWin the Takarazuka Kinen (Year 3) with a Mood level of Good or lower\nWin the Arima Kinen (Year 3) with a Mood level of Good or lower"
+        }
     },
     {   "id": "101102 - Grass Wonder Fantasy",
         "character_name": "Grass Wonder",
@@ -1222,7 +1286,11 @@
                 "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
                 "rewards": "Speed +15, Power +15, Wit +15, Up-Tempo hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Phoenix",
+            "condition": "Win the Asahi Hai Futurity Stakes with a Mood level of Good or lower\nWin the Arima Kinen (Year 2) with a Mood level of Good or lower\nWin the Takarazuka Kinen (Year 3) with a Mood level of Good or lower\nWin the Arima Kinen (Year 3) with a Mood level of Good or lower"
+        }
     },
 
     {   "id": "101201 - Hishi Amazon",
@@ -1294,7 +1362,11 @@
                 "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
                 "rewards": "Mood +1, All stats +5, Skill points +60, Steadfast hint +2, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Queen of the Amazons",
+            "condition": "Without losing any races inbetween, win at least 6 graded races in which you are the most popular as a End Closer, and overtake 5 others on the last straight in at least 2 of them"
+        }
     },
 
     {   "id": "101301 - Mejiro McQueen",
@@ -1361,7 +1433,11 @@
             "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
             "rewards": "Speed +15, Stamina +15, Guts +15, Skill points +15"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Best Actress",
+            "condition": "Win the Kikuka Sho\nWin the Tenno Sho (Spring)\nReach 1200 or more Stamina\nEarn a total of at least 320,000 fans"
+        }
     },
     {   "id": "101302 - Mejiro McQueen Anime",
         "character_name": "Mejiro McQueen",
@@ -1422,7 +1498,11 @@
             "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
             "rewards": "Speed +15, Stamina +15, Guts +15, Skill points +15"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Best Actress",
+            "condition": "Win the Kikuka Sho\nWin the Tenno Sho (Spring)\nReach 1200 or more Stamina\nEarn a total of at least 320,000 fans"
+        }
     },
 
     {   "id": "101401 - El Condor Pasa",
