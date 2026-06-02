@@ -10125,7 +10125,27 @@
             "shout of victory"
         ],
         "horse": "Kitasan Black (Original)",
-        "gametora_id": "100681"
+        "gametora_id": "100681",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "require_tags": ["backstretch"],
+                    "phase": "late",
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "corner_numbers": [3],
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Eternal Encompassing Shine",
         "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",

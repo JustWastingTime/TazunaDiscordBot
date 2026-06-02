@@ -260,7 +260,7 @@
                 { "start": 1300, "end": 1600, "label": "Flat", "type": "flat", "color": "#c9ec39" }
             ],
             "layout": [
-                { "start": 0, "end": 550, "label": "Straight", "color": "#b8d4ea" },
+                { "start": 0, "end": 550, "label": "Straight", "color": "#b8d4ea", "tags": ["backstretch"] },
                 { "start": 550, "end": 825, "label": "Corner 3", "color": "#edccae" },
                 { "start": 825, "end": 1075, "label": "Corner 4", "color": "#edccae" },
                 { "start": 1075, "end": 1600, "label": "Straight", "color": "#b8d4ea" }
@@ -306,7 +306,7 @@
                 { "start": 0, "end": 520, "label": "Straight", "color": "#b8d4ea" },
                 { "start": 520, "end": 710, "label": "Corner 1", "color": "#edccae" },
                 { "start": 710, "end": 900, "label": "Corner 2", "color": "#edccae" },
-                { "start": 900, "end": 1250, "label": "Straight", "color": "#b8d4ea" },
+                { "start": 900, "end": 1250, "label": "Straight", "color": "#b8d4ea", "tags": ["backstretch"] },
                 { "start": 1250, "end": 1550, "label": "Corner 3", "color": "#edccae" },
                 { "start": 1550, "end": 1850, "label": "Corner 4", "color": "#edccae" },
                 { "start": 1850, "end": 2200, "label": "Straight", "color": "#b8d4ea" }

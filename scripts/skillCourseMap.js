@@ -551,6 +551,9 @@ function markersFromActivationMap(skill, mapData) {
       const cornerNumbers = Array.isArray(trigger.corner_numbers) ? trigger.corner_numbers.map((v) => Number(v)) : [];
       const selectMode = lower(trigger.select ?? "");
       const excludeSelectMode = lower(trigger.exclude_select ?? "");
+      const requireTags = Array.isArray(trigger.require_tags)
+        ? trigger.require_tags.map((v) => lower(v))
+        : (trigger.require_tag ? [lower(trigger.require_tag)] : []);
       const localStartRatio = Number(trigger.clip_within_segment_start_ratio ?? trigger.local_start_ratio);
       const localEndRatio = Number(trigger.clip_within_segment_end_ratio ?? trigger.local_end_ratio);
       const applyLocalClip = Number.isFinite(localStartRatio) || Number.isFinite(localEndRatio);
@@ -564,6 +567,12 @@ function markersFromActivationMap(skill, mapData) {
         if (!ok && labels.length && labels.some((v) => label.includes(v))) ok = true;
         if (!ok && cornerNumbers.length && cornerNumbers.some((n) => label.includes(`corner ${n}`))) ok = true;
         if (!ok && !match && !labels.length && !cornerNumbers.length) ok = true;
+
+        // Tag gate: segment must carry every required tag (e.g. "backstretch").
+        if (ok && requireTags.length) {
+          const segTags = Array.isArray(segment.tags) ? segment.tags.map((v) => lower(v)) : [];
+          if (!requireTags.every((t) => segTags.includes(t))) ok = false;
+        }
 
         if (ok) matchingSegments.push(segment);
       }
@@ -585,7 +594,7 @@ function markersFromActivationMap(skill, mapData) {
       // select), honor that selection precisely. The forceFullRange shortcut is
       // only for vague triggers that should fill the inferred phase window.
       const hasExplicitSelection = Boolean(
-        match || labels.length || cornerNumbers.length || selectMode || excludeSelectMode
+        match || labels.length || cornerNumbers.length || selectMode || excludeSelectMode || requireTags.length
       );
 
       if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip && !hasExplicitSelection) {
