@@ -6160,7 +6160,23 @@
             "影打"
         ],
         "upgrade": "Headliner",
-        "gametora_id": "202012"
+        "gametora_id": "202012",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Early Start",
         "description": "Very slightly increase velocity for a medium duration when positioned toward the back mid-race.",
@@ -6184,7 +6200,18 @@
             "早仕掛け"
         ],
         "upgrade": "Daring Strike",
-        "gametora_id": "202022"
+        "gametora_id": "202022",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Risky Business",
         "description": "Moderately increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
@@ -6206,7 +6233,18 @@
             "あやしげな作戦"
         ],
         "upgrade": "Nothing Ventured",
-        "gametora_id": "202032"
+        "gametora_id": "202032",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Light as a Feather",
         "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
@@ -6230,7 +6268,23 @@
             "軽い足取り"
         ],
         "upgrade": "In High Spirits",
-        "gametora_id": "202042"
+        "gametora_id": "202042",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Fighting Spirit",
         "description": "When engaged in a challenge midpack mid-race, very slightly recover endurance and slightly increase velocity.",
@@ -6254,7 +6308,23 @@
             "闘争心"
         ],
         "upgrade": "Burning Soul",
-        "gametora_id": "202092"
+        "gametora_id": "202092",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Eager",
         "description": "When positioned toward the back mid-race, slightly increase velocity.",
@@ -6278,7 +6348,23 @@
             "前のめり"
         ],
         "upgrade": "Elated",
-        "gametora_id": "202102"
+        "gametora_id": "202102",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Pumped",
         "description": "When positioned toward the back on the final corner, slightly increase velocity.",
@@ -6310,7 +6396,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -6342,7 +6429,18 @@
             "恐れぬ心"
         ],
         "upgrade": "Dauntless",
-        "gametora_id": "202122"
+        "gametora_id": "202122",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "With All My Soul",
         "description": "When positioned toward the front mid-race, slightly increase velocity and minimally decrease the velocity of runners behind the skill user.",
@@ -6366,7 +6464,23 @@
             "気迫を込めて"
         ],
         "upgrade": "Wild Wind",
-        "gametora_id": "202132"
+        "gametora_id": "202132",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Full Throttle",
         "description": "Greatly consume endurance mid-race and moderately increase velocity.",
@@ -6388,7 +6502,18 @@
             "フルスロットル"
         ],
         "upgrade": "Keep Going!",
-        "gametora_id": "202152"
+        "gametora_id": "202152",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Downhill Speedster",
         "description": "Slightly increase velocity on downhills.",
@@ -6410,7 +6535,18 @@
             "下り坂巧者"
         ],
         "upgrade": "Supreme Downhiller",
-        "gametora_id": "202172"
+        "gametora_id": "202172",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "downhill",
+                "trigger_behavior": "random"
+              }
+            ]
+        }
     },
     {   "skill_name": "Professor of Curvature",
         "description": "Increase velocity on a corner with skilled turning.",
@@ -7309,7 +7445,7 @@
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "conditions": [
-                    "Last straight"
+                    "Final straight"
                 ]
             }
         ],
@@ -7321,7 +7457,19 @@
             "dream run",
             "夢の走り"
         ],
-        "gametora_id": "300061"
+        "gametora_id": "300061",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Headliner",
         "description": "Increase velocity when positioned toward the front upon approaching late-race.",
@@ -7345,7 +7493,23 @@
             "真打"
         ],
         "downgrade": "Feature Act",
-        "gametora_id": "202011"
+        "gametora_id": "202011",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
     },
     {   "skill_name": "Daring Strike",
         "description": "Moderately increase velocity for a medium duration when positioned toward the back mid-race.",
@@ -7369,7 +7533,18 @@
             "強攻策"
         ],
         "downgrade": "Early Start",
-        "gametora_id": "202021"
+        "gametora_id": "202021",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Nothing Ventured",
         "description": "Greatly increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
@@ -7391,7 +7566,18 @@
             "博打うち"
         ],
         "downgrade": "Risky Business",
-        "gametora_id": "202031"
+        "gametora_id": "202031",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Flash Forward",
         "description": "Increase velocity on a straight.",
@@ -7453,7 +7639,23 @@
             "意気衝天"
         ],
         "downgrade": "Light as a Feather",
-        "gametora_id": "202041"
+        "gametora_id": "202041",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint"
+                ]
+            }
+        }
     },
     {   "skill_name": "Blast Forward",
         "description": "Increase velocity on a straight.",
@@ -7565,7 +7767,23 @@
             "気炎万丈"
         ],
         "downgrade": "Fighting Spirit",
-        "gametora_id": "202091"
+        "gametora_id": "202091",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Elated",
         "description": "When positioned toward the back mid-race, increase velocity.",
@@ -7589,7 +7807,23 @@
             "高揚感"
         ],
         "downgrade": "Eager",
-        "gametora_id": "202101"
+        "gametora_id": "202101",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "Full of Vigor",
         "description": "When positioned toward the back on the final corner,  increase velocity.",
@@ -7621,7 +7855,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -7653,7 +7888,18 @@
             "大胆不敵"
         ],
         "downgrade": "Fearless",
-        "gametora_id": "202121"
+        "gametora_id": "202121",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "second_half",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Wild Wind",
         "description": "When positioned toward the front mid-race, increase velocity and slightly decrease the velocity of runners behind the skill user.",
@@ -7677,7 +7923,23 @@
             "荒ぶる旋風"
         ],
         "downgrade": "With All My Soul",
-        "gametora_id": "202131"
+        "gametora_id": "202131",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "medium"
+                ]
+            }
+        }
     },
     {   "skill_name": "See Ya Later!",
         "description": "Increase velocity when followed by another runner directly behind for a long time.",
@@ -7732,7 +7994,18 @@
             "勇往邁進"
         ],
         "downgrade": "Full Throttle",
-        "gametora_id": "202151"
+        "gametora_id": "202151",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
     },
     {   "skill_name": "Moonlit Flash",
         "description": "Increase velocity on straights.",
@@ -7761,7 +8034,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "trigger_behavior": "random"
                 }
             ]
         }
@@ -7794,7 +8068,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -7823,7 +8098,18 @@
             "supreme downhiller",
             "至高のダウンヒラー"
         ],
-        "downgrade": "Downhill Speedster"
+        "downgrade": "Downhill Speedster",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "target": "elevation",
+                "match": "downhill",
+                "trigger_behavior": "random"
+              }
+            ]
+        }
     },
     {   "skill_name": "In the Right Place! (TO BE RENAMED)",
         "description": "Decrease wind resistance when following directly behind another runner",
@@ -7845,7 +8131,16 @@
             "いいとこ入った！"
         ],
         "downgrade": "Slipstream",
-        "gametora_id": "201652"
+        "gametora_id": "201652",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
 
 
