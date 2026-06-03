@@ -7847,6 +7847,9 @@
         "downgrade": "Slipstream",
         "gametora_id": "201652"
     },
+
+
+
     {   "skill_name": "Certain Victory",
         "description": "Greatly increase velocity with an indomitable fighting spirit on the final straight after being on the heels of another runner toward the front on the final corner or later.",
         "effect": [
@@ -7883,7 +7886,15 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -7921,13 +7932,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 45
+                    "phase":"final_corner_and_beyond"
                 }
             ]
         }
@@ -7953,7 +7958,18 @@
             "波乱注意砲！"
         ],
         "upgrade": "Anchors Aweigh!",
-        "gametora_id": "10071"
+        "gametora_id": "10071",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.50,
+                    "clip_end_ratio": 0.60,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Xceleration",
         "description": "Become stronger at challenging rivals and moderately increase velocity when positioned toward the front with 200m or less remaining.",
@@ -7982,11 +7998,6 @@
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 200
-                },
                 {
                     "type": "line",
                     "distance_mode": "remaining",
@@ -8025,7 +8036,17 @@
             "レッドエース"
         ],
         "upgrade": "Resplendent Red Ace",
-        "gametora_id": "10091"
+        "gametora_id": "10091",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Focused Mind",
         "description": "Moderately increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
@@ -8050,7 +8071,19 @@
             "精神一到"
         ],
         "upgrade": "Where There's a Will, There's a Way",
-        "gametora_id": "10111"
+        "gametora_id": "10111",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Corazón ☆ Ardiente",
         "description": "Slightly hang on to the advantage when positioned toward the front with energy to spare on the final straight.",
@@ -8083,7 +8116,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "straight",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8155,8 +8189,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8194,8 +8228,15 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase":"final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8223,7 +8264,17 @@
             "学級委員長+速さ=バクシン"
         ],
         "upgrade": "Genius x Bakushin = Victory",
-        "gametora_id": "10411"
+        "gametora_id": "10411",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Luck Be with Me!",
         "description": "Moderately clear a path forward with the power of divination when the way ahead is jammed late-race.",
@@ -8248,7 +8299,18 @@
             "来てください来てください"
         ],
         "upgrade": "I See Victory in My Future!",
-        "gametora_id": "10561"
+        "gametora_id": "10561",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase":"late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "I Can Win Sometimes, Right?",
         "description": "Moderately increase velocity with an arousal of fighting spirit when positioned 3rd and about to lose late-race.",
@@ -8273,7 +8335,18 @@
             "アタシもたまにはね"
         ],
         "upgrade": "Just a Little Farther!",
-        "gametora_id": "10601"
+        "gametora_id": "10601",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase":"late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Call me King",
         "description": "Increase velocity in a true display of skill with 200m remaining after racing calmly.",
@@ -8300,11 +8373,6 @@
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 200
-                },
                 {
                     "type": "line",
                     "distance_mode": "remaining",
@@ -8336,7 +8404,18 @@
             "シューティングスター"
         ],
         "horse": "Special Week (Original)",
-        "gametora_id": "100011"
+        "gametora_id": "100011",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase":"late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "The View from the Lead is Mine!",
         "description": "Increase velocity by drawing on all remaining strength when in the lead by a fair margin in the second half of the race.",
@@ -8362,7 +8441,17 @@
             "先頭の景色は譲らない"
         ],
         "horse": "Silence Suzuka (Original)",
-        "gametora_id": "100021"
+        "gametora_id": "100021",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Sky-High Teio Step",
         "description": "Greatly increase velocity with flashy footwork when closing the gap to runners ahead on the final straight.",
@@ -8390,7 +8479,19 @@
             "究極テイオーステップ"
         ],
         "horse": "Tokai Teio (Original)",
-        "gametora_id": "100031"
+        "gametora_id": "100031",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Triumphant Pulse",
         "description": "Greatly increase ability to break out of the pack by opening up a path when positioned toward the front with 200m remaining.",
@@ -8423,11 +8524,6 @@
                     "type": "line",
                     "distance_mode": "remaining",
                     "value": 200
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 200
                 }
             ]
         }
@@ -8456,7 +8552,18 @@
         ],
         "horse": "Gold Ship (Original)",
         "downgrade": "Warning Shot!",
-        "gametora_id": "100071"
+        "gametora_id": "100071",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.50,
+                    "clip_end_ratio": 0.60,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Cut and Drive!",
         "description": "Become stronger at challenging rivals and increase velocity when positioned toward the front with 200m or less remaining.",
@@ -8487,11 +8594,6 @@
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 200
-                },
                 {
                     "type": "line",
                     "distance_mode": "remaining",
@@ -8534,7 +8636,17 @@
         ],
         "horse": "Daiwa Scarlet (Original)",
         "downgrade": "Red Ace",
-        "gametora_id": "100091"
+        "gametora_id": "100091",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Where There's a Will, There's a Way",
         "description": "Increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
@@ -8560,7 +8672,19 @@
         ],
         "horse": "Grass Wonder (Original)",
         "downgrade": "Focused Mind",
-        "gametora_id": "100111"
+        "gametora_id": "100111",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "The Duty of Dignity Calls",
         "description": "Increase velocity with the determination to not be overtaken when positioned toward the front on the final corner.",
@@ -8631,7 +8755,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "straight",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8666,8 +8791,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase":"final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8696,7 +8821,19 @@
             "汝皇帝の神威を見よ"
         ],
         "horse": "Symboli Rudolf (Original)",
-        "gametora_id": "100171"
+        "gametora_id": "100171",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Blazing Pride",
         "description": "Increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
@@ -8766,8 +8903,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8804,8 +8941,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8834,7 +8971,19 @@
             "mihono bourbon original og"
         ],
         "horse": "Mihono Bourbon (Original)",
-        "gametora_id": "100261"
+        "gametora_id": "100261",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Blue Rose Closer",
         "description": "Increase velocity with strong willpower on the final straight after passing another runner in the front part of the pack on the final corner or later.",
@@ -8869,8 +9018,15 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8910,8 +9066,15 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase":"final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8941,7 +9104,17 @@
         ],
         "horse": "Sakura Bakushin O (Original)",
         "downgrade": "Class Rep + Speed = Bakushin",
-        "gametora_id": "100411"
+        "gametora_id": "100411",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "I See Victory in My Future!",
         "description": "Clear a path forward with the power of divination when the way ahead is jammed late-race.",
@@ -8968,7 +9141,18 @@
         ],
         "horse": "Matikanefukukitaru (Original)",
         "downgrade": "Luck Be with Me!",
-        "gametora_id": "100561"
+        "gametora_id": "100561",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase":"late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Just a Little Farther!",
         "description": "Increase velocity with flaring fighting spirit when positioned 3rd and about to lose late-race.",
@@ -8995,7 +9179,18 @@
         ],
         "horse": "Nice Nature (Original)",
         "downgrade": "I Can Win Sometimes, Right?",
-        "gametora_id": "100601"
+        "gametora_id": "100601",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase":"late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Prideful King",
         "description": "Greatly increase velocity in a true display of skill with 200m remaining after racing calmly.",
@@ -9029,11 +9224,6 @@
                     "type": "line",
                     "distance_mode": "remaining",
                     "value": 200
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 200
                 }
             ]
         }
@@ -9060,7 +9250,18 @@
             "curren chan original og"
         ],
         "horse": "Curren Chan (Original)",
-        "gametora_id": "100381"
+        "gametora_id": "100381",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.50,
+                    "clip_end_ratio": 0.65,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Nemesis",
         "description": "Increase velocity with smoldering ambition when moving up from midpack on the final corner or later.",
@@ -9091,8 +9292,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9122,7 +9323,19 @@
             "キラキラSTARDOM"
         ],
         "horse": "Smart Falcon (Original)",
-        "gametora_id": "100461"
+        "gametora_id": "100461",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "phase":"mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Shadow Break",
         "description": "Increase velocity with beastly strength when passing another runner on the outside on the final corner or later. If the skill user engaged in a challenge mid-race, greatly increase velocity instead.",
@@ -9169,7 +9382,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9198,7 +9412,18 @@
             "薫風永遠なる瞬間を"
         ],
         "horse": "Air Groove (Wedding)",
-        "gametora_id": "110181"
+        "gametora_id": "110181",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase":"mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Flowery☆Maneuver",
         "description": "Increase velocity when passing another runner toward the front on the final corner. If passing toward the back, increase acceleration instead.",
@@ -9240,7 +9465,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9282,6 +9508,13 @@
                     "type": "box",
                     "target": "layout",
                     "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
                     "trigger_behavior": "asap"
                 }
             ]
@@ -9348,7 +9581,17 @@
             "gold city original og"
         ],
         "horse": "Gold City (Original)",
-        "gametora_id": "100401"
+        "gametora_id": "100401",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "A Kiss for Courage",
         "description": "Increase velocity enthusiastically when positioned toward the front in the second half of the race after recovering endurance with a skill.",
@@ -9488,7 +9731,17 @@
             "禾スナハチ登ル"
         ],
         "horse": "Matikanefukukitaru (Full Armor)",
-        "gametora_id": "110561"
+        "gametora_id": "110561",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "YUMMY☆SPEED!",
         "description": "Kick forward hard with renewed vigor when starting to get tired while well-positioned halfway through the race.",
@@ -9518,9 +9771,10 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 70
+                    "type": "box",
+                    "clip_start_ratio": 0.45,
+                    "clip_end_ratio": 0.60,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9549,7 +9803,17 @@
             "尊み☆ﾗｽﾄｽﾊﾟﾄ"
         ],
         "horse": "Agnes Digital (Original)",
-        "gametora_id": "100191"
+        "gametora_id": "100191",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Give Mummy a Hug ♡",
         "description": "Increase ability to break out of the pack when well-positioned and close to the runner ahead on the final straight.",
