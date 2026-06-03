@@ -6274,7 +6274,8 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "mid",
+                    "target": "zones",
+                    "match": "mid",
                     "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
                   }
@@ -7645,10 +7646,11 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "mid",
+                    "target": "zones",
+                    "match": "mid",
                     "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
-                  }
+                }
             ],
             "requirements": {
                 "distance_types": [
