@@ -9760,7 +9760,18 @@
             "xbiwa"
         ],
         "horse": "Biwa Hayahide (Christmas)",
-        "gametora_id": "110231"
+        "gametora_id": "110231",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Fairy Tale",
         "description": "Increase velocity with the excitement of running when engaged in a challenge while well-positioned in the second half of the race.",
