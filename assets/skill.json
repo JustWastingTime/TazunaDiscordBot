@@ -10836,46 +10836,6 @@
             ]
         }
     },
-    {   "skill_name": "Wherever This Wonder Leads",
-        "description": "If positioned midpack on a downhill just before late-race and there's a large distance left to the finish, enjoy the race to the fullest, increasing velocity.",
-        "effect": [
-            {
-                "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
-                "conditions": [
-                    "4th to 7th (CM), 5th to 10th (TT)",
-                    "Downhill",
-                    "Mid race",
-                    "After 60% of the race",
-                    "≥500m of the race remaining"
-                ]
-            }
-        ],
-        "preconditions": [],
-        "review": "",
-        "rarity": "unique",
-        "category": "rainbowvelocity",
-        "aliases": [
-            "wherever this wonder leads",
-            "mejiro dober camping"
-        ],
-        "horse": "Mejiro Dober (Camping)",
-        "gametora_id": "110591",
-        "activation_map": {
-            "show_chart": true,
-            "triggers": [
-                {
-                    "type": "box",
-                    "target": "elevation",
-                    "match": "downhill",
-                    "phase": "mid",
-                    "clip_start_ratio": 0.6,
-                    "remaining_gte": 500,
-                    "trigger_behavior": "asap"
-                }
-            ]
-        }
-    },
     {   "skill_name": "Eternal Encompassing Shine",
         "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",
         "effect": [
@@ -11346,7 +11306,7 @@
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
-                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.6s.",
                 "conditions": [
                     "Precondition is true",
                     "≤200m of the race remaining"
@@ -11386,7 +11346,133 @@
             ]
         }
     },
-
+    {   "skill_name": "Joyful Voyage",
+        "description": "If positioned toward the front with 200m remaining, increase velocity. Then, if also positioned near the leading Umamusume, gather strength to move slightly forward.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and current speed by 0.15 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and current speed by 0.035 for 3.0s.",
+                "conditions": [
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "≤5m behind 1st place", 
+                    "At the last 400m of the race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "At the last 400m of the race"
+                ]
+            }
+        ],
+        "preconditions": [
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "joyful voyage",
+            "taiki shuttle camping"
+        ],
+        "horse": "Taiki Shuttle (Camping)",
+        "gametora_id": "110101",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "line",
+                    "distance_mode": "remaining",
+                    "value": 200
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Wherever This Wonder Leads",
+        "description": "If positioned midpack on a downhill just before late-race and there's a large distance left to the finish, enjoy the race to the fullest, increasing velocity.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "4th to 7th (CM), 5th to 10th (TT)",
+                    "Downhill",
+                    "Mid race",
+                    "After 60% of the race",
+                    "≥500m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "wherever this wonder leads",
+            "mejiro dober camping"
+        ],
+        "horse": "Mejiro Dober (Camping)",
+        "gametora_id": "110591",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.6,
+                    "remaining_gte": 500,
+                    "trigger_behavior": "asap"
+                  }
+            ]
+        }
+    },
+    {   "skill_name": "trigger:BEAT",
+        "description": "When near the inner rail midpack on the final corner or later, calculate the path to victory, increasing velocity and ability to navigate smoothly on the final straight.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and lane movement speed by 0.015 for 3.0s.",
+                "conditions": [
+                    "Final straight"
+                ]
+            }
+        ],
+        "preconditions": [
+            "4th to 7th (CM), 5th to 9th (TT)",
+            "Right beside the inner fence",
+            "Final corner and beyond"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "trigger beat",
+            "air shakur original"
+        ],
+        "horse": "Air Shakur (Original)",
+        "gametora_id": "100361",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
 
     {   "skill_name": "Corner Adept x",
         "description": "Moderately decrease velocity on a corner with clumsy turning.",
