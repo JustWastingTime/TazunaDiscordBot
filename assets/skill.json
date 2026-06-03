@@ -10836,6 +10836,46 @@
             ]
         }
     },
+    {   "skill_name": "Wherever This Wonder Leads",
+        "description": "If positioned midpack on a downhill just before late-race and there's a large distance left to the finish, enjoy the race to the fullest, increasing velocity.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "4th to 7th (CM), 5th to 10th (TT)",
+                    "Downhill",
+                    "Mid race",
+                    "After 60% of the race",
+                    "≥500m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "wherever this wonder leads",
+            "mejiro dober camping"
+        ],
+        "horse": "Mejiro Dober (Camping)",
+        "gametora_id": "110591",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.6,
+                    "remaining_gte": 500,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
     {   "skill_name": "Eternal Encompassing Shine",
         "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",
         "effect": [
@@ -11280,7 +11320,7 @@
             "inari one original"
         ],
         "horse": "Inari One (Original)",
-        "gametora_id": "110341",
+        "gametora_id": "100341",
         "activation_map": {
             "show_chart": true,
             "triggers": [
@@ -11296,6 +11336,51 @@
                     "target": "layout",
                     "match": "straight",
                     "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Victory belongs to me—Strelitzia! ☆",
+        "description": "If positioned toward the back and racing calmly until the start of the final corner, when there are 300m remaining, cast a magic spell to increase velocity continuously.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 6.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Precondition is true",
+                    "≤200m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Has been 5th to 9th (CM), 6th to 12th (TT) the entire race",
+            "No 'Rushed'",
+            "Final corner and beyond"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "victory belongs to me strelitzia",
+            "sweep tosho original"
+        ],
+        "horse": "Sweep Tosho (Original)",
+        "gametora_id": "100441",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "distance_mode": "remaining",
+                    "remaining_start": 200,
+                    "remaining_end": 0,
                     "trigger_behavior": "asap"
                 }
             ]

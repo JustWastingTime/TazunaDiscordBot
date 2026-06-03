@@ -490,6 +490,8 @@ function markersFromActivationMap(skill, mapData) {
       const ratioEnd = Number(trigger.clip_end_ratio ?? trigger.end_ratio);
       const absoluteStart = Number(trigger.clip_start ?? trigger.start_m ?? trigger.range_start);
       const absoluteEnd = Number(trigger.clip_end ?? trigger.end_m ?? trigger.range_end);
+      const remainingGte = Number(trigger.remaining_gte ?? trigger.min_remaining ?? trigger.remaining_min);
+      const remainingLte = Number(trigger.remaining_lte ?? trigger.max_remaining ?? trigger.remaining_max);
 
       let clipStart = 0;
       let clipEnd = mapData.length;
@@ -497,6 +499,15 @@ function markersFromActivationMap(skill, mapData) {
       if (Number.isFinite(ratioEnd)) clipEnd = Math.min(1, ratioEnd) * mapData.length;
       if (Number.isFinite(absoluteStart)) clipStart = absoluteStart;
       if (Number.isFinite(absoluteEnd)) clipEnd = absoluteEnd;
+      // Remaining-distance constraints are converted to absolute distance windows:
+      // remaining >= X  => distance <= length - X
+      // remaining <= Y  => distance >= length - Y
+      if (Number.isFinite(remainingGte)) {
+        clipEnd = Math.min(clipEnd, mapData.length - remainingGte);
+      }
+      if (Number.isFinite(remainingLte)) {
+        clipStart = Math.max(clipStart, mapData.length - remainingLte);
+      }
       const explicitPhaseWindow = phaseWindowFromName(mapData, trigger.phase);
       if (explicitPhaseWindow) {
         clipStart = Math.max(clipStart, explicitPhaseWindow.start);
