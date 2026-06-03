@@ -9785,7 +9785,17 @@
             "fm original og"
         ],
         "horse": "Fine Motion (Original)",
-        "gametora_id": "100221"
+        "gametora_id": "100221",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "White Lightning Comin' Through!",
         "description": "Bolt down the track like lightning when well-positioned or aiming for the front from midpack on a straight in the second half of the race.",
@@ -9821,7 +9831,19 @@
             "imma show you white lightning"
         ],
         "horse": "Tamamo Cross (Original)",
-        "gametora_id": "100211"
+        "gametora_id": "100211",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Barcarole of Blessings",
         "description": "Increase velocity for a moderate duration when in the front part of the pack with 400m remaining. If at least 7 skills have been activated, greatly increase velocity for a moderate duration instead.",
@@ -9862,16 +9884,6 @@
         "activation_map": {
             "show_chart": true,
             "triggers": [
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 400
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 400
-                },
                 {
                     "type": "line",
                     "distance_mode": "remaining",
@@ -9949,14 +9961,11 @@
             "show_chart": true,
             "triggers": [
                 {
-                    "type": "line",
+                    "type": "box",
                     "distance_mode": "remaining",
-                    "value": 300
-                },
-                {
-                    "type": "line",
-                    "distance_mode": "remaining",
-                    "value": 300
+                    "remaining_start": 300,
+                    "remaining_end": 0,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9984,7 +9993,19 @@
             "a lifetimes dream a moments flight"
         ],
         "horse": "Mejiro Ardan (Original)",
-        "gametora_id": "100711"
+        "gametora_id": "100711",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Operation Cacao",
         "description": "Take a slight breather and increase velocity when in the front part of the pack and detecting another runner coming from behind on a corner mid-race.",
@@ -10017,7 +10038,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10050,8 +10073,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -10090,7 +10114,19 @@
             "meteor of dioscuri"
         ],
         "horse": "Admire Vega (Original)",
-        "gametora_id": "100331"
+        "gametora_id": "100331",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Victory Cheer!",
         "description": "Moderately increase velocity when positioned toward the front on the third corner in the second half of the race. Or, kick forward hard when toward the front on the backstretch late-race.",
@@ -10180,7 +10216,18 @@
             "brilliance illuminating the darkness"
         ],
         "horse": "Satono Diamond (Original)",
-        "gametora_id": "100671"
+        "gametora_id": "100671",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "line",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last"
+                }
+            ]
+        }
     },
     {   "skill_name": "Lovely Spring Breeze",
         "description": "From the midpack in the second half of the race, slightly increase velocity steadily for a duration based on remaining endurance.",
@@ -10601,6 +10648,8 @@
             ]
         }
     },
+
+
     {   "skill_name": "Corner Adept x",
         "description": "Moderately decrease velocity on a corner with clumsy turning.",
         "effect": [
