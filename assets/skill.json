@@ -6274,10 +6274,10 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "phase": "second_half",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
-                }
+                  }
             ],
             "requirements": {
                 "distance_types": [
@@ -7645,10 +7645,10 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "phase": "second_half",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
-                }
+                  }
             ],
             "requirements": {
                 "distance_types": [

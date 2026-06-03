@@ -337,7 +337,7 @@
             "similar": "Sprinters Stakes"
         },
         "map": {
-            "name": "Tokyo 1600m (counterclockwise)",
+            "name": "Nakayama 1200m (clockwise)",
             "elevation": [
                 { "start": 0, "end": 200, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
                 { "start": 200, "end": 1025, "label": "Flat", "type": "flat", "color": "#c9ec39" },
