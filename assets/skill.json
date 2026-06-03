@@ -9281,8 +9281,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9312,7 +9312,19 @@
             "煌星のヴォードヴィル"
         ],
         "horse": "Fuji Kiseki (Original)",
-        "gametora_id": "100051"
+        "gametora_id": "100051",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "KEEP IT REAL.",
         "description": "Moderately increase acceleration steadily with a wink when starting to make a move from midpack in the second half of the race.",
@@ -9407,7 +9419,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner"
+                    "match": "corner",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9435,7 +9449,19 @@
             "eishin flash original og"
         ],
         "horse": "Eishin Flash (Original)",
-        "gametora_id": "100371"
+        "gametora_id": "100371",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Bountiful Harvest",
         "description": "Increase velocity with a surge of great fortune when pressured by another runner toward the back in the second half of the race.",
@@ -9550,7 +9576,19 @@
             "ぐるぐるマミートリック"
         ],
         "horse": "Super Creek (Halloween)",
-        "gametora_id": "110451"
+        "gametora_id": "110451",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "A Princess Must Seize Victory!",
         "description": "Increase velocity with pretty princess power when engaged in a challenge on the final straight.",
@@ -9575,7 +9613,19 @@
             "姫たるもの勝利をこの手に"
         ],
         "horse": "Kawakami Princess (Original)",
-        "gametora_id": "100391"
+        "gametora_id": "100391",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Chasing After You",
         "description": "Chase after an unseen friend when in midpack in the second half of the race, moderately increasing velocity steadily and very slightly intimidating runners ahead..",
@@ -9600,7 +9650,17 @@
             "アナタヲオイカケテ"
         ],
         "horse": "Manhattan Cafe (Original)",
-        "gametora_id": "100251"
+        "gametora_id": "100251",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Arrows Whistle, Shadows Disperse",
         "description": "Increase velocity with a blazing spirit when pressured by another runner in the front part of the pack on the final corner or later.",
@@ -9633,8 +9693,8 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "corner",
-                    "select": "last"
+                    "phase": "final_corner_and_beyond",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9670,7 +9730,8 @@
                     "type": "box",
                     "target": "layout",
                     "match": "corner",
-                    "select": "last"
+                    "select": "last",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -9708,7 +9769,19 @@
             "yeah vivid time"
         ],
         "horse": "Tosen Jordan (Original)",
-        "gametora_id": "100481"
+        "gametora_id": "100481",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Festive Miracle",
         "description": "Control breathing and kick forward hard toward victory in the second half of the race after recovering endurance with skills at least 3 times.",
@@ -9734,7 +9807,17 @@
             "christmas eve miracle run"
         ],
         "horse": "Oguri Cap (Christmas)",
-        "gametora_id": "110061"
+        "gametora_id": "110061",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Presents from X",
         "description": "Increase velocity by deriving a path to victory mid-race after staying well-positioned from the start of the race up until the second half.",
