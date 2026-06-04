@@ -1149,6 +1149,73 @@
             "condition": "Win 5 graded races, including the Unicorn Stakes and Yasuda Kinen, with one of them being in rainy weather\nWin the Mile Championship with a difference of at least 5 lengths"
         }
     },
+    {   "id": "101002 - Taiki Shuttle Camping",
+        "character_name": "Taiki Shuttle",
+        "type": "Camping",
+        "costume": "Bubblegum☆Memories",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "30%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "B"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "A",
+            "Medium": "E",
+            "Long": "G"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "E",
+            "End": "G"
+            }
+        ],
+        "unique": "Joyful Voyage!",
+        "unique_explanation": "",
+        "skills": [
+            "Wet Conditions",
+            "Productive Plan",
+            "Head-On"
+        ],
+        "potential": [
+            "Mile Corners",
+            "Mile Maven",
+            "Pace Chaser Corners",
+            "Neck and Neck"
+        ],
+        "event_skills": [
+            "Prepared to Pass",
+            "Light as a Feather",
+            "Shifting Gears",
+            "All I've Got",
+            "Head-On"
+        ],
+        "aliases": ["taiki shuttle camping", "bubblegum memories"],
+        "url": "https://gametora.com/umamusume/characters/101002-taiki-shuttle",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1010_101002.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Mile Championship (Year 2), Kinko Sho, Takarazuka Kinen, Mainichi Okan (Year 3), and Tenno Sho (Autumn Year 3).",
+            "rewards": "Speed +25, Power +25, Guts +25, All I've Got hint +2, Head-On hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Mightiest Miler",
+            "condition": "Win 5 graded races, including the Unicorn Stakes and Yasuda Kinen, with one of them being in rainy weather\nWin the Mile Championship with a difference of at least 5 lengths"
+        }
+    },
 
     {   "id": "101101 - Grass Wonder",
         "character_name": "Grass Wonder",
@@ -5787,8 +5854,8 @@
     },
     {   "id": "105901 - Mejiro Dober Camping",
         "character_name": "Mejiro Dober",
-        "type": "Sapphire Sojourn",
-        "costume": "Off the Line",
+        "type": "Original",
+        "costume": "Sapphire Sojourn",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
