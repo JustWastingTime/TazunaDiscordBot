@@ -1572,7 +1572,11 @@
             "conditions": "Win the NHK Mile Cup, Mile Championship (Year 2), Yasuda Kinen (Year 3)",
             "rewards": "Speed +30, Wit +30, Skill points +30"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Phantom Bird",
+            "condition": "Finish 2nd or better in every race\nWin the Japan Cup (Year 2) as a Pace Chaser\nEarn a total of at least 320,000 fans\nComplete the Career"
+        }
     },
     {   "id": "101402 - El Condor Pasa Fantasy",
         "character_name": "El Condor Pasa",
@@ -1634,7 +1638,11 @@
             "conditions": "Win the NHK Mile Cup, Mile Championship (Year 2), Yasuda Kinen (Year 3)",
             "rewards": "Speed +30, Wit +30, Skill points +30"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Phantom Bird",
+            "condition": "Finish 2nd or better in every race\nWin the Japan Cup (Year 2) as a Pace Chaser\nEarn a total of at least 320,000 fans\nComplete the Career"
+        }
     },
 
     {   "id": "101501 - TM Opera O",
@@ -1703,7 +1711,11 @@
             "conditions": "Win the Autumn Triple Crown in either year (Tenno Sho (Autumn), Japan Cup, Arima Kinen). Doable multiple times.",
             "rewards": "Mood +1, All stats +10, Skill points +20"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Centurial Overlord",
+            "condition": "Without losing any races inbetween, win at least 8 races including the Tenno Sho (Spring), Takarazuka Kinen, Tenno Sho (Autumn), Japan Cup, and Arima Kinen"
+        }
     },
     {   "id": "101502 - TM Opera O New Year",
         "character_name": "T.M. Opera O",
@@ -1764,7 +1776,11 @@
             "conditions": "Win the Autumn Triple Crown in either year (Tenno Sho (Autumn), Japan Cup, Arima Kinen). Doable multiple times.",
             "rewards": "Mood +1, All stats +10, Skill points +20"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Centurial Overlord",
+            "condition": "Without losing any races inbetween, win at least 8 races including the Tenno Sho (Spring), Takarazuka Kinen, Tenno Sho (Autumn), Japan Cup, and Arima Kinen"
+        }
     },
 
     {   "id": "101601 - Narita Brian",
@@ -1844,7 +1860,11 @@
             "conditions": "Participate in the Takarazuka Kinen (Year 2) and lose to Biwa Hayahide",
             "rewards": "Energy -15, 1 random stat +8, Skill points +45"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Monster in the Shadows",
+            "condition": "Win the Satsuki Sho with a difference of at least 3 1/2 lengths\nWin the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths\nWin the Kikuka Sho with a difference of at least 7 lengths\nWin the Arima Kinen twice"
+        }
     },
 
     {   "id": "101701 - Symboli Rudolf",
@@ -1922,7 +1942,11 @@
             "conditions": "Win 8 G1 races.",
             "rewards": "Energy +30, Mood +3, 1 random stat +15"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Emperor",
+            "condition": "Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho while being undefeated\nWin the Japan Cup\nWin the Tenno Sho (Spring)\nWin the Arima Kinen twice"
+        }
     },
     {   "id": "101702 - Symboli Rudolf Festival",
         "character_name": "Symboli Rudolf",
@@ -1991,7 +2015,11 @@
             "conditions": "Win 8 G1 races.",
             "rewards": "Energy +30, Mood +3, 1 random stat +15"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Emperor",
+            "condition": "Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho while being undefeated\nWin the Japan Cup\nWin the Tenno Sho (Spring)\nWin the Arima Kinen twice"
+        }
     },
 
     {   "id": "101801 - Air Groove",
@@ -2061,7 +2089,11 @@
             "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
             "rewards": "All stats +3, Skill points +59, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Empress",
+            "condition": "Inherit memories from a parent that won the Japanese Oaks\nEarn a total of at least 320,000 fans\nWin the Japanese Oaks\nWin the Tenno Sho (Autumn)"
+        }
     },
     {   "id": "101802 - Air Groove Wedding",
         "character_name": "Air Groove",
@@ -2118,11 +2150,15 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1018_101802.png",
         "review": "",
         "secrets": [
-                {
-                "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
-                "rewards": "All stats +3, Skill points +59, Yayoi Akikawa bond +4"
-                }
-            ]
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
+            "rewards": "All stats +3, Skill points +59, Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "Empress",
+            "condition": "Inherit memories from a parent that won the Japanese Oaks\nEarn a total of at least 320,000 fans\nWin the Japanese Oaks\nWin the Tenno Sho (Autumn)"
+        }
     },
 
     {   "id": "101901 - Agnes Digital",
@@ -2198,7 +2234,11 @@
             "conditions": "Participate in the Takarazuka Kinen (Year 2)",
             "rewards": "1 random stat +4/5/10, Skill points +25/40/45"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "All-Around Otaku",
+            "condition": "Win the Japan Dirt Derby\nWin the Mile Championship\nWin the February Stakes\nWin the Yasuda Kinen\nWin the Tenno Sho (Autumn)\nWin the Arima Kinen (Year 3)"
+        }
     },
 
     {   "id": "102001 - Seiun Sky",
@@ -2275,7 +2315,11 @@
                 "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho)",
                 "rewards": "Mood +1, Speed +5, Power +5, Fast-Paced hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Trickster",
+            "condition": "Win the Satsuki Sho as a Front Runner\nWin the Kikuka Sho as a Front Runner while staying in the lead from the 200m mark to the goal line\nWin the Arima Kinen (Year 2) as a Front Runner\nWin the Tenno Sho (Spring) as a Front Runner"
+        }
     },
     {   "id": "102002 - Seiun Sky Ballroom",
         "character_name": "Seiun Sky",
@@ -2342,7 +2386,11 @@
                 "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby) and Kikuka Sho)",
                 "rewards": "Mood +1, Speed +5, Power +5, Fast-Paced hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Trickster",
+            "condition": "Win the Satsuki Sho as a Front Runner\nWin the Kikuka Sho as a Front Runner while staying in the lead from the 200m mark to the goal line\nWin the Arima Kinen (Year 2) as a Front Runner\nWin the Tenno Sho (Spring) as a Front Runner"
+        }
     },
 
     {   "id": "102101 - Tamamo Cross",
@@ -2422,7 +2470,11 @@
                 "conditions": "Win the Nakayama Kimpai",
                 "rewards": "Energy -15, 1 random stat +8, Skill points +35, Fans +500, Nakayama Racecourse hint +1, Up-Tempo hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Now That's White Lightning!",
+            "condition": "Win at least 8 graded races, including the Tenno Sho (Spring), Takarazuka Kinen (Year 3), Tenno Sho (Autumn Year 3)\nEarn a total of at least 240,000 fans"
+        }
     },
 
     {   "id": "102201 - Fine Motion",
@@ -2525,7 +2577,11 @@
             "conditions": "Pick the Arima Kinen (Autumn Year 3) as an optional race and win",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Preferred Position hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Capricious Clover",
+            "condition": "Win the Shuka Sho, Queen Elizabeth II Cup, and Arima Kinen (Year 2) while being undefeated and most popular\nWin the Shuka Sho with a difference of at least 3 1/2 lengths"
+        }
     },
     {   "id": "102202 - Fine Motion Wedding",
         "character_name": "Fine Motion",
@@ -2617,7 +2673,11 @@
             "conditions": "Pick the Arima Kinen (Autumn Year 3) as an optional race and win",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Preferred Position hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Capricious Clover",
+            "condition": "Win the Shuka Sho, Queen Elizabeth II Cup, and Arima Kinen (Year 2) while being undefeated and most popular\nWin the Shuka Sho with a difference of at least 3 1/2 lengths"
+        }
     },
 
     {   "id": "102301 - Biwa Hayahide",
@@ -2697,7 +2757,11 @@
             "conditions": "Win the Takarazuka Kinen (Year 3)",
             "rewards": "All stats +3, Skill points +45, Yayoi Akikawa bond +4, (random) Prepared to Pass hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Victory Derived",
+            "condition": "Finish 2nd or better in every race you participate in\nWin the Kikuka Sho\nWin the Tenno Sho (Spring)\nWin the Takarazuka Kinen\nClear all training objectives\nComplete the Career"
+        }
     },
     {   "id": "102302 - Biwa Hayahide Christmas",
         "character_name": "Biwa Hayahide",
@@ -2768,7 +2832,11 @@
             "conditions": "Win the Takarazuka Kinen (Year 3)",
             "rewards": "All stats +3, Skill points +45, Yayoi Akikawa bond +4, (random) Prepared to Pass hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Victory Derived",
+            "condition": "Finish 2nd or better in every race you participate in\nWin the Kikuka Sho\nWin the Tenno Sho (Spring)\nWin the Takarazuka Kinen\nClear all training objectives\nComplete the Career"
+        }
     },
 
     {   "id": "102401 - Mayano Top Gun",
@@ -2841,7 +2909,11 @@
             "conditions": "Win a G1 race as a Front Runner, Pace Chaser, Late Surger and End Closer",
             "rewards": "All stats +5, Skill points +30, Final Push hint +1, Head-On hint +1, Slick Surge hint +1, Straightaway Spurt hint +1"
             }
-        ]  
+        ],
+        "epithet": {
+            "name": "Free Spirit",
+            "condition": "Win a G1 race as a Front Runner\nWin a G1 race as a Pace Chaser\nWin a G1 race as a Late Surger\nWin a G1 race as a End Closer"
+        }
     },
     {   "id": "102402 - Mayano Top Gun Wedding",
         "character_name": "Mayano Top Gun",
@@ -2906,7 +2978,11 @@
             "conditions": "Win a G1 race as a Front Runner, Pace Chaser, Late Surger and End Closer",
             "rewards": "All stats +5, Skill points +30, Final Push hint +1, Head-On hint +1, Slick Surge hint +1, Straightaway Spurt hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Free Spirit",
+            "condition": "Win a G1 race as a Front Runner\nWin a G1 race as a Pace Chaser\nWin a G1 race as a Late Surger\nWin a G1 race as a End Closer"
+        }
     },
 
     {   "id": "102501 - Manhattan Cafe",
@@ -2978,7 +3054,11 @@
             "conditions": "Win 2+/4+/6+ Long races",
             "rewards": "Stamina +10, Guts +0/10/10, Skill Points +0/0/10, Long Straightaways hint +1/2/2, Long Corners hint +0/0/2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Looming Shadow",
+            "condition": "Win the Kikuka Sho as a Late Surger\nWin the Arima Kinen twice as a Late Surger\nWin the Tenno Sho (Spring) as a Late Surger\nReach 1200 or more Stamina"
+        }
     },
 
     {   "id": "102601 - Mihono Bourbon",
@@ -3054,7 +3134,11 @@
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
             "rewards": "All stats +3, Guts +15, Skill points +45, Straitaway Acceleration hint +2, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Incline Invicta",
+            "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, and Tokyo Yushun (Japanese Derby) while being undefeated and the most popular as a Front Runner\nReach 1200 or more Stamina"
+        }
     },
     {   "id": "102601 - Mihono Bourbon Valentines",
         "character_name": "Mihono Bourbon",
@@ -3121,7 +3205,11 @@
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
             "rewards": "All stats +3, Guts +15, Skill points +45, Straitaway Acceleration hint +2, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Incline Invicta",
+            "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, and Tokyo Yushun (Japanese Derby) while being undefeated and the most popular as a Front Runner\nReach 1200 or more Stamina"
+        }
     },
 
     {   "id": "102701 - Mejiro Ryan",
@@ -3191,7 +3279,11 @@
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
             "rewards": "Power +15, Slick Surge hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Mesmerizing Muscle",
+            "condition": "Win a G1 race against a Mejiro at least once\nWin the Kikuka Sho\nWin the Takarazuka Kinen\nWin the Arima Kinen\nEarn a total of at least 240,000 fans"
+        }
     },
 
     {   "id": "102801 - Hishi Akebono", 
@@ -3255,7 +3347,11 @@
         "aliases": ["hishi akebono original", "bono alla moda"],
         "url": "https://gametora.com/umamusume/characters/102801-hishi-akebono",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1028_102801.png",
-        "review": ""
+        "review": "",
+        "epithet": {
+            "name": "Colossus",
+            "condition": "Win the Yasuda Kinen\nWin the Mile Championship\nWin the Sprinters Stakes twice\nReach 1200 or more Power"
+        }
     },
 
     {   "id": "102901 - Yukino Bijin", 
@@ -3337,7 +3433,11 @@
             "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho) and the Hanshin Juvenile Fillies (Bad Result)",
             "rewards": "Guts +5, Wit +5"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Bonny Lass From Iwate",
+            "condition": "Win a graded race held in Morioka\nWin the Oka Sho, Japanese Oaks and Shuka Sho\nEarn a total of at least 320,000 fans"
+        }
     },
 
     {   "id": "103001 - Rice Shower",
@@ -3407,7 +3507,11 @@
             "conditions": "Win 2/3+/5+ Kyoto races",
             "rewards": "Speed +5/10/10, Stamina +5/10/10, Guts +0/0/10, Kyoto Racecourse hint +2, Firm Conditions hint +0/0/2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Sable Assassin",
+            "condition": "Participate in at least 23 graded races\nWin the Kikuka Sho as the 2nd most or most popular\nWin the Tenno Sho (Spring) as the 2nd most or most popular\nEarn a total of at least 320,000 fans"
+        }
     },
     {   "id": "103002 - Rice Shower Halloween",
         "character_name": "Rice Shower",
@@ -3469,7 +3573,11 @@
             "conditions": "Win 2/3+/5+ Kyoto races",
             "rewards": "Speed +5/10/10, Stamina +5/10/10, Guts +0/0/10, Kyoto Racecourse hint +2, Firm Conditions hint +0/0/2"
             }
-        ]   
+        ],
+        "epithet": {
+            "name": "Sable Assassin",
+            "condition": "Participate in at least 23 graded races\nWin the Kikuka Sho as the 2nd most or most popular\nWin the Tenno Sho (Spring) as the 2nd most or most popular\nEarn a total of at least 320,000 fans"
+        }
     },
 
     {   "id": "103101 - Ines Fujin",
@@ -3543,7 +3651,11 @@
             "conditions": "Get a win streak of G1 races as Front Runner",
             "rewards": "7+ \nSpeed +15, Guts +15, Early Lead hint +2, Front Runner Straightaways hint +2 \n\n4+ \nSpeed +10, Guts +10\n\n1+ \nSpeed +10"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "God of Wind",
+            "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, Tokyo Yushun (Japanese Derby) and Japan Cup (Year 3) as a Front Runner\nReach 1200 or more Speed\nReach 1200 or more Guts"
+        }
     },
 
     {   "id": "103201 - Agnes Tachyon",
@@ -3618,7 +3730,11 @@
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
             "rewards": "All stats +3, Tactical Tweak hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Faster than Light",
+            "condition": "Inherit memories from a parent with at least S rank\nWin the Hopeful Stakes, Yayoi Sho, and Satsuki Sho without losing any other races\nReach 1200 or more Speed"
+        }
     },
 
     {   "id": "103301 - Admire Vega",
@@ -3693,7 +3809,11 @@
             "conditions": "Win against any of the following characters: TM Opera O, Meisho Doto, Narita Top Road",
             "rewards": "8+\nSpeed +15, Power +15, Skill points +20, End Closer Straightaways hint +2, End Closer Corners hint +2\n\n6-7\nSpeed +10, Power +10, End Closer Corners hint +2\n\n0-5\nPower +10, End Closer Corners hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Brightest Star",
+            "condition": "Win the Satsuki Sho, Tokyo Yushun (Japanese Derby) and Takarazuka Kinen as most popular\nPlace higher than TM Opera O at least 3 times\nPlace higher than Narita Top Road at least 3 times\nPlace higher than Meisho Doto at least 3 times"
+        }
     },
 
     {   "id": "103401 - Inari One",
@@ -3763,7 +3883,11 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1034_103401.png",
         "review": "",
         "secrets": [
-        ]
+        ],
+        "epithet": {
+            "name": "Warlord from Oi",
+            "condition": "Win 4 G1 races on both turf and dirt terrain, including winning the Tokyo Daishoten, Takarazuka Kinen (Year 3) as a Pace Chaser and winning the Tenno Sho (Spring), Arima Kinen as a Late Surger or End Closer"
+        }
     },
 
     {   "id": "103501 - Winning Ticket",
@@ -3840,7 +3964,100 @@
             "conditions": "Win races where Biwa Hayahide or Narita Taishin run",
             "rewards": "7+ \nSpeed +15, Power +15, Skill points +15, Outer Swell hint +2\n\n4-6 \nSpeed +10, Power +10 \n\n1-3 \nSpeed +10"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Herald of a New Age",
+            "condition": "Win the Yayoi Sho as the most popular\nWin the Satsuki Sho as the most popular\nWin the Tokyo Yushun (Japanese Derby) as the most popular\nWin the Kikuka Sho as the most popular\nWin the Arima Kinen (Year 2)\nEarn a total of at least 240,000 fans"
+        }
+    },
+
+    {   "id": "103601 - Air Shakur",
+        "character_name": "Air Shakur",
+        "type": "Original",
+        "costume": "unsigned",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "30%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "E",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "C",
+            "Late": "A",
+            "End": "A"
+            }
+        ],
+        "unique": "trigger:BEAT",
+        "unique_explanation": "",
+        "skills": [
+            "Ramp Up",
+            "Eager",
+            "End Closer Straightaways"
+        ],
+        "potential": [
+            "Levelheaded",
+            "Elated",
+            "Strategist",
+            "Moonlit Flash"
+        ],
+        "event_skills": [
+            "Intense Gaze",
+            "Eager",
+            "Fall Runner",
+            "Fighting Spirit",
+            "99 Problems"
+        ],
+        "races": [
+            "hopeful stakes december 1 year 1",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "japan cup november 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": [
+            "air shakur original", "unsigned"
+        ],
+        "url": "https://gametora.com/umamusume/characters/103601-air-shakur",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1036_103601.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
+            "rewards": "Speed +10, Power +10, Fall Runner hint +1"
+            },
+            {
+                "conditions": "Win the Japan Cup (Year 2)",
+                "rewards": "All stats +3, Skill points +75, Fighting Spirit hint +3, Obtain 99 Problems skill, Yayoi Akikawa bond +4"
+            },
+            {
+                "conditions": "Lose the Japan Cup (Year 2)",
+                "rewards": "All stats +3, Skill points +45, Obtain 99 Problems skill, Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "Wall-Surmounting Genius",
+            "condition": "Win the Satsuki Sho, Tokyo Yushun (Japanese Derby), and Kikuka Sho\nWin the Tenno Sho (Spring), Takarazuka Kinen (Year 3), Tenno Sho (Autumn Year 3) and Arima Kinen (Year 3)\nReach 1200 or more Wit"
+        }
     },
 
     {   "id": "103701 - Eishin Flash",
@@ -3929,7 +4146,11 @@
             "conditions": "Win a G1 race on the Tokyo Racecourse 5 times and the Arima Kinen (Year 3)",
             "rewards": "Speed +10, Stamina +10, Power +10, Tokyo Racecourse hint +2, Standard Distance hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Blinding Flash",
+            "condition": "Win the Tokyo Yushun (Japanese Derby) as a Late Surger\nWin the Tenno Sho (Autumn) as a Late Surger\nComplete the Career with the Fast Learner condition"
+        }
     },
     {   "id": "103702 - Eishin Flash Valentines",
         "character_name": "Eishin Flash",   
@@ -4008,7 +4229,11 @@
             "conditions": "Win a G1 race on the Tokyo Racecourse 5 times and the Arima Kinen (Year 3)",
             "rewards": "Speed +10, Stamina +10, Power +10, Tokyo Racecourse hint +2, Standard Distance hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Blinding Flash",
+            "condition": "Win the Tokyo Yushun (Japanese Derby) as a Late Surger\nWin the Tenno Sho (Autumn) as a Late Surger\nComplete the Career with the Fast Learner condition"
+        }
     },
 
     {   "id": "103801 - Curren Chan",
@@ -4082,7 +4307,11 @@
             "conditions": "Win the Hakodate Sprint Stakes (Year 3), Keeneland Cup (Year 3), Centaur Stakes (Year 3)",
             "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Guts +15, Sprinting Gear hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Sprint Sweetheart",
+            "condition": "Win at least 9 races with a length of of 1200m, including the Sprinters Stakes and Takamatsunomiya Kinen\nEarn a total of at least 240,000 fans"
+        }
     },
     {   "id": "103801 - Curren Chan Wedding",
         "character_name": "Curren Chan",
@@ -4148,7 +4377,11 @@
             "conditions": "Win the Hakodate Sprint Stakes (Year 3), Keeneland Cup (Year 3), Centaur Stakes (Year 3)",
             "rewards": "Energy +25, Mood +1, Speed +15, Power +15, Guts +15, Sprinting Gear hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Sprint Sweetheart",
+            "condition": "Win at least 9 races with a length of of 1200m, including the Sprinters Stakes and Takamatsunomiya Kinen\nEarn a total of at least 240,000 fans"
+        }
     },
 
     {   "id": "103901 - Kawakami Princess",
@@ -4219,7 +4452,11 @@
             "conditions": "Win the Hanshin Juvenile Fillies, Oka Sho, Japanese Oaks, Shuka Sho, Victoria Mile, Queen Elizabeth II Cup (Year 2) and Queen Elizabeth II Cup (Year 3)",
             "rewards": "Speed +15, Power +15, Skill points +25, Outer Swell hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Precocious Princess",
+            "condition": "Inherit the memories of a parent who won the Takamatsunomiya Kinen\nWin the Japanese Oaks, Shuka Sho and Queen Elizabeth II Cup while being undefeated"
+        }
     },
 
     {   "id": "104001 - Gold City",
@@ -4284,7 +4521,11 @@
         "aliases": ["gold city original", "authentic 1928"],
         "url": "https://gametora.com/umamusume/characters/104001-gold-city",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104001.png",
-        "review": ""
+        "review": "",
+        "epithet": {
+            "name": "Beauty of the Century",
+            "condition": "Win the Hanshin Juvenile Fillies\nBe at a Mood level of Perfect and don't have either the Slow Metabolism, Skin Outbreak or Slacker condition for all races\nRaise the level of all trainings to at least 3\nComplete the Career"
+        }
     },
     {   "id": "104001 - Gold City Festival",
         "character_name": "Gold City",
@@ -4339,7 +4580,11 @@
         "aliases": ["gold city festival", "autumn cosmos"],
         "url": "https://gametora.com/umamusume/characters/104002-gold-city",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1040_104002.png",
-        "review": ""
+        "review": "",
+        "epithet": {
+            "name": "Beauty of the Century",
+            "condition": "Win the Hanshin Juvenile Fillies\nBe at a Mood level of Perfect and don't have either the Slow Metabolism, Skin Outbreak or Slacker condition for all races\nRaise the level of all trainings to at least 3\nComplete the Career"
+        }
     },
 
     {   "id": "104101 - Sakura Bakushin O",
@@ -4412,7 +4657,82 @@
             "conditions": "Win the Sprinters Stakes (Year 2) and the Sprinters Stakes (Year 3)",
             "rewards": "Mood +3, All stats +3, Speed +10, Skill points +45, Moxie hint +1, Get Hot Topic status"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Bakushin King",
+            "condition": "Win 11 races with a length of 1400m or lower\nWin the Sprinters Stakes (Year 3) with a difference of at least 4 lengths while being the most popular"
+        }
+    },
+
+    {   "id": "104201 - Seeking the Pearl",
+        "character_name": "Seeking the Pearl",
+        "type": "Original",
+        "costume": "Rocket ☆ Star",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "A",
+            "Medium": "E",
+            "Long": "G"
+            },
+            {
+            "Front": "C",
+            "Pace": "A",
+            "Late": "A",
+            "End": "B"
+            }
+        ],
+        "unique": "『I'm Possible』",
+        "unique_explanation": "",
+        "skills": [
+            "Firm Conditions",
+            "Sprint Straightaways",
+            "Unyielding Spirit"
+        ],
+        "potential": [
+            "Light as a Feather",
+            "Lightning Flash",
+            "Head-On",
+            "Big-Sisterly"
+        ],
+        "event_skills": [
+            "Uma Stan"
+        ],
+        "races": [
+            "daily hai junior stakes november 1 year 1",
+            "hanshin juvenile fillies december 1 year 1",
+            "oka sho april 1 year 2",
+            "nhk mile cup may 1 year 2",
+            "rose stakes september 1 year 2",
+            "mile championship november 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "sprinters stakes september 2 year 3",
+            "mile championship november 2 year 3"
+            
+        ],
+        "aliases": ["seeking the pearl original", "rocket star"],
+        "url": "https://gametora.com/umamusume/characters/104201-seeking-the-pearl",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1042_104201.png",
+        "review": "",
+        "epithet": {
+            "name": "Shining Like a Pearl",
+            "condition": "Win the Oka Sho\nWin the NHK Mile Cup\nWin the Japanese Oaks\nWin the Shuka Sho\nWin the Takamatsunomiya Kinen\nWin the Sprinters Stakes (Year 3)"
+        }
     },
 
     {   "id": "104401 - Sweep Tosho",
@@ -4585,7 +4905,11 @@
             "conditions": "Win the Arima Kinen (Year 2) and the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
             "rewards": "Power +10, Guts +10, Prepared to Pass hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Speedy Stayer",
+            "condition": "Win the Kikuka Sho with difference of at least 5 lengths\nWin 6 graded races with a length of 2400m or higher, including the Tenno Sho (Spring)"
+        }
     },
     {   "id": "104502 - Super Creek Halloween",
         "character_name": "Super Creek",
@@ -4664,7 +4988,11 @@
             "conditions": "Win the Arima Kinen (Year 2) and the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
             "rewards": "Power +10, Guts +10, Prepared to Pass hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Speedy Stayer",
+            "condition": "Win the Kikuka Sho with difference of at least 5 lengths\nWin 6 graded races with a length of 2400m or higher, including the Tenno Sho (Spring)"
+        }
     },
 
     {   "id": "104601 - Smart Falcon",
@@ -4750,7 +5078,11 @@
             "conditions": "Win the Kawasaki Kinen",
             "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Promising Omen hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Sand Falcon",
+            "condition": "Without losing any races inbetween, win at least 9 dirt graded races as a Front Runner, including the JBC Classic, Teio Sho, and Tokyo Daishoten"
+        }
     },
 
 
@@ -4822,7 +5154,11 @@
             "conditions": "Participate in the Copa Republica Argentina (Year 2)",
             "rewards": "\"♡ 3D Nail Art\" was healed\nMood +1, 4 random stats +2/+3, Skill points +105\n\n\"♡ 3D Nail Art\" was not healed\n4 random stats +2/+3, Skill points +85"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "L Hater",
+            "condition": "Win the Japan Cup\nWin the Tenno Sho (Spring)\nWin the Tenno Sho (Autumn) with a Mood level of Perfect twice\nWin against Gold Ship at least 3 times"
+        }
     },
 
 
@@ -4898,7 +5234,11 @@
             "conditions": "Win the Nikkei Sho",
             "rewards": "Practice Poor was healed\nMood +4, All stats +20, Skill points +70, Get Practice Perfect ◎ status\n\nPractice Poor was not healed\nMood +4, All stats +15, Skill points +70, Heal Practice Poor"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Comeback Champion",
+            "condition": "Win the Satsuki Sho as a End Closer, overtaking at least 4 people in the last straight\nWin the Tenno Sho (Spring) as a End Closer\nReach 1200 or more Guts"
+        }
     },
 
     {   "id": "105101 - Nishino Flower",
@@ -4981,7 +5321,11 @@
             "conditions": "Win the Takarazuka Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Stamina +20, Skill points +45, Head-On hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Little Miss Prodigy",
+            "condition": "Inherit memories from a parent that did not win any G1 races\nWin the Hanshin Juvenile Fillies, Oka Sho and Sprinters Stakes twice\nEarn a total of 100,000 fans within the Classic class"
+        }
     },
 
     {   "id": "105201 - Haru Urara",
@@ -5048,7 +5392,11 @@
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "All stats +9, Skill points +99, Long Shot hint +1, Yayoi Akikawa bond +5"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Hard-Trying Haru Urara",
+            "condition": "Earn a total of at least 550,000 fans"
+        }
     },
     {   "id": "105202 - Haru Urara New Year",
         "character_name": "Haru Urara",
@@ -5116,7 +5464,11 @@
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "All stats +9, Skill points +99, Long Shot hint +1, Yayoi Akikawa bond +5"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Hard-Trying Haru Urara",
+            "condition": "Earn a total of at least 550,000 fans"
+        }
     },
 
     {   "id": "105601 - Matikanefukukitaru",
@@ -5186,7 +5538,11 @@
             "conditions": "Win the Kyoto Shimbun Hai, Kobe Shimbun Hai and Kikuka Sho",
             "rewards": "Speed +25, Power +25, Slick Surge hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Fortune's Smile",
+            "condition": "Participate in at least 15 G1 or G2 races with a Mood level of Perfect\nWin at least 3 G2 or higher races in a row, including the Kikuka Sho"
+        }
     },
     {   "id": "105602 - Matikanefukukitaru Full Armor",
         "character_name": "Matikanefukukitaru",
@@ -5256,7 +5612,11 @@
             "conditions": "Win the Kyoto Shimbun Hai, Kobe Shimbun Hai and Kikuka Sho",
             "rewards": "Speed +25, Power +25, Slick Surge hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Fortune's Smile",
+            "condition": "Participate in at least 15 G1 or G2 races with a Mood level of Perfect\nWin at least 3 G2 or higher races in a row, including the Kikuka Sho"
+        }
     },
 
     {   "id": "105801 - Meisho Doto",
@@ -5334,7 +5694,11 @@
             "conditions": "Win the Satsuki Sho, Tenno Sho (Spring Year 3), Takarazuka Kinen (Year 3), and Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and Arima Kinen (Year 3)",
             "rewards": "All stats +10, Skill points +20, Prepared to Pass hint +1, Up-Tempo hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Unrelenting Challenger",
+            "condition": "Without losing any races inbetween, win 9 or more graded races including the Tenno Sho (Spring), Takarazuka Kinen and Arima Kinen"
+        }
     },
 
     {   "id": "105901 - Mejiro Dober",
@@ -5415,7 +5779,86 @@
             "conditions": "Win the Osaka Hai, Takarazuka Kinen (Year 3), Queen Elizabeth II Cup (year 3) and at least 2 other G1 races during Senior Year.",
             "rewards": "Speed +20, Power +20, All I've Got hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Coolheaded Beauty",
+            "condition": "Win the Hanshin Juvenile Fillies as a Late Surger while being most popular\nWin the Oka Sho as a Late Surger while being most popular\nWin the Japanese Oaks as a Late Surger while being most popular\nWin the Shuka Sho as a Late Surger while being most popular\nWin the Queen Elizabeth II Cup twicen\nEarn a total of at least 240,000 fans"
+        }
+    },
+    {   "id": "105901 - Mejiro Dober Camping",
+        "character_name": "Mejiro Dober",
+        "type": "Sapphire Sojourn",
+        "costume": "Off the Line",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "F"
+            },
+            {
+            "Front": "C",
+            "Pace": "B",
+            "Late": "A",
+            "End": "G"
+            }
+        ],
+        "unique": "Wherever This Wonder Leads",
+        "unique_explanation": "",
+        "skills": [
+            "Kyoto Racecourse",
+            "Fearless",
+            "Take the Chance"
+        ],
+        "potential": [
+            "Medium Straightaways",
+            "Dauntless",
+            "Full Throttle",
+            "From the Brink"
+        ],
+        "event_skills": [
+            "Fall Runner",
+            "Updrafters",
+            "Downhill Speedster",
+            "Unyielding Spirit",
+            "All I've Got"
+        ],
+        "aliases": ["mejiro dober camping", "sapphire sojourn"],
+        "url": "https://gametora.com/umamusume/characters/105902-mejiro-dober",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1059_105902.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Hanshin Juvenile Fillies",
+            "rewards": "Wit +10"
+            },
+            {
+            "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho)",
+            "rewards": "Mood +1, Speed +5, Stamina +5, Unyielding Spirit hint +2"
+            },
+            {
+            "conditions": "Win the Osaka Hai, Takarazuka Kinen (Year 3), Queen Elizabeth II Cup (year 3) and at least 2 other G1 races during Senior Year.",
+            "rewards": "Speed +20, Power +20, All I've Got hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Coolheaded Beauty",
+            "condition": "Win the Hanshin Juvenile Fillies as a Late Surger while being most popular\nWin the Oka Sho as a Late Surger while being most popular\nWin the Japanese Oaks as a Late Surger while being most popular\nWin the Shuka Sho as a Late Surger while being most popular\nWin the Queen Elizabeth II Cup twicen\nEarn a total of at least 240,000 fans"
+        }
     },
 
     {   "id": "106001 - Nice Nature",
@@ -5510,7 +5953,11 @@
             "conditions": "Participate in the Tokyo Yushun (Japanese Derby) and lose to Tokai Teio.",
             "rewards": "1 random stat +5, Skill points +35"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Supporting Star",
+            "condition": "Finish 3rd in at least 3 G1 races\nEarn a total of at least 320000 fans"
+        }
     },
     {   "id": "106002 - Nice Nature Cheerleader",
         "character_name": "Nice Nature",
@@ -5597,7 +6044,11 @@
             "conditions": "Participate in the Tokyo Yushun (Japanese Derby) and lose to Tokai Teio.",
             "rewards": "1 random stat +5, Skill points +35"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Supporting Star",
+            "condition": "Finish 3rd in at least 3 G1 races\nEarn a total of at least 320000 fans"
+        }
     },
 
     {   "id": "106101 - King Halo",
@@ -5672,7 +6123,11 @@
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Generation King",
+            "condition": "Inherit memories from a parent whose parents won a total of at least 11 G1 races\nPlace higher than Special Week 3 times\nPlace higher than Seiun Sky 3 times\nPlace higher than Grass Wonder 3 times\nPlace higher than El Condor Pasa 3 times"
+        }
     },
     {   "id": "106102 - King Halo Cheerleader",
         "character_name": "King Halo",
@@ -5738,7 +6193,11 @@
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Skill points +45, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Generation King",
+            "condition": "Inherit memories from a parent whose parents won a total of at least 11 G1 races\nPlace higher than Special Week 3 times\nPlace higher than Seiun Sky 3 times\nPlace higher than Grass Wonder 3 times\nPlace higher than El Condor Pasa 3 times"
+        }
     },
 
     {   "id": "106201 - Matikanetannhauser",
@@ -5824,7 +6283,11 @@
             "conditions": "Participate in the All Comers (Year 3) and beat Twin Turbo",
             "rewards": "Speed +20, All I've Got hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Talent Takes Time",
+            "condition": "Participate in 12 or more G1 races\nWin at least 4 graded races of 2500m or longer, including the Kikuka Sho and Arima Kinen (Year 3)"
+        }
     },
 
     {   "id": "106401 - Mejiro Palmer",
@@ -5894,7 +6357,11 @@
             "conditions": "Win the Arima Kinen (Year 2), Takarazuka Kinen (Year 3) and Arima Kinen (Year 3)",
             "rewards": "Speed +10, Guts +10, Runaway hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Stormy Front Runner",
+            "condition": "Raise your Front Runner aptitude to S\nWin a G1 as a Front Runner while being 4th most popular or worse\nWin the Tenno Sho (Spring), Takarazuka Kinen (Year 3), Arima Kinen (Year 3) as a Front Runner"
+        }
     },
 
     {   "id": "106701 - Satono Diamond",
@@ -5967,7 +6434,11 @@
             "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
             "rewards": "Speed +10, Stamina +10, Guts +10, Fall Runner hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Gem of Dreams",
+            "condition": "Inherit memories of a parent with training rank S or higher\nWin the Kikuka Sho\nWin the Tenno Sho (Spring)\nWin the Japan Cup (Year 3)\nWin the Arima Kinen twice"
+        }
     },
 
     {   "id": "106801 - Kitasan Black",
@@ -6050,7 +6521,11 @@
             "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho) and Arima Kinen (Year 3)",
             "rewards": "All stats +3, Skill points +45, Prudent Positioning hint +2, Yayoi Akikawa bond +4"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Bring Down the House",
+            "condition": "Win 7 or more G1 races, including the Kikuka Sho, Tenno Sho (Spring), Takarazuka Kinen, Tenno Sho (Autumn Year 3) and Arima Kinen (Year 3)\nEarn a total of at least 480,000 fans"
+        }
     },
 
     {   "id": "106901 - Sakura Chiyono O",
@@ -6138,7 +6613,11 @@
             "conditions": "Win the Arima Kinen (Year 3)",
             "rewards": "Energy -15, 1 random stat +10, Skill points +75, Feature Act hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Blooming Sakura",
+            "condition": "Inherit the memories of a parent who won the Asahi Hai Futurity Stakes and reached 1200 or more speed\nWin the Asahi Hai Futurity Stakes, Satsuki Sho, Tokyo Yushun (Japanese Derby), and Japan Cup"
+        }
     },
 
     {   "id": "107101 - Mejiro Ardan",
@@ -6217,7 +6696,11 @@
             "conditions": "Win the Tenno Sho (Autumn Year 2)",
             "rewards": "Corner Recovery hint +2"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Unbreakable",
+            "condition": "Win the Tokyo Yushun (Japanese Derby), and the Tenno Sho (Autumn) twice\nEnter every race with a Mood level of Perfect\nDon't fail a single training"
+        }
     },
 
     {   "id": "107201 - Yaeno Muteki",
@@ -6290,7 +6773,11 @@
             "conditions": "Win against any of the following characters 8 times: Oguri Cap, Super Creek, Inari One",
             "rewards": "All stats +10, Ramp Up hint +1, Homestretch Haste hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Will of Steel",
+            "condition": "Win the Satsuki Sho without having won any other turf G1s before\nWin the Osaka Hai, Yasuda Kinen, Takarazuka Kinen, Arima Kinen (Year 3)\nReach 1200 or more Power"
+        }
     },
 
     {   "id": "107401 - Mejiro Bright",
@@ -6378,6 +6865,10 @@
             "conditions": "Win 2+/4+/6+ Long races",
             "rewards": "2-3 \nStamina +10, Long Corners hint +1 \n\n4-5 \nStamina +10, Guts +5, Wit +5, Long Corners hint +2 \n\n6+ \nStamina +10, Guts +10, Long Corners hint +3, Passing Pro hint +2, Smoke Screen hint +1"
             }
-        ]
+        ],
+        "epithet": {
+            "name": "Stress-Free Stayer",
+            "condition": "Inherit memories from parents carrying the Mejiro name\nWin at least 4 G2 or G1 races with a length of 3000m or more, one of them being the Tenno Sho (Spring)\nEarn a total of at least 240,000 fans"
+        }
     }
 ]
