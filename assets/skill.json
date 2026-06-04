@@ -11817,7 +11817,7 @@
         "description": "Slightly increase acceleration on a straight in the last spurt.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.2 for 1.8s.",
+                "description": "Increases acceleration by 0.2 for 0.9s.",
                 "conditions": [
                     "End Closer",
                     "Any straight",
@@ -12526,7 +12526,7 @@
         "description": "Increase acceleration on a straight in the last spurt.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.4 for 1.8s.",
+                "description": "Increases acceleration by 0.4 for 0.9s.",
                 "conditions": [
                     "End Closer",
                     "Any straight",
