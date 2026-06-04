@@ -133,7 +133,27 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10003.png",
         "rarity": "r",
         "category": "speed",
-        "aliases": ["tokai teio tracen"]
+        "aliases": ["tokai teio tracen"],
+        "events":[
+            {
+                "name": "My Way, Or...",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Skill points +15, Bond +5",
+                    "Guts +15, Bond +5"
+                ]
+            },
+            {
+                "name": "My Weapon",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Guts +10, Bond +5",
+                    "Bond +5, Pace Chaser Straightaways hint +1"
+                ]
+            }
+        ]
     },
     {   "id": "10004 Maruzensky",
         "card_name": "Tracen Academy",
@@ -236,7 +256,27 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10006.png",
         "rarity": "r",
         "category": "stamina",
-        "aliases": ["gold ship tracen"]
+        "aliases": ["gold ship tracen"],
+        "events":[
+            {
+                "name": "Adventurer Gold Ship",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +15, Bond +5",
+                    "Guts +10, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Revive the Brand! Golshi's Yakisoba",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +5, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
+        ]
     },
     {   "id": "10007 Vodka",
         "card_name": "Tracen Academy",
@@ -4479,6 +4519,43 @@
         "aliases": [
             "tokai teio",
             "step smile wink"
+        ],
+        "events":[
+            {
+                "name": "A Selfish (?) Desire",
+                "type": "chain",
+                "results": 
+                [
+                    "Maximum Energy +4, Skill points +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Spreading the Love of Dance!",
+                "type": "chain",
+                "results": 
+                [
+                    "Skill points +15, Bond +5, Medium Corners hint +1",
+                    "Energy +20, Bond +5"
+                ]
+            },
+            {
+                "name": "My Way, Or...",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Skill points +15, Bond +5",
+                    "Guts +15, Bond +5"
+                ]
+            },
+            {
+                "name": "My Weapon",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Guts +10, Bond +5",
+                    "Bond +5, Pace Chaser Straightaways hint +1"
+                ]
+            }
         ]
     },
     {   "id": "20048 Oguri Cap",
@@ -4878,7 +4955,51 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30004.png",
         "rarity": "ssr",
         "category": "stamina",
-        "aliases": ["gold ship", "breakaway battleship", "golshi"]
+        "aliases": ["gold ship", "breakaway battleship", "golshi"],
+        "events":[
+            {
+                "name": "Fervor! Air Basketball!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy -10, Stamina +25, Skill points +10, Bond +5, Early Start hint +1"
+                ]
+            },
+            {
+                "name": "Respect the Salmon!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy -10, Stamina +10, Guts +25, Skill points +10, Bond +5, End Closer Savvy hint +1"
+                ]
+            },
+            {
+                "name": "Can't Spell \"Rival\" without \"Friend\"!",
+                "type": "chain",
+                "results": 
+                [
+                    "Stamina +20, Skill points +15, Bond +5, Corner Connoisseur hint +2, Risky Business hint +1"
+                ]
+            },
+            {
+                "name": "Adventurer Gold Ship",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +15, Bond +5",
+                    "Guts +10, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Revive the Brand! Golshi's Yakisoba",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +5, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
+        ]
     },
     {   "id": "30005 Vodka",
         "card_name": "Wild Rider",
@@ -6572,6 +6693,52 @@
         "category": "speed",
         "aliases": [
             "gold ship that time i became the strongest"
+        ],
+        "events":[
+            {
+                "name": "Raising the Uma Lord's Castle",
+                "type": "chain",
+                "results": 
+                [
+                    "Maximum Energy +4, Bond +5",
+                    "Speed +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Plotting the Uma Lord's Dungeon",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy -15, Speed +5, Stamina +5, Long Straightaways hint +1"
+                ]
+            },
+            {
+                "name": "Assembling the Uma Lord's Minions",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy -10, Speed +5/+10, Stamina +5/+10, Bond +5, Inside Scoop hint +3/Innate Experience hint +3",
+                    "Energy +10, Maverick hint +1"
+                ]
+            },
+            {
+                "name": "Adventurer Gold Ship",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +15, Bond +5",
+                    "Guts +10, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Revive the Brand! Golshi's Yakisoba",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +5, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
         ]
     },
 
