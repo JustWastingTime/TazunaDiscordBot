@@ -1,3 +1,8 @@
+"epithet": {
+            "name": "Selfish Magical Girl",
+            "condition": "Win the Tulip Sho and Shuka Sho as a End Closer\nWin the Takarazuka Kinen (Year 3), Queen Elizabeth II Cup (Year 3) and Arima Kinen (Year 3) as a Late Surger or End Closer"
+        }
+
 bashin_diff_behind<=1   "≤1 length ahead",
 bashin_diff_behind>=1   "≥1 length ahead",                                                          
 corner==0   "Not a corner"
@@ -136,6 +141,7 @@ phase>=2    "Late race and beyond"
                 "At the last 400m of the race",                                             remain_distance<=401 &remain_distance>=399
                 "At the last 800 to 850m of the race for a player character",               remain_distance_viewer_id>=800 &remain_distance_viewer_id<=850
                 "Second half of the race"                                                   distance_rate>=50
+                "After 60% of the race",                                                    distance_rate>=60
 
                 "When ≥4th favorite",                                                       popularity>=4
                 "When ≤3rd favorite",                                                       popularity<4
@@ -203,6 +209,18 @@ phase>=2    "Late race and beyond"
         }
     ]
 }
+
+"activation_map": { // Final corner
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "select": "last"
+                }
+            ]
+        }
 
 {   "id": "Make Debut",
         "rank": "bronze",
