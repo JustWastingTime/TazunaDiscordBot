@@ -318,7 +318,7 @@
             }
         ]
     },
-    {   "id": "10007 Vodka",
+    {   "id": "10007 Vodka", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Vodka",
         "unique": "-",
@@ -351,6 +351,26 @@
         "category": "power",
         "aliases": [
             "vodka tracen"
+        ],
+        "events":[
+            {
+                "name": "The Coolest Line",
+                "type": "event",
+                "results": 
+                [
+                    "Power +10, Bond +5",
+                    "Power +5, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Enemies on Main Street",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Nimble Navigator hint +1",
+                    "Power +5, Skill points +15, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "10008 Taiki Shuttle", "_event": "done",
@@ -763,7 +783,7 @@
             "super creek tracen"
         ]
     },
-    {   "id": "10020 Haru Urara",
+    {   "id": "10020 Haru Urara", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Haru Urara",
         "unique": "-",
@@ -787,6 +807,26 @@
         "category": "guts",
         "aliases": [
             "haru urara tracen"
+        ],
+        "events":[
+            {
+                "name": "Urara's ☆ Study Review",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Wit +5, Bond +5",
+                    "Mood +1, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "What Should I Do? ",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Long Shot hint +1",
+                    "Mood +1, Energy +10, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "10021 Hayakawa Tazuna",
@@ -3808,7 +3848,7 @@
         "category": "wit",
         "aliases": ["ikuno dictus", "never skip warmups", "never skip warm ups"]
     },
-    {   "id": "20026 Nice Nature (Messing Around)",
+    {   "id": "20026 Nice Nature",
         "card_name": "Messing Around",
         "character_name": "Nice Nature",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Wit when beginning a Career playthrough (20)",
@@ -4214,7 +4254,7 @@
             "sirius symboli", "one star unreachable"
         ]
     },
-    {   "id": "20039 Vodka",
+    {   "id": "20039 Vodka", "_event": "done",
         "card_name": "An Annoying Supervisor",
         "character_name": "Vodka",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which hint events occur (20%)",
@@ -4250,6 +4290,43 @@
         "category": "speed",
         "aliases": [
             "vodka", "an annoying supervisor"
+        ],
+        "events":[
+            {
+                "name": "Slacking Off at Sundown",
+                "type": "chain",
+                "results": 
+                [
+                    "Maximum Energy +4, Power +10, Bond +5",
+                    "Speed +15, Bond +5, Mile Corners hint +1 OR Speed +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Persistence Pays Off",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +15, Skill points +15"
+                ]
+            },
+            {
+                "name": "The Coolest Line",
+                "type": "event",
+                "results": 
+                [
+                    "Power +10, Bond +5",
+                    "Power +5, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Enemies on Main Street",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Nimble Navigator hint +1",
+                    "Power +5, Skill points +15, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "20040 Mejiro Ryan",
@@ -5098,7 +5175,7 @@
             }
         ]
     },
-    {   "id": "30005 Vodka",
+    {   "id": "30005 Vodka", "_event": "done",
         "card_name": "Wild Rider",
         "character_name": "Vodka",
         "unique": "Boosts Friendship Bonus and Specialty Priority when training together.",
@@ -5133,7 +5210,51 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30005.png",
         "rarity": "ssr",
         "category": "power",
-        "aliases": ["vodka", "wild rider"]
+        "aliases": ["vodka", "wild rider"],
+        "events":[
+            {
+                "name": "Gotta Follow My Heart",
+                "type": "chain",
+                "results": 
+                [
+                    "Power +10, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "A Vow to the Setting Sun",
+                "type": "chain",
+                "results": 
+                [
+                    "Power +15, Skill points +15, Bond +5, Updrafters hint +2"
+                ]
+            },
+            {
+                "name": "Put That on the Record, Okay?",
+                "type": "chain",
+                "results": 
+                [
+                    "Power +25, Skill points +30, Bond +5, Breath of Fresh Air hint +2"
+                ]
+            },
+            {
+                "name": "The Coolest Line",
+                "type": "event",
+                "results": 
+                [
+                    "Power +10, Bond +5",
+                    "Power +5, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Enemies on Main Street",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Nimble Navigator hint +1",
+                    "Power +5, Skill points +15, Bond +5"
+                ]
+            }
+        ]
     },
     {   "id": "30006 Grass Wonder",
         "card_name": "Fairest Fleur",
@@ -5584,7 +5705,7 @@
         "category": "speed",
         "aliases": ["nishino flower", "even the littlest bud"]
     },
-    {   "id": "30019 Haru Urara",
+    {   "id": "30019 Haru Urara", "_event": "done",
         "card_name": "Urara's Day Off!",
         "character_name": "Haru Urara",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases stat gain from races (5%)",
@@ -5607,7 +5728,51 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30019.png",
         "rarity": "ssr",
         "category": "guts",
-        "aliases": ["haru urara", "uraras day off!"]
+        "aliases": ["haru urara", "uraras day off!"],
+        "events":[
+            {
+                "name": "Trying Hard with Rice!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +10"
+                ]
+            },
+            {
+                "name": "Trying Hard with King!",
+                "type": "chain",
+                "results": 
+                [
+                    "Mood +1, Energy +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Trying Hard with Everyone's Support!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +15, Bond +5, Unruffled hint +1"
+                ]
+            },
+            {
+                "name": "Urara's ☆ Study Review",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Wit +5, Bond +5",
+                    "Mood +1, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "What Should I Do? ",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Long Shot hint +1",
+                    "Mood +1, Energy +10, Bond +5"
+                ]
+            }
+        ]
     },
     {   "id": "30020 Biko Pegasus",
         "card_name": "Double Carrot Punch!",
@@ -7555,7 +7720,7 @@
             "manhattan cafe my solo spun in spiraling runs"
         ]
     },
-    {   "id": "30076 Silence Suzuka",
+    {   "id": "30076 Silence Suzuka", "_event": "done",
         "card_name": "Searching for Unseen Sights",
         "character_name": "Silence Suzuka",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases stat gain from races (5%)",
@@ -8611,7 +8776,7 @@
             "mr. c.b.", "dear mr. c.b.", "mr cb", "mrcb", "dear mr cb", "dear mr c.b."
         ]
     },
-    {   "id": "30098 Haru Urara",
+    {   "id": "30098 Haru Urara","_event": "done",
         "card_name": "Sunny Passion ♪",
         "character_name": "Haru Urara",
         "unique": "Increases skill point gain when training together (1)",
@@ -8637,6 +8802,51 @@
         "category": "power",
         "aliases": [
             "haru urara", "sunny passion"
+        ],
+        "events":[
+            {
+                "name": "A Wonderful Wedding?",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +15, Get Charming status (random), Bond +5"
+                ]
+            },
+            {
+                "name": "The Theme's Decided!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +25, Bond +5",
+                    "Mood +2, Heal a negative status effect, Bond +5"
+                ]
+            },
+            {
+                "name": "The Gift of Excitement",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +50, Bond +5, Hard Worker hint +1"
+                ]
+            },
+            {
+                "name": "Urara's ☆ Study Review",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Wit +5, Bond +5",
+                    "Mood +1, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "What Should I Do? ",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Long Shot hint +1",
+                    "Mood +1, Energy +10, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "30099 Ikuno Dictus",
