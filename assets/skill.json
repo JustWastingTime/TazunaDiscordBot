@@ -2795,6 +2795,7 @@
                         "middle leg",
                         "mid"
                     ],
+                    "clip_start": 75,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -3559,6 +3560,7 @@
         "gametora_id": "201141",
         "activation_map": {
             "show_chart": true,
+            "clip_start": 150,
             "requirements": {
                 "distance_types": [
                     "medium"
@@ -3591,6 +3593,7 @@
         "gametora_id": "201142",
         "activation_map": {
             "show_chart": true,
+            "clip_start": 150,
             "requirements": {
                 "distance_types": [
                     "medium"
@@ -3623,6 +3626,7 @@
         "gametora_id": "201202",
         "activation_map": {
             "show_chart": true,
+            "clip_start": 75,
             "requirements": {
                 "distance_types": [
                     "long"
@@ -3660,6 +3664,7 @@
                 "type": "box",
                 "target": "elevation",
                 "match": "uphill",
+                "clip_start": 150,
                 "trigger_behavior": "asap"
               }
             ]
@@ -3695,6 +3700,7 @@
                 "type": "box",
                 "target": "elevation",
                 "match": "uphill",
+                "clip_start": 150,
                 "trigger_behavior": "asap"
               }
             ]
@@ -3867,6 +3873,7 @@
                 "type": "box",
                 "target": "elevation",
                 "match": "downhill",
+                "clip_start": 150,
                 "trigger_behavior": "asap"
               }
             ]
@@ -3935,6 +3942,7 @@
             "triggers": [
               {
                 "type": "box",
+                "clip_start": 150,
                 "trigger_behavior": "asap"
               }
             ]
@@ -3968,6 +3976,7 @@
             "triggers": [
               {
                 "type": "box",
+                "clip_start": 150,
                 "trigger_behavior": "asap"
               }
             ]
@@ -4242,6 +4251,7 @@
         "gametora_id": "201201",
         "activation_map": {
             "show_chart": true,
+            "clip_start": 75,
             "requirements": {
                 "distance_types": [
                     "long"
@@ -4946,6 +4956,7 @@
                         "opening leg",
                         "early"
                     ],
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ],
@@ -5337,6 +5348,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 75,
                     "trigger_behavior": "asap"
                 }
             ],
@@ -5691,6 +5703,7 @@
                         "middle leg",
                         "mid"
                     ],
+                    "clip_start": 75,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -5959,6 +5972,7 @@
             "triggers": [
               {
                 "type": "box",
+                "clip_start": 75,
                 "trigger_behavior": "asap"
               }
             ]
@@ -6022,6 +6036,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 150,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -6053,6 +6068,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 150,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -6934,6 +6950,7 @@
                         "opening leg",
                         "early"
                     ],
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ],
@@ -7172,6 +7189,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 75,
                     "trigger_behavior": "asap"
                 }
             ],
@@ -7362,6 +7380,7 @@
             "triggers": [
               {
                 "type": "box",
+                "clip_start": 75,
                 "trigger_behavior": "asap"
               }
             ]
@@ -7742,6 +7761,7 @@
                         "middle leg",
                         "mid"
                     ],
+                    "clip_start": 75,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -7971,6 +7991,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 150,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -8140,6 +8161,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 150,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -12171,6 +12193,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -12879,6 +12902,7 @@
             "triggers": [
                 {
                     "type": "box",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -14850,6 +14874,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ],
@@ -15113,6 +15138,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ],
@@ -15191,6 +15217,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -15464,6 +15491,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -15531,6 +15559,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -15598,6 +15627,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -15665,6 +15695,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ]
@@ -15733,6 +15764,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ],
@@ -15883,6 +15915,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 75,
                     "trigger_behavior": "random"
                 }
             ],
