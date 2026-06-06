@@ -2754,6 +2754,7 @@
                         "middle leg",
                         "mid"
                     ],
+                    "clip_start": 75,
                     "trigger_behavior": "asap"
                 }
             ]
