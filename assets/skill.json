@@ -9701,6 +9701,12 @@
                 {
                     "type": "box",
                     "target": "layout",
+                    "match": "mid",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
                     "match": "corner",
                     "select": "last",
                     "trigger_behavior": "asap"
