@@ -3909,6 +3909,7 @@
                 "type": "box",
                 "target": "elevation",
                 "match": "downhill",
+                "clip_start": 150,
                 "trigger_behavior": "asap"
               }
             ]
@@ -9700,7 +9701,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
+                    "target": "zones",
                     "match": "mid",
                     "trigger_behavior": "precondition"
                 },
@@ -9709,7 +9710,8 @@
                     "target": "layout",
                     "match": "corner",
                     "select": "last",
-                    "trigger_behavior": "asap"
+                    "trigger_behavior": "asap",
+                    "disable_auto_phase_clip": true
                 }
             ]
         }
