@@ -2717,7 +2717,17 @@
             "crowd hater",
             "バ群嫌い"
         ],
-        "gametora_id": "200401"
+        "gametora_id": "200401",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start": 25,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Iron Will",
         "description": "Recover endurance when the way ahead is jammed early-race or mid-race.",
@@ -2967,7 +2977,17 @@
             "running idle",
             "空回り"
         ],
-        "gametora_id": "200521"
+        "gametora_id": "200521",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start": 25,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Calm and Collected",
         "description": "Decrease fatigue upon approaching mid-race.",
@@ -3560,7 +3580,13 @@
         "gametora_id": "201141",
         "activation_map": {
             "show_chart": true,
-            "clip_start": 150,
+            "triggers": [
+                {
+                  "type": "box",
+                  "clip_start": 150,
+                  "trigger_behavior": "asap"
+                }
+            ],
             "requirements": {
                 "distance_types": [
                     "medium"
@@ -3593,7 +3619,13 @@
         "gametora_id": "201142",
         "activation_map": {
             "show_chart": true,
-            "clip_start": 150,
+            "triggers": [
+                {
+                  "type": "box",
+                  "clip_start": 150,
+                  "trigger_behavior": "asap"
+                }
+            ],
             "requirements": {
                 "distance_types": [
                     "medium"
@@ -3626,7 +3658,13 @@
         "gametora_id": "201202",
         "activation_map": {
             "show_chart": true,
-            "clip_start": 75,
+            "triggers": [
+                {
+                  "type": "box",
+                  "clip_start": 75,
+                  "trigger_behavior": "asap"
+                }
+            ],
             "requirements": {
                 "distance_types": [
                     "long"
@@ -4252,7 +4290,13 @@
         "gametora_id": "201201",
         "activation_map": {
             "show_chart": true,
-            "clip_start": 75,
+            "triggers": [
+                {
+                  "type": "box",
+                  "clip_start": 75,
+                  "trigger_behavior": "asap"
+                }
+            ],
             "requirements": {
                 "distance_types": [
                     "long"
@@ -15187,6 +15231,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 50,
                     "trigger_behavior": "random"
                 }
             ],
@@ -15196,6 +15241,7 @@
                 ]
             }
         }
+        
     },
     {   "skill_name": "Restart",
         "description": "Slightly dull movement for runners ahead when not in the lead early-race.",
@@ -15260,6 +15306,7 @@
                 {
                     "type": "box",
                     "phase": "early",
+                    "clip_start": 50,
                     "trigger_behavior": "random"
                 }
             ],
@@ -16068,7 +16115,17 @@
             "見惚れるトリック"
         ],
         "downgrade": "Trick (Front)",
-        "gametora_id": "200772"
+        "gametora_id": "200772",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
     },
     {   "skill_name": "Smoke Screen",
         "description": "Moderately narrow the field of view for runners ahead late-race.",

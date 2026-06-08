@@ -435,12 +435,13 @@ function evaluateTrackCompatibility(cmTrack, requirements) {
   return { doesNotWork: reasons.length > 0, reasons };
 }
 
-function markersFromActivationMap(skill, mapData) {
+function markersFromActivationMap(skill, mapData, options = {}) {
   const activationMap = skill?.activation_map;
   if (!activationMap || !Array.isArray(activationMap.triggers)) return [];
 
   const markers = [];
-  const autoPhaseWindow = inferAutoPhaseWindow(skill, mapData);
+  const allowAutoPhaseInference = options.allowAutoPhaseInference !== false;
+  const autoPhaseWindow = allowAutoPhaseInference ? inferAutoPhaseWindow(skill, mapData) : null;
   for (const trigger of activationMap.triggers) {
     const color = trigger.color ?? "#d11f2a";
     if (trigger.type === "line") {
@@ -659,14 +660,21 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
   }
 
   const activationMap = skill.activation_map;
+  const hasActivationMapConfig = Boolean(activationMap && typeof activationMap === "object");
   const explicitRequirements = requirementsFromActivationMap(activationMap);
-  const fallbackRequirements = inferTextTrackRequirements(skill);
+  const fallbackRequirements = hasActivationMapConfig ? null : inferTextTrackRequirements(skill);
   const requirements = explicitRequirements ?? fallbackRequirements;
   const compatibility = evaluateTrackCompatibility(cm?.track, requirements);
 
   const hasExplicitActivationMap = Boolean(activationMap && Array.isArray(activationMap.triggers));
-  const explicitMarkers = hasExplicitActivationMap ? markersFromActivationMap(skill, mapData) : [];
-  const markers = hasExplicitActivationMap ? explicitMarkers : inferSkillMarkers(skill, mapData);
+  const explicitMarkers = hasExplicitActivationMap
+    ? markersFromActivationMap(skill, mapData, { allowAutoPhaseInference: false })
+    : [];
+  const markers = hasExplicitActivationMap
+    ? explicitMarkers
+    : hasActivationMapConfig
+      ? []
+      : inferSkillMarkers(skill, mapData);
   const rawConditionTexts = collectSkillConditionText(skill, false);
   const isRandomPointSkill = rawConditionTexts.some((text) => text.includes("random point"));
   const defaultBehavior = isRandomPointSkill ? "random" : "asap";
