@@ -30,6 +30,7 @@ import {
   resolveSkillMapOutputPath,
 } from './skillCourseMap.js';
 import { dispatchClubCommand, handleClubComponent, isClubCommand, runClubComponentAction } from './clubHandlers.js';
+import { getUmaApiKey } from './clubService.js';
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -1734,5 +1735,10 @@ process.on('unhandledRejection', (reason) => {
 
 app.listen(PORT, () => {
   console.log('Listening on port', PORT);
+  if (getUmaApiKey()) {
+    console.log('UMA_API_KEY is configured.');
+  } else {
+    console.warn('UMA_API_KEY is missing — /register, /profile, and club leaderboards will fail until it is set.');
+  }
   postOpsNotice('✅ Tazuna bot started', `Listening on port ${PORT}`, 0x2ECC71);
 });

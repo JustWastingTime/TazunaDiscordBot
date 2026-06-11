@@ -10,18 +10,38 @@ const EMPTY_FAN_STATS = {
 
 const ACTIVE_LAG_TOLERANCE_MS = 2 * 60 * 60 * 1000;
 
+export function getUmaApiKey() {
+  return String(process.env.UMA_API_KEY || process.env.UMA_MOE_API_KEY || '').trim();
+}
+
 function getUmaHeaders() {
-  const headers = {};
-  const apiKey = process.env.UMA_API_KEY;
-  if (apiKey) headers['X-API-Key'] = apiKey;
-  return headers;
+  const apiKey = getUmaApiKey();
+  if (!apiKey) return {};
+  return {
+    'X-API-Key': apiKey,
+    Authorization: `Bearer ${apiKey}`,
+  };
 }
 
 export async function fetchUmaJson(url) {
+  const apiKey = getUmaApiKey();
+  if (!apiKey) {
+    throw new Error(
+      'UMA_API_KEY is not set on the bot server. Create an API key at uma.moe, add it to your environment, and restart the bot.',
+    );
+  }
+
   const res = await fetch(url, { headers: getUmaHeaders() });
   if (!res.ok) {
     if (res.status === 404) throw new Error('Not found on uma.moe.');
-    if (res.status === 403) throw new Error('uma.moe API access denied. Check UMA_API_KEY.');
+    if (res.status === 401) {
+      throw new Error(
+        'uma.moe rejected the API key (401). Check that UMA_API_KEY on the server is correct and starts with uma_k_.',
+      );
+    }
+    if (res.status === 403) {
+      throw new Error('uma.moe API access denied (403). Your API key may lack permission for this endpoint.');
+    }
     throw new Error(`uma.moe API returned ${res.status}`);
   }
   return res.json();
