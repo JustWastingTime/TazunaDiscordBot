@@ -155,42 +155,6 @@ const CM_COMMAND = {
 
 const GUILD_ADMIN_PERMISSIONS = '8';
 
-const REGISTER_CLUB_COMMAND = {
-  name: 'registerclub',
-  description: 'Link this server to an Umamusume club (admin only)',
-  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
-  options: [
-    {
-      type: 4,
-      name: 'id',
-      description: 'Club ID from Umamusume / uma.moe (e.g. 883948934)',
-      required: true,
-      min_value: 1,
-    },
-  ],
-  type: 1,
-  integration_types: [0],
-  contexts: [0],
-};
-
-const UNREGISTER_CLUB_COMMAND = {
-  name: 'unregisterclub',
-  description: 'Remove a club link from this server (admin only)',
-  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
-  options: [
-    {
-      type: 4,
-      name: 'id',
-      description: 'Club ID to unregister',
-      required: true,
-      min_value: 1,
-    },
-  ],
-  type: 1,
-  integration_types: [0],
-  contexts: [0],
-};
-
 const REGISTER_COMMAND = {
   name: 'register',
   description: 'Link your Discord account to your Umamusume trainer ID',
@@ -205,29 +169,6 @@ const REGISTER_COMMAND = {
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
-};
-
-const REGISTER_FORCED_COMMAND = {
-  name: 'registerforced',
-  description: 'Force-link a user to a trainer ID (admin only)',
-  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
-  options: [
-    {
-      type: 6,
-      name: 'user',
-      description: 'Discord user to link',
-      required: true,
-    },
-    {
-      type: 3,
-      name: 'id',
-      description: 'Your Umamusume Global ID',
-      required: true,
-    },
-  ],
-  type: 1,
-  integration_types: [0],
-  contexts: [0],
 };
 
 const PROFILE_COMMAND = {
@@ -246,54 +187,101 @@ const PROFILE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const LEADERBOARD_COMMAND = {
-  name: 'leaderboard',
-  description: 'Show a club monthly fans leaderboard',
-  options: [
-    {
-      type: 3,
-      name: 'clubname',
-      description: 'Club name to show (defaults to your linked club)',
-      required: false,
-    },
-  ],
+const CLUB_COMMAND = {
+  name: 'club',
+  description: 'Club leaderboards and server configuration',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
-};
-
-const SET_LEADERBOARD_CHANNEL_COMMAND = {
-  name: 'setleaderboardchannel',
-  description: 'Post an auto-updating club leaderboard in this channel (admin only)',
-  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
   options: [
     {
-      type: 4,
-      name: 'id',
-      description: 'Club ID from Umamusume / uma.moe',
-      required: true,
-      min_value: 1,
+      type: 1,
+      name: 'registerclub',
+      description: 'Link this server to an Umamusume club (admin only)',
+      options: [
+        {
+          type: 4,
+          name: 'id',
+          description: 'Club ID from Umamusume / uma.moe (e.g. 883948934)',
+          required: true,
+          min_value: 1,
+        },
+      ],
     },
-  ],
-  type: 1,
-  integration_types: [0],
-  contexts: [0],
-};
-
-const SET_PREMIUM_COMMAND = {
-  name: 'setpremium',
-  description: 'Enable or disable premium leaderboard refresh for this server (owner only)',
-  options: [
     {
-      type: 5,
-      name: 'enabled',
-      description: 'Grant premium (5-minute top-100 refresh)?',
-      required: true,
+      type: 1,
+      name: 'unregisterclub',
+      description: 'Remove a club link from this server (admin only)',
+      options: [
+        {
+          type: 4,
+          name: 'id',
+          description: 'Club ID to unregister',
+          required: true,
+          min_value: 1,
+        },
+      ],
+    },
+    {
+      type: 1,
+      name: 'registerforced',
+      description: 'Force-link a user to a trainer ID (admin only)',
+      options: [
+        {
+          type: 6,
+          name: 'user',
+          description: 'Discord user to link',
+          required: true,
+        },
+        {
+          type: 3,
+          name: 'id',
+          description: 'Umamusume Global ID',
+          required: true,
+        },
+      ],
+    },
+    {
+      type: 1,
+      name: 'leaderboard',
+      description: 'Show a club monthly fans leaderboard',
+      options: [
+        {
+          type: 3,
+          name: 'clubname',
+          description: 'Club name to show (defaults to your linked club)',
+          required: false,
+        },
+      ],
+    },
+    {
+      type: 1,
+      name: 'setleaderboardchannel',
+      description: 'Post an auto-updating club leaderboard in this channel (admin only)',
+      options: [
+        {
+          type: 4,
+          name: 'id',
+          description: 'Club ID from Umamusume / uma.moe',
+          required: true,
+          min_value: 1,
+        },
+      ],
+    },
+    {
+      type: 1,
+      name: 'setpremium',
+      description: 'Enable or disable premium leaderboard refresh (owner only)',
+      options: [
+        {
+          type: 5,
+          name: 'enabled',
+          description: 'Grant premium (5-minute top-100 refresh)?',
+          required: true,
+        },
+      ],
     },
   ],
-  type: 1,
-  integration_types: [0],
-  contexts: [0],
 };
 
 const SCHEDULE_COMMAND = {
@@ -416,14 +404,9 @@ const ALL_COMMANDS = [
   UMA_COMMAND,
   RACE_COMMAND,
   CM_COMMAND,
-  REGISTER_CLUB_COMMAND,
-  UNREGISTER_CLUB_COMMAND,
   REGISTER_COMMAND,
-  REGISTER_FORCED_COMMAND,
   PROFILE_COMMAND,
-  LEADERBOARD_COMMAND,
-  SET_LEADERBOARD_CHANNEL_COMMAND,
-  SET_PREMIUM_COMMAND,
+  CLUB_COMMAND,
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,

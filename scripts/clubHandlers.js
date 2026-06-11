@@ -40,14 +40,28 @@ const BOT_OWNER_IDS = new Set(
     .filter(Boolean),
 );
 
-function getOptionValue(options, name) {
-  const value = options?.find((opt) => opt.name === name)?.value;
+function resolveInteractionOptions(req) {
+  const data = req.body.data;
+  if (data.name === 'club') {
+    const subcommand = data.options?.find((opt) => opt.type === 1);
+    return subcommand?.options ?? [];
+  }
+  return data.options ?? [];
+}
+
+function getOptionValue(req, name) {
+  const value = resolveInteractionOptions(req).find((opt) => opt.name === name)?.value;
   if (value === undefined || value === null) return undefined;
   return typeof value === 'string' ? value : String(value);
 }
 
-function getOptionUserId(options, name) {
-  const opt = options?.find((o) => o.name === name);
+function getBooleanOption(req, name) {
+  const value = resolveInteractionOptions(req).find((opt) => opt.name === name)?.value;
+  return typeof value === 'boolean' ? value : undefined;
+}
+
+function getOptionUserId(req, name) {
+  const opt = resolveInteractionOptions(req).find((o) => o.name === name);
   return opt?.value ?? null;
 }
 
@@ -106,10 +120,10 @@ export async function handleRegisterClub(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
   if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/registerclub`.');
+    return ephemeral('❌ Only server administrators can use `/club registerclub`.');
   }
 
-  const circleId = String(getOptionValue(req.body.data.options, 'id') ?? '').trim();
+  const circleId = String(getOptionValue(req, 'id') ?? '').trim();
   if (!circleId) return ephemeral('❌ Please provide a club ID.');
 
   return {
@@ -147,10 +161,10 @@ export async function handleUnregisterClub(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
   if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/unregisterclub`.');
+    return ephemeral('❌ Only server administrators can use `/club unregisterclub`.');
   }
 
-  const circleId = String(getOptionValue(req.body.data.options, 'id') ?? '').trim();
+  const circleId = String(getOptionValue(req, 'id') ?? '').trim();
   if (!circleId) return ephemeral('❌ Please provide a club ID.');
 
   const removed = unregisterGuildClub(guildId, circleId);
@@ -161,7 +175,7 @@ export async function handleUnregisterClub(req) {
 }
 
 export async function handleRegister(req) {
-  const accountId = String(getOptionValue(req.body.data.options, 'id') ?? '').trim();
+  const accountId = String(getOptionValue(req, 'id') ?? '').trim();
   if (!accountId) return ephemeral('❌ Please provide your trainer account ID.');
 
   const userId = req.body.member?.user?.id || req.body.user?.id;
@@ -207,11 +221,11 @@ export async function handleRegisterForced(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
   if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/registerforced`.');
+    return ephemeral('❌ Only server administrators can use `/club registerforced`.');
   }
 
-  const targetUserId = getOptionUserId(req.body.data.options, 'user');
-  const viewerId = String(getOptionValue(req.body.data.options, 'id') ?? '').trim();
+  const targetUserId = getOptionUserId(req, 'user');
+  const viewerId = String(getOptionValue(req, 'id') ?? '').trim();
   if (!targetUserId) return ephemeral('❌ Please mention a user to register.');
   if (!viewerId) return ephemeral('❌ Please provide a trainer ID.');
 
@@ -254,7 +268,7 @@ export async function handleRegisterForced(req) {
 export async function handleProfile(req) {
   const userId = req.body.member?.user?.id || req.body.user?.id;
   const guildId = req.body.guild_id ?? null;
-  const nameArg = getOptionValue(req.body.data.options, 'name');
+  const nameArg = getOptionValue(req, 'name');
 
   return {
     deferred: true,
@@ -272,7 +286,7 @@ export async function handleProfile(req) {
           const guildClubs = getGuildClubs(guildId);
           if (!guildClubs.length) {
             await sendFollowup({
-              content: '❌ No clubs are registered on this server. An admin must run `/registerclub` first.',
+              content: '❌ No clubs are registered on this server. An admin must run `/club registerclub` first.',
             });
             return;
           }
@@ -339,7 +353,7 @@ export async function handleProfile(req) {
 export async function handleLeaderboard(req) {
   const userId = req.body.member?.user?.id || req.body.user?.id;
   const guildId = req.body.guild_id ?? null;
-  const clubNameArg = getOptionValue(req.body.data.options, 'clubname');
+  const clubNameArg = getOptionValue(req, 'clubname');
 
   return {
     deferred: true,
@@ -382,7 +396,7 @@ export async function handleLeaderboard(req) {
         if (!link?.circleId) {
           await sendFollowup({
             content:
-              'You have not linked a trainer yet. Use `/register`, or specify a club with `/leaderboard clubname:...`.',
+              'You have not linked a trainer yet. Use `/register`, or specify a club with `/club leaderboard clubname:...`.',
           });
           return;
         }
@@ -410,14 +424,14 @@ export async function handleSetLeaderboardChannel(req) {
   const channelId = req.body.channel_id;
   if (!guildId) return guildRequiredResponse();
   if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/setleaderboardchannel`.');
+    return ephemeral('❌ Only server administrators can use `/club setleaderboardchannel`.');
   }
 
-  const circleId = String(getOptionValue(req.body.data.options, 'id') ?? '').trim();
+  const circleId = String(getOptionValue(req, 'id') ?? '').trim();
   if (!circleId) return ephemeral('❌ Please provide a club ID.');
 
   if (!isGuildClubRegistered(guildId, circleId)) {
-    return ephemeral('❌ That club is not registered on this server. Run `/registerclub` first.');
+    return ephemeral('❌ That club is not registered on this server. Run `/club registerclub` first.');
   }
 
   return {
@@ -462,10 +476,10 @@ export async function handleSetPremium(req) {
   const userId = req.body.member?.user?.id || req.body.user?.id;
   if (!guildId) return guildRequiredResponse();
   if (!userId || !BOT_OWNER_IDS.has(userId)) {
-    return ephemeral('❌ Only the bot owner can use `/setpremium`.');
+    return ephemeral('❌ Only the bot owner can use `/club setpremium`.');
   }
 
-  const enabled = req.body.data.options?.find((opt) => opt.name === 'enabled')?.value;
+  const enabled = getBooleanOption(req, 'enabled');
   if (typeof enabled !== 'boolean') {
     return ephemeral('❌ Please choose whether premium is enabled or disabled.');
   }
@@ -478,8 +492,15 @@ export async function handleSetPremium(req) {
   );
 }
 
+function resolveClubSubcommand(req) {
+  if (req.body.data.name !== 'club') return req.body.data.name;
+  return req.body.data.options?.find((opt) => opt.type === 1)?.name ?? null;
+}
+
 export function dispatchClubCommand(name, req) {
-  switch (name) {
+  const subcommand = name === 'club' ? resolveClubSubcommand(req) : name;
+
+  switch (subcommand) {
     case 'registerclub':
       return handleRegisterClub(req);
     case 'unregisterclub':
@@ -502,14 +523,5 @@ export function dispatchClubCommand(name, req) {
 }
 
 export function isClubCommand(name) {
-  return [
-    'registerclub',
-    'unregisterclub',
-    'register',
-    'registerforced',
-    'profile',
-    'leaderboard',
-    'setleaderboardchannel',
-    'setpremium',
-  ].includes(name);
+  return name === 'club' || name === 'register' || name === 'profile';
 }
