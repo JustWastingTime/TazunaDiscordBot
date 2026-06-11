@@ -88,14 +88,11 @@ export function normalizeUserProfile(data, accountId) {
     const circleId = circleIdRaw != null ? String(circleIdRaw) : null;
     const circleName = circle?.name ?? currentMonth?.circle_name ?? null;
 
-    const avgMonthly = currentMonth?.avg_monthly ?? root.fan_history?.avg_monthly ?? null;
-
     return {
       viewerId,
       trainerName,
       circleId,
       circleName,
-      avgMonthly,
       member: {
         trainer_name: trainerName,
         viewer_id: viewerId,
@@ -138,7 +135,6 @@ export function normalizeUserProfile(data, accountId) {
     trainerName,
     circleId,
     circleName,
-    avgMonthly: null,
     member: {
       trainer_name: trainerName,
       viewer_id: viewerId,
@@ -189,7 +185,6 @@ export async function buildProfileEmbedForViewerId(viewerId, options = {}) {
     member,
     circle: circle ?? (profile.circleName ? { name: profile.circleName, circle_id: circleId } : null),
     ranks,
-    avgMonthly: profile.avgMonthly,
     festa,
   });
 }
@@ -402,14 +397,6 @@ function formatRankSuffix(rank) {
   return rank != null ? ` (#${rank})` : '';
 }
 
-function formatProfileStat(value) {
-  if (value === null || value === undefined || value === '') return '—';
-  if (typeof value === 'number' && Number.isFinite(value)) {
-    return formatIntWithCommas(Math.round(value));
-  }
-  return String(value);
-}
-
 function formatFestField(value) {
   if (value === null || value === undefined || value === '') return '—';
   if (typeof value === 'number' && Number.isFinite(value)) {
@@ -418,7 +405,7 @@ function formatFestField(value) {
   return String(value);
 }
 
-export function buildProfileEmbed({ member, circle, ranks = {}, avgMonthly = null, festa = null }) {
+export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) {
   const fanStats = getMemberFanStats(member.daily_fans);
   const dailyAvg = Math.round(fanStats.monthlyGain / fanStats.averageDays);
   const viewerId = String(member.viewer_id ?? '');
@@ -448,11 +435,6 @@ export function buildProfileEmbed({ member, circle, ranks = {}, avgMonthly = nul
       {
         name: '📊 Daily Average',
         value: `${formatIntWithCommas(dailyAvg)}${formatRankSuffix(ranks?.dailyAvg)}`,
-        inline: true,
-      },
-      {
-        name: '📈 Monthly Avg',
-        value: formatProfileStat(avgMonthly),
         inline: true,
       },
       {

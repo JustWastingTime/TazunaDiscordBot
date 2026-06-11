@@ -279,13 +279,11 @@ export async function handleProfile(req) {
               selected.members,
               selected.member.viewer_id,
             );
-            const umaProfile = await fetchUserProfile(selected.member.viewer_id);
             await sendFollowup({
               embeds: [buildProfileEmbed({
                 member: selected.member,
                 circle: selected.circle,
                 ranks,
-                avgMonthly: umaProfile.avgMonthly,
               })],
             });
             return;

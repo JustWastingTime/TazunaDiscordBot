@@ -198,7 +198,7 @@ const REGISTER_COMMAND = {
     {
       type: 3,
       name: 'id',
-      description: 'Account ID from uma.moe profile URL (e.g. uma.moe/profile/123...)',
+      description: 'Your Umamusume Global ID',
       required: true,
     },
   ],
@@ -221,7 +221,7 @@ const REGISTER_FORCED_COMMAND = {
     {
       type: 3,
       name: 'id',
-      description: 'Account ID from uma.moe profile URL',
+      description: 'Your Umamusume Global ID',
       required: true,
     },
   ],
