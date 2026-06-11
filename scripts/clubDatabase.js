@@ -98,17 +98,26 @@ export function isGuildClubRegistered(guildId, circleId) {
   return getGuildClubs(guildId).some((club) => String(club.circleId) === String(circleId));
 }
 
+export const STARTING_GAMBA_COINS = 1000;
+
 export function upsertUserLink({ discordUserId, viewerId, trainerName, circleId, circleName }) {
   const store = loadUserLinks();
-  store[String(discordUserId)] = {
-    discordUserId: String(discordUserId),
+  const key = String(discordUserId);
+  const existing = store[key];
+
+  store[key] = {
+    discordUserId: key,
     viewerId: String(viewerId),
     trainerName,
     circleId: String(circleId),
     circleName: circleName ?? null,
-    linkedAt: new Date().toISOString(),
+    linkedAt: existing?.linkedAt ?? new Date().toISOString(),
+    gambaCoins: existing?.gambaCoins ?? STARTING_GAMBA_COINS,
+    gambaWr: existing?.gambaWr ?? null,
+    quizAccuracy: existing?.quizAccuracy ?? null,
   };
   saveUserLinks(store);
+  return { isNewUser: !existing };
 }
 
 export function getUserLink(discordUserId) {
@@ -123,5 +132,8 @@ export function getUserLink(discordUserId) {
     circleId: String(link.circleId ?? ''),
     circleName: link.circleName ?? null,
     linkedAt: link.linkedAt ?? null,
+    gambaCoins: link.gambaCoins ?? null,
+    gambaWr: link.gambaWr ?? null,
+    quizAccuracy: link.quizAccuracy ?? null,
   };
 }

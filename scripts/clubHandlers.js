@@ -159,7 +159,7 @@ export async function handleRegister(req) {
     run: async (sendFollowup) => {
       try {
         const profile = await fetchUserProfile(accountId);
-        upsertUserLink({
+        const { isNewUser } = upsertUserLink({
           discordUserId: userId,
           viewerId: profile.viewerId,
           trainerName: profile.trainerName,
@@ -171,11 +171,12 @@ export async function handleRegister(req) {
           : profile.circleId
             ? ` (club ID \`${profile.circleId}\`)`
             : '';
+        const gambaLine = isNewUser ? '\n🎰 You received **1,000** starting GambaCoins.' : '';
         await sendFollowup({
           flags: InteractionResponseFlags.EPHEMERAL,
           content:
             `✅ Linked your Discord account to **${profile.trainerName}**` +
-            `${clubLine} (ID \`${profile.viewerId}\`).`,
+            `${clubLine} (ID \`${profile.viewerId}\`).${gambaLine}`,
         });
       } catch (err) {
         console.error('register failed:', err);
@@ -206,7 +207,7 @@ export async function handleRegisterForced(req) {
     run: async (sendFollowup) => {
       try {
         const profile = await fetchUserProfile(viewerId);
-        upsertUserLink({
+        const { isNewUser } = upsertUserLink({
           discordUserId: targetUserId,
           viewerId: profile.viewerId,
           trainerName: profile.trainerName,
@@ -218,11 +219,12 @@ export async function handleRegisterForced(req) {
           : profile.circleId
             ? ` (club ID \`${profile.circleId}\`)`
             : '';
+        const gambaLine = isNewUser ? '\n🎰 They received **1,000** starting GambaCoins.' : '';
         await sendFollowup({
           flags: InteractionResponseFlags.EPHEMERAL,
           content:
             `✅ Force-linked <@${targetUserId}> to **${profile.trainerName}**` +
-            `${clubLine} (ID \`${profile.viewerId}\`).`,
+            `${clubLine} (ID \`${profile.viewerId}\`).${gambaLine}`,
         });
       } catch (err) {
         console.error('registerforced failed:', err);
@@ -277,8 +279,14 @@ export async function handleProfile(req) {
               selected.members,
               selected.member.viewer_id,
             );
+            const umaProfile = await fetchUserProfile(selected.member.viewer_id);
             await sendFollowup({
-              embeds: [buildProfileEmbed(selected.circle, selected.member, ranks)],
+              embeds: [buildProfileEmbed({
+                member: selected.member,
+                circle: selected.circle,
+                ranks,
+                avgMonthly: umaProfile.avgMonthly,
+              })],
             });
             return;
           }
@@ -299,10 +307,14 @@ export async function handleProfile(req) {
           return;
         }
 
-        const embed = await buildProfileEmbedForViewerId(
-          link.viewerId,
-          link.circleId || undefined,
-        );
+        const embed = await buildProfileEmbedForViewerId(link.viewerId, {
+          circleIdHint: link.circleId || undefined,
+          festa: {
+            gambaCoins: link.gambaCoins,
+            gambaWr: link.gambaWr,
+            quizAccuracy: link.quizAccuracy,
+          },
+        });
         await sendFollowup({ embeds: [embed] });
       } catch (err) {
         console.error('profile failed:', err);

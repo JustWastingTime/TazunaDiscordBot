@@ -68,7 +68,45 @@ function pickObject(...candidates) {
 
 export function normalizeUserProfile(data, accountId) {
   const root = data && typeof data === 'object' ? data : {};
-  const user = pickObject(root.user, root.profile, root.trainer, root.member, root);
+
+  // uma.moe v4: GET /api/v4/user/profile/{account_id}
+  if (root.trainer && typeof root.trainer === 'object') {
+    const trainer = root.trainer;
+    const circle = root.circle ?? null;
+    const currentMonth = Array.isArray(root.fan_history?.monthly)
+      ? root.fan_history.monthly[0]
+      : null;
+
+    const viewerId = String(trainer.account_id ?? accountId);
+    const trainerName = trainer.name ?? currentMonth?.trainer_name ?? null;
+    if (!trainerName) {
+      throw new Error(`Trainer account \`${accountId}\` was not found on uma.moe.`);
+    }
+
+    const circleIdRaw =
+      circle?.circle_id ?? currentMonth?.circle_id ?? null;
+    const circleId = circleIdRaw != null ? String(circleIdRaw) : null;
+    const circleName = circle?.name ?? currentMonth?.circle_name ?? null;
+
+    const avgMonthly = currentMonth?.avg_monthly ?? root.fan_history?.avg_monthly ?? null;
+
+    return {
+      viewerId,
+      trainerName,
+      circleId,
+      circleName,
+      avgMonthly,
+      member: {
+        trainer_name: trainerName,
+        viewer_id: viewerId,
+        daily_fans: [],
+        last_updated: null,
+      },
+      circle: circle ?? (circleName ? { name: circleName, circle_id: circleId } : null),
+    };
+  }
+
+  const user = pickObject(root.user, root.profile, root.member, root);
   const circle = pickObject(root.circle, user?.circle, root.club);
 
   const viewerId = String(
@@ -100,6 +138,7 @@ export function normalizeUserProfile(data, accountId) {
     trainerName,
     circleId,
     circleName,
+    avgMonthly: null,
     member: {
       trainer_name: trainerName,
       viewer_id: viewerId,
@@ -117,7 +156,8 @@ export async function fetchUserProfile(accountId) {
   return normalizeUserProfile(data, id);
 }
 
-export async function buildProfileEmbedForViewerId(viewerId, circleIdHint = null) {
+export async function buildProfileEmbedForViewerId(viewerId, options = {}) {
+  const { circleIdHint = null, festa = null } = options;
   const profile = await fetchUserProfile(viewerId);
   let circle = profile.circle;
   let member = profile.member;
@@ -145,7 +185,13 @@ export async function buildProfileEmbedForViewerId(viewerId, circleIdHint = null
       ? buildTrainerRanks(circle, members, viewerId)
       : {};
 
-  return buildProfileEmbed(circle ?? { name: profile.circleName ?? 'Unknown' }, member, ranks);
+  return buildProfileEmbed({
+    member,
+    circle: circle ?? (profile.circleName ? { name: profile.circleName, circle_id: circleId } : null),
+    ranks,
+    avgMonthly: profile.avgMonthly,
+    festa,
+  });
 }
 
 // Monthly tracking period boundary is day 2 at 00:00 JST.
@@ -335,61 +381,142 @@ export function buildTrainerRanks(circle, members, targetViewerId) {
   return { totalFans: idx(byTotalFans), monthly: idx(byMonthly), dailyAvg: idx(byDailyAvg) };
 }
 
-export function buildProfileEmbed(circle, member, ranks) {
+function getCircleDisplayRank(circle) {
+  if (!circle) return null;
+  const live = circle.live_rank;
+  if (live != null && live !== 0) return live;
+  const monthly = circle.monthly_rank;
+  if (monthly != null && monthly !== 0) return monthly;
+  return null;
+}
+
+function buildClubDescription(circle) {
+  if (!circle?.name) return null;
+  const rank = getCircleDisplayRank(circle);
+  return rank != null
+    ? `**🏇 Club:** ${circle.name} (#${rank})`
+    : `**🏇 Club:** ${circle.name}`;
+}
+
+function formatRankSuffix(rank) {
+  return rank != null ? ` (#${rank})` : '';
+}
+
+function formatProfileStat(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return formatIntWithCommas(Math.round(value));
+  }
+  return String(value);
+}
+
+function formatFestField(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return Number.isInteger(value) ? formatIntWithCommas(value) : `${value}`;
+  }
+  return String(value);
+}
+
+export function buildProfileEmbed({ member, circle, ranks = {}, avgMonthly = null, festa = null }) {
   const fanStats = getMemberFanStats(member.daily_fans);
   const dailyAvg = Math.round(fanStats.monthlyGain / fanStats.averageDays);
-  const r = (n) => (n != null ? ` (#${n})` : '');
+  const viewerId = String(member.viewer_id ?? '');
+  const clubLine = buildClubDescription(circle);
 
   const chartData = fanStats.dailyFans
     .slice(1)
     .map((v, i) => Math.max(0, v - fanStats.dailyFans[i]));
   const labels = chartData.map((_, idx) => `Day ${idx + 1}`);
 
-  const qcConfig = {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: 'Fans gained',
-          data: chartData,
-          borderColor: 'rgb(75, 192, 192)',
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          fill: true,
-          tension: 0.2,
-        },
-      ],
-    },
-    options: {
-      legend: { display: false },
-      plugins: {
-        datalabels: { display: true, align: 'top', anchor: 'end' },
-        tickFormat: { useGrouping: true, locale: 'en-US', applyToDataLabels: true },
-      },
-      scales: {
-        xAxes: [{ display: true, gridLines: { display: false } }],
-        yAxes: [{
-          display: true,
-          gridLines: { display: false },
-          scaleLabel: { display: true, labelString: 'Fans' },
-        }],
-      },
-    },
-  };
-
-  const qcUrl = `https://quickchart.io/chart?w=600&h=300&c=${encodeURIComponent(JSON.stringify(qcConfig))}`;
-
-  return {
+  const embed = {
     color: 0xF1C40F,
     title: `${member.trainer_name} — Trainer Profile`,
-    description: [
-      `**🏇 Club:** ${circle?.name ?? 'Unknown'}`,
-      `**🔶 Total Fans:** ${formatIntWithCommas(fanStats.latestFans)}${r(ranks?.totalFans)}`,
-      `**📆 Monthly Fans:** ${formatIntWithCommas(fanStats.monthlyGain)}${r(ranks?.monthly)}`,
-      `**📊 Daily Average:** ${formatIntWithCommas(dailyAvg)}${r(ranks?.dailyAvg)}`,
-    ].join('\n'),
-    image: { url: qcUrl },
+    url: viewerId ? `https://uma.moe/profile/${viewerId}` : undefined,
+    description: clubLine ? `${clubLine}\n\u200b` : undefined,
+    fields: [
+      {
+        name: '🔶 Total Fans',
+        value: `${formatIntWithCommas(fanStats.latestFans)}${formatRankSuffix(ranks?.totalFans)}`,
+        inline: true,
+      },
+      {
+        name: '📆 Monthly Fans',
+        value: `${formatIntWithCommas(fanStats.monthlyGain)}${formatRankSuffix(ranks?.monthly)}`,
+        inline: true,
+      },
+      {
+        name: '📊 Daily Average',
+        value: `${formatIntWithCommas(dailyAvg)}${formatRankSuffix(ranks?.dailyAvg)}`,
+        inline: true,
+      },
+      {
+        name: '📈 Monthly Avg',
+        value: formatProfileStat(avgMonthly),
+        inline: true,
+      },
+      {
+        name: '\u200b',
+        value: '\u200b',
+        inline: false,
+      },
+      {
+        name: '🎰 GambaCoins',
+        value: formatFestField(festa?.gambaCoins),
+        inline: true,
+      },
+      {
+        name: '🎲 Gamba WR',
+        value: formatFestField(festa?.gambaWr),
+        inline: true,
+      },
+      {
+        name: '🧠 Quiz Accuracy',
+        value: formatFestField(festa?.quizAccuracy),
+        inline: true,
+      },
+    ],
   };
+
+  if (chartData.length > 0) {
+    const qcConfig = {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Fans gained',
+            data: chartData,
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: true,
+            tension: 0.2,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        plugins: {
+          datalabels: { display: true, align: 'top', anchor: 'end' },
+          tickFormat: { useGrouping: true, locale: 'en-US', applyToDataLabels: true },
+        },
+        scales: {
+          xAxes: [{ display: true, gridLines: { display: false } }],
+          yAxes: [{
+            display: true,
+            gridLines: { display: false },
+            scaleLabel: { display: true, labelString: 'Fans' },
+          }],
+        },
+      },
+    };
+
+    embed.image = {
+      url: `https://quickchart.io/chart?w=600&h=300&c=${encodeURIComponent(JSON.stringify(qcConfig))}`,
+    };
+  }
+
+  return embed;
 }
 
 export function buildLeaderboardEmbed(data, currentTarget = null) {
