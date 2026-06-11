@@ -29,6 +29,7 @@ import {
   ensureDirectory,
   resolveSkillMapOutputPath,
 } from './skillCourseMap.js';
+import { dispatchClubCommand, handleClubComponent, isClubCommand, runClubComponentAction } from './clubHandlers.js';
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -42,6 +43,7 @@ const MAP_RENDERER_CACHE_VERSION = 'v2';
 // Champions Meets offered in the skill-map dropdown are limited to this range so
 // users can't trigger image generation for an unbounded number of CMs.
 // Adjust SKILL_MAP_MAX_CM_NUMBER (or the env var) to decide the highest CM shown.
+// The effective lower bound is dynamic: max(configured minimum, current upcoming CM).
 const SKILL_MAP_MIN_CM_NUMBER = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 14);
 const SKILL_MAP_MAX_CM_NUMBER = Number(process.env.SKILL_MAP_MAX_CM_NUMBER ?? 16);
 
@@ -142,8 +144,14 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumbe
   const embed = buildSkillEmbed(skill, supporterList);
   const result = { embed, mapComponents: [] };
 
+  const upcomingCm = getUpcomingChampionsMeet(champsmeets);
+  const upcomingCmNumber = Number(upcomingCm?.number);
+  const effectiveMinCmNumber = Number.isFinite(upcomingCmNumber)
+    ? Math.max(SKILL_MAP_MIN_CM_NUMBER, upcomingCmNumber)
+    : SKILL_MAP_MIN_CM_NUMBER;
+
   const selectableCms = getSelectableChampionsMeets(champsmeets, {
-    fromCmNumber: SKILL_MAP_MIN_CM_NUMBER,
+    fromCmNumber: effectiveMinCmNumber,
     maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
   });
   if (selectableCms.length === 0) return result;
@@ -155,9 +163,8 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumbe
     activeCm = selectableCms.find((cm) => Number(cm.number) === Number(selectedCmNumber)) ?? null;
   }
   if (!activeCm) {
-    const upcoming = getUpcomingChampionsMeet(champsmeets);
     activeCm =
-      (upcoming && selectableCms.find((cm) => Number(cm.number) === Number(upcoming.number))) ||
+      (upcomingCm && selectableCms.find((cm) => Number(cm.number) === Number(upcomingCm.number))) ||
       selectableCms[0];
   }
 
@@ -1131,12 +1138,73 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       return;
     }
 
+    if (isClubCommand(name)) {
+      const clubResult = await dispatchClubCommand(name, req);
+      if (clubResult?.deferred) {
+        res.send({
+          type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+          data: clubResult.ephemeral ? { flags: InteractionResponseFlags.EPHEMERAL } : undefined,
+        });
+        (async () => {
+          try {
+            await clubResult.run((payload) => sendFollowup(token, payload));
+          } catch (err) {
+            console.error(`${name} deferred handler failed:`, err);
+            try {
+              await sendFollowup(token, {
+                flags: InteractionResponseFlags.EPHEMERAL,
+                content: '❌ Something went wrong. Please try again later.',
+              });
+            } catch (followupErr) {
+              console.error(`${name} follow-up failed:`, followupErr);
+            }
+          }
+        })();
+        return;
+      }
+      if (clubResult) {
+        return res.send(clubResult);
+      }
+    }
+
     console.error(`unknown command: ${name}`);
     return res.status(400).json({ error: 'unknown command' });
   }
 
   if (type === InteractionType.MESSAGE_COMPONENT) {
     const { custom_id, values } = data;
+
+    const clubAction = handleClubComponent(custom_id, values);
+    if (clubAction) {
+      const componentUserId = req.body.member?.user?.id || req.body.user?.id;
+      if (clubAction.ownerUserId && clubAction.ownerUserId !== componentUserId) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ That menu belongs to someone else.',
+          },
+        });
+      }
+
+      try {
+        const componentData = await runClubComponentAction(clubAction);
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: componentData,
+        });
+      } catch (err) {
+        console.error('Club component handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: {
+            content: `❌ ${err.message}`,
+            components: [],
+            embeds: [],
+          },
+        });
+      }
+    }
 
     if (custom_id === "supporter_select") {
       const [selectedId, levelStr] = values[0].split("|");

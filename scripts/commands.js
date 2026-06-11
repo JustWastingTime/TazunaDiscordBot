@@ -153,15 +153,108 @@ const CM_COMMAND = {
   contexts: [0, 1, 2],
 }; 
 
-const TRAINER_COMMAND = {
-  name: 'trainer',
-  description: 'Look up a trainer in the club',
+const GUILD_ADMIN_PERMISSIONS = '8';
+
+const REGISTER_CLUB_COMMAND = {
+  name: 'registerclub',
+  description: 'Link this server to an Umamusume club (admin only)',
+  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
+  options: [
+    {
+      type: 4,
+      name: 'id',
+      description: 'Club ID from Umamusume / uma.moe (e.g. 883948934)',
+      required: true,
+      min_value: 1,
+    },
+  ],
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
+const UNREGISTER_CLUB_COMMAND = {
+  name: 'unregisterclub',
+  description: 'Remove a club link from this server (admin only)',
+  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
+  options: [
+    {
+      type: 4,
+      name: 'id',
+      description: 'Club ID to unregister',
+      required: true,
+      min_value: 1,
+    },
+  ],
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
+const REGISTER_COMMAND = {
+  name: 'register',
+  description: 'Link your Discord account to your Umamusume trainer ID',
+  options: [
+    {
+      type: 3,
+      name: 'id',
+      description: 'Account ID from uma.moe profile URL (e.g. uma.moe/profile/123...)',
+      required: true,
+    },
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const REGISTER_FORCED_COMMAND = {
+  name: 'registerforced',
+  description: 'Force-link a user to a trainer ID (admin only)',
+  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
+  options: [
+    {
+      type: 6,
+      name: 'user',
+      description: 'Discord user to link',
+      required: true,
+    },
+    {
+      type: 3,
+      name: 'id',
+      description: 'Account ID from uma.moe profile URL',
+      required: true,
+    },
+  ],
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
+const PROFILE_COMMAND = {
+  name: 'profile',
+  description: 'Show your linked trainer profile, or look up a trainer on this server',
   options: [
     {
       type: 3,
       name: 'name',
-      description: 'Name of the trainer in the club',
-      required: false
+      description: 'Trainer name to look up (server clubs only)',
+      required: false,
+    },
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+const LEADERBOARD_COMMAND = {
+  name: 'leaderboard',
+  description: 'Show a club monthly fans leaderboard',
+  options: [
+    {
+      type: 3,
+      name: 'clubname',
+      description: 'Club name to show (defaults to your linked club)',
+      required: false,
     },
   ],
   type: 1,
@@ -283,6 +376,25 @@ const REFRESHCACHE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const ALL_COMMANDS = [SUPPORTER_COMMAND, SKILL_COMMAND, UMA_COMMAND, RACE_COMMAND, CM_COMMAND, SCHEDULE_COMMAND, RESOURCE_COMMAND, EPITHET_COMMAND, QP_COMMAND, DONATE_COMMAND, BUGREPORT_COMMAND, REFRESHCACHE_COMMAND];
+const ALL_COMMANDS = [
+  SUPPORTER_COMMAND,
+  SKILL_COMMAND,
+  UMA_COMMAND,
+  RACE_COMMAND,
+  CM_COMMAND,
+  REGISTER_CLUB_COMMAND,
+  UNREGISTER_CLUB_COMMAND,
+  REGISTER_COMMAND,
+  REGISTER_FORCED_COMMAND,
+  PROFILE_COMMAND,
+  LEADERBOARD_COMMAND,
+  SCHEDULE_COMMAND,
+  RESOURCE_COMMAND,
+  EPITHET_COMMAND,
+  QP_COMMAND,
+  DONATE_COMMAND,
+  BUGREPORT_COMMAND,
+  REFRESHCACHE_COMMAND,
+];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
