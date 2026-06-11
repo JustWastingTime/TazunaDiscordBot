@@ -7,6 +7,15 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '..', 'data');
 const GUILD_CLUBS_PATH = path.join(DATA_DIR, 'guild-clubs.json');
 const USER_LINKS_PATH = path.join(DATA_DIR, 'user-links.json');
+const LEADERBOARD_CHANNELS_PATH = path.join(DATA_DIR, 'leaderboard-channels.json');
+const PREMIUM_GUILDS_PATH = path.join(DATA_DIR, 'premium-guilds.json');
+
+const PREMIUM_GUILD_IDS_ENV = new Set(
+  String(process.env.PREMIUM_GUILD_IDS || '')
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean),
+);
 
 function ensureDataDir() {
   fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -80,6 +89,7 @@ export function unregisterGuildClub(guildId, circleId) {
   else delete store[key];
 
   saveGuildClubs(store);
+  removeLeaderboardChannelsForClub(guildId, circleId);
   return true;
 }
 
@@ -118,6 +128,98 @@ export function upsertUserLink({ discordUserId, viewerId, trainerName, circleId,
   };
   saveUserLinks(store);
   return { isNewUser: !existing };
+}
+
+function loadLeaderboardChannels() {
+  const data = readJson(LEADERBOARD_CHANNELS_PATH, []);
+  return Array.isArray(data) ? data : [];
+}
+
+function saveLeaderboardChannels(channels) {
+  writeJson(LEADERBOARD_CHANNELS_PATH, channels);
+}
+
+function loadPremiumGuildStore() {
+  const data = readJson(PREMIUM_GUILDS_PATH, { guildIds: [] });
+  return Array.isArray(data?.guildIds) ? data : { guildIds: [] };
+}
+
+function savePremiumGuildStore(store) {
+  writeJson(PREMIUM_GUILDS_PATH, store);
+}
+
+export function upsertLeaderboardChannel({ guildId, circleId, channelId, messageId }) {
+  const channels = loadLeaderboardChannels();
+  const g = String(guildId);
+  const c = String(circleId);
+  const next = channels.filter(
+    (entry) => !(String(entry.guildId) === g && String(entry.circleId) === c),
+  );
+  next.push({
+    guildId: g,
+    circleId: c,
+    channelId: String(channelId),
+    messageId: String(messageId),
+    lastUpdatedAt: null,
+    lastDailyKey: null,
+    lastEmbedHash: null,
+    createdAt: new Date().toISOString(),
+  });
+  saveLeaderboardChannels(next);
+}
+
+export function removeLeaderboardChannelsForClub(guildId, circleId) {
+  const channels = loadLeaderboardChannels();
+  const g = String(guildId);
+  const c = String(circleId);
+  const next = channels.filter(
+    (entry) => !(String(entry.guildId) === g && String(entry.circleId) === c),
+  );
+  if (next.length === channels.length) return false;
+  saveLeaderboardChannels(next);
+  return true;
+}
+
+export function getAllLeaderboardChannels() {
+  return loadLeaderboardChannels();
+}
+
+export function removeLeaderboardChannel(guildId, circleId) {
+  return removeLeaderboardChannelsForClub(guildId, circleId);
+}
+
+export function updateLeaderboardChannelState(guildId, circleId, patch) {
+  const channels = loadLeaderboardChannels();
+  const g = String(guildId);
+  const c = String(circleId);
+  const entry = channels.find(
+    (item) => String(item.guildId) === g && String(item.circleId) === c,
+  );
+  if (!entry) return false;
+
+  if (patch.lastUpdatedAt !== undefined) entry.lastUpdatedAt = patch.lastUpdatedAt;
+  if (patch.lastDailyKey !== undefined) entry.lastDailyKey = patch.lastDailyKey;
+  if (patch.lastEmbedHash !== undefined) entry.lastEmbedHash = patch.lastEmbedHash;
+  saveLeaderboardChannels(channels);
+  return true;
+}
+
+export function isPremiumGuild(guildId) {
+  const id = String(guildId);
+  if (PREMIUM_GUILD_IDS_ENV.has(id)) return true;
+  const store = loadPremiumGuildStore();
+  return store.guildIds.map(String).includes(id);
+}
+
+export function setGuildPremium(guildId, enabled) {
+  const store = loadPremiumGuildStore();
+  const id = String(guildId);
+  const ids = new Set(store.guildIds.map(String));
+  if (enabled) ids.add(id);
+  else ids.delete(id);
+  store.guildIds = [...ids].sort();
+  savePremiumGuildStore(store);
+  return enabled;
 }
 
 export function getUserLink(discordUserId) {

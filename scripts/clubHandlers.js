@@ -5,8 +5,12 @@ import {
 import {
   getGuildClubs,
   getUserLink,
+  isGuildClubRegistered,
+  isPremiumGuild,
   registerGuildClub,
+  setGuildPremium,
   unregisterGuildClub,
+  upsertLeaderboardChannel,
   upsertUserLink,
 } from './clubDatabase.js';
 import {
@@ -20,11 +24,21 @@ import {
   fetchUserProfile,
   findClubsByName,
   findTrainerCandidates,
+  buildLeaderboardPackage,
+  isTop100Circle,
   resolveLeaderboardFromCircleId,
   resolveProfileFromPick,
 } from './clubService.js';
+import { DiscordRequest } from './utils.js';
 
 const ADMINISTRATOR = 0x8n;
+
+const BOT_OWNER_IDS = new Set(
+  String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean),
+);
 
 function getOptionValue(options, name) {
   const value = options?.find((opt) => opt.name === name)?.value;
@@ -383,6 +397,87 @@ export async function handleLeaderboard(req) {
   };
 }
 
+function describeRefreshSchedule(guildId, circleData) {
+  const top100 = isTop100Circle(circleData?.circle);
+  if (!top100) return 'daily at **00:10 JST**';
+  return isPremiumGuild(guildId)
+    ? 'every **5 minutes** (premium server)'
+    : 'every **15 minutes**';
+}
+
+export async function handleSetLeaderboardChannel(req) {
+  const guildId = req.body.guild_id;
+  const channelId = req.body.channel_id;
+  if (!guildId) return guildRequiredResponse();
+  if (!isGuildAdmin(req.body.member)) {
+    return ephemeral('❌ Only server administrators can use `/setleaderboardchannel`.');
+  }
+
+  const circleId = String(getOptionValue(req.body.data.options, 'id') ?? '').trim();
+  if (!circleId) return ephemeral('❌ Please provide a club ID.');
+
+  if (!isGuildClubRegistered(guildId, circleId)) {
+    return ephemeral('❌ That club is not registered on this server. Run `/registerclub` first.');
+  }
+
+  return {
+    deferred: true,
+    ephemeral: true,
+    run: async (sendFollowup) => {
+      try {
+        const pkg = await buildLeaderboardPackage(circleId);
+        const response = await DiscordRequest(`channels/${channelId}/messages`, {
+          method: 'POST',
+          body: { embeds: [pkg.embed] },
+        });
+        const message = await response.json();
+
+        upsertLeaderboardChannel({
+          guildId,
+          circleId,
+          channelId,
+          messageId: message.id,
+        });
+
+        const schedule = describeRefreshSchedule(guildId, pkg.data);
+        await sendFollowup({
+          flags: InteractionResponseFlags.EPHEMERAL,
+          content:
+            `✅ Leaderboard posted in <#${channelId}> for **${pkg.data.circle?.name ?? circleId}**. ` +
+            `It will auto-update ${schedule}.`,
+        });
+      } catch (err) {
+        console.error('setleaderboardchannel failed:', err);
+        await sendFollowup({
+          flags: InteractionResponseFlags.EPHEMERAL,
+          content: `❌ Failed to set leaderboard channel: ${err.message}`,
+        });
+      }
+    },
+  };
+}
+
+export async function handleSetPremium(req) {
+  const guildId = req.body.guild_id;
+  const userId = req.body.member?.user?.id || req.body.user?.id;
+  if (!guildId) return guildRequiredResponse();
+  if (!userId || !BOT_OWNER_IDS.has(userId)) {
+    return ephemeral('❌ Only the bot owner can use `/setpremium`.');
+  }
+
+  const enabled = req.body.data.options?.find((opt) => opt.name === 'enabled')?.value;
+  if (typeof enabled !== 'boolean') {
+    return ephemeral('❌ Please choose whether premium is enabled or disabled.');
+  }
+
+  setGuildPremium(guildId, enabled);
+  return ephemeral(
+    enabled
+      ? '✅ This server now has **premium** leaderboard refresh (top-100 clubs update every 5 minutes).'
+      : '✅ Premium leaderboard refresh removed. Top-100 clubs on this server will update every 15 minutes.',
+  );
+}
+
 export function dispatchClubCommand(name, req) {
   switch (name) {
     case 'registerclub':
@@ -397,6 +492,10 @@ export function dispatchClubCommand(name, req) {
       return handleProfile(req);
     case 'leaderboard':
       return handleLeaderboard(req);
+    case 'setleaderboardchannel':
+      return handleSetLeaderboardChannel(req);
+    case 'setpremium':
+      return handleSetPremium(req);
     default:
       return null;
   }
@@ -410,5 +509,7 @@ export function isClubCommand(name) {
     'registerforced',
     'profile',
     'leaderboard',
+    'setleaderboardchannel',
+    'setpremium',
   ].includes(name);
 }

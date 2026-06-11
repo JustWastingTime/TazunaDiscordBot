@@ -667,8 +667,23 @@ export async function resolveProfileFromPick(value) {
   return buildProfileEmbedForViewerId(viewerId, circleId || undefined);
 }
 
-export async function resolveLeaderboardFromCircleId(circleId) {
+export function isTop100Circle(circle) {
+  const rank = circle?.live_rank;
+  return typeof rank === 'number' && rank > 0 && rank <= 100;
+}
+
+export async function buildLeaderboardPackage(circleId) {
   const data = await fetchCircleData(circleId);
   const currentTarget = await fetchCurrentTarget(data);
-  return buildLeaderboardEmbed(data, currentTarget);
+  const embed = buildLeaderboardEmbed(data, currentTarget);
+  return {
+    data,
+    embed,
+    isTop100: isTop100Circle(data.circle),
+  };
+}
+
+export async function resolveLeaderboardFromCircleId(circleId) {
+  const pkg = await buildLeaderboardPackage(circleId);
+  return pkg.embed;
 }

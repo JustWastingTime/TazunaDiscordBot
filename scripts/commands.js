@@ -262,6 +262,40 @@ const LEADERBOARD_COMMAND = {
   contexts: [0, 1, 2],
 };
 
+const SET_LEADERBOARD_CHANNEL_COMMAND = {
+  name: 'setleaderboardchannel',
+  description: 'Post an auto-updating club leaderboard in this channel (admin only)',
+  default_member_permissions: GUILD_ADMIN_PERMISSIONS,
+  options: [
+    {
+      type: 4,
+      name: 'id',
+      description: 'Club ID from Umamusume / uma.moe',
+      required: true,
+      min_value: 1,
+    },
+  ],
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
+const SET_PREMIUM_COMMAND = {
+  name: 'setpremium',
+  description: 'Enable or disable premium leaderboard refresh for this server (owner only)',
+  options: [
+    {
+      type: 5,
+      name: 'enabled',
+      description: 'Grant premium (5-minute top-100 refresh)?',
+      required: true,
+    },
+  ],
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
 const SCHEDULE_COMMAND = {
   name: "schedule",
   description: "See the current month's schedule",
@@ -388,6 +422,8 @@ const ALL_COMMANDS = [
   REGISTER_FORCED_COMMAND,
   PROFILE_COMMAND,
   LEADERBOARD_COMMAND,
+  SET_LEADERBOARD_CHANNEL_COMMAND,
+  SET_PREMIUM_COMMAND,
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,
