@@ -551,9 +551,11 @@ export function buildLeaderboardEmbed(data, currentTarget = null) {
     lines.push(['```', header, ...rows, '```'].join('\n'));
   }
 
+  const circleId = circle?.circle_id ?? circle?.id;
   return {
     color: 0xF1C40F,
     title: `🏆 ${circle.name} — Monthly Fans`,
+    url: circleId ? `https://uma.moe/circles/${circleId}` : undefined,
     description: lines.join('\n'),
     footer: {
       text: `Last updated • ${circle.last_updated ? new Date(circle.last_updated).toLocaleString() : '—'}`,
