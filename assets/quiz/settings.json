@@ -1,5 +1,5 @@
 {
-  "quizNotificationRole": "quiz-notifications",
+  "quizNotificationRole": "tazuna-quiz-role",
   "enabledCategories": [
     "umas",
     "songs",
@@ -7,18 +7,16 @@
     "supporters",
     "keiba",
     "trivia",
-    "silhouettes"
+    "umaguesser"
   ],
-  "availableCategories":[
+  "availableCategories": [
     "umas",
     "songs",
     "skills",
     "supporters",
     "trivia",
     "keiba",
-    "silhouettes",
-    
-
+    "umaguesser",
     "template"
   ]
 }
