@@ -191,14 +191,20 @@ export function filterSessionQuestions(questions, options) {
   });
 }
 
-function groupQuestionsByCategory(questions) {
-  const byCategory = new Map();
+function getQuestionBalanceKey(question) {
+  const category = question.category || 'unknown';
+  const prompt = String(question.prompt || '').trim() || question.id || 'unknown';
+  return `${category}::${prompt}`;
+}
+
+function groupQuestionsByBalanceKey(questions) {
+  const groups = new Map();
   for (const question of questions) {
-    const category = question.category || 'unknown';
-    if (!byCategory.has(category)) byCategory.set(category, []);
-    byCategory.get(category).push(question);
+    const key = getQuestionBalanceKey(question);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(question);
   }
-  return byCategory;
+  return groups;
 }
 
 function pickRandomItem(items) {
@@ -221,23 +227,23 @@ export function pickQuestion(questions, options) {
     const tierQuestions = eligible.filter((q) => getQuestionDifficulty(q) === tier);
     if (!tierQuestions.length) continue;
 
-    const byCategory = groupQuestionsByCategory(tierQuestions);
-    const categoryPools = [...byCategory.entries()].map(([category, categoryQuestions]) => {
-      const unused = categoryQuestions.filter((q) => !usedSet.has(q.id));
+    const byGroup = groupQuestionsByBalanceKey(tierQuestions);
+    const groupPools = [...byGroup.entries()].map(([groupKey, groupQuestions]) => {
+      const unused = groupQuestions.filter((q) => !usedSet.has(q.id));
       return {
-        category,
-        asked: categoryQuestions.length - unused.length,
+        groupKey,
+        asked: groupQuestions.length - unused.length,
         hasUnused: unused.length > 0,
-        pool: unused.length ? unused : categoryQuestions,
+        pool: unused.length ? unused : groupQuestions,
       };
     });
 
-    const categoriesWithUnused = categoryPools.filter((entry) => entry.hasUnused);
-    const candidates = categoriesWithUnused.length ? categoriesWithUnused : categoryPools;
+    const groupsWithUnused = groupPools.filter((entry) => entry.hasUnused);
+    const candidates = groupsWithUnused.length ? groupsWithUnused : groupPools;
     const minAsked = Math.min(...candidates.map((entry) => entry.asked));
     const balanced = candidates.filter((entry) => entry.asked === minAsked);
-    const chosenCategory = pickRandomItem(balanced);
-    return pickRandomItem(chosenCategory.pool);
+    const chosenGroup = pickRandomItem(balanced);
+    return pickRandomItem(chosenGroup.pool);
   }
 
   return null;
