@@ -79,6 +79,17 @@
         ["https://static.snep.pw/uma/games/shoematch/98caa6b87.png", 
         ["Hishi Akebono", "Oguri Cap", "Mihono Bourbon (Valentines)", "Curren Chan", "Nishino Flower"]]
       ]
+    },
+    { "promptTemplate": "Who's winning pose is this?",
+      "difficulty": "hard",
+      "entries": [
+        ["https://i.ibb.co.com/kgvtGgm9/92050ba596076fa9fb8a0ae5ae9a96f3.gif", 
+        ["Katsuragi Ace", "TM Opera O", "Orfevre", "Inari One", "Symboli Rudolf"], "expert"],
+        ["https://i.ibb.co.com/ccVRTKqT/cd2f9292f03b9b02028b3338f0c75492.gif", 
+        ["Sweep Tosho", "Matikanefukukitaru", "Rice Shower", "Haru Urara", "Vodka"]],
+        ["https://i.ibb.co.com/8gty8nWP/f1919b121907bfcd29f7892c2397cbbd.gif", 
+        ["Meisho Doto", "Matikanefukukitaru", "Narita Top Road", "Winning Ticket", "Nice Nature"]]
+      ]
     }
   ]
 }
