@@ -1,0 +1,475 @@
+import { addGambaCoins, ensureQuizUser, recordQuizAnswer } from './clubDatabase.js';
+import {
+  clearQuiz,
+  getActiveQuiz,
+  loadQuizQuestions,
+  loadQuizSettings,
+  loadQuizState,
+  updateQuizState,
+} from './quizStorage.js';
+import {
+  deleteChannelMessage,
+  editChannelMessage,
+  sendChannelMessage,
+} from './quizDiscord.js';
+import { getGuildQuizRoleId } from './quizGuild.js';
+import * as quiz from './quizService.js';
+
+const roundTimers = new Map();
+const betweenRoundTimers = new Map();
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function cancelTimer(map, guildId) {
+  const existing = map.get(guildId);
+  if (existing) {
+    clearTimeout(existing);
+    map.delete(guildId);
+  }
+}
+
+export function cancelAllTimers(guildId) {
+  cancelTimer(roundTimers, guildId);
+  cancelTimer(betweenRoundTimers, guildId);
+}
+
+function isChannelUnavailableError(err) {
+  const message = String(err?.message || err || '');
+  return message.includes('50001') || message.includes('50013') || message.includes('10003');
+}
+
+async function safeChannelSend(channelId, payload, context) {
+  try {
+    return await sendChannelMessage(channelId, payload);
+  } catch (err) {
+    if (isChannelUnavailableError(err)) {
+      console.warn(`${context}: channel unavailable (${err.message})`);
+      return null;
+    }
+    throw err;
+  }
+}
+
+async function abortQuiz(guildId, reason) {
+  cancelAllTimers(guildId);
+  await clearQuiz(guildId);
+  console.warn(`Quiz aborted for guild ${guildId}: ${reason}`);
+}
+
+function formatQuizLoadError(gamemode) {
+  const settings = loadQuizSettings();
+  const enabled = settings.enabledCategories || [];
+  if (!enabled.length) {
+    return 'No quiz categories enabled.';
+  }
+  const categories = quiz.getGamemodeCategories(gamemode, enabled);
+  if (!categories.length) {
+    return `No enabled categories for **${quiz.getGamemodeLabel(gamemode)}** mode.`;
+  }
+  return `No MCQ questions loaded for **${quiz.getGamemodeLabel(gamemode)}** (${categories.join(', ')}).`;
+}
+
+function loadSessionQuestions(quizState) {
+  const enabled = loadQuizSettings().enabledCategories || [];
+  const categories = quiz.getGamemodeCategories(quizState?.gamemode, enabled);
+  const questions = quiz.filterSessionQuestions(loadQuizQuestions(categories), {
+    gamemode: quizState.gamemode,
+    allowAudio: quizState.allowAudio,
+    allowPicture: quizState.allowPicture,
+  });
+  return { categories, questions };
+}
+
+async function runStartCountdown(channelId, seconds) {
+  let message = await safeChannelSend(
+    channelId,
+    { content: `⏳ First question in **${seconds}**...` },
+    'quiz countdown',
+  );
+
+  for (let remaining = seconds - 1; remaining >= 1; remaining -= 1) {
+    await sleep(1000);
+    if (!message?.id) continue;
+    try {
+      await editChannelMessage(channelId, message.id, {
+        content: `⏳ First question in **${remaining}**...`,
+      });
+    } catch {
+      // Ignore edit failures during countdown.
+    }
+  }
+
+  await sleep(1000);
+  if (message?.id) {
+    await deleteChannelMessage(channelId, message.id);
+  }
+}
+
+async function awardQuizWinCoins(winner, participantCount) {
+  const coinReward = quiz.calculateQuizWinReward(participantCount);
+  if (coinReward <= 0) return { coinReward: 0 };
+
+  addGambaCoins(winner.userId, coinReward);
+  return { coinReward };
+}
+
+export async function finishQuiz(guildId, winner) {
+  cancelAllTimers(guildId);
+
+  const active = getActiveQuiz(guildId);
+  if (!active) return;
+
+  const participantCount = quiz.getQuizParticipantCount(active.scores);
+  const reward = await awardQuizWinCoins(winner, participantCount);
+
+  await safeChannelSend(
+    active.channelId,
+    {
+      embeds: [
+        quiz.buildWinnerEmbed(winner, active.scores, {
+          coinReward: reward.coinReward,
+          scoreGoal: active.scoreGoal,
+        }),
+      ],
+    },
+    'finishQuiz',
+  );
+
+  await clearQuiz(guildId);
+}
+
+export async function finishRound(guildId) {
+  cancelTimer(roundTimers, guildId);
+
+  const outcome = await updateQuizState((state) => {
+    const active = state[guildId];
+    if (!active?.round || active.status !== 'active') return { done: false };
+
+    const { questions } = loadSessionQuestions(active);
+    const question = quiz.getQuestionById(questions, active.round.questionId);
+    if (!question) {
+      active.status = 'finished';
+      return { done: true, error: 'Question missing from quiz category files.', active };
+    }
+
+    return { done: true, active, question };
+  });
+
+  if (!outcome?.done) return;
+
+  if (outcome.error) {
+    await safeChannelSend(
+      outcome.active.channelId,
+      { content: `❌ Quiz ended: ${outcome.error}` },
+      'finishRound',
+    );
+    await clearQuiz(guildId);
+    return;
+  }
+
+  const { active, question } = outcome;
+  try {
+    const editPayload = {
+      embeds: [quiz.buildRoundEndEmbed(active, question)],
+      components: quiz.buildDisabledMcqRows(active.round),
+    };
+    await editChannelMessage(active.channelId, active.round.messageId, editPayload);
+  } catch (err) {
+    console.error('Failed to edit quiz round message:', err.message);
+    await safeChannelSend(
+      active.channelId,
+      { embeds: [quiz.buildRoundEndEmbed(active, question)] },
+      'finishRound fallback',
+    );
+  }
+
+  const hadAnswers = Object.keys(active.round.responses).length > 0;
+  const pendingWinner = active.pendingWinner;
+  quiz.clearRound(active);
+
+  let emptyRoundStreak = 0;
+  await updateQuizState((state) => {
+    const current = state[guildId];
+    if (!current) return true;
+    if (hadAnswers) current.emptyRoundStreak = 0;
+    else current.emptyRoundStreak = (current.emptyRoundStreak || 0) + 1;
+    emptyRoundStreak = current.emptyRoundStreak;
+    current.round = null;
+    return true;
+  });
+
+  if (emptyRoundStreak >= quiz.EMPTY_ROUND_LIMIT) {
+    await stopQuiz(guildId, {
+      reason: `⏹️ **Quiz auto-stopped** — no answers for **${quiz.EMPTY_ROUND_LIMIT}** rounds in a row.`,
+    });
+    return;
+  }
+
+  const winner = pendingWinner || quiz.resolveWinnerAfterRound(active);
+  if (winner && winner.points >= (active.scoreGoal ?? quiz.DEFAULT_SCORE_GOAL)) {
+    await finishQuiz(guildId, winner);
+    return;
+  }
+
+  const timer = setTimeout(() => {
+    beginRound(guildId).catch((err) => {
+      console.error('Failed to start next quiz round:', err.message);
+    });
+  }, quiz.BETWEEN_ROUNDS_MS);
+  betweenRoundTimers.set(guildId, timer);
+}
+
+function scheduleRoundEnd(guildId) {
+  cancelTimer(roundTimers, guildId);
+
+  const active = getActiveQuiz(guildId);
+  if (!active?.round) return;
+
+  const remaining = active.round.endsAt - Date.now();
+  const delay = Math.max(0, remaining);
+  const timer = setTimeout(() => {
+    finishRound(guildId).catch((err) => {
+      console.error('Failed to finish quiz round:', err.message);
+    });
+  }, delay);
+  roundTimers.set(guildId, timer);
+}
+
+export async function beginRound(guildId) {
+  cancelTimer(betweenRoundTimers, guildId);
+
+  const activeQuiz = getActiveQuiz(guildId);
+  if (!activeQuiz) return { ok: false, error: 'No active quiz.' };
+
+  const { questions } = loadSessionQuestions(activeQuiz);
+  if (!questions.length) {
+    const error = formatQuizLoadError(activeQuiz.gamemode);
+    await updateQuizState((state) => {
+      delete state[guildId];
+      return { error };
+    });
+    return { ok: false, error };
+  }
+
+  const setup = await updateQuizState((state) => {
+    const active = state[guildId];
+    if (!active || active.status !== 'active') return { ok: false, error: 'No active quiz.' };
+
+    const question = quiz.pickQuestion(questions, {
+      selectedDifficulty: active.difficulty,
+      usedIds: active.usedQuestionIds,
+    });
+    if (!question) {
+      return {
+        ok: false,
+        error: `No questions available for **${quiz.getGamemodeLabel(active.gamemode)}** mode.`,
+      };
+    }
+
+    quiz.startRoundState(active, question, null);
+    return { ok: true, active, question };
+  });
+
+  if (!setup.ok) return setup;
+
+  const active = getActiveQuiz(guildId);
+  const payload = await quiz.buildQuestionPayload(setup.question, active);
+
+  let message;
+  try {
+    message = await sendChannelMessage(active.channelId, payload);
+  } catch (err) {
+    if (isChannelUnavailableError(err)) {
+      await abortQuiz(guildId, 'missing access when posting round');
+      return { ok: false, error: 'Bot cannot post in the quiz channel. Quiz ended.' };
+    }
+    await updateQuizState((state) => {
+      if (state[guildId]) state[guildId].round = null;
+      return true;
+    });
+    throw err;
+  }
+
+  await updateQuizState((state) => {
+    const current = state[guildId];
+    if (current?.round) current.round.messageId = message.id;
+    return true;
+  });
+
+  scheduleRoundEnd(guildId);
+  return { ok: true };
+}
+
+export async function startQuiz({
+  guildId,
+  channelId,
+  userId,
+  userName,
+  gamemode,
+  difficulty,
+  roundSeconds,
+  scoreGoal,
+  audio,
+  picture,
+}) {
+  const existing = getActiveQuiz(guildId);
+  if (existing) {
+    return { ok: false, error: 'A quiz is already running in this server.' };
+  }
+
+  const quizGamemode = quiz.normalizeGamemode(gamemode);
+  const quizDifficulty = quiz.normalizeDifficulty(difficulty);
+  const quizRoundSeconds = quiz.normalizeRoundSeconds(roundSeconds);
+  const quizScoreGoal = quiz.normalizeScoreGoal(scoreGoal);
+  const allowAudio = quizGamemode === 'umadol' ? true : quiz.parseYesNo(audio, true);
+  const allowPicture = quizGamemode === 'umaguesser' ? true : quiz.parseYesNo(picture, true);
+
+  const enabled = loadQuizSettings().enabledCategories || [];
+  const categories = quiz.getGamemodeCategories(quizGamemode, enabled);
+  const questions = quiz.filterSessionQuestions(loadQuizQuestions(categories), {
+    gamemode: quizGamemode,
+    allowAudio,
+    allowPicture,
+  });
+
+  if (!questions.length) {
+    return {
+      ok: false,
+      error: `No questions found for **${quiz.getGamemodeLabel(quizGamemode)}** (${categories.join(', ') || 'none'}).`,
+    };
+  }
+
+  await updateQuizState((state) => {
+    state[guildId] = quiz.createQuizState({
+      guildId,
+      channelId,
+      startedBy: userId,
+      starterName: userName,
+      gamemode: quizGamemode,
+      difficulty: quizDifficulty,
+      roundSeconds: quizRoundSeconds,
+      scoreGoal: quizScoreGoal,
+      allowAudio,
+      allowPicture,
+    });
+    return true;
+  });
+
+  const roleId = await getGuildQuizRoleId(guildId);
+  const rolePing = roleId ? `<@&${roleId}>` : '';
+  const startMessage =
+    `🎯 **Quiz started** by **${userName}** ` +
+    `(${quiz.getGamemodeLabel(quizGamemode)} · ${quiz.getDifficultyLabel(quizDifficulty)} · ${quizRoundSeconds}s/round). ` +
+    `First to **${quizScoreGoal}** points wins!`;
+
+  await safeChannelSend(
+    channelId,
+    {
+      content: rolePing ? `${rolePing}\n${startMessage}` : startMessage,
+      allowed_mentions: roleId ? { roles: [roleId] } : undefined,
+    },
+    'startQuiz',
+  );
+
+  await runStartCountdown(channelId, quiz.QUIZ_START_COUNTDOWN_SECONDS);
+
+  if (!getActiveQuiz(guildId)) {
+    return { ok: false, error: 'Quiz was stopped before the first round.' };
+  }
+
+  return beginRound(guildId);
+}
+
+export async function stopQuiz(guildId, { reason } = {}) {
+  const active = getActiveQuiz(guildId);
+  if (!active) return { ok: false, error: 'No active quiz in this server.' };
+
+  cancelAllTimers(guildId);
+  const lines = quiz.getScoreboardLines(active.scores);
+  const heading = reason || '⏹️ **Quiz stopped.**';
+  await safeChannelSend(
+    active.channelId,
+    { content: [heading, '', '**Current scoreboard**', ...lines].join('\n') },
+    'stopQuiz',
+  );
+  await clearQuiz(guildId);
+  return { ok: true };
+}
+
+export async function handleMcqClick({
+  guildId,
+  userId,
+  displayName,
+  roundNumber,
+  choiceIndex,
+}) {
+  const userSetup = ensureQuizUser(userId, displayName, guildId);
+
+  const result = await updateQuizState((state) => {
+    const active = state[guildId];
+    if (!active || active.status !== 'active') {
+      return { ok: false, error: 'No active quiz.' };
+    }
+    if (!active.round || active.round.number !== roundNumber) {
+      return { ok: false, error: 'This round has ended.' };
+    }
+    if (active.round.type !== 'mcq') {
+      return { ok: false, error: 'This is not an MCQ round.' };
+    }
+
+    const { questions } = loadSessionQuestions(active);
+    const question = quiz.getQuestionById(questions, active.round.questionId);
+    const answer = quiz.processMcqAnswer(active, question, userId, displayName, choiceIndex);
+    return { ...answer, active, question, umaLinked: userSetup.umaLinked };
+  });
+
+  if (!result.ok) {
+    return { ok: false, error: result.error };
+  }
+
+  recordQuizAnswer(userId, result.correct);
+
+  let content;
+  if (result.correct) {
+    const bonus = result.isFirstCorrect
+      ? `First correct — **+${quiz.FIRST_POINTS}**!`
+      : `Correct — **+${quiz.OTHER_POINTS}**!`;
+    content = `✅ ${bonus} (${result.totalPoints} pts total)`;
+  } else {
+    content = '❌ Wrong answer.';
+  }
+
+  if (!result.umaLinked) {
+    content += '\n\n⚠️ You are **unlinked** — use `/register` to show club and fan stats on `/profile`.';
+  }
+
+  return { ok: true, content, reachedWinTarget: result.reachedWinTarget };
+}
+
+export async function resumeActiveQuizzes() {
+  const state = loadQuizState();
+
+  for (const guildId of Object.keys(state)) {
+    const active = state[guildId];
+    if (!active || active.status !== 'active') continue;
+
+    try {
+      if (active.round && quiz.isRoundOpen(active)) {
+        scheduleRoundEnd(guildId);
+        continue;
+      }
+
+      if (active.round && !quiz.isRoundOpen(active)) {
+        await finishRound(guildId);
+        continue;
+      }
+
+      await beginRound(guildId);
+    } catch (err) {
+      console.error(`Failed to resume quiz for guild ${guildId}:`, err.message);
+      await abortQuiz(guildId, 'resume failed');
+    }
+  }
+}

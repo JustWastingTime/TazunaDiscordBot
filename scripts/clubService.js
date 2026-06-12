@@ -405,6 +405,33 @@ function formatFestField(value) {
   return String(value);
 }
 
+export function buildUnlinkedProfileEmbed(link) {
+  const name = link?.trainerName || 'Trainer';
+  return {
+    color: 0xF1C40F,
+    title: `${name} — Trainer Profile`,
+    description:
+      '**🏇 Club:** Unlinked\n**Fan stats:** Unlinked — use `/register` with your uma.moe account ID.',
+    fields: [
+      {
+        name: '🎰 GambaCoins',
+        value: formatFestField(link?.gambaCoins),
+        inline: true,
+      },
+      {
+        name: '🎲 Gamba WR',
+        value: formatFestField(link?.gambaWr),
+        inline: true,
+      },
+      {
+        name: '🧠 Quiz Accuracy',
+        value: formatFestField(link?.quizAccuracy),
+        inline: true,
+      },
+    ],
+  };
+}
+
 export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) {
   const fanStats = getMemberFanStats(member.daily_fans);
   const dailyAvg = Math.round(fanStats.monthlyGain / fanStats.averageDays);
@@ -804,7 +831,7 @@ export function buildLeaderboardSelectRow(clubs, circleDataById, ownerUserId) {
 export async function resolveProfileFromPick(value) {
   const [circleId, viewerId] = String(value).split('::');
   if (!viewerId) throw new Error('Invalid selection.');
-  return buildProfileEmbedForViewerId(viewerId, circleId || undefined);
+  return buildProfileEmbedForViewerId(viewerId, { circleIdHint: circleId || undefined });
 }
 
 export function isTop100Circle(circle) {

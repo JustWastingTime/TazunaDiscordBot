@@ -5,6 +5,7 @@ import {
 import {
   getGuildClubs,
   getUserLink,
+  isUmaLinked,
   isPremiumGuild,
   registerGuildClub,
   setGuildPremium,
@@ -20,6 +21,7 @@ import {
   buildLeaderboardSelectRow,
   buildProfileEmbed,
   buildProfileEmbedForViewerId,
+  buildUnlinkedProfileEmbed,
   buildProfileSelectRow,
   buildTrainerRanks,
   fetchCircleData,
@@ -449,8 +451,13 @@ export async function handleProfile(req) {
         if (!link) {
           await sendFollowup({
             content:
-              'You have not linked a trainer yet. Use `/register` with your uma.moe account ID.',
+              'You do not have a trainer profile yet. Use `/register` or answer a quiz question to get started.',
           });
+          return;
+        }
+
+        if (!isUmaLinked(link)) {
+          await sendFollowup({ embeds: [buildUnlinkedProfileEmbed(link)] });
           return;
         }
 

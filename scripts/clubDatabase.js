@@ -122,8 +122,11 @@ export function upsertUserLink({ discordUserId, viewerId, trainerName, circleId,
     circleId: String(circleId),
     circleName: circleName ?? null,
     linkedAt: existing?.linkedAt ?? new Date().toISOString(),
+    registeredGuildId: existing?.registeredGuildId ?? null,
     gambaCoins: existing?.gambaCoins ?? STARTING_GAMBA_COINS,
     gambaWr: existing?.gambaWr ?? null,
+    quizCorrect: existing?.quizCorrect ?? 0,
+    quizWrong: existing?.quizWrong ?? 0,
     quizAccuracy: existing?.quizAccuracy ?? null,
   };
   saveUserLinks(store);
@@ -222,20 +225,98 @@ export function setGuildPremium(guildId, enabled) {
   return enabled;
 }
 
+function formatQuizAccuracy(correct, wrong) {
+  const total = (correct || 0) + (wrong || 0);
+  if (total <= 0) return null;
+  const pct = Math.round((correct / total) * 100);
+  return `${pct}% (${correct}/${total})`;
+}
+
+function normalizeUserRecord(link, discordUserId) {
+  return {
+    discordUserId: String(link.discordUserId ?? discordUserId),
+    viewerId: link.viewerId != null && link.viewerId !== '' ? String(link.viewerId) : null,
+    trainerName: link.trainerName ?? null,
+    circleId: link.circleId != null ? String(link.circleId) : '',
+    circleName: link.circleName ?? null,
+    linkedAt: link.linkedAt ?? null,
+    registeredGuildId: link.registeredGuildId ?? null,
+    gambaCoins: link.gambaCoins ?? null,
+    gambaWr: link.gambaWr ?? null,
+    quizCorrect: link.quizCorrect ?? 0,
+    quizWrong: link.quizWrong ?? 0,
+    quizAccuracy: link.quizAccuracy ?? null,
+  };
+}
+
+export function isUmaLinked(link) {
+  return Boolean(link?.viewerId);
+}
+
 export function getUserLink(discordUserId) {
   const store = loadUserLinks();
   const link = store[String(discordUserId)];
   if (!link) return null;
+  return normalizeUserRecord(link, discordUserId);
+}
 
-  return {
-    discordUserId: String(link.discordUserId ?? discordUserId),
-    viewerId: String(link.viewerId),
-    trainerName: link.trainerName,
-    circleId: String(link.circleId ?? ''),
-    circleName: link.circleName ?? null,
-    linkedAt: link.linkedAt ?? null,
-    gambaCoins: link.gambaCoins ?? null,
-    gambaWr: link.gambaWr ?? null,
-    quizAccuracy: link.quizAccuracy ?? null,
-  };
+export function ensureQuizUser(discordUserId, displayName, guildId = null) {
+  const store = loadUserLinks();
+  const key = String(discordUserId);
+  const existing = store[key];
+  const isNew = !existing;
+
+  if (!existing) {
+    store[key] = {
+      discordUserId: key,
+      viewerId: null,
+      trainerName: displayName || 'Trainer',
+      circleId: '',
+      circleName: null,
+      linkedAt: new Date().toISOString(),
+      registeredGuildId: guildId ? String(guildId) : null,
+      gambaCoins: STARTING_GAMBA_COINS,
+      gambaWr: null,
+      quizCorrect: 0,
+      quizWrong: 0,
+      quizAccuracy: null,
+    };
+  } else {
+    if (displayName) existing.trainerName = displayName;
+    if (guildId && !existing.registeredGuildId) existing.registeredGuildId = String(guildId);
+    if (existing.quizCorrect == null) existing.quizCorrect = 0;
+    if (existing.quizWrong == null) existing.quizWrong = 0;
+  }
+
+  saveUserLinks(store);
+  const link = normalizeUserRecord(store[key], key);
+  return { isNew, link, umaLinked: isUmaLinked(link) };
+}
+
+export function recordQuizAnswer(discordUserId, correct) {
+  const store = loadUserLinks();
+  const key = String(discordUserId);
+  const user = store[key];
+  if (!user) return null;
+
+  if (correct) user.quizCorrect = (user.quizCorrect || 0) + 1;
+  else user.quizWrong = (user.quizWrong || 0) + 1;
+
+  user.quizAccuracy = formatQuizAccuracy(user.quizCorrect, user.quizWrong);
+  saveUserLinks(store);
+  return normalizeUserRecord(user, key);
+}
+
+export function addGambaCoins(discordUserId, amount) {
+  const store = loadUserLinks();
+  const key = String(discordUserId);
+  const user = store[key];
+  if (!user) return null;
+
+  const delta = Math.trunc(amount);
+  if (!Number.isFinite(delta) || delta <= 0) return normalizeUserRecord(user, key);
+
+  user.gambaCoins = (user.gambaCoins ?? 0) + delta;
+  saveUserLinks(store);
+  return { link: normalizeUserRecord(user, key), added: delta };
 }

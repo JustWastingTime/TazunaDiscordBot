@@ -1,0 +1,149 @@
+{
+  "name": "Trivia",
+  "questions": [
+    { "prompt": "Which trio of Umas are called \"BNW\"?",
+      "answers": [
+        "Biwa Hayahide, Narita Taishin, Winning Ticket",
+        "Biwa Hayahide, Narita Brian, Winning Ticket",
+        "Narita Brian, Narita Taishin, Winning Ticket",
+        "Narita Brian, Nice Nature, Winning Ticket"
+      ],
+      "difficulty": "easy"
+    },
+    { "prompt": "Which Uma was NOT born in America?",
+      "answers": ["Manhattan Cafe", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"],
+      "difficulty": "easy"
+    },
+    { "prompt": "What is Tracen Academy's motto?",
+      "answers": ["Eclipse first, the rest nowhere", "Click wit to hit wit", "Eclipse the other horses to win", "Strength first, the rest dust", "Gallop with your lungs. presevere with your heart", "You need more guts"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Eishin Flash's family runs a cake shop. They are famous for what cake?",
+      "answers": ["Baumkuchen", "Käsekuchen", "Schwarzwälder Kirschtorte", "Apfelkuchen", "Bienenstich", "Marmorkuchen"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Mejiro Dober's father has a nickname for Dober she finds embarassing. What is it?",
+      "answers": ["Berry", "Dobey", "Beryl", "Dodo", "Doberry", "Donut", "Dooby", "Adobe"],
+      "difficulty": "hard"
+    },
+    { "promptTemplate": "Which uma was not available during launch?",
+      "difficulty": "medium",
+      "entries": [
+        ["", ["Mihono Bourbon", "Daiwa Scarlet", "Taiki Shuttle", "Maruzensky", "Rice Shower", "Oguri Cap"]],
+        ["", ["Matikanetannhauser", "Maruzensky", "Grass Wonder", "Silence Suzuka", "Mejiro Ryan", "Agnes Tachyon"]],
+        ["", ["Biwa Hayahide", "Mayano Top Gun", "King Halo", "Nice Nature", "Rice Shower"]],
+        ["", ["Narita Taishin", "Winning Ticket", "Tokai Teio", "Gold Ship", "Silence Suzuka", "Special Week"]]
+      ]
+    },
+    { "promptTemplate": "Who is {0}'s roommate?",
+      "difficulty": "medium",
+      "entries": [
+        ["Agnes Tachyon", ["Agnes Digital", "Daiwa Scarlet", "Manhattan Cafe", "Neo Universe", "Dantsu Flame", "Jungle Pokke"]],
+        ["Daiwa Scarlet", ["Vodka", "Hishi Amazon", "Biwa Hayahide", "Curren Chan", "Aston Machan", "Agnes Tachyon"], "easy"],
+        ["Eishin Flash", ["Smart Falcon", "Hishi Amazon", "Mihono Bourbon", "Fine Motion", "Rice Shower"]],
+        ["Silence Suzuka", ["Special Week", "Stay Gold", "Tokai Teio", "Gold Ship", "Seiun Sky", "Narita Taishin"], "easy"],
+        ["Nice Nature", ["Marvelous Sunday", "Ikuno Dictus", "Narita Taishin", "Matikanetannhauser", "Twin Turbo", "Fuji Kiseki"], "hard"],
+        ["Tokai Teio", ["Mayano Top Gun", "Symboli Rudolf", "Maruzensky", "T.M. Opera O", "Ines Fujin", "Oguri Cap"]],
+        ["Sakura Chiyono O", ["Mejiro Ardan", "Mejiro Ryan", "Sakura Bakushin O", "Hishi Amazon", "Tamamo Cross", "Super Creek"]]
+      ]
+    },
+    { "promptTemplate": "Which uma stays in Ritto dorm?",
+      "difficulty": "expert",
+      "entries": [
+        ["", ["Oguri Cap", "Inari One", "Mejiro Ryan", "Sakura Chiyono O", "Mejiro Ardan"]],
+        ["", ["Special Week", "El Condor Pasa", "Grass Wonder", "Maruzensky", "Seiun Sky"]]
+      ]
+    },
+    { "promptTemplate": "Which of these umas do NOT have a dorm roommate?",
+      "entries": [
+        ["", ["Fuji Kiseki", "Agnes Digital", "Special Week", "Admire Vega", "Air Groove"]],
+        ["", ["Hishi Amazon", "Manhattan Cafe", "Silence Suzuka", "Tokai Teio", "Seiun Sky"]]
+      ],
+      "difficulty": "hard"
+    },
+    { "prompt": "Tokai Teio's favorite drink is?",
+      "answers": ["Honeyade", "Orange juice", "Apple cider", "Black coffee", "UmaAid", "Cough syrup", "Milk"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Mayano Top Gun's father works as?",
+      "answers": ["Pilot", "Astronaut", "Racecar driver", "Aeronautical engineer", "Military general", "Trainer"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Who is the senpai Sakura Chiyono O admires the most?",
+      "answers": ["Maruzensky", "Sakura Bakushin O", "Special Week", "Narita Brian", "Mr. C.B.", "Mejiro McQueen", "Sirius Symboli"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Which Uma likes hospital food?",
+      "answers": ["Mejiro Ardan", "Ines Fujin", "Air Groove", "Biwa Hayahide", "Silence Suzuka", "Meisho Doto", "Admire Vega"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which Uma is the best at rhythm games?",
+      "answers": ["Narita Taishin", "Air Shakur", "Seeking The Pearl", "Kitasan Black", "Satono Diamond", "Winning Ticket", "Narita Top Road", "Fine Motion", "El Condor Pasa"],
+      "difficulty": "hard"
+    },
+    { "prompt": "What is the Mejiro signature color?",
+      "answers": ["Teal", "Purple", "Black", "Rose gold", "Indigo", "Green"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Maruzensky's phone background is what?",
+      "answers": ["Default", "Her car", "Selfie", "Rollercoaster picture", "Motivational poster", "Highway shot", "To-do list"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Sakura Chiyono O and Sakura Bakushin O were members of the?",
+      "answers": ["Victory Club", "Make-Up-Work Club", "Student Council", "Sakura Clan", "Poetry Club", "Bakushin Club"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Rice Shower's storybook is called what?",
+      "answers": ["The Blue Rose of Good Fortune", "The Blue Rose Assassin", "The Unlucky Witch's Blue Rose", "Blue Rose Seeking The Moon", "Beloathed Blue Rose", "Blue Rose with a Thousand Thorns", "Fortunate Blue Rose"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Gold Ship is associated with the number 564. Why?",
+      "answers": ["Sounds like her name", "Race record", "Starting gates at her wins", "Bettors at the incident", "No reason", "Birthday"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Sweep Tosho's spells are mostly named after what?",
+      "answers": ["Flowers", "Desserts", "French rivers", "Famous magicians", "Darwin's finches", "Frog species"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Agnes Digital's father is the chairman of what?",
+      "answers": ["Printing company", "Phone company", "Gaming company", "Social media company", "Animation company", "Toy company"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Biwa Hayahide's favorite fruit is?",
+      "answers": ["Bananas", "Apples", "Oranges", "Rambutans", "Pears", "Peaches", "Plums"],
+      "difficulty": "medium"
+    },
+    { "prompt": "In the Japanese Umamusume Community, Daiwa Scarlet and a Pokémon are considered rivals due to a meme. Which Pokémon is it?",
+      "answers": ["Quagsire", "Rapidash", "Mudsdale", "Regirock", "Revavroom", "Pikachu", "Blaziken", "Bulbasaur", "Gardevoir", "Wobuffet"],
+      "difficulty": "hard"
+    },
+    { "prompt": "When in her story does Eishin Flash introduce her trainer to her parents?",
+      "answers": ["After the tryouts", "After winning the Derby", "After Classic Year Japan Cup", "Before Senior Year Holidays", "After Classic Year Arima Kinen", "During Classic Year New Years"],
+      "difficulty": "hard"
+    },
+    { "prompt": "How many races did the horse Haru Urara start pre-retirement?",
+      "answers": ["113", "13", "53", "33", "103", "123", "133"],
+      "difficulty": "medium"
+    },
+    { "prompt": "In 2022, Yahoo Japan held a vote on 'which Umamusume do you think honestly loves her trainer?'. Who won?",
+      "answers": ["Nice Nature", "Eishin Flash", "Mejiro Ardan", "Mejiro Dober", "Symboli Rudolf", "Maruzensky", "Mayano Top Gun"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which Umamusume was NOT featured in it's first collab with Granblue Fantasy?",
+      "answers": ["Symboli Rudolf", "Silence Suzuka", "Special Week", "Tokai Teio", "Gold Ship", "Mejiro McQueen"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which Umamusume had ice skates on their original racewear design?",
+      "answers": ["Yukino Bijin", "Tamamo Cross", "Oguri Cap", "Admire Vega", "Grass Wonder", "King Halo", "Kawakami Princess"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which Sakura Umamusume does not have a cherry blossom pattern in their eyes?",
+      "answers": ["Sakura Chiyono O", "Sakura Laurel", "Sakura Bakushin O", "Sakura Chitose O"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Orfevre means what in French?",
+      "answers": ["Goldsmith", "Tyrant", "Kingmaker", "Smelter", "Longsword", "Oven"],
+      "difficulty": "hard"
+    }
+  ]
+}

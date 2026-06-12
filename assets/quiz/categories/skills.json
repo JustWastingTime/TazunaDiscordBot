@@ -1,0 +1,90 @@
+{
+  "name": "Skill",
+  "questions": [
+    { "promptTemplate": "Which uma has the unique skill {0}?",
+      "difficulty": "easy",
+      "entries": [
+        ["Introduction to Physiology", ["Agnes Tachyon", "$uma"]],
+        ["Super-Duper Climax", ["Haru Urara", "$uma"]],
+        ["Dazzl'n ♪ Diver", ["Special Week", "Maruzensky", "$uma"]],
+        ["1st Place Kiss☆", ["Mayano Top Gun", "$uma"]],
+        ["V Is for Victory!", ["Winning Ticket", "$uma"]],
+        ["I Can Win Sometimes, Right?", ["Nice Nature", "$uma"]],
+        ["The Duty of Dignity Calls", ["Mejiro McQueen", "$uma"]],
+        ["Blazing Pride", ["Air Groove", "$uma"]],
+        ["SPARKLY☆STARDOM", ["Smart Falcon", "Curren Chan", "$uma"]],
+        ["You and Me! One-on-One!", ["Hishi Amazon", "Gentildonna", "$uma"]],
+        ["KEEP IT REAL.", ["Gold City", "$uma"]],
+        ["OMG! (ﾟ∀ﾟ) The Final Sprint! ☆", ["Agnes Digital", "$uma"]],
+        ["Arrows Whistle, Shadows Disperse", ["Symboli Rudolf", "$uma"], "medium"],
+        ["Dancing in the Leaves", ["Gold City", "$uma"], "medium"],
+        ["Fairy Tale", ["Fine Motion", "$uma"]],
+        ["114th Time's the Charm", ["Haru Urara", "$uma"]],
+        ["A Lifelong Dream, A Moment's Flight", ["Mejiro Ardan", "$uma"], "medium"],
+        ["Shooting Star of Dioskouroi", ["Admire Vega", "$uma"], "medium"],
+        ["Ravissant", ["Fuji Kiseki", "$uma"], "medium"],
+        ["Break It Down!", ["Seiun Sky", "$uma"], "medium"],
+        ["Peerless Dance of Flowering Flames", ["Yaeno Muteki", "$uma"]],
+        ["Go☆Go☆Goal!", ["Nice Nature", "$uma"]],
+        ["Victory Belongs to Me—Strelitzia! ☆", ["Sweep Tosho", "$uma"]],
+        ["Louder! Tracen Cheer!", ["King Halo", "$uma"]],
+        ["Budding Blossom", ["Nishino Flower", "$uma"]],
+        ["Moving Past, and Beyond", ["Mejiro Dober", "$uma"]],
+        ["All Charged! It's Go Time!", ["Ines Fujin", "$uma"]]
+      ]
+    },
+    { "promptTemplate": "{0}'s unique skill is called?",
+      "difficulty": "medium",
+      "entries": [
+        ["Rice Shower (Halloween)", ["Every Rose Has Its Fangs", "Halloween Makeover", "Bite of a Umapire ☆", "Fairy Tale", "Budding Blossom", "I Can Win Sometimes, Right?"]],
+        ["Silence Suzuka", ["The View from the Lead Is Mine!", "I See Victory in My Future!", "Just a Little Farther!", "Victory Cheer!", "Wherever This Wonder Leads", "Angling and Scheming"]],
+        ["Vodka ", ["Cut and Drive!", "Nemesis", "You and Me! One-on-One!", "Blazing Pride", "Where There's a Will, There's a Way", "KEEP IT REAL."]],
+        ["Mihono Bourbon", ["G00 1st. F∞;", "Blue Rose Closer", "Resplendent Ace", "Flashy☆Landing", "#IamGundam", "Shadow Break"]],
+        ["Fine Motion (Wedding)", ["Best Day Ever", "Peerless Dance of Flowering Flames", "One True Color", "Joyful Voyage!", "Lovely Spring Breeze", "Barcarole of Blessings"]],
+        ["Tamamo Cross", ["White Lightning Comin' Through!", "Dancing in the Leaves", "Lightning from the Boonies", "Guten Appetit ♪", "Dreams Donned with Pride!", "Feel the Burn!"]],
+        ["Mihono Bourbon (Valentine)", ["Operation Cacao", "Valentine's Cookie", "Love is in the Air!", "Pop & Polish", "trigger:BEAT", "∴win Q.E.D."]],
+        ["Satono Diamond", ["Eternal Encompassing Shine", "One True Color", "Shooting for Victory!", "Ravissant", "Lights of Vaudeville", "Eternal Moments"]],
+        ["Mejiro Bright", ["Lovely Spring Breeze", "Pop & Polish", "114th Time's the Charm", "Ambition to Surpass the Sakura", "Eternal Encompassing Shine", "Best Day Ever"]],
+        ["Biwa Hayahide (Christmas)", ["Presents from X", "Best Day Ever", "Give Mummy a Hug ♡", "Super-Duper Stoked", "Certain Victory", "It is in the Bag!"]],
+        ["Oguri Cap (Christmas)", ["Festive Miracle", "YUMMY☆SPEED!", "Bountiful Harvest", "Cut and Drive!", "Shooting Star", "Sky-High Oguri Step"]],
+        ["Tosen Jordan (Original)'", ["Pop & Polish", "Cut and Drive!", "Luck Be with Me!", "Keep Pushing Ahead", "Warning Shot!", "Flowery☆Maneuver"]],
+        ["Manhattan Cafe", ["Chasing After You", "Shadow Break", "Nemesis", "A Princess Must Seize Victory!", "Arrows Whistle, Shadows Disperse", "Focused Mind"]]
+      ]
+    },
+    { "promptTemplate": "The white version of {0} is called?",
+      "difficulty": "medium",
+      "entries": [
+        ["Lane Legerdemain", ["Go with the Flow", "Dodging Danger", "Groundwork", "Prudent Positioning", "Countermeasure", "Second Wind", "Corner Acceleration"]],
+        ["Sixth Sense", ["Dodging Danger", "Acceleration", "Prudent Positioning", "Countermeasure", "Tactical Tweak", "Light as a Feather", "Fearless"]]
+      ]
+    },
+    { "promptTemplate": "The gold version of {0} is called?",
+      "difficulty": "medium",
+      "entries": [
+        ["Playtime's Over!", ["See Ya Later!", "It's On!", "Keep Going!", "Rushing Gale!", "Step on the Gas!", "You're Not the Boss of Me!", "Stop Right There!", "Break It Down!"]],
+        ["Outer Swell", ["Rising Dragon", "Killer Tunes", "In Body and Mind", "Changing Gears", "Power Swell", "Fast & Furious", "Daring Strike"]]
+      ]
+    },
+
+    {
+      "prompt": "Which Uma runs through snow in their Unique Skill?",
+      "answers": ["Oguri Cap", "Admire Vega", "Mejiro Ardan", "Air Groove"],
+      "difficulty": "medium"
+    },
+    {
+      "prompt": "What weapon does Grass Wonder wield in her unique animation?",
+      "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"],
+      "difficulty": "hard"
+    },
+    {
+      "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?",
+      "answers": ["Nice Nature (Cheerleader)", "Kawakami Princess", "Sakura Chiyono O", "El Condor Pasa (Fantasy)"],
+      "difficulty": "hard"
+    },
+    {
+      "prompt": "Which of these Uma does NOT have a ☆ in the name of their Unique Skill?",
+      "answers": ["Tosen Jordan", "Sweep Tosho", "Mayano Top Gun (Wedding)", "Hishi Akebono", "Maruzensky (Summer)", "Agnes Digital"],
+      "difficulty": "hard"
+    }
+  ]
+}

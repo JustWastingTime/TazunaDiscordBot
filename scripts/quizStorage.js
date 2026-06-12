@@ -1,0 +1,335 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const DATA_DIR = path.resolve(__dirname, '..', 'data');
+const QUIZ_DIR = path.resolve(__dirname, '..', 'assets', 'quiz');
+const QUIZ_STATE_PATH = path.join(DATA_DIR, 'quiz-state.json');
+const QUIZ_GUILD_PATH = path.join(DATA_DIR, 'quiz-guilds.json');
+const QUIZ_SETTINGS_PATH = path.join(QUIZ_DIR, 'settings.json');
+const QUIZ_CATEGORIES_DIR = path.join(QUIZ_DIR, 'categories');
+
+let writeQueue = Promise.resolve();
+
+function withLock(fn) {
+  const run = () => fn();
+  writeQueue = writeQueue.then(run, run);
+  return writeQueue;
+}
+
+function ensureDataDir() {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+function readJson(filePath, fallback) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    return fallback;
+  }
+}
+
+function writeJson(filePath, data) {
+  ensureDataDir();
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+}
+
+export function loadQuizState() {
+  return readJson(QUIZ_STATE_PATH, {});
+}
+
+export function getActiveQuiz(guildId) {
+  const state = loadQuizState();
+  const quiz = state[String(guildId)];
+  if (!quiz || quiz.status !== 'active') return null;
+  return quiz;
+}
+
+export function updateQuizState(mutator) {
+  return withLock(() => {
+    const state = loadQuizState();
+    const result = mutator(state);
+    writeJson(QUIZ_STATE_PATH, state);
+    return result;
+  });
+}
+
+export function clearQuiz(guildId) {
+  return updateQuizState((state) => {
+    delete state[String(guildId)];
+    return true;
+  });
+}
+
+export function loadQuizGuildConfig(guildId) {
+  const store = readJson(QUIZ_GUILD_PATH, {});
+  return store[String(guildId)] ?? null;
+}
+
+export function saveQuizGuildConfig(guildId, config) {
+  return withLock(() => {
+    const store = readJson(QUIZ_GUILD_PATH, {});
+    store[String(guildId)] = { ...config, guildId: String(guildId) };
+    writeJson(QUIZ_GUILD_PATH, store);
+    return store[String(guildId)];
+  });
+}
+
+export function loadQuizSettings() {
+  return readJson(QUIZ_SETTINGS_PATH, { enabledCategories: [] });
+}
+
+function listQuizCategoryIds() {
+  try {
+    return fs
+      .readdirSync(QUIZ_CATEGORIES_DIR)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => file.replace(/\.json$/, ''));
+  } catch {
+    return [];
+  }
+}
+
+const ENTRY_DIFFICULTIES = new Set(['easy', 'medium', 'hard', 'expert']);
+
+function isUrl(value) {
+  return typeof value === 'string' && /^https?:\/\//i.test(value);
+}
+
+function isImageUrl(value) {
+  return isUrl(value) && /\.(png|jpe?g|gif|webp|bmp|svg)(?:[?#].*)?$/i.test(value);
+}
+
+function mediaFromUrl(url) {
+  if (isImageUrl(url)) return { imageUrl: url };
+  return { audioUrl: url };
+}
+
+function parseEntryOverrides(...values) {
+  const overrides = {};
+  for (const value of values) {
+    if (value == null) continue;
+    const normalized = String(value).toLowerCase();
+    if (ENTRY_DIFFICULTIES.has(normalized)) overrides.difficulty = normalized;
+    if (normalized === 'silhouette') overrides.silhouette = true;
+  }
+  return overrides;
+}
+
+function normalizeCategoryEntry(entry) {
+  if (Array.isArray(entry)) {
+    const [first, answers, third, fourth] = entry;
+    const overrides = parseEntryOverrides(third, fourth);
+    if (isUrl(first)) return { ...mediaFromUrl(first), answers, ...overrides };
+    return { subject: first, answers, ...overrides };
+  }
+  if (entry && typeof entry === 'object') {
+    return {
+      subject: entry.subject ?? entry.name ?? entry.key,
+      prompt: entry.prompt,
+      answers: entry.answers,
+      audioUrl: entry.audioUrl,
+      imageUrl: entry.imageUrl,
+      silhouette: entry.silhouette === true,
+      id: entry.id,
+      difficulty: entry.difficulty,
+      type: entry.type,
+    };
+  }
+  return null;
+}
+
+function slugifyQuestionIdPart(value) {
+  return String(value || 'item')
+    .toLowerCase()
+    .normalize('NFKC')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function templateHasPlaceholder(template) {
+  return template.includes('{0}') || template.includes('{name}');
+}
+
+function buildEntryPrompt(template, value) {
+  return template.replace(/\{0\}/g, value).replace(/\{name\}/g, value);
+}
+
+function buildEntryId(categoryId, normalized, index, groupPrefix = '') {
+  const prefix = groupPrefix ? `${categoryId}-${groupPrefix}` : categoryId;
+  if (normalized.id) return normalized.id;
+  if (normalized.subject) {
+    const idPart = slugifyQuestionIdPart(normalized.subject) || `item-${index + 1}`;
+    return `${prefix}-${idPart}-${index + 1}`;
+  }
+  if (normalized.audioUrl) {
+    const idPart = slugifyQuestionIdPart(normalized.audioUrl.split('/').pop()) || `item-${index + 1}`;
+    return `${prefix}-${idPart}-${index + 1}`;
+  }
+  if (normalized.imageUrl) {
+    const idPart = slugifyQuestionIdPart(normalized.imageUrl.split('/').pop()) || `item-${index + 1}`;
+    return `${prefix}-${idPart}-${index + 1}`;
+  }
+  if (normalized.prompt) {
+    const idPart = slugifyQuestionIdPart(normalized.prompt) || `item-${index + 1}`;
+    return `${prefix}-${idPart}-${index + 1}`;
+  }
+  return `${prefix}-item-${index + 1}`;
+}
+
+function getCategoryDefaults(data) {
+  return {
+    type: data.type || 'mcq',
+    difficulty: data.difficulty || 'easy',
+  };
+}
+
+function isValidTemplateEntry(normalized, template) {
+  if (!normalized || !Array.isArray(normalized.answers) || !normalized.answers.length) {
+    return false;
+  }
+  if (normalized.prompt) return true;
+  if (!template) return false;
+  if (normalized.audioUrl || normalized.imageUrl) return true;
+  if (templateHasPlaceholder(template)) {
+    return Boolean(String(normalized.subject ?? '').trim());
+  }
+  return true;
+}
+
+function buildQuestionFromEntry(normalized, index, options) {
+  const {
+    categoryId,
+    template,
+    groupPrefix,
+    defaultType,
+    defaultDifficulty,
+    defaultSilhouette,
+  } = options;
+  const subject = normalized.subject != null ? String(normalized.subject).trim() : '';
+  const prompt = normalized.prompt
+    ? String(normalized.prompt).trim()
+    : buildEntryPrompt(template, subject);
+  const question = {
+    id: buildEntryId(categoryId, normalized, index, groupPrefix),
+    type: normalized.type || defaultType,
+    difficulty: normalized.difficulty || defaultDifficulty,
+    prompt,
+    answers: normalized.answers.map((answer) => String(answer)),
+  };
+  if (normalized.audioUrl) question.audioUrl = normalized.audioUrl;
+  if (normalized.imageUrl) question.imageUrl = normalized.imageUrl;
+  if (normalized.silhouette || defaultSilhouette) question.silhouette = true;
+  return question;
+}
+
+function expandEntryList(entries, options) {
+  return entries
+    .map((entry, index) => ({ normalized: normalizeCategoryEntry(entry), index }))
+    .filter(({ normalized }) => isValidTemplateEntry(normalized, options.template))
+    .map(({ normalized, index }) => buildQuestionFromEntry(normalized, index, options));
+}
+
+function expandTemplateGroup(group, categoryId, groupIndex, categoryDefaults) {
+  const template = String(group.promptTemplate || group.prompt || '').trim();
+  const entries = Array.isArray(group.entries) ? group.entries : [];
+  if (!template || !entries.length) return [];
+
+  return expandEntryList(entries, {
+    categoryId,
+    template,
+    groupPrefix: `g${groupIndex}`,
+    defaultType: group.type || categoryDefaults.type,
+    defaultDifficulty: group.difficulty || categoryDefaults.difficulty,
+    defaultSilhouette: group.silhouette === true,
+  });
+}
+
+function normalizeStandaloneQuestion(item, categoryId, index, categoryDefaults) {
+  const question = {
+    id: item.id || buildEntryId(categoryId, { prompt: item.prompt }, index, `q${index}`),
+    type: item.type || categoryDefaults.type,
+    difficulty: item.difficulty || categoryDefaults.difficulty,
+    prompt: String(item.prompt).trim(),
+    answers: item.answers.map((answer) => String(answer)),
+  };
+  if (item.audioUrl) question.audioUrl = item.audioUrl;
+  if (item.imageUrl) question.imageUrl = item.imageUrl;
+  if (item.silhouette === true) question.silhouette = true;
+  return question;
+}
+
+function isTemplateGroup(item) {
+  return Boolean(item && Array.isArray(item.entries) && (item.promptTemplate || item.prompt));
+}
+
+function normalizeCategoryQuestions(data, categoryId) {
+  const categoryDefaults = getCategoryDefaults(data);
+
+  if (Array.isArray(data.questions)) {
+    const questions = [];
+    data.questions.forEach((item, groupIndex) => {
+      if (isTemplateGroup(item)) {
+        questions.push(...expandTemplateGroup(item, categoryId, groupIndex, categoryDefaults));
+        return;
+      }
+      if (item?.prompt && Array.isArray(item.answers) && item.answers.length) {
+        questions.push(normalizeStandaloneQuestion(item, categoryId, questions.length, categoryDefaults));
+      }
+    });
+    return questions;
+  }
+
+  const template = String(data.promptTemplate || data.prompt || '').trim();
+  const entries = Array.isArray(data.entries) ? data.entries : [];
+  if (!entries.length) return [];
+
+  return expandEntryList(entries, {
+    categoryId,
+    template,
+    groupPrefix: '',
+    defaultType: categoryDefaults.type,
+    defaultDifficulty: categoryDefaults.difficulty,
+    defaultSilhouette: data.silhouette === true,
+  });
+}
+
+export function loadQuizCategory(categoryId) {
+  const filePath = path.join(QUIZ_CATEGORIES_DIR, `${categoryId}.json`);
+  const data = readJson(filePath, null);
+  if (!data) return null;
+
+  const questions = normalizeCategoryQuestions(data, categoryId);
+  return {
+    id: categoryId,
+    name: data.name || categoryId,
+    questions: questions.map((question) => ({
+      ...question,
+      category: categoryId,
+      categoryName: data.name || categoryId,
+    })),
+  };
+}
+
+export function loadQuizQuestions(categoryFilter) {
+  const settings = loadQuizSettings();
+  const enabled = settings.enabledCategories || [];
+  const categories = Array.isArray(categoryFilter) && categoryFilter.length
+    ? categoryFilter.filter((categoryId) => enabled.includes(categoryId))
+    : enabled;
+  const questions = [];
+
+  for (const categoryId of categories) {
+    const category = loadQuizCategory(categoryId);
+    if (!category) {
+      console.warn(`Quiz category not found: ${categoryId}`);
+      continue;
+    }
+    questions.push(...category.questions);
+  }
+
+  return questions;
+}

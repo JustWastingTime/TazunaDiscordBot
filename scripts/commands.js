@@ -285,6 +285,94 @@ const CLUB_COMMAND = {
   ],
 };
 
+const QUIZ_COMMAND = {
+  name: 'quiz',
+  description: 'Umamusume quiz games',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    {
+      type: 1,
+      name: 'start',
+      description: 'Start a quiz in this channel',
+      options: [
+        {
+          type: 3,
+          name: 'mode',
+          description: 'Quiz mode',
+          required: false,
+          choices: [
+            { name: 'Umastan', value: 'umastan' },
+            { name: 'Gamer', value: 'gamer' },
+            { name: 'Larper', value: 'larper' },
+            { name: 'Umadol', value: 'umadol' },
+            { name: 'Umaguesser', value: 'umaguesser' },
+          ],
+        },
+        {
+          type: 4,
+          name: 'timer',
+          description: 'Seconds per round (10–30)',
+          required: false,
+          min_value: 10,
+          max_value: 30,
+        },
+        {
+          type: 3,
+          name: 'difficulty',
+          description: 'Question difficulty',
+          required: false,
+          choices: [
+            { name: 'Easy', value: 'easy' },
+            { name: 'Medium', value: 'medium' },
+            { name: 'Hard', value: 'hard' },
+            { name: 'Expert', value: 'expert' },
+          ],
+        },
+        {
+          type: 4,
+          name: 'scoregoal',
+          description: 'Points needed to win (10–50)',
+          required: false,
+          min_value: 10,
+          max_value: 50,
+        },
+        {
+          type: 3,
+          name: 'audio',
+          description: 'Include audio questions?',
+          required: false,
+          choices: [
+            { name: 'Yes', value: 'yes' },
+            { name: 'No', value: 'no' },
+          ],
+        },
+        {
+          type: 3,
+          name: 'picture',
+          description: 'Include picture questions?',
+          required: false,
+          choices: [
+            { name: 'Yes', value: 'yes' },
+            { name: 'No', value: 'no' },
+          ],
+        },
+      ],
+    },
+    {
+      type: 1,
+      name: 'stop',
+      description: 'Stop the active quiz (admin only)',
+    },
+    {
+      type: 1,
+      name: 'notify',
+      description: 'Toggle quiz ping role (tazuna-quiz-role)',
+    },
+  ],
+};
+
 const SCHEDULE_COMMAND = {
   name: "schedule",
   description: "See the current month's schedule",
@@ -408,6 +496,7 @@ const ALL_COMMANDS = [
   REGISTER_COMMAND,
   PROFILE_COMMAND,
   CLUB_COMMAND,
+  QUIZ_COMMAND,
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,

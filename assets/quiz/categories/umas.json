@@ -1,0 +1,65 @@
+{
+  "name": "Uma",
+  "questions": [
+    { "promptTemplate": "{0}'s racewear is called?",
+      "difficulty": "hard",
+      "entries": [
+        ["Satono Diamond (Original)", ["Natural Brilliance", "Crystalline", "Titania", "Line Breakthrough", "Succès Étoilé", "Frontline Elegance"]],
+        ["Oguri Cap (Original)", ["Starlight Beat", "Ashen Miracle", "Fast as Lightning", "Line Breakthrough", "Nevertheless", "Peak Joy", "Beyond the Horizon"]],
+        ["Nishino Flower (Original)", ["Layered Petals", "Strength in Full Bloom", "Sunlight Bouquet", "Blossom in Learning", "Poinsettia Ribbon"]],
+        ["Haru Urara (New Year)", ["New Year ♪ New Urara!", "Pink Miracle", "Bundle of Joy", "Pastel Marine Locodol", "Miracle Make-up!", "Peak Joy", "Fields of Pink"]],
+        ["Matikanetannhauser (Original)", ["Clippety-Tippety-Clop", "Mambo", "Lucky Tidings", "Hat Breaker", "Turbulent Blue", "Sapphire Sojourn", "LOVE☆4EVER"]]
+      ]
+    },
+    { "promptTemplate": "Which Uma's racewear is named {0}?",
+      "difficulty": "hard",
+      "entries": [
+        ["Peak Blue", ["Daiwa Scarlet", "Tokai Teio", "Eishin Flash", "Grass Wonder", "Admire Vega", "Tamamo Cross", "Mejiro McQueen (Anime)", "Super Creek"]],
+        ["Stone-Piercing Blue", ["Grass Wonder", "Tokai Teio", "Eishin Flash", "Daiwa Scarlet", "Admire Vega", "Tamamo Cross", "Mejiro McQueen (Anime)", "Super Creek"]],
+        ["Always Electrifying", ["Ines Fujin", "Tamamo Cross", "Symboli Rudolf", "Narita Brian", "Seiun Sky (Ballroom)", "Kitasan Black", "Gold City"]],
+        ["Gilded Shrine to Glory", ["Kitasan Black", "Inari One", "Symboli Rudolf (Festival)", "Yaeno Muteki", "Mejiro Dober", "T.M. Opera O", "Matikanefukukitaru", "Maruzensky"]]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Sprint Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        ["Kitasan Black", ["E", "A", "B", "C", "D", "F", "G"]],
+        ["Smart Falcon", ["B", "A", "C", "D", "E", "F", "G"]],
+        ["Tosen Jordan", ["G", "A", "B", "C", "D", "E", "F"]],
+        ["Sakura Chiyono O", ["E", "A", "B", "C", "D", "F", "G"]],
+        ["Admire Vega", ["F", "A", "B", "C", "D", "E", "G"]],
+        ["Agnes Digital", ["F", "A", "B", "C", "D", "E", "G"]]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Long Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        ["Curren Chan", ["G", "A", "B", "C", "D", "E", "F"]],
+        ["Gold City", ["B", "A", "C", "D", "E", "F", "G"]],
+        ["Mejiro McQueen", ["A", "G", "B", "C", "D", "E", "F"]],
+        ["Nice Nature", ["A", "E", "B", "C", "D", "F", "G"]],
+        ["King Halo", ["C", "A", "B", "F", "D", "E", "G"]],
+        ["Silence Suzuka", ["E", "A", "B", "C", "D", "F", "G"]]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Power Stat Bonus",
+      "difficulty": "medium",
+      "entries": [
+        ["King Halo (Cheerleader)", ["10%", "0%", "5%", "15%", "20%", "30%"]],
+        ["Manhattan Cafe", ["0%", "5%", "10%", "15%", "20%", "30%"]],
+        ["Narita Brian", ["0%", "5%", "10%", "15%", "20%", "30%"]],
+        ["Gold Ship", ["10%", "0%", "5%", "15%", "20%", "30%"]]
+      ]
+    },
+    { "promptTemplate": "Which stat bonus is the highest for {0}",
+      "difficulty": "medium",
+      "entries": [
+        ["Manhattan Cafe", ["Stamina", "Speed", "Power", "Guts", "Wit"]],
+        ["Sakura Bakushin O", [ "Speed", "Stamina", "Power", "Guts", "Wit"]],
+        ["Grass Wonder", [ "Speed", "Stamina", "Power", "Guts", "Wit"]],
+        ["Narita Taishin", [ "Guts", "Stamina", "Power", "Wit", "Speed"]]
+      ]
+    }
+    
+  ]
+}

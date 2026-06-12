@@ -1,0 +1,62 @@
+{
+  "name": "Keiba",
+  "questions": [
+    { "promptTemplate": "Which of these umas did NOT win the Triple Crown?",
+      "difficulty": "medium",
+      "entries": [
+        ["", ["Oguri Cap", "Symboli Rudolf", "Orfevre", "Narita Brian", "Mr. C.B."]],
+        ["", ["Tokai Teio", "Symboli Rudolf", "Orfevre", "Narita Brian", "Mr. C.B."]],
+        ["", ["Mihono Bourbon", "Symboli Rudolf", "Orfevre", "Narita Brian", "Mr. C.B."]],
+        ["", ["Seiun Sky", "Symboli Rudolf", "Orfevre", "Narita Brian", "Mr. C.B."]]
+        ]
+    },
+    { "promptTemplate": "Which of these umas are a Double Crowner?",
+      "difficulty": "medium",
+      "entries": [
+        ["", ["Tokai Teio", "Oguri Cap", "Kitasan Black", "TM Opera O", "Sakura Chiyono O"]],
+        ["", ["Mihono Bourbon", "Rice Shower", "Narita Top Road", "Mejiro McQueen", "Admire Vega"]],
+        ["", ["Gold Ship", "Mayano Top Gun", "Gentildonna", "Super Creek", "Mejiro Ardan"]]
+        ]
+    },
+    { "prompt": "The 12 billion yen incident refers to?",
+      "answers": ["Gold Ship", "Agnes Digital", "Stay Gold", "Silence Suzuka", "Cesario"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which member of JAMD did NOT win any of their Triple Crown races?",
+      "answers": ["Dantsu Flame", "Agnes Tachyon", "Jungle Pocket", "Manhattan Cafe"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which race is not considered one of the Eight Great Classics?",
+      "answers": ["Arima Kinen", "Satsuki Sho", "Japanese Derby", "Oka Sho", "Tenno Sho (Autumn)", " Kikuka Sho"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which race is not considered one of the Triple Crowns?",
+      "answers": ["Shuka Sho", "Satsuki Sho", "Japanese Derby", "Kikuka Sho"],
+      "difficulty": "easy"
+    },
+    { "prompt": "The ? horse wins the Satsuki-Sho, the ? horse wins the Japanese Derby and the ? horse wins the Kikka-Sho",
+      "answers": ["fastest, luckiest, strongest", "luckiest, strongest, fastest", "fastest, fastest, fastest", "lucky, luckier, luckiest", "fastest, luckiest, sturdiest", "strongest, fastest, luckiest"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which uma has won the Senior Autumn Triple Crown?",
+      "answers": ["TM Opera O", "Gold Ship", "Orfevre", "Symboli Rudolf", "Sirius Symboli"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which horse was the first to win both Tenno Shos in the same year?",
+      "answers": ["Tamamo Cross", "Oguri Cap", "Manhattan Cafe", "Mejiro McQueen", "Special Week", "T.M. Opera O", "Mejiro Bright",  "Zenno Rob Roy"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which horse was the first one to have an official JRA plushie made of them?",
+      "answers": ["Oguri Cap", "Symboli Rudolf", "Air Groove", "Tokai Teio", "Mejiro McQueen", "Mr. C.B.", "Sakura Bakushin O"],
+      "difficulty": "medium"
+    },
+    { "prompt": "The first horse to ever defeat Symboli Rudolf was who?",
+      "answers": ["Katsuragi Ace", "Mr. C.B.", "Maruzensky", "Sirius Symboli", "Mejiro Ramonu", "Narita Brian", "T.M. Opera O"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which horse was the reason the JRA banned flash photography?",
+      "answers": ["Air Groove", "Manhattan Cafe", "Silence Suzuka", "Grass Wonder", "Biko Pegasus", "Seiun Sky", "Agnes Tachyon", "Bubble Gum Fellow", "Mr. C.B.", "Aston Machan"],
+      "difficulty": "hard"
+    }
+  ]
+}

@@ -40,6 +40,14 @@ import {
 } from './clubHandlers.js';
 import { getUmaApiKey } from './clubService.js';
 import { startLeaderboardCron } from './clubLeaderboardCron.js';
+import {
+  dispatchQuizCommand,
+  ensureQuizGuildSetup,
+  handleQuizAnswer,
+  handleQuizAnswerComponent,
+  isQuizCommand,
+} from './quizHandlers.js';
+import { resumeActiveQuizzes } from './quizRunner.js';
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -405,6 +413,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name, options } = data;
     const invokingUserId = req.body.member?.user?.id || req.body.user?.id;
+
+    if (req.body.guild_id) {
+      ensureQuizGuildSetup(req.body.guild_id);
+    }
 
     if (name === 'refreshcache') {
       if (!invokingUserId || !BOT_OWNER_IDS.has(invokingUserId)) {
@@ -1169,6 +1181,35 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       return;
     }
 
+    if (isQuizCommand(name)) {
+      const quizResult = await dispatchQuizCommand(req);
+      if (quizResult?.deferred) {
+        res.send({
+          type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+          data: quizResult.ephemeral ? { flags: InteractionResponseFlags.EPHEMERAL } : undefined,
+        });
+        (async () => {
+          try {
+            await quizResult.run((payload) => sendFollowup(token, payload));
+          } catch (err) {
+            console.error('quiz deferred handler failed:', err);
+            try {
+              await sendFollowup(token, {
+                flags: InteractionResponseFlags.EPHEMERAL,
+                content: '❌ Something went wrong. Please try again later.',
+              });
+            } catch (followupErr) {
+              console.error('quiz follow-up failed:', followupErr);
+            }
+          }
+        })();
+        return;
+      }
+      if (quizResult) {
+        return res.send(quizResult);
+      }
+    }
+
     if (isClubCommand(name)) {
       const clubResult = await dispatchClubCommand(name, req);
       if (clubResult?.deferred) {
@@ -1204,6 +1245,27 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
   if (type === InteractionType.MESSAGE_COMPONENT) {
     const { custom_id, values } = data;
+
+    if (req.body.guild_id) {
+      ensureQuizGuildSetup(req.body.guild_id);
+    }
+
+    const quizAnswer = handleQuizAnswerComponent(custom_id);
+    if (quizAnswer) {
+      try {
+        const response = await handleQuizAnswer(req, quizAnswer);
+        return res.send(response);
+      } catch (err) {
+        console.error('Quiz answer handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong processing your answer.',
+          },
+        });
+      }
+    }
 
     const clubAction = handleClubComponent(custom_id, values);
     if (clubAction) {
@@ -1771,5 +1833,8 @@ app.listen(PORT, () => {
   } else {
     console.warn('UMA_API_KEY is missing — /register, /profile, and club leaderboards will fail until it is set.');
   }
+  resumeActiveQuizzes().catch((err) => {
+    console.error('Failed to resume active quizzes:', err.message);
+  });
   postOpsNotice('✅ Tazuna bot started', `Listening on port ${PORT}`, 0x2ECC71);
 });

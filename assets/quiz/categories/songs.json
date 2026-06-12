@@ -1,0 +1,76 @@
+
+{
+  "name": "Songs",
+  "questions": [
+    {
+      "promptTemplate": "Name the Song",
+      "difficulty": "medium",
+      "entries": [
+        ["https://static.snep.pw/uma/songs/previews/83b6ea0c8.mp3", ["∞", "BLOW my GALE", "BRIGHTEST HEART", "Out of Triangle", "EXCEED", "winnng the soul"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/39c48d760.mp3", ["BLAZE", "WINNING MELODY", "Yume o Kakeru!", "Unite!!", "Legend Changer", "We are DREAMERS!!"]],
+        ["https://static.snep.pw/uma/songs/previews/f557ec80a.mp3", ["BLOW my GALE", "UMA IN AMERICA", "Spurt Syndromer", "Make Debut!", "U.M.A NEW WORLD!!", "WINNING MELODY"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/b817da3d7.mp3", ["Bokura no Bluebird Days", "Special Record!", " Umapyoi Densetsu", "UmaSugi! Gourmet Parade", "BRIGHTEST HEART", "BLAZE"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/fa5973a18.mp3", ["BRIGHTEST HEART", "∞", "Blaze", "Unite!!", "NEXT FRONTIER", "Yume o Kakeru!"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/f3db85741.mp3", ["GIRLS' LEGEND U", "Umapyoi Densetsu", "NEXT FRONTIER", "Me ni Shuki ♡ Rush-shu!", "UNLIMITED IMPACT", "Glorious Moment!"]],
+        ["https://static.snep.pw/uma/songs/previews/d2a949860.mp3", ["Glorious Moment!", "Special Record!", "GIRLS' LEGEND U", "Goal To My SHIP", "Hajimari no Signal", "Hai no memoire"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/1772bc95b.mp3", ["Go This Way", "Tracen Ondo", "Me ni Shuki ♡ Rush-shu!", "Glorious Moment!", "Goal To My SHIP", "Hajimari no Signal"]],
+        ["https://static.snep.pw/uma/songs/previews/4fa20b577.mp3", ["Grow-up Shine!", "GIRLS' LEGEND U", "Me ni Shuki ♡ Rush-shu!", "Go This Way", "UNLIMITED IMPACT", "Tokimeki Scramble"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/2c68331f8.mp3", ["Hai no memoire", "BLAZE", "VOLTAGE", "UNLIMITED IMPACT", "SHAKEROCK", "Glorious Moment!"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/660fa3ae8.mp3", ["Hajimari no Signal", "Hashire Umamusume", "Grow-up Shine!", "Goal To My SHIP", "Go This Way", "GIRLS' LEGEND U"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/3f4ab7f79.mp3", ["Hashire Umamusume", "Ichibanboshi ga Kakeru Sora", "Hajimari no Signal", "Honnou Speed", "They were born to run", "Go This Way"]],
+        ["https://static.snep.pw/uma/songs/previews/1168ee1e1.mp3", ["Honnou Speed", "UMA IN AMERICA", "Special Record!", "GIRLS' LEGEND U", "Ichibanboshi ga Kakeru Sora", "Hashire Umamusume"]],
+        ["https://static.snep.pw/uma/songs/previews/998bb9947.mp3", ["Ichibanboshi ga Kakeru Sora", "Hai no memoire", "UMA IN AMERICA", "Irodori Phantasia", "Salty Tails", "Koeru"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/c59253f94.mp3", ["Koeru", "∞", "Irodori Phantasia", "Go This Way", "GIRLS' LEGEND U", "Hai no memoire"]],
+        ["https://static.snep.pw/uma/songs/previews/a0c653980.mp3", ["Irodori Phantasia", "GIRLS' LEGEND U", "Salty Tails", "Hai no memoire", "Honnou Speed", "winning the soul"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/487ab56fd.mp3", ["Komorebi no Yell", "Grow-up Shine!", "Hajimari no Signal", "Ichibanboshi ga Kakeru Sora", "Make Debut!", "Yuri Camp"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/280106855.mp3", ["Legend Changer", "Make Debut!", "Out of Triangle", "NEXT FRONTIER", "We are DREAMERS!!", "VOLTAGE"]],
+        ["https://static.snep.pw/uma/songs/previews/22913f67d.mp3", ["Make Debut!", "Legend Changer", "Irodori Phantasia", "GIRLS' LEGEND U", "Umapyoi Densetsu", "Starting GATE"]],
+        ["https://static.snep.pw/uma/songs/previews/5dc85d137.mp3", ["Mejiro Sanka", "Legend Changer", "Marvelous Sunday Time☆★", "Me ni Shuki ♡ Rush-shu!", "Hashire Umamusume", "Komorebi no Yell"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/071fe1bbf.mp3", ["Marvelous Sunday Time☆★", "Happy Friday", "Everyday is a Good Day", "Komorebi no Yell", "Me ni Shuki ♡ Rush-shu!", "Hashire Umamusume"]],
+        ["https://static.snep.pw/uma/songs/previews/471fd5f1b.mp3", ["Me ni Shuki ♡ Rush-shu!", "Tracen Ondo", "Marvelous Sunday Time☆★", "UmaSugi! Gourmet Parade", "Yume o Kakeru!", "Honnou Speed"]],
+        ["https://static.snep.pw/uma/songs/previews/b62c07f3a.mp3", ["Midnight Epilogue", "Ms. VICTORIA", "Mejiro Sanka", "Spurt Syndromer", "Honnou Speed", "Yume o Kakeru!"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/a397fe0e1.mp3", ["Never Looking Back", "Overrunner!", "Make Debut!", "Mejiro Sanka", "UmaSugi! Gourmet Parade", "Midnight Epilogue"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/0ee65603c.mp3", ["Pakatube! Desu ga, Nani ka?", "Piyoppiyo ni Shiteyanyo!", "Midnight Epilogue", "NEXT FRONTIER", "Ms. VICTORIA", "Mejiro Sanka"], "hard"],      
+        ["https://static.snep.pw/uma/songs/previews/94e0d1283.mp3", ["PRISMATIC SPURT!!!!", "Umapyoi Densetsu", "WINNING MELODY", "We are DREAMERS!!", "UNLIMITED IMPACT", "Ready!! Steady!! Derby!!"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/3e164870b.mp3", ["Ready!! Steady!! Derby!!", "Hashire Umamusume", "FIGHT ON!", "U.M.A NEW WORLD!!", "PRISMATIC SPURT!!!!", "Ms. VICTORIA"]],
+        ["https://static.snep.pw/uma/songs/previews/a5aa22099.mp3", ["Special Record!", "Make Debut!", "PRISMATIC SPURT!!!!", "Ready!! Steady!! Derby!!", "Yume o Kakeru!", "Honnou Speed"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/85341f311.mp3", ["Sasayaka na Inori", "Mejiro Sanka", "Ichibanboshi ga Kakeru Sora", "Komorebi no Yell", "Hajimari no Signal", "Takarazuka Kinen"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/cb7d24ccc.mp3", ["Spurt Syndromer", "SHAKEROCK", "NEXT FRONTIER", "Saikyo ROARING", "RUNxRUN!", "GIRLS' LEGEND U"]],
+        ["https://static.snep.pw/uma/songs/previews/c144c9f47.mp3", ["Tracen Ondo", "UMA IN AMERICA", "Umapyoi Densetsu", "Special Record!", "SHAKEROCK", "Ready!! Steady!! Derby!!"]],
+        ["https://static.snep.pw/uma/songs/previews/6e4e2f2bd.mp3", ["U.M.A NEW WORLD!!", "Umapyoi Densetsu", "NEXT FRONTIER", "transforming", "UMA SUMMER", "GIRLS' LEGEND U"]],
+        ["https://static.snep.pw/uma/songs/previews/ac883a576.mp3", ["UMA IN AMERICA", "Legend Changer", "Umapyoi Densetsu", "Blaze", "winning the soul", "U.M.A NEW WORLD!!"]],
+        ["https://static.snep.pw/uma/songs/previews/e277c4cbe.mp3", ["Umapyoi Densetsu", "Kimi no Aiba ga", "Tracen Ondo", "VOLTAGE", "NEXT FRONTIER", "Ready!! Steady!! Derby!!"]],
+        ["https://static.snep.pw/uma/songs/previews/886ad59a0.mp3", ["UmaSugi! Gourmet Parade", "Umapyoi Densetsu", "Tracen Ondo", "Me ni Shuki ♡ Rush-shu!", "Go This Way", "GIRLS' LEGEND U"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/7bc7ef544.mp3", ["UNLIMITED IMPACT", "UMA IN AMERICA", "Tracen Ondo", "Special Record!", "Tokimeki Scramble", "Ready!! Steady!! Derby!!"]],
+        ["https://static.snep.pw/uma/songs/previews/b64785bd7.mp3", ["VOLTAGE", "Unite!!", "Umapyoi Densetsu", "Legend Changer", "SHAKEROCK", "Spurt Syndromer"]], 
+        ["https://static.snep.pw/uma/songs/previews/a97210de2.mp3", ["winning the soul", "WINNING MELODY", "Yume o Kakeru!", "We are DREAMERS!!"]],
+        ["https://static.snep.pw/uma/songs/previews/a76ba34e1.mp3", ["Yume o Kakeru!", "UNLIMITED IMPACT", "Umapyoi Densetsu", "Tokimeki Scramble", "QueenBee", "Spurt Syndromer"]],
+        ["https://static.snep.pw/uma/songs/previews/920c39483.mp3", ["Zensoku! Zenshin! Umadol Power☆", "Special Record!", "Piyoppiyo ni Shiteyanyo!", "Hashire Umamusume", "Irodori Phantasia", "Pakatube! Desu ga, Nani ka?"], "hard"]
+      ]
+    },
+    {
+      "promptTemplate": "Who sang this song?",
+      "difficulty": "medium",
+      "entries": [
+        ["https://static.snep.pw/uma/songs/previews/fdaf02cfe.mp3", ["Mayano Top Gun", "Sweep Tosho", "Matikanetannhauser", "Nishino Flower", "Smart Falcon", "Haru Urara"]],
+        ["https://static.snep.pw/uma/songs/previews/337f6adec.mp3", ["T.M. Opera O", "Symboli Rudolf", "King Halo", "Sirius Symboli", "Manhattan Cafe", "Orfevre"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/7587efda9.mp3", ["Super Creek", "Rice Shower", "Mihono Bourbon", "Narita Top Road", "Air Shakur", "Sakura Chiyono O"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/4f9518a90.mp3", ["Almond Eye", "Kawakami Princess", "Daiwa Scarlet", "Narita Top Road", "Fine Motion", "Mejiro McQueen"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/660fa3ae8.mp3", ["Mejiro McQueen", "Nice Nature", "King Halo", "Matikanetannhauser", "Taiki Shuttle", "Mejiro Ardan"], "easy"],
+        ["https://static.snep.pw/uma/songs/previews/5fe398049.mp3", ["Orfevre", "Sirius Symboli", "Gold Ship", "Admire Vega", "Haru Urara", "Mejiro Ramonu"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/cc23ec07e.mp3", ["Curren Chan", "Smart Falcon", "Yukino Bijin", "Copano Rickey", "Haru Urara", "Sakura Chiyono O"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/0c1e63b37.mp3", ["Haru Urara", "El Condor Pasa", "Yukino Bijin", "Copano Rickey", "Kitasan Black", "Biko Pegasus"]],
+        ["https://static.snep.pw/uma/songs/previews/d909010c4.mp3", ["Gentildonna", "Grass Wonder", "Agnes Tachyon", "Oguri Cap", "Orfevre", "Narita Brian"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/bd66145f0.mp3", ["Matikanefukukitaru", "Gold Ship", "Matikanetannhauser", "Sweep Tosho", "Vivlos", "Curren Chan"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/7f164ca2d.mp3", ["Sweep Tosho", "Silence Suzuka", "Winning Ticket", "Tokai Teio", "Matikanefukukitaru", "Taiki Shuttle"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/dedfd0b29.mp3", ["Tamamo Cross", "Winning Ticket", "Narita Taishin", "Symboli Rudolf", "Satono Diamond", "Biwa Hayahide"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/ab31f1e69.mp3", ["Nice Nature", "Mayano Top Gun", "Matikanetannhauser", "Kitasan Black", "Dantsu Flame", "Smart Falcon"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/058cbb174.mp3", ["Narita Top Road", "T.M. Opera O", "Admire Vega", "Manhattan Cafe", "Biwa Hayahide", "Agnes Tachyon"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/a1645afeb.mp3", ["Manhattan Cafe", "Meisho Doto", "Mr. C.B.", "Inari One", "Mejiro Dober", "Mejiro Palmer"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/24f4eafd3.mp3", ["Narita Brian", "Orfevre", "Grass Wonder", "Air Shakur", "Seiun Sky", "Mihono Bourbon"], "hard"],
+        ["https://static.snep.pw/uma/songs/previews/7ac9f5e48.mp3", ["Matikanetannhauser", "Bamboo Memory", "Agnes Digital", "Sakura Chiyono O", "Eishin Flash", "Tosen Jordan"], "hard"]
+        
+      ]
+    }
+  ]
+}

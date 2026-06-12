@@ -1,0 +1,24 @@
+{
+  "quizNotificationRole": "quiz-notifications",
+  "enabledCategories": [
+    "umas",
+    "songs",
+    "skills",
+    "supporters",
+    "keiba",
+    "trivia",
+    "silhouettes"
+  ],
+  "availableCategories":[
+    "umas",
+    "songs",
+    "skills",
+    "supporters",
+    "trivia",
+    "keiba",
+    "silhouettes",
+    
+
+    "template"
+  ]
+}

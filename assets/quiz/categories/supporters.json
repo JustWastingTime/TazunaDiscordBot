@@ -1,0 +1,51 @@
+{
+  "name": "Supporter",
+  "questions": [
+    { "promptTemplate": "Which gold skill does this card give?",
+      "entries": [
+        ["https://media.gametora.com/umamusume/supports/full/small/30053.png", ["Mile Maven", "Unchanging", "Beeline Burst", "Speed Star", "Big-Sisterly", "No Stopping Me!"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30085.png", ["Lead the Charge!", "Unyielding", "Superstan", "Tail Nine", "Flash Forward", "Encroaching Shadow"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30043.png", ["Come What May", "Refraction Arc", "Nothing Ventured", "Blatant Fear", "Unrestrained", "Shatterproof"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30095.png", ["Dauntless", "Blast Forward", "In High Spirits", "Burning Soul", "Cheers of a Fellow Dreamer", "See Ya Later!"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30097.png", ["Daring Strike", "Early Start", "Wild Wind", "Sturm und Drang", "Lane Legerdemain", "Yodo Invicta"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30070.png", ["Corner Connoisseur", "Sturm und Drang", "Beeline Burst", "From the Brink", "Step on the Gas!", "No Stopping Me!"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30038.png", ["Speed Star", "In Body and Mind", "Burning Soul", "Spring Spectacle", "Sixth Sense", "The Bigger Picture"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30002.png", ["Unrestrained", "Innate Experience", "Concentration", "See Ya Later!", "Dream Run", "Vanguard Spirit"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30021.png", ["Concentration", "It's On!", "Of Calm Mind", "For the Team", "Keep Going!", "Best in Japan"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30020.png", ["Plan X", "Wild Wind", "Fast & Furious", "Rising Dragon", "Blinding Flash", "Perfect Prep!"]]
+      ]
+    },
+    { "prompt": "At MLB, how many RB does this card have?",
+      "entries": [
+        ["https://media.gametora.com/umamusume/supports/full/small/20041.png", ["15%", "0%", "5%", "10%", "20%"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30020.png", ["10%", "0%", "5%", "15%", "20%"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30019.png", ["10%", "0%", "5%", "15%", "20%"]]
+      ],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which skill does this card NOT give?",
+      "entries": [
+        ["https://media.gametora.com/umamusume/supports/full/small/30028.png", ["Front Runner Corners", "Professor of Curvature", "Front Runner Straightaways", "Focus", "Straightaway Adept"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30032.png", ["Slipstream", "Prepared to Pass", "Tail Held High", "Ramp Up", "Playtime's Over!"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30057.png", ["Early Start", "Uma Stan", "Straightaway Spurt", "Groundwork", "Inside Scoop"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30054.png", ["Head-On", "Go with the Flow", "Hesitant Late Surgers", "On Your Left!", "Ramp Up"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30013.png", ["End Closer Corners", "Strategist", "Straightaway Spurt", "Intense Gaze", "Unyielding"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30065.png", ["Corner Adept", "Left-Handed", "Right-Handed", "Medium Straightaways", "Nimble Navigator"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/20015.png", ["Hesitant Late Surgers", "Ramp Up", "Tail Held High", "Hesitant Front Runners", "Hesitant Pace Chasers"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/20024.png", ["Tail Held High", "Ramp Up", "Mile Corners", "Shifting Gears", "Slipstream"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/20001.png", ["Mile Straightaways", "Summer Runner", "Mile Corners", "Prepared to Pass", "Unyielding Spirit"]]
+      ],
+      "difficulty": "medium"
+    },
+    { "promptTemplate": "What is the name of this card's first chain event?",
+      "entries": [
+        ["https://media.gametora.com/umamusume/supports/full/small/30016.png", ["Freshly Made in Ample Amounts", "Leave it to Me to Be Considerate! ♪", "Let Mommy Help You", "We Walk Together", "A Diligent Effort"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30028.png", ["Chasing Brilliance", "Ah, Friendship", "Ah, Home Sweet Home", "Thinking Freely", "Anything for My Classmates"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30097.png", ["Party Ditcher", "The Paths that Beckon", "Rivals Know Best", "Chasing Brilliance", "We Walk Together"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30086.png", ["Anything for My Classmates", "Rivals Know Best", "The Paths that Beckon", "Fortune Favors the Friends!", "Just Because ♪"]],
+        ["https://media.gametora.com/umamusume/supports/full/small/30078.png", ["Mystery Fortune Ritual!", "Maximum Spirituality", "Fortune Favors the Friends!", "A Battle I Can't Lose!", "A Tale Entrusted"]]
+      ],
+      "difficulty": "hard"
+    }
+  ]
+}
