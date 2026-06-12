@@ -5,7 +5,6 @@ import {
 import {
   getGuildClubs,
   getUserLink,
-  isGuildClubRegistered,
   isPremiumGuild,
   registerGuildClub,
   setGuildPremium,
@@ -14,6 +13,9 @@ import {
   upsertUserLink,
 } from './clubDatabase.js';
 import {
+  buildAllLeaderboardPackage,
+  buildAllLeaderboardPageButtons,
+  buildAllLeaderboardPageResponse,
   buildClubDatasets,
   buildLeaderboardSelectRow,
   buildProfileEmbed,
@@ -25,6 +27,7 @@ import {
   findClubsByName,
   findTrainerCandidates,
   buildLeaderboardPackage,
+  isAllClubsLeaderboardQuery,
   isTop100Circle,
   resolveLeaderboardFromCircleId,
   resolveProfileFromPick,
@@ -39,6 +42,9 @@ const BOT_OWNER_IDS = new Set(
     .map((id) => id.trim())
     .filter(Boolean),
 );
+
+const ALL_CLUBS_AUTOCOMPLETE = { name: 'All Clubs', value: 'all' };
+const LB_ALL_PAGE_RE = /^lb_all_(prev|next):([^:]+):([^:]+):(\d+)$/;
 
 function resolveInteractionOptions(req) {
   const data = req.body.data;
@@ -92,6 +98,103 @@ function guildRequiredResponse() {
   return ephemeral('❌ This command can only be used in a server.');
 }
 
+export function resolveAutocompleteFocus(data) {
+  const topOptions = data.options ?? [];
+  const subcommand = topOptions.find((opt) => opt.type === 1);
+  if (subcommand) {
+    const focused = subcommand.options?.find((opt) => opt.focused);
+    return {
+      subcommand: subcommand.name,
+      optionName: focused?.name ?? null,
+      value: typeof focused?.value === 'string' ? focused.value : '',
+    };
+  }
+
+  const focused = topOptions.find((opt) => opt.focused);
+  return {
+    subcommand: null,
+    optionName: focused?.name ?? null,
+    value: typeof focused?.value === 'string' ? focused.value : '',
+  };
+}
+
+export function buildRegisteredClubAutocompleteChoices(guildId, rawQuery) {
+  if (!guildId) return [];
+
+  const query = rawQuery.trim().toLowerCase();
+  const clubs = getGuildClubs(guildId);
+
+  return clubs
+    .map((club) => {
+      const name = String(club.circleName || club.circleId || '').trim();
+      if (!name) return null;
+      return { name: name.slice(0, 100), value: name.slice(0, 100) };
+    })
+    .filter(Boolean)
+    .filter((choice) => !query || choice.name.toLowerCase().includes(query))
+    .sort((a, b) => {
+      const aStarts = a.name.toLowerCase().startsWith(query) ? 0 : 1;
+      const bStarts = b.name.toLowerCase().startsWith(query) ? 0 : 1;
+      if (aStarts !== bStarts) return aStarts - bStarts;
+      return a.name.localeCompare(b.name);
+    })
+    .slice(0, 25);
+}
+
+export function buildLeaderboardAutocompleteChoices(guildId, rawQuery) {
+  if (!guildId) return [];
+
+  const query = rawQuery.trim().toLowerCase();
+  const choices = [];
+
+  if (
+    !query
+    || query === 'all'
+    || 'all clubs'.includes(query)
+    || 'all clubs'.startsWith(query)
+  ) {
+    choices.push(ALL_CLUBS_AUTOCOMPLETE);
+  }
+
+  const clubChoices = buildRegisteredClubAutocompleteChoices(guildId, rawQuery);
+  const seen = new Set(choices.map((choice) => choice.value.toLowerCase()));
+  for (const choice of clubChoices) {
+    const key = choice.value.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    choices.push(choice);
+    if (choices.length >= 25) break;
+  }
+
+  return choices.slice(0, 25);
+}
+
+function resolveGuildClubFromName(guildId, clubNameArg) {
+  const guildClubs = getGuildClubs(guildId);
+  if (!guildClubs.length) {
+    return {
+      error: '❌ No clubs are registered on this server. Run `/club registerclub` first.',
+    };
+  }
+
+  const matches = findClubsByName(guildClubs, clubNameArg);
+  if (!matches.length) {
+    return {
+      error: `❌ No registered club matching \`${clubNameArg}\` on this server.`,
+    };
+  }
+  if (matches.length > 1) {
+    const names = matches.map((club) => club.circleName || club.circleId).join(', ');
+    return {
+      error:
+        `❌ Multiple clubs match \`${clubNameArg}\` (${names}). ` +
+        'Pick a more specific name from autocomplete.',
+    };
+  }
+
+  return { club: matches[0], circleId: String(matches[0].circleId) };
+}
+
 export function handleClubComponent(customId, values) {
   if (customId.startsWith('profile_pick:')) {
     const ownerUserId = customId.slice('profile_pick:'.length);
@@ -101,6 +204,15 @@ export function handleClubComponent(customId, values) {
     const ownerUserId = customId.slice('leaderboard_pick:'.length);
     return { kind: 'leaderboard_pick', value: values?.[0], ownerUserId };
   }
+
+  const pageMatch = customId.match(LB_ALL_PAGE_RE);
+  if (pageMatch) {
+    const [, direction, ownerUserId, guildId, pageStr] = pageMatch;
+    const currentPage = Number.parseInt(pageStr, 10) || 0;
+    const pageIdx = direction === 'prev' ? currentPage - 1 : currentPage + 1;
+    return { kind: 'leaderboard_all_page', ownerUserId, guildId, pageIdx };
+  }
+
   return null;
 }
 
@@ -112,6 +224,15 @@ export async function runClubComponentAction(action) {
   if (action.kind === 'leaderboard_pick') {
     const embed = await resolveLeaderboardFromCircleId(action.value);
     return { embeds: [embed], components: [] };
+  }
+  if (action.kind === 'leaderboard_all_page') {
+    const guildClubs = getGuildClubs(action.guildId);
+    return buildAllLeaderboardPageResponse(
+      guildClubs,
+      action.pageIdx,
+      action.ownerUserId,
+      action.guildId,
+    );
   }
   throw new Error('Unknown club component action.');
 }
@@ -369,6 +490,26 @@ export async function handleLeaderboard(req) {
           }
 
           const guildClubs = getGuildClubs(guildId);
+          if (!guildClubs.length) {
+            await sendFollowup({
+              content: '❌ No clubs are registered on this server. An admin must run `/club registerclub` first.',
+            });
+            return;
+          }
+
+          if (isAllClubsLeaderboardQuery(clubNameArg)) {
+            const { embeds } = await buildAllLeaderboardPackage(guildClubs);
+            const totalPages = embeds.length;
+            await sendFollowup({
+              embeds: [embeds[0]],
+              components:
+                totalPages > 1
+                  ? [buildAllLeaderboardPageButtons(0, totalPages, userId, guildId)]
+                  : [],
+            });
+            return;
+          }
+
           const matches = findClubsByName(guildClubs, clubNameArg);
           if (!matches.length) {
             await sendFollowup({
@@ -427,12 +568,13 @@ export async function handleSetLeaderboardChannel(req) {
     return ephemeral('❌ Only server administrators can use `/club setleaderboardchannel`.');
   }
 
-  const circleId = String(getOptionValue(req, 'id') ?? '').trim();
-  if (!circleId) return ephemeral('❌ Please provide a club ID.');
+  const clubNameArg = String(getOptionValue(req, 'clubname') ?? '').trim();
+  if (!clubNameArg) return ephemeral('❌ Please provide a club name.');
 
-  if (!isGuildClubRegistered(guildId, circleId)) {
-    return ephemeral('❌ That club is not registered on this server. Run `/club registerclub` first.');
-  }
+  const resolved = resolveGuildClubFromName(guildId, clubNameArg);
+  if (resolved.error) return ephemeral(resolved.error);
+
+  const { circleId } = resolved;
 
   return {
     deferred: true,

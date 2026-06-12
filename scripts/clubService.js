@@ -564,6 +564,144 @@ export function buildLeaderboardEmbed(data, currentTarget = null) {
   };
 }
 
+const ALL_CLUBS_LEADERBOARD_VALUE = 'all';
+const ALL_LEADERBOARD_PAGE_SIZE = 30;
+
+function abbreviateClubLabel(name, width = 4) {
+  const text = String(name || '—').trim() || '—';
+  return (text.length > width ? text.slice(0, width) : text).padEnd(width, ' ');
+}
+
+function getActiveMembersWithClubLabel(data, clubLabel) {
+  const members = data?.members || [];
+  const cutoff = getActiveCutoffMs(members);
+
+  return members
+    .filter((m) => isMemberActive(m, cutoff))
+    .map((m) => {
+      const fanStats = getMemberFanStats(m.daily_fans);
+      return {
+        ...m,
+        clubLabel,
+        monthlyGain: fanStats.monthlyGain,
+        contributionFans: fanStats.contributionFans,
+        averageDays: fanStats.averageDays,
+      };
+    });
+}
+
+export function isAllClubsLeaderboardQuery(query) {
+  const normalized = String(query || '').trim().toLowerCase();
+  return normalized === ALL_CLUBS_LEADERBOARD_VALUE || normalized === 'all clubs';
+}
+
+export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
+  const dataByCircleId = new Map(datasets.map((d) => [String(d.circleId), d]));
+  const combined = [];
+
+  for (const club of guildClubs) {
+    const dataset = dataByCircleId.get(String(club.circleId));
+    if (!dataset?.members?.length) continue;
+    const label = abbreviateClubLabel(club.circleName || dataset.clubName, 4);
+    combined.push(...getActiveMembersWithClubLabel(dataset, label));
+  }
+
+  combined.sort((a, b) => b.contributionFans - a.contributionFans);
+
+  const clubNames = guildClubs
+    .map((club) => club.circleName || club.circleId)
+    .filter(Boolean);
+  const totalPages = Math.max(1, Math.ceil(combined.length / ALL_LEADERBOARD_PAGE_SIZE));
+  const embeds = [];
+
+  for (let pageIdx = 0; pageIdx < totalPages; pageIdx += 1) {
+    const start = pageIdx * ALL_LEADERBOARD_PAGE_SIZE;
+    const pageMembers = combined.slice(start, start + ALL_LEADERBOARD_PAGE_SIZE);
+
+    const nameW = 10;
+    const rankW = 4;
+    const clubW = 4;
+    const monthlyW = 7;
+    const dailyW = 6;
+    const header =
+      'Rank Name        Club Monthly  Daily  \n' +
+      '--------------------------------------  ';
+    const rows = pageMembers.map((m, idx) => {
+      const rank = `#${start + idx + 1}`.padEnd(rankW, ' ');
+      const name = truncateAndPadName(m.trainer_name, nameW);
+      const club = m.clubLabel || abbreviateClubLabel('—', clubW);
+      const monthlyFans = formatCompactInt(m.contributionFans).padStart(monthlyW, ' ');
+      const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
+      return `${rank} ${name} ${club} ${monthlyFans} ${dailyAvg}  `;
+    });
+
+    const lines = [];
+    lines.push(`**Combined Clubs:** ${clubNames.join(' + ') || '—'}`);
+    lines.push(`**Total Active Members:** ${combined.length}`);
+    lines.push(`**Page:** ${pageIdx + 1}/${totalPages}`);
+
+    if (!pageMembers.length) {
+      lines.push('');
+      lines.push('*No active members yet*');
+    } else {
+      lines.push('');
+      lines.push(['```', header, ...rows, '```'].join('\n'));
+    }
+
+    embeds.push({
+      color: 0xF1C40F,
+      title: '🏆 All Clubs — Monthly Fans',
+      description: lines.join('\n'),
+      timestamp: new Date().toISOString(),
+    });
+  }
+
+  return embeds;
+}
+
+export function buildAllLeaderboardPageButtons(pageIdx, totalPages, ownerUserId, guildId) {
+  return {
+    type: 1,
+    components: [
+      {
+        type: 2,
+        style: 2,
+        custom_id: `lb_all_prev:${ownerUserId}:${guildId}:${pageIdx}`,
+        label: 'Previous',
+        disabled: pageIdx <= 0,
+      },
+      {
+        type: 2,
+        style: 2,
+        custom_id: `lb_all_next:${ownerUserId}:${guildId}:${pageIdx}`,
+        label: 'Next',
+        disabled: pageIdx >= totalPages - 1,
+      },
+    ],
+  };
+}
+
+export async function buildAllLeaderboardPackage(guildClubs) {
+  const datasets = await buildClubDatasets(guildClubs.map((club) => club.circleId));
+  return {
+    embeds: buildAllLeaderboardEmbeds(guildClubs, datasets),
+  };
+}
+
+export async function buildAllLeaderboardPageResponse(guildClubs, pageIdx, ownerUserId, guildId) {
+  const { embeds } = await buildAllLeaderboardPackage(guildClubs);
+  const totalPages = Math.max(1, embeds.length);
+  const safePage = Math.max(0, Math.min(pageIdx, totalPages - 1));
+
+  return {
+    embeds: [embeds[safePage]],
+    components:
+      totalPages > 1
+        ? [buildAllLeaderboardPageButtons(safePage, totalPages, ownerUserId, guildId)]
+        : [],
+  };
+}
+
 export function findTrainerCandidates(targetName, datasets) {
   const lowerTarget = targetName.toLowerCase();
   const exact = [];

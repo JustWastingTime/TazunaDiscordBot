@@ -251,6 +251,7 @@ const CLUB_COMMAND = {
           name: 'clubname',
           description: 'Club name to show (defaults to your linked club)',
           required: false,
+          autocomplete: true,
         },
       ],
     },
@@ -260,11 +261,11 @@ const CLUB_COMMAND = {
       description: 'Post an auto-updating club leaderboard in this channel (admin only)',
       options: [
         {
-          type: 4,
-          name: 'id',
-          description: 'Club ID from Umamusume / uma.moe',
+          type: 3,
+          name: 'clubname',
+          description: 'Registered club name for this server',
           required: true,
-          min_value: 1,
+          autocomplete: true,
         },
       ],
     },

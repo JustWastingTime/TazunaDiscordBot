@@ -29,7 +29,15 @@ import {
   ensureDirectory,
   resolveSkillMapOutputPath,
 } from './skillCourseMap.js';
-import { dispatchClubCommand, handleClubComponent, isClubCommand, runClubComponentAction } from './clubHandlers.js';
+import {
+  buildLeaderboardAutocompleteChoices,
+  buildRegisteredClubAutocompleteChoices,
+  dispatchClubCommand,
+  handleClubComponent,
+  isClubCommand,
+  resolveAutocompleteFocus,
+  runClubComponentAction,
+} from './clubHandlers.js';
 import { getUmaApiKey } from './clubService.js';
 import { startLeaderboardCron } from './clubLeaderboardCron.js';
 
@@ -330,42 +338,63 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
    * See https://discord.com/developers/docs/interactions/application-commands#autocomplete
    */
   if (type === InteractionType.APPLICATION_COMMAND_AUTOCOMPLETE) {
-    const focused = data.options?.find(opt => opt.focused);
-    const rawQuery = typeof focused?.value === 'string' ? focused.value : '';
-    const query = rawQuery.trim().toLowerCase();
+    const focus = resolveAutocompleteFocus(data);
 
-    // Only start suggesting once the user has typed at least 3 characters.
-    if (data.name !== 'skill' || query.length < 3) {
+    if (data.name === 'club' && focus.optionName === 'clubname') {
+      const choices =
+        focus.subcommand === 'leaderboard'
+          ? buildLeaderboardAutocompleteChoices(req.body.guild_id, focus.value)
+          : focus.subcommand === 'setleaderboardchannel'
+            ? buildRegisteredClubAutocompleteChoices(req.body.guild_id, focus.value)
+            : [];
+
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
-        data: { choices: [] }
+        data: { choices },
       });
     }
 
-    const terms = query.split(/\s+/);
-    const matches = skills.filter(s => {
-      return terms.every(q =>
-        s.skill_name.toLowerCase().includes(q) ||
-        s.aliases?.some(a => a.toLowerCase().includes(q))
-      );
-    });
+    if (data.name === 'skill' && focus.optionName === 'name') {
+      const query = focus.value.trim().toLowerCase();
 
-    // Surface skills whose name starts with the query first, then alphabetical.
-    matches.sort((a, b) => {
-      const aStarts = a.skill_name.toLowerCase().startsWith(query) ? 0 : 1;
-      const bStarts = b.skill_name.toLowerCase().startsWith(query) ? 0 : 1;
-      if (aStarts !== bStarts) return aStarts - bStarts;
-      return a.skill_name.localeCompare(b.skill_name);
-    });
+      // Only start suggesting once the user has typed at least 3 characters.
+      if (query.length < 3) {
+        return res.send({
+          type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+          data: { choices: [] },
+        });
+      }
 
-    const choices = matches.slice(0, 25).map(s => ({
-      name: s.skill_name.length > 100 ? s.skill_name.slice(0, 100) : s.skill_name,
-      value: s.skill_name.length > 100 ? s.skill_name.slice(0, 100) : s.skill_name
-    }));
+      const terms = query.split(/\s+/);
+      const matches = skills.filter(s => {
+        return terms.every(q =>
+          s.skill_name.toLowerCase().includes(q) ||
+          s.aliases?.some(a => a.toLowerCase().includes(q))
+        );
+      });
+
+      // Surface skills whose name starts with the query first, then alphabetical.
+      matches.sort((a, b) => {
+        const aStarts = a.skill_name.toLowerCase().startsWith(query) ? 0 : 1;
+        const bStarts = b.skill_name.toLowerCase().startsWith(query) ? 0 : 1;
+        if (aStarts !== bStarts) return aStarts - bStarts;
+        return a.skill_name.localeCompare(b.skill_name);
+      });
+
+      const choices = matches.slice(0, 25).map(s => ({
+        name: s.skill_name.length > 100 ? s.skill_name.slice(0, 100) : s.skill_name,
+        value: s.skill_name.length > 100 ? s.skill_name.slice(0, 100) : s.skill_name,
+      }));
+
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices },
+      });
+    }
 
     return res.send({
       type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
-      data: { choices }
+      data: { choices: [] },
     });
   }
 
