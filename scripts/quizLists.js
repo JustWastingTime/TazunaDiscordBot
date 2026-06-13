@@ -35,24 +35,30 @@ function pickRandomItem(items) {
 export function resolveMcqAnswers(rawAnswers, { minWrong = 3, normalizeAnswer } = {}) {
   if (!rawAnswers?.length) return [];
 
-  const correct = String(rawAnswers[0]);
+  const usable = rawAnswers.filter((item) => isListRef(item) || String(item ?? '').trim());
+  if (!usable.length) return [];
+
+  const correct = String(usable[0]).trim();
   const exclude = new Set([normalizeAnswer(correct)]);
   const wrong = [];
 
-  for (const item of rawAnswers.slice(1)) {
+  for (const item of usable.slice(1)) {
     if (isListRef(item)) continue;
-    const value = String(item);
+    const value = String(item).trim();
+    if (!value) continue;
     wrong.push(value);
     exclude.add(normalizeAnswer(value));
   }
 
-  const listNames = rawAnswers.slice(1).filter(isListRef).map((ref) => ref.slice(1));
-  const listPool = [...new Set(listNames.flatMap(getQuizList))];
+  const listNames = usable.slice(1).filter(isListRef).map((ref) => ref.slice(1));
+  const listPool = [...new Set(listNames.flatMap(getQuizList))].filter((name) => String(name).trim());
   const maxAttempts = Math.max(listPool.length, minWrong) * 2;
   let attempts = 0;
 
   while (wrong.length < minWrong && attempts < maxAttempts) {
-    const available = listPool.filter((name) => !exclude.has(normalizeAnswer(name)));
+    const available = listPool.filter(
+      (name) => String(name).trim() && !exclude.has(normalizeAnswer(name)),
+    );
     if (!available.length) break;
     const pick = pickRandomItem(available);
     wrong.push(pick);

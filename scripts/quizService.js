@@ -158,8 +158,9 @@ export function calculateQuizWinReward(participantCount) {
   return Math.min(QUIZ_WIN_MAX_COINS, raw);
 }
 
-function truncateLabel(label) {
-  const s = String(label);
+function truncateLabel(label, fallback = 'Answer') {
+  const s = String(label ?? '').trim();
+  if (!s) return fallback;
   return s.length <= BUTTON_LABEL_MAX ? s : `${s.slice(0, BUTTON_LABEL_MAX - 1)}…`;
 }
 
@@ -561,7 +562,7 @@ export function buildMcqRows(guildId, round) {
       type: 2,
       style: 1,
       custom_id: `quiz-answer:${guildId}:${round.number}:${i}`,
-      label: truncateLabel(answer),
+      label: truncateLabel(answer, `Answer ${i + 1}`),
     })),
   }];
 }
@@ -575,7 +576,7 @@ export function buildDisabledMcqRows(round) {
       type: 2,
       style: i === correct ? 3 : 2,
       custom_id: `quiz-ended:${i}`,
-      label: truncateLabel(answer),
+      label: truncateLabel(answer, `Answer ${i + 1}`),
       disabled: true,
     })),
   }];
