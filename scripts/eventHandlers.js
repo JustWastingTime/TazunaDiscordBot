@@ -229,9 +229,7 @@ export async function handleGambaWagerClick(req, eventId, entryNumber, amount) {
   if (!wallet.ok) return ephemeral(wallet.error);
 
   const event = getEvent(eventId);
-  if (!event) return ephemeral('❌ This event is outdated.');
-  if (!isEventBettable(event)) return ephemeral('❌ Betting is closed for this event.');
-  if (!BET_AMOUNTS.includes(amount)) return ephemeral('❌ Invalid bet amount.');
+  const entry = getEntry(event, entryNumber);
 
   const user = {
     trainerName: wallet.link.trainerName || displayName,
@@ -240,8 +238,24 @@ export async function handleGambaWagerClick(req, eventId, entryNumber, amount) {
     betHistory: [...(wallet.link.betHistory || [])],
   };
 
+  function wagerUpdate(content) {
+    return {
+      type: InteractionResponseType.UPDATE_MESSAGE,
+      data: {
+        content,
+        embeds: event && entry ? [buildWagerEmbed(event, entry, user)] : [],
+        components: event && entry ? buildWagerButtons(event.id, entry.number) : [],
+      },
+    };
+  }
+
+  if (!event) return wagerUpdate('❌ This event is outdated.');
+  if (!isEventBettable(event)) return wagerUpdate('❌ Betting is closed for this event.');
+  if (!BET_AMOUNTS.includes(amount)) return wagerUpdate('❌ Invalid bet amount.');
+  if (!entry) return wagerUpdate('❌ Entry not found.');
+
   const result = placeBet(user, event, entryNumber, amount);
-  if (!result.ok) return ephemeral(`❌ ${result.error}`);
+  if (!result.ok) return wagerUpdate(`❌ ${result.error}`);
 
   updateUserBettingState(userId, {
     trainerName: user.trainerName,
@@ -254,9 +268,14 @@ export async function handleGambaWagerClick(req, eventId, entryNumber, amount) {
     console.error('Failed to refresh bets board:', err.message);
   });
 
-  return ephemeral(
-    `✅ Placed **${formatCoins(amount)}** GambaCoins on **#${entryNumber} ${result.entry.name}** @ ${result.entry.odds}.`,
-  );
+  return {
+    type: InteractionResponseType.UPDATE_MESSAGE,
+    data: {
+      content: `✅ Placed **${formatCoins(amount)}** GambaCoins on **#${entryNumber} ${result.entry.name}** @ ${result.entry.odds}.`,
+      embeds: [buildWagerEmbed(event, result.entry, result.user)],
+      components: buildWagerButtons(event.id, entry.number),
+    },
+  };
 }
 
 export function handleGambaBetComponent(customId) {
