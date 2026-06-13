@@ -686,6 +686,7 @@ export function buildWinnerEmbed(winner, scores, { coinReward = 0, scoreGoal = D
     color: 0x57f287,
     title: 'Quiz finished!',
     description: lines.join('\n'),
+    footer: { text: 'Use /quiz notify to get notifications for a quiz.' },
   };
 }
 
