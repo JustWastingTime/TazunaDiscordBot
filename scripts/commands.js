@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { capitalize, InstallGlobalCommands } from './utils.js';
+import { capitalize, InstallGlobalCommands, InstallGuildCommands } from './utils.js';
 
 // Get the game choices from game.js
 function createCommandChoices() {
@@ -152,8 +152,6 @@ const CM_COMMAND = {
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 }; 
-
-const GUILD_ADMIN_PERMISSIONS = '8';
 
 const REGISTER_COMMAND = {
   name: 'register',
@@ -487,6 +485,109 @@ const REFRESHCACHE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
+const GAMBACOIN_GIVE_SUBCOMMAND = {
+  type: 1,
+  name: 'give',
+  description: 'Give GambaCoins to another player',
+  options: [
+    {
+      type: 3,
+      name: 'player',
+      description: 'Player to give coins to',
+      required: true,
+      autocomplete: true,
+    },
+    {
+      type: 4,
+      name: 'value',
+      description: 'Coins to give',
+      required: true,
+      min_value: 1,
+    },
+  ],
+};
+
+const GAMBACOIN_BEG_SUBCOMMAND = {
+  type: 1,
+  name: 'beg',
+  description: 'Beg for GambaCoin donations from other players',
+  options: [
+    {
+      type: 3,
+      name: 'message',
+      description: 'Your begging message',
+      required: true,
+      max_length: 500,
+    },
+  ],
+};
+
+const GAMBACOIN_LEADERBOARD_SUBCOMMAND = {
+  type: 1,
+  name: 'leaderboard',
+  description: 'Leaderboard ranked by GambaCoin wallet',
+  options: [
+    {
+      type: 3,
+      name: 'scope',
+      description: 'Server wallets or global wallets',
+      required: false,
+      choices: [
+        { name: 'This server', value: 'server' },
+        { name: 'Global', value: 'global' },
+      ],
+    },
+  ],
+};
+
+const GAMBACOIN_AWARD_SUBCOMMAND = {
+  type: 1,
+  name: 'award',
+  description: 'Grant GambaCoins to a player (owner only, minted)',
+  options: [
+    {
+      type: 6,
+      name: 'user',
+      description: 'User to award coins to',
+      required: true,
+    },
+    {
+      type: 4,
+      name: 'amount',
+      description: 'Coins to award',
+      required: true,
+      min_value: 1,
+    },
+  ],
+};
+
+const GAMBACOIN_COMMAND = {
+  name: 'gambacoin',
+  description: 'GambaCoins — give, beg, and leaderboards',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    GAMBACOIN_GIVE_SUBCOMMAND,
+    GAMBACOIN_BEG_SUBCOMMAND,
+    GAMBACOIN_LEADERBOARD_SUBCOMMAND,
+  ],
+};
+
+const GAMBACOIN_OWNER_COMMAND = {
+  name: 'gambacoin',
+  description: 'GambaCoins — give, beg, leaderboards, and owner awards',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    GAMBACOIN_GIVE_SUBCOMMAND,
+    GAMBACOIN_BEG_SUBCOMMAND,
+    GAMBACOIN_LEADERBOARD_SUBCOMMAND,
+    GAMBACOIN_AWARD_SUBCOMMAND,
+  ],
+};
+
 const ALL_COMMANDS = [
   SUPPORTER_COMMAND,
   SKILL_COMMAND,
@@ -497,6 +598,7 @@ const ALL_COMMANDS = [
   PROFILE_COMMAND,
   CLUB_COMMAND,
   QUIZ_COMMAND,
+  GAMBACOIN_COMMAND,
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,
@@ -507,3 +609,12 @@ const ALL_COMMANDS = [
 ];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
+
+const ownerGuildId = String(process.env.BOT_OWNER_GUILD_ID || '').trim();
+if (ownerGuildId) {
+  InstallGuildCommands(process.env.APP_ID, ownerGuildId, [GAMBACOIN_OWNER_COMMAND]);
+} else {
+  console.warn(
+    'BOT_OWNER_GUILD_ID is not set — /gambacoin award will only be available after you set it and run npm run register.',
+  );
+}

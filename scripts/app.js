@@ -47,6 +47,13 @@ import {
   handleQuizAnswerComponent,
   isQuizCommand,
 } from './quizHandlers.js';
+import {
+  buildGiveAutocompleteChoices,
+  dispatchGambacoinCommand,
+  handleGambaDonateClick,
+  handleGambaDonateComponent,
+  isGambacoinCommand,
+} from './gambacoinHandlers.js';
 import { resumeActiveQuizzes } from './quizRunner.js';
 
 import path from 'path';
@@ -356,6 +363,14 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             ? buildRegisteredClubAutocompleteChoices(req.body.guild_id, focus.value)
             : [];
 
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices },
+      });
+    }
+
+    if (data.name === 'gambacoin' && focus.optionName === 'player') {
+      const choices = buildGiveAutocompleteChoices(req.body.guild_id, focus.value);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
@@ -1210,6 +1225,13 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
     }
 
+    if (isGambacoinCommand(name)) {
+      const gambacoinResult = await dispatchGambacoinCommand(req);
+      if (gambacoinResult) {
+        return res.send(gambacoinResult);
+      }
+    }
+
     if (isClubCommand(name)) {
       const clubResult = await dispatchClubCommand(name, req);
       if (clubResult?.deferred) {
@@ -1262,6 +1284,23 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           data: {
             flags: InteractionResponseFlags.EPHEMERAL,
             content: '❌ Something went wrong processing your answer.',
+          },
+        });
+      }
+    }
+
+    const gambaDonate = handleGambaDonateComponent(custom_id);
+    if (gambaDonate) {
+      try {
+        const response = await handleGambaDonateClick(req, gambaDonate.beggarId, gambaDonate.amount);
+        return res.send(response);
+      } catch (err) {
+        console.error('Gamba donate handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong processing your donation.',
           },
         });
       }

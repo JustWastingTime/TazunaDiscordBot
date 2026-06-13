@@ -316,6 +316,7 @@ export async function handleRegister(req) {
           trainerName: profile.trainerName,
           circleId: profile.circleId ?? '',
           circleName: profile.circleName,
+          registeredGuildId: req.body.guild_id,
         });
         const clubLine = profile.circleName
           ? ` in **${profile.circleName}**`
