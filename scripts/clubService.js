@@ -465,11 +465,6 @@ export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) 
         inline: true,
       },
       {
-        name: '\u200b',
-        value: '\u200b',
-        inline: false,
-      },
-      {
         name: '🎰 GambaCoins',
         value: formatFestField(festa?.gambaCoins),
         inline: true,

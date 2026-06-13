@@ -451,7 +451,7 @@ export async function handleProfile(req) {
         if (!link) {
           await sendFollowup({
             content:
-              'You do not have a trainer profile yet. Use `/register` or answer a quiz question to get started.',
+              'You do not have a trainer profile yet. Use `/register` with your umamusume id.',
           });
           return;
         }

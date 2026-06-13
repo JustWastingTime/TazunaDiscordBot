@@ -211,42 +211,85 @@ function pickRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-export function pickQuestion(questions, options) {
-  const { selectedDifficulty, usedIds = [] } = options;
-  const usedSet = new Set(usedIds);
-  const eligible = questions.filter((q) => q.type === QUIZ_MODE);
-  if (!eligible.length) return null;
+function countAskedTimes(questionId, usedIds) {
+  let count = 0;
+  for (const id of usedIds) {
+    if (id === questionId) count += 1;
+  }
+  return count;
+}
 
+function buildTierTryOrder(selectedDifficulty) {
   const tiersToTry = [];
   for (let attempt = 0; attempt < 8; attempt += 1) {
     tiersToTry.push(rollTargetDifficulty(selectedDifficulty));
   }
-  tiersToTry.push(...DIFFICULTY_LEVELS.slice().reverse());
+  for (const tier of [...DIFFICULTY_LEVELS].reverse()) {
+    tiersToTry.push(tier);
+  }
+  return tiersToTry;
+}
 
-  for (const tier of tiersToTry) {
-    const tierQuestions = eligible.filter((q) => getQuestionDifficulty(q) === tier);
-    if (!tierQuestions.length) continue;
+function pickBalancedFromPool(pool, usedIds, avoidId = null) {
+  if (!pool.length) return null;
 
-    const byGroup = groupQuestionsByBalanceKey(tierQuestions);
-    const groupPools = [...byGroup.entries()].map(([groupKey, groupQuestions]) => {
-      const unused = groupQuestions.filter((q) => !usedSet.has(q.id));
-      return {
-        groupKey,
-        asked: groupQuestions.length - unused.length,
-        hasUnused: unused.length > 0,
-        pool: unused.length ? unused : groupQuestions,
-      };
-    });
+  const usedSet = new Set(usedIds);
+  const unused = pool.filter((q) => !usedSet.has(q.id));
+  const workingPool = unused.length ? unused : pool;
 
-    const groupsWithUnused = groupPools.filter((entry) => entry.hasUnused);
-    const candidates = groupsWithUnused.length ? groupsWithUnused : groupPools;
-    const minAsked = Math.min(...candidates.map((entry) => entry.asked));
-    const balanced = candidates.filter((entry) => entry.asked === minAsked);
-    const chosenGroup = pickRandomItem(balanced);
-    return pickRandomItem(chosenGroup.pool);
+  const byGroup = groupQuestionsByBalanceKey(workingPool);
+  const groupPools = [...byGroup.entries()].map(([, groupQuestions]) => {
+    const groupUnused = groupQuestions.filter((q) => !usedSet.has(q.id));
+    const activePool = groupUnused.length ? groupUnused : groupQuestions;
+    const asked = groupQuestions.reduce(
+      (sum, q) => sum + countAskedTimes(q.id, usedIds),
+      0,
+    );
+    return { asked, pool: activePool, hasUnused: groupUnused.length > 0 };
+  });
+
+  const withUnused = groupPools.filter((entry) => entry.hasUnused);
+  const candidates = withUnused.length ? withUnused : groupPools;
+  const minAsked = Math.min(...candidates.map((entry) => entry.asked));
+  const balanced = candidates.filter((entry) => entry.asked === minAsked);
+  const chosenGroup = pickRandomItem(balanced);
+
+  let finalPool = chosenGroup.pool;
+  if (avoidId && finalPool.length > 1) {
+    const withoutRepeat = finalPool.filter((q) => q.id !== avoidId);
+    if (withoutRepeat.length) finalPool = withoutRepeat;
   }
 
-  return null;
+  if (avoidId && finalPool.length > 1 && !unused.length) {
+    finalPool.sort(
+      (a, b) => countAskedTimes(a.id, usedIds) - countAskedTimes(b.id, usedIds),
+    );
+    const minTimes = countAskedTimes(finalPool[0].id, usedIds);
+    const leastAsked = finalPool.filter((q) => countAskedTimes(q.id, usedIds) === minTimes);
+    return pickRandomItem(leastAsked);
+  }
+
+  return pickRandomItem(finalPool);
+}
+
+export function pickQuestion(questions, options) {
+  const { selectedDifficulty, usedIds = [] } = options;
+  const eligible = questions.filter((q) => q.type === QUIZ_MODE);
+  if (!eligible.length) return null;
+
+  const avoidId = usedIds.length ? usedIds[usedIds.length - 1] : null;
+  const unusedEligible = eligible.filter((q) => !new Set(usedIds).has(q.id));
+  const searchPool = unusedEligible.length ? unusedEligible : eligible;
+
+  for (const tier of buildTierTryOrder(selectedDifficulty)) {
+    const tierQuestions = searchPool.filter((q) => getQuestionDifficulty(q) === tier);
+    if (!tierQuestions.length) continue;
+
+    const picked = pickBalancedFromPool(tierQuestions, usedIds, avoidId);
+    if (picked) return picked;
+  }
+
+  return pickBalancedFromPool(searchPool, usedIds, avoidId);
 }
 
 export function getQuestionById(questions, id) {
