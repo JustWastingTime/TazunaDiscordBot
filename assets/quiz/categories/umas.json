@@ -2,64 +2,7686 @@
   "name": "Uma",
   "questions": [
     { "promptTemplate": "{0}'s racewear is called?",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "entries": [
-        ["Satono Diamond (Original)", ["Natural Brilliance", "Crystalline", "Titania", "Line Breakthrough", "Succès Étoilé", "Frontline Elegance"]],
-        ["Oguri Cap (Original)", ["Starlight Beat", "Ashen Miracle", "Fast as Lightning", "Line Breakthrough", "Nevertheless", "Peak Joy", "Beyond the Horizon"]],
-        ["Nishino Flower (Original)", ["Layered Petals", "Strength in Full Bloom", "Sunlight Bouquet", "Blossom in Learning", "Poinsettia Ribbon"]],
-        ["Haru Urara (New Year)", ["New Year ♪ New Urara!", "Pink Miracle", "Bundle of Joy", "Pastel Marine Locodol", "Miracle Make-up!", "Peak Joy", "Fields of Pink"]],
-        ["Matikanetannhauser (Original)", ["Clippety-Tippety-Clop", "Mambo", "Lucky Tidings", "Hat Breaker", "Turbulent Blue", "Sapphire Sojourn", "LOVE☆4EVER"]]
+        [ "Special Week (Original)",
+          [
+            "Special Dreamer",
+            "Run & Win",
+            "Starlight Beat",
+            "Peak Pink",
+            "Commander of Japan",
+            "Blazed Head, Covered Fists"
+          ]
+        ],
+        [ "Special Week (Summer)",
+          [
+            "Hopp'n♪Happy Heart",
+            "Special Dreamer",
+            "O Sole Suo!",
+            "Rouge Caroler",
+            "Quercus Civilis",
+            "King of Summer",
+            "Formula R"
+          ]
+        ],
+        ["Silence Suzuka (Original)",
+          [
+            "Innocent Silence",
+            "Cute Sweet Flower of Mutsu",
+            "Falcon of the Turf",
+            "Lucky Tidings",
+            "Faster than Light",
+            "Meisterschaft",
+            "CODE: ICING"
+          ]
+        ],
+        [ "Tokai Teio (Original)",
+          [
+            "Peak Joy",
+            "Beyond the Horizon",
+            "Azure Amazon",
+            "Monarch",
+            "Nevertheless",
+            "Natural Brilliance",
+            "Blazed Head, Covered Fists"
+          ]
+        ],
+        [ "Tokai Teio (Anime Collab)",
+          [
+            "Beyond the Horizon",
+            "Peak Joy",
+            "Chiffon-Wrapped Mummy",
+            "Rosy Dreams",
+            "Stone-Piercing Blue",
+            "Quercus Civilis",
+            "Archer by Moonlight"
+          ]
+        ],
+        [ "Maruzensky (Original)",
+          [ "Formula R",
+            "Hot☆Summer Night",
+            "Frontline Elegance",
+            "unsigned",
+            "Blossom in Learning",
+            "Princess of Pink",
+            "Innocent Silence"
+          ]
+        ],
+        [ "Maruzensky (Summer)",
+          [
+            "Hot☆Summer Night",
+            "Formula R",
+            "Murmuring Stream",
+            "Platanus Witch",
+            "End of the Skies",
+            "Innocent Silence",
+            "LOVE☆4EVER"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "Shooting Star Revue",
+            "Succès Étoilé",
+            "Beyond the Horizon",
+            "Hot☆Summer Night",
+            "Wild Frontier",
+            "Bestest Prize ♪",
+            "Kukulkan Warrior"
+          ]
+        ],
+        ["Fuji Kiseki (Ballroom)",
+          [
+            "Succès Étoilé",
+            "Shooting Star Revue",
+            "Nevertheless",
+            "Special Dreamer",
+            "Azure Amazon",
+            "Wild Top Gear",
+            "Rising☆Fortune"
+          ]
+        ],
+        [ "Oguri Cap (Original)",
+          [
+            "Starlight Beat",
+            "Ashen Miracle",
+            "Archer by Moonlight",
+            "Fille Éclair",
+            "Frontline Elegance",
+            "Wild Frontier",
+            "Rouge Caroler"
+          ]
+        ],
+        [ "Oguri Cap (Christmas)",
+          [
+            "Ashen Miracle",
+            "Starlight Beat",
+            "Reeling in the Big One",
+            "Blazed Head, Covered Fists",
+            "Starry Nocturne",
+            "Rosy Dreams",
+            "Vampire Makeover!"
+          ]
+        ],
+        [ "Gold Ship (Original)",
+          [
+            "Red Strife",
+            "Sunlight Bouqeut",
+            "Unpredictable",
+            "unsigned",
+            "Line Breakthrough",
+            "Peak Red",
+            "Ashen Miracle"
+          ]
+        ],
+        [ "Vodka (Original)",
+          [
+            "Wild Top Gear",
+            "Empress Road",
+            "Gilded Shrine to Glory",
+            "Authentic / 1928",
+            "Special Dreamer",
+            "Rosy Dreams",
+            "Tach-nology"
+          ]
+        ],
+        [ "Daiwa Scarlet (Original)",
+          [
+            "Peak Blue",
+            "Beyond the Horizon",
+            "CODE: ICING",
+            "Shooting Star Revue",
+            "Princess of Pink",
+            "Succès Étoilé",
+            "Rosy Dreams"
+          ]
+        ],
+        [ "Taiki Shuttle (Original)",
+          [
+            "Wild Frontier",
+            "Bubblegum☆Memories",
+            "Natural Brilliance",
+            "MB-19890425",
+            "Brunissage Line",
+            "Jokester ☆ Vibes",
+            "Line Breakthrough"
+          ]
+        ],
+        [ "Taiki Shuttle (Camping)",
+          [
+            "Bubblegum☆Memories",
+            "Wild Frontier",
+            "Special Dreamer",
+            "Chiffon-Wrapped Mummy",
+            "Hopp'n♪Happy Heart",
+            "Tach-nology",
+            "Innocent Silence"
+          ]
+        ],
+        [ "Grass Wonder (Original)",
+          [
+            "Stone-Piercing Blue",
+            "Saint Jade Healer",
+            "Bono ☆ Alla Moda",
+            "Lucky Tidings",
+            "Ma Chérie of the New Moon",
+            "Emperor's Path",
+            "Vampire Makeover!"
+          ]
+        ],
+        [ "Grass Wonder (Fantasy)",
+          [
+            "Saint Jade Healer",
+            "Stone-Piercing Blue",
+            "Tach-nology",
+            "Blazed Head, Covered Fists",
+            "Turbulent Blue",
+            "Empress Road",
+            "Soirée des Chatons"
+          ]
+        ],
+        [ "Hishi Amazon (Original)",
+          [
+            "Azure Amazon",
+            "Shooting Star Revue",
+            "Autumn Cosmos",
+            "Peak Blue",
+            "Beyond the Horizon",
+            "Turbulent Blue",
+            "Frontline Elegance"
+          ]
+        ],
+        [ "Mejiro McQueen (Original)",
+          [
+            "Frontline Elegance",
+            "End of the Skies",
+            "Blazed Head, Covered Fists",
+            "Brunissage Line",
+            "Clippety-Tippety-Clop",
+            "Creeping Shadow",
+            "Hopp'n♪Happy Heart"
+          ]
+        ],
+        [ "Mejiro McQueen (Anime Collab)",
+          [
+            "End of the Skies",
+            "Frontline Elegance",
+            "King of Emeralds",
+            "Wild Frontier",
+            "Stone-Piercing Blue",
+            "Chiffon-Wrapped Mummy",
+            "Rocket ☆ Star"
+          ]
+        ],
+        [ "El Condor Pasa (Original)",
+          [
+            "El☆Número 1",
+            "Kukulkan Warrior",
+            "unsigned",
+            "Murmuring Stream",
+            "Blazed Head, Covered Fists",
+            "Bestest Prize ♪",
+            "Rosy Dreams"
+          ]
+        ],
+        [ "El Condor Pasa (Fantasy)",
+          [
+            "Kukulkan Warrior",
+            "El☆Número 1",
+            "New Year ♪ New Urara!",
+            "Lucky Tidings",
+            "Tach-nology",
+            "Ashen Miracle",
+            "Fast as Lightning"
+          ]
+        ],
+        [ "T.M. Opera O (Original)",
+          [
+            "O Sole Suo!",
+            "New Year, Same Radiance!",
+            "Soirée des Chatons",
+            "Get to Winning!",
+            "Creeping Shadow",
+            "King of Emeralds",
+            "LOVE☆4EVER"
+          ]
+        ],
+        [ "T.M. Opera O (New Year)",
+          [
+            "New Year, Same Radiance!",
+            "O Sole Suo!",
+            "Red Strife",
+            "Fast as Lightning",
+            "Saint Jade Healer",
+            "Fille Éclair",
+            "Run & Win"
+          ]
+        ],
+        [ "Narita Brian (Original)",
+          [
+            "Maverick",
+            "Off the Line",
+            "Peak Blue",
+            "Turbulent Blue",
+            "Get to Winning!",
+            "Wild Frontier",
+            "Down the Line"
+          ]
+        ],
+        [ "Symboli Rudolf (Original)",
+          [ "Emperor's Path",
+            "Archer by Moonlight",
+            "Lucky Tidings",
+            "Always Electrifying",
+            "pf. Winning Equation...",
+            "El☆Número 1",
+            "Quercus Civilis"
+          ]
+        ],
+        [ "Symboli Rudolf (Festival)",
+          [
+            "Archer by Moonlight",
+            "Emperor's Path",
+            "Cute Sweet Flower of Mutsu",
+            "Stone-Piercing Blue",
+            "Meisterschaft",
+            "Natural Brilliance",
+            "Poinsettia Ribbon"
+          ]
+        ],
+        [ "Air Groove (Original)",
+          [
+            "Empress Road",
+            "Quercus Civilis",
+            "Nevertheless",
+            "Full-Color Fangirling",
+            "Clippety-Tippety-Clop",
+            "Gilded Shrine to Glory",
+            "Azure Amazon"
+          ]
+        ],
+        [ "Air Groove (Wedding)",
+          [
+            "Quercus Civilis",
+            "Empress Road",
+            "Peak Blue",
+            "Bubblegum☆Memories",
+            "Rising☆Fortune",
+            "Tach-nology",
+            "Jokester ☆ Vibes"
+          ]
+        ],
+        [ "Agnes Digital (Original)",
+          [
+            "Full-Color Fangirling",
+            "Platanus Witch",
+            "Red Strife",
+            "Peak Blue",
+            "MB-19890425",
+            "LOVE☆4EVER",
+            "Tach-nology"
+          ]
+        ],
+        [ "Seiun Sky (Original)",
+          [
+            "Reeling in the Big One",
+            "Soirée des Chatons",
+            "Princess of Pink",
+            "Vampire Makeover!",
+            "Layered Petals",
+            "Special Dreamer",
+            "Fille Éclair"
+          ]
+        ],
+        [ "Seiun Sky (Ballroom)",
+          [
+            "Soirée des Chatons",
+            "Reeling in the Big One",
+            "Bono ☆ Alla Moda",
+            "Clippety-Tippety-Clop",
+            "Nevertheless",
+            "Emperor's Path",
+            "Scramble☆Zone"
+          ]
+        ],
+        [ "Tamamo Cross (Original)",
+          [
+            "Fast as Lightning",
+            "Meisterschaft",
+            "Poinsettia Ribbon",
+            "Brunissage Line",
+            "Authentic / 1928",
+            "Blossom in Learning",
+            "Formula R"
+          ]
+        ],
+        [ "Fine Motion (Original)",
+          [
+            "Noble Seamair",
+            "Titania",
+            "Stone-Piercing Blue",
+            "Creeping Shadow",
+            "Blossom in Learning",
+            "Innocent Silence",
+            "Reeling in the Big One"
+          ]
+        ],
+        [ "Fine Motion (Wedding)",
+          [
+            "Titania",
+            "Noble Seamair",
+            "Line Breakthrough",
+            "O Sole Suo!",
+            "Peak Blue",
+            "Soirée des Chatons",
+            "Poinsettia Ribbon"
+          ]
+        ],
+        [ "Biwa Hayahide (Original)",
+          [
+            "pf. Winning Equation...",
+            "Rouge Caroler",
+            "O Sole Suo!",
+            "Hot☆Summer Night",
+            "Frontline Elegance",
+            "Strength in Full Bloom",
+            "Blossom in Learning"
+          ]
+        ],
+        [ "Biwa Hayahide (Christmas)",
+          [
+            "Rouge Caroler",
+            "pf. Winning Equation...",
+            "Full-Color Fangirling",
+            "Down the Line",
+            "Formula R",
+            "Platanus Witch",
+            "Crystalline"
+          ]
+        ],
+        [ "Mayano Top Gun (Original)",
+          [
+            "Scramble☆Zone",
+            "Sunlight Bouqeut",
+            "Meisterschaft",
+            "Jokester ☆ Vibes",
+            "Princess of Pink",
+            "Frontline Elegance",
+            "unsigned"
+          ]
+        ],
+        [ "Mayano Top Gun (Wedding)",
+          [
+            "Sunlight Bouqeut",
+            "Scramble☆Zone",
+            "Strength in Full Bloom",
+            "Autumn Cosmos",
+            "Rising☆Fortune",
+            "Reeling in the Big One",
+            "Princess of Pink"
+          ]
+        ],
+        [ "Manhattan Cafe (Original)",
+          [
+            "Creeping Shadow",
+            "Black Shadows",
+            "Murmuring Stream",
+            "Formula R",
+            "Get to Winning!",
+            "Darkness Ahead",
+            "Peak Joy"
+          ]
+        ],
+        [ "Mihono Bourbon (Original)",
+          [
+            "MB-19890425",
+            "CODE: ICING",
+            "Clippety-Tippety-Clop",
+            "RX-78-2",
+            "Maverick",
+            "Celestial Being",
+            "Special Dreamer"
+          ]
+        ],
+        [ "Mihono Bourbon (Valentines)",
+          [
+            "CODE: ICING",
+            "MB-19890425",
+            "O Sole Suo!",
+            "King of Emeralds",
+            "Formula R",
+            "Clippety-Tippety-Clop",
+            "Blossom in Learning"
+          ]
+        ],
+        [ "Mejiro Ryan (Original)",
+          [
+            "Down the Line",
+            "Mesmerizing Muscle",
+            "Line Breakthrough",
+            "Empress Road",
+            "Lucky Tidings",
+            "Murmuring Stream",
+            "Gymrat"
+          ]
+        ],
+        [ "Hishi Akebono (Original)",
+          [
+            "Bono ☆ Alla Moda",
+            "Sweetness Overload",
+            "Empress Road",
+            "Starlight Beat",
+            "End of the Skies",
+            "Formula R",
+            "Starry Nocturne"
+          ]
+        ],
+        [ "Rice Shower (Original)",
+          [
+            "Rosy Dreams",
+            "Vampire Makeover!",
+            "Wild Frontier",
+            "Creeping Shadow",
+            "Chiffon-Wrapped Mummy",
+            "Clippety-Tippety-Clop",
+            "Quercus Civilis"
+          ]
+        ],
+        [ "Rice Shower (Halloween)",
+          [
+            "Vampire Makeover!",
+            "Rosy Dreams",
+            "Brunissage Line",
+            "Shooting Star Revue",
+            "End of the Skies",
+            "Ma Chérie of the New Moon",
+            "Wild Frontier"
+          ]
+        ],
+        [ "Ines Fujin (Original)",
+          [
+            "Always Electrifying",
+            "Autumn Cosmos",
+            "unsigned",
+            "Stone-Piercing Pink",
+            "Pink Strife",
+            "Fast as Lightning",
+            "Reeling in the Big One"
+          ]
+        ],
+        [ "Agnes Tachyon (Original)",
+          [
+            "Tach-nology",
+            "Sapphire Sojourn",
+            "MB-19890425",
+            "Chiffon-Wrapped Mummy",
+            "Always Electrifying",
+            "Special Dreamer",
+            "Blossom in Learning"
+          ]
+        ],
+        [ "Admire Vega (Original)",
+          [
+            "Starry Nocturne",
+            "Reeling in the Big One",
+            "Strength in Full Bloom",
+            "Murmuring Stream",
+            "Meisterschaft",
+            "Rocket ☆ Star",
+            "Special Dreamer"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "Edomurasaki",
+            "Nevertheless",
+            "Layered Petals",
+            "Starry Nocturne",
+            "Stone-Piercing Blue",
+            "CODE: ICING",
+            "Maverick"
+          ]
+        ],
+        [ "Winning Ticket (Original)",
+          [
+            "Get to Winning!",
+            "Red Strife",
+            "Authentic / 1928",
+            "Murmuring Stream",
+            "Fast as Lightning",
+            "Run & Win",
+            "Frontline Elegance"
+          ]
+        ],
+        [ "Air Shakur (Original)",
+          [
+            "unsigned",
+            "Succès Étoilé",
+            "Rising☆Fortune",
+            "Starry Nocturne",
+            "Blossom in Learning",
+            "King of Emeralds",
+            "Fille Éclair"
+          ]
+        ],
+        [ "Eishin Flash (Original)",
+          [
+            "Meisterschaft",
+            "Precise Chocolatier",
+            "Poinsettia Ribbon",
+            "Lucky Tidings",
+            "unsigned",
+            "Always Electrifying",
+            "End of the Skies"
+          ]
+        ],
+        [ "Eishin Flash (Valentines)",
+          [
+            "Precise Chocolatier",
+            "Meisterschaft",
+            "Always Electrifying",
+            "Bestest Prize ♪",
+            "Down the Line",
+            "Strawberries Galore",
+            "German Cakegineering"
+          ]
+        ],
+        [ "Curren Chan (Original)",
+          [
+            "Fille Éclair",
+            "Ma Chérie of the New Moon",
+            "Stone-Piercing Blue",
+            "El☆Número 1",
+            "Blossom in Learning",
+            "Gilded Shrine to Glory",
+            "Starlight Beat"
+          ]
+        ],
+        [ "Curren Chan (Wedding)",
+          [
+            "Ma Chérie of the New Moon",
+            "Fille Éclair",
+            "Bono ☆ Alla Moda",
+            "Succès Étoilé",
+            "Scramble☆Zone",
+            "Cheerleader in Noble White",
+            "Platanus Witch"
+          ]
+        ],
+        [ "Kawakami Princess (Original)",
+          [
+            "Princess of Pink",
+            "Succès Étoilé",
+            "Beyond the Horizon",
+            "Frontline Elegance",
+            "Sapphire Sojourn",
+            "Wild Frontier",
+            "pf. Winning Equation..."
+          ]
+        ],
+        [ "Gold City (Original)",
+          [
+            "Authentic / 1928",
+            "Autumn Cosmos",
+            "MB-19890425",
+            "Wild Top Gear",
+            "Peak Joy",
+            "unsigned",
+            "Red Strife"
+          ]
+        ],
+        [ "Gold City (Festival)",
+          [
+            "Autumn Cosmos",
+            "Authentic / 1928",
+            "Strength in Full Bloom",
+            "Precise Chocolatier",
+            "Saint Jade Healer",
+            "Always Electrifying",
+            "Sapphire Sojourn"
+          ]
+        ],
+        [ "Sakura Bakushin O (Original)",
+          [
+            "Blossom in Learning",
+            "Saint Jade Healer",
+            "Jokester ☆ Vibes",
+            "Sunlight Bouqeut",
+            "Gilded Shrine to Glory",
+            "Fille Éclair",
+            "Peak Joy"
+          ]
+        ],
+        [ "Sweep Tosho (Original)",
+          [
+            "Platanus Witch",
+            "Ma Chérie of the New Moon",
+            "Moonlight Sonata",
+            "Archer by Moonlight",
+            "Meisterschaft",
+            "Titania",
+            "Shooting Star Revue"
+          ]
+        ],
+        [ "Super Creek (Original)",
+          [
+            "Murmuring Stream",
+            "Chiffon-Wrapped Mummy",
+            "Blazed Head, Covered Fists",
+            "Emperor's Path",
+            "Innocent Silence",
+            "El☆Número 1",
+            "Red Strife"
+          ]
+        ],
+        [ "Super Creek (Halloween)",
+          [
+            "Chiffon-Wrapped Mummy",
+            "Murmuring Stream",
+            "Run & Win",
+            "End of the Skies",
+            "Peak Blue",
+            "Autumn Cosmos",
+            "Sunlight Bouqeut"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "LOVE☆4EVER",
+            "unsigned",
+            "Down the Line",
+            "Peak Joy",
+            "Azure Amazon",
+            "Empress Road",
+            "Lucky Tidings"
+          ]
+        ],
+        [ "Tosen Jordan (Original)",
+          [
+            "Jokester ☆ Vibes",
+            "Ashen Miracle",
+            "Blazed Head, Covered Fists",
+            "Brunissage Line",
+            "unsigned",
+            "Precise Chocolatier",
+            "Scramble☆Zone"
+          ]
+        ],
+        [ "Narita Taishin (Original)",
+          [
+            "Nevertheless",
+            "Rouge Caroler",
+            "El☆Número 1",
+            "Full-Color Fangirling",
+            "Authentic / 1928",
+            "Maverick",
+            "Brunissage Line"
+          ]
+        ],
+        [ "Nishino Flower (Original)",
+          [
+            "Layered Petals",
+            "Always Electrifying",
+            "Sunlight Bouqeut",
+            "Quercus Civilis",
+            "Off the Line",
+            "Platanus Witch",
+            "Frontline Elegance"
+          ]
+        ],
+        [ "Haru Urara (Original)",
+          [
+            "Bestest Prize ♪",
+            "New Year ♪ New Urara!",
+            "End of the Skies",
+            "Beyond the Horizon",
+            "O Sole Suo!",
+            "Lucky Tidings",
+            "Run & Win"
+          ]
+        ],
+        [ "Haru Urara (New Year)",
+          [
+            "New Year ♪ New Urara!",
+            "Bestest Prize ♪",
+            "Starry Nocturne",
+            "CODE: ICING",
+            "Archer by Moonlight",
+            "Crystalline",
+            "Bubblegum☆Memories"
+          ]
+        ],
+        [ "Matikanefukukitaru (Original)",
+          [
+            "Rising☆Fortune",
+            "Lucky Tidings",
+            "Clippety-Tippety-Clop",
+            "Rouge Caroler",
+            "Kukulkan Warrior",
+            "Sunlight Bouqeut",
+            "Ma Chérie of the New Moon"
+          ]
+        ],
+        [ "Matikanefukukitaru (Full Armor)",
+          [
+            "Lucky Tidings",
+            "Rising☆Fortune",
+            "New Year, Same Radiance!",
+            "Natural Brilliance",
+            "Authentic / 1928",
+            "Azure Amazon",
+            "New Year ♪ New Urara!"
+          ]
+        ],
+        [ "Meisho Doto (Original)",
+          [
+            "Turbulent Blue",
+            "Succès Étoilé",
+            "unsigned",
+            "Clippety-Tippety-Clop",
+            "Blazed Head, Covered Fists",
+            "Tach-nology",
+            "Sapphire Sojourn"
+          ]
+        ],
+        [ "Mejiro Dober (Original)",
+          [
+            "Off the Line",
+            "Sapphire Sojourn",
+            "Red Strife",
+            "Azure Amazon",
+            "Fille Éclair",
+            "Bestest Prize ♪",
+            "Wild Frontier"
+          ]
+        ],
+        [ "Mejiro Dober (Camping)",
+          [
+            "Sapphire Sojourn",
+            "Off the Line",
+            "Rising☆Fortune",
+            "Murmuring Stream",
+            "Autumn Cosmos",
+            "Scramble☆Zone",
+            "Gilded Shrine to Glory"
+          ]
+        ],
+        [ "Nice Nature (Original)",
+          [
+            "Poinsettia Ribbon",
+            "Run & Win",
+            "Ashen Miracle",
+            "Lucky Tidings",
+            "King of Emeralds",
+            "Starlight Beat",
+            "Quercus Civilis"
+          ]
+        ],
+        [ "Nice Nature (Cheerleader)",
+          [
+            "Run & Win",
+            "Poinsettia Ribbon",
+            "Blazed Head, Covered Fists",
+            "Meisterschaft",
+            "MB-19890425",
+            "El☆Número 1",
+            "Noble Seamair"
+          ]
+        ],
+        [ "King Halo (Original)",
+          [
+            "King of Emeralds",
+            "Cheerleader in Noble White",
+            "Hot☆Summer Night",
+            "Turbulent Blue",
+            "Lucky Tidings",
+            "Crystalline",
+            "Fast as Lightning"
+          ]
+        ],
+        [ "King Halo (Cheerleader)",
+          [
+            "Cheerleader in Noble White",
+            "King of Emeralds",
+            "Always Electrifying",
+            "Jokester ☆ Vibes",
+            "Ashen Miracle",
+            "Noble Seamair",
+            "Succès Étoilé"
+          ]
+        ],
+        [ "Matikanetannhauser (Original)",
+          [
+            "Clippety-Tippety-Clop",
+            "Formula R",
+            "Lucky Tidings",
+            "Turbulent Blue",
+            "Scramble☆Zone",
+            "Poinsettia Ribbon",
+            "Archer by Moonlight"
+          ]
+        ],
+        [ "Mejiro Palmer (Original)",
+          [
+            "Line Breakthrough",
+            "Platanus Witch",
+            "Scramble☆Zone",
+            "Titania",
+            "Full-Color Fangirling",
+            "Starry Nocturne",
+            "Nevertheless"
+          ]
+        ],
+        [ "Satono Diamond (Original)",
+          [
+            "Natural Brilliance",
+            "Peak Blue",
+            "Lucky Tidings",
+            "LOVE☆4EVER",
+            "Jokester ☆ Vibes",
+            "Stone-Piercing Blue",
+            "Sunlight Bouqeut"
+          ]
+        ],
+        [ "Kitasan Black (Original)",
+          [
+            "Gilded Shrine to Glory",
+            "Innocent Silence",
+            "Sapphire Sojourn",
+            "Off the Line",
+            "MB-19890425",
+            "El☆Número 1",
+            "Fast as Lightning"
+          ]
+        ],
+        [ "Sakura Chiyono O (Original)",
+          [
+            "Strength in Full Bloom",
+            "Jokester ☆ Vibes",
+            "Soirée des Chatons",
+            "Natural Brilliance",
+            "Frontline Elegance",
+            "Starry Nocturne",
+            "Noble Seamair"
+          ]
+        ],
+        [ "Mejiro Ardan (Original)",
+          [
+            "Crystalline",
+            "MB-19890425",
+            "Empress Road",
+            "Princess of Pink",
+            "CODE: ICING",
+            "Peak Blue",
+            "Layered Petals"
+          ]
+        ],
+        [ "Yaeno Muteki (Original)",
+          [
+            "Blazed Head, Covered Fists",
+            "Cheerleader in Noble White",
+            "CODE: ICING",
+            "Princess of Pink",
+            "Peak Joy",
+            "Strength in Full Bloom",
+            "Tach-nology"
+          ]
+        ],
+        [ "Mejiro Bright (Original)",
+          [
+            "Brunissage Line",
+            "Blossom in Learning",
+            "Gilded Shrine to Glory",
+            "Precise Chocolatier",
+            "Turbulent Blue",
+            "MB-19890425",
+            "Ma Chérie of the New Moon"
+          ]
+        ]
       ]
     },
     { "promptTemplate": "Which Uma's racewear is named {0}?",
       "difficulty": "hard",
       "entries": [
-        ["Peak Blue", ["Daiwa Scarlet", "Tokai Teio", "Eishin Flash", "Grass Wonder", "Admire Vega", "Tamamo Cross", "Mejiro McQueen (Anime)", "Super Creek"]],
-        ["Stone-Piercing Blue", ["Grass Wonder", "Tokai Teio", "Eishin Flash", "Daiwa Scarlet", "Admire Vega", "Tamamo Cross", "Mejiro McQueen (Anime)", "Super Creek"]],
-        ["Always Electrifying", ["Ines Fujin", "Tamamo Cross", "Symboli Rudolf", "Narita Brian", "Seiun Sky (Ballroom)", "Kitasan Black", "Gold City"]],
-        ["Gilded Shrine to Glory", ["Kitasan Black", "Inari One", "Symboli Rudolf (Festival)", "Yaeno Muteki", "Mejiro Dober", "T.M. Opera O", "Matikanefukukitaru", "Maruzensky"]]
+        [
+          "Special Dreamer",
+          [
+            "Special Week (Original)",
+            "Special Week (Summer)",
+            "Vodka (Original)",
+            "Taiki Shuttle (Original)",
+            "Haru Urara (New Year)",
+            "Nice Nature (Cheerleader)",
+            "Inari One (Original)",
+            "Fine Motion (Wedding)"
+          ]
+        ],
+        [
+          "Hopp'n♪Happy Heart",
+          [
+            "Special Week (Summer)",
+            "Special Week (Original)",
+            "Hishi Akebono (Original)",
+            "Super Creek (Original)",
+            "Satono Diamond (Original)",
+            "Grass Wonder (Original)",
+            "Seiun Sky (Ballroom)",
+            "Mejiro Dober (Original)"
+          ]
+        ],
+        [
+          "Innocent Silence",
+          [
+            "Silence Suzuka (Original)",
+            "Gold City (Festival)",
+            "Rice Shower (Halloween)",
+            "Taiki Shuttle (Original)",
+            "Nice Nature (Cheerleader)",
+            "Inari One (Original)",
+            "Oguri Cap (Christmas)",
+            "Rice Shower (Original)"
+          ]
+        ],
+        [
+          "Peak Joy",
+          [
+            "Tokai Teio (Original)",
+            "Tokai Teio (Anime Collab)",
+            "Mejiro Dober (Original)",
+            "Air Groove (Wedding)",
+            "Symboli Rudolf (Original)",
+            "Smart Falcon (Original)",
+            "Mayano Top Gun (Original)",
+            "Fine Motion (Wedding)"
+          ]
+        ],
+        [
+          "Beyond the Horizon",
+          [
+            "Tokai Teio (Anime Collab)",
+            "Tokai Teio (Original)",
+            "Grass Wonder (Original)",
+            "Maruzensky (Original)",
+            "Agnes Digital (Original)",
+            "Meisho Doto (Original)",
+            "Special Week (Summer)",
+            "Matikanefukukitaru (Original)"
+          ]
+        ],
+        [
+          "Formula R",
+          [
+            "Maruzensky (Original)",
+            "Maruzensky (Summer)",
+            "Mihono Bourbon (Original)",
+            "Grass Wonder (Original)",
+            "Oguri Cap (Original)",
+            "Manhattan Cafe (Original)",
+            "Daiwa Scarlet (Original)",
+            "Mejiro Palmer (Original)"
+          ]
+        ],
+        [
+          "Hot☆Summer Night",
+          [
+            "Maruzensky (Summer)",
+            "Maruzensky (Original)",
+            "Nice Nature (Original)",
+            "Mayano Top Gun (Original)",
+            "Smart Falcon (Original)",
+            "Gold Ship (Original)",
+            "Sweep Tosho (Original)",
+            "Kawakami Princess (Original)"
+          ]
+        ],
+        [
+          "Shooting Star Revue",
+          [
+            "Fuji Kiseki (Original)",
+            "Yukino Bijin (Original)",
+            "Meisho Doto (Original)",
+            "Mejiro Palmer (Original)",
+            "King Halo (Cheerleader)",
+            "Narita Brian (Original)",
+            "King Halo (Original)",
+            "Oguri Cap (Original)"
+          ]
+        ],
+        [
+          "Succès Étoilé",
+          [
+            "Fuji Kiseki (Ballroom)",
+            "Biwa Hayahide (Christmas)",
+            "Gold City (Festival)",
+            "Mejiro McQueen (Anime Collab)",
+            "Fine Motion (Original)",
+            "Taiki Shuttle (Original)",
+            "Maruzensky (Original)",
+            "Sakura Bakushin O (Original)"
+          ]
+        ],
+        [
+          "Starlight Beat",
+          [
+            "Oguri Cap (Original)",
+            "Oguri Cap (Christmas)",
+            "Agnes Tachyon (Original)",
+            "Winning Ticket (Original)",
+            "Super Creek (Original)",
+            "Smart Falcon (Original)",
+            "Eishin Flash (Valentines)",
+            "Biwa Hayahide (Christmas)"
+          ]
+        ],
+        [
+          "Ashen Miracle",
+          [
+            "Oguri Cap (Christmas)",
+            "Oguri Cap (Original)",
+            "Inari One (Original)",
+            "Mayano Top Gun (Original)",
+            "Meisho Doto (Original)",
+            "Special Week (Original)",
+            "Satono Diamond (Original)",
+            "Mejiro McQueen (Anime Collab)"
+          ]
+        ],
+        [
+          "Red Strife",
+          [
+            "Gold Ship (Original)",
+            "Biwa Hayahide (Christmas)",
+            "Haru Urara (Original)",
+            "Mayano Top Gun (Wedding)",
+            "Special Week (Summer)",
+            "Gold City (Festival)",
+            "Mejiro Ryan (Original)",
+            "Eishin Flash (Valentines)"
+          ]
+        ],
+        [
+          "Wild Top Gear",
+          [
+            "Vodka (Original)",
+            "Sakura Bakushin O (Original)",
+            "Mejiro McQueen (Original)",
+            "Kitasan Black (Original)",
+            "Agnes Digital (Original)",
+            "King Halo (Cheerleader)",
+            "Manhattan Cafe (Original)",
+            "Tamamo Cross (Original)"
+          ]
+        ],
+        [
+          "Peak Blue",
+          [
+            "Daiwa Scarlet (Original)",
+            "Rice Shower (Original)",
+            "T.M. Opera O (Original)",
+            "Haru Urara (New Year)",
+            "Narita Taishin (Original)",
+            "Maruzensky (Summer)",
+            "Super Creek (Original)",
+            "Seeking the Pearl (Original)"
+          ]
+        ],
+        [
+          "Wild Frontier",
+          [
+            "Taiki Shuttle (Original)",
+            "Taiki Shuttle (Camping)",
+            "El Condor Pasa (Fantasy)",
+            "Winning Ticket (Original)",
+            "Sakura Bakushin O (Original)",
+            "Fine Motion (Wedding)",
+            "Fuji Kiseki (Original)",
+            "Manhattan Cafe (Original)"
+          ]
+        ],
+        [
+          "Bubblegum☆Memories",
+          [
+            "Taiki Shuttle (Camping)",
+            "Taiki Shuttle (Original)",
+            "Mejiro Palmer (Original)",
+            "Maruzensky (Summer)",
+            "Hishi Amazon (Original)",
+            "Seiun Sky (Original)",
+            "T.M. Opera O (New Year)",
+            "Winning Ticket (Original)"
+          ]
+        ],
+        [
+          "Stone-Piercing Blue",
+          [
+            "Grass Wonder (Original)",
+            "Grass Wonder (Fantasy)",
+            "Seiun Sky (Original)",
+            "Symboli Rudolf (Original)",
+            "Fuji Kiseki (Original)",
+            "Haru Urara (New Year)",
+            "Air Groove (Wedding)",
+            "El Condor Pasa (Fantasy)"
+          ]
+        ],
+        [
+          "Saint Jade Healer",
+          [
+            "Grass Wonder (Fantasy)",
+            "Grass Wonder (Original)",
+            "Gold City (Original)",
+            "Nice Nature (Cheerleader)",
+            "Oguri Cap (Original)",
+            "Satono Diamond (Original)",
+            "Air Groove (Original)",
+            "Biwa Hayahide (Original)"
+          ]
+        ],
+        [
+          "Azure Amazon",
+          [
+            "Hishi Amazon (Original)",
+            "Symboli Rudolf (Original)",
+            "Taiki Shuttle (Original)",
+            "Special Week (Original)",
+            "Grass Wonder (Fantasy)",
+            "Meisho Doto (Original)",
+            "Daiwa Scarlet (Original)",
+            "Biwa Hayahide (Original)"
+          ]
+        ],
+        [
+          "Frontline Elegance",
+          [
+            "Mejiro McQueen (Original)",
+            "Mejiro McQueen (Anime Collab)",
+            "Manhattan Cafe (Original)",
+            "Seeking the Pearl (Original)",
+            "Nice Nature (Original)",
+            "Rice Shower (Original)",
+            "Tamamo Cross (Original)",
+            "Symboli Rudolf (Original)"
+          ]
+        ],
+        [
+          "End of the Skies",
+          [
+            "Mejiro McQueen (Anime Collab)",
+            "Mejiro McQueen (Original)",
+            "Symboli Rudolf (Original)",
+            "Tosen Jordan (Original)",
+            "Mihono Bourbon (Original)",
+            "Narita Taishin (Original)",
+            "Mejiro Dober (Original)",
+            "Oguri Cap (Christmas)"
+          ]
+        ],
+        [
+          "El☆Número 1",
+          [
+            "El Condor Pasa (Original)",
+            "El Condor Pasa (Fantasy)",
+            "T.M. Opera O (New Year)",
+            "Sweep Tosho (Original)",
+            "Air Groove (Wedding)",
+            "Mejiro McQueen (Original)",
+            "Maruzensky (Original)",
+            "T.M. Opera O (Original)"
+          ]
+        ],
+        [
+          "Kukulkan Warrior",
+          [
+            "El Condor Pasa (Fantasy)",
+            "El Condor Pasa (Original)",
+            "Mejiro McQueen (Anime Collab)",
+            "Sweep Tosho (Original)",
+            "Mejiro Palmer (Original)",
+            "Maruzensky (Summer)",
+            "Oguri Cap (Christmas)",
+            "Mejiro Bright (Original)"
+          ]
+        ],
+        [
+          "O Sole Suo!",
+          [
+            "T.M. Opera O (Original)",
+            "T.M. Opera O (New Year)",
+            "Special Week (Original)",
+            "Fine Motion (Original)",
+            "Yaeno Muteki (Original)",
+            "Agnes Digital (Original)",
+            "Mejiro Bright (Original)",
+            "Mejiro Dober (Original)"
+          ]
+        ],
+        [
+          "New Year, Same Radiance!",
+          [
+            "T.M. Opera O (New Year)",
+            "T.M. Opera O (Original)",
+            "Mejiro Dober (Original)",
+            "El Condor Pasa (Fantasy)",
+            "Tokai Teio (Original)",
+            "Silence Suzuka (Original)",
+            "Meisho Doto (Original)",
+            "Nice Nature (Original)"
+          ]
+        ],
+        [
+          "Maverick",
+          [
+            "Narita Brian (Original)",
+            "Seiun Sky (Ballroom)",
+            "Sweep Tosho (Original)",
+            "Nishino Flower (Original)",
+            "Maruzensky (Summer)",
+            "Oguri Cap (Original)",
+            "Tosen Jordan (Original)",
+            "Kawakami Princess (Original)"
+          ]
+        ],
+        [
+          "Emperor's Path",
+          [
+            "Symboli Rudolf (Original)",
+            "Matikanetannhauser (Original)",
+            "Mejiro Palmer (Original)",
+            "Mejiro Ardan (Original)",
+            "Narita Taishin (Original)",
+            "Seeking the Pearl (Original)",
+            "Silence Suzuka (Original)",
+            "Meisho Doto (Original)"
+          ]
+        ],
+        [
+          "Archer by Moonlight",
+          [
+            "Symboli Rudolf (Festival)",
+            "Mejiro Bright (Original)",
+            "Yaeno Muteki (Original)",
+            "Narita Brian (Original)",
+            "Matikanetannhauser (Original)",
+            "Air Shakur (Original)",
+            "Super Creek (Original)",
+            "Air Groove (Wedding)"
+          ]
+        ],
+        [
+          "Empress Road",
+          [
+            "Air Groove (Original)",
+            "Air Groove (Wedding)",
+            "Agnes Digital (Original)",
+            "Gold City (Original)",
+            "Tamamo Cross (Original)",
+            "Tosen Jordan (Original)",
+            "Biwa Hayahide (Christmas)",
+            "Mejiro McQueen (Anime Collab)"
+          ]
+        ],
+        [
+          "Quercus Civilis",
+          [
+            "Air Groove (Wedding)",
+            "Air Groove (Original)",
+            "Maruzensky (Original)",
+            "Curren Chan (Original)",
+            "Sweep Tosho (Original)",
+            "Mejiro McQueen (Original)",
+            "Eishin Flash (Original)",
+            "Admire Vega (Original)"
+          ]
+        ],
+        [
+          "Full-Color Fangirling",
+          [
+            "Agnes Digital (Original)",
+            "Mihono Bourbon (Valentines)",
+            "Eishin Flash (Original)",
+            "Sweep Tosho (Original)",
+            "Kitasan Black (Original)",
+            "Rice Shower (Original)",
+            "Curren Chan (Original)",
+            "Gold City (Festival)"
+          ]
+        ],
+        [
+          "Reeling in the Big One",
+          [
+            "Seiun Sky (Original)",
+            "Seiun Sky (Ballroom)",
+            "Curren Chan (Original)",
+            "Yukino Bijin (Original)",
+            "Smart Falcon (Original)",
+            "Rice Shower (Halloween)",
+            "Tosen Jordan (Original)",
+            "Fine Motion (Wedding)"
+          ]
+        ],
+        [
+          "Soirée des Chatons",
+          [
+            "Seiun Sky (Ballroom)",
+            "Seiun Sky (Original)",
+            "Fine Motion (Wedding)",
+            "Oguri Cap (Original)",
+            "Kawakami Princess (Original)",
+            "Biwa Hayahide (Original)",
+            "Special Week (Original)",
+            "Agnes Tachyon (Original)"
+          ]
+        ],
+        [
+          "Fast as Lightning",
+          [
+            "Tamamo Cross (Original)",
+            "Air Shakur (Original)",
+            "Admire Vega (Original)",
+            "Grass Wonder (Original)",
+            "Oguri Cap (Christmas)",
+            "Haru Urara (Original)",
+            "Narita Brian (Original)",
+            "Manhattan Cafe (Original)"
+          ]
+        ],
+        [
+          "Noble Seamair",
+          [
+            "Fine Motion (Original)",
+            "Fine Motion (Wedding)",
+            "Hishi Akebono (Original)",
+            "Air Groove (Wedding)",
+            "Mejiro McQueen (Anime Collab)",
+            "Nice Nature (Original)",
+            "Fuji Kiseki (Original)",
+            "Mejiro Ryan (Original)"
+          ]
+        ],
+        [
+          "Titania",
+          [
+            "Fine Motion (Wedding)",
+            "Fine Motion (Original)",
+            "Tokai Teio (Original)",
+            "Silence Suzuka (Original)",
+            "Fuji Kiseki (Original)",
+            "Mayano Top Gun (Original)",
+            "Curren Chan (Original)",
+            "El Condor Pasa (Fantasy)"
+          ]
+        ],
+        [
+          "pf. Winning Equation...",
+          [
+            "Biwa Hayahide (Original)",
+            "Biwa Hayahide (Christmas)",
+            "Air Shakur (Original)",
+            "Oguri Cap (Christmas)",
+            "Taiki Shuttle (Camping)",
+            "Nice Nature (Cheerleader)",
+            "Silence Suzuka (Original)",
+            "Special Week (Original)"
+          ]
+        ],
+        [
+          "Rouge Caroler",
+          [
+            "Biwa Hayahide (Christmas)",
+            "Biwa Hayahide (Original)",
+            "Nice Nature (Cheerleader)",
+            "Air Shakur (Original)",
+            "Mejiro Palmer (Original)",
+            "Mejiro McQueen (Anime Collab)",
+            "Sweep Tosho (Original)",
+            "Mihono Bourbon (Valentines)"
+          ]
+        ],
+        [
+          "Scramble☆Zone",
+          [
+            "Mayano Top Gun (Original)",
+            "Mayano Top Gun (Wedding)",
+            "Gold City (Festival)",
+            "Admire Vega (Original)",
+            "Yaeno Muteki (Original)",
+            "Mejiro Dober (Original)",
+            "Sakura Bakushin O (Original)",
+            "Air Groove (Wedding)"
+          ]
+        ],
+        [
+          "Sunlight Bouqeut",
+          [
+            "Mayano Top Gun (Wedding)",
+            "Mayano Top Gun (Original)",
+            "Vodka (Original)",
+            "Sakura Bakushin O (Original)",
+            "Biwa Hayahide (Christmas)",
+            "Daiwa Scarlet (Original)",
+            "Mejiro Bright (Original)",
+            "Maruzensky (Summer)"
+          ]
+        ],
+        [
+          "Creeping Shadow",
+          [
+            "Manhattan Cafe (Original)",
+            "Mihono Bourbon (Original)",
+            "Matikanefukukitaru (Original)",
+            "Symboli Rudolf (Original)",
+            "Air Shakur (Original)",
+            "Fuji Kiseki (Original)",
+            "Air Groove (Wedding)",
+            "Nishino Flower (Original)"
+          ]
+        ],
+        [
+          "MB-19890425",
+          [
+            "Mihono Bourbon (Original)",
+            "Mihono Bourbon (Valentines)",
+            "Mejiro Ryan (Original)",
+            "Seiun Sky (Original)",
+            "King Halo (Cheerleader)",
+            "Seiun Sky (Ballroom)",
+            "Matikanefukukitaru (Full Armor)",
+            "Narita Brian (Original)"
+          ]
+        ],
+        [
+          "CODE: ICING",
+          [
+            "Mihono Bourbon (Valentines)",
+            "Mihono Bourbon (Original)",
+            "Symboli Rudolf (Original)",
+            "Rice Shower (Original)",
+            "Narita Brian (Original)",
+            "Kawakami Princess (Original)",
+            "Grass Wonder (Original)",
+            "El Condor Pasa (Fantasy)"
+          ]
+        ],
+        [
+          "Down the Line",
+          [
+            "Mejiro Ryan (Original)",
+            "Seeking the Pearl (Original)",
+            "Fine Motion (Wedding)",
+            "Seiun Sky (Ballroom)",
+            "Kawakami Princess (Original)",
+            "Mejiro Palmer (Original)",
+            "Symboli Rudolf (Original)",
+            "Curren Chan (Original)"
+          ]
+        ],
+        [
+          "Bono ☆ Alla Moda",
+          [
+            "Hishi Akebono (Original)",
+            "Ines Fujin (Original)",
+            "Agnes Digital (Original)",
+            "Gold City (Festival)",
+            "Curren Chan (Original)",
+            "Mejiro Bright (Original)",
+            "Vodka (Original)",
+            "Air Shakur (Original)"
+          ]
+        ],
+        [
+          "Cute Sweet Flower of Mutsu",
+          [
+            "Yukino Bijin (Original)",
+            "Meisho Doto (Original)",
+            "Maruzensky (Summer)",
+            "Mejiro Dober (Original)",
+            "Daiwa Scarlet (Original)",
+            "Symboli Rudolf (Original)",
+            "Air Shakur (Original)",
+            "King Halo (Original)"
+          ]
+        ],
+        [
+          "Rosy Dreams",
+          [
+            "Rice Shower (Original)",
+            "Rice Shower (Halloween)",
+            "Tamamo Cross (Original)",
+            "Maruzensky (Summer)",
+            "Air Groove (Original)",
+            "Super Creek (Original)",
+            "Narita Taishin (Original)",
+            "Taiki Shuttle (Camping)"
+          ]
+        ],
+        [
+          "Vampire Makeover!",
+          [
+            "Rice Shower (Halloween)",
+            "Rice Shower (Original)",
+            "Seiun Sky (Ballroom)",
+            "Hishi Amazon (Original)",
+            "Special Week (Original)",
+            "Daiwa Scarlet (Original)",
+            "Mayano Top Gun (Original)",
+            "Seiun Sky (Original)"
+          ]
+        ],
+        [
+          "Always Electrifying",
+          [
+            "Ines Fujin (Original)",
+            "Grass Wonder (Fantasy)",
+            "Super Creek (Original)",
+            "Curren Chan (Original)",
+            "Gold Ship (Original)",
+            "Kawakami Princess (Original)",
+            "Oguri Cap (Original)",
+            "Grass Wonder (Original)"
+          ]
+        ],
+        [
+          "Tach-nology",
+          [
+            "Agnes Tachyon (Original)",
+            "Nishino Flower (Original)",
+            "Mayano Top Gun (Original)",
+            "Mayano Top Gun (Wedding)",
+            "Maruzensky (Summer)",
+            "Super Creek (Original)",
+            "Tokai Teio (Original)",
+            "King Halo (Cheerleader)"
+          ]
+        ],
+        [
+          "Starry Nocturne",
+          [
+            "Admire Vega (Original)",
+            "Nice Nature (Cheerleader)",
+            "Haru Urara (Original)",
+            "Biwa Hayahide (Christmas)",
+            "T.M. Opera O (Original)",
+            "Symboli Rudolf (Original)",
+            "Ines Fujin (Original)",
+            "Biwa Hayahide (Original)"
+          ]
+        ],
+        [
+          "Edomurasaki",
+          [
+            "Inari One (Original)",
+            "Rice Shower (Original)",
+            "King Halo (Cheerleader)",
+            "Mayano Top Gun (Wedding)",
+            "Eishin Flash (Valentines)",
+            "Curren Chan (Original)",
+            "Grass Wonder (Fantasy)",
+            "Grass Wonder (Original)"
+          ]
+        ],
+        [
+          "Get to Winning!",
+          [
+            "Winning Ticket (Original)",
+            "Mejiro Palmer (Original)",
+            "Special Week (Original)",
+            "Matikanefukukitaru (Full Armor)",
+            "Yukino Bijin (Original)",
+            "Silence Suzuka (Original)",
+            "Sweep Tosho (Original)",
+            "Haru Urara (New Year)"
+          ]
+        ],
+        [
+          "unsigned",
+          [
+            "Air Shakur (Original)",
+            "Maruzensky (Summer)",
+            "Grass Wonder (Fantasy)",
+            "Tokai Teio (Anime Collab)",
+            "Gold City (Festival)",
+            "Taiki Shuttle (Camping)",
+            "Air Groove (Wedding)",
+            "Sweep Tosho (Original)"
+          ]
+        ],
+        [
+          "Meisterschaft",
+          [
+            "Eishin Flash (Original)",
+            "Eishin Flash (Valentines)",
+            "Kitasan Black (Original)",
+            "Mayano Top Gun (Original)",
+            "King Halo (Original)",
+            "Fuji Kiseki (Original)",
+            "Air Groove (Wedding)",
+            "Gold City (Original)"
+          ]
+        ],
+        [
+          "Precise Chocolatier",
+          [
+            "Eishin Flash (Valentines)",
+            "Eishin Flash (Original)",
+            "Super Creek (Halloween)",
+            "Sakura Bakushin O (Original)",
+            "Mejiro Dober (Original)",
+            "Seiun Sky (Original)",
+            "Mejiro McQueen (Anime Collab)",
+            "Matikanefukukitaru (Full Armor)"
+          ]
+        ],
+        [
+          "Fille Éclair",
+          [
+            "Curren Chan (Original)",
+            "Agnes Tachyon (Original)",
+            "Biwa Hayahide (Christmas)",
+            "Seiun Sky (Original)",
+            "Gold City (Original)",
+            "Rice Shower (Original)",
+            "Mejiro McQueen (Original)",
+            "El Condor Pasa (Fantasy)"
+          ]
+        ],
+        [
+          "Ma Chérie of the New Moon",
+          [
+            "Curren Chan (Wedding)",
+            "Air Shakur (Original)",
+            "Air Groove (Wedding)",
+            "Fuji Kiseki (Original)",
+            "El Condor Pasa (Fantasy)",
+            "Sakura Chiyono O (Original)",
+            "Vodka (Original)",
+            "Mejiro Palmer (Original)"
+          ]
+        ],
+        [
+          "Princess of Pink",
+          [
+            "Kawakami Princess (Original)",
+            "Nice Nature (Cheerleader)",
+            "Taiki Shuttle (Original)",
+            "Agnes Tachyon (Original)",
+            "Special Week (Summer)",
+            "Air Groove (Wedding)",
+            "Gold Ship (Original)",
+            "Seeking the Pearl (Original)"
+          ]
+        ],
+        [
+          "Authentic / 1928",
+          [
+            "Gold City (Original)",
+            "Gold City (Festival)",
+            "Narita Taishin (Original)",
+            "Seiun Sky (Ballroom)",
+            "Yukino Bijin (Original)",
+            "Tosen Jordan (Original)",
+            "Special Week (Original)",
+            "Agnes Digital (Original)"
+          ]
+        ],
+        [
+          "Autumn Cosmos",
+          [
+            "Gold City (Festival)",
+            "Gold City (Original)",
+            "Mejiro Ardan (Original)",
+            "Special Week (Original)",
+            "Nishino Flower (Original)",
+            "Seiun Sky (Ballroom)",
+            "Hishi Akebono (Original)",
+            "Manhattan Cafe (Original)"
+          ]
+        ],
+        [
+          "Blossom in Learning",
+          [
+            "Sakura Bakushin O (Original)",
+            "Seeking the Pearl (Original)",
+            "Gold City (Original)",
+            "Narita Taishin (Original)",
+            "Inari One (Original)",
+            "Eishin Flash (Valentines)",
+            "Mejiro Dober (Original)",
+            "Rice Shower (Original)"
+          ]
+        ],
+        [
+          "Rocket ☆ Star",
+          [
+            "Seeking the Pearl (Original)",
+            "Nishino Flower (Original)",
+            "Meisho Doto (Original)",
+            "Matikanefukukitaru (Full Armor)",
+            "Mejiro Bright (Original)",
+            "Silence Suzuka (Original)",
+            "Haru Urara (Original)",
+            "Mayano Top Gun (Wedding)"
+          ]
+        ],
+        [
+          "Platanus Witch",
+          [
+            "Sweep Tosho (Original)",
+            "Tokai Teio (Original)",
+            "Vodka (Original)",
+            "Hishi Akebono (Original)",
+            "Maruzensky (Summer)",
+            "Fuji Kiseki (Original)",
+            "Grass Wonder (Fantasy)",
+            "Maruzensky (Original)"
+          ]
+        ],
+        [
+          "Murmuring Stream",
+          [
+            "Super Creek (Original)",
+            "Super Creek (Halloween)",
+            "Gold City (Festival)",
+            "Nice Nature (Original)",
+            "Seiun Sky (Original)",
+            "El Condor Pasa (Original)",
+            "Mejiro Ryan (Original)",
+            "Mihono Bourbon (Valentines)"
+          ]
+        ],
+        [
+          "Chiffon-Wrapped Mummy",
+          [
+            "Super Creek (Halloween)",
+            "Super Creek (Original)",
+            "Meisho Doto (Original)",
+            "Gold City (Festival)",
+            "Tosen Jordan (Original)",
+            "Air Shakur (Original)",
+            "Tokai Teio (Original)",
+            "Satono Diamond (Original)"
+          ]
+        ],
+        [
+          "LOVE☆4EVER",
+          [
+            "Smart Falcon (Original)",
+            "Hishi Akebono (Original)",
+            "Ines Fujin (Original)",
+            "Mayano Top Gun (Original)",
+            "Air Shakur (Original)",
+            "T.M. Opera O (New Year)",
+            "Sweep Tosho (Original)",
+            "Nice Nature (Cheerleader)"
+          ]
+        ],
+        [
+          "Jokester ☆ Vibes",
+          [
+            "Tosen Jordan (Original)",
+            "King Halo (Original)",
+            "Mayano Top Gun (Original)",
+            "Admire Vega (Original)",
+            "Fuji Kiseki (Original)",
+            "Nice Nature (Cheerleader)",
+            "Maruzensky (Original)",
+            "Gold City (Festival)"
+          ]
+        ],
+        [
+          "Nevertheless",
+          [
+            "Narita Taishin (Original)",
+            "Mejiro Palmer (Original)",
+            "Gold City (Original)",
+            "Mayano Top Gun (Wedding)",
+            "Taiki Shuttle (Original)",
+            "Tamamo Cross (Original)",
+            "Vodka (Original)",
+            "Matikanefukukitaru (Original)"
+          ]
+        ],
+        [
+          "Layered Petals",
+          [
+            "Nishino Flower (Original)",
+            "Eishin Flash (Valentines)",
+            "Admire Vega (Original)",
+            "Sakura Chiyono O (Original)",
+            "Fuji Kiseki (Original)",
+            "Curren Chan (Wedding)",
+            "Mejiro Bright (Original)",
+            "El Condor Pasa (Original)"
+          ]
+        ],
+        [
+          "Bestest Prize ♪",
+          [
+            "Haru Urara (Original)",
+            "Haru Urara (New Year)",
+            "Special Week (Summer)",
+            "Rice Shower (Original)",
+            "Nishino Flower (Original)",
+            "Grass Wonder (Original)",
+            "Narita Taishin (Original)",
+            "Hishi Akebono (Original)"
+          ]
+        ],
+        [
+          "New Year ♪ New Urara!",
+          [
+            "Haru Urara (New Year)",
+            "Haru Urara (Original)",
+            "Hishi Amazon (Original)",
+            "Matikanefukukitaru (Full Armor)",
+            "Silence Suzuka (Original)",
+            "Fine Motion (Wedding)",
+            "Air Groove (Wedding)",
+            "Sakura Chiyono O (Original)"
+          ]
+        ],
+        [
+          "Rising☆Fortune",
+          [
+            "Matikanefukukitaru (Original)",
+            "Matikanefukukitaru (Full Armor)",
+            "Curren Chan (Wedding)",
+            "Rice Shower (Halloween)",
+            "Mayano Top Gun (Original)",
+            "Gold Ship (Original)",
+            "T.M. Opera O (New Year)",
+            "T.M. Opera O (Original)"
+          ]
+        ],
+        [
+          "Lucky Tidings",
+          [
+            "Matikanefukukitaru (Full Armor)",
+            "Matikanefukukitaru (Original)",
+            "King Halo (Original)",
+            "Maruzensky (Summer)",
+            "Air Groove (Wedding)",
+            "Mejiro Ardan (Original)",
+            "Sakura Chiyono O (Original)",
+            "Winning Ticket (Original)"
+          ]
+        ],
+        [
+          "Turbulent Blue",
+          [
+            "Meisho Doto (Original)",
+            "Winning Ticket (Original)",
+            "Maruzensky (Original)",
+            "Symboli Rudolf (Original)",
+            "Mejiro Dober (Original)",
+            "Mihono Bourbon (Valentines)",
+            "Sweep Tosho (Original)",
+            "Sakura Chiyono O (Original)"
+          ]
+        ],
+        [
+          "Off the Line",
+          [
+            "Mejiro Dober (Original)",
+            "Kawakami Princess (Original)",
+            "Nice Nature (Original)",
+            "Curren Chan (Original)",
+            "Symboli Rudolf (Original)",
+            "Taiki Shuttle (Camping)",
+            "Vodka (Original)",
+            "T.M. Opera O (New Year)"
+          ]
+        ],
+        [
+          "Sapphire Sojourn",
+          [
+            "Mejiro Dober (Camping)",
+            "Nice Nature (Original)",
+            "Mejiro Palmer (Original)",
+            "Agnes Digital (Original)",
+            "Fuji Kiseki (Original)",
+            "Maruzensky (Original)",
+            "Vodka (Original)",
+            "Kitasan Black (Original)"
+          ]
+        ],
+        [
+          "Poinsettia Ribbon",
+          [
+            "Nice Nature (Original)",
+            "Nice Nature (Cheerleader)",
+            "Mejiro Bright (Original)",
+            "Special Week (Original)",
+            "T.M. Opera O (Original)",
+            "Oguri Cap (Christmas)",
+            "Air Groove (Wedding)",
+            "Maruzensky (Original)"
+          ]
+        ],
+        [
+          "Run & Win",
+          [
+            "Nice Nature (Cheerleader)",
+            "Nice Nature (Original)",
+            "Mejiro Bright (Original)",
+            "Eishin Flash (Valentines)",
+            "Curren Chan (Original)",
+            "Narita Brian (Original)",
+            "Silence Suzuka (Original)",
+            "Biwa Hayahide (Original)"
+          ]
+        ],
+        [
+          "King of Emeralds",
+          [
+            "King Halo (Original)",
+            "King Halo (Cheerleader)",
+            "Maruzensky (Summer)",
+            "Fuji Kiseki (Original)",
+            "Special Week (Original)",
+            "Narita Brian (Original)",
+            "Mejiro McQueen (Anime Collab)",
+            "Air Shakur (Original)"
+          ]
+        ],
+        [
+          "Cheerleader in Noble White",
+          [
+            "King Halo (Cheerleader)",
+            "King Halo (Original)",
+            "Mejiro Ardan (Original)",
+            "Air Shakur (Original)",
+            "Seiun Sky (Ballroom)",
+            "Rice Shower (Original)",
+            "Grass Wonder (Original)",
+            "Fine Motion (Original)"
+          ]
+        ],
+        [
+          "Clippety-Tippety-Clop",
+          [
+            "Matikanetannhauser (Original)",
+            "Tokai Teio (Anime Collab)",
+            "Satono Diamond (Original)",
+            "Agnes Digital (Original)",
+            "Yukino Bijin (Original)",
+            "Tosen Jordan (Original)",
+            "T.M. Opera O (New Year)",
+            "Winning Ticket (Original)"
+          ]
+        ],
+        [
+          "Line Breakthrough",
+          [
+            "Mejiro Palmer (Original)",
+            "Rice Shower (Original)",
+            "Symboli Rudolf (Original)",
+            "Tokai Teio (Anime Collab)",
+            "Grass Wonder (Fantasy)",
+            "Gold City (Original)",
+            "Satono Diamond (Original)",
+            "Vodka (Original)"
+          ]
+        ],
+        [
+          "Natural Brilliance",
+          [
+            "Satono Diamond (Original)",
+            "Curren Chan (Original)",
+            "Agnes Digital (Original)",
+            "Sakura Bakushin O (Original)",
+            "Special Week (Original)",
+            "El Condor Pasa (Fantasy)",
+            "Gold Ship (Original)",
+            "Mihono Bourbon (Valentines)"
+          ]
+        ],
+        [
+          "Gilded Shrine to Glory",
+          [
+            "Kitasan Black (Original)",
+            "Matikanefukukitaru (Original)",
+            "Gold Ship (Original)",
+            "Fuji Kiseki (Original)",
+            "Mejiro McQueen (Anime Collab)",
+            "Eishin Flash (Valentines)",
+            "Air Groove (Wedding)",
+            "Mayano Top Gun (Wedding)"
+          ]
+        ],
+        [
+          "Strength in Full Bloom",
+          [
+            "Sakura Chiyono O (Original)",
+            "Tamamo Cross (Original)",
+            "Fine Motion (Original)",
+            "Seiun Sky (Ballroom)",
+            "Matikanefukukitaru (Original)",
+            "Matikanefukukitaru (Full Armor)",
+            "Manhattan Cafe (Original)",
+            "Sweep Tosho (Original)"
+          ]
+        ],
+        [
+          "Crystalline",
+          [
+            "Mejiro Ardan (Original)",
+            "Nice Nature (Original)",
+            "Sakura Chiyono O (Original)",
+            "Oguri Cap (Original)",
+            "Mejiro Bright (Original)",
+            "Grass Wonder (Fantasy)",
+            "Seiun Sky (Ballroom)",
+            "Hishi Amazon (Original)"
+          ]
+        ],
+        [
+          "Blazed Head, Covered Fists",
+          [
+            "Yaeno Muteki (Original)",
+            "Inari One (Original)",
+            "Sirius Symboli (Original)",
+            "El Condor Pasa (Original)",
+            "Mihono Bourbon (Valentines)",
+            "Narita Taishin (Original)",
+            "Eishin Flash (Valentines)",
+            "Grass Wonder (Original)"
+          ]
+        ],
+        [
+          "Brunissage Line",
+          [
+            "Mejiro Bright (Original)",
+            "Rice Shower (Halloween)",
+            "Mejiro McQueen (Anime Collab)",
+            "Special Week (Original)",
+            "Mejiro McQueen (Original)",
+            "Curren Chan (Original)",
+            "Air Groove (Original)",
+            "Narita Taishin (Original)"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Turf Aptitude?",
+      "difficulty": "easy",
+      "entries": [
+        [ "Agnes Digital (Original)",
+          [
+            "A",
+            "G",
+            "C",
+            "D",
+            "F",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "A",
+            "F",
+            "C",
+            "D",
+            "G",
+            "B",
+            "E"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "E",
+            "F",
+            "B",
+            "D",
+            "C",
+            "A",
+            "G"
+          ]
+        ],
+        [ "Haru Urara (Original)",
+          [
+            "G",
+            "E",
+            "F",
+            "A",
+            "C",
+            "D",
+            "B"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Dirt Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        [ "Maruzensky (Original)",
+          [
+            "D",
+            "F",
+            "G",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "F",
+            "C",
+            "D",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Oguri Cap (Original)",
+          [
+            "B",
+            "A",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Taiki Shuttle (Original)",
+          [
+            "B",
+            "D",
+            "A",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Hishi Amazon (Original)",
+          [
+            "E",
+            "F",
+            "D",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Mejiro McQueen (Original)",
+          [
+            "E",
+            "F",
+            "G",
+            "D",
+            "C"
+          ]
+        ],
+        [ "El Condor Pasa (Original)",
+          [
+            "B",
+            "A",
+            "F",
+            "C",
+            "D"
+          ]
+        ],
+        [ "T.M. Opera O (Original)",
+          [
+            "E",
+            "G",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Agnes Digital (Original)",
+          [
+            "A",
+            "B",
+            "D",
+            "E",
+            "C"
+          ]
+        ],
+        [ "Tamamo Cross (Original)",
+          [
+            "F",
+            "E",
+            "C",
+            "D",
+            "G"
+          ]
+        ],
+        [ "Mayano Top Gun (Original)",
+          [
+            "E",
+            "D",
+            "B",
+            "C",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "A",
+            "C",
+            "E",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Curren Chan (Original)",
+          [
+            "F",
+            "E",
+            "A",
+            "D",
+            "C",
+            "B",
+            "G"
+          ]
+        ],
+        [ "Gold City (Original)",
+          [
+            "D",
+            "E",
+            "C",
+            "B",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "A",
+            "B",
+            "D",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Meisho Doto (Original)",
+          [
+            "E",
+            "D",
+            "G",
+            "B",
+            "C",
+            "A",
+            "F"
+          ]
+        ],
+        [ "Yaeno Muteki (Original)",
+          [
+            "E",
+            "F",
+            "D",
+            "C",
+            "B",
+            "A",
+            "G"
+          ]
+        ]
       ]
     },
     { "promptTemplate": "What is {0}'s Sprint Aptitude?",
       "difficulty": "medium",
       "entries": [
-        ["Kitasan Black", ["E", "A", "B", "C", "D", "F", "G"]],
-        ["Smart Falcon", ["B", "A", "C", "D", "E", "F", "G"]],
-        ["Tosen Jordan", ["G", "A", "B", "C", "D", "E", "F"]],
-        ["Sakura Chiyono O", ["E", "A", "B", "C", "D", "F", "G"]],
-        ["Admire Vega", ["F", "A", "B", "C", "D", "E", "G"]],
-        ["Agnes Digital", ["F", "A", "B", "C", "D", "E", "G"]]
+        [ "Silence Suzuka (Original)",
+          [
+            "D",
+            "B",
+            "A",
+            "E",
+            "C",
+            "G",
+            "F"
+          ]
+        ],
+        [ "Maruzensky (Original)",
+          [
+            "B",
+            "E",
+            "F",
+            "G",
+            "D",
+            "C",
+            "A"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "B",
+            "A",
+            "G",
+            "F",
+            "D",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Oguri Cap (Original)",
+          [
+            "E",
+            "G",
+            "A",
+            "F",
+            "D",
+            "B",
+            "C"
+          ]
+        ],
+        [ "Taiki Shuttle (Original)",
+          [
+            "A",
+            "B",
+            "C",
+            "F",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Hishi Amazon (Original)",
+          [
+            "D",
+            "E",
+            "B",
+            "F",
+            "G",
+            "A",
+            "C"
+          ]
+        ],
+        [ "El Condor Pasa (Original)",
+          [
+            "F",
+            "B",
+            "C",
+            "G",
+            "D",
+            "E",
+            "A"
+          ]
+        ],    
+        [ "Symboli Rudolf (Original)",
+          [
+            "E",
+            "A",
+            "F",
+            "B",
+            "D",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Air Groove (Original)",
+          [
+            "C",
+            "A",
+            "D",
+            "F",
+            "G",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Agnes Digital (Original)",
+          [
+            "F",
+            "E",
+            "C",
+            "D",
+            "A",
+            "B",
+            "G"
+          ]
+        ],
+        [ "Mayano Top Gun (Original)",
+          [
+            "D",
+            "G",
+            "A",
+            "F",
+            "B",
+            "E",
+            "C"
+          ]
+        ],
+        [ "Mihono Bourbon (Original)",
+          [
+            "C",
+            "E",
+            "D",
+            "A",
+            "B",
+            "G",
+            "F"
+          ]
+        ],
+        [ "Mejiro Ryan (Original)",
+          [
+            "E",
+            "D",
+            "F",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Hishi Akebono (Original)",
+          [
+            "A",
+            "F",
+            "B",
+            "C",
+            "D",
+            "E"
+          ]
+        ],
+        [ "Rice Shower (Original)",
+          [
+            "E",
+            "B",
+            "D",
+            "C",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Admire Vega (Original)",
+          [
+            "F",
+            "B",
+            "G",
+            "A",
+            "E",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "F",
+            "A",
+            "G",
+            "D",
+            "B",
+            "E",
+            "C"
+          ]
+        ],
+        [ "Kawakami Princess (Original)",
+          [
+            "D",
+            "C",
+            "A",
+            "B",
+            "E",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Sweep Tosho (Original)",
+          [
+            "E",
+            "B",
+            "D",
+            "C",
+            "A",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "B",
+            "D",
+            "C",
+            "F",
+            "A",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Mejiro Dober (Original)",
+          [
+            "E",
+            "B",
+            "G",
+            "A",
+            "D",
+            "C",
+            "F"
+          ]
+        ],
+        [ "Kitasan Black (Original)",
+          [
+            "E",
+            "C",
+            "G",
+            "D",
+            "A",
+            "F",
+            "B"
+          ]
+        ],
+        [ "Sakura Chiyono O (Original)",
+          [
+            "E",
+            "C",
+            "D",
+            "B",
+            "G",
+            "F",
+            "A"
+          ]
+        ],
+        [ "Mejiro Ardan (Original)",
+          [
+            "E",
+            "B",
+            "A",
+            "C",
+            "D",
+            "G",
+            "F"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Mile Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        [ "Special Week (Original)",
+          [
+            "C",
+            "G",
+            "F",
+            "D",
+            "A",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Silence Suzuka (Original)",
+          [
+            "A",
+            "B",
+            "F",
+            "D",
+            "C",
+            "E",
+            "G"
+          ]
+        ],
+        [ "Tokai Teio (Original)",
+          [
+            "E",
+            "C",
+            "B",
+            "A",
+            "F",
+            "D",
+            "G"
+          ]
+        ],
+        [ "Maruzensky (Original)",
+          [
+            "A",
+            "E",
+            "B",
+            "F",
+            "D",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Gold Ship (Original)",
+          [
+            "C",
+            "G",
+            "B",
+            "F",
+            "D",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Mejiro McQueen (Original)",
+          [
+            "F",
+            "D",
+            "C",
+            "A",
+            "E",
+            "G",
+            "B"
+          ]
+        ],
+        [ "T.M. Opera O (Original)",
+          [
+            "E",
+            "G",
+            "F",
+            "B",
+            "A",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Narita Brian (Original)",
+          [
+            "B",
+            "A",
+            "G",
+            "E",
+            "F",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Symboli Rudolf (Original)",
+          [
+            "C",
+            "D",
+            "F",
+            "A",
+            "E",
+            "B",
+            "G"
+          ]
+        ],
+        [ "Air Groove (Original)",
+          [
+            "B",
+            "G",
+            "A",
+            "E",
+            "C",
+            "D",
+            "F"
+          ]
+        ],
+        [ "Seiun Sky (Original)",
+          [
+            "C",
+            "E",
+            "A",
+            "G",
+            "F",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Tamamo Cross (Original)",
+          [
+            "E",
+            "B",
+            "G",
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        ],
+        [ "Biwa Hayahide (Original)",
+          [
+            "C",
+            "G",
+            "D",
+            "E",
+            "F",
+            "B",
+            "A"
+          ]
+        ],  
+        [ "Mayano Top Gun (Original)",
+          [
+            "D",
+            "E",
+            "A",
+            "B",
+            "F",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Manhattan Cafe (Original)",
+          [
+            "F",
+            "C",
+            "D",
+            "E",
+            "G"
+          ]
+        ],
+        [ "Mihono Bourbon (Original)",
+          [
+            "B",
+            "G",
+            "E",
+            "A",
+            "F",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Mejiro Ryan (Original)",
+          [
+            "C",
+            "A",
+            "G",
+            "D",
+            "B",
+            "F",
+            "E"
+          ]
+        ],
+        [ "Hishi Akebono (Original)",
+          [
+            "B",
+            "A",
+            "C",
+            "G",
+            "E",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Rice Shower (Original)",
+          [
+            "C",
+            "G",
+            "F",
+            "D",
+            "B",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Ines Fujin (Original)",
+          [
+            "A",
+            "D",
+            "F",
+            "C",
+            "B",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Agnes Tachyon (Original)",
+          [
+            "D",
+            "E",
+            "B",
+            "F",
+            "C"
+          ]
+        ],
+        [ "Admire Vega (Original)",
+          [
+            "C",
+            "G",
+            "F",
+            "D",
+            "E",
+            "B",
+            "A"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "B",
+            "A",
+            "G",
+            "C",
+            "E",
+            "D",
+            "F"
+          ]
+        ],
+        [ "Curren Chan (Original)",
+          [
+            "D",
+            "F",
+            "B",
+            "C",
+            "E",
+            "A",
+            "G"
+          ]
+        ],
+        [ "Kawakami Princess (Original)",
+          [
+            "B",
+            "G",
+            "C",
+            "A",
+            "E",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Sakura Bakushin O (Original)",
+          [
+            "B",
+            "G",
+            "A",
+            "E",
+            "C",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Sweep Tosho (Original)",
+          [
+            "A",
+            "F",
+            "E",
+            "G",
+            "C",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Tosen Jordan (Original)",
+          [
+            "F",
+            "C",
+            "D",
+            "G",
+            "A",
+            "B",
+            "E"
+          ]
+        ],
+        [ "Narita Taishin (Original)",
+          [
+            "D",
+            "B",
+            "G",
+            "E",
+            "F",
+            "C",
+            "A"
+          ]
+        ],
+        [ "Haru Urara (Original)",
+          [
+            "B",
+            "D",
+            "A",
+            "F",
+            "E",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Haru Urara (New Year)",
+          [
+            "A",
+            "D",
+            "C",
+            "F",
+            "B",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Matikanefukukitaru (Original)",
+          [
+            "C",
+            "F",
+            "E",
+            "A",
+            "G",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Nice Nature (Original)",
+          [
+            "C",
+            "F",
+            "D",
+            "A",
+            "B",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Nice Nature (Cheerleader)",
+          [
+            "C",
+            "B",
+            "G",
+            "E",
+            "D",
+            "F",
+            "A"
+          ]
+        ],
+        [ "King Halo (Original)",
+          [
+            "B",
+            "G",
+            "D",
+            "E",
+            "F",
+            "A",
+            "C"
+          ]
+        ],
+        [ "Matikanetannhauser (Original)",
+          [
+            "D",
+            "B",
+            "A",
+            "F",
+            "G",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Mejiro Palmer (Original)",
+          [
+            "F",
+            "B",
+            "D",
+            "A",
+            "E",
+            "C",
+            "G"
+          ]
+        ],
+        [ "Satono Diamond (Original)",
+          [
+            "C",
+            "G",
+            "A",
+            "E",
+            "B",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Kitasan Black (Original)",
+          [
+            "C",
+            "D",
+            "E",
+            "G",
+            "A",
+            "B",
+            "F"
+          ]
+        ],
+        [ "Sakura Chiyono O (Original)",
+          [
+            "A",
+            "E",
+            "D",
+            "C",
+            "B",
+            "G",
+            "F"
+          ]
+        ],
+        [ "Mejiro Ardan (Original)",
+          [
+            "B",
+            "A",
+            "F",
+            "E",
+            "D",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Yaeno Muteki (Original)",
+          [
+            "B",
+            "F",
+            "C",
+            "E",
+            "A",
+            "D",
+            "G"
+          ]
+        ],
+        [ "Mejiro Bright (Original)",
+          [
+            "C",
+            "E",
+            "D",
+            "G",
+            "A",
+            "F",
+            "B"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Medium Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        [ "Special Week (Original)",
+          [
+            "A",
+            "E",
+            "C",
+            "G",
+            "D",
+            "B",
+            "F"
+          ]
+        ],
+        [ "Silence Suzuka (Original)",
+          [
+            "A",
+            "C",
+            "B",
+            "F",
+            "G",
+            "D",
+            "E"
+          ]
+        ],
+        [ "Maruzensky (Original)",
+          [
+            "B",
+            "G",
+            "D",
+            "C",
+            "F",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "B",
+            "C",
+            "E",
+            "G",
+            "A",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Vodka (Original)",
+          [
+            "A",
+            "E",
+            "F",
+            "C",
+            "D",
+            "G",
+            "B"
+          ]
+        ],
+        [ "Taiki Shuttle (Original)",
+          [
+            "E",
+            "B",
+            "F",
+            "G",
+            "D",
+            "C"
+          ]
+        ],
+        [ "Grass Wonder (Original)",
+          [
+            "B",
+            "A",
+            "F",
+            "D",
+            "C"
+          ]
+        ],
+        [ "Air Groove (Original)",
+          [
+            "A",
+            "E",
+            "B",
+            "C",
+            "D",
+            "G",
+            "F"
+          ]
+        ],
+        [ "Agnes Digital (Original)",
+          [
+            "A",
+            "B",
+            "F",
+            "G",
+            "C",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Manhattan Cafe (Original)",
+          [
+            "B",
+            "A",
+            "C",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Hishi Akebono (Original)",
+          [
+            "F",
+            "G",
+            "C",
+            "A",
+            "D",
+            "B",
+            "E"
+          ]
+        ],
+        [ "Curren Chan (Original)",
+          [
+            "G",
+            "F",
+            "E",
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Kawakami Princess (Original)",
+          [
+            "A",
+            "F",
+            "C",
+            "G",
+            "B",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Gold City (Original)",
+          [
+            "B",
+            "D",
+            "E",
+            "A",
+            "G",
+            "C",
+            "F"
+          ]
+        ],
+        [ "Sakura Bakushin O (Original)",
+          [
+            "G",
+            "D",
+            "E",
+            "C",
+            "F",
+            "B",
+            "A"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "A",
+            "C",
+            "D",
+            "E",
+            "G",
+            "B",
+            "F"
+          ]
+        ],
+        [ "Nishino Flower (Original)",
+          [
+            "E",
+            "B",
+            "G",
+            "D",
+            "A",
+            "F",
+            "C"
+          ]
+        ],
+        [ "King Halo (Cheerleader)",
+          [
+            "B",
+            "A",
+            "G",
+            "D",
+            "C",
+            "E",
+            "F"
+          ]
+        ]
       ]
     },
     { "promptTemplate": "What is {0}'s Long Aptitude?",
       "difficulty": "medium",
       "entries": [
-        ["Curren Chan", ["G", "A", "B", "C", "D", "E", "F"]],
-        ["Gold City", ["B", "A", "C", "D", "E", "F", "G"]],
-        ["Mejiro McQueen", ["A", "G", "B", "C", "D", "E", "F"]],
-        ["Nice Nature", ["A", "E", "B", "C", "D", "F", "G"]],
-        ["King Halo", ["C", "A", "B", "F", "D", "E", "G"]],
-        ["Silence Suzuka", ["E", "A", "B", "C", "D", "F", "G"]]
+        [ "Silence Suzuka (Original)",
+          [
+            "E",
+            "G",
+            "C",
+            "D",
+            "B",
+            "F",
+            "A"
+          ]
+        ],
+        [ "Tokai Teio (Original)",
+          [
+            "B",
+            "C",
+            "A",
+            "E",
+            "F",
+            "D",
+            "G"
+          ]
+        ],
+        [ "Maruzensky (Original)",
+          [
+            "C",
+            "G",
+            "F",
+            "E",
+            "A",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "E",
+            "F",
+            "C",
+            "A",
+            "D",
+            "G",
+            "B"
+          ]
+        ],
+        [ "Oguri Cap (Original)",
+          [
+            "B",
+            "D",
+            "C",
+            "A",
+            "F",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Vodka (Original)",
+          [
+            "F",
+            "G",
+            "A",
+            "D",
+            "C",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Daiwa Scarlet (Original)",
+          [
+            "B",
+            "D",
+            "G",
+            "A",
+            "F",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Taiki Shuttle (Original)",
+          [
+            "G",
+            "C",
+            "D",
+            "A",
+            "B",
+            "E",
+            "F"
+          ]
+        ],
+        [ "Hishi Amazon (Original)",
+          [
+            "B",
+            "E",
+            "C",
+            "D",
+            "A",
+            "F",
+            "G"
+          ]
+        ],
+        [ "El Condor Pasa (Original)",
+          [
+            "B",
+            "F",
+            "D",
+            "E",
+            "G",
+            "C",
+            "A"
+          ]
+        ],
+        [  "Air Groove (Original)",
+          [
+            "E",
+            "B",
+            "F",
+            "C",
+            "A",
+            "D",
+            "G"
+          ]
+        ],
+        [ "Fine Motion (Original)",
+          [
+            "C",
+            "A",
+            "D",
+            "G",
+            "B",
+            "F",
+            "E"
+          ]
+        ],
+        [ "Mihono Bourbon (Original)",
+          [
+            "B",
+            "E",
+            "G",
+            "D",
+            "F",
+            "A",
+            "C"
+          ]
+        ],
+        [ "Mejiro Ryan (Original)",
+          [
+            "B",
+            "C",
+            "A",
+            "D",
+            "G",
+            "E",
+            "F"
+          ]
+        ],
+        [ "Ines Fujin (Original)",
+          [
+            "C",
+            "G",
+            "D",
+            "F",
+            "A",
+            "B",
+            "E"
+          ]
+        ],
+        [ "Agnes Tachyon (Original)",
+          [
+            "B",
+            "A",
+            "E",
+            "D",
+            "C",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Admire Vega (Original)",
+          [
+            "C",
+            "E",
+            "F",
+            "G",
+            "B",
+            "D",
+            "A"
+          ]
+        ],
+        [ "Winning Ticket (Original)",
+          [
+            "B",
+            "C",
+            "G",
+            "A",
+            "E",
+            "F",
+            "D"
+          ]
+        ],
+        [ "Gold City (Festival)",
+          [
+            "B",
+            "C",
+            "G",
+            "F",
+            "E",
+            "D",
+            "A"
+          ]
+        ],
+        [ "Sweep Tosho (Original)",
+          [
+            "D",
+            "B",
+            "A",
+            "G",
+            "C",
+            "E",
+            "F"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "E",
+            "G",
+            "D",
+            "F",
+            "C",
+            "B",
+            "A"
+          ]
+        ],
+        [ "Tosen Jordan (Original)",
+          [
+            "B",
+            "C",
+            "E",
+            "F",
+            "G",
+            "D",
+            "A"
+          ]
+        ],
+        [ "Mejiro Dober (Original)",
+          [
+            "F",
+            "D",
+            "C",
+            "E",
+            "A",
+            "G",
+            "B"
+          ]
+        ],
+        [ "King Halo (Original)",
+          [
+            "C",
+            "B",
+            "E",
+            "A",
+            "F",
+            "D",
+            "G"
+          ]
+        ],
+        [ "Sakura Chiyono O (Original)",
+          [
+            "E",
+            "C",
+            "F",
+            "A",
+            "G",
+            "B",
+            "D"
+          ]
+        ],
+        [ "Mejiro Ardan (Original)",
+          [
+            "D",
+            "C",
+            "F",
+            "A",
+            "E",
+            "G",
+            "B"
+          ]
+        ],
+        [ "Yaeno Muteki (Original)",
+          [
+            "E",
+            "A",
+            "F",
+            "C",
+            "D",
+            "B",
+            "G"
+          ]
+        ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Power Stat Bonus",
+    { "promptTemplate": "What is {0}'s Front Aptitude?",
       "difficulty": "medium",
       "entries": [
-        ["King Halo (Cheerleader)", ["10%", "0%", "5%", "15%", "20%", "30%"]],
-        ["Manhattan Cafe", ["0%", "5%", "10%", "15%", "20%", "30%"]],
-        ["Narita Brian", ["0%", "5%", "10%", "15%", "20%", "30%"]],
-        ["Gold Ship", ["10%", "0%", "5%", "15%", "20%", "30%"]]
+        [ "Tokai Teio (Original)",
+          [
+            "D",
+            "C",
+            "F",
+            "G",
+            "B",
+            "E"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "C",
+            "D",
+            "F",
+            "E",
+            "A",
+            "B"
+          ]
+        ],
+        [ "Oguri Cap (Original)",
+          [
+            "F",
+            "G",
+            "C",
+            "D",
+            "B",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Vodka (Original)",
+          [
+            "C",
+            "E",
+            "G",
+            "D",
+            "F"
+          ]
+        ],
+        [ "Daiwa Scarlet (Original)",
+          [
+            "A",
+            "B",
+            "D",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Taiki Shuttle (Original)",
+          [
+            "C",
+            "F",
+            "B",
+            "E",
+            "D",
+            "A"
+          ]
+        ],
+        [ "Mejiro McQueen (Original)",
+          [
+            "B",
+            "D",
+            "C",
+            "A",
+            "E"
+          ]
+        ],
+        [ "El Condor Pasa (Original)",
+          [
+            "E",
+            "D",
+            "C",
+            "F",
+            "B"
+          ]
+        ],
+        [ "T.M. Opera O (Original)",
+          [
+            "C",
+            "D",
+            "B",
+            "F",
+            "E",
+            "A",
+            "G"
+          ]
+        ],
+        [ "Symboli Rudolf (Original)",
+          [
+            "B",
+            "D",
+            "G",
+            "E",
+            "A",
+            "F",
+            "C"
+          ]
+        ],     
+        [ "Air Groove (Original)",
+          [
+            "D",
+            "A",
+            "C",
+            "G",
+            "F",
+            "B",
+            "E"
+          ]
+        ],       
+        [ "Hishi Akebono (Original)",
+          [
+            "B",
+            "C",
+            "A",
+            "D",
+            "E",
+            "G",
+            "F"
+          ]
+        ],
+        [ "Rice Shower (Original)",
+          [
+            "B",
+            "D",
+            "C",
+            "E",
+            "F",
+            "A",
+            "G"
+          ]
+        ],       
+        [ "Agnes Tachyon (Original)",
+          [
+            "E",
+            "C",
+            "D",
+            "B",
+            "A",
+            "F",
+            "G"
+          ]
+        ],
+        [ "Curren Chan (Original)",
+          [
+            "B",
+            "F",
+            "A",
+            "E",
+            "G",
+            "C",
+            "D"
+          ]
+        ],        
+        [ "Super Creek (Halloween)",
+          [
+            "D",
+            "F",
+            "E",
+            "G",
+            "C",
+            "B",
+            "A"
+          ]
+        ],
+        [ "Tosen Jordan (Original)",
+          [
+            "C",
+            "D",
+            "G",
+            "A",
+            "F",
+            "B",
+            "E"
+          ]
+        ],       
+        [ "Mejiro Dober (Original)",
+          [
+            "C",
+            "A",
+            "F",
+            "E",
+            "G",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Sakura Chiyono O (Original)",
+          [
+            "B",
+            "F",
+            "G",
+            "A",
+            "C",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Mejiro Ardan (Original)",
+          [
+            "C",
+            "D",
+            "A",
+            "E",
+            "G",
+            "F",
+            "B"
+          ]
+        ]
       ]
     },
-    { "promptTemplate": "Which stat bonus is the highest for {0}",
+    { "promptTemplate": "What is {0}'s Pace Aptitude?",
       "difficulty": "medium",
       "entries": [
-        ["Manhattan Cafe", ["Stamina", "Speed", "Power", "Guts", "Wit"]],
-        ["Sakura Bakushin O", [ "Speed", "Stamina", "Power", "Guts", "Wit"]],
-        ["Grass Wonder", [ "Speed", "Stamina", "Power", "Guts", "Wit"]],
-        ["Narita Taishin", [ "Guts", "Stamina", "Power", "Wit", "Speed"]]
+        [ "Silence Suzuka (Original)",
+          [
+            "C",
+            "F",
+            "D",
+            "B",
+            "E",
+            "A",
+            "G"
+          ],
+          "hard"
+        ],
+        [ "Maruzensky (Summer)",
+          [
+            "E",
+            "G",
+            "B",
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        ],
+        [ "Fuji Kiseki (Original)",
+          [
+            "A",
+            "E",
+            "D",
+            "G",
+            "C",
+            "B",
+            "F"
+          ]
+        ],
+        [ "Gold Ship (Original)",
+          [
+            "B",
+            "C",
+            "F",
+            "D",
+            "E",
+            "A",
+            "G"
+          ]
+        ],
+        [ "Vodka (Original)",
+          [
+            "B",
+            "A",
+            "C",
+            "F",
+            "G",
+            "D",
+            "E"
+          ]
+        ],
+        [ "Daiwa Scarlet (Original)",
+          [
+            "A",
+            "F",
+            "D",
+            "C",
+            "G",
+            "B",
+            "E"
+          ]
+        ],
+        [ "Hishi Amazon (Original)",
+          [
+            "B",
+            "A",
+            "G",
+            "C",
+            "F",
+            "D",
+            "E"
+          ]
+        ],
+        [ "Mejiro McQueen (Anime Collab)",
+          [
+            "A",
+            "C",
+            "B",
+            "D",
+            "G",
+            "F",
+            "E"
+          ]
+        ],
+        [ "Symboli Rudolf (Festival)",
+          [
+            "A",
+            "F",
+            "D",
+            "B",
+            "E",
+            "G",
+            "C"
+          ]
+        ],
+        [ "Air Groove (Wedding)",
+          [
+            "A",
+            "E",
+            "F",
+            "C",
+            "B",
+            "G",
+            "D"
+          ]
+        ],
+        [ "Agnes Digital (Original)",
+          [
+            "A",
+            "G",
+            "E",
+            "D",
+            "C",
+            "F",
+            "B"
+          ]
+        ],
+        [ "Seiun Sky (Original)",
+          [
+            "B",
+            "E",
+            "G",
+            "D",
+            "F",
+            "C",
+            "A"
+          ]
+        ], 
+        [ "Tamamo Cross (Original)",
+          [
+            "A",
+            "G",
+            "D",
+            "E",
+            "F",
+            "C",
+            "B"
+          ]
+        ],
+        [ "Manhattan Cafe (Original)",
+          [
+            "C",
+            "F",
+            "G",
+            "A",
+            "E",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Mihono Bourbon (Original)",
+          [
+            "E",
+            "F",
+            "C",
+            "G",
+            "B",
+            "A",
+            "D"
+          ]
+        ],
+        [ "Mejiro Ryan (Original)",
+          [
+            "A",
+            "E",
+            "C",
+            "D",
+            "B",
+            "F",
+            "G"
+          ]
+        ],     
+        [ "Ines Fujin (Original)",
+          [
+            "C",
+            "D",
+            "A",
+            "G",
+            "B",
+            "E",
+            "F"
+          ]
+        ],       
+        [ "Admire Vega (Original)",
+          [
+            "C",
+            "A",
+            "G",
+            "B",
+            "F",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "B",
+            "D",
+            "G",
+            "F",
+            "E",
+            "C",
+            "A"
+          ]
+        ],
+        [ "Winning Ticket (Original)",
+          [
+            "B",
+            "E",
+            "C",
+            "F",
+            "G",
+            "D",
+            "A"
+          ]
+        ],
+        [ "Eishin Flash (Valentines)",
+          [
+            "B",
+            "E",
+            "G",
+            "D",
+            "C",
+            "A",
+            "F"
+          ]
+        ],
+        [ "Sakura Bakushin O (Original)",
+          [
+            "A",
+            "D",
+            "F",
+            "C",
+            "G",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Smart Falcon (Original)",
+          [
+            "D",
+            "F",
+            "C",
+            "G",
+            "A",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Tosen Jordan (Original)",
+          [
+            "A",
+            "D",
+            "E",
+            "F",
+            "C",
+            "B",
+            "G"
+          ]
+        ],
+        [ "Matikanefukukitaru (Full Armor)",
+          [
+            "B",
+            "G",
+            "F",
+            "D",
+            "C",
+            "E",
+            "A"
+          ]
+        ],
+        [ "Meisho Doto (Original)",
+          [
+            "A",
+            "E",
+            "B",
+            "G",
+            "F",
+            "C",
+            "D"
+          ]
+        ],
+        [ "Mejiro Dober (Original)",
+          [
+            "B",
+            "C",
+            "A",
+            "D",
+            "E",
+            "G",
+            "F"
+          ]
+        ],      
+        [ "Nice Nature (Original)",
+          [
+            "B",
+            "C",
+            "G",
+            "D",
+            "F",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Nice Nature (Cheerleader)",
+          [
+            "B",
+            "G",
+            "F",
+            "C",
+            "E",
+            "D",
+            "A"
+          ]
+        ],
+        [ "King Halo (Original)",
+          [
+            "B",
+            "E",
+            "G",
+            "F",
+            "C",
+            "A",
+            "D"
+          ]
+        ],
+        [ "Satono Diamond (Original)",
+          [
+            "B",
+            "C",
+            "A",
+            "D",
+            "F",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Kitasan Black (Original)",
+          [
+            "B",
+            "D",
+            "F",
+            "A",
+            "E",
+            "C",
+            "G"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Late Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        [
+          "Special Week (Original)",
+          [
+            "A",
+            "G",
+            "C",
+            "D",
+            "E",
+            "F",
+            "B"
+          ]
+        ],
+        [ "Tokai Teio (Original)",
+          [
+            "C",
+            "A",
+            "E",
+            "F",
+            "D",
+            "G",
+            "B"
+          ]
+        ],
+        [ "Fuji Kiseki (Ballroom)",
+          [
+            "C",
+            "G",
+            "F",
+            "E",
+            "D",
+            "B",
+            "A"
+          ]
+        ],
+        [ "Gold Ship (Original)",
+          [
+            "B",
+            "G",
+            "C",
+            "A",
+            "E",
+            "D",
+            "F"
+          ]
+        ],
+        [ "Hishi Amazon (Original)",
+          [
+            "C",
+            "F",
+            "G",
+            "B",
+            "D",
+            "E",
+            "A"
+          ]
+        ],
+        [ "Mejiro McQueen (Anime Collab)",
+          [
+            "D",
+            "E",
+            "G",
+            "F",
+            "A",
+            "B",
+            "C"
+          ]
+        ],
+        [ "Seiun Sky (Ballroom)",
+          [
+            "D",
+            "G",
+            "C",
+            "B",
+            "A",
+            "E",
+            "F"
+          ]
+        ],
+        [ "Biwa Hayahide (Original)",
+          [
+            "B",
+            "D",
+            "G",
+            "E",
+            "A",
+            "C",
+            "F"
+          ]
+        ],
+        [ "Mayano Top Gun (Wedding)",
+          [
+            "B",
+            "A",
+            "E",
+            "D",
+            "F",
+            "C",
+            "G"
+          ]
+        ],
+        [ "Rice Shower (Halloween)",
+          [
+            "C",
+            "G",
+            "D",
+            "F",
+            "E",
+            "A",
+            "B"
+          ]
+        ],
+        [ "Agnes Tachyon (Original)",
+          [
+            "B",
+            "D",
+            "E",
+            "A",
+            "F",
+            "C",
+            "G"
+          ]
+        ],
+        [ "Admire Vega (Original)",
+          [
+            "B",
+            "F",
+            "A",
+            "G",
+            "C",
+            "D",
+            "E"
+          ]
+        ],
+        [ "Inari One (Original)",
+          [
+            "B",
+            "D",
+            "F",
+            "G",
+            "A",
+            "E",
+            "C"
+          ]
+        ],
+        [ "Curren Chan (Wedding)",
+          [
+            "E",
+            "C",
+            "F",
+            "G",
+            "A",
+            "D",
+            "B"
+          ]
+        ],
+        [ "Sweep Tosho (Original)",
+          [
+            "A",
+            "B",
+            "F",
+            "G",
+            "C",
+            "D",
+            "E"
+          ]
+        ],
+        [ "Super Creek (Original)",
+          [
+            "B",
+            "G",
+            "C",
+            "D",
+            "F",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Tosen Jordan (Original)",
+          [
+            "B",
+            "A",
+            "F",
+            "D",
+            "G",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Narita Taishin (Original)",
+          [
+            "B",
+            "F",
+            "D",
+            "C",
+            "E",
+            "A",
+            "G"
+          ]
+        ],
+        [ "Haru Urara (New Year)",
+          [
+            "A",
+            "B",
+            "D",
+            "F",
+            "E",
+            "C",
+            "G"
+          ]
+        ],
+        [ "Meisho Doto (Original)",
+          [
+            "B",
+            "A",
+            "G",
+            "C",
+            "F",
+            "E",
+            "D"
+          ]
+        ],
+        [ "Kitasan Black (Original)",
+          [
+            "C",
+            "D",
+            "B",
+            "A",
+            "G",
+            "E",
+            "F"
+          ]
+        ],
+        [ "Mejiro Ardan (Original)",
+          [
+            "D",
+            "F",
+            "C",
+            "E",
+            "B",
+            "G",
+            "A"
+          ]
+        ],
+        [ "Yaeno Muteki (Original)",
+          [
+            "A",
+            "E",
+            "G",
+            "C",
+            "F",
+            "B",
+            "D"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s End Aptitude?",
+      "difficulty": "medium",
+      "entries": [
+        [ "Special Week (Summer)",
+          [
+            "C",
+            "E",
+            "F",
+            "D",
+            "A",
+            "B",
+            "G"
+          ]
+        ],
+        [ "Oguri Cap (Christmas)",
+          [
+            "D",
+            "E",
+            "G",
+            "F",
+            "B",
+            "A",
+            "C"
+          ]
+        ],
+        [ "El Condor Pasa (Fantasy)",
+          [
+            "C",
+            "B",
+            "A",
+            "G",
+            "D",
+            "E",
+            "F"
+          ]
+        ],
+        [ "Narita Brian (Original)",
+          [
+            "D",
+            "G",
+            "E",
+            "B",
+            "F",
+            "A",
+            "C"
+          ]
+        ],
+        [ "Symboli Rudolf (Original)",
+          [
+            "C",
+            "A",
+            "D",
+            "B",
+            "F",
+            "G",
+            "E"
+          ]
+        ],
+        [ "Agnes Digital (Original)",
+          [
+            "B",
+            "C",
+            "A",
+            "D",
+            "G",
+            "F",
+            "E"
+          ]
+        ],
+        [ "Fine Motion (Wedding)",
+          [
+            "C",
+            "D",
+            "A",
+            "G",
+            "B",
+            "F",
+            "E"
+          ]
+        ],
+        [ "Mayano Top Gun (Original)",
+          [
+            "B",
+            "C",
+            "G",
+            "D",
+            "F",
+            "A",
+            "E"
+          ]
+        ],
+        [ "Manhattan Cafe (Original)",
+          [
+            "C",
+            "G",
+            "E",
+            "D",
+            "F",
+            "A",
+            "B"
+          ]
+        ],
+        [ "Mejiro Ryan (Original)",
+          [
+            "F",
+            "G",
+            "E",
+            "C",
+            "B",
+            "A",
+            "D"
+          ]
+        ],
+        [ "Eishin Flash (Valentines)",
+          [
+            "C",
+            "G",
+            "F",
+            "D",
+            "A",
+            "E",
+            "B"
+          ]
+        ],
+        [ "Haru Urara (Original)",
+          [
+            "B",
+            "F",
+            "A",
+            "D",
+            "G",
+            "C",
+            "E"
+          ]
+        ],
+        [ "Nice Nature (Cheerleader)",
+          [
+            "D",
+            "G",
+            "A",
+            "C",
+            "F",
+            "B",
+            "E"
+          ]
+        ],
+        [ "King Halo (Cheerleader)",
+          [
+            "D",
+            "E",
+            "A",
+            "G",
+            "F",
+            "C",
+            "B"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Speed Stat Bonus?",
+      "difficulty": "expert",
+      "entries": [
+        [
+          "Silence Suzuka (Original)",
+          [
+            "20%",
+            "0%",
+            "30%",
+            "5%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Tokai Teio (Original)",
+          [
+            "20%",
+            "30%",
+            "15%",
+            "0%",
+            "10%",
+            "5%"
+          ]
+        ],
+        [
+          "Tokai Teio (Anime Collab)",
+          [
+            "10%",
+            "15%",
+            "20%",
+            "5%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Maruzensky (Original)",
+          [
+            "10%",
+            "20%",
+            "15%",
+            "5%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Maruzensky (Summer)",
+          [
+            "15%",
+            "20%",
+            "5%",
+            "10%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Ballroom)",
+          [
+            "8%",
+            "0%",
+            "10%",
+            "30%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Oguri Cap (Original)",
+          [
+            "20%",
+            "30%",
+            "10%",
+            "5%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Oguri Cap (Christmas)",
+          [
+            "15%",
+            "5%",
+            "10%",
+            "0%",
+            "30%",
+            "20%"
+          ]
+        ],
+        [
+          "Vodka (Original)",
+          [
+            "10%",
+            "5%",
+            "20%",
+            "15%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Daiwa Scarlet (Original)",
+          [
+            "10%",
+            "20%",
+            "0%",
+            "15%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Taiki Shuttle (Original)",
+          [
+            "20%",
+            "30%",
+            "10%",
+            "5%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Grass Wonder (Original)",
+          [
+            "20%",
+            "15%",
+            "0%",
+            "30%",
+            "10%",
+            "5%"
+          ]
+        ],
+        [
+          "El Condor Pasa (Original)",
+          [
+            "20%",
+            "15%",
+            "5%",
+            "0%",
+            "30%",
+            "10%"
+          ]
+        ],
+        [
+          "El Condor Pasa (Fantasy)",
+          [
+            "15%",
+            "30%",
+            "0%",
+            "10%",
+            "5%",
+            "20%"
+          ]
+        ],
+        [
+          "T.M. Opera O (New Year)",
+          [
+            "14%",
+            "30%",
+            "20%",
+            "10%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Narita Brian (Original)",
+          [
+            "10%",
+            "15%",
+            "0%",
+            "30%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Original)",
+          [
+            "8%",
+            "30%",
+            "0%",
+            "10%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Air Groove (Original)",
+          [
+            "10%",
+            "5%",
+            "0%",
+            "20%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Air Groove (Wedding)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "5%",
+            "20%",
+            "30%"
+          ]
+        ],
+        [
+          "Agnes Digital (Original)",
+          [
+            "8%",
+            "0%",
+            "30%",
+            "5%",
+            "10%",
+            "15%"
+          ]
+        ],
+        [
+          "Seiun Sky (Ballroom)",
+          [
+            "8%",
+            "15%",
+            "10%",
+            "5%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Wedding)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "20%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Valentines)",
+          [
+            "10%",
+            "30%",
+            "0%",
+            "15%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Yukino Bijin (Original)",
+          [
+            "10%",
+            "5%",
+            "30%",
+            "20%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Ines Fujin (Original)",
+          [
+            "15%",
+            "10%",
+            "0%",
+            "20%",
+            "5%",
+            "30%"
+          ]
+        ],
+        [
+          "Agnes Tachyon (Original)",
+          [
+            "20%",
+            "15%",
+            "5%",
+            "10%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Admire Vega (Original)",
+          [
+            "10%",
+            "5%",
+            "0%",
+            "15%",
+            "20%",
+            "30%"
+          ]
+        ],
+        [
+          "Curren Chan (Original)",
+          [
+            "10%",
+            "15%",
+            "20%",
+            "0%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Curren Chan (Wedding)",
+          [
+            "10%",
+            "5%",
+            "30%",
+            "15%",
+            "0%",
+            "20%"
+          ]
+        ],
+        [
+          "Gold City (Festival)",
+          [
+            "8%",
+            "20%",
+            "10%",
+            "5%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Sakura Bakushin O (Original)",
+          [
+            "20%",
+            "0%",
+            "10%",
+            "5%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Seeking the Pearl (Original)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "5%",
+            "30%",
+            "20%"
+          ]
+        ],
+        [
+          "Sweep Tosho (Original)",
+          [
+            "10%",
+            "5%",
+            "20%",
+            "30%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Super Creek (Halloween)",
+          [
+            "14%",
+            "15%",
+            "10%",
+            "0%",
+            "30%",
+            "20%"
+          ]
+        ],
+        [
+          "Smart Falcon (Original)",
+          [
+            "20%",
+            "10%",
+            "30%",
+            "15%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Tosen Jordan (Original)",
+          [
+            "10%",
+            "5%",
+            "30%",
+            "0%",
+            "15%",
+            "20%"
+          ]
+        ],
+        [
+          "Narita Taishin (Original)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "15%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Nishino Flower (Original)",
+          [
+            "15%",
+            "5%",
+            "10%",
+            "0%",
+            "20%",
+            "30%"
+          ]
+        ],
+        [
+          "Mejiro Dober (Original)",
+          [
+            "10%",
+            "15%",
+            "20%",
+            "5%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Mejiro Dober (Camping)",
+          [
+            "20%",
+            "5%",
+            "15%",
+            "10%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "King Halo (Cheerleader)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "5%",
+            "20%",
+            "30%"
+          ]
+        ],
+        [
+          "Mejiro Palmer (Original)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "5%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Kitasan Black (Original)",
+          [
+            "20%",
+            "30%",
+            "0%",
+            "10%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Sakura Chiyono O (Original)",
+          [
+            "10%",
+            "30%",
+            "15%",
+            "0%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Mejiro Ardan (Original)",
+          [
+            "10%",
+            "30%",
+            "5%",
+            "20%",
+            "0%",
+            "15%"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Stamina Stat Bonus?",
+      "difficulty": "expert",
+      "entries": [
+        [
+          "Special Week (Original)",
+          [
+            "20%",
+            "10%",
+            "30%",
+            "15%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Special Week (Summer)",
+          [
+            "10%",
+            "20%",
+            "0%",
+            "5%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Tokai Teio (Original)",
+          [
+            "10%",
+            "15%",
+            "5%",
+            "0%",
+            "20%",
+            "30%"
+          ]
+        ],
+        [
+          "Tokai Teio (Anime Collab)",
+          [
+            "10%",
+            "30%",
+            "15%",
+            "5%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Oguri Cap (Christmas)",
+          [
+            "15%",
+            "30%",
+            "0%",
+            "10%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Gold Ship (Original)",
+          [
+            "20%",
+            "0%",
+            "10%",
+            "30%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Grass Wonder (Fantasy)",
+          [
+            "15%",
+            "5%",
+            "10%",
+            "30%",
+            "0%",
+            "20%"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Original)",
+          [
+            "20%",
+            "30%",
+            "15%",
+            "10%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Anime Collab)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "5%",
+            "20%",
+            "15%"
+          ]
+        ],
+        [
+          "T.M. Opera O (Original)",
+          [
+            "20%",
+            "5%",
+            "10%",
+            "15%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "T.M. Opera O (New Year)",
+          [
+            "8%",
+            "10%",
+            "5%",
+            "30%",
+            "20%",
+            "15%"
+          ]
+        ],
+        [
+          "Narita Brian (Original)",
+          [
+            "20%",
+            "5%",
+            "15%",
+            "10%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Original)",
+          [
+            "20%",
+            "5%",
+            "30%",
+            "0%",
+            "10%",
+            "15%"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Festival)",
+          [
+            "14%",
+            "30%",
+            "20%",
+            "0%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Agnes Digital (Original)",
+          [
+            "8%",
+            "0%",
+            "10%",
+            "20%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Seiun Sky (Original)",
+          [
+            "10%",
+            "5%",
+            "0%",
+            "20%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Tamamo Cross (Original)",
+          [
+            "20%",
+            "5%",
+            "30%",
+            "10%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Christmas)",
+          [
+            "12%",
+            "20%",
+            "5%",
+            "10%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Original)",
+          [
+            "20%",
+            "5%",
+            "30%",
+            "0%",
+            "10%",
+            "15%"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Wedding)",
+          [
+            "10%",
+            "30%",
+            "15%",
+            "5%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Manhattan Cafe (Original)",
+          [
+            "30%",
+            "20%",
+            "0%",
+            "10%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Original)",
+          [
+            "20%",
+            "10%",
+            "0%",
+            "5%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Valentines)",
+          [
+            "10%",
+            "5%",
+            "20%",
+            "30%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Rice Shower (Original)",
+          [
+            "10%",
+            "30%",
+            "5%",
+            "20%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Rice Shower (Halloween)",
+          [
+            "15%",
+            "30%",
+            "5%",
+            "0%",
+            "20%",
+            "10%"
+          ]
+        ],
+        [
+          "Inari One (Original)",
+          [
+            "10%",
+            "15%",
+            "20%",
+            "0%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Winning Ticket (Original)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "15%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Eishin Flash (Valentines)",
+          [
+            "8%",
+            "15%",
+            "5%",
+            "0%",
+            "10%",
+            "30%"
+          ]
+        ],
+        [
+          "Super Creek (Original)",
+          [
+            "10%",
+            "30%",
+            "15%",
+            "5%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Super Creek (Halloween)",
+          [
+            "8%",
+            "20%",
+            "30%",
+            "10%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Original)",
+          [
+            "20%",
+            "5%",
+            "0%",
+            "30%",
+            "10%",
+            "15%"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Full Armor)",
+          [
+            "10%",
+            "5%",
+            "15%",
+            "20%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Meisho Doto (Original)",
+          [
+            "20%",
+            "30%",
+            "15%",
+            "0%",
+            "5%",
+            "10%"
+          ]
+        ],
+        [
+          "Nice Nature (Cheerleader)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "5%",
+            "30%",
+            "20%"
+          ]
+        ],
+        [
+          "Matikanetannhauser (Original)",
+          [
+            "20%",
+            "15%",
+            "30%",
+            "10%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Mejiro Palmer (Original)",
+          [
+            "10%",
+            "0%",
+            "5%",
+            "20%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Satono Diamond (Original)",
+          [
+            "15%",
+            "5%",
+            "30%",
+            "20%",
+            "10%",
+            "0%"
+          ]
+        ],
+        [
+          "Kitasan Black (Original)",
+          [
+            "10%",
+            "20%",
+            "15%",
+            "5%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Mejiro Bright (Original)",
+          [
+            "14%",
+            "15%",
+            "0%",
+            "5%",
+            "30%",
+            "20%"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Power Stat Bonus?",
+      "difficulty": "expert",
+      "entries": [
+        [
+          "Special Week (Summer)",
+          [
+            "10%",
+            "5%",
+            "15%",
+            "0%",
+            "30%",
+            "20%"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Original)",
+          [
+            "20%",
+            "15%",
+            "10%",
+            "30%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Ballroom)",
+          [
+            "14%",
+            "10%",
+            "30%",
+            "15%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Oguri Cap (Original)",
+          [
+            "10%",
+            "30%",
+            "20%",
+            "0%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Gold Ship (Original)",
+          [
+            "10%",
+            "20%",
+            "15%",
+            "30%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Vodka (Original)",
+          [
+            "20%",
+            "5%",
+            "30%",
+            "15%",
+            "10%",
+            "0%"
+          ]
+        ],
+        [
+          "Taiki Shuttle (Camping)",
+          [
+            "30%",
+            "15%",
+            "5%",
+            "0%",
+            "20%",
+            "10%"
+          ]
+        ],
+        [
+          "Grass Wonder (Original)",
+          [
+            "10%",
+            "0%",
+            "20%",
+            "15%",
+            "5%",
+            "30%"
+          ]
+        ],
+        [
+          "Hishi Amazon (Original)",
+          [
+            "20%",
+            "0%",
+            "30%",
+            "15%",
+            "5%",
+            "10%"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Anime Collab)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "15%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Air Groove (Original)",
+          [
+            "20%",
+            "15%",
+            "5%",
+            "10%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Air Groove (Wedding)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "0%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Agnes Digital (Original)",
+          [
+            "7%",
+            "5%",
+            "10%",
+            "15%",
+            "0%",
+            "20%"
+          ]
+        ],
+        [
+          "Seiun Sky (Ballroom)",
+          [
+            "8%",
+            "30%",
+            "20%",
+            "10%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Tamamo Cross (Original)",
+          [
+            "10%",
+            "5%",
+            "20%",
+            "15%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Fine Motion (Original)",
+          [
+            "15%",
+            "5%",
+            "20%",
+            "10%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Christmas)",
+          [
+            "12%",
+            "15%",
+            "20%",
+            "30%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Original)",
+          [
+            "10%",
+            "20%",
+            "15%",
+            "0%",
+            "5%",
+            "30%"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Valentines)",
+          [
+            "10%",
+            "15%",
+            "5%",
+            "30%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Mejiro Ryan (Original)",
+          [
+            "20%",
+            "0%",
+            "30%",
+            "10%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Hishi Akebono (Original)",
+          [
+            "20%",
+            "15%",
+            "5%",
+            "0%",
+            "30%",
+            "10%"
+          ]
+        ],
+        [
+          "Rice Shower (Halloween)",
+          [
+            "15%",
+            "0%",
+            "30%",
+            "10%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Admire Vega (Original)",
+          [
+            "20%",
+            "15%",
+            "30%",
+            "10%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Inari One (Original)",
+          [
+            "20%",
+            "5%",
+            "10%",
+            "15%",
+            "0%",
+            "30%"
+          ]
+        ],
+        [
+          "Winning Ticket (Original)",
+          [
+            "20%",
+            "30%",
+            "10%",
+            "0%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Eishin Flash (Original)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "15%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Eishin Flash (Valentines)",
+          [
+            "8%",
+            "30%",
+            "20%",
+            "0%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Curren Chan (Original)",
+          [
+            "20%",
+            "0%",
+            "10%",
+            "5%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Curren Chan (Wedding)",
+          [
+            "10%",
+            "0%",
+            "20%",
+            "15%",
+            "5%",
+            "30%"
+          ]
+        ],
+        [
+          "Kawakami Princess (Original)",
+          [
+            "10%",
+            "15%",
+            "30%",
+            "20%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Gold City (Original)",
+          [
+            "10%",
+            "20%",
+            "15%",
+            "0%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Gold City (Festival)",
+          [
+            "8%",
+            "5%",
+            "20%",
+            "15%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Sweep Tosho (Original)",
+          [
+            "20%",
+            "10%",
+            "15%",
+            "30%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Smart Falcon (Original)",
+          [
+            "10%",
+            "5%",
+            "30%",
+            "15%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Tosen Jordan (Original)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "20%",
+            "5%",
+            "30%"
+          ]
+        ],
+        [
+          "Nishino Flower (Original)",
+          [
+            "15%",
+            "5%",
+            "0%",
+            "30%",
+            "20%",
+            "10%"
+          ]
+        ],
+        [
+          "Haru Urara (Original)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "5%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Haru Urara (New Year)",
+          [
+            "20%",
+            "0%",
+            "5%",
+            "10%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Original)",
+          [
+            "10%",
+            "5%",
+            "15%",
+            "30%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Nice Nature (Original)",
+          [
+            "20%",
+            "10%",
+            "0%",
+            "15%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Nice Nature (Cheerleader)",
+          [
+            "10%",
+            "20%",
+            "5%",
+            "15%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "King Halo (Original)",
+          [
+            "20%",
+            "0%",
+            "30%",
+            "15%",
+            "5%",
+            "10%"
+          ]
+        ],
+        [
+          "King Halo (Cheerleader)",
+          [
+            "10%",
+            "0%",
+            "20%",
+            "30%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Yaeno Muteki (Original)",
+          [
+            "20%",
+            "0%",
+            "30%",
+            "15%",
+            "10%",
+            "5%"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Guts Stat Bonus?",
+      "difficulty": "expert",
+      "entries": [
+        [
+          "Special Week (Summer)",
+          [
+            "10%",
+            "0%",
+            "20%",
+            "15%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Silence Suzuka (Original)",
+          [
+            "10%",
+            "30%",
+            "0%",
+            "20%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Tokai Teio (Anime Collab)",
+          [
+            "10%",
+            "5%",
+            "0%",
+            "20%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Daiwa Scarlet (Original)",
+          [
+            "20%",
+            "30%",
+            "10%",
+            "15%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Hishi Amazon (Original)",
+          [
+            "10%",
+            "20%",
+            "15%",
+            "5%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "El Condor Pasa (Fantasy)",
+          [
+            "15%",
+            "10%",
+            "30%",
+            "5%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Original)",
+          [
+            "10%",
+            "15%",
+            "0%",
+            "20%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Air Groove (Wedding)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "30%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Seiun Sky (Ballroom)",
+          [
+            "14%",
+            "20%",
+            "0%",
+            "5%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Fine Motion (Wedding)",
+          [
+            "10%",
+            "30%",
+            "20%",
+            "5%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Original)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "20%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Original)",
+          [
+            "10%",
+            "30%",
+            "5%",
+            "20%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Hishi Akebono (Original)",
+          [
+            "10%",
+            "5%",
+            "20%",
+            "0%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Yukino Bijin (Original)",
+          [
+            "20%",
+            "0%",
+            "10%",
+            "15%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Rice Shower (Original)",
+          [
+            "20%",
+            "0%",
+            "10%",
+            "15%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Ines Fujin (Original)",
+          [
+            "15%",
+            "30%",
+            "20%",
+            "10%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Agnes Tachyon (Original)",
+          [
+            "10%",
+            "5%",
+            "30%",
+            "0%",
+            "20%",
+            "15%"
+          ]
+        ],
+        [
+          "Kawakami Princess (Original)",
+          [
+            "20%",
+            "30%",
+            "5%",
+            "10%",
+            "15%",
+            "0%"
+          ]
+        ],
+        [
+          "Gold City (Original)",
+          [
+            "20%",
+            "0%",
+            "5%",
+            "10%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Super Creek (Halloween)",
+          [
+            "8%",
+            "20%",
+            "15%",
+            "10%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Tosen Jordan (Original)",
+          [
+            "10%",
+            "30%",
+            "15%",
+            "0%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Narita Taishin (Original)",
+          [
+            "20%",
+            "5%",
+            "30%",
+            "0%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Haru Urara (Original)",
+          [
+            "20%",
+            "5%",
+            "10%",
+            "30%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Haru Urara (New Year)",
+          [
+            "10%",
+            "20%",
+            "0%",
+            "5%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Full Armor)",
+          [
+            "10%",
+            "0%",
+            "5%",
+            "30%",
+            "15%",
+            "20%"
+          ]
+        ],
+        [
+          "Meisho Doto (Original)",
+          [
+            "10%",
+            "5%",
+            "15%",
+            "0%",
+            "20%",
+            "30%"
+          ]
+        ],
+        [
+          "King Halo (Original)",
+          [
+            "10%",
+            "15%",
+            "20%",
+            "0%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "King Halo (Cheerleader)",
+          [
+            "10%",
+            "20%",
+            "0%",
+            "30%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Matikanetannhauser (Original)",
+          [
+            "10%",
+            "0%",
+            "20%",
+            "30%",
+            "5%",
+            "15%"
+          ]
+        ],
+        [
+          "Mejiro Palmer (Original)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "15%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Sakura Chiyono O (Original)",
+          [
+            "10%",
+            "30%",
+            "20%",
+            "15%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Yaeno Muteki (Original)",
+          [
+            "10%",
+            "20%",
+            "5%",
+            "0%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Mejiro Bright (Original)",
+          [
+            "8%",
+            "5%",
+            "10%",
+            "15%",
+            "0%",
+            "30%"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "What is {0}'s Wit Stat Bonus?",
+      "difficulty": "expert",
+      "entries": [
+        [
+          "Special Week (Original)",
+          [
+            "10%",
+            "15%",
+            "5%",
+            "20%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Maruzensky (Original)",
+          [
+            "20%",
+            "0%",
+            "5%",
+            "30%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Maruzensky (Summer)",
+          [
+            "15%",
+            "20%",
+            "10%",
+            "5%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Original)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "15%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Ballroom)",
+          [
+            "8%",
+            "15%",
+            "0%",
+            "20%",
+            "10%",
+            "30%"
+          ]
+        ],
+        [
+          "Taiki Shuttle (Original)",
+          [
+            "10%",
+            "20%",
+            "5%",
+            "30%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "Grass Wonder (Fantasy)",
+          [
+            "15%",
+            "30%",
+            "10%",
+            "0%",
+            "5%",
+            "20%"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Original)",
+          [
+            "10%",
+            "20%",
+            "5%",
+            "15%",
+            "30%",
+            "0%"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Anime Collab)",
+          [
+            "10%",
+            "5%",
+            "20%",
+            "0%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "El Condor Pasa (Original)",
+          [
+            "10%",
+            "15%",
+            "30%",
+            "5%",
+            "20%",
+            "0%"
+          ]
+        ],
+        [
+          "T.M. Opera O (Original)",
+          [
+            "10%",
+            "20%",
+            "5%",
+            "30%",
+            "0%",
+            "15%"
+          ]
+        ],
+        [
+          "T.M. Opera O (New Year)",
+          [
+            "8%",
+            "5%",
+            "30%",
+            "20%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Festival)",
+          [
+            "8%",
+            "20%",
+            "30%",
+            "15%",
+            "5%",
+            "10%"
+          ]
+        ],
+        [
+          "Agnes Digital (Original)",
+          [
+            "7%",
+            "15%",
+            "20%",
+            "30%",
+            "5%",
+            "10%"
+          ]
+        ],
+        [
+          "Seiun Sky (Original)",
+          [
+            "20%",
+            "15%",
+            "5%",
+            "30%",
+            "0%",
+            "10%"
+          ]
+        ],
+        [
+          "Seiun Sky (Ballroom)",
+          [
+            "%",
+            "20%",
+            "10%",
+            "0%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Fine Motion (Original)",
+          [
+            "15%",
+            "30%",
+            "10%",
+            "20%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Fine Motion (Wedding)",
+          [
+            "20%",
+            "10%",
+            "5%",
+            "0%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Original)",
+          [
+            "20%",
+            "15%",
+            "0%",
+            "10%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Christmas)",
+          [
+            "6%",
+            "10%",
+            "0%",
+            "30%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Wedding)",
+          [
+            "10%",
+            "15%",
+            "0%",
+            "30%",
+            "5%",
+            "20%"
+          ]
+        ],
+        [
+          "Mejiro Ryan (Original)",
+          [
+            "10%",
+            "20%",
+            "30%",
+            "15%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Air Shakur (Original)",
+          [
+            "30%",
+            "5%",
+            "0%",
+            "20%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Eishin Flash (Original)",
+          [
+            "20%",
+            "30%",
+            "15%",
+            "5%",
+            "10%",
+            "0%"
+          ]
+        ],
+        [
+          "Eishin Flash (Valentines)",
+          [
+            "14%",
+            "20%",
+            "10%",
+            "15%",
+            "5%",
+            "30%"
+          ]
+        ],
+        [
+          "Curren Chan (Wedding)",
+          [
+            "10%",
+            "0%",
+            "30%",
+            "20%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Gold City (Festival)",
+          [
+            "14%",
+            "20%",
+            "30%",
+            "0%",
+            "15%",
+            "10%"
+          ]
+        ],
+        [
+          "Sakura Bakushin O (Original)",
+          [
+            "10%",
+            "15%",
+            "30%",
+            "20%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Seeking the Pearl (Original)",
+          [
+            "20%",
+            "0%",
+            "30%",
+            "10%",
+            "15%",
+            "5%"
+          ]
+        ],
+        [
+          "Super Creek (Original)",
+          [
+            "20%",
+            "15%",
+            "0%",
+            "10%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Full Armor)",
+          [
+            "10%",
+            "15%",
+            "0%",
+            "30%",
+            "5%",
+            "20%"
+          ]
+        ],
+        [
+          "Mejiro Dober (Original)",
+          [
+            "20%",
+            "15%",
+            "30%",
+            "10%",
+            "5%",
+            "0%"
+          ]
+        ],
+        [
+          "Mejiro Dober (Camping)",
+          [
+            "10%",
+            "5%",
+            "0%",
+            "15%",
+            "30%",
+            "20%"
+          ]
+        ],
+        [
+          "Nice Nature (Original)",
+          [
+            "10%",
+            "20%",
+            "0%",
+            "5%",
+            "15%",
+            "30%"
+          ]
+        ],
+        [
+          "Nice Nature (Cheerleader)",
+          [
+            "10%",
+            "15%",
+            "0%",
+            "30%",
+            "20%",
+            "5%"
+          ]
+        ],
+        [
+          "Satono Diamond (Original)",
+          [
+            "15%",
+            "20%",
+            "30%",
+            "10%",
+            "0%",
+            "5%"
+          ]
+        ],
+        [
+          "Sakura Chiyono O (Original)",
+          [
+            "10%",
+            "0%",
+            "15%",
+            "20%",
+            "30%",
+            "5%"
+          ]
+        ],
+        [
+          "Mejiro Ardan (Original)",
+          [
+            "20%",
+            "5%",
+            "0%",
+            "10%",
+            "30%",
+            "15%"
+          ]
+        ],
+        [
+          "Mejiro Bright (Original)",
+          [
+            "8%",
+            "10%",
+            "20%",
+            "15%",
+            "30%",
+            "5%"
+          ]
+        ]
+      ]
+    },
+    { "promptTemplate": "Which stat bonus is the highest for {0}?",
+      "difficulty": "hard",
+      "entries": [
+        [
+          "Special Week (Original)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Guts",
+            "Power"
+          ]
+        ],
+        [
+          "Special Week (Summer)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Silence Suzuka (Original)",
+          [
+            "Speed",
+            "Wit",
+            "Stamina",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Tokai Teio (Original)",
+          [
+            "Speed",
+            "Stamina",
+            "Wit",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Tokai Teio (Anime Collab)",
+          [
+            "Speed",
+            "Guts",
+            "Wit",
+            "Stamina",
+            "Power"
+          ]
+        ],
+        [
+          "Maruzensky (Original)",
+          [
+            "Wit",
+            "Speed",
+            "Power",
+            "Guts",
+            "Stamina"
+          ]
+        ],
+        [
+          "Maruzensky (Summer)",
+          [
+            "Speed",
+            "Guts",
+            "Stamina",
+            "Wit",
+            "Power"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Original)",
+          [
+            "Power",
+            "Guts",
+            "Stamina",
+            "Speed",
+            "Wit"
+          ]
+        ],
+        [
+          "Fuji Kiseki (Ballroom)",
+          [
+            "Power",
+            "Speed",
+            "Stamina",
+            "Wit",
+            "Guts"
+          ]
+        ],
+        [
+          "Oguri Cap (Original)",
+          [
+            "Speed",
+            "Wit",
+            "Guts",
+            "Power",
+            "Stamina"
+          ]
+        ],
+        [
+          "Oguri Cap (Christmas)",
+          [
+            "Speed",
+            "Wit",
+            "Stamina",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Gold Ship (Original)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Guts",
+            "Power"
+          ]
+        ],
+        [
+          "Vodka (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Guts",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Daiwa Scarlet (Original)",
+          [
+            "Guts",
+            "Power",
+            "Speed",
+            "Wit",
+            "Stamina"
+          ]
+        ],
+        [
+          "Taiki Shuttle (Original)",
+          [
+            "Speed",
+            "Wit",
+            "Guts",
+            "Power",
+            "Stamina"
+          ]
+        ],
+        [
+          "Taiki Shuttle (Camping)",
+          [
+            "Power",
+            "Wit",
+            "Guts",
+            "Stamina",
+            "Speed"
+          ]
+        ],
+        [
+          "Grass Wonder (Original)",
+          [
+            "Speed",
+            "Guts",
+            "Power",
+            "Stamina",
+            "Wit"
+          ]
+        ],
+        [
+          "Grass Wonder (Fantasy)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Hishi Amazon (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Guts"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Original)",
+          [
+            "Stamina",
+            "Guts",
+            "Power",
+            "Speed",
+            "Wit"
+          ]
+        ],
+        [
+          "Mejiro McQueen (Anime Collab)",
+          [
+            "Stamina",
+            "Guts",
+            "Wit",
+            "Power",
+            "Speed"
+          ]
+        ],
+        [
+          "El Condor Pasa (Original)",
+          [
+            "Speed",
+            "Power",
+            "Guts",
+            "Stamina",
+            "Wit"
+          ]
+        ],
+        [
+          "El Condor Pasa (Fantasy)",
+          [
+            "Speed",
+            "Stamina",
+            "Guts",
+            "Power",
+            "Wit"
+          ]
+        ],
+        [
+          "T.M. Opera O (Original)",
+          [
+            "Stamina",
+            "Wit",
+            "Speed",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "T.M. Opera O (New Year)",
+          [
+            "Speed",
+            "Guts",
+            "Wit",
+            "Stamina",
+            "Power"
+          ]
+        ],
+        [
+          "Narita Brian (Original)",
+          [
+            "Stamina",
+            "Guts",
+            "Wit",
+            "Power",
+            "Speed"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Original)",
+          [
+            "Stamina",
+            "Guts",
+            "Speed",
+            "Wit",
+            "Power"
+          ]
+        ],
+        [
+          "Symboli Rudolf (Festival)",
+          [
+            "Stamina",
+            "Guts",
+            "Power",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Air Groove (Original)",
+          [
+            "Power",
+            "Speed",
+            "Stamina",
+            "Wit",
+            "Guts"
+          ]
+        ],
+        [
+          "Air Groove (Wedding)",
+          [
+            "Speed",
+            "Guts",
+            "Wit",
+            "Power",
+            "Stamina"
+          ]
+        ],
+        [
+          "Agnes Digital (Original)",
+          [
+            "Speed",
+            "Guts",
+            "Wit",
+            "Stamina",
+            "Power"
+          ]
+        ],
+        [
+          "Seiun Sky (Original)",
+          [
+            "Wit",
+            "Guts",
+            "Stamina",
+            "Speed",
+            "Power"
+          ]
+        ],
+        [
+          "Seiun Sky (Ballroom)",
+          [
+            "Guts",
+            "Wit",
+            "Stamina",
+            "Speed",
+            "Power"
+          ]
+        ],
+        [
+          "Tamamo Cross (Original)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Fine Motion (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Guts",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Fine Motion (Wedding)",
+          [
+            "Wit",
+            "Speed",
+            "Guts",
+            "Power",
+            "Stamina"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Original)",
+          [
+            "Wit",
+            "Power",
+            "Stamina",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Biwa Hayahide (Christmas)",
+          [
+            "Stamina",
+            "Guts",
+            "Speed",
+            "Power",
+            "Wit"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Original)",
+          [
+            "Stamina",
+            "Wit",
+            "Guts",
+            "Speed",
+            "Power"
+          ]
+        ],
+        [
+          "Mayano Top Gun (Wedding)",
+          [
+            "Speed",
+            "Power",
+            "Stamina",
+            "Wit",
+            "Guts"
+          ]
+        ],
+        [
+          "Manhattan Cafe (Original)",
+          [
+            "Stamina",
+            "Wit",
+            "Power",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Original)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Guts",
+            "Power"
+          ]
+        ],
+        [
+          "Mihono Bourbon (Valentines)",
+          [
+            "Speed",
+            "Stamina",
+            "Power",
+            "Wit",
+            "Guts"
+          ]
+        ],
+        [
+          "Mejiro Ryan (Original)",
+          [
+            "Power",
+            "Guts",
+            "Stamina",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Hishi Akebono (Original)",
+          [
+            "Power",
+            "Wit",
+            "Stamina",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Yukino Bijin (Original)",
+          [
+            "Guts",
+            "Stamina",
+            "Wit",
+            "Power",
+            "Speed"
+          ]
+        ],
+        [
+          "Rice Shower (Original)",
+          [
+            "Guts",
+            "Power",
+            "Stamina",
+            "Speed",
+            "Wit"
+          ]
+        ],
+        [
+          "Rice Shower (Halloween)",
+          [
+            "Stamina",
+            "Power",
+            "Speed",
+            "Guts",
+            "Wit"
+          ]
+        ],
+        [
+          "Ines Fujin (Original)",
+          [
+            "Speed",
+            "Stamina",
+            "Power",
+            "Guts",
+            "Wit"
+          ]
+        ],
+        [
+          "Agnes Tachyon (Original)",
+          [
+            "Speed",
+            "Wit",
+            "Power",
+            "Guts",
+            "Stamina"
+          ]
+        ],
+        [
+          "Admire Vega (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Wit",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Inari One (Original)",
+          [
+            "Power",
+            "Guts",
+            "Stamina",
+            "Speed",
+            "Wit"
+          ]
+        ],
+        [
+          "Winning Ticket (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Speed",
+            "Guts",
+            "Wit"
+          ]
+        ],
+        [
+          "Air Shakur (Original)",
+          [
+            "Wit",
+            "Guts",
+            "Speed",
+            "Power",
+            "Stamina"
+          ]
+        ],
+        [
+          "Eishin Flash (Original)",
+          [
+            "Wit",
+            "Power",
+            "Speed",
+            "Guts",
+            "Stamina"
+          ]
+        ],
+        [
+          "Eishin Flash (Valentines)",
+          [
+            "Wit",
+            "Guts",
+            "Stamina",
+            "Power",
+            "Speed"
+          ]
+        ],
+        [
+          "Curren Chan (Original)",
+          [
+            "Power",
+            "Wit",
+            "Guts",
+            "Speed",
+            "Stamina"
+          ]
+        ],
+        [
+          "Curren Chan (Wedding)",
+          [
+            "Speed",
+            "Stamina",
+            "Guts",
+            "Power",
+            "Wit"
+          ]
+        ],
+        [
+          "Kawakami Princess (Original)",
+          [
+            "Guts",
+            "Power",
+            "Speed",
+            "Wit",
+            "Stamina"
+          ]
+        ],
+        [
+          "Gold City (Original)",
+          [
+            "Guts",
+            "Stamina",
+            "Power",
+            "Speed",
+            "Wit"
+          ]
+        ],
+        [
+          "Gold City (Festival)",
+          [
+            "Wit",
+            "Power",
+            "Speed",
+            "Guts",
+            "Stamina"
+          ]
+        ],
+        [
+          "Sakura Bakushin O (Original)",
+          [
+            "Speed",
+            "Power",
+            "Guts",
+            "Stamina",
+            "Wit"
+          ]
+        ],
+        [
+          "Seeking the Pearl (Original)",
+          [
+            "Wit",
+            "Power",
+            "Guts",
+            "Speed",
+            "Stamina"
+          ]
+        ],
+        [
+          "Sweep Tosho (Original)",
+          [
+            "Power",
+            "Guts",
+            "Stamina",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Super Creek (Original)",
+          [
+            "Wit",
+            "Power",
+            "Guts",
+            "Speed",
+            "Stamina"
+          ]
+        ],
+        [
+          "Super Creek (Halloween)",
+          [
+            "Speed",
+            "Guts",
+            "Power",
+            "Wit",
+            "Stamina"
+          ]
+        ],
+        [
+          "Smart Falcon (Original)",
+          [
+            "Speed",
+            "Wit",
+            "Power",
+            "Stamina",
+            "Guts"
+          ]
+        ],
+        [
+          "Tosen Jordan (Original)",
+          [
+            "Speed",
+            "Guts",
+            "Wit",
+            "Stamina",
+            "Power"
+          ]
+        ],
+        [
+          "Narita Taishin (Original)",
+          [
+            "Guts",
+            "Stamina",
+            "Power",
+            "Speed",
+            "Wit"
+          ]
+        ],
+        [
+          "Nishino Flower (Original)",
+          [
+            "Speed",
+            "Power",
+            "Stamina",
+            "Guts",
+            "Wit"
+          ]
+        ],
+        [
+          "Haru Urara (Original)",
+          [
+            "Guts",
+            "Power",
+            "Stamina",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Haru Urara (New Year)",
+          [
+            "Power",
+            "Stamina",
+            "Wit",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Original)",
+          [
+            "Stamina",
+            "Power",
+            "Wit",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Matikanefukukitaru (Full Armor)",
+          [
+            "Stamina",
+            "Guts",
+            "Power",
+            "Wit",
+            "Speed"
+          ]
+        ],
+        [
+          "Meisho Doto (Original)",
+          [
+            "Stamina",
+            "Wit",
+            "Speed",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Mejiro Dober (Original)",
+          [
+            "Wit",
+            "Speed",
+            "Stamina",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Mejiro Dober (Camping)",
+          [
+            "Speed",
+            "Guts",
+            "Power",
+            "Wit",
+            "Stamina"
+          ]
+        ],
+        [
+          "Nice Nature (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Guts"
+          ]
+        ],
+        [
+          "Nice Nature (Cheerleader)",
+          [
+            "Stamina",
+            "Speed",
+            "Wit",
+            "Guts",
+            "Power"
+          ]
+        ],
+        [
+          "King Halo (Original)",
+          [
+            "Power",
+            "Speed",
+            "Guts",
+            "Stamina",
+            "Wit"
+          ]
+        ],
+        [
+          "King Halo (Cheerleader)",
+          [
+            "Speed",
+            "Wit",
+            "Stamina",
+            "Power",
+            "Guts"
+          ]
+        ],
+        [
+          "Matikanetannhauser (Original)",
+          [
+            "Stamina",
+            "Guts",
+            "Speed",
+            "Power",
+            "Wit"
+          ]
+        ],
+        [
+          "Mejiro Palmer (Original)",
+          [
+            "Speed",
+            "Power",
+            "Wit",
+            "Stamina",
+            "Guts"
+          ]
+        ],
+        [
+          "Satono Diamond (Original)",
+          [
+            "Stamina",
+            "Guts",
+            "Wit",
+            "Power",
+            "Speed"
+          ]
+        ],
+        [
+          "Kitasan Black (Original)",
+          [
+            "Speed",
+            "Stamina",
+            "Power",
+            "Guts",
+            "Wit"
+          ]
+        ],
+        [
+          "Sakura Chiyono O (Original)",
+          [
+            "Speed",
+            "Guts",
+            "Stamina",
+            "Power",
+            "Wit"
+          ]
+        ],
+        [
+          "Mejiro Ardan (Original)",
+          [
+            "Wit",
+            "Speed",
+            "Guts",
+            "Power",
+            "Stamina"
+          ]
+        ],
+        [
+          "Yaeno Muteki (Original)",
+          [
+            "Power",
+            "Stamina",
+            "Wit",
+            "Guts",
+            "Speed"
+          ]
+        ],
+        [
+          "Mejiro Bright (Original)",
+          [
+            "Stamina",
+            "Power",
+            "Guts",
+            "Speed",
+            "Wit"
+          ]
+        ]
       ]
     }
-    
   ]
 }

@@ -57,6 +57,86 @@
     { "prompt": "Which horse was the reason the JRA banned flash photography?",
       "answers": ["Air Groove", "Manhattan Cafe", "Silence Suzuka", "Grass Wonder", "Biko Pegasus", "Seiun Sky", "Agnes Tachyon", "Bubble Gum Fellow", "Mr. C.B.", "Aston Machan"],
       "difficulty": "hard"
+    },
+    { "prompt": "The horses Agnes Tachyon and Manhattan Cafe only had one race together. Which one?",
+      "answers": ["Yayoi Sho", "Satsuki Sho", "Radio Tampa Hai Sansai Stakes", "Their debut race", "Nikkei Sho", "Kikuka Sho"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Admire Vega's dam was named?",
+      "answers": ["Vega", "Admire Cosmos", "Believe Vega", "Admire Groove", "Admire Orion", "Sunday Silence", "Believe"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which overseas G1 did Agnes Digital win?",
+      "answers": ["Hong Kong Cup", "Dubai World Cup", "Prix de l'Arc de Triomphe", "Kentucky Derby", "American Oaks", "Prix du Cadran"],
+      "difficulty": "hard"
+    },
+    { "prompt": "By what length did Agnes Tachyon win the 2001 Satsuki Sho?",
+      "answers": ["1.5", "1", "Nose", "0.5", "5", "2.5", "2"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Almond Eye's only finish outside the Top 3 was in what race?",
+      "answers": ["2019 Arima Kinen", "2019 Yasuda Kinen", "2020 Yasuda Kinen", "2020 Arima Kinen", "Her debut", "2018 Japan Cup"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which of these horses NEVER finished outside the Top 2?",
+      "answers": ["Daiwa Scarlet", "Almond Eye", "Symboli Rudolf", "Oguri Cap", "Copano Rickey", "Smart Falcon", "Mejiro McQueen"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Smart Falcon took part in one international race, the Dubai World Cup. What was her placement?",
+      "answers": ["10th", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "13th", "15th"],
+      "difficulty": "hard"
+    },
+    { "prompt": "The first Japanese horse to win an American G1 is?",
+      "answers": ["Cesario", "El Condor Pasa", "Sirius Symboli", "Victoire Pisa", "Agnes Digital", "Eishin Flash", "Buena Vista", "Grass Wonder"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which horse was known to be best friends with Sunday Silence?",
+      "answers": ["Mejiro McQueen", "Manhattan Cafe", "Symboli Rudolf", "Mr. C.B.", "Super Creek", "Tokino Minoru", "Taiki Shuttle"],
+      "difficulty": "medium"
+    },
+    { "prompt": "What placement did Nice Nature get at the 1994 Arima Kinen?",
+      "answers": ["5th", "3rd", "7th", "9th"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Jockey Yutaka Take's first G1 race win was with which horse?",
+      "answers": ["Super Creek", "Oguri Cap", "Inari One", "Bamboo Memory", "Mejiro McQueen", "Daitaku Helios", "Tokai Roman"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Nice Nature is known for placing 3rd in 3 consecutive years of what race?",
+      "answers": ["Arima Kinen", "Takarazuka Kinen", "Tenno Sho Autumn", "Japan Cup", "Tenno Sho Spring"],
+      "difficulty": "hard"
+    },
+    { "prompt": "How many G1 did Vodka win?",
+    "answers": ["7", "5", "4", "3", "1", "2"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Almond Eye's career spanned 4 years. Which year was the only one she went undefeated in?",
+      "answers": ["2018", "2017", "2019", "2020"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Almond Eye is nicknamed after a vegetable by Japanese keiba fans. Which vegetable is it?",
+    "answers": ["Cucumber", "Bok Choy", "Bean Sprouts", "Radish", "Onion", "Spinach", "Edamame"],
+      "difficulty": "expert"
+    },
+    { "prompt": "How many Triple Crown races did Kitasan Black win?",
+      "answers": ["1", "0", "2", "3"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which horse was NOT inducted in the JRA Hall of Fame?",
+      "answers": ["Sirius Symboli", "Mr. C.B.", "Mejiro Ramonu", "Maruzensky", "Taiki Shuttle", "El Condor Pasa"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Satono Crown's first G1 win was what race?",
+      "answers": ["Hong Kong Vase", "Satsuki Sho", "Arima Kinen", "Dubai Sheema Classic", "Takarazuka Kinen", "Tenno Sho Autumn"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Who was the first Triple Crown Horse in Japan?",
+      "answers": ["St. Lite", "Symboli Rudolf", "Haiseiko", "Tokino Minoru", "Tosho Boy", "Mr. C.B."],
+      "difficulty": "expert"
+    },
+    { "prompt": "What placement did Manhattan Cafe get in the 2002 Prix de l'Arc de Triomphe?",
+      "answers": ["13th", "4th", "16th", "10th", "7th", "9th", "2nd", "3rd"],
+      "difficulty": "expert"
     }
   ]
 }
