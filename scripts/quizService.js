@@ -192,22 +192,6 @@ export function filterSessionQuestions(questions, options) {
   });
 }
 
-function getQuestionBalanceKey(question) {
-  const category = question.category || 'unknown';
-  const prompt = String(question.prompt || '').trim() || question.id || 'unknown';
-  return `${category}::${prompt}`;
-}
-
-function groupQuestionsByBalanceKey(questions) {
-  const groups = new Map();
-  for (const question of questions) {
-    const key = getQuestionBalanceKey(question);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(question);
-  }
-  return groups;
-}
-
 function pickRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
@@ -231,46 +215,107 @@ function buildTierTryOrder(selectedDifficulty) {
   return tiersToTry;
 }
 
+function getQuestionCategory(question) {
+  return question.category || 'unknown';
+}
+
+function getQuestionTemplateKey(question) {
+  return String(question.promptTemplate || question.prompt || question.id || 'unknown').trim();
+}
+
+function groupQuestionsByTemplate(questions) {
+  const groups = new Map();
+  for (const question of questions) {
+    const key = `${getQuestionCategory(question)}::${getQuestionTemplateKey(question)}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(question);
+  }
+  return groups;
+}
+
+function sumAskedTimes(questions, usedIds) {
+  return questions.reduce((sum, question) => sum + countAskedTimes(question.id, usedIds), 0);
+}
+
+function pickBalancedCategoryPool(categoryPools, usedIds) {
+  const usedSet = new Set(usedIds);
+  const entries = categoryPools.map((questions) => {
+    const hasUnused = questions.some((question) => !usedSet.has(question.id));
+    return { questions, hasUnused, asked: sumAskedTimes(questions, usedIds) };
+  });
+
+  const candidates = entries.some((entry) => entry.hasUnused)
+    ? entries.filter((entry) => entry.hasUnused)
+    : entries;
+  const minAsked = Math.min(...candidates.map((entry) => entry.asked));
+  const balanced = candidates.filter((entry) => entry.asked === minAsked);
+  return pickRandomItem(balanced).questions;
+}
+
+function pickBalancedTemplatePool(pool, usedIds) {
+  const usedSet = new Set(usedIds);
+  const byTemplate = groupQuestionsByTemplate(pool);
+  const entries = [...byTemplate.values()].map((questions) => {
+    const unused = questions.filter((question) => !usedSet.has(question.id));
+    const activePool = unused.length ? unused : questions;
+    return {
+      pool: activePool,
+      hasUnused: unused.length > 0,
+      asked: sumAskedTimes(questions, usedIds),
+    };
+  });
+
+  const candidates = entries.some((entry) => entry.hasUnused)
+    ? entries.filter((entry) => entry.hasUnused)
+    : entries;
+  const minAsked = Math.min(...candidates.map((entry) => entry.asked));
+  const balanced = candidates.filter((entry) => entry.asked === minAsked);
+  return pickRandomItem(balanced).pool;
+}
+
+function pickBalancedCategoryAndTemplate(pool, usedIds) {
+  const byCategory = new Map();
+  for (const question of pool) {
+    const category = getQuestionCategory(question);
+    if (!byCategory.has(category)) byCategory.set(category, []);
+    byCategory.get(category).push(question);
+  }
+
+  const categoryPool = pickBalancedCategoryPool([...byCategory.values()], usedIds);
+  return pickBalancedTemplatePool(categoryPool, usedIds);
+}
+
+function finalizeQuestionPick(finalPool, usedIds, avoidId, hasUnusedInSession) {
+  if (!finalPool.length) return null;
+
+  let pool = finalPool;
+  if (avoidId && pool.length > 1) {
+    const withoutRepeat = pool.filter((question) => question.id !== avoidId);
+    if (withoutRepeat.length) pool = withoutRepeat;
+  }
+
+  if (avoidId && pool.length > 1 && !hasUnusedInSession) {
+    pool.sort(
+      (a, b) => countAskedTimes(a.id, usedIds) - countAskedTimes(b.id, usedIds),
+    );
+    const minTimes = countAskedTimes(pool[0].id, usedIds);
+    const leastAsked = pool.filter(
+      (question) => countAskedTimes(question.id, usedIds) === minTimes,
+    );
+    return pickRandomItem(leastAsked);
+  }
+
+  return pickRandomItem(pool);
+}
+
 function pickBalancedFromPool(pool, usedIds, avoidId = null) {
   if (!pool.length) return null;
 
   const usedSet = new Set(usedIds);
-  const unused = pool.filter((q) => !usedSet.has(q.id));
+  const unused = pool.filter((question) => !usedSet.has(question.id));
   const workingPool = unused.length ? unused : pool;
-
-  const byGroup = groupQuestionsByBalanceKey(workingPool);
-  const groupPools = [...byGroup.entries()].map(([, groupQuestions]) => {
-    const groupUnused = groupQuestions.filter((q) => !usedSet.has(q.id));
-    const activePool = groupUnused.length ? groupUnused : groupQuestions;
-    const asked = groupQuestions.reduce(
-      (sum, q) => sum + countAskedTimes(q.id, usedIds),
-      0,
-    );
-    return { asked, pool: activePool, hasUnused: groupUnused.length > 0 };
-  });
-
-  const withUnused = groupPools.filter((entry) => entry.hasUnused);
-  const candidates = withUnused.length ? withUnused : groupPools;
-  const minAsked = Math.min(...candidates.map((entry) => entry.asked));
-  const balanced = candidates.filter((entry) => entry.asked === minAsked);
-  const chosenGroup = pickRandomItem(balanced);
-
-  let finalPool = chosenGroup.pool;
-  if (avoidId && finalPool.length > 1) {
-    const withoutRepeat = finalPool.filter((q) => q.id !== avoidId);
-    if (withoutRepeat.length) finalPool = withoutRepeat;
-  }
-
-  if (avoidId && finalPool.length > 1 && !unused.length) {
-    finalPool.sort(
-      (a, b) => countAskedTimes(a.id, usedIds) - countAskedTimes(b.id, usedIds),
-    );
-    const minTimes = countAskedTimes(finalPool[0].id, usedIds);
-    const leastAsked = finalPool.filter((q) => countAskedTimes(q.id, usedIds) === minTimes);
-    return pickRandomItem(leastAsked);
-  }
-
-  return pickRandomItem(finalPool);
+  const templatePool = pickBalancedCategoryAndTemplate(workingPool, usedIds);
+  return finalizeQuestionPick(templatePool, usedIds, avoidId, unused.length > 0);
 }
 
 export function pickQuestion(questions, options) {
@@ -279,15 +324,22 @@ export function pickQuestion(questions, options) {
   if (!eligible.length) return null;
 
   const avoidId = usedIds.length ? usedIds[usedIds.length - 1] : null;
-  const unusedEligible = eligible.filter((q) => !new Set(usedIds).has(q.id));
+  const unusedEligible = eligible.filter((question) => !new Set(usedIds).has(question.id));
   const searchPool = unusedEligible.length ? unusedEligible : eligible;
+  const hasUnusedInSession = unusedEligible.length > 0;
+  const tierOrder = buildTierTryOrder(selectedDifficulty);
 
-  for (const tier of buildTierTryOrder(selectedDifficulty)) {
-    const tierQuestions = searchPool.filter((q) => getQuestionDifficulty(q) === tier);
-    if (!tierQuestions.length) continue;
+  for (let attempt = 0; attempt < 16; attempt += 1) {
+    const templatePool = pickBalancedCategoryAndTemplate(searchPool, usedIds);
+    for (const tier of tierOrder) {
+      const tierPool = templatePool.filter(
+        (question) => getQuestionDifficulty(question) === tier,
+      );
+      if (!tierPool.length) continue;
 
-    const picked = pickBalancedFromPool(tierQuestions, usedIds, avoidId);
-    if (picked) return picked;
+      const picked = finalizeQuestionPick(tierPool, usedIds, avoidId, hasUnusedInSession);
+      if (picked) return picked;
+    }
   }
 
   return pickBalancedFromPool(searchPool, usedIds, avoidId);

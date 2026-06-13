@@ -217,6 +217,7 @@ function buildQuestionFromEntry(normalized, index, options) {
     id: buildEntryId(categoryId, normalized, index, groupPrefix),
     type: normalized.type || defaultType,
     difficulty: normalized.difficulty || defaultDifficulty,
+    promptTemplate: template,
     prompt,
     answers: normalized.answers.map((answer) => String(answer)),
   };
@@ -249,11 +250,13 @@ function expandTemplateGroup(group, categoryId, groupIndex, categoryDefaults) {
 }
 
 function normalizeStandaloneQuestion(item, categoryId, index, categoryDefaults) {
+  const prompt = String(item.prompt).trim();
   const question = {
     id: item.id || buildEntryId(categoryId, { prompt: item.prompt }, index, `q${index}`),
     type: item.type || categoryDefaults.type,
     difficulty: item.difficulty || categoryDefaults.difficulty,
-    prompt: String(item.prompt).trim(),
+    promptTemplate: String(item.promptTemplate || item.prompt || '').trim() || prompt,
+    prompt,
     answers: item.answers.map((answer) => String(answer)),
   };
   if (item.audioUrl) question.audioUrl = item.audioUrl;
