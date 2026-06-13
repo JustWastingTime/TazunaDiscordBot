@@ -82,20 +82,6 @@ const UMA_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const EVENT_LOOKUP_SUBCOMMAND = {
-  type: 1,
-  name: 'lookup',
-  description: 'Look up a training event by name',
-  options: [
-    {
-      type: 3,
-      name: 'name',
-      description: 'Name of the event',
-      required: true,
-    },
-  ],
-};
-
 const GAMBA_EVENT_POST_SUBCOMMAND = {
   type: 1,
   name: 'post',
@@ -158,15 +144,6 @@ const GAMBA_EVENT_GROUP = {
     GAMBA_EVENT_REFRESH_SUBCOMMAND,
     GAMBA_EVENT_SETTLE_SUBCOMMAND,
   ],
-};
-
-const EVENT_COMMAND = {
-  name: 'event',
-  description: 'Look up a training event',
-  type: 1,
-  integration_types: [0, 1],
-  contexts: [0, 1, 2],
-  options: [EVENT_LOOKUP_SUBCOMMAND],
 };
 
 const GAMBA_OWNER_COMMAND = {
@@ -681,7 +658,6 @@ const ALL_COMMANDS = [
   CLUB_COMMAND,
   QUIZ_COMMAND,
   GAMBACOIN_COMMAND,
-  EVENT_COMMAND,
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,

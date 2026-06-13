@@ -116,9 +116,17 @@ export async function handleGambacoinSetEventChannel(req) {
   }
 
   setEventChannel(guildId, channelId);
-  const count = await catchUpGuildEvents(guildId, channelId);
-  const catchUpLine = count
-    ? `\nPosted **${count}** ongoing event${count === 1 ? '' : 's'} to this channel.`
+  const catchUp = await catchUpGuildEvents(guildId, channelId);
+  if (catchUp.channelUnavailable) {
+    const partialLine = catchUp.posted
+      ? `\nPosted **${catchUp.posted}** ongoing event${catchUp.posted === 1 ? '' : 's'} before access failed.`
+      : '';
+    return ephemeral(
+      `⚠️ Event channel set to <#${channelId}>, but I couldn't post there. Give me **View Channel**, **Send Messages**, and **Embed Links** in that channel, then run the command again.${partialLine}`,
+    );
+  }
+  const catchUpLine = catchUp.posted
+    ? `\nPosted **${catchUp.posted}** ongoing event${catchUp.posted === 1 ? '' : 's'} to this channel.`
     : '';
   return ephemeral(`✅ Event channel set to <#${channelId}>.${catchUpLine}`);
 }
