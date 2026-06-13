@@ -15,7 +15,6 @@ import {
   isEventBettable,
   placeBet,
 } from './eventGambling.js';
-import { getEvent } from './eventStorage.js';
 import {
   buildEventAutocompleteChoices,
   catchUpGuildEvents,
@@ -25,7 +24,7 @@ import {
   reloadEventsFromDisk,
   settleEventEverywhere,
 } from './eventService.js';
-import { setEventChannel } from './eventStorage.js';
+import { getEvent, resolveEventId, setEventChannel } from './eventStorage.js';
 import {
   buildSettleSummaryEmbed,
   buildWagerButtons,
@@ -128,8 +127,10 @@ export async function handleEventPost(req) {
   const denied = requireOwnerOnOwnerGuild(req);
   if (denied) return denied;
 
-  const eventId = getGambaEventOptionValue(req, 'name');
-  if (!eventId) return ephemeral('❌ Pick an event to post.');
+  const eventId = resolveEventId(getGambaEventOptionValue(req, 'name'));
+  if (!eventId) {
+    return ephemeral('❌ Event not found. Pick from autocomplete or use the event id (e.g. `001`).');
+  }
 
   reloadEventsFromDisk();
   const result = await postEventEverywhere(eventId);
@@ -143,8 +144,10 @@ export async function handleEventRefresh(req) {
   const denied = requireOwnerOnOwnerGuild(req);
   if (denied) return denied;
 
-  const eventId = getGambaEventOptionValue(req, 'name');
-  if (!eventId) return ephemeral('❌ Pick an event to refresh.');
+  const eventId = resolveEventId(getGambaEventOptionValue(req, 'name'));
+  if (!eventId) {
+    return ephemeral('❌ Event not found. Pick from autocomplete or use the event id (e.g. `001`).');
+  }
 
   reloadEventsFromDisk();
   const result = await refreshEventEverywhere(eventId);
@@ -159,9 +162,11 @@ export async function handleEventSettle(req) {
   const denied = requireOwnerOnOwnerGuild(req);
   if (denied) return denied;
 
-  const eventId = getGambaEventOptionValue(req, 'name');
+  const eventId = resolveEventId(getGambaEventOptionValue(req, 'name'));
   const winner = Number(getGambaEventOptionValue(req, 'winner'));
-  if (!eventId) return ephemeral('❌ Pick an event to settle.');
+  if (!eventId) {
+    return ephemeral('❌ Event not found. Pick from autocomplete or use the event id (e.g. `001`).');
+  }
   if (!Number.isFinite(winner) || winner < 1) return ephemeral('❌ Enter a valid winning number.');
 
   const result = await settleEventEverywhere(eventId, winner);

@@ -115,6 +115,25 @@ export function getEventDefinition(eventId) {
   return loadDefinitionFiles().find((event) => event.id === String(eventId)) || null;
 }
 
+export function resolveEventId(query) {
+  const q = String(query || '').trim();
+  if (!q) return null;
+
+  const byId = getEventDefinition(q);
+  if (byId) return byId.id;
+
+  const lower = q.toLowerCase();
+  const events = loadDefinitionFiles();
+  const exactName = events.find((event) => event.name.toLowerCase() === lower);
+  if (exactName) return exactName.id;
+
+  const partial = events.find(
+    (event) =>
+      event.id.toLowerCase() === lower || event.name.toLowerCase().includes(lower),
+  );
+  return partial?.id ?? null;
+}
+
 export function getEvent(eventId) {
   const definition = getEventDefinition(eventId);
   if (!definition) return null;

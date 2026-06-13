@@ -102,10 +102,24 @@ function guildRequiredResponse() {
 
 export function resolveAutocompleteFocus(data) {
   const topOptions = data.options ?? [];
+
+  const group = topOptions.find((opt) => opt.type === 2);
+  if (group) {
+    const subcommand = group.options?.find((opt) => opt.type === 1);
+    const focused = subcommand?.options?.find((opt) => opt.focused);
+    return {
+      subcommandGroup: group.name,
+      subcommand: subcommand?.name ?? null,
+      optionName: focused?.name ?? null,
+      value: typeof focused?.value === 'string' ? focused.value : '',
+    };
+  }
+
   const subcommand = topOptions.find((opt) => opt.type === 1);
   if (subcommand) {
     const focused = subcommand.options?.find((opt) => opt.focused);
     return {
+      subcommandGroup: null,
       subcommand: subcommand.name,
       optionName: focused?.name ?? null,
       value: typeof focused?.value === 'string' ? focused.value : '',
@@ -114,6 +128,7 @@ export function resolveAutocompleteFocus(data) {
 
   const focused = topOptions.find((opt) => opt.focused);
   return {
+    subcommandGroup: null,
     subcommand: null,
     optionName: focused?.name ?? null,
     value: typeof focused?.value === 'string' ? focused.value : '',
