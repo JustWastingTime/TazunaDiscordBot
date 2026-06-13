@@ -663,17 +663,11 @@ const GAMBACOIN_COMMAND = {
 
 const GAMBACOIN_OWNER_COMMAND = {
   name: 'gambacoin',
-  description: 'GambaCoins — give, beg, leaderboards, and owner awards',
+  description: 'Grant GambaCoins to a player (owner only)',
   type: 1,
   integration_types: [0],
   contexts: [0],
-  options: [
-    GAMBACOIN_GIVE_SUBCOMMAND,
-    GAMBACOIN_BEG_SUBCOMMAND,
-    GAMBACOIN_LEADERBOARD_SUBCOMMAND,
-    GAMBACOIN_SETEVENTCHANNEL_SUBCOMMAND,
-    GAMBACOIN_AWARD_SUBCOMMAND,
-  ],
+  options: [GAMBACOIN_AWARD_SUBCOMMAND],
 };
 
 const ALL_COMMANDS = [
