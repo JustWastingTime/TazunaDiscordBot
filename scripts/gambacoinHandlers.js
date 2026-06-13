@@ -11,6 +11,7 @@ import {
   getUserLink,
   transferGambaCoins,
 } from './clubDatabase.js';
+import { handleGambacoinSetEventChannel } from './eventHandlers.js';
 
 const BOT_OWNER_IDS = new Set(
   String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
@@ -270,6 +271,8 @@ export function dispatchGambacoinCommand(req) {
       return handleGambacoinBeg(req);
     case 'leaderboard':
       return handleGambacoinLeaderboard(req);
+    case 'seteventchannel':
+      return handleGambacoinSetEventChannel(req);
     case 'award':
       return handleGambacoinAward(req);
     default:

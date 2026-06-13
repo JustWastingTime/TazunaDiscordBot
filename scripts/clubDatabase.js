@@ -133,6 +133,8 @@ export function upsertUserLink({
       existing?.registeredGuildId ?? (registeredGuildId ? String(registeredGuildId) : null),
     gambaCoins: existing?.gambaCoins ?? STARTING_GAMBA_COINS,
     gambaWr: existing?.gambaWr ?? null,
+    openTickets: existing?.openTickets ?? [],
+    betHistory: existing?.betHistory ?? [],
     quizCorrect: existing?.quizCorrect ?? 0,
     quizWrong: existing?.quizWrong ?? 0,
     quizAccuracy: existing?.quizAccuracy ?? null,
@@ -251,6 +253,8 @@ function normalizeUserRecord(link, discordUserId) {
     registeredGuildId: link.registeredGuildId ?? null,
     gambaCoins: link.gambaCoins ?? null,
     gambaWr: link.gambaWr ?? null,
+    openTickets: Array.isArray(link.openTickets) ? link.openTickets : [],
+    betHistory: Array.isArray(link.betHistory) ? link.betHistory : [],
     quizCorrect: link.quizCorrect ?? 0,
     quizWrong: link.quizWrong ?? 0,
     quizAccuracy: link.quizAccuracy ?? null,
@@ -285,6 +289,8 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
       registeredGuildId: guildId ? String(guildId) : null,
       gambaCoins: STARTING_GAMBA_COINS,
       gambaWr: null,
+      openTickets: [],
+      betHistory: [],
       quizCorrect: 0,
       quizWrong: 0,
       quizAccuracy: null,
@@ -294,6 +300,8 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
     if (guildId && !existing.registeredGuildId) existing.registeredGuildId = String(guildId);
     if (existing.quizCorrect == null) existing.quizCorrect = 0;
     if (existing.quizWrong == null) existing.quizWrong = 0;
+    if (!Array.isArray(existing.openTickets)) existing.openTickets = [];
+    if (!Array.isArray(existing.betHistory)) existing.betHistory = [];
   }
 
   saveUserLinks(store);
@@ -446,4 +454,41 @@ export function getGambaUserRank(discordUserId, { guildId = null } = {}) {
   const board = getGambaLeaderboard({ guildId, limit: Number.MAX_SAFE_INTEGER });
   const idx = board.findIndex((entry) => entry.discordUserId === String(discordUserId));
   return idx >= 0 ? idx + 1 : null;
+}
+
+export function updateUserBettingState(discordUserId, patch) {
+  const store = loadUserLinks();
+  const key = String(discordUserId);
+  const user = store[key];
+  if (!user) return null;
+
+  if (patch.trainerName) user.trainerName = patch.trainerName;
+  if (patch.gambaCoins != null) user.gambaCoins = patch.gambaCoins;
+  if (patch.openTickets) user.openTickets = patch.openTickets;
+  if (patch.betHistory) user.betHistory = patch.betHistory;
+
+  saveUserLinks(store);
+  return normalizeUserRecord(user, key);
+}
+
+export function loadAllUsersForSettlement() {
+  const store = loadUserLinks();
+  return Object.fromEntries(
+    Object.entries(store).map(([discordUserId, link]) => [
+      discordUserId,
+      normalizeUserRecord(link, discordUserId),
+    ]),
+  );
+}
+
+export function saveAllUsersFromSettlement(usersById) {
+  const store = loadUserLinks();
+  for (const [discordUserId, user] of Object.entries(usersById)) {
+    if (!store[discordUserId]) continue;
+    store[discordUserId].gambaCoins = user.gambaCoins;
+    store[discordUserId].openTickets = user.openTickets || [];
+    store[discordUserId].betHistory = user.betHistory || [];
+    if (user.trainerName) store[discordUserId].trainerName = user.trainerName;
+  }
+  saveUserLinks(store);
 }

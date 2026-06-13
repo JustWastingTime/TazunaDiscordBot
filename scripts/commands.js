@@ -82,20 +82,94 @@ const UMA_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const EVENT_COMMAND = {
-  name: 'event',
-  description: 'Lookup an event',
+const EVENT_LOOKUP_SUBCOMMAND = {
+  type: 1,
+  name: 'lookup',
+  description: 'Look up a training event by name',
   options: [
     {
       type: 3,
       name: 'name',
       description: 'Name of the event',
-      required: true
+      required: true,
     },
   ],
+};
+
+const EVENT_POST_SUBCOMMAND = {
+  type: 1,
+  name: 'post',
+  description: 'Post a gamble event to subscribed servers (owner only)',
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Event to post',
+      required: true,
+      autocomplete: true,
+    },
+  ],
+};
+
+const EVENT_REFRESH_SUBCOMMAND = {
+  type: 1,
+  name: 'refresh',
+  description: 'Refresh posted event messages after JSON edits (owner only)',
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Event to refresh',
+      required: true,
+      autocomplete: true,
+    },
+  ],
+};
+
+const EVENT_SETTLE_SUBCOMMAND = {
+  type: 1,
+  name: 'settle',
+  description: 'Settle an event and pay out winners (owner only)',
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Event to settle',
+      required: true,
+      autocomplete: true,
+    },
+    {
+      type: 4,
+      name: 'winner',
+      description: 'Winning entry number',
+      required: true,
+      min_value: 1,
+      max_value: 18,
+    },
+  ],
+};
+
+const EVENT_COMMAND = {
+  name: 'event',
+  description: 'Training event lookup and owner gamble event tools',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
+  options: [EVENT_LOOKUP_SUBCOMMAND],
+};
+
+const EVENT_OWNER_COMMAND = {
+  name: 'event',
+  description: 'Training event lookup and owner gamble event tools',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    EVENT_LOOKUP_SUBCOMMAND,
+    EVENT_POST_SUBCOMMAND,
+    EVENT_REFRESH_SUBCOMMAND,
+    EVENT_SETTLE_SUBCOMMAND,
+  ],
 };
 
 const RACE_COMMAND = {
@@ -540,6 +614,12 @@ const GAMBACOIN_LEADERBOARD_SUBCOMMAND = {
   ],
 };
 
+const GAMBACOIN_SETEVENTCHANNEL_SUBCOMMAND = {
+  type: 1,
+  name: 'seteventchannel',
+  description: 'Receive gamble event posts in this channel (admin only)',
+};
+
 const GAMBACOIN_AWARD_SUBCOMMAND = {
   type: 1,
   name: 'award',
@@ -571,6 +651,7 @@ const GAMBACOIN_COMMAND = {
     GAMBACOIN_GIVE_SUBCOMMAND,
     GAMBACOIN_BEG_SUBCOMMAND,
     GAMBACOIN_LEADERBOARD_SUBCOMMAND,
+    GAMBACOIN_SETEVENTCHANNEL_SUBCOMMAND,
   ],
 };
 
@@ -584,6 +665,7 @@ const GAMBACOIN_OWNER_COMMAND = {
     GAMBACOIN_GIVE_SUBCOMMAND,
     GAMBACOIN_BEG_SUBCOMMAND,
     GAMBACOIN_LEADERBOARD_SUBCOMMAND,
+    GAMBACOIN_SETEVENTCHANNEL_SUBCOMMAND,
     GAMBACOIN_AWARD_SUBCOMMAND,
   ],
 };
@@ -599,6 +681,7 @@ const ALL_COMMANDS = [
   CLUB_COMMAND,
   QUIZ_COMMAND,
   GAMBACOIN_COMMAND,
+  EVENT_COMMAND,
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,
@@ -612,9 +695,12 @@ InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
 
 const ownerGuildId = String(process.env.BOT_OWNER_GUILD_ID || '').trim();
 if (ownerGuildId) {
-  InstallGuildCommands(process.env.APP_ID, ownerGuildId, [GAMBACOIN_OWNER_COMMAND]);
+  InstallGuildCommands(process.env.APP_ID, ownerGuildId, [
+    GAMBACOIN_OWNER_COMMAND,
+    EVENT_OWNER_COMMAND,
+  ]);
 } else {
   console.warn(
-    'BOT_OWNER_GUILD_ID is not set — /gambacoin award will only be available after you set it and run npm run register.',
+    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award and /event post|refresh|settle will not register.',
   );
 }

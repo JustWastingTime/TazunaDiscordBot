@@ -54,6 +54,17 @@ import {
   handleGambaDonateComponent,
   isGambacoinCommand,
 } from './gambacoinHandlers.js';
+import {
+  buildEventAutocomplete,
+  dispatchEventCommand,
+  handleGambaBetClick,
+  handleGambaBetComponent,
+  handleGambaWagerClick,
+  handleGambaWagerComponent,
+  isEventGamblingCommand,
+} from './eventHandlers.js';
+import { startEventCron } from './eventCron.js';
+import { reloadEventsFromDisk } from './eventService.js';
 import { resumeActiveQuizzes } from './quizRunner.js';
 
 import path from 'path';
@@ -377,6 +388,14 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       });
     }
 
+    if (data.name === 'event' && focus.optionName === 'name') {
+      const choices = buildEventAutocomplete(focus.value);
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices },
+      });
+    }
+
     if (data.name === 'skill' && focus.optionName === 'name') {
       const query = focus.value.trim().toLowerCase();
 
@@ -452,9 +471,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       (async () => {
         try {
           await updateCache();
+          reloadEventsFromDisk();
           await sendFollowup(token, {
             flags: InteractionResponseFlags.EPHEMERAL,
-            content: '✅ Cache refreshed.'
+            content: '✅ Cache refreshed. Event JSON definitions reloaded — use `/event refresh` to push odds changes.',
           });
         } catch (err) {
           console.error('Manual cache refresh failed:', err);
@@ -1232,6 +1252,13 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
     }
 
+    if (isEventGamblingCommand(name)) {
+      const eventResult = await dispatchEventCommand(req);
+      if (eventResult) {
+        return res.send(eventResult);
+      }
+    }
+
     if (isClubCommand(name)) {
       const clubResult = await dispatchClubCommand(name, req);
       if (clubResult?.deferred) {
@@ -1284,6 +1311,45 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           data: {
             flags: InteractionResponseFlags.EPHEMERAL,
             content: '❌ Something went wrong processing your answer.',
+          },
+        });
+      }
+    }
+
+    const gambaWager = handleGambaWagerComponent(custom_id);
+    if (gambaWager) {
+      try {
+        const response = await handleGambaWagerClick(
+          req,
+          gambaWager.eventId,
+          gambaWager.entryNumber,
+          gambaWager.amount,
+        );
+        return res.send(response);
+      } catch (err) {
+        console.error('Gamba wager handler failed:', err.message);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong placing your bet.',
+          },
+        });
+      }
+    }
+
+    const gambaBet = handleGambaBetComponent(custom_id);
+    if (gambaBet) {
+      try {
+        const response = await handleGambaBetClick(req, gambaBet.eventId, gambaBet.entryNumber);
+        return res.send(response);
+      } catch (err) {
+        console.error('Gamba bet handler failed:', err.message);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong opening the wager menu.',
           },
         });
       }
@@ -1875,5 +1941,6 @@ app.listen(PORT, () => {
   resumeActiveQuizzes().catch((err) => {
     console.error('Failed to resume active quizzes:', err.message);
   });
+  startEventCron();
   postOpsNotice('✅ Tazuna bot started', `Listening on port ${PORT}`, 0x2ECC71);
 });
