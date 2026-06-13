@@ -133,6 +133,8 @@ export function upsertUserLink({
       existing?.registeredGuildId ?? (registeredGuildId ? String(registeredGuildId) : null),
     gambaCoins: existing?.gambaCoins ?? STARTING_GAMBA_COINS,
     gambaWr: existing?.gambaWr ?? null,
+    gambaWins: existing?.gambaWins ?? 0,
+    gambaLosses: existing?.gambaLosses ?? 0,
     openTickets: existing?.openTickets ?? [],
     betHistory: existing?.betHistory ?? [],
     quizCorrect: existing?.quizCorrect ?? 0,
@@ -242,6 +244,13 @@ function formatQuizAccuracy(correct, wrong) {
   return `${pct}% (${correct}/${total})`;
 }
 
+export function formatGambaWr(wins, losses) {
+  const total = (wins || 0) + (losses || 0);
+  if (total <= 0) return null;
+  const pct = Math.round((wins / total) * 100);
+  return `${pct}% (${wins}/${total})`;
+}
+
 function normalizeUserRecord(link, discordUserId) {
   return {
     discordUserId: String(link.discordUserId ?? discordUserId),
@@ -253,6 +262,8 @@ function normalizeUserRecord(link, discordUserId) {
     registeredGuildId: link.registeredGuildId ?? null,
     gambaCoins: link.gambaCoins ?? null,
     gambaWr: link.gambaWr ?? null,
+    gambaWins: link.gambaWins ?? 0,
+    gambaLosses: link.gambaLosses ?? 0,
     openTickets: Array.isArray(link.openTickets) ? link.openTickets : [],
     betHistory: Array.isArray(link.betHistory) ? link.betHistory : [],
     quizCorrect: link.quizCorrect ?? 0,
@@ -289,6 +300,8 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
       registeredGuildId: guildId ? String(guildId) : null,
       gambaCoins: STARTING_GAMBA_COINS,
       gambaWr: null,
+      gambaWins: 0,
+      gambaLosses: 0,
       openTickets: [],
       betHistory: [],
       quizCorrect: 0,
@@ -300,6 +313,8 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
     if (guildId && !existing.registeredGuildId) existing.registeredGuildId = String(guildId);
     if (existing.quizCorrect == null) existing.quizCorrect = 0;
     if (existing.quizWrong == null) existing.quizWrong = 0;
+    if (existing.gambaWins == null) existing.gambaWins = 0;
+    if (existing.gambaLosses == null) existing.gambaLosses = 0;
     if (!Array.isArray(existing.openTickets)) existing.openTickets = [];
     if (!Array.isArray(existing.betHistory)) existing.betHistory = [];
   }
@@ -488,6 +503,9 @@ export function saveAllUsersFromSettlement(usersById) {
     store[discordUserId].gambaCoins = user.gambaCoins;
     store[discordUserId].openTickets = user.openTickets || [];
     store[discordUserId].betHistory = user.betHistory || [];
+    store[discordUserId].gambaWins = user.gambaWins ?? 0;
+    store[discordUserId].gambaLosses = user.gambaLosses ?? 0;
+    store[discordUserId].gambaWr = user.gambaWr ?? null;
     if (user.trainerName) store[discordUserId].trainerName = user.trainerName;
   }
   saveUserLinks(store);

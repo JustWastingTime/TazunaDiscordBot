@@ -1,3 +1,5 @@
+import { buildGambleProfileFields } from './eventGambling.js';
+
 const EMPTY_FAN_STATS = {
   dailyFans: [],
   monthlyGain: 0,
@@ -407,7 +409,7 @@ function formatFestField(value) {
 
 export function buildUnlinkedProfileEmbed(link) {
   const name = link?.trainerName || 'Trainer';
-  return {
+  const embed = {
     color: 0xF1C40F,
     title: `${name} — Trainer Profile`,
     description:
@@ -428,8 +430,13 @@ export function buildUnlinkedProfileEmbed(link) {
         value: formatFestField(link?.quizAccuracy),
         inline: true,
       },
+      ...buildGambleProfileFields({
+        openTickets: link?.openTickets,
+        betHistory: link?.betHistory,
+      }),
     ],
   };
+  return embed;
 }
 
 export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) {
@@ -479,6 +486,12 @@ export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) 
         value: formatFestField(festa?.quizAccuracy),
         inline: true,
       },
+      ...(festa
+        ? buildGambleProfileFields({
+            openTickets: festa.openTickets,
+            betHistory: festa.betHistory,
+          })
+        : []),
     ],
   };
 

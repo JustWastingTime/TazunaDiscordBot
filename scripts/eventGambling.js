@@ -1,8 +1,9 @@
 import { randomUUID } from 'crypto';
-import { getUserLink, listGambaWalletUsers } from './clubDatabase.js';
+import { formatGambaWr, getUserLink, listGambaWalletUsers } from './clubDatabase.js';
 
 export const BET_AMOUNTS = [10, 50, 100, 500];
 export const BET_HISTORY_LIMIT = 50;
+export const PROFILE_HISTORY = 5;
 
 export function formatCoins(amount) {
   return Math.trunc(amount).toLocaleString('en-US');
@@ -143,6 +144,11 @@ export function settleEvent(usersById, event, winningEntryNumber) {
     }
 
     user.openTickets = (user.openTickets || []).filter((ticket) => ticket.eventId !== event.id);
+
+    if (won) user.gambaWins = (user.gambaWins || 0) + 1;
+    else user.gambaLosses = (user.gambaLosses || 0) + 1;
+    user.gambaWr = formatGambaWr(user.gambaWins, user.gambaLosses);
+
     results.push({
       discordUserId,
       displayName: user.trainerName || 'Trainer',
@@ -191,4 +197,83 @@ export function getWalletUser(discordUserId) {
     openTickets: link.openTickets || [],
     betHistory: link.betHistory || [],
   };
+}
+
+export function groupTicketsByEvent(tickets) {
+  const groups = new Map();
+  for (const ticket of tickets || []) {
+    const key = ticket.eventId || ticket.eventName;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        eventName: ticket.eventName,
+        entryNumber: ticket.entryNumber,
+        entryName: ticket.entryName,
+        amount: 0,
+      });
+    }
+    groups.get(key).amount += ticket.amount;
+  }
+  return [...groups.values()];
+}
+
+export function groupHistoryByEvent(history) {
+  const groups = new Map();
+  for (const entry of history || []) {
+    const key = entry.eventId || entry.eventName;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        eventName: entry.eventName,
+        entryNumber: entry.entryNumber,
+        entryName: entry.entryName,
+        amount: 0,
+        payout: 0,
+        result: entry.result,
+        settledAt: entry.settledAt,
+      });
+    }
+    const group = groups.get(key);
+    group.amount += entry.amount;
+    group.payout += entry.payout || 0;
+    if (new Date(entry.settledAt) > new Date(group.settledAt)) {
+      group.settledAt = entry.settledAt;
+    }
+  }
+  return [...groups.values()].sort(
+    (a, b) => new Date(b.settledAt).getTime() - new Date(a.settledAt).getTime(),
+  );
+}
+
+export function buildGambleProfileFields({ openTickets = [], betHistory = [] } = {}) {
+  const groupedOpen = groupTicketsByEvent(openTickets);
+  const openValue = groupedOpen.length
+    ? groupedOpen
+        .map(
+          (ticket) =>
+            `• ${ticket.eventName} — #${ticket.entryNumber} ${ticket.entryName}: ${formatCoins(ticket.amount)}`,
+        )
+        .join('\n')
+    : '_None_';
+
+  const history = groupHistoryByEvent(betHistory).slice(0, PROFILE_HISTORY);
+  const historyValue = history.length
+    ? history
+        .map((entry) => {
+          const icon = entry.result === 'win' ? '✅' : '❌';
+          const pay =
+            entry.result === 'win'
+              ? `+${formatCoins(entry.payout)}`
+              : `-${formatCoins(entry.amount)}`;
+          return `${icon} ${entry.eventName} #${entry.entryNumber} ${entry.entryName} — ${pay}`;
+        })
+        .join('\n')
+    : '_No settled bets yet_';
+
+  return [
+    { name: '🎰 Open Tickets', value: openValue.slice(0, 1024), inline: false },
+    {
+      name: `📜 Last ${PROFILE_HISTORY} Results`,
+      value: historyValue.slice(0, 1024),
+      inline: false,
+    },
+  ];
 }

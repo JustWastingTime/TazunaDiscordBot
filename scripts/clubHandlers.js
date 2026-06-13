@@ -483,6 +483,8 @@ export async function handleProfile(req) {
             gambaCoins: link.gambaCoins,
             gambaWr: link.gambaWr,
             quizAccuracy: link.quizAccuracy,
+            openTickets: link.openTickets,
+            betHistory: link.betHistory,
           },
         });
         await sendFollowup({ embeds: [embed] });
