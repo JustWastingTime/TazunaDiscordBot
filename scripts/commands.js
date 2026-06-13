@@ -96,7 +96,7 @@ const EVENT_LOOKUP_SUBCOMMAND = {
   ],
 };
 
-const EVENT_POST_SUBCOMMAND = {
+const GAMBA_EVENT_POST_SUBCOMMAND = {
   type: 1,
   name: 'post',
   description: 'Post a gamble event to subscribed servers (owner only)',
@@ -111,7 +111,7 @@ const EVENT_POST_SUBCOMMAND = {
   ],
 };
 
-const EVENT_REFRESH_SUBCOMMAND = {
+const GAMBA_EVENT_REFRESH_SUBCOMMAND = {
   type: 1,
   name: 'refresh',
   description: 'Refresh posted event messages after JSON edits (owner only)',
@@ -126,7 +126,7 @@ const EVENT_REFRESH_SUBCOMMAND = {
   ],
 };
 
-const EVENT_SETTLE_SUBCOMMAND = {
+const GAMBA_EVENT_SETTLE_SUBCOMMAND = {
   type: 1,
   name: 'settle',
   description: 'Settle an event and pay out winners (owner only)',
@@ -149,27 +149,33 @@ const EVENT_SETTLE_SUBCOMMAND = {
   ],
 };
 
+const GAMBA_EVENT_GROUP = {
+  type: 2,
+  name: 'event',
+  description: 'Post, refresh, and settle gamble events',
+  options: [
+    GAMBA_EVENT_POST_SUBCOMMAND,
+    GAMBA_EVENT_REFRESH_SUBCOMMAND,
+    GAMBA_EVENT_SETTLE_SUBCOMMAND,
+  ],
+};
+
 const EVENT_COMMAND = {
   name: 'event',
-  description: 'Training event lookup and owner gamble event tools',
+  description: 'Look up a training event',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
   options: [EVENT_LOOKUP_SUBCOMMAND],
 };
 
-const EVENT_OWNER_COMMAND = {
-  name: 'event',
-  description: 'Training event lookup and owner gamble event tools',
+const GAMBA_OWNER_COMMAND = {
+  name: 'gamba',
+  description: 'Owner gamble event tools',
   type: 1,
   integration_types: [0],
   contexts: [0],
-  options: [
-    EVENT_LOOKUP_SUBCOMMAND,
-    EVENT_POST_SUBCOMMAND,
-    EVENT_REFRESH_SUBCOMMAND,
-    EVENT_SETTLE_SUBCOMMAND,
-  ],
+  options: [GAMBA_EVENT_GROUP],
 };
 
 const RACE_COMMAND = {
@@ -697,10 +703,10 @@ const ownerGuildId = String(process.env.BOT_OWNER_GUILD_ID || '').trim();
 if (ownerGuildId) {
   InstallGuildCommands(process.env.APP_ID, ownerGuildId, [
     GAMBACOIN_OWNER_COMMAND,
-    EVENT_OWNER_COMMAND,
+    GAMBA_OWNER_COMMAND,
   ]);
 } else {
   console.warn(
-    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award and /event post|refresh|settle will not register.',
+    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award and /gamba event post|refresh|settle will not register.',
   );
 }

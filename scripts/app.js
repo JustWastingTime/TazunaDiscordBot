@@ -57,11 +57,13 @@ import {
 import {
   buildEventAutocomplete,
   dispatchEventCommand,
+  dispatchGambaCommand,
   handleGambaBetClick,
   handleGambaBetComponent,
   handleGambaWagerClick,
   handleGambaWagerComponent,
   isEventGamblingCommand,
+  isGambaCommand,
 } from './eventHandlers.js';
 import { startEventCron } from './eventCron.js';
 import { reloadEventsFromDisk } from './eventService.js';
@@ -388,7 +390,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       });
     }
 
-    if (data.name === 'event' && focus.optionName === 'name') {
+    if (data.name === 'gamba' && focus.optionName === 'name') {
       const choices = buildEventAutocomplete(focus.value);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
@@ -474,7 +476,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           reloadEventsFromDisk();
           await sendFollowup(token, {
             flags: InteractionResponseFlags.EPHEMERAL,
-            content: '✅ Cache refreshed. Event JSON definitions reloaded — use `/event refresh` to push odds changes.',
+            content: '✅ Cache refreshed. Event JSON definitions reloaded — use `/gamba event refresh` to push odds changes.',
           });
         } catch (err) {
           console.error('Manual cache refresh failed:', err);
@@ -1249,6 +1251,13 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       const gambacoinResult = await dispatchGambacoinCommand(req);
       if (gambacoinResult) {
         return res.send(gambacoinResult);
+      }
+    }
+
+    if (isGambaCommand(name)) {
+      const gambaResult = await dispatchGambaCommand(req);
+      if (gambaResult) {
+        return res.send(gambaResult);
       }
     }
 

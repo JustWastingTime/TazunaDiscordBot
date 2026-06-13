@@ -72,8 +72,25 @@ function getSubcommandOptions(req) {
   return subcommand?.options ?? [];
 }
 
+function getGambaEventOptions(req) {
+  const group = req.body.data.options?.find((opt) => opt.type === 2 && opt.name === 'event');
+  const subcommand = group?.options?.find((opt) => opt.type === 1);
+  return subcommand?.options ?? [];
+}
+
+function getGambaEventSubcommand(req) {
+  const group = req.body.data.options?.find((opt) => opt.type === 2 && opt.name === 'event');
+  return group?.options?.find((opt) => opt.type === 1)?.name ?? null;
+}
+
 function getOptionValue(req, name) {
   const value = getSubcommandOptions(req).find((opt) => opt.name === name)?.value;
+  if (value === undefined || value === null) return undefined;
+  return value;
+}
+
+function getGambaEventOptionValue(req, name) {
+  const value = getGambaEventOptions(req).find((opt) => opt.name === name)?.value;
   if (value === undefined || value === null) return undefined;
   return value;
 }
@@ -111,7 +128,7 @@ export async function handleEventPost(req) {
   const denied = requireOwnerOnOwnerGuild(req);
   if (denied) return denied;
 
-  const eventId = getOptionValue(req, 'name');
+  const eventId = getGambaEventOptionValue(req, 'name');
   if (!eventId) return ephemeral('❌ Pick an event to post.');
 
   reloadEventsFromDisk();
@@ -126,7 +143,7 @@ export async function handleEventRefresh(req) {
   const denied = requireOwnerOnOwnerGuild(req);
   if (denied) return denied;
 
-  const eventId = getOptionValue(req, 'name');
+  const eventId = getGambaEventOptionValue(req, 'name');
   if (!eventId) return ephemeral('❌ Pick an event to refresh.');
 
   reloadEventsFromDisk();
@@ -142,8 +159,8 @@ export async function handleEventSettle(req) {
   const denied = requireOwnerOnOwnerGuild(req);
   if (denied) return denied;
 
-  const eventId = getOptionValue(req, 'name');
-  const winner = Number(getOptionValue(req, 'winner'));
+  const eventId = getGambaEventOptionValue(req, 'name');
+  const winner = Number(getGambaEventOptionValue(req, 'winner'));
   if (!eventId) return ephemeral('❌ Pick an event to settle.');
   if (!Number.isFinite(winner) || winner < 1) return ephemeral('❌ Enter a valid winning number.');
 
@@ -265,6 +282,14 @@ export function dispatchEventCommand(req) {
   switch (subcommand) {
     case 'lookup':
       return handleEventLookup(req);
+    default:
+      return null;
+  }
+}
+
+export function dispatchGambaCommand(req) {
+  const subcommand = getGambaEventSubcommand(req);
+  switch (subcommand) {
     case 'post':
       return handleEventPost(req);
     case 'refresh':
@@ -278,4 +303,8 @@ export function dispatchEventCommand(req) {
 
 export function isEventGamblingCommand(name) {
   return name === 'event';
+}
+
+export function isGambaCommand(name) {
+  return name === 'gamba';
 }
