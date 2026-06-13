@@ -79,7 +79,7 @@
     {   "id": "100102 - Special Week Summer",
         "character_name": "Special Week",
         "type": "Summer",
-        "costume": "Hopping ♪ Vitamin Heart",
+        "costume": "Hopp'n♪Happy Heart",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -452,7 +452,7 @@
     {   "id": "100402 - Maruzensky Summer",
         "character_name": "Maruzensky",
         "type": "Summer",
-        "costume": "Blasting Off ☆ Summer Night",
+        "costume": "Hot☆Summer Night",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -601,7 +601,7 @@
     },
     {   "id": "100502 - Fuji Kiseki Ballroom",
         "character_name": "Fuji Kiseki",
-        "type": "Original",
+        "type": "Ballroom",
         "costume": "Succès Étoilé",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -2017,7 +2017,7 @@
     },
     {   "id": "101702 - Symboli Rudolf Festival",
         "character_name": "Symboli Rudolf",
-        "type": "Original",
+        "type": "Festival",
         "costume": "Archer by Moonlight",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -3728,7 +3728,7 @@
     {   "id": "103201 - Agnes Tachyon",
         "character_name": "Agnes Tachyon",
         "type": "Original",
-        "costume": "tach-nology",
+        "costume": "Tach-nology",
         "rarity": "⭐",
         "stat_bonuses": [
             {
@@ -4382,7 +4382,7 @@
     },
     {   "id": "103801 - Curren Chan Wedding",
         "character_name": "Curren Chan",
-        "type": "Original",
+        "type": "Wedding",
         "costume": "Ma Chérie of the New Moon",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -4529,7 +4529,7 @@
     {   "id": "104001 - Gold City",
         "character_name": "Gold City",
         "type": "Original",
-        "costume": "Authentic 1928",
+        "costume": "Authentic / 1928",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -5467,7 +5467,7 @@
     },
     {   "id": "105202 - Haru Urara New Year",
         "character_name": "Haru Urara",
-        "type": "New year",
+        "type": "New Year",
         "costume": "New Year ♪ New Urara!",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -5689,7 +5689,7 @@
     {   "id": "105801 - Meisho Doto",
         "character_name": "Meisho Doto",
         "type": "Original",
-        "costume": "Blue/Raging",
+        "costume": "Turbulent Blue",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -5854,7 +5854,7 @@
     },
     {   "id": "105901 - Mejiro Dober Camping",
         "character_name": "Mejiro Dober",
-        "type": "Original",
+        "type": "Camping",
         "costume": "Sapphire Sojourn",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
