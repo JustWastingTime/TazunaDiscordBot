@@ -208,6 +208,7 @@ export async function settleEventEverywhere(eventId, winningEntryNumber) {
     status: 'settled',
     winner: winningEntryNumber,
     settledAt: new Date().toISOString(),
+    settlementResults: result.results,
   });
   await refreshEventEverywhere(event.id);
 

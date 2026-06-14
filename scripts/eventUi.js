@@ -166,15 +166,19 @@ export function buildSettleSummaryEmbed(event, result) {
     '',
   ];
 
-  const winners = result.results.filter((entry) => entry.won);
-  const losers = result.results.filter((entry) => !entry.won);
+  const winners = result.results
+    .filter((entry) => entry.won)
+    .sort((a, b) => b.netGain - a.netGain || b.totalPayout - a.totalPayout);
+  const losers = result.results
+    .filter((entry) => !entry.won)
+    .sort((a, b) => a.netGain - b.netGain || b.totalWagered - a.totalWagered);
 
   if (winners.length) {
     lines.push('**Winners**');
     for (const entry of winners.slice(0, 15)) {
       lines.push(
-        `✅ **${entry.displayName}** — #${entry.entryNumber} ${entry.entryName}`,
-        `   Wagered ${entry.totalWagered} → won ${entry.totalPayout} (${entry.netGain >= 0 ? '+' : ''}${entry.netGain} net)`,
+        `✅ **${entry.displayName}** — +${entry.netGain.toLocaleString('en-US')} coins`,
+        `   #${entry.entryNumber} ${entry.entryName} · wagered ${entry.totalWagered.toLocaleString('en-US')} → won ${entry.totalPayout.toLocaleString('en-US')}`,
       );
     }
     if (winners.length > 15) lines.push(`_…and ${winners.length - 15} more winners._`);
@@ -184,9 +188,10 @@ export function buildSettleSummaryEmbed(event, result) {
   if (losers.length) {
     lines.push('**Losers**');
     for (const entry of losers.slice(0, 10)) {
+      const loss = Math.max(0, entry.totalWagered - entry.totalPayout);
       lines.push(
-        `❌ **${entry.displayName}** — #${entry.entryNumber} ${entry.entryName}`,
-        `   Lost ${entry.totalWagered} (${entry.netGain} net)`,
+        `❌ **${entry.displayName}** — -${loss.toLocaleString('en-US')} coins`,
+        `   #${entry.entryNumber} ${entry.entryName}`,
       );
     }
     if (losers.length > 10) lines.push(`_…and ${losers.length - 10} more losers._`);

@@ -1,4 +1,5 @@
 import {
+  collectEventSettlementResults,
   formatCoins,
   formatCutoff,
   getEntry,
@@ -6,6 +7,9 @@ import {
 } from './eventGambling.js';
 
 export const BETTOR_LINES_PER_ENTRY = 8;
+export const SETTLEMENT_WINNERS_SHOWN = 20;
+export const SETTLEMENT_LOSERS_SHOWN = 15;
+const EMBED_DESCRIPTION_LIMIT = 3900;
 
 function escapeMarkdown(value) {
   return String(value).replace(/([*_`~|\\])/g, '\\$1');
@@ -54,8 +58,100 @@ function formatBettorLine(bettor) {
   return `• **${escapeMarkdown(bettor.displayName)}** — ${detail} (${formatCoins(total)} total)`;
 }
 
+function formatSettlementWinnerLine(entry) {
+  return `• **${escapeMarkdown(entry.displayName)}** — +${formatCoins(entry.netGain)} coins`;
+}
+
+function formatSettlementLoserLine(entry) {
+  const loss = Math.max(0, entry.totalWagered - entry.totalPayout);
+  return (
+    `• **${escapeMarkdown(entry.displayName)}** — -${formatCoins(loss)} coins ` +
+    `(#${entry.entryNumber} ${entry.entryName})`
+  );
+}
+
+function appendSettlementSection(lines, {
+  title,
+  entries,
+  formatLine,
+  maxVisible,
+}) {
+  if (!entries.length) return maxVisible;
+
+  lines.push(title);
+  let visibleCount = Math.min(maxVisible, entries.length);
+  while (visibleCount > 0) {
+    const sectionLines = entries.slice(0, visibleCount).map(formatLine);
+    const hidden = entries.length - visibleCount;
+    const candidate = [
+      ...lines,
+      ...sectionLines,
+      ...(hidden > 0 ? [`_…and ${hidden} more._`] : []),
+    ];
+    if (candidate.join('\n').length <= EMBED_DESCRIPTION_LIMIT || visibleCount === 1) {
+      lines.push(...sectionLines);
+      if (hidden > 0) {
+        lines.push(`_…and ${hidden} more._`);
+      }
+      return visibleCount;
+    }
+    visibleCount -= 1;
+  }
+
+  return 0;
+}
+
+function buildSettledResultsLines(event, usersById) {
+  const results = collectEventSettlementResults(
+    usersById,
+    event.id,
+    event.settlementResults,
+  );
+  if (!results.length) {
+    return { lines: ['_No bets were placed for this event._'], bettorCount: 0 };
+  }
+
+  const winners = results
+    .filter((entry) => entry.won)
+    .sort((a, b) => b.netGain - a.netGain || b.totalPayout - a.totalPayout);
+  const losers = results
+    .filter((entry) => !entry.won)
+    .sort(
+      (a, b) =>
+        a.netGain - b.netGain ||
+        b.totalWagered - a.totalWagered,
+    );
+
+  const lines = [];
+  const winnerEntry = getEntry(event, event.winner);
+  const winnersTitle = winnerEntry
+    ? `**Winners** (#${event.winner} ${winnerEntry.name})`
+    : '**Winners**';
+
+  appendSettlementSection(lines, {
+    title: winnersTitle,
+    entries: winners,
+    formatLine: formatSettlementWinnerLine,
+    maxVisible: SETTLEMENT_WINNERS_SHOWN,
+  });
+
+  if (winners.length && losers.length) {
+    lines.push('');
+  }
+
+  appendSettlementSection(lines, {
+    title: '**Biggest Losers**',
+    entries: losers,
+    formatLine: formatSettlementLoserLine,
+    maxVisible: SETTLEMENT_LOSERS_SHOWN,
+  });
+
+  return { lines, bettorCount: results.length };
+}
+
 export function buildEventBetsEmbed(event, usersById) {
-  const groups = collectEventBets(usersById, event.id);
+  const phase = getEventPhase(event);
+  const groups = phase === 'settled' ? [] : collectEventBets(usersById, event.id);
   let totalPool = 0;
   let bettorCount = 0;
 
@@ -67,7 +163,7 @@ export function buildEventBetsEmbed(event, usersById) {
   }
 
   const lines = [];
-  switch (getEventPhase(event)) {
+  switch (phase) {
     case 'settled': {
       const winner = getEntry(event, event.winner);
       lines.push(`🏁 **Settled** — Winner: **#${event.winner} ${winner?.name || '?'}**`, '');
@@ -85,7 +181,11 @@ export function buildEventBetsEmbed(event, usersById) {
 
   lines.push('_One horse per bettor per event._', '');
 
-  if (!groups.length) {
+  if (phase === 'settled') {
+    const settled = buildSettledResultsLines(event, usersById);
+    lines.push(...settled.lines);
+    bettorCount = settled.bettorCount;
+  } else if (!groups.length) {
     lines.push('_No bets placed yet._');
   } else {
     for (const group of groups) {
@@ -110,19 +210,24 @@ export function buildEventBetsEmbed(event, usersById) {
   }
 
   let description = lines.join('\n').trim();
-  if (description.length > 3900) {
-    description = `${description.slice(0, 3880).trimEnd()}…`;
+  if (description.length > EMBED_DESCRIPTION_LIMIT) {
+    description = `${description.slice(0, EMBED_DESCRIPTION_LIMIT - 20).trimEnd()}…`;
   }
+
+  const footerText =
+    phase === 'settled'
+      ? bettorCount
+        ? `${bettorCount} bettor${bettorCount === 1 ? '' : 's'} settled`
+        : 'Event settled'
+      : groups.length
+        ? `${formatCoins(totalPool)} coins across ${bettorCount} pick${bettorCount === 1 ? '' : 's'}`
+        : 'Updates when players bet';
 
   return {
     color: event.status === 'settled' ? 0x57f287 : 0x5865f2,
     title: `📊 ${event.name} — Live Bets`,
     description,
-    footer: {
-      text: groups.length
-        ? `${formatCoins(totalPool)} coins across ${bettorCount} pick${bettorCount === 1 ? '' : 's'}`
-        : 'Updates when players bet',
-    },
+    footer: { text: footerText },
     timestamp: new Date().toISOString(),
   };
 }

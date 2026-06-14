@@ -175,6 +175,39 @@ export function settleEvent(usersById, event, winningEntryNumber) {
   };
 }
 
+export function collectEventSettlementResults(usersById, eventId, storedResults = null) {
+  if (Array.isArray(storedResults) && storedResults.length) {
+    return storedResults.map((entry) => ({ ...entry }));
+  }
+
+  const byUser = new Map();
+  for (const [discordUserId, user] of Object.entries(usersById || {})) {
+    const entries = (user.betHistory || []).filter((item) => item.eventId === eventId);
+    if (!entries.length) continue;
+
+    let totalWagered = 0;
+    let totalPayout = 0;
+    for (const entry of entries) {
+      totalWagered += entry.amount;
+      totalPayout += entry.payout || 0;
+    }
+
+    const won = entries.some((item) => item.result === 'win');
+    byUser.set(discordUserId, {
+      discordUserId,
+      displayName: user.trainerName || 'Trainer',
+      entryNumber: entries[0].entryNumber,
+      entryName: entries[0].entryName,
+      totalWagered,
+      totalPayout,
+      won,
+      netGain: totalPayout - totalWagered,
+    });
+  }
+
+  return [...byUser.values()];
+}
+
 export function collectAllUsersForBets() {
   const users = {};
   for (const link of listGambaWalletUsers()) {

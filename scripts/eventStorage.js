@@ -71,6 +71,7 @@ function mergeEvent(definition, runtime = {}) {
     status,
     winner: runtime.winner ?? null,
     settledAt: runtime.settledAt ?? null,
+    settlementResults: Array.isArray(runtime.settlementResults) ? runtime.settlementResults : null,
     closedAt: runtime.closedAt ?? null,
     postedAt: runtime.postedAt ?? null,
     entries: definition.entries,
