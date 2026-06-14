@@ -10,7 +10,9 @@ import {
 import {
   deleteChannelMessage,
   editChannelMessage,
+  isTransientDiscordError,
   sendChannelMessage,
+  summarizeDiscordError,
 } from './quizDiscord.js';
 import { getGuildQuizRoleId } from './quizGuild.js';
 import * as quiz from './quizService.js';
@@ -40,12 +42,66 @@ function isChannelUnavailableError(err) {
   return message.includes('50001') || message.includes('50013') || message.includes('10003');
 }
 
+function revertPendingRound(guildId) {
+  return updateQuizState((state) => {
+    const current = state[guildId];
+    if (!current?.round) return true;
+
+    const questionId = current.round.questionId;
+    if (questionId) {
+      current.usedQuestionIds = (current.usedQuestionIds || []).filter((id) => id !== questionId);
+    }
+    current.roundCount = Math.max(0, (current.roundCount || 1) - 1);
+    current.round = null;
+    return true;
+  });
+}
+
+function scheduleNextRound(guildId, delayMs = quiz.BETWEEN_ROUNDS_MS) {
+  cancelTimer(betweenRoundTimers, guildId);
+  const timer = setTimeout(() => {
+    beginRound(guildId).catch((err) => {
+      console.error('Failed to start next quiz round:', summarizeDiscordError(err));
+      scheduleRoundRecovery(guildId);
+    });
+  }, delayMs);
+  betweenRoundTimers.set(guildId, timer);
+}
+
+function scheduleRoundRecovery(guildId, attempt = 0) {
+  const active = getActiveQuiz(guildId);
+  if (!active || active.status !== 'active') return;
+
+  if (attempt >= 5) {
+    abortQuiz(guildId, 'too many Discord failures while posting quiz rounds').catch((err) => {
+      console.error('Failed to abort quiz after recovery attempts:', summarizeDiscordError(err));
+    });
+    return;
+  }
+
+  cancelTimer(betweenRoundTimers, guildId);
+  const delayMs = Math.min(30_000, 3000 * (attempt + 1));
+  console.warn(`Scheduling quiz round recovery for guild ${guildId} in ${delayMs}ms (attempt ${attempt + 1})`);
+
+  const timer = setTimeout(() => {
+    beginRound(guildId).catch((err) => {
+      console.error('Quiz round recovery failed:', summarizeDiscordError(err));
+      scheduleRoundRecovery(guildId, attempt + 1);
+    });
+  }, delayMs);
+  betweenRoundTimers.set(guildId, timer);
+}
+
 async function safeChannelSend(channelId, payload, context) {
   try {
     return await sendChannelMessage(channelId, payload);
   } catch (err) {
     if (isChannelUnavailableError(err)) {
-      console.warn(`${context}: channel unavailable (${err.message})`);
+      console.warn(`${context}: channel unavailable (${summarizeDiscordError(err)})`);
+      return null;
+    }
+    if (isTransientDiscordError(err)) {
+      console.warn(`${context}: transient Discord error (${summarizeDiscordError(err)})`);
       return null;
     }
     throw err;
@@ -177,7 +233,7 @@ export async function finishRound(guildId) {
     };
     await editChannelMessage(active.channelId, active.round.messageId, editPayload);
   } catch (err) {
-    console.error('Failed to edit quiz round message:', err.message);
+    console.error('Failed to edit quiz round message:', summarizeDiscordError(err));
     await safeChannelSend(
       active.channelId,
       { embeds: [quiz.buildRoundEndEmbed(active, question)] },
@@ -213,12 +269,7 @@ export async function finishRound(guildId) {
     return;
   }
 
-  const timer = setTimeout(() => {
-    beginRound(guildId).catch((err) => {
-      console.error('Failed to start next quiz round:', err.message);
-    });
-  }, quiz.BETWEEN_ROUNDS_MS);
-  betweenRoundTimers.set(guildId, timer);
+  scheduleNextRound(guildId);
 }
 
 function scheduleRoundEnd(guildId) {
@@ -231,7 +282,8 @@ function scheduleRoundEnd(guildId) {
   const delay = Math.max(0, remaining);
   const timer = setTimeout(() => {
     finishRound(guildId).catch((err) => {
-      console.error('Failed to finish quiz round:', err.message);
+      console.error('Failed to finish quiz round:', summarizeDiscordError(err));
+      scheduleRoundRecovery(guildId);
     });
   }, delay);
   roundTimers.set(guildId, timer);
@@ -242,6 +294,15 @@ export async function beginRound(guildId) {
 
   const activeQuiz = getActiveQuiz(guildId);
   if (!activeQuiz) return { ok: false, error: 'No active quiz.' };
+
+  if (activeQuiz.round) {
+    if (quiz.isRoundOpen(activeQuiz)) {
+      scheduleRoundEnd(guildId);
+      return { ok: true };
+    }
+    await finishRound(guildId);
+    return { ok: true };
+  }
 
   const { questions } = loadSessionQuestions(activeQuiz);
   if (!questions.length) {
@@ -281,15 +342,16 @@ export async function beginRound(guildId) {
   try {
     message = await sendChannelMessage(active.channelId, payload);
   } catch (err) {
+    await revertPendingRound(guildId);
+
     if (isChannelUnavailableError(err)) {
       await abortQuiz(guildId, 'missing access when posting round');
       return { ok: false, error: 'Bot cannot post in the quiz channel. Quiz ended.' };
     }
-    await updateQuizState((state) => {
-      if (state[guildId]) state[guildId].round = null;
-      return true;
-    });
-    throw err;
+
+    console.error('Failed to post quiz round:', summarizeDiscordError(err));
+    scheduleRoundRecovery(guildId);
+    return { ok: false, error: 'Could not post this round — retrying shortly.' };
   }
 
   await updateQuizState((state) => {
@@ -466,9 +528,11 @@ export async function resumeActiveQuizzes() {
         continue;
       }
 
-      await beginRound(guildId);
+      if (!active.round) {
+        await beginRound(guildId);
+      }
     } catch (err) {
-      console.error(`Failed to resume quiz for guild ${guildId}:`, err.message);
+      console.error(`Failed to resume quiz for guild ${guildId}:`, summarizeDiscordError(err));
       await abortQuiz(guildId, 'resume failed');
     }
   }

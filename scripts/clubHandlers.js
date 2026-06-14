@@ -3,8 +3,10 @@ import {
   InteractionResponseType,
 } from 'discord-interactions';
 import {
+  buildFestProfileData,
   getGuildClubs,
   getUserLink,
+  getUserLinkByViewerId,
   isUmaLinked,
   isPremiumGuild,
   registerGuildClub,
@@ -380,6 +382,7 @@ export async function handleRegisterForced(req) {
           trainerName: profile.trainerName,
           circleId: profile.circleId ?? '',
           circleName: profile.circleName,
+          registeredGuildId: guildId,
         });
         const clubLine = profile.circleName
           ? ` in **${profile.circleName}**`
@@ -446,11 +449,15 @@ export async function handleProfile(req) {
               selected.members,
               selected.member.viewer_id,
             );
+            const festa = buildFestProfileData(
+              getUserLinkByViewerId(selected.member.viewer_id),
+            );
             await sendFollowup({
               embeds: [buildProfileEmbed({
                 member: selected.member,
                 circle: selected.circle,
                 ranks,
+                festa,
               })],
             });
             return;

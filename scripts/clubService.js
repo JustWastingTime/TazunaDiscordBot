@@ -1,4 +1,5 @@
 import { buildGambleProfileFields } from './eventGambling.js';
+import { buildFestProfileData, getUserLinkByViewerId } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
   dailyFans: [],
@@ -156,6 +157,7 @@ export async function fetchUserProfile(accountId) {
 
 export async function buildProfileEmbedForViewerId(viewerId, options = {}) {
   const { circleIdHint = null, festa = null } = options;
+  const festaData = festa ?? buildFestProfileData(getUserLinkByViewerId(viewerId));
   const profile = await fetchUserProfile(viewerId);
   let circle = profile.circle;
   let member = profile.member;
@@ -187,7 +189,7 @@ export async function buildProfileEmbedForViewerId(viewerId, options = {}) {
     member,
     circle: circle ?? (profile.circleName ? { name: profile.circleName, circle_id: circleId } : null),
     ranks,
-    festa,
+    festa: festaData,
   });
 }
 

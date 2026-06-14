@@ -130,7 +130,9 @@ export function upsertUserLink({
     circleName: circleName ?? null,
     linkedAt: existing?.linkedAt ?? new Date().toISOString(),
     registeredGuildId:
-      existing?.registeredGuildId ?? (registeredGuildId ? String(registeredGuildId) : null),
+      registeredGuildId != null && registeredGuildId !== ''
+        ? String(registeredGuildId)
+        : (existing?.registeredGuildId ?? null),
     gambaCoins: existing?.gambaCoins ?? STARTING_GAMBA_COINS,
     gambaWr: existing?.gambaWr ?? null,
     gambaWins: existing?.gambaWins ?? 0,
@@ -283,6 +285,30 @@ export function getUserLink(discordUserId) {
   return normalizeUserRecord(link, discordUserId);
 }
 
+export function getUserLinkByViewerId(viewerId) {
+  const id = String(viewerId ?? '').trim();
+  if (!id) return null;
+
+  const store = loadUserLinks();
+  for (const [discordUserId, link] of Object.entries(store)) {
+    if (String(link.viewerId) === id) {
+      return normalizeUserRecord(link, discordUserId);
+    }
+  }
+  return null;
+}
+
+export function buildFestProfileData(link) {
+  if (!link) return null;
+  return {
+    gambaCoins: link.gambaCoins,
+    gambaWr: link.gambaWr,
+    quizAccuracy: link.quizAccuracy,
+    openTickets: link.openTickets,
+    betHistory: link.betHistory,
+  };
+}
+
 export function ensureQuizUser(discordUserId, displayName, guildId = null) {
   const store = loadUserLinks();
   const key = String(discordUserId);
@@ -365,16 +391,23 @@ export function hasGambaWallet(discordUserId) {
   return Boolean(getUserLink(discordUserId));
 }
 
+function matchesGambaGuildScope(entry, guildId) {
+  const gid = String(guildId);
+  if (entry.registeredGuildId === gid) return true;
+
+  const circleId = entry.circleId;
+  if (!circleId) return false;
+
+  return getGuildClubs(gid).some((club) => String(club.circleId) === String(circleId));
+}
+
 export function findGambaPlayersByName(query, { guildId = null } = {}) {
   const q = String(query || '').trim().toLowerCase();
   if (!q) return [];
 
   let entries = listGambaWalletUsers();
   if (guildId) {
-    const guildEntries = entries.filter(
-      (entry) => entry.registeredGuildId === String(guildId),
-    );
-    if (guildEntries.length) entries = guildEntries;
+    entries = entries.filter((entry) => matchesGambaGuildScope(entry, guildId));
   }
 
   const exact = entries.filter(
@@ -451,7 +484,7 @@ export function awardGambaCoins(discordUserId, amount) {
 export function getGambaLeaderboard({ guildId = null, limit = 25 } = {}) {
   let entries = listGambaWalletUsers().filter((entry) => entry.gambaCoins != null);
   if (guildId) {
-    entries = entries.filter((entry) => entry.registeredGuildId === String(guildId));
+    entries = entries.filter((entry) => matchesGambaGuildScope(entry, guildId));
   }
 
   return entries
