@@ -69,6 +69,50 @@
         ["https://static.snep.pw/uma/songs/previews/a1645afeb.mp3", ["Manhattan Cafe", "Meisho Doto", "Mr. C.B.", "Inari One", "Mejiro Dober", "Mejiro Palmer"], "hard"],
         ["https://static.snep.pw/uma/songs/previews/24f4eafd3.mp3", ["Narita Brian", "Orfevre", "Grass Wonder", "Air Shakur", "Seiun Sky", "Mihono Bourbon"], "hard"],
         ["https://static.snep.pw/uma/songs/previews/7ac9f5e48.mp3", ["Matikanetannhauser", "Bamboo Memory", "Agnes Digital", "Sakura Chiyono O", "Eishin Flash", "Tosen Jordan"], "hard"]
+      ]
+    },
+    {
+      "promptTemplate": "Who's voice is it anyway'",
+      "difficulty": "expert",
+      "entries": [
+        ["https://static.snep.pw/uma/games/cyguess/1c3f3e5a7.mp3", 
+        ["Eishin Flash", "Mejiro Ardan", "Air Groove", "Fine Motion", "Agnes Tachyon", "Grass Wonder"]],
+        ["https://static.snep.pw/uma/games/cyguess/4f7a22876.mp3", 
+        ["Haru Urara", "Sweep Tosho", "Nishino Flower", "Biko Pegasus", "Matikanetannhauser"]],
+        ["https://static.snep.pw/uma/games/cyguess/3e675c147.mp3", 
+        ["Matikanefukukitaru", "Matikanetannhauser", "Haru Urara", "Inari One", "Tokai Teio"]],
+        ["https://static.snep.pw/uma/games/cyguess/acf2e75ee.mp3", 
+        ["Narita Taishin", "Narita Brian", "Biwa Hayahide", "Admire Vega", "Symboli Rudolf", "Mejiro Dober"]],
+        ["https://static.snep.pw/uma/games/cyguess/5769b7f9d.mp3", 
+        ["Meisho Doto", "Dantsu Flame", "Silence Suzuka", "Rice Shower", "Mejiro Bright"]],
+        ["https://static.snep.pw/uma/games/cyguess/06f161cf5.mp3", 
+        ["Mejiro Bright", "Satono Diamond", "Eishin Flash", "Grass Wonder", "Super Creek"]],
+        ["https://static.snep.pw/uma/games/cyguess/c604bf449.mp3", 
+        ["Silence Suzuka", "Grass Wonder", "Mejiro Bright", "Mejiro Dober", "Sakura Chiyono O"]],
+        ["https://static.snep.pw/uma/games/cyguess/0cbb2c4de.mp3", 
+        ["Kawakami Princess", "Curren Chan", "Hishi Akebono", "Ines Fujin", "King Halo"]],
+        ["https://static.snep.pw/uma/games/cyguess/3748294dc.mp3", 
+        ["Gold Ship", "Matikanefukukitaru", "Gold Boat", "Agnes Digital", "Winning Ticket"]],
+        ["https://static.snep.pw/uma/games/cyguess/a67b1f1cd.mp3", 
+        ["Satono Diamond", "Silence Suzuka", "Grass Wonder", "Mejiro Dober", "Fine Motion"]],
+        ["https://static.snep.pw/uma/games/cyguess/cac62fb3a.mp3", 
+        ["Maruzensky", "Ines Fujin", "Mejiro Palmer", "Daiwa Scarlet", "Mejiro Ryan"]],
+        ["https://static.snep.pw/uma/games/cyguess/10f175789.mp3", 
+        ["Super Creek", "Mejiro Ardan", "Satono Diamond", "Grass Wonder", "Mejiro McQueen"]],
+        ["https://static.snep.pw/uma/games/cyguess/560215a81.mp3", 
+        ["Admire Vega", "Biwa Hayahide", "Nice Nature", "Narita Taishin", "Narita Brian"]],
+        ["https://static.snep.pw/uma/games/cyguess/9f91a8ff2.mp3", 
+        ["Tamamo Cross", "Agnes Digital", "Gold Ship", "Bamboo Memory", "Shinko Windy"]],
+        ["https://static.snep.pw/uma/games/cyguess/4abf772f4.mp3", 
+        ["Grass Wonder", "Ines Fujin", "Mejiro Palmer", "Daiwa Scarlet", "Mejiro Ryan"]],
+        ["https://static.snep.pw/uma/games/cyguess/9c8fb7438.mp3", 
+        ["Kitasan Black", "Ines Fujin", "Special Week", "Mejiro Ryan", "Buena Vista"]],
+        ["https://static.snep.pw/uma/games/cyguess/a226091b5.mp3", 
+        ["Seiun Sky", "Mejiro Ryan", "Mejiro Palmer", "Ines Fujin", "Mejiro Ryan"]],
+        ["https://static.snep.pw/uma/games/cyguess/882b37370.mp3", 
+        ["Ines Fujin", "Smart Falcon", "Tokai Teio", "Maruzensky", "Mejiro Ryan"]]
+       
+
         
       ]
     }
