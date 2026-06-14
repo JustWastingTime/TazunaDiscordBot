@@ -286,18 +286,36 @@ function escapeJson(value) {
   return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
-function formatEntryLine(url, subject) {
-  return `        ["${url}",\n        ["${escapeJson(subject)}", ${MCQ_ANSWERS.map((a) => `"${a}"`).join(', ')}]]`;
+function formatEntryLine(url, answers) {
+  const answersStr = answers.map((answer) => `"${escapeJson(answer)}"`).join(', ');
+  return `        ["${escapeJson(url)}",\n        [${answersStr}]]`;
 }
 
-function buildStandGroup(folder, difficulty, items) {
-  const lines = items.map(({ url, subject }) => formatEntryLine(url, subject));
-  return `{ "promptTemplate": "${PROMPT}",
-      "difficulty": "${difficulty}",
-      "entries": [
-${lines.join(',\n')}
-      ]
-    }`;
+function formatQuestionGroup(group) {
+  const prompt = escapeJson(group.promptTemplate);
+  const header = group.version
+    ? `    { "promptTemplate": "${prompt}", "version": "${escapeJson(group.version)}",`
+    : `    { "promptTemplate": "${prompt}",`;
+  const entries = (group.entries || []).map((entry, index, list) => {
+    const suffix = index < list.length - 1 ? ',' : '';
+    return `${formatEntryLine(entry[0], entry[1])}${suffix}`;
+  });
+  return [
+    header,
+    `      "difficulty": "${escapeJson(group.difficulty)}",`,
+    '      "entries": [',
+    ...entries,
+    '      ]',
+    '    }',
+  ].join('\n');
+}
+
+function buildStandGroup(difficulty, items) {
+  return {
+    promptTemplate: PROMPT,
+    difficulty,
+    entries: items.map(({ url, subject }) => [url, [subject, ...MCQ_ANSWERS]]),
+  };
 }
 
 function extractPreservedGroups(umaguesser) {
@@ -325,21 +343,15 @@ async function main() {
       ? await resolveTierItems(tier.folder, filenames, candidateMap, { verify: false })
       : await probeTier(tier.folder, candidateMap);
     console.log(`${tier.folder}: ${items.length} images`);
-    standGroups.push(buildStandGroup(tier.folder, tier.difficulty, items));
+    standGroups.push(buildStandGroup(tier.difficulty, items));
   }
 
   const preserved = extractPreservedGroups(umaguesser);
-  const preservedJson = preserved
-    .map((group) => JSON.stringify(group, null, 2)
-      .split('\n')
-      .map((line) => `    ${line}`)
-      .join('\n'))
-    .join(',\n');
-
+  const groupsJson = [...standGroups, ...preserved].map(formatQuestionGroup).join(',\n');
   const output = `{
-  "name": "Umaguesser",
+  "name": "${escapeJson(umaguesser.name || 'Umaguesser')}",
   "questions": [
-${standGroups.join(',\n')}${preserved.length ? `,\n${preservedJson}` : ''}
+${groupsJson}
   ]
 }
 `;

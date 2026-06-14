@@ -548,11 +548,10 @@ const GAMBACOIN_GIVE_SUBCOMMAND = {
   description: 'Give GambaCoins to another player',
   options: [
     {
-      type: 3,
+      type: 6,
       name: 'player',
       description: 'Player to give coins to',
       required: true,
-      autocomplete: true,
     },
     {
       type: 4,

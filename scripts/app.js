@@ -48,7 +48,6 @@ import {
   isQuizCommand,
 } from './quizHandlers.js';
 import {
-  buildGiveAutocompleteChoices,
   dispatchGambacoinCommand,
   handleGambaDonateClick,
   handleGambaDonateComponent,
@@ -376,14 +375,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             ? buildRegisteredClubAutocompleteChoices(req.body.guild_id, focus.value)
             : [];
 
-      return res.send({
-        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
-        data: { choices },
-      });
-    }
-
-    if (data.name === 'gambacoin' && focus.optionName === 'player') {
-      const choices = buildGiveAutocompleteChoices(req.body.guild_id, focus.value);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
