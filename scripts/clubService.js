@@ -234,54 +234,47 @@ export async function fetchCurrentTarget(circleData) {
   return totalPoints / 30 / daysElapsed;
 }
 
+function buildDailyFansFromTrimmed(trimmed) {
+  let lastNegativeIdx = -1;
+  for (let i = 0; i < trimmed.length; i += 1) {
+    if (trimmed[i] < 0) lastNegativeIdx = i;
+  }
+
+  if (lastNegativeIdx < 0) {
+    const firstPositiveIdx = trimmed.findIndex((n) => n > 0);
+    if (firstPositiveIdx < 0) return [];
+    let prev = trimmed[firstPositiveIdx];
+    return trimmed.slice(firstPositiveIdx).map((n) => {
+      const v = n > 0 ? n : prev;
+      prev = v;
+      return v;
+    });
+  }
+
+  const baseline = Math.abs(trimmed[lastNegativeIdx]);
+  let startIdx = lastNegativeIdx + 1;
+  // Zeros after the last baseline are untracked days (between clubs) — skip until first real reading.
+  while (startIdx < trimmed.length && trimmed[startIdx] <= 0) startIdx += 1;
+
+  if (startIdx >= trimmed.length) return [baseline];
+
+  const dailyFans = [baseline];
+  let prev = baseline;
+  for (let i = startIdx; i < trimmed.length; i += 1) {
+    const n = trimmed[i];
+    if (n > 0) prev = n;
+    dailyFans.push(prev);
+  }
+  return dailyFans;
+}
+
 export function getMemberFanStats(rawFans) {
   const fans = Array.isArray(rawFans) ? rawFans.filter((n) => typeof n === 'number') : [];
   const lastPositiveIdx = fans.reduce((idx, n, i) => (n > 0 ? i : idx), -1);
   if (lastPositiveIdx < 0) return { ...EMPTY_FAN_STATS };
 
   const trimmed = fans.slice(0, lastPositiveIdx + 1);
-
-  let lastNegativeIdx = -1;
-  let negativeCount = 0;
-  for (let i = 0; i < trimmed.length; i += 1) {
-    if (trimmed[i] < 0) {
-      lastNegativeIdx = i;
-      negativeCount += 1;
-    }
-  }
-
-  const isPreviousMonthBaselineOnly = negativeCount === 1 && lastNegativeIdx === 0;
-
-  let dailyFans;
-
-  if (lastNegativeIdx < 0) {
-    const firstPositiveIdx = trimmed.findIndex((n) => n > 0);
-    const start = firstPositiveIdx > 0 ? firstPositiveIdx : 0;
-    let prev = trimmed[start];
-    dailyFans = trimmed.slice(start).map((n) => {
-      const v = n > 0 ? n : prev;
-      prev = v;
-      return v;
-    });
-  } else if (isPreviousMonthBaselineOnly) {
-    const baseline = Math.abs(trimmed[0]);
-    let prev = baseline;
-    const rest = trimmed.slice(1).map((n) => {
-      const v = n > 0 ? n : prev;
-      prev = v;
-      return v;
-    });
-    dailyFans = [baseline, ...rest];
-  } else {
-    const baseline = Math.abs(trimmed[lastNegativeIdx]);
-    let prev = baseline;
-    const postJoin = trimmed.slice(lastNegativeIdx + 1).map((n) => {
-      const v = n > 0 ? n : prev;
-      prev = v;
-      return v;
-    });
-    dailyFans = [baseline, ...postJoin];
-  }
+  const dailyFans = buildDailyFansFromTrimmed(trimmed);
 
   if (!dailyFans.length) return { ...EMPTY_FAN_STATS };
 
