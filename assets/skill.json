@@ -6549,7 +6549,7 @@
         "description": "Greatly consume endurance mid-race and moderately increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.25 for 2.4s. Lose HP by 2%.",
+                "description": "Increases target speed by 0.25 for 2.4s. Lose HP by 4%.",
                 "conditions": [
                     "Late Surger",
                     "Random point in mid race"
@@ -8046,7 +8046,7 @@
         "description": "Greatly consume endurance mid-race and greatly increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.45 for 2.4s. Lose HP by 2%.",
+                "description": "Increases target speed by 0.45 for 2.4s. Lose HP by 4%.",
                 "conditions": [
                     "Late Surger",
                     "Random point in mid race"
