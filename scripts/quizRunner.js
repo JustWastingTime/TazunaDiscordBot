@@ -449,7 +449,7 @@ export async function stopQuiz(guildId, { reason } = {}) {
   if (!active) return { ok: false, error: 'No active quiz in this server.' };
 
   cancelAllTimers(guildId);
-  const lines = quiz.getScoreboardLines(active.scores);
+  const lines = quiz.getScoreboardLines(active.scores, { scoreGoal: active.scoreGoal });
   const heading = reason || '⏹️ **Quiz stopped.**';
   await safeChannelSend(
     active.channelId,

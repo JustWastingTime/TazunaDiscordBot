@@ -445,6 +445,7 @@ export function createQuizState({
     emptyRoundStreak: 0,
     roundCount: 0,
     pendingWinner: null,
+    goalReachCounter: 0,
     round: null,
   };
 }
@@ -502,6 +503,10 @@ export function recordResponse(quiz, userId, displayName, { correct, choiceIndex
 
   const totalPoints = quiz.scores[userId].points;
   const scoreGoal = quiz.scoreGoal ?? DEFAULT_SCORE_GOAL;
+  if (correct && totalPoints >= scoreGoal && !quiz.scores[userId].reachedGoalAt) {
+    quiz.goalReachCounter = (quiz.goalReachCounter || 0) + 1;
+    quiz.scores[userId].reachedGoalAt = quiz.goalReachCounter;
+  }
   if (correct && totalPoints >= scoreGoal) {
     if (!quiz.pendingWinner || reachedAt < quiz.pendingWinner.reachedAt) {
       quiz.pendingWinner = {
@@ -569,10 +574,19 @@ export function clearRound(quiz) {
   quiz.round = null;
 }
 
-export function getScoreboardLines(scores) {
+export function getScoreboardLines(scores, { scoreGoal = null } = {}) {
+  const goal = scoreGoal ?? DEFAULT_SCORE_GOAL;
   const entries = Object.entries(scores)
     .map(([userId, data]) => ({ userId, ...data }))
-    .sort((a, b) => b.points - a.points || a.displayName.localeCompare(b.displayName));
+    .sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+      const aReached = a.points >= goal && a.reachedGoalAt;
+      const bReached = b.points >= goal && b.reachedGoalAt;
+      if (aReached && bReached) return a.reachedGoalAt - b.reachedGoalAt;
+      if (aReached) return -1;
+      if (bReached) return 1;
+      return a.displayName.localeCompare(b.displayName);
+    });
 
   if (!entries.length) return ['_No scores yet._'];
   return entries.map((entry, i) => {
@@ -616,7 +630,10 @@ function formatRoundSummary(quiz, question) {
     ...correctLines,
     ...wrongSection,
   ].join('\n');
-  const scoreboardSection = ['**Scoreboard**', ...getScoreboardLines(quiz.scores)].join('\n');
+  const scoreboardSection = [
+    '**Scoreboard**',
+    ...getScoreboardLines(quiz.scores, { scoreGoal: quiz.scoreGoal }),
+  ].join('\n');
 
   return [
     `**Round ${quiz.round.number}** — time's up!`,
@@ -717,7 +734,7 @@ export function buildWinnerEmbed(winner, scores, { coinReward = 0, scoreGoal = D
   } else {
     lines.push('', '_No coin reward — need at least 3 participants._');
   }
-  lines.push('', `**Final scoreboard** (goal: ${scoreGoal})`, ...getScoreboardLines(scores));
+  lines.push('', `**Final scoreboard** (goal: ${scoreGoal})`, ...getScoreboardLines(scores, { scoreGoal }));
 
   return {
     color: 0x57f287,
@@ -743,7 +760,11 @@ export function resolveWinnerAfterRound(quiz) {
   const leaders = Object.entries(quiz.scores)
     .map(([userId, data]) => ({ userId, ...data }))
     .filter((entry) => entry.points >= scoreGoal)
-    .sort((a, b) => b.points - a.points || a.displayName.localeCompare(b.displayName));
+    .sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+      if (a.reachedGoalAt && b.reachedGoalAt) return a.reachedGoalAt - b.reachedGoalAt;
+      return a.displayName.localeCompare(b.displayName);
+    });
 
   return leaders[0] ?? null;
 }
