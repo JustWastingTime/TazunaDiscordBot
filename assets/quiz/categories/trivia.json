@@ -19,7 +19,10 @@
         ["Silence Suzuka", ["Special Week", "Stay Gold", "Tokai Teio", "Gold Ship", "Seiun Sky", "Narita Taishin"], "easy"],
         ["Nice Nature", ["Marvelous Sunday", "Ikuno Dictus", "Narita Taishin", "Matikanetannhauser", "Twin Turbo", "Fuji Kiseki"], "hard"],
         ["Tokai Teio", ["Mayano Top Gun", "Symboli Rudolf", "Maruzensky", "T.M. Opera O", "Ines Fujin", "Oguri Cap"]],
-        ["Sakura Chiyono O", ["Mejiro Ardan", "Mejiro Ryan", "Sakura Bakushin O", "Hishi Amazon", "Tamamo Cross", "Super Creek"]]
+        ["Sakura Chiyono O", ["Mejiro Ardan", "Mejiro Ryan", "Sakura Bakushin O", "Hishi Amazon", "Tamamo Cross", "Super Creek"]],
+        ["Winning Ticket", ["Tosen Jordan", "Biwa Hayahide", "Narita Taishin", "Special Week", "Yukino Bijin", "Gold City"]],
+        ["Inari One", ["Twin Turbo", "Super Creek", "Oguri Cap", "Shinko Windy", "Yaeno Muteki", "Rice Shower"]]
+
       ]
     },
     { "promptTemplate": "Which uma stays in Ritto dorm?",
@@ -2204,6 +2207,10 @@
     },
     { "prompt": "Orfevre means what in French?",
       "answers": ["Goldsmith", "Tyrant", "Kingmaker", "Smelter", "Longsword", "Oven"],
+      "difficulty": "hard"
+    },
+    { "prompt": "How many meters long is the Tokyo homestretch ingame?",
+      "answers": ["500", "600", "400", "525"], 
       "difficulty": "hard"
     }
   ]

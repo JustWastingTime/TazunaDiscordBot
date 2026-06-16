@@ -141,6 +141,29 @@
     { "prompt": "How many races did the horse Haru Urara start pre-retirement?",
       "answers": ["113", "13", "53", "33", "103", "123", "133"],
       "difficulty": "medium"
-    }
+    },
+    { "prompt": "Which Graded Race does not have a corner?",
+      "answers": ["Ibis Summer Dash", "Keeneland Cup", "Aoi Stakes", "CBC Sho"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which race is not part of the Summer Sprint Series?",
+      "answers": ["Ibis Summer Dash", "Keeneland Cup", "Centaur Stakes", "Hakodate Sprint Stakes"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which race is part of the Dual Grand Prix?",
+      "answers": ["Takarazuka Kinen", "Queen Elizabeth II", "Osaka Hai", "Japan Cup"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which race is not run on the Tokyo 1600m Turf?",
+      "answers": ["Mile Championship", "Yasuda Kinen", "NHK Mile", "Victoria Mile"],
+      "difficulty": "easy"
+    },
+    { "promptTemplate": "Which year did the {0} get upgraded to a G1?",
+      "difficulty": "hard",
+      "entries": [
+          ["Osaka Hai", ["2017", "2018", "1982", "2006", "2003", "1986"]],
+          ["Hopeful Stakes", ["2017", "2016", "2007", "2018", "2003", "1987"]]
+        ]
+    } 
   ]
 }
