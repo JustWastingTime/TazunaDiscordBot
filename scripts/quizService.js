@@ -26,8 +26,17 @@ export const QUIZ_GAMEMODES = {
 
 export const DEFAULT_GAMEMODE = 'umastan';
 export const DIFFICULTY_LEVELS = ['easy', 'medium', 'hard', 'expert'];
-export const DEFAULT_DIFFICULTY = 'hard';
+export const SESSION_DIFFICULTY_LEVELS = [...DIFFICULTY_LEVELS, 'default'];
+export const DEFAULT_DIFFICULTY = 'default';
 export const DEFAULT_QUESTION_DIFFICULTY = 'medium';
+
+const SESSION_FALLBACKS = {
+  easy: ['medium'],
+  medium: ['hard'],
+  hard: ['expert'],
+  expert: ['hard'],
+  default: ['hard', 'medium', 'easy', 'expert'],
+};
 export const QUIZ_MODE = 'mcq';
 export const BUTTON_LABEL_MAX = 80;
 
@@ -134,7 +143,9 @@ export function getGamemodeLabel(gamemode) {
 }
 
 export function normalizeDifficulty(difficulty) {
-  return DIFFICULTY_LEVELS.includes(difficulty) ? difficulty : DEFAULT_DIFFICULTY;
+  const value = String(difficulty ?? '').trim().toLowerCase();
+  if (SESSION_DIFFICULTY_LEVELS.includes(value)) return value;
+  return DEFAULT_DIFFICULTY;
 }
 
 export function getDifficultyLabel(difficulty) {
@@ -143,6 +154,7 @@ export function getDifficultyLabel(difficulty) {
     medium: 'Medium',
     hard: 'Hard',
     expert: 'Expert',
+    default: 'Default',
   };
   return labels[normalizeDifficulty(difficulty)];
 }
@@ -169,13 +181,35 @@ export function getQuestionDifficulty(question) {
   return DIFFICULTY_LEVELS.includes(value) ? value : DEFAULT_QUESTION_DIFFICULTY;
 }
 
-export function rollTargetDifficulty(selectedDifficulty) {
-  const selected = normalizeDifficulty(selectedDifficulty);
-  const idx = DIFFICULTY_LEVELS.indexOf(selected);
-  const lower = DIFFICULTY_LEVELS.slice(0, idx);
-  if (!lower.length) return selected;
-  if (Math.random() < 0.6) return selected;
-  return lower[Math.floor(Math.random() * lower.length)];
+export function rollQuestionDifficulty(sessionDifficulty) {
+  const mode = normalizeDifficulty(sessionDifficulty);
+  switch (mode) {
+    case 'easy':
+      return 'easy';
+    case 'medium':
+      return Math.random() < 0.8 ? 'medium' : 'easy';
+    case 'hard':
+      return Math.random() < 0.8 ? 'hard' : 'medium';
+    case 'expert':
+      return 'expert';
+    case 'default':
+    default: {
+      const roll = Math.random();
+      if (roll < 0.4) return 'hard';
+      if (roll < 0.7) return 'medium';
+      if (roll < 0.9) return 'easy';
+      return 'expert';
+    }
+  }
+}
+
+export function buildTierTryOrder(sessionDifficulty) {
+  const mode = normalizeDifficulty(sessionDifficulty);
+  const rolled = rollQuestionDifficulty(mode);
+  const fallbacks = (SESSION_FALLBACKS[mode] || []).filter((tier) => tier !== rolled);
+  const used = new Set([rolled, ...fallbacks]);
+  const remaining = DIFFICULTY_LEVELS.filter((tier) => !used.has(tier));
+  return [rolled, ...fallbacks, ...remaining];
 }
 
 export function matchesMediaFilters(question, { allowAudio = true, allowPicture = true } = {}) {
@@ -202,17 +236,6 @@ function countAskedTimes(questionId, usedIds) {
     if (id === questionId) count += 1;
   }
   return count;
-}
-
-function buildTierTryOrder(selectedDifficulty) {
-  const tiersToTry = [];
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    tiersToTry.push(rollTargetDifficulty(selectedDifficulty));
-  }
-  for (const tier of [...DIFFICULTY_LEVELS].reverse()) {
-    tiersToTry.push(tier);
-  }
-  return tiersToTry;
 }
 
 function getQuestionCategory(question) {
@@ -327,10 +350,10 @@ export function pickQuestion(questions, options) {
   const unusedEligible = eligible.filter((question) => !new Set(usedIds).has(question.id));
   const searchPool = unusedEligible.length ? unusedEligible : eligible;
   const hasUnusedInSession = unusedEligible.length > 0;
-  const tierOrder = buildTierTryOrder(selectedDifficulty);
 
   for (let attempt = 0; attempt < 16; attempt += 1) {
     const templatePool = pickBalancedCategoryAndTemplate(searchPool, usedIds);
+    const tierOrder = buildTierTryOrder(selectedDifficulty);
     for (const tier of tierOrder) {
       const tierPool = templatePool.filter(
         (question) => getQuestionDifficulty(question) === tier,

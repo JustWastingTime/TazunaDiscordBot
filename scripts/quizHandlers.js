@@ -59,7 +59,7 @@ export async function handleQuizStart(req) {
 
   const gamemode = getOptionValue(req, 'mode') ?? quiz.DEFAULT_GAMEMODE;
   const timer = getOptionValue(req, 'timer');
-  const difficulty = getOptionValue(req, 'difficulty') ?? quiz.DEFAULT_DIFFICULTY;
+  const difficulty = getOptionValue(req, 'difficulty');
   const scoregoal = getOptionValue(req, 'scoregoal');
   const audio = getOptionValue(req, 'audio') ?? 'yes';
   const picture = getOptionValue(req, 'picture') ?? 'yes';

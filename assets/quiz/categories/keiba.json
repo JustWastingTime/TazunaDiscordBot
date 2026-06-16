@@ -137,6 +137,10 @@
     { "prompt": "What placement did Manhattan Cafe get in the 2002 Prix de l'Arc de Triomphe?",
       "answers": ["13th", "4th", "16th", "10th", "7th", "9th", "2nd", "3rd"],
       "difficulty": "expert"
+    },
+    { "prompt": "How many races did the horse Haru Urara start pre-retirement?",
+      "answers": ["113", "13", "53", "33", "103", "123", "133"],
+      "difficulty": "medium"
     }
   ]
 }

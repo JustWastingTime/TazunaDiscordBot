@@ -1,22 +1,24 @@
 {
   "quizNotificationRole": "tazuna-quiz-role",
   "enabledCategories": [
-    "umas",
-    "songs",
-    "skills",
-    "supporters",
     "keiba",
+    "skills",
+    "songs",
+    "supporters",
     "trivia",
-    "umaguesser"
+    "umaguesser",
+    "umas"
   ],
   "availableCategories": [
-    "umas",
-    "songs",
+    "keiba",
     "skills",
+    "songs",
     "supporters",
     "trivia",
-    "keiba",
     "umaguesser",
+    "umas",
+
+    
     "template"
   ]
 }
