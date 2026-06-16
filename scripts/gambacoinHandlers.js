@@ -6,10 +6,12 @@ import {
   BEG_DONATION_AMOUNTS,
   awardGambaCoins,
   ensureQuizUser,
+  getGambaDisplayName,
   getGambaLeaderboard,
   getUserLink,
   transferGambaCoins,
 } from './clubDatabase.js';
+import { enrichGambaLeaderboardEntries } from './clubService.js';
 import { handleGambacoinSetEventChannel } from './eventHandlers.js';
 
 const BOT_OWNER_IDS = new Set(
@@ -73,7 +75,7 @@ function buildLeaderboardEmbed(entries, { scopeLabel, totalCount }) {
 
   const lines = entries.map((entry, index) => {
     const rank = index + 1;
-    const name = entry.trainerName || 'Trainer';
+    const name = entry.displayName || getGambaDisplayName(entry);
     return `${rankLabel(rank)} **${name}** — ${formatCoins(entry.gambaCoins ?? 0)} coins`;
   });
 
@@ -193,6 +195,7 @@ export async function handleGambacoinLeaderboard(req) {
     guildId: useGuild ? guildId : null,
     limit: 25,
   });
+  const enrichedBoard = await enrichGambaLeaderboardEntries(board);
   const totalCount = getGambaLeaderboard({
     guildId: useGuild ? guildId : null,
     limit: Number.MAX_SAFE_INTEGER,
@@ -201,7 +204,7 @@ export async function handleGambacoinLeaderboard(req) {
   return {
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
     data: {
-      embeds: [buildLeaderboardEmbed(board, { scopeLabel, totalCount })],
+      embeds: [buildLeaderboardEmbed(enrichedBoard, { scopeLabel, totalCount })],
     },
   };
 }

@@ -1,5 +1,5 @@
 import { buildGambleProfileFields } from './eventGambling.js';
-import { buildFestProfileData, getUserLinkByViewerId } from './clubDatabase.js';
+import { buildFestProfileData, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
   dailyFans: [],
@@ -856,4 +856,32 @@ export async function buildLeaderboardPackage(circleId) {
 export async function resolveLeaderboardFromCircleId(circleId) {
   const pkg = await buildLeaderboardPackage(circleId);
   return pkg.embed;
+}
+
+export async function enrichGambaLeaderboardEntries(entries) {
+  const enriched = await Promise.all(
+    entries.map(async (entry) => {
+      if (entry.umaTrainerName) {
+        return { ...entry, displayName: entry.umaTrainerName };
+      }
+      if (!entry.viewerId) {
+        return { ...entry, displayName: entry.trainerName || 'Trainer' };
+      }
+
+      try {
+        const profile = await fetchUserProfile(entry.viewerId);
+        setUmaTrainerName(entry.discordUserId, profile.trainerName);
+        return {
+          ...entry,
+          umaTrainerName: profile.trainerName,
+          trainerName: profile.trainerName,
+          displayName: profile.trainerName,
+        };
+      } catch (err) {
+        console.warn(`Could not resolve trainer name for ${entry.viewerId}:`, err.message);
+        return { ...entry, displayName: entry.trainerName || 'Trainer' };
+      }
+    }),
+  );
+  return enriched;
 }

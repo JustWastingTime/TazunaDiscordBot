@@ -108,6 +108,23 @@ export function isGuildClubRegistered(guildId, circleId) {
   return getGuildClubs(guildId).some((club) => String(club.circleId) === String(circleId));
 }
 
+function mergeGuildIds(existingGuildIds, ...guildIds) {
+  const merged = new Set(
+    (Array.isArray(existingGuildIds) ? existingGuildIds : [])
+      .map((guildId) => String(guildId))
+      .filter(Boolean),
+  );
+  for (const guildId of guildIds) {
+    if (guildId != null && guildId !== '') merged.add(String(guildId));
+  }
+  return [...merged];
+}
+
+function trackUserGuildActivity(user, guildId) {
+  if (!user || guildId == null || guildId === '') return;
+  user.activeGuildIds = mergeGuildIds(user.activeGuildIds, guildId);
+}
+
 export const STARTING_GAMBA_COINS = 1000;
 
 export function upsertUserLink({
@@ -122,17 +139,21 @@ export function upsertUserLink({
   const key = String(discordUserId);
   const existing = store[key];
 
+  const registeredGid =
+    registeredGuildId != null && registeredGuildId !== ''
+      ? String(registeredGuildId)
+      : (existing?.registeredGuildId ?? null);
+
   store[key] = {
     discordUserId: key,
     viewerId: String(viewerId),
     trainerName,
+    umaTrainerName: trainerName,
     circleId: String(circleId),
     circleName: circleName ?? null,
     linkedAt: existing?.linkedAt ?? new Date().toISOString(),
-    registeredGuildId:
-      registeredGuildId != null && registeredGuildId !== ''
-        ? String(registeredGuildId)
-        : (existing?.registeredGuildId ?? null),
+    registeredGuildId: registeredGid,
+    activeGuildIds: mergeGuildIds(existing?.activeGuildIds, registeredGid),
     gambaCoins: existing?.gambaCoins ?? STARTING_GAMBA_COINS,
     gambaWr: existing?.gambaWr ?? null,
     gambaWins: existing?.gambaWins ?? 0,
@@ -258,10 +279,14 @@ function normalizeUserRecord(link, discordUserId) {
     discordUserId: String(link.discordUserId ?? discordUserId),
     viewerId: link.viewerId != null && link.viewerId !== '' ? String(link.viewerId) : null,
     trainerName: link.trainerName ?? null,
+    umaTrainerName: link.umaTrainerName ?? null,
     circleId: link.circleId != null ? String(link.circleId) : '',
     circleName: link.circleName ?? null,
     linkedAt: link.linkedAt ?? null,
     registeredGuildId: link.registeredGuildId ?? null,
+    activeGuildIds: Array.isArray(link.activeGuildIds)
+      ? link.activeGuildIds.map(String)
+      : [],
     gambaCoins: link.gambaCoins ?? null,
     gambaWr: link.gambaWr ?? null,
     gambaWins: link.gambaWins ?? 0,
@@ -309,6 +334,25 @@ export function buildFestProfileData(link) {
   };
 }
 
+export function getGambaDisplayName(entry) {
+  return entry?.umaTrainerName || entry?.trainerName || 'Trainer';
+}
+
+export function setUmaTrainerName(discordUserId, trainerName) {
+  const name = String(trainerName || '').trim();
+  if (!name) return null;
+
+  const store = loadUserLinks();
+  const key = String(discordUserId);
+  const user = store[key];
+  if (!user) return null;
+
+  user.umaTrainerName = name;
+  user.trainerName = name;
+  saveUserLinks(store);
+  return normalizeUserRecord(user, key);
+}
+
 export function ensureQuizUser(discordUserId, displayName, guildId = null) {
   const store = loadUserLinks();
   const key = String(discordUserId);
@@ -320,10 +364,12 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
       discordUserId: key,
       viewerId: null,
       trainerName: displayName || 'Trainer',
+      umaTrainerName: null,
       circleId: '',
       circleName: null,
       linkedAt: new Date().toISOString(),
       registeredGuildId: guildId ? String(guildId) : null,
+      activeGuildIds: mergeGuildIds([], guildId),
       gambaCoins: STARTING_GAMBA_COINS,
       gambaWr: null,
       gambaWins: 0,
@@ -335,7 +381,8 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
       quizAccuracy: null,
     };
   } else {
-    if (displayName) existing.trainerName = displayName;
+    trackUserGuildActivity(existing, guildId);
+    if (displayName && !isUmaLinked(existing)) existing.trainerName = displayName;
     if (guildId && !existing.registeredGuildId) existing.registeredGuildId = String(guildId);
     if (existing.quizCorrect == null) existing.quizCorrect = 0;
     if (existing.quizWrong == null) existing.quizWrong = 0;
@@ -394,6 +441,7 @@ export function hasGambaWallet(discordUserId) {
 function matchesGambaGuildScope(entry, guildId) {
   const gid = String(guildId);
   if (entry.registeredGuildId === gid) return true;
+  if (entry.activeGuildIds?.includes(gid)) return true;
 
   const circleId = entry.circleId;
   if (!circleId) return false;
@@ -411,12 +459,12 @@ export function findGambaPlayersByName(query, { guildId = null } = {}) {
   }
 
   const exact = entries.filter(
-    (entry) => String(entry.trainerName || '').toLowerCase() === q,
+    (entry) => getGambaDisplayName(entry).toLowerCase() === q,
   );
   if (exact.length) return exact;
 
   return entries.filter((entry) =>
-    String(entry.trainerName || '').toLowerCase().includes(q),
+    getGambaDisplayName(entry).toLowerCase().includes(q),
   );
 }
 
@@ -491,7 +539,7 @@ export function getGambaLeaderboard({ guildId = null, limit = 25 } = {}) {
     .sort(
       (a, b) =>
         (b.gambaCoins ?? 0) - (a.gambaCoins ?? 0) ||
-        String(a.trainerName || '').localeCompare(String(b.trainerName || ''), undefined, {
+        String(getGambaDisplayName(a)).localeCompare(String(getGambaDisplayName(b)), undefined, {
           sensitivity: 'base',
         }),
     )
