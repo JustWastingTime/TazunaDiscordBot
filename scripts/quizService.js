@@ -29,14 +29,6 @@ export const DIFFICULTY_LEVELS = ['easy', 'medium', 'hard', 'expert'];
 export const SESSION_DIFFICULTY_LEVELS = [...DIFFICULTY_LEVELS, 'default'];
 export const DEFAULT_DIFFICULTY = 'default';
 export const DEFAULT_QUESTION_DIFFICULTY = 'medium';
-
-const SESSION_FALLBACKS = {
-  easy: ['medium'],
-  medium: ['hard'],
-  hard: ['expert'],
-  expert: ['hard'],
-  default: ['hard', 'medium', 'easy', 'expert'],
-};
 export const QUIZ_MODE = 'mcq';
 export const BUTTON_LABEL_MAX = 80;
 
@@ -206,10 +198,23 @@ export function rollQuestionDifficulty(sessionDifficulty) {
 export function buildTierTryOrder(sessionDifficulty) {
   const mode = normalizeDifficulty(sessionDifficulty);
   const rolled = rollQuestionDifficulty(mode);
-  const fallbacks = (SESSION_FALLBACKS[mode] || []).filter((tier) => tier !== rolled);
-  const used = new Set([rolled, ...fallbacks]);
-  const remaining = DIFFICULTY_LEVELS.filter((tier) => !used.has(tier));
-  return [rolled, ...fallbacks, ...remaining];
+
+  switch (mode) {
+    case 'easy':
+      return ['easy', 'medium'];
+    case 'medium':
+      return [rolled, 'hard'];
+    case 'hard':
+      return [rolled, 'expert'];
+    case 'expert':
+      return ['expert', 'hard'];
+    case 'default': {
+      const fallbackOrder = ['hard', 'medium', 'easy', 'expert'].filter((tier) => tier !== rolled);
+      return [rolled, ...fallbackOrder];
+    }
+    default:
+      return [rolled];
+  }
 }
 
 export function matchesMediaFilters(question, { allowAudio = true, allowPicture = true } = {}) {
@@ -347,25 +352,34 @@ export function pickQuestion(questions, options) {
   if (!eligible.length) return null;
 
   const avoidId = usedIds.length ? usedIds[usedIds.length - 1] : null;
-  const unusedEligible = eligible.filter((question) => !new Set(usedIds).has(question.id));
+  const usedSet = new Set(usedIds);
+  const unusedEligible = eligible.filter((question) => !usedSet.has(question.id));
   const searchPool = unusedEligible.length ? unusedEligible : eligible;
   const hasUnusedInSession = unusedEligible.length > 0;
+  const tierOrder = buildTierTryOrder(selectedDifficulty);
 
-  for (let attempt = 0; attempt < 16; attempt += 1) {
-    const templatePool = pickBalancedCategoryAndTemplate(searchPool, usedIds);
-    const tierOrder = buildTierTryOrder(selectedDifficulty);
-    for (const tier of tierOrder) {
-      const tierPool = templatePool.filter(
-        (question) => getQuestionDifficulty(question) === tier,
-      );
-      if (!tierPool.length) continue;
+  for (const tier of tierOrder) {
+    const tierPool = searchPool.filter(
+      (question) => getQuestionDifficulty(question) === tier,
+    );
+    if (!tierPool.length) continue;
 
-      const picked = finalizeQuestionPick(tierPool, usedIds, avoidId, hasUnusedInSession);
+    for (let attempt = 0; attempt < 16; attempt += 1) {
+      const templatePool = pickBalancedCategoryAndTemplate(tierPool, usedIds);
+      const picked = finalizeQuestionPick(templatePool, usedIds, avoidId, hasUnusedInSession);
       if (picked) return picked;
     }
   }
 
-  return pickBalancedFromPool(searchPool, usedIds, avoidId);
+  const lastTier = tierOrder[tierOrder.length - 1];
+  const lastTierPool = searchPool.filter(
+    (question) => getQuestionDifficulty(question) === lastTier,
+  );
+  if (lastTierPool.length) {
+    return pickBalancedFromPool(lastTierPool, usedIds, avoidId);
+  }
+
+  return null;
 }
 
 export function getQuestionById(questions, id) {
