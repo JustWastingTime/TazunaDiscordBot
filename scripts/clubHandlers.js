@@ -33,6 +33,7 @@ import {
   findTrainerCandidates,
   buildLeaderboardPackage,
   findRankThreshold,
+  formatTierRankRange,
   getRankThresholds,
   isAllClubsLeaderboardQuery,
   isTop100Circle,
@@ -204,7 +205,7 @@ export async function buildTargetTierAutocompleteChoices(rawQuery) {
   return tiers
     .filter((tier) => !query || tier.tier.toLowerCase().includes(query))
     .map((tier) => {
-      const label = `${tier.tier} (rank ≤ #${tier.rank})`;
+      const label = formatTierRankRange(tier);
       return {
         name: label.slice(0, 100),
         value: tier.tier.slice(0, 100),
@@ -719,7 +720,7 @@ export async function handleSetTarget(req) {
         await sendFollowup({
           flags: InteractionResponseFlags.EPHEMERAL,
           content:
-            `✅ Set **${clubLabel}** target to **${threshold.tier}** (rank ≤ #${threshold.rank}). ` +
+            `✅ Set **${clubLabel}** target to **${formatTierRankRange(threshold)}**. ` +
             'Leaderboards for this server will show daily target and progress vs that tier.',
         });
       } catch (err) {

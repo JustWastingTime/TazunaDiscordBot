@@ -218,40 +218,40 @@ export function getDaysSinceJstMonthSecondMidnight(now = new Date()) {
 
 const RANK_THRESHOLDS_URL = 'https://uma.moe/api/v4/circles/rank-thresholds';
 const RANK_THRESHOLDS_TTL_MS = 60 * 60 * 1000;
+const TARGET_TIER_ORDER = ['SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+', 'C', 'D+', 'D'];
+const CLUB_MEMBER_COUNT = 30;
 let rankThresholdsCache = { fetchedAt: 0, tiers: [] };
 
 function normalizeRankThresholdEntry(item) {
   if (!item || typeof item !== 'object') return null;
 
-  const tier = item.tier ?? item.name ?? item.label ?? item.grade ?? item.rank_tier;
-  const rankRaw =
-    item.rank ??
-    item.rank_max ??
-    item.max_rank ??
-    item.position ??
-    item.rank_min ??
-    item.min_rank;
-  const monthlyPointRaw =
-    item.monthly_point ??
-    item.min_monthly_point ??
-    item.monthly_points ??
-    item.points ??
-    item.point_threshold;
+  const tier = item.name ?? item.tier;
+  if (tier == null || tier === '') return null;
 
-  if (tier == null || tier === '' || rankRaw == null) return null;
-
-  const rank = Number(rankRaw);
-  if (!Number.isFinite(rank)) return null;
-
-  const monthlyPoint =
-    monthlyPointRaw != null && Number.isFinite(Number(monthlyPointRaw))
-      ? Number(monthlyPointRaw)
+  const rankingFrom =
+    item.ranking_from != null && Number.isFinite(Number(item.ranking_from))
+      ? Number(item.ranking_from)
+      : null;
+  const rankingTo =
+    item.ranking_to != null && Number.isFinite(Number(item.ranking_to))
+      ? Number(item.ranking_to)
+      : null;
+  const minFans =
+    item.current_min_fans != null && Number.isFinite(Number(item.current_min_fans))
+      ? Number(item.current_min_fans)
+      : null;
+  const clubFansPerDay =
+    item.current_fans_per_day != null && Number.isFinite(Number(item.current_fans_per_day))
+      ? Number(item.current_fans_per_day)
       : null;
 
   return {
     tier: String(tier).trim(),
-    rank,
-    monthlyPoint,
+    rankIndex: Number(item.rank_index) || 0,
+    rankingFrom,
+    rankingTo,
+    minFans,
+    clubFansPerDay,
   };
 }
 
@@ -264,10 +264,22 @@ export function normalizeRankThresholds(payload) {
   for (const item of items) {
     const normalized = normalizeRankThresholdEntry(item);
     if (!normalized) continue;
+    if (!TARGET_TIER_ORDER.includes(normalized.tier)) continue;
     byTier.set(normalized.tier.toLowerCase(), normalized);
   }
 
-  return [...byTier.values()].sort((a, b) => a.rank - b.rank);
+  return TARGET_TIER_ORDER.map((name) => byTier.get(name.toLowerCase())).filter(Boolean);
+}
+
+export function formatTierRankRange(threshold) {
+  if (!threshold) return '';
+  const { rankingFrom, rankingTo, tier } = threshold;
+  if (rankingFrom != null && rankingTo != null) {
+    return `${tier} (#${rankingFrom}–#${rankingTo})`;
+  }
+  if (rankingFrom != null) return `${tier} (#${rankingFrom}+)`;
+  if (rankingTo != null) return `${tier} (≤ #${rankingTo})`;
+  return tier;
 }
 
 export async function getRankThresholds() {
@@ -288,29 +300,31 @@ export function findRankThreshold(tiers, tierQuery) {
   return tiers.find((tier) => tier.tier.toLowerCase() === query) ?? null;
 }
 
-export function computeDailyTargetFromThreshold(threshold) {
-  if (!threshold?.monthlyPoint) return null;
-  const daysElapsed = getDaysSinceJstMonthSecondMidnight();
-  return threshold.monthlyPoint / (30 * daysElapsed);
+export function computeMemberDailyTarget(clubFansPerDay) {
+  if (clubFansPerDay == null || !Number.isFinite(clubFansPerDay)) return null;
+  return clubFansPerDay / CLUB_MEMBER_COUNT;
 }
 
 export function buildTargetStatus(circle, threshold) {
   if (!circle || !threshold) return null;
 
   const currentRank = circle.live_rank ?? circle.monthly_rank;
+  const useLivePoints =
+    typeof circle.live_rank === 'number' && circle.live_rank > 0 && circle.live_rank <= 100;
+  const currentPoints = useLivePoints ? circle.live_points : circle.monthly_point;
+
   const rankLine =
-    typeof currentRank === 'number' && currentRank > 0
-      ? currentRank <= threshold.rank
-        ? `✅ Rank #${currentRank} (tier floor #${threshold.rank})`
-        : `⚠️ Rank #${currentRank} (need ≤ #${threshold.rank})`
+    typeof currentRank === 'number' && currentRank > 0 && threshold.rankingTo != null
+      ? currentRank <= threshold.rankingTo
+        ? `✅ Rank #${currentRank} (target ≤ #${threshold.rankingTo})`
+        : `⚠️ Rank #${currentRank} (need ≤ #${threshold.rankingTo})`
       : null;
 
-  const currentPoints = circle.monthly_point ?? circle.live_points;
   const pointsLine =
-    threshold.monthlyPoint != null && typeof currentPoints === 'number'
-      ? currentPoints >= threshold.monthlyPoint
-        ? `✅ ${formatCompactInt(currentPoints)} pts (tier floor ${formatCompactInt(threshold.monthlyPoint)})`
-        : `⚠️ ${formatCompactInt(currentPoints)} pts (need ${formatCompactInt(threshold.monthlyPoint)})`
+    threshold.minFans != null && typeof currentPoints === 'number'
+      ? currentPoints >= threshold.minFans
+        ? `✅ ${formatCompactInt(currentPoints)} fans (tier floor ${formatCompactInt(threshold.minFans)})`
+        : `⚠️ ${formatCompactInt(currentPoints)} fans (need ${formatCompactInt(threshold.minFans)})`
       : null;
 
   return rankLine ?? pointsLine ?? '—';
@@ -327,8 +341,9 @@ export async function resolveClubTargetInfo(guildId, circleId, circleData) {
   const circle = circleData?.circle;
   return {
     tierLabel: threshold.tier,
-    rankBoundary: threshold.rank,
-    dailyTarget: computeDailyTargetFromThreshold(threshold),
+    tierRangeLabel: formatTierRankRange(threshold),
+    rankBoundary: threshold.rankingTo,
+    dailyTarget: computeMemberDailyTarget(threshold.clubFansPerDay),
     statusText: buildTargetStatus(circle, threshold),
   };
 }
@@ -670,7 +685,7 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   lines.push(`**Last Month's Rank:** # ${circle.last_month_rank ?? '—'}`);
 
   if (targetInfo) {
-    lines.push(`**Target Tier:** ${targetInfo.tierLabel} (rank ≤ #${targetInfo.rankBoundary})`);
+    lines.push(`**Target Tier:** ${targetInfo.tierRangeLabel ?? targetInfo.tierLabel}`);
     lines.push(
       `**Daily Target:** ${
         targetInfo.dailyTarget == null ? '—' : formatIntWithCommas(Math.round(targetInfo.dailyTarget))
