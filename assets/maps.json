@@ -1,0 +1,71 @@
+[   
+    {   "name": "Hanshin 1200m (inner) (clockwise)",
+        "racetrack": "Hanshin",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1200m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hanshin#1200-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 400, "label": "Flat", "type": "flat"},
+            { "start": 400, "end": 995, "label": "Donwhill", "type": "downhill", "change": -1},
+            { "start": 995, "end": 1000, "label": "Flat", "type": "flat"},
+            { "start": 1000, "end": 1125, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 1125, "end": 1200, "label": "Flat", "type": "flat" }
+        ],
+        "layout": [
+            { "start": 0, "end": 250, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 250, "end": 550, "label": "Corner 3" },
+            { "start": 550, "end": 850, "label": "Corner 4" },
+            { "start": 850, "end": 1200, "label": "Straight", "tags": ["homestretch"] }
+        ],
+        "zones": [
+            { "start": 0, "end": 200, "label": "Early Race"},
+            { "start": 200, "end": 800, "label": "Mid Race"},
+            { "start": 800, "end": 1000, "label": "Late Race"},
+            { "start": 1000, "end": 1200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [500],
+        "races": ["centaur stakes september 1 year 2"]
+    },
+    {   "name": "Hanshin 2200m (inner) (clockwise)",
+        "racetrack": "Hanshin",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2200m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hanshin#2200-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 290, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 290, "end": 295, "label": "Flat", "type": "flat"},
+            { "start": 295, "end": 420, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 420, "end": 1400, "label": "Flat", "type": "flat"},
+            { "start": 1400, "end": 1995, "label": "Downhill", "type": "downhill", "change": -1 },
+            { "start": 1995, "end": 2000, "label": "Flat", "type": "flat" },
+            { "start": 2000, "end": 2125, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 2125, "end": 2200, "label": "Flat", "type": "flat" }
+        ],
+        "layout": [
+            { "start": 0, "end": 520, "label": "Straight"},
+            { "start": 520, "end": 710, "label": "Corner 1" },
+            { "start": 710, "end": 900, "label": "Corner 2" },
+            { "start": 900, "end": 1250, "label": "Straight", "tags": ["backstretch"] },
+            { "start": 1250, "end": 1550, "label": "Corner 3"},
+            { "start": 1550, "end": 1850, "label": "Corner 4"},
+            { "start": 1850, "end": 2200, "label": "Straight", "tags": ["homestretch"] }
+        ],
+        "zones": [
+            { "start": 0, "end": 367, "label": "Early Race"},
+            { "start": 367, "end": 1467, "label": "Mid Race"},
+            { "start": 1467, "end": 1833, "label": "Late Race"},
+            { "start": 1833, "end": 2200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [917],
+        "races": [
+            "takarazuka kinen june 2 year 2", 
+            "queen elizabeth ii cup november 1 year 2", 
+            "takarazuka kinen june 2 year 3", 
+            "queen elizabeth ii cup november 1 year 3"
+        ]
+    }
+]

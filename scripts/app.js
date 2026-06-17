@@ -32,6 +32,7 @@ import {
 import {
   buildLeaderboardAutocompleteChoices,
   buildRegisteredClubAutocompleteChoices,
+  buildTargetTierAutocompleteChoices,
   dispatchClubCommand,
   handleClubComponent,
   isClubCommand,
@@ -90,6 +91,7 @@ const events = cache.events;
 const skills = cache.skills;
 const races = cache.races;
 const champsmeets = cache.champsmeets;
+const maps = cache.maps;
 const legendraces = cache.legendraces;
 const misc = cache.misc;
 const schedule = cache.schedule;
@@ -190,6 +192,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumbe
   const selectableCms = getSelectableChampionsMeets(champsmeets, {
     fromCmNumber: effectiveMinCmNumber,
     maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
+    mapsCatalog: maps,
   });
   if (selectableCms.length === 0) return result;
 
@@ -205,7 +208,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumbe
       selectableCms[0];
   }
 
-  const mapData = getCourseMapDataFromCm(activeCm);
+  const mapData = getCourseMapDataFromCm(activeCm, maps);
   if (!mapData) return result;
 
   const overlay = resolveSkillActivationOverlay(skill, activeCm, mapData);
@@ -260,7 +263,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumbe
 }
 
 async function resolveCmMapImageUrl(cm, req) {
-  const mapData = getCourseMapDataFromCm(cm);
+  const mapData = getCourseMapDataFromCm(cm, maps);
   if (!mapData) return null;
 
   const cacheKey = buildSkillMapCacheKey({
@@ -371,10 +374,18 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       const choices =
         focus.subcommand === 'leaderboard'
           ? buildLeaderboardAutocompleteChoices(req.body.guild_id, focus.value)
-          : focus.subcommand === 'setleaderboardchannel'
+          : focus.subcommand === 'setleaderboardchannel' || focus.subcommand === 'settarget'
             ? buildRegisteredClubAutocompleteChoices(req.body.guild_id, focus.value)
             : [];
 
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices },
+      });
+    }
+
+    if (data.name === 'club' && focus.optionName === 'target' && focus.subcommand === 'settarget') {
+      const choices = await buildTargetTierAutocompleteChoices(focus.value);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
@@ -1386,7 +1397,9 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
 
       try {
-        const componentData = await runClubComponentAction(clubAction);
+        const componentData = await runClubComponentAction(clubAction, {
+          guildId: req.body.guild_id ?? null,
+        });
         return res.send({
           type: InteractionResponseType.UPDATE_MESSAGE,
           data: componentData,

@@ -326,6 +326,27 @@ const CLUB_COMMAND = {
     },
     {
       type: 1,
+      name: 'settarget',
+      description: 'Set the rank tier target for a registered club (admin only)',
+      options: [
+        {
+          type: 3,
+          name: 'clubname',
+          description: 'Registered club name for this server',
+          required: true,
+          autocomplete: true,
+        },
+        {
+          type: 3,
+          name: 'target',
+          description: 'Target tier (SS, S+, S, A+, etc.)',
+          required: true,
+          autocomplete: true,
+        },
+      ],
+    },
+    {
+      type: 1,
       name: 'setpremium',
       description: 'Enable or disable premium leaderboard refresh (owner only)',
       options: [

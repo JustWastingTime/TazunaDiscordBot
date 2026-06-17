@@ -2,7 +2,6 @@ import crypto from 'crypto';
 import { DiscordRequest } from './utils.js';
 import {
   getAllLeaderboardChannels,
-  isGuildClubRegistered,
   isPremiumGuild,
   updateLeaderboardChannelState,
   removeLeaderboardChannel,
@@ -11,6 +10,7 @@ import { buildLeaderboardPackage, getUmaApiKey } from './clubService.js';
 
 const PREMIUM_TOP100_INTERVAL_MS = 5 * 60 * 1000;
 const STANDARD_TOP100_INTERVAL_MS = 15 * 60 * 1000;
+const NON_TOP100_POLL_MS = 60 * 60 * 1000;
 const TICK_MS = 60 * 1000;
 const EDIT_STAGGER_MS = 2500;
 const CIRCLE_CACHE_TTL_MS = 3 * 60 * 1000;
@@ -18,29 +18,27 @@ const CIRCLE_CACHE_TTL_MS = 3 * 60 * 1000;
 const circleCache = new Map();
 let tickInFlight = false;
 
-function hashEmbed(embed) {
-  return crypto.createHash('sha256').update(JSON.stringify(embed)).digest('hex');
-}
-
-function getJstParts(now = new Date()) {
-  const jst = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
-  return {
-    year: jst.getFullYear(),
-    month: jst.getMonth() + 1,
-    day: jst.getDate(),
-    hour: jst.getHours(),
-    minute: jst.getMinutes(),
+export function hashLeaderboardContent(embed) {
+  const stable = {
+    color: embed?.color,
+    title: embed?.title,
+    url: embed?.url,
+    description: embed?.description,
+    footer: embed?.footer,
   };
+  return crypto.createHash('sha256').update(JSON.stringify(stable)).digest('hex');
 }
 
-function getJstDateKey(now = new Date()) {
-  const { year, month, day } = getJstParts(now);
-  return `${year}-${month}-${day}`;
+function getCircleUpdatedMs(circle) {
+  if (!circle?.last_updated) return null;
+  const t = new Date(circle.last_updated).getTime();
+  return Number.isFinite(t) ? t : null;
 }
 
-function isPastDailyJstCutoff(now = new Date()) {
-  const { hour, minute } = getJstParts(now);
-  return hour > 0 || (hour === 0 && minute >= 10);
+function getSyncedCircleUpdatedMs(entry) {
+  if (!entry?.lastCircleUpdatedAt) return 0;
+  const t = new Date(entry.lastCircleUpdatedAt).getTime();
+  return Number.isFinite(t) ? t : 0;
 }
 
 function getTop100IntervalMs(guildId) {
@@ -56,18 +54,22 @@ function staggerDelayMs(entry, index) {
   return index * EDIT_STAGGER_MS + bucket * 150;
 }
 
-async function getCachedLeaderboardPackage(circleId) {
-  const key = String(circleId);
+function leaderboardCacheKey(guildId, circleId) {
+  return guildId ? `${guildId}:${circleId}` : String(circleId);
+}
+
+async function getCachedLeaderboardPackage(circleId, guildId = null) {
+  const key = leaderboardCacheKey(guildId, circleId);
   const cached = circleCache.get(key);
   const now = Date.now();
   if (cached && now - cached.fetchedAt < CIRCLE_CACHE_TTL_MS) {
     return cached;
   }
 
-  const pkg = await buildLeaderboardPackage(key);
+  const pkg = await buildLeaderboardPackage(circleId, { guildId });
   const cachedPkg = {
     ...pkg,
-    embedHash: hashEmbed(pkg.embed),
+    contentHash: hashLeaderboardContent(pkg.embed),
     fetchedAt: now,
   };
   circleCache.set(key, cachedPkg);
@@ -79,26 +81,48 @@ function isDueForTop100(entry, now, intervalMs) {
   return now - entry.lastUpdatedAt >= intervalMs;
 }
 
-function isDueForDaily(entry, now) {
-  const todayKey = getJstDateKey(now);
-  if (entry.lastDailyKey === todayKey) return false;
-  return isPastDailyJstCutoff(now);
+function isDueForNonTop100(entry, now, pkg) {
+  if (!entry.lastUpdatedAt) return true;
+  if (now - entry.lastUpdatedAt < NON_TOP100_POLL_MS) return false;
+
+  const circleUpdatedMs = getCircleUpdatedMs(pkg?.data?.circle);
+  if (circleUpdatedMs != null && circleUpdatedMs > getSyncedCircleUpdatedMs(entry)) {
+    return true;
+  }
+
+  return entry.lastEmbedHash !== pkg.contentHash;
+}
+
+function shouldWarnNeverSynced(entry, now) {
+  if (entry.lastUpdatedAt != null) return false;
+  const createdMs = entry.createdAt ? new Date(entry.createdAt).getTime() : 0;
+  return createdMs > 0 && now - createdMs > 2 * 60 * 60 * 1000;
 }
 
 function collectDueChannels(channels, now, packagesByCircle) {
   const due = [];
 
   for (const entry of channels) {
-    if (!isGuildClubRegistered(entry.guildId, entry.circleId)) continue;
-
-    const pkg = packagesByCircle.get(String(entry.circleId));
-    if (!pkg) continue;
+    const cacheKey = leaderboardCacheKey(entry.guildId, entry.circleId);
+    const pkg = packagesByCircle.get(cacheKey);
+    if (!pkg) {
+      if (shouldWarnNeverSynced(entry, now)) {
+        console.warn(
+          `Leaderboard channel guild ${entry.guildId} circle ${entry.circleId} has no uma.moe data — fetch may be failing.`,
+        );
+      }
+      continue;
+    }
 
     if (pkg.isTop100) {
       const intervalMs = getTop100IntervalMs(entry.guildId);
       if (isDueForTop100(entry, now, intervalMs)) due.push(entry);
-    } else if (isDueForDaily(entry, now)) {
+    } else if (isDueForNonTop100(entry, now, pkg)) {
       due.push(entry);
+    } else if (shouldWarnNeverSynced(entry, now)) {
+      console.warn(
+        `Leaderboard channel guild ${entry.guildId} circle ${entry.circleId} has never synced — still waiting for uma.moe data changes.`,
+      );
     }
   }
 
@@ -119,21 +143,23 @@ async function editLeaderboardMessage(entry, embed) {
 }
 
 async function processDueChannel(entry, pkg, now) {
-  if (entry.lastEmbedHash === pkg.embedHash) {
-    const patch = { lastUpdatedAt: now };
-    if (!pkg.isTop100) patch.lastDailyKey = getJstDateKey(now);
-    updateLeaderboardChannelState(entry.guildId, entry.circleId, patch);
+  const circleLastUpdated = pkg.data?.circle?.last_updated ?? null;
+  const unchanged =
+    entry.lastEmbedHash === pkg.contentHash &&
+    getSyncedCircleUpdatedMs(entry) >= (getCircleUpdatedMs(pkg.data?.circle) ?? 0);
+
+  if (unchanged) {
+    updateLeaderboardChannelState(entry.guildId, entry.circleId, { lastUpdatedAt: now });
     return;
   }
 
   try {
     await editLeaderboardMessage(entry, pkg.embed);
-    const patch = {
+    updateLeaderboardChannelState(entry.guildId, entry.circleId, {
       lastUpdatedAt: now,
-      lastEmbedHash: pkg.embedHash,
-    };
-    if (!pkg.isTop100) patch.lastDailyKey = getJstDateKey(now);
-    updateLeaderboardChannelState(entry.guildId, entry.circleId, patch);
+      lastEmbedHash: pkg.contentHash,
+      lastCircleUpdatedAt: circleLastUpdated,
+    });
   } catch (err) {
     const message = String(err?.message || err);
     if (message.includes('10008') || message.includes('Unknown Message')) {
@@ -141,7 +167,10 @@ async function processDueChannel(entry, pkg, now) {
       removeLeaderboardChannel(entry.guildId, entry.circleId);
       return;
     }
-    console.error(`Failed to update leaderboard ${entry.guildId}/${entry.circleId}:`, message);
+    console.error(
+      `Failed to update leaderboard guild ${entry.guildId} circle ${entry.circleId} message ${entry.messageId}:`,
+      message,
+    );
   }
 }
 
@@ -158,14 +187,19 @@ export async function runLeaderboardTick() {
     if (!channels.length) return;
 
     const now = Date.now();
-    const uniqueCircleIds = [...new Set(channels.map((c) => String(c.circleId)))];
+    const channelPairs = channels.map((entry) => ({
+      guildId: String(entry.guildId),
+      circleId: String(entry.circleId),
+      cacheKey: leaderboardCacheKey(entry.guildId, entry.circleId),
+    }));
+    const uniquePairs = [...new Map(channelPairs.map((pair) => [pair.cacheKey, pair])).values()];
     const packagesByCircle = new Map();
 
     await Promise.all(
-      uniqueCircleIds.map(async (circleId) => {
+      uniquePairs.map(async ({ guildId, circleId, cacheKey }) => {
         try {
-          const pkg = await getCachedLeaderboardPackage(circleId);
-          packagesByCircle.set(circleId, pkg);
+          const pkg = await getCachedLeaderboardPackage(circleId, guildId);
+          packagesByCircle.set(cacheKey, pkg);
         } catch (err) {
           console.error(`Leaderboard fetch failed for circle ${circleId}:`, err.message);
         }
@@ -175,7 +209,7 @@ export async function runLeaderboardTick() {
     const due = collectDueChannels(channels, now, packagesByCircle);
     for (let i = 0; i < due.length; i += 1) {
       const entry = due[i];
-      const pkg = packagesByCircle.get(String(entry.circleId));
+      const pkg = packagesByCircle.get(leaderboardCacheKey(entry.guildId, entry.circleId));
       if (!pkg) continue;
 
       if (i > 0) {
@@ -194,7 +228,9 @@ export function startLeaderboardCron() {
     return;
   }
 
-  console.log('Leaderboard cron started (tick every 60s, premium top-100: 5m, standard top-100: 15m, else daily 00:10 JST).');
+  console.log(
+    'Leaderboard cron started (tick every 60s, premium top-100: 5m, standard top-100: 15m, else hourly when uma.moe data changes).',
+  );
   setInterval(() => {
     runLeaderboardTick().catch((err) => console.error('Leaderboard cron tick failed:', err));
   }, TICK_MS);

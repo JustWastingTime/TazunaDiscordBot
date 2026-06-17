@@ -11,13 +11,20 @@ async function main() {
 
   const champsmeetPath = path.resolve("assets", "champsmeet.json");
   const champsmeets = JSON.parse(await fs.readFile(champsmeetPath, "utf8"));
+  const mapsPath = path.resolve("assets", "maps.json");
+  let mapsCatalog = [];
+  try {
+    mapsCatalog = JSON.parse(await fs.readFile(mapsPath, "utf8"));
+  } catch {
+    mapsCatalog = [];
+  }
   const targets = champsmeets.filter((cm) => cmNumbers.includes(String(cm.number)));
   if (targets.length === 0) {
     throw new Error(`No CM entries matched: ${cmNumbers.join(", ")}`);
   }
 
   for (const cm of targets) {
-    const mapData = getCourseMapDataFromCm(cm);
+    const mapData = getCourseMapDataFromCm(cm, mapsCatalog);
     if (!mapData) {
       console.log(`Skipped CM ${cm.number} (${cm.name}): map data missing or invalid.`);
       continue;

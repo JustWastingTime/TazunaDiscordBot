@@ -101,7 +101,26 @@ export function getGuildClubs(guildId) {
   return clubs.map((club) => ({
     circleId: String(club.circleId),
     circleName: club.circleName ?? null,
+    targetTier: club.targetTier ?? null,
   }));
+}
+
+export function setGuildClubTarget(guildId, circleId, targetTier) {
+  const store = loadGuildClubs();
+  const key = String(guildId);
+  const clubs = Array.isArray(store[key]) ? store[key] : [];
+  const club = clubs.find((item) => String(item.circleId) === String(circleId));
+  if (!club) return false;
+
+  club.targetTier = String(targetTier).trim();
+  saveGuildClubs(store);
+  return true;
+}
+
+export function getGuildClubTarget(guildId, circleId) {
+  const clubs = getGuildClubs(guildId);
+  const club = clubs.find((item) => String(item.circleId) === String(circleId));
+  return club?.targetTier ?? null;
 }
 
 export function isGuildClubRegistered(guildId, circleId) {
@@ -186,7 +205,14 @@ function savePremiumGuildStore(store) {
   writeJson(PREMIUM_GUILDS_PATH, store);
 }
 
-export function upsertLeaderboardChannel({ guildId, circleId, channelId, messageId }) {
+export function upsertLeaderboardChannel({
+  guildId,
+  circleId,
+  channelId,
+  messageId,
+  circleLastUpdated = null,
+  embedHash = null,
+}) {
   const channels = loadLeaderboardChannels();
   const g = String(guildId);
   const c = String(circleId);
@@ -198,9 +224,10 @@ export function upsertLeaderboardChannel({ guildId, circleId, channelId, message
     circleId: c,
     channelId: String(channelId),
     messageId: String(messageId),
-    lastUpdatedAt: null,
+    lastUpdatedAt: Date.now(),
     lastDailyKey: null,
-    lastEmbedHash: null,
+    lastEmbedHash: embedHash,
+    lastCircleUpdatedAt: circleLastUpdated,
     createdAt: new Date().toISOString(),
   });
   saveLeaderboardChannels(next);
@@ -238,6 +265,7 @@ export function updateLeaderboardChannelState(guildId, circleId, patch) {
   if (patch.lastUpdatedAt !== undefined) entry.lastUpdatedAt = patch.lastUpdatedAt;
   if (patch.lastDailyKey !== undefined) entry.lastDailyKey = patch.lastDailyKey;
   if (patch.lastEmbedHash !== undefined) entry.lastEmbedHash = patch.lastEmbedHash;
+  if (patch.lastCircleUpdatedAt !== undefined) entry.lastCircleUpdatedAt = patch.lastCircleUpdatedAt;
   saveLeaderboardChannels(channels);
   return true;
 }

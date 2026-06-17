@@ -1,5 +1,5 @@
 import { buildGambleProfileFields } from './eventGambling.js';
-import { buildFestProfileData, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
+import { buildFestProfileData, getGuildClubTarget, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
   dailyFans: [],
@@ -216,22 +216,121 @@ export function getDaysSinceJstMonthSecondMidnight(now = new Date()) {
   return Math.max(elapsedHours / 24, 1 / 24);
 }
 
-export async function fetchCurrentTarget(circleData) {
-  const circle = circleData?.circle;
-  if (!circle) return null;
+const RANK_THRESHOLDS_URL = 'https://uma.moe/api/v4/circles/rank-thresholds';
+const RANK_THRESHOLDS_TTL_MS = 60 * 60 * 1000;
+let rankThresholdsCache = { fetchedAt: 0, tiers: [] };
 
-  const rank = circle.live_rank ?? circle.monthly_rank;
-  const useLivePoints = typeof rank === 'number' ? rank <= 100 : true;
-  const page = useLivePoints ? 99 : 499;
-  const payload = await fetchUmaJson(`https://uma.moe/api/v4/circles/list?page=${page}&limit=1`);
-  const firstCircle = Array.isArray(payload?.circles) ? payload.circles[0] : null;
-  if (!firstCircle) return null;
+function normalizeRankThresholdEntry(item) {
+  if (!item || typeof item !== 'object') return null;
 
-  const totalPoints = useLivePoints ? firstCircle.live_points : firstCircle.monthly_point;
-  if (typeof totalPoints !== 'number') return null;
+  const tier = item.tier ?? item.name ?? item.label ?? item.grade ?? item.rank_tier;
+  const rankRaw =
+    item.rank ??
+    item.rank_max ??
+    item.max_rank ??
+    item.position ??
+    item.rank_min ??
+    item.min_rank;
+  const monthlyPointRaw =
+    item.monthly_point ??
+    item.min_monthly_point ??
+    item.monthly_points ??
+    item.points ??
+    item.point_threshold;
 
+  if (tier == null || tier === '' || rankRaw == null) return null;
+
+  const rank = Number(rankRaw);
+  if (!Number.isFinite(rank)) return null;
+
+  const monthlyPoint =
+    monthlyPointRaw != null && Number.isFinite(Number(monthlyPointRaw))
+      ? Number(monthlyPointRaw)
+      : null;
+
+  return {
+    tier: String(tier).trim(),
+    rank,
+    monthlyPoint,
+  };
+}
+
+export function normalizeRankThresholds(payload) {
+  const items = Array.isArray(payload)
+    ? payload
+    : payload?.thresholds ?? payload?.tiers ?? payload?.ranks ?? [];
+
+  const byTier = new Map();
+  for (const item of items) {
+    const normalized = normalizeRankThresholdEntry(item);
+    if (!normalized) continue;
+    byTier.set(normalized.tier.toLowerCase(), normalized);
+  }
+
+  return [...byTier.values()].sort((a, b) => a.rank - b.rank);
+}
+
+export async function getRankThresholds() {
+  const now = Date.now();
+  if (rankThresholdsCache.tiers.length && now - rankThresholdsCache.fetchedAt < RANK_THRESHOLDS_TTL_MS) {
+    return rankThresholdsCache.tiers;
+  }
+
+  const payload = await fetchUmaJson(RANK_THRESHOLDS_URL);
+  const tiers = normalizeRankThresholds(payload);
+  rankThresholdsCache = { fetchedAt: now, tiers };
+  return tiers;
+}
+
+export function findRankThreshold(tiers, tierQuery) {
+  const query = String(tierQuery ?? '').trim().toLowerCase();
+  if (!query) return null;
+  return tiers.find((tier) => tier.tier.toLowerCase() === query) ?? null;
+}
+
+export function computeDailyTargetFromThreshold(threshold) {
+  if (!threshold?.monthlyPoint) return null;
   const daysElapsed = getDaysSinceJstMonthSecondMidnight();
-  return totalPoints / 30 / daysElapsed;
+  return threshold.monthlyPoint / (30 * daysElapsed);
+}
+
+export function buildTargetStatus(circle, threshold) {
+  if (!circle || !threshold) return null;
+
+  const currentRank = circle.live_rank ?? circle.monthly_rank;
+  const rankLine =
+    typeof currentRank === 'number' && currentRank > 0
+      ? currentRank <= threshold.rank
+        ? `✅ Rank #${currentRank} (tier floor #${threshold.rank})`
+        : `⚠️ Rank #${currentRank} (need ≤ #${threshold.rank})`
+      : null;
+
+  const currentPoints = circle.monthly_point ?? circle.live_points;
+  const pointsLine =
+    threshold.monthlyPoint != null && typeof currentPoints === 'number'
+      ? currentPoints >= threshold.monthlyPoint
+        ? `✅ ${formatCompactInt(currentPoints)} pts (tier floor ${formatCompactInt(threshold.monthlyPoint)})`
+        : `⚠️ ${formatCompactInt(currentPoints)} pts (need ${formatCompactInt(threshold.monthlyPoint)})`
+      : null;
+
+  return rankLine ?? pointsLine ?? '—';
+}
+
+export async function resolveClubTargetInfo(guildId, circleId, circleData) {
+  const targetTier = getGuildClubTarget(guildId, circleId);
+  if (!targetTier) return null;
+
+  const tiers = await getRankThresholds();
+  const threshold = findRankThreshold(tiers, targetTier);
+  if (!threshold) return null;
+
+  const circle = circleData?.circle;
+  return {
+    tierLabel: threshold.tier,
+    rankBoundary: threshold.rank,
+    dailyTarget: computeDailyTargetFromThreshold(threshold),
+    statusText: buildTargetStatus(circle, threshold),
+  };
 }
 
 function buildDailyFansFromTrimmed(trimmed) {
@@ -531,7 +630,7 @@ export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) 
   return embed;
 }
 
-export function buildLeaderboardEmbed(data, currentTarget = null) {
+export function buildLeaderboardEmbed(data, targetInfo = null) {
   const circle = data.circle;
   const members = data.members || [];
   const cutoff = getActiveCutoffMs(members);
@@ -569,9 +668,19 @@ export function buildLeaderboardEmbed(data, currentTarget = null) {
   const currentRank = circle.live_rank ?? circle.monthly_rank ?? '—';
   lines.push(`**Current Rank:** # ${currentRank}`);
   lines.push(`**Last Month's Rank:** # ${circle.last_month_rank ?? '—'}`);
-  lines.push(
-    `**Current Target:** ${currentTarget == null ? '—' : formatIntWithCommas(Math.round(currentTarget))}`,
-  );
+
+  if (targetInfo) {
+    lines.push(`**Target Tier:** ${targetInfo.tierLabel} (rank ≤ #${targetInfo.rankBoundary})`);
+    lines.push(
+      `**Daily Target:** ${
+        targetInfo.dailyTarget == null ? '—' : formatIntWithCommas(Math.round(targetInfo.dailyTarget))
+      }`,
+    );
+    lines.push(`**vs Target:** ${targetInfo.statusText ?? '—'}`);
+  } else {
+    lines.push('**Target Tier:** — *(set with `/club settarget`)*');
+    lines.push('**Daily Target:** —');
+  }
 
   if (!activeMembers.length) {
     lines.push('');
@@ -842,10 +951,11 @@ export function isTop100Circle(circle) {
   return typeof rank === 'number' && rank > 0 && rank <= 100;
 }
 
-export async function buildLeaderboardPackage(circleId) {
+export async function buildLeaderboardPackage(circleId, options = {}) {
+  const { guildId = null } = options;
   const data = await fetchCircleData(circleId);
-  const currentTarget = await fetchCurrentTarget(data);
-  const embed = buildLeaderboardEmbed(data, currentTarget);
+  const targetInfo = guildId ? await resolveClubTargetInfo(guildId, circleId, data) : null;
+  const embed = buildLeaderboardEmbed(data, targetInfo);
   return {
     data,
     embed,
@@ -853,8 +963,8 @@ export async function buildLeaderboardPackage(circleId) {
   };
 }
 
-export async function resolveLeaderboardFromCircleId(circleId) {
-  const pkg = await buildLeaderboardPackage(circleId);
+export async function resolveLeaderboardFromCircleId(circleId, options = {}) {
+  const pkg = await buildLeaderboardPackage(circleId, options);
   return pkg.embed;
 }
 

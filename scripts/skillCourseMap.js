@@ -61,56 +61,134 @@ export function getUpcomingChampionsMeet(champsmeets, nowSec = Math.floor(Date.n
   return champsmeets[champsmeets.length - 1] ?? null;
 }
 
-function resolveMapName(cm, length) {
-  if (cm?.map?.name) return cm.map.name;
-  const racetrack = cm?.track?.racetrack ?? "Course";
-  const terrain = cm?.track?.terrain ?? "";
-  const direction = normalizeDirection(cm?.track?.direction);
+function resolveMapName(cm, rawMap, length) {
+  if (rawMap?.name) return rawMap.name;
+  const racetrack = cm?.track?.racetrack ?? rawMap?.racetrack ?? "Course";
+  const terrain = cm?.track?.terrain ?? rawMap?.terrain ?? "";
+  const direction = normalizeDirection(cm?.track?.direction ?? rawMap?.direction);
   return `${racetrack} ${terrain} ${length}m (${direction})`.trim();
 }
 
-function normalizeSegments(segments) {
+function withDefaultSegmentColor(segment, rowKey) {
+  if (segment?.color) return segment;
+  const label = lower(segment?.label);
+  if (rowKey === "elevation") {
+    const type = lower(segment?.type);
+    if (type.includes("uphill") || label.includes("uphill")) return { ...segment, color: "#e6ca9d" };
+    if (type.includes("downhill") || label.includes("downhill")) return { ...segment, color: "#67d2de" };
+    return { ...segment, color: "#c9ec39" };
+  }
+  if (rowKey === "layout") {
+    if (label.includes("corner")) return { ...segment, color: "#edccae" };
+    return { ...segment, color: "#b8d4ea" };
+  }
+  if (rowKey === "zones") {
+    if (label.includes("early")) return { ...segment, color: "#00a88f" };
+    if (label.includes("mid")) return { ...segment, color: "#e3d95f" };
+    if (label.includes("late")) return { ...segment, color: "#cf81bb" };
+    if (label.includes("spurt")) return { ...segment, color: "#bf6ea8" };
+    return { ...segment, color: "#d7d0df" };
+  }
+  return segment;
+}
+
+function normalizeSegments(segments, rowKey) {
   return Array.isArray(segments)
     ? segments
-        .map((segment) => ({
+        .map((segment) => withDefaultSegmentColor({
           ...segment,
           start: Number(segment.start),
           end: Number(segment.end),
-        }))
+        }, rowKey))
         .filter((segment) => Number.isFinite(segment.start) && Number.isFinite(segment.end) && segment.end > segment.start)
     : [];
 }
 
-export function getCourseMapDataFromCm(cm) {
-  if (!cm?.map) return null;
-  const length = toMeters(cm.track?.distance_meters);
+function normalizeStatThresholds(rawMap) {
+  const source =
+    rawMap?.stat_thresholds ??
+    rawMap?.statThresholds ??
+    rawMap?.stat_tresholds ??
+    rawMap?.stat_treshold ??
+    rawMap?.stat_threshold ??
+    "";
+
+  if (Array.isArray(source)) {
+    return source.map((v) => String(v).trim()).filter(Boolean);
+  }
+
+  const text = String(source ?? "").trim();
+  if (!text) return [];
+  return text
+    .split(/(?:\s*&\s*|\s*,\s*|\s*\/\s*|\s+\+\s+)/g)
+    .map((v) => v.trim())
+    .filter(Boolean);
+}
+
+function resolveMapSource(cm, mapsCatalog) {
+  if (cm?.map && typeof cm.map === "object") return cm.map;
+  const mapRef = cm?.map_id ?? cm?.mapId ?? cm?.map_ref ?? cm?.mapRef ?? cm?.map;
+  if (!mapRef) return null;
+  const ref = lower(mapRef);
+  if (!Array.isArray(mapsCatalog)) return null;
+  return mapsCatalog.find((map) => {
+    if (!map || typeof map !== "object") return false;
+    return (
+      lower(map.id) === ref ||
+      lower(map.map_id) === ref ||
+      lower(map.slug) === ref ||
+      lower(map.name) === ref
+    );
+  }) ?? null;
+}
+
+function normalizeDistancePoints(points, length) {
+  const values = Array.isArray(points) ? points : [points];
+  return [...new Set(
+    values
+      .map((value) => Number(value))
+      .filter((value) => Number.isFinite(value) && value >= 0 && value <= length)
+  )].sort((a, b) => a - b);
+}
+
+export function getCourseMapDataFromCm(cm, mapsCatalog = []) {
+  const rawMap = resolveMapSource(cm, mapsCatalog);
+  if (!rawMap) return null;
+  const length = toMeters(cm?.track?.distance_meters ?? rawMap.distance_meters);
   if (!length || length <= 0) return null;
 
-  const elevation = normalizeSegments(cm.map.elevation);
-  const layout = normalizeSegments(cm.map.layout);
-  const zones = normalizeSegments(cm.map.zones);
+  const elevation = normalizeSegments(rawMap.elevation, "elevation");
+  const layout = normalizeSegments(rawMap.layout, "layout");
+  const zones = normalizeSegments(rawMap.zones, "zones");
+  const positionKeepEnds = normalizeDistancePoints(
+    rawMap.position_keep_ends ?? rawMap.positionKeepEnds ?? rawMap.position_keep_end,
+    length
+  );
+  const statThresholds = normalizeStatThresholds(rawMap);
   if (!elevation.length || !layout.length || !zones.length) return null;
 
   return {
-    name: resolveMapName(cm, length),
+    name: resolveMapName(cm, rawMap, length),
     length,
     elevation,
     layout,
     zones,
+    positionKeepEnds,
+    statThresholds,
   };
 }
 
 // Returns the Champions Meets that can be offered in the skill map dropdown:
 // those that have renderable map data and whose number falls within the
 // [fromCmNumber, maxCmNumber] window. Sorted ascending by CM number.
-export function getSelectableChampionsMeets(champsmeets, { fromCmNumber = 0, maxCmNumber = Infinity } = {}) {
+export function getSelectableChampionsMeets(champsmeets, { fromCmNumber = 0, maxCmNumber = Infinity, mapsCatalog = [] } = {}) {
   if (!Array.isArray(champsmeets)) return [];
   return champsmeets
     .filter((cm) => {
       const num = Number(cm?.number);
       if (!Number.isFinite(num)) return false;
       if (num < fromCmNumber || num > maxCmNumber) return false;
-      return !!getCourseMapDataFromCm(cm);
+      return !!getCourseMapDataFromCm(cm, mapsCatalog);
     })
     .sort((a, b) => Number(a.number) - Number(b.number));
 }

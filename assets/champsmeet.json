@@ -316,7 +316,8 @@
                 { "start": 367, "end": 1467, "label": "Mid Race", "color": "#e3d95f" },
                 { "start": 1467, "end": 1833, "label": "Late Race", "color": "#cf81bb" },
                 { "start": 1833, "end": 2200, "label": "Last spurt", "color": "#bf6ea8" }
-            ]
+            ],
+            "position_keep_ends": [917]
         },
         "date": "<t:1782079200:F> - <t:1782856800:F>, <t:1782079200:R>",
         "image": "",

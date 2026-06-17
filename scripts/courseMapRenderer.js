@@ -17,6 +17,7 @@ const DEFAULT_COLORS = {
   activationLine: "#ff4d6d",
   activationBoxStroke: "#ff5c7a",
   preconditionBoxStroke: "#d9b84a",
+  positionKeepLine: "#a76bff",
 };
 
 function clamp(value, min, max) {
@@ -55,6 +56,35 @@ function computeTickStep(length) {
   if (length <= 2000) return 200;
   if (length <= 3000) return 300;
   return 400;
+}
+
+function defaultSegmentColor(rowKey, segment) {
+  const label = String(segment?.label ?? "").toLowerCase();
+  if (rowKey === "elevation") {
+    const type = String(segment?.type ?? "").toLowerCase();
+    if (type.includes("uphill") || label.includes("uphill")) return "#e6ca9d";
+    if (type.includes("downhill") || label.includes("downhill")) return "#67d2de";
+    return "#c9ec39";
+  }
+  if (rowKey === "layout") {
+    if (label.includes("corner")) return "#edccae";
+    return "#b8d4ea";
+  }
+  if (rowKey === "zones") {
+    if (label.includes("early")) return "#00a88f";
+    if (label.includes("mid")) return "#e3d95f";
+    if (label.includes("late")) return "#cf81bb";
+    if (label.includes("spurt")) return "#bf6ea8";
+    return "#d7d0df";
+  }
+  return "#d1d5db";
+}
+
+function formatStatThresholds(statThresholds) {
+  if (!Array.isArray(statThresholds)) return "";
+  const cleaned = [...new Set(statThresholds.map((v) => String(v ?? "").trim()).filter(Boolean))];
+  if (!cleaned.length) return "";
+  return `Stat Thresholds: ${cleaned.join(" & ")}`;
 }
 
 function mergeTouchingBoxMarkers(markers, length) {
@@ -99,9 +129,11 @@ function buildSvg(mapData, options) {
   const warningText = options.warningText ? String(options.warningText) : "";
   const backgroundOpacity = clamp(Number(options.backgroundOpacity ?? 0), 0, 1);
   const length = Number(mapData.length);
+  const statThresholdText = formatStatThresholds(mapData.statThresholds);
   const rowBottom = trackTop + rowHeight * 3 + rowGap * 2;
   const axisY = rowBottom + 32;
-  const height = options.height ?? axisY + 34;
+  const statThresholdY = axisY + 42;
+  const height = options.height ?? (statThresholdText ? statThresholdY + 22 : axisY + 34);
 
   if (!Number.isFinite(length) || length <= 0) {
     throw new Error("mapData.length must be a positive number.");
@@ -159,7 +191,7 @@ function buildSvg(mapData, options) {
       const x = xFromDistance(segment.start);
       const w = xFromDistance(segment.end) - x;
       const label = segmentLabel(segment);
-      const fill = segment.color ?? "#d1d5db";
+      const fill = segment.color ?? defaultSegmentColor(row.key, segment);
       const textColor = segment.textColor ?? "#20262e";
 
       parts.push(
@@ -198,6 +230,12 @@ function buildSvg(mapData, options) {
     parts.push(
       `<line x1="${x.toFixed(2)}" y1="${axisY}" x2="${x.toFixed(2)}" y2="${(axisY - 10).toFixed(2)}" stroke="${DEFAULT_COLORS.tick}" stroke-width="2"/>`,
       `<text x="${x.toFixed(2)}" y="${(axisY + 20).toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.axis}" font-size="13" font-family="Arial, Helvetica, sans-serif">${d}</text>`
+    );
+  }
+
+  if (statThresholdText) {
+    parts.push(
+      `<text x="${(width / 2).toFixed(2)}" y="${statThresholdY.toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.axis}" font-size="15" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(statThresholdText)}</text>`
     );
   }
 
@@ -267,6 +305,25 @@ function buildSvg(mapData, options) {
     );
   }
 
+  const rawPositionKeepEnds = Array.isArray(mapData.positionKeepEnds)
+    ? mapData.positionKeepEnds
+    : (Array.isArray(mapData.position_keep_ends) ? mapData.position_keep_ends : []);
+  const positionKeepEnds = rawPositionKeepEnds
+    .map((value) => Number(value))
+    .filter((value) => Number.isFinite(value) && value >= 0 && value <= length)
+    .sort((a, b) => a - b);
+
+  // Draw PK overlays last so labels stay visible on top of skill overlays.
+  for (const distance of positionKeepEnds) {
+    const lineX = xFromDistance(distance);
+    const labelX = clamp(lineX + 6, margin.left + 4, width - margin.right - 22);
+    const labelY = trackTop + rowHeight * 0.34;
+    parts.push(
+      `<line x1="${lineX.toFixed(2)}" y1="${(trackTop - 10).toFixed(2)}" x2="${lineX.toFixed(2)}" y2="${(axisY + 4).toFixed(2)}" stroke="${DEFAULT_COLORS.positionKeepLine}" stroke-width="2.8"/>`,
+      `<text x="${labelX.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="start" fill="${DEFAULT_COLORS.positionKeepLine}" font-size="11" font-family="Arial, Helvetica, sans-serif" font-weight="700">PK</text>`
+    );
+  }
+
   parts.push("</svg>");
   return parts.join("");
 }
@@ -301,6 +358,7 @@ const SAMPLE_MAP = {
     { start: 1067, end: 1333, label: "Late", color: "#cf81bb" },
     { start: 1333, end: 1600, label: "Last Spurt", color: "#bf6ea8" },
   ],
+  positionKeepEnds: [500],
 };
 
 async function runCli() {

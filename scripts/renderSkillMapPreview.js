@@ -28,6 +28,7 @@ async function main() {
 
   const skills = await loadJson(path.resolve("assets", "skill.json"));
   const champsmeets = await loadJson(path.resolve("assets", "champsmeet.json"));
+  const mapsCatalog = await loadJson(path.resolve("assets", "maps.json")).catch(() => []);
 
   const skill = findSkill(skills, skillQuery);
   if (!skill) {
@@ -39,7 +40,7 @@ async function main() {
     : getUpcomingChampionsMeet(champsmeets);
   if (!cm) throw new Error("No Champions Meet found.");
 
-  const mapData = getCourseMapDataFromCm(cm);
+  const mapData = getCourseMapDataFromCm(cm, mapsCatalog);
   if (!mapData) {
     throw new Error(`CM ${cm.number} (${cm.name}) has no valid map data.`);
   }
