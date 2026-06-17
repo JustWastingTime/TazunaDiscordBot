@@ -33,6 +33,7 @@
         ["All Charged! It's Go Time!", ["Ines Fujin", "$uma"]]
       ]
     },
+
     { "promptTemplate": "{0}'s unique skill is called?",
       "difficulty": "medium",
       "entries": [
@@ -146,23 +147,38 @@
       ]
     },
 
-    {
-      "prompt": "Which Uma runs through snow in their Unique Skill?",
+    { "promptTemplate": "This is the skill description of which skill? \n\n {0}",
+      "difficulty": "expert",
+      "entries": [
+        ["Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
+        ["Super-Duper Climax", "U=ma2", "Superior Heal", "Keep Pushing Ahead", "Introduction to Physiology"]],
+        ["Greatly recover endurance when well-positioned mid-race.",
+        ["Pure Heart", "Super-Duper Climax", "U=ma2", "Superior Heal", "Keep Pushing Ahead", "Introduction to Physiology"]],
+        ["Greatly recover endurance with a gentle light when overtaken toward the back mid-race.",
+        ["Superior Heal", "Super-Duper Climax", "U=ma2", "Keep Pushing Ahead", "Introduction to Physiology", "Go, Go, Mun!"]],
+        ["If positioned toward the front from the start of the race until the second half of the race, good vibes recover endurance and moderately increase velocity steadily.",
+        ["Keep Pushing Ahead", "Superior Heal", "Super-Duper Climax", "U=ma2", "Introduction to Physiology", "Dazzl'n ♪ Diver"]],
+        ["Recover endurance and moderately increase velocity with newfound resolve when in midpack around halfway through the race.",
+        ["Go, Go, Mun!", "Super-Duper Climax", "U=ma2", "Superior Heal", "Keep Pushing Ahead", "Introduction to Physiology", "Every Rose Has Its Fangs"]]
+       
+      ]
+    },
+
+    { "prompt": "Which Uma runs through snow in their Unique Skill?",
       "answers": ["Oguri Cap", "Admire Vega", "Mejiro Ardan", "Air Groove"],
+      "difficulty": "easy"
+    },
+
+    { "prompt": "What weapon does Grass Wonder wield in her unique animation?",
+      "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"],
       "difficulty": "medium"
     },
-    {
-      "prompt": "What weapon does Grass Wonder wield in her unique animation?",
-      "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"],
-      "difficulty": "hard"
-    },
-    {
-      "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?",
+
+    { "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?",
       "answers": ["Nice Nature (Cheerleader)", "Kawakami Princess", "Sakura Chiyono O", "El Condor Pasa (Fantasy)"],
       "difficulty": "hard"
     },
-    {
-      "prompt": "Which of these Uma does NOT have a ☆ in the name of their Unique Skill?",
+    { "prompt": "Which of these Uma does NOT have a ☆ in the name of their Unique Skill?",
       "answers": ["Tosen Jordan", "Sweep Tosho", "Mayano Top Gun (Wedding)", "Hishi Akebono", "Maruzensky (Summer)", "Agnes Digital"],
       "difficulty": "hard"
     }
