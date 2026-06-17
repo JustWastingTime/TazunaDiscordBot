@@ -29,6 +29,45 @@
         "position_keep_ends": [500],
         "races": ["centaur stakes september 1 year 2"]
     },
+    {   "name": "Hanshin 1600m (outer) (clockwise)",
+        "racetrack": "Hanshin",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1600m",
+        "elevation_scale": 8,
+        "stat_treshold": "Power",
+        "url": "https://gametora.com/umamusume/racetracks/hanshin#1600-turf-outer",
+        "elevation": [
+            { "start": 0, "end": 950, "label": "Flat", "type": "flat"},
+            { "start": 950, "end": 1350, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 1350, "end": 1405, "label": "Flat", "type": "flat"},
+            { "start": 1405, "end": 1525, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 1525, "end": 1600, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 450, "label": "Straight"},
+            { "start": 450, "end": 800, "label": "Corner 3"},
+            { "start": 800, "end": 1150, "label": "Corner 4"},
+            { "start": 1150, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 267, "label": "Early Race"},
+            { "start": 267, "end": 1067, "label": "Mid Race"},
+            { "start": 1067, "end": 1333, "label": "Late Race"},
+            { "start": 1333, "end": 1600, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [667],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "asahi hai futurity stakes december 1 year 1",
+            "tulip sho march 1 year 2",
+            "oka sho april 1 year 2",
+            "arlington cup april 1 year 2",
+            "mile championship november 2 year 2",
+            "hanshin umamusume stakes april 1 year 3",
+            "mile championship november 2 year 3"
+        ]
+    },
     {   "name": "Hanshin 2200m (inner) (clockwise)",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
@@ -105,6 +144,41 @@
         ],
         "position_keep_ends": [1000],
         "races": ["kobe shimbun hai september 2 year 2"]
+    },
+    {   "name": "Hanshin 2600m (outer) (clockwise)",
+        "racetrack": "Hanshin",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2600m",
+        "elevation_scale": 8,
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hanshin#2600-turf-outer",
+        "elevation": [
+            { "start": 0, "end": 315, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 315, "end": 370, "label": "Flat", "type": "flat"},
+            { "start": 370, "end": 490, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 490, "end": 1950, "label": "Flat", "type": "flat"},
+            { "start": 1950, "end": 2350, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 2350, "end": 2405, "label": "Flat", "type": "flat"},
+            { "start": 2405, "end": 2525, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 2525, "end": 2600, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 570, "label": "Straight"},
+            { "start": 570, "end": 760, "label": "Corner 1"},
+            { "start": 760, "end": 950, "label": "Corner 2"},
+            { "start": 950, "end": 1450, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1450, "end": 1800, "label": "Corner 3"},
+            { "start": 1800, "end": 2150, "label": "Corner 4"},
+            { "start": 2150, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 433, "label": "Early Race"},
+            { "start": 433, "end": 1733, "label": "Mid Race"},
+            { "start": 1733, "end": 2167, "label": "Late Race"},
+            { "start": 2167, "end": 2600, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1083]
     },
 
     {   "name": "Niigata 2400m (inner) (counterclockwise)",
@@ -220,6 +294,39 @@
             "arima kinen december 2 year 2",
             "nikkei sho march 2 year 3",
             "arima kinen december 2 year 3"
+        ]
+    },
+
+    {   "name": "Chukyo 1200m (counterclockwise)",
+        "racetrack": "Chukyo",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "1200m",
+        "elevation_scale": 9,
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/chukyo#1200-turf",
+        "elevation": [
+            { "start": 0, "end": 100, "label": "Flat", "type": "flat"},
+            { "start": 100, "end": 875, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 875, "end": 975, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 975, "end": 1200, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 300, "label": "Straight"},
+            { "start": 300, "end": 550, "label": "Corner 3"},
+            { "start": 550, "end": 800, "label": "Corner 4"},
+            { "start": 800, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 200, "label": "Early Race"},
+            { "start": 200, "end": 800, "label": "Mid Race"},
+            { "start": 800, "end": 1000, "label": "Late Race"},
+            { "start": 1000, "end": 1200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [500],
+        "races": [
+            "cbc sho july 1 year 2",
+            "takamatsunomiya kinen march 2 year 3"
         ]
     }
 ]
