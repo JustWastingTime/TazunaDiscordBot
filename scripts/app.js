@@ -94,8 +94,6 @@ const events = cache.events;
 const skills = cache.skills;
 const races = cache.races;
 const champsmeets = cache.champsmeets;
-const maps = cache.maps;
-const customraces = cache.customraces;
 const legendraces = cache.legendraces;
 const misc = cache.misc;
 const schedule = cache.schedule;
@@ -199,7 +197,9 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
   const embed = buildSkillEmbed(skill, supporterList);
   const result = { embed, mapComponents: [] };
 
-  const override = mapOverride ? resolveMapOverride(mapOverride, maps, customraces) : null;
+  const override = mapOverride
+    ? resolveMapOverride(mapOverride, cache.maps, cache.customraces)
+    : null;
   let mapData = null;
   let overlayCm = null;
   let mapLabel = null;
@@ -220,7 +220,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     const selectableCms = getSelectableChampionsMeets(champsmeets, {
       fromCmNumber: effectiveMinCmNumber,
       maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
-      mapsCatalog: maps,
+      mapsCatalog: cache.maps,
     });
     if (selectableCms.length === 0) return result;
 
@@ -234,7 +234,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
         selectableCms[0];
     }
 
-    mapData = getCourseMapDataFromCm(activeCm, maps);
+    mapData = getCourseMapDataFromCm(activeCm, cache.maps);
     overlayCm = activeCm;
     mapLabel = activeCm.name;
     mapContextKey = `cm:${activeCm.number}`;
@@ -297,7 +297,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
 }
 
 async function resolveCmMapImageUrl(cm, req) {
-  const mapData = getCourseMapDataFromCm(cm, maps);
+  const mapData = getCourseMapDataFromCm(cm, cache.maps);
   if (!mapData) return null;
 
   const cacheKey = buildSkillMapCacheKey({
@@ -435,7 +435,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
     }
 
     if (data.name === 'skill' && focus.optionName === 'map_override') {
-      const choices = buildMapOverrideAutocompleteChoices(focus.value, maps, customraces);
+      const choices = buildMapOverrideAutocompleteChoices(focus.value, cache.maps, cache.customraces);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
