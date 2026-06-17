@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, buildMapEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
 import cache, { updateCache } from './githubCache.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
@@ -27,6 +27,8 @@ import {
   getCourseMapDataFromMap,
   resolveMapOverride,
   buildMapOverrideAutocompleteChoices,
+  resolveMapCatalogMatches,
+  buildMapCatalogAutocompleteChoices,
   resolveSkillActivationOverlay,
   buildSkillMapCacheKey,
   ensureDirectory,
@@ -323,6 +325,38 @@ async function resolveCmMapImageUrl(cm, req) {
   return `${baseUrl}/assets/generated/skill-maps/${fileName}`;
 }
 
+async function resolveCatalogMapImageUrl(resolved, req) {
+  const mapData = getCourseMapDataFromMap(resolved.rawMap, resolved.context);
+  if (!mapData) return null;
+
+  const cacheKey = buildSkillMapCacheKey({
+    mapContextKey: resolved.key,
+    skillId: "catalog-map",
+    mapData,
+    markers: [],
+    rendererVersion: MAP_RENDERER_CACHE_VERSION,
+  });
+  const fileName = `${skillMapFilePrefix(resolved.key)}-${cacheKey}.png`;
+  const outputPath = resolveSkillMapOutputPath(PROJECT_ROOT, fileName);
+  if (!fs.existsSync(outputPath)) {
+    await ensureDirectory(path.dirname(outputPath));
+    await renderCourseMapPng(mapData, outputPath, {
+      width: 1500,
+      height: 360,
+      skillMarkers: [],
+    });
+  }
+
+  const baseUrl = getRequestBaseUrl(req);
+  if (!baseUrl) return null;
+  return `${baseUrl}/assets/generated/skill-maps/${fileName}`;
+}
+
+async function buildMapLookupPayload(resolved, req) {
+  const imageUrl = await resolveCatalogMapImageUrl(resolved, req);
+  return buildMapEmbed(resolved, imageUrl);
+}
+
 // Bug report destination (overridable via env)
 const BUG_REPORT_GUILD_ID = process.env.BUG_REPORT_GUILD_ID || '1416320822846689333';
 const BUG_REPORT_CHANNEL_ID = process.env.BUG_REPORT_CHANNEL_ID || '1495734291253035028';
@@ -428,6 +462,14 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
     if (data.name === 'gamba' && focus.optionName === 'name') {
       const choices = buildEventAutocomplete(focus.value);
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices },
+      });
+    }
+
+    if (data.name === 'map' && focus.optionName === 'name') {
+      const choices = buildMapCatalogAutocompleteChoices(focus.value, cache.maps, cache.customraces);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
@@ -811,6 +853,50 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             }
           ]
         }
+      });
+    }
+
+    // "map" command
+    if (name === 'map') {
+      const mapQuery = data.options?.find((opt) => opt.name === 'name')?.value ?? '';
+      const matches = resolveMapCatalogMatches(mapQuery, cache.maps, cache.customraces);
+
+      if (matches.length === 0) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { content: `❌ Course map "${mapQuery}" not found.` },
+        });
+      }
+
+      if (matches.length === 1) {
+        const mapPayload = await buildMapLookupPayload(matches[0], req);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: mapPayload,
+        });
+      }
+
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: `🔎 Found ${matches.length} matches. Pick one:`,
+          components: [
+            {
+              type: 1,
+              components: [
+                {
+                  type: 3,
+                  custom_id: 'map_select',
+                  placeholder: 'Choose a course map',
+                  options: matches.slice(0, 25).map((entry) => ({
+                    label: entry.label.length > 100 ? `${entry.label.slice(0, 97)}...` : entry.label,
+                    value: entry.key,
+                  })),
+                },
+              ],
+            },
+          ],
+        },
       });
     }
 
@@ -1820,6 +1906,28 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           embeds: [buildRaceEmbed(race, characters)],
           components: [] // remove the dropdown after selection
         }
+      });
+    }
+
+    if (custom_id === "map_select") {
+      const selectedKey = values[0];
+      const resolved = resolveMapOverride(selectedKey, cache.maps, cache.customraces);
+
+      if (!resolved) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: { content: "❌ Course map not found." },
+        });
+      }
+
+      const mapPayload = await buildMapLookupPayload(resolved, req);
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: {
+          content: `✅ You selected **${resolved.label}**`,
+          ...mapPayload,
+          components: [],
+        },
       });
     }
 

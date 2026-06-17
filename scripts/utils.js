@@ -1143,6 +1143,56 @@ export function buildRaceEmbed(race, charactersJSON) {
   };
 }
 
+export function buildMapEmbed(resolved, imageUrl = null) {
+  const map = resolved?.rawMap ?? {};
+  const customRace = resolved?.customRace ?? null;
+  const statThreshold = map.stat_treshold ?? map.stat_threshold ?? map.stat_thresholds ?? "";
+
+  const fields = [
+    { name: "Racetrack", value: String(map.racetrack ?? "—"), inline: true },
+    { name: "Distance", value: String(map.distance_meters ?? "—"), inline: true },
+    { name: "Terrain", value: String(map.terrain ?? "—"), inline: true },
+    { name: "Direction", value: String(map.direction ?? "—"), inline: true },
+  ];
+
+  if (statThreshold) {
+    fields.push({
+      name: "Stat Thresholds",
+      value: Array.isArray(statThreshold) ? statThreshold.join(" & ") : String(statThreshold),
+      inline: false,
+    });
+  }
+
+  if (customRace?.host) {
+    fields.push({ name: "Host", value: String(customRace.host), inline: true });
+  }
+
+  if (customRace?.description) {
+    fields.push({ name: "About", value: String(customRace.description), inline: false });
+  }
+
+  if (Array.isArray(map.races) && map.races.length > 0) {
+    const racesText = map.races.slice(0, 8).map((race) => `• ${race}`).join("\n");
+    fields.push({
+      name: "Races",
+      value: racesText.length > 1024 ? `${racesText.slice(0, 1021)}...` : racesText,
+      inline: false,
+    });
+  }
+
+  const embed = {
+    title: resolved?.label ?? map.name ?? "Course Map",
+    fields,
+    url: customRace?.url ?? map.url,
+  };
+
+  if (imageUrl) {
+    embed.image = { url: imageUrl };
+  }
+
+  return { embeds: [embed] };
+}
+
 export function buildCMEmbed(cm) {
   const buttons = [];
 

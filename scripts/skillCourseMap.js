@@ -281,6 +281,7 @@ export function resolveMapOverride(rawValue, mapsCatalog = [], customRacesCatalo
       label: race.name ?? rawMap.name ?? "Custom Race",
       rawMap,
       context: buildMapContextFromRawMap(rawMap, race.name),
+      customRace: race,
     };
   }
 
@@ -336,6 +337,74 @@ export function buildMapOverrideAutocompleteChoices(query, mapsCatalog = [], cus
     value: value.length > 100 ? value.slice(0, 100) : value,
   }));
 }
+
+function toCatalogEntryFromMap(map) {
+  return {
+    source: "map",
+    key: `map:${mapChoiceKey(map)}`,
+    label: map.name ?? "Course Map",
+    rawMap: map,
+    context: buildMapContextFromRawMap(map),
+    customRace: null,
+  };
+}
+
+function toCatalogEntryFromCustomRace(race, mapsCatalog = []) {
+  const rawMap = resolveCustomRaceMapSource(race, mapsCatalog);
+  if (!rawMap) return null;
+  return {
+    source: "custom",
+    key: `custom:${race.id ?? slugifyMapKey(race.name)}`,
+    label: race.name ?? rawMap.name ?? "Custom Race",
+    rawMap,
+    context: buildMapContextFromRawMap(rawMap, race.name),
+    customRace: race,
+  };
+}
+
+export function resolveMapCatalogMatches(rawValue, mapsCatalog = [], customRacesCatalog = []) {
+  const value = String(rawValue ?? "").trim();
+  if (!value) return [];
+
+  const exact = resolveMapOverride(value, mapsCatalog, customRacesCatalog);
+  if (exact) return [exact];
+
+  const terms = value.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return [];
+
+  const matches = [];
+  const seen = new Set();
+
+  for (const map of mapsCatalog ?? []) {
+    if (!map?.name || !getCourseMapDataFromMap(map)) continue;
+    const hay = mapSearchHaystack(map);
+    if (!terms.every((term) => hay.includes(term))) continue;
+    const entry = toCatalogEntryFromMap(map);
+    if (seen.has(entry.key)) continue;
+    seen.add(entry.key);
+    matches.push(entry);
+  }
+
+  for (const race of customRacesCatalog ?? []) {
+    const entry = toCatalogEntryFromCustomRace(race, mapsCatalog);
+    if (!entry) continue;
+    const searchText = [
+      entry.label,
+      race.host,
+      race.description,
+      mapSearchHaystack(entry.rawMap),
+    ].filter(Boolean).join(" ").toLowerCase();
+    if (!terms.every((term) => searchText.includes(term))) continue;
+    if (seen.has(entry.key)) continue;
+    seen.add(entry.key);
+    matches.push(entry);
+  }
+
+  matches.sort((a, b) => a.label.localeCompare(b.label));
+  return matches;
+}
+
+export const buildMapCatalogAutocompleteChoices = buildMapOverrideAutocompleteChoices;
 
 // Returns the Champions Meets that can be offered in the skill map dropdown:
 // those that have renderable map data and whose number falls within the

@@ -215,6 +215,23 @@ const CM_COMMAND = {
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
+};
+
+const MAP_COMMAND = {
+  name: 'map',
+  description: 'Lookup a course map',
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Name of the course map',
+      required: true,
+      autocomplete: true,
+    },
+  ],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
 }; 
 
 const REGISTER_COMMAND = {
@@ -680,6 +697,7 @@ const ALL_COMMANDS = [
   UMA_COMMAND,
   RACE_COMMAND,
   CM_COMMAND,
+  MAP_COMMAND,
   REGISTER_COMMAND,
   PROFILE_COMMAND,
   CLUB_COMMAND,
