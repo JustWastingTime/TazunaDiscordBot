@@ -1,6 +1,7 @@
 import path from "path";
 import crypto from "crypto";
 import fs from "fs/promises";
+import { MAP_COLORS } from "./courseMapRenderer.js";
 
 function toMeters(distanceValue) {
   if (typeof distanceValue === "number") return distanceValue;
@@ -70,24 +71,25 @@ function resolveMapName(cm, rawMap, length) {
 }
 
 function withDefaultSegmentColor(segment, rowKey) {
-  if (segment?.color) return segment;
   const label = lower(segment?.label);
+  if (rowKey === "layout") {
+    if (!label) return { ...segment, color: MAP_COLORS.layoutBlank };
+    if (label.includes("corner")) return { ...segment, color: MAP_COLORS.layoutCorner };
+    return { ...segment, color: MAP_COLORS.layoutStraight };
+  }
+  if (segment?.color) return segment;
   if (rowKey === "elevation") {
     const type = lower(segment?.type);
-    if (type.includes("uphill") || label.includes("uphill")) return { ...segment, color: "#e6ca9d" };
-    if (type.includes("downhill") || label.includes("downhill")) return { ...segment, color: "#67d2de" };
-    return { ...segment, color: "#c9ec39" };
-  }
-  if (rowKey === "layout") {
-    if (label.includes("corner")) return { ...segment, color: "#edccae" };
-    return { ...segment, color: "#b8d4ea" };
+    if (type.includes("uphill") || label.includes("uphill")) return { ...segment, color: MAP_COLORS.elevationUphill };
+    if (type.includes("downhill") || label.includes("downhill")) return { ...segment, color: MAP_COLORS.elevationDownhill };
+    return { ...segment, color: MAP_COLORS.elevationFlat };
   }
   if (rowKey === "zones") {
-    if (label.includes("early")) return { ...segment, color: "#00a88f" };
-    if (label.includes("mid")) return { ...segment, color: "#e3d95f" };
-    if (label.includes("late")) return { ...segment, color: "#cf81bb" };
-    if (label.includes("spurt")) return { ...segment, color: "#bf6ea8" };
-    return { ...segment, color: "#d7d0df" };
+    if (label.includes("spurt")) return { ...segment, color: MAP_COLORS.zoneSpurt };
+    if (label.includes("early")) return { ...segment, color: MAP_COLORS.zoneEarly };
+    if (label.includes("mid")) return { ...segment, color: MAP_COLORS.zoneMid };
+    if (label.includes("late")) return { ...segment, color: MAP_COLORS.zoneLate };
+    return { ...segment, color: MAP_COLORS.zoneFallback };
   }
   return segment;
 }
@@ -151,10 +153,9 @@ function normalizeDistancePoints(points, length) {
   )].sort((a, b) => a - b);
 }
 
-export function getCourseMapDataFromCm(cm, mapsCatalog = []) {
-  const rawMap = resolveMapSource(cm, mapsCatalog);
-  if (!rawMap) return null;
-  const length = toMeters(cm?.track?.distance_meters ?? rawMap.distance_meters);
+export function getCourseMapDataFromMap(rawMap, contextCm = null) {
+  if (!rawMap || typeof rawMap !== "object") return null;
+  const length = toMeters(contextCm?.track?.distance_meters ?? rawMap.distance_meters);
   if (!length || length <= 0) return null;
 
   const elevation = normalizeSegments(rawMap.elevation, "elevation");
@@ -165,17 +166,175 @@ export function getCourseMapDataFromCm(cm, mapsCatalog = []) {
     length
   );
   const statThresholds = normalizeStatThresholds(rawMap);
+  const elevationScale = Number(
+    rawMap?.elevation_scale ??
+    rawMap?.elevationScale ??
+    rawMap?.elevation_range ??
+    rawMap?.elevationRange
+  );
   if (!elevation.length || !layout.length || !zones.length) return null;
 
   return {
-    name: resolveMapName(cm, rawMap, length),
+    name: resolveMapName(contextCm, rawMap, length),
     length,
     elevation,
     layout,
     zones,
     positionKeepEnds,
     statThresholds,
+    elevationScale: Number.isFinite(elevationScale) && elevationScale > 0 ? elevationScale : null,
   };
+}
+
+export function getCourseMapDataFromCm(cm, mapsCatalog = []) {
+  const rawMap = resolveMapSource(cm, mapsCatalog);
+  if (!rawMap) return null;
+  return getCourseMapDataFromMap(rawMap, cm);
+}
+
+function slugifyMapKey(value) {
+  return lower(value).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+function mapChoiceKey(map) {
+  return map?.id ?? map?.slug ?? map?.map_id ?? slugifyMapKey(map?.name);
+}
+
+function mapSearchHaystack(map) {
+  return [
+    map?.name,
+    map?.racetrack,
+    map?.direction,
+    map?.terrain,
+    map?.distance_meters,
+    mapChoiceKey(map),
+  ].filter(Boolean).join(" ").toLowerCase();
+}
+
+function findMapInCatalog(key, mapsCatalog = []) {
+  if (!Array.isArray(mapsCatalog) || !key) return null;
+  const ref = lower(String(key).trim());
+  const exact = mapsCatalog.find((map) => {
+    if (!map || typeof map !== "object") return false;
+    return [map.id, map.slug, map.map_id, map.name, mapChoiceKey(map)]
+      .filter(Boolean)
+      .some((candidate) => lower(candidate) === ref);
+  });
+  if (exact) return exact;
+
+  const terms = ref.split(/\s+/).filter(Boolean);
+  if (!terms.length) return null;
+  const matches = mapsCatalog.filter((map) => {
+    if (!map) return false;
+    const hay = mapSearchHaystack(map);
+    return terms.every((term) => hay.includes(term));
+  });
+  if (matches.length === 1) return matches[0];
+  return matches.find((map) => lower(map.name) === ref) ?? null;
+}
+
+function resolveCustomRaceMapSource(race, mapsCatalog = []) {
+  if (!race || typeof race !== "object") return null;
+  if (race.map && typeof race.map === "object") return race.map;
+  const mapRef = race.map_id ?? race.mapId ?? race.map_ref ?? race.mapRef;
+  if (mapRef) return findMapInCatalog(mapRef, mapsCatalog);
+  if (Array.isArray(race.elevation) && Array.isArray(race.layout) && Array.isArray(race.zones)) {
+    return race;
+  }
+  return null;
+}
+
+function buildMapContextFromRawMap(rawMap, label = null) {
+  return {
+    name: label ?? rawMap?.name ?? "Course",
+    track: {
+      racetrack: rawMap?.racetrack,
+      direction: rawMap?.direction,
+      terrain: rawMap?.terrain,
+      distance_meters: rawMap?.distance_meters,
+      distance_type: rawMap?.distance_type,
+      ground: rawMap?.ground,
+      season: rawMap?.season,
+      weather: rawMap?.weather,
+    },
+  };
+}
+
+export function resolveMapOverride(rawValue, mapsCatalog = [], customRacesCatalog = []) {
+  const value = String(rawValue ?? "").trim();
+  if (!value) return null;
+
+  if (value.toLowerCase().startsWith("custom:")) {
+    const customId = value.slice(7).trim().toLowerCase();
+    const race = (customRacesCatalog ?? []).find((entry) => {
+      if (!entry) return false;
+      return [entry.id, entry.slug, slugifyMapKey(entry.name)]
+        .filter(Boolean)
+        .some((candidate) => lower(candidate) === customId);
+    });
+    if (!race) return null;
+    const rawMap = resolveCustomRaceMapSource(race, mapsCatalog);
+    if (!rawMap) return null;
+    return {
+      source: "custom",
+      key: `custom:${race.id ?? slugifyMapKey(race.name)}`,
+      label: race.name ?? rawMap.name ?? "Custom Race",
+      rawMap,
+      context: buildMapContextFromRawMap(rawMap, race.name),
+    };
+  }
+
+  const mapKey = value.toLowerCase().startsWith("map:") ? value.slice(4).trim() : value;
+  const map = findMapInCatalog(mapKey, mapsCatalog);
+  if (!map) return null;
+  return {
+    source: "map",
+    key: `map:${mapChoiceKey(map)}`,
+    label: map.name ?? "Course Map",
+    rawMap: map,
+    context: buildMapContextFromRawMap(map),
+  };
+}
+
+export function buildMapOverrideAutocompleteChoices(query, mapsCatalog = [], customRacesCatalog = []) {
+  const terms = String(query ?? "").trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const entries = [];
+
+  for (const map of mapsCatalog ?? []) {
+    if (!map?.name || !getCourseMapDataFromMap(map)) continue;
+    const searchText = mapSearchHaystack(map);
+    if (terms.length && !terms.every((term) => searchText.includes(term))) continue;
+    entries.push({
+      name: map.name,
+      value: `map:${mapChoiceKey(map)}`,
+      sortKey: `0:${map.name}`,
+    });
+  }
+
+  for (const race of customRacesCatalog ?? []) {
+    const rawMap = resolveCustomRaceMapSource(race, mapsCatalog);
+    if (!rawMap || !getCourseMapDataFromMap(rawMap)) continue;
+    const label = race.name ?? rawMap.name ?? "Custom Race";
+    const searchText = [
+      label,
+      race.host,
+      race.description,
+      rawMap.name,
+      rawMap.racetrack,
+    ].filter(Boolean).join(" ").toLowerCase();
+    if (terms.length && !terms.every((term) => searchText.includes(term))) continue;
+    entries.push({
+      name: `[Custom] ${label}`,
+      value: `custom:${race.id ?? slugifyMapKey(label)}`,
+      sortKey: `1:${label}`,
+    });
+  }
+
+  entries.sort((a, b) => a.sortKey.localeCompare(b.sortKey));
+  return entries.slice(0, 25).map(({ name, value }) => ({
+    name: name.length > 100 ? `${name.slice(0, 97)}...` : name,
+    value: value.length > 100 ? value.slice(0, 100) : value,
+  }));
 }
 
 // Returns the Champions Meets that can be offered in the skill map dropdown:
@@ -794,9 +953,10 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
   };
 }
 
-export function buildSkillMapCacheKey({ cmNumber, skillId, mapData, markers, rendererVersion }) {
+export function buildSkillMapCacheKey({ cmNumber, mapContextKey, skillId, mapData, markers, rendererVersion }) {
   const payload = {
     cm: String(cmNumber ?? ""),
+    mapContext: String(mapContextKey ?? ""),
     skill: String(skillId ?? ""),
     rendererVersion: String(rendererVersion ?? ""),
     map: mapData,

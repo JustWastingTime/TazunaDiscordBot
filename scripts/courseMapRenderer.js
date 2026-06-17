@@ -1,15 +1,47 @@
 import fs from "fs/promises";
 import path from "path";
-import sharp from "sharp";
+import { Resvg } from "@resvg/resvg-js";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const FONT_REGULAR_PATH = path.resolve(__dirname, "../assets/font/Rubik-Regular.ttf");
+const FONT_BOLD_PATH = path.resolve(__dirname, "../assets/font/Rubik-Bold.ttf");
+const FONT_FAMILY = "Rubik";
+const METER_LABEL_FONT_SIZE = 9;
+
+function renderSvgToPng(svg) {
+  const resvg = new Resvg(svg, {
+    font: {
+      fontFiles: [FONT_REGULAR_PATH, FONT_BOLD_PATH],
+      loadSystemFonts: false,
+      defaultFontFamily: FONT_FAMILY,
+      sansSerifFamily: FONT_FAMILY,
+    },
+  });
+  return resvg.render().asPng();
+}
+
+export const MAP_COLORS = {
+  sky: "#A8D4F8",
+  elevationFlat: "#8DB86A",
+  elevationUphill: "#E89548",
+  elevationDownhill: "#C49AA8",
+  layoutBlank: "#B8B2A8",
+  layoutStraight: "#A8BDD6",
+  layoutCorner: "#EDCA72",
+  zoneEarly: "#59B292",
+  zoneMid: "#D4BC6A",
+  zoneLate: "#F7A5A5",
+  zoneSpurt: "#E195AB",
+  zoneFallback: "#C9BFB4",
+};
+
 const DEFAULT_COLORS = {
   background: "#2b2d31",
-  title: "#24b7ff",
-  warning: "#ff4d6d",
+  title: "#6BB5A8",
+  warning: "#e87a92",
   axis: "#8b96a8",
   tick: "#9ea7b7",
   meterText: "#6f7888",
@@ -17,7 +49,7 @@ const DEFAULT_COLORS = {
   activationLine: "#ff4d6d",
   activationBoxStroke: "#ff5c7a",
   preconditionBoxStroke: "#d9b84a",
-  positionKeepLine: "#a76bff",
+  positionKeepLine: "#934761",
 };
 
 function clamp(value, min, max) {
@@ -45,9 +77,7 @@ function normalizeSegment(segment, length) {
 }
 
 function segmentLabel(segment) {
-  if (segment.type === "uphill") return "↗";
-  if (segment.type === "downhill") return "↘";
-  if (segment.type === "flat") return "";
+  if (segment.type === "uphill" || segment.type === "downhill" || segment.type === "flat") return "";
   return segment.label ?? "";
 }
 
@@ -58,25 +88,34 @@ function computeTickStep(length) {
   return 400;
 }
 
-function defaultSegmentColor(rowKey, segment) {
+function layoutSegmentColor(segment) {
+  const label = String(segment?.label ?? "").trim().toLowerCase();
+  if (!label) return MAP_COLORS.layoutBlank;
+  if (label.includes("corner")) return MAP_COLORS.layoutCorner;
+  return MAP_COLORS.layoutStraight;
+}
+
+function zoneSegmentColor(segment) {
+  const label = String(segment?.label ?? "").trim().toLowerCase();
+  if (label.includes("spurt")) return MAP_COLORS.zoneSpurt;
+  if (label.includes("early")) return MAP_COLORS.zoneEarly;
+  if (label.includes("mid")) return MAP_COLORS.zoneMid;
+  if (label.includes("late")) return MAP_COLORS.zoneLate;
+  return MAP_COLORS.zoneFallback;
+}
+
+function elevationSegmentColor(segment) {
+  const type = String(segment?.type ?? "").toLowerCase();
   const label = String(segment?.label ?? "").toLowerCase();
-  if (rowKey === "elevation") {
-    const type = String(segment?.type ?? "").toLowerCase();
-    if (type.includes("uphill") || label.includes("uphill")) return "#e6ca9d";
-    if (type.includes("downhill") || label.includes("downhill")) return "#67d2de";
-    return "#c9ec39";
-  }
-  if (rowKey === "layout") {
-    if (label.includes("corner")) return "#edccae";
-    return "#b8d4ea";
-  }
-  if (rowKey === "zones") {
-    if (label.includes("early")) return "#00a88f";
-    if (label.includes("mid")) return "#e3d95f";
-    if (label.includes("late")) return "#cf81bb";
-    if (label.includes("spurt")) return "#bf6ea8";
-    return "#d7d0df";
-  }
+  if (type.includes("uphill") || label.includes("uphill")) return MAP_COLORS.elevationUphill;
+  if (type.includes("downhill") || label.includes("downhill")) return MAP_COLORS.elevationDownhill;
+  return MAP_COLORS.elevationFlat;
+}
+
+function defaultSegmentColor(rowKey, segment) {
+  if (rowKey === "elevation") return elevationSegmentColor(segment);
+  if (rowKey === "layout") return layoutSegmentColor(segment);
+  if (rowKey === "zones") return zoneSegmentColor(segment);
   return "#d1d5db";
 }
 
@@ -85,6 +124,111 @@ function formatStatThresholds(statThresholds) {
   const cleaned = [...new Set(statThresholds.map((v) => String(v ?? "").trim()).filter(Boolean))];
   if (!cleaned.length) return "";
   return `Stat Thresholds: ${cleaned.join(" & ")}`;
+}
+
+function elevationUsesSlopes(segments) {
+  return segments.some((segment) => Number.isFinite(Number(segment?.change)));
+}
+
+function resolveSegmentElevationDelta(segment) {
+  const span = Number(segment?.end) - Number(segment?.start);
+  if (!Number.isFinite(span) || span <= 0) return 0;
+
+  const change = Number(segment?.change);
+  if (Number.isFinite(change)) {
+    // Game SlopePer: grade percent applied over the segment distance (meters).
+    return (change / 100) * span;
+  }
+
+  const type = String(segment?.type ?? "").toLowerCase();
+  if (type.includes("uphill")) return span / 100;
+  if (type.includes("downhill")) return -span / 100;
+  return 0;
+}
+
+function slopedElevationColor(segment) {
+  return elevationSegmentColor(segment);
+}
+
+function buildElevationProfile(segments, rowY, rowHeight, elevationScale = null) {
+  let elevation = 0;
+  const boundaries = [{ distance: segments[0]?.start ?? 0, elevation: 0 }];
+
+  for (const segment of segments) {
+    elevation += resolveSegmentElevationDelta(segment);
+    boundaries.push({ distance: segment.end, elevation });
+  }
+
+  const elevationAtDistance = (distance) => {
+    for (let i = 0; i < segments.length; i++) {
+      const segment = segments[i];
+      if (distance >= segment.start && distance <= segment.end) {
+        const startElevation = boundaries[i].elevation;
+        const endElevation = boundaries[i + 1].elevation;
+        const span = segment.end - segment.start;
+        if (span <= 0 || startElevation === endElevation) return startElevation;
+        const ratio = (distance - segment.start) / span;
+        return startElevation + (endElevation - startElevation) * ratio;
+      }
+    }
+    return boundaries[boundaries.length - 1]?.elevation ?? 0;
+  };
+
+  const sampleElevations = boundaries.map((point) => point.elevation);
+  const minElevation = Math.min(...sampleElevations);
+  const maxElevation = Math.max(...sampleElevations);
+  const baselineY = rowY + rowHeight * 0.56;
+  const amplitude = rowHeight * 0.4;
+  const scale = Number(elevationScale);
+
+  const yFromElevation = (value) => {
+    if (Number.isFinite(scale) && scale > 0) {
+      return baselineY - (value / scale) * amplitude;
+    }
+    const center = (minElevation + maxElevation) / 2;
+    const halfRange = Math.max((maxElevation - minElevation) / 2, 0.5);
+    return baselineY - ((value - center) / halfRange) * amplitude;
+  };
+
+  const yAtDistance = (distance) => yFromElevation(elevationAtDistance(distance));
+
+  return { boundaries, yAtDistance, elevationAtDistance };
+}
+
+function renderSlopedElevationRow(parts, row, rowHeight, xFromDistance, boundaryLabels, elevationScale = null) {
+  const rowBottom = row.y + rowHeight;
+  const startX = xFromDistance(row.segments[0].start);
+  const endX = xFromDistance(row.segments[row.segments.length - 1].end);
+  const { yAtDistance } = buildElevationProfile(row.segments, row.y, rowHeight, elevationScale);
+
+  parts.push(
+    `<rect x="${startX.toFixed(2)}" y="${row.y}" width="${(endX - startX).toFixed(2)}" height="${rowHeight}" fill="${MAP_COLORS.sky}" stroke="${DEFAULT_COLORS.segmentBorder}" stroke-width="1"/>`
+  );
+
+  for (const segment of row.segments) {
+    const x1 = xFromDistance(segment.start);
+    const x2 = xFromDistance(segment.end);
+    const y1 = yAtDistance(segment.start);
+    const y2 = yAtDistance(segment.end);
+    const fill = segment.color ?? slopedElevationColor(segment);
+    const points = [
+      `${x1.toFixed(2)},${rowBottom}`,
+      `${x2.toFixed(2)},${rowBottom}`,
+      `${x2.toFixed(2)},${y2.toFixed(2)}`,
+      `${x1.toFixed(2)},${y1.toFixed(2)}`,
+    ].join(" ");
+
+    parts.push(`<polygon points="${points}" fill="${fill}" stroke="${DEFAULT_COLORS.segmentBorder}" stroke-width="0.8"/>`);
+  }
+
+  for (const segment of row.segments) {
+    if (segment.end >= row.segments[row.segments.length - 1].end) continue;
+    boundaryLabels.push({
+      x: xFromDistance(segment.end),
+      y: rowBottom,
+      text: `${segment.end}m`,
+    });
+  }
 }
 
 function mergeTouchingBoxMarkers(markers, length) {
@@ -120,7 +264,7 @@ function mergeTouchingBoxMarkers(markers, length) {
 
 function buildSvg(mapData, options) {
   const width = options.width ?? 1500;
-  const rowGap = 8;
+  const rowGap = 0;
   const rowHeight = 54;
   const margin = { top: 92, right: 48, bottom: 18, left: 48 };
   const trackWidth = width - margin.left - margin.right;
@@ -130,6 +274,7 @@ function buildSvg(mapData, options) {
   const backgroundOpacity = clamp(Number(options.backgroundOpacity ?? 0), 0, 1);
   const length = Number(mapData.length);
   const statThresholdText = formatStatThresholds(mapData.statThresholds);
+  const elevationScale = mapData.elevationScale ?? mapData.elevation_scale ?? null;
   const rowBottom = trackTop + rowHeight * 3 + rowGap * 2;
   const axisY = rowBottom + 32;
   const statThresholdY = axisY + 42;
@@ -178,20 +323,29 @@ function buildSvg(mapData, options) {
       </pattern>
     </defs>`,
     `<rect x="0" y="0" width="${width}" height="${height}" fill="${DEFAULT_COLORS.background}" fill-opacity="${backgroundOpacity}"/>`,
-    `<text x="${width / 2}" y="46" text-anchor="middle" fill="${DEFAULT_COLORS.title}" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(title)}</text>`
+    `<text x="${width / 2}" y="46" text-anchor="middle" fill="${DEFAULT_COLORS.title}" font-size="34" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(title)}</text>`
   );
   if (warningText) {
     parts.push(
-      `<text x="${width / 2}" y="72" text-anchor="middle" fill="${DEFAULT_COLORS.warning}" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(warningText)}</text>`
+      `<text x="${width / 2}" y="72" text-anchor="middle" fill="${DEFAULT_COLORS.warning}" font-size="18" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(warningText)}</text>`
     );
   }
 
   for (const row of rows) {
+    if (row.key === "elevation" && elevationUsesSlopes(row.segments)) {
+      renderSlopedElevationRow(parts, row, rowHeight, xFromDistance, boundaryLabels, elevationScale);
+      continue;
+    }
+
     for (const segment of row.segments) {
       const x = xFromDistance(segment.start);
       const w = xFromDistance(segment.end) - x;
       const label = segmentLabel(segment);
-      const fill = segment.color ?? defaultSegmentColor(row.key, segment);
+      const fill = row.key === "layout"
+        ? layoutSegmentColor(segment)
+        : row.key === "zones"
+          ? zoneSegmentColor(segment)
+          : (segment.color ?? defaultSegmentColor(row.key, segment));
       const textColor = segment.textColor ?? "#20262e";
 
       parts.push(
@@ -200,7 +354,7 @@ function buildSvg(mapData, options) {
 
       if (label && w > 44) {
         parts.push(
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(row.y + rowHeight / 2 + 5).toFixed(2)}" text-anchor="middle" fill="${textColor}" font-size="17" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(label)}</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(row.y + rowHeight / 2 + 5).toFixed(2)}" text-anchor="middle" fill="${textColor}" font-size="17" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(label)}</text>`
         );
       }
     }
@@ -219,7 +373,7 @@ function buildSvg(mapData, options) {
   for (const marker of boundaryLabels) {
     parts.push(
       `<line x1="${marker.x.toFixed(2)}" y1="${(marker.y - 7).toFixed(2)}" x2="${marker.x.toFixed(2)}" y2="${(marker.y + 5).toFixed(2)}" stroke="${DEFAULT_COLORS.tick}" stroke-width="1.5"/>`,
-      `<text x="${marker.x.toFixed(2)}" y="${(marker.y - 6).toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.meterText}" font-size="11" font-family="Arial, Helvetica, sans-serif">${marker.text}</text>`
+      `<text x="${marker.x.toFixed(2)}" y="${(marker.y - 6).toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.meterText}" font-size="${METER_LABEL_FONT_SIZE}" font-family="${FONT_FAMILY}" font-weight="400">${marker.text}</text>`
     );
   }
   const tickStep = options.tickStep ?? computeTickStep(length);
@@ -229,13 +383,13 @@ function buildSvg(mapData, options) {
     const x = xFromDistance(d);
     parts.push(
       `<line x1="${x.toFixed(2)}" y1="${axisY}" x2="${x.toFixed(2)}" y2="${(axisY - 10).toFixed(2)}" stroke="${DEFAULT_COLORS.tick}" stroke-width="2"/>`,
-      `<text x="${x.toFixed(2)}" y="${(axisY + 20).toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.axis}" font-size="13" font-family="Arial, Helvetica, sans-serif">${d}</text>`
+      `<text x="${x.toFixed(2)}" y="${(axisY + 20).toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.axis}" font-size="13" font-family="${FONT_FAMILY}" font-weight="400">${d}</text>`
     );
   }
 
   if (statThresholdText) {
     parts.push(
-      `<text x="${(width / 2).toFixed(2)}" y="${statThresholdY.toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.axis}" font-size="15" font-family="Arial, Helvetica, sans-serif" font-weight="700">${escapeXml(statThresholdText)}</text>`
+      `<text x="${(width / 2).toFixed(2)}" y="${statThresholdY.toFixed(2)}" text-anchor="middle" fill="${DEFAULT_COLORS.axis}" font-size="15" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(statThresholdText)}</text>`
     );
   }
 
@@ -277,21 +431,21 @@ function buildSvg(mapData, options) {
         parts.push(
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="${color}" fill-opacity="${Math.min(fillOpacity, 0.08)}" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#asapHatch)" fill-opacity="0.4" stroke="${color}" stroke-width="${Math.max(strokeWidth, 2.4)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">ASAP</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">ASAP</text>`
         );
       } else if (behavior === "precondition") {
         const preColor = "#d9b84a";
         parts.push(
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#f7e6a4" fill-opacity="0.2" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#preconditionHatch)" fill-opacity="0.45" stroke="${preColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#e5c767" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">PRECONDITION</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#e5c767" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">PRECONDITION</text>`
         );
       } else {
         const randomColor = "#4f88d4";
         parts.push(
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#bfdcff" fill-opacity="0.24" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#randomStripe)" fill-opacity="0.55" stroke="${randomColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#5f98e3" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="700">RANDOM</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#5f98e3" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">RANDOM</text>`
         );
       }
       continue;
@@ -320,7 +474,7 @@ function buildSvg(mapData, options) {
     const labelY = trackTop + rowHeight * 0.34;
     parts.push(
       `<line x1="${lineX.toFixed(2)}" y1="${(trackTop - 10).toFixed(2)}" x2="${lineX.toFixed(2)}" y2="${(axisY + 4).toFixed(2)}" stroke="${DEFAULT_COLORS.positionKeepLine}" stroke-width="2.8"/>`,
-      `<text x="${labelX.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="start" fill="${DEFAULT_COLORS.positionKeepLine}" font-size="11" font-family="Arial, Helvetica, sans-serif" font-weight="700">PK</text>`
+      `<text x="${labelX.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="start" fill="${DEFAULT_COLORS.positionKeepLine}" font-size="11" font-family="${FONT_FAMILY}" font-weight="700">PK</text>`
     );
   }
 
@@ -330,9 +484,10 @@ function buildSvg(mapData, options) {
 
 export async function renderCourseMapPng(mapData, outputPath, options = {}) {
   const svg = buildSvg(mapData, options);
+  const png = renderSvgToPng(svg);
   const outDir = path.dirname(outputPath);
   await fs.mkdir(outDir, { recursive: true });
-  await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(outputPath);
+  await fs.writeFile(outputPath, png);
   return outputPath;
 }
 
@@ -353,10 +508,10 @@ const SAMPLE_MAP = {
     { start: 1075, end: 1600, label: "Straight", color: "#b8d4ea" },
   ],
   zones: [
-    { start: 0, end: 267, label: "Early", color: "#00a88f", textColor: "#ffffff" },
-    { start: 267, end: 1067, label: "Mid", color: "#e3d95f" },
-    { start: 1067, end: 1333, label: "Late", color: "#cf81bb" },
-    { start: 1333, end: 1600, label: "Last Spurt", color: "#bf6ea8" },
+    { start: 0, end: 267, label: "Early", color: MAP_COLORS.zoneEarly, textColor: "#ffffff" },
+    { start: 267, end: 1067, label: "Mid", color: MAP_COLORS.zoneMid },
+    { start: 1067, end: 1333, label: "Late", color: MAP_COLORS.zoneLate },
+    { start: 1333, end: 1600, label: "Last Spurt", color: MAP_COLORS.zoneSpurt },
   ],
   positionKeepEnds: [500],
 };

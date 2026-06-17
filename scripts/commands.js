@@ -60,6 +60,13 @@ const SKILL_COMMAND = {
       required: true,
       autocomplete: true
     },
+    {
+      type: 3,
+      name: 'map_override',
+      description: 'Show the skill chart on a different course map',
+      required: false,
+      autocomplete: true,
+    },
   ],
   type: 1,
   integration_types: [0, 1],

@@ -4,6 +4,7 @@
         "direction": "Clockwise",
         "terrain": "Turf",
         "distance_meters": "1200m",
+        "elevation_scale": 8,
         "stat_treshold": "",
         "url": "https://gametora.com/umamusume/racetracks/hanshin#1200-turf-inner",
         "elevation": [
@@ -33,6 +34,7 @@
         "direction": "Clockwise",
         "terrain": "Turf",
         "distance_meters": "2200m",
+        "elevation_scale": 8,
         "stat_treshold": "",
         "url": "https://gametora.com/umamusume/racetracks/hanshin#2200-turf-inner",
         "elevation": [
@@ -66,6 +68,158 @@
             "queen elizabeth ii cup november 1 year 2", 
             "takarazuka kinen june 2 year 3", 
             "queen elizabeth ii cup november 1 year 3"
+        ]
+    },
+    {   "name": "Hanshin 2400m (outer) (clockwise)",
+        "racetrack": "Hanshin",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2400m",
+        "elevation_scale": 8,
+        "stat_treshold": "Power",
+        "url": "https://gametora.com/umamusume/racetracks/hanshin#2400-turf-outer",
+        "elevation": [
+            { "start": 0, "end": 132, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 132, "end": 187, "label": "Flat", "type": "flat"},
+            { "start": 187, "end": 307, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 307, "end": 1750, "label": "Flat", "type": "flat"},
+            { "start": 1750, "end": 2150, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 2150, "end": 2205, "label": "Flat", "type": "flat"},
+            { "start": 2205, "end": 2325, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 2325, "end": 2400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 382, "label": ""},
+            { "start": 382, "end": 560, "label": "Corner 1"},
+            { "start": 560, "end": 750, "label": "Corner 2"},
+            { "start": 750, "end": 1250, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1250, "end": 1600, "label": "Corner 3"},
+            { "start": 1600, "end": 1950, "label": "Corner 4"},
+            { "start": 1950, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 400, "label": "Early Race"},
+            { "start": 400, "end": 1600, "label": "Mid Race"},
+            { "start": 1600, "end": 2000, "label": "Late Race"},
+            { "start": 2000, "end": 2400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1000],
+        "races": ["kobe shimbun hai september 2 year 2"]
+    },
+
+    {   "name": "Niigata 2400m (inner) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "2400m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#2400-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 810, "label": "Straight"},
+            { "start": 810, "end": 1010, "label": "Corner 1"},
+            { "start": 1010, "end": 1210, "label": "Corner 2"},
+            { "start": 1210, "end": 1650, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1650, "end": 1850, "label": "Corner 3"},
+            { "start": 1850, "end": 2050, "label": "Corner 4"},
+            { "start": 2050, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 400, "label": "Early Race"},
+            { "start": 400, "end": 1600, "label": "Mid Race"},
+            { "start": 1600, "end": 2000, "label": "Late Race"},
+            { "start": 2000, "end": 2400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1000]
+    },
+
+    {   "name": "Tokyo 2400m (counterclockwise)",
+        "racetrack": "Tokyo",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "2400m",
+        "elevation_scale": 5,
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/tokyo#2400-turf",
+        "elevation": [
+            { "start": 0, "end": 40, "label": "Uphill", "type": "uphill", "change": 1.5},
+            { "start": 40, "end": 1125, "label": "Flat", "type": "flat"},
+            { "start": 1125, "end": 1200, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 1200, "end": 1250, "label": "Flat", "type": "flat"},
+            { "start": 1250, "end": 1500, "label": "Downhill", "type": "downhill", "change": -1.5},
+            { "start": 1500, "end": 1950, "label": "Flat", "type": "flat"},
+            { "start": 1950, "end": 2100, "label": "Uphill", "type": "uphill", "change": 1.5},
+            { "start": 2100, "end": 2400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 325, "label": "Straight"},
+            { "start": 325, "end": 575, "label": "Corner 1" },
+            { "start": 575, "end": 900, "label": "Corner 2" },
+            { "start": 900, "end": 1350, "label": "Straight", "tags": ["backstretch"] },
+            { "start": 1350, "end": 1625, "label": "Corner 3"},
+            { "start": 1625, "end": 1875, "label": "Corner 4"},
+            { "start": 1875, "end": 2400, "label": "Straight", "tags": ["homestretch"] }
+        ],
+        "zones": [
+            { "start": 0, "end": 400, "label": "Early Race"},
+            { "start": 400, "end": 1600, "label": "Mid Race"},
+            { "start": 1600, "end": 2000, "label": "Late Race"},
+            { "start": 2000, "end": 2400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1000],
+        "races": [
+            "japanese oaks may 2 year 2",
+            "japanese derby may 2 year 2",
+            "japan cup november 2 year 2",
+            "aoba sho april 2 year 2",
+            "japan cup november 2 year 3"
+        ]
+    },
+
+    {   "name": "Nakayama 2500m (inner) (clockwise)",
+        "racetrack": "Nakayama",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2500m",
+        "elevation_scale": 7,
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/nakayama#2500-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 621, "label": "Flat", "type": "flat"},
+            { "start": 621, "end": 731, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 731, "end": 825, "label": "Flat", "type": "flat"},
+            { "start": 825, "end": 1025, "label": "Uphill", "type": "uphill", "change": 1.5},
+            { "start": 1025, "end": 1125, "label": "Flat", "type": "flat"},
+            { "start": 1125, "end": 1525, "label": "Downhill", "type": "downhill", "change": -1.5},
+            { "start": 1525, "end": 2325, "label": "Flat", "type": "flat"},
+            { "start": 2325, "end": 2435, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 2435, "end": 2500, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 100, "label": ""},
+            { "start": 100, "end": 246, "label": "Corner 3"},
+            { "start": 246, "end": 496, "label": "Corner 4"},
+            { "start": 496, "end": 875, "label": "Straight"},
+            { "start": 875, "end": 1125, "label": "Corner 1"},
+            { "start": 1125, "end": 1375, "label": "Corner 2"},
+            { "start": 1375, "end": 1700, "label": "Straight", "tags": ["backstretch"] },
+            { "start": 1700, "end": 1950, "label": "Corner 3"},
+            { "start": 1950, "end": 2200, "label": "Corner 4"},
+            { "start": 2200, "end": 2500, "label": "Straight", "tags": ["homestretch"] }
+        ],
+        "zones": [
+            { "start": 0, "end": 417, "label": "Early Race"},
+            { "start": 417, "end": 1667, "label": "Mid Race"},
+            { "start": 1667, "end": 2083, "label": "Late Race"},
+            { "start": 2083, "end": 2500, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1042],
+        "races": [
+            "arima kinen december 2 year 2",
+            "nikkei sho march 2 year 3",
+            "arima kinen december 2 year 3"
         ]
     }
 ]

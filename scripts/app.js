@@ -24,6 +24,9 @@ import {
   getUpcomingChampionsMeet,
   getSelectableChampionsMeets,
   getCourseMapDataFromCm,
+  getCourseMapDataFromMap,
+  resolveMapOverride,
+  buildMapOverrideAutocompleteChoices,
   resolveSkillActivationOverlay,
   buildSkillMapCacheKey,
   ensureDirectory,
@@ -92,6 +95,7 @@ const skills = cache.skills;
 const races = cache.races;
 const champsmeets = cache.champsmeets;
 const maps = cache.maps;
+const customraces = cache.customraces;
 const legendraces = cache.legendraces;
 const misc = cache.misc;
 const schedule = cache.schedule;
@@ -177,64 +181,92 @@ function composeSkillComponents(baseComponents, mapComponents) {
   ];
 }
 
+function normalizeSkillMapOptions(options) {
+  if (options == null) return {};
+  if (typeof options === 'number') return { selectedCmNumber: options };
+  return options;
+}
+
+function skillMapFilePrefix(mapContextKey) {
+  return String(mapContextKey ?? 'map').replace(/[^a-zA-Z0-9._-]+/g, '-');
+}
+
 // Returns { embed, mapComponents } where mapComponents holds the optional
 // Champions Meet selector row. selectedCmNumber forces a specific CM map.
-async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumber = null) {
+// mapOverride resolves a catalog/custom-race map instead of the CM default.
+async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
+  const { selectedCmNumber = null, mapOverride = null } = normalizeSkillMapOptions(options);
   const embed = buildSkillEmbed(skill, supporterList);
   const result = { embed, mapComponents: [] };
 
-  const upcomingCm = getUpcomingChampionsMeet(champsmeets);
-  const upcomingCmNumber = Number(upcomingCm?.number);
-  const effectiveMinCmNumber = Number.isFinite(upcomingCmNumber)
-    ? Math.max(SKILL_MAP_MIN_CM_NUMBER, upcomingCmNumber)
-    : SKILL_MAP_MIN_CM_NUMBER;
+  const override = mapOverride ? resolveMapOverride(mapOverride, maps, customraces) : null;
+  let mapData = null;
+  let overlayCm = null;
+  let mapLabel = null;
+  let mapContextKey = null;
 
-  const selectableCms = getSelectableChampionsMeets(champsmeets, {
-    fromCmNumber: effectiveMinCmNumber,
-    maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
-    mapsCatalog: maps,
-  });
-  if (selectableCms.length === 0) return result;
+  if (override) {
+    mapData = getCourseMapDataFromMap(override.rawMap, override.context);
+    overlayCm = override.context;
+    mapLabel = override.label;
+    mapContextKey = override.key;
+  } else {
+    const upcomingCm = getUpcomingChampionsMeet(champsmeets);
+    const upcomingCmNumber = Number(upcomingCm?.number);
+    const effectiveMinCmNumber = Number.isFinite(upcomingCmNumber)
+      ? Math.max(SKILL_MAP_MIN_CM_NUMBER, upcomingCmNumber)
+      : SKILL_MAP_MIN_CM_NUMBER;
 
-  // Resolve which CM to display: an explicit selection wins, otherwise the
-  // current upcoming CM (if it's selectable), otherwise the first selectable.
-  let activeCm = null;
-  if (selectedCmNumber != null) {
-    activeCm = selectableCms.find((cm) => Number(cm.number) === Number(selectedCmNumber)) ?? null;
+    const selectableCms = getSelectableChampionsMeets(champsmeets, {
+      fromCmNumber: effectiveMinCmNumber,
+      maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
+      mapsCatalog: maps,
+    });
+    if (selectableCms.length === 0) return result;
+
+    let activeCm = null;
+    if (selectedCmNumber != null) {
+      activeCm = selectableCms.find((cm) => Number(cm.number) === Number(selectedCmNumber)) ?? null;
+    }
+    if (!activeCm) {
+      activeCm =
+        (upcomingCm && selectableCms.find((cm) => Number(cm.number) === Number(upcomingCm.number))) ||
+        selectableCms[0];
+    }
+
+    mapData = getCourseMapDataFromCm(activeCm, maps);
+    overlayCm = activeCm;
+    mapLabel = activeCm.name;
+    mapContextKey = `cm:${activeCm.number}`;
+    result._selectableCms = selectableCms;
+    result._activeCm = activeCm;
   }
-  if (!activeCm) {
-    activeCm =
-      (upcomingCm && selectableCms.find((cm) => Number(cm.number) === Number(upcomingCm.number))) ||
-      selectableCms[0];
-  }
 
-  const mapData = getCourseMapDataFromCm(activeCm, maps);
   if (!mapData) return result;
 
-  const overlay = resolveSkillActivationOverlay(skill, activeCm, mapData);
+  const overlay = resolveSkillActivationOverlay(skill, overlayCm, mapData);
 
-  // Skills explicitly configured to show a chart keep the CM switcher even on a
-  // CM that produces no overlay, so the user can switch back to a working CM.
   const chartCapable =
     skill.activation_map?.show_chart === true ||
     (Array.isArray(skill.activation_map?.triggers) && skill.activation_map.triggers.length > 0);
 
   if (!overlay.shouldShowChart) {
-    if (chartCapable) {
-      const dropdownRow = buildSkillCmDropdownRow(skill, selectableCms, activeCm.number);
+    if (!override && chartCapable && result._selectableCms && result._activeCm) {
+      const dropdownRow = buildSkillCmDropdownRow(skill, result._selectableCms, result._activeCm.number);
       if (dropdownRow) result.mapComponents.push(dropdownRow);
     }
     return result;
   }
 
   const cacheKey = buildSkillMapCacheKey({
-    cmNumber: activeCm.number,
+    cmNumber: overlayCm?.number,
+    mapContextKey,
     skillId: skill.gametora_id ?? skill.skill_name,
     mapData,
     markers: overlay.markers,
     rendererVersion: MAP_RENDERER_CACHE_VERSION,
   });
-  const fileName = `cm${activeCm.number}-${cacheKey}.png`;
+  const fileName = `${skillMapFilePrefix(mapContextKey)}-${cacheKey}.png`;
   const outputPath = resolveSkillMapOutputPath(PROJECT_ROOT, fileName);
   if (!fs.existsSync(outputPath)) {
     await ensureDirectory(path.dirname(outputPath));
@@ -251,13 +283,15 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumbe
     embed.image = { url: `${baseUrl}/assets/generated/skill-maps/${fileName}` };
   }
 
-  const suffix = `Map overlay: ${activeCm.name} • Report any errors using /bugreport`;
+  const suffix = `Map overlay: ${mapLabel} • Report any errors using /bugreport`;
   embed.footer = embed.footer?.text
     ? { text: `${embed.footer.text} • ${suffix}` }
     : { text: suffix };
 
-  const dropdownRow = buildSkillCmDropdownRow(skill, selectableCms, activeCm.number);
-  if (dropdownRow) result.mapComponents.push(dropdownRow);
+  if (!override && result._selectableCms && result._activeCm) {
+    const dropdownRow = buildSkillCmDropdownRow(skill, result._selectableCms, result._activeCm.number);
+    if (dropdownRow) result.mapComponents.push(dropdownRow);
+  }
 
   return result;
 }
@@ -394,6 +428,14 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
     if (data.name === 'gamba' && focus.optionName === 'name') {
       const choices = buildEventAutocomplete(focus.value);
+      return res.send({
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: { choices },
+      });
+    }
+
+    if (data.name === 'skill' && focus.optionName === 'map_override') {
+      const choices = buildMapOverrideAutocompleteChoices(focus.value, maps, customraces);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
@@ -557,6 +599,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
     // "skill" command
     if (name === 'skill') {
       const skillQuery = data.options?.find(opt => opt.name === 'name')?.value?.toLowerCase();
+      const mapOverride = data.options?.find(opt => opt.name === 'map_override')?.value ?? null;
       const query = skillQuery.toLowerCase().split(/\s+/); 
 
       // Find the skills that match
@@ -589,7 +632,12 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         // Creating components if the skill has cards or upgraded version
         let components = [];
 
-        const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(matches[0], supporterList, req);
+        const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(
+          matches[0],
+          supporterList,
+          req,
+          { mapOverride }
+        );
 
         return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -619,7 +667,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
                   placeholder: "Choose a Skill",
                   options: matches.slice(0, 25).map(s => ({
                     label:  s.skill_name , // must be <=100 chars
-                    value: s.skill_name, // send the skill title back on select
+                    value: mapOverride ? `${s.skill_name}::${mapOverride}` : s.skill_name,
                     description: s.description.length > 80 
                       ? s.description.slice(0, 77) + "..." 
                       : s.description,
@@ -1506,10 +1554,16 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
     // Handling selecting a skill from a dropdown
     if (custom_id === "skill_select") {
-      const selectedTitle = values[0].toLowerCase();
+      const [selectedTitle, selectedMapOverride] = String(values[0] ?? "").split("::");
       const skill = skills.find(s =>
-        s.skill_name.toLowerCase() === selectedTitle
+        s.skill_name.toLowerCase() === selectedTitle.toLowerCase()
       );
+      if (!skill) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: { content: "❌ Could not find the selected skill." }
+        });
+      }
 
       // Lookup supporters with this skill
       const supporterMatches = getSupporterMatchesForSkill(skill.skill_name);
@@ -1520,7 +1574,12 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         : 'None';
 
         
-      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(skill, supporterList, req);
+      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(
+        skill,
+        supporterList,
+        req,
+        { mapOverride: selectedMapOverride || null }
+      );
 
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
