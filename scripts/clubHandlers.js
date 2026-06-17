@@ -721,7 +721,7 @@ export async function handleSetTarget(req) {
           flags: InteractionResponseFlags.EPHEMERAL,
           content:
             `✅ Set **${clubLabel}** target to **${formatTierRankRange(threshold)}**. ` +
-            'Leaderboards for this server will show daily target and progress vs that tier.',
+            'Leaderboards for this server will show the target tier and per-member daily target.',
         });
       } catch (err) {
         console.error('settarget failed:', err);

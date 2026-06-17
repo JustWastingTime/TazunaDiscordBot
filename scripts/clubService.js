@@ -305,31 +305,6 @@ export function computeMemberDailyTarget(clubFansPerDay) {
   return clubFansPerDay / CLUB_MEMBER_COUNT;
 }
 
-export function buildTargetStatus(circle, threshold) {
-  if (!circle || !threshold) return null;
-
-  const currentRank = circle.live_rank ?? circle.monthly_rank;
-  const useLivePoints =
-    typeof circle.live_rank === 'number' && circle.live_rank > 0 && circle.live_rank <= 100;
-  const currentPoints = useLivePoints ? circle.live_points : circle.monthly_point;
-
-  const rankLine =
-    typeof currentRank === 'number' && currentRank > 0 && threshold.rankingTo != null
-      ? currentRank <= threshold.rankingTo
-        ? `✅ Rank #${currentRank} (target ≤ #${threshold.rankingTo})`
-        : `⚠️ Rank #${currentRank} (need ≤ #${threshold.rankingTo})`
-      : null;
-
-  const pointsLine =
-    threshold.minFans != null && typeof currentPoints === 'number'
-      ? currentPoints >= threshold.minFans
-        ? `✅ ${formatCompactInt(currentPoints)} fans (tier floor ${formatCompactInt(threshold.minFans)})`
-        : `⚠️ ${formatCompactInt(currentPoints)} fans (need ${formatCompactInt(threshold.minFans)})`
-      : null;
-
-  return rankLine ?? pointsLine ?? '—';
-}
-
 export async function resolveClubTargetInfo(guildId, circleId, circleData) {
   const targetTier = getGuildClubTarget(guildId, circleId);
   if (!targetTier) return null;
@@ -338,13 +313,11 @@ export async function resolveClubTargetInfo(guildId, circleId, circleData) {
   const threshold = findRankThreshold(tiers, targetTier);
   if (!threshold) return null;
 
-  const circle = circleData?.circle;
   return {
     tierLabel: threshold.tier,
     tierRangeLabel: formatTierRankRange(threshold),
     rankBoundary: threshold.rankingTo,
     dailyTarget: computeMemberDailyTarget(threshold.clubFansPerDay),
-    statusText: buildTargetStatus(circle, threshold),
   };
 }
 
@@ -687,14 +660,13 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   if (targetInfo) {
     lines.push(`**Target Tier:** ${targetInfo.tierRangeLabel ?? targetInfo.tierLabel}`);
     lines.push(
-      `**Daily Target:** ${
+      `**Daily Target (per member):** ${
         targetInfo.dailyTarget == null ? '—' : formatIntWithCommas(Math.round(targetInfo.dailyTarget))
       }`,
     );
-    lines.push(`**vs Target:** ${targetInfo.statusText ?? '—'}`);
   } else {
     lines.push('**Target Tier:** — *(set with `/club settarget`)*');
-    lines.push('**Daily Target:** —');
+    lines.push('**Daily Target (per member):** —');
   }
 
   if (!activeMembers.length) {
