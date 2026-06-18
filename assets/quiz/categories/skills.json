@@ -1,8 +1,7 @@
 {
   "name": "Skill",
   "questions": [
-    { "promptTemplate": "Which uma has the unique skill {0}?",
-      "difficulty": "easy",
+    { "promptTemplate": "Which uma has the unique skill {0}?", "difficulty": "easy",
       "entries": [
         ["Introduction to Physiology", ["Agnes Tachyon", "$uma"]],
         ["Super-Duper Climax", ["Haru Urara", "$uma"]],
@@ -33,8 +32,61 @@
         ["All Charged! It's Go Time!", ["Ines Fujin", "$uma"]]
       ]
     },
-    { "promptTemplate": "{0}'s unique skill is called?",
-      "difficulty": "medium",
+    { "promptTemplate": "What is the category of the skill {0}?", "difficulty": "easy",
+      "entries": [
+        ["Highlander", ["Acceleration", "Recovery", "Velocity", "None of the Above"]],
+        ["End Closer Savvy", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Lie in Wait", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Rainy Days x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Kyoto Racecourse", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Firm Conditions", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Full Throttle", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Long Straightaways", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Watchful Eye", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Super Lucky Seven", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Swinging Maestro", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Staggering Lead", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Kawasaki Racecourse", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Fighting Spirit", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Risky Business", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Hanshin Racecourse x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["1,500,000 CC", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Maverick", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Left-Handed", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Fall Runner x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Big-Sisterly", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Top Pick", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Feature Act", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Left-Handed x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Keep Pushing Ahead", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Hakodate Racecourse x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Snowy Days", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Longchamp Racecourse x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Inner Post Averseness", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Paddock Fright", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Keen Eye", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Dazzl'n ♪ Diver", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Steadfast", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Early Start", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Unruffled", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Non-Standard Distance x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Corner Recovery x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Tactical Tweak", ["Acceleration", "Recovery", "Velocity", "None of the Above"]],
+        ["Lay Low", ["Recovery", "Velocity", "Acceleration", "None of the Above"]],
+        ["Tail Held High", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Long Corners", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Frenzied End Closers", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Elated", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Front Runner Corners", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["15,000,000 CC", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Oi Racecourse x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["Slick Surge", ["Acceleration", "Recovery", "Velocity", "None of the Above"]],
+        ["Victory Cheer!", ["Velocity", "Recovery", "Acceleration", "None of the Above"]],
+        ["Standard Distance x", ["None of the Above", "Recovery", "Velocity", "Acceleration"]],
+        ["End Closer Corners", ["Velocity", "Recovery", "Acceleration", "None of the Above"]]
+      ]
+    },
+    { "promptTemplate": "{0}'s unique skill is called?", "difficulty": "medium",
       "entries": [
         ["Rice Shower (Halloween)", ["Every Rose Has Its Fangs", "Halloween Makeover", "Bite of a Umapire ☆", "Fairy Tale", "Budding Blossom", "I Can Win Sometimes, Right?"]],
         ["Silence Suzuka", ["The View from the Lead Is Mine!", "I See Victory in My Future!", "Just a Little Farther!", "Victory Cheer!", "Wherever This Wonder Leads", "Angling and Scheming"]],
@@ -51,8 +103,7 @@
         ["Manhattan Cafe", ["Chasing After You", "Shadow Break", "Nemesis", "A Princess Must Seize Victory!", "Arrows Whistle, Shadows Disperse", "Focused Mind"]]
       ]
     },
-    { "promptTemplate": "The white version of {0} is called?",
-      "difficulty": "medium",
+    { "promptTemplate": "The white version of {0} is called?", "difficulty": "medium",
       "entries": [
         ["Lane Legerdemain", ["Go with the Flow", "Dodging Danger", "Groundwork", "Prudent Positioning", "Countermeasure", "Second Wind", "Corner Acceleration"]],
         ["Sixth Sense", ["Dodging Danger", "Acceleration", "Prudent Positioning", "Countermeasure", "Tactical Tweak", "Light as a Feather", "Fearless"]],
@@ -98,8 +149,7 @@
         ["Moonlit Flash", ["End Closer Straightaways", "Top Pick", "Playtime's Over!", "Slipstream", "Leader's Pride", "Full Throttle", "Huge Lead"]]
       ]
     },
-    { "promptTemplate": "The gold version of {0} is called?",
-      "difficulty": "medium",
+    { "promptTemplate": "The gold version of {0} is called?", "difficulty": "medium",
       "entries": [
         ["Playtime's Over!", ["See Ya Later!", "It's On!", "Keep Going!", "Rushing Gale!", "Step on the Gas!", "You're Not the Boss of Me!", "Stop Right There!", "Break It Down!"]],
         ["Outer Swell", ["Rising Dragon", "Killer Tunes", "In Body and Mind", "Changing Gears", "Power Swell", "Fast & Furious", "Daring Strike"]],
@@ -146,8 +196,7 @@
         ["Long Straightaways", ["Blast Forward", "Flash Forward", "Forward, March!", "Innate Experience", "Blinding Flash", "Headliner", "Wind Slash"]]
       ]
     },
-    { "promptTemplate": "This is the skill description of which skill? \n\n {0}",
-      "difficulty": "expert",
+    { "promptTemplate": "This is the skill description of which skill? \n\n {0}", "difficulty": "expert",
       "entries": [
         ["Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
         ["Super-Duper Climax", "U=ma2", "Superior Heal", "Keep Pushing Ahead", "Introduction to Physiology"]],
@@ -162,8 +211,7 @@
        
       ]
     },
-    { "promptTemplate": "In Trackblazer, which of the following events can give the skill{0}?",
-      "difficulty": "expert",
+    { "promptTemplate": "In Trackblazer, which of the following events can give the skill{0}?", "difficulty": "expert",
       "entries": [
               ["Uma Stan", ["Agnes Digital Explodes", "The Strongest, Mightiest Cinderella!", "Under the Same Umbrella", "Keeping It Cute", "Hungry for Affection"]],
               ["Prudent Positioning", ["The Strongest, Mightiest Cinderella!", "Mission: Big Surprise!", "Living Alone", "Brian Gets Jealous?", "Worldwide Windy", "The Perfect Combo"]],
@@ -172,43 +220,47 @@
     },
 
 
-    { "prompt": "Which Uma runs through snow in their Unique Skill?",
-      "answers": ["Oguri Cap", "Admire Vega", "Mejiro Ardan", "Air Groove"],
-      "difficulty": "easy"
+    { "prompt": "Which Uma runs through snow in their Unique Skill?", "difficulty": "easy",
+      "answers": ["Oguri Cap", "Admire Vega", "Mejiro Ardan", "Air Groove"]
     },
-    { "prompt": "What weapon does Grass Wonder wield in her unique animation?",
-      "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"],
-      "difficulty": "easy"
+    { "prompt": "What weapon does Grass Wonder wield in her unique animation?", "difficulty": "easy",
+      "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"]
     },
 
-    { "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?",
-      "answers": ["Nice Nature (Cheerleader)", "Kawakami Princess", "Sakura Chiyono O", "El Condor Pasa (Fantasy)"],
-      "difficulty": "hard"
+    { "prompt": "Which of the following skills cannot be acquired through URA Finale's scenario events?", "difficulty": "medium",
+        "answers": ["Professor of Curvature", "Beeline Burst", "Iron Will", "Breath of Fresh Air"]
     },
-    { "prompt": "Which of these Uma does NOT have a ☆ in the name of their Unique Skill?",
-      "answers": ["Tosen Jordan", "Sweep Tosho", "Mayano Top Gun (Wedding)", "Hishi Akebono", "Maruzensky (Summer)", "Agnes Digital"],
-      "difficulty": "hard"
+    { "prompt": "These speed skills give 40 extra speed at level 1 except?", "difficulty": "medium",
+        "answers": ["Maverick", "Left-Handed", "Spring Runner", "Long Shot", "Lone Wolf"]
     },
-
-    { "prompt": "By how many percent does the skill \"Restraint\" reduced Rushed chance?",
-      "answers": ["3%", "2%", "5%", "4%"],
-      "difficulty": "hard"
-    },  
-
-    { "prompt": "Which race spark does not give the skill \"Tokyo Racecourse\"?",
-      "answers": ["Victoria Mile", "Japan Cup", "Yasuda Kinen", "Japanese Derby"],
-      "difficulty": "hard"
+    { "prompt": "What does the skill G1 Averseness do?", "difficulty": "medium",
+      "answers": ["Speed stat down by 40", "Speed stat up by 40", "Speed stat down by 60", "Can't enter G1s"]
     },
-
-    { "prompt": "What does the skill Ignited Spirit WIT increase?",
-      "answers": ["Field of Vision and Lane Movement early-race", "Field of Vision and Lane Movement mid-race", "Lane Movement early-race", "Lane Movement and Target Speed early-race", "Lane Movement and Target Speed mid-race"],
-      "difficulty": "expert"
+    { "prompt": "When a skill is named XXXX Racecourse, what do they generally do?", "difficulty": "medium",
+      "answers": ["Stamina stat up by 40", "Speed stat up by 40", "Power stat up by 40", "Wit stat up by 40"]
     },
-
-    {   "prompt": "Which of the following skills cannot be acquired through URA Finale's scenario events?",
-        "answers": ["Professor of Curvature", "Beeline Burst", "Iron Will", "Breath of Fresh Air"],
-        "difficulty": "easy"
-    }
     
+    { "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?", "difficulty": "hard",
+      "answers": ["Nice Nature (Cheerleader)", "Kawakami Princess", "Sakura Chiyono O", "El Condor Pasa (Fantasy)"]
+    },
+    { "prompt": "Which of these Uma does NOT have a ☆ in the name of their Unique Skill?", "difficulty": "hard",
+      "answers": ["Tosen Jordan", "Sweep Tosho", "Mayano Top Gun (Wedding)", "Hishi Akebono", "Maruzensky (Summer)", "Agnes Digital"]
+    },
+    { "prompt": "By how many percent does the skill \"Restraint\" reduced Rushed chance?", "difficulty": "hard",
+      "answers": ["3%", "2%", "5%", "4%"]
+    },  
+    { "prompt": "Which race spark does not give the skill \"Tokyo Racecourse\"?", "difficulty": "hard",
+      "answers": ["Victoria Mile", "Japan Cup", "Yasuda Kinen", "Japanese Derby"]   
+    },
+    { "prompt": "What does the skill Ignited Spirit WIT increase?", "difficulty": "hard",
+      "answers": ["Field of Vision and Lane Movement early-race", "Field of Vision and Lane Movement mid-race", "Lane Movement early-race", "Lane Movement and Target Speed early-race", "Lane Movement and Target Speed mid-race"]
+    },
+    { "prompt": "What does the skill Maverick do?", "difficulty": "hard",
+      "answers": ["Speed stat up by 60", "Speed stat up by 40", "Power stat up by 40", "Speed and Power stat up by 40"]
+    },
+    { "prompt": "In CM, what is the chance for your uma to trigger Outer Post Proficiency lv 1", "difficulty": "hard",
+      "answers": ["44.4%", "33.3%", "50%", "0%", "66.7%"]
+    }
+
   ]
 }
