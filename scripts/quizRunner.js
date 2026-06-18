@@ -227,10 +227,16 @@ export async function finishRound(guildId) {
 
   const { active, question } = outcome;
   try {
-    const editPayload = await quiz.buildRoundEndPayload(active, question);
-    await editChannelMessage(active.channelId, active.round.messageId, editPayload);
+    await editChannelMessage(active.channelId, active.round.messageId, {
+      components: quiz.buildDisabledMcqRows(active.round),
+    });
+    await safeChannelSend(
+      active.channelId,
+      { embeds: [quiz.buildRoundEndEmbed(active, question)] },
+      'finishRound summary',
+    );
   } catch (err) {
-    console.error('Failed to edit quiz round message:', summarizeDiscordError(err));
+    console.error('Failed to finish quiz round message:', summarizeDiscordError(err));
     await safeChannelSend(
       active.channelId,
       { embeds: [quiz.buildRoundEndEmbed(active, question)] },
@@ -286,20 +292,9 @@ function scheduleRoundEnd(guildId) {
   roundTimers.set(guildId, timer);
 }
 
-export async function beginRound(guildId) {
-  cancelTimer(betweenRoundTimers, guildId);
-
+async function prepareRoundContent(guildId) {
   const activeQuiz = getActiveQuiz(guildId);
   if (!activeQuiz) return { ok: false, error: 'No active quiz.' };
-
-  if (activeQuiz.round) {
-    if (quiz.isRoundOpen(activeQuiz)) {
-      scheduleRoundEnd(guildId);
-      return { ok: true };
-    }
-    await finishRound(guildId);
-    return { ok: true };
-  }
 
   const { questions } = loadSessionQuestions(activeQuiz);
   if (!questions.length) {
@@ -327,13 +322,25 @@ export async function beginRound(guildId) {
     }
 
     quiz.startRoundState(active, question, null);
-    return { ok: true, active, question };
+    return { ok: true, question };
   });
 
   if (!setup.ok) return setup;
 
   const active = getActiveQuiz(guildId);
-  const payload = await quiz.buildQuestionPayload(setup.question, active);
+  const media = await quiz.buildQuestionMediaFiles(setup.question, active);
+  return { ok: true, question: setup.question, media };
+}
+
+async function publishRound(guildId, prep) {
+  const active = getActiveQuiz(guildId);
+  if (!active?.round) {
+    await revertPendingRound(guildId);
+    return { ok: false, error: 'Quiz round was cancelled before posting.' };
+  }
+
+  quiz.syncRoundClock(active, prep.question);
+  const payload = quiz.assembleQuestionPayload(prep.question, active, prep.media);
 
   let message;
   try {
@@ -359,6 +366,26 @@ export async function beginRound(guildId) {
 
   scheduleRoundEnd(guildId);
   return { ok: true };
+}
+
+export async function beginRound(guildId) {
+  cancelTimer(betweenRoundTimers, guildId);
+
+  const activeQuiz = getActiveQuiz(guildId);
+  if (!activeQuiz) return { ok: false, error: 'No active quiz.' };
+
+  if (activeQuiz.round) {
+    if (quiz.isRoundOpen(activeQuiz)) {
+      scheduleRoundEnd(guildId);
+      return { ok: true };
+    }
+    await finishRound(guildId);
+    return { ok: true };
+  }
+
+  const prep = await prepareRoundContent(guildId);
+  if (!prep.ok) return prep;
+  return publishRound(guildId, prep);
 }
 
 export async function startQuiz({
@@ -432,13 +459,33 @@ export async function startQuiz({
     'startQuiz',
   );
 
+  let prepReady = false;
+  const prepPromise = prepareRoundContent(guildId).then((result) => {
+    prepReady = true;
+    return result;
+  });
   await runStartCountdown(channelId, quiz.QUIZ_START_COUNTDOWN_SECONDS);
 
   if (!getActiveQuiz(guildId)) {
     return { ok: false, error: 'Quiz was stopped before the first round.' };
   }
 
-  return beginRound(guildId);
+  let loadingMessage = null;
+  if (!prepReady) {
+    loadingMessage = await safeChannelSend(
+      channelId,
+      { content: '⏳ Preparing question...' },
+      'quiz prepare',
+    );
+  }
+
+  const resolvedPrep = await prepPromise;
+  if (loadingMessage?.id) {
+    await deleteChannelMessage(channelId, loadingMessage.id);
+  }
+
+  if (!resolvedPrep.ok) return resolvedPrep;
+  return publishRound(guildId, resolvedPrep);
 }
 
 export async function stopQuiz(guildId, { reason } = {}) {

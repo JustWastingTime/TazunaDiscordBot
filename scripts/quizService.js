@@ -688,22 +688,33 @@ export function buildDisabledMcqRows(round) {
   }];
 }
 
-export async function buildQuestionPayload(question, quiz) {
-  const embed = buildQuestionEmbed(question, quiz);
-  const payload = { embeds: [embed] };
+export function syncRoundClock(quiz, question) {
+  const roundSeconds = getRoundSeconds(quiz, question);
+  const startedAt = Date.now();
+  quiz.round.startedAt = startedAt;
+  quiz.round.endsAt = startedAt + roundSeconds * 1000;
+  quiz.round.roundSeconds = roundSeconds;
+}
+
+export async function buildQuestionMediaFiles(question, quiz) {
   const files = [];
+  const media = {
+    files,
+    embedImage: null,
+    embedImageFallback: null,
+    audioNote: null,
+    audioUrl: null,
+  };
 
   if (question.audioUrl) {
-    const clipSeconds = quiz.round?.roundSeconds ?? getRoundSeconds(quiz, question);
+    const clipSeconds = getRoundSeconds(quiz, question);
     try {
-      const audioFile = await createQuizAudioFile(question.audioUrl, clipSeconds);
-      files.push(audioFile);
-      if (!question.imageUrl) {
-        embed.description = `${embed.description}\n\n🔊 Listen to the attached audio clip.`;
-      }
+      files.push(await createQuizAudioFile(question.audioUrl, clipSeconds));
+      if (!question.imageUrl) media.audioNote = 'clip';
     } catch (err) {
       console.error('Failed to trim quiz audio, sending URL fallback:', err.message);
-      embed.description = `${embed.description}\n\n🔊 [Listen to audio](${question.audioUrl})`;
+      media.audioNote = 'link';
+      media.audioUrl = question.audioUrl;
     }
   }
 
@@ -712,33 +723,56 @@ export async function buildQuestionPayload(question, quiz) {
       try {
         const silhouette = await createSilhouetteFile(question.imageUrl);
         files.push(silhouette);
-        embed.image = { url: `attachment://${silhouette.filename}` };
+        media.embedImage = { url: `attachment://${silhouette.filename}` };
       } catch (err) {
         console.error('Failed to create quiz silhouette, using attached image fallback:', err.message);
         try {
           const imageFile = await createQuizImageFile(question.imageUrl);
           files.push(imageFile);
-          embed.image = { url: `attachment://${imageFile.filename}` };
+          media.embedImage = { url: `attachment://${imageFile.filename}` };
         } catch (fallbackErr) {
           console.error('Failed to attach quiz image fallback:', fallbackErr.message);
-          embed.image = { url: question.imageUrl };
+          media.embedImageFallback = question.imageUrl;
         }
       }
     } else {
       try {
         const imageFile = await createQuizImageFile(question.imageUrl);
         files.push(imageFile);
-        embed.image = { url: `attachment://${imageFile.filename}` };
+        media.embedImage = { url: `attachment://${imageFile.filename}` };
       } catch (err) {
         console.error('Failed to attach quiz image, using URL fallback:', err.message);
-        embed.image = { url: question.imageUrl };
+        media.embedImageFallback = question.imageUrl;
       }
     }
   }
 
-  if (files.length) payload.files = files;
-  payload.components = buildMcqRows(quiz.guildId, quiz.round);
+  return media;
+}
+
+export function assembleQuestionPayload(question, quiz, media) {
+  const embed = buildQuestionEmbed(question, quiz);
+  if (media.audioNote === 'clip' && !question.imageUrl) {
+    embed.description = `${embed.description}\n\n🔊 Listen to the attached audio clip.`;
+  } else if (media.audioNote === 'link' && media.audioUrl) {
+    embed.description = `${embed.description}\n\n🔊 [Listen to audio](${media.audioUrl})`;
+  }
+
+  if (media.embedImage) {
+    embed.image = media.embedImage;
+  } else if (media.embedImageFallback) {
+    embed.image = { url: media.embedImageFallback };
+  }
+
+  const payload = { embeds: [embed], components: buildMcqRows(quiz.guildId, quiz.round) };
+  if (media.files.length) payload.files = media.files;
   return payload;
+}
+
+export async function buildQuestionPayload(question, quiz) {
+  const media = await buildQuestionMediaFiles(question, quiz);
+  syncRoundClock(quiz, question);
+  return assembleQuestionPayload(question, quiz, media);
 }
 
 export function buildWinnerEmbed(winner, scores, { coinReward = 0, scoreGoal = DEFAULT_SCORE_GOAL } = {}) {
@@ -765,26 +799,6 @@ export function buildRoundEndEmbed(quiz, question) {
     description: formatRoundSummary(quiz, question),
     footer: { text: getCategoryFooterText(question) },
   };
-}
-
-export async function buildRoundEndPayload(quiz, question) {
-  const embed = buildRoundEndEmbed(quiz, question);
-  const payload = {
-    embeds: [embed],
-    components: buildDisabledMcqRows(quiz.round),
-  };
-
-  if (!question?.imageUrl) return payload;
-
-  try {
-    const imageFile = await createQuizImageFile(question.imageUrl);
-    payload.files = [imageFile];
-    embed.image = { url: `attachment://${imageFile.filename}` };
-  } catch (err) {
-    console.error('Failed to attach round-end image:', err.message);
-  }
-
-  return payload;
 }
 
 export function resolveWinnerAfterRound(quiz) {
