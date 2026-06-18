@@ -171,14 +171,14 @@
             ]
     },
 
-    
+
     { "prompt": "Which Uma runs through snow in their Unique Skill?",
       "answers": ["Oguri Cap", "Admire Vega", "Mejiro Ardan", "Air Groove"],
       "difficulty": "easy"
     },
     { "prompt": "What weapon does Grass Wonder wield in her unique animation?",
       "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"],
-      "difficulty": "medium"
+      "difficulty": "easy"
     },
 
     { "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?",
