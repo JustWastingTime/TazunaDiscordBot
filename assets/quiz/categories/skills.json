@@ -226,6 +226,9 @@
     { "prompt": "What weapon does Grass Wonder wield in her unique animation?", "difficulty": "easy",
       "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"]
     },
+    { "prompt": "When a skill is named XXXX Racecourse, what do they generally do?", "difficulty": "easy",
+      "answers": ["Stamina stat up by 40", "Speed stat up by 40", "Power stat up by 40", "Wit stat up by 40"]
+    },
 
     { "prompt": "Which of the following skills cannot be acquired through URA Finale's scenario events?", "difficulty": "medium",
         "answers": ["Professor of Curvature", "Beeline Burst", "Iron Will", "Breath of Fresh Air"]
@@ -236,9 +239,10 @@
     { "prompt": "What does the skill G1 Averseness do?", "difficulty": "medium",
       "answers": ["Speed stat down by 40", "Speed stat up by 40", "Speed stat down by 60", "Can't enter G1s"]
     },
-    { "prompt": "When a skill is named XXXX Racecourse, what do they generally do?", "difficulty": "medium",
-      "answers": ["Stamina stat up by 40", "Speed stat up by 40", "Power stat up by 40", "Wit stat up by 40"]
+    { "prompt": "In which map does the skill Yodo Invicta trigger?", "difficulty": "medium",
+        "answers": ["Kyoto Racecourse", "Tokyo Racecourse", "Hanshin Racecourse", "Nakayama Racecourse", "Invicta Racecourse"]
     },
+    
     
     { "prompt": "Which of these Umas do NOT have part of their own name in the name of their Unique Skill?", "difficulty": "hard",
       "answers": ["Nice Nature (Cheerleader)", "Kawakami Princess", "Sakura Chiyono O", "El Condor Pasa (Fantasy)"]
