@@ -2102,6 +2102,15 @@
         ]
       ]
     },
+    { "promptTemplate": "In their profile, who's weight is written as this? \n\n{0}",
+    "difficulty": "expert",
+    "entries": [
+      ["Slight decrease (pre-race nerves)", ["Special Week", "Mejiro Ardan", "Gold City", "Meisho Doto", "Rice Shower", "El Condor Pasa"]],
+      ["Slight increase (overate)", ["Oguri Cap", "Special Week", "Taiki Shuttle", "Nice Nature", "Rice Shower"]],
+      ["Slight increase (but it's no problem!)", ["Taiki Shuttle", "Oguri Cap", "Tokai Teio", "Hishi Amazon", "Mejiro McQueen", "Special Week"]],
+      ["Perpetually perfect (according to herself)", ["TM Opera O", "Maruzensky", "Mejiro McQueen", "Silence Suzuka", "Symboli Rudolf"]]
+    ]
+    },
 
 
     { "prompt": "Which trio of Umas are called \"BNW\"?",
@@ -2209,9 +2218,46 @@
       "answers": ["Goldsmith", "Tyrant", "Kingmaker", "Smelter", "Longsword", "Oven"],
       "difficulty": "hard"
     },
-    { "prompt": "How many meters long is the Tokyo homestretch ingame?",
-      "answers": ["500", "600", "400", "525"], 
-      "difficulty": "hard"
+    { "prompt": "In umamusume, where do umas go after finishing the Twinkle Series?",
+      "answers": ["Dream Trophy League", "Home", "Countryside", "Hokkaido", "Beach"],
+      "difficulty": "medium"
+    },
+    { "prompt": "This uma has more than 4 million fans in Umatter and is none as the \"Bento Fairy \" by her fans.",
+      "answers": ["Nishino Flower", "Taiki Shuttle", "Oguri Cap", "Mejiro Ardan", "Curren Chan"],
+      "difficulty": "medium"
+    },
+    { "prompt": "This uma uploads magic tutorial videos on UmaTok",
+      "answers": ["Fuji Kiseki", "Gold City", "Vivlos", "Curren Chan", "Grass Wonder"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which of these races are not part of the Triple Tiara?",
+      "answers": ["Satsuki Sho", "Oka Sho", "Japanese Oaks", "Shuka Sho"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Which combination of races are the Senior Spring Triple Crown?",
+      "answers": ["Tenno Sho Spring, Takarazuka Kinen, Osaka Hai", "Osaka Hai, Tenno Sho Autumn, Takarazuka Kinen", "Takatsunomiya Kinen, Tenno Sho Spring, Osakai Hai", "Tenno Sho Autumn, Japan Cup, Arima Kinen"],
+      "difficulty": "easy"
+    },
+    { "prompt": "Which of these umas do not live in the dorms?",
+      "answers": ["Maruzensky", "Oguri Cap", "Special Week", "Symboli Rudolf", "Mejiro Ramonu"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Symboli Rudolf, Symboli Kris S and Sirius Symboli stay in which dorm?",
+      "answers": ["Miho", "Ritto", "They don't live in a dorm", "Kanto"],
+      "difficulty": "expert"
+    },
+    { "prompt": "Which of these umas serve as the Vice President of the Student Council",
+      "answers": ["Narita Brian", "Maruzensky", "Mr. C.B.", "Mejiro Ramonu", "Tokai Teio"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Which of these social media networks dont exist in universe?",
+      "answers": ["Umaddit", "Umastagram", "UmaTube", "Umatter", "UmaTok", "LANE"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Did you know? She can tell different brands of milk apart from taste alone.",
+      "answers": ["Special Week", "$uma"],
+      "difficulty": "expert"
     }
+    
   ]
 }

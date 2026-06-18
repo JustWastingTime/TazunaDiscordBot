@@ -18,6 +18,14 @@
         ["", ["Gold Ship", "Mayano Top Gun", "Gentildonna", "Super Creek", "Mejiro Ardan"]]
         ]
     },
+    { "promptTemplate": "Which year did the {0} get upgraded to a G1?",
+    "difficulty": "hard",
+    "entries": [
+        ["Osaka Hai", ["2017", "2018", "1982", "2006", "2003", "1986"]],
+        ["Hopeful Stakes", ["2017", "2016", "2007", "2018", "2003", "1987"]]
+      ]
+    },
+
     { "prompt": "The 12 billion yen incident refers to?",
       "answers": ["Gold Ship", "Agnes Digital", "Stay Gold", "Silence Suzuka", "Cesario"],
       "difficulty": "medium"
@@ -27,6 +35,10 @@
       "difficulty": "medium"
     },
     { "prompt": "Which race is not considered one of the Eight Great Classics?",
+      "answers": ["Takarazuka Kinen", "Satsuki Sho", "Japanese Derby", "Oka Sho", "Tenno Sho (Autumn)", " Kikuka Sho"],
+      "difficulty": "hard"
+    },
+    { "prompt": "Which race of the Eight Great Classics did not exist before World War II",
       "answers": ["Arima Kinen", "Satsuki Sho", "Japanese Derby", "Oka Sho", "Tenno Sho (Autumn)", " Kikuka Sho"],
       "difficulty": "hard"
     },
@@ -158,12 +170,14 @@
       "answers": ["Mile Championship", "Yasuda Kinen", "NHK Mile", "Victoria Mile"],
       "difficulty": "easy"
     },
-    { "promptTemplate": "Which year did the {0} get upgraded to a G1?",
-      "difficulty": "hard",
-      "entries": [
-          ["Osaka Hai", ["2017", "2018", "1982", "2006", "2003", "1986"]],
-          ["Hopeful Stakes", ["2017", "2016", "2007", "2018", "2003", "1987"]]
-        ]
-    } 
+    { "prompt": "In horse racing, the term \"length\" refers to?",
+      "answers": ["Length of horse from nose to tail", "3 meters", "1 yard", "1 umamusume t-posing"],
+      "difficulty": "medium"
+    },
+    { "prompt": "Oi racecourse is located in the city of?",
+      "answers": ["Tokyo", "Oi", "Kyoto", "Yokohama"],
+      "difficulty": "medium"
+    }
+   
   ]
 }
