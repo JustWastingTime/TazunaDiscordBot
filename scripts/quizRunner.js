@@ -236,7 +236,7 @@ export async function finishRound(guildId) {
       'finishRound summary',
     );
   } catch (err) {
-    console.error('Failed to finish quiz round message:', summarizeDiscordError(err));
+    console.error('Failed to edit quiz round message:', summarizeDiscordError(err));
     await safeChannelSend(
       active.channelId,
       { embeds: [quiz.buildRoundEndEmbed(active, question)] },
@@ -339,12 +339,19 @@ async function publishRound(guildId, prep) {
     return { ok: false, error: 'Quiz round was cancelled before posting.' };
   }
 
-  quiz.syncRoundClock(active, prep.question);
-  const payload = quiz.assembleQuestionPayload(prep.question, active, prep.media);
+  await updateQuizState((state) => {
+    const current = state[guildId];
+    if (!current?.round) return true;
+    quiz.syncRoundClock(current, prep.question);
+    return true;
+  });
+
+  const synced = getActiveQuiz(guildId);
+  const payload = quiz.assembleQuestionPayload(prep.question, synced, prep.media);
 
   let message;
   try {
-    message = await sendChannelMessage(active.channelId, payload);
+    message = await sendChannelMessage(synced.channelId, payload);
   } catch (err) {
     await revertPendingRound(guildId);
 

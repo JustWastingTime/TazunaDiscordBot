@@ -689,7 +689,10 @@ export function buildDisabledMcqRows(round) {
 }
 
 export function syncRoundClock(quiz, question) {
-  const roundSeconds = getRoundSeconds(quiz, question);
+  let roundSeconds = getRoundSeconds(quiz, question);
+  if (quiz.round?.number === 1) {
+    roundSeconds += QUIZ_START_COUNTDOWN_SECONDS;
+  }
   const startedAt = Date.now();
   quiz.round.startedAt = startedAt;
   quiz.round.endsAt = startedAt + roundSeconds * 1000;
