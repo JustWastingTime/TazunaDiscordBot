@@ -128,20 +128,25 @@ function normalizeStatThresholds(rawMap) {
 }
 
 function resolveMapSource(cm, mapsCatalog) {
+  const mapRef = cm?.map_id ?? cm?.mapId ?? cm?.map_ref ?? cm?.mapRef
+    ?? (typeof cm?.map === "string" ? cm.map : null);
+  if (mapRef) {
+    const ref = lower(mapRef);
+    if (Array.isArray(mapsCatalog)) {
+      const found = mapsCatalog.find((map) => {
+        if (!map || typeof map !== "object") return false;
+        return (
+          lower(map.id) === ref ||
+          lower(map.map_id) === ref ||
+          lower(map.slug) === ref ||
+          lower(map.name) === ref
+        );
+      });
+      if (found) return found;
+    }
+  }
   if (cm?.map && typeof cm.map === "object") return cm.map;
-  const mapRef = cm?.map_id ?? cm?.mapId ?? cm?.map_ref ?? cm?.mapRef ?? cm?.map;
-  if (!mapRef) return null;
-  const ref = lower(mapRef);
-  if (!Array.isArray(mapsCatalog)) return null;
-  return mapsCatalog.find((map) => {
-    if (!map || typeof map !== "object") return false;
-    return (
-      lower(map.id) === ref ||
-      lower(map.map_id) === ref ||
-      lower(map.slug) === ref ||
-      lower(map.name) === ref
-    );
-  }) ?? null;
+  return null;
 }
 
 function normalizeDistancePoints(points, length) {
@@ -674,7 +679,7 @@ function phaseWindowFromName(mapData, phaseName) {
   if (phase === "early") return earlyZone ? { start: earlyZone.start, end: earlyZone.end } : null;
   if (phase === "mid" || phase === "middle") return midZone ? { start: midZone.start, end: midZone.end } : null;
   if (phase === "late") return lateZone ? { start: lateZone.start, end: lateZone.end } : null;
-  if (phase === "spurt" || phase === "last_spurt") return spurtZone ? { start: spurtZone.start, end: spurtZone.end } : null;
+  if (phase === "spurt") return spurtZone ? { start: spurtZone.start, end: spurtZone.end } : null;
   if (phase === "first_half") return { start: 0, end: mapData.length * 0.5 };
   if (phase === "late_and_beyond") {
     const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;

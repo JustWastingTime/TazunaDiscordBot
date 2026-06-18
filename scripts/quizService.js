@@ -18,7 +18,7 @@ export const QUIZ_WIN_MAX_COINS = 50;
 export const EMPTY_ROUND_LIMIT = 3;
 
 export const QUIZ_GAMEMODES = {
-  gamer: ['umas', 'skills', 'supporters'],
+  gamer: ['umas', 'skills', 'supporters', 'gamedata'],
   larper: ['songs', 'keiba', 'trivia', 'umaguesser'],
   umadol: ['songs'],
   umaguesser: ['umaguesser'],

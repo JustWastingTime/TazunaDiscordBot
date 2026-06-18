@@ -1,8 +1,8 @@
 [
-    {   "name": "Taurus Cup 2025",
+    {
+        "name": "Taurus Cup 2025",
         "number": "1",
-        "track":
-        {
+        "track": {
             "racetrack": "Tokyo",
             "terrain": "Turf",
             "distance_type": "Medium",
@@ -15,12 +15,13 @@
         },
         "date": "<t:1755813600:F>",
         "image": "https://img.game8.co/4241619/91e0d8bd34b3c6a3d3596fbe06122f50.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthO7Ta65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZrBIAqF5cIC2zeNgTA72G5o%2B32%2Fe9ztDYrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLhJ9YHvVXJc%2F5ubQQnU1qFUdPJauQADWTaMttuQlIKP9G2XtNbxp6rnogL7UOXqxaVwN6KZlOcPWJw4nlOBgfOiFEc%2BLOq1VAKc6lXJE%2F1KD%2FgZ%2BBuf%2FeUisK9vX%2Bjdv0S%2FfQIrCWvgBwIAAA%3D%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthO7Ta65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZrBIAqF5cIC2zeNgTA72G5o%2B32%2Fe9ztDYrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLhJ9YHvVXJc%2F5ubQQnU1qFUdPJauQADWTaMttuQlIKP9G2XtNbxp6rnogL7UOXqxaVwN6KZlOcPWJw4nlOBgfOiFEc%2BLOq1VAKc6lXJE%2F1KD%2FgZ%2BBuf%2FeUisK9vX%2Bjdv0S%2FfQIrCWvgBwIAAA%3D%3D",
+        "map_id": "Tokyo 2400m (counterclockwise)"
     },
-    {   "name": "Gemini Cup 2025",
+    {
+        "name": "Gemini Cup 2025",
         "number": "2",
-        "track":
-        {
+        "track": {
             "racetrack": "Kyoto",
             "terrain": "Turf",
             "distance_type": "Long",
@@ -33,12 +34,13 @@
         },
         "date": "<t:1757628000:F>",
         "image": "https://img.game8.co/4254696/e32337b8225cd773fc47e077b09843f0.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthO7Ta65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZrBIAqF5cIC2zeNgTA72G5o%2B32%2Fe9ztDYrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLhJ9YHvVXJc%2F5ubQQnU1qFUdPJauQADWTaMttuQlIKP9G2XtNbxp6rnogL7UOXqxaVwN6KZlOcPWJw4nlOBgfOiFEc%2BLOq1VAKc6lXJE%2F1KD%2FgZ%2BBuf%2FeUisK9vX%2Bjdv0S%2FfQIrCWvgBwIAAA%3D%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthO7Ta65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZrBIAqF5cIC2zeNgTA72G5o%2B32%2Fe9ztDYrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLhJ9YHvVXJc%2F5ubQQnU1qFUdPJauQADWTaMttuQlIKP9G2XtNbxp6rnogL7UOXqxaVwN6KZlOcPWJw4nlOBgfOiFEc%2BLOq1VAKc6lXJE%2F1KD%2FgZ%2BBuf%2FeUisK9vX%2Bjdv0S%2FfQIrCWvgBwIAAA%3D%3D",
+        "map_id": "Kyoto 3200m (outer) (clockwise)"
     },
-    {   "name": "Cancer Cup 2025",
+    {
+        "name": "Cancer Cup 2025",
         "number": "3",
-        "track":
-        {
+        "track": {
             "racetrack": "Tokyo",
             "terrain": "Turf",
             "distance_type": "Mile",
@@ -51,12 +53,13 @@
         },
         "date": "<t:1760220000:F> (Estimated)",
         "image": "https://img.game8.co/4292870/964b31c99b08d94e93717904b4290a23.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnTa65Vh6KeRYelistStiSUa7wpSQfy9yUkr7B73NDMPMu2BIJQs%2FO9i22TedQRQKy8wC2zeNgTA72G7f9od%2B97g7GBTh1yQvzAus5sIGmQZ2PMJeEFKqdYMppxJvcmXSD86wbZ0jSXGL1Qe%2BV8lx%2FW%2BuBiVQW4dS0dFr5QIMZNkw2m5DUgo%2B0rdd0lrHn6qeigrsQ5WrF5fC3YhmUp4%2BYXHieE4FBs6LUhz4uKjXUglwqlclj%2FQrPeJn4G989vMssG%2FvN%2FTuX6JfvwCECixpBwIAAA%3D%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnTa65Vh6KeRYelistStiSUa7wpSQfy9yUkr7B73NDMPMu2BIJQs%2FO9i22TedQRQKy8wC2zeNgTA72G7f9od%2B97g7GBTh1yQvzAus5sIGmQZ2PMJeEFKqdYMppxJvcmXSD86wbZ0jSXGL1Qe%2BV8lx%2FW%2BuBiVQW4dS0dFr5QIMZNkw2m5DUgo%2B0rdd0lrHn6qeigrsQ5WrF5fC3YhmUp4%2BYXHieE4FBs6LUhz4uKjXUglwqlclj%2FQrPeJn4G989vMssG%2FvN%2FTuX6JfvwCECixpBwIAAA%3D%3D",
+        "map_id": "Tokyo 1600m (counterclockwise)"
     },
-    {   "name": "Leo Cup 2025",
+    {
+        "name": "Leo Cup 2025",
         "number": "4",
-        "track":
-        {
+        "track": {
             "racetrack": "Hanshin",
             "terrain": "Turf",
             "distance_type": "Medium",
@@ -69,12 +72,13 @@
         },
         "date": "<t:1762034400:F>",
         "image": "https://img.game8.co/4301378/13ec6fd35be87cd8b2298221be086b57.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnda65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZq9QRQKy4UFtm8aA2F2sN2%2B7Yd%2B97gbDIrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLg11Ae%2BV8lx%2FW9uBiVQW4dS0clr5QIMZNkw2m5DUgo%2B0rdd0lrHn6qeiwrsQ5WrF5fC3YhmUp4%2FYHHieE4FBs6LUhz5sKjXUglwqlclT%2FQrPeBn4G989peLwL6%2BfaF3%2FxL99gn7t0r6BwIAAA%3D%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnda65VhyKeRYelistSsSSUa7wpSQfy9yU0r7B73NDMPMu2JMJQs%2FO9i2GZq9QRQKy4UFtm8aA2F2sN2%2B7Yd%2B97gbDIrwS5Ij8wKrubBBppEdT7BXhJRq3WDOqcS6arAy6TvnTQuTpLg11Ae%2BV8lx%2FW9uBiVQW4dS0clr5QIMZNkw2m5DUgo%2B0rdd0lrHn6qeiwrsQ5WrF5fC3YhmUp4%2FYHHieE4FBs6LUhz5sKjXUglwqlclT%2FQrPeBn4G989peLwL6%2BfaF3%2FxL99gn7t0r6BwIAAA%3D%3D",
+        "map_id": "Hanshin 2200m (inner) (clockwise)"
     },
-    {   "name": "Virgo Cup 2025",
+    {
+        "name": "Virgo Cup 2025",
         "number": "5",
-        "track":
-        {
+        "track": {
             "racetrack": "Hanshin",
             "terrain": "Turf",
             "distance_type": "Mile",
@@ -87,12 +91,13 @@
         },
         "date": "<t:1763589600:F>",
         "image": "https://img.game8.co/4259380/45ce916af7479ecebeee705823be1fd7.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvU7EMBCE32VqF%2FkhQNxdiWiQrkQUq3gTrDvbkXetCJ3u3ZHDIQRvQDczGs18F0ypZOEnB9s2Y9MbRKGwnllgh6YxEGYH2923wzj0D%2F1oUIRfkjwzr7CaCxtkmtjxDHtBSKnWDZacSqyrBhuTvnPetTBJirC9gfrAtyo5rv%2FN1aAEautQKjp7rVyAgaw7RtvtSErBR%2Fq2a9rq%2BGPVS1GBvaty8%2BJSuBnRTMrLByyOHE%2BpwMB5UYoTH1b1WioBjvWq5Jl%2BpQf8DPyNT%2F58FtjXty%2F07l%2BiXz8BsrA9NwcCAAA%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvU7EMBCE32VqF%2FkhQNxdiWiQrkQUq3gTrDvbkXetCJ3u3ZHDIQRvQDczGs18F0ypZOEnB9s2Y9MbRKGwnllgh6YxEGYH2923wzj0D%2F1oUIRfkjwzr7CaCxtkmtjxDHtBSKnWDZacSqyrBhuTvnPetTBJirC9gfrAtyo5rv%2FN1aAEautQKjp7rVyAgaw7RtvtSErBR%2Fq2a9rq%2BGPVS1GBvaty8%2BJSuBnRTMrLByyOHE%2BpwMB5UYoTH1b1WioBjvWq5Jl%2BpQf8DPyNT%2F58FtjXty%2F07l%2BiXz8BsrA9NwcCAAA%3D",
+        "map_id": "Hanshin 1600m (outer) (clockwise)"
     },
-    {   "name": "Libra Cup 2025",
+    {
+        "name": "Libra Cup 2025",
         "number": "6",
-        "track":
-        {
+        "track": {
             "racetrack": "Kyoto",
             "terrain": "Turf",
             "distance_type": "Long",
@@ -105,12 +110,13 @@
         },
         "date": "<t:1797026400:F>, <t:1797026400:R> (Estimated)",
         "image": "https://img.game8.co/4338848/80a608ffdaee4de7679b8fcbc042b643.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvWoDMRCE32VqFfeTS2x1LoObgMuQYjntXYQt6dCuOILxuwddHELyBulmhmHmu2JMJQs%2FO9i22bWNQRQKy4UFdmgaA2F2sN1jO%2ByH%2FqnfGxThlyRH5gVWc2GDTCM7nmCvCCnVusGcU4l11WBl0nfOmxYmSRG2N1Af%2BF4lx%2FW%2FuRmUQG0dSkUnr5ULMJBlw2i7DUkp%2BEjfdklrHd9VPRcV2IcqVy8uhbsRzaQ8f8DixPGcCgycF6U48mFRr6US4FSvSp7oV3rAz8Df%2BOwvF4F9fftC7%2F4l%2Bu0Tn3FECAcCAAA%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvWoDMRCE32VqFfeTS2x1LoObgMuQYjntXYQt6dCuOILxuwddHELyBulmhmHmu2JMJQs%2FO9i22bWNQRQKy4UFdmgaA2F2sN1jO%2ByH%2FqnfGxThlyRH5gVWc2GDTCM7nmCvCCnVusGcU4l11WBl0nfOmxYmSRG2N1Af%2BF4lx%2FW%2FuRmUQG0dSkUnr5ULMJBlw2i7DUkp%2BEjfdklrHd9VPRcV2IcqVy8uhbsRzaQ8f8DixPGcCgycF6U48mFRr6US4FSvSp7oV3rAz8Df%2BOwvF4F9fftC7%2F4l%2Bu0Tn3FECAcCAAA%3D",
+        "map_id": "Kyoto 3000m (outer) (clockwise)"
     },
-    {   "name": "Scorpio Cup 2026",
+    {
+        "name": "Scorpio Cup 2026",
         "number": "7",
-        "track":
-        {
+        "track": {
             "racetrack": "Tokyo",
             "terrain": "Turf",
             "distance_type": "Medium",
@@ -123,12 +129,13 @@
         },
         "date": "<t:1767218400:F>, <t:1767218400:R> (Estimated)",
         "image": "https://img.game8.co/4360491/1166956c9db5d358ed28ddec7989dadb.png/show",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvWoDMRCE32VqFffjc2J1LkOagMuQYjntXYQt6dCuOILxuwddHELyBulmh%2BWb74oxlSz85GDbZt%2FsDKJQWC4ssEPTGAizg%2B327XAY%2Bof%2BYFCEX5I8My%2BwmgsbZBrZ8QR7RUipvhvMOZVYqQYrk75zhu0rjiTFLaoPfH8lx3W%2FuRmUQG0FpaKT1%2BoFGMiyabTdpqQUfKTvc0lrhT%2FWPBcV2F2NqxeXwv0QzaQ8f8DixPGcCgycF6U48nFRr6Ua4FSnSp7oV3vED%2BBvffaXi8C%2Bvn2pd%2F9S%2FfYJH3YdrwcCAAA%3D"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOvWoDMRCE32VqFffjc2J1LkOagMuQYjntXYQt6dCuOILxuwddHELyBulmh%2BWb74oxlSz85GDbZt%2FsDKJQWC4ssEPTGAizg%2B327XAY%2Bof%2BYFCEX5I8My%2BwmgsbZBrZ8QR7RUipvhvMOZVYqQYrk75zhu0rjiTFLaoPfH8lx3W%2FuRmUQG0FpaKT1%2BoFGMiyabTdpqQUfKTvc0lrhT%2FWPBcV2F2NqxeXwv0QzaQ8f8DixPGcCgycF6U48nFRr6Ua4FSnSp7oV3vED%2BBvffaXi8C%2Bvn2pd%2F9S%2FfYJH3YdrwcCAAA%3D",
+        "map_id": "Tokyo 2000m (counterclockwise)"
     },
-    {   "name": "Sagittarius Cup 2026",
+    {
+        "name": "Sagittarius Cup 2026",
         "number": "8",
-        "track":
-        {
+        "track": {
             "racetrack": "Nakayama",
             "terrain": "Turf",
             "distance_type": "Long",
@@ -141,12 +148,13 @@
         },
         "date": "<t:1769205600:F>, <t:1769205600:R>",
         "image": "https://gamebrott.com/wp-content/uploads/2025/12/Detail-Track-untuk-Sagitarius-Cup-1024x576.webp",
-        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnDa6hZ5CLoUcSw%2BLvXZELMloV5gS8u9Fbkpp%2F6C3mWF5%2B27oYk7Cxx62rtpqZxCE%2FDyxwLZVZSDMPWyzq9t9u3na7A2y8GuUE%2FMMqynzuhyDvly4uwrsQJOwQaKOex5gb%2FAxFobBmGIO5ZXBwqQXTmsWJokBdmugzvPjlHouUtXdIHuqCyhmHZwWWcBA5tWtblZPJe8Cfdc5LgX%2BXPKYVWC3JS5O%2BugfRTSR8vgBizOHa8ww6J0ohY4PszrNxQDn8iqngX6tB%2FwA%2Fs5XN00C%2B%2Fb%2Bpd78S%2FX7JwoKbVccAgAA"
+        "umalator": "https://alpha123.github.io/uma-tools/umalator-global/#H4sIAAAAAAAACtWOwWrDMBBE%2F2XOOthOnDa6hZ5CLoUcSw%2BLvXZELMloV5gS8u9Fbkpp%2F6C3mWF5%2B27oYk7Cxx62rtpqZxCE%2FDyxwLZVZSDMPWyzq9t9u3na7A2y8GuUE%2FMMqynzuhyDvly4uwrsQJOwQaKOex5gb%2FAxFobBmGIO5ZXBwqQXTmsWJokBdmugzvPjlHouUtXdIHuqCyhmHZwWWcBA5tWtblZPJe8Cfdc5LgX%2BXPKYVWC3JS5O%2BugfRTSR8vgBizOHa8ww6J0ohY4PszrNxQDn8iqngX6tB%2FwA%2Fs5XN00C%2B%2Fb%2Bpd78S%2FX7JwoKbVccAgAA",
+        "map_id": "Nakayama 2500m (inner) (clockwise)"
     },
-    {   "name": "Capricorn Cup 2026",
+    {
+        "name": "Capricorn Cup 2026",
         "number": "9",
-        "track":
-        {
+        "track": {
             "racetrack": "Chukyo",
             "terrain": "Turf",
             "distance_type": "Sprint",
@@ -159,12 +167,13 @@
         },
         "date": "<t:1770933600:F>, <t:1770933600:R>",
         "image": "https://img.game8.co/4382526/b13aa80a04143cbd346b582dc3b5947f.png/show",
-        "umalator": "https://dev.umalator.app/v2/#H4sIAAAAAAAACt2PzUrFMBCF3%2BWss2jrFWV2d%2BlOuEtxEZppDbfJlMyEIqXvLrkqoo%2Fg7vwM33B2jFKL8lMA9d1D1zvMRWoOoDuHjb29cQGdHJS9Sr5Ji4lBg4P6tC6soPuuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0R%2Bbnqsp6NTkFjVI%2BjJqxRvP7yBcOF%2BlwiFENZ9HPq8WrQZuXXtVy%2BR%2FpWf8AP7ESSR8jrjGZVHQy6vDJGXkcGnJs2i0KFlB%2B3Hc1g3%2Fdd3xAbrH1ucHAgAA"
+        "umalator": "https://dev.umalator.app/v2/#H4sIAAAAAAAACt2PzUrFMBCF3%2BWss2jrFWV2d%2BlOuEtxEZppDbfJlMyEIqXvLrkqoo%2Fg7vwM33B2jFKL8lMA9d1D1zvMRWoOoDuHjb29cQGdHJS9Sr5Ji4lBg4P6tC6soPuuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0R%2Bbnqsp6NTkFjVI%2BjJqxRvP7yBcOF%2BlwiFENZ9HPq8WrQZuXXtVy%2BR%2FpWf8AP7ESSR8jrjGZVHQy6vDJGXkcGnJs2i0KFlB%2B3Hc1g3%2Fdd3xAbrH1ucHAgAA",
+        "map_id": "Chukyo 1200m (counterclockwise)"
     },
-    {   "name": "Aquarius Cup 2026",
+    {
+        "name": "Aquarius Cup 2026",
         "number": "10",
-        "track":
-        {
+        "track": {
             "racetrack": "Tokyo",
             "terrain": "Dirt",
             "distance_type": "Mile",
@@ -178,12 +187,13 @@
         "date": "<t:1772463600:F>, <t:1772463600:R>",
         "image": "https://uma.guide/img/guides/article/cm10-guide/cm10-track.png",
         "umalator": "https://dev.umalator.app/v2/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbbZhKBuy3SBLcMWwho7Yi2N0YwwwfjuYTYJITlCuvczfMPbMXKrQs8Rvu8e%2B95hrtyKWYeNgr5RvWuhIFzgTw6aMsEPDhLyupDAP3SdQ8uhh9%2FBTaekRgQcZCUy2mAnoiGnEr7typvRn0zPTQX%2BZHJLEjl%2FGdEalOZ3eFyo3LjBISbRUEY6r5q0RbLOXrU6hV%2FpGT%2BAP3Fmjp8jbmlZBP716jBxHSleLHlhSZq4CPx%2BHPd1w39dd3wAS42dEQcCAAA%3D",
-        "url": "https://uma.guide/guides/cm10-guide"
+        "url": "https://uma.guide/guides/cm10-guide",
+        "map_id": "Tokyo 1600m (counterclockwise) (dirt)"
     },
-    {   "name": "Pisces Cup 2026",
+    {
+        "name": "Pisces Cup 2026",
         "number": "11",
-        "track":
-        {
+        "track": {
             "racetrack": "Hanshin",
             "terrain": "Turf",
             "distance_type": "Long",
@@ -196,12 +206,13 @@
         },
         "date": "<t:1774562400:F>, <t:1774562400:R>",
         "image": "https://uma.guide/img/guides/article/cm11-guide/cm11-track.png",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2Pu2rEMBBF%2F%2BXWKmzHgWS6LdMFtlxSCGvsiLU0RjPChMX%2FHpQHIfmEdPcxnOHeMEktyk8B1HeP%2FeiwFKk5gEaHnb29cgHdOSh7lQzqHSwmBg0O6tO2soLuu86hJt%2BDbpBqc7RGBBx0Y27woZ2o%2BRSz%2F7ab7I3%2B0PRSTUFjk3vUIOnLqBVvvLyBcOZ8lQqHENV8nvi0WbQauHXtVS2z%2F5We8AP4EyeR8DniGtdVQZcXh1nKxOHckmfRaFGygm7H8bFu%2BK%2FrjnfEz1AqBwIAAA%3D%3D"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2Pu2rEMBBF%2F%2BXWKmzHgWS6LdMFtlxSCGvsiLU0RjPChMX%2FHpQHIfmEdPcxnOHeMEktyk8B1HeP%2FeiwFKk5gEaHnb29cgHdOSh7lQzqHSwmBg0O6tO2soLuu86hJt%2BDbpBqc7RGBBx0Y27woZ2o%2BRSz%2F7ab7I3%2B0PRSTUFjk3vUIOnLqBVvvLyBcOZ8lQqHENV8nvi0WbQauHXtVS2z%2F5We8AP4EyeR8DniGtdVQZcXh1nKxOHckmfRaFGygm7H8bFu%2BK%2FrjnfEz1AqBwIAAA%3D%3D",
+        "map_id": "Hanshin 3200m (outer to inner) (clockwise)"
     },
-    {   "name": "Aries Cup 2026",
+    {
+        "name": "Aries Cup 2026",
         "number": "12",
-        "track":
-        {
+        "track": {
             "racetrack": "Nakayama",
             "terrain": "Turf",
             "distance_type": "Medium",
@@ -214,12 +225,13 @@
         },
         "date": "<t:1776722400:F> - <t:1777500000:F>, <t:1776722400:R>",
         "image": "https://uma.guide/img/guides/article/cm12/cm12-track.png",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT5zB0HdlekCV4YUwlo74iyt0a4wh%2FG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN36c4OU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfyl6xxaDif4Ddx0TGpGwEEWIrP19kQ05FTCd1x4NfuT8dRU4M%2BGa5LI%2BSuI1qA0PeBxo3LnBoeYREMZ6Lpo0hbJbvZVq2P41V7xI%2FhTZ%2Bb4OeKe5lngX98cRq4DxZs1LyxJExeB3%2Fb9WNf%2F13X7BwrC7wgHAgAA"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT5zB0HdlekCV4YUwlo74iyt0a4wh%2FG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN36c4OU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfyl6xxaDif4Ddx0TGpGwEEWIrP19kQ05FTCd1x4NfuT8dRU4M%2BGa5LI%2BSuI1qA0PeBxo3LnBoeYREMZ6Lpo0hbJbvZVq2P41V7xI%2FhTZ%2Bb4OeKe5lngX98cRq4DxZs1LyxJExeB3%2Fb9WNf%2F13X7BwrC7wgHAgAA",
+        "map_id": "Nakayama 2000m (inner) (clockwise)"
     },
-    {   "name": "Taurus Cup 2026",
+    {
+        "name": "Taurus Cup 2026",
         "number": "13",
-        "track":
-        {
+        "track": {
             "racetrack": "Tokyo",
             "terrain": "Turf",
             "distance_type": "Medium",
@@ -232,12 +244,13 @@
         },
         "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
         "image": "https://uma.guide/img/guides/article/cm13/cm13-track.png",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA",
+        "map_id": "Tokyo 2400m (counterclockwise)"
     },
-    {   "name": "Gemini Cup 2026",
+    {
+        "name": "Gemini Cup 2026",
         "number": "14",
-        "track":
-        {
+        "track": {
             "racetrack": "Tokyo",
             "terrain": "Turf",
             "distance_type": "Mile",
@@ -248,38 +261,15 @@
             "weather": "Sunny",
             "similar": "NHK Mile Cup, Yasuda Kinen"
         },
-        "map": {
-            "name": "Tokyo 1600m (counterclockwise)",
-            "elevation": [
-                { "start": 0, "end": 325, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 325, "end": 400, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
-                { "start": 400, "end": 450, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 450, "end": 700, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
-                { "start": 700, "end": 1150, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 1150, "end": 1300, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
-                { "start": 1300, "end": 1600, "label": "Flat", "type": "flat", "color": "#c9ec39" }
-            ],
-            "layout": [
-                { "start": 0, "end": 550, "label": "Straight", "color": "#b8d4ea", "tags": ["backstretch"] },
-                { "start": 550, "end": 825, "label": "Corner 3", "color": "#edccae" },
-                { "start": 825, "end": 1075, "label": "Corner 4", "color": "#edccae" },
-                { "start": 1075, "end": 1600, "label": "Straight", "color": "#b8d4ea" }
-            ],
-            "zones": [
-                { "start": 0, "end": 267, "label": "Early Race", "color": "#00a88f" },
-                { "start": 267, "end": 1067, "label": "Mid Race", "color": "#e3d95f" },
-                { "start": 1067, "end": 1333, "label": "Late Race", "color": "#cf81bb" },
-                { "start": 1333, "end": 1600, "label": "Last spurt", "color": "#bf6ea8" }
-            ]
-        },
         "date": "<t:1780264800:F> - <t:1781128800:F>, <t:1780264800:R>",
         "image": "",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA",
+        "map_id": "Tokyo 1600m (counterclockwise)"
     },
-    {   "name": "Cancer Cup 2026",
+    {
+        "name": "Cancer Cup 2026",
         "number": "15",
-        "track":
-        {
+        "track": {
             "racetrack": "Hanshin",
             "terrain": "Turf",
             "distance_type": "Medium",
@@ -290,43 +280,15 @@
             "weather": "Cloudy",
             "similar": "Takarazuka Kinen"
         },
-        "map": {
-            "name": "Hanshin 2200m (inner) (clockwise)",
-            "elevation": [
-                { "start": 0, "end": 290, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
-                { "start": 290, "end": 295, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 295, "end": 420, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
-                { "start": 420, "end": 1400, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 1400, "end": 1995, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
-                { "start": 1995, "end": 2000, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 2000, "end": 2125, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
-                { "start": 2125, "end": 2200, "label": "Flat", "type": "flat", "color": "#c9ec39" }
-            ],
-            "layout": [
-                { "start": 0, "end": 520, "label": "Straight", "color": "#b8d4ea" },
-                { "start": 520, "end": 710, "label": "Corner 1", "color": "#edccae" },
-                { "start": 710, "end": 900, "label": "Corner 2", "color": "#edccae" },
-                { "start": 900, "end": 1250, "label": "Straight", "color": "#b8d4ea", "tags": ["backstretch"] },
-                { "start": 1250, "end": 1550, "label": "Corner 3", "color": "#edccae" },
-                { "start": 1550, "end": 1850, "label": "Corner 4", "color": "#edccae" },
-                { "start": 1850, "end": 2200, "label": "Straight", "color": "#b8d4ea" }
-            ],
-            "zones": [
-                { "start": 0, "end": 367, "label": "Early Race", "color": "#00a88f"},
-                { "start": 367, "end": 1467, "label": "Mid Race", "color": "#e3d95f" },
-                { "start": 1467, "end": 1833, "label": "Late Race", "color": "#cf81bb" },
-                { "start": 1833, "end": 2200, "label": "Last spurt", "color": "#bf6ea8" }
-            ],
-            "position_keep_ends": [917]
-        },
         "date": "<t:1782079200:F> - <t:1782856800:F>, <t:1782079200:R>",
         "image": "",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PQU7EMAxF7%2FLXWXQqQJDdLNkhzRKxiBq3WNPEVeyoQlXvjtIBITgCu%2B9n61l%2FwyC1KD1H%2BFP31D04TEVqjvC9w0rB3qkcWSmo5CMaJ7qxkJaZFP6%2B6xxqCif4DVJtZGtGwEEXoibv24laSJzD97jI2uyPLU%2FVFP6uxZU1Svoa1Eowmj7gcaF8lQqHyGohD3RejK1Garv2qpYx%2FKJn%2FAj%2B4CRyK6lXnmeFf31zGKUMFC%2BNvIiysWSF3%2Fb9aNf%2F13b7J%2BdYrPwHAgAA"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PQU7EMAxF7%2FLXWXQqQJDdLNkhzRKxiBq3WNPEVeyoQlXvjtIBITgCu%2B9n61l%2FwyC1KD1H%2BFP31D04TEVqjvC9w0rB3qkcWSmo5CMaJ7qxkJaZFP6%2B6xxqCif4DVJtZGtGwEEXoibv24laSJzD97jI2uyPLU%2FVFP6uxZU1Svoa1Eowmj7gcaF8lQqHyGohD3RejK1Garv2qpYx%2FKJn%2FAj%2B4CRyK6lXnmeFf31zGKUMFC%2BNvIiysWSF3%2Fb9aNf%2F13b7J%2BdYrPwHAgAA",
+        "map_id": "Hanshin 2200m (inner) (clockwise)"
     },
-    {   "name": "Leo Cup 2026",
+    {
+        "name": "Leo Cup 2026",
         "number": "16",
-        "track":
-        {
+        "track": {
             "racetrack": "Nakayama",
             "terrain": "Turf",
             "distance_type": "Sprint",
@@ -337,35 +299,15 @@
             "weather": "Sunny",
             "similar": "Sprinters Stakes"
         },
-        "map": {
-            "name": "Nakayama 1200m (clockwise)",
-            "elevation": [
-                { "start": 0, "end": 200, "label": "Downhill", "type": "downhill", "color": "#67d2de" },
-                { "start": 200, "end": 1025, "label": "Flat", "type": "flat", "color": "#c9ec39" },
-                { "start": 1025, "end": 1135, "label": "Uphill", "type": "uphill", "color": "#e6ca9d" },
-                { "start": 1135, "end": 1200, "label": "Flat", "type": "flat", "color": "#c9ec39" }
-            ],
-            "layout": [
-                { "start": 0, "end": 300, "label": "", "color": "#b2beb5" },
-                { "start": 300, "end": 650, "label": "Corner 3", "color": "#edccae" },
-                { "start": 650, "end": 900, "label": "Corner 4", "color": "#edccae" },
-                { "start": 900, "end": 1200, "label": "Straight", "color": "#b8d4ea" }
-            ],
-            "zones": [
-                { "start": 0, "end": 200, "label": "Early Race", "color": "#00a88f" },
-                { "start": 200, "end": 800, "label": "Mid Race", "color": "#e3d95f" },
-                { "start": 800, "end": 1000, "label": "Late Race", "color": "#cf81bb" },
-                { "start": 1000, "end": 1200, "label": "Last spurt", "color": "#bf6ea8" }
-            ]
-        },
         "date": "",
         "image": "",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFbbJQVB3ZbrAlSGFsNaOOEtrtCtMMP73sE5CSD4h3ZtZ8cTsGLlVoacI33eXrneYK7di0WGjoG9UTxYKwgV%2BcNCU6QQJeV1I4C9d59By6OF3cNMpqRkBB1mJzDbYE9GQUwnfceXN7I%2FGc1OBfzDckkTOX0G0BqX5HR43KnducIhJNJSRrqsmbZHsZl%2B1OoVf7RU%2Fgj91Zo6fI%2B5pWQT%2B5dVh4jpSvFnzzJI0cRH4%2FTjOdcN%2FXXd8ACrYoscHAgAA"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFbbJQVB3ZbrAlSGFsNaOOEtrtCtMMP73sE5CSD4h3ZtZ8cTsGLlVoacI33eXrneYK7di0WGjoG9UTxYKwgV%2BcNCU6QQJeV1I4C9d59By6OF3cNMpqRkBB1mJzDbYE9GQUwnfceXN7I%2FGc1OBfzDckkTOX0G0BqX5HR43KnducIhJNJSRrqsmbZHsZl%2B1OoVf7RU%2Fgj91Zo6fI%2B5pWQT%2B5dVh4jpSvFnzzJI0cRH4%2FTjOdcN%2FXXd8ACrYoscHAgAA",
+        "map_id": "Nakayama 1200m (outer) (clockwise)"
     },
-    {   "name": "Virgo Cup 2026",
+    {
+        "name": "Virgo Cup 2026",
         "number": "17",
-        "track":
-        {
+        "track": {
             "racetrack": "Ooi",
             "terrain": "Dirt",
             "distance_type": "Medium",
@@ -378,6 +320,7 @@
         },
         "date": "",
         "image": "",
-        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbY3gTDdlukCW4YthDV2xFoaoxlhgvHdgzYJITlCuvczfMPbMUotys8B1Pd9d3KYi9QcQIPDxt7euIB6B2WvkkEnB4uJ7736tC6soMeuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0Z%2Banqsp6KHJLWqQ9GXUijee30G4cL5JhUOIaj6PfF4tWg3cuvaqlsn%2FSs%2F4AfyJk8jnSL3FZVHQ69VhkjJyuLTkRTRalKyg%2FTju64b%2Fuu74AIpADhkHAgAA"
+        "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbY3gTDdlukCW4YthDV2xFoaoxlhgvHdgzYJITlCuvczfMPbMUotys8B1Pd9d3KYi9QcQIPDxt7euIB6B2WvkkEnB4uJ7736tC6soMeuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0Z%2Banqsp6KHJLWqQ9GXUijee30G4cL5JhUOIaj6PfF4tWg3cuvaqlsn%2FSs%2F4AfyJk8jnSL3FZVHQ69VhkjJyuLTkRTRalKyg%2FTju64b%2Fuu74AIpADhkHAgAA",
+        "map_id": "Ooi 2000m (clockwise) (dirt)"
     }
 ]

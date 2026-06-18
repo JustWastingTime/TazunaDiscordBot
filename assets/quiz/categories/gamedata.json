@@ -1,0 +1,48 @@
+{
+    "name": "GameData",
+    "questions": [
+        {   "promptTemplate": "How many Scenario Link Umamusume does the scenario {0} have?",
+            "difficulty": "medium",
+            "entries": [
+                    ["URA Finale", ["0", "1", "3", "4"]],
+                    ["Unity Cup", ["3", "4", "1", "0"]],
+                    ["Trackblazer", ["0", "1", "3", "4"]]
+                  ]
+        },  
+        {   "promptTemplate": "In Unity Cup, what skill do you get when you pick the name {0}?",
+            "difficulty": "medium",
+            "entries": [
+                    ["Team Carrot", ["No Stopping Me!", "Cooldown", "Indomitable", "Clairvoyance", "Mile Maven"]],
+                    ["Blue Bloom", ["Cooldown", "No Stopping Me!", "Indomitable", "Clairvoyance", "Mile Maven"]],
+                    ["Carrot Pudding", ["Indomitable", "No Stopping Me!", "Cooldown",  "Clairvoyance", "Mile Maven"]],
+                    ["Sunny Runners", ["Clairvoyance", "No Stopping Me!", "Cooldown", "Indomitable", "Mile Maven"]],
+                    ["Happy Hoppers", ["Mile Maven", "No Stopping Me!", "Cooldown", "Indomitable", "Clairvoyance"]]
+                  ]
+        },
+        {   "promptTemplate": "In Unity Cup, picking {0} gets you the team name?",
+            "difficulty": "medium",
+            "entries": [
+                    ["Taiki Shuttle", ["Happy Hoppers", "Sunny Runners", "Carrot Pudding", "Blue Bloom", "Team Carrot"]],
+                    ["Matikanefukukitaru", ["Sunny Runners", "Happy Hoppers", "Carrot Pudding", "Blue Bloom", "Team Carrot"]],
+                    ["Haru Urara", ["Carrot Pudding", "Sunny Runners", "Happy Hoppers", "Blue Bloom", "Team Carrot"]],
+                    ["Rice Shower", ["Blue Bloom", "Sunny Runners", "Happy Hoppers", "Carrot Pudding", "Team Carrot"]]
+                  ]
+        },
+        {   "promptTemplate": "Which of the following skills does {0} give if you start dating them before Classic Year?",
+            "difficulty": "medium",
+            "entries": [
+                   ["Riko Kashimoto", ["Sympathy", "Tail Held High", "Uma Stan", "Corner Recovery", "Front Runner Savvy", "Pace Chaser Savvy "]],
+                   ["Tazuna Hayakawa", ["Tail Held High", "Sympathy", "Uma Stan", "Corner Recovery", "Pace Chaser Savvy", "Front Runner Savvy "]],
+                   ["Team Sirius", ["Corner Recovery ", "Sympathy", "Tail Held High", "Uma Stan", "Pace Chaser Savvy"]]
+                 ]
+        },
+        
+        {   "prompt": "In Unity Cup, what is Riko Kashimoto's team called?",
+            "answers": ["Team Zenith", "Team Rigil", "Team Spica", "Team Alkes"],
+            "difficulty": "easy"
+        }
+           
+    ]
+            
+            
+}

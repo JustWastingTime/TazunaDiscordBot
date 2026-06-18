@@ -4741,9 +4741,6 @@
                     "type": "box",
                     "phase": "late_and_beyond",
                     "target": "zones",
-                    "labels": [
-                        "last_spurt"
-                    ],
                     "trigger_behavior": "random"
                   }
             ]
@@ -6740,9 +6737,6 @@
                     "type": "box",
                     "phase": "late_and_beyond",
                     "target": "zones",
-                    "labels": [
-                        "last_spurt"
-                    ],
                     "trigger_behavior": "random"
                   }
             ]

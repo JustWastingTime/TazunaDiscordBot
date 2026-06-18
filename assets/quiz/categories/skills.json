@@ -33,7 +33,6 @@
         ["All Charged! It's Go Time!", ["Ines Fujin", "$uma"]]
       ]
     },
-
     { "promptTemplate": "{0}'s unique skill is called?",
       "difficulty": "medium",
       "entries": [
@@ -143,10 +142,10 @@
         ["Masterful Gambit", ["Sturm und Drang", "Wild Wind", "Elated", "Daring Strike", "Keep Going!", "Tail Nine", "Moonlit Flash"]],
         ["Ignited Spirit PWR", ["Burning Spirit PWR", "Determined Descent", "Plan X", "Turbo Sprint", "From the Brink", "Furious Feat", "Encroaching Shadow", "Hard Worker"]],
         ["Light as a Feather", ["In High Spirits", "Professor of Curvature", "Rising Dragon", "See Ya Later!", "In the Right Place!", "Overwhelming Pressure", "Supreme Downhiller", "Radiant Star"]],
-        ["Up-Tempo", ["Killer Tunes", "Innate Experience", "Overwhelming Pressure", "Moonlit Flash", "Top Runner", "Mile Maven", "Elated"]]
+        ["Up-Tempo", ["Killer Tunes", "Innate Experience", "Overwhelming Pressure", "Moonlit Flash", "Top Runner", "Mile Maven", "Elated"]],
+        ["Long Straightaways", ["Blast Forward", "Flash Forward", "Forward, March!", "Innate Experience", "Blinding Flash", "Headliner", "Wind Slash"]]
       ]
     },
-
     { "promptTemplate": "This is the skill description of which skill? \n\n {0}",
       "difficulty": "expert",
       "entries": [
@@ -163,12 +162,20 @@
        
       ]
     },
+    { "promptTemplate": "In Trackblazer, which of the following events can give the skill{0}?",
+      "difficulty": "expert",
+      "entries": [
+              ["Uma Stan", ["Agnes Digital Explodes", "The Strongest, Mightiest Cinderella!", "Under the Same Umbrella", "Keeping It Cute", "Hungry for Affection"]],
+              ["Prudent Positioning", ["The Strongest, Mightiest Cinderella!", "Mission: Big Surprise!", "Living Alone", "Brian Gets Jealous?", "Worldwide Windy", "The Perfect Combo"]],
+              ["Deep Breaths", ["A Family (?) Shopping Trip", "The Inescapable Ardan", "An Unusual Addition", "Idle Committee Banter", "Guillible Socialites"]]
+            ]
+    },
 
+    
     { "prompt": "Which Uma runs through snow in their Unique Skill?",
       "answers": ["Oguri Cap", "Admire Vega", "Mejiro Ardan", "Air Groove"],
       "difficulty": "easy"
     },
-
     { "prompt": "What weapon does Grass Wonder wield in her unique animation?",
       "answers": ["Naginata", "Yari", "Yumi", "Masakari", "Kunai"],
       "difficulty": "medium"
@@ -181,6 +188,27 @@
     { "prompt": "Which of these Uma does NOT have a ☆ in the name of their Unique Skill?",
       "answers": ["Tosen Jordan", "Sweep Tosho", "Mayano Top Gun (Wedding)", "Hishi Akebono", "Maruzensky (Summer)", "Agnes Digital"],
       "difficulty": "hard"
+    },
+
+    { "prompt": "By how many percent does the skill \"Restraint\" reduced Rushed chance?",
+      "answers": ["3%", "2%", "5%", "4%"],
+      "difficulty": "hard"
+    },  
+
+    { "prompt": "Which race spark does not give the skill \"Tokyo Racecourse\"?",
+      "answers": ["Victoria Mile", "Japan Cup", "Yasuda Kinen", "Japanese Derby"],
+      "difficulty": "hard"
+    },
+
+    { "prompt": "What does the skill Ignited Spirit WIT increase?",
+      "answers": ["Field of Vision and Lane Movement early-race", "Field of Vision and Lane Movement mid-race", "Lane Movement early-race", "Lane Movement and Target Speed early-race", "Lane Movement and Target Speed mid-race"],
+      "difficulty": "expert"
+    },
+
+    {   "prompt": "Which of the following skills cannot be acquired through URA Finale's scenario events?",
+        "answers": ["Professor of Curvature", "Beeline Burst", "Iron Will", "Breath of Fresh Air"],
+        "difficulty": "easy"
     }
+    
   ]
 }
