@@ -227,10 +227,7 @@ export async function finishRound(guildId) {
 
   const { active, question } = outcome;
   try {
-    const editPayload = {
-      embeds: [quiz.buildRoundEndEmbed(active, question)],
-      components: quiz.buildDisabledMcqRows(active.round),
-    };
+    const editPayload = await quiz.buildRoundEndPayload(active, question);
     await editChannelMessage(active.channelId, active.round.messageId, editPayload);
   } catch (err) {
     console.error('Failed to edit quiz round message:', summarizeDiscordError(err));

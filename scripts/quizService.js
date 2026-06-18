@@ -1,5 +1,5 @@
 import { createQuizAudioFile } from './quizAudio.js';
-import { createSilhouetteFile } from './quizImage.js';
+import { createQuizImageFile, createSilhouetteFile } from './quizImage.js';
 import { resolveMcqAnswers } from './quizLists.js';
 
 export const DEFAULT_ROUND_SECONDS = 10;
@@ -714,11 +714,25 @@ export async function buildQuestionPayload(question, quiz) {
         files.push(silhouette);
         embed.image = { url: `attachment://${silhouette.filename}` };
       } catch (err) {
-        console.error('Failed to create quiz silhouette, using original image:', err.message);
-        embed.image = { url: question.imageUrl };
+        console.error('Failed to create quiz silhouette, using attached image fallback:', err.message);
+        try {
+          const imageFile = await createQuizImageFile(question.imageUrl);
+          files.push(imageFile);
+          embed.image = { url: `attachment://${imageFile.filename}` };
+        } catch (fallbackErr) {
+          console.error('Failed to attach quiz image fallback:', fallbackErr.message);
+          embed.image = { url: question.imageUrl };
+        }
       }
     } else {
-      embed.image = { url: question.imageUrl };
+      try {
+        const imageFile = await createQuizImageFile(question.imageUrl);
+        files.push(imageFile);
+        embed.image = { url: `attachment://${imageFile.filename}` };
+      } catch (err) {
+        console.error('Failed to attach quiz image, using URL fallback:', err.message);
+        embed.image = { url: question.imageUrl };
+      }
     }
   }
 
@@ -751,6 +765,26 @@ export function buildRoundEndEmbed(quiz, question) {
     description: formatRoundSummary(quiz, question),
     footer: { text: getCategoryFooterText(question) },
   };
+}
+
+export async function buildRoundEndPayload(quiz, question) {
+  const embed = buildRoundEndEmbed(quiz, question);
+  const payload = {
+    embeds: [embed],
+    components: buildDisabledMcqRows(quiz.round),
+  };
+
+  if (!question?.imageUrl) return payload;
+
+  try {
+    const imageFile = await createQuizImageFile(question.imageUrl);
+    payload.files = [imageFile];
+    embed.image = { url: `attachment://${imageFile.filename}` };
+  } catch (err) {
+    console.error('Failed to attach round-end image:', err.message);
+  }
+
+  return payload;
 }
 
 export function resolveWinnerAfterRound(quiz) {
