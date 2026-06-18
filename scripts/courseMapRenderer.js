@@ -126,10 +126,6 @@ function formatStatThresholds(statThresholds) {
   return `Stat Thresholds: ${cleaned.join(" & ")}`;
 }
 
-function elevationUsesSlopes(segments) {
-  return segments.some((segment) => Number.isFinite(Number(segment?.change)));
-}
-
 function resolveSegmentElevationDelta(segment) {
   const span = Number(segment?.end) - Number(segment?.start);
   if (!Number.isFinite(span) || span <= 0) return 0;
@@ -332,7 +328,7 @@ function buildSvg(mapData, options) {
   }
 
   for (const row of rows) {
-    if (row.key === "elevation" && elevationUsesSlopes(row.segments)) {
+    if (row.key === "elevation" && row.segments.length > 0) {
       renderSlopedElevationRow(parts, row, rowHeight, xFromDistance, boundaryLabels, elevationScale);
       continue;
     }

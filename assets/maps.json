@@ -1,4 +1,819 @@
 [   
+    {   "name": "Sapporo 1200m (clockwise)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1200m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#1200-turf",
+        "elevation": [
+            { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 400, "label": "Straight"},
+            { "start": 400, "end": 675, "label": "Corner 3"},
+            { "start": 675, "end": 950, "label": "Corner 4"},
+            { "start": 950, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 200, "label": "Early Race"},
+            { "start": 200, "end": 800, "label": "Mid Race"},
+            { "start": 800, "end": 1000, "label": "Late Race"},
+            { "start": 1000, "end": 1200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [500],
+        "races": [
+            "keeneland cup august 2 year 2",
+            "keeneland cup august 2 year 3"
+        ]
+    },
+    {   "name": "Sapporo 1500m (clockwise)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1500m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#1500-turf",
+        "elevation": [
+            { "start": 0, "end": 1500, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 150, "label": ""},
+            { "start": 150, "end": 425, "label": "Corner 2"},
+            { "start": 425, "end": 700, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 700, "end": 975, "label": "Corner 3"},
+            { "start": 975, "end": 1250, "label": "Corner 4"},
+            { "start": 1250, "end": 1500, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 250, "label": "Early Race"},
+            { "start": 250, "end": 1000, "label": "Mid Race"},
+            { "start": 1000, "end": 1250, "label": "Late Race"},
+            { "start": 1250, "end": 1500, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [625]
+    },
+    {   "name": "Sapporo 1800m (clockwise)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1800m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#1800-turf",
+        "elevation": [
+            { "start": 0, "end": 1800, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 175, "label": "Straight"},
+            { "start": 175, "end": 450, "label": "Corner 1"},
+            { "start": 450, "end": 725, "label": "Corner 2"},
+            { "start": 725, "end": 1000, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1000, "end": 1275, "label": "Corner 3"},
+            { "start": 1275, "end": 1550, "label": "Corner 4"},
+            { "start": 1550, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 300, "label": "Early Race"},
+            { "start": 300, "end": 1200, "label": "Mid Race"},
+            { "start": 1200, "end": 1500, "label": "Late Race"},
+            { "start": 1500, "end": 1800, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [750],
+        "races": [
+            "sapporo junior stakes september 1 year 1",
+            "queen stakes july 2 year 2",
+            "queen stakes july 2 year 3"
+        ]
+    },
+    {   "name": "Sapporo 2000m (clockwise)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2000m",
+        "stat_treshold": "Power",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#2000-turf",
+        "elevation": [
+            { "start": 0, "end": 2000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 375, "label": "Straight"},
+            { "start": 375, "end": 650, "label": "Corner 1"},
+            { "start": 650, "end": 925, "label": "Corner 2"},
+            { "start": 925, "end": 1200, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1200, "end": 1475, "label": "Corner 3"},
+            { "start": 1475, "end": 1750, "label": "Corner 4"},
+            { "start": 1750, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 333, "label": "Early Race"},
+            { "start": 333, "end": 1333, "label": "Mid Race"},
+            { "start": 1333, "end": 1667, "label": "Late Race"},
+            { "start": 1667, "end": 2000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [833],
+        "races": [
+            "sapporo kinen august 2 year 2",
+            "sapporo kinen august 2 year 3"
+        ]
+    },
+    {   "name": "Sapporo 2600m (clockwise)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2600m",
+        "stat_treshold": "Stamina",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#2600-turf",
+        "elevation": [
+            { "start": 0, "end": 2600, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 175, "label": "Straight"},
+            { "start": 175, "end": 450, "label": "Corner 3"},
+            { "start": 450, "end": 725, "label": "Corner 4"},
+            { "start": 725, "end": 975, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 975, "end": 1250, "label": "Corner 1"},
+            { "start": 1250, "end": 1525, "label": "Corner 2"},
+            { "start": 1525, "end": 1800, "label": "Straight"},
+            { "start": 1800, "end": 2075, "label": "Corner 3"},
+            { "start": 2075, "end": 2350, "label": "Corner 4"},
+            { "start": 2350, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 433, "label": "Early Race"},
+            { "start": 433, "end": 1733, "label": "Mid Race"},
+            { "start": 1733, "end": 2167, "label": "Late Race"},
+            { "start": 2167, "end": 2600, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1083]
+    },
+    {   "name": "Sapporo 1000m (clockwise) (dirt)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Dirt",
+        "distance_meters": "1000m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#1000-dirt",
+        "elevation": [
+            { "start": 0, "end": 1000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 280, "label": "Straight"},
+            { "start": 280, "end": 510, "label": "Corner 3"},
+            { "start": 510, "end": 740, "label": "Corner 4"},
+            { "start": 740, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 167, "label": "Early Race"},
+            { "start": 167, "end": 667, "label": "Mid Race"},
+            { "start": 667, "end": 833, "label": "Late Race"},
+            { "start": 833, "end": 1000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [417]
+    },
+    {   "name": "Sapporo 1700m (clockwise) (dirt)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Dirt",
+        "distance_meters": "1700m",
+        "stat_treshold": "Speed",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#1700-dirt",
+        "elevation": [
+            { "start": 0, "end": 1700, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 240, "label": "Straight"},
+            { "start": 240, "end": 470, "label": "Corner 1"},
+            { "start": 470, "end": 700, "label": "Corner 2"},
+            { "start": 700, "end": 980, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 980, "end": 1210, "label": "Corner 3"},
+            { "start": 1210, "end": 1440, "label": "Corner 4"},
+            { "start": 1440, "end": 1700, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 283, "label": "Early Race"},
+            { "start": 283, "end": 1133, "label": "Mid Race"},
+            { "start": 1133, "end": 1417, "label": "Late Race"},
+            { "start": 1417, "end": 1700, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [708],
+        "races": [
+            "elm stakes august 1 year 2",
+            "elm stakes august 1 year 3"
+        ]
+    },
+    {   "name": "Sapporo 2400m (clockwise) (dirt)",
+        "racetrack": "Sapporo",
+        "direction": "Clockwise",
+        "terrain": "Dirt",
+        "distance_meters": "2400m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/sapporo#2400-dirt",
+        "elevation": [
+            { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 200, "label": "Straight"},
+            { "start": 200, "end": 430, "label": "Corner 3"},
+            { "start": 430, "end": 660, "label": "Corner 4"},
+            { "start": 660, "end": 940, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 940, "end": 1170, "label": "Corner 1"},
+            { "start": 1170, "end": 1400, "label": "Corner 2"},
+            { "start": 1400, "end": 1680, "label": "Straight"},
+            { "start": 1680, "end": 1910, "label": "Corner 3"},
+            { "start": 1910, "end": 2140, "label": "Corner 4"},
+            { "start": 2140, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 400, "label": "Early Race"},
+            { "start": 400, "end": 1600, "label": "Mid Race"},
+            { "start": 1600, "end": 2000, "label": "Late Race"},
+            { "start": 2000, "end": 2400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1000]
+    },
+
+    {   "name": "Hakodate 1000m (clockwise)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1000m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#1000-turf",
+        "elevation": [
+            { "start": 0, "end": 555, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 555, "end": 1000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 310, "label": "Straight"},
+            { "start": 310, "end": 530, "label": "Corner 3"},
+            { "start": 530, "end": 750, "label": "Corner 4"},
+            { "start": 750, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 167, "label": "Early Race"},
+            { "start": 167, "end": 667, "label": "Mid Race"},
+            { "start": 667, "end": 833, "label": "Late Race"},
+            { "start": 833, "end": 1000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [417]
+    },
+    {   "name": "Hakodate 1200m (clockwise)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1200m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#1200-turf",
+        "elevation": [
+            { "start": 0, "end": 755, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 755, "end": 1200, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 510, "label": "Straight"},
+            { "start": 510, "end": 730, "label": "Corner 3"},
+            { "start": 730, "end": 950, "label": "Corner 4"},
+            { "start": 950, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 200, "label": "Early Race"},
+            { "start": 200, "end": 800, "label": "Mid Race"},
+            { "start": 800, "end": 1000, "label": "Late Race"},
+            { "start": 1000, "end": 1200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [500],
+        "races": [
+            "hakodate junior stakes july 2 year 1",
+            "hakodate sprint stakes june 2 year 2",
+            "hakodate sprint stakes june 2 year 3"
+        ]
+    },
+    {   "name": "Hakodate 1800m (clockwise)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "1800m",
+        "stat_treshold": "Power",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#1800-turf",
+        "elevation": [
+            { "start": 0, "end": 220, "label": "Flat", "type": "flat"},
+            { "start": 220, "end": 420, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 420, "end": 665, "label": "Flat", "type": "flat"},
+            { "start": 665, "end": 1385, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 1385, "end": 1800, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 320, "label": "Straight"},
+            { "start": 320, "end": 540, "label": "Corner 1"},
+            { "start": 540, "end": 760, "label": "Corner 2"},
+            { "start": 760, "end": 1110, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1110, "end": 1330, "label": "Corner 3"},
+            { "start": 1330, "end": 1550, "label": "Corner 4"},
+            { "start": 1550, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 300, "label": "Early Race"},
+            { "start": 300, "end": 1200, "label": "Mid Race"},
+            { "start": 1200, "end": 1500, "label": "Late Race"},
+            { "start": 1500, "end": 1800, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [750]
+    },
+    {   "name": "Hakodate 2000m (clockwise)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2000m",
+        "stat_treshold": "Speed",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#2000-turf",
+        "elevation": [
+            { "start": 0, "end": 420, "label": "Flat", "type": "flat"},
+            { "start": 420, "end": 620, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 620, "end": 865, "label": "Flat", "type": "flat"},
+            { "start": 865, "end": 1585, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 1585, "end": 2000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 520, "label": "Straight"},
+            { "start": 520, "end": 740, "label": "Corner 1"},
+            { "start": 740, "end": 960, "label": "Corner 2"},
+            { "start": 960, "end": 1310, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1310, "end": 1530, "label": "Corner 3"},
+            { "start": 1530, "end": 1750, "label": "Corner 4"},
+            { "start": 1750, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 333, "label": "Early Race"},
+            { "start": 333, "end": 1333, "label": "Mid Race"},
+            { "start": 1333, "end": 1667, "label": "Late Race"},
+            { "start": 1667, "end": 2000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [833],
+        "races": [
+            "hakodate kinen july 1 year 2",
+            "hakodate kinen july 1 year 3"
+        ]
+    },
+    {   "name": "Hakodate 2600m (clockwise)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2600m",
+        "stat_treshold": "Stamina",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#2600-turf",
+        "elevation": [
+            { "start": 0, "end": 495, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 495, "end": 970, "label": "Flat", "type": "flat"},
+            { "start": 970, "end": 1170, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 1170, "end": 1425, "label": "Flat", "type": "flat"},
+            { "start": 1425, "end": 2145, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 2145, "end": 2600, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 240, "label": "Straight"},
+            { "start": 240, "end": 470, "label": "Corner 3"},
+            { "start": 470, "end": 700, "label": "Corner 4"},
+            { "start": 700, "end": 1070, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1070, "end": 1300, "label": "Corner 1"},
+            { "start": 1300, "end": 1530, "label": "Corner 2"},
+            { "start": 1530, "end": 1890, "label": "Straight"},
+            { "start": 1890, "end": 2120, "label": "Corner 3"},
+            { "start": 2120, "end": 2350, "label": "Corner 4"},
+            { "start": 2350, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 433, "label": "Early Race"},
+            { "start": 433, "end": 1733, "label": "Mid Race"},
+            { "start": 1733, "end": 2167, "label": "Late Race"},
+            { "start": 2167, "end": 2600, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1083]
+    },
+    {   "name": "Hakodate 1000m (clockwise) (dirt)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Dirt",
+        "distance_meters": "1000m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#1000-dirt",
+        "elevation": [
+            { "start": 0, "end": 1000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 370, "label": "Straight"},
+            { "start": 370, "end": 560, "label": "Corner 3"},
+            { "start": 560, "end": 750, "label": "Corner 4"},
+            { "start": 750, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 167, "label": "Early Race"},
+            { "start": 167, "end": 667, "label": "Mid Race"},
+            { "start": 667, "end": 833, "label": "Late Race"},
+            { "start": 833, "end": 1000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [417]
+    },
+    {   "name": "Hakodate 1700m (clockwise) (dirt)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Dirt",
+        "distance_meters": "1700m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#1700-dirt",
+        "elevation": [
+            { "start": 0, "end": 275, "label": "Flat", "type": "flat"},
+            { "start": 275, "end": 615, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 615, "end": 1285, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 1285, "end": 1700, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 350, "label": "Straight"},
+            { "start": 350, "end": 540, "label": "Corner 1"},
+            { "start": 540, "end": 730, "label": "Corner 2"},
+            { "start": 730, "end": 1070, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1070, "end": 1260, "label": "Corner 3"},
+            { "start": 1260, "end": 1450, "label": "Corner 4"},
+            { "start": 1450, "end": 1700, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 283, "label": "Early Race"},
+            { "start": 283, "end": 1133, "label": "Mid Race"},
+            { "start": 1133, "end": 1417, "label": "Late Race"},
+            { "start": 1417, "end": 1700, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [708]
+    },
+    {   "name": "Hakodate 2400m (clockwise) (dirt)",
+        "racetrack": "Hakodate",
+        "direction": "Clockwise",
+        "terrain": "Dirt",
+        "distance_meters": "2400m",
+        "stat_treshold": "Stamina",
+        "url": "https://gametora.com/umamusume/racetracks/hakodate#2400-dirt",
+        "elevation": [
+            { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 292, "label": "Straight"},
+            { "start": 292, "end": 482, "label": "Corner 3"},
+            { "start": 482, "end": 672, "label": "Corner 4"},
+            { "start": 672, "end": 1040, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1040, "end": 1230, "label": "Corner 1"},
+            { "start": 1230, "end": 1420, "label": "Corner 2"},
+            { "start": 1420, "end": 1770, "label": "Straight"},
+            { "start": 1770, "end": 1960, "label": "Corner 3"},
+            { "start": 1960, "end": 2150, "label": "Corner 4"},
+            { "start": 2150, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 400, "label": "Early Race"},
+            { "start": 400, "end": 1600, "label": "Mid Race"},
+            { "start": 1600, "end": 2000, "label": "Late Race"},
+            { "start": 2000, "end": 2400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1000]
+    },
+
+    {   "name": "Niigata 1000m (straight)",
+        "racetrack": "Niigata",
+        "direction": "Straight",
+        "terrain": "Turf",
+        "distance_meters": "1000m",
+        "stat_treshold": "Power",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1000-turf",
+        "elevation": [
+            { "start": 0, "end": 1000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 650, "label": "Straight"},
+            { "start": 650, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 167, "label": "Early Race"},
+            { "start": 167, "end": 667, "label": "Mid Race"},
+            { "start": 667, "end": 833, "label": "Late Race"},
+            { "start": 833, "end": 1000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [417],
+        "races": [
+            "ibis summer dash july 2 year 2",
+            "ibis summer dash july 2 year 3"
+        ]
+    },
+
+    {   "name": "Niigata 1200m (inner) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "1200m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1200-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 430, "label": "Straight"},
+            { "start": 430, "end": 630, "label": "Corner 3"},
+            { "start": 630, "end": 640, "label": ""},
+            { "start": 640, "end": 850, "label": "Corner 4"},
+            { "start": 850, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 200, "label": "Early Race"},
+            { "start": 200, "end": 800, "label": "Mid Race"},
+            { "start": 800, "end": 1000, "label": "Late Race"},
+            { "start": 1000, "end": 1200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [500]
+    },
+
+    {   "name": "Niigata 1400m (inner) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "1400m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1400-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 1400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 650, "label": "Straight"},
+            { "start": 650, "end": 850, "label": "Corner 3"},
+            { "start": 850, "end": 1050, "label": "Corner 4"},
+            { "start": 1050, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 233, "label": "Early Race"},
+            { "start": 233, "end": 933, "label": "Mid Race"},
+            { "start": 933, "end": 1167, "label": "Late Race"},
+            { "start": 1167, "end": 1400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [583]
+    },
+
+    {   "name": "Niigata 1600m (outer) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "1600m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1600-turf-outer",
+        "elevation": [
+            { "start": 0, "end": 250, "label": "Flat", "type": "flat"},
+            { "start": 250, "end": 600, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 600, "end": 900, "label": "Downhill", "type": "downhill", "change": -1.5},
+            { "start": 900, "end": 1600, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 550, "label": "Straight"},
+            { "start": 550, "end": 750, "label": "Corner 3"},
+            { "start": 750, "end": 950, "label": "Corner 4"},
+            { "start": 950, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 267, "label": "Early Race"},
+            { "start": 267, "end": 1067, "label": "Mid Race"},
+            { "start": 1067, "end": 1333, "label": "Late Race"},
+            { "start": 1333, "end": 1600, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [667],
+        "races": [
+            "sekiya kinen august 1 year 2",
+            "sekiya kinen august 1 year 3"
+        ]
+    },
+
+    {   "name": "Niigata 1800m (outer) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "1800m",
+        "stat_treshold": "Power",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1800-turf-outer",
+        "elevation": [
+            { "start": 0, "end": 450, "label": "Flat", "type": "flat"},
+            { "start": 450, "end": 800, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 800, "end": 1100, "label": "Downhill", "type": "downhill", "change": -1.5},
+            { "start": 1100, "end": 1800, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 750, "label": "Straight"},
+            { "start": 750, "end": 950, "label": "Corner 3"},
+            { "start": 950, "end": 1150, "label": "Corner 4"},
+            { "start": 1150, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 300, "label": "Early Race"},
+            { "start": 300, "end": 1200, "label": "Mid Race"},
+            { "start": 1200, "end": 1500, "label": "Late Race"},
+            { "start": 1500, "end": 1800, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [750]
+    },
+
+    {   "name": "Niigata 2000m (inner) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "2000m",
+        "stat_treshold": "Stamina & Power",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#2000-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 2000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 420, "label": "Straight"},
+            { "start": 420, "end": 620, "label": "Corner 1"},
+            { "start": 620, "end": 820, "label": "Corner 2"},
+            { "start": 820, "end": 1250, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1250, "end": 1450, "label": "Corner 3"},
+            { "start": 1450, "end": 1650, "label": "Corner 4"},
+            { "start": 1650, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 333, "label": "Early Race"},
+            { "start": 333, "end": 1333, "label": "Mid Race"},
+            { "start": 1333, "end": 1667, "label": "Late Race"},
+            { "start": 1667, "end": 2000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [833]
+    },
+
+    {   "name": "Niigata 2000m (outer) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "2000m",
+        "stat_treshold": "Stamina & Power",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#2000-turf-outer",
+        "elevation": [
+            { "start": 0, "end": 650, "label": "Flat", "type": "flat"},
+            { "start": 650, "end": 1000, "label": "Uphill", "type": "uphill", "change": 1},
+            { "start": 1000, "end": 1300, "label": "Downhill", "type": "downhill", "change": -1.5},
+            { "start": 1300, "end": 2000, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 950, "label": "Straight"},
+            { "start": 950, "end": 1150, "label": "Corner 3"},
+            { "start": 1150, "end": 1350, "label": "Corner 4"},
+            { "start": 1350, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 333, "label": "Early Race"},
+            { "start": 333, "end": 1333, "label": "Mid Race"},
+            { "start": 1333, "end": 1667, "label": "Late Race"},
+            { "start": 1667, "end": 2000, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [833],
+        "races": [
+            "niigata kinen september 1 year 2",
+            "niigata kinen september 1 year 3"
+        ]
+    },
+
+    {   "name": "Niigata 2200m (inner) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "2200m",
+        "stat_treshold": "Speed",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#2200-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 2200, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 650, "label": "Straight"},
+            { "start": 650, "end": 850, "label": "Corner 1"},
+            { "start": 850, "end": 1050, "label": "Corner 2"},
+            { "start": 1050, "end": 1450, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1450, "end": 1650, "label": "Corner 3"},
+            { "start": 1650, "end": 1850, "label": "Corner 4"},
+            { "start": 1850, "end": 2200, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 367, "label": "Early Race"},
+            { "start": 367, "end": 1467, "label": "Mid Race"},
+            { "start": 1467, "end": 1833, "label": "Late Race"},
+            { "start": 1833, "end": 2200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [917]
+    },
+
+    {   "name": "Niigata 2400m (inner) (counterclockwise)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Turf",
+        "distance_meters": "2400m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#2400-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 810, "label": "Straight"},
+            { "start": 810, "end": 1010, "label": "Corner 1"},
+            { "start": 1010, "end": 1210, "label": "Corner 2"},
+            { "start": 1210, "end": 1650, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1650, "end": 1850, "label": "Corner 3"},
+            { "start": 1850, "end": 2050, "label": "Corner 4"},
+            { "start": 2050, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 400, "label": "Early Race"},
+            { "start": 400, "end": 1600, "label": "Mid Race"},
+            { "start": 1600, "end": 2000, "label": "Late Race"},
+            { "start": 2000, "end": 2400, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1000]
+    },
+
+    {   "name": "Niigata 1200m (counterclockwise) (dirt)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Dirt",
+        "distance_meters": "1200m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1200-dirt",
+        "elevation": [
+            { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 600, "label": "Straight"},
+            { "start": 600, "end": 750, "label": "Corner 3"},
+            { "start": 750, "end": 900, "label": "Corner 4"},
+            { "start": 900, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 200, "label": "Early Race"},
+            { "start": 200, "end": 800, "label": "Mid Race"},
+            { "start": 800, "end": 1000, "label": "Late Race"},
+            { "start": 1000, "end": 1200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [500]
+    },
+
+    {   "name": "Niigata 1800m (counterclockwise) (dirt)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Dirt",
+        "distance_meters": "1800m",
+        "stat_treshold": "Wit",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#1800-dirt",
+        "elevation": [
+            { "start": 0, "end": 1800, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 400, "label": "Straight"},
+            { "start": 400, "end": 560, "label": "Corner 1"},
+            { "start": 560, "end": 720, "label": "Corner 2"},
+            { "start": 720, "end": 1140, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1140, "end": 1300, "label": "Corner 3"},
+            { "start": 1300, "end": 1460, "label": "Corner 4"},
+            { "start": 1460, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 300, "label": "Early Race"},
+            { "start": 300, "end": 1200, "label": "Mid Race"},
+            { "start": 1200, "end": 1500, "label": "Late Race"},
+            { "start": 1500, "end": 1800, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [750],
+        "races": [
+            "leopard stakes august 1 year 2"
+        ]
+    },
+
+    {   "name": "Niigata 2500m (counterclockwise) (dirt)",
+        "racetrack": "Niigata",
+        "direction": "Counterclockwise",
+        "terrain": "Dirt",
+        "distance_meters": "2500m",
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/niigata#2500-dirt",
+        "elevation": [
+            { "start": 0, "end": 2500, "label": "Flat", "type": "flat"}
+        ],
+        "layout": [
+            { "start": 0, "end": 380, "label": "Straight"},
+            { "start": 380, "end": 540, "label": "Corner 3"},
+            { "start": 540, "end": 700, "label": "Corner 4"},
+            { "start": 700, "end": 1120, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1120, "end": 1280, "label": "Corner 1"},
+            { "start": 1280, "end": 1440, "label": "Corner 2"},
+            { "start": 1440, "end": 1850, "label": "Straight"},
+            { "start": 1850, "end": 2010, "label": "Corner 3"},
+            { "start": 2010, "end": 2170, "label": "Corner 4"},
+            { "start": 2170, "end": 2500, "label": "Straight", "tags": ["homestretch"]}
+        ],
+        "zones": [
+            { "start": 0, "end": 417, "label": "Early Race"},
+            { "start": 417, "end": 1667, "label": "Mid Race"},
+            { "start": 1667, "end": 2083, "label": "Late Race"},
+            { "start": 2083, "end": 2500, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [1042]
+    },
+
     {   "name": "Hanshin 1200m (inner) (clockwise)",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
@@ -181,33 +996,7 @@
         "position_keep_ends": [1083]
     },
 
-    {   "name": "Niigata 2400m (inner) (counterclockwise)",
-        "racetrack": "Niigata",
-        "direction": "Counterclockwise",
-        "terrain": "Turf",
-        "distance_meters": "2400m",
-        "stat_treshold": "",
-        "url": "https://gametora.com/umamusume/racetracks/niigata#2400-turf-inner",
-        "elevation": [
-            { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
-        ],
-        "layout": [
-            { "start": 0, "end": 810, "label": "Straight"},
-            { "start": 810, "end": 1010, "label": "Corner 1"},
-            { "start": 1010, "end": 1210, "label": "Corner 2"},
-            { "start": 1210, "end": 1650, "label": "Straight", "tags": ["backstretch"]},
-            { "start": 1650, "end": 1850, "label": "Corner 3"},
-            { "start": 1850, "end": 2050, "label": "Corner 4"},
-            { "start": 2050, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
-        ],
-        "zones": [
-            { "start": 0, "end": 400, "label": "Early Race"},
-            { "start": 400, "end": 1600, "label": "Mid Race"},
-            { "start": 1600, "end": 2000, "label": "Late Race"},
-            { "start": 2000, "end": 2400, "label": "Last spurt"}
-        ],
-        "position_keep_ends": [1000]
-    },
+    
 
     {   "name": "Tokyo 2400m (counterclockwise)",
         "racetrack": "Tokyo",
@@ -329,4 +1118,6 @@
             "takamatsunomiya kinen march 2 year 3"
         ]
     }
+
+    
 ]
