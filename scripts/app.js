@@ -17,7 +17,7 @@ import {
   MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
-import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, buildMapEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
+import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, parseSkillNavCustomId, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, buildMapEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
 import cache, { updateCache } from './githubCache.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
@@ -26,6 +26,7 @@ import {
   getCourseMapDataFromCm,
   getCourseMapDataFromMap,
   resolveMapOverride,
+  resolveMapSource,
   buildMapOverrideAutocompleteChoices,
   resolveMapCatalogMatches,
   buildMapCatalogAutocompleteChoices,
@@ -197,11 +198,12 @@ function skillMapFilePrefix(mapContextKey) {
 async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
   const { selectedCmNumber = null, mapOverride = null } = normalizeSkillMapOptions(options);
   const embed = buildSkillEmbed(skill, supporterList);
-  const result = { embed, mapComponents: [] };
+  const result = { embed, mapComponents: [], mapOverrideKey: null, mapCid: null };
 
   const override = mapOverride
     ? resolveMapOverride(mapOverride, cache.maps, cache.customraces)
     : null;
+  if (override) result.mapOverrideKey = override.key;
   let mapData = null;
   let overlayCm = null;
   let mapLabel = null;
@@ -212,6 +214,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     overlayCm = override.context;
     mapLabel = override.label;
     mapContextKey = override.key;
+    result.mapCid = override.rawMap?.cid ?? null;
   } else {
     const upcomingCm = getUpcomingChampionsMeet(champsmeets);
     const upcomingCmNumber = Number(upcomingCm?.number);
@@ -242,6 +245,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     mapContextKey = `cm:${activeCm.number}`;
     result._selectableCms = selectableCms;
     result._activeCm = activeCm;
+    result.mapCid = resolveMapSource(activeCm, cache.maps)?.cid ?? null;
   }
 
   if (!mapData) return result;
@@ -674,7 +678,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         // Creating components if the skill has cards or upgraded version
         let components = [];
 
-        const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(
+        const { embed: skillEmbed, mapComponents, mapOverrideKey, mapCid } = await buildSkillEmbedWithMap(
           matches[0],
           supporterList,
           req,
@@ -686,7 +690,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         data: { 
           embeds: [skillEmbed],
           components: composeSkillComponents(
-            buildSkillComponents(matches[0], supporterMatches.length, supporterMatches),
+            buildSkillComponents(matches[0], supporterMatches.length, supporterMatches, mapOverrideKey, mapCid),
             mapComponents
           )
         }
@@ -1595,7 +1599,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
 
-      const { embed: skillEmbed } = await buildSkillEmbedWithMap(skill, supporterList, req);
+      const { embed: skillEmbed, mapCid } = await buildSkillEmbedWithMap(skill, supporterList, req);
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
@@ -1603,7 +1607,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           embeds: [buildSupporterEmbed(supporter, skills, level), skillEmbed],
           components: [
             ...buildSupporterComponents(supporter, level),
-            ...buildSkillComponents(skill, false, supporterMatches)
+            ...buildSkillComponents(skill, false, supporterMatches, null, mapCid)
           ]
         }
       });
@@ -1660,7 +1664,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         : 'None';
 
         
-      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(
+      const { embed: skillEmbed, mapComponents, mapOverrideKey, mapCid } = await buildSkillEmbedWithMap(
         skill,
         supporterList,
         req,
@@ -1673,7 +1677,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           content: `✅ You selected **${skill.skill_name}**`,
           embeds: [skillEmbed],
           components: composeSkillComponents(
-            buildSkillComponents(skill, supporterMatches.length, supporterMatches),
+            buildSkillComponents(skill, supporterMatches.length, supporterMatches, mapOverrideKey, mapCid),
             mapComponents
           )
         }
@@ -1701,7 +1705,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
 
-      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumber);
+      const { embed: skillEmbed, mapComponents, mapCid } = await buildSkillEmbedWithMap(skill, supporterList, req, selectedCmNumber);
 
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
@@ -1709,7 +1713,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           content: `✅ You selected **${skill.skill_name}**`,
           embeds: [skillEmbed],
           components: composeSkillComponents(
-            buildSkillComponents(skill, supporterMatches.length, supporterMatches),
+            buildSkillComponents(skill, supporterMatches.length, supporterMatches, null, mapCid),
             mapComponents
           )
         }
@@ -1729,70 +1733,44 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           });
     }
 
-    // Handling looking up the upgraded skill
-    if (custom_id.startsWith("upgrade_")) {
-      const upgradedName = custom_id.replace("upgrade_", "").toLowerCase();
-      const upgradedSkill = skills.find(s =>
-        s.skill_name.toLowerCase() === upgradedName
-      );
-
-      if (!upgradedSkill) {
+    // Handling looking up the upgraded/downgraded skill
+    if (custom_id.startsWith("upgrade_") || custom_id.startsWith("downgrade_")) {
+      const parsed = parseSkillNavCustomId(custom_id);
+      if (!parsed) {
         return res.send({
           type: InteractionResponseType.UPDATE_MESSAGE,
-          data: { content: "⚠️ Upgraded skill not found!" }
+          data: { content: "⚠️ Could not parse skill navigation button." }
         });
       }
 
-      // Lookup supporters with this skill
-      const supporterMatches = getSupporterMatchesForSkill(upgradedSkill.skill_name);
+      const targetSkill = skills.find(s =>
+        s.skill_name.toLowerCase() === parsed.targetName.toLowerCase()
+      );
 
-      // Format supporter names into a list
-      let supporterList = supporterMatches.length
+      if (!targetSkill) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: { content: `⚠️ ${parsed.kind === "upgrade" ? "Upgraded" : "Downgraded"} skill not found!` }
+        });
+      }
+
+      const supporterMatches = getSupporterMatchesForSkill(targetSkill.skill_name);
+      const supporterList = supporterMatches.length
         ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
         : 'None';
 
-      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(upgradedSkill, supporterList, req);
+      const { embed: skillEmbed, mapComponents, mapOverrideKey, mapCid } = await buildSkillEmbedWithMap(
+        targetSkill,
+        supporterList,
+        req,
+        { mapOverride: parsed.mapOverrideKey }
+      );
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
           embeds: [skillEmbed],
           components: composeSkillComponents(
-            buildSkillComponents(upgradedSkill, supporterMatches.length, supporterMatches),
-            mapComponents
-          )
-        }
-      });
-    }
-
-    // Handling looking up the downgraded skill
-    if (custom_id.startsWith("downgrade_")) {
-      const downgradedName = custom_id.replace("downgrade_", "").toLowerCase();
-      const downgradedSkill = skills.find(s =>
-        s.skill_name.toLowerCase() === downgradedName
-      );
-
-      if (!downgradedSkill) {
-        return res.send({
-          type: InteractionResponseType.UPDATE_MESSAGE,
-          data: { content: "⚠️ Downgraded skill not found!" }
-        });
-      }
-
-      // Lookup supporters with this skill
-      const supporterMatches = getSupporterMatchesForSkill(downgradedSkill.skill_name);
-
-      // Format supporter names into a list
-      let supporterList = supporterMatches.length
-        ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
-        : 'None';
-
-      const { embed: skillEmbed, mapComponents } = await buildSkillEmbedWithMap(downgradedSkill, supporterList, req);
-      return res.send({
-        type: InteractionResponseType.UPDATE_MESSAGE,
-        data: {
-          embeds: [skillEmbed],
-          components: composeSkillComponents(
-            buildSkillComponents(downgradedSkill, supporterMatches.length, supporterMatches),
+            buildSkillComponents(targetSkill, supporterMatches.length, supporterMatches, mapOverrideKey, mapCid),
             mapComponents
           )
         }
@@ -1861,7 +1839,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           ).join('\n')
         : 'None';
 
-      const { embed: skillEmbed } = await buildSkillEmbedWithMap(skill, supporterList, req);
+      const { embed: skillEmbed, mapCid } = await buildSkillEmbedWithMap(skill, supporterList, req);
       return res.send({
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: {
@@ -1869,7 +1847,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           embeds: [buildUmaEmbed(uma, skills), skillEmbed],
           components: [
             ...buildUmaComponents(uma, true, characters),
-            ...buildSkillComponents(skill, supporterMatches.length, supporterMatches)
+            ...buildSkillComponents(skill, supporterMatches.length, supporterMatches, null, mapCid)
           ]
         }
       });

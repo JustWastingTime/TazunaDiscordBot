@@ -1,5 +1,6 @@
 [   
     {   "name": "Sapporo 1200m (clockwise)",
+        "cid": "10101",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -28,6 +29,7 @@
         ]
     },
     {   "name": "Sapporo 1500m (clockwise)",
+        "cid": "10102",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -54,6 +56,7 @@
         "position_keep_ends": [625]
     },
     {   "name": "Sapporo 1800m (clockwise)",
+        "cid": "10103",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -86,6 +89,7 @@
         ]
     },
     {   "name": "Sapporo 2000m (clockwise)",
+        "cid": "10104",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -117,6 +121,7 @@
         ]
     },
     {   "name": "Sapporo 2600m (clockwise)",
+        "cid": "10105",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -147,6 +152,7 @@
         "position_keep_ends": [1083]
     },
     {   "name": "Sapporo 1000m (clockwise) (dirt)",
+        "cid": "10106",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -171,6 +177,7 @@
         "position_keep_ends": [417]
     },
     {   "name": "Sapporo 1700m (clockwise) (dirt)",
+        "cid": "10107",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -202,6 +209,7 @@
         ]
     },
     {   "name": "Sapporo 2400m (clockwise) (dirt)",
+        "cid": "10108",
         "racetrack": "Sapporo",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -233,6 +241,7 @@
     },
 
     {   "name": "Hakodate 1000m (clockwise)",
+        "cid": "10201",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -258,6 +267,7 @@
         "position_keep_ends": [417]
     },
     {   "name": "Hakodate 1200m (clockwise)",
+        "cid": "10202",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -288,6 +298,7 @@
         ]
     },
     {   "name": "Hakodate 1800m (clockwise)",
+        "cid": "10203",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -319,6 +330,7 @@
         "position_keep_ends": [750]
     },
     {   "name": "Hakodate 2000m (clockwise)",
+        "cid": "10204",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -354,6 +366,7 @@
         ]
     },
     {   "name": "Hakodate 2600m (clockwise)",
+        "cid": "10205",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -389,6 +402,7 @@
         "position_keep_ends": [1083]
     },
     {   "name": "Hakodate 1000m (clockwise) (dirt)",
+        "cid": "10206",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -413,6 +427,7 @@
         "position_keep_ends": [417]
     },
     {   "name": "Hakodate 1700m (clockwise) (dirt)",
+        "cid": "10207",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -443,6 +458,7 @@
         "position_keep_ends": [708]
     },
     {   "name": "Hakodate 2400m (clockwise) (dirt)",
+        "cid": "10208",
         "racetrack": "Hakodate",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -474,6 +490,7 @@
     },
 
     {   "name": "Niigata 1000m (straight)",
+        "cid": "10301",
         "racetrack": "Niigata",
         "direction": "Straight",
         "terrain": "Turf",
@@ -500,6 +517,7 @@
         ]
     },
     {   "name": "Niigata 1200m (inner) (counterclockwise)",
+        "cid": "10302",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -525,6 +543,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Niigata 1400m (inner) (counterclockwise)",
+        "cid": "10303",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -549,6 +568,7 @@
         "position_keep_ends": [583]
     },
     {   "name": "Niigata 1600m (outer) (counterclockwise)",
+        "cid": "10304",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -580,6 +600,7 @@
         ]
     },
     {   "name": "Niigata 1800m (outer) (counterclockwise)",
+        "cid": "10305",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -607,6 +628,7 @@
         "position_keep_ends": [750]
     },
     {   "name": "Niigata 2000m (inner) (counterclockwise)",
+        "cid": "10307",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -634,6 +656,7 @@
         "position_keep_ends": [833]
     },
     {   "name": "Niigata 2000m (outer) (counterclockwise)",
+        "cid": "10307",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -665,6 +688,7 @@
         ]
     },
     {   "name": "Niigata 2200m (inner) (counterclockwise)",
+        "cid": "10308",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -692,6 +716,7 @@
         "position_keep_ends": [917]
     },
     {   "name": "Niigata 2400m (inner) (counterclockwise)",
+        "cid": "10309",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -719,6 +744,7 @@
         "position_keep_ends": [1000]
     },
     {   "name": "Niigata 1200m (counterclockwise) (dirt)",
+        "cid": "10310",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -743,6 +769,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Niigata 1800m (counterclockwise) (dirt)",
+        "cid": "10311",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -773,6 +800,7 @@
         ]
     },
     {   "name": "Niigata 2500m (counterclockwise) (dirt)",
+        "cid": "10312",
         "racetrack": "Niigata",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -804,6 +832,7 @@
     },
 
     {   "name": "Fukushima 1200m (clockwise)",
+        "cid": "10401",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -830,6 +859,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Fukushima 1800m (clockwise)",
+        "cid": "10402",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -862,6 +892,7 @@
         ]
     },
     {   "name": "Fukushima 2000m (clockwise)",
+        "cid": "10403",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -897,6 +928,7 @@
         ]
     },
     {   "name": "Fukushima 2600m (clockwise)",
+        "cid": "10404",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -930,6 +962,7 @@
         "position_keep_ends": [1083]
     },
     {   "name": "Fukushima 1150m (clockwise) (dirt)",
+        "cid": "10405",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -954,6 +987,7 @@
         "position_keep_ends": [479]
     },
     {   "name": "Fukushima 1700m (clockwise) (dirt)",
+        "cid": "10406",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -983,6 +1017,7 @@
         "position_keep_ends": [708]
     },
     {   "name": "Fukushima 2400m (clockwise) (dirt)",
+        "cid": "10407",
         "racetrack": "Fukushima",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -1014,6 +1049,7 @@
     },
 
     {   "name": "Nakayama 1200m (outer) (clockwise)",
+        "cid": "10501",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1045,6 +1081,7 @@
         ]
     },
     {   "name": "Nakayama 1600m (outer) (clockwise)",
+        "cid": "10502",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1084,6 +1121,7 @@
         ]
     },
     {   "name": "Nakayama 1800m (inner) (clockwise)",
+        "cid": "10503",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1126,6 +1164,7 @@
         ]
     },
     {   "name": "Nakayama 2000m (inner) (clockwise)",
+        "cid": "10504",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1169,6 +1208,7 @@
         ]
     },
     {   "name": "Nakayama 2200m (outer) (clockwise)",
+        "cid": "10505",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1211,6 +1251,7 @@
         ]
     },
     {   "name": "Nakayama 2500m (inner) (clockwise)",
+        "cid": "10506",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1255,6 +1296,7 @@
         ]
     },
     {   "name": "Nakayama 3600m (inner) (clockwise)",
+        "cid": "10507",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -1307,6 +1349,7 @@
         ]
     },
     {   "name": "Nakayama 1200m (clockwise) (dirt)",
+        "cid": "10508",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -1339,6 +1382,7 @@
         ]
     },
     {   "name": "Nakayama 1800m (clockwise) (dirt)",
+        "cid": "10509",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -1378,6 +1422,7 @@
         ]
     },
     {   "name": "Nakayama 2400m (clockwise) (dirt)",
+        "cid": "10510",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -1408,6 +1453,7 @@
         "position_keep_ends": [1000]
     },
     {   "name": "Nakayama 2500m (clockwise) (dirt)",
+        "cid": "10511",
         "racetrack": "Nakayama",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -1439,6 +1485,7 @@
     },
 
     {   "name": "Tokyo 1400m (counterclockwise)",
+        "cid": "10601",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1474,6 +1521,7 @@
         ]
     },
     {   "name": "Tokyo 1600m (counterclockwise)",
+        "cid": "10602",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1517,6 +1565,7 @@
         ]
     },
     {   "name": "Tokyo 1800m (counterclockwise)",
+        "cid": "10603",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1560,6 +1609,7 @@
         ]
     },
     {   "name": "Tokyo 2000m (counterclockwise)",
+        "cid": "10604",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1598,6 +1648,7 @@
         ]
     },
     {   "name": "Tokyo 2300m (counterclockwise)",
+        "cid": "10605",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1632,6 +1683,7 @@
         "position_keep_ends": [958]
     },
     {   "name": "Tokyo 2400m (counterclockwise)",
+        "cid": "10606",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1674,6 +1726,7 @@
         ]
     },
     {   "name": "Tokyo 2500m (counterclockwise)",
+        "cid": "10607",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1714,6 +1767,7 @@
         ]
     },
     {   "name": "Tokyo 3400m (counterclockwise)",
+        "cid": "10608",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1760,6 +1814,7 @@
         ]
     },
     {   "name": "Tokyo 1300m (counterclockwise) (dirt)",
+        "cid": "10609",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -1789,6 +1844,7 @@
         "position_keep_ends": [542]
     },
     {   "name": "Tokyo 1400m (counterclockwise) (dirt)",
+        "cid": "10610",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -1821,6 +1877,7 @@
         ]
     },
     {   "name": "Tokyo 1600m (counterclockwise) (dirt)",
+        "cid": "10611",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -1856,6 +1913,7 @@
         ]
     },
     {   "name": "Tokyo 2100m (counterclockwise) (dirt)",
+        "cid": "10612",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -1888,6 +1946,7 @@
         "position_keep_ends": [875]
     },
     {   "name": "Tokyo 2400m (counterclockwise) (dirt)",
+        "cid": "10613",
         "racetrack": "Tokyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -1916,6 +1975,7 @@
     },
 
     {   "name": "Chukyo 1200m (counterclockwise)",
+        "cid": "10701",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1948,6 +2008,7 @@
         ]
     },
     {   "name": "Chukyo 1400m (counterclockwise)",
+        "cid": "10702",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -1979,6 +2040,7 @@
         ]
     },
     {   "name": "Chukyo 1600m (counterclockwise)",
+        "cid": "10703",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -2013,6 +2075,7 @@
         ]
     },
     {   "name": "Chukyo 2000m (counterclockwise)",
+        "cid": "10704",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -2051,6 +2114,7 @@
         ]
     },
     {   "name": "Chukyo 2200m (counterclockwise)",
+        "cid": "10705",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Turf",
@@ -2084,6 +2148,7 @@
         "position_keep_ends": [917]
     },
     {   "name": "Chukyo 1200m (counterclockwise) (dirt)",
+        "cid": "10706",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -2108,6 +2173,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Chukyo 1400m (counterclockwise) (dirt)",
+        "cid": "10707",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -2139,6 +2205,7 @@
         ]
     },
     {   "name": "Chukyo 1800m (counterclockwise) (dirt)",
+        "cid": "10708",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -2175,6 +2242,7 @@
         ]
     },
     {   "name": "Chukyo 1900m (counterclockwise) (dirt)",
+        "cid": "10709",
         "racetrack": "Chukyo",
         "direction": "Counterclockwise",
         "terrain": "Dirt",
@@ -2203,6 +2271,7 @@
     },
 
     {   "name": "Kyoto 1200m (inner) (clockwise)",
+        "cid": "10801",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2238,6 +2307,7 @@
         ]
     },
     {   "name": "Kyoto 1400m (inner) (clockwise)",
+        "cid": "10803",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2267,6 +2337,7 @@
         "position_keep_ends": [583]
     },
     {   "name": "Kyoto 1400m (outer) (clockwise)",
+        "cid": "10803",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2302,6 +2373,7 @@
         ]
     },
     {   "name": "Kyoto 1600m (inner) (clockwise)",
+        "cid": "10805",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2337,6 +2409,7 @@
         ]
     },
     {   "name": "Kyoto 1600m (outer) (clockwise)",
+        "cid": "10805",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2372,6 +2445,7 @@
         ]
     },
     {   "name": "Kyoto 1800m (outer) (clockwise)",
+        "cid": "10806",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2405,6 +2479,7 @@
         ]
     },
     {   "name": "Kyoto 2000m (inner) (clockwise)",
+        "cid": "10807",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2441,6 +2516,7 @@
         ]
     },
     {   "name": "Kyoto 2200m (outer) (clockwise)",
+        "cid": "10808",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2479,6 +2555,7 @@
         ]
     },
     {   "name": "Kyoto 2400m (outer) (clockwise)",
+        "cid": "10809",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2516,6 +2593,7 @@
         ]
     },
     {   "name": "Kyoto 3000m (outer) (clockwise)",
+        "cid": "10810",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2558,6 +2636,7 @@
         ]
     },
     {   "name": "Kyoto 3200m (outer) (clockwise)",
+        "cid": "10811",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2597,6 +2676,7 @@
         "position_keep_ends": [1333]
     },
     {   "name": "Kyoto 1200m (clockwise) (dirt)",
+        "cid": "10812",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -2625,6 +2705,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Kyoto 1400m (clockwise) (dirt)",
+        "cid": "10813",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -2654,6 +2735,7 @@
         "position_keep_ends": [583]
     },
     {   "name": "Kyoto 1800m (clockwise) (dirt)",
+        "cid": "10814",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -2689,6 +2771,7 @@
         ]
     },
     {   "name": "Kyoto 1900m (clockwise) (dirt)",
+        "cid": "10815",
         "racetrack": "Kyoto",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -2724,6 +2807,7 @@
     },
 
     {   "name": "Hanshin 1200m (inner) (clockwise)",
+        "cid": "10901",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2754,6 +2838,7 @@
         "races": ["centaur stakes september 1 year 2"]
     },
     {   "name": "Hanshin 1400m (inner) (clockwise)",
+        "cid": "10902",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2789,6 +2874,7 @@
         ]
     },
     {   "name": "Hanshin 1600m (outer) (clockwise)",
+        "cid": "10903",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2828,6 +2914,7 @@
         ]
     },
     {   "name": "Hanshin 1800m (outer) (clockwise)",
+        "cid": "10904",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2861,6 +2948,7 @@
         ]
     },
     {   "name": "Hanshin 2200m (inner) (clockwise)",
+        "cid": "10906",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2902,6 +2990,7 @@
         ]
     },
     {   "name": "Hanshin 2000m (inner) (clockwise)",
+        "cid": "10905",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2946,6 +3035,7 @@
         ]
     },
     {   "name": "Hanshin 2400m (outer) (clockwise)",
+        "cid": "10907",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -2982,6 +3072,7 @@
         "races": ["kobe shimbun hai september 2 year 2"]
     },
     {   "name": "Hanshin 2600m (outer) (clockwise)",
+        "cid": "10908",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3017,6 +3108,7 @@
         "position_keep_ends": [1083]
     },
     {   "name": "Hanshin 3000m (inner) (clockwise)",
+        "cid": "10909",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3059,6 +3151,7 @@
         ]
     },   
     {   "name": "Hanshin 1200m (clockwise) (dirt)",
+        "cid": "10910",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3083,6 +3176,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Hanshin 1400m (clockwise) (dirt)",
+        "cid": "10911",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3109,6 +3203,7 @@
         "position_keep_ends": [583]
     },
     {   "name": "Hanshin 1800m (clockwise) (dirt)",
+        "cid": "10912",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3143,6 +3238,7 @@
         ]
     },
     {   "name": "Hanshin 2000m (clockwise) (dirt)",
+        "cid": "10913",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3178,6 +3274,7 @@
         ]
     },
     {   "name": "Hanshin 3200m (outer to inner) (clockwise)",
+        "cid": "10914",
         "racetrack": "Hanshin",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3221,6 +3318,7 @@
     },
 
     {   "name": "Kokura 1200m (clockwise)",
+        "cid": "11001",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3251,6 +3349,7 @@
         ]
     },
     {   "name": "Kokura 1800m (clockwise)",
+        "cid": "11002",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3283,6 +3382,7 @@
         ]
     },
     {   "name": "Kokura 2000m (clockwise)",
+        "cid": "11003",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3316,6 +3416,7 @@
         ]
     },
     {   "name": "Kokura 2600m (clockwise)",
+        "cid": "11004",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Turf",
@@ -3348,6 +3449,7 @@
         "position_keep_ends": [1083]
     },
     {   "name": "Kokura 1000m (clockwise) (dirt)",
+        "cid": "11005",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3372,6 +3474,7 @@
         "position_keep_ends": [417]
     },
     {   "name": "Kokura 1700m (clockwise) (dirt)",
+        "cid": "11006",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3401,6 +3504,7 @@
         "position_keep_ends": [708]
     },
     {   "name": "Kokura 2400m (clockwise) (dirt)",
+        "cid": "11007",
         "racetrack": "Kokura",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3432,6 +3536,7 @@
     },
 
     {   "name": "Ooi 1200m (clockwise) (dirt)",
+        "cid": "11101",
         "racetrack": "Ooi",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3457,6 +3562,7 @@
         "position_keep_ends": [500]
     },
     {   "name": "Ooi 1800m (clockwise) (dirt)",
+        "cid": "11102",
         "racetrack": "Ooi",
         "direction": "Clockwise",
         "terrain": "Dirt",
@@ -3489,6 +3595,7 @@
         ]
     },
     {   "name": "Ooi 2000m (clockwise) (dirt)",
+        "cid": "11103",
         "racetrack": "Ooi",
         "direction": "Clockwise",
         "terrain": "Dirt",

@@ -127,7 +127,7 @@ function normalizeStatThresholds(rawMap) {
     .filter(Boolean);
 }
 
-function resolveMapSource(cm, mapsCatalog) {
+export function resolveMapSource(cm, mapsCatalog) {
   const mapRef = cm?.map_id ?? cm?.mapId ?? cm?.map_ref ?? cm?.mapRef
     ?? (typeof cm?.map === "string" ? cm.map : null);
   if (mapRef) {

@@ -5922,8 +5922,7 @@
         ]
       ]
     },
-    { "promptTemplate": "Who is this uma?",
-      "difficulty": "expert",
+    { "promptTemplate": "Who is this uma?", "difficulty": "expert",
       "entries": [
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankF:1412695050969681982>\nSprint: <:RankE:1412695032137257040> | Mile: <:RankB:1412694961358372894> | Medium: <:RankA:1412694937203511336> | Long: <:RankD:1412695001825284198>\nFront: <:RankC:1412694982363578450> | Pace: <:RankA:1412694937203511336> | Late: <:RankD:1412695001825284198> | End: <:RankG:1412695075271475212>", "answers": ["Mejiro Ardan (Original)","T.M. Opera O (New Year)","Matikanefukukitaru (Original)","Kitasan Black (Original)","Seiun Sky (Ballroom)","Manhattan Cafe (Original)","Mejiro Ryan (Original)"] },
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankG:1412695075271475212>\nSprint: <:RankG:1412695075271475212> | Mile: <:RankD:1412695001825284198> | Medium: <:RankA:1412694937203511336> | Long: <:RankB:1412694961358372894>\nFront: <:RankE:1412695032137257040> | Pace: <:RankA:1412694937203511336> | Late: <:RankB:1412694961358372894> | End: <:RankF:1412695050969681982>", "answers": ["Agnes Tachyon (Original)","Narita Taishin (Original)","Eishin Flash (Valentines)","Curren Chan (Wedding)","Haru Urara (New Year)","Nice Nature (Cheerleader)","Biwa Hayahide (Christmas)"] },
