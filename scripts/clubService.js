@@ -155,24 +155,87 @@ export async function fetchUserProfile(accountId) {
   return normalizeUserProfile(data, id);
 }
 
+function scoreProfileMemberMatch({ circleId, member }) {
+  let score = 0;
+  if (String(member?.circle_id ?? '') === String(circleId)) score += 1e15;
+
+  const updatedMs = getMemberLastUpdatedMs(member);
+  if (updatedMs != null) score += updatedMs;
+
+  const fanStats = getMemberFanStats(member?.daily_fans ?? []);
+  if (fanStats.activeDays > 0) score += 1e10;
+
+  return score;
+}
+
+export function pickBestProfileMatch(matches) {
+  if (!matches?.length) return null;
+  if (matches.length === 1) return matches[0];
+  return [...matches].sort(
+    (a, b) => scoreProfileMemberMatch(b) - scoreProfileMemberMatch(a),
+  )[0];
+}
+
+export async function resolveProfileCircleMember(viewerId, candidateCircleIds) {
+  const target = String(viewerId);
+  const uniqueIds = [...new Set(candidateCircleIds.map(String).filter(Boolean))];
+  const matches = [];
+
+  await Promise.all(
+    uniqueIds.map(async (circleId) => {
+      try {
+        const circleData = await fetchCircleData(circleId);
+        const member = (circleData.members || []).find(
+          (m) => String(m.viewer_id) === target,
+        );
+        if (!member) return;
+        matches.push({
+          circleId,
+          circle: circleData.circle,
+          members: circleData.members || [],
+          member,
+        });
+      } catch (err) {
+        console.warn(`Could not load circle ${circleId} for profile:`, err.message);
+      }
+    }),
+  );
+
+  return pickBestProfileMatch(matches);
+}
+
 export async function buildProfileEmbedForViewerId(viewerId, options = {}) {
-  const { circleIdHint = null, festa = null } = options;
+  const { circleIdHint = null, festa = null, searchCircleIds = [] } = options;
   const festaData = festa ?? buildFestProfileData(getUserLinkByViewerId(viewerId));
   const profile = await fetchUserProfile(viewerId);
+
+  const candidateCircleIds = [
+    profile.circleId,
+    circleIdHint,
+    ...searchCircleIds,
+  ];
+
+  const resolved = await resolveProfileCircleMember(viewerId, candidateCircleIds);
+
   let circle = profile.circle;
   let member = profile.member;
   let members = [];
+  let resolvedCircleId = profile.circleId ?? circleIdHint ?? null;
 
-  const circleId = profile.circleId ?? circleIdHint ?? null;
-  if (circleId) {
+  if (resolved) {
+    circle = resolved.circle ?? circle;
+    members = resolved.members;
+    member = resolved.member;
+    resolvedCircleId = resolved.circleId;
+  } else if (resolvedCircleId) {
     try {
-      const circleData = await fetchCircleData(circleId);
+      const circleData = await fetchCircleData(resolvedCircleId);
       circle = circleData.circle ?? circle;
       members = circleData.members || [];
       const fromCircle = members.find((m) => String(m.viewer_id) === String(viewerId));
       if (fromCircle) member = fromCircle;
     } catch (err) {
-      console.warn(`Could not refresh circle ${circleId} for profile:`, err.message);
+      console.warn(`Could not refresh circle ${resolvedCircleId} for profile:`, err.message);
     }
   }
 
@@ -185,12 +248,26 @@ export async function buildProfileEmbedForViewerId(viewerId, options = {}) {
       ? buildTrainerRanks(circle, members, viewerId)
       : {};
 
-  return buildProfileEmbed({
+  const embed = buildProfileEmbed({
     member,
-    circle: circle ?? (profile.circleName ? { name: profile.circleName, circle_id: circleId } : null),
+    circle:
+      circle ??
+      (profile.circleName
+        ? { name: profile.circleName, circle_id: resolvedCircleId }
+        : null),
     ranks,
     festa: festaData,
   });
+
+  return {
+    embed,
+    resolvedCircle: circle
+      ? {
+          circleId: String(circle.circle_id ?? circle.id ?? resolvedCircleId ?? ''),
+          circleName: circle.name ?? profile.circleName ?? null,
+        }
+      : null,
+  };
 }
 
 // Monthly tracking period boundary is day 2 at 00:00 JST.
@@ -930,7 +1007,10 @@ export function buildLeaderboardSelectRow(clubs, circleDataById, ownerUserId) {
 export async function resolveProfileFromPick(value) {
   const [circleId, viewerId] = String(value).split('::');
   if (!viewerId) throw new Error('Invalid selection.');
-  return buildProfileEmbedForViewerId(viewerId, { circleIdHint: circleId || undefined });
+  const { embed } = await buildProfileEmbedForViewerId(viewerId, {
+    circleIdHint: circleId || undefined,
+  });
+  return embed;
 }
 
 export function isTop100Circle(circle) {

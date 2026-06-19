@@ -37,6 +37,7 @@ import {
   getRankThresholds,
   isAllClubsLeaderboardQuery,
   isTop100Circle,
+  pickBestProfileMatch,
   resolveLeaderboardFromCircleId,
   resolveProfileFromPick,
 } from './clubService.js';
@@ -471,7 +472,7 @@ export async function handleProfile(req) {
           }
 
           if (candidates.length === 1) {
-            const selected = candidates[0];
+            const selected = pickBestProfileMatch(candidates) ?? candidates[0];
             const ranks = buildTrainerRanks(
               selected.circle,
               selected.members,
@@ -512,8 +513,10 @@ export async function handleProfile(req) {
           return;
         }
 
-        const embed = await buildProfileEmbedForViewerId(link.viewerId, {
+        const guildClubIds = guildId ? getGuildClubs(guildId).map((club) => club.circleId) : [];
+        const { embed, resolvedCircle } = await buildProfileEmbedForViewerId(link.viewerId, {
           circleIdHint: link.circleId || undefined,
+          searchCircleIds: guildClubIds,
           festa: {
             gambaCoins: link.gambaCoins,
             gambaWr: link.gambaWr,
@@ -522,6 +525,22 @@ export async function handleProfile(req) {
             betHistory: link.betHistory,
           },
         });
+
+        if (
+          resolvedCircle?.circleId &&
+          (String(link.circleId) !== String(resolvedCircle.circleId) ||
+            link.circleName !== resolvedCircle.circleName)
+        ) {
+          upsertUserLink({
+            discordUserId: userId,
+            viewerId: link.viewerId,
+            trainerName: link.trainerName,
+            circleId: resolvedCircle.circleId,
+            circleName: resolvedCircle.circleName,
+            registeredGuildId: guildId,
+          });
+        }
+
         await sendFollowup({ embeds: [embed] });
       } catch (err) {
         console.error('profile failed:', err);
