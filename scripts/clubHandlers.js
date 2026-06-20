@@ -90,6 +90,10 @@ export function isGuildAdmin(member) {
   }
 }
 
+function isBotOwner(userId) {
+  return Boolean(userId && BOT_OWNER_IDS.has(userId));
+}
+
 function ephemeral(content) {
   return {
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -288,8 +292,9 @@ export async function runClubComponentAction(action, context = {}) {
 export async function handleRegisterClub(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/club registerclub`.');
+  const userId = req.body.member?.user?.id || req.body.user?.id;
+  if (!isGuildAdmin(req.body.member) && !isBotOwner(userId)) {
+    return ephemeral('❌ Only server administrators or the bot owner can use `/club registerclub`.');
   }
 
   const circleId = String(getOptionValue(req, 'id') ?? '').trim();

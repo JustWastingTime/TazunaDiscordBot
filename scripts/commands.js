@@ -276,7 +276,7 @@ const CLUB_COMMAND = {
     {
       type: 1,
       name: 'registerclub',
-      description: 'Link this server to an Umamusume club (admin only)',
+      description: 'Link this server to an Umamusume club (admin or bot owner)',
       options: [
         {
           type: 4,
