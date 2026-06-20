@@ -1069,8 +1069,7 @@
         ["Zenno Rob Roy", "$uma", "$uma", "$uma", "$uma", "$uma"]]
       ]
     },
-    { "promptTemplate": "Who's that uma? It's ...",
-      "difficulty": "expert",
+    { "promptTemplate": "Who's that uma? It's ...", "difficulty": "expert",
       "entries": [
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-hard/admire_groove_original.png",
         ["Admire Groove (Original)", "$uma", "$uma", "$uma", "$uma", "$uma"]],

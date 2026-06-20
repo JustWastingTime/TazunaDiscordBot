@@ -18,7 +18,7 @@ export const QUIZ_WIN_MAX_COINS = 50;
 export const EMPTY_ROUND_LIMIT = 3;
 
 export const QUIZ_GAMEMODES = {
-  gamer: ['umas', 'skills', 'supporters', 'gamedata'],
+  gamer: ['umas', 'gamedata'],
   larper: ['songs', 'keiba', 'trivia', 'umaguesser'],
   umadol: ['songs'],
   umaguesser: ['umaguesser'],
@@ -243,107 +243,32 @@ function countAskedTimes(questionId, usedIds) {
   return count;
 }
 
-function getQuestionCategory(question) {
-  return question.category || 'unknown';
-}
-
-function getQuestionTemplateKey(question) {
-  return String(question.promptTemplate || question.prompt || question.id || 'unknown').trim();
-}
-
-function groupQuestionsByTemplate(questions) {
-  const groups = new Map();
-  for (const question of questions) {
-    const key = `${getQuestionCategory(question)}::${getQuestionTemplateKey(question)}`;
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(question);
-  }
-  return groups;
-}
-
-function sumAskedTimes(questions, usedIds) {
-  return questions.reduce((sum, question) => sum + countAskedTimes(question.id, usedIds), 0);
-}
-
-function pickBalancedCategoryPool(categoryPools, usedIds) {
-  const usedSet = new Set(usedIds);
-  const entries = categoryPools.map((questions) => {
-    const hasUnused = questions.some((question) => !usedSet.has(question.id));
-    return { questions, hasUnused, asked: sumAskedTimes(questions, usedIds) };
-  });
-
-  const candidates = entries.some((entry) => entry.hasUnused)
-    ? entries.filter((entry) => entry.hasUnused)
-    : entries;
-  const minAsked = Math.min(...candidates.map((entry) => entry.asked));
-  const balanced = candidates.filter((entry) => entry.asked === minAsked);
-  return pickRandomItem(balanced).questions;
-}
-
-function pickBalancedTemplatePool(pool, usedIds) {
-  const usedSet = new Set(usedIds);
-  const byTemplate = groupQuestionsByTemplate(pool);
-  const entries = [...byTemplate.values()].map((questions) => {
-    const unused = questions.filter((question) => !usedSet.has(question.id));
-    const activePool = unused.length ? unused : questions;
-    return {
-      pool: activePool,
-      hasUnused: unused.length > 0,
-      asked: sumAskedTimes(questions, usedIds),
-    };
-  });
-
-  const candidates = entries.some((entry) => entry.hasUnused)
-    ? entries.filter((entry) => entry.hasUnused)
-    : entries;
-  const minAsked = Math.min(...candidates.map((entry) => entry.asked));
-  const balanced = candidates.filter((entry) => entry.asked === minAsked);
-  return pickRandomItem(balanced).pool;
-}
-
-function pickBalancedCategoryAndTemplate(pool, usedIds) {
-  const byCategory = new Map();
-  for (const question of pool) {
-    const category = getQuestionCategory(question);
-    if (!byCategory.has(category)) byCategory.set(category, []);
-    byCategory.get(category).push(question);
-  }
-
-  const categoryPool = pickBalancedCategoryPool([...byCategory.values()], usedIds);
-  return pickBalancedTemplatePool(categoryPool, usedIds);
-}
-
-function finalizeQuestionPick(finalPool, usedIds, avoidId, hasUnusedInSession) {
-  if (!finalPool.length) return null;
-
-  let pool = finalPool;
-  if (avoidId && pool.length > 1) {
-    const withoutRepeat = pool.filter((question) => question.id !== avoidId);
-    if (withoutRepeat.length) pool = withoutRepeat;
-  }
-
-  if (avoidId && pool.length > 1 && !hasUnusedInSession) {
-    pool.sort(
-      (a, b) => countAskedTimes(a.id, usedIds) - countAskedTimes(b.id, usedIds),
-    );
-    const minTimes = countAskedTimes(pool[0].id, usedIds);
-    const leastAsked = pool.filter(
-      (question) => countAskedTimes(question.id, usedIds) === minTimes,
-    );
-    return pickRandomItem(leastAsked);
-  }
-
-  return pickRandomItem(pool);
-}
-
-function pickBalancedFromPool(pool, usedIds, avoidId = null) {
+function pickWeightedFromPool(pool, usedIds, avoidId = null) {
   if (!pool.length) return null;
 
+  let candidates = [...pool];
+
+  if (avoidId && candidates.length > 1) {
+    const noImmediateRepeat = candidates.filter((question) => question.id !== avoidId);
+    if (noImmediateRepeat.length) candidates = noImmediateRepeat;
+  }
+
+  const recentWindowSize = Math.max(3, Math.min(12, Math.floor(usedIds.length * 0.2)));
+  const recentIds = new Set(usedIds.slice(-recentWindowSize));
+  if (recentIds.size && candidates.length > recentIds.size) {
+    const notRecent = candidates.filter((question) => !recentIds.has(question.id));
+    if (notRecent.length) candidates = notRecent;
+  }
+
   const usedSet = new Set(usedIds);
-  const unused = pool.filter((question) => !usedSet.has(question.id));
-  const workingPool = unused.length ? unused : pool;
-  const templatePool = pickBalancedCategoryAndTemplate(workingPool, usedIds);
-  return finalizeQuestionPick(templatePool, usedIds, avoidId, unused.length > 0);
+  const unused = candidates.filter((question) => !usedSet.has(question.id));
+  const workingPool = unused.length ? unused : candidates;
+
+  const minAsked = Math.min(...workingPool.map((question) => countAskedTimes(question.id, usedIds)));
+  const leastAsked = workingPool.filter(
+    (question) => countAskedTimes(question.id, usedIds) === minAsked,
+  );
+  return pickRandomItem(leastAsked);
 }
 
 export function pickQuestion(questions, options) {
@@ -363,12 +288,8 @@ export function pickQuestion(questions, options) {
       (question) => getQuestionDifficulty(question) === tier,
     );
     if (!tierPool.length) continue;
-
-    for (let attempt = 0; attempt < 16; attempt += 1) {
-      const templatePool = pickBalancedCategoryAndTemplate(tierPool, usedIds);
-      const picked = finalizeQuestionPick(templatePool, usedIds, avoidId, hasUnusedInSession);
-      if (picked) return picked;
-    }
+    const picked = pickWeightedFromPool(tierPool, usedIds, avoidId);
+    if (picked) return picked;
   }
 
   const lastTier = tierOrder[tierOrder.length - 1];
@@ -376,7 +297,7 @@ export function pickQuestion(questions, options) {
     (question) => getQuestionDifficulty(question) === lastTier,
   );
   if (lastTierPool.length) {
-    return pickBalancedFromPool(lastTierPool, usedIds, avoidId);
+    return pickWeightedFromPool(lastTierPool, usedIds, avoidId);
   }
 
   return null;
