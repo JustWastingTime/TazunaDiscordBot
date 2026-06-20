@@ -6,6 +6,7 @@ import sharp from 'sharp';
 const SILHOUETTE_ALPHA_THRESHOLD = 24;
 const SILHOUETTE_BG_COLOR_TOLERANCE = 48;
 const SILHOUETTE_MAX_SIZE = 800;
+const QUIZ_IMAGE_FETCH_TIMEOUT_MS = 20_000;
 
 function safeUnlink(filePath) {
   try {
@@ -55,7 +56,9 @@ function resolveImageMeta(url, contentType) {
 }
 
 async function downloadImageBuffer(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(QUIZ_IMAGE_FETCH_TIMEOUT_MS),
+  });
   if (!response.ok) {
     throw new Error(`Failed to download image (${response.status})`);
   }

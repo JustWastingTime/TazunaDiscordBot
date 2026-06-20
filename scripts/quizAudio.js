@@ -6,6 +6,7 @@ import { promisify } from 'util';
 import ffmpegPath from 'ffmpeg-static';
 
 const execFileAsync = promisify(execFile);
+const QUIZ_AUDIO_FETCH_TIMEOUT_MS = 20_000;
 
 function parseFfmpegDuration(output) {
   const match = output.match(/Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/);
@@ -40,7 +41,9 @@ function safeUnlink(filePath) {
 }
 
 async function downloadAudio(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(QUIZ_AUDIO_FETCH_TIMEOUT_MS),
+  });
   if (!response.ok) throw new Error(`Failed to download audio (${response.status})`);
 
   const inputPath = path.join(
@@ -79,7 +82,9 @@ async function trimAudioFile(inputPath, clipSeconds, duration) {
 
 export async function createQuizAudioFile(audioUrl, clipSeconds) {
   if (!ffmpegPath) {
-    const response = await fetch(audioUrl);
+    const response = await fetch(audioUrl, {
+      signal: AbortSignal.timeout(QUIZ_AUDIO_FETCH_TIMEOUT_MS),
+    });
     if (!response.ok) throw new Error(`Failed to download audio (${response.status})`);
     return {
       buffer: Buffer.from(await response.arrayBuffer()),

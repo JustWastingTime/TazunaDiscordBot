@@ -230,7 +230,7 @@
       "answers": ["Stamina stat up by 40", "Speed stat up by 40", "Power stat up by 40", "Wit stat up by 40"]
     },
 
-    { "prompt": "Which of the following skills cannot be acquired through URA Finale's scenario events?", "difficulty": "medium",
+    { "prompt": "Which of the following skills CANNOT be acquired through URA Finale's scenario events?", "difficulty": "medium",
         "answers": ["Professor of Curvature", "Beeline Burst", "Iron Will", "Breath of Fresh Air"]
     },
     { "prompt": "These speed skills give 40 extra speed at level 1 except?", "difficulty": "medium",
@@ -253,7 +253,7 @@
     { "prompt": "By how many percent does the skill \"Restraint\" reduced Rushed chance?", "difficulty": "hard",
       "answers": ["3%", "2%", "5%", "4%"]
     },  
-    { "prompt": "Which race spark does not give the skill \"Tokyo Racecourse\"?", "difficulty": "hard",
+    { "prompt": "Which race spark does NOT give the skill \"Tokyo Racecourse\"?", "difficulty": "hard",
       "answers": ["Victoria Mile", "Japan Cup", "Yasuda Kinen", "Japanese Derby"]   
     },
     { "prompt": "What does the skill Ignited Spirit WIT increase?", "difficulty": "hard",
