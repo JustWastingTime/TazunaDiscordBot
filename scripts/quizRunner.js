@@ -19,6 +19,7 @@ import * as quiz from './quizService.js';
 
 const roundTimers = new Map();
 const betweenRoundTimers = new Map();
+const QUIZ_ROLE_SETUP_TIMEOUT_MS = 8_000;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -452,13 +453,26 @@ export async function startQuiz({
 
   let roleId = null;
   let permissionsWarning = null;
-  try {
-    roleId = await getGuildQuizRoleId(guildId);
-  } catch (err) {
+  const roleSetup = getGuildQuizRoleId(guildId)
+    .then((resolvedRoleId) => ({ roleId: resolvedRoleId, timedOut: false, err: null }))
+    .catch((err) => ({ roleId: null, timedOut: false, err }));
+  const roleResult = await Promise.race([
+    roleSetup,
+    sleep(QUIZ_ROLE_SETUP_TIMEOUT_MS).then(() => ({ roleId: null, timedOut: true, err: null })),
+  ]);
+
+  if (roleResult.timedOut) {
+    permissionsWarning =
+      '⚠️ Quiz started, but quiz notification role setup timed out. ' +
+      'Please check bot role permissions if `/quiz notify` does not work.';
+    console.warn(`Quiz role setup timed out for guild ${guildId}`);
+  } else if (roleResult.err) {
     permissionsWarning =
       '⚠️ Quiz started, but I could not manage the quiz notification role. ' +
       'Please grant me **Manage Roles** (and keep my role above quiz roles) to enable `/quiz notify` pings.';
-    console.warn(`Quiz role setup skipped for guild ${guildId}: ${summarizeDiscordError(err)}`);
+    console.warn(`Quiz role setup skipped for guild ${guildId}: ${summarizeDiscordError(roleResult.err)}`);
+  } else {
+    roleId = roleResult.roleId;
   }
   const rolePing = roleId ? `<@&${roleId}>` : '';
   const startMessage =
