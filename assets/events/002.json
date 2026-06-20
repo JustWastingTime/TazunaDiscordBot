@@ -6,7 +6,7 @@
   "startsAt": "2026-06-20T12:00:00+09:00",
   "endsAt": "2026-06-20T23:30:00+09:00",
   "availability": "guilds",
-  "guildIds": ["1441129742240710678", "1416320822846689333"],
+  "guildIds": ["1441129742240710678", "1416320822846689333", "1461077219303620763"],
   "entries": [
     { "number": 1, "name": "Cabal Agency 2", "odds": 1.5 },
     { "number": 2, "name": "UMAlliance 1", "odds": 1.5},
