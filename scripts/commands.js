@@ -408,6 +408,7 @@ const QUIZ_COMMAND = {
             { name: 'Larper', value: 'larper' },
             { name: 'Umadol', value: 'umadol' },
             { name: 'Umaguesser', value: 'umaguesser' },
+            { name: 'TESTING - IGNORE THIS', value: 'testing' },
           ],
         },
         {

@@ -1,24 +1,20 @@
 {
-  "name": "TemplateCategory",
+  "name": "Test",
   "questions": [
-    {
-      "promptTemplate": "Who is {0}'s roommate?", "difficulty": "medium",
+    { "promptTemplate": "Whose winning pose is this?", "difficulty": "medium",
       "entries": [
-        ["Agnes Tachyon", ["Agnes Digital", "Daiwa Scarlet", "Manhattan Cafe", "Neo Universe", "Dantsu Flame", "Jungle Pokke"]],
-        ["Daiwa Scarlet", ["Vodka", "Hishi Amazon", "Biwa Hayahide", "Curren Chan", "Aston Machan", "Agnes Tachyon"], "easy"],
-        ["Eishin Flash", ["Smart Falcon", "Hishi Amazon", "Mihono Bourbon", "Fine Motion", "Rice Shower"]]
+        
+        ["https://i.ibb.co.com/Q77ZprBr/Uma-Viewer-2026-06-20-13-36-10-709.gif",
+        ["Special Week", "Winning Ticket", "Dantsu Flame", "Curren Chan", "Daiwa Scarlet"]]
       ]
     },
-    {
-      "promptTemplate": "Which uma stays in Ritto dorm?", "difficulty": "hard",
+    { "promptTemplate": "Whose winning pose is this?", "difficulty": "hard",
       "entries": [
-        ["", ["Oguri Cap", "Inari One", "Mejiro Ryan", "Sakura Chiyono O", "Mejiro Ardan"]],
-        ["", ["Special Week", "El Condor Pasa", "Grass Wonder", "Maruzensky", "Seiun Sky"]]
+        ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",
+        ["Special Week", "Winning Ticket", "Dantsu Flame", "Curren Chan", "El Condor Pasa"]],
+        ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",
+        ["Special Week", "Meisho Doto", "Matikanetannhauser", "Fine Motion", "Grass Wonder"]]
       ]
-    },
-    {
-      "prompt": "Which of these umas do NOT have a dorm roommate?", "difficulty": "hard",
-      "answers": ["Fuji Kiseki", "Agnes Digital", "Special Week", "Admire Vega", "Air Groove"]
     }
   ]
 }

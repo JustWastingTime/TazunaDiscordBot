@@ -417,11 +417,15 @@ export function loadQuizCategory(categoryId) {
   };
 }
 
+const ALWAYS_LOADABLE_CATEGORIES = new Set(['testquestions']);
+
 export function loadQuizQuestions(categoryFilter) {
   const settings = loadQuizSettings();
   const enabled = settings.enabledCategories || [];
+  const canLoad = (categoryId) =>
+    enabled.includes(categoryId) || ALWAYS_LOADABLE_CATEGORIES.has(categoryId);
   const categories = Array.isArray(categoryFilter) && categoryFilter.length
-    ? categoryFilter.filter((categoryId) => enabled.includes(categoryId))
+    ? categoryFilter.filter(canLoad)
     : enabled;
   const questions = [];
 

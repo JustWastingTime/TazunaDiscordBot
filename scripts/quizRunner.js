@@ -418,7 +418,9 @@ export async function startQuiz({
   const quizRoundSeconds = quiz.normalizeRoundSeconds(roundSeconds);
   const quizScoreGoal = quiz.normalizeScoreGoal(scoreGoal);
   const allowAudio = quizGamemode === 'umadol' ? true : quiz.parseYesNo(audio, true);
-  const allowPicture = quizGamemode === 'umaguesser' ? true : quiz.parseYesNo(picture, true);
+  const allowPicture = quizGamemode === 'umaguesser' || quizGamemode === 'testing'
+    ? true
+    : quiz.parseYesNo(picture, true);
 
   const enabled = loadQuizSettings().enabledCategories || [];
   const categories = quiz.getGamemodeCategories(quizGamemode, enabled);

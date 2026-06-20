@@ -1,9 +1,10 @@
 import { createQuizAudioFile } from './quizAudio.js';
-import { createQuizImageFile, createSilhouetteFile } from './quizImage.js';
+import { createSilhouetteFile } from './quizImage.js';
 import { resolveMcqAnswers } from './quizLists.js';
 
 export const DEFAULT_ROUND_SECONDS = 10;
 export const AUDIO_ROUND_BONUS_SECONDS = 5;
+export const IMAGE_ROUND_BONUS_SECONDS = 5;
 export const MIN_ROUND_SECONDS = 10;
 export const MAX_ROUND_SECONDS = 30;
 export const DEFAULT_SCORE_GOAL = 15;
@@ -22,6 +23,7 @@ export const QUIZ_GAMEMODES = {
   larper: ['songs', 'keiba', 'trivia', 'umaguesser'],
   umadol: ['songs'],
   umaguesser: ['umaguesser'],
+  testing: ['testquestions'],
 };
 
 export const DEFAULT_GAMEMODE = 'umastan';
@@ -109,7 +111,13 @@ function getCategoryFooterText(question) {
 
 export function normalizeGamemode(gamemode) {
   const value = String(gamemode || '').toLowerCase();
-  if (value === 'gamer' || value === 'larper' || value === 'umadol' || value === 'umaguesser') {
+  if (
+    value === 'gamer'
+    || value === 'larper'
+    || value === 'umadol'
+    || value === 'umaguesser'
+    || value === 'testing'
+  ) {
     return value;
   }
   if (value === 'godgamer') return DEFAULT_GAMEMODE;
@@ -119,6 +127,7 @@ export function normalizeGamemode(gamemode) {
 export function getGamemodeCategories(gamemode, enabledCategories) {
   const normalized = normalizeGamemode(gamemode);
   if (normalized === DEFAULT_GAMEMODE) return [...enabledCategories];
+  if (normalized === 'testing') return ['testquestions'];
   const enabled = new Set(enabledCategories);
   return (QUIZ_GAMEMODES[normalized] || []).filter((categoryId) => enabled.has(categoryId));
 }
@@ -130,6 +139,7 @@ export function getGamemodeLabel(gamemode) {
     umadol: 'Umadol',
     umaguesser: 'Umaguesser',
     umastan: 'Umastan',
+    testing: 'TESTING - IGNORE THIS',
   };
   return labels[normalizeGamemode(gamemode)];
 }
@@ -329,9 +339,15 @@ export function isAudioQuestion(question) {
   return Boolean(question?.audioUrl);
 }
 
+export function isImageQuestion(question) {
+  return Boolean(question?.imageUrl);
+}
+
 export function getRoundSeconds(quizState, question) {
   const base = normalizeRoundSeconds(quizState?.roundSeconds);
-  const bonus = isAudioQuestion(question) ? AUDIO_ROUND_BONUS_SECONDS : 0;
+  let bonus = 0;
+  if (isAudioQuestion(question)) bonus += AUDIO_ROUND_BONUS_SECONDS;
+  if (isImageQuestion(question)) bonus += IMAGE_ROUND_BONUS_SECONDS;
   return base + bonus;
 }
 
@@ -359,7 +375,7 @@ export function createQuizState({
     roundSeconds: normalizeRoundSeconds(roundSeconds),
     scoreGoal: normalizeScoreGoal(scoreGoal),
     allowAudio: mode === 'umadol' ? true : allowAudio,
-    allowPicture: mode === 'umaguesser' ? true : allowPicture,
+    allowPicture: mode === 'umaguesser' || mode === 'testing' ? true : allowPicture,
     status: 'active',
     scores: {},
     usedQuestionIds: [],
@@ -649,25 +665,11 @@ export async function buildQuestionMediaFiles(question, quiz) {
         files.push(silhouette);
         media.embedImage = { url: `attachment://${silhouette.filename}` };
       } catch (err) {
-        console.error('Failed to create quiz silhouette, using attached image fallback:', err.message);
-        try {
-          const imageFile = await createQuizImageFile(question.imageUrl);
-          files.push(imageFile);
-          media.embedImage = { url: `attachment://${imageFile.filename}` };
-        } catch (fallbackErr) {
-          console.error('Failed to attach quiz image fallback:', fallbackErr.message);
-          media.embedImageFallback = question.imageUrl;
-        }
+        console.error('Failed to create quiz silhouette, using image URL:', err.message);
+        media.embedImage = { url: question.imageUrl };
       }
     } else {
-      try {
-        const imageFile = await createQuizImageFile(question.imageUrl);
-        files.push(imageFile);
-        media.embedImage = { url: `attachment://${imageFile.filename}` };
-      } catch (err) {
-        console.error('Failed to attach quiz image, using URL fallback:', err.message);
-        media.embedImageFallback = question.imageUrl;
-      }
+      media.embedImage = { url: question.imageUrl };
     }
   }
 
