@@ -69,7 +69,6 @@ export async function handleQuizStart(req) {
     ephemeral: true,
     run: async (sendFollowup) => {
       try {
-        await ensureGuildQuizRole(guildId);
         const result = await startQuiz({
           guildId,
           channelId,
@@ -91,7 +90,11 @@ export async function handleQuizStart(req) {
           return;
         }
 
-        await sendFollowup({ content: '✅ Quiz started!' });
+        await sendFollowup({
+          content: result.warning
+            ? `✅ Quiz started!\n\n${result.warning}`
+            : '✅ Quiz started!',
+        });
       } catch (err) {
         console.error('quiz start failed:', err);
         await sendFollowup({

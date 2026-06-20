@@ -33,6 +33,9 @@
     { "prompt": "Which race is not considered one of the Triple Crowns?", "difficulty": "easy",
       "answers": ["Shuka Sho", "Satsuki Sho", "Japanese Derby", "Kikuka Sho"]
     },
+    { "prompt": "Which GI is part of the Filly Triple Crown / Triple Tiara but is not one of the JRA Eight Great Classics", "difficulty": "easy",
+      "answers": ["Shuka Sho", "Oka Sho", "Japanese Derby", "Kikuka Sho", "Arima Kinen"]
+    },
 
     { "prompt": "The 12 billion yen incident refers to?", "difficulty": "medium",
       "answers": ["Gold Ship", "Agnes Digital", "Stay Gold", "Silence Suzuka", "Cesario"]
@@ -81,6 +84,9 @@
     },
     { "prompt": "Oi racecourse is located in the city of?", "difficulty": "medium",
       "answers": ["Tokyo", "Oi", "Kyoto", "Yokohama"]
+    },
+    { "prompt": "What is the IRL nickname of Admire Vega?", "difficulty": "medium",
+      "answers": ["Adobe", "Ayabe", "Kyoto", "Yokohama"]
     },
 
     { "prompt": "Which race is not considered one of the Eight Great Classics?", "difficulty": "hard",

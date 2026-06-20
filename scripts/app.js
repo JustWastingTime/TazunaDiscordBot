@@ -74,6 +74,7 @@ import {
 import { startEventCron } from './eventCron.js';
 import { reloadEventsFromDisk } from './eventService.js';
 import { resumeActiveQuizzes } from './quizRunner.js';
+import { startQuizRemoteSync } from './quizStorage.js';
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -2096,6 +2097,7 @@ app.listen(PORT, () => {
   } else {
     console.warn('UMA_API_KEY is missing — /register, /profile, and club leaderboards will fail until it is set.');
   }
+  startQuizRemoteSync();
   resumeActiveQuizzes().catch((err) => {
     console.error('Failed to resume active quizzes:', err.message);
   });

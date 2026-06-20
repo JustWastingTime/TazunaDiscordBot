@@ -450,7 +450,16 @@ export async function startQuiz({
     return true;
   });
 
-  const roleId = await getGuildQuizRoleId(guildId);
+  let roleId = null;
+  let permissionsWarning = null;
+  try {
+    roleId = await getGuildQuizRoleId(guildId);
+  } catch (err) {
+    permissionsWarning =
+      '⚠️ Quiz started, but I could not manage the quiz notification role. ' +
+      'Please grant me **Manage Roles** (and keep my role above quiz roles) to enable `/quiz notify` pings.';
+    console.warn(`Quiz role setup skipped for guild ${guildId}: ${summarizeDiscordError(err)}`);
+  }
   const rolePing = roleId ? `<@&${roleId}>` : '';
   const startMessage =
     `🎯 **Quiz started** by **${userName}** ` +
@@ -492,7 +501,9 @@ export async function startQuiz({
   }
 
   if (!resolvedPrep.ok) return resolvedPrep;
-  return publishRound(guildId, resolvedPrep);
+  const published = await publishRound(guildId, resolvedPrep);
+  if (!published.ok) return published;
+  return permissionsWarning ? { ok: true, warning: permissionsWarning } : published;
 }
 
 export async function stopQuiz(guildId, { reason } = {}) {

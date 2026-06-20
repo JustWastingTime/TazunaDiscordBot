@@ -211,7 +211,7 @@
        
       ]
     },
-    { "promptTemplate": "In Trackblazer, which of the following events can give the skill{0}?", "difficulty": "expert",
+    { "promptTemplate": "In Trackblazer, which of the following events can give the skill {0}?", "difficulty": "expert",
       "entries": [
               ["Uma Stan", ["Agnes Digital Explodes", "The Strongest, Mightiest Cinderella!", "Under the Same Umbrella", "Keeping It Cute", "Hungry for Affection"]],
               ["Prudent Positioning", ["The Strongest, Mightiest Cinderella!", "Mission: Big Surprise!", "Living Alone", "Brian Gets Jealous?", "Worldwide Windy", "The Perfect Combo"]],

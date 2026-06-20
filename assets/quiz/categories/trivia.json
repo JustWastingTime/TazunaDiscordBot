@@ -2135,6 +2135,10 @@
     { "prompt": "Which of these umas do not live in the dorms?", "difficulty": "easy",
       "answers": ["Maruzensky", "Oguri Cap", "Special Week", "Symboli Rudolf", "Mejiro Ramonu"]
     },
+    { "prompt": "In Uma Musume's world, what does URA stand for, replacing Japan's real-world JRA?", "difficulty": "easy",
+      "answers": ["Umamusume Racing Association", "Ultimate Racing Authority", "Universal Race Association", "Uma Regional Association", "Uma Racing in America"]
+    },
+
     { "prompt": "Mayano Top Gun's father works as?", "difficulty": "medium",
       "answers": ["Pilot", "Astronaut", "Racecar driver", "Aeronautical engineer", "Military general", "Trainer"]
     },
@@ -2165,6 +2169,7 @@
     { "prompt": "Which of these social media networks dont exist in universe?", "difficulty": "medium",
       "answers": ["Umaddit", "Umastagram", "UmaTube", "Umatter", "UmaTok", "LANE"]
     },
+
     { "prompt": "Mejiro Dober's father has a nickname for Dober she finds embarassing. What is it?", "difficulty": "hard",
       "answers": ["Berry", "Dobey", "Beryl", "Dodo", "Doberry", "Donut", "Dooby", "Adobe"]
     },
@@ -2193,6 +2198,13 @@
     { "prompt": "Orfevre means what in French?", "difficulty": "hard",
       "answers": ["Goldsmith", "Tyrant", "Kingmaker", "Smelter", "Longsword", "Oven"]
     },
+    { "prompt": "What bizarre creature does Winning Ticket see in the “Wings of Iron - Hazy Tails” VR machine, implied to be a real-world horse?", "difficulty": "hard",
+      "answers": ["Cow's body, alpaca's head", " Goat's body, deer's head", " Zebra's body, camel's head", "Donkey's body, llama's head", "Uma's body, human's head"]
+    },
+    { "prompt": "In universe, a length is defined using the Three Goddesses' arm span instead of a horse's body. Roughly how long is it?", "difficulty": "hard",
+      "answers": ["250cm", "200cm", "180cm", "300cm", "150cm"]
+    },
+
     { "prompt": "Which Umamusume was NOT featured in it's first collab with Granblue Fantasy?", "difficulty": "expert",
       "answers": ["Symboli Rudolf", "Silence Suzuka", "Special Week", "Tokai Teio", "Gold Ship", "Mejiro McQueen"]
     },

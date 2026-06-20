@@ -10,8 +10,19 @@ const QUIZ_STATE_PATH = path.join(DATA_DIR, 'quiz-state.json');
 const QUIZ_GUILD_PATH = path.join(DATA_DIR, 'quiz-guilds.json');
 const QUIZ_SETTINGS_PATH = path.join(QUIZ_DIR, 'settings.json');
 const QUIZ_CATEGORIES_DIR = path.join(QUIZ_DIR, 'categories');
+const QUIZ_REMOTE_SYNC_ENABLED = ['1', 'true', 'yes'].includes(
+  String(process.env.QUIZ_REMOTE_SYNC_ENABLED || '').toLowerCase().trim(),
+);
+const QUIZ_REMOTE_SYNC_INTERVAL_MS = Math.max(
+  60_000,
+  Number(process.env.QUIZ_REMOTE_SYNC_INTERVAL_MS || 300_000),
+);
+const QUIZ_REMOTE_REPO = process.env.QUIZ_REMOTE_REPO || 'JustWastingTime/TazunaDiscordBot';
+const QUIZ_REMOTE_BRANCH = process.env.QUIZ_REMOTE_BRANCH || 'main';
+const QUIZ_REMOTE_TOKEN = String(process.env.QUIZ_REMOTE_TOKEN || '').trim();
 
 let writeQueue = Promise.resolve();
+let quizRemoteSyncInFlight = null;
 
 function withLock(fn) {
   const run = () => fn();
@@ -80,6 +91,95 @@ export function saveQuizGuildConfig(guildId, config) {
 
 export function loadQuizSettings() {
   return readJson(QUIZ_SETTINGS_PATH, { enabledCategories: [] });
+}
+
+function buildGithubHeaders() {
+  if (!QUIZ_REMOTE_TOKEN) return {};
+  return {
+    Authorization: `Bearer ${QUIZ_REMOTE_TOKEN}`,
+  };
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, { headers: buildGithubHeaders() });
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} for ${url}`);
+  }
+  return await res.json();
+}
+
+async function fetchText(url) {
+  const res = await fetch(url, { headers: buildGithubHeaders() });
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} for ${url}`);
+  }
+  return await res.text();
+}
+
+async function syncRemoteQuizAssetsOnce() {
+  if (!QUIZ_REMOTE_SYNC_ENABLED) return;
+  if (quizRemoteSyncInFlight) return quizRemoteSyncInFlight;
+
+  quizRemoteSyncInFlight = (async () => {
+    const settingsRaw = await fetchText(
+      `https://raw.githubusercontent.com/${QUIZ_REMOTE_REPO}/${QUIZ_REMOTE_BRANCH}/assets/quiz/settings.json`,
+    );
+    const settings = JSON.parse(settingsRaw);
+    fs.mkdirSync(QUIZ_DIR, { recursive: true });
+    fs.mkdirSync(QUIZ_CATEGORIES_DIR, { recursive: true });
+    fs.writeFileSync(QUIZ_SETTINGS_PATH, settingsRaw.endsWith('\n') ? settingsRaw : `${settingsRaw}\n`, 'utf8');
+
+    const categories = Array.isArray(settings?.enabledCategories)
+      ? settings.enabledCategories.map((value) => String(value).trim()).filter(Boolean)
+      : [];
+    if (!categories.length) return;
+
+    // Verify category files exist in the remote branch before downloading.
+    const remoteFiles = await fetchJson(
+      `https://api.github.com/repos/${QUIZ_REMOTE_REPO}/contents/assets/quiz/categories?ref=${encodeURIComponent(QUIZ_REMOTE_BRANCH)}`,
+    );
+    const available = new Set(
+      Array.isArray(remoteFiles)
+        ? remoteFiles
+          .filter((entry) => entry?.type === 'file' && String(entry.name || '').endsWith('.json'))
+          .map((entry) => String(entry.name).replace(/\.json$/, ''))
+        : [],
+    );
+
+    for (const categoryId of categories) {
+      if (!available.has(categoryId)) continue;
+      const raw = await fetchText(
+        `https://raw.githubusercontent.com/${QUIZ_REMOTE_REPO}/${QUIZ_REMOTE_BRANCH}/assets/quiz/categories/${categoryId}.json`,
+      );
+      const filePath = path.join(QUIZ_CATEGORIES_DIR, `${categoryId}.json`);
+      fs.writeFileSync(filePath, raw.endsWith('\n') ? raw : `${raw}\n`, 'utf8');
+    }
+  })();
+
+  try {
+    await quizRemoteSyncInFlight;
+  } catch (err) {
+    console.warn(`[QuizRemoteSync] Sync failed: ${err.message}`);
+  } finally {
+    quizRemoteSyncInFlight = null;
+  }
+}
+
+export function startQuizRemoteSync() {
+  if (!QUIZ_REMOTE_SYNC_ENABLED) return;
+  console.log(
+    `[QuizRemoteSync] Enabled (${QUIZ_REMOTE_REPO}@${QUIZ_REMOTE_BRANCH}, interval=${QUIZ_REMOTE_SYNC_INTERVAL_MS}ms)`,
+  );
+
+  syncRemoteQuizAssetsOnce().catch((err) => {
+    console.warn(`[QuizRemoteSync] Initial sync error: ${err.message}`);
+  });
+
+  setInterval(() => {
+    syncRemoteQuizAssetsOnce().catch((err) => {
+      console.warn(`[QuizRemoteSync] Scheduled sync error: ${err.message}`);
+    });
+  }, QUIZ_REMOTE_SYNC_INTERVAL_MS);
 }
 
 function listQuizCategoryIds() {
