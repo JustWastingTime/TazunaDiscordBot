@@ -12,15 +12,38 @@ export function getQuizRoleName() {
   return loadQuizSettings().quizNotificationRole || DEFAULT_QUIZ_ROLE_NAME;
 }
 
-export async function ensureGuildQuizRole(guildId) {
+const roleSetupLocks = new Map();
+
+function findQuizRoles(roles, roleName) {
+  const target = roleName.toLowerCase();
+  return roles.filter((item) => item.name.toLowerCase() === target);
+}
+
+function pickQuizRole(matches, preferredRoleId = null) {
+  if (!matches.length) return null;
+  if (preferredRoleId) {
+    const saved = matches.find((role) => String(role.id) === String(preferredRoleId));
+    if (saved) return saved;
+  }
+  return [...matches].sort((a, b) => String(a.id).localeCompare(String(b.id)))[0];
+}
+
+async function resolveGuildQuizRole(guildId) {
   const existing = loadQuizGuildConfig(guildId);
-  if (existing?.roleId) {
+  const roleName = getQuizRoleName();
+  const roles = await getGuildRoles(guildId);
+  const matches = findQuizRoles(roles, roleName);
+
+  if (existing?.roleId && roles.some((role) => String(role.id) === String(existing.roleId))) {
     return existing;
   }
 
-  const roleName = getQuizRoleName();
-  const roles = await getGuildRoles(guildId);
-  let role = roles.find((item) => item.name.toLowerCase() === roleName.toLowerCase());
+  let role = pickQuizRole(matches, existing?.roleId);
+  if (matches.length > 1) {
+    console.warn(
+      `Multiple quiz roles named "${roleName}" in guild ${guildId}; using ${role?.id ?? 'new role'}.`,
+    );
+  }
 
   if (!role) {
     role = await createGuildRole(guildId, roleName);
@@ -33,6 +56,19 @@ export async function ensureGuildQuizRole(guildId) {
   };
   await saveQuizGuildConfig(guildId, config);
   return config;
+}
+
+export async function ensureGuildQuizRole(guildId) {
+  const key = String(guildId);
+  if (roleSetupLocks.has(key)) {
+    return roleSetupLocks.get(key);
+  }
+
+  const setup = resolveGuildQuizRole(guildId).finally(() => {
+    roleSetupLocks.delete(key);
+  });
+  roleSetupLocks.set(key, setup);
+  return setup;
 }
 
 export async function getGuildQuizRoleId(guildId) {

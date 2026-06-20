@@ -20,6 +20,8 @@ import * as quiz from './quizService.js';
 const roundTimers = new Map();
 const betweenRoundTimers = new Map();
 const QUIZ_ROLE_SETUP_TIMEOUT_MS = 8_000;
+const QUIZ_CHANNEL_PERMISSIONS_HELP =
+  'Give me **View Channel**, **Send Messages**, **Embed Links**, and **Use External Apps** in that channel (check channel overrides too).';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -106,6 +108,49 @@ async function safeChannelSend(channelId, payload, context) {
       return null;
     }
     throw err;
+  }
+}
+
+function formatQuizChannelError(prefix) {
+  return `${prefix} ${QUIZ_CHANNEL_PERMISSIONS_HELP}`;
+}
+
+async function validateQuizChannel(channelId) {
+  try {
+    const probe = await sendChannelMessage(channelId, {
+      content: '\u200b',
+      embeds: [{ description: 'Quiz channel check', color: 0xf1c40f }],
+      components: [{
+        type: 1,
+        components: [{
+          type: 2,
+          style: 2,
+          custom_id: 'quiz-probe:0',
+          label: 'Check',
+          disabled: true,
+        }],
+      }],
+      flags: 4096,
+    });
+    if (probe?.id) {
+      await deleteChannelMessage(channelId, probe.id);
+    }
+    return { ok: true };
+  } catch (err) {
+    if (isChannelUnavailableError(err)) {
+      return {
+        ok: false,
+        error: formatQuizChannelError('I cannot post quiz rounds in this channel.'),
+      };
+    }
+    if (isTransientDiscordError(err)) {
+      console.warn(`Quiz channel probe transient failure: ${summarizeDiscordError(err)}`);
+      return { ok: true };
+    }
+    return {
+      ok: false,
+      error: `Could not verify quiz channel: ${summarizeDiscordError(err)}`,
+    };
   }
 }
 
@@ -358,7 +403,10 @@ async function publishRound(guildId, prep) {
 
     if (isChannelUnavailableError(err)) {
       await abortQuiz(guildId, 'missing access when posting round');
-      return { ok: false, error: 'Bot cannot post in the quiz channel. Quiz ended.' };
+      return {
+        ok: false,
+        error: formatQuizChannelError('I lost access while posting the round, so the quiz ended.'),
+      };
     }
 
     console.error('Failed to post quiz round:', summarizeDiscordError(err));
@@ -435,6 +483,11 @@ export async function startQuiz({
       ok: false,
       error: `No questions found for **${quiz.getGamemodeLabel(quizGamemode)}** (${categories.join(', ') || 'none'}).`,
     };
+  }
+
+  const channelCheck = await validateQuizChannel(channelId);
+  if (!channelCheck.ok) {
+    return channelCheck;
   }
 
   await updateQuizState((state) => {

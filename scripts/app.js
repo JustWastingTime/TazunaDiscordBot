@@ -49,7 +49,6 @@ import { getUmaApiKey } from './clubService.js';
 import { startLeaderboardCron } from './clubLeaderboardCron.js';
 import {
   dispatchQuizCommand,
-  ensureQuizGuildSetup,
   handleQuizAnswer,
   handleQuizAnswerComponent,
   isQuizCommand,
@@ -540,10 +539,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name, options } = data;
     const invokingUserId = req.body.member?.user?.id || req.body.user?.id;
-
-    if (req.body.guild_id) {
-      ensureQuizGuildSetup(req.body.guild_id);
-    }
 
     if (name === 'refreshcache') {
       if (!invokingUserId || !BOT_OWNER_IDS.has(invokingUserId)) {
@@ -1444,10 +1439,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
   if (type === InteractionType.MESSAGE_COMPONENT) {
     const { custom_id, values } = data;
-
-    if (req.body.guild_id) {
-      ensureQuizGuildSetup(req.body.guild_id);
-    }
 
     const quizAnswer = handleQuizAnswerComponent(custom_id);
     if (quizAnswer) {
