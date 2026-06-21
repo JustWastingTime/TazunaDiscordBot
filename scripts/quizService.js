@@ -245,6 +245,12 @@ function pickRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
+function getTemplateKey(question) {
+  const category = String(question?.category || '').trim().toLowerCase();
+  const template = String(question?.promptTemplate || question?.prompt || '').trim().toLowerCase();
+  return `${category}::${template}`;
+}
+
 function countAskedTimes(questionId, usedIds) {
   let count = 0;
   for (const id of usedIds) {
@@ -253,10 +259,19 @@ function countAskedTimes(questionId, usedIds) {
   return count;
 }
 
-function pickWeightedFromPool(pool, usedIds, avoidId = null) {
-  if (!pool.length) return null;
+function countTemplateAskedTimes(templateKey, usedIds, questionById) {
+  let count = 0;
+  for (const id of usedIds) {
+    const question = questionById.get(id);
+    if (!question) continue;
+    if (getTemplateKey(question) === templateKey) count += 1;
+  }
+  return count;
+}
 
+function applyRepeatGuards(pool, usedIds, avoidId = null) {
   let candidates = [...pool];
+  if (!candidates.length) return candidates;
 
   if (avoidId && candidates.length > 1) {
     const noImmediateRepeat = candidates.filter((question) => question.id !== avoidId);
@@ -270,9 +285,40 @@ function pickWeightedFromPool(pool, usedIds, avoidId = null) {
     if (notRecent.length) candidates = notRecent;
   }
 
+  return candidates;
+}
+
+function pickWeightedFromPool(pool, usedIds, questionById, avoidId = null) {
+  if (!pool.length) return null;
+
+  const candidates = applyRepeatGuards(pool, usedIds, avoidId);
+  if (!candidates.length) return null;
+
+  const grouped = new Map();
+  for (const question of candidates) {
+    const templateKey = getTemplateKey(question);
+    if (!grouped.has(templateKey)) grouped.set(templateKey, []);
+    grouped.get(templateKey).push(question);
+  }
+  let templateGroups = [...grouped.entries()].map(([templateKey, questions]) => ({ templateKey, questions }));
+
+  const avoidTemplate = avoidId ? getTemplateKey(questionById.get(avoidId)) : null;
+  if (avoidTemplate && templateGroups.length > 1) {
+    const noImmediateTemplateRepeat = templateGroups.filter((group) => group.templateKey !== avoidTemplate);
+    if (noImmediateTemplateRepeat.length) templateGroups = noImmediateTemplateRepeat;
+  }
+
+  const minTemplateAsked = Math.min(
+    ...templateGroups.map((group) => countTemplateAskedTimes(group.templateKey, usedIds, questionById)),
+  );
+  const leastAskedTemplates = templateGroups.filter(
+    (group) => countTemplateAskedTimes(group.templateKey, usedIds, questionById) === minTemplateAsked,
+  );
+  const pickedTemplateQuestions = pickRandomItem(leastAskedTemplates).questions;
+
   const usedSet = new Set(usedIds);
-  const unused = candidates.filter((question) => !usedSet.has(question.id));
-  const workingPool = unused.length ? unused : candidates;
+  const unused = pickedTemplateQuestions.filter((question) => !usedSet.has(question.id));
+  const workingPool = unused.length ? unused : pickedTemplateQuestions;
 
   const minAsked = Math.min(...workingPool.map((question) => countAskedTimes(question.id, usedIds)));
   const leastAsked = workingPool.filter(
@@ -286,6 +332,7 @@ export function pickQuestion(questions, options) {
   const eligible = questions.filter((q) => q.type === QUIZ_MODE);
   if (!eligible.length) return null;
 
+  const questionById = new Map(eligible.map((question) => [question.id, question]));
   const avoidId = usedIds.length ? usedIds[usedIds.length - 1] : null;
   const usedSet = new Set(usedIds);
   const unusedEligible = eligible.filter((question) => !usedSet.has(question.id));
@@ -298,7 +345,7 @@ export function pickQuestion(questions, options) {
       (question) => getQuestionDifficulty(question) === tier,
     );
     if (!tierPool.length) continue;
-    const picked = pickWeightedFromPool(tierPool, usedIds, avoidId);
+    const picked = pickWeightedFromPool(tierPool, usedIds, questionById, avoidId);
     if (picked) return picked;
   }
 
@@ -307,7 +354,7 @@ export function pickQuestion(questions, options) {
     (question) => getQuestionDifficulty(question) === lastTier,
   );
   if (lastTierPool.length) {
-    return pickWeightedFromPool(lastTierPool, usedIds, avoidId);
+    return pickWeightedFromPool(lastTierPool, usedIds, questionById, avoidId);
   }
 
   return null;
@@ -626,10 +673,7 @@ export function buildDisabledMcqRows(round) {
 }
 
 export function syncRoundClock(quiz, question) {
-  let roundSeconds = getRoundSeconds(quiz, question);
-  if (quiz.round?.number === 1) {
-    roundSeconds += QUIZ_START_COUNTDOWN_SECONDS;
-  }
+  const roundSeconds = getRoundSeconds(quiz, question);
   const startedAt = Date.now();
   quiz.round.startedAt = startedAt;
   quiz.round.endsAt = startedAt + roundSeconds * 1000;
