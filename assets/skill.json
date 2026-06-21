@@ -9082,7 +9082,7 @@
         }
     },
     {   "skill_name": "Victoria por plancha ☆",
-        "description": "Hang onto the advantage when positioned toward the front with energy to spare on the final straight",
+        "description": "Hang onto the advantage when positioned toward the front with energy to spare on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
