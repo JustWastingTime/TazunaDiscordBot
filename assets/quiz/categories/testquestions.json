@@ -1,21 +1,6 @@
 {
   "name": "Test",
   "questions": [
-    { "promptTemplate": "Whose winning pose is this?", "difficulty": "medium",
-      "entries": [
-        
-        ["https://i.ibb.co.com/Q77ZprBr/Uma-Viewer-2026-06-20-13-36-10-709.gif",
-        ["Special Week", "Winning Ticket", "Dantsu Flame", "Curren Chan", "Daiwa Scarlet"]]
-      ]
-    },
-    { "promptTemplate": "Whose winning pose is this?", "difficulty": "hard",
-      "entries": [
-        ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",
-        ["Special Week", "Winning Ticket", "Dantsu Flame", "Curren Chan", "El Condor Pasa"]],
-        ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",
-        ["Special Week", "Meisho Doto", "Matikanetannhauser", "Fine Motion", "Grass Wonder"]]
-      ]
-    },
 {   "promptTemplate": "This is the skill description of which skill? \n\n {0}", "difficulty": "expert",
       "entries": [
         ["Gain momentum and begin to advance when passing another runner while well-positioned around halfway through the race.",["#LookatCurren","Go, Go, Mun!","Joyful Voyage","Louder! Tracen Cheer!","One True Color","Pure Heart"]],
