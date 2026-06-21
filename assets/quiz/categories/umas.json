@@ -1,7 +1,7 @@
 {
   "name": "Uma",
   "questions": [
-    { "promptTemplate": "What is {0}'s Turf Aptitude?", "difficulty": "easy",
+    {   "promptTemplate": "What is {0}'s Turf Aptitude?", "difficulty": "easy",
       "entries": [
         [ "Agnes Digital (Original)",
           [
@@ -49,7 +49,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Dirt Aptitude?", "difficulty": "easy",
+    {   "promptTemplate": "What is {0}'s Dirt Aptitude?", "difficulty": "easy",
       "entries": [
         [ "Maruzensky (Original)",
           [
@@ -212,8 +212,8 @@
         ]
       ]
     },
-    
-    { "promptTemplate": "What is {0}'s Sprint Aptitude?", "difficulty": "medium",
+
+    {   "promptTemplate": "What is {0}'s Sprint Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Silence Suzuka (Original)",
           [
@@ -476,7 +476,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Mile Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s Mile Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Special Week (Original)",
           [
@@ -949,7 +949,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Medium Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s Medium Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Special Week (Original)",
           [
@@ -1146,7 +1146,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Long Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s Long Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Silence Suzuka (Original)",
           [
@@ -1447,7 +1447,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Front Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s Front Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Tokai Teio (Original)",
           [
@@ -1660,7 +1660,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Pace Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s Pace Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Silence Suzuka (Original)",
           [
@@ -2016,7 +2016,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Late Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s Late Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Special Week (Original)",
           [
@@ -2273,7 +2273,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s End Aptitude?", "difficulty": "medium",
+    {   "promptTemplate": "What is {0}'s End Aptitude?", "difficulty": "medium",
       "entries": [
         [ "Special Week (Summer)",
           [
@@ -2431,7 +2431,7 @@
         ]
       ]
     },
-    { "promptTemplate": "Which Uma does the epithet \"{0}\" belong to?", "difficulty": "medium",
+    {   "promptTemplate": "Which Uma does the epithet \"{0}\" belong to?", "difficulty": "medium",
       "entries": [
         [ "All-Around Otaku",
           [
@@ -3084,7 +3084,7 @@
     },
 
 
-    { "promptTemplate": "What is {0}'s Speed Stat Bonus?", "difficulty": "hard",
+    {   "promptTemplate": "What is {0}'s Speed Stat Bonus?", "difficulty": "hard",
       "entries": [
         [ "Silence Suzuka (Original)",
           [
@@ -3538,7 +3538,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Stamina Stat Bonus?", "difficulty": "hard",
+    {   "promptTemplate": "What is {0}'s Stamina Stat Bonus?", "difficulty": "hard",
       "entries": [
         [ "Special Week (Original)",
           [
@@ -3932,7 +3932,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Power Stat Bonus?", "difficulty": "hard",
+    {   "promptTemplate": "What is {0}'s Power Stat Bonus?", "difficulty": "hard",
       "entries": [
         [ "Special Week (Summer)",
           [
@@ -4376,7 +4376,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Guts Stat Bonus?", "difficulty": "hard",
+    {   "promptTemplate": "What is {0}'s Guts Stat Bonus?", "difficulty": "hard",
       "entries": [
         [ "Special Week (Summer)",
           [
@@ -4710,7 +4710,7 @@
         ]
       ]
     },
-    { "promptTemplate": "What is {0}'s Wit Stat Bonus?", "difficulty": "hard",
+    {   "promptTemplate": "What is {0}'s Wit Stat Bonus?", "difficulty": "hard",
       "entries": [
         [ "Special Week (Original)",
           [
@@ -5103,7 +5103,7 @@
         ]
       ]
     },
-    { "promptTemplate": "Which stat bonus is the highest for {0}?", "difficulty": "hard",
+    {   "promptTemplate": "Which stat bonus is the highest for {0}?", "difficulty": "expert",
       "entries": [
         [ "Special Week (Original)",
           [
@@ -5112,15 +5112,6 @@
             "Wit",
             "Guts",
             "Power"
-          ]
-        ],
-        [ "Special Week (Summer)",
-          [
-            "Stamina",
-            "Speed",
-            "Wit",
-            "Power",
-            "Guts"
           ]
         ],
         [ "Silence Suzuka (Original)",
@@ -5141,15 +5132,6 @@
             "Guts"
           ]
         ],
-        [ "Tokai Teio (Anime Collab)",
-          [
-            "Speed",
-            "Guts",
-            "Wit",
-            "Stamina",
-            "Power"
-          ]
-        ],
         [ "Maruzensky (Original)",
           [
             "Wit",
@@ -5157,15 +5139,6 @@
             "Power",
             "Guts",
             "Stamina"
-          ]
-        ],
-        [ "Maruzensky (Summer)",
-          [
-            "Speed",
-            "Guts",
-            "Stamina",
-            "Wit",
-            "Power"
           ]
         ],
         [ "Fuji Kiseki (Original)",
@@ -5193,15 +5166,6 @@
             "Guts",
             "Power",
             "Stamina"
-          ]
-        ],
-        [ "Oguri Cap (Christmas)",
-          [
-            "Speed",
-            "Wit",
-            "Stamina",
-            "Power",
-            "Guts"
           ]
         ],
         [ "Gold Ship (Original)",
@@ -5258,15 +5222,6 @@
             "Wit"
           ]
         ],
-        [ "Grass Wonder (Fantasy)",
-          [
-            "Stamina",
-            "Speed",
-            "Wit",
-            "Power",
-            "Guts"
-          ]
-        ],
         [ "Hishi Amazon (Original)",
           [
             "Power",
@@ -5285,30 +5240,12 @@
             "Wit"
           ]
         ],
-        [ "Mejiro McQueen (Anime Collab)",
-          [
-            "Stamina",
-            "Guts",
-            "Wit",
-            "Power",
-            "Speed"
-          ]
-        ],
         [ "El Condor Pasa (Original)",
           [
             "Speed",
             "Power",
             "Guts",
             "Stamina",
-            "Wit"
-          ]
-        ],
-        [ "El Condor Pasa (Fantasy)",
-          [
-            "Speed",
-            "Stamina",
-            "Guts",
-            "Power",
             "Wit"
           ]
         ],
@@ -5366,24 +5303,6 @@
             "Guts"
           ]
         ],
-        [ "Air Groove (Wedding)",
-          [
-            "Speed",
-            "Guts",
-            "Wit",
-            "Power",
-            "Stamina"
-          ]
-        ],
-        [ "Agnes Digital (Original)",
-          [
-            "Speed",
-            "Guts",
-            "Wit",
-            "Stamina",
-            "Power"
-          ]
-        ],
         [ "Seiun Sky (Original)",
           [
             "Wit",
@@ -5411,15 +5330,6 @@
             "Guts"
           ]
         ],
-        [ "Fine Motion (Original)",
-          [
-            "Power",
-            "Stamina",
-            "Guts",
-            "Wit",
-            "Speed"
-          ]
-        ],
         [ "Fine Motion (Wedding)",
           [
             "Wit",
@@ -5438,15 +5348,6 @@
             "Speed"
           ]
         ],
-        [ "Biwa Hayahide (Christmas)",
-          [
-            "Stamina",
-            "Guts",
-            "Speed",
-            "Power",
-            "Wit"
-          ]
-        ],
         [ "Mayano Top Gun (Original)",
           [
             "Stamina",
@@ -5454,15 +5355,6 @@
             "Guts",
             "Speed",
             "Power"
-          ]
-        ],
-        [ "Mayano Top Gun (Wedding)",
-          [
-            "Speed",
-            "Power",
-            "Stamina",
-            "Wit",
-            "Guts"
           ]
         ],
         [ "Manhattan Cafe (Original)",
@@ -5483,15 +5375,6 @@
             "Power"
           ]
         ],
-        [ "Mihono Bourbon (Valentines)",
-          [
-            "Speed",
-            "Stamina",
-            "Power",
-            "Wit",
-            "Guts"
-          ]
-        ],
         [ "Mejiro Ryan (Original)",
           [
             "Power",
@@ -5510,39 +5393,12 @@
             "Speed"
           ]
         ],
-        [ "Yukino Bijin (Original)",
-          [
-            "Guts",
-            "Stamina",
-            "Wit",
-            "Power",
-            "Speed"
-          ]
-        ],
         [ "Rice Shower (Original)",
           [
             "Guts",
             "Power",
             "Stamina",
             "Speed",
-            "Wit"
-          ]
-        ],
-        [ "Rice Shower (Halloween)",
-          [
-            "Stamina",
-            "Power",
-            "Speed",
-            "Guts",
-            "Wit"
-          ]
-        ],
-        [ "Ines Fujin (Original)",
-          [
-            "Speed",
-            "Stamina",
-            "Power",
-            "Guts",
             "Wit"
           ]
         ],
@@ -5618,15 +5474,6 @@
             "Stamina"
           ]
         ],
-        [ "Curren Chan (Wedding)",
-          [
-            "Speed",
-            "Stamina",
-            "Guts",
-            "Power",
-            "Wit"
-          ]
-        ],
         [ "Kawakami Princess (Original)",
           [
             "Guts",
@@ -5661,15 +5508,6 @@
             "Guts",
             "Stamina",
             "Wit"
-          ]
-        ],
-        [ "Seeking the Pearl (Original)",
-          [
-            "Wit",
-            "Power",
-            "Guts",
-            "Speed",
-            "Stamina"
           ]
         ],
         [ "Sweep Tosho (Original)",
@@ -5708,30 +5546,12 @@
             "Guts"
           ]
         ],
-        [ "Tosen Jordan (Original)",
-          [
-            "Speed",
-            "Guts",
-            "Wit",
-            "Stamina",
-            "Power"
-          ]
-        ],
         [ "Narita Taishin (Original)",
           [
             "Guts",
             "Stamina",
             "Power",
             "Speed",
-            "Wit"
-          ]
-        ],
-        [ "Nishino Flower (Original)",
-          [
-            "Speed",
-            "Power",
-            "Stamina",
-            "Guts",
             "Wit"
           ]
         ],
@@ -5759,15 +5579,6 @@
             "Power",
             "Wit",
             "Guts",
-            "Speed"
-          ]
-        ],
-        [ "Matikanefukukitaru (Full Armor)",
-          [
-            "Stamina",
-            "Guts",
-            "Power",
-            "Wit",
             "Speed"
           ]
         ],
@@ -5807,15 +5618,6 @@
             "Guts"
           ]
         ],
-        [ "Nice Nature (Cheerleader)",
-          [
-            "Stamina",
-            "Speed",
-            "Wit",
-            "Guts",
-            "Power"
-          ]
-        ],
         [ "King Halo (Original)",
           [
             "Power",
@@ -5823,15 +5625,6 @@
             "Guts",
             "Stamina",
             "Wit"
-          ]
-        ],
-        [ "King Halo (Cheerleader)",
-          [
-            "Speed",
-            "Wit",
-            "Stamina",
-            "Power",
-            "Guts"
           ]
         ],
         [ "Matikanetannhauser (Original)",
@@ -5843,39 +5636,12 @@
             "Wit"
           ]
         ],
-        [ "Mejiro Palmer (Original)",
-          [
-            "Speed",
-            "Power",
-            "Wit",
-            "Stamina",
-            "Guts"
-          ]
-        ],
-        [ "Satono Diamond (Original)",
-          [
-            "Stamina",
-            "Guts",
-            "Wit",
-            "Power",
-            "Speed"
-          ]
-        ],
         [ "Kitasan Black (Original)",
           [
             "Speed",
             "Stamina",
             "Power",
             "Guts",
-            "Wit"
-          ]
-        ],
-        [ "Sakura Chiyono O (Original)",
-          [
-            "Speed",
-            "Guts",
-            "Stamina",
-            "Power",
             "Wit"
           ]
         ],
@@ -5909,7 +5675,7 @@
       ]
     },
     
-    { "promptTemplate": "Who is this uma?", "difficulty": "expert",
+    {   "promptTemplate": "Who is this uma?", "difficulty": "expert",
       "entries": [
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankF:1412695050969681982>\nSprint: <:RankE:1412695032137257040> | Mile: <:RankB:1412694961358372894> | Medium: <:RankA:1412694937203511336> | Long: <:RankD:1412695001825284198>\nFront: <:RankC:1412694982363578450> | Pace: <:RankA:1412694937203511336> | Late: <:RankD:1412695001825284198> | End: <:RankG:1412695075271475212>", "answers": ["Mejiro Ardan (Original)","T.M. Opera O (New Year)","Matikanefukukitaru (Original)","Kitasan Black (Original)","Seiun Sky (Ballroom)","Manhattan Cafe (Original)","Mejiro Ryan (Original)"] },
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankG:1412695075271475212>\nSprint: <:RankG:1412695075271475212> | Mile: <:RankD:1412695001825284198> | Medium: <:RankA:1412694937203511336> | Long: <:RankB:1412694961358372894>\nFront: <:RankE:1412695032137257040> | Pace: <:RankA:1412694937203511336> | Late: <:RankB:1412694961358372894> | End: <:RankF:1412695050969681982>", "answers": ["Agnes Tachyon (Original)","Narita Taishin (Original)","Eishin Flash (Valentines)","Curren Chan (Wedding)","Haru Urara (New Year)","Nice Nature (Cheerleader)","Biwa Hayahide (Christmas)"] },
@@ -5937,6 +5703,37 @@
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankG:1412695075271475212>\nSprint: <:RankE:1412695032137257040> | Mile: <:RankA:1412694937203511336> | Medium: <:RankA:1412694937203511336> | Long: <:RankE:1412695032137257040>\nFront: <:RankB:1412694961358372894> | Pace: <:RankA:1412694937203511336> | Late: <:RankF:1412695050969681982> | End: <:RankG:1412695075271475212>", "answers": ["Sakura Chiyono O (Original)","Manhattan Cafe (Original)","Mayano Top Gun (Wedding)","Tosen Jordan (Original)","Nice Nature (Original)","Hishi Amazon (Original)","Agnes Tachyon (Original)"] },
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankF:1412695050969681982>\nSprint: <:RankF:1412695050969681982> | Mile: <:RankC:1412694982363578450> | Medium: <:RankA:1412694937203511336> | Long: <:RankA:1412694937203511336>\nFront: <:RankE:1412695032137257040> | Pace: <:RankA:1412694937203511336> | Late: <:RankB:1412694961358372894> | End: <:RankE:1412695032137257040>", "answers": ["Biwa Hayahide (Original)","Maruzensky (Original)","Gold City (Festival)","Mejiro McQueen (Original)","Fine Motion (Original)","Seiun Sky (Original)","Tosen Jordan (Original)"] }
       ]
+    },
+    {   "promptTemplate": "{0} has 3 stats with 10% growth.  Which one is NOT one of them?", "difficulty": "expert",
+        "entries": [
+          ["Special Week (Summer)",["Speed","Stamina","Power","Guts"]],
+          ["Tokai Teio (Anime)",["Power","Stamina","Guts","Wit"]],
+          ["Mejiro McQueen (Anime)",["Guts","Stamina","Power","Wit"]],
+          ["Air Groove (Wedding)",["Wit","Speed","Power","Guts"]],
+          ["Mayano Top Gun (Wedding)",["Guts","Speed","Stamina","Wit"]],
+          ["Mihono Bourbon (Valentines)",["Wit","Speed","Stamina","Power"]],
+          ["Curren Chan (Wedding)",["Guts", "Wit","Speed","Power"]],
+          ["Tosen Jordan (Original)",["Stamina","Guts","Speed","Power"]],
+          ["Matikanefukukitaru (Full Armor)",["Power", "Stamina","Guts","Wit"]],
+          ["Nice Nature (Cheerleader)",["Speed", "Stamina","Power","Wit"]],
+          ["King Halo (Cheerleader)",["Wit","Speed","Power","Guts"]],
+          ["Mejiro Palmer (Original)",["Power","Speed","Stamina","Guts"]],
+          ["Sakura Chiyono O (Original)",["Power","Speed","Wit","Guts"]]
+        ]
+    },
+
+    {   "prompt": "Which of the following uma has a 30% __Power__ growth?", "difficulty": "medium",
+        "answers": ["Taiki Shuttle (Camping)", "Taiki Shuttle (Original)", "Hishi Amazon (Original)", "Mejiro Ryan (Original)", "Grass Wonder (Original)"]
+    },
+    {   "prompt": "Which of the following uma has a 30% __Stamina__ growth?", "difficulty": "medium",
+        "answers": ["Manhattan Cafe (Original)", "Symboli Rudolf (Original)", "Taiki Shuttle (Camping)", "Mihono Bourbon (Original)", "Super Creek (Original)"]
+    },
+    {   "prompt": "Which of the following uma has a 30% __Wit__ growth?", "difficulty": "medium",
+        "answers": ["Air Shakur (Original)", "Agnes Tachyon (Original)", "Eishin Flash (Original)", "Manhattan Cafe (Original)", "Seiun Sky (Ballroom)"]
+    },
+
+    {   "prompt": "Which of the following stat does Agnes Digital (Original) not have growth in?", "difficulty": "hard",
+        "answers": ["Guts", "Speed", "Stamina", "Power", "Wit"]
     }
     
   ]
