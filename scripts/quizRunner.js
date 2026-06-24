@@ -359,6 +359,8 @@ async function prepareRoundContent(guildId) {
     const question = quiz.pickQuestion(questions, {
       selectedDifficulty: active.difficulty,
       usedIds: active.usedQuestionIds,
+      gamemode: active.gamemode,
+      enabledCategories: loadQuizSettings().enabledCategories || [],
     });
     if (!question) {
       return {

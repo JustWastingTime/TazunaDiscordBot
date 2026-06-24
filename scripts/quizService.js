@@ -17,6 +17,7 @@ export const QUIZ_WIN_BASE_COINS = 10;
 export const QUIZ_WIN_COINS_PER_PARTICIPANT = 5;
 export const QUIZ_WIN_MAX_COINS = 50;
 export const EMPTY_ROUND_LIMIT = 3;
+export const UMASTAN_GAMER_POOL_WEIGHT = 0.6;
 
 export const QUIZ_GAMEMODES = {
   gamer: ['umas', 'gamedata'],
@@ -327,9 +328,7 @@ function pickWeightedFromPool(pool, usedIds, questionById, avoidId = null) {
   return pickRandomItem(leastAsked);
 }
 
-export function pickQuestion(questions, options) {
-  const { selectedDifficulty, usedIds = [] } = options;
-  const eligible = questions.filter((q) => q.type === QUIZ_MODE);
+function pickQuestionFromPool(eligible, selectedDifficulty, usedIds) {
   if (!eligible.length) return null;
 
   const questionById = new Map(eligible.map((question) => [question.id, question]));
@@ -337,7 +336,6 @@ export function pickQuestion(questions, options) {
   const usedSet = new Set(usedIds);
   const unusedEligible = eligible.filter((question) => !usedSet.has(question.id));
   const searchPool = unusedEligible.length ? unusedEligible : eligible;
-  const hasUnusedInSession = unusedEligible.length > 0;
   const tierOrder = buildTierTryOrder(selectedDifficulty);
 
   for (const tier of tierOrder) {
@@ -355,6 +353,39 @@ export function pickQuestion(questions, options) {
   );
   if (lastTierPool.length) {
     return pickWeightedFromPool(lastTierPool, usedIds, questionById, avoidId);
+  }
+
+  return null;
+}
+
+function buildUmastanPickOrder(questions, enabledCategories) {
+  const enabled = new Set(enabledCategories || []);
+  const gamerCats = new Set(QUIZ_GAMEMODES.gamer.filter((categoryId) => enabled.has(categoryId)));
+  const larperCats = new Set(QUIZ_GAMEMODES.larper.filter((categoryId) => enabled.has(categoryId)));
+  const gamerPool = questions.filter((question) => gamerCats.has(question.category));
+  const larperPool = questions.filter((question) => larperCats.has(question.category));
+
+  const preferGamer = Math.random() < UMASTAN_GAMER_POOL_WEIGHT;
+  const primary = preferGamer ? gamerPool : larperPool;
+  const secondary = preferGamer ? larperPool : gamerPool;
+  const order = [];
+  if (primary.length) order.push(primary);
+  if (secondary.length) order.push(secondary);
+  return order.length ? order : [questions];
+}
+
+export function pickQuestion(questions, options) {
+  const { selectedDifficulty, usedIds = [], gamemode, enabledCategories } = options;
+  const eligible = questions.filter((q) => q.type === QUIZ_MODE);
+  if (!eligible.length) return null;
+
+  const poolsToTry = normalizeGamemode(gamemode) === DEFAULT_GAMEMODE
+    ? buildUmastanPickOrder(eligible, enabledCategories)
+    : [eligible];
+
+  for (const pool of poolsToTry) {
+    const picked = pickQuestionFromPool(pool, selectedDifficulty, usedIds);
+    if (picked) return picked;
   }
 
   return null;
