@@ -88,6 +88,10 @@
     { "prompt": "What is the IRL nickname of Admire Vega?", "difficulty": "medium",
       "answers": ["Adobe", "Ayabe", "Kyoto", "Yokohama"]
     },
+    { "prompt": "In 2021, which racecourse did the Tenno Sho Spring happen on?", "difficulty": "hard",
+      "answers": ["Hanshin", "Kyoto", "Nakayama", "Tokyo"]
+    },
+      
 
     { "prompt": "Which race is not considered one of the Eight Great Classics?", "difficulty": "hard",
       "answers": ["Takarazuka Kinen", "Satsuki Sho", "Japanese Derby", "Oka Sho", "Tenno Sho (Autumn)", " Kikuka Sho"]
@@ -128,7 +132,10 @@
     { "prompt": "Which race is not part of the Summer Sprint Series?", "difficulty": "hard",
       "answers": ["Ibis Summer Dash", "Keeneland Cup", "Centaur Stakes", "Hakodate Sprint Stakes"]
     },
-
+    {	"prompt": "Which race was Almond Eye's first loss?", "difficulty": "hard",
+      "answers": ["Debut", "Yasuda Kinen 2019", "Arima Kinen 2019", "Yasuda Kinen 2020"]
+    },
+    
     { "prompt": "By what length did Agnes Tachyon win the 2001 Satsuki Sho?", "difficulty": "expert",
       "answers": ["1.5", "1", "Nose", "0.5", "5", "2.5", "2"]
     },
@@ -152,6 +159,18 @@
     },
     { "prompt": "What placement did Manhattan Cafe get in the 2002 Prix de l'Arc de Triomphe?", "difficulty": "expert",
       "answers": ["13th", "4th", "16th", "10th", "7th", "9th", "2nd", "3rd"]
+    },
+    {	"prompt": "Which Triple Tiara uma was the first that went undefeated in previous races?", "difficulty": "expert",
+      "answers": ["Daring Tact", "Almond Eye", "Gentildonna", "Mejiro Ramonu"]
+    },
+    { "prompt": "At what odds did Copano Rickey win the 2014 February Stakes?", "difficulty":"expert",
+      "answers": ["272.1", "207.5", "16", "2.7","3.6","181.2"] 
+    },
+    { "prompt":"How many times did Smart Falcon win a G/JPN1 race?", "difficulty":"expert",
+      "answers":["6","11","10","4"]
+    },
+    { "prompt":"Which of these horses has won a G1 race?", "difficulty":"expert",
+      "answers": ["Bubble Gum Fellow","Twin Turbo","Win Variation","Curren Bouquetd’or","Matikanetannhauser","Ikuno Dictus"]
     }
   ]
 }

@@ -7520,7 +7520,7 @@
             "mihono bourbon the ghost finds halloween magic", "mihono bourbon poverty", "mihono bourbon welfare", "mihono bourbon event", "mihono bourbon halloween"
         ]
     },
-    {   "id": "30067 The Throne's Assemblage",
+    {   "id": "30067 Heirs to the Throne", "_event": "done",
         "card_name": "Esteemed and Adored",
         "character_name": "Heirs to the Throne",
         "unique": "Gain Skill Point Bonus (2) when the bond gauge is at least 80",
@@ -7554,6 +7554,159 @@
         "category": "group",
         "aliases": [
             "the thrones assemblage", "heirs to the throne", "esteemed and adored", "symboli rudolf group", "throne", "tokai teio group", "tsurumaru tsuyoshi group"
+        ],
+        "events":[
+            {
+                "name": "#Studenting (Symboli Rudolf)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +12, Wit +34, Bond +5, Fighting Spirit hint +1"
+                ]
+            },
+            {
+                "name": "The Monarch's Pride (Tokai Teio)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +12, Mood +1, Speed +23, Bond +5, Prudent Positioning hint +1"
+                ]
+            },
+            {
+                "name": "A Leisurely Stroll for Two (Tsurumaru Tsuyoshi)",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +36, Skill points +17, Bond +5, Full Throttle hint +1"
+                ]
+            },
+            {
+                "name": "I Wanna Be Just Like Prez!",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +24, Speed +11, Wit +28, Skill points +17, Bond +5, Nakayama Racecourse hint +1"
+                ]
+            },
+            {
+                "name": "I Want to Be Just Like President Rudolf!",
+                "type": "date",
+                "results": 
+                [
+                    "Energy +24, Mood +1, Speed +17, Wit +34, Skill points +23, Bond +5, Refraction Arc hint +1, Get \"Pure Passion: Heirs to the Throne\" status"
+                ]
+            },
+
+            {
+                "name": "My Way, Or...",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Skill points +17, Bond +5",
+                    "Guts +17, Bond +5"
+                ]
+            },
+            {
+                "name": "My Weapon",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Guts +11, Bond +5",
+                    "Bond +5, Pace Chaser Straightaways hint +1"
+                ]
+            },
+            {
+                "name": "The Emperor's Encouragement",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +11, Bond +5",
+                    "Energy -10, Skill points +34, Bond +5"
+                ]
+            },
+            {
+                "name": "The Student Council President's Thoughtfulness",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Rainy Days hint +1",
+                    "Stamina +17, Bond +5"
+                ]
+            },
+            {
+                "name": "Preparing to the MAX!",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +12, Mood +1, Bond +5",
+                    "Speed +17, Bond +5"
+                ]
+            },
+            {
+                "name": "Helping Out to the MAX!",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Fighter hint +1",
+                    "Guts +17, Bond +5"
+                ]
+            },
+            {
+                "name": "Emulation Is the Sincerest Form of Flattery",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +5, Wit +17, Skill points +5, Bond +5, Get \"Pure Passion: Heirs to the Throne\" status, Can start dating"
+                ]
+            },
+            {
+                "name": "The Bright Future Ahead",
+                "type": "event",
+                "results": 
+                [
+                    "Wit +17, Bond +5",
+                    "Speed +17, Bond +5"
+                ]
+            },
+
+            {
+                "name": "We'll Get Stronger, Together",
+                "type": "special",
+                "condition": "Randomly after training (repeatable)",
+                "results": 
+                [
+                    "Wit +4, Skill points +4 (random), Bond +5",
+                    "Speed +4, Skill points +4 (random), Bond +5",
+                    "Energy +3 (random), Skill points +4, Bond +5"
+                ]
+            },
+            {
+                "name": "The Heroic Trio Running Side by Side",
+                "type": "special",
+                "condition": "After Finals (bond maxed)",
+                "results": 
+                [
+                    "Speed +23, Wit +23, Skill points +23"
+                ]
+            },
+            {
+                "name": "With Our Powers Combined",
+                "type": "special",
+                "condition": "After Finals (bond not maxed)",
+                "results": 
+                [
+                    "Speed +17, Wit +17, Skill points +17"
+                ]
+            },
+            {
+                "name": "Dreaming the Same Dream",
+                "type": "special",
+                "condition": "Dating before the first New Year's",
+                "results": 
+                [
+                    "Speed +11, Wit +23, Skill points +11, Bond +5, Medium Corners hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30068 Curren Chan",
