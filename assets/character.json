@@ -146,6 +146,76 @@
             "condition": "Win the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths while also being the most popular\nWin the Tenno Sho (Spring)\nWin the Tenno Sho (Autumn)\nWin the Japan Cup"
         }
     },
+    {   "id": "100103 - Special Week Commander",
+        "character_name": "Special Week",
+        "type": "Commander",
+        "costume": "Ruler of Japan",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+                "speed": "10%",
+                "stamina": "10%",
+                "power": "",
+                "guts": "",
+                "wit": "10%"
+            } 
+        ],
+        "aptitudes": [
+            {
+                "Turf": "A",
+                "Dirt": "G"
+            },
+            {
+                "Sprint": "F",
+                "Mile": "C",
+                "Medium": "A",
+                "Long": "A"
+            },
+            {
+                "Front": "G",
+                "Pace": "A",
+                "Late": "A",
+                "End": "C"
+            }
+        ],
+        "unique": "Dreams Donned with Pride!",
+        "unique_explanation": "",
+        "skills": [
+            "Corner Adept",
+            "Pressure",
+            "Outer Swell"
+        ],
+        "potential": [
+            "Long Straightaways",
+            "Overwhelming Pressure",
+            "Long Corners",
+            "Best in Japan"
+        ],
+        "event_skills": [
+            "Pace Strategy",
+            "Homestretch Haste",
+            "Corner Adept",
+            "Tokyo Racecourse",
+            "Nakayama Racecourse",
+            "Winter Runner",
+            "Stamina to Spare",
+            "Slick Surge"
+        ],
+        "aliases": ["special week commander", "spechan", "spe", "commander spe", "ruler of japan", "john pretty derby", "lil spica", "agemasen", "supreme racist of japan", "supreme racer of japan"],
+        "url": "https://gametora.com/umamusume/characters/100103-special-week",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1001_100103.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Win the Satsuki Sho, Kikuka Sho, Japan Cup (Year 2), Takarazuka Kinen (Year 3), Arima Kinen (Year 3)",
+                "rewards": "Speed +30, Power +30, Stamina to Spare hint +2, Slick Surge hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Ruler of Japan",
+            "condition": "Win the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths while also being the most popular\nWin the Tenno Sho (Spring)\nWin the Tenno Sho (Autumn)\nWin the Japan Cup"
+        }
+    },
 
     {   "id": "100201 - Silence Suzuka",
         "character_name": "Silence Suzuka",
@@ -903,6 +973,72 @@
             "condition": "Win at least 6 G1 races, including the Satsuki Sho, Kikuka Sho, and Takarazuka Kinen\nEarn a total of at least 480,000 fans"
         }
     },
+    {   "id": "100701 - Gold Ship Summer",
+        "character_name": "Gold Ship",
+        "type": "Summer",
+        "costume": "Run! Fun! Watergun!",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+                "speed": "",
+                "stamina": "",
+                "power": "20%",
+                "guts": "",
+                "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+                "Turf": "A",
+                "Dirt": "G"
+            },
+            {
+                "Sprint": "G",
+                "Mile": "C",
+                "Medium": "A",
+                "Long": "A"
+            },
+            {
+                "Front": "G",
+                "Pace": "B",
+                "Late": "B",
+                "End": "A"
+            }
+        ],
+        "unique": "Adventure of 564",
+        "unique_explanation": "",
+        "skills": [
+            "Lucky Seven",
+            "Inside Scoop",
+            "After-School Stroll"
+        ],
+        "potential": [
+            "Eager",
+            "Innate Experience",
+            "Risky Business",
+            "Elated"
+        ],
+        "event_skills": [
+            "Hanshin Racecourse",
+            "Non-Standard Distance",
+            "Summer Runner",
+            "Gatekept"
+        ],
+        "aliases": ["gold ship summer", "golshi", "run fun watergun", "gorushi"],
+        "url": "https://gametora.com/umamusume/characters/100702-gold-ship",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1007_100702.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Win Takarazuka Kinen Year 2 and 3",
+                "rewards": "All stats +3, Mood +1, Skill points +45, Yayoi Akikawa bond +4 || All stats +3, Mood +1, Skill points +45, (random) Get Charming status, (random) Obtain Gatekept skill, Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "Unpredictable",
+            "condition": "Win at least 6 G1 races, including the Satsuki Sho, Kikuka Sho, and Takarazuka Kinen\nEarn a total of at least 480,000 fans"
+        }
+    },
 
     {   "id": "100801 - Vodka",
         "character_name": "Vodka",
@@ -1543,6 +1679,71 @@
         "skills": [
             "Straightaway Adept",
             "Stamina to Spare",
+            "Deep Breaths"
+        ],
+        "potential": [
+            "Fall Runner",
+            "Cooldown",
+            "Ramp Up",
+            "Beeline Burst"
+        ],
+        "event_skills": [
+            "Early Lead",
+            "Calm in a Crowd",
+            "Prudent Positioning"
+        ],
+        "aliases": ["mejiro mcqueen anime", "end of the skies"],
+        "url": "https://gametora.com/umamusume/characters/101302-mejiro-mcqueen",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1013_101302.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
+            "rewards": "Speed +15, Stamina +15, Guts +15, Skill points +15"
+            }
+        ],
+        "epithet": {
+            "name": "Best Actress",
+            "condition": "Win the Kikuka Sho\nWin the Tenno Sho (Spring)\nReach 1200 or more Stamina\nEarn a total of at least 320,000 fans"
+        }
+    },
+    {   "id": "101303 - Mejiro McQueen Summer",
+        "character_name": "Mejiro McQueen",
+        "type": "Summer",
+        "costume": "Fair Lady of the Waves",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "8%",
+            "stamina": "8%",
+            "power": "",
+            "guts": "",
+            "wit": "14%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "E"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "B",
+            "Pace": "A",
+            "Late": "D",
+            "End": "F"
+            }
+        ],
+        "unique": "The Sea Glitters, but You're Dazzling",
+        "unique_explanation": "",
+        "skills": [
+            "Focus",
+            "Pace",
             "Deep Breaths"
         ],
         "potential": [
@@ -5538,6 +5739,80 @@
         }
     },
 
+    {   "id": "105301 - Bamboo Memory",
+        "character_name": "Bamboo Memory",
+        "type": "Original",
+        "costume": "Ambition of the Black Iron",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "10%",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "D"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "A",
+            "Medium": "C",
+            "Long": "G"
+            },
+            {
+            "Front": "G",
+            "Pace": "E",
+            "Late": "A",
+            "End": "C"
+            }
+        ],
+        "unique": "Hot-Blooded Disciplinary Attack!",
+        "unique_explanation": "",
+        "skills": [
+            "Ramp Up",
+            "Outer Swell",
+            "Pumped"
+        ],
+        "potential": [
+            "Sprint Corners",
+            "Rising Dragon",
+            "Fearless",
+            "Full of Vigor"
+        ],
+        "event_skills": [
+            "Target in Sight",
+            "Sprint Straightaways",
+            "Homestretch Haste"
+        ],
+        "races": [
+            "swan stakes october 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "takarazuka kinen june 2 year 3",
+            "sprinters stakes september 2 year 3",
+            "mile championship november 2 year 3"
+        ],
+        "aliases": ["bamboo memory original", "ambition of the black iron"],
+        "url": "https://gametora.com/umamusume/characters/105301-bamboo-memory",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1053_105301.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Sprinters Stakes, Takamatsunomiya Kinen and 2 non-objective Sprint races in Senior year",
+            "rewards": "Power +30, Guts +30, Sprint Straightaways hint +2, Homestretch Haste hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Embodiment of Dreams",
+            "condition": "Participate in at least 23 graded races\nWin the Yasuda Kinen (Senior)\nWin the Takarazuka Kinen\nWin the Sprinters Stakes\nWin the Mile Championship"
+        }
+    },
+
     {   "id": "105601 - Matikanefukukitaru",
         "character_name": "Matikanefukukitaru",
         "type": "Original",
@@ -5610,7 +5885,7 @@
             "name": "Fortune's Smile",
             "condition": "Participate in at least 15 G1 or G2 races with a Mood level of Perfect\nWin at least 3 G2 or higher races in a row, including the Kikuka Sho"
         }
-    },
+    },  
     {   "id": "105602 - Matikanefukukitaru Full Armor",
         "character_name": "Matikanefukukitaru",
         "type": "Full Armor",
@@ -6882,7 +7157,7 @@
         "unique": "Lovely Spring Breeze",
         "unique_explanation": "",
         "skills": [
-            "Pace -Right Handed",
+            "Pace Strategy",
             "End Closer Corners",
             "Free-Spirited"
         ],

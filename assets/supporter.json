@@ -4126,7 +4126,7 @@
             "inari one", "laughing through the mud"
         ]
     },
-    {   "id": "20033 El Condor Pasa",
+    {   "id": "20033 El Condor Pasa", "_event": "done",
         "card_name": "Mud-Caked Compañero",
         "character_name": "El Condor Pasa",
         "unique": "Increases Speed gain when training together (1)\nIncreases the frequency at which the character participates in their preferred training type (20)",
@@ -4159,6 +4159,43 @@
             "el condor pasa",
             "mud-caked companero",
             "mud caked companero"
+        ],
+        "events":[
+            {
+                "name": "With Passion and Joy!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +10, Speed +5, Power +5, Bond +5",
+                    "Energy -10, Speed +15, Power +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Muddy Heroes",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy -10, Speed +15, Power +15, Bond +7, Pace Chaser Corners hint +1"
+                ]
+            },
+            {
+                "name": "Blazing Fire!",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +10, Bond +5",
+                    "Energy -10, Power +20, Bond +5"
+                ]
+            },
+            {
+                "name": "Secret Notebook!",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Long Shot hint +1",
+                    "Mood +1, Energy +10, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "20034 Mejiro Ardan",

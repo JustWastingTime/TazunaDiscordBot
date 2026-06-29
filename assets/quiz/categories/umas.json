@@ -5675,7 +5675,7 @@
       ]
     },
     
-    {   "promptTemplate": "Who is this uma?", "difficulty": "expert",
+    {   "promptTemplate": "Who is this uma?", "difficulty": "expert", "_notes": "ADD WHEN NEW UMA",
       "entries": [
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankF:1412695050969681982>\nSprint: <:RankE:1412695032137257040> | Mile: <:RankB:1412694961358372894> | Medium: <:RankA:1412694937203511336> | Long: <:RankD:1412695001825284198>\nFront: <:RankC:1412694982363578450> | Pace: <:RankA:1412694937203511336> | Late: <:RankD:1412695001825284198> | End: <:RankG:1412695075271475212>", "answers": ["Mejiro Ardan (Original)","T.M. Opera O (New Year)","Matikanefukukitaru (Original)","Kitasan Black (Original)","Seiun Sky (Ballroom)","Manhattan Cafe (Original)","Mejiro Ryan (Original)"]},
         { "prompt": "Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankG:1412695075271475212>\nSprint: <:RankG:1412695075271475212> | Mile: <:RankD:1412695001825284198> | Medium: <:RankA:1412694937203511336> | Long: <:RankB:1412694961358372894>\nFront: <:RankE:1412695032137257040> | Pace: <:RankA:1412694937203511336> | Late: <:RankB:1412694961358372894> | End: <:RankF:1412695050969681982>", "answers": ["Agnes Tachyon (Original)","Narita Taishin (Original)","Eishin Flash (Valentines)","Curren Chan (Wedding)","Haru Urara (New Year)","Nice Nature (Cheerleader)","Biwa Hayahide (Christmas)"]},
@@ -5734,7 +5734,7 @@
         {"prompt":"Who is this uma?\n\n**Aptitudes**\nTurf: <:RankA:1412694937203511336> | Dirt: <:RankG:1412695075271475212>\nSprint: <:RankF:1412695050969681982> | Mile: <:RankC:1412694982363578450> | Medium: <:RankA:1412694937203511336> | Long: <:RankA:1412694937203511336>\nFront: <:RankG:1412695075271475212> | Pace: <:RankA:1412694937203511336> | Late: <:RankA:1412694937203511336> | End: <:RankC:1412694982363578450>","answers":["Special Week (Original)","Matikanetannhauser (Original)","Maruzensky (Original)","Grass Wonder (Original)","Symboli Rudolf (Festival)","Mayano Top Gun (Original)","Agnes Tachyon (Original)"]}
       ]
     },
-    {   "promptTemplate": "{0} has 3 stats with 10% growth.  Which one is NOT one of them?", "difficulty": "expert",
+    {   "promptTemplate": "{0} has 3 stats with 10% growth.  Which one is NOT one of them?", "difficulty": "expert", "_notes": "ADD WHEN NEW UMA",
         "entries": [
           ["Special Week (Summer)",["Speed","Stamina","Power","Guts"]],
           ["Tokai Teio (Anime)",["Power","Stamina","Guts","Wit"]],
@@ -5748,7 +5748,8 @@
           ["Nice Nature (Cheerleader)",["Speed", "Stamina","Power","Wit"]],
           ["King Halo (Cheerleader)",["Wit","Speed","Power","Guts"]],
           ["Mejiro Palmer (Original)",["Power","Speed","Stamina","Guts"]],
-          ["Sakura Chiyono O (Original)",["Power","Speed","Wit","Guts"]]
+          ["Sakura Chiyono O (Original)",["Power","Speed","Wit","Guts"]],
+          ["Special Week (Commander)",["Guts","Stamina","Speed","Wit"]]
         ]
     },
 
