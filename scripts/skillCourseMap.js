@@ -9,6 +9,15 @@ function toMeters(distanceValue) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
+function inferDistanceTypeFromMeters(distanceValue) {
+  const meters = toMeters(distanceValue);
+  if (!meters || meters <= 0) return null;
+  if (meters <= 1400) return "Sprint";
+  if (meters <= 1800) return "Mile";
+  if (meters <= 2400) return "Medium";
+  return "Long";
+}
+
 function extractUnixTimestamp(value) {
   const match = String(value ?? "").match(/<t:(\d+):/);
   if (!match) return null;
@@ -257,7 +266,7 @@ function buildMapContextFromRawMap(rawMap, label = null) {
       direction: rawMap?.direction,
       terrain: rawMap?.terrain,
       distance_meters: rawMap?.distance_meters,
-      distance_type: rawMap?.distance_type,
+      distance_type: rawMap?.distance_type ?? inferDistanceTypeFromMeters(rawMap?.distance_meters),
       ground: rawMap?.ground,
       season: rawMap?.season,
       weather: rawMap?.weather,
@@ -711,7 +720,7 @@ function evaluateTrackCompatibility(cmTrack, requirements) {
   if (!requirements) return { doesNotWork: false, reasons: [] };
 
   const track = {
-    distanceType: lower(cmTrack?.distance_type),
+    distanceType: lower(cmTrack?.distance_type ?? inferDistanceTypeFromMeters(cmTrack?.distance_meters)),
     terrain: lower(cmTrack?.terrain),
     direction: normalizeDirection(cmTrack?.direction),
     racetrack: lower(cmTrack?.racetrack),
