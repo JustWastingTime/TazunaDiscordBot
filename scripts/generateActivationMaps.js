@@ -82,6 +82,14 @@ function buildActivationMapForSkill(skill) {
     });
   }
 
+  if (allText.includes("not a corner")) {
+    triggers.push({
+      type: "box",
+      target: "layout",
+      match: "not_a_corner",
+    });
+  }
+
   if (allText.includes("random point on a random straight")) {
     triggers.push({
       type: "box",

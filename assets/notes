@@ -91,7 +91,7 @@ phase>=2    "Late race and beyond"
 
                 "Any corner",                                                               corner!=0
                 "On corner 1/2/3/4",                                                        corner==1/2/3/4
-                "Any straight",                                                             corner==0
+                "Not a corner",                                                             corner==0
 
                 "Uphill",                                                                   slope==1
                 "Downhill",                                                                 slope==2

@@ -1196,6 +1196,12 @@ export function buildMapEmbed(resolved, imageUrl = null) {
     fields.push({ name: "About", value: String(customRace.description), inline: false });
   }
 
+  const track = customRace?.track;
+  if (track && [track.season, track.ground, track.weather].some(Boolean)) {
+    const conditions = [track.season, track.ground, track.weather].filter(Boolean).join("  •  ");
+    fields.push({ name: "Conditions", value: conditions, inline: false });
+  }
+
   if (Array.isArray(map.races) && map.races.length > 0) {
     const racesText = map.races.slice(0, 8).map((race) => `• ${race}`).join("\n");
     fields.push({

@@ -258,7 +258,7 @@ function resolveCustomRaceMapSource(race, mapsCatalog = []) {
   return null;
 }
 
-function buildMapContextFromRawMap(rawMap, label = null) {
+function buildMapContextFromRawMap(rawMap, label = null, trackOverlay = null) {
   return {
     name: label ?? rawMap?.name ?? "Course",
     track: {
@@ -270,6 +270,7 @@ function buildMapContextFromRawMap(rawMap, label = null) {
       ground: rawMap?.ground,
       season: rawMap?.season,
       weather: rawMap?.weather,
+      ...(trackOverlay ?? {}),
     },
   };
 }
@@ -294,7 +295,7 @@ export function resolveMapOverride(rawValue, mapsCatalog = [], customRacesCatalo
       key: `custom:${race.id ?? slugifyMapKey(race.name)}`,
       label: race.name ?? rawMap.name ?? "Custom Race",
       rawMap,
-      context: buildMapContextFromRawMap(rawMap, race.name),
+      context: buildMapContextFromRawMap(rawMap, race.name, race.track),
       customRace: race,
     };
   }
@@ -371,7 +372,7 @@ function toCatalogEntryFromCustomRace(race, mapsCatalog = []) {
     key: `custom:${race.id ?? slugifyMapKey(race.name)}`,
     label: race.name ?? rawMap.name ?? "Custom Race",
     rawMap,
-    context: buildMapContextFromRawMap(rawMap, race.name),
+    context: buildMapContextFromRawMap(rawMap, race.name, race.track),
     customRace: race,
   };
 }
@@ -437,6 +438,19 @@ export function getSelectableChampionsMeets(champsmeets, { fromCmNumber = 0, max
 
 function lower(value) {
   return String(value ?? "").toLowerCase();
+}
+
+function isLayoutCornerSegment(segment) {
+  return lower(segment?.label).includes("corner");
+}
+
+function layoutSegmentMatches(segment, match) {
+  const normalizedMatch = lower(match);
+  if (!normalizedMatch) return true;
+  if (normalizedMatch === "not_a_corner" || normalizedMatch === "not_corner" || normalizedMatch === "not corner") {
+    return !isLayoutCornerSegment(segment);
+  }
+  return lower(segment?.label).includes(normalizedMatch);
 }
 
 function collectSkillConditionText(skill, includeDescriptions = false) {
@@ -593,10 +607,11 @@ function inferMarkersFromConditionSet(conditionTexts, mapData) {
   const mentionsCorner = texts.some((t) => t.includes("corner"));
   const mentionsFinalCorner = texts.some((t) => t.includes("final corner"));
   const mentionsNotFinalCorner = texts.some((t) => t.includes("not final corner"));
+  const mentionsNotACorner = texts.some((t) => t.includes("not a corner"));
   const mentionsStraight = texts.some((t) => t.includes("straight"));
   const mentionsFinalStraight = texts.some((t) => t.includes("final straight"));
 
-  if (phaseWindow?.forceFullRange && (mentionsCorner || mentionsStraight)) {
+  if (phaseWindow?.forceFullRange && (mentionsCorner || mentionsStraight || mentionsNotACorner)) {
     addClippedBox(clipStart, clipEnd);
   } else {
     if (mentionsCorner) {
@@ -610,7 +625,10 @@ function inferMarkersFromConditionSet(conditionTexts, mapData) {
       for (const segment of selected) addClippedBox(segment.start, segment.end);
     }
 
-    if (mentionsStraight) {
+    if (mentionsNotACorner) {
+      const notCornerSegments = (mapData.layout ?? []).filter((s) => !isLayoutCornerSegment(s));
+      for (const segment of notCornerSegments) addClippedBox(segment.start, segment.end);
+    } else if (mentionsStraight) {
       const selected = mentionsFinalStraight ? (finalStraight ? [finalStraight] : []) : straightSegments;
       for (const segment of selected) addClippedBox(segment.start, segment.end);
     }
@@ -776,10 +794,7 @@ function markersFromActivationMap(skill, mapData, options = {}) {
       const linePosition = lower(trigger.line_position ?? trigger.position ?? "start");
       if (target === "layout" || target === "elevation" || target === "zones") {
         const source = target === "elevation" ? mapData.elevation : target === "zones" ? mapData.zones : mapData.layout;
-        const matching = source.filter((segment) => {
-          if (!match) return true;
-          return lower(segment.label).includes(match);
-        });
+        const matching = source.filter((segment) => layoutSegmentMatches(segment, match));
         const selected =
           selectMode === "last"
             ? (matching.length ? [matching[matching.length - 1]] : [])
@@ -895,7 +910,7 @@ function markersFromActivationMap(skill, mapData, options = {}) {
         const label = lower(segment.label);
         let ok = false;
 
-        if (match && label.includes(match)) ok = true;
+        if (match) ok = layoutSegmentMatches(segment, match);
         if (!ok && labels.length && labels.some((v) => label.includes(v))) ok = true;
         if (!ok && cornerNumbers.length && cornerNumbers.some((n) => label.includes(`corner ${n}`))) ok = true;
         if (!ok && !match && !labels.length && !cornerNumbers.length) ok = true;

@@ -6163,7 +6163,7 @@
                 "conditions": [
                     "Medium",
                     "2nd to 5th (CM), 2nd to 7th (TT)",
-                    "Any straight",
+                    "Not a corner",
                     "Character is in their late race spurt mode"
                 ]
             }
@@ -6185,7 +6185,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight",
+                    "match": "not_a_corner",
                     "phase": "late_and_beyond",
                     "trigger_behavior": "random"
                 }
@@ -7433,7 +7433,7 @@
                 "conditions": [
                     "Medium",
                     "2nd to 5th (CM), 2nd to 7th (TT)",
-                    "Any straight",
+                    "Not a corner",
                     "Last spurt"
                 ]
             }
@@ -7455,7 +7455,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight",
+                    "match": "not_a_corner",
                     "phase": "late_and_beyond",
                     "trigger_behavior": "random"
                 }
@@ -9666,7 +9666,7 @@
                 "conditions": [
                     "1st to 2nd",
                     "≤1 length ahead",
-                    "Any straight",
+                    "Not a corner",
                     "Mid race"
                 ]
             }
@@ -9689,7 +9689,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight",
+                    "match": "not_a_corner",
                     "phase":"mid",
                     "trigger_behavior": "asap"
                 }
@@ -10530,7 +10530,7 @@
                 "conditions": [
                     "6th to 7th (CM), 8th to 9th (TT)",
                     "Overtake target exists",
-                    "Any straight",
+                    "Not a corner",
                     "Second half of the race"
                 ]
             },
@@ -10539,7 +10539,7 @@
                 "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "2nd to 3rd (CM), 2nd to 4th (TT)",
-                    "Any straight",
+                    "Not a corner",
                     "Second half of the race"
                 ]
             }
@@ -10562,7 +10562,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight",
+                    "match": "not_a_corner",
                     "phase": "second_half",
                     "trigger_behavior": "asap"
                 }
@@ -11031,7 +11031,7 @@
                 "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "1st to 2nd",
-                    "Any straight",
+                    "Not a corner",
                     "Straight on the opposite of the audience",
                     "Late race and beyond"
                 ]
@@ -11041,7 +11041,7 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "1st to 2nd",
-                    "Any straight",
+                    "Not a corner",
                     "Late race and beyond"
                 ]
             }
@@ -11063,7 +11063,7 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight",
+                    "match": "not_a_corner",
                     "phase": "late_and_beyond",
                     "trigger_behavior": "asap"
                 }
@@ -11889,7 +11889,7 @@
                 "description": "Increases acceleration by 0.2 for 0.9s.",
                 "conditions": [
                     "End Closer",
-                    "Any straight",
+                    "Not a corner",
                     "Character is in their late race spurt mode"
                 ]
             }
@@ -11913,7 +11913,7 @@
                 "type": "box",
                 "phase": "late_and_beyond",
                 "target": "layout",
-                "match": "straight",
+                "match": "not_a_corner",
                 "trigger_behavior": "asap"
               }
             ]
@@ -12599,7 +12599,7 @@
                 "description": "Increases acceleration by 0.4 for 0.9s.",
                 "conditions": [
                     "End Closer",
-                    "Any straight",
+                    "Not a corner",
                     "Character is in their late race spurt mode"
                 ]
             }
@@ -12622,7 +12622,7 @@
                 "type": "box",
                 "phase": "late_and_beyond",
                 "target": "layout",
-                "match": "straight",
+                "match": "not_a_corner",
                 "trigger_behavior": "asap"
               }
             ]
@@ -12635,7 +12635,7 @@
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "Any straight"
+                    "Random point on a random straight"
                 ]
             }
         ],

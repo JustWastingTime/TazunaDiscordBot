@@ -1,1 +1,77 @@
-[]
+[
+    {   "id": "buninv1dirt",
+        "name": "Bunny Invitational Dirt",
+        "description": "Ooi 1200m (clockwise) • Autumn, rainy, heavy",
+        "map_id": "Ooi 1200m (clockwise) (dirt)",
+        "track": {
+            "racetrack": "Ooi",
+            "terrain": "Dirt",
+            "distance_type": "Sprint",
+            "distance_meters": "1200m",
+            "direction": "Right-Handed",
+            "season": "Autumn",
+            "weather": "Rainy",
+            "ground": "Heavy"
+        }
+    },
+    {   "id": "buninv1sprint",
+        "name": "Bunny Invitational Sprint",
+        "description": "Nakayama 1200m (outer) (clockwise) • Autumn, sunny, good",
+        "map_id": "Nakayama 1200m (outer) (clockwise)",
+        "track": {
+            "racetrack": "Nakayama",
+            "terrain": "Turf",
+            "distance_type": "Sprint",
+            "distance_meters": "1200m",
+            "direction": "Right-Handed",
+            "season": "Autumn",
+            "weather": "Sunny",
+            "ground": "Good"
+        }
+    },
+    {   "id": "buninv1mile",
+        "name": "Bunny Invitational Mile",
+        "description": "Hakodate 1800m (clockwise) • Winter, rainy, soft",
+        "map_id": "Hakodate 1800m (clockwise)",
+        "track": {
+            "racetrack": "Hakodate",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1800m",
+            "direction": "Right-Handed",
+            "season": "Winter",
+            "weather": "Rainy",
+            "ground": "Soft"
+        }
+    },
+    {   "id": "buninv1med",
+        "name": "Bunny Invitational Medium",
+        "description": "Kyoto 2000m (inner) (clockwise)• Spring, sunny, good",
+        "map_id": "Kyoto 2000m (inner) (clockwise)",
+        "track": {
+            "racetrack": "Kyoto",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2000m",
+            "direction": "Right-Handed",
+            "season": "Spring",
+            "weather": "Sunny",
+            "ground": "Good"
+        }
+    },
+    {   "id": "buninv1long",
+        "name": "Bunny Invitational Long",
+        "description": "Kokura 2600m (clockwise) • Spring, sunny, good",
+        "map_id": "Kokura 2600m (clockwise)",
+        "track": {
+            "racetrack": "Kokura",
+            "terrain": "Turf",
+            "distance_type": "Long",
+            "distance_meters": "2600m",
+            "direction": "Right-Handed",
+            "season": "Spring",
+            "weather": "Sunny",
+            "ground": "Good"
+        }
+    }
+]
