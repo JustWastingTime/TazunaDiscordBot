@@ -1,0 +1,24 @@
+{
+  "id": "004",
+  "name": "BUNNY DAHBY 3",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-06-30T11:00:00+07:00",
+  "endsAt": "2026-06-30T20:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": [1441129742240710678],
+  "entries": [
+    { "number": 1, "name": "Vivi's Nice Nature", "odds": 1.5 },
+    { "number": 2, "name": "Minh's Valentine Bourbon", "odds": 1.5},
+    { "number": 3, "name": "Legi's Christmas Oguri", "odds": 1.5},
+    { "number": 4, "name": "Aru's Narita Taishin", "odds": 1.5 },
+    { "number": 5, "name": "Butter's Mejiro Dober", "odds": 1.5 },
+    { "number": 6, "name": "Umappe's Summer Maru", "odds": 1.5},
+    { "number": 7, "name": "Moobie's Grass Wonder", "odds": 1.5},
+    { "number": 8, "name": "Plinko's Admire Vega", "odds": 1.5},
+    { "number": 9, "name": "Nightfish's Christmas Oguri", "odds": 1.5},
+    { "number": 10, "name": "Banana's Christmas Oguri", "odds": 1.5},
+    { "number": 11, "name": "lilac's Christmas Oguri", "odds": 1.5}
+  ]
+}
+
