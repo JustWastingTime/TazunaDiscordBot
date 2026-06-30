@@ -1,0 +1,25 @@
+{
+  "id": "003",
+  "name": "Teio Sho 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-01T00:00:00+07:00",
+  "endsAt": "2026-07-01T18:00:00+07:00",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Natural Rise", "ageSex": "4C", "jockey": "T. Yokoyama", "odds": 26.1 },
+    { "number": 2, "name": "Kazeno Runner", "ageSex": "5H", "jockey": "A. Nishimura", "odds": 11.8 },
+    { "number": 3, "name": "Outrange", "ageSex": "6H", "jockey": "K. Matsuyama", "odds": 9.0},
+    { "number": 4, "name": "Nansei White", "ageSex": "6H", "jockey": "Y. Ando", "odds": 299.4 },
+    { "number": 5, "name": "Lord Couronme", "ageSex": "5H", "jockey": "K. Yokoyama", "odds": 2.9 },
+    { "number": 6, "name": "Saint Honore", "ageSex": "5H", "jockey": "N. Mikamoto", "odds": 24.4},
+    { "number": 7, "name": "Marukan Lani", "ageSex": "6H", "jockey": "M. Matsuzaki", "odds": 173.0 },
+    { "number": 8, "name": "Mikki Fight", "ageSex": "5H", "jockey": "K. Tosaki", "odds": 3.0 },
+    { "number": 9, "name": "Night of Fire", "ageSex": "C4", "jockey": "J. Wada", "odds": 131.9 },
+    { "number": 10, "name": "Diktaean", "ageSex": "8G", "jockey": "T. Yano", "odds": 14.9 },
+    { "number": 11, "name": "Kazu Tanja", "ageSex": "5H", "jockey": "M. Iwata ", "odds": 58.9 },
+    { "number": 12, "name": "Seraphic Call", "ageSex": "6H", "jockey": "H. Yoshihara", "odds": 62.6 },
+    { "number": 13, "name": "Ramjet", "ageSex": "5H", "jockey": "K. Miura", "odds": 5.2 }
+  ]
+}
