@@ -6,7 +6,7 @@
   "startsAt": "2026-06-30T11:00:00+07:00",
   "endsAt": "2026-06-30T20:00:00+07:00",
   "availability": "guilds",
-  "guildIds": [1441129742240710678],
+  "guildIds": ["1441129742240710678"],
   "entries": [
     { "number": 1, "name": "Vivi's Nice Nature", "odds": 1.5 },
     { "number": 2, "name": "Minh's Valentine Bourbon", "odds": 1.5},
