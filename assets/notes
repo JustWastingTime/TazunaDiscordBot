@@ -106,7 +106,7 @@ phase>=2    "Late race and beyond"
                 "Final corner and beyond",                                                  is_finalcorner==1
                 "Final corner",                                                             is_finalcorner==1 &corner!=0
                 "Random point in the final corner"                                          is_finalcorner_random==1
-                "Final straight",                                                           is_finalcorner==1 &corner==0
+                "Final non-corner",                                                           is_finalcorner==1 &corner==0
                 "Just entered final straight",                                              is_last_straight_onetime==1
                 
                 "Moved closer to the fence",                                                is_move_lane==1
