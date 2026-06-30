@@ -4,7 +4,7 @@
   "type": "horse_race",
   "status": "scheduled",
   "startsAt": "2026-06-30T11:00:00+07:00",
-  "endsAt": "2026-06-30T20:00:00+07:00",
+  "endsAt": "2026-07-01T02:00:00+07:00",
   "availability": "guilds",
   "guildIds": ["1441129742240710678"],
   "entries": [
@@ -18,7 +18,12 @@
     { "number": 8, "name": "Plinko's Admire Vega", "odds": 1.5},
     { "number": 9, "name": "Nightfish's Christmas Oguri", "odds": 1.5},
     { "number": 10, "name": "Banana's Christmas Oguri", "odds": 1.5},
-    { "number": 11, "name": "lilac's Christmas Oguri", "odds": 1.5}
+    { "number": 11, "name": "lilac's Christmas Oguri", "odds": 1.5},
+    { "number": 12, "name": "Chartreux's Daiwa Scarlet", "odds": 1.5},
+    { "number": 13, "name": "Breaghs's Valentine Bourbon", "odds": 1.5},
+    { "number": 14, "name": "Clingyeye's Inari One", "odds": 1.5},
+    { "number": 15, "name": "Palfatreos' Oguri Cap", "odds": 1.5},
+    { "number": 16, "name": "Jlew's Oguri Cap", "odds": 1.5}
   ]
 }
 
