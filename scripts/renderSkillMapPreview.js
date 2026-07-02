@@ -59,6 +59,7 @@ async function main() {
     width: 1500,
     height: 360,
     skillMarkers: overlay.markers,
+    warningText: overlay.doesNotWork ? "DOES NOT WORK" : undefined,
   });
 
   console.log(`Rendered: ${outputPath}`);

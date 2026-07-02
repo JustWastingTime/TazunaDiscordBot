@@ -43,14 +43,14 @@ phase>=2    "Late race and beyond"
                 "≥1 length behind",                                                         bashin_diff_infront>=1
                 "≤1 length behind",                                                         bashin_diff_infront<=1
                 "≤5m ahead of another uma for ≥1s",                                         behind_near_lane_time_set1>=1
-                "Right behind another uma for ≥3s",                                         front_near_lane_time>=3
+                "Right behind another uma for ≥3s",                                         front_near_lane_time>=3/infront_near_lane_time>=3
                 "Right in front of another uma for ≥3s",                                    behind_near_lane_time>=3
                 
                 "Blocked in front",                                                         blocked_front==1
                 "Blocked in front for ≥1s",                                                 blocked_front_continuetime>=1
                 "Blocked at the sides for ≥2s",                                             blocked_side_continuetime>=2
                 "≥1 uma within 3m or 3 lanes",                                              near_count>=1
-                "Surrounded",                                                               surrounded==1               
+                "Surrounded",                                                               surrounded==1                                                               
 
                 "Overtake target exists",                                                   is_overtake==1
                 "Overtake target exists for ≥2s",                                           overtake_target_no_order_up_time>=2
@@ -106,7 +106,7 @@ phase>=2    "Late race and beyond"
                 "Final corner and beyond",                                                  is_finalcorner==1
                 "Final corner",                                                             is_finalcorner==1 &corner!=0
                 "Random point in the final corner"                                          is_finalcorner_random==1
-                "Final non-corner",                                                           is_finalcorner==1 &corner==0
+                "Final non-corner",                                                         is_finalcorner==1 &corner==0
                 "Just entered final straight",                                              is_last_straight_onetime==1
                 
                 "Moved closer to the fence",                                                is_move_lane==1
@@ -124,6 +124,9 @@ phase>=2    "Late race and beyond"
                 "≥1 enemy umas currently 'Rushed' behind you",                              temptation_count_behind>=1
 
                 "Character is in their last spurt mode",                                    is_lastspurt==1
+                "Not enough stamina to do a last spurt"                                     lastspurt==0
+                "Enough stamina to do a non-full last spurt"                                lastspurt==1
+                "Enough stamina to do a full last spurt"                                    lastspurt==2
 
                 "Early/Mid/Late race",                                                      phase==0/1/2,
                 "Last spurt",                                                               phase==3
@@ -132,6 +135,7 @@ phase>=2    "Late race and beyond"
                 "Random point in early/mid/late race",                                      phase_random==0/1/2
                 "Random point in last spurt phase",                                         phase_random==3
                 "Random point in second half of early race",                                phase_laterhalf_random==0
+                "Random point in the first half of last spurt phase",                       phase_firsthalf_random==3
 
                 
 

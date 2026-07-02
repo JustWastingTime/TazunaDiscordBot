@@ -539,14 +539,21 @@ function inferPhaseWindowFromTexts(texts, mapData) {
   const cornerSegments = (mapData.layout ?? []).filter((segment) => lower(segment.label).includes("corner"));
   const finalCorner = cornerSegments.length ? cornerSegments[cornerSegments.length - 1] : null;
 
+  // "Final corner and beyond" + "Late race and beyond" => intersection of both windows.
+  const hasFinalCornerBeyond = texts.some((t) => t.includes("final corner and beyond"));
+  const hasLateAndBeyond = texts.some((t) => t.includes("late race and beyond"));
+  if (hasFinalCornerBeyond && hasLateAndBeyond) {
+    return resolvePhaseClipFromSpec(mapData, ["final_corner_and_beyond", "late_and_beyond"]);
+  }
+
   // "Final corner and beyond" means from start of last corner to race end.
-  if (texts.some((t) => t.includes("final corner and beyond"))) {
+  if (hasFinalCornerBeyond) {
     const start = finalCorner?.start ?? (lateZone?.start ?? mapData.length * 0.75);
     return { start, end: mapData.length, forceFullRange: true };
   }
 
   // "Late race and beyond" means from late-race start to race end.
-  if (texts.some((t) => t.includes("late race and beyond"))) {
+  if (hasLateAndBeyond) {
     const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;
     return { start, end: mapData.length };
   }
@@ -720,6 +727,29 @@ function phaseWindowFromName(mapData, phaseName) {
   return null;
 }
 
+// Intersects one or more named phase windows (AND). Accepts a string or array of phase keys.
+function resolvePhaseClipFromSpec(mapData, phaseSpec) {
+  const names = Array.isArray(phaseSpec)
+    ? phaseSpec
+    : phaseSpec
+      ? [phaseSpec]
+      : [];
+  if (!names.length) return null;
+
+  let start = 0;
+  let end = mapData.length;
+  let matched = false;
+  for (const name of names) {
+    const window = phaseWindowFromName(mapData, name);
+    if (!window) continue;
+    matched = true;
+    start = Math.max(start, window.start);
+    end = Math.min(end, window.end);
+  }
+  if (!matched || end <= start) return null;
+  return { start, end };
+}
+
 function requirementsFromActivationMap(activationMap) {
   const req = activationMap?.requirements;
   if (!req) return null;
@@ -844,12 +874,12 @@ function markersFromActivationMap(skill, mapData, options = {}) {
       if (Number.isFinite(remainingLte)) {
         clipStart = Math.max(clipStart, mapData.length - remainingLte);
       }
-      const explicitPhaseWindow = phaseWindowFromName(mapData, trigger.phase);
+      const explicitPhaseWindow = resolvePhaseClipFromSpec(mapData, trigger.phases ?? trigger.phase);
       if (explicitPhaseWindow) {
         clipStart = Math.max(clipStart, explicitPhaseWindow.start);
         clipEnd = Math.min(clipEnd, explicitPhaseWindow.end);
       }
-      const hasExplicitPhase = Boolean(trigger.phase);
+      const hasExplicitPhase = Boolean(trigger.phases ?? trigger.phase);
       const useAutoPhaseClip = !hasExplicitPhase && trigger.disable_auto_phase_clip !== true && trigger.apply_auto_phase_clip !== false;
       if (autoPhaseWindow && useAutoPhaseClip) {
         clipStart = Math.max(clipStart, autoPhaseWindow.start);
@@ -943,6 +973,19 @@ function markersFromActivationMap(skill, mapData, options = {}) {
       const hasExplicitSelection = Boolean(
         match || labels.length || cornerNumbers.length || selectMode || excludeSelectMode || requireTags.length
       );
+
+      // Phase-only triggers paint one continuous window instead of splitting per segment.
+      if (
+        hasExplicitPhase &&
+        !hasExplicitSelection &&
+        !applyLocalClip &&
+        !Number.isFinite(ratioStart) &&
+        !Number.isFinite(ratioEnd) &&
+        trigger.target == null
+      ) {
+        pushClippedBox(clipStart, clipEnd);
+        continue;
+      }
 
       if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip && !hasExplicitSelection) {
         pushUniqueBox(markers, clipStart, clipEnd, color, triggerBehavior);
@@ -1051,12 +1094,13 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
   };
 }
 
-export function buildSkillMapCacheKey({ cmNumber, mapContextKey, skillId, mapData, markers, rendererVersion }) {
+export function buildSkillMapCacheKey({ cmNumber, mapContextKey, skillId, mapData, markers, rendererVersion, doesNotWork }) {
   const payload = {
     cm: String(cmNumber ?? ""),
     mapContext: String(mapContextKey ?? ""),
     skill: String(skillId ?? ""),
     rendererVersion: String(rendererVersion ?? ""),
+    doesNotWork: Boolean(doesNotWork),
     map: mapData,
     markers,
   };

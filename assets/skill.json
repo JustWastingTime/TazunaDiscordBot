@@ -2601,17 +2601,18 @@
         }
     },
     {   "skill_name": "Breath of Fresh Air",
-        "description": "Recover endurance on a straight.",
+        "description": "Recover endurance on a mid-race straight.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%",
                 "conditions": [
-                    "Random point on a random straight"
+                    "Not a corner",
+                    "Mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Tracks often start with a straight, greatly diminishing the value of this recovery.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenrecovery",
         "aliases": [
@@ -2627,18 +2628,21 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
     },
     {   "skill_name": "Straightaway Recovery",
-        "description": "Slightly recover endurance on a straight.",
+        "description": "Slightly recover endurance on a mid-race straight.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
-                    "Random point on a random straight"
+                    "Not a corner",
+                    "Mid race"
                 ]
             }
         ],
@@ -2658,7 +2662,9 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "match": "straight"
+                    "match": "straight",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -2730,10 +2736,10 @@
         }
     },
     {   "skill_name": "Iron Will",
-        "description": "Recover endurance when the way ahead is jammed early-race or mid-race.",
+        "description": "When the way ahead is jammed early or mid-race, draw on firm willpower to recover endurance and increase navigation.",
         "effect": [
             {
-                "description": "Recover HP by 5.5%",
+                "description": "Increases lane movement speed by 0.035 for 2.0s. Recover HP by 5.5%.",
                 "conditions": [
                     "Blocked in front for ≥1s",
                     "Early race or Mid race",
@@ -2771,10 +2777,10 @@
         }
     },
     {   "skill_name": "Lay Low",
-        "description": "Slightly recover endurance when the way ahead is jammed early-race or mid-race.",
+        "description": "When the way ahead is jammed early or mid-race, lay low to slightly recover endurance and slightly increase navigation.",
         "effect": [
             {
-                "description": "Recover HP by 1.5%",
+                "description": "Increases lane movement speed by 0.015 for 2.0s. Recover HP by 1.5%",
                 "conditions": [
                     "Blocked in front for ≥1s",
                     "Early race or Mid race",
@@ -2783,7 +2789,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Might trigger during the early race, diminishing the value of the stamina recovery.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -2997,7 +3003,7 @@
                 "conditions": [
                     "Pace Chaser",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in second half of early race"
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -3036,7 +3042,7 @@
                 "conditions": [
                     "Pace Chaser",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in second half of early race"
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -3261,7 +3267,7 @@
                 "conditions": [
                     "Mile",
                     "6th to 9th (CM), 7th to 12th (TT)",
-                    "Random point in second half of early race"
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -3305,7 +3311,7 @@
                 "conditions": [
                     "Mile",
                     "6th to 9th (CM), 7th to 12th (TT)",
-                    "Random point in second half of early race"
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -3418,13 +3424,13 @@
         }
     },
     {   "skill_name": "Cooldown",
-        "description": "Decrease fatigue by taking a breather upon entering a straight.",
+        "description": "Take a breather and decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Long",
-                    "Random point on a random straight"
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -3443,8 +3449,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "straight",
+                    "phase": "mid",
                     "trigger_behavior": "random"
                 }
             ],
@@ -3456,18 +3461,18 @@
         }
     },
     {   "skill_name": "Deep Breaths",
-        "description": "Slightly decrease fatigue by taking a breather upon entering a straight.",
+        "description": "Take a breather and slightly decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Long",
-                    "Random point on a random straight"
+                    "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "It might trigger on an early or late activation, reducing the impact of the stamina recovery.",
+        "review": "",
         "rarity": "normal",
         "category": "recovery",
         "aliases": [
@@ -3481,8 +3486,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "straight",
+                    "phase": "mid",
                     "trigger_behavior": "random"
                 }
             ],
@@ -3494,10 +3498,10 @@
         }
     },
     {   "skill_name": "Adrenaline Rush",
-        "description": "Regain the energy to run when close to exhausting strength.",
+        "description": "When endurance is running low, rekindle determination and increase velocity.",
         "effect": [
             {
-                "description": "Recover HP by 5.5%",
+                "description": "Increases target speed by 0.35 for 1.8s. Recover HP by 5.5%",
                 "conditions": [
                     "Long",
                     "≤30% HP remaining"
@@ -3818,13 +3822,14 @@
         }
     },
     {   "skill_name": "Relax",
-        "description": "Recover endurance late-race.",
+        "description": "Recover endurance when positioned midpack or further back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Late Surger",
-                    "Random point in late race"
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -3842,20 +3847,21 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "late",
+                    "phase": "mid",
                     "trigger_behavior": "random"
                 }
             ]
         }
     },
     {   "skill_name": "A Small Breather",
-        "description": "Slightly recover endurance late-race.",
+        "description": "Slightly recover endurance when positioned midpack or further back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Late Surger",
-                    "Random point in late race"
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in mid race"
                 ]
             }
         ],
@@ -3875,7 +3881,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "late",
+                    "phase": "mid",
                     "trigger_behavior": "random"
                 }
             ]
@@ -3954,13 +3960,13 @@
         }
     },
     {   "skill_name": "Serenity",
-        "description": "Regain composure by calming down when the way ahead is jammed.",
+        "description": "Relax and recover endurance when following directly behind a runner.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "End Closer",
-                    "Blocked in front for ≥1s",
+                    "Right behind another uma for ≥1s",
                     "After ≥10s into a race"
                 ]
             }
@@ -3988,13 +3994,13 @@
         }
     },
     {   "skill_name": "Levelheaded",
-        "description": "Slightly regain composure by calming down when the way ahead is jammed.",
+        "description": "Relax and slightly recover endurance when following directly behind a runner.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "End Closer",
-                    "Blocked in front for ≥1s",
+                    "Right behind another uma for ≥1s",
                     "After ≥10s into a race"
                 ]
             }
@@ -4162,11 +4168,10 @@
         "description": "Suck endurance from runners ahead when well-positioned and pressured by another runner mid-race.",
         "effect": [
             {
-                "description": "Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
-                "inherited": "Recover HP by 1.5%. Reduces HP of all umas ahead by 0.25%.",
+                "description": "Increases target speed by 0.25 for 5.0s. Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
+                "inherited": "Increases target speed by 0.05 for 3.0s. Recover HP by 1.5%. Reduces HP of all umas ahead by 0.25%.",
                 "conditions": [
                     "2nd to 5th (CM), 2nd to 6th (TT)",
-                    "Be an overtake target for ≥1s",
                     "Mid race"
                 ]
             }
@@ -4194,14 +4199,14 @@
         }
     },
     {   "skill_name": "Lie in Wait",
-        "description": "Recover endurance when positioned toward the back upon approaching mid-race.",
+        "description": "Recover endurance when positioned midpack or further back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
                 "conditions": [
                     "Late Surger",
-                    "5th to 9th (CM), 6th to 12th (TT)",
-                    "Random point in second half of early race"
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -4231,14 +4236,14 @@
         }
     },
     {   "skill_name": "Be Still",
-        "description": "Slightly recover endurance when positioned toward the back upon approaching mid-race.",
+        "description": "Slightly recover endurance when positioned midpack or further back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
                 "conditions": [
                     "Late Surger",
-                    "5th to 9th (CM), 6th to 12th (TT)",
-                    "Random point in second half of early race"
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -4456,7 +4461,7 @@
                 "conditions": [
                     "Long",
                     "4th to 7th (CM), 5th to 10th (TT)",
-                    "Random point in first half of mid race"
+                    "Random point in the first half of mid race"
                 ]
             }
         ],
@@ -4500,7 +4505,7 @@
                 "conditions": [
                     "Long",
                     "4th to 7th (CM), 5th to 10th (TT)",
-                    "Random point in first half of mid race"
+                    "Random point in the first half of mid race"
                 ]
             }
         ],
@@ -4650,7 +4655,7 @@
         "description": "Slightly increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for 2.4s. 30s cooldown.",
+                "description": "Increases target speed by 0.15 for 3.0s. 30s cooldown.",
                 "conditions": [
                     "Random point on a random straight"
                 ]
@@ -4719,12 +4724,12 @@
                 "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Character is in their last spurt mode",
-                    "Random point in last spurt phase"
+                    "Random point in the first half of last spurt phase"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Useful additional speed at the final spurt of the race. Might trigger too late and be less effective.",
+        "review": "",
         "rarity": "normal",
         "category": "velocity",
         "aliases": [
@@ -4739,10 +4744,11 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "late_and_beyond",
                     "target": "zones",
+                    "labels": ["last spurt"],
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
-                  }
+                }
             ]
         }
     },
@@ -4818,13 +4824,13 @@
         }
     },
     {   "skill_name": "Position Pilfer",
-        "description": "Slightly increase velocity mid-race.",
+        "description": "Slightly increase velocity when positioned midpack or further back mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
                 "conditions": [
                     "Late Surger",
-                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "4th to 9th (CM), 5th to 12th (TT)",
                     "Random point in mid race"
                 ]
             }
@@ -4892,18 +4898,21 @@
         }
     },
     {   "skill_name": "Masterful Gambit",
-        "description": "Slightly move up in preparation to close the gap when positioned toward the back late-race.",
+        "description": "Slightly increase velocity during the last spurt when positioned toward the back late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "End Closer",
-                    "Last 50% of the pack (by distance)",
-                    "Random point in late race"
+                    "Character is in their last spurt mode",
+                    "Random point in the first half of last spurt phase"
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": [
+            "Last 50% of the pack (by distance)",
+            "Late race"
+        ],
         "review": "",
         "rarity": "normal",
         "category": "velocity",
@@ -4919,8 +4928,15 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "late",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
+                },
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "precondition"
                 }
             ]
         }
@@ -4965,15 +4981,14 @@
         }
     },
     {   "skill_name": "Productive Plan",
-        "description": "Slightly widen the margin when positioned toward the front early-race.",
+        "description": "Slightly widen the margin when positioned toward the front upon approaching mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in early race",
-                    "After ≥5s into a race"
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -4993,12 +5008,8 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "zones",
-                    "labels": [
-                        "opening leg",
-                        "early"
-                    ],
-                    "clip_start": 75,
+                    "phase": "early",
+                    "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ],
@@ -5051,14 +5062,14 @@
         }
     },
     {   "skill_name": "Steadfast",
-        "description": "Slightly increase ability to fight back when passed by another runner on the final corner.",
+        "description": "Slightly increase velocity and very minimally increase acceleration when pressured on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "Medium",
-                    "Be overtaken by another uma",
-                    "Final corner"
+                    "Be an overtake target for ≥2s",
+                    "Final corner and beyond"
                 ]
             }
         ],
@@ -5078,9 +5089,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "corner",
-                    "select": "last",
+                    "phase": "final_corner_and_beyond",
                     "trigger_behavior": "asap"
                 }
             ],
@@ -5596,10 +5605,10 @@
         }
     },
     {   "skill_name": "Pressure",
-        "description": "Slightly increase velocity when passing another runner late-race.",
+        "description": "Slightly increase velocity and very minimally increase acceleration after passing another runner late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for 3.0s.",
+                "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "Long",
                     "Overtake another uma",
@@ -6159,7 +6168,7 @@
         "description": "Slightly increase velocity when well-positioned on a straight in the last spurt.",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "Medium",
                     "2nd to 5th (CM), 2nd to 7th (TT)",
@@ -6205,7 +6214,7 @@
                 "conditions": [
                     "Long",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in second half of mid race"
+                    "Random point in the second half of mid race"
                 ]
             }
         ],
@@ -6313,7 +6322,7 @@
                 "conditions": [
                     "Sprint",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in second half of the mid race"
+                    "Random point in the second half of the mid race"
                 ]
             }
         ],
@@ -6475,7 +6484,7 @@
                 "conditions": [
                     "Late Surger",
                     "3rd to 7th (CM), 4th to 10th (TT)",
-                    "Random point in second half of the race"
+                    "Random point in the second half of the race"
                 ]
             }
         ],
@@ -6546,7 +6555,7 @@
         "description": "Greatly consume endurance mid-race and moderately increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.25 for 2.4s. Lose HP by 4%.",
+                "description": "Increases target speed by 0.25 for 2.4s. Lose HP by 2%.",
                 "conditions": [
                     "Late Surger",
                     "Random point in mid race"
@@ -6646,7 +6655,7 @@
         "description": "Increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 2.4s. 30s cooldown.",
+                "description": "Increases target speed by 0.35 for 3.0s. 30s cooldown.",
                 "conditions": [
                     "Random point on a random straight"
                 ]
@@ -6715,7 +6724,7 @@
                 "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Character is in their last spurt mode",
-                    "Random point in last spurt phase"
+                    "Random point in the first half of last spurt phase"
                 ]
             }
         ],
@@ -6724,7 +6733,7 @@
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
-            "body and mind",
+            "in body and mind",
             "heart and soul",
             "全身全霊"
         ],
@@ -6735,10 +6744,11 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "late_and_beyond",
                     "target": "zones",
+                    "labels": ["last spurt"],
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
-                  }
+                }
             ]
         }
     },
@@ -6811,13 +6821,13 @@
         }
     },
     {   "skill_name": "Fast & Furious",
-        "description": "Increase velocity mid-race.",
+        "description": "Increase velocity when positioned midpack or further back mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Late Surger",
-                    "6th to 9th (CM), 7th to 12th (TT)",
+                    "4th to 9th (CM), 5th to 12th (TT)",
                     "Random point in mid race"
                 ]
             }
@@ -6884,18 +6894,21 @@
         }
     },
     {   "skill_name": "Sturm und Drang",
-        "description": "Move up in preparation to close the gap when positioned toward the back late-race.",
+        "description": "Increase velocity during the last spurt when positioned toward the back late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "End Closer",
-                    "Last 50% of the pack (by distance)",
-                    "Random point in late race"
+                    "Character is in their last spurt mode",
+                    "Random point in the first half of last spurt phase"
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": [
+            "Last 50% of the pack (by distance)",
+            "Late race"
+        ],
         "review": "",
         "rarity": "rare",
         "category": "goldenvelocity",
@@ -6912,8 +6925,15 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "late",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
+                },
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "precondition"
                 }
             ]
         }
@@ -6958,15 +6978,14 @@
         }
     },
     {   "skill_name": "Mile Maven",
-        "description": "Widen the margin when positioned toward the front early-race.",
+        "description": "Widen the margin when positioned toward the front upon approaching mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in early race",
-                    "After ≥5s into a race"
+                    "Random point in the second half of early race"
                 ]
             }
         ],
@@ -6984,12 +7003,8 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "zones",
-                    "labels": [
-                        "opening leg",
-                        "early"
-                    ],
-                    "clip_start": 75,
+                    "phase": "early",
+                    "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ],
@@ -7040,14 +7055,14 @@
         }
     },
     {   "skill_name": "Unyielding",
-        "description": "Increase ability to fight back when passed by another runner on the final corner.",
+        "description": "Increase velocity and very slightly increase acceleration when pressured on the final corner or later",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
                     "Medium",
-                    "Be overtaken by another uma",
-                    "Final corner"
+                    "Be an overtake target for ≥2s",
+                    "Final corner and beyond"
                 ]
             }
         ],
@@ -7067,9 +7082,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "corner",
-                    "select": "last",
+                    "phase": "final_corner_and_beyond",
                     "trigger_behavior": "asap"
                 }
             ],
@@ -7280,10 +7293,10 @@
         }
     },
     {   "skill_name": "Overwhelming Pressure",
-        "description": "Increase velocity when passing another runner late-race.",
+        "description": "Increase velocity and very slightly increase acceleration after passing another runner late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 3.0s.",
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
                     "Long",
                     "Overtake another uma",
@@ -7429,7 +7442,7 @@
         "description": "Increase velocity when well-positioned on a straight in the last spurt.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 3.0s.",
                 "conditions": [
                     "Medium",
                     "2nd to 5th (CM), 2nd to 7th (TT)",
@@ -7539,7 +7552,7 @@
                 "conditions": [
                     "Long",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in second half of mid race"
+                    "Random point in the second half of mid race"
                 ]
             }
         ],
@@ -7686,7 +7699,7 @@
                 "conditions": [
                     "Sprint",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in second half of the mid race"
+                    "Random point in the second half of the mid race"
                 ]
             }
         ],
@@ -7807,7 +7820,7 @@
         }
     },
     {   "skill_name": "Burning Soul",
-        "description": "When engaged in a challenge midpack mid-race, moderately recover endurance and moderately increase velocity.",
+        "description": "Moderately recover endurance and increase velocity when engaging in a challenge midpack mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s. Recover HP by 3.5%.",
@@ -7936,7 +7949,7 @@
                 "conditions": [
                     "Late Surger",
                     "3rd to 7th (CM), 4th to 10th (TT)",
-                    "Random point in second half of the race"
+                    "Random point in the second half of the race"
                 ]
             }
         ],
@@ -8040,7 +8053,7 @@
         "description": "Greatly consume endurance mid-race and greatly increase velocity.",
         "effect": [
             {
-                "description": "Increases target speed by 0.45 for 2.4s. Lose HP by 4%.",
+                "description": "Increases target speed by 0.45 for 2.4s. Lose HP by 2%.",
                 "conditions": [
                     "Late Surger",
                     "Random point in mid race"
@@ -8259,22 +8272,21 @@
         }
     },
     {   "skill_name": "Legacy of the Strong",
-        "description": "Increase velocity continuously when pressured by another runner and running out of energy toward the front on the final corner or later.",
+        "description": "Increase velocity continuously when pressured toward the front late-race on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.6s.",
                 "conditions": [
-                    "1st to 3rd",
+                    "1st to 4th",
                     "Be an overtake target for ≥1s",
-                    "≤1 length ahead",
-                    "≤45% HP remaining",
-                    "Final corner and beyond"
+                    "Final corner and beyond",
+                    "Late race and beyond"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Bad",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -8291,7 +8303,11 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "phase":"final_corner_and_beyond"
+                    "phase": [
+                        "final_corner_and_beyond",
+                        "late_and_beyond"
+                    ],
+                    "trigger_behavior": "asap"
                 }
             ]
         }
@@ -8741,11 +8757,11 @@
         }
     },
     {   "skill_name": "Shooting Star",
-        "description": "Ride the momentum to increase velocity and very slightly increase acceleration after passing another runner toward the front late-race.",
+        "description": "Ride the momentum to surge ahead and very slightly increase acceleration after passing another runner toward the front late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "description": "Increases current speed by 0.35 and acceleration by 0.1 for 5.0s.",
+                "inherited": "Increases current speed by 0.15 and acceleration by 0.05 for 3.0s.",
                 "conditions": [
                     "2nd to 5th (CM), 2nd to 6th (TT)",
                     "Overtake another uma",
@@ -8813,20 +8829,23 @@
         }
     },
     {   "skill_name": "Sky-High Teio Step",
-        "description": "Greatly increase velocity with flashy footwork when closing the gap to runners ahead on the final straight.",
+        "description": "When closing the gap to runners ahead late-race, greatly increase velocity with flashy footwork on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
                 "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": [
-                    "2nd to 3rd",
-                    "Overtake target exists",
-                    "≤1 length behind",
+                    "Precondition is true",
                     "Final non-corner"
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": [
+            "2nd to 3rd",
+            "≤1 length behind",
+            "Overtake target exists",
+            "Late race and beyond"
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -8848,7 +8867,13 @@
                     "match": "not_a_corner",
                     "select": "last",
                     "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "precondition"
                 }
+                
             ]
         }
     },
@@ -9046,8 +9071,18 @@
         }
     },
     {   "skill_name": "The Duty of Dignity Calls",
-        "description": "Increase velocity with the determination to not be overtaken when positioned toward the front on the final corner.",
+        "description": "Increase velocity with determination to keep the lead when positioned toward the front on the final corner. If in a long-distance race and still going strong, increase velocity greatly instead.",
         "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "Long",
+                    "First 30% of the pack (by distance)",
+                    "Enough stamina to do a full spurt",
+                    "Final corner"
+                ]
+            },
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
@@ -9233,15 +9268,25 @@
         }
     },
     {   "skill_name": "∴win Q.E.D.",
-        "description": "Increase velocity by deriving the winning equation when passing another runner toward the front on the final corner or later.",
+        "description": "Increase velocity when positioned toward the front on the final corner or later late-race. If the skill user ran calmly, formulate the perfect plan and increase velocity greatly instead.",
         "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "1st to 4th place",
+                    "No 'Rushed'", 
+                    "Final corner and beyond",
+                    "Late race and beyond"
+                ]
+            },
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "1st to 4th place",
-                    "Overtake another uma",
-                    "Final corner and beyond"
+                    "Final corner and beyond",
+                    "Late race and beyond"
                 ]
             }
         ],
@@ -9261,8 +9306,10 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "phase": "final_corner_and_beyond",
+                    "phase": [
+                        "final_corner_and_beyond",
+                        "late_and_beyond"
+                    ],
                     "trigger_behavior": "asap"
                 }
             ]
@@ -9307,15 +9354,24 @@
         }
     },
     {   "skill_name": "G00 1st. F∞;",
-        "description": "Increase velocity when positioned toward the front after making it to the final straight without faltering.",
+        "description": "If the user didn't have a late start, increase velocity when toward the front on the final straight. If the user had kept position toward the front, greatly increase velocity instead.",
         "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "1st to 3rd",
+                    "Has been 1st to 2nd the entire race",
+                    "No 'Late Start'",
+                    "Final non-corner"
+                ]
+            },
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "1st to 3rd",
                     "No 'Late Start'",
-                    "No 'Rushed'",
                     "Final non-corner"
                 ]
             }
@@ -9345,7 +9401,7 @@
         }
     },
     {   "skill_name": "Blue Rose Closer",
-        "description": "Increase velocity with strong willpower on the final straight after passing another runner in the front part of the pack on the final corner or later.",
+        "description": "When the skill user has passed another runner late-race and has reached the front part of the pack, draw on deep resolve to increase velocity on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -9356,9 +9412,9 @@
             }
         ],
         "preconditions": [
-            "1st to 4th",
+            "2nd to 4th",
             "Overtake another uma",
-            "Final corner and beyond"
+            "Late race and beyond"
         ],
         "review": "",
         "rarity": "unique",
@@ -9792,7 +9848,7 @@
         }
     },
     {   "skill_name": "Flowery☆Maneuver",
-        "description": "Increase velocity when passing another runner toward the front on the final corner. If passing toward the back, increase acceleration instead.",
+        "description": "Increase velocity when passing another runner toward the front on the final corner or later. If passing toward the back, increase acceleration instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -9800,7 +9856,7 @@
                 "conditions": [
                     "1st to 4th (CM), 1st to 5th (TT)",
                     "Overtake another uma",
-                    "Final corner"
+                    "Final corner and beyond"
                 ]
             },
             {
@@ -9809,7 +9865,7 @@
                 "conditions": [
                     "5th to 7th (CM), 6th to 10th (TT)",
                     "Overtake another uma",
-                    "Final corner"
+                    "Final corner and beyond"
                 ]
             }
         ],
@@ -9829,9 +9885,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "corner",
-                    "select": "last",
+                    "phase": "final_corner_and_beyond",
                     "trigger_behavior": "asap"
                 }
             ]
@@ -9887,19 +9941,21 @@
         }
     },
     {   "skill_name": "Lights of Vaudeville",
-        "description": "Greatly increase velocity with a dazzling display when just breaking out of the pack toward the front on the final straight.",
+        "description": "When just breaking out of the pack toward the front late-race, dazzle everyone and greatly increase velocity with 300m remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
                 "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": [
-                    "3rd to 9th (CM), 4th to 12th (TT)",
-                    "≤5m ahead of another uma for ≥1s",
-                    "Final non-corner"
+                    "≤300m of the race remaining"
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": [
+            "1st to 4th (CM), 1st to 5th (TT)",
+            "≤5m ahead of another uma for ≥1s",
+            "Late race and beyond"
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -9916,11 +9972,14 @@
             "show_chart": true,
             "triggers": [
                 {
+                    "type": "line",
+                    "distance_mode": "remaining",
+                    "value": 200
+                },
+                {
                     "type": "box",
-                    "target": "layout",
-                    "match": "not_a_corner",
-                    "select": "last",
-                    "trigger_behavior": "asap"
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "precondition"
                 }
             ]
         }
@@ -9999,15 +10058,13 @@
         }
     },
     {   "skill_name": "I Never Goof Up!",
-        "description": "Aim for the front with unwavering determination when passing another runner from midpack or further back on a corner late-race.",
+        "description": "Aim for the front with unwavering determination when passing another runner late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
                 "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
                 "conditions": [
-                    "3rd to 9th (CM), 3rd to 12th (TT)",
                     "Overtake another uma",
-                    "Any corner",
                     "Late race and beyond"
                 ]
             }
@@ -10027,8 +10084,6 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "corner",
                     "phase": "late_and_beyond",
                     "trigger_behavior": "asap"
                 }
@@ -10036,14 +10091,23 @@
         }
     },
     {   "skill_name": "Schwarzes Schwert",
-        "description": "Increase velocity in a dash for the lead after running calmly and according to plan up until the final straight.",
+        "description": "Increase velocity when 3rd or worse on the final straight after racing calmly. If the user has maintained position in midpack, greatly increase velocity instead.",
         "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "3rd to 9th (CM), 3rd to 12th (TT)",
+                    "Has been 4th to 7th (CM), 5th to 10th (TT) the entire race" ,
+                    "No 'Rushed'",
+                    "Final non-corner"
+                ]
+            },
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "3rd to 9th (CM), 3rd to 12th (TT)",
-                    "No 'Late Start'",
                     "No 'Rushed'",
                     "Final non-corner"
                 ]
@@ -10293,19 +10357,21 @@
         }
     },
     {   "skill_name": "Arrows Whistle, Shadows Disperse",
-        "description": "Increase velocity with a blazing spirit when pressured by another runner in the front part of the pack on the final corner or later.",
+        "description": "Burning spirit increases velocity continuously on the last corner and later when pressured while in the front of the pack late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 on the final corner for 6.0s.",
                 "inherited": "Increases target speed by 0.15 on the final corner for 3.6s.",
                 "conditions": [
-                    "1st to 5th (CM), 1st to 6th (TT)",
-                    "Be an overtake target for ≥2s",
                     "Final corner and beyond"
                 ]
             }
         ],
-        "preconditions": [],
+        "preconditions": [
+            "1st to 5th (CM), 1st to 6th (TT)",
+            "Be an overtake target for ≥2s",
+            "Late race and beyond"
+        ],
         "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
@@ -10367,14 +10433,14 @@
         }
     },
     {   "skill_name": "Pop & Polish",
-        "description": "Get hyped and increase velocity when pressured by or passing another runner while well-positioned on the final straight.",
+        "description": "Get pumped and increase velocity when pressured or trying to pass another runner toward the front on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "2nd to 3rd (CM), 2nd to 4th (TT)",
-                    "Be an overtake target for ≥2s",
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Be an overtake target for ≥1s",
                     "Final non-corner"
                 ]
             },
@@ -10382,8 +10448,8 @@
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "1st to 2nd",
-                    "Overtake another uma",
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Overtake target exists",
                     "Final non-corner"
                 ]
             }
@@ -10456,8 +10522,8 @@
                 "description": "Increases target speed by 0.35 for 5.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
-                    "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race",
                     "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "Has been 1st to 5th (CM), 1st to 6th (TT) the entire race",
                     "Mid race",
                     "Second half of the race"
                 ]
@@ -10573,8 +10639,8 @@
         "description": "Increase velocity for a moderate duration when in the front part of the pack with 400m remaining. If at least 7 skills have been activated, greatly increase velocity for a moderate duration instead.",
         "effect": [
             {
-                "description": "Increases target speed by 0.45 for 4.0s.",
-                "inherited": "Increases target speed by 0.25 for 2.4s.",
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
                 "conditions": [
                     "1st to 4th (CM), 1st to 5th (TT)",
                     "Activated ≥7 skills",
@@ -10770,13 +10836,13 @@
         }
     },
     {   "skill_name": "Guten Appetit ♪",
-        "description": "Increase velocity continuously with a patissiere's pride on the final straight after passing another runner 3 times on the final corner or later.",
+        "description": "Draw extra strength from pride, increasing velocity continuously on the final straight if the skill user passed another runner at least 2 times on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
                 "inherited": "Increases target speed by 0.15 for 3.6s.",
                 "conditions": [
-                    "Overtake ≥3 times on the final corner and beyond",
+                    "Overtake ≥2 times on the final corner and beyond",
                     "Final non-corner"
                 ]
             }
@@ -11024,11 +11090,11 @@
         }
     },
     {   "skill_name": "Break It Down!",
-        "description": "If positioned toward the front on a straight late-race, increase velocity with high spirits. If the straight is on the backstretch, also increase acceleration very slightly.",
+        "description": "High spirits increase velocity when positioned toward the front on a late-race straight. If it's the backstretch, also slightly increase acceleration.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
-                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
+                "description": "Increases target speed by 0.35 and acceleration by 0.2 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.07 for 3.0s.",
                 "conditions": [
                     "1st to 2nd",
                     "Not a corner",
@@ -11849,14 +11915,14 @@
         }
     },
     {   "skill_name": "Slick Surge",
-        "description": "Slightly increase acceleration late-race.",
+        "description": "Slightly increase acceleration when positioned midpack or further back in the early part of late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
                     "Late Surger",
-                    "6th to 9th (CM), 7th to 12th (TT)",
-                    "Random point in late race"
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the first half of late race"
                 ]
             }
         ],
@@ -11877,6 +11943,7 @@
                 {
                     "type": "box",
                     "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ]
@@ -11920,13 +11987,13 @@
           }
     },
     {   "skill_name": "Sprinting Gear",
-        "description": "Slightly increase acceleration on a straight.",
+        "description": "Slightly increase acceleration late-race..",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "Random point on a random straight"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -11945,8 +12012,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "straight",
+                    "phase": "late",
                     "trigger_behavior": "random"
                 }
             ],
@@ -12004,7 +12070,7 @@
                 "conditions": [
                     "Sprint",
                     "2nd to 5th (CM), 2nd to 6th (TT)",
-                    "Random point in second half of mid race"
+                    "Random point in the second half of mid race"
                 ]
             }
         ],
@@ -12038,14 +12104,14 @@
         }
     },
     {   "skill_name": "Acceleration",
-        "description": "Slightly increase acceleration when passing another runner mid-race.",
+        "description": "Slightly increase acceleration when passing another runner in the second half of the race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "Overtake another uma",
-                    "Mid race"
+                    "Second half of the race"
                 ]
             }
         ],
@@ -12065,7 +12131,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "phase": "mid",
+                    "phase": "second_half",
                     "trigger_behavior": "asap"
                 }
             ],
@@ -12077,19 +12143,18 @@
         }
     },
     {   "skill_name": "Second Wind",
-        "description": "Slightly increase acceleration when not in the lead mid-race.",
+        "description": "Moderately expend endurance to slightly increase acceleration late-race.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.2 for 3.0s.",
+                "description": "Increases acceleration by 0.2 for 3.0s. Reduce HP by 2%.",
                 "conditions": [
                     "Front Runner",
-                    "2nd or worse",
-                    "Random point in mid race"
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race acceleration is not great. Unlikely to catch up to the actual front with this.",
+        "review": "",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -12105,7 +12170,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "phase": "mid",
+                    "phase": "late",
                     "trigger_behavior": "random"
                 }
             ]
@@ -12311,19 +12376,19 @@
         }
     },
     {   "skill_name": "Head-On",
-        "description": "Slightly increase acceleration when positioned toward the front late-race. ",
+        "description": "Slightly increase acceleration when positioned toward the front in the early part of late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
                     "Pace Chaser",
                     "1st to 5th (CM), 1st to 6th (TT)",
-                    "Random point in late race"
+                    "Random point in the first half of late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Good acceleration skill for Pace Chasers. Gambling.",
+        "review": "",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -12340,20 +12405,21 @@
                 {
                     "type": "box",
                     "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ]
         }
     },
     {   "skill_name": "Take the Chance",
-        "description": "If positioned toward the back late-race, slightly increase acceleration.",
+        "description": "Slightly increase acceleration when positioned midpack or further back in the early part of late-race.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.2 for 1.2s.",
+                "description": "Increases acceleration by 0.2 for 1.8s.",
                 "conditions": [
                     "Medium",
                     "4th to 9th (CM), 5th to 12th (TT)",
-                    "Random point in the late race"
+                    "Random point in the first half of late race"
                 ]
             }
         ],
@@ -12374,6 +12440,7 @@
                 {
                     "type": "box",
                     "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ],
@@ -12418,10 +12485,10 @@
         }
     },
     {   "skill_name": "Rushing Gale!",
-        "description": "Increase acceleration on a straight",
+        "description": "Increase acceleration and slightly increase velocity on a straight.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
+                "description": "Increases target speed by 0.15 and acceleration by 0.4 for 3.0s.30s cooldown.",
                 "conditions": [
                     "Random point on a random straight"
                 ]
@@ -12559,14 +12626,14 @@
         }
     },
     {   "skill_name": "On Your Left!",
-        "description": "Increase acceleration late-race.",
+        "description": "Increase acceleration when positioned midpack or further back in the early part of late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
                 "conditions": [
                     "Late Surger",
-                    "6th to 9th (CM), 7th to 12th (TT)",
-                    "Random point in late race"
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the first half of late race"
                 ]
             }
         ],
@@ -12587,6 +12654,7 @@
                 {
                     "type": "box",
                     "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ]
@@ -12629,13 +12697,13 @@
           }
     },
     {   "skill_name": "Turbo Sprint",
-        "description": "Increase acceleration on a straight.",
+        "description": "Increase acceleration late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
                     "Sprint",
-                    "Random point on a random straight"
+                    "Random point in late race"
                 ]
             }
         ],
@@ -12655,8 +12723,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "target": "layout",
-                    "match": "straight",
+                    "phase": "late",
                     "trigger_behavior": "random"
                 }
             ],
@@ -12714,7 +12781,7 @@
                 "conditions": [
                     "Sprint",
                     "2nd to 5th (CM), 2nd to 6th (TT)",
-                    "Random point in second half of mid race"
+                    "Random point in the second half of mid race"
                 ]
             }
         ],
@@ -12747,19 +12814,19 @@
         }
     },
     {   "skill_name": "Step on the Gas!",
-        "description": "Increase acceleration when passing another runner mid-race.",
+        "description": "Increase acceleration when passing another runner in the second half of the race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
                     "Mile",
                     "Overtake another uma",
-                    "Mid race"
+                    "Second half of the race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid-race acceleration is not very impactful.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -12775,7 +12842,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "phase": "mid",
+                    "phase": "second_half",
                     "trigger_behavior": "asap"
                 }
             ],
@@ -12787,19 +12854,18 @@
         }
     },
     {   "skill_name": "Reignition",
-        "description": "Increase acceleration when not in the lead mid-race.",
+        "description": "Moderately expend endurance to increase acceleration late-race.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.2 for 3.0s.",
+                "description": "Increases acceleration by 0.4 for 3.0s. Reduce HP by 2%.",
                 "conditions": [
                     "Front Runner",
-                    "2nd or worse",
-                    "Random point in mid race"
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race acceleration is not great. Unlikely to catch up to the actual front with this.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -12815,7 +12881,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "phase": "mid",
+                    "phase": "late",
                     "trigger_behavior": "random"
                 }
             ]
@@ -12955,14 +13021,14 @@
         }
     },
     {   "skill_name": "From the Brink",
-        "description": "If positioned toward the back late-race, increase acceleration.",
+        "description": "Increase acceleration when positioned midpack or further back in the early part of late-race.",
         "effect": [
             {
-                "description": "Increases acceleration by 0.4 for 1.2s.",
+                "description": "Increases acceleration by 0.4 for 1.8s.",
                 "conditions": [
                     "Medium",
                     "4th to 9th (CM), 5th to 12th (TT)",
-                    "Random point in the late race"
+                    "Random point in the first half of late race"
                 ]
             }
         ],
@@ -12983,6 +13049,7 @@
                 {
                     "type": "box",
                     "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ],
@@ -12994,7 +13061,7 @@
         }
     },
     {   "skill_name": "Neck and Neck",
-        "description": "Increase acceleration when positioned toward the front late-race.",
+        "description": "Increase acceleration when positioned toward the front in the early part of late-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
@@ -13022,6 +13089,7 @@
                 {
                     "type": "box",
                     "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ]
@@ -13329,7 +13397,7 @@
                     "5th to 6th (CM), 6th to 8th (TT)",
                     "Any corner",
                     "Not final corner",
-                    "Never 'Rushed'",
+                    "No 'Rushed'",
                     "Late race and beyond"
                 ]
             },
@@ -13339,7 +13407,7 @@
                 "conditions": [
                     "5th to 6th (CM), 6th to 8th (TT)",
                     "Final corner",
-                    "Never 'Rushed'",
+                    "No 'Rushed'",
                     "Mid race"
                 ]
             }
@@ -13635,19 +13703,18 @@
         }
     },
     {   "skill_name": "Thunderbolt Step",
-        "description": "Moderately avoid becoming surrounded for a medium duration when positioned toward the back mid-race",
+        "description": "Moderately avoid becoming surrounded for a medium duration mid-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.025 and acceleration by 0.2 for 4.0s.",
                 "conditions": [
                     "Medium",
-                    "6th to 9th (CM), 7th to 12th (TT)",
                     "Random point in mid race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Mid race lane movement speed and mid-race acceleration is a gamble. Works if it triggers before the late race, otherwise kinda useless. Take if its really cheap.",
+        "review": "",
         "rarity": "normal",
         "category": "flow",
         "aliases": [
@@ -13856,13 +13923,12 @@
         }
     },
     {   "skill_name": "Lightning Step",
-        "description": "Avoid becoming surrounded for a medium duration when positioned toward the back mid-race.",
+        "description": "Avoid becoming surrounded for a medium duration mid-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 and acceleration by 0.3 for 4.0s.",
                 "conditions": [
                     "Medium",
-                    "6th to 9th (CM), 7th to 12th (TT)",
                     "Random point in mid race"
                 ]
             }
@@ -14700,7 +14766,7 @@
             {
                 "description": "Increases target speed by ~0.05 and acceleration by ~0.1 for 1.2s. Recover HP by ~0.5%. (Multiplier based on number of career wins)",
                 "conditions": [
-                    "Random point in second half of the race"
+                    "Random point in the second half of the race"
                 ]
             }
         ],
@@ -14733,7 +14799,7 @@
             {
                 "description": "Increases target speed by ~0.25 and acceleration by ~0.3 for 1.2s. Recover HP by ~3.5%. (Scaling based on number of career wins)",
                 "conditions": [
-                    "Random point in second half of the race"
+                    "Random point in the second half of the race"
                 ]
             }
         ],
@@ -15317,7 +15383,7 @@
             {
                 "description": "Increased rush duration by 5.0s for enemy Front Runners.",
                 "conditions": [
-                    "≥1 Front Runner currently 'Rushed'",
+                    "≥1 enemy Front Runner currently 'Rushed'",
                     "Currently not 'Rushed'."
                 ]
             }
@@ -15351,7 +15417,7 @@
             {
                 "description": "Increased rush duration by 5.0s for enemy Pace Chasers.",
                 "conditions": [
-                    "≥1 Pace Chaser currently 'Rushed'",
+                    "≥1 enemy Pace Chaser currently 'Rushed'",
                     "Currently not 'Rushed'."
                 ]
             }
@@ -15385,7 +15451,7 @@
             {
                 "description": "Increased rush duration by 5.0s for enemy Late Surgers.",
                 "conditions": [
-                    "≥1 Late Surger currently 'Rushed'",
+                    "≥1 enemy Late Surger currently 'Rushed'",
                     "You are not rushed."
                 ]
             }
@@ -15419,7 +15485,7 @@
             {
                 "description": "Increased rush duration by 5.0s for enemy End Closers.",
                 "conditions": [
-                    "≥1 End Closer currently 'Rushed'",
+                    "≥1 enemy End Closer currently 'Rushed'",
                     "You are not rushed."
                 ]
             }

@@ -82,13 +82,13 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const MAP_RENDERER_CACHE_VERSION = 'v2';
+const MAP_RENDERER_CACHE_VERSION = 'v3';
 
 // Champions Meets offered in the skill-map dropdown are limited to this range so
 // users can't trigger image generation for an unbounded number of CMs.
 // Adjust SKILL_MAP_MAX_CM_NUMBER (or the env var) to decide the highest CM shown.
 // The effective lower bound is dynamic: max(configured minimum, current upcoming CM).
-const SKILL_MAP_MIN_CM_NUMBER = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 14);
+const SKILL_MAP_MIN_CM_NUMBER = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 16);
 const SKILL_MAP_MAX_CM_NUMBER = Number(process.env.SKILL_MAP_MAX_CM_NUMBER ?? 16);
 
 const characters = cache.characters;
@@ -270,6 +270,7 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     skillId: skill.gametora_id ?? skill.skill_name,
     mapData,
     markers: overlay.markers,
+    doesNotWork: overlay.doesNotWork,
     rendererVersion: MAP_RENDERER_CACHE_VERSION,
   });
   const fileName = `${skillMapFilePrefix(mapContextKey)}-${cacheKey}.png`;
