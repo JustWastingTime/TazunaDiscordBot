@@ -477,6 +477,15 @@ const QUIZ_COMMAND = {
 const SCHEDULE_COMMAND = {
   name: "schedule",
   description: "See the current month's schedule",
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Optional event name to jump to',
+      required: false,
+      autocomplete: true,
+    },
+  ],
   type: 1,
   integration_types: [0, 1], 
   contexts: [0, 1, 2],

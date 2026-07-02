@@ -14,7 +14,6 @@ import {
   InteractionResponseFlags,
   InteractionResponseType,
   InteractionType,
-  MessageComponentTypes,
   verifyKeyMiddleware,
 } from 'discord-interactions';
 import { scheduleColors, truncate, buildSupporterEmbed, buildSupporterComponents, buildSupporterEventEmbed, buildSkillEmbed, buildSkillComponents, parseSkillNavCustomId, getColor, getCustomEmoji, parseEmojiForDropdown, buildEventEmbed, buildUmaEmbed, buildUmaComponents, buildRaceEmbed, buildCMEmbed, buildMapEmbed, capitalize, buildResourceEmbed, buildEpithetEmbed, buildEpithetListPayload, EPITHET_PAGINATION_ID_PREFIX, DiscordRequest } from './utils.js';
@@ -74,6 +73,11 @@ import { startEventCron } from './eventCron.js';
 import { reloadEventsFromDisk } from './eventService.js';
 import { resumeActiveQuizzes } from './quizRunner.js';
 import { startQuizRemoteSync } from './quizStorage.js';
+import {
+  buildScheduleAutocompleteChoices,
+  getCurrentMonthEventById,
+  getCurrentMonthSchedule,
+} from './scheduleService.js';
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -99,7 +103,6 @@ const races = cache.races;
 const champsmeets = cache.champsmeets;
 const legendraces = cache.legendraces;
 const misc = cache.misc;
-const schedule = cache.schedule;
 const resources = cache.resources;
 const epithets = cache.epithets;
 
@@ -180,6 +183,99 @@ function composeSkillComponents(baseComponents, mapComponents) {
     ...mapRows,
     ...base.slice(firstButtonRowIndex),
   ];
+}
+
+const SCHEDULE_TYPE_META = {
+  character_banner: { label: 'Character Banner', color: scheduleColors.Banner },
+  support_card_banner: { label: 'Support Banner', color: scheduleColors.Banner },
+  story_event: { label: 'Story Event', color: scheduleColors['Story Event'] },
+  champions_meeting: { label: 'Champions Meeting', color: scheduleColors['Champions Meeting'] },
+  campaign: { label: 'Campaign', color: scheduleColors.Scenario },
+  paid_banner: { label: 'Paid Banner', color: scheduleColors.Banner },
+  anniversary: { label: 'Anniversary', color: scheduleColors.Anniversary },
+};
+
+function getScheduleTypeMeta(type) {
+  return SCHEDULE_TYPE_META[type] || { label: 'Event', color: scheduleColors.Default };
+}
+
+function toDiscordTimestamp(isoString) {
+  const ms = Date.parse(String(isoString || ''));
+  if (!Number.isFinite(ms)) return null;
+  return Math.floor(ms / 1000);
+}
+
+function formatScheduleDateLine(event) {
+  const startTs = toDiscordTimestamp(event.startAt);
+  const endTs = toDiscordTimestamp(event.endAt);
+  if (!startTs) return 'Date unavailable';
+  if (endTs && endTs !== startTs) {
+    return `<t:${startTs}:F> - <t:${endTs}:F>`;
+  }
+  return `<t:${startTs}:F>`;
+}
+
+function formatScheduleOptionRange(event) {
+  const startMs = Date.parse(String(event.startAt || ''));
+  if (!Number.isFinite(startMs)) return 'Date TBD';
+  const start = new Date(startMs);
+  const startLabel = start.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const endMs = Date.parse(String(event.endAt || ''));
+  if (!Number.isFinite(endMs) || endMs === startMs) return startLabel;
+  const end = new Date(endMs);
+  const endLabel = end.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  return `${startLabel} - ${endLabel}`;
+}
+
+function buildScheduleSelectRow(events, selectedId, placeholder) {
+  return [
+    {
+      type: 1,
+      components: [
+        {
+          type: 3,
+          custom_id: 'schedule_select',
+          placeholder: placeholder || 'Select another event',
+          options: events.slice(0, 25).map((event) => ({
+            label: event.title.length > 100 ? `${event.title.slice(0, 97)}...` : event.title,
+            value: event.id,
+            description: `${getScheduleTypeMeta(event.type).label} • ${formatScheduleOptionRange(event)}`.slice(0, 100),
+            default: event.id === selectedId,
+          })),
+        },
+      ],
+    },
+  ];
+}
+
+function buildScheduleEmbed(event, monthLabel, generatedAt) {
+  const typeMeta = getScheduleTypeMeta(event.type);
+  const startRelative = toDiscordTimestamp(event.startAt);
+  const footerParts = [`${monthLabel} schedule`, 'Dates are estimated'];
+  if (generatedAt) {
+    const generatedTs = toDiscordTimestamp(generatedAt);
+    if (generatedTs) footerParts.push(`Snapshot <t:${generatedTs}:R>`);
+  }
+
+  const embed = {
+    title: event.title,
+    color: typeMeta.color,
+    description: [
+      `**Type:** ${typeMeta.label}`,
+      `**Window:** ${formatScheduleDateLine(event)}`,
+      startRelative ? `**Starts:** <t:${startRelative}:R>` : '',
+      `**Status:** ${event.isConfirmed ? 'Confirmed' : 'Estimated'}`,
+      '',
+      '⚠️ Timeline dates are predictions and can change.',
+    ].filter(Boolean).join('\n'),
+    footer: { text: footerParts.join(' • ') },
+  };
+
+  if (event.imageUrl) {
+    embed.image = { url: event.imageUrl };
+  }
+
+  return embed;
 }
 
 function normalizeSkillMapOptions(options) {
@@ -525,6 +621,22 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
       });
+    }
+
+    if (data.name === 'schedule' && focus.optionName === 'name') {
+      try {
+        const choices = await buildScheduleAutocompleteChoices(focus.value);
+        return res.send({
+          type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+          data: { choices },
+        });
+      } catch (err) {
+        console.error('Schedule autocomplete failed:', err.message);
+        return res.send({
+          type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+          data: { choices: [] },
+        });
+      }
     }
 
     return res.send({
@@ -1059,38 +1171,40 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       });
 
       try {
-        const schedules = schedule;
+        const nameQuery = String(data.options?.find((opt) => opt.name === 'name')?.value || '').trim();
+        const view = await getCurrentMonthSchedule(nameQuery);
 
-        for (const event of schedules) {
-          const components = [
-            {
-              type: MessageComponentTypes.CONTAINER,
-              accent_color: scheduleColors[event.event_type] || scheduleColors.Default,
-              components: [
-                {
-                  type: MessageComponentTypes.MEDIA_GALLERY,
-                  items: [
-                    {
-                      media: { url: event.thumbnail }
-                    }
-                  ]
-                },
-                {
-                  type: MessageComponentTypes.TEXT_DISPLAY,
-                  content: `${event.date}`
-                }
-              ]
-            }
-          ];
-
-          const payload = {
-            flags: InteractionResponseFlags.IS_COMPONENTS_V2,
-            components
-          };
-
-          // Send one message per schedule item
-          await sendFollowup(token, payload);
+        if (!view.selected || view.monthEvents.length === 0) {
+          await sendFollowup(token, {
+            content: '❌ No schedule events found for this month.',
+          });
+          return;
         }
+
+        const selected = view.selected;
+        const hasQuery = nameQuery.length > 0;
+        const hasMatches = view.matches.length > 0;
+        const header = hasQuery
+          ? hasMatches
+            ? view.matches.length > 1
+              ? `🔎 Found ${view.matches.length} matches for **${nameQuery}**. Pick one from the dropdown.`
+              : `✅ Matched **${nameQuery}**.`
+            : `❌ No matches for **${nameQuery}**. Showing the full ${view.monthLabel} schedule instead.`
+          : `📅 ${view.monthLabel} schedule`;
+
+        const dropdownSource = view.monthEvents;
+
+        await sendFollowup(token, {
+          content: header,
+          embeds: [buildScheduleEmbed(selected, view.monthLabel, view.generatedAt)],
+          components: buildScheduleSelectRow(
+            dropdownSource,
+            selected.id,
+            hasQuery && view.matches.length > 1
+              ? `Multiple matches for "${nameQuery}" — pick one`
+              : `Select another ${view.monthLabel} event`,
+          ),
+        });
       } catch (err) {
         console.error("Schedule command error:", err);
         await sendFollowup(token, { content: "❌ Failed to load schedule." });
@@ -1857,6 +1971,45 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           embeds: [buildEventEmbed(event, events)] // remove the dropdown after selection
         }
       });
+    }
+
+    if (custom_id === 'schedule_select') {
+      try {
+        const selectedId = String(values?.[0] || '');
+        const view = await getCurrentMonthEventById(selectedId);
+        if (!view.selected || view.monthEvents.length === 0) {
+          return res.send({
+            type: InteractionResponseType.UPDATE_MESSAGE,
+            data: {
+              content: '❌ This schedule entry is no longer available for the current month.',
+              embeds: [],
+              components: [],
+            },
+          });
+        }
+
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: {
+            content: `📅 ${view.monthLabel} schedule`,
+            embeds: [buildScheduleEmbed(view.selected, view.monthLabel, view.generatedAt)],
+            components: buildScheduleSelectRow(
+              view.monthEvents,
+              view.selected.id,
+              `Select another ${view.monthLabel} event`,
+            ),
+          },
+        });
+      } catch (err) {
+        console.error('Schedule select handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Could not update the schedule card.',
+          },
+        });
+      }
     }
 
     if (custom_id === "race_select") {
