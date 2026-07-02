@@ -976,7 +976,7 @@
     {   "id": "100701 - Gold Ship Summer",
         "character_name": "Gold Ship",
         "type": "Summer",
-        "costume": "Run! Fun! Watergun!",
+        "costume": "RUN! RUIN! LAUNCHER!",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -1024,7 +1024,7 @@
             "Summer Runner",
             "Gatekept"
         ],
-        "aliases": ["gold ship summer", "golshi", "run fun watergun", "gorushi"],
+        "aliases": ["gold ship summer", "golshi", "run ruin launcher", "gorushi"],
         "url": "https://gametora.com/umamusume/characters/100702-gold-ship",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1007_100702.png",
         "review": "",
@@ -5742,7 +5742,7 @@
     {   "id": "105301 - Bamboo Memory",
         "character_name": "Bamboo Memory",
         "type": "Original",
-        "costume": "Ambition of the Black Iron",
+        "costume": "Iron Ambition",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -5797,7 +5797,7 @@
             "sprinters stakes september 2 year 3",
             "mile championship november 2 year 3"
         ],
-        "aliases": ["bamboo memory original", "ambition of the black iron"],
+        "aliases": ["bamboo memory original", "iron ambition"],
         "url": "https://gametora.com/umamusume/characters/105301-bamboo-memory",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1053_105301.png",
         "review": "",
@@ -7211,6 +7211,81 @@
         "epithet": {
             "name": "Stress-Free Stayer",
             "condition": "Inherit memories from parents carrying the Mejiro name\nWin at least 4 G2 or G1 races with a length of 3000m or more, one of them being the Tenno Sho (Spring)\nEarn a total of at least 240,000 fans"
+        }
+    },
+
+    {   "id": "109801 - Copano Rickey",
+        "character_name": "Copano Rickey",
+        "type": "Original",
+        "costume": "Eightfold☆Fortune",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "10%",
+            "guts": "",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "F",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "C",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "G"
+            },
+            {
+            "Front": "A",
+            "Pace": "A",
+            "Late": "C",
+            "End": "G"
+            }
+        ],
+        "unique": "Luck Runs My Way",
+        "unique_explanation": "",
+        "skills": [
+            "Sunny Sign",
+            "Pace Chaser Savvy",
+            "Medium Corners"
+        ],
+        "potential": [
+            "Solid Steps",
+            "Chance of Victory",
+            "Collaborative Graded Races",
+            "Strong Steps"
+        ],
+        "event_skills": [
+            "Solid Steps",
+            "Top Pick",
+            "Forward, March!"
+        ],
+        "races": [
+            "champions cup december 1 year 2",
+            "february stakes february 2 year 3",
+            "kashiwa kinen may 1 year 3",
+            "teio sho june 2 year 3",
+            "mc nambu hai october 1 year 3",
+            "jbc classic november 1 year 3",
+            "tokyo daishoten december 2 year 3"
+        ],
+        "aliases": ["copano rickey original", "eightfold fortune"],
+        "url": "https://gametora.com/umamusume/characters/109801-copano-rickey",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1098_109801.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win a Dirt G1 race 11 times",
+            "rewards": "Speed +25, Power +25, Wit +25, Skill points +30, Top Pick hint +2, Forward, March! hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Bringer of Victory",
+            "condition": "Win 11 or more dirt G1s\nHave a Mood level of Great in all races\nComplete the Career"
         }
     }
 ]
