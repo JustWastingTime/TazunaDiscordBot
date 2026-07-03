@@ -975,15 +975,26 @@ function markersFromActivationMap(skill, mapData, options = {}) {
       );
 
       // Phase-only triggers paint one continuous window instead of splitting per segment.
+      // Local clip ratios apply within that phase window, not each layout segment.
       if (
         hasExplicitPhase &&
         !hasExplicitSelection &&
-        !applyLocalClip &&
         !Number.isFinite(ratioStart) &&
         !Number.isFinite(ratioEnd) &&
         trigger.target == null
       ) {
-        pushClippedBox(clipStart, clipEnd);
+        if (applyLocalClip) {
+          const phaseLength = clipEnd - clipStart;
+          const localStart = Number.isFinite(localStartRatio)
+            ? clipStart + Math.max(0, localStartRatio) * phaseLength
+            : clipStart;
+          const localEnd = Number.isFinite(localEndRatio)
+            ? clipStart + Math.min(1, localEndRatio) * phaseLength
+            : clipEnd;
+          pushClippedBox(localStart, localEnd);
+        } else {
+          pushClippedBox(clipStart, clipEnd);
+        }
         continue;
       }
 
