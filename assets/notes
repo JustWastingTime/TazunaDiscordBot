@@ -38,6 +38,8 @@ phase>=2    "Late race and beyond"
                 "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race"                 order_rate_in40_continue==1
                 "Has been 6th to 9th (CM), 8th to 12th (TT) the entire race"                order_rate_out70_continue==1
 
+                "Base Power ≥ 1200"                                                         base_power≥1200
+
                 "≥1 length ahead",                                                          bashin_diff_behind>=1
                 "≤1 length ahead",                                                          bashin_diff_behind<=1
                 "≥1 length behind",                                                         bashin_diff_infront>=1

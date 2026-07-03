@@ -312,16 +312,11 @@
     },
     {   "skill_name": "Chin Up, Derby Umamusume!",
         "description": "Feel closer to being Japan's top racer, moderately increasing performance.",
-        "conditions": [
-            [
-                "Always activates"
-            ]
-        ],
         "effect": [
             {
                 "description": "Speed stat +40.",
                 "conditions": [
-                    "always activates"
+                    "Always activates"
                 ]
             }
         ],
@@ -335,6 +330,208 @@
             "胸を張れダービーウマ娘"
         ],
         "gametora_id": "300111",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Collaborative Graded Races",
+        "description": "Increase performance in collaborative graded races.",
+        "effect": [
+            {
+                "description": "Speed stat +40/+60.",
+                "conditions": [
+                    "Kawasaki, Funabashi, Morioka or Ooi Racecourse"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "collaborative graded races",
+            "exchange races",
+            "交流重賞"
+        ],
+        "gametora_id": "202252",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Solid Steps",
+        "description": "Slightly increase Speed when the Power attribute exceeds a certain amount. If Power greatly exceeds that amount, increase Speed moderately instead.",
+        "effect": [
+            {
+                "description": "Speed stat +40.",
+                "conditions": [
+                    "Dirt",
+                    "Base Power ≥ 1200"
+                ]
+            },
+            {
+                "description": "Speed stat +20.",
+                "conditions": [
+                    "Dirt",
+                    "Base Power ≥ 1000",
+                    "Base Power < 1200"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "solid setps",
+            "skillful step",
+            "踏み込み上手"
+        ],
+        "gametora_id": "202332",
+        "activation_map": {
+            "show_chart": false
+        },
+        "upgrade": "Strong Steps"
+    },
+    {   "skill_name": "Muddy",
+        "description": "Increase performance on soft and heavy ground, increasing Speed.",
+        "effect": [
+            {
+                "description": "Speed stat +40/+60.",
+                "conditions": [
+                    "Dirt",
+                    "Track condition is heavy or bad"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "muddy",
+            "mud play",
+            "泥遊び"
+        ],
+        "gametora_id": "202343",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Risk Taker",
+        "description": "Very occasionally tap into untold inner strength, moderately increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
+        "effect": [
+            {
+                "description": "Speed stat, power stat and guts stat +40.",
+                "conditions": [
+                    "When ≤3rd favorite",
+                    "15% chance to activate"
+                ]
+            },
+            {
+                "description": "Speed stat, power stat and guts stat +40.",
+                "conditions": [
+                    "When ≥4th favorite",
+                    "30% chance to activate"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "risk taker",
+            "gambling spirit",
+            "やまっけ"
+        ],
+        "gametora_id": "202442",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Sprint Race Enthusiast",
+        "description": "Increase performance in turf sprint races. (Event Exclusive)",
+        "effect": [
+            {
+                "description": "Speed stat +60.",
+                "conditions": [
+                    "Turf",
+                    "Sprint"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "sprint race enthusiast",
+            "short distance racing passion",
+            "短距離レースへの想い"
+        ],
+        "gametora_id": "1200041",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Confident",
+        "description": "Slightly increase Speed and Power when both attributes exceed a certain amount.",
+        "effect": [
+            {
+                "description": "Speed stat and power stat +20.",
+                "conditions": [
+                    "Mile / Medium",
+                    "Base Speed ≥ 1000",
+                    "Base Power ≥ 1000"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "confident",
+            "self assured",
+            "自信家"
+        ],
+        "gametora_id": "202652",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Adventurer",
+        "description": "Slightly increase Speed when the Speed attribute greatly exceeds a certain amount. If the Wit attribute also greatly exceeds that amount, increase Speed moderately instead.",
+        "effect": [
+            {
+                "description": "Speed stat +40.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Medium",
+                    "Base Speed ≥ 1200",
+                    "Base Wit ≥ 1200"
+                ]
+            },
+            {
+                "description": "Speed stat +20.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Medium",
+                    "Base Speed ≥ 1200",
+                    "Base Wit < 1200"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speed",
+        "aliases": [
+            "adventurer",
+            "inquisitive mind",
+            "探求心"
+        ],
+        "gametora_id": "202702",
         "activation_map": {
             "show_chart": false
         }
@@ -438,6 +635,40 @@
         "activation_map": {
             "show_chart": false
         }
+    },
+    {   "skill_name": "Strong Steps",
+        "description": "Increase Speed when the Power attribute exceeds a certain amount. If Power greatly exceeds that amount, increase Speed greatly instead.",
+        "effect": [
+            {
+                "description": "Speed stat +80.",
+                "conditions": [
+                    "Dirt",
+                    "Base Power ≥ 1200"
+                ]
+            },
+            {
+                "description": "Speed stat +60.",
+                "conditions": [
+                    "Dirt",
+                    "Base Power ≥ 1000",
+                    "Base Power < 1200"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "strong setps",
+            "outstanding step",
+            "抜群の踏み込み"
+        ],
+        "gametora_id": "202331",
+        "activation_map": {
+            "show_chart": false
+        },
+        "downgrade": "Solid Steps"
     },
     {   "skill_name": "Connection",
         "description": "Speed stat +60. Activates all sympathy skills.",
