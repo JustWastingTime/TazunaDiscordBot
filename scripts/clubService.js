@@ -12,6 +12,7 @@ const EMPTY_FAN_STATS = {
 };
 
 const ACTIVE_LAG_TOLERANCE_MS = 2 * 60 * 60 * 1000;
+const MIN_ACTIVE_RATIO_FOR_FILTER = 0.75;
 
 export function getUmaApiKey() {
   return String(process.env.UMA_API_KEY || process.env.UMA_MOE_API_KEY || '').trim();
@@ -465,15 +466,25 @@ function getMemberLastUpdatedMs(member) {
 }
 
 export function getActiveCutoffMs(members) {
-  const stamps = (members || []).map(getMemberLastUpdatedMs).filter((t) => t != null);
+  const list = members || [];
+  const stamps = list.map(getMemberLastUpdatedMs).filter((t) => t != null);
   if (!stamps.length) return null;
-  return Math.max(...stamps) - ACTIVE_LAG_TOLERANCE_MS;
+
+  const freshest = Math.max(...stamps);
+  const cutoff = freshest - ACTIVE_LAG_TOLERANCE_MS;
+  const activeCount = stamps.filter((t) => t >= cutoff).length;
+  const activeRatio = activeCount / Math.max(1, list.length);
+
+  // If this filter would hide too many members, treat scrape timestamps as stale and disable it.
+  if (activeRatio < MIN_ACTIVE_RATIO_FOR_FILTER) return null;
+
+  return cutoff;
 }
 
 export function isMemberActive(member, cutoffMs) {
+  if (cutoffMs == null) return true;
   const ts = getMemberLastUpdatedMs(member);
   if (ts == null) return false;
-  if (cutoffMs == null) return true;
   return ts >= cutoffMs;
 }
 
