@@ -465,6 +465,20 @@ function getMemberLastUpdatedMs(member) {
   return Number.isFinite(t) ? t : null;
 }
 
+function getCurrentJstDayIndex(now = new Date()) {
+  const jstNow = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+  const day = jstNow.getDate();
+  return Number.isFinite(day) ? Math.max(0, day - 1) : null;
+}
+
+function hasTodayAndYesterdayZeroDailyFans(member, now = new Date()) {
+  const fans = Array.isArray(member?.daily_fans) ? member.daily_fans : [];
+  if (!fans.length) return false;
+  const dayIdx = getCurrentJstDayIndex(now);
+  if (dayIdx == null || dayIdx <= 0 || dayIdx >= fans.length) return false;
+  return fans[dayIdx] === 0 && fans[dayIdx - 1] === 0;
+}
+
 export function getActiveCutoffMs(members) {
   const list = members || [];
   const stamps = list.map(getMemberLastUpdatedMs).filter((t) => t != null);
@@ -482,6 +496,8 @@ export function getActiveCutoffMs(members) {
 }
 
 export function isMemberActive(member, cutoffMs) {
+  // If both today's and yesterday's slots are 0, treat this trainer as no longer in the current club.
+  if (hasTodayAndYesterdayZeroDailyFans(member)) return false;
   if (cutoffMs == null) return true;
   const ts = getMemberLastUpdatedMs(member);
   if (ts == null) return false;
@@ -503,16 +519,22 @@ function formatCompactInt(n) {
   return formatNumber(Math.trunc(n));
 }
 
+function toHalfwidthAscii(input) {
+  return String(input || '')
+    // Fullwidth space
+    .replace(/\u3000/g, ' ')
+    // Fullwidth ASCII variants (！-～) -> (!-~)
+    .replace(/[\uFF01-\uFF5E]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0));
+}
+
 function normalizeName(raw) {
-  let name = raw || 'Unknown';
-  name = name.replace(/！/g, '!').replace(/＠/g, '@').replace(/\s+/g, ' ');
-  if (name.includes('くま')) name = 'Kuma Kaibutsu';
-  if (name.includes('Hai')) name = 'Hai!Aku Aru!';
+  let name = toHalfwidthAscii(raw || 'Unknown');
+  name = name.replace(/\s+/g, ' ');
   return name;
 }
 
 function stripDisplaySuffix(name) {
-  return String(name || '').replace(/＠/g, '@').trimEnd();
+  return toHalfwidthAscii(name || '').trimEnd();
 }
 
 function truncateAndPadName(rawName, width) {
