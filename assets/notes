@@ -1,34 +1,17 @@
-"epithet": {
-            "name": "Selfish Magical Girl",
-            "condition": "Win the Tulip Sho and Shuka Sho as a End Closer\nWin the Takarazuka Kinen (Year 3), Queen Elizabeth II Cup (Year 3) and Arima Kinen (Year 3) as a Late Surger or End Closer"
-        }
-
-bashin_diff_behind<=1   "≤1 length ahead",
-bashin_diff_behind>=1   "≥1 length ahead",                                                          
-corner==0   "Not a corner"
-hp_per<=45  "≤45% HP remaining",
-is_finalcorner==1   "Final corner and beyond"
-is_overtake==1  
-order_rate>=20 (CM >= 2 | LoH >= 2)
-order_rate<=50 (CM <= 5 | LoH <= 6) 
-order>=2    "2nd or worse",
-order<=5    "1st to 5th"
-overtake_target_no_order_up_time>=2     "Overtake target exists for ≥2s"
-overtake_target_time>=1     "Be an overtake target for ≥1s"
-remain_distance<=305    "≤305m of the race remaining",
-remain_distance>=300    "≥300m of the race remaining",
-slope==0    "Not a slope"
-slope==1    "Uphill"
-slope==2    "Downhill"
-slope==0 @slope==2  "Not an uphill"
-phase>=0    "Early race and beyond"
-phase>=1    "Mid race and beyond"
-phase>=2    "Late race and beyond"
-
 "conditions":
         [
             [
                 "Precondition is true",
+
+                "Kawasaki, Funabashi, Morioka or Ooi Racecourse"                            is_dirtgrade==1
+                "Sapporo, Hakodate, Fukushima, Kokura, Kawasaki, or Funabashi Racecourse"   is_tight_track==1
+
+                "Any time",                                                                 time==0
+                "Morning time",                                                             time==1
+                "Day time",                                                                 time==2
+                "Evening time",                                                             time==3
+                "Night time",                                                               time==4
+                
                 "1st to 5th",
                                                                              
                 
@@ -81,6 +64,7 @@ phase>=2    "Late race and beyond"
                 "Activated ≥3 skills during the early race",                                activate_count_start>=3
                 "Activated ≥2 skills during the mid race",                                  activate_count_middle>=2
                 "Activated ≥3 skills during the late race and beyond",                      activate_count_end_after>=3
+                "Activated ≥2 skills during the second half of the race",                   activate_count_later_half>=2
 
                 "Right beside the inner fence",                                             lane_type==0
                 "Inner lane",                                                               lane_type<=0.2
@@ -136,7 +120,7 @@ phase>=2    "Late race and beyond"
                 "Early race or mid race",                                                   phase<=1
                 "Random point in early/mid/late race",                                      phase_random==0/1/2
                 "Random point in last spurt phase",                                         phase_random==3
-                "Random point in second half of early race",                                phase_laterhalf_random==0
+                "Random point in the second half of early race",                            phase_laterhalf_random==0
                 "Random point in the first half of last spurt phase",                       phase_firsthalf_random==3
 
                 
@@ -148,9 +132,14 @@ phase>=2    "Late race and beyond"
                 "At the last 800 to 850m of the race for a player character",               remain_distance_viewer_id>=800 &remain_distance_viewer_id<=850
                 "Second half of the race"                                                   distance_rate>=50
                 "After 60% of the race",                                                    distance_rate>=60
+                "Before 42% of the race",                                                   distance_rate<=42
+                "Randomly in the second half of the race",                                  distance_rate_after_random==50
 
                 "When ≥4th favorite",                                                       popularity>=4
                 "When ≤3rd favorite",                                                       popularity<4
+
+                ">0 Showdowns during the final straight"                                    compete_fight_count>0
+                "Mood is good or better",                                                   motivation>4
             ]
         ]
 

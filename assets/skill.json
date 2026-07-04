@@ -1,6 +1,6 @@
 [
-    {   "skill_name": "Right-Handed",
-        "description": "Increase performance on right-handed tracks.",
+    {   "note": "================= START OF WHITE SPEED ==================",
+        "skill_name": "Right-Handed", "description": "Increase performance on right-handed tracks.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -25,8 +25,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Left-Handed",
-        "description": "Increase performance on left-handed tracks.",
+    {   "skill_name": "Left-Handed", "description": "Increase performance on left-handed tracks.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -50,8 +49,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Spring Runner",
-        "description": "Increase performance in spring.",
+    {   "skill_name": "Spring Runner", "description": "Increase performance in spring.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -74,8 +72,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Summer Runner",
-        "description": "Increase performance in summer.",
+    {   "skill_name": "Summer Runner", "description": "Increase performance in summer.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -92,13 +89,13 @@
             "summer girl",
             "夏ウマ娘"
         ],
+        "upgrade": "Summer Gust",
         "gametora_id": "200182",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Fall Runner",
-        "description": "Increase performance in fall.",
+    {   "skill_name": "Fall Runner", "description": "Increase performance in fall.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -122,8 +119,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Winter Runner",
-        "description": "Increase performance in winter.",
+    {   "skill_name": "Winter Runner", "description": "Increase performance in winter.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -145,8 +141,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Outer Post Proficiency",
-        "description": "Increase performance in brackets 6–8.",
+    {   "skill_name": "Outer Post Proficiency", "description": "Increase performance in brackets 6-8.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -168,8 +163,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Maverick",
-        "description": "Increase performance when no other runners are using the same strategy.",
+    {   "skill_name": "Maverick", "description": "Increase performance when no other runners are using the same strategy.",
         "effect": [
             {
                 "description": "Speed stat +60/+80.",
@@ -190,8 +184,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Long Shot",
-        "description": "Increase performance when 4th favorite or below.",
+    {   "skill_name": "Long Shot", "description": "Increase performance when 4th favorite or below.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -214,8 +207,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Sympathy",
-        "description": "Moderately increase performance when many runners share a sympathetic heart.",
+    {   "skill_name": "Sympathy", "description": "Moderately increase performance when many runners share a sympathetic heart.",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -238,8 +230,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Lone Wolf",
-        "description": "Moderately increase performance when no other runners have the heart of a lone wolf.",
+    {   "skill_name": "Lone Wolf", "description": "Moderately increase performance when no other runners have the heart of a lone wolf.",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -261,8 +252,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Towards the Scenery I Seek",
-        "description": "Moderately increase performance in pursuit of that long sought-after scenery.",
+    {   "skill_name": "Towards the Scenery I Seek",  "description": "Moderately increase performance in pursuit of that long sought-after scenery.",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -285,8 +275,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Show Me What Lies Beyond!",
-        "description": "Moderately increase Silence Suzuka's performance thanks to the desire to see her running reach new heights.",
+    {   "skill_name": "Show Me What Lies Beyond!", "description": "Moderately increase Silence Suzuka's performance thanks to the desire to see her running reach new heights.",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -310,8 +299,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Chin Up, Derby Umamusume!",
-        "description": "Feel closer to being Japan's top racer, moderately increasing performance.",
+    {   "skill_name": "Chin Up, Derby Umamusume!", "description": "Feel closer to being Japan's top racer, moderately increasing performance.",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -334,8 +322,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Collaborative Graded Races",
-        "description": "Increase performance in collaborative graded races.",
+    {   "skill_name": "Collaborative Graded Races", "description": "Increase performance in collaborative graded races.",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -353,13 +340,13 @@
             "exchange races",
             "交流重賞"
         ],
+        "upgrade": "Exchange Races Demon",
         "gametora_id": "202252",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Solid Steps",
-        "description": "Slightly increase Speed when the Power attribute exceeds a certain amount. If Power greatly exceeds that amount, increase Speed moderately instead.",
+    {   "skill_name": "Solid Steps", "description": "Slightly increase Speed when the Power attribute exceeds a certain amount. If Power greatly exceeds that amount, increase Speed moderately instead. (Dirt)",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -386,14 +373,13 @@
             "skillful step",
             "踏み込み上手"
         ],
+        "upgrade": "Strong Steps",
         "gametora_id": "202332",
         "activation_map": {
             "show_chart": false
-        },
-        "upgrade": "Strong Steps"
+        }
     },
-    {   "skill_name": "Muddy",
-        "description": "Increase performance on soft and heavy ground, increasing Speed.",
+    {   "skill_name": "Muddy", "description": "Increase performance on soft and heavy ground, increasing Speed. (Dirt)",
         "effect": [
             {
                 "description": "Speed stat +40/+60.",
@@ -413,12 +399,12 @@
             "泥遊び"
         ],
         "gametora_id": "202343",
+        "upgrade": "Maestro of the Mud",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Risk Taker",
-        "description": "Very occasionally tap into untold inner strength, moderately increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
+    {   "skill_name": "Risk Taker", "description": "Very occasionally tap into untold inner strength, moderately increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
         "effect": [
             {
                 "description": "Speed stat, power stat and guts stat +40.",
@@ -444,13 +430,13 @@
             "gambling spirit",
             "やまっけ"
         ],
+        "upgrade": "Risk-Maker",
         "gametora_id": "202442",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Sprint Race Enthusiast",
-        "description": "Increase performance in turf sprint races. (Event Exclusive)",
+    {   "skill_name": "Sprint Race Enthusiast", "description": "Increase performance in turf sprint races. (Event Exclusive)",
         "effect": [
             {
                 "description": "Speed stat +60.",
@@ -474,8 +460,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Confident",
-        "description": "Slightly increase Speed and Power when both attributes exceed a certain amount.",
+    {   "skill_name": "Confident", "description": "Slightly increase Speed and Power when both attributes exceed a certain amount. (Mile/Medium)",
         "effect": [
             {
                 "description": "Speed stat and power stat +20.",
@@ -495,13 +480,13 @@
             "self assured",
             "自信家"
         ],
+        "upgrade": "Part the Clouds",
         "gametora_id": "202652",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Adventurer",
-        "description": "Slightly increase Speed when the Speed attribute greatly exceeds a certain amount. If the Wit attribute also greatly exceeds that amount, increase Speed moderately instead.",
+    {   "skill_name": "Adventurer", "description": "Slightly increase Speed when the Speed attribute greatly exceeds a certain amount. If the Wit attribute also greatly exceeds that amount, increase Speed moderately instead. (Pace, Medium)",
         "effect": [
             {
                 "description": "Speed stat +40.",
@@ -532,12 +517,16 @@
             "探求心"
         ],
         "gametora_id": "202702",
+        "upgrade": "Singularity",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Unchanging",
-        "description": "Greatly increase performance with the same ambition of days past.",
+
+
+
+    {   "note": "================= START OF GOLD SPEED ==================",
+        "skill_name": "Unchanging", "description": "Greatly increase performance with the same ambition of days past.",
         "effect": [
             {
                 "description": "Speed stat +80.",
@@ -561,8 +550,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Fall Frenzy",
-        "description": "Increase performance in fall, boosting Speed and Power.",
+    {   "skill_name": "Fall Frenzy", "description": "Increase performance in fall, boosting Speed and Power.",
         "effect": [
             {
                 "description": "Speed and Power stat +60.",
@@ -581,13 +569,16 @@
             "初嵐"
         ],
         "downgrade": "Fall Runner",
+        "evolutions": [
+            "Autumn Grace",
+            "The Stormforged Heroes Advances"
+        ],
         "gametora_id": "200194",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Spring Spectacle",
-        "description": "Increase performance in spring, boosting Speed and Power.",
+    {   "skill_name": "Spring Spectacle", "description": "Increase performance in spring, boosting Speed and Power.",
         "effect": [
             {
                 "description": "Speed and Power stat +60.",
@@ -606,13 +597,16 @@
             "first breeze of spring"
         ],
         "downgrade": "Spring Runner",
+        "evolutions": [
+            "The Sakura Bloom Regally Today",
+            "Sakura Blossoms in the Breeze"
+        ],
         "gametora_id": "200174",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Right-Handed Demon",
-        "description": "Increase proficiency in right-handed tracks, increasing Speed and Power.",
+    {   "skill_name": "Right-Handed Demon", "description": "Increase proficiency in right-handed tracks, increasing Speed and Power.",
         "effect": [
             {
                 "description": "Speed and Power stat +60.",
@@ -631,13 +625,15 @@
             "右回りの鬼"
         ],
         "downgrade": "Right-Handed",
+        "evolutions": [
+            "Rondo to the Right"
+        ],
         "gametora_id": "200014",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Strong Steps",
-        "description": "Increase Speed when the Power attribute exceeds a certain amount. If Power greatly exceeds that amount, increase Speed greatly instead.",
+    {   "skill_name": "Strong Steps", "description": "Increase Speed when the Power attribute exceeds a certain amount. If Power greatly exceeds that amount, increase Speed greatly instead. (Dirt)",
         "effect": [
             {
                 "description": "Speed stat +80.",
@@ -664,20 +660,22 @@
             "outstanding step",
             "抜群の踏み込み"
         ],
+        "downgrade": "Solid Steps",
+        "evolutions": [
+            "Longmai Pulse"
+        ],
         "gametora_id": "202331",
         "activation_map": {
             "show_chart": false
-        },
-        "downgrade": "Solid Steps"
+        }
     },
-    {   "skill_name": "Connection",
-        "description": "Speed stat +60. Activates all sympathy skills.",
+    {   "skill_name": "Maestro of the Mud", "description": "Increase performance on soft and heavy ground, increasing Speed and Power. (Dirt)",
         "effect": [
             {
-                "description": "Speed stat +60. Activates all sympathy skills.",
+                "description": "Speed stat and power stat +60.",
                 "conditions": [
-                    "Turf",
-                    "1 other uma has Sympathy."
+                    "Dirt",
+                    "Track condition is heavy or bad"
                 ]
             }
         ],
@@ -686,17 +684,148 @@
         "rarity": "rare",
         "category": "goldenspeed",
         "aliases": [
-            "connection",
-            "コネクト"
+            "maestro of the mud"
         ],
-        "downgrade": "Sympathy",
-        "gametora_id": "201632",
+        "downgrade": "Muddy",
+        "evolutions": [
+            "Mischevious Maestro",
+            "Mud Demon Lord"
+        ],
+        "gametora_id": "202341",
+        "activation_map": {
+            "show_chart": false
+        }  
+    },
+    {   "skill_name": "Risk-Maker", "description": "Occasionally tap into untold inner strength, greatly increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
+        "effect": [
+            {
+                "description": "Speed stat, power stat and guts stat +80.",
+                "conditions": [
+                    "When ≤3rd favorite",
+                    "30% chance to activate"
+                ]
+            },
+            {
+                "description": "Speed stat, power stat and guts stat +80.",
+                "conditions": [
+                    "When ≥4th favorite",
+                    "60% chance to activate"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "risk maker",
+            "gambler",
+            "勝負師"
+        ],
+        "evolutions":[
+           "Takin' Each Gamble"
+        ],
+        "gametora_id": "202441",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Right-Handed x",
-        "description": "Moderately decrease performance on right-handed tracks.",
+    {   "skill_name": "Part the Clouds", "description": "Increase Speed and Power when both attributes exceed a certain amount. (Mile/Medium)",
+        "effect": [
+            {
+                "description": "Speed stat and power stat +60.",
+                "conditions": [
+                    "Mile / Medium",
+                    "Base Speed ≥ 1000",
+                    "Base Power ≥ 1000"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "part the clouds",
+            "cloud dragons metamorphosis",
+            "雲蒸竜変"
+        ],
+        "downgrade": "Confident",
+        "evolutions": [
+            "Intoxicate the World",
+            "Rowing Beneath Plum Blossoms"
+        ],
+        "gametora_id": "202651",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Summer Gust", "description": "Increase performance in summer races, increasing Speed and Power.",
+        "effect": [
+            {
+                "description": "Speed and Power stat +60.",
+                "conditions": [
+                    "Summer"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "summer gust",
+            "青嵐",
+            "summer gale"
+        ],
+        "downgrade": "Summer Runner",
+        "gametora_id": "200184",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Singularity", "description": "Increase Speed when the Speed attribute greatly exceeds a certain amount. If the Wit attribute also greatly exceeds that amount, increase Speed greatly instead. (Pace, Medium)",
+        "effect": [
+            {
+                "description": "Speed stat +80.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Medium",
+                    "Base Speed ≥ 1200",
+                    "Base Wit ≥ 1200"
+                ]
+            },
+            {
+                "description": "Speed stat +60.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Medium",
+                    "Base Speed ≥ 1200",
+                    "Base Wit < 1200"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenspeed",
+        "aliases": [
+            "singularity"
+        ],
+        "downgrade": "Adventurer",
+        "evolutions": [
+            "Devil's Laplace"
+        ],
+        "gametora_id": "202701",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
+
+
+    {   "note": "================= START OF PURPLE SPEED ==================",
+        "skill_name": "Right-Handed x", "description": "Moderately decrease performance on right-handed tracks.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -719,8 +848,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Left-Handed x",
-        "description": "Moderately decrease performance on left-handed tracks.",
+    {   "skill_name": "Left-Handed x", "description": "Moderately decrease performance on left-handed tracks.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -743,8 +871,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Spring Runner x",
-        "description": "Moderately decrease performance in spring.",
+    {   "skill_name": "Spring Runner x", "description": "Moderately decrease performance in spring.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -767,8 +894,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Summer Runner x",
-        "description": "Moderately decrease performance in summer.",
+    {   "skill_name": "Summer Runner x", "description": "Moderately decrease performance in summer.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -791,8 +917,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Fall Runner x",
-        "description": "Moderately decrease performance in fall.",
+    {   "skill_name": "Fall Runner x", "description": "Moderately decrease performance in fall.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -815,8 +940,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Winter Runner x",
-        "description": "Moderately decrease performance in winter.",
+    {   "skill_name": "Winter Runner x", "description": "Moderately decrease performance in winter.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -839,8 +963,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Outer Post Averseness",
-        "description": "Moderately decrease performance in brackets 6–8.",
+    {   "skill_name": "Outer Post Averseness", "description": "Moderately decrease performance in brackets 6-8.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -864,8 +987,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "G1 Averseness",
-        "description": "Moderately decrease performance in G1 or otherwise important races.",
+    {   "skill_name": "G1 Averseness", "description": "Moderately decrease performance in G1 or otherwise important races.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -888,8 +1010,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "♡ 3D Nail Art",
-        "description": "Moderately decrease performance on firm ground.",
+    {   "skill_name": "♡ 3D Nail Art", "description": "Moderately decrease performance on firm ground.",
         "effect": [
             {
                 "description": "Speed stat -40.",
@@ -912,13 +1033,12 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Creeping Anxiety",
-        "description": "Moderately decrease performance due to Trainer's anxiety.",
+    {   "skill_name": "Creeping Anxiety", "description": "Moderately decrease performance due to Trainer's anxiety.",
         "effect": [
             {
                 "description": "Speed stat -40.",
                 "conditions": [
-                    "Always activate"
+                    "Always activates"
                 ]
             }
         ],
@@ -936,8 +1056,56 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Tokyo Racecourse",
-        "description": "Increase performance at Tokyo Racecourse.",
+    {   "skill_name": "Collaborative Graded Races x", "description": "Moderately decrease performance in collaborative graded races.",
+        "effect": [
+            {
+                "description": "Speed stat -40.",
+                "conditions": [
+                    "Kawasaki, Funabashi, Morioka or Ooi Racecourse"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speednegative",
+        "aliases": [
+            "collaborative graded races x",
+            "exchange races x"
+        ],
+        "gametora_id": "202253",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Muddy x", "description": "Decrease performance on soft and heavy ground, moderately decreasing Speed. (Dirt)",
+        "effect": [
+            {
+                "description": "Speed stat -40.",
+                "conditions": [
+                    "Dirt",
+                    "Track condition is heavy or bad"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "speednegative",
+        "aliases": [
+            "muddy x",
+            "mud play x"
+        ],
+        "gametora_id": "202344",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
+
+
+    {   "note": "================= START OF WHITE STAMINA ==================",
+        "skill_name": "Tokyo Racecourse", "description": "Increase performance at Tokyo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -960,8 +1128,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Nakayama Racecourse",
-        "description": "Increase performance at Nakayama Racecourse.",
+    {   "skill_name": "Nakayama Racecourse", "description": "Increase performance at Nakayama Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -984,8 +1151,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Hanshin Racecourse",
-        "description": "Increase performance at Hanshin Racecourse.",
+    {   "skill_name": "Hanshin Racecourse", "description": "Increase performance at Hanshin Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1008,8 +1174,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Kyoto Racecourse",
-        "description": "Increase performance at Kyoto Racecourse.",
+    {   "skill_name": "Kyoto Racecourse", "description": "Increase performance at Kyoto Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1027,13 +1192,13 @@
             "京都レース場",
             "kyoto racetrack"
         ],
+        "upgrade": "Yodo Invicta",
         "gametora_id": "200062",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Chukyo Racecourse",
-        "description": "Increase performance at Chukyo Racecourse.",
+    {   "skill_name": "Chukyo Racecourse", "description": "Increase performance at Chukyo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1056,8 +1221,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Sapporo Racecourse",
-        "description": "Increase performance at Sapporo Racecourse.",
+    {   "skill_name": "Sapporo Racecourse", "description": "Increase performance at Sapporo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1080,8 +1244,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Hakodate Racecourse",
-        "description": "Increase performance at Hakodate Racecourse.",
+    {   "skill_name": "Hakodate Racecourse", "description": "Increase performance at Hakodate Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1104,8 +1267,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Fukushima Racecourse",
-        "description": "Increase performance at Fukushima Racecourse.",
+    {   "skill_name": "Fukushima Racecourse", "description": "Increase performance at Fukushima Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1128,8 +1290,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Niigata Racecourse",
-        "description": "Increase performance at Niigata Racecourse.",
+    {   "skill_name": "Niigata Racecourse", "description": "Increase performance at Niigata Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1152,8 +1313,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Kokura Racecourse",
-        "description": "Increase performance at Kokura Racecourse.",
+    {   "skill_name": "Kokura Racecourse", "description": "Increase performance at Kokura Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1176,8 +1336,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Standard Distance",
-        "description": "Increase performance over standard distances (multiples of 400m).",
+    {   "skill_name": "Standard Distance",  "description": "Increase performance over standard distances (multiples of 400m).",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1201,8 +1360,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Non-Standard Distance",
-        "description": "Increase performance over non-standard distances (not multiples of 400m).",
+    {   "skill_name": "Non-Standard Distance", "description": "Increase performance over non-standard distances (not multiples of 400m).",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1226,8 +1384,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Oi Racecourse",
-        "description": "Increase performance at Oi Racecourse.",
+    {   "skill_name": "Oi Racecourse", "description": "Increase performance at Oi Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1250,8 +1407,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Unquenched Thirst",
-        "description": "Moderately increase performance with the desire to race at Kyoto Racecourse.",
+    {   "skill_name": "Unquenched Thirst", "description": "Moderately increase performance with the desire to race at Kyoto Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40.",
@@ -1273,8 +1429,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Hoiya! Have a Good Run!",
-        "description": "Moderately increase Silence Suzuka's performance thanks to a charm that guarantees a satisfying run.",
+    {   "skill_name": "Hoiya! Have a Good Run!", "description": "Moderately increase Silence Suzuka's performance thanks to a charm that guarantees a satisfying run.",
         "effect": [
             {
                 "description": "Stamina stat +40.",
@@ -1297,8 +1452,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Long Race Enthusiast",
-        "description": "Increase proficiency in Long Turf races. This skill is exclusive to the event.",
+    {   "skill_name": "Long Race Enthusiast", "description": "Increase proficiency in Long Turf races. This skill is exclusive to the event.",
         "effect": [
             {
                 "description": "Stamina stat +60.",
@@ -1322,8 +1476,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Kawasaki Racecourse",
-        "description": "Increase performance at Kawasaki Racecourse.",
+    {   "skill_name": "Kawasaki Racecourse", "description": "Increase performance at Kawasaki Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1346,8 +1499,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Funabashi Racecourse",
-        "description": "Increase performance at Funabashi Racecourse.",
+    {   "skill_name": "Funabashi Racecourse", "description": "Increase performance at Funabashi Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1370,8 +1522,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Morioka Racecourse",
-        "description": "Increase performance at Morioka Racecourse.",
+    {   "skill_name": "Morioka Racecourse", "description": "Increase performance at Morioka Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1394,8 +1545,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Longchamp Racecourse",
-        "description": "Increase performance at Longchamp Racecourse.",
+    {   "skill_name": "Longchamp Racecourse", "description": "Increase performance at Longchamp Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat +40/+60.",
@@ -1418,8 +1568,11 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Yodo Invicta",
-        "description": "Increase performance at Kyoto Racecourse, boosting Stamina and Wit.",
+
+
+
+    {   "note": "================= START OF GOLD STAMINA ==================",
+        "skill_name": "Yodo Invicta", "description": "Increase performance at Kyoto Racecourse, boosting Stamina and Wit.",
         "effect": [
             {
                 "description": "Speed, Stamina & Wit stat +60.",
@@ -1438,13 +1591,17 @@
             "淀の申し子",
             "child of yodo"
         ],
+        "downgrade": "Kyoto Racecourse",
+        "evolutions": [
+            "Queen of Yodo",
+            "Blessing of Yodo"
+        ],
         "gametora_id": "200064",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "For the Team",
-        "description": "The whole team feels super determined to win this special race, greatly increasing performance.",
+    {   "skill_name": "For the Team", "description": "The whole team feels super determined to win this special race, greatly increasing performance.",
         "effect": [
             {
                 "description": "Stamina stat +80.",
@@ -1467,8 +1624,11 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Tokyo Racecourse x",
-        "description": "Moderately decrease performance at Tokyo Racecourse.",
+
+
+
+    {   "note": "================= START OF PURPLE STAMINA ==================",
+        "skill_name": "Tokyo Racecourse x", "description": "Moderately decrease performance at Tokyo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1491,8 +1651,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Nakayama Racecourse x",
-        "description": "Moderately decrease performance at Nakayama Racecourse.",
+    {   "skill_name": "Nakayama Racecourse x", "description": "Moderately decrease performance at Nakayama Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1515,8 +1674,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Hanshin Racecourse x",
-        "description": "Moderately decrease performance at Hanshin Racecourse.",
+    {   "skill_name": "Hanshin Racecourse x", "description": "Moderately decrease performance at Hanshin Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1539,8 +1697,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Kyoto Racecourse x",
-        "description": "Moderately decrease performance at Kyoto Racecourse.",
+    {   "skill_name": "Kyoto Racecourse x", "description": "Moderately decrease performance at Kyoto Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1563,8 +1720,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Chukyo Racecourse x",
-        "description": "Moderately decrease performance at Chukyo Racecourse.",
+    {   "skill_name": "Chukyo Racecourse x", "description": "Moderately decrease performance at Chukyo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1587,8 +1743,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Sapporo Racecourse x",
-        "description": "Moderately decrease performance at Sapporo Racecourse.",
+    {   "skill_name": "Sapporo Racecourse x", "description": "Moderately decrease performance at Sapporo Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1611,8 +1766,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Hakodate Racecourse x",
-        "description": "Moderately decrease performance at Hakodate Racecourse.",
+    {   "skill_name": "Hakodate Racecourse x", "description": "Moderately decrease performance at Hakodate Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1635,8 +1789,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Fukushima Racecourse x",
-        "description": "Moderately decrease performance at Fukushima Racecourse.",
+    {   "skill_name": "Fukushima Racecourse x", "description": "Moderately decrease performance at Fukushima Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1659,8 +1812,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Niigata Racecourse x",
-        "description": "Moderately decrease performance at Niigata Racecourse.",
+    {   "skill_name": "Niigata Racecourse x", "description": "Moderately decrease performance at Niigata Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1683,8 +1835,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Kokura Racecourse x",
-        "description": "Moderately decrease performance at Kokura Racecourse.",
+    {   "skill_name": "Kokura Racecourse x", "description": "Moderately decrease performance at Kokura Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1707,8 +1858,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Standard Distance x",
-        "description": "Moderately decrease performance over standard distances (multiples of 400m).",
+    {   "skill_name": "Standard Distance x", "description": "Moderately decrease performance over standard distances (multiples of 400m).",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1731,8 +1881,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Non-Standard Distance x",
-        "description": "Moderately decrease performance over non-standard distances (not multiples of 400m).",
+    {   "skill_name": "Non-Standard Distance x", "description": "Moderately decrease performance over non-standard distances (not multiples of 400m).",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1756,8 +1905,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Paddock Fright",
-        "description": "Moderately decrease performance when the favourite.",
+    {   "skill_name": "Paddock Fright", "description": "Moderately decrease performance when the favourite.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1781,8 +1929,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Oi Racecourse x",
-        "description": "Moderately decrease performance at Oi Racecourse.",
+    {   "skill_name": "Oi Racecourse x", "description": "Moderately decrease performance at Oi Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1806,8 +1953,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Kawasaki Racecourse x",
-        "description": "Moderately decrease performance at Kawasaki Racecourse.",
+    {   "skill_name": "Kawasaki Racecourse x", "description": "Moderately decrease performance at Kawasaki Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1830,8 +1976,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Funabashi Racecourse x",
-        "description": "Moderately decrease performance at Funabashi Racecourse.",
+    {   "skill_name": "Funabashi Racecourse x", "description": "Moderately decrease performance at Funabashi Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1854,8 +1999,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Morioka Racecourse x",
-        "description": "Moderately decrease performance at Morioka Racecourse.",
+    {   "skill_name": "Morioka Racecourse x", "description": "Moderately decrease performance at Morioka Racecourse.",
         "effect": [
             {
                 "description": "Stamina stat -40.",
@@ -1901,8 +2045,11 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Firm Conditions",
-        "description": "Increase performance on firm ground.",
+
+
+
+    {   "note": "================= START OF WHITE POWER ==================",
+        "skill_name": "Firm Conditions", "description": "Increase performance on firm ground.",
         "effect": [
             {
                 "description": "Power stat +40/+60.",
@@ -1920,12 +2067,12 @@
             "good track condition",
             "良バ場"
         ],
+        "gametora_id": "200152",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Wet Conditions",
-        "description": "Increase performance on good, soft and heavy ground.",
+    {   "skill_name": "Wet Conditions", "description": "Increase performance on good, soft and heavy ground.",
         "effect": [
             {
                 "description": "Power stat +40/+60.",
@@ -1945,12 +2092,12 @@
             "bad track condition",
             "道悪"
         ],
+        "gametora_id": "200162",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Competitive Spirit",
-        "description": "Increase performance when many other runners are using the same strategy.",
+    {   "skill_name": "Competitive Spirit", "description": "Increase performance when many other runners are using the same strategy.",
         "effect": [
             {
                 "description": "Power stat +40/+60.",
@@ -1967,12 +2114,12 @@
             "competitive spirit",
             "対抗意識"
         ],
+        "gametora_id": "200282",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "As a Friend and Rival",
-        "description": "Moderately increase Silence Suzuka's performance through the happiness felt seeing a friend find their running style.",
+    {   "skill_name": "As a Friend and Rival", "description": "Moderately increase Silence Suzuka's performance through the happiness felt seeing a friend find their running style.",
         "effect": [
             {
                 "description": "Power stat +40.",
@@ -1990,12 +2137,12 @@
             "友としてライバルとして",
             "as a friend as a rival"
         ],
+        "gametora_id": "300091",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Mile Race Enthusiast",
-        "description": "Increase proficiency in Mile Turf races. This skill is exclusive to the event.",
+    {   "skill_name": "Mile Race Enthusiast", "description": "Increase proficiency in Mile Turf races. This skill is exclusive to the event.",
         "effect": [
             {
                 "description": "Power stat +60.",
@@ -2014,12 +2161,16 @@
             "マイルレースへの想い",
             "mile racing passion"
         ],
+        "gametora_id": "1200031",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Firm Course Menace",
-        "description": "Increase performance on firm ground, boosting Power and Speed.",
+
+
+
+    {   "note": "================= START OF GOLD POWER ==================",
+        "skill_name": "Firm Course Menace", "description": "Increase performance on firm ground, boosting Power and Speed.",
         "effect": [
             {
                 "description": "Speed and Power stat +60.",
@@ -2038,12 +2189,20 @@
             "good track demon",
             "良バ場の鬼"
         ],
+        "downgrade": "Firm Conditions",
+        "evolutions": [
+            "Turf Protagonist"
+        ],
+        "gametora_id": "200154",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Firm Conditions x",
-        "description": "Moderately decrease performance on firm ground.",
+
+
+
+    {   "note": "================= START OF PURPLE POWER ==================",
+        "skill_name": "Firm Conditions x", "description": "Moderately decrease performance on firm ground.",
         "effect": [
             {
                 "description": "Power stat -40.",
@@ -2061,12 +2220,12 @@
             "good track condition x",
             "良バ場x"
         ],
+        "gametora_id": "200153",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Wet Conditions x",
-        "description": "Moderately decrease performance on good, soft and heavy ground.",
+    {   "skill_name": "Wet Conditions x", "description": "Moderately decrease performance on good, soft and heavy ground.",
         "effect": [
             {
                 "description": "Power stat -40.",
@@ -2086,12 +2245,12 @@
             "bad track condition x",
             "道悪x"
         ],
+        "gametora_id": "200163",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Wallflower",
-        "description": "Moderately decrease performance when many other runners are using the same strategy.",
+    {   "skill_name": "Wallflower", "description": "Moderately decrease performance when many other runners are using the same strategy.",
         "effect": [
             {
                 "description": "Power stat -40.",
@@ -2110,12 +2269,16 @@
             "introverted",
             "引っ込み思案"
         ],
+        "gametora_id": "200283",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Sunny Days",
-        "description": "Increase performance in sunny weather.",
+
+
+
+    {   "note": "================= START OF WHITE GUTS ==================", 
+        "skill_name": "Sunny Days", "description": "Increase performance in sunny weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -2132,12 +2295,12 @@
             "sunny",
             "晴れの日"
         ],
+        "gametora_id": "200212",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Cloudy Days",
-        "description": "Increase performance in cloudy weather.",
+    {   "skill_name": "Cloudy Days", "description": "Increase performance in cloudy weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -2154,12 +2317,12 @@
             "cloudy",
             "曇りの日"
         ],
+        "gametora_id": "200222",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Rainy Days",
-        "description": "Increase performance in rainy weather.",
+    {   "skill_name": "Rainy Days", "description": "Increase performance in rainy weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -2176,12 +2339,12 @@
             "rainy",
             "雨の日"
         ],
+        "gametora_id": "200232",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Snowy Days",
-        "description": "Increase performance in snowy weather.",
+    {   "skill_name": "Snowy Days", "description": "Increase performance in snowy weather.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -2198,12 +2361,12 @@
             "snowy",
             "雪の日"
         ],
+        "gametora_id": "200242",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Target in Sight",
-        "description": "Increase performance when the favorite is using the same strategy",
+    {   "skill_name": "Target in Sight", "description": "Increase performance when the favorite is using the same strategy.",
         "effect": [
             {
                 "description": "Guts stat +40/+60.",
@@ -2221,12 +2384,40 @@
             "徹底マーク",
             "eyes on you"
         ],
+        "gametora_id": "200292",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Rainy Days x",
-        "description": "Moderately decrease performance in rainy weather.",
+    {   "skill_name": "Dirt Race Enthusiast", "description": "Increase performance in medium-distance dirt races. (Event Exclusive)",
+        "effect": [
+            {
+                "description": "Guts stat +60.",
+                "conditions": [
+                    "Dirt",
+                    "Medium"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "guts",
+        "aliases": [
+            "dirt race enthusiast",
+            "dirt racing passion",
+            "ダートレースへの想い"
+        ],
+        "gametora_id": "1200051",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
+
+
+    {   "note": "================= START OF PURPLE GUTS ==================",
+        "skill_name": "Rainy Days x", "description": "Moderately decrease performance in rainy weather.",
         "effect": [
             {
                 "description": "Guts stat -40.",
@@ -2243,12 +2434,12 @@
             "rainy days x",
             "雨の日x"
         ],
+        "gametora_id": "200233",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "99 problems",
-        "description": "Get overwhelmed by powerful opponents, moderately decreasing Guts and Wit.",
+    {   "skill_name": "99 problems", "description": "Get overwhelmed by powerful opponents, moderately decreasing Guts and Wit.",
         "effect": [
             {
                 "description": "Guts & Wit stat -40.",
@@ -2264,12 +2455,16 @@
         "aliases": [
             "99 problems"
         ],
+        "gametora_id": "202181",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Inner Post Proficiency",
-        "description": "Increase performance in brackets 1–3.",
+
+
+
+    {   "note": "================= START OF WHITE GATE ==================", 
+        "skill_name": "Inner Post Proficiency", "description": "Increase performance in brackets 1-3.",
         "effect": [
             {
                 "description": "Wit stat +40/+60.",
@@ -2286,12 +2481,12 @@
             "inner",
             "innerpost"
         ],
+        "gametora_id": "200182",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Front Runner Savvy",
-        "description": "Increase ability to get into a good position.",
+    {   "skill_name": "Front Runner Savvy", "description": "Increase ability to get into a good position.",
         "effect": [
             {
                 "description": "Wit stat +40/+60 and FoV +5/+10.",
@@ -2309,12 +2504,12 @@
             "runners tricks",
             "逃げのコツ"
         ],
+        "gametora_id": "201522",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Pace Chaser Savvy",
-        "description": "Increase ability to get into a good position.",
+    {   "skill_name": "Pace Chaser Savvy", "description": "Increase ability to get into a good position.",
         "effect": [
             {
                 "description": "Wit stat +40/+60 and FoV +5/+10.",
@@ -2332,12 +2527,12 @@
             "leaders tricks",
             "先行のコツ"
         ],
+        "gametora_id": "201532",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Late Surger Savvy",
-        "description": "Increase ability to get into a good position.",
+    {   "skill_name": "Late Surger Savvy", "description": "Increase ability to get into a good position.",
         "effect": [
             {
                 "description": "Wit stat +40/+60 and FoV +5/+10.",
@@ -2355,12 +2550,12 @@
             "betweeners tricks",
             "差しのコツ"
         ],
+        "gametora_id": "201542",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "End Closer Savvy",
-        "description": "Increase ability to get into a good position as an end closer.",
+    {   "skill_name": "End Closer Savvy", "description": "Increase ability to get into a good position as an end closer.",
         "effect": [
             {
                 "description": "Wit stat +40/+60 and FoV +5/+10.",
@@ -2378,12 +2573,12 @@
             "chasers tricks",
             "追込のコツ"
         ],
+        "gametora_id": "201552",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Restraint",
-        "description": "Increase Wit and moderately decrease the chance of being Rushed.",
+    {   "skill_name": "Restraint", "description": "Increase Wit and moderately decrease the chance of being Rushed.",
         "conditions": [
             [
                 "Always activates"
@@ -2406,12 +2601,12 @@
             "self control",
             "自制心"
         ],
+        "gametora_id": "202161",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Medium Race Enthusiast",
-        "description": "Increase proficiency in Medium Turf races. This skill is exclusive to the event.",
+    {   "skill_name": "Medium Race Enthusiast", "description": "Increase proficiency in Medium Turf races. This skill is exclusive to the event.",
         "effect": [
             {
                 "description": "Wit stat +60.",
@@ -2430,12 +2625,61 @@
             "medium distance racing passion",
             "中距離レースへの想い"
         ],
+        "gametora_id": "1200011",
         "activation_map": {
             "show_chart": false
         }
     },
-    {   "skill_name": "Inner Post Averseness",
-        "description": "Moderately decrease performance in brackets 1-3.",
+    {   "skill_name": "Night Races", "description": "Increase performance at night.",
+        "effect": [
+            {
+                "description": "Wit stat +40/+60.",
+                "conditions": [
+                    "Night time"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "gate",
+        "aliases": [
+            "night races",
+            "nocturnal",
+            "ナイター"
+        ],
+        "gametora_id": "202232",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Sharp Turns", "description": "Increase performance on tracks with sharp turns.",
+        "effect": [
+            {
+                "description": "Wit stat +40/+60.",
+                "conditions": [
+                    "Sapporo, Hakodate, Fukushima, Kokura, Kawasaki, or Funabashi Racecourse"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "gate",
+        "aliases": [
+            "sharp turns",
+            "tight turns"
+        ],
+        "gametora_id": "202242",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
+
+
+    {   "note": "================= START OF PURPLE GATE ==================", 
+        "skill_name": "Inner Post Averseness", "description": "Moderately decrease performance in brackets 1-3.",
         "effect": [
             {
                 "description": "Wit stat -40.",
@@ -2459,8 +2703,55 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Lucky Seven",
-        "description": "Moderately good things may happen when in bracket 7.",
+    {   "skill_name": "Night Races x", "description": "Moderately decrease performance at night.",
+        "effect": [
+            {
+                "description": "Wit stat -40.",
+                "conditions": [
+                    "Night time"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "gatenegative",
+        "aliases": [
+            "night races x",
+            "nocturnal x"
+        ],
+        "gametora_id": "202233",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Gonna Be Ur #1 FRFR", "description": "Press coverage goes to the skill user's head, moderately increasing chance of rushing.",
+        "effect": [
+            {
+                "description": "Increases Rush Chance by 10%.",
+                "conditions": [
+                    "Always activates"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "gatenegative",
+        "aliases": [
+            "gonna be ur 1 frfr",
+            "gonna be your number one frfr"
+        ],
+        "gametora_id": "202511",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
+
+
+    {   "note": "================= START OF PURPLE GATE ==================", 
+        "skill_name": "Lucky Seven", "description": "Moderately good things may happen when in bracket 7.",
         "effect": [
             {
                 "description": "Speed, stamina and power stat +40",
@@ -2485,8 +2776,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Super Lucky Seven",
-        "description": "Good things may happen when in bracket 7.",
+    {   "skill_name": "Super Lucky Seven", "description": "Good things may happen when in bracket 7.",
         "effect": [
             {
                 "description": "Increases speed, stamina and power stat by 60",
@@ -2505,6 +2795,9 @@
             "super lucky seven"
         ],
         "downgrade": "Lucky Seven",
+        "evolutions": [
+            "Lucky Number Seven"
+        ],
         "gametora_id": "201561",
         "activation_map": {
             "show_chart": false
@@ -2512,8 +2805,8 @@
     },
 
 
-    {   "skill_name": "Introduction to Physiology",
-        "description": "Moderately recover endurance and slightly increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race.",
+    {   "note": "================= START OF RECOVERY ==================",
+        "skill_name": "Introduction to Physiology", "description": "Moderately recover endurance and slightly increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race.",
         "effect": [
             {
                 "description": "Recover HP by 3.5%. Increases speed by 0.15 for 4.0s.",
@@ -2548,8 +2841,7 @@
             ]
         }
     },
-    {   "skill_name": "Clear Heart",
-        "description": "Recover endurance when well-positioned mid-race.",
+    {   "skill_name": "Clear Heart", "description": "Recover endurance when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -2584,8 +2876,7 @@
             ]
         }
     },
-    {   "skill_name": "Super-Duper Stoked",
-        "description": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
+    {   "skill_name": "Super-Duper Stoked", "description": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
         "effect": [
             {
                 "description": "Recover HP by 3.5%.",
@@ -2620,8 +2911,7 @@
             ]
         }
     },
-    {   "skill_name": "U=ma2",
-        "description": "Recover endurance and moderately increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race.",
+    {   "skill_name": "U=ma2", "description": "Recover endurance and moderately increase velocity for a moderate duration when sitting off the pace on a corner in the second half of the race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Increases speed by 0.25 for 4.0s.",
@@ -2659,8 +2949,7 @@
             ]
         }
     },
-    {   "skill_name": "Pure Heart",
-        "description": "Greatly recover endurance when well-positioned mid-race.",
+    {   "skill_name": "Pure Heart", "description": "Greatly recover endurance when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 7.5%.",
@@ -2699,8 +2988,7 @@
             ]
         }
     },
-    {   "skill_name": "Super-Duper Climax",
-        "description": "Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
+    {   "skill_name": "Super-Duper Climax", "description": "Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -2738,8 +3026,7 @@
             ]
         }
     },
-    {   "skill_name": "Swinging Maestro",
-        "description": "Recover endurance on a corner with efficient turning.",
+    {   "skill_name": "Swinging Maestro", "description": "Recover endurance on a corner with efficient turning.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%",
@@ -2770,8 +3057,7 @@
             ]
         }
     },
-    {   "skill_name": "Corner Recovery",
-        "description": "Slightly recover endurance on a corner with efficient turning.",
+    {   "skill_name": "Corner Recovery", "description": "Slightly recover endurance on a corner with efficient turning.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -2801,8 +3087,7 @@
             ]
         }
     },
-    {   "skill_name": "Corner Recovery x",
-        "description": "Moderately lose endurance on a corner with inefficient turning.",
+    {   "skill_name": "Corner Recovery x", "description": "Moderately lose endurance on a corner with inefficient turning.",
         "effect": [
             {
                 "description": "Reduce HP by 2%",
@@ -4849,8 +5134,9 @@
     },
 
 
-    {   "skill_name": "Corner Adept",
-        "description": "Slightly increase velocity on a corner with skilled turning.",
+
+    {   "note": "================= START OF WHITE VELOCITY ==================",
+        "skill_name": "Corner Adept", "description": "Slightly increase velocity on a corner with skilled turning.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s. 30s cooldown.",
@@ -4882,8 +5168,7 @@
             ]
         }
     },
-    {   "skill_name": "Straightaway Adept",
-        "description": "Slightly increase velocity on a straight.",
+    {   "skill_name": "Straightaway Adept", "description": "Slightly increase velocity on a straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s. 30s cooldown.",
@@ -4915,8 +5200,7 @@
             ]
         }
     },
-    {   "skill_name": "Ramp Up",
-        "description": "Slightly increase velocity when passing another runner mid-race.",
+    {   "skill_name": "Ramp Up", "description": "Slightly increase velocity when passing another runner mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 1.8s. 30s cooldown.",
@@ -4948,8 +5232,7 @@
             ]
         }
     },
-    {   "skill_name": "Homestretch Haste",
-        "description": "Slightly increase velocity in the last spurt.",
+    {   "skill_name": "Homestretch Haste", "description": "Slightly increase velocity in the last spurt.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -4983,8 +5266,7 @@
             ]
         }
     },
-    {   "skill_name": "Fast-Paced",
-        "description": "Slightly increase ability to go to the front mid-race.",
+    {   "skill_name": "Fast-Paced", "description": "Slightly increase ability to go to the front mid-race. (Front Runner)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5018,8 +5300,7 @@
             ]
         }
     },
-    {   "skill_name": "Prepared to Pass",
-        "description": "Slightly increase ability to break out of the pack on the final corner.",
+    {   "skill_name": "Prepared to Pass", "description": "Slightly increase ability to break out of the pack on the final corner. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 1.8s.",
@@ -5054,8 +5335,7 @@
             ]
         }
     },
-    {   "skill_name": "Position Pilfer",
-        "description": "Slightly increase velocity when positioned midpack or further back mid-race.",
+    {   "skill_name": "Position Pilfer", "description": "Slightly increase velocity when positioned midpack or further back mid-race. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -5092,8 +5372,7 @@
             ]
         }
     },
-    {   "skill_name": "Outer Swell",
-        "description": "Slightly increase velocity when passing another runner on the outside on the final corner.",
+    {   "skill_name": "Outer Swell", "description": "Slightly increase velocity when passing another runner on the outside on the final corner. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5128,8 +5407,7 @@
             ]
         }
     },
-    {   "skill_name": "Masterful Gambit",
-        "description": "Slightly increase velocity during the last spurt when positioned toward the back late-race.",
+    {   "skill_name": "Masterful Gambit", "description": "Slightly increase velocity during the last spurt when positioned toward the back late-race. (End Closer)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5172,8 +5450,7 @@
             ]
         }
     },
-    {   "skill_name": "Gap Closer",
-        "description": "Slightly increase spurting ability when positioned toward the back late-race.",
+    {   "skill_name": "Gap Closer", "description": "Slightly increase spurting ability when positioned toward the back late-race. (Sprint)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
@@ -5211,8 +5488,7 @@
             }
         }
     },
-    {   "skill_name": "Productive Plan",
-        "description": "Slightly widen the margin when positioned toward the front upon approaching mid-race.",
+    {   "skill_name": "Productive Plan", "description": "Slightly widen the margin when positioned toward the front upon approaching mid-race. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5253,8 +5529,7 @@
             }
         }
     },
-    {   "skill_name": "Up-Tempo",
-        "description": "Slightly increase positioning ability when positioned toward the front mid-race.",
+    {   "skill_name": "Up-Tempo", "description": "Slightly increase positioning ability when positioned toward the front mid-race. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -5292,8 +5567,7 @@
             }
         }
     },
-    {   "skill_name": "Steadfast",
-        "description": "Slightly increase velocity and very minimally increase acceleration when pressured on the final corner or later.",
+    {   "skill_name": "Steadfast", "description": "Slightly increase velocity and very minimally increase acceleration when pressured on the final corner or later. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
@@ -5331,8 +5605,7 @@
             }
         }
     },
-    {   "skill_name": "Inside Scoop",
-        "description": "Slightly increase velocity when positioned toward the inner fence on the final corner.",
+    {   "skill_name": "Inside Scoop", "description": "Slightly increase velocity when positioned toward the inner fence on the final corner. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5372,8 +5645,7 @@
             }
         }
     },
-    {   "skill_name": "Sprint Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Sprint Straightaways", "description": "Moderately increase velocity on a straight. (Sprint)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5392,6 +5664,7 @@
             "short distance straights",
             "短距離直線"
         ],
+        "upgrade": "Shocking Flash",
         "gametora_id": "200962",
         "activation_map": {
             "show_chart": true,
@@ -5410,8 +5683,7 @@
             }
         }
     },
-    {   "skill_name": "Sprint Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Sprint Corners", "description": "Moderately increase velocity on a corner. (Sprint)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5430,6 +5702,7 @@
             "short distance corners",
             "短距離コーナー"
         ],
+        "upgrade": "Lightning Slash",
         "gametora_id": "200972",
         "activation_map": {
             "show_chart": true,
@@ -5448,8 +5721,7 @@
             }
         }
     },
-    {   "skill_name": "Huge Lead",
-        "description": "Slightly increase ability to maintain the lead when leading by a large margin mid-race",
+    {   "skill_name": "Huge Lead", "description": "Slightly increase ability to maintain the lead when leading by a large margin mid-race. (Sprint)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5488,8 +5760,7 @@
             }
         }
     },
-    {   "skill_name": "Mile Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Mile Straightaways", "description": "Moderately increase velocity on a straight. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5508,6 +5779,7 @@
             "mile straights",
             "マイル直線"
         ],
+        "upgrade": "Cyclone Flash",
         "gametora_id": "201032",
         "activation_map": {
             "show_chart": true,
@@ -5526,8 +5798,7 @@
             }
         }
     },
-    {   "skill_name": "Mile Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Mile Corners", "description": "Moderately increase velocity on a corner. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5545,6 +5816,7 @@
             "mile corners",
             "マイルコーナー"
         ],
+        "upgrade": "Crescent Gust",
         "gametora_id": "201042",
         "activation_map": {
             "show_chart": true,
@@ -5563,8 +5835,7 @@
             }
         }
     },
-    {   "skill_name": "Shifting Gears",
-        "description": "Slightly increase passing ability when positioned toward the front mid-race.",
+    {   "skill_name": "Shifting Gears", "description": "Slightly increase passing ability when positioned toward the front mid-race. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -5602,8 +5873,7 @@
             }
         }
     },
-    {   "skill_name": "Unyielding Spirit",
-        "description": "Slightly increase passing ability.",
+    {   "skill_name": "Unyielding Spirit", "description": "Slightly increase passing ability. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -5641,8 +5911,7 @@
             }
         }
     },
-    {   "skill_name": "Medium Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Medium Straightaways", "description": "Moderately increase velocity on a straight. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5680,8 +5949,7 @@
             }
         }
     },
-    {   "skill_name": "Medium Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Medium Corners", "description": "Moderately increase velocity on a corner. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5719,8 +5987,7 @@
             }
         }
     },
-    {   "skill_name": "Long Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Long Straightaways", "description": "Increase velocity on a straight. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5739,6 +6006,7 @@
             "long distance straights",
             "長距離直線"
         ],
+        "upgrade": "Blast Forward",
         "gametora_id": "201172",
         "activation_map": {
             "show_chart": true,
@@ -5757,8 +6025,7 @@
             }
         }
     },
-    {   "skill_name": "Long Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Long Corners", "description": "Increase velocity on a corner. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5777,6 +6044,7 @@
             "long distance corners",
             "長距離コーナー"
         ],
+        "upgrade": "Wind Slash",
         "gametora_id": "201182",
         "activation_map": {
             "show_chart": true,
@@ -5795,8 +6063,7 @@
             }
         }
     },
-    {   "skill_name": "Keeping the Lead",
-        "description": "Slightly increase ability to maintain the lead when leading by a fair margin mid-race.",
+    {   "skill_name": "Keeping the Lead", "description": "Slightly increase ability to maintain the lead when leading by a fair margin mid-race. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5835,8 +6102,7 @@
             }
         }
     },
-    {   "skill_name": "Pressure",
-        "description": "Slightly increase velocity and very minimally increase acceleration after passing another runner late-race.",
+    {   "skill_name": "Pressure",  "description": "Slightly increase velocity and very minimally increase acceleration after passing another runner late-race. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.05 for 3.0s.",
@@ -5874,8 +6140,7 @@
             }
         }
     },
-    {   "skill_name": "Front Runner Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Front Runner Straightaways", "description": "Moderately increase velocity on a straight. (Front Runner)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5894,6 +6159,7 @@
             "runners straights",
             "逃げ直線"
         ],
+        "upgrade": "Gale Flash",
         "gametora_id": "201242",
         "activation_map": {
             "show_chart": true,
@@ -5907,8 +6173,7 @@
             ]
         }
     },
-    {   "skill_name": "Front Runner Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Front Runner Corners", "description": "Moderately increase velocity on a corner. (Front Runner)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -5927,6 +6192,7 @@
             "runners corners",
             "逃げコーナー"
         ],
+        "upgrade": "Crescent Gale",
         "gametora_id": "201252",
         "activation_map": {
             "show_chart": true,
@@ -5940,8 +6206,7 @@
             ]
         }
     },
-    {   "skill_name": "Leader's Pride",
-        "description": "Slightly increase ability to pass or challenge another runner early-race or mid-race.",
+    {   "skill_name": "Leader's Pride", "description": "Slightly increase ability to pass or challenge another runner early-race or mid-race. (Front Runner) ",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -5991,8 +6256,7 @@
             ]
         }
     },
-    {   "skill_name": "Pace Chaser Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Pace Chaser Straightaways", "description": "Moderately increase velocity on a straight. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -6011,6 +6275,7 @@
             "leaders straights",
             "先行直線"
         ],
+        "upgrade": "Valiant Flash",
         "gametora_id": "201312",
         "activation_map": {
             "show_chart": true,
@@ -6024,8 +6289,7 @@
             ]
         }
     },
-    {   "skill_name": "Pace Chaser Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Pace Chaser Corners", "description": "Increase velocity on a corner. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -6044,6 +6308,7 @@
             "leaders corners",
             "先行コーナー"
         ],
+        "upgrade": "Bravery Slash",
         "gametora_id": "201322",
         "activation_map": {
             "show_chart": true,
@@ -6057,8 +6322,7 @@
             ]
         }
     },
-    {   "skill_name": "Late Surger Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Late Surger Straightaways", "description": "Increase velocity on a straight. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -6077,6 +6341,7 @@
             "betweeners straights",
             "差し直線"
         ],
+        "upgrade": "Sharp Streak",
         "gametora_id": "201382",
         "activation_map": {
             "show_chart": true,
@@ -6090,8 +6355,7 @@
             ]
         }
     },
-    {   "skill_name": "Late Surger Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "Late Surger Corners", "description": "Increase velocity on a corner. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -6110,6 +6374,7 @@
             "betweeners corners",
             "差しコーナー"
         ],
+        "upgrade": "Sharp Arc",
         "gametora_id": "201392",
         "activation_map": {
             "show_chart": true,
@@ -6123,8 +6388,7 @@
             ]
         }
     },
-    {   "skill_name": "1,500,000 CC",
-        "description": "Slightly increase velocity on an uphill.",
+    {   "skill_name": "1,500,000 CC", "description": "Slightly increase velocity on an uphill. (Late Surger)",
         "effect": [
             {
                 "description": "Increases speed by 0.15 for 2.4s.",
@@ -6159,8 +6423,7 @@
             ]
         }
     },
-    {   "skill_name": "End Closer Straightaways",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "End Closer Straightaways", "description": "Increase velocity on a straight. (End Closer)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -6193,8 +6456,7 @@
             ]
         }
     },
-    {   "skill_name": "End Closer Corners",
-        "description": "Increase velocity on a corner.",
+    {   "skill_name": "End Closer Corners", "description": "Increase velocity on a corner. (End Closer)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15/0.25 for 3.0s.",
@@ -6213,6 +6475,7 @@
             "chasers corners",
             "追込コーナー"
         ],
+        "upgrade": "Moonlit Slash",
         "gametora_id": "201462",
         "activation_map": {
             "show_chart": true,
@@ -6226,8 +6489,7 @@
             ]
         }
     },
-    {   "skill_name": "Uma Stan",
-        "description": "Slightly increase velocity when close to many runners.",
+    {   "skill_name": "Uma Stan", "description": "Slightly increase velocity when close to many runners.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -6260,8 +6522,7 @@
             ]
         }
     },
-    {   "skill_name": "Tail Held High",
-        "description": "Slightly increase velocity after activating many skills mid-race.",
+    {   "skill_name": "Tail Held High", "description": "Slightly increase velocity after activating many skills mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -6292,8 +6553,7 @@
             ]
         }
     },
-    {   "skill_name": "Slipstream",
-        "description": "Slightly decrease wind resistance when following directly behind another runner.",
+    {   "skill_name": "Slipstream", "description": "Slightly decrease wind resistance when following directly behind another runner.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s. 30s cooldown.",
@@ -6324,8 +6584,7 @@
             ]
         }
     },
-    {   "skill_name": "Playtime's Over!",
-        "description": "Slightly increase velocity when followed by another runner directly behind for a long time.",
+    {   "skill_name": "Playtime's Over!", "description": "Slightly increase velocity when followed by another runner directly behind for a long time.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s. 30s cooldown.",
@@ -6356,8 +6615,7 @@
             ]
         }
     },
-    {   "skill_name": "Top Pick",
-        "description": "Slightly increase velocity when engaged in a challenge mid-race.",
+    {   "skill_name": "Top Pick", "description": "Slightly increase velocity when engaged in a challenge mid-race. (Dirt)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -6395,8 +6653,7 @@
             }
         }
     },
-    {   "skill_name": "All I've Got",
-        "description": "Slightly increase velocity when well-positioned on a straight in the last spurt.",
+    {   "skill_name": "All I've Got", "description": "Slightly increase velocity when well-positioned on a straight in the last spurt. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 3.0s.",
@@ -6437,8 +6694,7 @@
             }
         }
     },
-    {   "skill_name": "Feature Act",
-        "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
+    {   "skill_name": "Feature Act", "description": "Slightly increase velocity when positioned toward the front upon approaching late-race. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -6477,8 +6733,7 @@
             }
         }
     },
-    {   "skill_name": "Early Start",
-        "description": "Very slightly increase velocity for a medium duration when positioned toward the back mid-race.",
+    {   "skill_name": "Early Start", "description": "Very slightly increase velocity for a medium duration when positioned toward the back mid-race. (End Closer)",
         "effect": [
             {
                 "description": "Increases target speed by 0.05 for 4.0s.",
@@ -6512,8 +6767,7 @@
             ]
         }
     },
-    {   "skill_name": "Risky Business",
-        "description": "Moderately increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
+    {   "skill_name": "Risky Business", "description": "Moderately increase velocity in the second half of the race, but also greatly increase fatigue sometimes.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 1.8s. 10% chance to lose 4% HP, 30% chance to lose 2% HP and 60% chance nothing happens.",
@@ -6545,8 +6799,7 @@
             ]
         }
     },
-    {   "skill_name": "Light as a Feather",
-        "description": "Slightly increase velocity when positioned toward the front upon approaching late-race.",
+    {   "skill_name": "Light as a Feather", "description": "Slightly increase velocity when positioned toward the front upon approaching late-race. (Sprint)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -6586,8 +6839,7 @@
             }
         }
     },
-    {   "skill_name": "Fighting Spirit",
-        "description": "When engaged in a challenge midpack mid-race, very slightly recover endurance and slightly increase velocity.",
+    {   "skill_name": "Fighting Spirit", "description": "When engaged in a challenge midpack mid-race, very slightly recover endurance and slightly increase velocity. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s. Recover HP by 0.5%.",
@@ -6626,8 +6878,7 @@
             }
         }
     },
-    {   "skill_name": "Eager",
-        "description": "When positioned toward the back mid-race, slightly increase velocity.",
+    {   "skill_name": "Eager", "description": "When positioned toward the back mid-race, slightly increase velocity. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -6666,8 +6917,7 @@
             }
         }
     },
-    {   "skill_name": "Pumped",
-        "description": "When positioned toward the back on the final corner, slightly increase velocity.",
+    {   "skill_name": "Pumped", "description": "When positioned toward the back on the final corner, slightly increase velocity. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 1.8s.",
@@ -6707,8 +6957,7 @@
             }
         }
     },
-    {   "skill_name": "Fearless",
-        "description": "When positioned in the midpack during the second half of the race, slightly increase velocity and very minimally increase acceleration.",
+    {   "skill_name": "Fearless", "description": "When positioned in the midpack during the second half of the race, slightly increase velocity and very minimally increase acceleration. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.05 for 2.4s.",
@@ -6742,8 +6991,7 @@
             ]
         }
     },
-    {   "skill_name": "With All My Soul",
-        "description": "When positioned toward the front mid-race, slightly increase velocity and minimally decrease the velocity of runners behind the skill user.",
+    {   "skill_name": "With All My Soul", "description": "When positioned toward the front mid-race, slightly increase velocity and minimally decrease the velocity of runners behind the skill user. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 1.8s. Decreases current speed by 0.035 for 1.8s of 5 closest runners behind the skill user.",
@@ -6782,8 +7030,7 @@
             }
         }
     },
-    {   "skill_name": "Full Throttle",
-        "description": "Greatly consume endurance mid-race and moderately increase velocity.",
+    {   "skill_name": "Full Throttle", "description": "Greatly consume endurance mid-race and moderately increase velocity. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 2.4s. Lose HP by 2%.",
@@ -6815,8 +7062,7 @@
             ]
         }
     },
-    {   "skill_name": "Downhill Speedster",
-        "description": "Slightly increase velocity on downhills.",
+    {   "skill_name": "Downhill Speedster", "description": "Slightly increase velocity on downhills.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 2.4s.",
@@ -6848,6 +7094,354 @@
             ]
         }
     },
+    {   "skill_name": "Sunny Sign", "description": "Slightly increase velocity when positioned toward the front upon approaching late-race. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Dirt",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the second half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "sunny sign",
+            "promising omen",
+            "明るい兆し"
+        ],
+        "upgrade": "Chance of Victory",
+        "gametora_id": "202262",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+              {
+                "type": "box",
+                "phase": "mid",
+                "clip_within_segment_start_ratio": 0.5,
+                "trigger_behavior": "random"
+              }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Comeback", "description": "Slightly increase velocity when positioned toward the back mid-race. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Dirt",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "cant keep me down", "redoubled efforts"
+        ],
+        "upgrade": "Can't Keep Me Down",
+        "gametora_id": "202272",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Full Tilt", "description": "Slightly increase velocity when positioned toward the front in the last spurt. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Dirt",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Character is in their last spurt mode",
+                    "Random point in last spurt phase"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "full tilt", "at full speed"
+        ],
+        "upgrade": "Full Speed!",
+        "gametora_id": "202282",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Rational", "description": "Slightly increase velocity when positioned toward the back in the early part of mid-race after recovering endurance with a skill. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 1.8s.",
+                "conditions": [
+                    "Dirt",
+                    "5th to 9th (CM), 5th to 12th (TT)",
+                    "Activated ≥1 recovery skills",
+                    "Before 42% of the race",
+                    "Mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "rational", "clear head"
+        ],
+        "upgrade": "Crystal Clear",
+        "gametora_id": "202292",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_end_ratio": 0.42,
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Down in the Dirt", "description": "Slightly increase velocity when following directly behind a runner. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Dirt",
+                    "Right behind another uma for ≥3s",
+                    "After ≥5s into a race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "down in the dirt", "dust bath"
+        ],
+        "upgrade": "Dancer in the Dirt",
+        "gametora_id": "202302",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "clip_start": 75,
+                  "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "On the Attack", "description": "Slightly increase velocity mid-race. (Pace Chaser)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "on the attack", "attack stance"
+        ],
+        "upgrade": "Unstoppable",
+        "gametora_id": "202372",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "phase": "mid",
+                  "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Breakin' Out", "description": "Slightly increase velocity and slightly increase navigation when positioned around the very back mid-race. (End Closer)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 and lane movement speed byu 0.015 for 2.4s.",
+                "conditions": [
+                    "End Closer",
+                    "7th to 9th (CM), 9th to 12th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "brakin out", "breaking out", "breakthrough plan"
+        ],
+        "upgrade": "Breakin' Ahead",
+        "gametora_id": "202382",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "phase": "mid",
+                  "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Mad Dash", "description": "Greatly expend endurance and moderately increase velocity in the early part of mid-race. (Front Runner)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 2.7s. Reduce HP by 4%.",
+                "conditions": [
+                    "Front Runner",
+                    "Random point in the first half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "mad dash", "frantic state"
+        ],
+        "upgrade": "Givin' It 1000%",
+        "gametora_id": "202392",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "phase": "mid",
+                  "clip_within_segment_end_ratio": 0.5,
+                  "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Aspire", "description": "Very slightly increase velocity for a medium duration when positioned 2nd or later and within 2 lengths of the lead just before late-race. (Pace Chaser)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.05 for 4.0s.",
+                "conditions": [
+                    "Pace Chaser",
+                    "2nd to 9th (CM), 2nd to 12th (TT)",
+                    "≤5m behind 1st place",
+                    "After 60% of the race", 
+                    "Mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "aspire", "ambitions"
+        ],
+        "upgrade": "Ambitious Breeze",
+        "gametora_id": "202412",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "phase": "mid",
+                  "clip_start_ratio": 0.6,
+                  "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Steady Gait", "description": "Very slightly increase velocity and acceleration upon approaching late-race when leading or within 4 lengths of the lead. (Pace, Medium)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.05 and acceleration by 0.1 for 3.0s.",
+                "conditions": [
+                    "Medium",
+                    "Pace Chaser",
+                    "≤10m behind 1st place",
+                    "Random point in the second half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "steady gait", "firm step"
+        ],
+        "upgrade": "Solid Strike",
+        "gametora_id": "202432",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "phase": "mid",
+                  "clip_within_segment_start_ratio": 0.5,
+                  "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+
     {   "skill_name": "Professor of Curvature",
         "description": "Increase velocity on a corner with skilled turning.",
         "effect": [
@@ -8382,6 +8976,46 @@
             "requirements": {
                 "distance_types": [
                     "medium"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Can't Keep Me Down",
+        "description": "Increase velocity when positioned toward the back mid-race. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Dirt",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "cant keep me down", "redoubled efforts"
+        ],
+        "downgrade": "Comeback",
+        "evolutions":[
+            "Back for More Moe!"
+        ],
+        "gametora_id": "202271",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
                 ]
             }
         }
@@ -10205,7 +10839,7 @@
                 {
                     "type": "line",
                     "distance_mode": "remaining",
-                    "value": 200
+                    "value": 300
                 },
                 {
                     "type": "box",
@@ -11794,7 +12428,7 @@
                     "clip_start_ratio": 0.6,
                     "remaining_gte": 500,
                     "trigger_behavior": "asap"
-                  }
+                }
             ]
         }
     },
@@ -15037,7 +15671,7 @@
         "preconditions": [],
         "review": "",
         "rarity": "rare",
-        "category": "golden velocity",
+        "category": "goldenvelocity",
         "aliases": [
             "radiant star",
             "the first star",
@@ -15057,6 +15691,315 @@
             ]
         }
     },
+    {   "skill_name": "On the Way to Our Dream", "description": "Slightly increase velocity and minimally increase acceleration when positioned toward the front in the second half of the race. Increase this skill's effectiveness based on the user's number of fans.",
+        "effect": [
+            {
+                "description": "Increases target speed by ~0.15 and acceleration by ~0.07 for 1.2s. (Multiplier based on number of fans)",
+                "conditions": [
+                    "1st to 6th (CM), 1st to 8th (TT)",
+                    "Randomly in the second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "on the way to our dreams",
+            "halfway to a dream",
+            "夢の途中"
+        ],
+        "upgrade": "I Wanna Win with You",
+        "gametora_id": "210072",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "I Wanna Win with You", "description": "Increase velocity and slightly increase acceleration when positioned toward the front in the second half of the race. Increase this skill's effectiveness based on the user's number of fans.",
+        "effect": [
+            {
+                "description": "Increases target speed by ~0.35 and acceleration by ~0.2 for 1.2s. (Multiplier based on number of fans)",
+                "conditions": [
+                    "1st to 6th (CM), 1st to 8th (TT)",
+                    "Randomly in the second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "i wanna win with you",
+            "i want to win with you",
+            "キミと勝ちたい"
+        ],
+        "downgrade": "On the Way to Our Dream",
+        "gametora_id": "210071",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Eyes on the Goal", "description": "Slightly increase velocity in the last spurt. Increase this skill's effectiveness based on the value of the user's highest attribute.",
+        "effect": [
+            {
+                "description": "Increases target speed by ~0.15 for 2.4s. (Multiplier based on ???)",
+                "conditions": [
+                    "Character is in their last spurt mode",  
+                    "Random point in last spurt phase"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "eyes on the goal",
+            "eyes on the horizon",
+            "前だけ見据えて"
+        ],
+        "upgrade": "Past My Limits",
+        "gametora_id": "210082",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Racing Spirit: Speed", "description": "Slightly increase velocity upon approaching late-race.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.0s.",
+                "conditions": [
+                    "Random point in the second half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "racing spirit speed",
+            "essence of racing speed"
+        ],
+        "gametora_id": "210091",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Racing Spirit: Stamina", "description": "Moderately expend endurance to moderately increase velocity in the last spurt.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 3.0s. Reduce HP by 2%.",
+                "conditions": [
+                    "≥2% HP remaining",
+                    "Character is in their last spurt mode",  
+                    "Random point in last spurt phase"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "racing spirit stamina",
+            "essence of racing stamina"
+        ],
+        "gametora_id": "210101",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Racing Spirit: Power", "description": "Slightly increase velocity for a medium duration when trying to pass another runner in the last spurt.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 4.0s.",
+                "conditions": [
+                    "Overtake target exists",
+                    "Character is in their last spurt mode",
+                    "Last spurt"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "racing spirit power",
+            "essence of racing power"
+        ],
+        "gametora_id": "210111",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Racing Spirit: Wit", "description": "Slightly increase velocity upon activating 2 skills during the second half of the race.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.0s.",
+                "conditions": [
+                    "Activated ≥2 skills during the second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "racing spirit wit",
+            "essence of racing wisdom"
+        ],
+        "gametora_id": "210131",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Past My Limits", "description": "Increase velocity in the last spurt. Increase this skill's effectiveness based on the value of the user's highest attribute.",
+        "effect": [
+            {
+                "description": "Increases target speed by ~0.35 for 2.4s. (Multiplier based on ???)",
+                "conditions": [
+                    "Character is in their last spurt mode",  
+                    "Random point in last spurt phase"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "past the limits",
+            "beyond the limits",
+            "限界の先へ"
+        ],
+        "downgrade": "Eyes on the Goal",
+        "gametora_id": "210081",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Racing Spirit: Guts", "description": "Slightly increase acceleration when dueling.",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 1.2s.",
+                "conditions": [
+                    ">0 Showdowns during the final straight"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "racing spirit guts",
+            "essence of racing guts"
+        ],
+        "gametora_id": "210121",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Racing Spirit: Mood", "description": "Stamina, Guts, and Wit might moderately increase when mood is good or great.",
+        "effect": [
+            {
+                "description": "Stamina, Guts and Wit stat +40",
+                "conditions": [
+                    "Mood is good or better"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "stamina",
+        "aliases": [
+            "racing spirit mood",
+            "essence of racing energy"
+        ],
+        "gametora_id": "210141",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
 
 
     {   "skill_name": "Hesitant Front Runners",
