@@ -59,12 +59,13 @@
                 "Overtake ≥3 times on the final corner and beyond",                         change_order_up_finalcorner_after>=3
 
                 "Activated ≥7 skills",                                                      activate_count_all>=7
-                "Activated 6 skills or less",                                               activate_count_all<=6
+                "Activated ≤6 skills",                                                      activate_count_all<=6
                 "Activated ≥3 recovery skills",                                             activate_count_heal>=3
                 "Activated ≥3 skills during the early race",                                activate_count_start>=3
                 "Activated ≥2 skills during the mid race",                                  activate_count_middle>=2
                 "Activated ≥3 skills during the late race and beyond",                      activate_count_end_after>=3
                 "Activated ≥2 skills during the second half of the race",                   activate_count_later_half>=2
+                "Activated any other skill",                                                is_activate_any_skill
 
                 "Right beside the inner fence",                                             lane_type==0
                 "Inner lane",                                                               lane_type<=0.2

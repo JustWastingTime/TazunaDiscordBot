@@ -3116,8 +3116,7 @@
             ]
         }
     },
-    {   "skill_name": "Breath of Fresh Air",
-        "description": "Recover endurance on a mid-race straight.",
+    {   "skill_name": "Breath of Fresh Air", "description": "Recover endurance on a mid-race straight.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%",
@@ -3151,8 +3150,7 @@
             ]
         }
     },
-    {   "skill_name": "Straightaway Recovery",
-        "description": "Slightly recover endurance on a mid-race straight.",
+    {   "skill_name": "Straightaway Recovery", "description": "Slightly recover endurance on a mid-race straight.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3185,8 +3183,7 @@
             ]
         }
     },
-    {   "skill_name": "Ramp Revulsion",
-        "description": "Moderately increase fatigue on an uphill.",
+    {   "skill_name": "Ramp Revulsion", "description": "Moderately increase fatigue on an uphill.",
         "effect": [
             {
                 "description": "Reduce HP by 2%",
@@ -3218,8 +3215,7 @@
             ]
         }
     },
-    {   "skill_name": "Packphobia",
-        "description": "Moderately lose endurance when surrounded.",
+    {   "skill_name": "Packphobia", "description": "Moderately lose endurance when surrounded.",
         "effect": [
             {
                 "description": "Reduce HP by 2%",
@@ -3251,8 +3247,7 @@
             ]
         }
     },
-    {   "skill_name": "Iron Will",
-        "description": "When the way ahead is jammed early or mid-race, draw on firm willpower to recover endurance and increase navigation.",
+    {   "skill_name": "Iron Will", "description": "When the way ahead is jammed early or mid-race, draw on firm willpower to recover endurance and increase navigation.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 for 2.0s. Recover HP by 5.5%.",
@@ -3292,8 +3287,7 @@
             ]
         }
     },
-    {   "skill_name": "Lay Low",
-        "description": "When the way ahead is jammed early or mid-race, lay low to slightly recover endurance and slightly increase navigation.",
+    {   "skill_name": "Lay Low", "description": "When the way ahead is jammed early or mid-race, lay low to slightly recover endurance and slightly increase navigation.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.015 for 2.0s. Recover HP by 1.5%",
@@ -3333,8 +3327,7 @@
             ]
         }
     },
-    {   "skill_name": "Indomitable",
-        "description": "Recover endurance when passed by another runner mid-race.",
+    {   "skill_name": "Indomitable", "description": "Recover endurance when passed by another runner mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3368,8 +3361,7 @@
             ]
         }
     },
-    {   "skill_name": "Pace Strategy",
-        "description": "Slightly recover endurance when passed by another runner mid-race.",
+    {   "skill_name": "Pace Strategy", "description": "Slightly recover endurance when passed by another runner mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3405,8 +3397,7 @@
             ]
         }
     },
-    {   "skill_name": "Unruffled",
-        "description": "Recover endurance when surrounded mid-race.",
+    {   "skill_name": "Unruffled", "description": "Recover endurance when surrounded mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3442,8 +3433,7 @@
             ]
         }
     },
-    {   "skill_name": "Calm in a Crowd",
-        "description": "Slightly recover endurance when surrounded mid-race.",
+    {   "skill_name": "Calm in a Crowd", "description": "Slightly recover endurance when surrounded mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3479,8 +3469,7 @@
             ]
         }
     },
-    {   "skill_name": "Running Idle",
-        "description": "Moderately increase fatigue when in the lead by too large of a margin.",
+    {   "skill_name": "Running Idle", "description": "Moderately increase fatigue when in the lead by too large of a margin.",
         "effect": [
             {
                 "description": "Reduce HP by 2%.",
@@ -3511,8 +3500,7 @@
             ]
         }
     },
-    {   "skill_name": "Calm and Collected",
-        "description": "Decrease fatigue upon approaching mid-race.",
+    {   "skill_name": "Calm and Collected", "description": "Decrease fatigue upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3550,8 +3538,7 @@
             ]
         }
     },
-    {   "skill_name": "Stamina to Spare",
-        "description": "Slightly recover endurance when well-positioned mid-race.",
+    {   "skill_name": "Stamina to Spare", "description": "Slightly recover endurance when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3589,8 +3576,7 @@
             ]
         }
     },
-    {   "skill_name": "Race Planner",
-        "description": "Decrease fatigue mid-race.",
+    {   "skill_name": "Race Planner", "description": "Decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3626,8 +3612,7 @@
             ]
         }
     },
-    {   "skill_name": "Preferred Position",
-        "description": "Slightly decrease fatigue mid-race.",
+    {   "skill_name": "Preferred Position", "description": "Slightly decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3664,8 +3649,7 @@
             ]
         }
     },
-    {   "skill_name": "Sleeping Lion",
-        "description": "Decrease fatigue mid-race.",
+    {   "skill_name": "Sleeping Lion", "description": "Decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3701,8 +3685,7 @@
             ]
         }
     },
-    {   "skill_name": "Standing By",
-        "description": "Slightly decrease fatigue mid-race.",
+    {   "skill_name": "Standing By", "description": "Slightly decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3739,8 +3722,7 @@
             ]
         }
     },
-    {   "skill_name": "Wait-and-See",
-        "description": "Slightly decrease fatigue and very slightly increase acceleration when positioned toward the back mid-race.",
+    {   "skill_name": "Wait-and-See", "description": "Slightly decrease fatigue and very slightly increase acceleration when positioned toward the back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%. Increases acceleration by 0.1 for 3.0s.",
@@ -3775,8 +3757,7 @@
             ]
         }
     },
-    {   "skill_name": "Keen Eye",
-        "description": "Decrease fatigue, then moderately decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
+    {   "skill_name": "Keen Eye", "description": "Decrease fatigue, then moderately decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Reduces speed of all umas ahead by 0.2.",
@@ -3819,8 +3800,7 @@
             }
         }
     },
-    {   "skill_name": "Watchful Eye",
-        "description": "Slightly decrease fatigue, then very slightly decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
+    {   "skill_name": "Watchful Eye", "description": "Slightly decrease fatigue, then very slightly decrease velocity of runners ahead when positioned toward the back upon approaching mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%. Reduces speed of all umas ahead by 0.05.",
@@ -3863,8 +3843,7 @@
             }
         }
     },
-    {   "skill_name": "Trackblazer",
-        "description": "Decrease fatigue when positioned toward the front mid-race.",
+    {   "skill_name": "Trackblazer", "description": "Decrease fatigue when positioned toward the front mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3901,8 +3880,7 @@
             ]
         }
     },
-    {   "skill_name": "Rosy Outlook",
-        "description": "Slightly decrease fatigue when positioned toward the front mid-race.",
+    {   "skill_name": "Rosy Outlook", "description": "Slightly decrease fatigue when positioned toward the front mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -3939,8 +3917,7 @@
             ]
         }
     },
-    {   "skill_name": "Cooldown",
-        "description": "Take a breather and decrease fatigue mid-race.",
+    {   "skill_name": "Cooldown", "description": "Take a breather and decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -3976,8 +3953,7 @@
             }
         }
     },
-    {   "skill_name": "Deep Breaths",
-        "description": "Take a breather and slightly decrease fatigue mid-race.",
+    {   "skill_name": "Deep Breaths", "description": "Take a breather and slightly decrease fatigue mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4013,8 +3989,7 @@
             }
         }
     },
-    {   "skill_name": "Adrenaline Rush",
-        "description": "When endurance is running low, rekindle determination and increase velocity.",
+    {   "skill_name": "Adrenaline Rush", "description": "When endurance is running low, rekindle determination and increase velocity.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 1.8s. Recover HP by 5.5%",
@@ -4044,8 +4019,7 @@
             }
         }
     },
-    {   "skill_name": "Extra Tank",
-        "description": "Slightly regain the energy to run when close to exhausting strength.",
+    {   "skill_name": "Extra Tank", "description": "Slightly regain the energy to run when close to exhausting strength.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4680,8 +4654,7 @@
             ]
         }
     },
-    {   "skill_name": "Every Rose Has Its Fangs",
-        "description": "Suck endurance from runners ahead when well-positioned and pressured by another runner mid-race.",
+    {   "skill_name": "Every Rose Has Its Fangs", "description": "Drain endurance from runners in front and moderately increase velocity when well-positioned mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s. Recover HP by 5.5%. Reduces HP of all umas ahead by 0.5%.",
@@ -4889,11 +4862,10 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Ready, Go!",
-        "description": "Moderately recover endurance and slightly increase velocity with newfound resolve when in midpack around halfway through the race.",
+    {   "skill_name": "Ready, Go!", "description": "Moderately recover endurance and slightly increase velocity with newfound resolve when in midpack around halfway through the race.",
         "effect": [
             {
-                "description": "Recover HP by 3.5%. Increases speed by 0.15 for 5.0s.",
+                "description": "Recover HP by 3.5%. Increases target speed by 0.15 for 5.0s.",
                 "conditions": [
                     "3rd to 6th (CM), 3rd to 8th (TT)",
                     "Mid race",
@@ -4928,12 +4900,11 @@
             ]
         }
     },
-    {   "skill_name": "Go, Go, Mun!",
-        "description": "Recover endurance and moderately increase velocity with newfound resolve when in midpack around halfway through the race.",
+    {   "skill_name": "Go, Go, Mun!", "description": "Recover endurance and moderately increase velocity with newfound resolve when in midpack around halfway through the race.",
         "effect": [
             {
-                "description": "Recover HP by 5.5%. Increases speed by 0.25 for 5.0s.",
-                "inherited": "Recover HP by 1.5%. Increases speed by 0.05 for 3.0s.",
+                "description": "Recover HP by 5.5%. Increases target speed by 0.25 for 5.0s.",
+                "inherited": "Recover HP by 1.5%. Increases target speed by 0.05 for 3.0s.",
                 "conditions": [
                     "3rd to 6th (CM), 3rd to 8th (TT)",
                     "Mid race",
@@ -9246,8 +9217,7 @@
             ]
         }
     },
-    {   "skill_name": "Red Ace",
-        "description": "Slightly swell with the determination to be number one when positioned toward the front in the second half of the race.",
+    {   "skill_name": "Red Ace", "description": "Slightly swell with the determination to be number one when positioned toward the front in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.2 for 5.0s.",
@@ -10849,8 +10819,7 @@
             ]
         }
     },
-    {   "skill_name": "KEEP IT REAL.",
-        "description": "Moderately increase acceleration steadily with a wink when starting to make a move from midpack in the second half of the race.",
+    {   "skill_name": "KEEP IT REAL.", "description": "Moderately increase acceleration continuously with a captivating performance when starting to make a move from midpack in the second half of the race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 6.0s.",
@@ -11186,8 +11155,7 @@
             ]
         }
     },
-    {   "skill_name": "Chasing After You",
-        "description": "Chase after an unseen friend when in midpack in the second half of the race, moderately increasing velocity steadily and very slightly intimidating runners ahead..",
+    {   "skill_name": "Chasing After You", "description": "When positioned midpack in the second half of the race, moderately increase velocity steadily to chase Cafe's friend, very slightly intimidating runners ahead.",
         "effect": [
             {
                 "description": "Reduces speed by 0.05 to 5 umas ahead of you and increases your target speed by 0.25 for 6.0s.",
@@ -11221,12 +11189,11 @@
             ]
         }
     },
-    {   "skill_name": "Arrows Whistle, Shadows Disperse",
-        "description": "Burning spirit increases velocity continuously on the last corner and later when pressured while in the front of the pack late-race.",
+    {   "skill_name": "Arrows Whistle, Shadows Disperse", "description": "Burning spirit increases velocity continuously on the last corner and later when pressured while in the front of the pack late-race.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 on the final corner for 6.0s.",
-                "inherited": "Increases target speed by 0.15 on the final corner for 3.6s.",
+                "description": "Increases target speed by 0.35 for 6.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.6s.",
                 "conditions": [
                     "Final corner and beyond"
                 ]
@@ -11260,8 +11227,7 @@
             ]
         }
     },
-    {   "skill_name": "Dancing in the Leaves",
-        "description": "Increase ability to break out of the pack when engaged in a challenge in midpack on the final corner.",
+    {   "skill_name": "Dancing in the Leaves", "description": "Increase ability to break out of the pack when engaged in a challenge in midpack on the final corner.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -11500,8 +11466,7 @@
             ]
         }
     },
-    {   "skill_name": "Barcarole of Blessings",
-        "description": "Increase velocity for a moderate duration when in the front part of the pack with 400m remaining. If at least 7 skills have been activated, greatly increase velocity for a moderate duration instead.",
+    {   "skill_name": "Barcarole of Blessings", "description": "Increase velocity when positioned in the front part of the pack with 400m remaining. If the skill user has activated at least 7 skills, increase velocity greatly instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -11513,17 +11478,17 @@
                 ]
             },
             {
-                "description": "Increases target speed by 0.35 for 4.0s.",
-                "inherited": "Increases target speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "1st to 4th (CM), 1st to 5th (TT)",
-                    "Activated 6 skills or less",
+                    "Activated ≤6 skills",
                     "At the last 400m of the race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "A good inherit on medium and long maps.",
+        "review": "",
         "rarity": "unique",
         "category": "rainbowvelocity",
         "aliases": [
@@ -12001,8 +11966,7 @@
             ]
         }
     },
-    {   "skill_name": "Peerless Dance of Flowering Flames",
-        "description": "If the skill user passes another runner on the final corner or later, increase velocity with fiery fighting spirit when in the front part of the pack with 300m remaining.",
+    {   "skill_name": "Peerless Dance of Flowering Flames", "description": "If the user passes another runner on the final corner or later, increase velocity with fiery fighting spirit when in the front part of the pack with 300m or less remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12475,9 +12439,130 @@
             ]
         }
     },
+    {   "skill_name": "Dreams Donned with Pride!", "description": "If the user activates another skill on the final corner late-race, take the crowd's cheers to heart and moderately increase velocity. If racing at Nakayama Racecourse, greatly increase velocity instead",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "Precondition is true",
+                    "Activated any other skill",
+                    "Final corner",
+                    "Late race and beyond"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "Activated any other skill",
+                    "Final corner",
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Nakayama Racecourse"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "dreams donned with pride",
+            "dignified dreamlike brocard",
+            "special week commander", "commander special week"
+        ],
+        "horse": "Special Week (Commander)",
+        "gametora_id": "100361",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "phase": "late_and_beyond",
+                    "match": "corner",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
 
-    {   "skill_name": "Corner Adept x",
-        "description": "Moderately decrease velocity on a corner with clumsy turning.",
+    {   "skill_name": "564 Escapades", "description": "Slightly increase velocity sometime in the second half of the race. If you've got any cool rare skills lying around, go ahead and activate 2 regardless of their conditions—it's on the house.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 5.0s. Use 2 Random Rare Skills.",
+                "inherited": "Increases target speed by 0.035 for 5.0s. Use 1 Random Rare Skill.",
+                "conditions": [
+                    "Randomly in the second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "564 escapades",
+            "adventure of 564",
+            "golshi summer", "summer golshi",
+            "gold ship summer", "summer gold ship", "summer goldship", "goldship summer"
+        ],
+        "horse": "Gold Ship (Summer)",
+        "gametora_id": "110071",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+        
+    },
+    {   "skill_name": "Your Smile Sparkles as the Waves", "description": "When positioned in the front part of the pack in the second half of the race, start a long spurt based on remaining endurance, slightly increasing velocity continuously.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 5.0s.",
+                "inherited": "Increases target speed by 0.035 for 5.0s.",
+                "conditions": [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Second half of the race" 
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "your smile sparkles as the waves",
+            "the sea glitters bur youre dazzling",
+            "mejiro mcqueen summer", "summer mejiro mcqueen"
+        ],
+        "horse": "Mejiro McQueen (Summer)",
+        "gametora_id": "120131",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+        
+    },
+
+
+
+    {   "skill_name": "Corner Adept x", "description": "Moderately decrease velocity on a corner with clumsy turning.",
         "effect": [
             {
                 "description": "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
@@ -12508,8 +12593,7 @@
             ]
         }
     },
-    {   "skill_name": "Defeatist",
-        "description": "Moderately increase urge to give up when positioned around the very back on the final straight.",
+    {   "skill_name": "Defeatist", "description": "Moderately increase urge to give up when positioned around the very back on the final straight.",
         "effect": [
             {
                 "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
@@ -12542,8 +12626,7 @@
             ]
         }
     },
-    {   "skill_name": "Reckless",
-        "description": "Moderately increase carelessness when in the lead with around 200m remaining.",
+    {   "skill_name": "Reckless", "description": "Moderately increase carelessness when in the lead with around 200m remaining.",
         "effect": [
             {
                 "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
@@ -12575,8 +12658,7 @@
             ]
         }
     },
-    {   "skill_name": "Blatant Fear",
-        "description": "Greatly decrease velocity on a corner in the second half of the race due to Trainer's obvious anxiety.",
+    {   "skill_name": "Blatant Fear", "description": "Greatly decrease velocity on a corner in the second half of the race due to Trainer's obvious anxiety.",
         "effect": [
             {
                 "description": "Reduces speed by 0.3 for 5.0s.",
@@ -14312,8 +14394,7 @@
             ]
         }
     },
-    {   "skill_name": "Budding Blossom",
-        "description": "If the skill user engaged in a challenge on a mid-race corner, increase acceleration when well-positioned late-race at least halfway through the final corner.",
+    {   "skill_name": "Budding Blossom", "description": "If the user engaged in a challenge on a mid-race corner, increase acceleration when well-positioned late-race at least halfway through the final corner.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
