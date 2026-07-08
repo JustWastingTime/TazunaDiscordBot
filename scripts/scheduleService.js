@@ -98,11 +98,20 @@ function normalizeTimelineEvent(raw, index) {
   const startAt = raw?.global_release_date ? String(raw.global_release_date) : '';
   const endAt = raw?.estimated_end_date ? String(raw.estimated_end_date) : startAt;
   const imageUrl = toAbsoluteUmaUrl(raw?.image_path || raw?.image || '');
-
-  const relatedNames = [
-    ...(Array.isArray(raw?.related_characters) ? raw.related_characters : []),
+  const gametoraUrl = raw?.gametora_url ? String(raw.gametora_url) : '';
+  const description = raw?.description ? String(raw.description) : '';
+  const pickupCardIds = Array.isArray(raw?.pickup_card_ids)
+    ? raw.pickup_card_ids.map((cardId) => Number(cardId)).filter(Number.isFinite)
+    : [];
+  const relatedCharacters = Array.isArray(raw?.related_characters)
+    ? raw.related_characters.map(String)
+    : [];
+  const relatedSupportNames = [
     ...(Array.isArray(raw?.related_support_card_names) ? raw.related_support_card_names : []),
-  ];
+    ...(Array.isArray(raw?.related_support_cards) ? raw.related_support_cards : []),
+  ].map(String);
+
+  const relatedNames = [...relatedCharacters, ...relatedSupportNames];
 
   const type = String(raw?.type || 'event');
   const source = String(raw?.source || '');
@@ -119,7 +128,11 @@ function normalizeTimelineEvent(raw, index) {
     tags,
     startAt,
     endAt,
-    isConfirmed: Boolean(raw?.is_confirmed),
+    gametoraUrl,
+    description,
+    pickupCardIds,
+    relatedCharacters,
+    relatedSupportNames,
     imageUrl,
     searchable,
   };
@@ -144,6 +157,55 @@ function sortEvents(events) {
     if (timeDiff !== 0) return timeDiff;
     return a.title.localeCompare(b.title);
   });
+}
+
+export function isScheduleEventActive(event, nowMs = Date.now()) {
+  const endMs = toTimestamp(event?.endAt);
+  if (!Number.isFinite(endMs)) return true;
+  return endMs >= nowMs;
+}
+
+function cacheNeedsRebuild() {
+  return cacheState.events.length > 0 && cacheState.events.some((event) => !('gametoraUrl' in event));
+}
+
+function pickDefaultSelected(matches, monthEvents, nowMs) {
+  const activeMatches = matches.filter((event) => isScheduleEventActive(event, nowMs));
+  if (activeMatches.length > 0) return activeMatches[0];
+
+  const activeMonth = monthEvents.filter((event) => isScheduleEventActive(event, nowMs));
+  if (activeMonth.length > 0) return activeMonth[0];
+
+  return matches[0] || monthEvents[0] || null;
+}
+
+function buildScheduleView(state, query, baseDate) {
+  const nowMs = baseDate.getTime();
+  const monthStartMs = Date.UTC(baseDate.getUTCFullYear(), baseDate.getUTCMonth(), 1);
+  const monthEndMs = Date.UTC(baseDate.getUTCFullYear(), baseDate.getUTCMonth() + 1, 1);
+
+  const monthEvents = state.events.filter((event) => overlapsMonth(event, monthStartMs, monthEndMs));
+  const activeMonthEvents = monthEvents.filter((event) => isScheduleEventActive(event, nowMs));
+  const terms = String(query || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const matches = terms.length === 0
+    ? monthEvents
+    : monthEvents.filter((event) => terms.every((term) => event.searchable.includes(term)));
+
+  const monthLabel = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(baseDate);
+
+  return {
+    monthLabel,
+    query: String(query || '').trim(),
+    monthEvents,
+    activeMonthEvents,
+    matches,
+    selected: pickDefaultSelected(matches, monthEvents, nowMs),
+    generatedAt: state.generatedAt,
+  };
 }
 
 async function refreshScheduleCacheIfNeeded(force = false) {
@@ -172,7 +234,7 @@ async function refreshScheduleCacheIfNeeded(force = false) {
 
     cacheState.lastCheckedAt = nowMs;
 
-    if (isSameManifest && cacheState.events.length > 0) {
+    if (isSameManifest && cacheState.events.length > 0 && !cacheNeedsRebuild()) {
       saveDiskCache();
       return cacheState;
     }
@@ -204,41 +266,22 @@ async function refreshScheduleCacheIfNeeded(force = false) {
 export async function getCurrentMonthSchedule(query = '', now = new Date()) {
   const state = await refreshScheduleCacheIfNeeded(false);
   const baseDate = now instanceof Date ? now : new Date(now);
-  const monthStartMs = Date.UTC(baseDate.getUTCFullYear(), baseDate.getUTCMonth(), 1);
-  const monthEndMs = Date.UTC(baseDate.getUTCFullYear(), baseDate.getUTCMonth() + 1, 1);
-
-  const monthEvents = state.events.filter((event) => overlapsMonth(event, monthStartMs, monthEndMs));
-  const terms = String(query || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
-  const matches = terms.length === 0
-    ? monthEvents
-    : monthEvents.filter((event) => terms.every((term) => event.searchable.includes(term)));
-
-  const selected = matches[0] || monthEvents[0] || null;
-  const monthLabel = new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(baseDate);
-
-  return {
-    monthLabel,
-    query: String(query || '').trim(),
-    monthEvents,
-    matches,
-    selected,
-    generatedAt: state.generatedAt,
-  };
+  return buildScheduleView(state, query, baseDate);
 }
 
 export async function getCurrentMonthEventById(eventId, now = new Date()) {
   const view = await getCurrentMonthSchedule('', now);
-  const selected = view.monthEvents.find((event) => event.id === String(eventId)) || view.monthEvents[0] || null;
+  const selected = view.monthEvents.find((event) => event.id === String(eventId))
+    || view.selected
+    || null;
   return { ...view, selected };
 }
 
 export async function buildScheduleAutocompleteChoices(query = '', limit = 25) {
   const view = await getCurrentMonthSchedule(query);
-  const source = view.matches.length > 0 ? view.matches : view.monthEvents;
+  const source = view.matches.length > 0
+    ? view.matches.filter((event) => isScheduleEventActive(event))
+    : view.activeMonthEvents;
   return source.slice(0, limit).map((event) => ({
     name: event.title.length > 100 ? `${event.title.slice(0, 97)}...` : event.title,
     value: event.title.length > 100 ? event.title.slice(0, 100) : event.title,

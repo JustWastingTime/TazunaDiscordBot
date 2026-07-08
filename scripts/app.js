@@ -292,7 +292,8 @@ function formatScheduleOptionRange(event) {
   return `${startLabel} - ${endLabel}`;
 }
 
-function buildScheduleSelectRow(events, selectedId, placeholder) {
+function buildScheduleSelectRow(events, selectedId) {
+  if (!events.length) return [];
   return [
     {
       type: 1,
@@ -300,7 +301,7 @@ function buildScheduleSelectRow(events, selectedId, placeholder) {
         {
           type: 3,
           custom_id: 'schedule_select',
-          placeholder: placeholder || 'Select another event',
+          placeholder: 'Check other events',
           options: events.slice(0, 25).map((event) => ({
             label: event.title.length > 100 ? `${event.title.slice(0, 97)}...` : event.title,
             value: event.id,
@@ -313,34 +314,131 @@ function buildScheduleSelectRow(events, selectedId, placeholder) {
   ];
 }
 
-function buildScheduleEmbed(event, monthLabel, generatedAt) {
+function findSupporterByPickupId(pickupId) {
+  return supporters.find((card) => card.id.startsWith(`${pickupId} `)) || null;
+}
+
+function findCharacterByPickupId(pickupId) {
+  return characters.find((card) =>
+    card.id.startsWith(`${pickupId} -`) || card.id.startsWith(`${pickupId} `)
+  ) || null;
+}
+
+function buildSchedulePickupRow(event) {
+  if (event.source === 'support' && event.pickupCardIds?.length) {
+    const options = event.pickupCardIds.map((pickupId) => {
+      const card = findSupporterByPickupId(pickupId);
+      const label = card
+        ? `${card.character_name} - ${card.card_name}`
+        : `Support #${pickupId}`;
+      return {
+        label: label.length > 100 ? `${label.slice(0, 97)}...` : label,
+        value: `${event.id}::support::${pickupId}`,
+        description: card?.rarity ? card.rarity.toUpperCase() : undefined,
+      };
+    });
+    if (!options.length) return null;
+    return {
+      type: 1,
+      components: [
+        {
+          type: 3,
+          custom_id: 'schedule_pickup_select',
+          placeholder: 'View pickup support cards',
+          options: options.slice(0, 25),
+        },
+      ],
+    };
+  }
+
+  if (event.source === 'character' && event.pickupCardIds?.length) {
+    const options = event.pickupCardIds.map((pickupId) => {
+      const card = findCharacterByPickupId(pickupId);
+      const label = card
+        ? `${card.character_name} (${card.type})`
+        : `Uma #${pickupId}`;
+      return {
+        label: label.length > 100 ? `${label.slice(0, 97)}...` : label,
+        value: `${event.id}::character::${pickupId}`,
+        description: card?.costume ? card.costume.slice(0, 100) : undefined,
+      };
+    });
+    if (!options.length) return null;
+    return {
+      type: 1,
+      components: [
+        {
+          type: 3,
+          custom_id: 'schedule_pickup_select',
+          placeholder: 'View pickup characters',
+          options: options.slice(0, 25),
+        },
+      ],
+    };
+  }
+
+  return null;
+}
+
+function buildScheduleComponents(event, activeEvents) {
+  const rows = buildScheduleSelectRow(activeEvents, event.id);
+  const pickupRow = buildSchedulePickupRow(event);
+  if (pickupRow) rows.push(pickupRow);
+  return rows;
+}
+
+function formatChampionsDescription(description) {
+  return String(description || '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .trim();
+}
+
+function buildScheduleEmbed(event) {
   const typeMeta = getScheduleTypeMeta(event.type);
   const startRelative = toDiscordTimestamp(event.startAt);
-  const footerParts = [`${monthLabel} schedule`, 'Dates are estimated'];
-  if (generatedAt) {
-    const generatedTs = toDiscordTimestamp(generatedAt);
-    if (generatedTs) footerParts.push(`Snapshot <t:${generatedTs}:R>`);
+  const descriptionLines = [
+    `**Type:** ${typeMeta.label}`,
+    `**Window:** ${formatScheduleDateLine(event)}`,
+    startRelative ? `**Starts:** <t:${startRelative}:R>` : '',
+  ];
+
+  if (event.source === 'champions' && event.description) {
+    descriptionLines.push('', formatChampionsDescription(event.description));
   }
 
   const embed = {
     title: event.title,
     color: typeMeta.color,
-    description: [
-      `**Type:** ${typeMeta.label}`,
-      `**Window:** ${formatScheduleDateLine(event)}`,
-      startRelative ? `**Starts:** <t:${startRelative}:R>` : '',
-      `**Status:** ${event.isConfirmed ? 'Confirmed' : 'Estimated'}`,
-      '',
-      '⚠️ Timeline dates are predictions and can change.',
-    ].filter(Boolean).join('\n'),
-    footer: { text: footerParts.join(' • ') },
+    description: descriptionLines.filter(Boolean).join('\n'),
+    footer: { text: '⚠️ Timeline dates are predictions and can change.' },
   };
+
+  if (event.gametoraUrl) {
+    embed.url = event.gametoraUrl;
+  }
 
   if (event.imageUrl) {
     embed.image = { url: event.imageUrl };
   }
 
   return embed;
+}
+
+function buildScheduleMessageData(view, options = {}) {
+  const selected = options.selected || view.selected;
+  const extraEmbeds = options.extraEmbeds || [];
+  return {
+    content: options.content ?? `📅 ${view.monthLabel} schedule`,
+    embeds: [buildScheduleEmbed(selected), ...extraEmbeds],
+    components: buildScheduleComponents(selected, view.activeMonthEvents),
+  };
+}
+
+function parseSchedulePickupValue(rawValue) {
+  const [eventId, kind, pickupIdRaw] = String(rawValue || '').split('::');
+  const pickupId = Number(pickupIdRaw);
+  if (!eventId || !kind || !Number.isFinite(pickupId)) return null;
+  return { eventId, kind, pickupId };
 }
 
 function normalizeSkillMapOptions(options) {
@@ -1267,7 +1365,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           return;
         }
 
-        const selected = view.selected;
         const hasQuery = nameQuery.length > 0;
         const hasMatches = view.matches.length > 0;
         const header = hasQuery
@@ -1278,19 +1375,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             : `❌ No matches for **${nameQuery}**. Showing the full ${view.monthLabel} schedule instead.`
           : `📅 ${view.monthLabel} schedule`;
 
-        const dropdownSource = view.monthEvents;
-
-        await sendFollowup(token, {
+        await sendFollowup(token, buildScheduleMessageData(view, {
           content: header,
-          embeds: [buildScheduleEmbed(selected, view.monthLabel, view.generatedAt)],
-          components: buildScheduleSelectRow(
-            dropdownSource,
-            selected.id,
-            hasQuery && view.matches.length > 1
-              ? `Multiple matches for "${nameQuery}" — pick one`
-              : `Select another ${view.monthLabel} event`,
-          ),
-        });
+          selected: view.selected,
+        }));
       } catch (err) {
         console.error("Schedule command error:", err);
         await sendFollowup(token, { content: "❌ Failed to load schedule." });
@@ -2123,15 +2211,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
         return res.send({
           type: InteractionResponseType.UPDATE_MESSAGE,
-          data: {
-            content: `📅 ${view.monthLabel} schedule`,
-            embeds: [buildScheduleEmbed(view.selected, view.monthLabel, view.generatedAt)],
-            components: buildScheduleSelectRow(
-              view.monthEvents,
-              view.selected.id,
-              `Select another ${view.monthLabel} event`,
-            ),
-          },
+          data: buildScheduleMessageData(view),
         });
       } catch (err) {
         console.error('Schedule select handler failed:', err);
@@ -2140,6 +2220,75 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           data: {
             flags: InteractionResponseFlags.EPHEMERAL,
             content: '❌ Could not update the schedule card.',
+          },
+        });
+      }
+    }
+
+    if (custom_id === 'schedule_pickup_select') {
+      try {
+        const parsed = parseSchedulePickupValue(values?.[0]);
+        if (!parsed) {
+          return res.send({
+            type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+            data: {
+              flags: InteractionResponseFlags.EPHEMERAL,
+              content: '❌ Could not parse the selected pickup card.',
+            },
+          });
+        }
+
+        const view = await getCurrentMonthEventById(parsed.eventId);
+        const event = view.monthEvents.find((entry) => entry.id === parsed.eventId) || view.selected;
+        if (!event) {
+          return res.send({
+            type: InteractionResponseType.UPDATE_MESSAGE,
+            data: {
+              content: '❌ This schedule entry is no longer available for the current month.',
+              embeds: [],
+              components: [],
+            },
+          });
+        }
+
+        let extraEmbeds = [];
+        if (parsed.kind === 'support') {
+          const card = findSupporterByPickupId(parsed.pickupId);
+          if (!card) {
+            return res.send({
+              type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+              data: {
+                flags: InteractionResponseFlags.EPHEMERAL,
+                content: '❌ Support card not found in bot data.',
+              },
+            });
+          }
+          extraEmbeds = [buildSupporterEmbed(card, skills)];
+        } else if (parsed.kind === 'character') {
+          const card = findCharacterByPickupId(parsed.pickupId);
+          if (!card) {
+            return res.send({
+              type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+              data: {
+                flags: InteractionResponseFlags.EPHEMERAL,
+                content: '❌ Character card not found in bot data.',
+              },
+            });
+          }
+          extraEmbeds = [buildUmaEmbed(card, skills)];
+        }
+
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: buildScheduleMessageData({ ...view, selected: event }, { extraEmbeds }),
+        });
+      } catch (err) {
+        console.error('Schedule pickup handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Could not load the selected pickup card.',
           },
         });
       }
