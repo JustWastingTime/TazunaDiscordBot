@@ -275,7 +275,7 @@ function buildMapContextFromRawMap(rawMap, label = null, trackOverlay = null) {
   };
 }
 
-export function resolveMapOverride(rawValue, mapsCatalog = [], customRacesCatalog = []) {
+function resolveMapOverrideExact(rawValue, mapsCatalog = [], customRacesCatalog = []) {
   const value = String(rawValue ?? "").trim();
   if (!value) return null;
 
@@ -288,28 +288,83 @@ export function resolveMapOverride(rawValue, mapsCatalog = [], customRacesCatalo
         .some((candidate) => lower(candidate) === customId);
     });
     if (!race) return null;
-    const rawMap = resolveCustomRaceMapSource(race, mapsCatalog);
-    if (!rawMap) return null;
-    return {
-      source: "custom",
-      key: `custom:${race.id ?? slugifyMapKey(race.name)}`,
-      label: race.name ?? rawMap.name ?? "Custom Race",
-      rawMap,
-      context: buildMapContextFromRawMap(rawMap, race.name, race.track),
-      customRace: race,
-    };
+    return toCatalogEntryFromCustomRace(race, mapsCatalog);
   }
 
   const mapKey = value.toLowerCase().startsWith("map:") ? value.slice(4).trim() : value;
   const map = findMapInCatalog(mapKey, mapsCatalog);
   if (!map) return null;
-  return {
-    source: "map",
-    key: `map:${mapChoiceKey(map)}`,
-    label: map.name ?? "Course Map",
-    rawMap: map,
-    context: buildMapContextFromRawMap(map),
-  };
+  return toCatalogEntryFromMap(map);
+}
+
+function searchMapCatalogByTerms(terms, mapsCatalog = [], customRacesCatalog = []) {
+  const matches = [];
+  const seen = new Set();
+
+  for (const map of mapsCatalog ?? []) {
+    if (!map?.name || !getCourseMapDataFromMap(map)) continue;
+    const hay = mapSearchHaystack(map);
+    if (!terms.every((term) => hay.includes(term))) continue;
+    const entry = toCatalogEntryFromMap(map);
+    if (seen.has(entry.key)) continue;
+    seen.add(entry.key);
+    matches.push(entry);
+  }
+
+  for (const race of customRacesCatalog ?? []) {
+    const entry = toCatalogEntryFromCustomRace(race, mapsCatalog);
+    if (!entry) continue;
+    const searchText = [
+      entry.label,
+      race.host,
+      race.description,
+      mapSearchHaystack(entry.rawMap),
+    ].filter(Boolean).join(" ").toLowerCase();
+    if (!terms.every((term) => searchText.includes(term))) continue;
+    if (seen.has(entry.key)) continue;
+    seen.add(entry.key);
+    matches.push(entry);
+  }
+
+  matches.sort((a, b) => a.label.localeCompare(b.label));
+  return matches;
+}
+
+export function resolveMapOverride(rawValue, mapsCatalog = [], customRacesCatalog = []) {
+  const exact = resolveMapOverrideExact(rawValue, mapsCatalog, customRacesCatalog);
+  if (exact) return exact;
+
+  const value = String(rawValue ?? "").trim();
+  if (!value || value.toLowerCase().startsWith("custom:")) return null;
+
+  const mapKey = value.toLowerCase().startsWith("map:") ? value.slice(4).trim() : value;
+  const terms = mapKey.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return null;
+
+  const matches = searchMapCatalogByTerms(terms, mapsCatalog, customRacesCatalog);
+  return matches.length === 1 ? matches[0] : null;
+}
+
+export function resolveMapOverrideSelection(rawValue, mapsCatalog = [], customRacesCatalog = []) {
+  const value = String(rawValue ?? "").trim();
+  if (!value) return { entry: null, candidates: [], query: null };
+
+  const lowered = value.toLowerCase();
+  if (lowered.startsWith("custom:") || lowered.startsWith("map:")) {
+    const entry = resolveMapOverrideExact(value, mapsCatalog, customRacesCatalog);
+    return { entry, candidates: [], query: null };
+  }
+
+  const exact = resolveMapOverrideExact(value, mapsCatalog, customRacesCatalog);
+  if (exact) return { entry: exact, candidates: [], query: null };
+
+  const terms = value.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return { entry: null, candidates: [], query: value };
+
+  const candidates = searchMapCatalogByTerms(terms, mapsCatalog, customRacesCatalog);
+  if (candidates.length === 0) return { entry: null, candidates: [], query: value };
+  if (candidates.length === 1) return { entry: candidates[0], candidates: [], query: null };
+  return { entry: candidates[0], candidates, query: value };
 }
 
 export function buildMapOverrideAutocompleteChoices(query, mapsCatalog = [], customRacesCatalog = []) {
@@ -381,42 +436,14 @@ export function resolveMapCatalogMatches(rawValue, mapsCatalog = [], customRaces
   const value = String(rawValue ?? "").trim();
   if (!value) return [];
 
-  const exact = resolveMapOverride(value, mapsCatalog, customRacesCatalog);
+  const exact = resolveMapOverrideExact(value, mapsCatalog, customRacesCatalog);
   if (exact) return [exact];
 
-  const terms = value.toLowerCase().split(/\s+/).filter(Boolean);
+  const mapKey = value.toLowerCase().startsWith("map:") ? value.slice(4).trim() : value;
+  const terms = mapKey.toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return [];
 
-  const matches = [];
-  const seen = new Set();
-
-  for (const map of mapsCatalog ?? []) {
-    if (!map?.name || !getCourseMapDataFromMap(map)) continue;
-    const hay = mapSearchHaystack(map);
-    if (!terms.every((term) => hay.includes(term))) continue;
-    const entry = toCatalogEntryFromMap(map);
-    if (seen.has(entry.key)) continue;
-    seen.add(entry.key);
-    matches.push(entry);
-  }
-
-  for (const race of customRacesCatalog ?? []) {
-    const entry = toCatalogEntryFromCustomRace(race, mapsCatalog);
-    if (!entry) continue;
-    const searchText = [
-      entry.label,
-      race.host,
-      race.description,
-      mapSearchHaystack(entry.rawMap),
-    ].filter(Boolean).join(" ").toLowerCase();
-    if (!terms.every((term) => searchText.includes(term))) continue;
-    if (seen.has(entry.key)) continue;
-    seen.add(entry.key);
-    matches.push(entry);
-  }
-
-  matches.sort((a, b) => a.label.localeCompare(b.label));
-  return matches;
+  return searchMapCatalogByTerms(terms, mapsCatalog, customRacesCatalog);
 }
 
 export const buildMapCatalogAutocompleteChoices = buildMapOverrideAutocompleteChoices;

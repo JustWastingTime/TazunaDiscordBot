@@ -25,10 +25,11 @@ import {
   getCourseMapDataFromCm,
   getCourseMapDataFromMap,
   resolveMapOverride,
-  resolveMapSource,
-  buildMapOverrideAutocompleteChoices,
+  resolveMapOverrideSelection,
   resolveMapCatalogMatches,
   buildMapCatalogAutocompleteChoices,
+  resolveMapSource,
+  buildMapOverrideAutocompleteChoices,
   resolveSkillActivationOverlay,
   buildSkillMapCacheKey,
   ensureDirectory,
@@ -93,7 +94,7 @@ const MAP_RENDERER_CACHE_VERSION = 'v3';
 // Adjust SKILL_MAP_MAX_CM_NUMBER (or the env var) to decide the highest CM shown.
 // The effective lower bound is dynamic: max(configured minimum, current upcoming CM).
 const SKILL_MAP_MIN_CM_NUMBER = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 16);
-const SKILL_MAP_MAX_CM_NUMBER = Number(process.env.SKILL_MAP_MAX_CM_NUMBER ?? 16);
+const SKILL_MAP_MAX_CM_NUMBER = Number(process.env.SKILL_MAP_MAX_CM_NUMBER ?? 17);
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -161,6 +162,70 @@ function buildSkillCmDropdownRow(skill, selectableCms, selectedCmNumber) {
       },
     ],
   };
+}
+
+function buildSkillMapOverrideDropdownRow(skill, mapMatches, selectedKey, mapOverrideQuery) {
+  if (!Array.isArray(mapMatches) || mapMatches.length < 2 || !selectedKey) return null;
+
+  const identifier = skill.gametora_id ?? skill.skill_name;
+  const querySuffix = mapOverrideQuery ? `|${mapOverrideQuery}` : '';
+  const options = mapMatches.slice(0, 25).map((entry) => {
+    const track = entry.context?.track ?? {};
+    const subtitle = [track.racetrack, track.distance_meters, track.terrain, track.distance_type]
+      .filter(Boolean)
+      .join(' - ');
+    return {
+      label: entry.label.slice(0, 100),
+      value: `${entry.key}|${identifier}${querySuffix}`.slice(0, 100),
+      description: subtitle ? subtitle.slice(0, 100) : undefined,
+      default: entry.key === selectedKey,
+    };
+  });
+
+  return {
+    type: 1,
+    components: [
+      {
+        type: 3,
+        custom_id: 'skill_map_override_select',
+        placeholder: 'Select a course map',
+        options,
+      },
+    ],
+  };
+}
+
+function parseSkillMapOverrideSelectValue(rawValue) {
+  const parts = String(rawValue ?? '').split('|');
+  if (parts.length < 2) return null;
+  return {
+    mapKey: parts[0],
+    identifier: parts[1],
+    mapOverrideQuery: parts.slice(2).join('|') || null,
+  };
+}
+
+function attachSkillMapDropdowns(result, skill, {
+  override,
+  mapOverrideCandidates,
+  mapOverrideQuery,
+  chartCapable = true,
+}) {
+  if (mapOverrideCandidates.length >= 2 && override) {
+    const dropdownRow = buildSkillMapOverrideDropdownRow(
+      skill,
+      mapOverrideCandidates,
+      override.key,
+      mapOverrideQuery
+    );
+    if (dropdownRow) result.mapComponents.push(dropdownRow);
+    return;
+  }
+
+  if (!override && chartCapable && result._selectableCms && result._activeCm) {
+    const dropdownRow = buildSkillCmDropdownRow(skill, result._selectableCms, result._activeCm.number);
+    if (dropdownRow) result.mapComponents.push(dropdownRow);
+  }
 }
 
 // Inserts map selector rows before the skill button row (upgrade/downgrade/
@@ -292,13 +357,30 @@ function skillMapFilePrefix(mapContextKey) {
 // Champions Meet selector row. selectedCmNumber forces a specific CM map.
 // mapOverride resolves a catalog/custom-race map instead of the CM default.
 async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
-  const { selectedCmNumber = null, mapOverride = null } = normalizeSkillMapOptions(options);
+  const {
+    selectedCmNumber = null,
+    mapOverride = null,
+    mapOverrideQuery = null,
+  } = normalizeSkillMapOptions(options);
   const embed = buildSkillEmbed(skill, supporterList);
   const result = { embed, mapComponents: [], mapOverrideKey: null, mapCid: null };
 
-  const override = mapOverride
-    ? resolveMapOverride(mapOverride, cache.maps, cache.customraces)
-    : null;
+  let override = null;
+  let mapOverrideCandidates = [];
+  let activeMapOverrideQuery = mapOverrideQuery;
+
+  if (mapOverride) {
+    if (mapOverrideQuery) {
+      override = resolveMapOverride(mapOverride, cache.maps, cache.customraces);
+      mapOverrideCandidates = resolveMapCatalogMatches(mapOverrideQuery, cache.maps, cache.customraces);
+      if (mapOverrideCandidates.length < 2) mapOverrideCandidates = [];
+    } else {
+      const selection = resolveMapOverrideSelection(mapOverride, cache.maps, cache.customraces);
+      override = selection.entry;
+      mapOverrideCandidates = selection.candidates;
+      activeMapOverrideQuery = selection.query;
+    }
+  }
   if (override) result.mapOverrideKey = override.key;
   let mapData = null;
   let overlayCm = null;
@@ -353,10 +435,12 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     (Array.isArray(skill.activation_map?.triggers) && skill.activation_map.triggers.length > 0);
 
   if (!overlay.shouldShowChart) {
-    if (!override && chartCapable && result._selectableCms && result._activeCm) {
-      const dropdownRow = buildSkillCmDropdownRow(skill, result._selectableCms, result._activeCm.number);
-      if (dropdownRow) result.mapComponents.push(dropdownRow);
-    }
+    attachSkillMapDropdowns(result, skill, {
+      override,
+      mapOverrideCandidates,
+      mapOverrideQuery: activeMapOverrideQuery,
+      chartCapable,
+    });
     return result;
   }
 
@@ -391,10 +475,12 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     ? { text: `${embed.footer.text} • ${suffix}` }
     : { text: suffix };
 
-  if (!override && result._selectableCms && result._activeCm) {
-    const dropdownRow = buildSkillCmDropdownRow(skill, result._selectableCms, result._activeCm.number);
-    if (dropdownRow) result.mapComponents.push(dropdownRow);
-  }
+  attachSkillMapDropdowns(result, skill, {
+    override,
+    mapOverrideCandidates,
+    mapOverrideQuery: activeMapOverrideQuery,
+    chartCapable: true,
+  });
 
   return result;
 }
@@ -1776,6 +1862,53 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         supporterList,
         req,
         { mapOverride: selectedMapOverride || null }
+      );
+
+      return res.send({
+        type: InteractionResponseType.UPDATE_MESSAGE,
+        data: {
+          content: `✅ You selected **${skill.skill_name}**`,
+          embeds: [skillEmbed],
+          components: composeSkillComponents(
+            buildSkillComponents(skill, supporterMatches.length, supporterMatches, mapOverrideKey, mapCid),
+            mapComponents
+          )
+        }
+      });
+    }
+
+    // Handling switching the course map shown under a skill (ambiguous map_override)
+    if (custom_id === "skill_map_override_select") {
+      const parsed = parseSkillMapOverrideSelectValue(values[0]);
+      if (!parsed) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: { content: "⚠️ Could not parse map selection." }
+        });
+      }
+
+      const skill = skills.find(s =>
+        String(s.gametora_id ?? "") === parsed.identifier ||
+        s.skill_name.toLowerCase() === String(parsed.identifier ?? "").toLowerCase()
+      );
+
+      if (!skill) {
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: { content: "❌ Could not find the selected skill." }
+        });
+      }
+
+      const supporterMatches = getSupporterMatchesForSkill(skill.skill_name);
+      const supporterList = supporterMatches.length
+        ? supporterMatches.map(s => `• ${s.character_name} - ${s.card_name} (${s.rarity.toUpperCase()})`).join('\n')
+        : 'None';
+
+      const { embed: skillEmbed, mapComponents, mapOverrideKey, mapCid } = await buildSkillEmbedWithMap(
+        skill,
+        supporterList,
+        req,
+        { mapOverride: parsed.mapKey, mapOverrideQuery: parsed.mapOverrideQuery }
       );
 
       return res.send({
