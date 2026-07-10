@@ -11,6 +11,9 @@ import { buildLeaderboardPackage, getUmaApiKey } from './clubService.js';
 const PREMIUM_TOP100_INTERVAL_MS = 5 * 60 * 1000;
 const STANDARD_TOP100_INTERVAL_MS = 15 * 60 * 1000;
 const NON_TOP100_POLL_MS = 60 * 60 * 1000;
+const HOURLY_RANK_MIN = 101;
+const HOURLY_RANK_MAX = 10000;
+const HOURLY_UPDATE_MINUTE_UTC = 15;
 const TICK_MS = 60 * 1000;
 const EDIT_STAGGER_MS = 2500;
 const CIRCLE_CACHE_TTL_MS = 3 * 60 * 1000;
@@ -81,6 +84,28 @@ function isDueForTop100(entry, now, intervalMs) {
   return now - entry.lastUpdatedAt >= intervalMs;
 }
 
+function getCircleRank(circle) {
+  const rank = circle?.live_rank ?? circle?.monthly_rank;
+  return typeof rank === 'number' ? rank : null;
+}
+
+function isHourlyRankBandCircle(circle) {
+  const rank = getCircleRank(circle);
+  return rank != null && rank >= HOURLY_RANK_MIN && rank <= HOURLY_RANK_MAX;
+}
+
+function getUtcHourKey(tsMs) {
+  const d = new Date(tsMs);
+  return `${d.getUTCFullYear()}-${d.getUTCMonth() + 1}-${d.getUTCDate()}-${d.getUTCHours()}`;
+}
+
+function isDueForHourlyRankBand(entry, now) {
+  const minute = new Date(now).getUTCMinutes();
+  if (minute !== HOURLY_UPDATE_MINUTE_UTC) return false;
+  if (!entry.lastUpdatedAt) return true;
+  return getUtcHourKey(entry.lastUpdatedAt) !== getUtcHourKey(now);
+}
+
 function isDueForNonTop100(entry, now, pkg) {
   if (!entry.lastUpdatedAt) return true;
   if (now - entry.lastUpdatedAt < NON_TOP100_POLL_MS) return false;
@@ -117,6 +142,8 @@ function collectDueChannels(channels, now, packagesByCircle) {
     if (pkg.isTop100) {
       const intervalMs = getTop100IntervalMs(entry.guildId);
       if (isDueForTop100(entry, now, intervalMs)) due.push(entry);
+    } else if (isHourlyRankBandCircle(pkg?.data?.circle)) {
+      if (isDueForHourlyRankBand(entry, now)) due.push(entry);
     } else if (isDueForNonTop100(entry, now, pkg)) {
       due.push(entry);
     } else if (shouldWarnNeverSynced(entry, now)) {
@@ -229,7 +256,7 @@ export function startLeaderboardCron() {
   }
 
   console.log(
-    'Leaderboard cron started (tick every 60s, premium top-100: 5m, standard top-100: 15m, else hourly when uma.moe data changes).',
+    'Leaderboard cron started (tick every 60s, premium top-100: 5m, standard top-100: 15m, ranks 101-10000: hourly at :15 UTC, others: hourly when uma.moe data changes).',
   );
   setInterval(() => {
     runLeaderboardTick().catch((err) => console.error('Leaderboard cron tick failed:', err));

@@ -638,7 +638,13 @@ export async function handleLeaderboard(req) {
 
 function describeRefreshSchedule(guildId, circleData) {
   const top100 = isTop100Circle(circleData?.circle);
-  if (!top100) return 'hourly when **uma.moe** publishes new fan data (typically ~5 PM JST)';
+  if (!top100) {
+    const rank = circleData?.circle?.live_rank ?? circleData?.circle?.monthly_rank;
+    if (typeof rank === 'number' && rank >= 101 && rank <= 10000) {
+      return 'every hour at **:15 UTC** (for ranks #101-#10000)';
+    }
+    return 'hourly when **uma.moe** publishes new fan data';
+  }
   return isPremiumGuild(guildId)
     ? 'every **5 minutes** (premium server)'
     : 'every **15 minutes**';
