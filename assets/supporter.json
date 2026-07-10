@@ -9626,7 +9626,7 @@
         ]
     },
     {   "id": "30107 Maruzensky",
-        "card_name": "Sentimental Weather Alert",
+        "card_name": "Sentimental Flare ♪",
         "character_name": "Maruzensky",
         "unique": "Gain Training Effectiveness (5) per every level of the current training facility",
         "effects": [
@@ -9663,11 +9663,11 @@
         "rarity": "ssr",
         "category": "speed",
         "aliases": [
-            "maruzensky", "sentimental weather alert", "smaru", "RENAME"
+            "maruzensky", "sentimental flare", "smaru"
         ]
     },
     {   "id": "30108 Nakayama Festa",
-        "card_name": "一天地六に身を任せ",
+        "card_name": "Trusting the Dice",
         "character_name": "Nakayama Festa",
         "unique": "20% chance to make the current training fail rate zero",
         "effects": [
@@ -9709,8 +9709,7 @@
         "category": "wit",
         "aliases": [
             "nakayama festa",
-            "itten chiroku ni mi o makase",
-            "RENAME"
+            "trusting the dice"
         ]
     },
     {   "id": "30109 Sakura Chiyono O", "_event": "done",
@@ -9748,9 +9747,8 @@
         "aliases": [
             "sakura chiyono o",
             "chiyono o",
-            "choberigu kokoro areba sakuragokoro",
-            "sakura chiyono welfare", "sakura chiyono poverty", "sakura chiyono event",
-            "RENAME"
+            "a good heart blossoms to its fullest",
+            "sakura chiyono welfare", "sakura chiyono poverty", "sakura chiyono event"
         ],
         "events":[
             {
