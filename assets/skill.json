@@ -13048,8 +13048,7 @@
             ]
         }
     },
-    {   "skill_name": "Best Day Ever",
-        "description": "If well-positioned late-race on the final corner or later, increase velocity. If there's a large distance left to the finish, also increase acceleration very slightly with perfect form.",
+    {   "skill_name": "Best Day Ever", "description": "If well-positioned late-race on the final corner or later, increase velocity. If there's a large distance left to the finish, also increase acceleration very slightly with perfect form.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
@@ -15119,7 +15118,8 @@
     },
 
 
-    {   "skill_name": "Feel the Burn!",
+    {   "note": "================= START OF RAINBOW VELOCITY ==================",
+        "skill_name": "Feel the Burn!",
         "description": "Moderately increase acceleration in an attempt to move up on a corner late-race.",
         "effect": [
             {
@@ -15588,8 +15588,7 @@
     },
 
 
-    {   "skill_name": "Prudent Positioning",
-        "description": "Increase navigation early-race.",
+    {   "skill_name": "Prudent Positioning", "description": "Increase navigation early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 for 3.0s.",
