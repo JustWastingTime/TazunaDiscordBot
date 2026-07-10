@@ -784,6 +784,10 @@ export function buildSkillEmbed(skill, supporterList) {
       // Effect description
       value += `\n\n**Effect:**\n${effect.description}`;
 
+      if (effect.scale) {
+        value += `\n\n**Scale:**\n${effect.scale}`;
+      }
+
       // Inherited effect (if exists)
       if (effect.inherited) {
         value += `\n\n**Inherited:**\n${effect.inherited}`;

@@ -12770,12 +12770,13 @@
         "description": "From the midpack in the second half of the race, slightly increase velocity steadily for a duration based on remaining endurance.",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for ~5.0s (duration based on remaining endurance).",
-                "inherited": "Increases target speed by 0.035 for ~3.0s (duration based on remaining endurance).",
+                "description": "Increases target speed by 0.15 for ~5.0s (duration based on remaining HP).",
+                "inherited": "Increases target speed by 0.035 for ~3.0s (duration based on remaining HP).",
                 "conditions": [
                     "4th to 7th (CM), 5th to 10th (TT)",
                     "Second half of the race"
-                ]
+                ],
+                "scale":"HP < 2000, 1.0x\n2000 <= HP < 2400, 1.5x\n2400 <= HP < 2600, 2.0x\n2600 <= HP < 2800, 2.2x\n2800 <= HP < 3000, 2.5x\n3000 <= HP < 3200, 3.0x\n3200 <= HP < 3500, 3.5x\n3500 <= HP, 4.0x"
             }
         ],
         "preconditions": [],
@@ -13443,12 +13444,13 @@
     {   "skill_name": "Your Smile Sparkles as the Waves", "description": "When positioned in the front part of the pack in the second half of the race, start a long spurt based on remaining endurance, slightly increasing velocity continuously.",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for 5.0s.",
-                "inherited": "Increases target speed by 0.035 for 5.0s.",
+                "description": "Increases target speed by 0.15 for ~5.0s (duration based on remaining HP).",
+                "inherited": "Increases target speed by 0.035 for ~3.0s (duration based on remaining HP).",
                 "conditions": [
                     "1st to 4th (CM), 1st to 5th (TT)",
                     "Second half of the race" 
-                ]
+                ],
+                "scale":"HP < 2000, 1.0x\n2000 <= HP < 2400, 1.5x\n2400 <= HP < 2600, 2.0x\n2600 <= HP < 2800, 2.2x\n2800 <= HP < 3000, 2.5x\n3000 <= HP < 3200, 3.0x\n3200 <= HP < 3500, 3.5x\n3500 <= HP, 4.0x"
             }
         ],
         "preconditions": [],
@@ -13473,7 +13475,6 @@
                 }
             ]
         }
-        
     },
 
 
@@ -15344,8 +15345,7 @@
             ]
         }
     },
-    {   "skill_name": "Moving Past, and Beyond",
-        "description": "Having run the race calmly, increase acceleration with hardened determination when making a move mid-race, or on a crucial corner late-race whilst in midpack.",
+    {   "skill_name": "Moving Past, and Beyond", "description": "Having run the race calmly, increase acceleration with hardened determination when making a move mid-race, or on a crucial corner late-race whilst in midpack.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 4.0s.",
@@ -15522,9 +15522,42 @@
             ]
         }
     },
+    {   "skill_name": "Red-Hot Discipline!", "description": "Very slightly increase acceleration for a brief duration when closing in from the back on the final corner or later late-race. Effect and duration increase when passing another runner (up to 3 times).",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.1 for 2.0s. Increase acceleration by 0.1 and 2.0s for every runner passed (up to 3 times).",
+                "conditions": [
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "≤1 length(s) behind",
+                    "Final corner and beyond",
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "red hot discipline"
+        ],
+        "gametora_id": "100531",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "select": "last",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                } 
+            ]
+        }
+    },
 
-    {   "skill_name": "Corner Acceleration x",
-        "description": "Moderately decrease acceleration on a corner with awkward turning.",
+    {   "skill_name": "Corner Acceleration x", "description": "Moderately decrease acceleration on a corner with awkward turning.",
         "effect": [
             {
                 "description": "Reduces acceleration by 0.2 for 3.0s. 30s cooldown.",
@@ -17587,8 +17620,7 @@
             ]
         }
     },
-    {   "skill_name": "Battle Formation",
-        "description": "Dull movement for runners ahead when positioned toward the back early-race.",
+    {   "skill_name": "Battle Formation", "description": "Dull movement for runners ahead when positioned toward the back early-race. (Mile)",
         "effect": [
             {
                 "description": "Reduces acceleration by 0.2 for 3.0s to all enemy umas ahead.",
