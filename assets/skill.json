@@ -4125,8 +4125,7 @@
             }
         }
     },
-    {   "skill_name": "Passing Pro",
-        "description": "Slightly decrease fatigue when determined to pass another runner.",
+    {   "skill_name": "Passing Pro", "description": "Slightly decrease fatigue when determined to pass another runner. (Long)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4164,8 +4163,7 @@
             }
         }
     },
-    {   "skill_name": "Restless",
-        "description": "Reduce fatigue on an uphill.",
+    {   "skill_name": "Restless", "description": "Reduce fatigue on an uphill. (Front Runner) ",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4200,8 +4198,7 @@
             ]
           }
     },
-    {   "skill_name": "Moxie",
-        "description": "Slightly reduce fatigue on an uphill.",
+    {   "skill_name": "Moxie", "description": "Slightly reduce fatigue on an uphill. (Front Runner)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4236,8 +4233,7 @@
             ]
           }
     },
-    {   "skill_name": "Gourmand",
-        "description": "Recover endurance mid-race.",
+    {   "skill_name": "Gourmand", "description": "Recover endurance mid-race. (Pace Chaser)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4272,8 +4268,7 @@
             ]
         }
     },
-    {   "skill_name": "Hydrate",
-        "description": "Slightly recover endurance mid-race.",
+    {   "skill_name": "Hydrate", "description": "Slightly recover endurance mid-race. (Pace Chaser)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4309,8 +4304,7 @@
             ]
         }
     },
-    {   "skill_name": "Relax",
-        "description": "Recover endurance when positioned midpack or further back mid-race.",
+    {   "skill_name": "Relax", "description": "Recover endurance when positioned midpack or further back mid-race. (Late Surger)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4341,8 +4335,7 @@
             ]
         }
     },
-    {   "skill_name": "A Small Breather",
-        "description": "Slightly recover endurance when positioned midpack or further back mid-race.",
+    {   "skill_name": "A Small Breather", "description": "Slightly recover endurance when positioned midpack or further back mid-race. (Late Surger)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4375,8 +4368,7 @@
             ]
         }
     },
-    {   "skill_name": "Go-Home Specialist",
-        "description": "Reduce fatigue on a downhill.",
+    {   "skill_name": "Go-Home Specialist", "description": "Reduce fatigue on a downhill. (End Closer)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4411,8 +4403,7 @@
             ]
         }
     },
-    {   "skill_name": "After-School Stroll",
-        "description": "Slightly reduce fatigue on a downhill.",
+    {   "skill_name": "After-School Stroll", "description": "Slightly reduce fatigue on a downhill. (End Closer)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4447,8 +4438,7 @@
             ]
         }
     },
-    {   "skill_name": "Serenity",
-        "description": "Relax and recover endurance when following directly behind a runner.",
+    {   "skill_name": "Serenity", "description": "Relax and recover endurance when following directly behind a runner. (End Closer)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4481,8 +4471,7 @@
             ]
         }
     },
-    {   "skill_name": "Levelheaded",
-        "description": "Relax and slightly recover endurance when following directly behind a runner.",
+    {   "skill_name": "Levelheaded", "description": "Relax and slightly recover endurance when following directly behind a runner. (End Closer)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4515,8 +4504,7 @@
             ]
         }
     },
-    {   "skill_name": "Triple 7s",
-        "description": "Slightly gain energy with 777m remaining.",
+    {   "skill_name": "Triple 7s", "description": "Slightly gain energy with 777m remaining.",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4575,8 +4563,7 @@
             ]
         }
     },
-    {   "skill_name": "Superior Heal",
-        "description": "Greatly recover endurance with a gentle light when overtaken toward the back mid-race.",
+    {   "skill_name": "Superior Heal", "description": "Greatly recover endurance with a gentle light when overtaken toward the back mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 7.5%.",
@@ -4612,8 +4599,7 @@
             ]
         }
     },
-    {   "skill_name": "Dazzl'n ♪ Diver",
-        "description": "Recover endurance by relaxing after activating 2 skills when positioned midpack mid-race.",
+    {   "skill_name": "Dazzl'n ♪ Diver", "description": "Recover endurance by relaxing after activating 2 skills when positioned midpack mid-race.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4684,8 +4670,7 @@
             ]
         }
     },
-    {   "skill_name": "Lie in Wait",
-        "description": "Recover endurance when positioned midpack or further back upon approaching mid-race.",
+    {   "skill_name": "Lie in Wait", "description": "Recover endurance when positioned midpack or further back upon approaching mid-race. (Late Surger)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4721,8 +4706,7 @@
             ]
         }
     },
-    {   "skill_name": "Be Still",
-        "description": "Slightly recover endurance when positioned midpack or further back upon approaching mid-race.",
+    {   "skill_name": "Be Still", "description": "Slightly recover endurance when positioned midpack or further back upon approaching mid-race. (Late Surger)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4757,8 +4741,7 @@
             ]
         }
     },
-    {   "skill_name": "VIP Pass",
-        "description": "Decrease fatigue when determined to pass another runner.",
+    {   "skill_name": "VIP Pass", "description": "Decrease fatigue when determined to pass another runner. (Long)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4795,8 +4778,7 @@
             }
         }
     },
-    {   "skill_name": "Familiar Ground",
-        "description": "Slightly recover endurance when positioned toward the back mid-race.",
+    {   "skill_name": "Familiar Ground", "description": "Slightly recover endurance when positioned toward the back mid-race. (Dirt)",
         "effect": [
             {
                 "description": "Recover HP by 1.5%.",
@@ -4834,8 +4816,7 @@
             }
         }
     },
-    {   "skill_name": "Cheers of a Fellow Dreamer",
-        "description": "Recover Silence Suzuka's endurance on a corner in the second half of the race through a friend's cheers of support.",
+    {   "skill_name": "Cheers of a Fellow Dreamer", "description": "Recover Silence Suzuka's endurance on a corner in the second half of the race through a friend's cheers of support.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%.",
@@ -4937,8 +4918,7 @@
             ]
         }
     },
-    {   "skill_name": "Of Calm Mind",
-        "description": "If positioned in the midpack around when the mid-race starts, slightly decrease velocity and greatly recover endurance.",
+    {   "skill_name": "Of Calm Mind", "description": "Slightly decrease velocity and greatly recover endurance when positioned midpack in the early part of mid-race. (Long)",
         "effect": [
             {
                 "description": "Recover HP by 7.5%. Reduces speed by 0.15 for 1.2s.",
@@ -4971,7 +4951,8 @@
                         "mid"
                     ],
                     "clip_within_segment_start_ratio": 0,
-                    "clip_within_segment_end_ratio": 0.5
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -4981,8 +4962,7 @@
             }
         }
     },
-    {   "skill_name": "Free Spirited",
-        "description": "If positioned in the midpack around when the mid-race starts, slightly decrease velocity and moderately recover endurance",
+    {   "skill_name": "Free Spirited", "description": "Slightly decrease velocity and moderately recover endurance when positioned midpack in the early part of mid-race. (Long)",
         "effect": [
             {
                 "description": "Recover HP by 3.5%. Reduces speed by 0.15 for 1.2s.",
@@ -5015,7 +4995,8 @@
                         "mid"
                     ],
                     "clip_within_segment_start_ratio": 0,
-                    "clip_within_segment_end_ratio": 0.5
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
                 }
             ],
             "requirements": {
@@ -5025,8 +5006,7 @@
             }
         }
     },
-    {   "skill_name": "Keep Pushing Ahead",
-        "description": "If positioned toward the front from the start of the race until the second half of the race, good vibes recover endurance and moderately increase velocity steadily.",
+    {   "skill_name": "Keep Pushing Ahead", "description": "If positioned toward the front from the start of the race until the second half of the race, good vibes recover endurance and moderately increase velocity steadily.",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Increases speed by 0.25 for 6.0s.",
@@ -5061,8 +5041,7 @@
             ]
         }
     },
-    {   "skill_name": "Master of the Sands",
-        "description": "Recover endurance and increase velocity when positioned toward the back mid-race.",
+    {   "skill_name": "Master of the Sands", "description": "Recover endurance and increase velocity when positioned toward the back mid-race. (Dirt)",
         "effect": [
             {
                 "description": "Recover HP by 5.5%. Increases speed by 0.35 for 1.8s.",
@@ -5099,6 +5078,182 @@
                 ]
             }
         }
+    },
+    {   "skill_name": "Heart All Set", "description": "If the skill user began the race without a late start, greatly recover endurance in the early part of mid-race. (Pace, Long)",
+        "effect": [
+            {
+                "description": "Recover HP by 7.5%.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Long",
+                    "No 'Late Start'",
+                    "Random point in the first half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenrecovery",
+        "aliases": [
+            "heart all set"
+        ],
+        "downgrade": "All Set",
+        "evolutions": [
+            "An Earnest Breather",
+            "Single-Minded Santa Claus"
+        ],
+        "gametora_id": "202191",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "clip_within_segment_start_ratio": 0,
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+        
+    },
+    {   "skill_name": "All Set", "description": "If the skill user began the race without a late start, moderately recover endurance in the early part of mid-race. (Pace, Long)",
+        "effect": [
+            {
+                "description": "Recover HP by 7.5%.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Long",
+                    "No 'Late Start'",
+                    "Random point in the first half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "recovery",
+        "aliases": [
+            "all set"
+        ],
+        "upgrade": "Heart All Set",
+        "gametora_id": "202192",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "clip_within_segment_start_ratio": 0,
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+        
+    },
+
+    {   "skill_name": "Light-Footed as a Hare", "description": "Recover endurance and moderately increase velocity mid-race. (Long)",
+        "effect": [
+            {
+                "description": "Recover HP by 5.5%. Increase target speed by 0.25 for 2.4s.",
+                "conditions": [
+                    "Long",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenrecovery",
+        "aliases": [
+            "light footed as a hare", "lightfooted as a hare"
+        ],
+        "downgrade": "Undistracted",
+        "evolutions": [
+            "Drawing a Neon Trail"
+        ],
+        "gametora_id": "202581",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+        
+    },
+    {   "skill_name": "Undistracted", "description": "Slightly recover endurance and very slightly increase velocity mid-race. (Long)",
+        "effect": [
+            {
+                "description": "Recover HP by 1.5%. Increase target speed by 0.05 for 2.4s.",
+                "conditions": [
+                    "Long",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "recovery",
+        "aliases": [
+            "undistracted"
+        ],
+        "upgrade": "Light-Footed as a Hare",
+        "gametora_id": "202582",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": [
+                        "middle leg",
+                        "mid"
+                    ],
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+        
     },
 
 
@@ -7048,7 +7203,7 @@
             "downhill adept",
             "下り坂巧者"
         ],
-        "upgrade": "Supreme Downhiller",
+        "upgrade": "Master of Declines",
         "gametora_id": "202172",
         "activation_map": {
             "show_chart": true,
@@ -7803,6 +7958,166 @@
             }
         }
     },
+    {   "skill_name": "Unrestrained Passion", "description": "Slightly increase velocity when positioned midpack or further back upon approaching mid-race. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the second half of early race"
+                    
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "unrestrained passion"
+        ],
+        "upgrade": "Inspiration (TO BE RENAMED)",
+        "gametora_id": "202612",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Start the Charge", "description": "Slightly increase velocity when positioned midpack or further back upon approaching late-race. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the second half of mid race"
+                    
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "start the charge"
+        ],
+        "upgrade": "Rampaging Passion",
+        "gametora_id": "202622",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "First Step", "description": "Very slightly increase velocity for a medium duration when positioned midpack mid-race. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.05 for 4.0s.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "first step"
+        ],
+        "upgrade": "A Journey in a Step",
+        "gametora_id": "202642",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Rising Heat", "description": "Slightly surge ahead when positioned midpack in the early part of late-race. (Medium/Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "Medium / Long",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "rising heat"
+        ],
+        "upgrade": "Rising Pulse",
+        "gametora_id": "202662",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Pop Off!", "description": "Slightly increase velocity and very slightly recover endurance mid-race. (Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.15 for 2.4s. Recover HP by 0.5%.",
+                "conditions": [
+                    "Medium / Long",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocity",
+        "aliases": [
+            "pop off"
+        ],
+        "upgrade": "Send It! ☆",
+        "gametora_id": "202682",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
 
 
 
@@ -7827,6 +8142,11 @@
             "弧線のプロフェッサー"
         ],
         "downgrade": "Corner Adept",
+        "evolutions": [
+            "Unquestioned Might",
+            "Expert Caretaker",
+            "Archline Top Scholar"
+        ],
         "gametora_id": "200331",
         "activation_map": {
             "show_chart": true,
@@ -7859,6 +8179,14 @@
             "ハヤテ一文字"
         ],
         "downgrade": "Straightaway Adept",
+        "evolutions": [
+            "Above the Cloudline",
+            "Decisive Strike",
+            "Petals in the Breeze",
+            "A Petal's Bravery",
+            "Bloom Down the Branch",
+            "Ahead of the Gale"
+        ],
         "gametora_id": "200361",
         "activation_map": {
             "show_chart": true,
@@ -7892,6 +8220,16 @@
             "アガッてきた"
         ],
         "downgrade": "Ramp Up",
+        "evolutions": [
+            "Ruler of Summer",
+            "Growing Flame",
+            "Run Like the Fic's Due Tomorrow!",
+            "Now I'm Hyped!!",
+            "C'mon, Let's Do This!",
+            "'kay then, let's get movin'!",
+            "With A Sparkling Heart!",
+            "Now I'm Fired Up!!"
+        ],
         "gametora_id": "200461",
         "activation_map": {
             "show_chart": true,
@@ -7924,6 +8262,17 @@
             "全身全霊"
         ],
         "downgrade": "Homestretch Haste",
+        "evolutions": [
+            "Accelerating to My Dreams!",
+            "In the Wolf's Maw",
+            "On My Honor",
+            "Speedy Santa",
+            "Full-Power Pitch",
+            "Doing My Best!",
+            "Limiter Release",
+            "Earth-Shaking Dash",
+            "World-Captivating Brilliance"
+        ],
         "gametora_id": "200511",
         "activation_map": {
             "show_chart": true,
@@ -7958,6 +8307,17 @@
             "脱出術"
         ],
         "downgrade": "Fast-Paced",
+        "evolutions": [
+            "Breakaway Scheme",
+            "Malfunction Mitigation",
+            "Slightly Sweet Escape",
+            "Run If You Can ♪",
+            "Surprise~Successful~☆",
+            "Leap Ahead to the Future",
+            "Ultramarine Getaway",
+            "Crossing the Ocean",
+            "Breakaway Star"
+        ],
         "gametora_id": "200541",
         "activation_map": {
             "show_chart": true,
@@ -7990,6 +8350,17 @@
             "スピードスター"
         ],
         "downgrade": "Prepared to Pass",
+        "evolutions": [
+            "Entrance of the Centurial Overlord!",
+            "Right on the Dot",
+            "Royal Star",
+            "Delightful Memory",
+            "Good Year for Sakura!",
+            "Rather Run than Worry!",
+            "Glittering Star",
+            "K.Speed",
+            "Shooting Star's Trail"
+        ],
         "gametora_id": "200581",
         "activation_map": {
             "show_chart": true,
@@ -8025,6 +8396,14 @@
             "迅速果断"
         ],
         "downgrade": "Position Pilfer",
+        "evolutions": [
+            "Sunshine 'n' Spirit!",
+            "Winning Road",
+            "Gone in a Flash",
+            "Let's Get Cracking!",
+            "Ambitious Card",
+            "Emergency! Hero on the Scene!"
+        ],
         "gametora_id": "200591",
         "activation_map": {
             "show_chart": true,
@@ -8062,6 +8441,14 @@
             "昇り龍"
         ],
         "downgrade": "Outer Swell",
+        "evolutions": [
+            "Rising Condor",
+            "Bulk Up & Away!",
+            "Rising Road Rage",
+            "Ascend Glory",
+            "Peak Discipline",
+            "Dragon and Tiger's Battle"
+        ],
         "gametora_id": "200611",
         "activation_map": {
             "show_chart": true,
@@ -8100,6 +8487,11 @@
             "疾風怒濤"
         ],
         "downgrade": "Masterful Gambit",
+        "evolutions": [
+            "Pororoca Roar",
+            "Self-Destructive Comet",
+            "The Stormcaller of Destruction"
+        ],
         "gametora_id": "200631",
         "activation_map": {
             "show_chart": true,
@@ -8140,6 +8532,10 @@
             "電撃の煌めき"
         ],
         "downgrade": "Gap Closer",
+        "evolutions": [
+            "Shocking Sweep",
+            "Special Move: Lightning Kiiick!"
+        ],
         "gametora_id": "200671",
         "activation_map": {
             "show_chart": true,
@@ -8176,6 +8572,13 @@
             "mile maven"
         ],
         "downgrade": "Productive Plan",
+        "evolutions": [
+            "Queen of the Stage",
+            "Frontier Spirit",
+            "Takin' Y'all on a Wild Ride!",
+            "Emergence of the Mile☆God",
+            "Conqueror of Banquets"
+        ],
         "gametora_id": "200681",
         "activation_map": {
             "show_chart": true,
@@ -8215,6 +8618,17 @@
             "キラーチューン"
         ],
         "downgrade": "Up-Tempo",
+        "evolutions": [
+            "Perfectly Tuned",
+            "The Leading Actor",
+            "Let Those Muscles SING!",
+            "A Prayer for Our Predecessors",
+            "Arabesque of the Brightest Star",
+            "Reminiscent Träumerei",
+            "Love Me ☆ Parade",
+            "Stay Tuned",
+            "Nature's Rhythm"
+        ],
         "gametora_id": "200721",
         "activation_map": {
             "show_chart": true,
@@ -8253,6 +8667,12 @@
             "勝利への執念"
         ],
         "downgrade": "Steadfast",
+        "evolutions": [
+            "Cry of Victory",
+            "One-On-One Obsession",
+            "Yaeno's Fighting Spirit",
+            "Ardent Desire for Victory"
+        ],
         "gametora_id": "200731",
         "activation_map": {
             "show_chart": true,
@@ -8291,6 +8711,14 @@
             "内的体験"
         ],
         "downgrade": "Inside Scoop",
+        "evolutions": [
+            "Bring On the Luck!",
+            "Holiday Miracle",
+            "Golshi's Out-of-Body Experience",
+            "Fan Dance",
+            "Torment",
+            "Paranormal Experience"
+        ],
         "gametora_id": "200751",
         "activation_map": {
             "show_chart": true,
@@ -8332,6 +8760,9 @@
             "圧倒的リード"
         ],
         "downgrade": "Huge Lead",
+        "evolutions": [
+            "Bakushin LEAD!"
+        ],
         "gametora_id": "200981",
         "activation_map": {
             "show_chart": true,
@@ -8370,6 +8801,14 @@
             "ギアチェンジ"
         ],
         "downgrade": "Shifting Gears",
+        "evolutions": [
+            "Let's Floor It, Baby!",
+            "Shootin' Straight Ahead!",
+            "Emboldening Memories",
+            "Shearing Gust",
+            "LOL I'm on FIRE!",
+            "Secret Flavor Remix!"
+        ],
         "gametora_id": "201051",
         "activation_map": {
             "show_chart": true,
@@ -8408,6 +8847,15 @@
             "姉御肌"
         ],
         "downgrade": "Unyielding Spirit",
+        "evolutions": [
+            "Dazzling Star",
+            "Dignified Empress",
+            "Pearlescent Danceoff",
+            "A Dose of Ambition",
+            "Veiled Grit",
+            "Angelic Garment",
+            "Wind in My Back"
+        ],
         "gametora_id": "201071",
         "activation_map": {
             "show_chart": true,
@@ -8464,8 +8912,7 @@
             }
         }
     },
-    {   "skill_name": "Overwhelming Pressure",
-        "description": "Increase velocity and very slightly increase acceleration after passing another runner late-race.",
+    {   "skill_name": "Overwhelming Pressure", "description": "Increase velocity and very slightly increase acceleration after passing another runner late-race. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.1 for 3.0s.",
@@ -8503,8 +8950,7 @@
             }
         }
     },
-    {   "skill_name": "15,000,000 CC",
-        "description": "Increase velocity on an uphill.",
+    {   "skill_name": "15,000,000 CC", "description": "Increase velocity on an uphill. (Late Surger)",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 2.4s.",
@@ -8526,6 +8972,9 @@
             "百万バリキ"
         ],
         "downgrade": "1,500,000 CC",
+        "evolutions": [
+            "Superpowered Engines!"
+        ],
         "gametora_id": "201411",
         "activation_map": {
             "show_chart": true,
@@ -8539,8 +8988,7 @@
             ]
         }
     },
-    {   "skill_name": "Trending in the Charts!",
-        "description": "Increase velocity when engaged in a challenge mid-race.",
+    {   "skill_name": "Trending in the Charts!", "description": "Increase velocity when engaged in a challenge mid-race. (Dirt)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s.",
@@ -8561,6 +9009,13 @@
             "チャート急上昇"
         ],
         "downgrade": "Top Pick",
+        "evolutions": [
+            "Umadol ♪ Chart Topper!",
+            "Rising to Umadol Stardom!",
+            "To the Ultimate Stage!",
+            "Be a Good Ambassador!",
+            "Give Your All, Star of Tomakomai!"
+        ],
         "gametora_id": "201671",
         "activation_map": {
             "show_chart": true,
@@ -8578,8 +9033,7 @@
             }
         }
     },
-    {   "skill_name": "Superstan",
-        "description": "Increase velocity when close to many runners.",
+    {   "skill_name": "Superstan", "description": "Increase velocity when close to many runners.",
         "effect": [
             {
                 "description": "Increases speed by 0.35 for 3.0s.",
@@ -8598,6 +9052,11 @@
             "ウママニア"
         ],
         "downgrade": "Uma Stan",
+        "evolutions": [
+            "Ultimate Uma Simp",
+            "Subject Observation",
+            "Respect! Uma Mania!"
+        ],
         "gametora_id": "201592",
         "activation_map": {
             "show_chart": true,
@@ -8610,8 +9069,7 @@
             ]
         }
     },
-    {   "skill_name": "Come What May",
-        "description": "Increase velocity when well-positioned on a straight in the last spurt.",
+    {   "skill_name": "Come What May", "description": "Increase velocity when well-positioned on a straight in the last spurt. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -8633,6 +9091,14 @@
             "決死の覚悟"
         ],
         "downgrade": "All I've Got",
+        "evolutions": [
+            "Give This Moment Everything",
+            "I Can Fly!",
+            "Beyond the Stars with You",
+            "Unyielding Aster",
+            "Become the Foundation",
+            "Saintess Awakened"
+        ],
         "gametora_id": "201701",
         "activation_map": {
             "show_chart": true,
@@ -8652,8 +9118,7 @@
             }
         }
     },
-    {   "skill_name": "Tail Nine",
-        "description": "Increase velocity after activating many skills mid-race.",
+    {   "skill_name": "Tail Nine", "description": "Increase velocity after activating many skills mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -8672,6 +9137,11 @@
             "尻尾の滝登り"
         ],
         "downgrade": "Tail Held High",
+        "evolutions": [
+            "Paradise Tail",
+            "Firefighter's Ascent",
+            "Smooth Sailing!"
+        ],
         "gametora_id": "201612",
         "activation_map": {
             "show_chart": true,
@@ -8715,8 +9185,7 @@
             ]
         }
     },
-    {   "skill_name": "Headliner",
-        "description": "Increase velocity when positioned toward the front upon approaching late-race.",
+    {   "skill_name": "Headliner", "description": "Increase velocity when positioned toward the front upon approaching late-race. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s.",
@@ -8737,6 +9206,11 @@
             "真打"
         ],
         "downgrade": "Feature Act",
+        "evolutions": [
+            "Never a Beat Late!",
+            "Classy Summer",
+            "The Right Path"
+        ],
         "gametora_id": "202011",
         "activation_map": {
             "show_chart": true,
@@ -8755,8 +9229,7 @@
             }
         }
     },
-    {   "skill_name": "Daring Strike",
-        "description": "Moderately increase velocity for a medium duration when positioned toward the back mid-race.",
+    {   "skill_name": "Daring Strike", "description": "Moderately increase velocity for a medium duration when positioned toward the back mid-race. (End Closer)",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 4.0s.",
@@ -8777,6 +9250,9 @@
             "強攻策"
         ],
         "downgrade": "Early Start",
+        "evolutions": [
+            "Engaging Engine!"
+        ],
         "gametora_id": "202021",
         "activation_map": {
             "show_chart": true,
@@ -8809,6 +9285,9 @@
             "博打うち"
         ],
         "downgrade": "Risky Business",
+        "evolutions": [
+            "It's All or Nothing"
+        ],
         "gametora_id": "202031",
         "activation_map": {
             "show_chart": true,
@@ -8822,8 +9301,7 @@
             ]
         }
     },
-    {   "skill_name": "Flash Forward",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Flash Forward", "description": "Increase velocity on a straight. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -8843,6 +9321,10 @@
             "光芒一閃"
         ],
         "downgrade": "Medium Straightaways",
+        "evolutions": [
+            "Dark Flash",
+            "Fleeting Afterglow"
+        ],
         "gametora_id": "201103",
         "activation_map": {
             "show_chart": true,
@@ -8861,8 +9343,7 @@
             }
         }
     },
-    {   "skill_name": "In High Spirits",
-        "description": "Increase velocity when positioned toward the front upon approaching late-race.",
+    {   "skill_name": "In High Spirits", "description": "Increase velocity when positioned toward the front upon approaching late-race. (Sprint)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s.",
@@ -8882,6 +9363,10 @@
             "意気衝天"
         ],
         "downgrade": "Light as a Feather",
+        "evolutions": [
+            "Leave a Footprint in Your Memory",
+            "Full Charge! BAKUSHIIIN!"
+        ],
         "gametora_id": "202041",
         "activation_map": {
             "show_chart": true,
@@ -8901,8 +9386,7 @@
             }
         }
     },
-    {   "skill_name": "Blast Forward",
-        "description": "Increase velocity on a straight.",
+    {   "skill_name": "Blast Forward", "description": "Increase velocity on a straight. (Long)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -8920,6 +9404,12 @@
             "blast forward",
             "flash of wind",
             "烈風一閃"
+        ],
+        "downgrade": "Long Straightaways",
+        "evolutions": [
+            "Bright Blast",
+            "Festive Dance on Hanamichi",
+            "North Wind Kick"
         ],
         "gametora_id": "201173",
         "activation_map": {
@@ -8939,8 +9429,7 @@
             }
         }
     },
-    {   "skill_name": "Top Runner",
-        "description": "Increase ability to pass or challenge another runner early-race or mid-race.",
+    {   "skill_name": "Top Runner", "description": "Increase ability to pass or challenge another runner early-race or mid-race. (Front Runner)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -8970,6 +9459,10 @@
             "トップランナー"
         ],
         "downgrade": "Leader's Pride",
+        "evolutions": [
+            "Record Runner",
+            "Lead-Preserving Algorithm"
+        ],
         "gametora_id": "201271",
         "activation_map": {
             "show_chart": true,
@@ -8989,8 +9482,7 @@
             ]
         }
     },
-    {   "skill_name": "Burning Soul",
-        "description": "Moderately recover endurance and increase velocity when engaging in a challenge midpack mid-race.",
+    {   "skill_name": "Burning Soul", "description": "Moderately recover endurance and increase velocity when engaging in a challenge midpack mid-race. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s. Recover HP by 3.5%.",
@@ -9012,6 +9504,11 @@
             "気炎万丈"
         ],
         "downgrade": "Fighting Spirit",
+        "evolutions": [
+            "I Don't Wanna Lose!",
+            "Burn Down",
+            "Fierce as Fire"
+        ],
         "gametora_id": "202091",
         "activation_map": {
             "show_chart": true,
@@ -9030,8 +9527,7 @@
             }
         }
     },
-    {   "skill_name": "Elated",
-        "description": "When positioned toward the back mid-race, increase velocity.",
+    {   "skill_name": "Elated", "description": "When positioned toward the back mid-race, increase velocity. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s.",
@@ -9052,6 +9548,17 @@
             "高揚感"
         ],
         "downgrade": "Eager",
+        "evolutions": [
+            "Uplift",
+            "Have Some Squid, Kid!",
+            "It's Getting Exciting!!",
+            "Marvelous ☆ Thrill",
+            "Marvelous Momentum☆",
+            "All-Out Excitement!!",
+            "Chasing Mother's Likeness",
+            "Connecting Elation",
+            "Wild at Heart"
+        ],
         "gametora_id": "202101",
         "activation_map": {
             "show_chart": true,
@@ -9070,8 +9577,7 @@
             }
         }
     },
-    {   "skill_name": "Full of Vigor",
-        "description": "When positioned toward the back on the final corner,  increase velocity.",
+    {   "skill_name": "Full of Vigor", "description": "When positioned toward the back on the final corner, increase velocity. (Mile)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 1.8s.",
@@ -9092,6 +9598,10 @@
             "破竹の勢い"
         ],
         "downgrade": "Pumped",
+        "evolutions": [
+            "Ready for a Red-Hot Tech!",
+            "Unstoppable Muscles"
+        ],
         "gametora_id": "202111",
         "activation_map": {
             "show_chart": true,
@@ -9111,8 +9621,7 @@
             }
         }
     },
-    {   "skill_name": "Dauntless",
-        "description": "When positioned in the midpack during the second half of the race, increase velocity and very slightly increase acceleration.",
+    {   "skill_name": "Dauntless", "description": "When positioned in the midpack during the second half of the race, increase velocity and very slightly increase acceleration. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.1 for 2.4s.",
@@ -9133,6 +9642,14 @@
             "大胆不敵"
         ],
         "downgrade": "Fearless",
+        "evolutions": [
+            "I Want to Explore More!",
+            "Step with Confidence",
+            "I'm Literally the Best!",
+            "Simply the Best!",
+            "High Society Mentality!",
+            "Decisive Battle"
+        ],
         "gametora_id": "202121",
         "activation_map": {
             "show_chart": true,
@@ -9146,8 +9663,7 @@
             ]
         }
     },
-    {   "skill_name": "Wild Wind",
-        "description": "When positioned toward the front mid-race, increase velocity and slightly decrease the velocity of runners behind the skill user.",
+    {   "skill_name": "Wild Wind", "description": "When positioned toward the front mid-race, increase velocity and slightly decrease the velocity of runners behind the user. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 1.8s. Decreases current speed by 0.15 for 1.8s of 5 closest runners behind the skill user.",
@@ -9168,6 +9684,9 @@
             "荒ぶる旋風"
         ],
         "downgrade": "With All My Soul",
+        "evolutions": [
+            "Wind God's Wrath"
+        ],
         "gametora_id": "202131",
         "activation_map": {
             "show_chart": true,
@@ -9186,8 +9705,7 @@
             }
         }
     },
-    {   "skill_name": "See Ya Later!",
-        "description": "Increase velocity when followed by another runner directly behind for a long time.",
+    {   "skill_name": "See Ya Later!", "description": "Increase velocity when followed by another runner directly behind for a long time.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s. 30s cooldown.",
@@ -9207,6 +9725,12 @@
             "お先に失礼っ"
         ],
         "downgrade": "Playtime's Over!",
+        "evolutions": [
+            "WILD, Amirite?",
+            "Let's Meet Under the Blue Sky!",
+            "Hot Spring Dash",
+            "Extra-Firm, Coming Right Up!"
+        ],
         "gametora_id": "201662",
         "activation_map": {
             "show_chart": true,
@@ -9219,8 +9743,7 @@
             ]
         }
     },
-    {   "skill_name": "Keep Going!",
-        "description": "Greatly consume endurance mid-race and greatly increase velocity.",
+    {   "skill_name": "Keep Going!", "description": "Moderately expend endurance to greatly increase velocity mid-race. (Late Surger)",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 2.4s. Lose HP by 2%.",
@@ -9240,6 +9763,13 @@
             "勇往邁進"
         ],
         "downgrade": "Full Throttle",
+        "evolutions": [
+            "Open All the Buds",
+            "Red-Hot Spark",
+            "Flash Torrent",
+            "Piercing Azure",
+            "Wild Runway"
+        ],
         "gametora_id": "202151",
         "activation_map": {
             "show_chart": true,
@@ -9253,8 +9783,7 @@
             ]
         }
     },
-    {   "skill_name": "Moonlit Flash",
-        "description": "Increase velocity on straights.",
+    {   "skill_name": "Moonlit Flash", "description": "Increase velocity on straights. (End Closer)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -9273,6 +9802,10 @@
             "月影一閃"
         ],
         "downgrade": "End Closer Straightaways",
+        "evolutions": [
+            "Lose Myself",
+            "Arrow of Artemis"
+        ],
         "gametora_id": "201453",
         "activation_map": {
             "show_chart": true,
@@ -9286,7 +9819,7 @@
             ]
         }
     },
-    {   "skill_name": "Refraction Arc", "description": "Increase velocity on corners.",
+    {   "skill_name": "Refraction Arc", "description": "Increase velocity on corners. (Medium)",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 3.0s.",
@@ -9939,9 +10472,117 @@
             ]
         }
     },
-
-    {   "skill_name": "Supreme Downhiller (TO BE RENAMED)",
-        "description": "Increase velocity on downhills.",
+    {   "skill_name": "Reckless Charge", "description": "Increase velocity when positioned toward the front upon approaching late-race. (Mile)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Mile",
+                    "1st to 5th (CM), 1st to 6th (TT)",  
+                    "Random point in the second half of early race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "reckless charge"
+        ],
+        "downgrade": "No Looking Back",
+        "evolutions":[
+            "DW I'm on It!",
+            "Pioneering the Future!",
+            "Watch Me Do It!",
+            "Reckless Passion"
+        ],
+        "gametora_id": "202501",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "mile"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Crescent Gale", "description": "Increase velocity on a corner. (Front Runner)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Front Runner",
+                    "Random point on a random corner"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "crescent gale"
+        ],
+        "downgrade": "Front Runner Corners",
+        "evolutions": [
+            "Slick Serving"
+        ],
+        "gametora_id": "201253",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Sharp Arc", "description": "Increase velocity on a corner. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Late Surger",
+                    "Random point on a random corner"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "sharp arc"
+        ],
+        "downgrade": "Late Surger Corners",
+        "gametora_id": "201393",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Master of Declines", "description": "Increase velocity on downhills.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 2.4s.",
@@ -9955,11 +10596,18 @@
         "rarity": "rare",
         "category": "goldenvelocity",
         "aliases": [
-            "downhill speedster",
-            "supreme downhiller",
-            "至高のダウンヒラー"
+            "master of declines"
         ],
         "downgrade": "Downhill Speedster",
+        "evolutions": [
+            "Give You a Taste of Glory",
+            "Behold My Courageous Advance",
+            "Veil in the Spring Breeze",
+            "Blooming in Sickness and in Health",
+            "Fiery Princess☆Sudden Descent!!",
+            "Heavenly Little Sister"
+        ],
+        "gametora_id": "202171",
         "activation_map": {
             "show_chart": true,
             "triggers": [
@@ -9972,13 +10620,517 @@
             ]
         }
     },
+    {   "skill_name": "Beautiful Form", "description": "Surge ahead when positioned toward the back on a third corner just before the final corner. (Medium/Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Medium / Long",
+                    "5th to 9th (CM), 6th to 12th (TT)",  
+                    "Random point on corner 3"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "beautiful form"
+        ],
+        "downgrade": "Break the Mold",
+        "evolutions":[
+            "Soaring Steps",
+            "Mesmerizing Somersault",
+            "Light in the Dark"
+        ],
+        "gametora_id": "202521",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "corner_numbers": [3],
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "medium", "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Superb Gait", "description": "Increase velocity mid-race. (Mile/Medium)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Mile / Medium",  
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "superb gait"
+        ],
+        "downgrade": "Graceful Gait",
+        "evolutions":[
+            "Enchanting Smile Beyond Reach",
+            "Guidance of the Sea Breeze",
+            "Out in Front"
+        ],
+        "gametora_id": "202531",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "mile", "medium"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Vying for the Throne", "description": "When positioned midpack or further back on the final corner, slightly decrease the velocity of 3 runners ahead and 3 behind. Increase skill user's velocity. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 1.8s. Decreases current speed by 0.15 for 1.8s to 3 runners ahead and behind the skill user.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in final corner"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "vying for the throne"
+        ],
+        "downgrade": "Pressure (TO BE RENAMED)",
+        "evolutions":[
+            "Ever Graceful",
+            "My Clan's Code of Honor",
+            "Trionfo",
+            "Esplosione"
+        ],
+        "gametora_id": "202541",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "select": "last",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Divine Speed", "description": "Surge ahead and slightly recover endurance sometime during the second half of the race.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s. Recover HP by 1.5%.",
+                "conditions": [
+                    "Randomly in the second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "divine speed"
+        ],
+        "downgrade": "High Speed",
+        "evolutions":[
+            "Let the Roaring Applause Ring"
+        ],
+        "gametora_id": "202551",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "clip_end_ratio": 1,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Sure Shot", "description": "Increase velocity when positioned toward the back upon approaching late-race. (Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Long",  
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in the second half of mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "sure shot"
+        ],
+        "downgrade": "Locked On",
+        "evolutions":[
+            "Imposing Innovation"
+        ],
+        "gametora_id": "202561",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "In One Fell Swoop", "description": "If still going strong, surge ahead in the early part of late-race. (Late, Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Long",
+                    "Late Surger",
+                    "Enough stamina to do a full last spurt",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "in one fell swoop"
+        ],
+        "downgrade": "Hurry Up!",
+        "evolutions":[
+            "Blossom for Us!"
+        ],
+        "gametora_id": "202591",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Luminescence", "description": "Surge ahead upon activating 13 skills this race. (Medium)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Medium",
+                    "Activated ≥13 skills"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "luminescence"
+        ],
+        "downgrade": "Ignition",
+        "evolutions":[
+            "Cross the Sea of Stars",
+            "Luminous Spectrum",
+            "Sparkle ☆ Dolly Stage",
+            "Musica Scintillante"
+        ],
+        "gametora_id": "202601",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements":
+            {
+                "distance_types":
+                [
+                    "medium"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "A Journey in a Step", "description": "Moderately increase velocity for a medium duration when positioned midpack mid-race. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 4.0s.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "a journey in a step"
+        ],
+        "downgrade": "First Step",
+        "evolutions":[
+            "Collect All the Little Miracles",
+            "Heavenly Road of the Holy Night",
+            "Dreamer's Path",
+            "Onward! To the Sea!"
+        ],
+        "gametora_id": "202641",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Rising Pulse", "description": "Surge ahead when positioned midpack in the early part of late-race. (Medium/Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Medium / Long",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "rising pulse"
+        ],
+        "downgrade": "Rising Heat",
+        "evolutions":[
+            "Demon of Tokyo",
+            "Unparalleled Bomber Runner",
+            "Beat the Stars"
+        ],
+        "gametora_id": "202661",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Crescent Gust", "description": "Increase velocity on a corner. (Mile)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "Mile",
+                    "Random point on a random corner"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "crescent gust"
+        ],
+        "downgrade": "Mile Corners",
+        "evolutions": [
+            "Flower Girl's Blessing"
+        ],
+        "gametora_id": "201043",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Send It! ☆", "description": "Increase velocity and moderately recover endurance mid-race. (Long)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s. Recover HP by 3.5%.",
+                "conditions": [
+                    "Medium / Long",
+                    "3rd to 7th (CM), 4th to 10th (TT)",
+                    "Random point in mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "send it"
+        ],
+        "upgrade": "Pop Off!",
+        "evolutions":[
+            "Merry☆Christmas↑Party"
+        ],
+        "gametora_id": "202681",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Rampaging Passion", "description": "Increase velocity when positioned midpack or further back upon approaching late-race. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the second half of mid race"
+                    
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "rampaging passion"
+        ],
+        "downgrade": "Start the Charge",
+        "evolutions":[
+            "Fangs of Ferocity",
+            "The Strongest Lady's Pride"
+        ],
+        "gametora_id": "202621",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Inspiration (TO BE RENAMED)", "description": "Increase velocity when positioned midpack or further back upon approaching mid-race. (Late Surger)",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 2.4s.",
+                "conditions": [
+                    "Late Surger",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Random point in the second half of early race"
+                    
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocity",
+        "aliases": [
+            "inspiration",
+            "to be renamed"
+        ],
+        "upgrade": "Unrestrained Passion",
+        "evolutions":[
+            "Brush Up!"
+        ],
+        "gametora_id": "202611",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
     
 
 
-
     {   "note": "================= START OF RAINBOW VELOCITY ==================",
-        "skill_name": "Certain Victory",
-        "description": "Greatly increase velocity with an indomitable fighting spirit on the final straight after being on the heels of another runner toward the front on the final corner or later.",
+        "skill_name": "Certain Victory", "description": "Greatly increase velocity with an indomitable fighting spirit on the final straight after being on the heels of another runner toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -10026,8 +11178,7 @@
             ]
         }
     },
-    {   "skill_name": "Legacy of the Strong",
-        "description": "Increase velocity continuously when pressured toward the front late-race on the final corner or later.",
+    {   "skill_name": "Legacy of the Strong", "description": "Increase velocity continuously when pressured toward the front late-race on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
@@ -10067,8 +11218,7 @@
             ]
         }
     },
-    {   "skill_name": "Warning Shot!",
-        "description": "Slightly increase velocity with a long spurt starting halfway through the race.",
+    {   "skill_name": "Warning Shot!", "description": "Slightly increase velocity with a long spurt starting halfway through the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for 6.0s.",
@@ -10101,8 +11251,7 @@
             ]
         }
     },
-    {   "skill_name": "Xceleration",
-        "description": "Become stronger at challenging rivals and moderately increase velocity when positioned toward the front with 200m or less remaining.",
+    {   "skill_name": "Xceleration", "description": "Become stronger at challenging rivals and moderately increase velocity when positioned toward the front with 200m or less remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
@@ -10177,8 +11326,7 @@
             ]
         }
     },
-    {   "skill_name": "Focused Mind",
-        "description": "Moderately increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
+    {   "skill_name": "Focused Mind", "description": "Moderately increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
@@ -10214,8 +11362,7 @@
             ]
         }
     },
-    {   "skill_name": "Corazón ☆ Ardiente",
-        "description": "Slightly hang on to the advantage when positioned toward the front with energy to spare on the final straight.",
+    {   "skill_name": "Corazón ☆ Ardiente", "description": "Slightly hang on to the advantage when positioned toward the front with energy to spare on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.2 for 5.0s.",
@@ -10251,8 +11398,7 @@
             ]
         }
     },
-    {   "skill_name": "Empress's Pride",
-        "description": "Moderately increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
+    {   "skill_name": "Empress's Pride", "description": "Moderately increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
@@ -10287,8 +11433,7 @@
             ]
         }
     },
-    {   "skill_name": "1st Place Kiss☆",
-        "description": "Slightly increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner or later.",
+    {   "skill_name": "1st Place Kiss☆", "description": "Slightly increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.2 for 5.0s.",
@@ -10324,8 +11469,7 @@
             ]
         }
     },
-    {   "skill_name": "V is for Victory!",
-        "description": "Moderately increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
+    {   "skill_name": "V is for Victory!", "description": "Moderately increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
@@ -10370,8 +11514,7 @@
             ]
         }
     },
-    {   "skill_name": "Class Rep + Speed = Bakushin",
-        "description": "Moderately increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
+    {   "skill_name": "Class Rep + Speed = Bakushin", "description": "Moderately increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
@@ -10405,8 +11548,7 @@
             ]
         }
     },
-    {   "skill_name": "Luck Be with Me!",
-        "description": "Moderately clear a path forward with the power of divination when the way ahead is jammed late-race.",
+    {   "skill_name": "Luck Be with Me!", "description": "Moderately clear a path forward with the power of divination when the way ahead is jammed late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.1 for 5.0s.",
@@ -10441,8 +11583,7 @@
             ]
         }
     },
-    {   "skill_name": "I Can Win Sometimes, Right?",
-        "description": "Moderately increase velocity with an arousal of fighting spirit when positioned 3rd and about to lose late-race.",
+    {   "skill_name": "I Can Win Sometimes, Right?", "description": "Moderately increase velocity with an arousal of fighting spirit when positioned 3rd and about to lose late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 5.0s.",
@@ -10477,8 +11618,7 @@
             ]
         }
     },
-    {   "skill_name": "Call me King",
-        "description": "Increase velocity in a true display of skill with 200m remaining after racing calmly.",
+    {   "skill_name": "Call me King", "description": "Increase velocity in a true display of skill with 200m remaining after racing calmly.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -10510,8 +11650,7 @@
             ]
         }
     },
-    {   "skill_name": "Shooting Star",
-        "description": "Ride the momentum to surge ahead and very slightly increase acceleration after passing another runner toward the front late-race.",
+    {   "skill_name": "Shooting Star", "description": "Ride the momentum to surge ahead and very slightly increase acceleration after passing another runner toward the front late-race.",
         "effect": [
             {
                 "description": "Increases current speed by 0.35 and acceleration by 0.1 for 5.0s.",
@@ -10546,8 +11685,7 @@
             ]
         }
     },
-    {   "skill_name": "The View from the Lead is Mine!",
-        "description": "Increase velocity by drawing on all remaining strength when in the lead by a fair margin in the second half of the race.",
+    {   "skill_name": "The View from the Lead is Mine!", "description": "Increase velocity by drawing on all remaining strength when in the lead by a fair margin in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -10582,8 +11720,7 @@
             ]
         }
     },
-    {   "skill_name": "Sky-High Teio Step",
-        "description": "When closing the gap to runners ahead late-race, greatly increase velocity with flashy footwork on the final straight.",
+    {   "skill_name": "Sky-High Teio Step", "description": "When closing the gap to runners ahead late-race, greatly increase velocity with flashy footwork on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -10631,8 +11768,7 @@
             ]
         }
     },
-    {   "skill_name": "Triumphant Pulse",
-        "description": "Greatly increase ability to break out of the pack by opening up a path when positioned toward the front with 200m remaining.",
+    {   "skill_name": "Triumphant Pulse", "description": "Greatly increase ability to break out of the pack by opening up a path when positioned toward the front with 200m remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -10666,8 +11802,7 @@
             ]
         }
     },
-    {   "skill_name": "Anchors Aweigh!",
-        "description": "Moderately increase velocity steadily with a long spurt starting halfway through the race.",
+    {   "skill_name": "Anchors Aweigh!", "description": "Moderately increase velocity steadily with a long spurt starting halfway through the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 for 6.0s.",
@@ -10703,8 +11838,7 @@
             ]
         }
     },
-    {   "skill_name": "Cut and Drive!",
-        "description": "Become stronger at challenging rivals and increase velocity when positioned toward the front with 200m or less remaining.",
+    {   "skill_name": "Cut and Drive!", "description": "Become stronger at challenging rivals and increase velocity when positioned toward the front with 200m or less remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -10740,8 +11874,7 @@
             ]
         }
     },
-    {   "skill_name": "Resplendent Red Ace",
-        "description": "Swell with the determination to be number one when positioned toward the front in the second half of the race.",
+    {   "skill_name": "Resplendent Red Ace", "description": "Swell with the determination to be number one when positioned toward the front in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -10786,8 +11919,7 @@
             ]
         }
     },
-    {   "skill_name": "Where There's a Will, There's a Way",
-        "description": "Increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
+    {   "skill_name": "Where There's a Will, There's a Way", "description": "Increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -10824,8 +11956,7 @@
             ]
         }
     },
-    {   "skill_name": "The Duty of Dignity Calls",
-        "description": "Increase velocity with determination to keep the lead when positioned toward the front on the final corner. If in a long-distance race and still going strong, increase velocity greatly instead.",
+    {   "skill_name": "The Duty of Dignity Calls", "description": "Increase velocity with determination to keep the lead when positioned toward the front on the final corner. If in a long-distance race and still going strong, increase velocity greatly instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -10870,8 +12001,7 @@
             ]
         }
     },
-    {   "skill_name": "Victoria por plancha ☆",
-        "description": "Hang onto the advantage when positioned toward the front with energy to spare on the final straight.",
+    {   "skill_name": "Victoria por plancha ☆", "description": "Hang onto the advantage when positioned toward the front with energy to spare on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -10909,8 +12039,7 @@
             ]
         }
     },
-    {   "skill_name": "This Dance is for Vittoria!",
-        "description": "Increase velocity with royal brilliance when positioned toward the front and close to the runner ahead or behind on the final corner or later.",
+    {   "skill_name": "This Dance is for Vittoria!", "description": "Increase velocity with royal brilliance when positioned toward the front and close to the runner ahead or behind on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -10945,8 +12074,7 @@
             ]
         }
     },
-    {   "skill_name": "Behold Thine Emperor's Divine Might",
-        "description": "Greatly increase velocity on the final straight after passing another runner 3 times late-race.",
+    {   "skill_name": "Behold Thine Emperor's Divine Might", "description": "Greatly increase velocity on the final straight after passing another runner 3 times late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -10983,8 +12111,7 @@
             ]
         }
     },
-    {   "skill_name": "Blazing Pride",
-        "description": "Increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
+    {   "skill_name": "Blazing Pride", "description": "Increase velocity with the stride of an empress when passing another runner from midpack or further back on the final corner.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11068,8 +12195,7 @@
             ]
         }
     },
-    {   "skill_name": "Flashy☆Landing",
-        "description": "Increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner or later.",
+    {   "skill_name": "Flashy☆Landing", "description": "Increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -11106,8 +12232,7 @@
             ]
         }
     },
-    {   "skill_name": "G00 1st. F∞;",
-        "description": "If the user didn't have a late start, increase velocity when toward the front on the final straight. If the user had kept position toward the front, greatly increase velocity instead.",
+    {   "skill_name": "G00 1st. F∞;", "description": "If the user didn't have a late start, increase velocity when toward the front on the final straight. If the user had kept position toward the front, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -11153,8 +12278,7 @@
             ]
         }
     },
-    {   "skill_name": "Blue Rose Closer",
-        "description": "When the skill user has passed another runner late-race and has reached the front part of the pack, draw on deep resolve to increase velocity on the final straight.",
+    {   "skill_name": "Blue Rose Closer", "description": "When the skill user has passed another runner late-race and has reached the front part of the pack, draw on deep resolve to increase velocity on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11199,8 +12323,7 @@
             ]
         }
     },
-    {   "skill_name": "Our Ticket to Win!",
-        "description": "Increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
+    {   "skill_name": "Our Ticket to Win!", "description": "Increase velocity with winning ambition when positioned toward the front on the final straight after engaging in a challenge on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11247,8 +12370,7 @@
             ]
         }
     },
-    {   "skill_name": "Genius x Bakushin = Victory",
-        "description": "Increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
+    {   "skill_name": "Genius x Bakushin = Victory", "description": "Increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11284,8 +12406,7 @@
             ]
         }
     },
-    {   "skill_name": "I See Victory in My Future!",
-        "description": "Clear a path forward with the power of divination when the way ahead is jammed late-race.",
+    {   "skill_name": "I See Victory in My Future!", "description": "Clear a path forward with the power of divination when the way ahead is jammed late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
@@ -11322,8 +12443,7 @@
             ]
         }
     },
-    {   "skill_name": "Just a Little Farther!",
-        "description": "Increase velocity with flaring fighting spirit when positioned 3rd and about to lose late-race.",
+    {   "skill_name": "Just a Little Farther!", "description": "Increase velocity with flaring fighting spirit when positioned 3rd and about to lose late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11360,8 +12480,7 @@
             ]
         }
     },
-    {   "skill_name": "Prideful King",
-        "description": "Greatly increase velocity in a true display of skill with 200m remaining after racing calmly.",
+    {   "skill_name": "Prideful King", "description": "Greatly increase velocity in a true display of skill with 200m remaining after racing calmly.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -11396,8 +12515,7 @@
             ]
         }
     },
-    {   "skill_name": "#LookatCurren",
-        "description": "Gain momentum and begin to advance when passing another runner while well-positioned around halfway through the race.",
+    {   "skill_name": "#LookatCurren", "description": "Gain momentum and begin to advance when passing another runner while well-positioned around halfway through the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -11431,8 +12549,7 @@
             ]
         }
     },
-    {   "skill_name": "Nemesis",
-        "description": "Increase velocity with smoldering ambition when moving up from midpack on the final corner or later.",
+    {   "skill_name": "Nemesis", "description": "Increase velocity with smoldering ambition when moving up from midpack on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11466,8 +12583,7 @@
             ]
         }
     },
-    {   "skill_name": "SPARKLY☆STARDOM",
-        "description": "Become empowered to keep the spotlight when positioned toward the front and close to the runner behind on a straight mid-race.",
+    {   "skill_name": "SPARKLY☆STARDOM", "description": "Become empowered to keep the spotlight when positioned toward the front and close to the runner behind on a straight mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -11505,8 +12621,7 @@
             ]
         }
     },
-    {   "skill_name": "Shadow Break",
-        "description": "Increase velocity with beastly strength when passing another runner on the outside on the final corner or later. If the skill user engaged in a challenge mid-race, greatly increase velocity instead.",
+    {   "skill_name": "Shadow Break", "description": "Increase velocity with beastly strength when passing another runner on the outside on the final corner or later. If the skill user engaged in a challenge mid-race, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -11563,8 +12678,7 @@
             ]
         }
     },
-    {   "skill_name": "Eternal Moments",
-        "description": "Increase velocity when starting to make a move from a position toward the front mid-race.",
+    {   "skill_name": "Eternal Moments", "description": "Increase velocity when starting to make a move from a position toward the front mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11600,8 +12714,7 @@
             ]
         }
     },
-    {   "skill_name": "Flowery☆Maneuver",
-        "description": "Increase velocity when passing another runner toward the front on the final corner or later. If passing toward the back, increase acceleration instead.",
+    {   "skill_name": "Flowery☆Maneuver", "description": "Increase velocity when passing another runner toward the front on the final corner or later. If passing toward the back, increase acceleration instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11644,8 +12757,7 @@
             ]
         }
     },
-    {   "skill_name": "You and Me! One-on-One!",
-        "description": "Increase velocity on the final straight after passing another runner on the outside toward the back on the final corner or later.",
+    {   "skill_name": "You and Me! One-on-One!", "description": "Increase velocity on the final straight after passing another runner on the outside toward the back on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11693,8 +12805,7 @@
             ]
         }
     },
-    {   "skill_name": "Lights of Vaudeville",
-        "description": "When just breaking out of the pack toward the front late-race, dazzle everyone and greatly increase velocity with 300m remaining.",
+    {   "skill_name": "Lights of Vaudeville", "description": "When just breaking out of the pack toward the front late-race, dazzle everyone and greatly increase velocity with 300m remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -11770,8 +12881,7 @@
             ]
         }
     },
-    {   "skill_name": "A Kiss for Courage",
-        "description": "Increase velocity enthusiastically when positioned toward the front in the second half of the race after recovering endurance with a skill.",
+    {   "skill_name": "A Kiss for Courage", "description": "Increase velocity enthusiastically when positioned toward the front in the second half of the race after recovering endurance with a skill.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11809,8 +12919,7 @@
             ]
         }
     },
-    {   "skill_name": "I Never Goof Up!",
-        "description": "Aim for the front with unwavering determination when passing another runner late-race.",
+    {   "skill_name": "I Never Goof Up!", "description": "Aim for the front with unwavering determination when passing another runner late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -11842,8 +12951,7 @@
             ]
         }
     },
-    {   "skill_name": "Schwarzes Schwert",
-        "description": "Increase velocity when 3rd or worse on the final straight after racing calmly. If the user has maintained position in midpack, greatly increase velocity instead.",
+    {   "skill_name": "Schwarzes Schwert", "description": "Increase velocity when 3rd or worse on the final straight after racing calmly. If the user has maintained position in midpack, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -11888,8 +12996,7 @@
             ]
         }
     },
-    {   "skill_name": "Bountiful Harvest",
-        "description": "Increase velocity with a surge of great fortune when pressured by another runner toward the back in the second half of the race.",
+    {   "skill_name": "Bountiful Harvest", "description": "Increase velocity with a surge of great fortune when pressured by another runner toward the back in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -11925,8 +13032,7 @@
             ]
         }
     },
-    {   "skill_name": "YUMMY☆SPEED!",
-        "description": "Kick forward hard with renewed vigor when starting to get tired while well-positioned halfway through the race.",
+    {   "skill_name": "YUMMY☆SPEED!", "description": "Kick forward hard with renewed vigor when starting to get tired while well-positioned halfway through the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -11961,8 +13067,7 @@
             ]
         }
     },
-    {   "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆",
-        "description": "Increase velocity and navigation with the pure euphoria of being within breathing distance of precious waifus after passing another runner 2 times late-race.",
+    {   "skill_name": "OMG! (ﾟ∀ﾟ) The Final Sprint! ☆", "description": "Increase velocity and navigation with the pure euphoria of being within breathing distance of precious waifus after passing another runner 2 times late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
@@ -11997,8 +13102,7 @@
             ]
         }
     },
-    {   "skill_name": "Give Mummy a Hug ♡",
-        "description": "Increase ability to break out of the pack when well-positioned and close to the runner ahead on the final straight.",
+    {   "skill_name": "Give Mummy a Hug ♡", "description": "Increase ability to break out of the pack when well-positioned and close to the runner ahead on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -12036,8 +13140,7 @@
             ]
         }
     },
-    {   "skill_name": "A Princess Must Seize Victory!",
-        "description": "Increase velocity with pretty princess power when engaged in a challenge on the final straight.",
+    {   "skill_name": "A Princess Must Seize Victory!", "description": "Increase velocity with pretty princess power when engaged in a challenge on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12181,8 +13284,7 @@
             ]
         }
     },
-    {   "skill_name": "Pop & Polish",
-        "description": "Get pumped and increase velocity when pressured or trying to pass another runner toward the front on the final straight.",
+    {   "skill_name": "Pop & Polish", "description": "Get pumped and increase velocity when pressured or trying to pass another runner toward the front on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12228,8 +13330,7 @@
             ]
         }
     },
-    {   "skill_name": "Festive Miracle",
-        "description": "Control breathing and kick forward hard toward victory in the second half of the race after recovering endurance with skills at least 3 times.",
+    {   "skill_name": "Festive Miracle", "description": "Control breathing and kick forward hard toward victory in the second half of the race after recovering endurance with skills at least 3 times.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s. Recover HP by 3.5%.",
@@ -12264,8 +13365,7 @@
             ]
         }
     },
-    {   "skill_name": "Presents from X",
-        "description": "Increase velocity by deriving a path to victory mid-race after staying well-positioned from the start of the race up until the second half.",
+    {   "skill_name": "Presents from X", "description": "Increase velocity by deriving a path to victory mid-race after staying well-positioned from the start of the race up until the second half.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12301,8 +13401,7 @@
             ]
         }
     },
-    {   "skill_name": "Fairy Tale",
-        "description": "Increase velocity with the excitement of running when engaged in a challenge while well-positioned in the second half of the race.",
+    {   "skill_name": "Fairy Tale", "description": "Increase velocity with the excitement of running when engaged in a challenge while well-positioned in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12336,8 +13435,7 @@
             ]
         }
     },
-    {   "skill_name": "White Lightning Comin' Through!",
-        "description": "Bolt down the track like lightning when well-positioned or aiming for the front from midpack on a straight in the second half of the race.",
+    {   "skill_name": "White Lightning Comin' Through!", "description": "Bolt down the track like lightning when well-positioned or aiming for the front from midpack on a straight in the second half of the race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
@@ -12469,8 +13567,7 @@
             ]
         }
     },
-    {   "skill_name": "Ambition to Surpass the Sakura",
-        "description": "Increase velocity with blossoming ambition when well-positioned and close to the runner ahead with 300m or less remaining.",
+    {   "skill_name": "Ambition to Surpass the Sakura", "description": "Increase velocity with blossoming ambition when well-positioned and close to the runner ahead with 300m or less remaining.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12507,8 +13604,7 @@
             ]
         }
     },
-    {   "skill_name": "A Lifelong Dream, A Moment's Flight",
-        "description": "Seize the moment when close to the runner behind on the final straight, slightly consuming endurance to greatly increase velocity for a moderate duration.",
+    {   "skill_name": "A Lifelong Dream, A Moment's Flight", "description": "Seize the moment when close to the runner behind on the final straight, slightly consuming endurance to greatly increase velocity for a moderate duration.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 4.0s. Reduces HP by 1%.",
@@ -12544,8 +13640,7 @@
             ]
         }
     },
-    {   "skill_name": "Operation Cacao",
-        "description": "Take a slight breather and increase velocity when in the front part of the pack and detecting another runner coming from behind on a corner mid-race.",
+    {   "skill_name": "Operation Cacao", "description": "Take a slight breather and increase velocity when in the front part of the pack and detecting another runner coming from behind on a corner mid-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s. Recover HP by 1.5%.",
@@ -12582,8 +13677,7 @@
             ]
         }
     },
-    {   "skill_name": "Guten Appetit ♪",
-        "description": "Draw extra strength from pride, increasing velocity continuously on the final straight if the skill user passed another runner at least 2 times on the final corner or later.",
+    {   "skill_name": "Guten Appetit ♪", "description": "Draw extra strength from pride, increasing velocity continuously on the final straight if the skill user passed another runner at least 2 times on the final corner or later.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
@@ -12617,8 +13711,7 @@
             ]
         }
     },
-    {   "skill_name": "Shooting Star of Dioskouroi",
-        "description": "Increase velocity with guidance from the stars when far from the lead on the final straight. If positioned around the very back, greatly increase velocity instead.",
+    {   "skill_name": "Shooting Star of Dioskouroi", "description": "Increase velocity with guidance from the stars when far from the lead on the final straight. If positioned around the very back, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -12665,8 +13758,7 @@
             ]
         }
     },
-    {   "skill_name": "Victory Cheer!",
-        "description": "Moderately increase velocity when positioned toward the front on the third corner in the second half of the race. Or, kick forward hard when toward the front on the backstretch late-race.",
+    {   "skill_name": "Victory Cheer!", "description": "Moderately increase velocity when positioned toward the front on the third corner in the second half of the race. Or, kick forward hard when toward the front on the backstretch late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -12720,8 +13812,7 @@
             ]
         }
     },
-    {   "skill_name": "Eternal Encompassing Shine",
-        "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",
+    {   "skill_name": "Eternal Encompassing Shine", "description": "If well-positioned at the start of the final straight, her strong willpower to win increases velocity. If positioned near the front, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -12766,8 +13857,7 @@
             ]
         }
     },
-    {   "skill_name": "Lovely Spring Breeze",
-        "description": "From the midpack in the second half of the race, slightly increase velocity steadily for a duration based on remaining endurance.",
+    {   "skill_name": "Lovely Spring Breeze", "description": "From the midpack in the second half of the race, slightly increase velocity steadily for a duration based on remaining endurance.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for ~5.0s (duration based on remaining HP).",
@@ -12802,8 +13892,7 @@
             ]
         }
     },
-    {   "skill_name": "Ravissant",
-        "description": "When passing another racer at the front part of the pack on the final corner or later, perform a dazzling display that greatly increases velocity for a moderate duration.",
+    {   "skill_name": "Ravissant", "description": "When passing another racer at the front part of the pack on the final corner or later, perform a dazzling display that greatly increases velocity for a moderate duration.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 4.0s.",
@@ -12837,8 +13926,7 @@
             ]
         }
     },
-    {   "skill_name": "Break It Down!",
-        "description": "High spirits increase velocity when positioned toward the front on a late-race straight. If it's the backstretch, also slightly increase acceleration.",
+    {   "skill_name": "Break It Down!", "description": "High spirits increase velocity when positioned toward the front on a late-race straight. If it's the backstretch, also slightly increase acceleration.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and acceleration by 0.2 for 5.0s.",
@@ -12987,8 +14075,7 @@
             ]
         }
     },
-    {   "skill_name": "All Charged! It's Go Time!",
-        "description": "Moderately increase velocity when positioned toward the front with about 300m remaining. If coming out of an uphill, greatly increase velocity instead.",
+    {   "skill_name": "All Charged! It's Go Time!", "description": "Moderately increase velocity when positioned toward the front with about 300m remaining. If coming out of an uphill, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -13102,8 +14189,7 @@
             ]
         }
     },
-    {   "skill_name": "One True Color",
-        "description": "If positioned toward the front with 350m or less remaining and there is another Umamusume close behind, the determination to stay ahead makes it easier to break out of the pack.",
+    {   "skill_name": "One True Color", "description": "If positioned toward the front with 350m or less remaining and there is another Umamusume close behind, the determination to stay ahead makes it easier to break out of the pack.",
         "effect": [
             {
                 "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
@@ -13138,8 +14224,7 @@
             ]
         }
     },
-    {   "skill_name": "Now We're Cruisin'!",
-        "description": "When competing for the lead if positioned in the midpack or further for the first half of the race, show off some Edo spirit and greatly increase velocity.",
+    {   "skill_name": "Now We're Cruisin'!", "description": "When competing for the lead if positioned in the midpack or further for the first half of the race, show off some Edo spirit and greatly increase velocity.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -13183,8 +14268,7 @@
             ]
         }
     },
-    {   "skill_name": "Victory belongs to me—Strelitzia! ☆",
-        "description": "If positioned toward the back and racing calmly until the start of the final corner, when there are 300m remaining, cast a magic spell to increase velocity continuously.",
+    {   "skill_name": "Victory belongs to me—Strelitzia! ☆", "description": "If positioned toward the back and racing calmly until the start of the final corner, when there are 300m remaining, cast a magic spell to increase velocity continuously.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 6.0s.",
@@ -13228,8 +14312,7 @@
             ]
         }
     },
-    {   "skill_name": "Joyful Voyage",
-        "description": "If positioned toward the front with 200m remaining, increase velocity. Then, if also positioned near the leading Umamusume, gather strength to move slightly forward.",
+    {   "skill_name": "Joyful Voyage", "description": "If positioned toward the front with 200m remaining, increase velocity. Then, if also positioned near the leading Umamusume, gather strength to move slightly forward.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and current speed by 0.15 for 5.0s.",
@@ -13271,8 +14354,7 @@
             ]
         }
     },
-    {   "skill_name": "Wherever This Wonder Leads",
-        "description": "If positioned midpack on a downhill just before late-race and there's a large distance left to the finish, enjoy the race to the fullest, increasing velocity.",
+    {   "skill_name": "Wherever This Wonder Leads", "description": "If positioned midpack on a downhill just before late-race and there's a large distance left to the finish, enjoy the race to the fullest, increasing velocity.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
@@ -13312,8 +14394,7 @@
             ]
         }
     },
-    {   "skill_name": "trigger:BEAT",
-        "description": "When near the inner rail midpack on the final corner or later, calculate the path to victory, increasing velocity and ability to navigate smoothly on the final straight.",
+    {   "skill_name": "trigger:BEAT", "description": "When near the inner rail midpack on the final corner or later, calculate the path to victory, increasing velocity and ability to navigate smoothly on the final straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 and lane movement speed by 0.035 for 5.0s.",
@@ -13355,7 +14436,7 @@
             ]
         }
     },
-    {   "skill_name": "Dreams Donned with Pride!", "description": "If the user activates another skill on the final corner late-race, take the crowd's cheers to heart and moderately increase velocity. If racing at Nakayama Racecourse, greatly increase velocity instead",
+    {   "skill_name": "Dreams Donned with Pride!", "description": "If the user activates another skill on the final corner late-race, take the crowd's cheers to heart and moderately increase velocity. If racing at Nakayama Racecourse, greatly increase velocity instead.",
         "effect": [
             {
                 "description": "Increases target speed by 0.45 for 5.0s.",
@@ -13404,7 +14485,72 @@
             ]
         }
     },
-
+    {   "skill_name": "Ruler of Japan", "description": "I'll tackle this with everything I've got!",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "≥350m of the race remaining",
+                    "≤400m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [  
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "ruler of japan"
+        ],
+        "horse": "",
+        "gametora_id": "300131",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "distance_mode": "remaining",
+                    "remaining_start": 400,
+                    "remaining_end": 350,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Indomitable", "description": "I'll rise up to the challenge!",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 3.0s.",
+                "conditions": [
+                    "≥350m of the race remaining",
+                    "≤400m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [  
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "indomitable"
+        ],
+        "horse": "",
+        "gametora_id": "300141",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "distance_mode": "remaining",
+                    "remaining_start": 400,
+                    "remaining_end": 350,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
     {   "skill_name": "564 Escapades", "description": "Slightly increase velocity sometime in the second half of the race. If you've got any cool rare skills lying around, go ahead and activate 2 regardless of their conditions—it's on the house.",
         "effect": [
             {
@@ -13482,7 +14628,7 @@
         "skill_name": "Corner Adept x", "description": "Moderately decrease velocity on a corner with clumsy turning.",
         "effect": [
             {
-                "description": "Reduces speed by 0.2 for 1.8s. 30s cooldown.",
+                "description": "Reduces current speed by 0.2 for 1.8s. 30s cooldown.",
                 "conditions": [
                     "Random point on a random corner"
                 ]
@@ -13513,7 +14659,7 @@
     {   "skill_name": "Defeatist", "description": "Moderately increase urge to give up when positioned around the very back on the final straight.",
         "effect": [
             {
-                "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
+                "description": "Reduces current speed by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
                     "Last 25% of the pack (by distance)",
                     "Random point on the final straight"
@@ -13546,7 +14692,7 @@
     {   "skill_name": "Reckless", "description": "Moderately increase carelessness when in the lead with around 200m remaining.",
         "effect": [
             {
-                "description": "Reduces speed by 0.2 for 3.0s. 30s cooldown.",
+                "description": "Reduces current speed by 0.2 for 3.0s. 30s cooldown.",
                 "conditions": [
                     "1st",
                     "≥1 length ahead",
@@ -13575,7 +14721,46 @@
             ]
         }
     },
-    {   "skill_name": "Blatant Fear", "description": "Greatly decrease velocity on a corner in the second half of the race due to Trainer's obvious anxiety.",
+    {   "skill_name": "Down in the Dirt x", "description": "Moderately decrease velocity when following directly behind a runner. (Dirt)",
+        "effect": [
+            {
+                "description": "Reduces current speed by 0.2 for 3.0s.",
+                "conditions": [
+                    "Dirt",
+                    "Right behind another uma for ≥3s",
+                    "After ≥5s into a race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocitynegative",
+        "aliases": [
+            "down in the dirt x"
+        ],
+        "gametora_id": "202303",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                  "type": "box",
+                  "clip_start": 75,
+                  "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+
+
+
+    {   "note": "================= START OF GOLD PURPLE VELOCITY ==================",
+        "skill_name": "Blatant Fear", "description": "Greatly decrease velocity on a corner in the second half of the race due to Trainer's obvious anxiety.",
         "effect": [
             {
                 "description": "Reduces speed by 0.3 for 5.0s.",
@@ -13997,7 +15182,7 @@
             }
         }
     },
-    {   "skill_name": "Second Wind", "description": "Moderately expend endurance to slightly increase acceleration late-race.",
+    {   "skill_name": "Second Wind", "description": "Moderately expend endurance to slightly increase acceleration late-race. (Front Runner)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s. Reduce HP by 2%.",
@@ -14030,8 +15215,7 @@
             ]
         }
     },
-    {   "skill_name": "Shrewd Step",
-        "description": "Slightly increase ability to navigate smoothly.",
+    {   "skill_name": "Shrewd Step", "description": "Slightly increase ability to navigate smoothly. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0.",
@@ -14062,8 +15246,7 @@
             ]
         }
     },
-    {   "skill_name": "Straight Descent",
-        "description": "Slightly improve running on a downhill.",
+    {   "skill_name": "Straight Descent", "description": "Slightly improve running on a downhill. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
@@ -14074,7 +15257,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Very impactful on tracks where the downhill is right before the last spurt.",
+        "review": "",
         "rarity": "normal",
         "category": "accel",
         "aliases": [
@@ -14096,8 +15279,7 @@
             ]
         }
     },
-    {   "skill_name": "Tactical Tweak",
-        "description": "Slightly increase acceleration when positioned toward the back mid-race.",
+    {   "skill_name": "Tactical Tweak", "description": "Slightly increase acceleration when positioned toward the back mid-race. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
@@ -14130,8 +15312,7 @@
             ]
         }
     },
-    {   "skill_name": "Fighter",
-        "description": "Slightly increase acceleration for a medium duration when trying to pass another runner.",
+    {   "skill_name": "Fighter", "description": "Slightly increase acceleration for a medium duration when trying to pass another runner. (Late Surger)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 4.0s.",
@@ -14164,8 +15345,7 @@
             ]
         }
     },
-    {   "skill_name": "Highlander",
-        "description": "Slightly improve running on an uphill.",
+    {   "skill_name": "Highlander", "description": "Slightly improve running on an uphill.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
@@ -14228,8 +15408,7 @@
             ]
         }
     },
-    {   "skill_name": "Head-On",
-        "description": "Slightly increase acceleration when positioned toward the front in the early part of late-race.",
+    {   "skill_name": "Head-On", "description": "Slightly increase acceleration when positioned toward the front in the early part of late-race. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
@@ -14264,8 +15443,7 @@
             ]
         }
     },
-    {   "skill_name": "Take the Chance",
-        "description": "Slightly increase acceleration when positioned midpack or further back in the early part of late-race.",
+    {   "skill_name": "Take the Chance", "description": "Slightly increase acceleration when positioned midpack or further back in the early part of late-race. (Medium)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 1.8s.",
@@ -14413,12 +15591,189 @@
             }
         }
     },
+    {   "skill_name": "Scramble", "description": "Moderately expend endurance to slightly increase acceleration when positioned midpack or further back in the last spurt. (Late, Long)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 1.5s. Reduces HP by 2%.",
+                "conditions": [
+                    "Late Surger",
+                    "Long",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Character is in their last spurt mode"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "scramble"
+        ],
+        "upgrade": "Claw Forward",
+        "gametora_id": "202422",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "My True Strength", "description": "Slightly increase acceleration late-race if the skill user led or was within 4 lengths of the lead just before late-race. (Pace, Long)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 1.2s.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Long",
+                    "Late race"
+                ]
+            }
+        ],
+        "preconditions": [
+            "≤10m behind 1st place",
+            "Mid race",
+            "After 60% of the race"
+        ],
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "my true strength"
+        ],
+        "upgrade": "Beast Mode",
+        "gametora_id": "202482",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.6,
+                    "trigger_behavior": "precondition"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Sharp Steps", "description": "Slightly increase acceleration in the early part of late-race if the skill user stayed toward the back without rushing until the start of late-race. (End Closer)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 1.2s.",
+                "conditions": [
+                    "End Closer",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [
+            "No 'Rushed'",
+            "After 66% of the race",
+            "Has been 5th to 9th (CM), 6th to 12th (TT) the entire race" 
+        ],
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "sharp steps"
+        ],
+        "upgrade": "Razor-Sharp Steps",
+        "gametora_id": "202492",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Beating Heart", "description": "Slightly increase acceleration when positioned toward the front in the early part of late-race. (Mile)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 1.8s.",
+                "conditions": [
+                    "Mile",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "beating heart"
+        ],
+        "upgrade": "High Voltage",
+        "gametora_id": "202672",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Goin' First", "description": "Slightly increase acceleration in the start dash. (Medium)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 1.5s.",
+                "conditions": [
+                    "Medium",
+                    "Always activates (wit check)"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "accel",
+        "aliases": [
+            "goin first", "going first"
+        ],
+        "upgrade": "Before Anyone!",
+        "gametora_id": "202692",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
 
 
 
     {   "note": "================= START OF GOLD ACCEL ==================",
-        "skill_name": "Corner Connoisseur",
-        "description": "Increase acceleration on a corner with masterful turning.",
+        "skill_name": "Corner Connoisseur", "description": "Increase acceleration on a corner with masterful turning.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s. 30s cooldown.",
@@ -14437,6 +15792,14 @@
             "曲線のソムリエ"
         ],
         "downgrade": "Corner Acceleration",
+        "evolutions": [
+            "Cornered by the Beast",
+            "Moonlight Sommelier",
+            "Trajectory to the Future",
+            "Snow Fluttering Through the Corner",
+            "Winter's Beauty Under the Waning Moon",
+            "Curve Grand Chef"
+        ],
         "gametora_id": "200341",
         "activation_map": {
             "show_chart": true,
@@ -14450,8 +15813,7 @@
             ]
         }
     },
-    {   "skill_name": "Rushing Gale!",
-        "description": "Increase acceleration and slightly increase velocity on a straight.",
+    {   "skill_name": "Rushing Gale!", "description": "Increase acceleration and slightly increase velocity on a straight.",
         "effect": [
             {
                 "description": "Increases target speed by 0.15 and acceleration by 0.4 for 3.0s.30s cooldown.",
@@ -14470,6 +15832,9 @@
             "一陣の風"
         ],
         "downgrade": "Straightaway Acceleration",
+        "evolutions": [
+            "Riding the Mistral"
+        ],
         "gametora_id": "200371",
         "activation_map": {
             "show_chart": true,
@@ -14505,6 +15870,15 @@
             "nsm"
         ],
         "downgrade": "Nimble Navigator",
+        "evolutions": [
+            "I copy!",
+            "Unstoppable Princess",
+            "Keep the Cheers Comin'",
+            "Like They Do in the City!",
+            "Cuttin' Through!",
+            "Make the World Marvelous ☆",
+            "Step Aside"
+        ],
         "gametora_id": "200491",
         "activation_map": {
             "show_chart": true,
@@ -14540,6 +15914,17 @@
             "先手必勝"
         ],
         "downgrade": "Early Lead",
+        "evolutions": [
+            "Overclock",
+            "Get the Festival Going!",
+            "Raise the Pitch",
+            "Introducing the Victor!",
+            "Turbo's Leadin' the Charge!",
+            "Aced It!",
+            "Ahead of the Trend☆",
+            "Pioneer of Dreams",
+            "First in the Bath!"
+        ],
         "gametora_id": "200531",
         "activation_map": {
             "show_chart": true,
@@ -14574,6 +15959,9 @@
             "逃亡者"
         ],
         "downgrade": "Final Push",
+        "evolutions": [
+            "Otherworldly Front-Runner"
+        ],
         "gametora_id": "200551",
         "activation_map": {
             "show_chart": true,
@@ -14609,6 +15997,16 @@
             "乗り換え上手"
         ],
         "downgrade": "Slick Surge",
+        "evolutions": [
+            "Indomitable Spirit",
+            "Star of the Runway",
+            "To the Finale's Forefront",
+            "Lezzgo!",
+            "Red-Hot Transforma-Runner!",
+            "Service: Transit",
+            "Year-End Cleaning Pro",
+            "Pump-Up Pro"
+        ],
         "gametora_id": "200601",
         "activation_map": {
             "show_chart": true,
@@ -14643,6 +16041,15 @@
             "迫る影"
         ],
         "downgrade": "Straightaway Spurt",
+        "evolutions": [
+            "Heart of a Hunter",
+            "Standout Step",
+            "Fleet Foot of Idaten",
+            "Spring from the Earth",
+            "Dancing Flourish",
+            "Flood of \"Je t'aime\"",
+            "Imminent Twilight"
+        ],
         "gametora_id": "200641",
         "activation_map": {
             "show_chart": true,
@@ -14677,6 +16084,12 @@
             "スプリントターボ"
         ],
         "downgrade": "Sprinting Gear",
+        "evolutions": [
+            "Bakushin SPRINT!",
+            "#BeautifulSprint",
+            "Ultimate Ultra-Sprint!",
+            "Cultivation Sprint!"
+        ],
         "gametora_id": "200651",
         "activation_map": {
             "show_chart": true,
@@ -14715,6 +16128,13 @@
             "豪脚"
         ],
         "downgrade": "Updrafters",
+        "evolutions": [
+            "Feet of Fury",
+            "Heroic Flurry",
+            "Condor Leap",
+            "Unobstructable",
+            "Attack of Ares"
+        ],
         "gametora_id": "200701",
         "activation_map": {
             "show_chart": true,
@@ -14752,6 +16172,14 @@
             "プランX"
         ],
         "downgrade": "Countermeasure",
+        "evolutions": [
+            "Cornered by the Beast",
+            "Moonlight Sommelier",
+            "Trajectory to the Future",
+            "Snow Fluttering Through the Corner",
+            "Winter's Beauty Under the Waning Moon",
+            "Curve Grand Chef"
+        ],
         "gametora_id": "200991",
         "activation_map": {
             "show_chart": true,
@@ -14792,6 +16220,10 @@
             "アクセル全開！"
         ],
         "downgrade": "Acceleration",
+        "evolutions": [
+            "Revved Up Red-Hot",
+            "Break Through the Red Zone"
+        ],
         "gametora_id": "201061",
         "activation_map": {
             "show_chart": true,
@@ -14810,8 +16242,7 @@
             }
         }
     },
-    {   "skill_name": "Reignition",
-        "description": "Moderately expend endurance to increase acceleration late-race.",
+    {   "skill_name": "Reignition", "description": "Moderately expend endurance to increase acceleration late-race. (Front Runner)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s. Reduce HP by 2%.",
@@ -14831,6 +16262,14 @@
             "再燃焼"
         ],
         "downgrade": "Second Wind",
+        "evolutions": [
+            "Cornered by the Beast",
+            "Moonlight Sommelier",
+            "Trajectory to the Future",
+            "Snow Fluttering Through the Corner",
+            "Winter's Beauty Under the Waning Moon",
+            "Curve Grand Chef"
+        ],
         "gametora_id": "201291",
         "activation_map": {
             "show_chart": true,
@@ -14844,8 +16283,7 @@
             ]
         }
     },
-    {   "skill_name": "Technician",
-        "description": "Moderately increase ability to navigate smoothly.",
+    {   "skill_name": "Technician", "description": "Moderately increase ability to navigate smoothly. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 3.0.",
@@ -14856,7 +16294,7 @@
             }
         ],
         "preconditions": [],
-        "review": "Easy to trigger for Team Trials. However this will likely trigger mid-race where acceleration is not impactful.",
+        "review": "",
         "rarity": "rare",
         "category": "goldenaccel",
         "aliases": [
@@ -14864,6 +16302,10 @@
             "技巧派"
         ],
         "downgrade": "Shrewd Step",
+        "evolutions": [
+            "Talented Technique",
+            "Phantom Technician"
+        ],
         "gametora_id": "201331",
         "activation_map": {
             "show_chart": true,
@@ -14875,8 +16317,7 @@
             ]
         }
     },
-    {   "skill_name": "Determined Descent",
-        "description": "Moderately improve running on a downhill.",
+    {   "skill_name": "Determined Descent", "description": "Moderately improve running on a downhill. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 3.0s.",
@@ -14896,6 +16337,15 @@
             "決意の直滑降"
         ],
         "downgrade": "Straight Descent",
+        "evolutions": [
+            "Heroic Determination",
+            "Heavenly Descent",
+            "Blooming Resolve",
+            "Snow Gals Know Howta Sled!",
+            "Steadfast Determination",
+            "Helping Grant Your Dream",
+            "Tiara Dive!"
+        ],
         "gametora_id": "201341",
         "activation_map": {
             "show_chart": true,
@@ -14909,8 +16359,7 @@
             ]
         }
     },
-    {   "skill_name": "Shatterproof",
-        "description": "Moderately increase acceleration when positioned toward the back mid-race.",
+    {   "skill_name": "Shatterproof", "description": "Moderately increase acceleration when positioned toward the back mid-race. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 3.0s.",
@@ -14943,8 +16392,7 @@
             ]
         }
     },
-    {   "skill_name": "Hard Worker",
-        "description": "Moderately increase acceleration for a medium duration when trying to pass another runner.",
+    {   "skill_name": "Hard Worker", "description": "Moderately increase acceleration for a medium duration when trying to pass another runner. (Late Surger)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.3 for 4.0s.",
@@ -14965,6 +16413,10 @@
             "努力家"
         ],
         "downgrade": "Fighter",
+        "evolutions": [
+            "Never Ever Give Up",
+            "I'll Do My Very Best!"
+        ],
         "gametora_id": "201401",
         "activation_map": {
             "show_chart": true,
@@ -14977,8 +16429,7 @@
             ]
         }
     },
-    {   "skill_name": "From the Brink",
-        "description": "Increase acceleration when positioned midpack or further back in the early part of late-race.",
+    {   "skill_name": "From the Brink", "description": "Increase acceleration when positioned midpack or further back in the early part of late-race. (Medium)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
@@ -14999,6 +16450,16 @@
             "起死回生"
         ],
         "downgrade": "Take the Chance",
+        "evolutions": [
+            "First Step from the Brink",
+            "Bolt from the Brink",
+            "Turning Things Right Around!",
+            "Oopsy-Doopsy",
+            "I Can Totes Shake 'Em!",
+            "Azure Revolution",
+            "Million Card",
+            "Big Comeback Time!?"
+        ],
         "gametora_id": "202081",
         "activation_map": {
             "show_chart": true,
@@ -15017,8 +16478,7 @@
             }
         }
     },
-    {   "skill_name": "Neck and Neck",
-        "description": "Increase acceleration when positioned toward the front in the early part of late-race.",
+    {   "skill_name": "Neck and Neck", "description": "Increase acceleration when positioned toward the front in the early part of late-race. (Pace Chaser)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 1.8s.",
@@ -15039,6 +16499,18 @@
             "鍔迫り合い"
         ],
         "downgrade": "Head-On",
+        "evolutions": [
+            "Spear of Morrígan",
+            "Ideal-Seeking Determination",
+            "May the Best Uma Win!",
+            "For My Rival!",
+            "Fervent Determination",
+            "Spark of Life",
+            "Gifted Grace",
+            "There's No Way I'll Lose!",
+            "Let Me Win Pleeease ♥",
+            "Fuel Up ☆ Pumpkin Power!"
+        ],
         "gametora_id": "201901",
         "activation_map": {
             "show_chart": true,
@@ -15052,40 +16524,291 @@
             ]
         }
     },
-    {   "skill_name": "Ultimate Hill Climber (TO BE RENAMED)",
-        "description": "Moderately increase acceleration on an uphill.",
+    {   "skill_name": "Be the Center!", "description": "Increase acceleration when positioned toward the front late-race. (Dirt)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
                 "conditions": [
-                    "Random point on a random uphill"
+                    "Dirt",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in late race"
                 ]
             }
         ],
         "preconditions": [],
-        "review": "Very impactful on tracks where the uphill is right before the last spurt.",
-        "rarity": "normal",
-        "category": "accel",
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
         "aliases": [
-            "ultimate hill climber",
-            "究極のヒルクライマー"
+            "be the center"
         ],
-        "downgrade": "Highlander",
-        "gametora_id": "201582",
+        "downgrade": "Got the Spirit!",
+        "evolutions": [
+            "Always Center Stage!"
+        ],
+        "gametora_id": "202311",
         "activation_map": {
             "show_chart": true,
             "triggers": [
                 {
                     "type": "box",
-                    "target": "elevation",
-                    "match": "uphill",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Run Like Crazy!", "description": "Increase acceleration when positioned midpack or further back late-race. (Dirt)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 3.0s.",
+                "conditions": [
+                    "Dirt",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Random point in late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "run like crazy"
+        ],
+        "downgrade": "Rapid Gain",
+        "gametora_id": "202321",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "terrains": [
+                    "dirt"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Flash Forward (TO BE RENAMED)", "description": "Increase acceleration when trying to pass another runner from the back late-race. (Sprint/Mile)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 2.0s.",
+                "conditions": [
+                    "Sprint / Mile",
+                    "5th to 9th (CM), 6th to 12th (TT)",
+                    "Overtake target exists",
+                    "Late race and beyond"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "flash forward"
+        ],
+        "downgrade": "Leap Forward",
+        "evolutions": [
+            "Always the Most Brilliant",
+            "Thunderclap",
+            "Olifant's Roar",
+            "Here You Go!"
+        ],
+        "gametora_id": "202401",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "sprint", "mile"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Claw Forward", "description": "Moderately expend endurance to increase acceleration when positioned midpack or further back in the last spurt. (Late, Long)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 1.5s. Reduces HP by 2%.",
+                "conditions": [
+                    "Late Surger",
+                    "Long",
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Character is in their last spurt mode"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "claw forward"
+        ],
+        "downgrade": "Scramble",
+        "evolutions": [
+            "Beyond My Station",
+            "Simple and Sturdy"
+        ],
+        "gametora_id": "202421",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "trigger_behavior": "asap"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Beast Mode", "description": "Increase acceleration late-race if the skill user led or was within 4 lengths of the lead just before late-race. (Pace, Long)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 1.2s.",
+                "conditions": [
+                    "Pace Chaser",
+                    "Long",
+                    "Late race"
+                ]
+            }
+        ],
+        "preconditions": [
+            "≤10m behind 1st place",
+            "Mid race",
+            "After 60% of the race"
+        ],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "beast mode"
+        ],
+        "downgrade": "My True Strength",
+        "evolutions": [
+            "Ravenous Beast",
+            "Butterfly Transformation Jutsu",
+            "The Fierce Beast Howls at the Sun",
+            "Let Your Name Shake Heaven and Earth",
+            "The Ashen Monster",
+            "Monster Machine"
+        ],
+        "gametora_id": "202481",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.6,
+                    "trigger_behavior": "precondition"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "long"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Razor-Sharp Steps", "description": "Increase acceleration in the early part of late-race if the skill user stayed toward the back without rushing until the start of late-race. (End Closer)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 1.2s.",
+                "conditions": [
+                    "End Closer",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [
+            "No 'Rushed'",
+            "After 66% of the race",
+            "Has been 5th to 9th (CM), 6th to 12th (TT) the entire race" 
+        ],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "razor sharp steps"
+        ],
+        "downgrade": "Sharp Steps",
+        "evolutions": [
+            "Cake-Cuttin' Time!",
+            "Strike of an Oath",
+            "Sylphid Magia",
+            "Nox Lumina",
+            "Breeze Across the Spring Sky"
+        ],
+        "gametora_id": "202491",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
             ]
         }
     },
-    {   "skill_name": "Unshakable Stance (TO BE RENAMED)",
-        "description": "Increase acceleration after activating many skills early-race.",
+    {   "skill_name": "Miracle for My Future", "description": "Increase acceleration late-race to pull off a miracle. (Sprint)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 1.8s.",
+                "conditions": [
+                    "Sprint",
+                    "Random point in late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "miracle for my future"
+        ],
+        "gametora_id": "202571",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Solid Preparation", "description": "Increase acceleration when many skills activate early-race.",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 3.0s.",
@@ -15095,14 +16818,18 @@
             }
         ],
         "preconditions": [],
-        "review": "Front Runners only. Take green skills suited for the CM youre building for and other early race skills such as Focus/Concentration, Early Lead, etc. Crucial for Front Runners.",
-        "rarity": "normal",
-        "category": "accel",
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
         "aliases": [
-            "unshakable stance",
-            "盤石の構え"
+            "solid preparation"
         ],
         "downgrade": "Groundwork",
+        "evolutions": [
+            "Information Broker",
+            "I'm a Big Sis After All",
+            "Victory Path Domination"
+        ],
         "gametora_id": "201602",
         "activation_map": {
             "show_chart": true,
@@ -15114,6 +16841,73 @@
                     "trigger_behavior": "asap"
                 }
             ]
+        }
+    },
+    {   "skill_name": "High Voltage", "description": "Increase acceleration when positioned toward the front in the early part of late-race. (Mile)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 1.8s.",
+                "conditions": [
+                    "Mile",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the first half of late race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "high voltage"
+        ],
+        "downgrade": "Beating Heart",
+        "evolutions": [
+            "Enjoy the Flight"
+        ],
+        "gametora_id": "202671",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ],
+            "requirements": {
+                "distance_types": [
+                    "mile"
+                ]
+            }
+        }
+    },
+    {   "skill_name": "Before Anyone!", "description": "Increase acceleration in the start dash. (Medium)",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 1.5s.",
+                "conditions": [
+                    "Medium",
+                    "Always activates (wit check)"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenaccel",
+        "aliases": [
+            "before anyone"
+        ],
+        "downgrade": "Goin' First",
+        "evolutions": [
+            "Ráfaga Azul",
+            "To the Best View!"
+        ],
+        "gametora_id": "202691",
+        "activation_map": {
+            "show_chart": false
         }
     },
 
@@ -16547,8 +18341,7 @@
             ]
         }
     },
-    {   "skill_name": "Ignited Spirit STA",
-        "description": "Burn bright with team spirit, slightly recovering endurance in proportion to the total Stamina of racing team members mid-race.",
+    {   "skill_name": "Ignited Spirit STA", "description": "Burn bright with team spirit, slightly recovering endurance in proportion to the total Stamina of racing team members mid-race.",
         "effect": [
             {
                 "description": "Recover HP based on your team's total base stamina stat.\nTotal < 1200 : 1.2% HP\n1200 <= Total < 1800 : 1.35% HP\n1800 <= Total < 260 : 1.5% HP\n2600 <= Total < 3600 : 1.65% HP\n3600 <= Total : 1.8% HP",
@@ -16580,8 +18373,7 @@
             ]
         }
     },
-    {   "skill_name": "Burning Spirit STA",
-        "description": "Burn bright with team spirit, recovering endurance in proportion to the total Stamina of racing team members mid-race",
+    {   "skill_name": "Burning Spirit STA", "description": "Burn bright with team spirit, recovering endurance in proportion to the total Stamina of racing team members mid-race",
         "effect": [
             {
                 "description": "Recover HP based on your team's total base stamina stat.\nTotal < 1200 : 4.4% HP\n1200 <= Total < 1800 : 4.95% HP\n1800 <= Total < 260 : 5.5% HP\n2600 <= Total < 3600 : 6.05% HP\n3600 <= Total : 6.6% HP",
@@ -16613,8 +18405,7 @@
             ]
         }
     },
-    {   "skill_name": "Ignited Spirit PWR",
-        "description": "Burn bright with team spirit, slightly increasing acceleration in proportion to the total Power of racing team members late-race.",
+    {   "skill_name": "Ignited Spirit PWR", "description": "Burn bright with team spirit, slightly increasing acceleration in proportion to the total Power of racing team members late-race.",
         "effect": [
             {
                 "description": "Increases acceleration based on your team's total base power stat for 1.2s.\nTotal < 1200 : 0.16 accel\n1200 <= Total < 1800 : 0.18 accel\n1800 <= Total < 260 : 0.2 accel\n2600 <= Total < 3600 : 0.22 accel\n3600 <= Total : 0.24 accel",
@@ -16646,8 +18437,7 @@
             ]
         }
     },
-    {   "skill_name": "Burning Spirit PWR",
-        "description": "Burn bright with team spirit, increasing acceleration in proportion to the total Power of racing team members late-race.",
+    {   "skill_name": "Burning Spirit PWR", "description": "Burn bright with team spirit, increasing acceleration in proportion to the total Power of racing team members late-race.",
         "effect": [
             {
                 "description": "Increases acceleration based on your team's total base power stat for 1.2s.\nTotal < 1200 : 0.32 accel\n1200 <= Total < 1800 : 0.36 accel\n1800 <= Total < 260 : 0.4 accel\n2600 <= Total < 3600 : 0.44 accel\n3600 <= Total : 0.48 accel",
@@ -16679,8 +18469,7 @@
             ]
         }
     },
-    {   "skill_name": "Ignited Spirit WIT",
-        "description": "Burn bright with team spirit, slightly increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
+    {   "skill_name": "Ignited Spirit WIT", "description": "Burn bright with team spirit, slightly increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s.\nTotal < 1200 : 0.012 lane movement speed and 4 FoV\n1200 <= Total < 1800 : 0.0135 lane movement speed and 4.5 FoV\n1800 <= Total < 260 : 0.015 lane movement speed and 5 FoV\n2600 <= Total < 3600 : 0.0165 lane movement speed and 5.5 FoV\n3600 <= Total : 0.018 lane movement speed and 6 FoV",
@@ -16712,8 +18501,7 @@
             ]
         }
     },
-    {   "skill_name": "Burning Spirit WIT",
-        "description": "Burn bright with team spirit, increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
+    {   "skill_name": "Burning Spirit WIT", "description": "Burn bright with team spirit, increasing strategic navigation for a medium duration in proportion to the total Wit of racing team members early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed and FoV based on your team's total base wit stat for 3.0s.\nTotal < 1200 : 0.028 lane movement speed and 12 FoV\n1200 <= Total < 1800 : 0.0315 lane movement speed and 13.5 FoV\n1800 <= Total < 260 : 0.035 lane movement speed and 15 FoV\n2600 <= Total < 3600 : 0.0385 lane movement speed and 16.5 FoV\n3600 <= Total : 0.042 lane movement speed and 18 FoV",
@@ -16745,14 +18533,14 @@
             ]
         }
     },
-    {   "skill_name": "Glittering Star",
-        "description": "Very slightly control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins.",
+    {   "skill_name": "Glittering Star", "description": "Very slightly control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins.",
         "effect": [
             {
                 "description": "Increases target speed by ~0.05 and acceleration by ~0.1 for 1.2s. Recover HP by ~0.5%. (Multiplier based on number of career wins)",
                 "conditions": [
                     "Random point in the second half of the race"
-                ]
+                ],
+                "scale": "Races won < 6, 0.8x\n6 <= Races won < 14, 0.9x\n14 <= Races won < 18, 1.0x\n18 <= Races won < 25, 1.1x\n25 <= Races won, 1.2x"
             }
         ],
         "preconditions": [],
@@ -16778,14 +18566,14 @@
             ]
         }
     },
-    {   "skill_name": "Radiant Star",
-        "description": "Control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins. ",
+    {   "skill_name": "Radiant Star", "description": "Control breathing and kick forward in the second half of the race. Effect is increased in proportion to number of career wins. ",
         "effect": [
             {
                 "description": "Increases target speed by ~0.25 and acceleration by ~0.3 for 1.2s. Recover HP by ~3.5%. (Scaling based on number of career wins)",
                 "conditions": [
                     "Random point in the second half of the race"
-                ]
+                ],
+                "scale": "Races won < 6, 0.8x\n6 <= Races won < 14, 0.9x\n14 <= Races won < 18, 1.0x\n18 <= Races won < 25, 1.1x\n25 <= Races won, 1.2x"
             }
         ],
         "preconditions": [],

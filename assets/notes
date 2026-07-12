@@ -1,6 +1,9 @@
 "conditions":
         [
             [
+                "Front Runner/Pace Chaser/Late Surger/End Closer"                           running_style==1/2/3/4
+                "Sprint/Mile/Medium/Long"                                                   distance_type==4
+
                 "Precondition is true",
 
                 "Kawasaki, Funabashi, Morioka or Ooi Racecourse"                            is_dirtgrade==1
@@ -20,7 +23,8 @@
 
                 "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race"                 order_rate_in40_continue==1
                 "Has been 6th to 9th (CM), 8th to 12th (TT) the entire race"                order_rate_out70_continue==1
-
+                "Has been 5th to 9th (CM), 6th to 12th (TT) the entire race"                order_rate_out50_continue==1
+                
                 "Base Power ≥ 1200"                                                         base_power≥1200
 
                 "≥1 length ahead",                                                          bashin_diff_behind>=1
@@ -121,7 +125,9 @@
                 "Early race or mid race",                                                   phase<=1
                 "Random point in early/mid/late race",                                      phase_random==0/1/2
                 "Random point in last spurt phase",                                         phase_random==3
-                "Random point in the second half of early race",                            phase_laterhalf_random==0
+                "Random point in the second half of early/mid/late race",                   phase_laterhalf_random==0/1/2
+                "Random point in the second half of last spurt phase",                      phase_laterhalf_random==3
+                "Random point in the first half of early/mid/late race",                    phase_firsthalf_random==0/1/2
                 "Random point in the first half of last spurt phase",                       phase_firsthalf_random==3
 
                 
