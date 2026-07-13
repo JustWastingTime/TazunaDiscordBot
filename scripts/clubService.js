@@ -559,11 +559,42 @@ function stripDisplaySuffix(name) {
   return toHalfwidthAscii(name || '').trimEnd();
 }
 
+function charDisplayWidth(ch) {
+  const code = ch.codePointAt(0);
+  if (code == null) return 0;
+  // East Asian Wide / Fullwidth ranges commonly used in Discord monospace.
+  if (
+    (code >= 0x1100 && code <= 0x115f) ||
+    code === 0x2329 ||
+    code === 0x232a ||
+    (code >= 0x2e80 && code <= 0xa4cf) ||
+    (code >= 0xac00 && code <= 0xd7a3) ||
+    (code >= 0xf900 && code <= 0xfaff) ||
+    (code >= 0xfe10 && code <= 0xfe19) ||
+    (code >= 0xfe30 && code <= 0xfe6f) ||
+    (code >= 0xff00 && code <= 0xff60) ||
+    (code >= 0xffe0 && code <= 0xffe6) ||
+    (code >= 0x20000 && code <= 0x2fffd) ||
+    (code >= 0x30000 && code <= 0x3fffd)
+  ) {
+    return 2;
+  }
+  return 1;
+}
+
 function truncateAndPadName(rawName, width) {
   let name = normalizeName(rawName || 'Unknown');
   name = stripDisplaySuffix(name);
-  if (name.length > width) name = name.slice(0, width);
-  return name.padEnd(width, ' ');
+
+  let result = '';
+  let used = 0;
+  for (const ch of name) {
+    const cw = charDisplayWidth(ch);
+    if (used + cw > width) break;
+    result += ch;
+    used += cw;
+  }
+  return result + ' '.repeat(Math.max(0, width - used));
 }
 
 export function buildTrainerRanks(circle, members, targetViewerId) {
@@ -774,9 +805,13 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   const totalW = 6;
   const todayW = 6;
   const dailyW = 6;
-  const header =
-    'Rank Name           Total  Daily  Today  \n' +
-    '-----------------------------------------  ';
+  const colGap = '  ';
+  const headerLine =
+    `${'Rank'.padEnd(rankW, ' ')} ${'Name'.padEnd(nameW, ' ')}` +
+    `${colGap}${'Total'.padStart(totalW, ' ')}` +
+    `${colGap}${'Avg'.padStart(dailyW, ' ')}` +
+    `${colGap}${'Today'.padStart(todayW, ' ')}  `;
+  const header = `${headerLine}\n${'-'.repeat(headerLine.trimEnd().length)}  `;
 
   const rows = activeMembers.map((m, idx) => {
     const rank = `#${idx + 1}`.padEnd(rankW, ' ');
@@ -784,7 +819,7 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
     const totalFans = formatCompactInt(m.contributionFans).padStart(totalW, ' ');
     const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
     const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
-    return `${rank} ${name} ${totalFans} ${dailyAvg} ${todayFans}  `;
+    return `${rank} ${name}${colGap}${totalFans}${colGap}${dailyAvg}${colGap}${todayFans}  `;
   });
 
   const lines = [];
@@ -886,9 +921,13 @@ export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
     const monthlyW = 7;
     const todayW = 6;
     const dailyW = 6;
-    const header =
-      'Rank Name        Club Monthly  Daily  Today  \n' +
-      '---------------------------------------------  ';
+    const colGap = '  ';
+    const headerLine =
+      `${'Rank'.padEnd(rankW, ' ')} ${'Name'.padEnd(nameW, ' ')} ${'Club'.padEnd(clubW, ' ')}` +
+      `${colGap}${'Monthly'.padStart(monthlyW, ' ')}` +
+      `${colGap}${'Avg'.padStart(dailyW, ' ')}` +
+      `${colGap}${'Today'.padStart(todayW, ' ')}  `;
+    const header = `${headerLine}\n${'-'.repeat(headerLine.trimEnd().length)}  `;
     const rows = pageMembers.map((m, idx) => {
       const rank = `#${start + idx + 1}`.padEnd(rankW, ' ');
       const name = truncateAndPadName(m.trainer_name, nameW);
@@ -896,7 +935,7 @@ export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
       const monthlyFans = formatCompactInt(m.contributionFans).padStart(monthlyW, ' ');
       const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
       const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
-      return `${rank} ${name} ${club} ${monthlyFans} ${dailyAvg} ${todayFans}  `;
+      return `${rank} ${name} ${club}${colGap}${monthlyFans}${colGap}${dailyAvg}${colGap}${todayFans}  `;
     });
 
     const lines = [];
