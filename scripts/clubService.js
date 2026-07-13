@@ -775,16 +775,16 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   const todayW = 6;
   const dailyW = 6;
   const header =
-    'Rank Name           Total  Today  Daily  \n' +
+    'Rank Name           Total  Daily  Today  \n' +
     '-----------------------------------------  ';
 
   const rows = activeMembers.map((m, idx) => {
     const rank = `#${idx + 1}`.padEnd(rankW, ' ');
     const name = truncateAndPadName(m.trainer_name, nameW);
     const totalFans = formatCompactInt(m.contributionFans).padStart(totalW, ' ');
-    const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
     const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-    return `${rank} ${name} ${totalFans} ${todayFans} ${dailyAvg}  `;
+    const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
+    return `${rank} ${name} ${totalFans} ${dailyAvg} ${todayFans}  `;
   });
 
   const lines = [];
@@ -887,16 +887,16 @@ export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
     const todayW = 6;
     const dailyW = 6;
     const header =
-      'Rank Name        Club Monthly  Today  Daily  \n' +
+      'Rank Name        Club Monthly  Daily  Today  \n' +
       '---------------------------------------------  ';
     const rows = pageMembers.map((m, idx) => {
       const rank = `#${start + idx + 1}`.padEnd(rankW, ' ');
       const name = truncateAndPadName(m.trainer_name, nameW);
       const club = m.clubLabel || abbreviateClubLabel('—', clubW);
       const monthlyFans = formatCompactInt(m.contributionFans).padStart(monthlyW, ' ');
-      const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
       const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-      return `${rank} ${name} ${club} ${monthlyFans} ${todayFans} ${dailyAvg}  `;
+      const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
+      return `${rank} ${name} ${club} ${monthlyFans} ${dailyAvg} ${todayFans}  `;
     });
 
     const lines = [];
