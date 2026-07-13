@@ -479,6 +479,28 @@ function hasTodayAndYesterdayZeroDailyFans(member, now = new Date()) {
   return fans[dayIdx] === 0 && fans[dayIdx - 1] === 0;
 }
 
+function resolveDailyFansValueAt(rawFans, dayIdx) {
+  if (!Array.isArray(rawFans) || dayIdx == null || dayIdx < 0) return null;
+  for (let i = Math.min(dayIdx, rawFans.length - 1); i >= 0; i -= 1) {
+    const value = rawFans[i];
+    if (typeof value !== 'number') continue;
+    if (value > 0) return value;
+    if (value < 0) return Math.abs(value);
+  }
+  return null;
+}
+
+export function getTodayFanGain(rawFans, now = new Date()) {
+  const dayIdx = getCurrentJstDayIndex(now);
+  if (dayIdx == null || dayIdx <= 0) return 0;
+
+  const today = resolveDailyFansValueAt(rawFans, dayIdx);
+  const yesterday = resolveDailyFansValueAt(rawFans, dayIdx - 1);
+  if (today == null || yesterday == null) return 0;
+
+  return Math.max(0, today - yesterday);
+}
+
 export function getActiveCutoffMs(members) {
   const list = members || [];
   const stamps = list.map(getMemberLastUpdatedMs).filter((t) => t != null);
@@ -742,6 +764,7 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
         monthlyGain: fanStats.monthlyGain,
         contributionFans: fanStats.contributionFans,
         averageDays: fanStats.averageDays,
+        todayGain: getTodayFanGain(m.daily_fans),
       };
     })
     .sort((a, b) => b.contributionFans - a.contributionFans);
@@ -749,17 +772,19 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   const nameW = 13;
   const rankW = 4;
   const totalW = 6;
+  const todayW = 6;
   const dailyW = 6;
   const header =
-    'Rank Name           Total  Daily  \n' +
-    '----------------------------------  ';
+    'Rank Name           Total  Today  Daily  \n' +
+    '-----------------------------------------  ';
 
   const rows = activeMembers.map((m, idx) => {
     const rank = `#${idx + 1}`.padEnd(rankW, ' ');
     const name = truncateAndPadName(m.trainer_name, nameW);
     const totalFans = formatCompactInt(m.contributionFans).padStart(totalW, ' ');
+    const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
     const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-    return `${rank} ${name} ${totalFans} ${dailyAvg}  `;
+    return `${rank} ${name} ${totalFans} ${todayFans} ${dailyAvg}  `;
   });
 
   const lines = [];
@@ -822,6 +847,7 @@ function getActiveMembersWithClubLabel(data, clubLabel) {
         monthlyGain: fanStats.monthlyGain,
         contributionFans: fanStats.contributionFans,
         averageDays: fanStats.averageDays,
+        todayGain: getTodayFanGain(m.daily_fans),
       };
     });
 }
@@ -858,17 +884,19 @@ export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
     const rankW = 4;
     const clubW = 4;
     const monthlyW = 7;
+    const todayW = 6;
     const dailyW = 6;
     const header =
-      'Rank Name        Club Monthly  Daily  \n' +
-      '--------------------------------------  ';
+      'Rank Name        Club Monthly  Today  Daily  \n' +
+      '---------------------------------------------  ';
     const rows = pageMembers.map((m, idx) => {
       const rank = `#${start + idx + 1}`.padEnd(rankW, ' ');
       const name = truncateAndPadName(m.trainer_name, nameW);
       const club = m.clubLabel || abbreviateClubLabel('—', clubW);
       const monthlyFans = formatCompactInt(m.contributionFans).padStart(monthlyW, ' ');
+      const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
       const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-      return `${rank} ${name} ${club} ${monthlyFans} ${dailyAvg}  `;
+      return `${rank} ${name} ${club} ${monthlyFans} ${todayFans} ${dailyAvg}  `;
     });
 
     const lines = [];
