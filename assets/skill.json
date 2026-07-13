@@ -16912,7 +16912,7 @@
     },
 
 
-    {   "note": "================= START OF RAINBOW VELOCITY ==================",
+    {   "note": "================= START OF RAINBOW ACCEL ==================",
         "skill_name": "Feel the Burn!",
         "description": "Moderately increase acceleration in an attempt to move up on a corner late-race.",
         "effect": [
@@ -17382,7 +17382,8 @@
     },
 
 
-    {   "skill_name": "Prudent Positioning", "description": "Increase navigation early-race.",
+    {   "note": "================= START OF WHITE LANE ==================",
+        "skill_name": "Prudent Positioning", "description": "Increase navigation early-race.",
         "effect": [
             {
                 "description": "Increases lane movement speed by 0.035 for 3.0s.",
@@ -18211,8 +18212,7 @@
     },
 
 
-    {   "skill_name": "Ignited Spirit SPD",
-        "description": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race. ",
+    {   "skill_name": "Ignited Spirit SPD", "description": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race. ",
         "effect": [
             {
                 "description": "Increases target speed based on your team's total base speed stat for 1.8s.\nTotal < 1200 : 0.12 speed\n1200 <= Total < 1800 : 0.135 speed\n1800 <= Total < 260 : 0.15 speed\n2600 <= Total < 3600 : 0.165 speed\n3600 <= Total : 0.18 speed",
@@ -18244,8 +18244,7 @@
             ]
         }
     },
-    {   "skill_name": "Ignited Spirit GUTS",
-        "description": "Burn bright with team spirit, very slightly increasing vigor in proportion to the total Guts of racing team members late-race.",
+    {   "skill_name": "Ignited Spirit GUTS", "description": "Burn bright with team spirit, very slightly increasing vigor in proportion to the total Guts of racing team members late-race.",
         "effect": [
             {
                 "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s.\nTotal < 1200 : 0.04 speed and 0.08 accel\n1200 <= Total < 1800 : 0.045 speed and 0.09 accel\n1800 <= Total < 260 : 0.05 speed and 0.1 accel\n2600 <= Total < 3600 : 0.055 speed and 0.11 accel\n3600 <= Total : 0.06 speed and 0.12 accel",
@@ -18276,8 +18275,7 @@
             ]
         }
     },
-    {   "skill_name": "Burning Spirit SPD",
-        "description": "Burn bright with team spirit, increasing velocity in proportion to the total Speed of racing team members mid-race",
+    {   "skill_name": "Burning Spirit SPD", "description": "Burn bright with team spirit, increasing velocity in proportion to the total Speed of racing team members mid-race",
         "effect": [
             {
                 "description": "Increases target speed based on your team's total base speed stat for 1.8s.\nTotal < 1200 : 0.28 speed\n1200 <= Total < 1800 : 0.315 speed\n1800 <= Total < 260 : 0.35 speed\n2600 <= Total < 3600 : 0.385 speed\n3600 <= Total : 0.42 speed",
@@ -18309,8 +18307,7 @@
             ]
         }
     },
-    {   "skill_name": "Burning Spirit GUTS",
-        "description": "Burn bright with team spirit, increasing vigor in proportion to the total Guts of racing team members late-race.",
+    {   "skill_name": "Burning Spirit GUTS", "description": "Burn bright with team spirit, increasing vigor in proportion to the total Guts of racing team members late-race.",
         "effect": [
             {
                 "description": "Increases target speed and acceleration based on your team's total base guts stat for 1.8s.\nTotal < 1200 : 0.2 speed and 0.24 accel\n1200 <= Total < 1800 : 0.225 speed and 0.27 accel\n1800 <= Total < 260 : 0.25 speed and 0.3 accel\n2600 <= Total < 3600 : 0.275 speed and 0.33 accel\n3600 <= Total : 0.3 speed and 0.36 accel",
@@ -18910,7 +18907,8 @@
 
 
 
-    {   "skill_name": "Hesitant Front Runners", "description": "Slightly decrease velocity of front runners late-race.",
+    {   "note": "================= START OF DEBUFFS ==================",
+        "skill_name": "Hesitant Front Runners", "description": "Slightly decrease velocity of front runners late-race.",
         "effect": [
             {
                 "description": "Reduces speed by 0.15 for 3.0s for all enemy Front Runners.",
@@ -19111,7 +19109,7 @@
             }
         }
     },
-    {   "skill_name": "Tether", "description": "Slightly decrease velocity of runners ahead when positioned toward the back late-race.",
+    {   "skill_name": "Tether", "description": "Slightly decrease velocity of runners ahead when positioned toward the back late-race. (Medium)",
         "effect": [
             {
                 "description": "Reduces current speed by 0.15 for 3.0s to all enemy umas ahead.",
@@ -19149,7 +19147,7 @@
             }
         }
     },
-    {   "skill_name": "Intense Gaze", "description": "Slightly unnerve runners in focus late-race.",
+    {   "skill_name": "Intense Gaze", "description": "Slightly unnerve runners in focus late-race. (End Closer)",
         "effect": [
             {
                 "description": "Reduces current speed by 0.15 for 3.0s to all enemy umas within FoV.",
@@ -19182,6 +19180,74 @@
             ]
         }
     },
+    {   "skill_name": "Dust Cloud", "description": "Slightly decrease the velocity of a runner directly behind the skill user when leading early-race. (Dirt)",
+        "effect": [
+            {
+                "description": "Reduces current speed by 0.15 for 3.0s to the closest uma behind you.",
+                "conditions": [
+                    "Dirt",
+                    "1st",
+                    "≤1 length ahead",
+                    "Early race",
+                    "After ≥10s into a race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocitydebuff",
+        "aliases": [
+            "dust cloud"
+        ],
+        "upgrade": "Dust Cloud Idol",
+        "gametora_id": "202352",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "clip_start": 150,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Oppression", "description": "Slightly intimidate a runner who used a recovery skill in the second half of the race. (Dirt)",
+        "effect": [
+            {
+                "description": "Reduces current speed by 0.15 for 3.0s to an uma that triggered a recovery skill.",
+                "conditions": [
+                    "Dirt",
+                    "Another uma activated a recovery skill",
+                    "Second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "normal",
+        "category": "velocitydebuff",
+        "aliases": [
+            "oppression"
+        ],
+        "upgrade": "Catch 'Em Off Guard",
+        "gametora_id": "202362",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+
+
+
     {   "skill_name": "Greed for Speed", "description": "Moderately steal velocity from runners behind when positioned toward the front mid-race. (Mile)",
         "effect": [
             {
@@ -19220,7 +19286,7 @@
             }
         }
     },
-    {   "skill_name": "Dominator", "description": "Decrease velocity of runners ahead when positioned toward the back late-race.",
+    {   "skill_name": "Dominator", "description": "Decrease velocity of runners ahead when positioned toward the back late-race. (Medium)",
         "effect": [
             {
                 "description": "Reduces current speed by 0.25 for 3.0s to all enemy umas ahead.",
@@ -19258,7 +19324,7 @@
             }
         }
     },
-    {   "skill_name": "Petrifying Gaze", "description": "Unnerve runners in focus late-race.",
+    {   "skill_name": "Petrifying Gaze", "description": "Unnerve runners in focus late-race. (End Closer)",
         "effect": [
             {
                 "description": "Reduces current speed by 0.25 for 3.0s to all enemy umas within FoV.",
@@ -19331,8 +19397,75 @@
             }
         }
     },
-    {   "skill_name": "Opening Gambit",
-        "description": "Slightly dull movement for runners ahead when positioned toward the back early-race.",
+    {   "skill_name": "Dust Cloud Idol", "description": "Decrease the velocity of a runner directly behind the skill user when leading early-race. (Dirt)",
+        "effect": [
+            {
+                "description": "Reduces current speed by 0.25 for 3.0s to the closest uma behind you.",
+                "conditions": [
+                    "Dirt",
+                    "1st",
+                    "≤1 length ahead",
+                    "Early race",
+                    "After ≥10s into a race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocitydebuff",
+        "aliases": [
+            "dust cloud idol"
+        ],
+        "downgrade": "Dust Cloud",
+        "gametora_id": "202351",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "early",
+                    "clip_start": 150,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Catch 'Em Off Guard", "description": "Intimidate a runner who used a recovery skill in the second half of the race. (Dirt)",
+        "effect": [
+            {
+                "description": "Reduces current speed by 0.25 for 3.0s to an uma that triggered a recovery skill.",
+                "conditions": [
+                    "Dirt",
+                    "Another uma activated a recovery skill",
+                    "Second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "rare",
+        "category": "goldenvelocitydebuff",
+        "aliases": [
+            "catch em off guard"
+        ],
+        "downgrade": "Oppression",
+        "gametora_id": "202361",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+
+
+
+    {   "skill_name": "Opening Gambit", "description": "Slightly dull movement for runners ahead when positioned toward the back early-race.",
         "effect": [
             {
                 "description": "Reduces acceleration by 0.1 for 3.0s to all enemy umas ahead.",
@@ -19446,6 +19579,9 @@
             }
         }
     },
+
+
+
     {   "skill_name": "Frenzied Front Runners",
         "description": "Increase time needed for front runners to calm down when they become rushed.",
         "effect": [
@@ -19514,8 +19650,7 @@
             ]
         }
     },
-    {   "skill_name": "Frenzied Late Surgers",
-        "description": "Increase time needed for late surgers to calm down when they become rushed.",
+    {   "skill_name": "Frenzied Late Surgers", "description": "Increase time needed for late surgers to calm down when they become rushed.",
         "effect": [
             {
                 "description": "Increased rush duration by 5.0s for enemy Late Surgers.",
@@ -19959,8 +20094,7 @@
             }
         }
     },
-    {   "skill_name": "Murmur",
-        "description": "Slightly disturb runners directly ahead mid-race.",
+    {   "skill_name": "Murmur", "description": "Slightly disturb runners directly ahead mid-race.",
         "effect": [
             {
                 "description": "Reduces HP by 1% for all enemy umas ahead.",
