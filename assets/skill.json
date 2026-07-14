@@ -16076,8 +16076,8 @@
         ],
         "preconditions": [],
         "review": "Easy to trigger for Team Trials but accelerating randomly can be impactful or even harmful. Gamble on it activating at the late race.",
-        "rarity": "normal",
-        "category": "accel",
+        "rarity": "rare",
+        "category": "goldenaccel",
         "aliases": [
             "turbo sprint",
             "sprint turbo",
@@ -18286,8 +18286,8 @@
         ],
         "preconditions": [],
         "review": "A bit costly, but can help when combined with other mid race speed skills.",
-        "rarity": "normal",
-        "category": "velocity",
+        "rarity": "rare",
+        "category": "goldenvelocity",
         "aliases": [
             "burning spirit spd",
             "burning spirit speed",
@@ -18318,8 +18318,8 @@
         ],
         "preconditions": [],
         "review": "",
-        "rarity": "normal",
-        "category": "velocity",
+        "rarity": "rare",
+        "category": "goldenvelocity",
         "aliases": [
             "burning spirit guts",
             "aoharu burning guts",
