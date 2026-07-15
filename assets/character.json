@@ -2481,7 +2481,14 @@
             "Kyoto Racecourse",
             "Mile Corners",
             "Updrafters",
-            "Unyielding Spirit"
+            "Unyielding Spirit",
+            "Morioka Racecourse",
+            "Rapid Gain"
+        ],
+        "evo_skills": [
+            "Ultimate Uma Simp",
+            "Best View of Anyone!",
+            "Aim for the Front and Center!"
         ],
         "races": [
             "nhk mile cup may 1 year 2",
@@ -2501,6 +2508,10 @@
             {
             "conditions": "Participate in the Takarazuka Kinen (Year 2)",
             "rewards": "1 random stat +4/5/10, Skill points +25/40/45"
+            },
+            {
+            "conditions": "Win the M.C. Nambu Hai",
+            "rewards": "Energy -15, Speed +5, Stamina +5, Power +10, Guts +10, Skill points +45, Morioka Racecourse hint +1, Rapid Gain hint +1"
             }
         ],
         "epithet": {
@@ -5314,6 +5325,11 @@
             "Kawasaki Racecourse",
             "Sunny Sign"
         ],
+        "evo_skills": [
+            "Umadol★Onstage!",
+            "No Looking Away☆",
+            "Umadol ♪ Chart Topper!"
+        ],
         "races": [
             "satsuki sho april 1 year 2",
             "japan dirt derby july 1 year 2",
@@ -5344,7 +5360,7 @@
             },
             {
             "conditions": "Win the Kawasaki Kinen",
-            "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Promising Omen hint +1"
+            "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Sunny Sign hint +1"
             }
         ],
         "epithet": {

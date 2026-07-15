@@ -6280,7 +6280,8 @@
         "aliases": [
             "front runner straightway",
             "runners straights",
-            "逃げ直線"
+            "逃げ直線",
+            "front straights"
         ],
         "upgrade": "Gale Flash",
         "gametora_id": "201242",
@@ -6313,7 +6314,8 @@
         "aliases": [
             "front runner corners",
             "runners corners",
-            "逃げコーナー"
+            "逃げコーナー",
+            "front corners"
         ],
         "upgrade": "Crescent Gale",
         "gametora_id": "201252",
@@ -6396,7 +6398,8 @@
         "aliases": [
             "pace chaser straightway",
             "leaders straights",
-            "先行直線"
+            "先行直線",
+            "pace straights"
         ],
         "upgrade": "Valiant Flash",
         "gametora_id": "201312",
@@ -6429,7 +6432,8 @@
         "aliases": [
             "pace chaser corners",
             "leaders corners",
-            "先行コーナー"
+            "先行コーナー",
+            "pace corners"
         ],
         "upgrade": "Bravery Slash",
         "gametora_id": "201322",
@@ -6462,7 +6466,8 @@
         "aliases": [
             "late surger straightway",
             "betweeners straights",
-            "差し直線"
+            "差し直線",
+            "late straights"
         ],
         "upgrade": "Sharp Streak",
         "gametora_id": "201382",
@@ -6495,7 +6500,8 @@
         "aliases": [
             "late surger corners",
             "betweeners corners",
-            "差しコーナー"
+            "差しコーナー",
+            "late corners"
         ],
         "upgrade": "Sharp Arc",
         "gametora_id": "201392",
@@ -6563,7 +6569,8 @@
         "aliases": [
             "end closer straightway",
             "chasers straights",
-            "追込直線"
+            "追込直線",
+            "end straights"
         ],
         "upgrade": "Moonlit Flash",
         "gametora_id": "201452",
@@ -6596,7 +6603,8 @@
         "aliases": [
             "end closer corners",
             "chasers corners",
-            "追込コーナー"
+            "追込コーナー",
+            "end corners"
         ],
         "upgrade": "Moonlit Slash",
         "gametora_id": "201462",
@@ -6661,7 +6669,8 @@
         "aliases": [
             "tail held high",
             "hold your tail high",
-            "尻尾上がり"
+            "尻尾上がり",
+            "thh"
         ],
         "upgrade": "Tail Nine",
         "gametora_id": "201611",
@@ -6723,7 +6732,8 @@
         "category": "velocity",
         "aliases": [
             "playtimes over",
-            "遊びはおしまいっ！"
+            "遊びはおしまいっ",
+            "pto"
         ],
         "upgrade": "See Ya Later!",
         "gametora_id": "201661",
@@ -15482,7 +15492,7 @@
             }
         }
     },
-    {   "skill_name": "Got the Spirit", "description": "Slightly increase acceleration when positioned toward the front late-race. (Dirt)",
+    {   "skill_name": "Got the Spirit!", "description": "Slightly increase acceleration when positioned toward the front late-race. (Dirt)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.2 for 3.0s.",
@@ -15994,7 +16004,8 @@
         "aliases": [
             "on your left",
             "switchup pro",
-            "乗り換え上手"
+            "乗り換え上手",
+            "oyl"
         ],
         "downgrade": "Slick Surge",
         "evolutions": [

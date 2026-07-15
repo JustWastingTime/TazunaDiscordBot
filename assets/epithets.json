@@ -975,13 +975,13 @@
     },
     {   "id": "Kanto Conqueror",
         "rank": "bronze",
-        "conditions": "Win three graded races that are held in either Tokyo, Nakayama or Ooi. (Trackblazer only)",
+        "conditions": "Win three graded races that are held in either Tokyo, Nakayama, Oi, Kawasaki, or Funabashi. (Trackblazer only)",
         "reward": "2 random stats +5",
         "aliases": ["kanto conqueror"]
     },
     {   "id": "Tohoku Top Dog",
         "rank": "bronze",
-        "conditions": "Win three graded races that are held in either Fukushima or Niigata. (Trackblazer only)",
+        "conditions": "Win three graded races that are held in either Fukushima, Niigata, or Morioka. (Trackblazer only)",
         "reward": "2 random stats +5",
         "aliases": ["tohoku top dog"]
     },
