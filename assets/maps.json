@@ -11,10 +11,10 @@
             { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 400, "label": "Straight 1"},
+            { "start": 0, "end": 400, "label": "Straight"},
             { "start": 400, "end": 675, "label": "Corner 3"},
             { "start": 675, "end": 934, "label": "Corner 4"},
-            { "start": 934, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 934, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -42,10 +42,10 @@
         "layout": [
             { "start": 0, "end": 150, "label": ""},
             { "start": 150, "end": 425, "label": "Corner 2"},
-            { "start": 425, "end": 700, "label": "Straight 1", "tags": ["backstretch"]},
+            { "start": 425, "end": 700, "label": "Straight", "tags": ["backstretch"]},
             { "start": 700, "end": 975, "label": "Corner 3"},
             { "start": 975, "end": 1234, "label": "Corner 4"},
-            { "start": 1234, "end": 1500, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1234, "end": 1500, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 250, "label": "Early Race"},
@@ -67,13 +67,13 @@
             { "start": 0, "end": 1800, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 175, "label": "Straight 1"},
+            { "start": 0, "end": 175, "label": "Straight"},
             { "start": 175, "end": 450, "label": "Corner 1"},
             { "start": 450, "end": 725, "label": "Corner 2"},
-            { "start": 725, "end": 1000, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 725, "end": 1000, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1000, "end": 1275, "label": "Corner 3"},
             { "start": 1275, "end": 1534, "label": "Corner 4"},
-            { "start": 1534, "end": 1800, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1534, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -100,13 +100,13 @@
             { "start": 0, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 375, "label": "Straight 1"},
+            { "start": 0, "end": 375, "label": "Straight"},
             { "start": 375, "end": 650, "label": "Corner 1"},
             { "start": 650, "end": 925, "label": "Corner 2"},
-            { "start": 925, "end": 1200, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 925, "end": 1200, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1200, "end": 1475, "label": "Corner 3"},
             { "start": 1475, "end": 1734, "label": "Corner 4"},
-            { "start": 1734, "end": 2000, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1734, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -132,16 +132,16 @@
             { "start": 0, "end": 2600, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 175, "label": "Straight 1"},
+            { "start": 0, "end": 175, "label": "Straight"},
             { "start": 175, "end": 450, "label": "Corner 3"},
             { "start": 450, "end": 725, "label": "Corner 4"},
-            { "start": 725, "end": 975, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 725, "end": 975, "label": "Straight", "tags": ["backstretch"]},
             { "start": 975, "end": 1250, "label": "Corner 1"},
             { "start": 1250, "end": 1525, "label": "Corner 2"},
-            { "start": 1525, "end": 1800, "label": "Straight 3"},
+            { "start": 1525, "end": 1800, "label": "Straight"},
             { "start": 1800, "end": 2075, "label": "Corner 3"},
             { "start": 2075, "end": 2334, "label": "Corner 4"},
-            { "start": 2334, "end": 2600, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2334, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 433, "label": "Early Race"},
@@ -163,10 +163,10 @@
             { "start": 0, "end": 1000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 280, "label": "Straight 1"},
+            { "start": 0, "end": 280, "label": "Straight"},
             { "start": 280, "end": 510, "label": "Corner 3"},
             { "start": 510, "end": 736, "label": "Corner 4"},
-            { "start": 736, "end": 1000, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 736, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 167, "label": "Early Race"},
@@ -188,13 +188,13 @@
             { "start": 0, "end": 1700, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 240, "label": "Straight 1"},
+            { "start": 0, "end": 240, "label": "Straight"},
             { "start": 240, "end": 470, "label": "Corner 1"},
             { "start": 470, "end": 700, "label": "Corner 2"},
-            { "start": 700, "end": 980, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 700, "end": 980, "label": "Straight", "tags": ["backstretch"]},
             { "start": 980, "end": 1210, "label": "Corner 3"},
             { "start": 1210, "end": 1436, "label": "Corner 4"},
-            { "start": 1436, "end": 1700, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1436, "end": 1700, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 283, "label": "Early Race"},
@@ -220,16 +220,16 @@
             { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 200, "label": "Straight 1"},
+            { "start": 0, "end": 200, "label": "Straight"},
             { "start": 200, "end": 430, "label": "Corner 3"},
             { "start": 430, "end": 660, "label": "Corner 4"},
-            { "start": 660, "end": 940, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 660, "end": 940, "label": "Straight", "tags": ["backstretch"]},
             { "start": 940, "end": 1170, "label": "Corner 1"},
             { "start": 1170, "end": 1400, "label": "Corner 2"},
-            { "start": 1400, "end": 1680, "label": "Straight 3"},
+            { "start": 1400, "end": 1680, "label": "Straight"},
             { "start": 1680, "end": 1910, "label": "Corner 3"},
             { "start": 1910, "end": 2136, "label": "Corner 4"},
-            { "start": 2136, "end": 2400, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2136, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -253,10 +253,10 @@
             { "start": 555, "end": 1000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 310, "label": "Straight 1"},
+            { "start": 0, "end": 310, "label": "Straight"},
             { "start": 310, "end": 530, "label": "Corner 3"},
             { "start": 530, "end": 738, "label": "Corner 4"},
-            { "start": 738, "end": 1000, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 738, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 167, "label": "Early Race"},
@@ -279,10 +279,10 @@
             { "start": 755, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 510, "label": "Straight 1"},
+            { "start": 0, "end": 510, "label": "Straight"},
             { "start": 510, "end": 730, "label": "Corner 3"},
             { "start": 730, "end": 938, "label": "Corner 4"},
-            { "start": 938, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 938, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -313,13 +313,13 @@
             { "start": 1385, "end": 1800, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 320, "label": "Straight 1"},
+            { "start": 0, "end": 320, "label": "Straight"},
             { "start": 320, "end": 540, "label": "Corner 1"},
             { "start": 540, "end": 760, "label": "Corner 2"},
-            { "start": 760, "end": 1110, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 760, "end": 1110, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1110, "end": 1330, "label": "Corner 3"},
             { "start": 1330, "end": 1538, "label": "Corner 4"},
-            { "start": 1538, "end": 1800, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1538, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -345,13 +345,13 @@
             { "start": 1585, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 520, "label": "Straight 1"},
+            { "start": 0, "end": 520, "label": "Straight"},
             { "start": 520, "end": 740, "label": "Corner 1"},
             { "start": 740, "end": 960, "label": "Corner 2"},
-            { "start": 960, "end": 1310, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 960, "end": 1310, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1310, "end": 1530, "label": "Corner 3"},
             { "start": 1530, "end": 1738, "label": "Corner 4"},
-            { "start": 1738, "end": 2000, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1738, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -382,16 +382,16 @@
             { "start": 2145, "end": 2600, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 260, "label": "Straight 1"},
+            { "start": 0, "end": 260, "label": "Straight"},
             { "start": 260, "end": 500, "label": "Corner 3"},
             { "start": 500, "end": 730, "label": "Corner 4"},
-            { "start": 730, "end": 1120, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 730, "end": 1120, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1120, "end": 1340, "label": "Corner 1"},
             { "start": 1340, "end": 1560, "label": "Corner 2"},
-            { "start": 1560, "end": 1910, "label": "Straight 3"},
+            { "start": 1560, "end": 1910, "label": "Straight"},
             { "start": 1910, "end": 2130, "label": "Corner 3"},
             { "start": 2130, "end": 2338, "label": "Corner 4"},
-            { "start": 2338, "end": 2600, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2338, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 433, "label": "Early Race"},
@@ -413,10 +413,10 @@
             { "start": 0, "end": 1000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 370, "label": "Straight 1"},
+            { "start": 0, "end": 370, "label": "Straight"},
             { "start": 370, "end": 560, "label": "Corner 3"},
             { "start": 560, "end": 740, "label": "Corner 4"},
-            { "start": 740, "end": 1000, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 740, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 167, "label": "Early Race"},
@@ -441,13 +441,13 @@
             { "start": 1285, "end": 1700, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 350, "label": "Straight 1"},
+            { "start": 0, "end": 350, "label": "Straight"},
             { "start": 350, "end": 540, "label": "Corner 1"},
             { "start": 540, "end": 730, "label": "Corner 2"},
-            { "start": 730, "end": 1070, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 730, "end": 1070, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1070, "end": 1260, "label": "Corner 3"},
             { "start": 1260, "end": 1440, "label": "Corner 4"},
-            { "start": 1440, "end": 1700, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1440, "end": 1700, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 283, "label": "Early Race"},
@@ -469,16 +469,16 @@
             { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 292, "label": "Straight 1"},
+            { "start": 0, "end": 292, "label": "Straight"},
             { "start": 292, "end": 482, "label": "Corner 3"},
             { "start": 482, "end": 672, "label": "Corner 4"},
-            { "start": 672, "end": 1040, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 672, "end": 1040, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1040, "end": 1230, "label": "Corner 1"},
             { "start": 1230, "end": 1420, "label": "Corner 2"},
-            { "start": 1420, "end": 1770, "label": "Straight 3"},
+            { "start": 1420, "end": 1770, "label": "Straight"},
             { "start": 1770, "end": 1960, "label": "Corner 3"},
             { "start": 1960, "end": 2140, "label": "Corner 4"},
-            { "start": 2140, "end": 2400, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2140, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -501,8 +501,8 @@
             { "start": 0, "end": 1000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 650, "label": "Straight 1"},
-            { "start": 650, "end": 1000, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 0, "end": 650, "label": "Straight"},
+            { "start": 650, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 167, "label": "Early Race"},
@@ -528,10 +528,10 @@
             { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 450, "label": "Straight 1"},
+            { "start": 0, "end": 450, "label": "Straight"},
             { "start": 450, "end": 650, "label": "Corner 3"},
             { "start": 650, "end": 842, "label": "Corner 4"},
-            { "start": 842, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 842, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -553,10 +553,10 @@
             { "start": 0, "end": 1400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 650, "label": "Straight 1"},
+            { "start": 0, "end": 650, "label": "Straight"},
             { "start": 650, "end": 850, "label": "Corner 3"},
             { "start": 850, "end": 1042, "label": "Corner 4"},
-            { "start": 1042, "end": 1400, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1042, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -581,10 +581,10 @@
             { "start": 900, "end": 1600, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 550, "label": "Straight 1"},
+            { "start": 0, "end": 550, "label": "Straight"},
             { "start": 550, "end": 750, "label": "Corner 3"},
             { "start": 750, "end": 942, "label": "Corner 4"},
-            { "start": 942, "end": 1600, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 942, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -613,10 +613,10 @@
             { "start": 1100, "end": 1800, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 750, "label": "Straight 1"},
+            { "start": 0, "end": 750, "label": "Straight"},
             { "start": 750, "end": 950, "label": "Corner 3"},
             { "start": 950, "end": 1142, "label": "Corner 4"},
-            { "start": 1142, "end": 1800, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1142, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -638,13 +638,13 @@
             { "start": 0, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 420, "label": "Straight 1"},
+            { "start": 0, "end": 420, "label": "Straight"},
             { "start": 420, "end": 620, "label": "Corner 1"},
             { "start": 620, "end": 820, "label": "Corner 2"},
-            { "start": 820, "end": 1250, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 820, "end": 1250, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1250, "end": 1450, "label": "Corner 3"},
             { "start": 1450, "end": 1642, "label": "Corner 4"},
-            { "start": 1642, "end": 2000, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1642, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -669,10 +669,10 @@
             { "start": 1300, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 950, "label": "Straight 1"},
+            { "start": 0, "end": 950, "label": "Straight"},
             { "start": 950, "end": 1150, "label": "Corner 3"},
             { "start": 1150, "end": 1342, "label": "Corner 4"},
-            { "start": 1342, "end": 2000, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1342, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -698,13 +698,13 @@
             { "start": 0, "end": 2200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 650, "label": "Straight 1"},
+            { "start": 0, "end": 650, "label": "Straight"},
             { "start": 650, "end": 850, "label": "Corner 1"},
             { "start": 850, "end": 1050, "label": "Corner 2"},
-            { "start": 1050, "end": 1450, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 1050, "end": 1450, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1450, "end": 1650, "label": "Corner 3"},
             { "start": 1650, "end": 1842, "label": "Corner 4"},
-            { "start": 1842, "end": 2200, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1842, "end": 2200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 367, "label": "Early Race"},
@@ -726,13 +726,13 @@
             { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 810, "label": "Straight 1"},
+            { "start": 0, "end": 810, "label": "Straight"},
             { "start": 810, "end": 1010, "label": "Corner 1"},
             { "start": 1010, "end": 1210, "label": "Corner 2"},
-            { "start": 1210, "end": 1650, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 1210, "end": 1650, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1650, "end": 1850, "label": "Corner 3"},
             { "start": 1850, "end": 2042, "label": "Corner 4"},
-            { "start": 2042, "end": 2400, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 2042, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -754,10 +754,10 @@
             { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 540, "label": "Straight 1"},
+            { "start": 0, "end": 540, "label": "Straight"},
             { "start": 540, "end": 700, "label": "Corner 3"},
             { "start": 700, "end": 847, "label": "Corner 4"},
-            { "start": 847, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 847, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -779,13 +779,13 @@
             { "start": 0, "end": 1800, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 400, "label": "Straight 1"},
+            { "start": 0, "end": 400, "label": "Straight"},
             { "start": 400, "end": 560, "label": "Corner 1"},
             { "start": 560, "end": 720, "label": "Corner 2"},
-            { "start": 720, "end": 1140, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 720, "end": 1140, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1140, "end": 1300, "label": "Corner 3"},
             { "start": 1300, "end": 1447, "label": "Corner 4"},
-            { "start": 1447, "end": 1800, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1447, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -810,16 +810,16 @@
             { "start": 0, "end": 2500, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 380, "label": "Straight 1"},
+            { "start": 0, "end": 380, "label": "Straight"},
             { "start": 380, "end": 540, "label": "Corner 3"},
             { "start": 540, "end": 700, "label": "Corner 4"},
-            { "start": 700, "end": 1120, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 700, "end": 1120, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1120, "end": 1280, "label": "Corner 1"},
             { "start": 1280, "end": 1440, "label": "Corner 2"},
-            { "start": 1440, "end": 1850, "label": "Straight 3"},
+            { "start": 1440, "end": 1850, "label": "Straight"},
             { "start": 1850, "end": 2010, "label": "Corner 3"},
             { "start": 2010, "end": 2170, "label": "Corner 4"},
-            { "start": 2170, "end": 2500, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2170, "end": 2500, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 417, "label": "Early Race"},
@@ -844,10 +844,10 @@
             { "start": 280, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 420, "label": "Straight 1"},
+            { "start": 0, "end": 420, "label": "Straight"},
             { "start": 420, "end": 720, "label": "Corner 3"},
             { "start": 720, "end": 908, "label": "Corner 4"},
-            { "start": 908, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 908, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -904,13 +904,13 @@
             { "start": 1080, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 530, "label": "Straight 1"},
+            { "start": 0, "end": 530, "label": "Straight"},
             { "start": 530, "end": 730, "label": "Corner 1"},
             { "start": 730, "end": 930, "label": "Corner 2"},
-            { "start": 930, "end": 1220, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 930, "end": 1220, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1220, "end": 1520, "label": "Corner 3"},
             { "start": 1520, "end": 1708, "label": "Corner 4"},
-            { "start": 1708, "end": 2000, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1708, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -941,16 +941,16 @@
             { "start": 1680, "end": 2600, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 220, "label": "Straight 1"},
+            { "start": 0, "end": 220, "label": "Straight"},
             { "start": 220, "end": 520, "label": "Corner 3"},
             { "start": 520, "end": 720, "label": "Corner 4"},
-            { "start": 720, "end": 1130, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 720, "end": 1130, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1130, "end": 1330, "label": "Corner 1"},
             { "start": 1330, "end": 1530, "label": "Corner 2"},
-            { "start": 1530, "end": 1820, "label": "Straight 3"},
+            { "start": 1530, "end": 1820, "label": "Straight"},
             { "start": 1820, "end": 2120, "label": "Corner 3"},
             { "start": 2120, "end": 2308, "label": "Corner 4"},
-            { "start": 2308, "end": 2600, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2308, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 433, "label": "Early Race"},
@@ -972,10 +972,10 @@
             { "start": 0, "end": 1150, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 500, "label": "Straight 1"},
+            { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 710, "label": "Corner 3"},
             { "start": 710, "end": 855, "label": "Corner 4"},
-            { "start": 855, "end": 1150, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 855, "end": 1150, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 192, "label": "Early Race"},
@@ -1027,16 +1027,16 @@
             { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 310, "label": "Straight 1"},
+            { "start": 0, "end": 310, "label": "Straight"},
             { "start": 310, "end": 520, "label": "Corner 3"},
             { "start": 520, "end": 680, "label": "Corner 4"},
-            { "start": 680, "end": 1060, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 680, "end": 1060, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1060, "end": 1230, "label": "Corner 1"},
             { "start": 1230, "end": 1400, "label": "Corner 2"},
-            { "start": 1400, "end": 1750, "label": "Straight 3"},
+            { "start": 1400, "end": 1750, "label": "Straight"},
             { "start": 1750, "end": 1960, "label": "Corner 3"},
             { "start": 1960, "end": 2105, "label": "Corner 4"},
-            { "start": 2105, "end": 2400, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2105, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -1065,7 +1065,7 @@
             { "start": 0, "end": 300, "label": ""},
             { "start": 300, "end": 650, "label": "Corner 3"},
             { "start": 650, "end": 890, "label": "Corner 4"},
-            { "start": 890, "end": 1200, "label": "Straight 1", "tags": ["homestretch"]}
+            { "start": 890, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -1100,7 +1100,7 @@
             { "start": 500, "end": 700, "label": ""},
             { "start": 700, "end": 1050, "label": "Corner 3"},
             { "start": 1050, "end": 1290, "label": "Corner 4"},
-            { "start": 1290, "end": 1600, "label": "Straight 1", "tags": ["homestretch"]}
+            { "start": 1290, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -1140,13 +1140,13 @@
             { "start": 1735, "end": 1800, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 175, "label": "Straight 1"},
+            { "start": 0, "end": 175, "label": "Straight"},
             { "start": 175, "end": 425, "label": "Corner 1"},
             { "start": 425, "end": 675, "label": "Corner 2"},
-            { "start": 675, "end": 1000, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 675, "end": 1000, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1000, "end": 1250, "label": "Corner 3"},
             { "start": 1250, "end": 1490, "label": "Corner 4"},
-            { "start": 1490, "end": 1800, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1490, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -1183,13 +1183,13 @@
             { "start": 1935, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 375, "label": "Straight 1"},
+            { "start": 0, "end": 375, "label": "Straight"},
             { "start": 375, "end": 625, "label": "Corner 1"},
             { "start": 625, "end": 875, "label": "Corner 2"},
-            { "start": 875, "end": 1200, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 875, "end": 1200, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1200, "end": 1450, "label": "Corner 3"},
             { "start": 1450, "end": 1690, "label": "Corner 4"},
-            { "start": 1690, "end": 2000, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1690, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -1227,13 +1227,13 @@
             { "start": 2135, "end": 2200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 403, "label": "Straight 1"},
+            { "start": 0, "end": 403, "label": "Straight"},
             { "start": 403, "end": 650, "label": "Corner 1"},
             { "start": 650, "end": 1100, "label": "Corner 2"},
-            { "start": 1100, "end": 1300, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 1100, "end": 1300, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1300, "end": 1650, "label": "Corner 3"},
             { "start": 1650, "end": 1890, "label": "Corner 4"},
-            { "start": 1890, "end": 2200, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1890, "end": 2200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 367, "label": "Early Race"},
@@ -1273,13 +1273,13 @@
             { "start": 0, "end": 100, "label": ""},
             { "start": 100, "end": 246, "label": "Corner 3"},
             { "start": 246, "end": 496, "label": "Corner 4"},
-            { "start": 496, "end": 875, "label": "Straight 1"},
+            { "start": 496, "end": 875, "label": "Straight"},
             { "start": 875, "end": 1125, "label": "Corner 1"},
             { "start": 1125, "end": 1375, "label": "Corner 2"},
-            { "start": 1375, "end": 1700, "label": "Straight 2", "tags": ["backstretch"] },
+            { "start": 1375, "end": 1700, "label": "Straight", "tags": ["backstretch"] },
             { "start": 1700, "end": 1950, "label": "Corner 3"},
             { "start": 1950, "end": 2190, "label": "Corner 4"},
-            { "start": 2190, "end": 2500, "label": "Straight 3", "tags": ["homestretch"] }
+            { "start": 2190, "end": 2500, "label": "Straight", "tags": ["homestretch"] }
         ],
         "zones": [
             { "start": 0, "end": 417, "label": "Early Race"},
@@ -1321,19 +1321,19 @@
             { "start": 3535, "end": 3600, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 290, "label": "Straight 1"},
+            { "start": 0, "end": 290, "label": "Straight"},
             { "start": 290, "end": 540, "label": "Corner 1"},
             { "start": 540, "end": 790, "label": "Corner 2"},
-            { "start": 790, "end": 1115, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 790, "end": 1115, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1115, "end": 1365, "label": "Corner 3"},
             { "start": 1365, "end": 1615, "label": "Corner 4"},
-            { "start": 1615, "end": 1975, "label": "Straight 3"},
+            { "start": 1615, "end": 1975, "label": "Straight"},
             { "start": 1975, "end": 2225, "label": "Corner 1"},
             { "start": 2225, "end": 2475, "label": "Corner 2"},
-            { "start": 2475, "end": 2800, "label": "Straight 4"},
+            { "start": 2475, "end": 2800, "label": "Straight"},
             { "start": 2800, "end": 3050, "label": "Corner 3"},
             { "start": 3050, "end": 3290, "label": "Corner 4"},
-            { "start": 3290, "end": 3600, "label": "Straight 5", "tags": ["homestretch"]}
+            { "start": 3290, "end": 3600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 600, "label": "Early Race"},
@@ -1363,10 +1363,10 @@
             { "start": 1175, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 500, "label": "Straight 1"},
+            { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 700, "label": "Corner 3"},
             { "start": 700, "end": 892, "label": "Corner 4"},
-            { "start": 892, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 892, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -1432,16 +1432,16 @@
             { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 200, "label": "Straight 1"},
+            { "start": 0, "end": 200, "label": "Straight"},
             { "start": 200, "end": 400, "label": "Corner 3"},
             { "start": 400, "end": 600, "label": "Corner 4"},
-            { "start": 600, "end": 950, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 600, "end": 950, "label": "Straight", "tags": ["backstretch"]},
             { "start": 950, "end": 1150, "label": "Corner 1"},
             { "start": 1150, "end": 1350, "label": "Corner 2"},
-            { "start": 1350, "end": 1700, "label": "Straight 3"},
+            { "start": 1350, "end": 1700, "label": "Straight"},
             { "start": 1700, "end": 1900, "label": "Corner 3"},
             { "start": 1900, "end": 2092, "label": "Corner 4"},
-            { "start": 2092, "end": 2400, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2092, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -1463,16 +1463,16 @@
             { "start": 0, "end": 2500, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 300, "label": "Straight 1"},
+            { "start": 0, "end": 300, "label": "Straight"},
             { "start": 300, "end": 500, "label": "Corner 3"},
             { "start": 500, "end": 700, "label": "Corner 4"},
-            { "start": 700, "end": 1050, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 700, "end": 1050, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1050, "end": 1250, "label": "Corner 1"},
             { "start": 1250, "end": 1450, "label": "Corner 2"},
-            { "start": 1450, "end": 1800, "label": "Straight 3"},
+            { "start": 1450, "end": 1800, "label": "Straight"},
             { "start": 1800, "end": 2000, "label": "Corner 3"},
             { "start": 2000, "end": 2192, "label": "Corner 4"},
-            { "start": 2192, "end": 2500, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2192, "end": 2500, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 417, "label": "Early Race"},
@@ -1584,10 +1584,10 @@
         "layout": [
             { "start": 0, "end": 75, "label": ""},
             { "start": 75, "end": 325, "label": "Corner 2"},
-            { "start": 325, "end": 750, "label": "Straight 1", "tags": ["backstretch"]},
+            { "start": 325, "end": 750, "label": "Straight", "tags": ["backstretch"]},
             { "start": 750, "end": 1025, "label": "Corner 3"},
             { "start": 1025, "end": 1275, "label": "Corner 4"},
-            { "start": 1275, "end": 1800, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1275, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -1628,10 +1628,10 @@
         "layout": [
             { "start": 0, "end": 200, "label": ""},
             { "start": 200, "end": 400, "label": "Corner 2"},
-            { "start": 400, "end": 950, "label": "Straight 1", "tags": ["backstretch"]},
+            { "start": 400, "end": 950, "label": "Straight", "tags": ["backstretch"]},
             { "start": 950, "end": 1225, "label": "Corner 3"},
             { "start": 1225, "end": 1475, "label": "Corner 4"},
-            { "start": 1475, "end": 2000, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1475, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -1665,13 +1665,13 @@
             { "start": 2000, "end": 2300, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 225, "label": "Straight 1"},
+            { "start": 0, "end": 225, "label": "Straight"},
             { "start": 225, "end": 475, "label": "Corner 1"},
             { "start": 475, "end": 800, "label": "Corner 2"},
-            { "start": 800, "end": 1250, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 800, "end": 1250, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1250, "end": 1525, "label": "Corner 3"},
             { "start": 1525, "end": 1775, "label": "Corner 4"},
-            { "start": 1775, "end": 2300, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1775, "end": 2300, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 383, "label": "Early Race"},
@@ -1701,13 +1701,13 @@
             { "start": 2100, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 325, "label": "Straight 1"},
+            { "start": 0, "end": 325, "label": "Straight"},
             { "start": 325, "end": 575, "label": "Corner 1" },
             { "start": 575, "end": 900, "label": "Corner 2" },
-            { "start": 900, "end": 1350, "label": "Straight 2", "tags": ["backstretch"] },
+            { "start": 900, "end": 1350, "label": "Straight", "tags": ["backstretch"] },
             { "start": 1350, "end": 1625, "label": "Corner 3"},
             { "start": 1625, "end": 1875, "label": "Corner 4"},
-            { "start": 1875, "end": 2400, "label": "Straight 3", "tags": ["homestretch"] }
+            { "start": 1875, "end": 2400, "label": "Straight", "tags": ["homestretch"] }
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -1744,13 +1744,13 @@
             { "start": 2200, "end": 2500, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 425, "label": "Straight 1"},
+            { "start": 0, "end": 425, "label": "Straight"},
             { "start": 425, "end": 675, "label": "Corner 1"},
             { "start": 675, "end": 1000, "label": "Corner 2"},
-            { "start": 1000, "end": 1450, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 1000, "end": 1450, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1450, "end": 1725, "label": "Corner 3"},
             { "start": 1725, "end": 1975, "label": "Corner 4"},
-            { "start": 1975, "end": 2500, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1975, "end": 2500, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 417, "label": "Early Race"},
@@ -1790,16 +1790,16 @@
             { "start": 3100, "end": 3400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 292, "label": "Straight 1"},
+            { "start": 0, "end": 292, "label": "Straight"},
             { "start": 292, "end": 567, "label": "Corner 3"},
             { "start": 567, "end": 842, "label": "Corner 4"},
-            { "start": 842, "end": 1325, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 842, "end": 1325, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1325, "end": 1575, "label": "Corner 1"},
             { "start": 1575, "end": 1900, "label": "Corner 2"},
-            { "start": 1900, "end": 2350, "label": "Straight 3"},
+            { "start": 1900, "end": 2350, "label": "Straight"},
             { "start": 2350, "end": 2625, "label": "Corner 3"},
             { "start": 2625, "end": 2875, "label": "Corner 4"},
-            { "start": 2875, "end": 3400, "label": "Straight 4", "tags": ["homestretch"]}
+            { "start": 2875, "end": 3400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 567, "label": "Early Race"},
@@ -1892,10 +1892,10 @@
             { "start": 1350, "end": 1600, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 650, "label": "Straight 1"},
+            { "start": 0, "end": 650, "label": "Straight"},
             { "start": 650, "end": 875, "label": "Corner 3"},
             { "start": 875, "end": 1099, "label": "Corner 4"},
-            { "start": 1099, "end": 1600, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1099, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -1928,13 +1928,13 @@
             { "start": 1850, "end": 2100, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 200, "label": "Straight 1"},
+            { "start": 0, "end": 200, "label": "Straight"},
             { "start": 200, "end": 450, "label": "Corner 1"},
             { "start": 450, "end": 700, "label": "Corner 2"},
-            { "start": 700, "end": 1150, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 700, "end": 1150, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1150, "end": 1375, "label": "Corner 3"},
             { "start": 1375, "end": 1599, "label": "Corner 4"},
-            { "start": 1599, "end": 2100, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1599, "end": 2100, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 350, "label": "Early Race"},
@@ -1956,13 +1956,13 @@
             { "start": 0, "end": 2400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 500, "label": "Straight 1"},
+            { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 750, "label": "Corner 1"},
             { "start": 750, "end": 1000, "label": "Corner 2"},
-            { "start": 1000, "end": 1450, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 1000, "end": 1450, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1450, "end": 1675, "label": "Corner 3"},
             { "start": 1675, "end": 1900, "label": "Corner 4"},
-            { "start": 1900, "end": 2400, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1900, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -1989,10 +1989,10 @@
             { "start": 975, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 300, "label": "Straight 1"},
+            { "start": 0, "end": 300, "label": "Straight"},
             { "start": 300, "end": 550, "label": "Corner 3"},
             { "start": 550, "end": 788, "label": "Corner 4"},
-            { "start": 788, "end": 1200, "label": "Straight 1", "tags": ["homestretch"]}
+            { "start": 788, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -2022,10 +2022,10 @@
             { "start": 1175, "end": 1400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 500, "label": "Straight 1"},
+            { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 750, "label": "Corner 3"},
             { "start": 750, "end": 988, "label": "Corner 4"},
-            { "start": 988, "end": 1400, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 988, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -2056,10 +2056,10 @@
         "layout": [
             { "start": 0, "end": 150, "label": ""},
             { "start": 150, "end": 300, "label": "Corner 2"},
-            { "start": 300, "end": 700, "label": "Straight 1", "tags": ["backstretch"]},
+            { "start": 300, "end": 700, "label": "Straight", "tags": ["backstretch"]},
             { "start": 700, "end": 950, "label": "Corner 3"},
             { "start": 950, "end": 1188, "label": "Corner 4"},
-            { "start": 1188, "end": 1600, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 1188, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -2090,13 +2090,13 @@
             { "start": 1775, "end": 2000, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 300, "label": "Straight 1"},
+            { "start": 0, "end": 300, "label": "Straight"},
             { "start": 300, "end": 500, "label": "Corner 1"},
             { "start": 500, "end": 700, "label": "Corner 2"},
-            { "start": 700, "end": 1100, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 700, "end": 1100, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1100, "end": 1350, "label": "Corner 3"},
             { "start": 1350, "end": 1588, "label": "Corner 4"},
-            { "start": 1588, "end": 2000, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1588, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -2130,13 +2130,13 @@
             { "start": 1975, "end": 2200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 500, "label": "Straight 1"},
+            { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 700, "label": "Corner 1"},
             { "start": 700, "end": 900, "label": "Corner 2"},
-            { "start": 900, "end": 1300, "label": "Straight 2", "tags": ["backstretch"]},
+            { "start": 900, "end": 1300, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1300, "end": 1550, "label": "Corner 3"},
             { "start": 1550, "end": 1788, "label": "Corner 4"},
-            { "start": 1788, "end": 2200, "label": "Straight 3", "tags": ["homestretch"]}
+            { "start": 1788, "end": 2200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 367, "label": "Early Race"},
@@ -2158,10 +2158,10 @@
             { "start": 0, "end": 1200, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 400, "label": "Straight 1"},
+            { "start": 0, "end": 400, "label": "Straight"},
             { "start": 400, "end": 600, "label": "Corner 3"},
             { "start": 600, "end": 790, "label": "Corner 4"},
-            { "start": 790, "end": 1200, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 790, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -2186,10 +2186,10 @@
             { "start": 1175, "end": 1400, "label": "Flat", "type": "flat"}
         ],
         "layout": [
-            { "start": 0, "end": 600, "label": "Straight 1"},
+            { "start": 0, "end": 600, "label": "Straight"},
             { "start": 600, "end": 800, "label": "Corner 3"},
             { "start": 800, "end": 990, "label": "Corner 4"},
-            { "start": 990, "end": 1400, "label": "Straight 2", "tags": ["homestretch"]}
+            { "start": 990, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -2288,8 +2288,8 @@
         "layout": [
             { "start": 0, "end": 320, "label": "Straight"},
             { "start": 320, "end": 595, "label": "Corner 3"},
-            { "start": 595, "end": 870, "label": "Corner 4"},
-            { "start": 870, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 595, "end": 872, "label": "Corner 4"},
+            { "start": 872, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -2324,8 +2324,8 @@
         "layout": [
             { "start": 0, "end": 520, "label": "Straight"},
             { "start": 520, "end": 795, "label": "Corner 3"},
-            { "start": 795, "end": 1070, "label": "Corner 4"},
-            { "start": 1070, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 795, "end": 1072, "label": "Corner 4"},
+            { "start": 1072, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -2354,8 +2354,8 @@
         "layout": [
             { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 750, "label": "Corner 3"},
-            { "start": 750, "end": 1000, "label": "Corner 4"},
-            { "start": 1000, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 750, "end": 997, "label": "Corner 4"},
+            { "start": 997, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -2391,8 +2391,8 @@
             { "start": 0, "end": 200, "label": ""},
             { "start": 200, "end": 720, "label": "Straight", "tags": ["backstretch"]},
             { "start": 720, "end": 995, "label": "Corner 3"},
-            { "start": 995, "end": 1270, "label": "Corner 4"},
-            { "start": 1270, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 995, "end": 1272, "label": "Corner 4"},
+            { "start": 1272, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -2427,8 +2427,8 @@
             { "start": 0, "end": 200, "label": ""},
             { "start": 200, "end": 700, "label": "Straight", "tags": ["backstretch"]},
             { "start": 700, "end": 950, "label": "Corner 3"},
-            { "start": 950, "end": 1200, "label": "Corner 4"},
-            { "start": 1200, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 950, "end": 1197, "label": "Corner 4"},
+            { "start": 1197, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -2463,8 +2463,8 @@
             { "start": 0, "end": 400, "label": ""},
             { "start": 400, "end": 900, "label": "Straight", "tags": ["backstretch"]},
             { "start": 900, "end": 1150, "label": "Corner 3"},
-            { "start": 1150, "end": 1400, "label": "Corner 4"},
-            { "start": 1400, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1150, "end": 1397, "label": "Corner 4"},
+            { "start": 1397, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -2497,10 +2497,10 @@
             { "start": 0, "end": 400, "label": "Straight"},
             { "start": 400, "end": 585, "label": "Corner 1"},
             { "start": 585, "end": 770, "label": "Corner 2"},
-            { "start": 770, "end": 1170, "label": "Straight", "tags": ["backstretch"]},
-            { "start": 1170, "end": 1420, "label": "Corner 3"},
-            { "start": 1420, "end": 1670, "label": "Corner 4"},
-            { "start": 1670, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 770, "end": 1120, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 1120, "end": 1395, "label": "Corner 3"},
+            { "start": 1395, "end": 1672, "label": "Corner 4"},
+            { "start": 1672, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -2536,8 +2536,8 @@
             { "start": 600, "end": 800, "label": "Corner 2"},
             { "start": 800, "end": 1300, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1300, "end": 1550, "label": "Corner 3"},
-            { "start": 1550, "end": 1800, "label": "Corner 4"},
-            { "start": 1800, "end": 2200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1550, "end": 1797, "label": "Corner 4"},
+            { "start": 1797, "end": 2200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 367, "label": "Early Race"},
@@ -2575,8 +2575,8 @@
             { "start": 800, "end": 1000, "label": "Corner 2"},
             { "start": 1000, "end": 1500, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1500, "end": 1750, "label": "Corner 3"},
-            { "start": 1750, "end": 2000, "label": "Corner 4"},
-            { "start": 2000, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1750, "end": 1997, "label": "Corner 4"},
+            { "start": 1997, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -2620,8 +2620,8 @@
             { "start": 1450, "end": 1650, "label": "Corner 2"},
             { "start": 1650, "end": 2100, "label": "Straight", "tags": ["backstretch"]},
             { "start": 2100, "end": 2350, "label": "Corner 3"},
-            { "start": 2350, "end": 2600, "label": "Corner 4"},
-            { "start": 2600, "end": 3000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 2350, "end": 2597, "label": "Corner 4"},
+            { "start": 2597, "end": 3000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 500, "label": "Early Race"},
@@ -2663,8 +2663,8 @@
             { "start": 1650, "end": 1850, "label": "Corner 2"},
             { "start": 1850, "end": 2300, "label": "Straight", "tags": ["backstretch"]},
             { "start": 2300, "end": 2550, "label": "Corner 3"},
-            { "start": 2550, "end": 2800, "label": "Corner 4"},
-            { "start": 2800, "end": 3200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 2550, "end": 2797, "label": "Corner 4"},
+            { "start": 2797, "end": 3200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 533, "label": "Early Race"},
@@ -2692,8 +2692,8 @@
         "layout": [
             { "start": 0, "end": 400, "label": "Straight"},
             { "start": 400, "end": 625, "label": "Corner 3"},
-            { "start": 625, "end": 850, "label": "Corner 4"},
-            { "start": 850, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 625, "end": 871, "label": "Corner 4"},
+            { "start": 871, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -2722,8 +2722,8 @@
             { "start": 0, "end": 100, "label": ""},
             { "start": 100, "end": 600, "label": "Straight"},
             { "start": 600, "end": 825, "label": "Corner 3"},
-            { "start": 825, "end": 1050, "label": "Corner 4"},
-            { "start": 1050, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 825, "end": 1071, "label": "Corner 4"},
+            { "start": 1071, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -2754,8 +2754,8 @@
             { "start": 450, "end": 600, "label": "Corner 2"},
             { "start": 600, "end": 1000, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1000, "end": 1225, "label": "Corner 3"},
-            { "start": 1225, "end": 1450, "label": "Corner 4"},
-            { "start": 1450, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1225, "end": 1471, "label": "Corner 4"},
+            { "start": 1471, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -2790,8 +2790,8 @@
             { "start": 550, "end": 700, "label": "Corner 2"},
             { "start": 700, "end": 1100, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1100, "end": 1325, "label": "Corner 3"},
-            { "start": 1325, "end": 1550, "label": "Corner 4"},
-            { "start": 1550, "end": 1900, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1325, "end": 1571, "label": "Corner 4"},
+            { "start": 1571, "end": 1900, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 317, "label": "Early Race"},
@@ -2824,8 +2824,8 @@
         "layout": [
             { "start": 0, "end": 250, "label": "Straight", "tags": ["backstretch"]},
             { "start": 250, "end": 550, "label": "Corner 3" },
-            { "start": 550, "end": 850, "label": "Corner 4" },
-            { "start": 850, "end": 1200, "label": "Straight", "tags": ["homestretch"] }
+            { "start": 550, "end": 844, "label": "Corner 4" },
+            { "start": 844, "end": 1200, "label": "Straight", "tags": ["homestretch"] }
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -2855,8 +2855,8 @@
         "layout": [
             { "start": 0, "end": 450, "label": "Straight"},
             { "start": 450, "end": 750, "label": "Corner 3"},
-            { "start": 750, "end": 1050, "label": "Corner 4"},
-            { "start": 1050, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 750, "end": 1044, "label": "Corner 4"},
+            { "start": 1044, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -2891,8 +2891,8 @@
         "layout": [
             { "start": 0, "end": 450, "label": "Straight"},
             { "start": 450, "end": 800, "label": "Corner 3"},
-            { "start": 800, "end": 1150, "label": "Corner 4"},
-            { "start": 1150, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 800, "end": 1127, "label": "Corner 4"},
+            { "start": 1127, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -2931,8 +2931,8 @@
         "layout": [
             { "start": 0, "end": 650, "label": "Straight"},
             { "start": 650, "end": 1000, "label": "Corner 3"},
-            { "start": 1000, "end": 1350, "label": "Corner 4"},
-            { "start": 1350, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1000, "end": 1327, "label": "Corner 4"},
+            { "start": 1327, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -2944,46 +2944,6 @@
         "races": [
             "mainichi hai march 2 year 2",
             "rose stakes september 1 year 2"
-        ]
-    },
-    {   "name": "Hanshin 2200m (inner) (clockwise)",
-        "cid": "10906",
-        "racetrack": "Hanshin",
-        "direction": "Clockwise",
-        "terrain": "Turf",
-        "distance_meters": "2200m",
-        "elevation_scale": 8,
-        "stat_treshold": "",
-        "url": "https://gametora.com/umamusume/racetracks/hanshin#2200-turf-inner",
-        "elevation": [
-            { "start": 0, "end": 290, "label": "Downhill", "type": "downhill", "change": -1},
-            { "start": 290, "end": 295, "label": "Flat", "type": "flat"},
-            { "start": 295, "end": 420, "label": "Uphill", "type": "uphill", "change": 2},
-            { "start": 420, "end": 1400, "label": "Flat", "type": "flat"},
-            { "start": 1400, "end": 1995, "label": "Downhill", "type": "downhill", "change": -1 },
-            { "start": 1995, "end": 2000, "label": "Flat", "type": "flat" },
-            { "start": 2000, "end": 2125, "label": "Uphill", "type": "uphill", "change": 2},
-            { "start": 2125, "end": 2200, "label": "Flat", "type": "flat" }
-        ],
-        "layout": [
-            { "start": 0, "end": 520, "label": "Straight"},
-            { "start": 520, "end": 710, "label": "Corner 1" },
-            { "start": 710, "end": 900, "label": "Corner 2" },
-            { "start": 900, "end": 1250, "label": "Straight", "tags": ["backstretch"] },
-            { "start": 1250, "end": 1550, "label": "Corner 3"},
-            { "start": 1550, "end": 1850, "label": "Corner 4"},
-            { "start": 1850, "end": 2200, "label": "Straight", "tags": ["homestretch"] }
-        ],
-        "zones": [
-            { "start": 0, "end": 367, "label": "Early Race"},
-            { "start": 367, "end": 1467, "label": "Mid Race"},
-            { "start": 1467, "end": 1833, "label": "Late Race"},
-            { "start": 1833, "end": 2200, "label": "Last spurt"}
-        ],
-        "position_keep_ends": [917],
-        "races": [
-            "takarazuka kinen june 2 year 2", 
-            "takarazuka kinen june 2 year 3"
         ]
     },
     {   "name": "Hanshin 2000m (inner) (clockwise)",
@@ -3011,8 +2971,8 @@
             { "start": 560, "end": 750, "label": "Corner 2"},
             { "start": 750, "end": 1050, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1050, "end": 1350, "label": "Corner 3"},
-            { "start": 1350, "end": 1650, "label": "Corner 4"},
-            { "start": 1650, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1350, "end": 1644, "label": "Corner 4"},
+            { "start": 1644, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -3029,6 +2989,46 @@
             "mermaid stakes june 1 year 3",
             "naruo kinen june 1 year 3",
             "challenge cup december 1 year 3"
+        ]
+    },
+    {   "name": "Hanshin 2200m (inner) (clockwise)",
+        "cid": "10906",
+        "racetrack": "Hanshin",
+        "direction": "Clockwise",
+        "terrain": "Turf",
+        "distance_meters": "2200m",
+        "elevation_scale": 8,
+        "stat_treshold": "",
+        "url": "https://gametora.com/umamusume/racetracks/hanshin#2200-turf-inner",
+        "elevation": [
+            { "start": 0, "end": 290, "label": "Downhill", "type": "downhill", "change": -1},
+            { "start": 290, "end": 295, "label": "Flat", "type": "flat"},
+            { "start": 295, "end": 420, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 420, "end": 1400, "label": "Flat", "type": "flat"},
+            { "start": 1400, "end": 1995, "label": "Downhill", "type": "downhill", "change": -1 },
+            { "start": 1995, "end": 2000, "label": "Flat", "type": "flat" },
+            { "start": 2000, "end": 2125, "label": "Uphill", "type": "uphill", "change": 2},
+            { "start": 2125, "end": 2200, "label": "Flat", "type": "flat" }
+        ],
+        "layout": [
+            { "start": 0, "end": 520, "label": "Straight"},
+            { "start": 520, "end": 710, "label": "Corner 1" },
+            { "start": 710, "end": 900, "label": "Corner 2" },
+            { "start": 900, "end": 1250, "label": "Straight", "tags": ["backstretch"] },
+            { "start": 1250, "end": 1550, "label": "Corner 3"},
+            { "start": 1550, "end": 1844, "label": "Corner 4"},
+            { "start": 1844, "end": 2200, "label": "Straight", "tags": ["homestretch"] }
+        ],
+        "zones": [
+            { "start": 0, "end": 367, "label": "Early Race"},
+            { "start": 367, "end": 1467, "label": "Mid Race"},
+            { "start": 1467, "end": 1833, "label": "Late Race"},
+            { "start": 1833, "end": 2200, "label": "Last spurt"}
+        ],
+        "position_keep_ends": [917],
+        "races": [
+            "takarazuka kinen june 2 year 2", 
+            "takarazuka kinen june 2 year 3"
         ]
     },
     {   "name": "Hanshin 2400m (outer) (clockwise)",
@@ -3052,12 +3052,12 @@
         ],
         "layout": [
             { "start": 0, "end": 382, "label": ""},
-            { "start": 382, "end": 560, "label": "Corner 1"},
-            { "start": 560, "end": 750, "label": "Corner 2"},
-            { "start": 750, "end": 1250, "label": "Straight", "tags": ["backstretch"]},
+            { "start": 382, "end": 572, "label": "Corner 1"},
+            { "start": 572, "end": 748, "label": "Corner 2"},
+            { "start": 748, "end": 1250, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1250, "end": 1600, "label": "Corner 3"},
-            { "start": 1600, "end": 1950, "label": "Corner 4"},
-            { "start": 1950, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1600, "end": 1927, "label": "Corner 4"},
+            { "start": 1927, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -3093,8 +3093,8 @@
             { "start": 760, "end": 950, "label": "Corner 2"},
             { "start": 950, "end": 1450, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1450, "end": 1800, "label": "Corner 3"},
-            { "start": 1800, "end": 2150, "label": "Corner 4"},
-            { "start": 2150, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1800, "end": 2127, "label": "Corner 4"},
+            { "start": 2127, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 433, "label": "Early Race"},
@@ -3133,8 +3133,8 @@
             { "start": 1510, "end": 1700, "label": "Corner 2"},
             { "start": 1700, "end": 2050, "label": "Straight", "tags": ["backstretch"]},
             { "start": 2050, "end": 2350, "label": "Corner 3"},
-            { "start": 2350, "end": 2650, "label": "Corner 4"},
-            { "start": 2650, "end": 3000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 2350, "end": 2644, "label": "Corner 4"},
+            { "start": 2644, "end": 3000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 500, "label": "Early Race"},
@@ -3161,8 +3161,8 @@
         "layout": [
             { "start": 0, "end": 350, "label": "Straight"},
             { "start": 350, "end": 600, "label": "Corner 3"},
-            { "start": 600, "end": 850, "label": "Corner 4"},
-            { "start": 850, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 600, "end": 848, "label": "Corner 4"},
+            { "start": 848, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -3188,8 +3188,8 @@
         "layout": [
             { "start": 0, "end": 550, "label": "Straight"},
             { "start": 550, "end": 800, "label": "Corner 3"},
-            { "start": 800, "end": 1050, "label": "Corner 4"},
-            { "start": 1050, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 800, "end": 1048, "label": "Corner 4"},
+            { "start": 1048, "end": 1400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 233, "label": "Early Race"},
@@ -3220,8 +3220,8 @@
             { "start": 480, "end": 630, "label": "Corner 2"},
             { "start": 630, "end": 950, "label": "Straight", "tags": ["backstretch"]},
             { "start": 950, "end": 1200, "label": "Corner 3"},
-            { "start": 1200, "end": 1450, "label": "Corner 4"},
-            { "start": 1450, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1200, "end": 1448, "label": "Corner 4"},
+            { "start": 1448, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -3255,8 +3255,8 @@
             { "start": 650, "end": 800, "label": "Corner 2"},
             { "start": 800, "end": 1150, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1150, "end": 1400, "label": "Corner 3"},
-            { "start": 1400, "end": 1650, "label": "Corner 4"},
-            { "start": 1650, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1400, "end": 1648, "label": "Corner 4"},
+            { "start": 1648, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -3299,8 +3299,8 @@
             { "start": 1710, "end": 1900, "label": "Corner 2"},
             { "start": 1900, "end": 2250, "label": "Straight", "tags": ["backstretch"]},
             { "start": 2250, "end": 2550, "label": "Corner 3"},
-            { "start": 2550, "end": 2850, "label": "Corner 4"},
-            { "start": 2850, "end": 3200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 2550, "end": 2844, "label": "Corner 4"},
+            { "start": 2844, "end": 3200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 533, "label": "Early Race"},
@@ -3329,8 +3329,8 @@
         "layout": [
             { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 705, "label": "Corner 3"},
-            { "start": 705, "end": 910, "label": "Corner 4"},
-            { "start": 910, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 705, "end": 907, "label": "Corner 4"},
+            { "start": 907, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -3364,8 +3364,8 @@
             { "start": 495, "end": 700, "label": "Corner 2"},
             { "start": 700, "end": 1100, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1100, "end": 1305, "label": "Corner 3"},
-            { "start": 1305, "end": 1510, "label": "Corner 4"},
-            { "start": 1510, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1305, "end": 1507, "label": "Corner 4"},
+            { "start": 1507, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -3397,8 +3397,8 @@
             { "start": 695, "end": 900, "label": "Corner 2"},
             { "start": 900, "end": 1300, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1300, "end": 1505, "label": "Corner 3"},
-            { "start": 1505, "end": 1710, "label": "Corner 4"},
-            { "start": 1710, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1505, "end": 1707, "label": "Corner 4"},
+            { "start": 1707, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -3434,8 +3434,8 @@
             { "start": 1315, "end": 1520, "label": "Corner 2"},
             { "start": 1520, "end": 1900, "label": "Straight"},
             { "start": 1900, "end": 2105, "label": "Corner 3"},
-            { "start": 2105, "end": 2310, "label": "Corner 4"},
-            { "start": 2310, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 2105, "end": 2307, "label": "Corner 4"},
+            { "start": 2307, "end": 2600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 433, "label": "Early Race"},
@@ -3459,8 +3459,8 @@
         "layout": [
             { "start": 0, "end": 360, "label": "Straight"},
             { "start": 360, "end": 540, "label": "Corner 3"},
-            { "start": 540, "end": 720, "label": "Corner 4"},
-            { "start": 720, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 540, "end": 709, "label": "Corner 4"},
+            { "start": 709, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 167, "label": "Early Race"},
@@ -3489,8 +3489,8 @@
             { "start": 520, "end": 700, "label": "Corner 2"},
             { "start": 700, "end": 1060, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1060, "end": 1240, "label": "Corner 3"},
-            { "start": 1240, "end": 1420, "label": "Corner 4"},
-            { "start": 1420, "end": 1700, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1240, "end": 1409, "label": "Corner 4"},
+            { "start": 1409, "end": 1700, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 283, "label": "Early Race"},
@@ -3520,8 +3520,8 @@
             { "start": 1220, "end": 1400, "label": "Corner 2"},
             { "start": 1400, "end": 1760, "label": "Straight"},
             { "start": 1760, "end": 1940, "label": "Corner 3"},
-            { "start": 1940, "end": 2120, "label": "Corner 4"},
-            { "start": 2120, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1940, "end": 2109, "label": "Corner 4"},
+            { "start": 2109, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -3546,9 +3546,8 @@
         "layout": [
             { "start": 0, "end": 500, "label": "Straight"},
             { "start": 500, "end": 650, "label": "Corner 3"},
-            { "start": 650, "end": 800, "label": "Corner 4"},
-            { "start": 800, "end": 812, "label": ""},
-            { "start": 812, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 650, "end": 814, "label": "Corner 4"},
+            { "start": 814, "end": 1200, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 200, "label": "Early Race"},
@@ -3556,7 +3555,14 @@
             { "start": 800, "end": 1000, "label": "Late Race"},
             { "start": 1000, "end": 1200, "label": "Last spurt"}
         ],
-        "position_keep_ends": [500]
+        "position_keep_ends": [500],
+        "races":[
+            "jbc sprint november 1 year 2",
+            "jbc sprint november 1 year 3",
+            "tokyo hai october 1 year 2",
+            "tokyo hai october 1 year 3",
+            "tokyo sprint april 2 year 3"
+        ]
     },
     {   "name": "Ooi 1800m (clockwise) (dirt)",
         "cid": "11102",
@@ -3576,8 +3582,8 @@
             { "start": 500, "end": 650, "label": "Corner 2"},
             { "start": 650, "end": 1100, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1100, "end": 1250, "label": "Corner 3"},
-            { "start": 1250, "end": 1400, "label": "Corner 4"},
-            { "start": 1400, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1250, "end": 1414, "label": "Corner 4"},
+            { "start": 1414, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -3588,7 +3594,10 @@
         "position_keep_ends": [750],
         "races": [
             "jbc ladies november 1 year 2",
-            "jbc ladies november 1 year 3"
+            "jbc ladies november 1 year 3",
+            "ladies prelude october 1 year 2",
+            "ladies prelude october 1 year 3",
+            "tck joo hai january 2 year 3"
         ]
     },
     {   "name": "Ooi 2000m (clockwise) (dirt)",
@@ -3608,8 +3617,8 @@
             { "start": 650, "end": 800, "label": "Corner 2"},
             { "start": 800, "end": 1300, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1300, "end": 1450, "label": "Corner 3"},
-            { "start": 1450, "end": 1600, "label": "Corner 4"},
-            { "start": 1600, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1450, "end": 1614, "label": "Corner 4"},
+            { "start": 1614, "end": 2000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 333, "label": "Early Race"},
@@ -3681,7 +3690,12 @@
             { "start": 1067, "end": 1333, "label": "Late Race"},
             { "start": 1333, "end": 1600, "label": "Last spurt"}
         ],
-        "position_keep_ends": [667]
+        "position_keep_ends": [667],
+        "races":[
+            "zen nippon junior yushun december 2 year 1",
+            "sparking lady cup july 1 year 2",
+            "sparking lady cup july 1 year 3"
+        ]
     },
     {   "name": "Kawasaki 2100m (counterclockwise) (dirt)",
         "racetrack": "Kawasaki",
@@ -3711,7 +3725,12 @@
             { "start": 1400, "end": 1750, "label": "Late Race"},
             { "start": 1750, "end": 2100, "label": "Last spurt"}
         ],
-        "position_keep_ends": [875]
+        "position_keep_ends": [875],
+        "races":[
+            "kawasaki kinen february 1 year 3",
+            "empress hai march 1 year 3",
+            "kanto oaks june 1 year 2"
+        ]
     },
 
     {   "name": "Funabashi 1000m (counterclockwise) (dirt)",
@@ -3727,8 +3746,8 @@
         "layout": [
             { "start": 0, "end": 370, "label": "Straight"},
             { "start": 370, "end": 540, "label": "Corner 3"},
-            { "start": 540, "end": 690, "label": "Corner 4"},
-            { "start": 690, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 540, "end": 692, "label": "Corner 4"},
+            { "start": 692, "end": 1000, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 167, "label": "Early Race"},
@@ -3754,8 +3773,8 @@
             { "start": 440, "end": 600, "label": "Corner 2"},
             { "start": 600, "end": 970, "label": "Straight", "tags": ["backstretch"]},
             { "start": 970, "end": 1140, "label": "Corner 3"},
-            { "start": 1140, "end": 1290, "label": "Corner 4"},
-            { "start": 1290, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1140, "end": 1292, "label": "Corner 4"},
+            { "start": 1292, "end": 1600, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 267, "label": "Early Race"},
@@ -3763,7 +3782,12 @@
             { "start": 1067, "end": 1333, "label": "Late Race"},
             { "start": 1333, "end": 1600, "label": "Last spurt"}
         ],
-        "position_keep_ends": [667]
+        "position_keep_ends": [667],
+        "races":[
+            "kashiwa kinen may 1 year 3",
+            "marine cup april 1 year 2",
+            "marine cup april 1 year 3"
+        ]
     },
     {   "name": "Funabashi 1800m (counterclockwise) (dirt)",
         "racetrack": "Funabashi",
@@ -3782,8 +3806,8 @@
             { "start": 640, "end": 800, "label": "Corner 2"},
             { "start": 800, "end": 1170, "label": "Straight", "tags": ["backstretch"]},
             { "start": 1170, "end": 1340, "label": "Corner 3"},
-            { "start": 1340, "end": 1490, "label": "Corner 4"},
-            { "start": 1490, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1340, "end": 1492, "label": "Corner 4"},
+            { "start": 1492, "end": 1800, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 300, "label": "Early Race"},
@@ -3791,7 +3815,13 @@
             { "start": 1200, "end": 1500, "label": "Late Race"},
             { "start": 1500, "end": 1800, "label": "Last spurt"}
         ],
-        "position_keep_ends": [750]
+        "position_keep_ends": [750],
+        "races": [
+            "sazanka tv hai september 2 year 2",
+            "sazanka tv hai september 2 year 3",
+            "queen sho december 1 year 2",
+            "queen sho december 1 year 3"
+        ]
     },
     {   "name": "Funabashi 2400m (counterclockwise) (dirt)",
         "racetrack": "Funabashi",
@@ -3812,8 +3842,8 @@
             { "start": 1240, "end": 1400, "label": "Corner 2"},
             { "start": 1400, "end": 1770, "label": "Straight"},
             { "start": 1770, "end": 1940, "label": "Corner 3"},
-            { "start": 1940, "end": 2090, "label": "Corner 4"},
-            { "start": 2090, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
+            { "start": 1940, "end": 2092, "label": "Corner 4"},
+            { "start": 2092, "end": 2400, "label": "Straight", "tags": ["homestretch"]}
         ],
         "zones": [
             { "start": 0, "end": 400, "label": "Early Race"},
@@ -3821,7 +3851,10 @@
             { "start": 1600, "end": 2000, "label": "Late Race"},
             { "start": 2000, "end": 2400, "label": "Last spurt"}
         ],
-        "position_keep_ends": [1000]
+        "position_keep_ends": [1000],
+        "races": [
+            "diolite kinen march 2 year 3"
+        ]
     },
 
     {   "name": "Morioka 1200m (counterclockwise) (dirt)",
@@ -3852,7 +3885,11 @@
             { "start": 800, "end": 1000, "label": "Late Race"},
             { "start": 1000, "end": 1200, "label": "Last spurt"}
         ],
-        "position_keep_ends": [500]
+        "position_keep_ends": [500],
+        "races":[
+            "cluster cup august 1 year 2",
+            "cluster cup august 1 year 3"
+        ]
     },
     {   "name": "Morioka 1600m (counterclockwise) (dirt)",
         "racetrack": "Morioka",
@@ -3882,7 +3919,11 @@
             { "start": 1067, "end": 1333, "label": "Late Race"},
             { "start": 1333, "end": 1600, "label": "Last spurt"}
         ],
-        "position_keep_ends": [667]
+        "position_keep_ends": [667],
+        "races":[
+            "mile championship nambu hai october 1 year 2",
+            "mile championship nambu hai october 1 year 3"
+        ]
     },
     {   "name": "Morioka 1800m (counterclockwise) (dirt)",
         "racetrack": "Morioka",
@@ -3949,7 +3990,11 @@
             { "start": 1333, "end": 1667, "label": "Late Race"},
             { "start": 1667, "end": 2000, "label": "Last spurt"}
         ],
-        "position_keep_ends": [833]
+        "position_keep_ends": [833],
+        "races": [
+            "mercury cup july 2 year 2",
+            "mercury cup july 2 year 3"
+        ]
     },
 
     {   "name": "Longchamp 2400m (clockwise)",
