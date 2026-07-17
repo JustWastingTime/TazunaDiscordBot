@@ -45,6 +45,11 @@ function normalizeDefinition(raw) {
   const entries = Array.isArray(raw.entries) ? raw.entries : raw.horses;
   if (!raw.id || !raw.name || !Array.isArray(entries) || !entries.length) return null;
 
+  const threadIdRaw = raw.threadID ?? raw.threadId ?? raw.thread_id ?? null;
+  const threadId = threadIdRaw != null && String(threadIdRaw).trim()
+    ? String(threadIdRaw).trim()
+    : null;
+
   return {
     id: String(raw.id),
     name: String(raw.name),
@@ -54,6 +59,7 @@ function normalizeDefinition(raw) {
     endsAt: raw.endsAt || raw.cutoffAt || null,
     availability: String(raw.availability || 'all'),
     guildIds: Array.isArray(raw.guildIds) ? raw.guildIds.map(String) : [],
+    threadId,
     entries: entries.map((entry) => ({
       number: Number(entry.number),
       name: String(entry.name),
@@ -203,6 +209,38 @@ export function getEventChannel(guildId) {
 
 export function getEligibleEventChannels(event) {
   return getEventChannels().filter((entry) => isEventAvailableToGuild(event, entry.guildId));
+}
+
+/**
+ * Resolve where an event should be posted/refreshed.
+ * If the event defines `threadID`, post into that thread instead of the
+ * guild's main event channel. Duplicate destinations are collapsed so a
+ * shared thread is only posted once.
+ */
+export function getEventPostTargets(event) {
+  const channels = getEligibleEventChannels(event);
+  if (!channels.length) return [];
+
+  const targets = channels.map((entry) => ({
+    guildId: String(entry.guildId),
+    channelId: String(event.threadId || entry.channelId),
+  }));
+
+  const seenChannels = new Set();
+  return targets.filter((target) => {
+    if (seenChannels.has(target.channelId)) return false;
+    seenChannels.add(target.channelId);
+    return true;
+  });
+}
+
+export function resolveEventPostChannelId(event, guildId, fallbackChannelId = null) {
+  const post = getEventPost(guildId, event.id);
+  if (post?.channelId) return String(post.channelId);
+  if (event.threadId) return String(event.threadId);
+  if (fallbackChannelId) return String(fallbackChannelId);
+  const subscribed = getEventChannel(guildId);
+  return subscribed?.channelId ? String(subscribed.channelId) : null;
 }
 
 export function getEventPosts() {

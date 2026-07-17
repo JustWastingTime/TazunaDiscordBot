@@ -1,0 +1,22 @@
+{
+  "id": "005a",
+  "name": "Bunny Invitational Group A Match 1 Sprints",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527684470885584906",
+  "entries": [
+    { "number": 1, "name": "RDD | Ethan", "odds": 2.0 },
+    { "number": 2, "name": "RDD | Sayuri", "odds": 2.0},
+    { "number": 3, "name": "RDD | Icyjelly", "odds": 2.0},
+    { "number": 4, "name": "JLew@BUNS", "odds": 2.0 },
+    { "number": 5, "name": "Banana@BUNS", "odds": 2.0 },
+    { "number": 6, "name": "Nightfish@BUNS", "odds": 2.0},
+    { "number": 7, "name": "HOTS - Chocomoto", "odds": 2.0 },
+    { "number": 8, "name": "HOTS - AzureLightBR", "odds": 2.0 },
+    { "number": 9, "name": "HOTS - Ren", "odds": 2.0 }
+  ]
+}

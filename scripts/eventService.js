@@ -7,6 +7,7 @@ import {
   sendChannelMessage,
 } from './quizDiscord.js';
 import {
+  getEventPostTargets,
   getEligibleEventChannels,
   getEvent,
   getEventPost,
@@ -15,13 +16,21 @@ import {
   listSettleableEvents,
   patchEventRuntime,
   reloadEventDefinitions,
+  resolveEventPostChannelId,
   upsertEventPost,
 } from './eventStorage.js';
 import { buildAllEventMessagePayloads, buildEventMessagePayload } from './eventUi.js';
 
 function isChannelUnavailableError(err) {
   const message = String(err?.message || err || '');
-  return message.includes('50001') || message.includes('50013') || message.includes('10003');
+  // 50001 Missing Access, 50013 Missing Permissions, 10003 Unknown Channel,
+  // 50083 Thread is archived
+  return (
+    message.includes('50001') ||
+    message.includes('50013') ||
+    message.includes('10003') ||
+    message.includes('50083')
+  );
 }
 
 function isUnknownMessageError(err) {
@@ -108,13 +117,13 @@ export async function refreshEventEverywhere(eventId) {
   const event = getEvent(eventId);
   if (!event) return { ok: false, error: 'Event not found.' };
 
-  const channels = getEligibleEventChannels(event);
+  const targets = getEventPostTargets(event);
   let refreshed = 0;
   let skipped = 0;
-  for (const channel of channels) {
-    const post = getEventPost(channel.guildId, event.id);
-    const channelId = post?.channelId || channel.channelId;
-    const result = await refreshEventInChannel(event, channel.guildId, channelId);
+  for (const target of targets) {
+    const channelId =
+      getEventPost(target.guildId, event.id)?.channelId || target.channelId;
+    const result = await refreshEventInChannel(event, target.guildId, channelId);
     if (result.ok) refreshed += 1;
     else if (result.channelUnavailable) skipped += 1;
   }
@@ -131,21 +140,31 @@ export async function postEventEverywhere(eventId) {
     status: 'open',
     postedAt: new Date().toISOString(),
   });
-  const channels = getEligibleEventChannels(opened);
-  if (!channels.length) {
-    return { ok: false, error: 'No subscribed event channels match this event.' };
+  const targets = getEventPostTargets(opened);
+  if (!targets.length) {
+    return {
+      ok: false,
+      error: event.threadId
+        ? 'No subscribed event channels match this event (needed to resolve guild for the thread).'
+        : 'No subscribed event channels match this event.',
+    };
   }
 
   let posted = 0;
   let skipped = 0;
-  for (const channel of channels) {
-    const result = await postEventToChannel(opened, channel.guildId, channel.channelId);
+  for (const target of targets) {
+    const result = await postEventToChannel(opened, target.guildId, target.channelId);
     if (result.ok) posted += 1;
     else if (result.channelUnavailable) skipped += 1;
   }
 
   if (!posted && skipped) {
-    return { ok: false, error: 'Could not post to any event channels (missing channel access).' };
+    return {
+      ok: false,
+      error: event.threadId
+        ? 'Could not post to the event thread (missing access, or the thread is archived).'
+        : 'Could not post to any event channels (missing channel access).',
+    };
   }
 
   return { ok: true, event: opened, posted, skipped };
@@ -158,7 +177,8 @@ export async function catchUpGuildEvents(guildId, channelId) {
 
   let posted = 0;
   for (const event of events) {
-    const result = await postEventToChannel(event, guildId, channelId);
+    const targetChannelId = resolveEventPostChannelId(event, guildId, channelId);
+    const result = await postEventToChannel(event, guildId, targetChannelId);
     if (!result.ok) {
       return { posted, channelUnavailable: Boolean(result.channelUnavailable) };
     }
@@ -171,15 +191,14 @@ export async function catchUpGuildEvents(guildId, channelId) {
 export async function refreshBetsBoardForEvent(eventId) {
   const event = getEvent(eventId);
   if (!event) return;
-  const channels = getEligibleEventChannels(event);
-  for (const channel of channels) {
-    const post = getEventPost(channel.guildId, event.id);
-    // Prefer the channel we originally posted to; fall back to the subscribed event channel.
-    const channelId = post?.channelId || channel.channelId;
+  const targets = getEventPostTargets(event);
+  for (const target of targets) {
+    const post = getEventPost(target.guildId, event.id);
+    const channelId = post?.channelId || target.channelId;
     try {
-      const betsMessageId = await upsertBetsBoardMessage(event, channel.guildId, channelId, post);
+      const betsMessageId = await upsertBetsBoardMessage(event, target.guildId, channelId, post);
       upsertEventPost({
-        guildId: channel.guildId,
+        guildId: target.guildId,
         eventId: event.id,
         channelId,
         horseMessages: post?.horseMessages || [],
@@ -188,7 +207,7 @@ export async function refreshBetsBoardForEvent(eventId) {
     } catch (err) {
       if (isChannelUnavailableError(err)) {
         console.warn(
-          `refreshBetsBoardForEvent: guild ${channel.guildId} channel ${channelId} unavailable (${err.message})`,
+          `refreshBetsBoardForEvent: guild ${target.guildId} channel ${channelId} unavailable (${err.message})`,
         );
         continue;
       }

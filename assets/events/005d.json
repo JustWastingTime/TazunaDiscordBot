@@ -1,0 +1,22 @@
+{
+  "id": "005d",
+  "name": "Bunny Invitational Group A Match 1 Long",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527684470885584906",
+  "entries": [
+    { "number": 1, "name": "RDD | LittlePup", "odds": 2.0 },
+    { "number": 2, "name": "RDD | Rozkoszny", "odds": 2.0},
+    { "number": 3, "name": "RDD | Karina", "odds": 2.0},
+    { "number": 4, "name": "Legi@BUNS", "odds": 2.0 },
+    { "number": 5, "name": "Hi! Im Aru!@BUNS", "odds": 2.0 },
+    { "number": 6, "name": "KaiAiya@BUNS", "odds": 2.0},
+    { "number": 7, "name": "HOTS - Ultra", "odds": 2.0 },
+    { "number": 8, "name": "HOTS - Khaile", "odds": 2.0 },
+    { "number": 9, "name": "HOTS - FishPineApl", "odds": 2.0 }
+  ]
+}
