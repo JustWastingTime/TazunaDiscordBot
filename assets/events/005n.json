@@ -1,0 +1,22 @@
+{
+  "id": "005d",
+  "name": "Bunny Invitational Group B Match 1 Long",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527695234677346466",
+  "entries": [
+    { "number": 1, "name": "TSC - Kino", "odds": 2.0 },
+    { "number": 2, "name": "TSC - K1dsgrama", "odds": 2.0},
+    { "number": 3, "name": "TSC - Coolbiscuit", "odds": 2.0},
+    { "number": 4, "name": "ALLI - Hades", "odds": 2.0 },
+    { "number": 5, "name": "ALLI - Fafa", "odds": 2.0 },
+    { "number": 6, "name": "ALLI - Shenezle", "odds": 2.0},
+    { "number": 7, "name": "KING - Snrubman", "odds": 2.0 },
+    { "number": 8, "name": "KING - Jaya", "odds": 2.0 },
+    { "number": 9, "name": "KING - qontroL", "odds": 2.0 }
+  ]
+}

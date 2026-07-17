@@ -1,0 +1,22 @@
+{
+  "id": "005f",
+  "name": "Bunny Invitational Group A Match 2 Sprints",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527695234677346466",
+  "entries": [
+    { "number": 1, "name": "Swaejudinoli@FLNA", "odds": 2.0 },
+    { "number": 2, "name": "XV11@FLNA", "odds": 2.0},
+    { "number": 3, "name": "Zera@FLNA", "odds": 2.0},
+    { "number": 4, "name": "USK - Aur0x", "odds": 2.0 },
+    { "number": 5, "name": "USK - RTemp35T", "odds": 2.0 },
+    { "number": 6, "name": "USK - Ylgr", "odds": 2.0},
+    { "number": 7, "name": "CABAL - 0hqw", "odds": 2.0 },
+    { "number": 8, "name": "CABAL - Nekata", "odds": 2.0 },
+    { "number": 9, "name": "CABAL - @Curren", "odds": 2.0 }
+  ]
+}

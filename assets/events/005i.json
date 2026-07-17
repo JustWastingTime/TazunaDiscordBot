@@ -1,0 +1,22 @@
+{
+  "id": "005d",
+  "name": "Bunny Invitational Group A Match 2 Long",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527695234677346466",
+  "entries": [
+    { "number": 1, "name": "Korie@FLNA", "odds": 2.0 },
+    { "number": 2, "name": "Omatsuri Mambo !@FLNA", "odds": 2.0},
+    { "number": 3, "name": "lazarus@FLNA", "odds": 2.0},
+    { "number": 4, "name": "USK | Yozu", "odds": 2.0 },
+    { "number": 5, "name": "USK | Shin", "odds": 2.0 },
+    { "number": 6, "name": "USK | loliぺdofin", "odds": 2.0},
+    { "number": 7, "name": "CABAL - ONEWINGEDANGEL", "odds": 2.0 },
+    { "number": 8, "name": "CABAL - StirFryYutaka", "odds": 2.0 },
+    { "number": 9, "name": "CABAL - Chungus Truther", "odds": 2.0 }
+  ]
+}

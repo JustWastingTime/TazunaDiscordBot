@@ -1,0 +1,22 @@
+{
+  "id": "005b",
+  "name": "Bunny Invitational Group A Match 2 Mile",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527695234677346466",
+  "entries": [
+    { "number": 1, "name": "USK - AzimDaQuixote", "odds": 2.0 },
+    { "number": 2, "name": "USK - Special Needs", "odds": 2.0 },
+    { "number": 3, "name": "USK - InfinitumX", "odds": 2.0},
+    { "number": 4, "name": "CABAL - KittyChloe", "odds": 2.0 },
+    { "number": 5, "name": "CABAL - Sapphire", "odds": 2.0},
+    { "number": 6, "name": "CABAL - Salty", "odds": 2.0},
+    { "number": 7, "name": "StarryNight@FLNA", "odds": 2.0 },
+    { "number": 8, "name": "Clowngeta@FLNA", "odds": 2.0 },
+    { "number": 9, "name": "Cyndexv@FLNA", "odds": 2.0 }
+  ]
+}
