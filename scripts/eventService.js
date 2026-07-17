@@ -24,6 +24,32 @@ function isChannelUnavailableError(err) {
   return message.includes('50001') || message.includes('50013') || message.includes('10003');
 }
 
+function isUnknownMessageError(err) {
+  const message = String(err?.message || err || '');
+  return message.includes('"code":10008') || message.includes('10008') || /unknown message/i.test(message);
+}
+
+async function upsertBetsBoardMessage(event, guildId, channelId, existingPost = null) {
+  const betsEmbed = buildEventBetsEmbed(event, collectAllUsersForBets());
+  let betsMessageId = existingPost?.betsMessageId || null;
+
+  if (betsMessageId) {
+    try {
+      await editChannelMessage(channelId, betsMessageId, { embeds: [betsEmbed] });
+      return betsMessageId;
+    } catch (err) {
+      if (!isUnknownMessageError(err)) throw err;
+      console.warn(
+        `upsertBetsBoardMessage: bets board ${betsMessageId} missing in guild ${guildId}; recreating.`,
+      );
+      betsMessageId = null;
+    }
+  }
+
+  const betsMessage = await sendChannelMessage(channelId, { embeds: [betsEmbed] });
+  return betsMessage.id;
+}
+
 export function reloadEventsFromDisk() {
   return reloadEventDefinitions();
 }
@@ -53,14 +79,7 @@ export async function postEventToChannel(event, guildId, channelId) {
       }
     }
 
-    const betsEmbed = buildEventBetsEmbed(event, collectAllUsersForBets());
-    let betsMessageId = existing?.betsMessageId || null;
-    if (betsMessageId) {
-      await editChannelMessage(channelId, betsMessageId, { embeds: [betsEmbed] });
-    } else {
-      const betsMessage = await sendChannelMessage(channelId, { embeds: [betsEmbed] });
-      betsMessageId = betsMessage.id;
-    }
+    const betsMessageId = await upsertBetsBoardMessage(event, guildId, channelId, existing);
 
     upsertEventPost({
       guildId,
@@ -94,8 +113,8 @@ export async function refreshEventEverywhere(eventId) {
   let skipped = 0;
   for (const channel of channels) {
     const post = getEventPost(channel.guildId, event.id);
-    if (!post) continue;
-    const result = await refreshEventInChannel(event, channel.guildId, post.channelId);
+    const channelId = post?.channelId || channel.channelId;
+    const result = await refreshEventInChannel(event, channel.guildId, channelId);
     if (result.ok) refreshed += 1;
     else if (result.channelUnavailable) skipped += 1;
   }
@@ -152,19 +171,24 @@ export async function catchUpGuildEvents(guildId, channelId) {
 export async function refreshBetsBoardForEvent(eventId) {
   const event = getEvent(eventId);
   if (!event) return;
-  const users = collectAllUsersForBets();
   const channels = getEligibleEventChannels(event);
   for (const channel of channels) {
     const post = getEventPost(channel.guildId, event.id);
-    if (!post?.betsMessageId) continue;
+    // Prefer the channel we originally posted to; fall back to the subscribed event channel.
+    const channelId = post?.channelId || channel.channelId;
     try {
-      await editChannelMessage(channel.channelId, post.betsMessageId, {
-        embeds: [buildEventBetsEmbed(event, users)],
+      const betsMessageId = await upsertBetsBoardMessage(event, channel.guildId, channelId, post);
+      upsertEventPost({
+        guildId: channel.guildId,
+        eventId: event.id,
+        channelId,
+        horseMessages: post?.horseMessages || [],
+        betsMessageId,
       });
     } catch (err) {
       if (isChannelUnavailableError(err)) {
         console.warn(
-          `refreshBetsBoardForEvent: guild ${channel.guildId} channel ${channel.channelId} unavailable (${err.message})`,
+          `refreshBetsBoardForEvent: guild ${channel.guildId} channel ${channelId} unavailable (${err.message})`,
         );
         continue;
       }
