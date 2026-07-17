@@ -1,0 +1,24 @@
+{
+  "id": "005",
+  "name": "Bunny Invitational Full Gamba",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266", "1441129742240710678", "1461077219303620763"],
+  "entries": [
+    { "number": 1, "name": "BUNS", "odds": 5 },
+    { "number": 2, "name": "Cabal Agency", "odds": 5},
+    { "number": 3, "name": "FALENA", "odds": 5},
+    { "number": 4, "name": "KING", "odds": 5 },
+    { "number": 5, "name": "KitaTrauma", "odds": 5 },
+    { "number": 6, "name": "Rilliance", "odds": 5},
+    { "number": 7, "name": "Ritto Dorm Dropouts", "odds": 5 },
+    { "number": 8, "name": "The Shadow Clones", "odds": 5 },
+    { "number": 9, "name": "Uma Love", "odds": 5 },
+    { "number": 10, "name": "UMAlliance", "odds": 5 },
+    { "number": 11, "name": "Umamusuko", "odds": 5 },
+    { "number": 12, "name": "Umazing Hotsprings", "odds": 5 }
+  ]
+}
