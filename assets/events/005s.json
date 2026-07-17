@@ -1,0 +1,22 @@
+{
+  "id": "005s",
+  "name": "Bunny Invitational Group B Match 2 Long",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527746967038329013",
+  "entries": [
+    { "number": 1, "name": "RILL - Mada", "odds": 2.0 },
+    { "number": 2, "name": "RILL - Fatal", "odds": 2.0},
+    { "number": 3, "name": "RILL - Lyra", "odds": 2.0},
+    { "number": 4, "name": "KITA - Sharky", "odds": 2.0 },
+    { "number": 5, "name": "KITA - evo", "odds": 2.0 },
+    { "number": 6, "name": "KITA - Izaya", "odds": 2.0},
+    { "number": 7, "name": "LOVE - Maya's #1 Dad", "odds": 2.0 },
+    { "number": 8, "name": "LOVE - Chara", "odds": 2.0 },
+    { "number": 9, "name": "LOVE - FNCLUNA", "odds": 2.0 }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "id": "005e",
+  "id": "005o",
   "name": "Bunny Invitational Group B Match 1 Dirt",
   "type": "horse_race",
   "status": "scheduled",
@@ -7,7 +7,7 @@
   "endsAt": "2026-07-18T22:00:00+07:00",
   "availability": "guilds",
   "guildIds": ["1518456417412059266"],
-  "threadID": "1527695234677346466",
+  "threadID": "1527702746130809042",
   "entries": [
     { "number": 1, "name": "ALLI - OJ", "odds": 2.0 },
     { "number": 2, "name": "ALLI - eachcorpse", "odds": 2.0 },

@@ -1,0 +1,22 @@
+{
+  "id": "005q",
+  "name": "Bunny Invitational Group B Match 2 Mile",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527746967038329013",
+  "entries": [
+    { "number": 1, "name": "KITA - Elita", "odds": 2.0 },
+    { "number": 2, "name": "KITA - Fluwid", "odds": 2.0 },
+    { "number": 3, "name": "KITA - aShinyYoyo", "odds": 2.0},
+    { "number": 4, "name": "LOVE - Powd", "odds": 2.0 },
+    { "number": 5, "name": "LOVE - Asha", "odds": 2.0 },
+    { "number": 6, "name": "LOVE - Bananamjohn", "odds": 2.0 },
+    { "number": 7, "name": "RILL - Seraphos", "odds": 2.0 },
+    { "number": 8, "name": "RILL - BeatThisStone", "odds": 2.0},
+    { "number": 9, "name": "RILL - FREAK", "odds": 2.0}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "005r",
+  "name": "Bunny Invitational Group B Match 2 Medium",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-07-17T12:00:00+09:00",
+  "endsAt": "2026-07-18T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "threadID": "1527746967038329013",
+  "entries": [
+    { "number": 1, "name": "LOVE - Xnaw", "odds": 2.0 },
+    { "number": 2, "name": "LOVE - Wishy", "odds": 2.0 },
+    { "number": 3, "name": "LOVE - Ori", "odds": 2.0 },
+    { "number": 4, "name": "RILL - Reimixqt", "odds": 2.0 },
+    { "number": 5, "name": "RILL - RipPeR", "odds": 2.0},
+    { "number": 6, "name": "RILL - End365", "odds": 2.0},
+    { "number": 7, "name": "KITA - ThatGuyMark", "odds": 2.0 },
+    { "number": 8, "name": "KITA - North", "odds": 2.0 },
+    { "number": 9, "name": "KITA - mollusc", "odds": 2.0}
+  ]
+}
