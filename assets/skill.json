@@ -13871,7 +13871,7 @@
         "effect": [
             {
                 "description": "Increases target speed by 0.15 for ~5.0s (duration based on remaining HP).",
-                "inherited": "Increases target speed by 0.035 for ~3.0s (duration based on remaining HP).",
+                "inherited": "Increases target speed by 0.035 for 3.0s.",
                 "conditions": [
                     "4th to 7th (CM), 5th to 10th (TT)",
                     "Second half of the race"
@@ -14626,6 +14626,82 @@
                     "type": "box",
                     "clip_start_ratio": 0.5,
                     "clip_end_ratio": 1,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Luck Runs My Way", "description": "Moderately increase velocity sometime upon approaching late-race, then increase velocity and acceleration based on how many passive skills the skill user has in effect.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 5.0s. Increase additional target speed and acceleration based on amount of green skills activating.",
+                "inherited": "Increases target speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "Random point in the second half of mid race"
+                ],
+                "scale":"0 to 2 green skills, 0\n3 to 4 green skills, 0.05 target speed and 0.05 acceleration\n5 green skills, 0.10 target speed and 0.1 acceleration\n6+ green skills, 0.15 target speed and +0.15 acceleration"
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "luck runs my way",
+            "copano rickey original"
+        ],
+        "horse": "Copano Rickey (Original)",
+        "gametora_id": "100981",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "α-star*", "description": "Moderately increase velocity steadily when positioned toward the lead around halfway through the race. Also moderately recover endurance if it's a dirt race.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 6.0s. Recover HP by 3.5%.",
+                "inherited": "Increases target speed by 0.05 for 3.6s. Recover HP by 0.5%.",
+                "conditions": [
+                    "Dirt",
+                    "First 10% of the pack (by distance)",
+                    "Between 40% to 50% of the race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 6.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.6s.",
+                "conditions": [
+                    "First 10% of the pack (by distance)",
+                    "Between 40% to 50% of the race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "alpha star star",
+            "a star star",
+            "smart falcon grand live"
+        ],
+        "horse": "Smart Falcon (Grand Live)",
+        "gametora_id": "110461",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.40,
+                    "clip_end_ratio": 0.50,
                     "trigger_behavior": "asap"
                 }
             ]
@@ -17017,7 +17093,8 @@
             "shooting for victory",
             "taiki shuttle",
             "victory shot",
-            "ヴィクトリーショット"
+            "ヴィクトリーショット",
+            "sfv"
         ],
         "horse": "Taiki Shuttle (Original)",
         "gametora_id": "100101",
