@@ -372,7 +372,7 @@ const CLUB_COMMAND = {
     {
       type: 1,
       name: 'settings',
-      description: 'Configure club targets and leaderboard columns (admin only)',
+      description: 'Configure club targets and leaderboard columns (admin or bot owner)',
     },
     {
       type: 1,

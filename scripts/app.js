@@ -1888,6 +1888,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       try {
         const result = await runClubSettingsComponentAction(clubSettingsAction, {
           member: req.body.member,
+          userId: componentUserId,
         });
         if (result?.type === 'modal') {
           return res.send({
@@ -2515,7 +2516,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
 
       try {
-        const panel = await runClubSettingsModalSubmit(modalAction);
+        const panel = await runClubSettingsModalSubmit(modalAction, {
+          member: req.body.member,
+          userId: componentUserId,
+        });
         return res.send({
           type: InteractionResponseType.UPDATE_MESSAGE,
           data: panel,

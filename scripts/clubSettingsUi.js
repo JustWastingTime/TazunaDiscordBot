@@ -25,6 +25,13 @@ import { DiscordRequest } from './utils.js';
 
 const ADMINISTRATOR = 0x8n;
 
+const BOT_OWNER_IDS = new Set(
+  String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean),
+);
+
 function isGuildAdmin(member) {
   if (!member?.permissions) return false;
   try {
@@ -32,6 +39,14 @@ function isGuildAdmin(member) {
   } catch {
     return false;
   }
+}
+
+function isBotOwner(userId) {
+  return Boolean(userId && BOT_OWNER_IDS.has(String(userId)));
+}
+
+function canManageClubSettings(member, userId) {
+  return isGuildAdmin(member) || isBotOwner(userId);
 }
 
 const CS_PICK = 'cs_pick';
@@ -341,12 +356,12 @@ export async function handleClubSettingsCommand(req) {
     };
   }
 
-  if (!isGuildAdmin(req.body.member)) {
+  if (!canManageClubSettings(req.body.member, userId)) {
     return {
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
         flags: InteractionResponseFlags.EPHEMERAL,
-        content: '❌ Only server administrators can use `/club settings`.',
+        content: '❌ Only server administrators or the bot owner can use `/club settings`.',
       },
     };
   }
@@ -394,7 +409,11 @@ export async function handleClubSettingsCommand(req) {
   };
 }
 
-export async function runClubSettingsComponentAction(action, { member } = {}) {
+export async function runClubSettingsComponentAction(action, { member, userId } = {}) {
+  if (!canManageClubSettings(member, userId ?? action.ownerUserId)) {
+    throw new Error('Only server administrators or the bot owner can change club settings.');
+  }
+
   const { kind, ownerUserId, guildId, circleId, value } = action;
 
   if (kind === CS_PICK) {
@@ -447,7 +466,11 @@ export async function runClubSettingsComponentAction(action, { member } = {}) {
   throw new Error('Unknown club settings action.');
 }
 
-export async function runClubSettingsModalSubmit(action) {
+export async function runClubSettingsModalSubmit(action, { member, userId } = {}) {
+  if (!canManageClubSettings(member, userId ?? action.ownerUserId)) {
+    throw new Error('Only server administrators or the bot owner can change club settings.');
+  }
+
   const { ownerUserId, guildId, circleId, manualTarget } = action;
   const raw = String(manualTarget ?? '').replace(/,/g, '').trim();
   const n = Number(raw);
