@@ -79,6 +79,13 @@ import {
   getCurrentMonthEventById,
   getCurrentMonthSchedule,
 } from './scheduleService.js';
+import {
+  dispatchSignupCommand,
+  handleSignupComponent,
+  handleSignupToggleClick,
+  isSignupCommand,
+} from './signupHandlers.js';
+import { startSignupCron } from './signupCron.js';
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -1686,6 +1693,46 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
     }
 
+    if (isSignupCommand(name)) {
+      try {
+        const signupResult = await dispatchSignupCommand(req);
+        if (signupResult?.deferred) {
+          res.send({
+            type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+            data: signupResult.ephemeral ? { flags: InteractionResponseFlags.EPHEMERAL } : undefined,
+          });
+          (async () => {
+            try {
+              await signupResult.run((payload) => sendFollowup(token, payload));
+            } catch (err) {
+              console.error('signup deferred handler failed:', err);
+              try {
+                await sendFollowup(token, {
+                  flags: InteractionResponseFlags.EPHEMERAL,
+                  content: '❌ Something went wrong creating the signup.',
+                });
+              } catch (followupErr) {
+                console.error('signup follow-up failed:', followupErr);
+              }
+            }
+          })();
+          return;
+        }
+        if (signupResult) {
+          return res.send(signupResult);
+        }
+      } catch (err) {
+        console.error('signup command failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong creating the signup.',
+          },
+        });
+      }
+    }
+
     if (isEventGamblingCommand(name)) {
       const eventResult = await dispatchEventCommand(req);
       if (eventResult) {
@@ -1797,6 +1844,23 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           data: {
             flags: InteractionResponseFlags.EPHEMERAL,
             content: '❌ Something went wrong processing your donation.',
+          },
+        });
+      }
+    }
+
+    const signupToggle = handleSignupComponent(custom_id);
+    if (signupToggle) {
+      try {
+        const response = await handleSignupToggleClick(req, signupToggle.signupId);
+        return res.send(response);
+      } catch (err) {
+        console.error('Signup toggle handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ Something went wrong updating your signup.',
           },
         });
       }
@@ -2529,5 +2593,6 @@ app.listen(PORT, () => {
     console.error('Failed to resume active quizzes:', err.message);
   });
   startEventCron();
+  startSignupCron();
   postOpsNotice('✅ Tazuna bot started', `Listening on port ${PORT}`, 0x2ECC71);
 });

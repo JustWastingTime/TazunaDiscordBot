@@ -701,6 +701,38 @@ const GAMBACOIN_OWNER_COMMAND = {
   options: [GAMBACOIN_AWARD_SUBCOMMAND],
 };
 
+const SIGNUP_COMMAND = {
+  name: 'signup',
+  description: 'Post a timed signup message in a channel (owner only)',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    {
+      type: 3,
+      name: 'name',
+      description: 'Name of the signup / event',
+      required: true,
+      max_length: 100,
+    },
+    {
+      type: 7,
+      name: 'at',
+      description: 'Channel to post the signup in',
+      required: true,
+      channel_types: [0, 5],
+    },
+    {
+      type: 4,
+      name: 'hours',
+      description: 'How many hours the signup button stays open',
+      required: true,
+      min_value: 1,
+      max_value: 720,
+    },
+  ],
+};
+
 const ALL_COMMANDS = [
   SUPPORTER_COMMAND,
   SKILL_COMMAND,
@@ -729,9 +761,10 @@ if (ownerGuildId) {
   InstallGuildCommands(process.env.APP_ID, ownerGuildId, [
     GAMBACOIN_OWNER_COMMAND,
     GAMBA_OWNER_COMMAND,
+    SIGNUP_COMMAND,
   ]);
 } else {
   console.warn(
-    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award and /gamba event post|refresh|settle will not register.',
+    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award, /gamba event post|refresh|settle, and /signup will not register.',
   );
 }

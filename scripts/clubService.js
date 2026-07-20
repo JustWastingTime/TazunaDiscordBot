@@ -803,9 +803,9 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   const nameW = 13;
   const rankW = 4;
   const totalW = 6;
-  const todayW = 6;
+  const todayW = 7;
   const dailyW = 6;
-  const colGap = '  ';
+  const colGap = ' ';
   const headerLine =
     `${'Rank'.padEnd(rankW, ' ')} ${'Name'.padEnd(nameW, ' ')}` +
     `${colGap}${'Total'.padStart(totalW, ' ')}` +
@@ -818,7 +818,7 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
     const name = truncateAndPadName(m.trainer_name, nameW);
     const totalFans = formatCompactInt(m.contributionFans).padStart(totalW, ' ');
     const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-    const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
+    const todayFans = `+${formatCompactInt(m.todayGain)}`.padStart(todayW, ' ');
     return `${rank} ${name}${colGap}${totalFans}${colGap}${dailyAvg}${colGap}${todayFans}  `;
   });
 
@@ -919,9 +919,9 @@ export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
     const rankW = 4;
     const clubW = 4;
     const monthlyW = 7;
-    const todayW = 6;
+    const todayW = 7;
     const dailyW = 6;
-    const colGap = '  ';
+    const colGap = ' ';
     const headerLine =
       `${'Rank'.padEnd(rankW, ' ')} ${'Name'.padEnd(nameW, ' ')} ${'Club'.padEnd(clubW, ' ')}` +
       `${colGap}${'Monthly'.padStart(monthlyW, ' ')}` +
@@ -934,7 +934,7 @@ export function buildAllLeaderboardEmbeds(guildClubs, datasets) {
       const club = m.clubLabel || abbreviateClubLabel('—', clubW);
       const monthlyFans = formatCompactInt(m.contributionFans).padStart(monthlyW, ' ');
       const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-      const todayFans = formatCompactInt(m.todayGain).padStart(todayW, ' ');
+      const todayFans = `+${formatCompactInt(m.todayGain)}`.padStart(todayW, ' ');
       return `${rank} ${name} ${club}${colGap}${monthlyFans}${colGap}${dailyAvg}${colGap}${todayFans}  `;
     });
 
