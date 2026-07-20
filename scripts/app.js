@@ -45,6 +45,12 @@ import {
   resolveAutocompleteFocus,
   runClubComponentAction,
 } from './clubHandlers.js';
+import {
+  parseClubSettingsComponent,
+  parseClubSettingsModal,
+  runClubSettingsComponentAction,
+  runClubSettingsModalSubmit,
+} from './clubSettingsUi.js';
 import { getUmaApiKey } from './clubService.js';
 import { startLeaderboardCron } from './clubLeaderboardCron.js';
 import {
@@ -1866,6 +1872,45 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
     }
 
+    const clubSettingsAction = parseClubSettingsComponent(custom_id, values);
+    if (clubSettingsAction) {
+      const componentUserId = req.body.member?.user?.id || req.body.user?.id;
+      if (clubSettingsAction.ownerUserId && clubSettingsAction.ownerUserId !== componentUserId) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ That settings panel belongs to someone else.',
+          },
+        });
+      }
+
+      try {
+        const result = await runClubSettingsComponentAction(clubSettingsAction, {
+          member: req.body.member,
+        });
+        if (result?.type === 'modal') {
+          return res.send({
+            type: InteractionResponseType.MODAL,
+            data: result.modal,
+          });
+        }
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: result,
+        });
+      } catch (err) {
+        console.error('Club settings component failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: `❌ ${err.message}`,
+          },
+        });
+      }
+    }
+
     const clubAction = handleClubComponent(custom_id, values);
     if (clubAction) {
       const componentUserId = req.body.member?.user?.id || req.body.user?.id;
@@ -2451,6 +2496,40 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         type: InteractionResponseType.UPDATE_MESSAGE,
         data: listPayload
       });
+    }
+  }
+
+  if (type === InteractionType.MODAL_SUBMIT) {
+    const { custom_id, components } = data;
+    const modalAction = parseClubSettingsModal(custom_id, components);
+    if (modalAction) {
+      const componentUserId = req.body.member?.user?.id || req.body.user?.id;
+      if (modalAction.ownerUserId && modalAction.ownerUserId !== componentUserId) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ That settings panel belongs to someone else.',
+          },
+        });
+      }
+
+      try {
+        const panel = await runClubSettingsModalSubmit(modalAction);
+        return res.send({
+          type: InteractionResponseType.UPDATE_MESSAGE,
+          data: panel,
+        });
+      } catch (err) {
+        console.error('Club settings modal failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: `❌ ${err.message}`,
+          },
+        });
+      }
     }
   }
 

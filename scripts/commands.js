@@ -371,6 +371,11 @@ const CLUB_COMMAND = {
     },
     {
       type: 1,
+      name: 'settings',
+      description: 'Configure club targets and leaderboard columns (admin only)',
+    },
+    {
+      type: 1,
       name: 'setpremium',
       description: 'Enable or disable premium leaderboard refresh (owner only)',
       options: [

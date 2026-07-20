@@ -102,25 +102,80 @@ export function getGuildClubs(guildId) {
     circleId: String(club.circleId),
     circleName: club.circleName ?? null,
     targetTier: club.targetTier ?? null,
+    manualTarget: typeof club.manualTarget === 'number' ? club.manualTarget : null,
+    showTotal: club.showTotal !== false,
+    showAvg: club.showAvg !== false,
+    showToday: club.showToday !== false,
   }));
 }
 
-export function setGuildClubTarget(guildId, circleId, targetTier) {
+export function getGuildClubRecord(guildId, circleId) {
+  return getGuildClubs(guildId).find((club) => String(club.circleId) === String(circleId)) ?? null;
+}
+
+export function getGuildClubSettings(guildId, circleId) {
+  const club = getGuildClubRecord(guildId, circleId);
+  return {
+    targetTier: club?.targetTier ?? null,
+    manualTarget: club?.manualTarget ?? null,
+    showTotal: club?.showTotal !== false,
+    showAvg: club?.showAvg !== false,
+    showToday: club?.showToday !== false,
+  };
+}
+
+export function updateGuildClubSettings(guildId, circleId, patch = {}) {
   const store = loadGuildClubs();
   const key = String(guildId);
   const clubs = Array.isArray(store[key]) ? store[key] : [];
   const club = clubs.find((item) => String(item.circleId) === String(circleId));
   if (!club) return false;
 
-  club.targetTier = String(targetTier).trim();
+  if (patch.targetTier !== undefined) {
+    club.targetTier = patch.targetTier == null || patch.targetTier === ''
+      ? null
+      : String(patch.targetTier).trim();
+  }
+  if (patch.manualTarget !== undefined) {
+    if (patch.manualTarget == null || patch.manualTarget === '') {
+      club.manualTarget = null;
+    } else {
+      const n = Number(patch.manualTarget);
+      club.manualTarget = Number.isFinite(n) && n >= 0 ? Math.trunc(n) : null;
+    }
+  }
+  if (patch.showTotal !== undefined) club.showTotal = Boolean(patch.showTotal);
+  if (patch.showAvg !== undefined) club.showAvg = Boolean(patch.showAvg);
+  if (patch.showToday !== undefined) club.showToday = Boolean(patch.showToday);
+
   saveGuildClubs(store);
   return true;
+}
+
+export function setGuildClubTarget(guildId, circleId, targetTier) {
+  return updateGuildClubSettings(guildId, circleId, {
+    targetTier,
+    manualTarget: null,
+  });
+}
+
+export function setGuildClubManualTarget(guildId, circleId, manualTarget) {
+  return updateGuildClubSettings(guildId, circleId, {
+    manualTarget,
+    targetTier: null,
+  });
 }
 
 export function getGuildClubTarget(guildId, circleId) {
   const clubs = getGuildClubs(guildId);
   const club = clubs.find((item) => String(item.circleId) === String(circleId));
   return club?.targetTier ?? null;
+}
+
+export function getGuildClubManualTarget(guildId, circleId) {
+  const clubs = getGuildClubs(guildId);
+  const club = clubs.find((item) => String(item.circleId) === String(circleId));
+  return club?.manualTarget ?? null;
 }
 
 export function isGuildClubRegistered(guildId, circleId) {

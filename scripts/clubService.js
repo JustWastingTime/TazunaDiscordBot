@@ -1,5 +1,5 @@
 import { buildGambleProfileFields } from './eventGambling.js';
-import { buildFestProfileData, getGuildClubTarget, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
+import { buildFestProfileData, getGuildClubSettings, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
   dailyFans: [],
@@ -384,14 +384,26 @@ export function computeMemberDailyTarget(clubFansPerDay) {
 }
 
 export async function resolveClubTargetInfo(guildId, circleId, circleData) {
-  const targetTier = getGuildClubTarget(guildId, circleId);
-  if (!targetTier) return null;
+  const settings = getGuildClubSettings(guildId, circleId);
+
+  if (settings.manualTarget != null) {
+    return {
+      kind: 'manual',
+      tierLabel: null,
+      tierRangeLabel: null,
+      rankBoundary: null,
+      dailyTarget: settings.manualTarget,
+    };
+  }
+
+  if (!settings.targetTier) return null;
 
   const tiers = await getRankThresholds();
-  const threshold = findRankThreshold(tiers, targetTier);
+  const threshold = findRankThreshold(tiers, settings.targetTier);
   if (!threshold) return null;
 
   return {
+    kind: 'tier',
     tierLabel: threshold.tier,
     tierRangeLabel: formatTierRankRange(threshold),
     rankBoundary: threshold.rankingTo,
@@ -781,10 +793,13 @@ export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) 
   return embed;
 }
 
-export function buildLeaderboardEmbed(data, targetInfo = null) {
+export function buildLeaderboardEmbed(data, targetInfo = null, columnVisibility = null) {
   const circle = data.circle;
   const members = data.members || [];
   const cutoff = getActiveCutoffMs(members);
+  const showTotal = columnVisibility?.showTotal !== false;
+  const showAvg = columnVisibility?.showAvg !== false;
+  const showToday = columnVisibility?.showToday !== false;
 
   const activeMembers = members
     .filter((m) => isMemberActive(m, cutoff))
@@ -806,20 +821,26 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   const todayW = 7;
   const dailyW = 6;
   const colGap = ' ';
-  const headerLine =
-    `${'Rank'.padEnd(rankW, ' ')} ${'Name'.padEnd(nameW, ' ')}` +
-    `${colGap}${'Total'.padStart(totalW, ' ')}` +
-    `${colGap}${'Avg'.padStart(dailyW, ' ')}` +
-    `${colGap}${'Today'.padStart(todayW, ' ')}  `;
-  const header = `${headerLine}\n${'-'.repeat(headerLine.trimEnd().length)}  `;
+
+  const headerParts = [`${'Rank'.padEnd(rankW, ' ')} ${'Name'.padEnd(nameW, ' ')}`];
+  if (showTotal) headerParts.push(colGap + 'Total'.padStart(totalW, ' '));
+  if (showAvg) headerParts.push(colGap + 'Avg'.padStart(dailyW, ' '));
+  if (showToday) headerParts.push(colGap + 'Today'.padStart(todayW, ' '));
+  const headerLine = `${headerParts.join('')}  `;
+  const header = `${headerLine}\n${'-'.repeat(Math.max(1, headerLine.trimEnd().length))}  `;
 
   const rows = activeMembers.map((m, idx) => {
     const rank = `#${idx + 1}`.padEnd(rankW, ' ');
     const name = truncateAndPadName(m.trainer_name, nameW);
-    const totalFans = formatCompactInt(m.contributionFans).padStart(totalW, ' ');
-    const dailyAvg = formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' ');
-    const todayFans = `+${formatCompactInt(m.todayGain)}`.padStart(todayW, ' ');
-    return `${rank} ${name}${colGap}${totalFans}${colGap}${dailyAvg}${colGap}${todayFans}  `;
+    const parts = [`${rank} ${name}`];
+    if (showTotal) parts.push(colGap + formatCompactInt(m.contributionFans).padStart(totalW, ' '));
+    if (showAvg) {
+      parts.push(
+        colGap + formatCompactInt(Math.round(m.monthlyGain / m.averageDays)).padStart(dailyW, ' '),
+      );
+    }
+    if (showToday) parts.push(colGap + `+${formatCompactInt(m.todayGain)}`.padStart(todayW, ' '));
+    return `${parts.join('')}  `;
   });
 
   const lines = [];
@@ -827,7 +848,12 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
   lines.push(`**Current Rank:** # ${currentRank}`);
   lines.push(`**Last Month's Rank:** # ${circle.last_month_rank ?? '—'}`);
 
-  if (targetInfo) {
+  if (targetInfo?.kind === 'manual') {
+    lines.push('**Target Tier:** Manual');
+    lines.push(
+      `**Daily Target (per member):** ${formatIntWithCommas(Math.round(targetInfo.dailyTarget))}`,
+    );
+  } else if (targetInfo) {
     lines.push(`**Target Tier:** ${targetInfo.tierRangeLabel ?? targetInfo.tierLabel}`);
     lines.push(
       `**Daily Target (per member):** ${
@@ -835,7 +861,7 @@ export function buildLeaderboardEmbed(data, targetInfo = null) {
       }`,
     );
   } else {
-    lines.push('**Target Tier:** — *(set with `/club settarget`)*');
+    lines.push('**Target Tier:** — *(set with `/club settings`)*');
     lines.push('**Daily Target (per member):** —');
   }
 
@@ -1122,7 +1148,8 @@ export async function buildLeaderboardPackage(circleId, options = {}) {
   const { guildId = null } = options;
   const data = await fetchCircleData(circleId);
   const targetInfo = guildId ? await resolveClubTargetInfo(guildId, circleId, data) : null;
-  const embed = buildLeaderboardEmbed(data, targetInfo);
+  const columnVisibility = guildId ? getGuildClubSettings(guildId, circleId) : null;
+  const embed = buildLeaderboardEmbed(data, targetInfo, columnVisibility);
   return {
     data,
     embed,

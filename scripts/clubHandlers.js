@@ -17,6 +17,9 @@ import {
   setGuildClubTarget,
 } from './clubDatabase.js';
 import {
+  handleClubSettingsCommand,
+} from './clubSettingsUi.js';
+import {
   buildAllLeaderboardPackage,
   buildAllLeaderboardPageButtons,
   buildAllLeaderboardPageResponse,
@@ -764,6 +767,10 @@ export async function handleSetTarget(req) {
   };
 }
 
+export async function handleClubSettings(req) {
+  return handleClubSettingsCommand(req);
+}
+
 export async function handleSetPremium(req) {
   const guildId = req.body.guild_id;
   const userId = req.body.member?.user?.id || req.body.user?.id;
@@ -810,6 +817,8 @@ export function dispatchClubCommand(name, req) {
       return handleSetLeaderboardChannel(req);
     case 'settarget':
       return handleSetTarget(req);
+    case 'settings':
+      return handleClubSettings(req);
     case 'setpremium':
       return handleSetPremium(req);
     default:
