@@ -1201,7 +1201,7 @@
             "manhattan cafe tracen", "coughy"
         ]
     },
-    {   "id": "10032 Mihono Bourbon",
+    {   "id": "10032 Mihono Bourbon", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Mihono Bourbon",
         "unique": "-",
@@ -1229,6 +1229,24 @@
         "category": "power",
         "aliases": [
             "mihono bourbon tracen"
+        ],
+        "events":[
+            {
+                "name": "Do No Harm",
+                "type": "event",
+                "results": [
+                    "Energy -10, Stamina +5, Power +15, Bond +5",
+                    "Energy +10, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Orders Must Be Followed",
+                "type": "event",
+                "results": [
+                    "Bond +5, Focus hint +1",
+                    "Speed +10, Skill points +15, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "10033 Mejiro Ryan",
@@ -1324,7 +1342,7 @@
             "ines fujin tracen"
         ]
     },
-    {   "id": "10036 Agnes Tachyon",
+    {   "id": "10036 Agnes Tachyon", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Agnes Tachyon",
         "unique": "-",
@@ -1354,6 +1372,24 @@
         "category": "wit",
         "aliases": [
             "agnes tachyon tracen"
+        ],
+        "events":[
+            {
+                "name": "The Correlation between Sleep and Efficiency",
+                "type": "event",
+                "results": [
+                    "Power +5, Wit +5, Bond +5",
+                    "Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Happenstance Introduced Through Intervention",
+                "type": "event",
+                "results": [
+                    "Bond +5, Late Surger Savvy hint +1",
+                    "Wit +10, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "10037 Air Shakur",
@@ -3355,7 +3391,7 @@
         "category": "stamina",
         "aliases": ["manhattan cafe", "my solo drawn to raindrop drums", "coughy"]
     },
-    {   "id": "20009 Mihono Bourbon",
+    {   "id": "20009 Mihono Bourbon", "_event": "done",
         "card_name": "Pal-Assisted Training",
         "character_name": "Mihono Bourbon",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases the frequency at which hint events occur (20%)",
@@ -3384,7 +3420,40 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20009.png",
         "rarity": "sr",
         "category": "power",
-        "aliases": ["mihono bourbon", "pal assisted training"]
+        "aliases": ["mihono bourbon", "pal assisted training"],
+        "events":[
+            {
+                "name": "I'm Not a Cyborg",
+                "type": "chain",
+                "results": [
+                    "Guts +10, Skill points +15, Bond +5",
+                    "Energy -10, (random) Bond -5, Corner Recovery hint +1, Event chain ended"
+                ]
+            },
+            {
+                "name": "New Values Installed",
+                "type": "chain",
+                "results": [
+                    "Energy -10, Power +5, Guts +5, Bond +5, Front Runner Straightaways hint +1, "
+                ]
+            },
+            {
+                "name": "Do No Harm",
+                "type": "event",
+                "results": [
+                    "Energy -10, Stamina +5, Power +15, Bond +5",
+                    "Energy +10, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Orders Must Be Followed",
+                "type": "event",
+                "results": [
+                    "Bond +5, Focus hint +1",
+                    "Speed +10, Skill points +15, Bond +5"
+                ]
+            }
+        ]
     },
     {   "id": "20010 Mejiro Ryan",
         "card_name": "On and Off the Court",
@@ -3446,7 +3515,7 @@
         "category": "guts",
         "aliases": ["yukino bijin", "city girl 101"]
     },
-    {   "id": "20012 Agnes Tachyon",
+    {   "id": "20012 Agnes Tachyon", "_event": "done",
         "card_name": "Experimental Studies on Subject A",
         "character_name": "Agnes Tachyon",
         "unique": "Increases skill point gain when training together (1)\nIncreases the frequency at which hint events occur (20%)",
@@ -3476,7 +3545,39 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20012.png",
         "rarity": "sr",
         "category": "wit",
-        "aliases": ["agnes tachyon", "experimental studies on subject a"]
+        "aliases": ["agnes tachyon", "experimental studies on subject a"],
+        "events":[
+            {
+                "name": "Report: Potential of Specialized Training",
+                "type": "chain",
+                "results": [
+                    "Wit +5, Skill points +15"
+                ]
+            },
+            {
+                "name": "Report: N/A (On Break)",
+                "type": "chain",
+                "results": [
+                    "Wit +10, Skill points +15, Subdued Front Runners hint +1"
+                ]
+            },
+            {
+                "name": "The Correlation between Sleep and Efficiency",
+                "type": "event",
+                "results": [
+                    "Power +5, Wit +5, Bond +5",
+                    "Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Happenstance Introduced Through Intervention",
+                "type": "event",
+                "results": [
+                    "Bond +5, Late Surger Savvy hint +1",
+                    "Wit +10, Bond +5"
+                ]
+            }
+        ]
     },
     {   "id": "20013 Eishin Flash",
         "card_name": "5:00 a.m.-Right on Schedule",
@@ -7668,7 +7769,7 @@
             "zenno rob roy magical heroine"
         ]
     },
-    {   "id": "30066 Mihono Bourbon",
+    {   "id": "30066 Mihono Bourbon", "_event": "done",
         "card_name": "The Ghost Finds Halloween Magic",
         "character_name": "Mihono Bourbon",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Speed when beginning a Career playthrough (20)",
@@ -7700,6 +7801,46 @@
         "category": "wit",
         "aliases": [
             "mihono bourbon the ghost finds halloween magic", "mihono bourbon poverty", "mihono bourbon welfare", "mihono bourbon event", "mihono bourbon halloween"
+        ],
+        "events":[
+           {
+                "name": "Status—Boring?",
+                "type": "chain",
+                "results": [
+                    "Speed +10, Bond +5, Moxie hint +1",
+                    "Wit +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Status—As I Am",
+                "type": "chain",
+                "results": [
+                    "Stamina +5, Wit +10"
+                ]
+            },
+            {
+                "name": "Status—Fun!",
+                "type": "chain",
+                "results": [
+                    "Stamina +5, Wit +10, Taking the Lead hint +1"
+                ]
+            },
+            {
+                "name": "Do No Harm",
+                "type": "event",
+                "results": [
+                    "Energy -10, Stamina +5, Power +15, Bond +5",
+                    "Energy +10, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Orders Must Be Followed",
+                "type": "event",
+                "results": [
+                    "Bond +5, Focus hint +1",
+                    "Speed +10, Skill points +15, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "30067 Heirs to the Throne", "_event": "done",
@@ -9387,7 +9528,7 @@
             "rice shower", "day i dreamed of", "rice shower poverty", "rice shower welfare", "rice shower event"
         ]
     },
-    {   "id": "30101 Agnes Tachyon",
+    {   "id": "30101 Agnes Tachyon", "_event": "done",
         "card_name": "Q≠0",
         "character_name": "Agnes Tachyon",
         "unique": "Gain Friendship Bonus (20) when the bond gauge is full",
@@ -9410,7 +9551,7 @@
             "Pace Chaser Corners",
             "Pace Chaser Savvy",
             "Head-On",
-            "Attack Stance"
+            "On the Attack"
         ],
         "event_skills": [
             "Unstoppable",
@@ -9424,6 +9565,46 @@
         "category": "speed",
         "aliases": [
             "agnes tachyon", "q≠0", "q=0", "q0"
+        ],
+        "events":[
+            {
+                "name": "Researching the Limits of Running: Rapport",
+                "type": "chain",
+                "results": [
+                    "Mood +1, Energy +10, Bond +5", 
+                    "Speed +5, Stamina +5, Wit +5, Bond +5, Pace Chaser Straightaways hint +1/+3, Murmur hint +1, OR Speed +5, Wit +5, Bond +5, Pace Chaser Straightaways hint +1"
+                ]
+            },
+            {
+                "name": "Researching the Limits of Running: Dreams",
+                "type": "chain",
+                "results": [
+                    "Speed +5, Stamina +5, Wit +5, Skill points +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Researching the Limits of Running: Velocity",
+                "type": "chain",
+                "results": [
+                    "Energy +5/+10, Skill points +10/+30, Unstoppable hint +1/+3"
+                ]
+            },
+            {
+                "name": "The Correlation between Sleep and Efficiency",
+                "type": "event",
+                "results": [
+                    "Power +5, Wit +5, Bond +5",
+                    "Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Happenstance Introduced Through Intervention",
+                "type": "event",
+                "results": [
+                    "Bond +5, Late Surger Savvy hint +1",
+                    "Wit +10, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "30102 El Condor Pasa", "_event": "done",
@@ -9910,6 +10091,85 @@
         "aliases": [
             "manhattan cafe coughy coffee",
             "its on the house"
+        ]
+    },
+    {   "id": "30121 Mihono Bourbon", "_event": "done",
+        "card_name": "U & Me",
+        "character_name": "Mihono Bourbon",
+        "unique": "Gain Training Effectiveness (10) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Speed Bonus - 0/0/0/1/2",
+            "Initial Speed - 15/16/18/20/20",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/33/36/40/40%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Focus",
+            "Prudent Positioning",
+            "Early Lead",
+            "Leader's Pride",
+            "Front Runner Straightaways",
+            "Front Runner Corners"
+        ],
+        "event_skills": [
+            "Trackblazer",
+            "Fast-Paced",
+            "Focus"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30121-mihono-bourbon",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30121.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "mihono bourbon",
+            "u & me",
+            "u and me",
+            "mihono bourbon welfare",
+            "mihono bourbon event"
+        ],
+        "events":[
+            {
+                "name": "Please Rerun Task",
+                "type": "chain",
+                "results": [
+                "Energy +5, Mood +1, Bond +5",
+                "Speed +10, Bond +5, Fast-Paced hint +1"
+                ]
+            },
+            {
+                "name": "Finding the Common Denominator",
+                "type": "chain",
+                "results": [
+                "Speed +10, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "The Fan-Appreciation Prize Drawing!",
+                "type": "chain",
+                "results": [
+                "Speed +10, Bond +5, Trackblazer hint +1"
+                ]
+            },
+            {
+                "name": "Do No Harm",
+                "type": "event",
+                "results": [
+                    "Energy -10, Stamina +5, Power +15, Bond +5",
+                    "Energy +10, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Orders Must Be Followed",
+                "type": "event",
+                "results": [
+                    "Bond +5, Focus hint +1",
+                    "Speed +10, Skill points +15, Bond +5"
+                ]
+            }
         ]
     }
 ]
