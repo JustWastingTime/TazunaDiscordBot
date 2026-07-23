@@ -7043,7 +7043,86 @@
 
 
 
-
+    {   "id": "30052 Light Hello", "_event": "done",
+        "card_name": "From the Ground Up",
+        "character_name": "Light Hello",
+        "unique": "Gain Energy Cost Reduction (30) when participating in a friendship (rainbow) training",
+        "effects": [
+            "Training Effectiveness - 0/5/10/10/10%",
+            "Initial Speed - 0/0/0/15/30",
+            "Initial Guts - 25/26/27/28/30",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Event Recovery - 40/45/50/55/60%",
+            "Event Effectiveness - 25/27/30/32/35%",
+            "Failure Protection - 20/22/25/27/30%",
+            "Energy Cost Reduction - 5/6/8/10/10%"
+        ],
+        "support_skills": [
+        ],
+        "event_skills": [
+            "See Ya Later!",
+            "Maverick",
+            "Front Runner Savvy",
+            "Pace Chaser Savvy"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30052-light-hello",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30052.png",
+        "rarity": "ssr",
+        "category": "pal",
+        "aliases": [
+            "light hello from the ground up",
+            "light hello ogc", "light hello gl", "light hello grand live"
+        ],
+        "events": [
+            {
+                "name": "Repose in the Lunar Mare",
+                "type": "date",
+                "results": [
+                "Maximum Energy +4, Energy +35, Mood +1, Bond +5"
+                ]
+            },
+            {
+                "name": "Tycho's Radiance",
+                "type": "date",
+                "results": [
+                "Energy +35, Mood +1, Guts +12, Bond +5"
+                ]
+            },
+            {
+                "name": "Hidden Beneath the Regolith",
+                "type": "date",
+                "results": [
+                "Energy +70, Mood +1, Bond +5",
+                "Mood +1, Speed +18, Guts +18, Bond +5"
+                ]
+            },
+            {
+                "name": "Scaling Mons Huygens",
+                "type": "date",
+                "results": [
+                "Energy +42, Mood +1, Guts +12, Bond +5"
+                ]
+            },
+            {
+                "name": "At Rainbow Cove",
+                "type": "date",
+                "results": [
+                "Mood +1, Energy +28/+42, Speed +6/+12, Guts +6/+12, See Ya Later! hint +1/+3"
+                ]
+            },
+            {
+                "name": "Bonding with Light Hello: Letting Loose",
+                "type": "special",
+                "condition": "Dating before the first New Year's",
+                "results": [
+                "Mood +2, Speed +12, Bond +5, Front Runner Savvy hint +1, Pace Chaser Savvy hint +1",
+                "Energy +21, Guts +12, Bond +5"
+                ]
+            }
+        ]
+    },
     {   "id": "30053 Taiki Shuttle", "_event": "done",
         "card_name": "Hands Up, Crook!",
         "character_name": "Taiki Shuttle",

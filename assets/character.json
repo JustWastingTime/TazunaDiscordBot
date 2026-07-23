@@ -1089,6 +1089,7 @@
             "Shifting Gears",
             "All I've Got",
             "Slick Surge",
+            "Pedal to the Metal",
             "Nimble Navigator"
         ],
         "races": [
@@ -5348,7 +5349,92 @@
         "secrets": [
             {
             "conditions": "Random event",
-            "rewards": "Get Fan Promise (Hokkaido/Hokuto/Nakayama/Kansai/Kokura) status"
+            "rewards": "Get Fan Promise (Hokkaido/Hokuto/Nakayama/Kansai/Kokura/Kawasaki) status"
+            },
+            {
+            "conditions": "Finish the Fan Promise by winning a race in that region",
+            "rewards": "Mood +1, 2 stats +10, Skill points +10, Relevant track skill hint +5"
+            },
+            {
+            "conditions": "Have at least 120000 fans before the finals",
+            "rewards": "Mood +1, Guts +20, Top Pick hint +3"
+            },
+            {
+            "conditions": "Win the Kawasaki Kinen",
+            "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Sunny Sign hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "Sand Falcon",
+            "condition": "Without losing any races inbetween, win at least 9 dirt graded races as a Front Runner, including the JBC Classic, Teio Sho, and Tokyo Daishoten"
+        }
+    },
+    {   "id": "104602 - Smart Falcon Grand Live",
+        "character_name": "Smart Falcon",
+        "type": "Grand Live",
+        "costume": "Twilight Triumph",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "E",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "B",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "E"
+            },
+            {
+            "Front": "A",
+            "Pace": "D",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "α-star*",
+        "unique_explanation": "",
+        "skills": [
+            "Top Pick",
+            "Front Runner Corners",
+            "With All My Soul"
+        ],
+        "potential": [
+            "Got the Spirit!",
+            "Trending in the Charts!",
+            "Dust Cloud",
+            "Be the Center!"
+        ],
+        "event_skills": [
+            "Leader's Pride",
+            "Full Tilt",
+            "Prudent Positioning",
+            "Top Pick",
+            "Kawasaki Racecourse",
+            "Sunny Sign"
+        ],
+        "evo_skills": [
+            "Rising to Umadol Stardom!",
+            "To the Ultimate Stage!",
+            "Always Center Stage!"
+        ],
+        "aliases": ["smart falcon grand live", "twilight triumph", "banana falco"],
+        "url": "https://gametora.com/umamusume/characters/104602-smart-falcon",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1046_104602.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Random event",
+            "rewards": "Get Fan Promise (Hokkaido/Hokuto/Nakayama/Kansai/Kokura/Kawasaki) status"
             },
             {
             "conditions": "Finish the Fan Promise by winning a race in that region",
