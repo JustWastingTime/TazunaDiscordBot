@@ -713,7 +713,7 @@ const SIGNUP_COMMAND = {
 
 const SET_MINE_CHANNEL_COMMAND = {
   name: 'setminechannel',
-  description: 'Post the mines board in this channel (admin, premium servers)',
+  description: 'Post a mines board in this channel (admin, premium; multiple allowed)',
   type: 1,
   integration_types: [0],
   contexts: [0],

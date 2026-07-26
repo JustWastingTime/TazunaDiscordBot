@@ -4,7 +4,7 @@ import {
 } from 'discord-interactions';
 import { isGuildAdmin } from './clubHandlers.js';
 import { isPremiumGuild } from './clubDatabase.js';
-import { getGuildMineState } from './mineAlarmStorage.js';
+import { getBoard, getGuildMineState, listBoardChannelIds } from './mineAlarmStorage.js';
 import {
   BOARD_START_ID,
   BOARD_STOP_ID,
@@ -12,6 +12,7 @@ import {
   MAX_MINUTES,
   RESTART_CUSTOM_ID_PREFIX,
   deleteNoticeMessage,
+  resolveMineChannelId,
   setupMineChannel,
   startTimer,
   stopTimer,
@@ -43,17 +44,28 @@ function requirePremium(guildId) {
   return null;
 }
 
-function requireBoard(guildId) {
-  const state = getGuildMineState(guildId);
-  if (!state.board?.channelId) {
+function requireMineChannel(guildId, currentChannelId) {
+  const resolved = resolveMineChannelId(guildId, currentChannelId);
+  if (resolved.error === 'none') {
     return {
       denied: ephemeral(
         'No mines board is set up yet. An admin needs to run `/setminechannel` first.',
       ),
-      state: null,
+      channelId: null,
     };
   }
-  return { denied: null, state };
+  if (resolved.error === 'ambiguous') {
+    const mentions = listBoardChannelIds(resolved.state)
+      .map((id) => `<#${id}>`)
+      .join(', ');
+    return {
+      denied: ephemeral(
+        `This server has multiple mine channels (${mentions}). Run this in one of those channels, or use the board buttons.`,
+      ),
+      channelId: null,
+    };
+  }
+  return { denied: null, channelId: resolved.channelId };
 }
 
 export function isMineAlarmCommand(name) {
@@ -92,11 +104,16 @@ export async function handleSetMineChannel(req) {
     run: async (sendFollowup) => {
       try {
         const result = await setupMineChannel(guildId, channelId);
+        const boardCount = listBoardChannelIds(getGuildMineState(guildId)).length;
+        const multiHint =
+          boardCount > 1
+            ? ` This server now has **${boardCount}** mine channels.`
+            : '';
         await sendFollowup({
           flags: InteractionResponseFlags.EPHEMERAL,
           content: result.updated
-            ? 'Updated the mines board in this channel.'
-            : 'Mines board posted in this channel. It will update when timers change.',
+            ? `Updated the mines board in this channel.${multiHint}`
+            : `Mines board posted in this channel. It will update when timers change.${multiHint}`,
         });
       } catch (err) {
         console.error('setminechannel failed:', err.message ?? err);
@@ -113,6 +130,7 @@ export async function handleSetMineChannel(req) {
 export async function handleStartTimer(req) {
   const guildId = req.body.guild_id;
   const userId = resolveUserId(req);
+  const currentChannelId = req.body.channel_id;
 
   if (!guildId) {
     return ephemeral('❌ This command can only be used in a server.');
@@ -122,7 +140,7 @@ export async function handleStartTimer(req) {
   const premiumDenied = requirePremium(guildId);
   if (premiumDenied) return premiumDenied;
 
-  const { denied, state } = requireBoard(guildId);
+  const { denied, channelId } = requireMineChannel(guildId, currentChannelId);
   if (denied) return denied;
 
   const rawMinutes = getOptionValue(req, 'minutes');
@@ -136,14 +154,18 @@ export async function handleStartTimer(req) {
   const { timer, minutes: usedMinutes } = await startTimer(
     guildId,
     userId,
-    state.board.channelId,
+    channelId,
     minutes,
   );
   const unix = Math.floor(timer.endAt / 1000);
+  const rewardHint =
+    usedMinutes >= DEFAULT_MINUTES
+      ? ''
+      : ` Coins are only awarded for full **${DEFAULT_MINUTES}**-minute sessions.`;
 
   return ephemeral(
     `Timer started for **${usedMinutes}** minute${usedMinutes === 1 ? '' : 's'}. ` +
-      `Done <t:${unix}:R>.`,
+      `Done <t:${unix}:R>.${rewardHint}`,
   );
 }
 
@@ -168,20 +190,23 @@ export async function handleStopTimer(req) {
 export async function handleMineBoardStart(req) {
   const guildId = req.body.guild_id;
   const userId = resolveUserId(req);
+  const channelId = req.body.channel_id;
 
   if (!guildId) return ephemeral('❌ This button can only be used in a server.');
   if (!userId) return ephemeral('❌ Could not identify you.');
+  if (!channelId || !getBoard(getGuildMineState(guildId), channelId)) {
+    return ephemeral(
+      'No mines board is set up in this channel. An admin needs to run `/setminechannel` here.',
+    );
+  }
 
   const premiumDenied = requirePremium(guildId);
   if (premiumDenied) return premiumDenied;
 
-  const { denied, state } = requireBoard(guildId);
-  if (denied) return denied;
-
   const { timer, minutes } = await startTimer(
     guildId,
     userId,
-    state.board.channelId,
+    channelId,
     DEFAULT_MINUTES,
   );
   const unix = Math.floor(timer.endAt / 1000);
@@ -210,6 +235,7 @@ export async function handleMineBoardStop(req) {
 export async function handleMineRestart(req, ownerId) {
   const guildId = req.body.guild_id;
   const userId = resolveUserId(req);
+  const channelId = req.body.channel_id;
 
   if (!guildId) return ephemeral('❌ This button can only be used in a server.');
   if (!userId) return ephemeral('❌ Could not identify you.');
@@ -221,13 +247,16 @@ export async function handleMineRestart(req, ownerId) {
   const premiumDenied = requirePremium(guildId);
   if (premiumDenied) return premiumDenied;
 
-  const { denied, state } = requireBoard(guildId);
-  if (denied) return denied;
+  if (!channelId || !getBoard(getGuildMineState(guildId), channelId)) {
+    return ephemeral(
+      'No mines board is set up in this channel. An admin needs to run `/setminechannel` here.',
+    );
+  }
 
   const { timer, minutes } = await startTimer(
     guildId,
     userId,
-    state.board.channelId,
+    channelId,
     DEFAULT_MINUTES,
   );
   const unix = Math.floor(timer.endAt / 1000);

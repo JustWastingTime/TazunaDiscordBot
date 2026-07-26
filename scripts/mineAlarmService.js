@@ -8,9 +8,12 @@ import {
   ensureQuizUser,
 } from './clubDatabase.js';
 import {
+  getBoard,
   getGuildMineState,
+  listBoardChannelIds,
   listGuildMineStates,
   saveGuildMineState,
+  timersForChannel,
 } from './mineAlarmStorage.js';
 
 export const DEFAULT_MINUTES = 50;
@@ -112,19 +115,29 @@ export function buildBoardPayload(timers) {
   };
 }
 
-export async function refreshBoard(guildId, state = null) {
+export async function refreshBoard(guildId, channelId, state = null) {
   const current = state || getGuildMineState(guildId);
-  if (!current.board?.channelId || !current.board?.messageId) return;
+  const board = getBoard(current, channelId);
+  if (!board?.messageId) return;
 
   try {
     await editChannelMessage(
-      current.board.channelId,
-      current.board.messageId,
-      buildBoardPayload(current.timers),
+      channelId,
+      board.messageId,
+      buildBoardPayload(timersForChannel(current, channelId)),
     );
   } catch (err) {
-    console.error(`Failed to refresh mine board (${guildId}):`, err.message ?? err);
+    console.error(
+      `Failed to refresh mine board (${guildId}/${channelId}):`,
+      err.message ?? err,
+    );
   }
+}
+
+async function refreshBoards(guildId, channelIds, state = null) {
+  const current = state || getGuildMineState(guildId);
+  const unique = [...new Set(channelIds.filter(Boolean).map(String))];
+  await Promise.all(unique.map((channelId) => refreshBoard(guildId, channelId, current)));
 }
 
 export function awardMineAlarmCoins(userId, displayName, guildId) {
@@ -142,15 +155,21 @@ async function handleTimerExpired(guildId, userId, timer) {
   saveGuildMineState(guildId, state);
   pendingTimeouts.delete(timerKey(guildId, userId));
 
-  const awarded = awardMineAlarmCoins(userId, 'Trainer', guildId);
+  // Only full-length mine sessions earn coins (blocks short-timer farming).
+  // Timers started before `minutes` was stored are treated as full sessions.
+  const sessionMinutes =
+    timer.minutes == null ? DEFAULT_MINUTES : Number(timer.minutes);
+  const awarded =
+    sessionMinutes >= DEFAULT_MINUTES
+      ? awardMineAlarmCoins(userId, 'Trainer', guildId)
+      : 0;
 
-  await refreshBoard(guildId, state);
+  await refreshBoard(guildId, timer.channelId, state);
   await notifyTimerDone(guildId, userId, timer.channelId, awarded);
 }
 
 async function notifyTimerDone(guildId, userId, channelId, awarded = 0) {
-  const state = getGuildMineState(guildId);
-  const targetChannelId = state.board?.channelId ?? channelId;
+  const targetChannelId = String(channelId);
   const deleteAt = Date.now() + DONE_NOTICE_MINUTES * 60 * 1000;
   const rewardLine = awarded
     ? ` (+**${MINE_ALARM_COIN_REWARD}** GambaCoins)`
@@ -217,19 +236,46 @@ export function scheduleTimer(guildId, userId, timer) {
   pendingTimeouts.set(timerKey(guildId, userId), timeout);
 }
 
+/**
+ * Resolve which mine board channel a slash command should use.
+ * Prefer the current channel if it has a board; otherwise the only board if exactly one exists.
+ */
+export function resolveMineChannelId(guildId, currentChannelId) {
+  const state = getGuildMineState(guildId);
+  const boards = listBoardChannelIds(state);
+  if (!boards.length) return { channelId: null, state, error: 'none' };
+
+  if (currentChannelId && getBoard(state, currentChannelId)) {
+    return { channelId: String(currentChannelId), state, error: null };
+  }
+
+  if (boards.length === 1) {
+    return { channelId: boards[0], state, error: null };
+  }
+
+  return { channelId: null, state, error: 'ambiguous' };
+}
+
 export async function startTimer(guildId, userId, channelId, minutes = DEFAULT_MINUTES) {
   const clamped = Math.min(MAX_MINUTES, Math.max(1, Math.trunc(minutes)));
   const endAt = Date.now() + clamped * 60 * 1000;
+  const cid = String(channelId);
 
   const state = getGuildMineState(guildId);
+  if (!getBoard(state, cid)) {
+    throw new Error('No mines board in that channel.');
+  }
+
+  const previousChannelId = state.timers[String(userId)]?.channelId;
   state.timers[String(userId)] = {
     endAt,
-    channelId: String(channelId),
+    channelId: cid,
+    minutes: clamped,
   };
   saveGuildMineState(guildId, state);
 
   scheduleTimer(guildId, String(userId), state.timers[String(userId)]);
-  await refreshBoard(guildId, state);
+  await refreshBoards(guildId, [cid, previousChannelId], state);
 
   return { timer: state.timers[String(userId)], minutes: clamped };
 }
@@ -238,38 +284,34 @@ export async function stopTimer(guildId, userId) {
   clearScheduled(guildId, userId);
 
   const state = getGuildMineState(guildId);
-  if (!state.timers[String(userId)]) return false;
+  const existing = state.timers[String(userId)];
+  if (!existing) return false;
 
   delete state.timers[String(userId)];
   saveGuildMineState(guildId, state);
-  await refreshBoard(guildId, state);
+  await refreshBoard(guildId, existing.channelId, state);
   return true;
 }
 
 export async function setupMineChannel(guildId, channelId) {
   const state = getGuildMineState(guildId);
-  const payload = buildBoardPayload(state.timers);
+  const cid = String(channelId);
+  const existing = getBoard(state, cid);
+  const payload = buildBoardPayload(timersForChannel(state, cid));
 
-  if (state.board?.messageId && state.board.channelId === String(channelId)) {
+  if (existing?.messageId) {
     try {
-      await editChannelMessage(state.board.channelId, state.board.messageId, payload);
-      return { updated: true, board: state.board };
+      await editChannelMessage(cid, existing.messageId, payload);
+      return { updated: true, board: { channelId: cid, messageId: existing.messageId } };
     } catch {
       // Message missing — post a new one below.
     }
   }
 
-  if (state.board?.messageId && state.board.channelId !== String(channelId)) {
-    await deleteChannelMessage(state.board.channelId, state.board.messageId);
-  }
-
-  const message = await sendChannelMessage(channelId, payload);
-  state.board = {
-    channelId: String(channelId),
-    messageId: String(message.id),
-  };
+  const message = await sendChannelMessage(cid, payload);
+  state.boards[cid] = { messageId: String(message.id) };
   saveGuildMineState(guildId, state);
-  return { updated: false, board: state.board };
+  return { updated: false, board: { channelId: cid, messageId: String(message.id) } };
 }
 
 /**
@@ -315,6 +357,7 @@ export async function resumeMineAlarmsOnBoot() {
       }
     }
 
-    await refreshBoard(guildId, getGuildMineState(guildId));
+    const fresh = getGuildMineState(guildId);
+    await refreshBoards(guildId, listBoardChannelIds(fresh), fresh);
   }
 }
