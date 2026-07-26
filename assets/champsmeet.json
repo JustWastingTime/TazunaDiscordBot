@@ -288,5 +288,39 @@
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbY3gTDdlukCW4YthDV2xFoaoxlhgvHdgzYJITlCuvczfMPbMUotys8B1Pd9d3KYi9QcQIPDxt7euIB6B2WvkkEnB4uJ7736tC6soMeuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0Z%2Banqsp6KHJLWqQ9GXUijee30G4cL5JhUOIaj6PfF4tWg3cuvaqlsn%2FSs%2F4AfyJk8jnSL3FZVHQ69VhkjJyuLTkRTRalKyg%2FTju64b%2Fuu74AIpADhkHAgAA",
         "map_id": "Ooi 2000m (clockwise) (dirt)"
+    },
+    {   "name": "Libra Cup 2026", "number": "18",
+        "track": {
+            "racetrack": "Hanshin",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1600m",
+            "direction": "Right-Handed",
+            "ground": "Firm",
+            "season": "Autumn",
+            "weather": "Cloudy",
+            "similar": "Asahi Hai Futurity Stakes, Hanshin Juvenile Fillies, Oka Sho"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "",
+        "map_id": "Hanshin 1600m (outer) (clockwise)"
+    },
+    {   "name": "Scorpio Cup 2026", "number": "19",
+        "track": {
+            "racetrack": "Kyoto",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2200m",
+            "direction": "Right-Handed",
+            "ground": "Firm",
+            "season": "Autumn",
+            "weather": "Sunny",
+            "similar": "Queen Elizabeth II Cup"
+        },
+        "date": "",
+        "image": "",
+        "umalator": "",
+        "map_id": "Kyoto 2200m (outer) (clockwise)"
     }
 ]
