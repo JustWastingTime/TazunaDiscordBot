@@ -23,7 +23,7 @@ export const BOARD_STOP_ID = 'mine_board_stop';
 export const RESTART_CUSTOM_ID_PREFIX = 'mine_restart:';
 
 const EMPTY_TEXT = '_Nobody is in the mines right now._';
-const MINE_EMOJI = '⛏️';
+const MINE_EMOJI = '<a:minekraft:1530868447485890740>';
 
 /** @type {Map<string, NodeJS.Timeout>} */
 const pendingTimeouts = new Map();
