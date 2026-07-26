@@ -142,16 +142,21 @@ async function handleTimerExpired(guildId, userId, timer) {
   saveGuildMineState(guildId, state);
   pendingTimeouts.delete(timerKey(guildId, userId));
 
+  const awarded = awardMineAlarmCoins(userId, 'Trainer', guildId);
+
   await refreshBoard(guildId, state);
-  await notifyTimerDone(guildId, userId, timer.channelId);
+  await notifyTimerDone(guildId, userId, timer.channelId, awarded);
 }
 
-async function notifyTimerDone(guildId, userId, channelId) {
+async function notifyTimerDone(guildId, userId, channelId, awarded = 0) {
   const state = getGuildMineState(guildId);
   const targetChannelId = state.board?.channelId ?? channelId;
   const deleteAt = Date.now() + DONE_NOTICE_MINUTES * 60 * 1000;
+  const rewardLine = awarded
+    ? ` (+**${MINE_ALARM_COIN_REWARD}** GambaCoins)`
+    : '';
   const content =
-    `<@${userId}> your mines are done! Restart below, or this message disappears ` +
+    `<@${userId}> your mines are done${rewardLine}! Restart below, or this message disappears ` +
     `<t:${Math.floor(deleteAt / 1000)}:R>.`;
 
   try {

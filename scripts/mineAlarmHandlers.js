@@ -10,9 +10,7 @@ import {
   BOARD_STOP_ID,
   DEFAULT_MINUTES,
   MAX_MINUTES,
-  MINE_ALARM_COIN_REWARD,
   RESTART_CUSTOM_ID_PREFIX,
-  awardMineAlarmCoins,
   deleteNoticeMessage,
   setupMineChannel,
   startTimer,
@@ -38,18 +36,6 @@ function resolveUserId(req) {
   return req.body.member?.user?.id || req.body.user?.id || null;
 }
 
-function resolveDisplayName(req) {
-  const member = req.body.member;
-  const user = member?.user || req.body.user;
-  return (
-    member?.nick ||
-    member?.display_name ||
-    user?.global_name ||
-    user?.username ||
-    'Trainer'
-  );
-}
-
 function requirePremium(guildId) {
   if (!guildId || !isPremiumGuild(guildId)) {
     return ephemeral('Only available on premium servers.');
@@ -68,11 +54,6 @@ function requireBoard(guildId) {
     };
   }
   return { denied: null, state };
-}
-
-function coinRewardLine(awarded) {
-  if (!awarded) return '';
-  return `\n+**${MINE_ALARM_COIN_REWARD}** GambaCoins.`;
 }
 
 export function isMineAlarmCommand(name) {
@@ -158,12 +139,11 @@ export async function handleStartTimer(req) {
     state.board.channelId,
     minutes,
   );
-  const awarded = awardMineAlarmCoins(userId, resolveDisplayName(req), guildId);
   const unix = Math.floor(timer.endAt / 1000);
 
   return ephemeral(
     `Timer started for **${usedMinutes}** minute${usedMinutes === 1 ? '' : 's'}. ` +
-      `Done <t:${unix}:R>.${coinRewardLine(awarded)}`,
+      `Done <t:${unix}:R>.`,
   );
 }
 
@@ -204,11 +184,10 @@ export async function handleMineBoardStart(req) {
     state.board.channelId,
     DEFAULT_MINUTES,
   );
-  const awarded = awardMineAlarmCoins(userId, resolveDisplayName(req), guildId);
   const unix = Math.floor(timer.endAt / 1000);
 
   return ephemeral(
-    `Timer started for **${minutes}** minutes. Done <t:${unix}:R>.${coinRewardLine(awarded)}`,
+    `Timer started for **${minutes}** minutes. Done <t:${unix}:R>.`,
   );
 }
 
@@ -251,7 +230,6 @@ export async function handleMineRestart(req, ownerId) {
     state.board.channelId,
     DEFAULT_MINUTES,
   );
-  const awarded = awardMineAlarmCoins(userId, resolveDisplayName(req), guildId);
   const unix = Math.floor(timer.endAt / 1000);
 
   const messageId = req.body.message?.id;
@@ -260,7 +238,7 @@ export async function handleMineRestart(req, ownerId) {
   }
 
   return ephemeral(
-    `Restarted your mine timer (**${minutes}** minutes). Done <t:${unix}:R>.${coinRewardLine(awarded)}`,
+    `Restarted your mine timer (**${minutes}** minutes). Done <t:${unix}:R>.`,
   );
 }
 
