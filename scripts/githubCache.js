@@ -22,7 +22,8 @@ const cache = {
   legendraces: [],
   misc: [],
   resources: [],
-  epithets: []
+  epithets: [],
+  guides: [],
 };
 
 // GitHub raw URLs
@@ -39,6 +40,7 @@ const urls = {
   misc: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/misc.json',
   resources: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/resources.json',
   epithets: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/epithets.json',
+  guides: 'https://raw.githubusercontent.com/JustWastingTime/TazunaDiscordBot/heads/main/assets/guides.json',
 };
 
 const localFiles = {
@@ -54,6 +56,7 @@ const localFiles = {
   misc: 'misc.json',
   resources: 'resources.json',
   epithets: 'epithets.json',
+  guides: 'guides.json',
 };
 
 // Function to fetch a JSON file
@@ -68,14 +71,14 @@ async function loadCacheEntry(key, useLocalAssets) {
     try {
       return await readLocalJson(localFiles[key]);
     } catch (err) {
-      if (key === 'customraces' && err?.code === 'ENOENT') return [];
+      if ((key === 'customraces' || key === 'guides') && err?.code === 'ENOENT') return [];
       throw err;
     }
   }
 
   const url = urls[key];
   const res = await fetch(url);
-  if (key === 'customraces' && res.status === 404) return [];
+  if ((key === 'customraces' || key === 'guides') && res.status === 404) return [];
   if (!res.ok) throw new Error(`[CacheUpdater] Failed to fetch ${url}: ${res.status}`);
   return await res.json();
 }

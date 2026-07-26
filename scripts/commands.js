@@ -541,23 +541,17 @@ const EPITHET_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const QP_COMMAND = {
-  name: 'qp',
-  description: 'Show a quick picture guide',
+const GUIDE_COMMAND = {
+  name: 'guide',
+  description: 'Show a picture guide',
   options: [
     {
       type: 3,
-      name: 'guide',
-      description: 'Which guide image to show',
+      name: 'name',
+      description: 'Which guide to show',
       required: true,
-      choices: [
-        { name: 'Sample Race Schedule', value: 'sample_schedule' },
-        { name: 'Race Bonus and Hammers', value: 'race_bonus_and_hammers' },
-        { name: 'Consecutive Race Penalty', value: 'consecutive_race_penalty' },
-        { name: 'Trackblazer Mood & Energy Events', value: 'mood_energy_mant' },
-        { name: 'Unique Levels', value: 'unique_levels' }
-      ]
-    }
+      autocomplete: true,
+    },
   ],
   type: 1,
   integration_types: [0, 1],
@@ -738,6 +732,40 @@ const SIGNUP_COMMAND = {
   ],
 };
 
+const SET_MINE_CHANNEL_COMMAND = {
+  name: 'setminechannel',
+  description: 'Post the mines board in this channel (admin, premium servers)',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
+const START_TIMER_COMMAND = {
+  name: 'starttimer',
+  description: 'Start a mine timer (default 50 minutes, premium servers)',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    {
+      type: 4,
+      name: 'minutes',
+      description: 'Timer length in minutes (default 50, max 50)',
+      required: false,
+      min_value: 1,
+      max_value: 50,
+    },
+  ],
+};
+
+const STOP_TIMER_COMMAND = {
+  name: 'stoptimer',
+  description: 'Cancel your active mine timer (premium servers)',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
 const ALL_COMMANDS = [
   SUPPORTER_COMMAND,
   SKILL_COMMAND,
@@ -753,10 +781,13 @@ const ALL_COMMANDS = [
   SCHEDULE_COMMAND,
   RESOURCE_COMMAND,
   EPITHET_COMMAND,
-  QP_COMMAND,
+  GUIDE_COMMAND,
   DONATE_COMMAND,
   BUGREPORT_COMMAND,
   REFRESHCACHE_COMMAND,
+  SET_MINE_CHANNEL_COMMAND,
+  START_TIMER_COMMAND,
+  STOP_TIMER_COMMAND,
 ];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

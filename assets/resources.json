@@ -9,7 +9,7 @@
     },
     {   "name": "pull_planner",
         "description": "A tool to calculate how much carats you can save by a certain banner and for pull planning.",
-        "url": "https://umatracker.com/"
+        "url": "https://caratcalculator.moe/"
     },
     {   "name": "rating_optimizer",
         "description": "A tool to optimize picking your skills for maxing ratings.",

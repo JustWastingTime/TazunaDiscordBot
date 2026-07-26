@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sample_schedule_mant",
+    "title": "Trackblazer - Sample Race Schedule",
+    "filename": "sample_schedule.png",
+    "aliases": ["schedule", "sample race", "race schedule", "mant", "trackblazer"]
+  },
+  {
+    "id": "race_bonus_and_hammers",
+    "title": "Trackblazer - Race Bonus and Hammers",
+    "filename": "race_bonus_and_hammers.png",
+    "aliases": ["race bonus", "hammers", "hammer", "mant", "trackblazer"]
+  },
+  {
+    "id": "consecutive_race_penalty",
+    "title": "Trackblazer - Consecutive Race Penalty",
+    "filename": "consecutive_race_penalty.png",
+    "aliases": ["consecutive", "penalty", "race penalty", "mant", "trackblazer"]
+  },
+  {
+    "id": "mood_energy_mant",
+    "title": "Trackblazer - Mood & Energy Events",
+    "filename": "mood_energy_mant.png",
+    "aliases": ["mood", "energy", "trackblazer", "mant", "trackblazer"]
+  },
+  {
+    "id": "unique_levels",
+    "title": "Trackblazer - Unique Levels",
+    "filename": "unique_levels.png",
+    "aliases": ["unique", "unique level", "levels", "mant", "trackblazer"]
+  }
+]
