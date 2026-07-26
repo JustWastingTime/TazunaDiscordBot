@@ -38,7 +38,6 @@ import {
 import {
   buildLeaderboardAutocompleteChoices,
   buildRegisteredClubAutocompleteChoices,
-  buildTargetTierAutocompleteChoices,
   dispatchClubCommand,
   handleClubComponent,
   isClubCommand,
@@ -754,18 +753,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       const choices =
         focus.subcommand === 'leaderboard'
           ? buildLeaderboardAutocompleteChoices(req.body.guild_id, focus.value)
-          : focus.subcommand === 'setleaderboardchannel' || focus.subcommand === 'settarget'
+          : focus.subcommand === 'setleaderboardchannel'
             ? buildRegisteredClubAutocompleteChoices(req.body.guild_id, focus.value)
             : [];
 
-      return res.send({
-        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
-        data: { choices },
-      });
-    }
-
-    if (data.name === 'club' && focus.optionName === 'target' && focus.subcommand === 'settarget') {
-      const choices = await buildTargetTierAutocompleteChoices(focus.value);
       return res.send({
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
         data: { choices },
