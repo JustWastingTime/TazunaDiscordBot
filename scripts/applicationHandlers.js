@@ -156,26 +156,41 @@ function buildMainEmbed(guildName, clubs, resolvedApps) {
 }
 
 // ─── Application post message ─────────────────────────────────────────────────
-function buildApplicationMessage(app) {
-  const statusLabel = {
-    pending: '🟡 Pending',
-    approved: '✅ Approved',
-    rejected: '❌ Rejected',
-    waitlisted: '⏳ Waitlisted',
-    cancelled: '🚫 Cancelled',
-  }[app.status] ?? app.status;
+const APP_STATUS_META = {
+  pending:    { label: 'Pending',    emoji: '🟡', color: 0xF1C40F },
+  approved:   { label: 'Approved',   emoji: '✅', color: 0x2ECC71 },
+  rejected:   { label: 'Rejected',   emoji: '❌', color: 0xE74C3C },
+  waitlisted: { label: 'Waitlisted', emoji: '⏳', color: 0x3498DB },
+  cancelled:  { label: 'Cancelled',  emoji: '🚫', color: 0x95A5A6 },
+};
 
-  const lines = [
-    `📋 **New Application**`,
-    `**IGN:** ${app.ign}`,
-    `**Game ID:** ${app.gameId}`,
-    `**Club:** ${app.club}`,
-    app.reason ? `**Reason:** ${app.reason}` : null,
-    `**Applicant:** <@${app.applicantId}>`,
-    `**Status:** ${statusLabel}`,
-  ].filter(Boolean).join('\n');
-
+function buildApplicationMessage(app, { decidedBy = null } = {}) {
+  const meta = APP_STATUS_META[app.status] ?? { label: app.status, emoji: '📋', color: 0xF1C40F };
   const isPending = app.status === 'pending';
+
+  const fields = [
+    { name: 'IGN', value: `\`${app.ign}\``, inline: true },
+    { name: 'Game ID', value: `\`${app.gameId}\``, inline: true },
+    { name: 'Club', value: app.club, inline: true },
+    { name: 'Applicant', value: `<@${app.applicantId}>`, inline: true },
+    { name: 'Status', value: `${meta.emoji} **${meta.label}**`, inline: true },
+  ];
+
+  if (app.reason) {
+    fields.push({ name: 'Reason', value: app.reason.slice(0, 1024), inline: false });
+  }
+
+  const embed = {
+    color: meta.color,
+    title: `${meta.emoji} Club Application`,
+    fields,
+    timestamp: app.createdAt || new Date().toISOString(),
+  };
+
+  if (decidedBy) {
+    embed.footer = { text: `${meta.label} by admin` };
+    embed.description = `Decision by <@${decidedBy}>`;
+  }
 
   const adminButtons = isPending ? [
     { type: 2, style: 3, custom_id: `${APP_APPROVE_PREFIX}${app.id}`, label: 'Approve' },
@@ -184,14 +199,14 @@ function buildApplicationMessage(app) {
   ] : [];
 
   const cancelButton = isPending
-    ? [{ type: 2, style: 2, custom_id: `${APP_CANCEL_PREFIX}${app.id}`, label: 'Cancel (Applicant only)' }]
+    ? [{ type: 2, style: 2, custom_id: `${APP_CANCEL_PREFIX}${app.id}`, label: 'Cancel' }]
     : [];
 
   const rows = [];
   if (adminButtons.length) rows.push({ type: 1, components: adminButtons });
   if (cancelButton.length) rows.push({ type: 1, components: cancelButton });
 
-  return { content: lines, components: rows };
+  return { content: '', embeds: [embed], components: rows };
 }
 
 // ─── Refresh main channel message ────────────────────────────────────────────
@@ -429,8 +444,7 @@ export async function handleApplicationDecision(req, appId, decision) {
 
   const decisionLabel = { approved: '✅ Approved', rejected: '❌ Rejected', waitlisted: '⏳ Waitlisted' }[decision] ?? decision;
 
-  const updatedPayload = buildApplicationMessage(updated);
-  updatedPayload.content = `${updatedPayload.content}\n${decisionLabel} by <@${actorId}>`;
+  const updatedPayload = buildApplicationMessage(updated, { decidedBy: actorId });
 
   try {
     await editChannelMessage(app.channelId, app.messageId, updatedPayload);
