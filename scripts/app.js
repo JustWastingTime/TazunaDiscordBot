@@ -102,6 +102,16 @@ import {
   handleMineAlarmComponent,
   isMineAlarmCommand,
 } from './mineAlarmHandlers.js';
+import {
+  handleApplicationCancel,
+  handleApplicationDecision,
+  handleApplicationModalSubmit,
+  handleOpenApplicationModal,
+  handleSetApplicationChannelCommand,
+  isApplicationChannelCommand,
+  isApplicationModalSubmit,
+  parseApplicationComponent,
+} from './applicationHandlers.js';
 import { startMineAlarmCron } from './mineAlarmCron.js';
 import { resumeMineAlarmsOnBoot } from './mineAlarmService.js';
 
@@ -1815,12 +1825,65 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       }
     }
 
+    if (isApplicationChannelCommand(name)) {
+      const appResult = await handleSetApplicationChannelCommand(req);
+      if (appResult?.deferred) {
+        res.send({
+          type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+          data: appResult.ephemeral ? { flags: InteractionResponseFlags.EPHEMERAL } : undefined,
+        });
+        (async () => {
+          try {
+            await appResult.run((payload) => sendFollowup(token, payload));
+          } catch (err) {
+            console.error('setapplicationchannel deferred handler failed:', err);
+            try {
+              await sendFollowup(token, {
+                flags: InteractionResponseFlags.EPHEMERAL,
+                content: '❌ Something went wrong. Please try again later.',
+              });
+            } catch (followupErr) {
+              console.error('setapplicationchannel follow-up failed:', followupErr);
+            }
+          }
+        })();
+        return;
+      }
+      if (appResult) return res.send(appResult);
+    }
+
     console.error(`unknown command: ${name}`);
     return res.status(400).json({ error: 'unknown command' });
   }
 
   if (type === InteractionType.MESSAGE_COMPONENT) {
     const { custom_id, values } = data;
+
+    // ── Application channel components ──
+    const appComponent = parseApplicationComponent(custom_id);
+    if (appComponent) {
+      try {
+        let response;
+        if (appComponent.action === 'open_modal') {
+          response = await handleOpenApplicationModal(req);
+        } else if (appComponent.action === 'approve') {
+          response = await handleApplicationDecision(req, appComponent.appId, 'approved');
+        } else if (appComponent.action === 'reject') {
+          response = await handleApplicationDecision(req, appComponent.appId, 'rejected');
+        } else if (appComponent.action === 'waitlist') {
+          response = await handleApplicationDecision(req, appComponent.appId, 'waitlisted');
+        } else if (appComponent.action === 'cancel') {
+          response = await handleApplicationCancel(req, appComponent.appId);
+        }
+        if (response) return res.send(response);
+      } catch (err) {
+        console.error('Application component handler failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { flags: InteractionResponseFlags.EPHEMERAL, content: '❌ Something went wrong.' },
+        });
+      }
+    }
 
     const quizAnswer = handleQuizAnswerComponent(custom_id);
     if (quizAnswer) {
@@ -2559,6 +2622,41 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
   if (type === InteractionType.MODAL_SUBMIT) {
     const { custom_id, components } = data;
+
+    // ── Application modal ──
+    if (isApplicationModalSubmit(custom_id)) {
+      try {
+        const appResult = await handleApplicationModalSubmit(req);
+        if (appResult?.deferred) {
+          res.send({
+            type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+            data: appResult.ephemeral ? { flags: InteractionResponseFlags.EPHEMERAL } : undefined,
+          });
+          (async () => {
+            try {
+              await appResult.run((payload) => sendFollowup(token, payload));
+            } catch (err) {
+              console.error('application modal deferred handler failed:', err);
+              try {
+                await sendFollowup(token, {
+                  flags: InteractionResponseFlags.EPHEMERAL,
+                  content: '❌ Failed to submit your application.',
+                });
+              } catch {}
+            }
+          })();
+          return;
+        }
+        if (appResult) return res.send(appResult);
+      } catch (err) {
+        console.error('Application modal submit failed:', err);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: { flags: InteractionResponseFlags.EPHEMERAL, content: `❌ ${err.message}` },
+        });
+      }
+    }
+
     const modalAction = parseClubSettingsModal(custom_id, components);
     if (modalAction) {
       const componentUserId = req.body.member?.user?.id || req.body.user?.id;

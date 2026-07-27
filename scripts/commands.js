@@ -745,6 +745,14 @@ const STOP_TIMER_COMMAND = {
   contexts: [0],
 };
 
+const SET_APPLICATION_CHANNEL_COMMAND = {
+  name: 'setapplicationchannel',
+  description: 'Set this channel as the club application channel (admin only; uses registered clubs)',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+};
+
 const ALL_COMMANDS = [
   SUPPORTER_COMMAND,
   SKILL_COMMAND,
@@ -767,6 +775,7 @@ const ALL_COMMANDS = [
   SET_MINE_CHANNEL_COMMAND,
   START_TIMER_COMMAND,
   STOP_TIMER_COMMAND,
+  SET_APPLICATION_CHANNEL_COMMAND,
 ];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
