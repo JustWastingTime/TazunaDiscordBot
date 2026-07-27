@@ -458,7 +458,6 @@ export async function handleApplicationDecision(req, appId, decision) {
     }).then(async (notifMsg) => {
       setTimeout(async () => {
         try { await deleteChannelMessage(app.channelId, notifMsg.id); } catch {}
-        try { await deleteChannelMessage(app.channelId, app.messageId); } catch {}
       }, 15 * 60 * 1000);
     });
   } catch (err) {
@@ -496,10 +495,6 @@ export async function handleApplicationCancel(req, appId) {
   } catch (err) {
     console.error('[applicationHandlers] edit app message (cancel) failed:', err.message);
   }
-
-  setTimeout(async () => {
-    try { await deleteChannelMessage(app.channelId, app.messageId); } catch {}
-  }, 15 * 60 * 1000);
 
   return ephemeral('✅ Your application has been cancelled.');
 }
