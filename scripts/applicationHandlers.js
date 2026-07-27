@@ -67,11 +67,13 @@ async function resolveRegisteredClubs(guildId) {
     const name = String(club.circleName || club.circleId || '').trim();
     if (!name) continue;
 
+    let dailyTargetValue = null;
     let dailyTarget = null;
     try {
       const info = await resolveClubTargetInfo(guildId, club.circleId, null);
       if (info?.dailyTarget != null && Number.isFinite(info.dailyTarget)) {
-        dailyTarget = formatIntWithCommas(Math.round(info.dailyTarget));
+        dailyTargetValue = Math.round(info.dailyTarget);
+        dailyTarget = formatIntWithCommas(dailyTargetValue);
       }
     } catch (err) {
       console.error(`[applicationHandlers] target resolve failed for ${club.circleId}:`, err.message);
@@ -81,9 +83,11 @@ async function resolveRegisteredClubs(guildId) {
       name,
       circleId: String(club.circleId),
       dailyTarget,
+      dailyTargetValue,
     });
   }
 
+  clubs.sort((a, b) => (b.dailyTargetValue ?? -1) - (a.dailyTargetValue ?? -1));
   return clubs;
 }
 
@@ -94,7 +98,7 @@ function clubNamesForModal(clubs) {
 // ─── Main channel message ─────────────────────────────────────────────────────
 function buildMainEmbed(guildName, clubs, resolvedApps) {
   const clubLines = clubs.map((c) => {
-    const target = c.dailyTarget ? ` — Daily target: **${c.dailyTarget}**/member/day` : ' — Daily target: _Not set_';
+    const target = c.dailyTarget ? ` — Daily target: **${c.dailyTarget}**` : ' — Daily target: _Not set_';
     return `• **${c.name}**${target}`;
   }).join('\n') || '_No clubs registered_';
 
