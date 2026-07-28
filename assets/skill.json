@@ -14707,6 +14707,77 @@
             ]
         }
     },
+    {   "skill_name": "Ticket to Your Dreams!", "description": "Moderately increase velocity steadily when in midpack or further back on the final straight in the last spurt. Effect increases when activating a skill (up to 3 times).",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 6.0s. Increases by an additional 0.05 per skill activation up to 3 times.",
+                "inherited": "Increases target speed by 0.05 for 3.6s. Increases by an additional 0.05 per skill activation up to 3 times.",
+                "conditions": [
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "Final non-corner",
+                    "Character is in their last spurt mode"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "ticket to your dreams",
+            "winning ticket steampunk"
+        ],
+        "horse": "Winning Ticket (Steampunk)",
+        "gametora_id": "110351",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "not_a_corner",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Hephaestus", "description": "Aim higher, increasing velocity from midpack upon approaching the final straight late-race. ",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.6s. Increases by an additional 0.05 per skill activation up to 3 times.",
+                "conditions": [
+                    "4th to 7th (CM), 5th to 9th (TT)",
+                    "Late race and beyond",
+                    "Second half of final corner"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "hephaestus",
+            "narita taishin steampunk"
+        ],
+        "horse": "Narita Taishin (Steampunk)",
+        "gametora_id": "110501",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "late_and_beyond",
+                    "target": "layout",
+                    "match": "not_a_corner",
+                    "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
 
 
 

@@ -98,6 +98,7 @@
                 "Final corner",                                                             is_finalcorner==1 &corner!=0
                 "Random point in the final corner"                                          is_finalcorner_random==1
                 "Final non-corner",                                                         is_finalcorner==1 &corner==0
+                "Second half of final corner",                                              is_finalcorner_laterhalf==1
                 "Just entered final straight",                                              is_last_straight_onetime==1
                 
                 "Moved closer to the fence",                                                is_move_lane==1
