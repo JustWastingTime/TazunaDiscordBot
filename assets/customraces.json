@@ -118,5 +118,185 @@
             "weather": "",
             "ground": ""
         }
+    },
+    {   "id": "ulcmilequal",
+        "name": "Uma Legends Cup - Mile Qualifiers",
+        "description": "Uma Legends Cup - Mile Qualifiers • Autumn",
+        "map_id": "Fukushima 1800m (clockwise)",
+        "track": {
+            "racetrack": "Fukushima",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1800m",
+            "direction": "Right-Handed",
+            "season": "Autumn",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcmilesemis",
+        "name": "Uma Legends Cup - Mile Semis",
+        "description": "Uma Legends Cup - Mile Semis • Summer",
+        "map_id": "Tokyo 1600m (counterclockwise)",
+        "track": {
+            "racetrack": "Tokyo",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1600m",
+            "direction": "Left-Handed",
+            "season": "Summer",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcmilefinals",
+        "name": "Uma Legends Cup - Mile Finals",
+        "description": "Uma Legends Cup - Mile Finals • Autumn",
+        "map_id": "Kyoto 1600m (outer) (clockwise)",
+        "track": {
+            "racetrack": "Kyoto",
+            "terrain": "Turf",
+            "distance_type": "Mile",
+            "distance_meters": "1600m",
+            "direction": "Right-Handed",
+            "season": "Autumn",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcmedqual",
+        "name": "Uma Legends Cup - Medium Qualifiers",
+        "description": "Uma Legends Cup - Medium Qualifiers • Spring",
+        "map_id": "Sapporo 2000m (clockwise)",
+        "track": {
+            "racetrack": "Sapporo",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2000m",
+            "direction": "Right-Handed",
+            "season": "Spring",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcmedsemis",
+        "name": "Uma Legends Cup - Medium Semis",
+        "description": "Uma Legends Cup - Medium Semis • Spring",
+        "map_id": "Nakayama 2000m (inner) (clockwise)",
+        "track": {
+            "racetrack": "Nakayama",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2000m",
+            "direction": "Right-Handed",
+            "season": "Spring",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcmedfinals",
+        "name": "Uma Legends Cup - Medium Finals",
+        "description": "Uma Legends Cup - Medium Finals • Autumn",
+        "map_id": "Tokyo 2400m (counterclockwise)",
+        "track": {
+            "racetrack": "Tokyo",
+            "terrain": "Turf",
+            "distance_type": "Medium",
+            "distance_meters": "2400m",
+            "direction": "Left-Handed",
+            "season": "Autumn",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulclongqual",
+        "name": "Uma Legends Cup - Long Qualifiers",
+        "description": "Uma Legends Cup - Long Qualifiers • Spring",
+        "map_id": "Hanshin 2600m (outer) (clockwise)",
+        "track": {
+            "racetrack": "Hanshin",
+            "terrain": "Turf",
+            "distance_type": "Long",
+            "distance_meters": "2600m",
+            "direction": "Right-Handed",
+            "season": "Spring",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulclongsemis",
+        "name": "Uma Legends Cup - Long Semis",
+        "description": "Uma Legends Cup - Long Semis • Spring",
+        "map_id": "Kyoto 3200m (outer) (clockwise)",
+        "track": {
+            "racetrack": "Kyoto",
+            "terrain": "Turf",
+            "distance_type": "Long",
+            "distance_meters": "3200m",
+            "direction": "Right-Handed",
+            "season": "Spring",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulclongfinals",
+        "name": "Uma Legends Cup - Long Finals",
+        "description": "Uma Legends Cup - Long Finals • Winter",
+        "map_id": "Nakayama 2500m (inner) (clockwise)",
+        "track": {
+            "racetrack": "Nakayama",
+            "terrain": "Turf",
+            "distance_type": "Long",
+            "distance_meters": "2500m",
+            "direction": "Right-Handed",
+            "season": "Winter",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcdirtqual",
+        "name": "Uma Legends Cup - Dirt Qualifiers",
+        "description": "Uma Legends Cup - Dirt Qualifiers • Winter",
+        "map_id": "Kokura 1700m (clockwise) (dirt)",
+        "track": {
+            "racetrack": "Kokura",
+            "terrain": "Dirt",
+            "distance_type": "Mile",
+            "distance_meters": "1700m",
+            "direction": "Right-Handed",
+            "season": "Winter",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcdirtsemis",
+        "name": "Uma Legends Cup - Dirt Semis",
+        "description": "Uma Legends Cup - Dirt Semis • Winter",
+        "map_id": "Tokyo 1600m (counterclockwise) (dirt)",
+        "track": {
+            "racetrack": "Tokyo",
+            "terrain": "Dirt",
+            "distance_type": "Mile",
+            "distance_meters": "1600m",
+            "direction": "Left-Handed",
+            "season": "Winter",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcdirtfinals",
+        "name": "Uma Legends Cup - Dirt Finals",
+        "description": "Uma Legends Cup - Dirt Finals • Winter",
+        "map_id": "Chukyo 1800m (counterclockwise) (dirt)",
+        "track": {
+            "racetrack": "Chukyo",
+            "terrain": "Dirt",
+            "distance_type": "Mile",
+            "distance_meters": "1800m",
+            "direction": "Left-Handed",
+            "season": "Winter",
+            "weather": "",
+            "ground": ""
+        }
     }
 ]
