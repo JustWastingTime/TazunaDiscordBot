@@ -73,5 +73,50 @@
             "weather": "Sunny",
             "ground": "Good"
         }
+    },
+    {   "id": "ulcsprintqual",
+        "name": "Uma Legends Cup - Sprint Qualifiers",
+        "description": "Uma Legends Cup - Sprint Qualifiers • Summer",
+        "map_id": "Tokyo 1400m (counterclockwise)",
+        "track": {
+            "racetrack": "Tokyo",
+            "terrain": "Turf",
+            "distance_type": "Sprint",
+            "distance_meters": "1400m",
+            "direction": "Left-Handed",
+            "season": "Summer",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcsprintsemis",
+        "name": "Uma Legends Cup - Sprint Semis",
+        "description": "Uma Legends Cup - Sprint Semis • Spring",
+        "map_id": "Chukyo 1200m (counterclockwise)",
+        "track": {
+            "racetrack": "Chukyo",
+            "terrain": "Turf",
+            "distance_type": "Sprint",
+            "distance_meters": "1200m",
+            "direction": "Left-Handed",
+            "season": "Spring",
+            "weather": "",
+            "ground": ""
+        }
+    },
+    {   "id": "ulcsprintfinals",
+        "name": "Uma Legends Cup - Sprint Finals",
+        "description": "Uma Legends Cup - Sprint Finals • Autumn",
+        "map_id": "Nakayama 1200m (outer) (clockwise)",
+        "track": {
+            "racetrack": "Nakayama",
+            "terrain": "Turf",
+            "distance_type": "Sprint",
+            "distance_meters": "1200m",
+            "direction": "Right-Handed",
+            "season": "Autumn",
+            "weather": "",
+            "ground": ""
+        }
     }
 ]
