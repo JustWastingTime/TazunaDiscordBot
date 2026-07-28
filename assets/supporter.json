@@ -1838,7 +1838,7 @@
         "category": "speed",
         "aliases": ["sweep tosho tracen"]
     },
-    {   "id": "10051 Twin Turbo",
+    {   "id": "10051 Twin Turbo", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Twin Turbo",
         "unique": "-",
@@ -1866,7 +1866,25 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10051.png",
         "rarity": "r",
         "category": "speed",
-        "aliases": ["twin turbo tracen"]
+        "aliases": ["twin turbo tracen"],
+        "events":[
+            {
+                "name": "Just Start Running!",
+                "type": "event",
+                "results": [
+                    "Speed +20, Mood -1",
+                    "Energy -10, Power +20, Bond +5"
+                ]
+            },
+            {
+                "name": "I'm All Fired Up!",
+                "type": "event",
+                "results": [
+                "Energy +15, Bond +5",
+                "Bond +5, Early Lead hint +1"
+                ]
+            }
+        ]
     },
     {   "id": "10052 Daitaku Helios",
         "card_name": "Tracen Academy",
@@ -5209,7 +5227,7 @@
             }
         ]
     },
-    {   "id": "30003 Tokai Teio",
+    {   "id": "30003 Tokai Teio", "_event": "done",
         "card_name": "Dream Big!",
         "character_name": "Tokai Teio",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Speed when beginning a Career playthrough (20)",
@@ -6269,7 +6287,7 @@
         "category": "speed",
         "aliases": ["special week", "the setting sun and rising stars", "poverty spe", "welfare spe", "event spe", "spechan"]
     },
-    {   "id": "30026 Twin Turbo",
+    {   "id": "30026 Twin Turbo", "_event": "done",
         "card_name": "Turbo Booooost!",
         "character_name": "Twin Turbo",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
@@ -6301,7 +6319,49 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30026.png",
         "rarity": "ssr",
         "category": "speed",
-        "aliases": ["twin turbo", "turbo boost"]
+        "aliases": ["twin turbo", "turbo boost"],
+        "events":[
+            {
+                "name": "I'm Not Afraid!",
+                "type": "chain",
+                "results": [
+                "Speed +10, Bond +5 OR Energy -10, Speed +10, Event chain ended",
+                "Energy +20, Event chain ended"
+                ]
+            },
+            {
+                "name": "Can't Catch Me!",
+                "type": "chain",
+                "results": [
+                "Speed +15, Bond +5, Leader's Pride hint +3 OR Energy -10, Speed +10, Event chain ended",
+                "Energy +25, Event chain ended"
+                ]
+            },
+            {
+                "name": "Turbo Is Strong!",
+                "type": "chain",
+                "results": [
+                "Energy -10, Speed +5, Early Lead hint +3 OR Energy -10, Speed +25, Bond +5, Taking the Lead hint +3",
+                "Energy +15, Watchful Eye hint +3"
+                ]
+            },
+            {
+                "name": "Just Start Running!",
+                "type": "event",
+                "results": [
+                    "Speed +20, Mood -1",
+                    "Energy -10, Power +20, Bond +5"
+                ]
+            },
+            {
+                "name": "I'm All Fired Up!",
+                "type": "event",
+                "results": [
+                "Energy +15, Bond +5",
+                "Bond +5, Early Lead hint +1"
+                ]
+            }
+        ]
     },
     {   "id": "30027 Mejiro Palmer",
         "card_name": "Go Ahead and Laugh",
@@ -7508,7 +7568,7 @@
     },
 
 
-    {   "id": "30060 Twin Turbo",
+    {   "id": "30060 Twin Turbo", "_event": "done",
         "card_name": "Constellation of Stars",
         "character_name": "Twin Turbo",
         "unique": "Increases Guts gain when training together (1)\nIncreases stat gain from races (5%)",
@@ -7540,6 +7600,46 @@
         "category": "guts",
         "aliases": [
             "twin turbo constellation of stars"
+        ],
+        "events":[
+            {
+                "name": "Ad Squad, Go!",
+                "type": "chain",
+                "results": [
+                "Energy -5, Guts +15, Bond +5",
+                "Energy +20, Bond -5, Event chain ended"
+                ]
+            },
+            {
+                "name": "Ad Squad, Full Throttle!",
+                "type": "chain",
+                "results": [
+                "Energy -10, Speed +7, Power +7, Bond +5"
+                ]
+            },
+            {
+                "name": "Ad Squad Rocks!",
+                "type": "chain",
+                "results": [
+                "Energy -10, Guts +15, Bond +5, Killer Tunes hint +3 OR Energy -10, Guts +10, Bond +5, Up-Tempo hint +3"
+                ]
+            },
+            {
+                "name": "Just Start Running!",
+                "type": "event",
+                "results": [
+                    "Speed +20, Mood -1",
+                    "Energy -10, Power +20, Bond +5"
+                ]
+            },
+            {
+                "name": "I'm All Fired Up!",
+                "type": "event",
+                "results": [
+                "Energy +15, Bond +5",
+                "Bond +5, Early Lead hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30061 Biwa Hayahide",
@@ -10091,6 +10191,166 @@
         "aliases": [
             "manhattan cafe coughy coffee",
             "its on the house"
+        ]
+    },
+    {   "id": "30111 Tokai Teio", "_event": "done",
+        "card_name": "Teio-Oo-Oo!!!",
+        "character_name": "Tokai Teio",
+        "unique": "Gain Training Effectiveness (1%) for every 30 combined support bond, up to (20%) at 600",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Wit Bonus - 0/0/0/1/2",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/33/36/40/40%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Competitive Spirit",
+            "Corner Adept",
+            "Prudent Positioning",
+            "Nimble Navigator",
+            "Go with the Flow",
+            "Soft Step",
+            "Pace Chaser Corners",
+            "With All My Soul"
+        ],
+        "event_skills": [
+            "Professor of Curvature",
+            "Preferred Position",
+            "Pace Chaser Straightaways"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30111-tokai-teio",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30111.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "tokai teio",
+            "teio oo oo"
+        ],
+        "events":[
+            {
+                "name": "The Monarch's Weak Point",
+                "type": "chain",
+                "results": [
+                    "Mood +2, Bond +5", 
+                    "Power +5, Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "A New Way of Cool",
+                "type": "chain",
+                "results": [
+                    "Skill points +20, Bond +5, Preferred Position hint +1 OR Skill points +15, Bond +5",
+                    "Power +10, Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "The Monarch's Play Style",
+                "type": "chain",
+                "results": [
+                    "Power +10, Wit +20, Bond +5, Professor of Curvature hint +1"
+                ]
+            },
+            {
+                "name": "My Way, Or...",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Skill points +15, Bond +5",
+                    "Guts +15, Bond +5"
+                ]
+            },
+            {
+                "name": "My Weapon",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Guts +10, Bond +5",
+                    "Bond +5, Pace Chaser Straightaways hint +1"
+                ]
+            }
+        ]
+    },
+    {   "id": "30112 Twin Turbo", "_event": "done",
+        "card_name": "TT Ignition!",
+        "character_name": "Twin Turbo",
+        "unique": "Gain Friendship Bonus (3) every time you do friendship training with this card, up to 5 times for a total of (15)",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Speed Bonus - 0/0/0/1/2",
+            "Power Bonus - 1",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Competitive Spirit",
+            "Target in Sight",
+            "Early Lead",
+            "Fast-Paced",
+            "Moxie",
+            "Leader's Pride",
+            "Mad Dash"
+        ],
+        "event_skills": [
+            "Givin' It 1000%",
+            "Playtime's Over!",
+            "Early Lead"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30112-twin-turbo",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30112.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "twin turbo",
+            "tt ignition"
+        ],
+        "events":[
+            {
+                "name": "Chasing Down Turbo!",
+                "type": "chain",
+                "results": [
+                "Speed +15, Guts +15, Bond +5, OR Energy -20, Speed +10, Guts +10, Bond +5, Playtime's Over! hint +1, Event chain ended",
+                "Skill points +10, Bond +5"
+                ]
+            },
+            {
+                "name": "Gaming with Turbo!",
+                "type": "chain",
+                "results": [
+                "Energy -5, Speed +15, Guts +15, Skill points +15, Bond +5 OR Energy -20, Speed +10, Guts +10, Bond +5, Givin' It 1000% hint +1, Event chain ended"
+                ]
+            },
+            {
+                "name": "The Unbeatable Turbo!",
+                "type": "chain",
+                "results": [
+                "Energy -20, Speed +10, Guts +10, Bond +5, Givin' It 1000% hint +2 OR Energy -5, Speed +15, Guts +15, Bond +5, Givin' It 1000% hint +3"
+                ]
+            },
+            {
+                "name": "Just Start Running!",
+                "type": "event",
+                "results": [
+                    "Speed +20, Mood -1",
+                    "Energy -10, Power +20, Bond +5"
+                ]
+            },
+            {
+                "name": "I'm All Fired Up!",
+                "type": "event",
+                "results": [
+                "Energy +15, Bond +5",
+                "Bond +5, Early Lead hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30121 Mihono Bourbon", "_event": "done",
