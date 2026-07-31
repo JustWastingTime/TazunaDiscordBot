@@ -2,7 +2,7 @@ import {
   InteractionResponseFlags,
   InteractionResponseType,
 } from 'discord-interactions';
-import { isGuildAdmin } from './clubHandlers.js';
+import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 import { isPremiumGuild } from './clubDatabase.js';
 import { getBoard, getGuildMineState, listBoardChannelIds } from './mineAlarmStorage.js';
 import {
@@ -94,8 +94,8 @@ export async function handleSetMineChannel(req) {
   const premiumDenied = requirePremium(guildId);
   if (premiumDenied) return premiumDenied;
 
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/setminechannel`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/setminechannel`'));
   }
 
   return {

@@ -42,15 +42,7 @@ import {
 } from './clubService.js';
 import { hashLeaderboardContent } from './clubLeaderboardCron.js';
 import { DiscordRequest } from './utils.js';
-
-const ADMINISTRATOR = 0x8n;
-
-const BOT_OWNER_IDS = new Set(
-  String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
-    .split(',')
-    .map((id) => id.trim())
-    .filter(Boolean),
-);
+import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 
 const ALL_CLUBS_AUTOCOMPLETE = { name: 'All Clubs', value: 'all' };
 const LB_ALL_PAGE_RE = /^lb_all_(prev|next):([^:]+):([^:]+):(\d+)$/;
@@ -80,17 +72,8 @@ function getOptionUserId(req, name) {
   return opt?.value ?? null;
 }
 
-export function isGuildAdmin(member) {
-  if (!member?.permissions) return false;
-  try {
-    return (BigInt(member.permissions) & ADMINISTRATOR) === ADMINISTRATOR;
-  } catch {
-    return false;
-  }
-}
-
-function isBotOwner(userId) {
-  return Boolean(userId && BOT_OWNER_IDS.has(userId));
+export async function isGuildAdmin(member, guildId) {
+  return isTazunaAdmin(guildId, member);
 }
 
 function ephemeral(content) {
@@ -271,8 +254,8 @@ export async function handleRegisterClub(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
   const userId = req.body.member?.user?.id || req.body.user?.id;
-  if (!isGuildAdmin(req.body.member) && !isBotOwner(userId)) {
-    return ephemeral('❌ Only server administrators or the bot owner can use `/club registerclub`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member, { allowBotOwner: true, userId }))) {
+    return ephemeral(tazunaAdminDenied('use `/club registerclub`'));
   }
 
   const circleId = String(getOptionValue(req, 'id') ?? '').trim();
@@ -312,8 +295,8 @@ export async function handleRegisterClub(req) {
 export async function handleUnregisterClub(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/club unregisterclub`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/club unregisterclub`'));
   }
 
   const circleId = String(getOptionValue(req, 'id') ?? '').trim();
@@ -373,8 +356,8 @@ export async function handleRegister(req) {
 export async function handleRegisterForced(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/club registerforced`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/club registerforced`'));
   }
 
   const targetUserId = getOptionUserId(req, 'user');
@@ -632,8 +615,8 @@ export async function handleSetLeaderboardChannel(req) {
   const guildId = req.body.guild_id;
   const channelId = req.body.channel_id;
   if (!guildId) return guildRequiredResponse();
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/club setleaderboardchannel`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/club setleaderboardchannel`'));
   }
 
   const clubNameArg = String(getOptionValue(req, 'clubname') ?? '').trim();

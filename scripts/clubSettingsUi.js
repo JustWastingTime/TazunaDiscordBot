@@ -22,31 +22,10 @@ import {
 } from './clubService.js';
 import { hashLeaderboardContent } from './clubLeaderboardCron.js';
 import { DiscordRequest } from './utils.js';
+import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 
-const ADMINISTRATOR = 0x8n;
-
-const BOT_OWNER_IDS = new Set(
-  String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
-    .split(',')
-    .map((id) => id.trim())
-    .filter(Boolean),
-);
-
-function isGuildAdmin(member) {
-  if (!member?.permissions) return false;
-  try {
-    return (BigInt(member.permissions) & ADMINISTRATOR) === ADMINISTRATOR;
-  } catch {
-    return false;
-  }
-}
-
-function isBotOwner(userId) {
-  return Boolean(userId && BOT_OWNER_IDS.has(String(userId)));
-}
-
-function canManageClubSettings(member, userId) {
-  return isGuildAdmin(member) || isBotOwner(userId);
+async function canManageClubSettings(guildId, member, userId) {
+  return isTazunaAdmin(guildId, member, { allowBotOwner: true, userId });
 }
 
 const CS_PICK = 'cs_pick';
@@ -356,12 +335,12 @@ export async function handleClubSettingsCommand(req) {
     };
   }
 
-  if (!canManageClubSettings(req.body.member, userId)) {
+  if (!(await canManageClubSettings(guildId, req.body.member, userId))) {
     return {
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
         flags: InteractionResponseFlags.EPHEMERAL,
-        content: '❌ Only server administrators or the bot owner can use `/club settings`.',
+        content: tazunaAdminDenied('use `/club settings`'),
       },
     };
   }
@@ -410,8 +389,8 @@ export async function handleClubSettingsCommand(req) {
 }
 
 export async function runClubSettingsComponentAction(action, { member, userId } = {}) {
-  if (!canManageClubSettings(member, userId ?? action.ownerUserId)) {
-    throw new Error('Only server administrators or the bot owner can change club settings.');
+  if (!(await canManageClubSettings(action.guildId, member, userId ?? action.ownerUserId))) {
+    throw new Error(tazunaAdminDenied('change club settings').replace('❌ ', ''));
   }
 
   const { kind, ownerUserId, guildId, circleId, value } = action;
@@ -467,8 +446,8 @@ export async function runClubSettingsComponentAction(action, { member, userId } 
 }
 
 export async function runClubSettingsModalSubmit(action, { member, userId } = {}) {
-  if (!canManageClubSettings(member, userId ?? action.ownerUserId)) {
-    throw new Error('Only server administrators or the bot owner can change club settings.');
+  if (!(await canManageClubSettings(action.guildId, member, userId ?? action.ownerUserId))) {
+    throw new Error(tazunaAdminDenied('change club settings').replace('❌ ', ''));
   }
 
   const { ownerUserId, guildId, circleId, manualTarget } = action;

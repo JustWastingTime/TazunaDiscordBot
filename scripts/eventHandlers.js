@@ -2,7 +2,7 @@ import {
   InteractionResponseFlags,
   InteractionResponseType,
 } from 'discord-interactions';
-import { isGuildAdmin } from './clubHandlers.js';
+import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 import {
   getUserLink,
   updateUserBettingState,
@@ -111,8 +111,8 @@ export async function handleGambacoinSetEventChannel(req) {
   const guildId = req.body.guild_id;
   const channelId = req.body.channel_id;
   if (!guildId || !channelId) return guildRequired();
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/gambacoin seteventchannel`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/gambacoin seteventchannel`'));
   }
 
   setEventChannel(guildId, channelId);

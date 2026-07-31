@@ -15,8 +15,7 @@ import {
   setApplicationChannel,
   updateApplicationStatus,
 } from './applicationStorage.js';
-
-const ADMINISTRATOR = 0x8n;
+import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 
 // ─── Custom ID constants ───────────────────────────────────────────────────────
 export const APP_OPEN_MODAL_ID   = 'app_open_modal';
@@ -27,11 +26,6 @@ export const APP_WAITLIST_PREFIX = 'app_waitlist:';
 export const APP_CANCEL_PREFIX   = 'app_cancel:';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-function isAdmin(member) {
-  if (!member?.permissions) return false;
-  try { return (BigInt(member.permissions) & ADMINISTRATOR) === ADMINISTRATOR; } catch { return false; }
-}
-
 function ephemeral(content) {
   return {
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -228,7 +222,9 @@ export async function refreshMainMessage(guildId) {
 export async function handleSetApplicationChannelCommand(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return ephemeral('❌ This command can only be used in a server.');
-  if (!isAdmin(req.body.member)) return ephemeral('❌ Only admins can use this command.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/setapplicationchannel`'));
+  }
 
   const registered = getGuildClubs(guildId);
   if (!registered.length) {
@@ -431,8 +427,8 @@ export async function handleApplicationDecision(req, appId, decision) {
 
   if (!guildId) return ephemeral('❌ Server only.');
 
-  if (!isAdmin(req.body.member)) {
-    return ephemeral('❌ Only admins can approve/reject/waitlist applications.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('approve/reject/waitlist applications'));
   }
 
   const app = getApplication(appId);
