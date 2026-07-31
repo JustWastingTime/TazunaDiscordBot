@@ -2,7 +2,7 @@ import {
   InteractionResponseFlags,
   InteractionResponseType,
 } from 'discord-interactions';
-import { isGuildAdmin } from './clubHandlers.js';
+import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 import { ensureGuildQuizRole, toggleQuizNotification } from './quizGuild.js';
 import * as quiz from './quizService.js';
 import {
@@ -129,8 +129,8 @@ export async function handleQuizStart(req) {
 export async function handleQuizStop(req) {
   const guildId = req.body.guild_id;
   if (!guildId) return guildRequiredResponse();
-  if (!isGuildAdmin(req.body.member)) {
-    return ephemeral('❌ Only server administrators can use `/quiz stop`.');
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('use `/quiz stop`'));
   }
 
   return {

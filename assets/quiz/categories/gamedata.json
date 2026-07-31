@@ -680,6 +680,14 @@
         {   "prompt": "In which map does the skill Yodo Invicta trigger?", "difficulty": "medium",
             "answers": ["Kyoto Racecourse", "Tokyo Racecourse", "Hanshin Racecourse", "Nakayama Racecourse", "Invicta Racecourse"]
         },
+        {	"prompt": "How many pink sparks does it take to raise E aptitude to A aptitude before starting a career?", "difficulty": "medium",
+            "answers": ["10", "9", "7", "11"]
+        },
+        {	"prompt": "How many total affinity does a set of parents need to reach ◎ evaluation?", "difficulty": "medium",
+            "answers": ["150", "100", "80", "125"]
+        },
+
+
 
         {   "prompt": "How many meters long is the Tokyo homestretch ingame?", "difficulty": "hard",
             "answers": ["500", "600", "400", "525"]

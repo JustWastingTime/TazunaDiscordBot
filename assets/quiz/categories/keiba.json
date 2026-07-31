@@ -88,11 +88,11 @@
     { "prompt": "What is the IRL nickname of Admire Vega?", "difficulty": "medium",
       "answers": ["Adobe", "Ayabe", "Kyoto", "Yokohama"]
     },
+
+      
     { "prompt": "In 2021, which racecourse did the Tenno Sho Spring happen on?", "difficulty": "hard",
       "answers": ["Hanshin", "Kyoto", "Nakayama", "Tokyo"]
     },
-      
-
     { "prompt": "Which race is not considered one of the Eight Great Classics?", "difficulty": "hard",
       "answers": ["Takarazuka Kinen", "Satsuki Sho", "Japanese Derby", "Oka Sho", "Tenno Sho (Autumn)", " Kikuka Sho"]
     },

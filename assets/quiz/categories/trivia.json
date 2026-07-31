@@ -1,6 +1,16 @@
 {
   "name": "Trivia",
   "questions": [
+    { "promptTemplate": "Which Uma was NOT born in America?", "difficulty": "medium",
+      "entries": [
+        ["Manhattan Cafe", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"],
+        ["Special Week", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"],
+        ["Air Shakur", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"],
+        ["Silence Suzuka", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"],
+        ["Tosen Jordan", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"],
+        ["Almond Eye", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"]
+      ]
+    },
     { "promptTemplate": "Which uma was not available during launch?", "difficulty": "medium",
     "entries": [
       ["", ["Mihono Bourbon", "Daiwa Scarlet", "Taiki Shuttle", "Maruzensky", "Rice Shower", "Oguri Cap"]],
@@ -2103,6 +2113,7 @@
       ["Perpetually perfect (according to herself)", ["TM Opera O", "Maruzensky", "Mejiro McQueen", "Silence Suzuka", "Symboli Rudolf"]]
     ]
     },
+    
 
 
     { "prompt": "Which trio of Umas are called \"BNW\"?", "difficulty": "easy",
@@ -2112,10 +2123,7 @@
         "Narita Brian, Narita Taishin, Winning Ticket",
         "Narita Brian, Nice Nature, Winning Ticket"
       ]
-    },
-    { "prompt": "Which Uma was NOT born in America?", "difficulty": "easy",
-      "answers": ["Manhattan Cafe", "El Condor Pasa", "Grass Wonder", "Taiki Shuttle"]
-    },
+    },   
     { "prompt": "What is Tracen Academy's motto?", "difficulty": "easy",
       "answers": ["Eclipse first, the rest nowhere", "Click wit to hit wit", "Eclipse the other horses to win", "Strength first, the rest dust", "Gallop with your lungs. presevere with your heart", "You need more guts"]
       
@@ -2157,7 +2165,7 @@
     { "prompt": "In umamusume, where do umas go after finishing the Twinkle Series?", "difficulty": "medium",
       "answers": ["Dream Trophy League", "Home", "Countryside", "Hokkaido", "Beach"]
     },
-    { "prompt": "This uma has more than 4 million fans in Umatter and is none as the \"Bento Fairy \" by her fans.", "difficulty": "medium",
+    { "prompt": "This uma has more than 4 million fans in Umatter and is known as the \"Bento Fairy \" by her fans.", "difficulty": "medium",
       "answers": ["Nishino Flower", "Taiki Shuttle", "Oguri Cap", "Mejiro Ardan", "Curren Chan"]
     },
     { "prompt": "This uma uploads magic tutorial videos on UmaTok", "difficulty": "medium",
@@ -2168,6 +2176,9 @@
     },
     { "prompt": "Which of these social media networks dont exist in universe?", "difficulty": "medium",
       "answers": ["Umaddit", "Umastagram", "UmaTube", "Umatter", "UmaTok", "LANE"]
+    },
+    { "prompt": "What is the first story event in Umamusume called?", "difficulty": "medium",
+      "answers": ["Dashing Towards Your Dreams", "Brand New Friends", "Hopping to Your Heart", "Brand New Buddies"]
     },
 
     { "prompt": "Mejiro Dober's father has a nickname for Dober she finds embarassing. What is it?", "difficulty": "hard",

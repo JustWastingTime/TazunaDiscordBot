@@ -163,13 +163,13 @@ export async function getGuildRoles(guildId) {
   return discordFetch(`guilds/${guildId}/roles`, { method: 'GET' });
 }
 
-export async function createGuildRole(guildId, name) {
+export async function createGuildRole(guildId, name, reason = 'Tazuna bot') {
   return discordFetch(`guilds/${guildId}/roles`, {
     method: 'POST',
     body: JSON.stringify({
       name,
       mentionable: true,
-      reason: 'Tazuna quiz notifications',
+      reason,
     }),
   });
 }
