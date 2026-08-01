@@ -1,0 +1,29 @@
+{
+  "id": "006",
+  "name": "Ibis Summer Dash 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-08-01T00:00:00+07:00",
+  "endsAt": "2026-08-02T13:40:00+07:00",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Win Greatest", "ageSex": "9H", "jockey": "M. Matsuoka", "odds": 13.9 },
+    { "number": 2, "name": "Dugat", "ageSex": "7G", "jockey": "T. Eda", "odds": 76.7 },
+    { "number": 3, "name": "Mikatte Yondeii", "ageSex": "6M", "jockey": "S. Kobayashi", "odds": 78.0},
+    { "number": 4, "name": "Cowslip", "ageSex": "4M", "jockey": "A. Tsumura", "odds": 40.4 },
+    { "number": 5, "name": "Bergun", "ageSex": "4M", "jockey": "Y. Hishida", "odds": 34.5 },
+    { "number": 6, "name": "Puro Magic", "ageSex": "5M", "jockey": "H. Tanabe", "odds": 2.7},
+    { "number": 7, "name": "Bagradas", "ageSex": "6H", "jockey": "M. Sugihara", "odds": 62.0 },
+    { "number": 8, "name": "Schlaf", "ageSex": "4M", "jockey": "J. Shimada", "odds": 17.4 },
+    { "number": 9, "name": "Counter Seven", "ageSex": "4H", "jockey": "K. Miura", "odds": 32.8 },
+    { "number": 10, "name": "Ecoro Regina", "ageSex": "6M", "jockey": "K. Kikuzawa", "odds": 6.3 },
+    { "number": 11, "name": "Lord Trail", "ageSex": "5H", "jockey": "T. Ono", "odds": 46.0 },
+    { "number": 12, "name": "Geumeusilakko", "ageSex": "8H", "jockey": "Y. Hara", "odds": 20.0 },
+    { "number": 13, "name": "T M Spada", "ageSex": "7M", "jockey": "K. Kokubun", "odds": 16.1 },
+    { "number": 14, "name": "Boukephalas", "ageSex": "6H", "jockey": "S. Ishibashi", "odds": 106.2 },
+    { "number": 15, "name": "Atari Daikichi", "ageSex": "4H", "jockey": "M. Muto", "odds": 41.1 },
+    { "number": 16, "name": "American Stage", "ageSex": "4H", "jockey": "K. Tosaki", "odds": 4.7 },
+    { "number": 17, "name": "Big Caesar", "ageSex": "6H", "jockey": "K. Ogino", "odds": 10.2 }
+  ]
+}
