@@ -143,8 +143,22 @@ export async function handleEventPost(req) {
   reloadEventsFromDisk();
   const result = await postEventEverywhere(eventId);
   if (!result.ok) return ephemeral(`❌ ${result.error}`);
+  const parts = [];
+  if (result.posted) {
+    parts.push(
+      `posted to **${result.posted}** new channel${result.posted === 1 ? '' : 's'}`,
+    );
+  }
+  if (result.updated) {
+    parts.push(
+      `updated **${result.updated}** existing channel${result.updated === 1 ? '' : 's'}`,
+    );
+  }
+  if (!parts.length) {
+    parts.push('no channels updated');
+  }
   return ephemeral(
-    `✅ Posted **${result.event.name}** (\`${result.event.id}\`) to **${result.posted}** channel${result.posted === 1 ? '' : 's'}.`,
+    `✅ **${result.event.name}** (\`${result.event.id}\`): ${parts.join(', ')}.`,
   );
 }
 

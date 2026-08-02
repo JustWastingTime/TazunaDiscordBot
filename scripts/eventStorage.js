@@ -261,12 +261,37 @@ export function getEventPost(guildId, eventId) {
   );
 }
 
+/** Post record for this event already living in a specific channel (any guild). */
+export function getEventPostForChannel(eventId, channelId) {
+  if (!channelId) return null;
+  return (
+    getEventPosts().find(
+      (entry) =>
+        String(entry.eventId) === String(eventId) && String(entry.channelId) === String(channelId),
+    ) || null
+  );
+}
+
+/**
+ * Resolve the stored post to edit for a destination.
+ * Prefer a record already on this channel (shared threads / late join),
+ * otherwise fall back to this guild's record (may be on an old channel).
+ */
+export function resolveEventPostForTarget(eventId, guildId, channelId) {
+  const onChannel = getEventPostForChannel(eventId, channelId);
+  if (onChannel) return onChannel;
+  return getEventPost(guildId, eventId);
+}
+
 export function upsertEventPost(record) {
+  // One event destination (channel) → one post record. Also replace this guild's prior row.
   const posts = getEventPosts().filter(
     (entry) =>
       !(
-        String(entry.guildId) === String(record.guildId) &&
-        String(entry.eventId) === String(record.eventId)
+        (String(entry.guildId) === String(record.guildId) &&
+          String(entry.eventId) === String(record.eventId)) ||
+        (String(entry.eventId) === String(record.eventId) &&
+          String(entry.channelId) === String(record.channelId))
       ),
   );
   posts.push({

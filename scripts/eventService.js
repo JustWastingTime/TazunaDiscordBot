@@ -17,6 +17,7 @@ import {
   patchEventRuntime,
   reloadEventDefinitions,
   resolveEventPostChannelId,
+  resolveEventPostForTarget,
   upsertEventPost,
 } from './eventStorage.js';
 import { buildAllEventMessagePayloads, buildEventMessagePayload } from './eventUi.js';
@@ -63,41 +64,76 @@ export function reloadEventsFromDisk() {
   return reloadEventDefinitions();
 }
 
+/**
+ * Ensure the event is present in a channel:
+ * - If this channel already has the event → edit those messages in place
+ * - If not → post new messages
+ * Never leaves duplicate event posts in the same channel.
+ */
 export async function postEventToChannel(event, guildId, channelId) {
   try {
     const payloads = buildAllEventMessagePayloads(event);
-    const existing = getEventPost(guildId, event.id);
+    const existing = resolveEventPostForTarget(event.id, guildId, channelId);
+    // Message IDs are only valid in the channel they were posted to.
+    const sameChannel =
+      !existing?.channelId || String(existing.channelId) === String(channelId);
+    const hadExistingOnChannel = Boolean(sameChannel && existing);
     const horseMessages = [];
 
     for (const { chunk, payload } of payloads) {
-      const prior = existing?.horseMessages?.find((item) => item.chunk === chunk);
+      const prior = sameChannel
+        ? existing?.horseMessages?.find((item) => item.chunk === chunk)
+        : null;
       if (prior?.messageId) {
-        await editChannelMessage(channelId, prior.messageId, payload);
-        horseMessages.push({ messageId: prior.messageId, chunk });
-      } else {
-        const message = await sendChannelMessage(channelId, payload);
-        horseMessages.push({ messageId: message.id, chunk });
+        try {
+          await editChannelMessage(channelId, prior.messageId, payload);
+          horseMessages.push({ messageId: prior.messageId, chunk });
+          continue;
+        } catch (err) {
+          if (!isUnknownMessageError(err)) throw err;
+          console.warn(
+            `postEventToChannel: horse message ${prior.messageId} missing in guild ${guildId}; recreating.`,
+          );
+        }
       }
+      const message = await sendChannelMessage(channelId, payload);
+      horseMessages.push({ messageId: message.id, chunk });
     }
 
-    if (existing?.horseMessages?.length) {
+    if (sameChannel && existing?.horseMessages?.length) {
       for (const prior of existing.horseMessages) {
         if (!horseMessages.some((item) => item.chunk === prior.chunk)) {
           await deleteChannelMessage(channelId, prior.messageId);
         }
       }
+    } else if (existing && !sameChannel) {
+      // Guild moved destinations — remove the old channel's copy.
+      const oldChannelId = existing.channelId;
+      for (const prior of existing.horseMessages || []) {
+        if (prior?.messageId) await deleteChannelMessage(oldChannelId, prior.messageId);
+      }
+      if (existing.betsMessageId) {
+        await deleteChannelMessage(oldChannelId, existing.betsMessageId);
+      }
     }
 
-    const betsMessageId = await upsertBetsBoardMessage(event, guildId, channelId, existing);
+    const betsExisting = sameChannel
+      ? existing
+      : existing
+        ? { ...existing, betsMessageId: null }
+        : null;
+    const betsMessageId = await upsertBetsBoardMessage(event, guildId, channelId, betsExisting);
 
+    // Keep ownership on the guild that already owned this channel's post when updating.
+    const ownerGuildId = sameChannel && existing?.guildId ? existing.guildId : guildId;
     upsertEventPost({
-      guildId,
+      guildId: ownerGuildId,
       eventId: event.id,
       channelId,
       horseMessages,
       betsMessageId,
     });
-    return { ok: true };
+    return { ok: true, created: !hadExistingOnChannel, updated: hadExistingOnChannel };
   } catch (err) {
     if (isChannelUnavailableError(err)) {
       console.warn(
@@ -151,14 +187,19 @@ export async function postEventEverywhere(eventId) {
   }
 
   let posted = 0;
+  let updated = 0;
   let skipped = 0;
   for (const target of targets) {
     const result = await postEventToChannel(opened, target.guildId, target.channelId);
-    if (result.ok) posted += 1;
-    else if (result.channelUnavailable) skipped += 1;
+    if (result.ok) {
+      if (result.created) posted += 1;
+      else updated += 1;
+    } else if (result.channelUnavailable) {
+      skipped += 1;
+    }
   }
 
-  if (!posted && skipped) {
+  if (!posted && !updated && skipped) {
     return {
       ok: false,
       error: event.threadId
@@ -167,7 +208,7 @@ export async function postEventEverywhere(eventId) {
     };
   }
 
-  return { ok: true, event: opened, posted, skipped };
+  return { ok: true, event: opened, posted, updated, skipped };
 }
 
 export async function catchUpGuildEvents(guildId, channelId) {
