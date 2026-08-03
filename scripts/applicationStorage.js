@@ -130,3 +130,20 @@ export function listResolvedApplications(guildId) {
     (app) => app.status === 'approved' || app.status === 'waitlisted',
   );
 }
+
+/** Remove approved/waitlisted applications from the roster (pending kept). Returns count cleared. */
+export function clearResolvedApplications(guildId) {
+  const store = loadApplications();
+  const gid = String(guildId);
+  let cleared = 0;
+
+  for (const [id, app] of Object.entries(store)) {
+    if (app.guildId !== gid) continue;
+    if (app.status !== 'approved' && app.status !== 'waitlisted') continue;
+    delete store[id];
+    cleared += 1;
+  }
+
+  if (cleared) saveApplications(store);
+  return cleared;
+}

@@ -106,6 +106,7 @@ import {
   handleApplicationCancel,
   handleApplicationDecision,
   handleApplicationModalSubmit,
+  handleClearApplicationList,
   handleOpenApplicationModal,
   handleSetApplicationChannelCommand,
   isApplicationChannelCommand,
@@ -1866,6 +1867,8 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
         let response;
         if (appComponent.action === 'open_modal') {
           response = await handleOpenApplicationModal(req);
+        } else if (appComponent.action === 'clear_list') {
+          response = await handleClearApplicationList(req);
         } else if (appComponent.action === 'approve') {
           response = await handleApplicationDecision(req, appComponent.appId, 'approved');
         } else if (appComponent.action === 'reject') {

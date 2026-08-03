@@ -255,6 +255,12 @@ const PROFILE_COMMAND = {
   description: 'Show your linked trainer profile, or look up a trainer on this server',
   options: [
     {
+      type: 6,
+      name: 'user',
+      description: 'Discord user to look up (uses their linked trainer)',
+      required: false,
+    },
+    {
       type: 3,
       name: 'name',
       description: 'Trainer name to look up (server clubs only)',

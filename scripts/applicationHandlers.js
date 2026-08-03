@@ -7,6 +7,7 @@ import { DiscordRequest } from './utils.js';
 import { getGuildClubs } from './clubDatabase.js';
 import { formatIntWithCommas, resolveClubTargetInfo } from './clubService.js';
 import {
+  clearResolvedApplications,
   createApplication,
   getApplication,
   getApplicationChannel,
@@ -19,6 +20,7 @@ import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 
 // ─── Custom ID constants ───────────────────────────────────────────────────────
 export const APP_OPEN_MODAL_ID   = 'app_open_modal';
+export const APP_CLEAR_LIST_ID   = 'app_clear_list';
 export const APP_MODAL_ID        = 'app_modal_submit';
 export const APP_APPROVE_PREFIX  = 'app_approve:';
 export const APP_REJECT_PREFIX   = 'app_reject:';
@@ -142,6 +144,13 @@ function buildMainEmbed(guildName, clubs, resolvedApps) {
             custom_id: APP_OPEN_MODAL_ID,
             label: 'Apply',
             emoji: { name: '📝' },
+          },
+          {
+            type: 2,
+            style: 4,
+            custom_id: APP_CLEAR_LIST_ID,
+            label: 'Clear List',
+            emoji: { name: '🧹' },
           },
         ],
       },
@@ -495,6 +504,28 @@ export async function handleApplicationCancel(req, appId) {
   return ephemeral('✅ Your application has been cancelled.');
 }
 
+// ─── Button: clear approved/waitlisted roster (admin only) ───────────────────
+export async function handleClearApplicationList(req) {
+  const guildId = req.body.guild_id;
+  if (!guildId) return ephemeral('❌ Server only.');
+
+  if (!(await isTazunaAdmin(guildId, req.body.member))) {
+    return ephemeral(tazunaAdminDenied('clear the applicant list'));
+  }
+
+  const config = getApplicationChannel(guildId);
+  if (!config) return ephemeral('❌ Application channel is not configured.');
+
+  const cleared = clearResolvedApplications(guildId);
+  await refreshMainMessage(guildId);
+
+  return ephemeral(
+    cleared
+      ? `✅ Cleared **${cleared}** approved/waitlisted applicant${cleared === 1 ? '' : 's'} from the list.`
+      : '✅ The applicant list was already empty.',
+  );
+}
+
 // ─── Router helpers ───────────────────────────────────────────────────────────
 export function isApplicationChannelCommand(name) {
   return name === 'setapplicationchannel';
@@ -502,6 +533,7 @@ export function isApplicationChannelCommand(name) {
 
 export function parseApplicationComponent(customId) {
   if (customId === APP_OPEN_MODAL_ID) return { action: 'open_modal' };
+  if (customId === APP_CLEAR_LIST_ID) return { action: 'clear_list' };
   if (customId?.startsWith(APP_APPROVE_PREFIX))  return { action: 'approve',   appId: customId.slice(APP_APPROVE_PREFIX.length) };
   if (customId?.startsWith(APP_REJECT_PREFIX))   return { action: 'reject',    appId: customId.slice(APP_REJECT_PREFIX.length) };
   if (customId?.startsWith(APP_WAITLIST_PREFIX)) return { action: 'waitlist',  appId: customId.slice(APP_WAITLIST_PREFIX.length) };

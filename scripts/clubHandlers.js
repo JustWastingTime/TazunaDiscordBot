@@ -402,16 +402,82 @@ export async function handleRegisterForced(req) {
   };
 }
 
+async function sendLinkedProfileFollowup(sendFollowup, {
+  targetUserId,
+  guildId,
+  selfLookup,
+}) {
+  const link = getUserLink(targetUserId);
+  if (!link) {
+    await sendFollowup({
+      content: selfLookup
+        ? 'You do not have a trainer profile yet. Use `/register` with your umamusume id.'
+        : `❌ <@${targetUserId}> does not have a linked trainer profile.`,
+    });
+    return;
+  }
+
+  if (!isUmaLinked(link)) {
+    await sendFollowup({ embeds: [buildUnlinkedProfileEmbed(link)] });
+    return;
+  }
+
+  const guildClubIds = guildId ? getGuildClubs(guildId).map((club) => club.circleId) : [];
+  const { embed, resolvedCircle } = await buildProfileEmbedForViewerId(link.viewerId, {
+    circleIdHint: link.circleId || undefined,
+    searchCircleIds: guildClubIds,
+    festa: {
+      gambaCoins: link.gambaCoins,
+      gambaWr: link.gambaWr,
+      quizAccuracy: link.quizAccuracy,
+      openTickets: link.openTickets,
+      betHistory: link.betHistory,
+    },
+  });
+
+  if (
+    selfLookup &&
+    resolvedCircle?.circleId &&
+    (String(link.circleId) !== String(resolvedCircle.circleId) ||
+      link.circleName !== resolvedCircle.circleName)
+  ) {
+    upsertUserLink({
+      discordUserId: targetUserId,
+      viewerId: link.viewerId,
+      trainerName: link.trainerName,
+      circleId: resolvedCircle.circleId,
+      circleName: resolvedCircle.circleName,
+      registeredGuildId: guildId,
+    });
+  }
+
+  await sendFollowup({ embeds: [embed] });
+}
+
 export async function handleProfile(req) {
   const userId = req.body.member?.user?.id || req.body.user?.id;
   const guildId = req.body.guild_id ?? null;
+  const targetUserId = getOptionUserId(req, 'user');
   const nameArg = getOptionValue(req, 'name');
+
+  if (targetUserId && nameArg) {
+    return ephemeral('❌ Use either `user` or `name`, not both.');
+  }
 
   return {
     deferred: true,
     ephemeral: false,
     run: async (sendFollowup) => {
       try {
+        if (targetUserId) {
+          await sendLinkedProfileFollowup(sendFollowup, {
+            targetUserId: String(targetUserId),
+            guildId,
+            selfLookup: String(targetUserId) === String(userId),
+          });
+          return;
+        }
+
         if (nameArg) {
           if (!guildId) {
             await sendFollowup({
@@ -465,49 +531,11 @@ export async function handleProfile(req) {
           return;
         }
 
-        const link = getUserLink(userId);
-        if (!link) {
-          await sendFollowup({
-            content:
-              'You do not have a trainer profile yet. Use `/register` with your umamusume id.',
-          });
-          return;
-        }
-
-        if (!isUmaLinked(link)) {
-          await sendFollowup({ embeds: [buildUnlinkedProfileEmbed(link)] });
-          return;
-        }
-
-        const guildClubIds = guildId ? getGuildClubs(guildId).map((club) => club.circleId) : [];
-        const { embed, resolvedCircle } = await buildProfileEmbedForViewerId(link.viewerId, {
-          circleIdHint: link.circleId || undefined,
-          searchCircleIds: guildClubIds,
-          festa: {
-            gambaCoins: link.gambaCoins,
-            gambaWr: link.gambaWr,
-            quizAccuracy: link.quizAccuracy,
-            openTickets: link.openTickets,
-            betHistory: link.betHistory,
-          },
+        await sendLinkedProfileFollowup(sendFollowup, {
+          targetUserId: userId,
+          guildId,
+          selfLookup: true,
         });
-
-        if (
-          resolvedCircle?.circleId &&
-          (String(link.circleId) !== String(resolvedCircle.circleId) ||
-            link.circleName !== resolvedCircle.circleName)
-        ) {
-          upsertUserLink({
-            discordUserId: userId,
-            viewerId: link.viewerId,
-            trainerName: link.trainerName,
-            circleId: resolvedCircle.circleId,
-            circleName: resolvedCircle.circleName,
-            registeredGuildId: guildId,
-          });
-        }
-
-        await sendFollowup({ embeds: [embed] });
       } catch (err) {
         console.error('profile failed:', err);
         await sendFollowup({ content: `❌ Failed: ${err.message}` });
