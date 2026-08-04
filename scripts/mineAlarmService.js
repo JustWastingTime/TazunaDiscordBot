@@ -115,18 +115,60 @@ export function buildBoardPayload(timers) {
   };
 }
 
-export async function refreshBoard(guildId, channelId, state = null) {
-  const current = state || getGuildMineState(guildId);
-  const board = getBoard(current, channelId);
-  if (!board?.messageId) return;
+function isUnknownMessageError(err) {
+  const message = String(err?.message || err || '');
+  return message.includes('"code":10008') || message.includes('10008') || /unknown message/i.test(message);
+}
 
+function isChannelUnavailableError(err) {
+  const message = String(err?.message || err || '');
+  return (
+    message.includes('50001') ||
+    message.includes('50013') ||
+    message.includes('10003') ||
+    message.includes('50083')
+  );
+}
+
+/**
+ * Edit the board message, or post a new one if the stored message is gone.
+ * Returns the latest messageId (or null if the board couldn't be updated).
+ */
+async function upsertBoardMessage(guildId, channelId, state = null) {
+  const current = state || getGuildMineState(guildId);
+  const cid = String(channelId);
+  const board = getBoard(current, cid);
+  const payload = buildBoardPayload(timersForChannel(current, cid));
+
+  if (board?.messageId) {
+    try {
+      await editChannelMessage(cid, board.messageId, payload);
+      return board.messageId;
+    } catch (err) {
+      if (!isUnknownMessageError(err)) throw err;
+      console.warn(
+        `Mine board message ${board.messageId} missing in guild ${guildId} channel ${cid}; recreating.`,
+      );
+    }
+  }
+
+  const message = await sendChannelMessage(cid, payload);
+  current.boards[cid] = { messageId: String(message.id) };
+  saveGuildMineState(guildId, current);
+  return String(message.id);
+}
+
+export async function refreshBoard(guildId, channelId, state = null) {
   try {
-    await editChannelMessage(
-      channelId,
-      board.messageId,
-      buildBoardPayload(timersForChannel(current, channelId)),
-    );
+    await upsertBoardMessage(guildId, channelId, state);
   } catch (err) {
+    if (isChannelUnavailableError(err)) {
+      console.warn(
+        `Mine board channel unavailable (${guildId}/${channelId}):`,
+        err.message ?? err,
+      );
+      return;
+    }
     console.error(
       `Failed to refresh mine board (${guildId}/${channelId}):`,
       err.message ?? err,
@@ -297,21 +339,9 @@ export async function setupMineChannel(guildId, channelId) {
   const state = getGuildMineState(guildId);
   const cid = String(channelId);
   const existing = getBoard(state, cid);
-  const payload = buildBoardPayload(timersForChannel(state, cid));
-
-  if (existing?.messageId) {
-    try {
-      await editChannelMessage(cid, existing.messageId, payload);
-      return { updated: true, board: { channelId: cid, messageId: existing.messageId } };
-    } catch {
-      // Message missing — post a new one below.
-    }
-  }
-
-  const message = await sendChannelMessage(cid, payload);
-  state.boards[cid] = { messageId: String(message.id) };
-  saveGuildMineState(guildId, state);
-  return { updated: false, board: { channelId: cid, messageId: String(message.id) } };
+  const messageId = await upsertBoardMessage(guildId, cid, state);
+  const updated = Boolean(existing?.messageId && existing.messageId === messageId);
+  return { updated, board: { channelId: cid, messageId } };
 }
 
 /**
