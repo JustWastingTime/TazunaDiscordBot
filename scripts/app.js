@@ -1980,19 +1980,34 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
     const mineAlarmAction = handleMineAlarmComponent(custom_id);
     if (mineAlarmAction) {
-      try {
-        const response = await handleMineAlarmClick(req, mineAlarmAction);
-        return res.send(response);
-      } catch (err) {
-        console.error('Mine alarm button handler failed:', err);
-        return res.send({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: {
-            flags: InteractionResponseFlags.EPHEMERAL,
-            content: '❌ Something went wrong with the mine alarm.',
-          },
-        });
-      }
+      // Acknowledge immediately — board edits can exceed Discord's 3s window.
+      res.send({
+        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
+        data: { flags: InteractionResponseFlags.EPHEMERAL },
+      });
+      (async () => {
+        try {
+          const response = await handleMineAlarmClick(req, mineAlarmAction);
+          const data = response?.data || { content: '✅ Done.' };
+          await sendFollowup(token, {
+            flags: data.flags ?? InteractionResponseFlags.EPHEMERAL,
+            content: data.content,
+            embeds: data.embeds,
+            components: data.components,
+          });
+        } catch (err) {
+          console.error('Mine alarm button handler failed:', err);
+          try {
+            await sendFollowup(token, {
+              flags: InteractionResponseFlags.EPHEMERAL,
+              content: '❌ Something went wrong with the mine alarm.',
+            });
+          } catch (followupErr) {
+            console.error('Mine alarm follow-up failed:', followupErr);
+          }
+        }
+      })();
+      return;
     }
 
     const clubSettingsAction = parseClubSettingsComponent(custom_id, values);

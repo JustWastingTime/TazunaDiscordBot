@@ -317,7 +317,10 @@ export async function startTimer(guildId, userId, channelId, minutes = DEFAULT_M
   saveGuildMineState(guildId, state);
 
   scheduleTimer(guildId, String(userId), state.timers[String(userId)]);
-  await refreshBoards(guildId, [cid, previousChannelId], state);
+  // Don't block slash/button acks on Discord edit latency.
+  refreshBoards(guildId, [cid, previousChannelId], state).catch((err) => {
+    console.error('Mine board refresh after startTimer failed:', err.message ?? err);
+  });
 
   return { timer: state.timers[String(userId)], minutes: clamped };
 }
@@ -331,7 +334,9 @@ export async function stopTimer(guildId, userId) {
 
   delete state.timers[String(userId)];
   saveGuildMineState(guildId, state);
-  await refreshBoard(guildId, existing.channelId, state);
+  refreshBoard(guildId, existing.channelId, state).catch((err) => {
+    console.error('Mine board refresh after stopTimer failed:', err.message ?? err);
+  });
   return true;
 }
 
