@@ -3637,7 +3637,7 @@
     {   "id": "102901 - Yukino Bijin", 
         "character_name": "Yukino Bijin",
         "type": "Original",
-        "costume": "Cute Sweet Flower of Mutsu",
+        "costume": "Darl'n Snowflake",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -3666,7 +3666,7 @@
             "End": "G"
             }
         ],
-        "unique": "Chasing the Snowlight",
+        "unique": "Snow Bright, Snow Flight",
         "unique_explanation": "",
         "skills": [
             "Nimble Navigator",
@@ -3683,7 +3683,14 @@
             "Winter Runner",
             "Downhill Speedster",
             "Corner Acceleration",
-            "Head-On"
+            "Head-On",
+            "Morioka Racecourse",
+            "Full Tilt"
+        ],
+        "evo_skills": [
+            "Like They Do in the City!",
+            "Snow Gals Know Howta Sled!",
+            "Steadfast Determination"
         ],
         "races": [
             "hanshin juvenile fillies december 1 year 1",
@@ -3696,7 +3703,7 @@
             "queen elizabeth ii cup november 1 year 3",
             "japan cup november 2 year 3"
         ],
-        "aliases": ["yukino bijin original", "cute sweet flower of mutsu"],
+        "aliases": ["yukino bijin original", "darln snowflake", "darling snowflake"],
         "url": "https://gametora.com/umamusume/characters/102901-yukino-bijin",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1029_102901.png",
         "review": "",
@@ -3712,10 +3719,14 @@
             {
             "conditions": "Win the Triple Tiara (Oka Sho, Japanese Oaks, Shuka Sho) and the Hanshin Juvenile Fillies (Bad Result)",
             "rewards": "Guts +5, Wit +5"
+            },
+            {
+            "conditions": "Win the M.C. Nambu Hai (Year 2 or Year 3)",
+            "rewards": "Energy -15, 1 random stat +10, Power +20, Guts +10, Skill points +45, Morioka Racecourse hint +5, Full Tilt hint +1"
             }
         ],
         "epithet": {
-            "name": "Bonny Lass From Iwate",
+            "name": "Iwate's Natural Beauty",
             "condition": "Win a graded race held in Morioka\nWin the Oka Sho, Japanese Oaks and Shuka Sho\nEarn a total of at least 320,000 fans"
         }
     },

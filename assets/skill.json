@@ -14742,11 +14742,11 @@
             ]
         }
     },
-    {   "skill_name": "Hephaestus", "description": "Aim higher, increasing velocity from midpack upon approaching the final straight late-race. ",
+    {   "skill_name": "Hephaestus", "description": "Aim higher, increasing velocity from midpack upon approaching the final straight late-race.",
         "effect": [
             {
                 "description": "Increases target speed by 0.35 for 5.0s.",
-                "inherited": "Increases target speed by 0.05 for 3.6s. Increases by an additional 0.05 per skill activation up to 3 times.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "4th to 7th (CM), 5th to 9th (TT)",
                     "Late race and beyond",
@@ -14773,6 +14773,85 @@
                     "target": "layout",
                     "match": "not_a_corner",
                     "select": "last",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Snow Bright, Snow Flight", "description": "With 300m or less remaining, increase velocity when leading or positioned toward the front close to the lead runner.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "≤5m behind 1st place",
+                    "≤300m of the race remaining",
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "snow bright snow flight",
+            "yukino bijin original"
+        ],
+        "horse": "Yukino Bijin (Original)",
+        "gametora_id": "100291",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "line",
+                    "distance_mode": "remaining",
+                    "value": 300
+                }
+            ]
+        }
+    },
+    {   "skill_name": "I'm Possible!", "description": "Increase velocity when positioned 2nd or later within 4 lengths of the lead with 200m remaining. If within 2 lengths, increase velocity greatly instead.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "≥2nd place",
+                    "≤5m behind 1st place",
+                    "≤201m of the race remaining",
+                    "≥199m of the race remaining",
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "≥2nd place",
+                    "≤10m behind 1st place",
+                    "≤201m of the race remaining",
+                    "≥199m of the race remaining",
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "im possible",
+            "seeking the pearl original"
+        ],
+        "horse": "Seeking the Pearl (Original)",
+        "gametora_id": "100421",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "distance_mode": "remaining",
+                    "remaining_start": 201,
+                    "remaining_end": 199,
                     "trigger_behavior": "asap"
                 }
             ]
