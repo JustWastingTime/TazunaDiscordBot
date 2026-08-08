@@ -96,7 +96,12 @@ async function updateCache() {
     console.log(`[CacheUpdater] Updating JSON cache from ${useLocalAssets ? 'local assets' : 'GitHub'}...`);
     const nextData = {};
     for (const key of Object.keys(urls)) {
-      nextData[key] = await loadCacheEntry(key, useLocalAssets);
+      try {
+        nextData[key] = await loadCacheEntry(key, useLocalAssets);
+      } catch (err) {
+        const src = useLocalAssets ? localFiles[key] : urls[key];
+        throw new Error(`[CacheUpdater] Failed loading "${key}" from ${src}: ${err.message}`);
+      }
     }
 
     // Mutate arrays in place so existing references keep seeing fresh data.

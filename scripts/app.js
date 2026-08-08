@@ -900,9 +900,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
           });
         } catch (err) {
           console.error('Manual cache refresh failed:', err);
+          const detail = String(err?.message || err).slice(0, 180);
           await sendFollowup(token, {
             flags: InteractionResponseFlags.EPHEMERAL,
-            content: '❌ Cache refresh failed.'
+            content: `❌ Cache refresh failed.\n\`${detail}\``
           });
         }
       })();

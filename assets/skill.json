@@ -14786,7 +14786,7 @@
                 "conditions": [
                     "1st to 4th (CM), 1st to 5th (TT)",
                     "≤5m behind 1st place",
-                    "≤300m of the race remaining",
+                    "≤300m of the race remaining"
                 ]
             }
         ],
@@ -14820,7 +14820,7 @@
                     "≥2nd place",
                     "≤5m behind 1st place",
                     "≤201m of the race remaining",
-                    "≥199m of the race remaining",
+                    "≥199m of the race remaining"
                 ]
             },
             {
@@ -14830,7 +14830,7 @@
                     "≥2nd place",
                     "≤10m behind 1st place",
                     "≤201m of the race remaining",
-                    "≥199m of the race remaining",
+                    "≥199m of the race remaining"
                 ]
             }
         ],
