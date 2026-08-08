@@ -7682,7 +7682,7 @@
                 "conditions": [
                     "Mile",
                     "1st to 5th (CM), 1st to 6th (TT)",  
-                    "Random point in the second half of early race"
+                    "Random point in the second half of mid race"
                 ]
             }
         ],
@@ -7700,7 +7700,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "early",
+                    "phase": "mid",
                     "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
@@ -10489,7 +10489,7 @@
                 "conditions": [
                     "Mile",
                     "1st to 5th (CM), 1st to 6th (TT)",  
-                    "Random point in the second half of early race"
+                    "Random point in the second half of med race"
                 ]
             }
         ],
@@ -10513,7 +10513,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "early",
+                    "phase": "med",
                     "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random"
                 }
