@@ -15809,7 +15809,7 @@
         "aliases": [
             "leap forward"
         ],
-        "upgrade": "Flash Forward (TO BE RENAMED)",
+        "upgrade": "Lightning Surge",
         "gametora_id": "202402",
         "activation_map": {
             "show_chart": true,
@@ -16836,7 +16836,7 @@
             }
         }
     },
-    {   "skill_name": "Flash Forward (TO BE RENAMED)", "description": "Increase acceleration when trying to pass another runner from the back late-race. (Sprint/Mile)",
+    {   "skill_name": "Lightning Surge", "description": "Increase acceleration when trying to pass another runner from the back late-race. (Sprint/Mile)",
         "effect": [
             {
                 "description": "Increases acceleration by 0.4 for 2.0s.",
