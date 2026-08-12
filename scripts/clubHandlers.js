@@ -42,7 +42,7 @@ import {
 } from './clubService.js';
 import { hashLeaderboardContent } from './clubLeaderboardCron.js';
 import { DiscordRequest } from './utils.js';
-import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
+import { isBotOwner, isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 
 const ALL_CLUBS_AUTOCOMPLETE = { name: 'All Clubs', value: 'all' };
 const LB_ALL_PAGE_RE = /^lb_all_(prev|next):([^:]+):([^:]+):(\d+)$/;
@@ -702,7 +702,7 @@ export async function handleSetPremium(req) {
   const guildId = req.body.guild_id;
   const userId = req.body.member?.user?.id || req.body.user?.id;
   if (!guildId) return guildRequiredResponse();
-  if (!userId || !BOT_OWNER_IDS.has(userId)) {
+  if (!isBotOwner(userId)) {
     return ephemeral('❌ Only the bot owner can use `/club setpremium`.');
   }
 
