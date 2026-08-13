@@ -5040,7 +5040,7 @@
     {   "id": "104201 - Seeking the Pearl",
         "character_name": "Seeking the Pearl",
         "type": "Original",
-        "costume": "Rocket ☆ Star",
+        "costume": "Rocket☆Star",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
@@ -5069,7 +5069,7 @@
             "End": "B"
             }
         ],
-        "unique": "『I'm Possible』",
+        "unique": "I'm Possible!",
         "unique_explanation": "",
         "skills": [
             "Firm Conditions",
@@ -5078,12 +5078,17 @@
         ],
         "potential": [
             "Light as a Feather",
-            "Lightning Flash",
+            "Shocking Flash",
             "Head-On",
             "Big-Sisterly"
         ],
         "event_skills": [
             "Uma Stan"
+        ],
+        "evo_skills":
+        [
+            "The World Is My Oyster",
+            "Pearlescent Danceoff"
         ],
         "races": [
             "daily hai junior stakes november 1 year 1",
@@ -5103,7 +5108,7 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1042_104201.png",
         "review": "",
         "epithet": {
-            "name": "Shining Like a Pearl",
+            "name": "Twinkling Pearl",
             "condition": "Win the Oka Sho\nWin the NHK Mile Cup\nWin the Japanese Oaks\nWin the Shuka Sho\nWin the Takamatsunomiya Kinen\nWin the Sprinters Stakes (Year 3)"
         }
     },
