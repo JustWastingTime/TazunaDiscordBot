@@ -2823,7 +2823,7 @@
             "mr cb tracen", "mr c b"
         ]
     },
-    {   "id": "10079 Daiichi Ruby",
+    {   "id": "10079 Daiichi Ruby", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Daiichi Ruby",
         "unique": "-",
@@ -2856,10 +2856,28 @@
         "rarity": "r",
         "category": "power",
         "aliases": [
-            "daiichi ruby tracen"
+            "daiichi ruby tracen", "daichi"
+        ],
+        "events":[
+        {
+            "name": "Magnificent Dismay?",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Power +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Magnificent Melodia",
+            "type": "event",
+            "results": [
+            "Skill points +25, Bond +5",
+            "Bond +5, Gap Closer hint +1"
+            ]
+        }
         ]
     },
-    {   "id": "10080 K. S. Miracle",
+    {   "id": "10080 K. S. Miracle", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "K. S. Miracle",
         "unique": "-",
@@ -2887,6 +2905,24 @@
         "category": "guts",
         "aliases": [
             "k s miracle tracen", "ksmiracle"
+        ],
+        "events":[
+        {
+            "name": "Spreading Kindness",
+            "type": "event",
+            "results": [
+            "Speed +5, Power +5, Guts +5, Bond +5",
+            "Mood +2, Bond +5"
+            ]
+        },
+        {
+            "name": "Come Rain or River",
+            "type": "event",
+            "results": [
+            "Wit +20, Bond +5",
+            "Bond +5, Light as a Feather hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10081 Tsurumaru Tsuyoshi",
@@ -5158,9 +5194,77 @@
             "RENAME"
         ]
     },
+    {   "id": "20051 K. S. Miracle", "_event": "done",
+        "card_name": "The 3rd Miracle",
+        "character_name": "K. S. Miracle",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases skill point gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Guts Bonus - 0/0/0/0/1",
+            "Initial Guts - 20/21/22/23/25",
+            "Initial Friendship Gauge - 20/21/22/23/25",
+            "Hint Levels - 0/1/1/2/2",
+            "Hint Frequency - 0/20/25/30/30%",
+            "Specialty Priority - 50/53/57/61/65"
+        ],
+        "support_skills": [
+            "Updrafters",
+            "Sprint Corners",
+            "Countermeasure",
+            "Pace Chaser Straightaways",
+            "Pace Chaser Savvy",
+            "On the Attack"
+        ],
+        "event_skills": [
+            "Sprint Straightaways",
+            "Light as a Feather"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20051-ksmiracle",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20051.png",
+        "rarity": "sr",
+        "category": "guts",
+        "aliases": [
+            "k s miracle",
+            "ksmiracle",
+            "the 3rd miracle"
+        ],
+        "events":[
+        {
+            "name": "Across Still Waters",
+            "type": "chain",
+            "results": [
+            "Speed +5, Power +5, Guts +5, Bond +5, Sprint Straightaways hint +1"
+            ]
+        },
+        {
+            "name": "On Thin Ice",
+            "type": "chain",
+            "results": [
+            "Skill points +35, Bond +5",
+            "Energy +30, Bond +5"
+            ]
+        },
+        {
+            "name": "Spreading Kindness",
+            "type": "event",
+            "results": [
+            "Speed +5, Power +5, Guts +5, Bond +5",
+            "Mood +2, Bond +5"
+            ]
+        },
+        {
+            "name": "Come Rain or River",
+            "type": "event",
+            "results": [
+            "Wit +20, Bond +5",
+            "Bond +5, Light as a Feather hint +1"
+            ]
+        }
+        ]
+    },
 
     
-    {   "id": "30001 Special Week",
+    {   "id": "30001 Special Week", "_event": "done",
         "card_name": "The Brightest Star in Japan!",
         "character_name": "Special Week",
         "unique": "Increases Guts gain when training together (1)\nIncreases initial Guts when beginning a Career playthrough (20)",
@@ -10570,6 +10674,87 @@
                 "Energy +10, Stamina +10, Bond +5"
                 ]
             }
+        ]
+    },
+    {   "id": "30114 Daiichi Ruby", "_event": "done",
+        "card_name": "Ah, Such Majesty",
+        "character_name": "Daiichi Ruby",
+        "unique": "Gain Power Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Training Effectiveness - 5%",
+            "Initial Power - 25/26/27/28/30",
+            "Initial Guts - 0/0/0/15/30",
+            "Initial Friendship Gauge - 25/27/30/32/35",
+            "Specialty Priority - 50/57/65/72/80",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Slick Surge",
+            "Gap Closer",
+            "Subdued Front Runners",
+            "Flustered Front Runners",
+            "Hesitant Front Runners",
+            "Stop Right There!",
+            "Opening Gambit",
+            "Tether",
+            "Late Surger Straightaways",
+            "Lone Wolf",
+            "Fearless"
+        ],
+        "event_skills": [
+            "Lightning Surge",
+            "Late Surger Corners",
+            "Sprinting Gear",
+            "Gap Closer"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30114-daiichi-ruby",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30114.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "daiichi ruby", "daichi",
+            "ah such majesty"
+        ],
+        "events":[
+        {
+            "name": "To Uphold Oneself with Strictness",
+            "type": "chain",
+            "results": [
+            "Power +10, Bond +5 OR Power +15, Bond +5, Late Surger Corners hint +2"
+            ]
+        },
+        {
+            "name": "To Exert Oneself with Diligence",
+            "type": "chain",
+            "results": [
+            "Energy +10, Power +10, Bond +5",
+            "Skill points +10, Bond +5, Sprinting Gear hint +2"
+            ]
+        },
+        {
+            "name": "To Conduct Oneself with Kindness",
+            "type": "chain",
+            "results": [
+            "Power +15, Skill points +25, Bond +5, Lightning Surge hint +1"
+            ]
+        },
+        {
+            "name": "Magnificent Dismay?",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Power +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Magnificent Melodia",
+            "type": "event",
+            "results": [
+            "Skill points +25, Bond +5",
+            "Bond +5, Gap Closer hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30121 Mihono Bourbon", "_event": "done",
