@@ -17558,6 +17558,7 @@
         "effect": [
             {
                 "description": "Increases acceleration by 0.1 for 2.0s. Increase acceleration by 0.1 and 2.0s for every runner passed (up to 3 times).",
+                "inherited": "Increases acceleration by 0.05 for 1.2s. Increase acceleration by 0.05 and 1.0s for every runner passed (up to 3 times).",
                 "conditions": [
                     "5th to 9th (CM), 6th to 12th (TT)",
                     "≤1 length(s) behind",
@@ -17571,8 +17572,10 @@
         "rarity": "unique",
         "category": "rainbowaccel",
         "aliases": [
-            "red hot discipline"
+            "red hot discipline",
+            "bamboo memory original"
         ],
+        "horse": "Bamboo Memory (Original)",
         "gametora_id": "100531",
         "activation_map": {
             "show_chart": true,
