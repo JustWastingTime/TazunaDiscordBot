@@ -37,7 +37,8 @@
     { "number": 27, "name": "legi", "ageSex": "C", "jockey": "Christmas Oguri", "odds": 2.0 },
     { "number": 28, "name": "Rusalyca@BUNS", "ageSex": "C", "jockey": "Summer McQueen", "odds": 2.5 },
     { "number": 29, "name": "Minh@BUNS", "ageSex": "C", "jockey": "Christmas Oguri", "odds": 2.0 },
-    { "number": 30, "name": "Hoid", "ageSex": "B", "jockey": "Christmas Oguri", "odds": 2.0 }
+    { "number": 30, "name": "Hoid", "ageSex": "B", "jockey": "Christmas Oguri", "odds": 2.0 },
+    { "number": 31, "name": "JLew@BUNS", "ageSex": "C", "jockey": "Seiun Sky", "odds": 2.5 }
   ]
 }
 
