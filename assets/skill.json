@@ -14330,7 +14330,7 @@
                 "conditions": [
                     "2nd to 4th (CM), 2nd to 5th (TT)",
                     "≤5m behind 1st place", 
-                    "At the last 400m of the race"
+                    "At the last 200m of the race"
                 ]
             },
             {
@@ -14338,7 +14338,7 @@
                 "inherited": "Increases target speed by 0.15 for 3.0s.",
                 "conditions": [
                     "2nd to 4th (CM), 2nd to 5th (TT)",
-                    "At the last 400m of the race"
+                    "At the last 200m of the race"
                 ]
             }
         ],
