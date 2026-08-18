@@ -14857,6 +14857,75 @@
             ]
         }
     },
+    {   "skill_name": "THE MOE AAAA Thanks for My Life", "description": "Simp hard and increase velocity when positioned midpack or further back on a mid-race corner and there are at least 3 beautiful radiant Umamusume nearby.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "4th to 9th (CM), 5th to 12th (TT)",
+                    "≥3 uma within 3m or 3 lanes",
+                    "Any corner",
+                    "Mid race"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "the moe aaaa thanks for my life",
+            "agnes digital halloween"
+        ],
+        "horse": "Agnes Digital (Halloween)",
+        "gametora_id": "110191",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "phase": "mid",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Spooky, Scary, Happy", "description": "Increase velocity and very slightly intimidate up to 2 runners ahead and up to 2 runners behind when positioned toward the front upon entering the final straight.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s. Reduces speed by 0.05 to 2 runners ahead and behind.",
+                "inherited": "Increases target speed by 0.15 for 3.0s. Reduces speed by 0.025 to 2 runners ahead and behind.",
+                "conditions": [
+                    "1st to 4th (CM), 1st to 5th (TT)",
+                    "Just entered final straight"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "spooky scary happy",
+            "meisho doto halloween"
+        ],
+        "horse": "Meisho Doto (Halloween)",
+        "gametora_id": "110581",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "line",
+                    "target": "layout",
+                    "match": "straight",
+                    "select": "last"
+                }
+            ]
+        }
+    },
 
 
 

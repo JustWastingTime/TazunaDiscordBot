@@ -2520,6 +2520,92 @@
             "condition": "Win the Japan Dirt Derby\nWin the Mile Championship\nWin the February Stakes\nWin the Yasuda Kinen\nWin the Tenno Sho (Autumn)\nWin the Arima Kinen (Year 3)"
         }
     },
+    {   "id": "101902 - Agnes Digital Halloween",
+        "character_name": "Agnes Digital",
+        "type": "Halloween",
+        "costume": "Fanatic♡Jiangshi",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "7%",
+            "stamina": "7%",
+            "power": "8%",
+            "guts": "8%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "G"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "B"
+            }
+        ],
+        "unique": "THE MOE AAAA Thanks for My Life",
+        "unique_explanation": "",
+        "skills": [
+            "Comeback",
+            "Ramp Up",
+            "Updrafters"
+        ],
+        "potential": [
+            "Uma Stan",
+            "It's On!",
+            "Forward, March!",
+            "Can't Keep Me Down"
+        ],
+        "event_skills": [
+            "Top Pick",
+            "Acceleration",
+            "Homestretch Haste",
+            "Kyoto Racecourse",
+            "Mile Corners",
+            "Down in the Dirt",
+            "Mile Straightaways",
+            "Updrafters",
+            "Unyielding Spirit",
+            "Morioka Racecourse",
+            "Rapid Gain"
+        ],
+        "evo_skills": [
+            "Run Like the Fic's Due Tomorrow!",
+            "Now I'm Hyped!!",
+            "Back for More Moe!"
+        ],
+        "aliases": ["agnes digital halloween", "fanatic jiangshi", "digitan"],
+        "url": "https://gametora.com/umamusume/characters/101901-agnes-digital",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1019_101901.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Hanshin Juvenile Fillies or the Asahi Hai Futurity Stakes, Oka Sho, NHK Mile Cup, Mile Championship, February Stakes, Victoria Mile and Yausda Kinen",
+            "rewards": "Speed +20, Power +20, Skill points +30, Updrafters hint +1, Unyielding Spirit hint +1"
+            },
+            {
+            "conditions": "Participate in the Takarazuka Kinen (Year 2)",
+            "rewards": "1 random stat +4/5/10, Skill points +25/40/45"
+            },
+            {
+            "conditions": "Win the M.C. Nambu Hai",
+            "rewards": "Energy -15, Speed +5, Stamina +5, Power +10, Guts +10, Skill points +45, Morioka Racecourse hint +1, Rapid Gain hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "All-Around Otaku",
+            "condition": "Win the Japan Dirt Derby\nWin the Mile Championship\nWin the February Stakes\nWin the Yasuda Kinen\nWin the Tenno Sho (Autumn)\nWin the Arima Kinen (Year 3)"
+        }
+    },
 
     {   "id": "102001 - Seiun Sky",
         "character_name": "Seiun Sky",
@@ -6291,6 +6377,10 @@
             "Prepared to Pass",
             "Up-Tempo"
         ],
+        "evo_skills": [
+            "Right on the Dot",
+            "I-I'm Doing My Best!"
+        ],
         "races": [
             "nikkei shinshun january 1 year 3",
             "kinko sho march 1 year 3",
@@ -6302,6 +6392,86 @@
         "aliases": ["meisho doto original", "blue raging"],
         "url": "https://gametora.com/umamusume/characters/105801-meisho-doto",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1058_105801.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Participate in the Make Debut",
+            "rewards": "All stats +3, Skill points +20, Get 'Not Ready' status, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Have at least 15,000 fans before October 2 Year 2",
+            "rewards": "All stats +3, Skill points +20, Heal 'Not Ready' status, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Satsuki Sho, Tenno Sho (Spring Year 3), Takarazuka Kinen (Year 3), and Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and Arima Kinen (Year 3)",
+            "rewards": "All stats +10, Skill points +20, Prepared to Pass hint +1, Up-Tempo hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "Unrelenting Challenger",
+            "condition": "Without losing any races inbetween, win 9 or more graded races including the Tenno Sho (Spring), Takarazuka Kinen and Arima Kinen"
+        }
+    },
+    {   "id": "105802 - Meisho Doto Halloween",
+        "character_name": "Meisho Doto",
+        "type": "Halloween",
+        "costume": "Dot-o'-Lantern",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "",
+            "power": "15%",
+            "guts": "",
+            "wit": "15%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "E"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "F",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "B",
+            "End": "E"
+            }
+        ],
+        "unique": "Spooky, Scary, Happy",
+        "unique_explanation": "",
+        "skills": [
+            "Corner Recovery",
+            "Head-On",
+            "Medium Straightaways"
+        ],
+        "potential": [
+            "On the Attack",
+            "Neck and Neck",
+            "Right-Handed",
+            "Swinging Maestro"
+        ],
+        "event_skills": [
+            "Tactical Tweak",
+            "All I've Got",
+            "Medium Corners",
+            "Prepared to Pass",
+            "Up-Tempo"
+        ],
+        "evo_skills": [
+            "For My Rival!",
+            "Fervent Determination",
+            "Soul Guide"
+        ],
+        "aliases": ["meisho doto halloween", "doto lantern"],
+        "url": "https://gametora.com/umamusume/characters/105802-meisho-doto",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1058_105802.png",
         "review": "",
         "secrets": [
             {
@@ -7366,7 +7536,7 @@
         ],
         "potential": [
             "Fighting Spirit",
-            "It's On",
+            "It's On!",
             "Corner Acceleration",
             "Unyielding"
         ],
