@@ -1035,6 +1035,7 @@
         "aliases": [
             "agnes digital tracen"
         ]
+        
     },
     {   "id": "10027 Tamamo Cross",
         "card_name": "Tracen Academy",
@@ -1186,7 +1187,7 @@
             "mayano top gun tracen"
         ]
     },
-    {   "id": "10031 Manhattan Cafe",
+    {   "id": "10031 Manhattan Cafe", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Manhattan Cafe",
         "unique": "-",
@@ -1217,6 +1218,24 @@
         "category": "stamina",
         "aliases": [
             "manhattan cafe tracen", "coughy"
+        ],
+        "events":[
+        {
+            "name": "Solo Nighttime Run",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Energy +10, Stamina +5, Bond +5"
+            ]
+        },
+        {
+            "name": "A Taste of Silence",
+            "type": "event",
+            "results": [
+            "Stamina +5, Skill points +15, Bond +5",
+            "Bond +5, Non-Standard Distance hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10032 Mihono Bourbon", "_event": "done",
@@ -3508,7 +3527,7 @@
         "category": "stamina",
         "aliases": ["mayano top gun", "cute plus cute", "cute + cute"]
     },
-    {   "id": "20008 Manhattan Cafe",
+    {   "id": "20008 Manhattan Cafe", "_event": "done",
         "card_name": "My Solo Drawn to Raindrop Drums",
         "character_name": "Manhattan Cafe",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which the character participates in their preferred training type (20)",
@@ -3540,7 +3559,39 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20008.png",
         "rarity": "sr",
         "category": "stamina",
-        "aliases": ["manhattan cafe", "my solo drawn to raindrop drums", "coughy"]
+        "aliases": ["manhattan cafe", "my solo drawn to raindrop drums", "coughy"],
+        "events":[
+        {
+            "name": "Invitation on a Rainy Day",
+            "type": "chain",
+            "results": [
+            "Energy +15, Skill points +15"
+            ]
+        },
+        {
+            "name": "Invitation on a Stormy Day",
+            "type": "chain",
+            "results": [
+            "Stamina +15, Bond +5, Studious hint +1"
+            ]
+        },
+        {
+            "name": "Solo Nighttime Run",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Energy +10, Stamina +5, Bond +5"
+            ]
+        },
+        {
+            "name": "A Taste of Silence",
+            "type": "event",
+            "results": [
+            "Stamina +5, Skill points +15, Bond +5",
+            "Bond +5, Non-Standard Distance hint +1"
+            ]
+        }
+        ]
     },
     {   "id": "20009 Mihono Bourbon", "_event": "done",
         "card_name": "Pal-Assisted Training",
@@ -8629,7 +8680,7 @@
             "marvelous sunday dazzling day in the snow", "marvelous sunday welfare", "marvelous sunday poverty", "marvelous sunday event"
         ]
     },
-    {   "id": "30075 Manhattan Cafe",
+    {   "id": "30075 Manhattan Cafe", "_event": "done",
         "card_name": "My Solo Spun in Spiraling Runs",
         "character_name": "Manhattan Cafe",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Stamina gain when training together (1)",
@@ -8663,6 +8714,46 @@
         "category": "stamina",
         "aliases": [
             "manhattan cafe my solo spun in spiraling runs"
+        ],
+        "events":[
+        {
+            "name": "Drawn In",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Wit +5"
+            ]
+        },
+        {
+            "name": "Discovery",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Wit +10, Bond +5, Long Corners hint +1 OR Energy +15, Bond +5, Long Corners hint +1, Get Night Owl status",
+            "Energy +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Shadowing",
+            "type": "chain",
+            "results": [
+            "Stamina +15, Bond +5, Stamina Siphon hint +1"
+            ]
+        },
+        {
+            "name": "Solo Nighttime Run",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Energy +10, Stamina +5, Bond +5"
+            ]
+        },
+        {
+            "name": "A Taste of Silence",
+            "type": "event",
+            "results": [
+            "Stamina +5, Skill points +15, Bond +5",
+            "Bond +5, Non-Standard Distance hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30076 Silence Suzuka", "_event": "done",
@@ -10395,7 +10486,7 @@
             }
         ]
     },
-    {   "id": "30110 Manhattan Cafe",
+    {   "id": "30110 Manhattan Cafe", "_event": "done",
         "card_name": "It's on the house.",
         "character_name": "Manhattan Cafe",
         "unique": "Gain Stamina Bonus (2) when the bond gauge is at least 80",
@@ -10431,6 +10522,45 @@
         "aliases": [
             "manhattan cafe coughy coffee",
             "its on the house"
+        ],
+        "events":[
+        {
+            "name": "Not All Phenomena Must Be Seen",
+            "type": "chain",
+            "results": [
+            "Energy +20, Mood +1, Stamina +5, Bond +5"
+            ]
+        },
+        {
+            "name": "The Big Picture Isn't So Big",
+            "type": "chain",
+            "results": [
+            "Energy +25, Stamina +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Not All Mysteries Must Be Solved",
+            "type": "chain",
+            "results": [
+            "Energy +30, Stamina +5, Bond +5, Of Calm Mind hint +1"
+            ]
+        },
+        {
+            "name": "Solo Nighttime Run",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Energy +10, Stamina +5, Bond +5"
+            ]
+        },
+        {
+            "name": "A Taste of Silence",
+            "type": "event",
+            "results": [
+            "Stamina +5, Skill points +15, Bond +5",
+            "Bond +5, Non-Standard Distance hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30111 Tokai Teio", "_event": "done",
@@ -10755,6 +10885,87 @@
             "Bond +5, Gap Closer hint +1"
             ]
         }
+        ]
+    },
+    {   "id": "30116 Daitaku Helios",
+        "card_name": "Sunlit Angel ♪",
+        "character_name": "Daitaku Helios",
+        "unique": "Gain Initial Stat Up (10), where Stat is the type of the card, for every card in your support deck (Friend and Group types give (2) to every stat)",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Speed Bonus - 0/0/0/1/2",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 5/6/7/8/10%",
+            "Fan Bonus - 15/16/17/18/20%",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 35/40/45/50/50",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Firm Conditions",
+            "Fall Runner",
+            "Sunny Days",
+            "Mile Corners",
+            "Shifting Gears",
+            "Speed Eater",
+            "Sympathy",
+            "Slipstream",
+            "Mad Dash"
+        ],
+        "event_skills": [
+            "Perfect Spot!",
+            "Front Runner Straightaways",
+            "Tail Held High",
+            "Long Shot"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30116-daitaku-helios",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30116.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "daitaku helios",
+            "sunlit angel"
+        ]
+    },
+    {   "id": "30117 Shinko Windy",
+        "card_name": "Onwards, Demon Queen Lackeys!",
+        "character_name": "Shinko Windy",
+        "unique": "Gain Training Effectiveness (10) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Initial Speed - 15/16/18/20/20",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Guts - 15/16/18/20/20",
+            "Initial Friendship Gauge - 25/27/30/32/35",
+            "Hint Levels - 0/0/0/2/3",
+            "Hint Frequency - 0/0/0/30/40%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Prepared to Pass",
+            "Hesitant Front Runners",
+            "Competitive Spirit",
+            "Wet Conditions",
+            "Full Tilt",
+            "Down in the Dirt",
+            "Got the Spirit!",
+            "Muddy",
+            "Oppression"
+        ],
+        "event_skills": [
+            "Maestro of the Mud",
+            "Full Tilt",
+            "Unyielding Spirit"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30117-shinko-windy",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30117.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "shinko windy welfare",
+            "onwards demon queen lackeys"
         ]
     },
     {   "id": "30121 Mihono Bourbon", "_event": "done",

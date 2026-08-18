@@ -1,4 +1,7 @@
 import 'dotenv/config';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { capitalize, InstallGlobalCommands, InstallGuildCommands } from './utils.js';
 
 // Get the game choices from game.js
@@ -581,6 +584,49 @@ const REFRESHCACHE_COMMAND = {
   contexts: [0, 1, 2],
 };
 
+function getChampionsMeetNumberBounds() {
+  try {
+    const champsmeets = JSON.parse(
+      fs.readFileSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'assets', 'champsmeet.json'), 'utf8'),
+    );
+    const numbers = champsmeets
+      .map((cm) => Number(cm?.number))
+      .filter((n) => Number.isInteger(n) && n > 0);
+    if (numbers.length === 0) return { min: 1, max: 99 };
+    return { min: Math.min(...numbers), max: Math.max(...numbers) };
+  } catch {
+    return { min: 1, max: 99 };
+  }
+}
+
+const CM_NUMBER_BOUNDS = getChampionsMeetNumberBounds();
+
+const SETCM_COMMAND = {
+  name: 'setcm',
+  description: 'Set the default Champions Meet range shown on /skill (owner only)',
+  type: 1,
+  integration_types: [0],
+  contexts: [0],
+  options: [
+    {
+      type: 4,
+      name: 'start',
+      description: 'First CM number to show (must exist in champsmeet.json)',
+      required: true,
+      min_value: CM_NUMBER_BOUNDS.min,
+      max_value: CM_NUMBER_BOUNDS.max,
+    },
+    {
+      type: 4,
+      name: 'end',
+      description: 'Last CM number to show (must exist in champsmeet.json)',
+      required: true,
+      min_value: CM_NUMBER_BOUNDS.min,
+      max_value: CM_NUMBER_BOUNDS.max,
+    },
+  ],
+};
+
 const GAMBACOIN_GIVE_SUBCOMMAND = {
   type: 1,
   name: 'give',
@@ -792,9 +838,10 @@ if (ownerGuildId) {
     GAMBACOIN_OWNER_COMMAND,
     GAMBA_OWNER_COMMAND,
     SIGNUP_COMMAND,
+    SETCM_COMMAND,
   ]);
 } else {
   console.warn(
-    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award, /gamba event post|refresh|settle, and /signup will not register.',
+    'BOT_OWNER_GUILD_ID is not set — owner-only /gambacoin award, /gamba event post|refresh|settle, /signup, and /setcm will not register.',
   );
 }

@@ -36,6 +36,11 @@ import {
   resolveSkillMapOutputPath,
 } from './skillCourseMap.js';
 import {
+  getAvailableCmNumbers,
+  getSkillCmRange,
+  setSkillCmRange,
+} from './skillCmRange.js';
+import {
   buildLeaderboardAutocompleteChoices,
   buildRegisteredClubAutocompleteChoices,
   dispatchClubCommand,
@@ -124,13 +129,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const MAP_RENDERER_CACHE_VERSION = 'v3';
-
-// Champions Meets offered in the skill-map dropdown are limited to this range so
-// users can't trigger image generation for an unbounded number of CMs.
-// Adjust SKILL_MAP_MAX_CM_NUMBER (or the env var) to decide the highest CM shown.
-// The effective lower bound is dynamic: max(configured minimum, current upcoming CM).
-const SKILL_MAP_MIN_CM_NUMBER = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 17);
-const SKILL_MAP_MAX_CM_NUMBER = Number(process.env.SKILL_MAP_MAX_CM_NUMBER ?? 19);
 
 const characters = cache.characters;
 const supporters = cache.supporters;
@@ -530,14 +528,11 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     result.mapCid = override.rawMap?.cid ?? null;
   } else {
     const upcomingCm = getUpcomingChampionsMeet(champsmeets);
-    const upcomingCmNumber = Number(upcomingCm?.number);
-    const effectiveMinCmNumber = Number.isFinite(upcomingCmNumber)
-      ? Math.max(SKILL_MAP_MIN_CM_NUMBER, upcomingCmNumber)
-      : SKILL_MAP_MIN_CM_NUMBER;
+    const { min: skillCmMin, max: skillCmMax } = getSkillCmRange();
 
     const selectableCms = getSelectableChampionsMeets(champsmeets, {
-      fromCmNumber: effectiveMinCmNumber,
-      maxCmNumber: SKILL_MAP_MAX_CM_NUMBER,
+      fromCmNumber: skillCmMin,
+      maxCmNumber: skillCmMax,
       mapsCatalog: cache.maps,
     });
     if (selectableCms.length === 0) return result;
@@ -873,6 +868,55 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name, options } = data;
     const invokingUserId = req.body.member?.user?.id || req.body.user?.id;
+
+    if (name === 'setcm') {
+      if (!invokingUserId || !BOT_OWNER_IDS.has(invokingUserId)) {
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: '❌ You are not allowed to use this command.',
+          },
+        });
+      }
+
+      const start = options?.find((opt) => opt.name === 'start')?.value;
+      const end = options?.find((opt) => opt.name === 'end')?.value;
+      const available = getAvailableCmNumbers(champsmeets);
+
+      try {
+        const range = setSkillCmRange(start, end, available);
+        const labels = champsmeets
+          .filter((cm) => {
+            const n = Number(cm.number);
+            return n >= range.min && n <= range.max;
+          })
+          .sort((a, b) => Number(a.number) - Number(b.number))
+          .map((cm) => `CM ${cm.number}: ${cm.name}`)
+          .join('\n');
+
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content:
+              `✅ Default \`/skill\` CM range set to **${range.min}–${range.max}**.\n` +
+              (labels || '_No named CMs in that range._'),
+          },
+        });
+      } catch (err) {
+        const availHint = available.length
+          ? `Available: ${available.join(', ')}`
+          : 'No CMs loaded in cache.';
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            flags: InteractionResponseFlags.EPHEMERAL,
+            content: `❌ ${err.message}\n${availHint}`,
+          },
+        });
+      }
+    }
 
     if (name === 'refreshcache') {
       if (!invokingUserId || !BOT_OWNER_IDS.has(invokingUserId)) {
