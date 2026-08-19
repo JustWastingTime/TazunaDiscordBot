@@ -7476,7 +7476,7 @@
             "name": "Sundown Sinks into Night",
             "type": "chain",
             "results": [
-            "__Chose the 1st option in the 1st event__\nSkill points +40, Bond +5, Uma Stan hint +1", "__Chose the 2nd option in the 1st event__\nStamina +15, Guts +15, Skill points +20, Bond +5, Come What May hint +3 OR Mood -1, Guts +10, Bond +5, All I've Got hint +3"
+            "__Chose the 1st option in the 1st event__\nSkill points +40, Bond +5, Uma Stan hint +1\n\n__Chose the 2nd option in the 1st event__\nStamina +15, Guts +15, Skill points +20, Bond +5, Come What May hint +3 OR Mood -1, Guts +10, Bond +5, All I've Got hint +3"
             ]
         },
         {
@@ -10577,7 +10577,7 @@
             "air groove", "tailwind to my goals"
         ]
     },
-    {   "id": "30107 Maruzensky",
+    {   "id": "30107 Maruzensky", "_event": "done",
         "card_name": "Sentimental Flare ♪",
         "character_name": "Maruzensky",
         "unique": "Gain Training Effectiveness (5) per every level of the current training facility",
@@ -10616,6 +10616,45 @@
         "category": "speed",
         "aliases": [
             "maruzensky", "sentimental flare", "smaru"
+        ],
+        "events": [
+        {
+            "name": "A Seaside Resort, Love is in the Air",
+            "type": "chain",
+            "results": [
+            "Speed +10 OR Speed +15, Wit +5, Bond +15"
+            ]
+        },
+        {
+            "name": "Thrilling Memories Still in My Heart",
+            "type": "chain",
+            "results": [
+            "Speed +10 OR Speed +15, Power +5, Bond +15, Focus hint +1"
+            ]
+        },
+        {
+            "name": "Shine On Forever",
+            "type": "chain",
+            "results": [
+            "Speed +30, Wit +10, Top Runner hint +1"
+            ]
+        },
+        {
+            "name": "For an Adorable Younger Student",
+            "type": "event",
+            "results": [
+            "Bond +5, Early Lead hint +1",
+            "Energy +5, Speed +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Drive Destination",
+            "type": "event",
+            "results": [
+            "Speed +5, Mood +1, Bond +5",
+            "Wit +5, Mood +1, Bond +5"
+            ]
+        }
         ]
     },
     {   "id": "30108 Nakayama Festa", "_event": "done",
@@ -10683,7 +10722,7 @@
             "name": "Upping the Ante",
             "type": "chain",
             "results": [
-            "__Chose the 1st option in the 2nd event__\nSpeed +10, Wit +10, Skill points +20, Bond +5, Nothing Ventured hint +1 OR Skill points +10, Risky Business hint +1", "__Chose the 2nd option in the 2nd event__\nSpeed +20, Stamina +20, Wit +20, Skill points +30, Bond +5, Nothing Ventured hint +3 OR Skill points +10, Risky Business hint +1"
+            "__Chose the 1st option in the 2nd event__\nSpeed +10, Wit +10, Skill points +20, Bond +5, Nothing Ventured hint +1 OR Skill points +10, Risky Business hint +1\n\n__Chose the 2nd option in the 2nd event__\nSpeed +20, Stamina +20, Wit +20, Skill points +30, Bond +5, Nothing Ventured hint +3 OR Skill points +10, Risky Business hint +1"
             ]
         },
         {
