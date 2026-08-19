@@ -2512,7 +2512,7 @@
         }      
         ]
     },
-    {   "id": "10067 Nakayama Festa",
+    {   "id": "10067 Nakayama Festa", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Nakayama Festa",
         "unique": "-",
@@ -2547,6 +2547,24 @@
         "category": "stamina",
         "aliases": [
             "nakayama festa tracen"
+        ],
+        "events": [
+        {
+            "name": "Sundown Showdown",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Guts +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Sundown Solo Supper",
+            "type": "event",
+            "results": [
+            "Bond +5, Nakayama Racecourse hint +1",
+            "Bond +5, Hanshin Racecourse hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10068 Inari One",
@@ -7399,7 +7417,7 @@
             "bamboo memory head on fight"
         ]
     },
-    {   "id": "30043 Nakayama Festa",
+    {   "id": "30043 Nakayama Festa", "_event": "done",
         "card_name": "43, 8, 1",
         "character_name": "Nakayama Festa",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Guts gain when training together (1)",
@@ -7437,6 +7455,46 @@
         "category": "stamina",
         "aliases": [
             "nakayama festa 43 8 1"
+        ],
+        "events": [
+        {
+            "name": "Night of Ill Portent",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Guts +5, Skill points +10, Bond +5, Will affect the outcome of the 3rd event",
+            "Energy -10, Skill points +5, Bond +5, Will affect the outcome of the 3rd event"
+            ]
+        },
+        {
+            "name": "Midday Match",
+            "type": "chain",
+            "results": [
+            "Skill points +25, Bond +5"
+            ]
+        },
+        {
+            "name": "Sundown Sinks into Night",
+            "type": "chain",
+            "results": [
+            "__Chose the 1st option in the 1st event__\nSkill points +40, Bond +5, Uma Stan hint +1", "__Chose the 2nd option in the 1st event__\nStamina +15, Guts +15, Skill points +20, Bond +5, Come What May hint +3 OR Mood -1, Guts +10, Bond +5, All I've Got hint +3"
+            ]
+        },
+        {
+            "name": "Sundown Showdown",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Guts +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Sundown Solo Supper",
+            "type": "event",
+            "results": [
+            "Bond +5, Nakayama Racecourse hint +1",
+            "Bond +5, Hanshin Racecourse hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30044 Narita Brian",
@@ -10560,7 +10618,7 @@
             "maruzensky", "sentimental flare", "smaru"
         ]
     },
-    {   "id": "30108 Nakayama Festa",
+    {   "id": "30108 Nakayama Festa", "_event": "done",
         "card_name": "Trusting the Dice",
         "character_name": "Nakayama Festa",
         "unique": "20% chance to make the current training fail rate zero",
@@ -10604,6 +10662,46 @@
         "aliases": [
             "nakayama festa",
             "trusting the dice"
+        ],
+        "events": [
+        {
+            "name": "All In",
+            "type": "chain",
+            "results": [
+            "Wit +10, Skill points +20, Bond +5"
+            ]
+        },
+        {
+            "name": "Eat 'Em and Weep",
+            "type": "chain",
+            "results": [
+            "Bond +10, Will affect the outcome of the 3rd event",
+            "Bond +10, Will affect the outcome of the 3rd event"
+            ]
+        },
+        {
+            "name": "Upping the Ante",
+            "type": "chain",
+            "results": [
+            "__Chose the 1st option in the 2nd event__\nSpeed +10, Wit +10, Skill points +20, Bond +5, Nothing Ventured hint +1 OR Skill points +10, Risky Business hint +1", "__Chose the 2nd option in the 2nd event__\nSpeed +20, Stamina +20, Wit +20, Skill points +30, Bond +5, Nothing Ventured hint +3 OR Skill points +10, Risky Business hint +1"
+            ]
+        },
+        {
+            "name": "Sundown Showdown",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Guts +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Sundown Solo Supper",
+            "type": "event",
+            "results": [
+            "Bond +5, Nakayama Racecourse hint +1",
+            "Bond +5, Hanshin Racecourse hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30109 Sakura Chiyono O", "_event": "done",
