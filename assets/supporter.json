@@ -2464,7 +2464,7 @@
             "bamboo memory tracen"
         ]
     },
-    {   "id": "10066 Shinko Windy",
+    {   "id": "10066 Shinko Windy", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Shinko Windy",
         "unique": "-",
@@ -2492,6 +2492,24 @@
         "category": "speed",
         "aliases": [
             "shinko windy tracen"
+        ],
+        "events": [
+        {
+            "name": "Chomp Extermination!",
+            "type": "event",
+            "results": [
+            "Speed +3, Mood +1, Bond +5",
+            "Energy +10, Skill points +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Chomp Attack!",
+            "type": "event",
+            "results": [
+            "Skill points +15, Bond +5",
+            "Speed +3, Bond +5, Unyielding Spirit hint +1"
+            ]
+        }      
         ]
     },
     {   "id": "10067 Nakayama Festa",
@@ -4451,7 +4469,7 @@
         "category": "wit",
         "aliases": ["ines fujin", "you earned it"]
     },
-    {   "id": "20031 Shinko Windy",
+    {   "id": "20031 Shinko Windy", "_event": "done",
         "card_name": "///WARNING GATE///",
         "character_name": "Shinko Windy",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
@@ -4481,6 +4499,39 @@
         "category": "speed",
         "aliases": [
             "shinko windy", "warning gate"
+        ],
+        "events": [
+        {
+            "name": "Dig Here, Windy!",
+            "type": "chain",
+            "results": [
+            "Speed +10, Bond +5",
+            "Energy -5, Skill points +30, Bond +5"
+            ]
+        },
+        {
+            "name": "C'mon Gates, Open Already!",
+            "type": "chain",
+            "results": [
+            "Speed +10, Skill points +15, Bond +5, Shifting Gears hint +3 OR Speed +5, Skill points +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Chomp Extermination!",
+            "type": "event",
+            "results": [
+            "Speed +3, Mood +1, Bond +5",
+            "Energy +10, Skill points +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Chomp Attack!",
+            "type": "event",
+            "results": [
+            "Skill points +15, Bond +5",
+            "Speed +3, Bond +5, Unyielding Spirit hint +1"
+            ]
+        }      
         ]
     },
     {   "id": "20032 Inari One",
@@ -11198,7 +11249,7 @@
         }
         ]
     },
-    {   "id": "30117 Shinko Windy",
+    {   "id": "30117 Shinko Windy", "_event": "done",
         "card_name": "Onwards, Demon Queen Lackeys!",
         "character_name": "Shinko Windy",
         "unique": "Gain Training Effectiveness (10) when the bond gauge is at least 80",
@@ -11236,6 +11287,45 @@
         "aliases": [
             "shinko windy welfare",
             "onwards demon queen lackeys"
+        ],
+        "events": [
+        {
+            "name": "What Do You Mean, \"Stale?!\"",
+            "type": "chain",
+            "results": [
+            "Speed +15, Bond +5"
+            ]
+        },
+        {
+            "name": "The Big Prank Plan!",
+            "type": "chain",
+            "results": [
+            "Power +15, Bond +5, Full Tilt hint +1"
+            ]
+        },
+        {
+            "name": "Executing the Plan!",
+            "type": "chain",
+            "results": [
+            "Guts +20, Skill points +10, Bond +5, Maestro of the Mud hint +1"
+            ]
+        },
+        {
+            "name": "Chomp Extermination!",
+            "type": "event",
+            "results": [
+            "Speed +3, Mood +1, Bond +5",
+            "Energy +10, Skill points +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Chomp Attack!",
+            "type": "event",
+            "results": [
+            "Skill points +15, Bond +5",
+            "Speed +3, Bond +5, Unyielding Spirit hint +1"
+            ]
+        }      
         ]
     },
     {   "id": "30121 Mihono Bourbon", "_event": "done",
