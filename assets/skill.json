@@ -14480,7 +14480,7 @@
             "special week commander", "commander special week"
         ],
         "horse": "Special Week (Commander)",
-        "gametora_id": "100361",
+        "gametora_id": "120011",
         "activation_map": {
             "show_chart": true,
             "triggers": [
