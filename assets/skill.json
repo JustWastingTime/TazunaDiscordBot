@@ -14926,6 +14926,41 @@
             ]
         }
     },
+    {   "skill_name": "Silent Letter", "description": "Increase ability to break out of the pack with a strong desire to linger in fans' hearts when pressured toward the front with 400m or less remaining.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 and acceleration by 0.3 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and acceleration by 0.1 for 5.0s.",
+                "conditions": [
+                    "1st to 2nd",
+                    "Be an overtake target for ≥1s",
+                    "≤400m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "silent letter",
+            "aston machan original"
+        ],
+        "horse": "Aston Machan (Original)",
+        "gametora_id": "100871",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "distance_mode": "remaining",
+                    "remaining_start": 400,
+                    "remaining_end": 0,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
 
 
 

@@ -7664,6 +7664,100 @@
         }
     },
 
+    {   "id": "108701 - Aston Machan",
+        "character_name": "Aston Machan",
+        "type": "Original",
+        "costume": "Flare",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "A",
+            "Mile": "B",
+            "Medium": "G",
+            "Long": "G"
+            },
+            {
+            "Front": "A",
+            "Pace": "A",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "Silent Letter",
+        "unique_explanation": "",
+        "skills": [
+            "Wet Conditions",
+            "Light as a Feather",
+            "Early Lead"
+        ],
+        "potential": [
+            "Sprint Corners",
+            "Taking the Lead",
+            "Groundwork",
+            "In High Spirits"
+        ],
+        "event_skills": [
+            "Light as a Feather",
+            "Front Runner Savvy",
+            "Shifting Gears",
+            "Productive Plan",
+            "Rosy Outlook",
+            "Up-Tempo"
+        ],
+        "evo_skills": [
+            "Raise the Pitch",
+            "Leave a Footprint in Your Memory"
+        ],
+        "races": [
+            "fantasy stakes november 1 year 1",
+            "hanshin juvenile fillies december 1 year 1",
+            "fillies' revue march 1 year 2",
+            "oka sho april 1 year 2",
+            "sprinters stakes september 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "sprinters stakes september 2 year 3"
+        ],
+        "aliases": ["aston machan original", "flare"],
+        "url": "https://gametora.com/umamusume/characters/108701-aston-machan",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1087_108701.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win against Vodka in races at least 4 times",
+            "rewards": "Speed +20, Guts +20, Skill points +30, Shifting Gears hint +2"
+            },
+            {
+            "conditions": "Win against Daiwa Scarlet in races at least 3 times",
+            "rewards": "Power +20, Wit +20, Skill points +30, Productive Plan hint +2"
+            },
+            {
+            "conditions": "Win the Shuka Sho",
+            "rewards": "Rosy Outlook hint +2"
+            },
+            {
+            "conditions": "Win the Tenno Sho (Autumn Year 3)",
+            "rewards": "Up-Tempo hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Undying Machan",
+            "condition": "Win the Sprinters Stakes\nWin at least twice against both Daiwa Scarlet and Vodka\nEarn a total of at least 320,000 fans and complete the Career having cleared all objectives"
+        }
+    },
+
     {   "id": "109801 - Copano Rickey",
         "character_name": "Copano Rickey",
         "type": "Original",
