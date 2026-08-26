@@ -4386,6 +4386,7 @@
         "aliases": [
             "go home specialist",
             "after school specialist",
+            "afterschool stroll",
             "下校後のスペシャリスト"
         ],
         "downgrade": "After-School Stroll",
@@ -14639,7 +14640,7 @@
                 "conditions": [
                     "Random point in the second half of mid race"
                 ],
-                "scale":"0 to 2 green skills, 0\n3 to 4 green skills, 0.05 target speed and 0.05 acceleration\n5 green skills, 0.10 target speed and 0.1 acceleration\n6+ green skills, 0.15 target speed and +0.15 acceleration"
+                "scale":"0 to 2 green skills, 0\n3 to 4 green skills, 0.05 target speed and 0.05 acceleration\n5 green skills, 0.10 target speed and 0.1 acceleration\n6+ green skills, 0.15 target speed and 0.15 acceleration"
             }
         ],
         "preconditions": [],
@@ -17386,6 +17387,7 @@
         "aliases": [
             "lets pump some iron",
             "pump iron",
+            "lpsi",
             "mejiro ryan",
             "lets anabolic",
             "レッツアナボリック"
