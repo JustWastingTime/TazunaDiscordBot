@@ -7664,6 +7664,84 @@
         }
     },
 
+    {   "id": "107801 - Yamanin Zephyr",
+        "character_name": "Yamanin Zephyr",
+        "type": "Original",
+        "costume": "Fluttertail Spirit",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "",
+            "guts": "10%",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "D"
+            },
+            {
+            "Sprint": "B",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "G"
+            },
+            {
+            "Front": "E",
+            "Pace": "A",
+            "Late": "C",
+            "End": "G"
+            }
+        ],
+        "unique": "Sunny Breeze",
+        "unique_explanation": "",
+        "skills": [
+            "Long Shot",
+            "Shifting Gears",
+            "Aspire"
+        ],
+        "potential": [
+            "Mile Corners",
+            "Changing Gears",
+            "Corner Acceleration",
+            "Ambitious Breeze"
+        ],
+        "event_skills": [
+            "Unyielding Spirit",
+            "Spring Runner",
+            "Summer Runner",
+            "Fall Runner",
+            "Winter Runner"
+        ],
+        "evo_skills": [
+            "Shearing Gust",
+            "As Nature Wills",
+            "Heavenly Wind"
+        ],
+        "races": [
+            "new zealand trophy mile 1 year 2",
+            "aoi stakes may 2 year 2",
+            "sprinters stakes september 2 year 2",
+            "mile championship november 2 year 2",
+            "yasuda kinen june 1 year 3",
+            "sprinters stakes september 2 year 3",
+            "tenno sho autumn october 2 year 3"
+        ],
+        "aliases": ["yamanin zephyr original", "fluttertail spirit"],
+        "url": "https://gametora.com/umamusume/characters/107801-yamanin-zephyr",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1078_107801.png",
+        "review": "",
+        "secrets": [
+        ],
+        "epithet": {
+            "name": "Wind Incarnate",
+            "condition": "Win the Yasuda Kinen twice\nWin the Sprinters Stakes\nWin the Takarazuka Kinen (Senior)\nReach 1200 or more Speed"
+        }
+    },
+
     {   "id": "108701 - Aston Machan",
         "character_name": "Aston Machan",
         "type": "Original",
