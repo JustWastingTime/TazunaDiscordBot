@@ -973,7 +973,7 @@
             "condition": "Win at least 6 G1 races, including the Satsuki Sho, Kikuka Sho, and Takarazuka Kinen\nEarn a total of at least 480,000 fans"
         }
     },
-    {   "id": "100701 - Gold Ship Summer",
+    {   "id": "100702 - Gold Ship Summer",
         "character_name": "Gold Ship",
         "type": "Summer",
         "costume": "RUN! RUIN! LAUNCHER!",
@@ -3506,7 +3506,7 @@
             "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, and Tokyo Yushun (Japanese Derby) while being undefeated and the most popular as a Front Runner\nReach 1200 or more Stamina"
         }
     },
-    {   "id": "102601 - Mihono Bourbon Valentines",
+    {   "id": "102602 - Mihono Bourbon Valentines",
         "character_name": "Mihono Bourbon",
         "type": "Valentines",
         "costume": "CODE: ICING",
@@ -4986,7 +4986,7 @@
             "condition": "Win the Hanshin Juvenile Fillies\nBe at a Mood level of Perfect and don't have either the Slow Metabolism, Skin Outbreak or Slacker condition for all races\nRaise the level of all trainings to at least 3\nComplete the Career"
         }
     },
-    {   "id": "104001 - Gold City Festival",
+    {   "id": "104002 - Gold City Festival",
         "character_name": "Gold City",
         "type": "Festival",
         "costume": "Autumn Cosmos",
@@ -6577,7 +6577,7 @@
             "condition": "Win the Hanshin Juvenile Fillies as a Late Surger while being most popular\nWin the Oka Sho as a Late Surger while being most popular\nWin the Japanese Oaks as a Late Surger while being most popular\nWin the Shuka Sho as a Late Surger while being most popular\nWin the Queen Elizabeth II Cup twicen\nEarn a total of at least 240,000 fans"
         }
     },
-    {   "id": "105901 - Mejiro Dober Camping",
+    {   "id": "105902 - Mejiro Dober Camping",
         "character_name": "Mejiro Dober",
         "type": "Camping",
         "costume": "Sapphire Sojourn",
