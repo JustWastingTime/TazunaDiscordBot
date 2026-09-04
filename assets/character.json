@@ -2812,6 +2812,11 @@
             "Nakayama Racecourse",
             "Up-Tempo"
         ],
+        "evo_skills": [
+            "Gone in a Flash",
+            "Let's Get Cracking!",
+            "Paradise Tail"
+        ],
         "races": [
             "hanshin daishoten march 2 year 3",
             "tenno sho spring april 2 year 3",
@@ -2822,6 +2827,89 @@
         "aliases": ["tamamo cross original", "fast as lightning"],
         "url": "https://gametora.com/umamusume/characters/102101-tamamo-cross",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1021_102101.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3)) and the Takarazuka Kinen (Year 3)",
+            "rewards": "Speed +25, Guts +15, Tail Held High hint +2"
+            },
+            {
+            "conditions": "Win the Kyoto Kimpai",
+            "rewards": "Energy -15, 1 random stat +8, Skill points +35, Fans +500, Kyoto Racecourse hint +1, Updrafters hint +1"
+            },
+            {
+                "conditions": "Win the Nakayama Kimpai",
+                "rewards": "Energy -15, 1 random stat +8, Skill points +35, Fans +500, Nakayama Racecourse hint +1, Up-Tempo hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "Now That's White Lightning!",
+            "condition": "Win at least 8 graded races, including the Tenno Sho (Spring), Takarazuka Kinen (Year 3), Tenno Sho (Autumn Year 3)\nEarn a total of at least 240,000 fans"
+        }
+    },
+    {   "id": "102102 - Tamamo Cross Festival",
+        "character_name": "Tamamo Cross",
+        "type": "Festival",
+        "costume": "Raging Thunder",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "14%",
+            "stamina": "8%",
+            "power": "",
+            "guts": "8%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "F"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "E",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "A"
+            }
+        ],
+        "unique": "Lightning Flare",
+        "unique_explanation": "",
+        "skills": [
+            "Ramp Up",
+            "Up-Tempo",
+            "Head-On"
+        ],
+        "potential": [
+            "Wet Conditions",
+            "Killer Tunes",
+            "Tail Held High",
+            "It's On!"
+        ],
+        "event_skills": [
+            "Hanshin Racecourse",
+            "Fall Runner",
+            "Straight Descent",
+            "Tail Held High",
+            "Kyoto Racecourse",
+            "Updrafters",
+            "Nakayama Racecourse",
+            "Up-Tempo"
+        ],
+        "evo_skills": [
+            "A Prayer for Our Predecessors",
+            "C'mon, Let's Do This!",
+            "'kay then, let's get movin'!"
+        ],
+        "aliases": ["tamamo cross festival", "raging thunder"],
+        "url": "https://gametora.com/umamusume/characters/102102-tamamo-cross",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1021_102102.png",
         "review": "",
         "secrets": [
             {
@@ -4260,6 +4348,77 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1034_103401.png",
         "review": "",
         "secrets": [
+        ],
+        "epithet": {
+            "name": "Warlord from Oi",
+            "condition": "Win 4 G1 races on both turf and dirt terrain, including winning the Tokyo Daishoten, Takarazuka Kinen (Year 3) as a Pace Chaser and winning the Tenno Sho (Spring), Arima Kinen as a Late Surger or End Closer"
+        }
+    },
+    {   "id": "103402 - Inari One Festival",
+        "character_name": "Inari One",
+        "type": "Festival",
+        "costume": "Golden Dream",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "14%",
+            "stamina": "",
+            "power": "8%",
+            "guts": "",
+            "wit": "8%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "B",
+            "End": "A"
+            }
+        ],
+        "unique": "Firelight",
+        "unique_explanation": "",
+        "skills": [
+            "Oi Racecourse",
+            "Inside Scoop",
+            "Straightaway Spurt"
+        ],
+        "potential": [
+            "I Can See Right Through You",
+            "Innate Experience",
+            "Rapid Gain",
+            "Encroaching Shadow"
+        ],
+        "event_skills": [
+            "Ramp Up",
+            "Forward, March!",
+            "Tail Held High",
+            "Fall Runner",
+            "After-School Stroll",
+            "Eager",
+            "All I've Got",
+            "Fighting Spirit"
+        ],
+        "evo_skills": [
+            "Standout Step",
+            "Fleet Foot of Idaten"
+        ],
+        "aliases": ["inari one festival", "edomurasaki"],
+        "url": "https://gametora.com/umamusume/characters/103402-inari-one",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1034_103402.png",
+        "review": "",
+        "secrets": [
+            
         ],
         "epithet": {
             "name": "Warlord from Oi",
@@ -5712,6 +5871,79 @@
         "epithet": {
             "name": "L Hater",
             "condition": "Win the Japan Cup\nWin the Tenno Sho (Spring)\nWin the Tenno Sho (Autumn) with a Mood level of Perfect twice\nWin against Gold Ship at least 3 times"
+        }
+    },
+
+    {   "id": "104901 - Nakayama Festa",
+        "character_name": "Nakayama Festa",
+        "type": "Original",
+        "costume": "Desperate Measures",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "10%",
+            "power": "10%",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "B"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Laugh at the Odds",
+        "unique_explanation": "",
+        "skills": [
+            "Risk-Taker",
+            "Risky Business",
+            "All I've Got"
+        ],
+        "potential": [
+            "Late Surger Straightaways",
+            "Nothing Ventured",
+            "Medium Straightaways",
+            "Risk-Maker"
+        ],
+        "event_skills": [
+            "Long Shot"
+        ],
+        "evo_skills": [
+            "It's All or Nothing",
+            "Takin' Each Gamble"
+        ],
+        "races": [
+            "keisei hai january 1 year 2",
+            "satsuki sho april 1 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "chunichi shimbun hai december 1 year 2",
+            "takarazuka kinen june 2 year 3",
+            "japan cup november 2 year 3"
+        ],
+        "aliases": ["nakayama festa original", "desperate measures"],
+        "url": "hhttps://gametora.com/umamusume/characters/104901-nakayama-festa",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1049_104901.png",
+        "review": "",
+        "secrets": [
+        ],
+        "epithet": {
+            "name": "Thoroughbred Gambler",
+            "condition": "Win both the Takarazuka Kinen and the Japan Cup (Senior)\nSucceed a training that has a failure rate of at least 30%\nNever fail a training during the entire run\nComplete the Career"
         }
     },
 
