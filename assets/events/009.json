@@ -13,7 +13,7 @@
     { "number": 3, "name": "Izaya", "ageSex": "Kita", "jockey": "Christmas Oguri", "odds": 2.0 },
     { "number": 4, "name": "Banana@BUNS", "ageSex": "BUNS", "jockey": "Camping Taiki", "odds": 2.0 },
     { "number": 5, "name": "Minh@BUNS", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 2.0 },
-    { "number": 6, "name": "North", "ageSex": "Kita", "jockey": "Aston Machan", "odds": 2.0 },
+    { "number": 6, "name": "North", "ageSex": "Kita", "jockey": "Aston Machan", "odds": 2.5 },
     { "number": 7, "name": "Bane@BUNS", "ageSex": "BUNS", "jockey": "Hishi Amazon", "odds": 2.5 },
     { "number": 8, "name": "Elita", "ageSex": "Kita", "jockey": "Seiun Sky", "odds": 2.0 },  
     { "number": 9, "name": "Hi!Im Aru!@BUNS", "ageSex": "BUNS", "jockey": "Narita Taishin", "odds": 2.5 },
@@ -21,10 +21,10 @@
     { "number": 11, "name": "ClingyEye3053", "ageSex": "BUNS", "jockey": "Sweep Tosho", "odds": 2.5 },
     { "number": 12, "name": "Wemser", "ageSex": "BUNS", "jockey": "Oguri Cap", "odds": 2.0 },
     { "number": 13, "name": "legi", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 2.0 },
-    { "number": 14, "name": "XV11@CMA", "ageSex": "Falena", "jockey": "Halloween Doto", "odds": 2.5 },
-    { "number": 15, "name": "Vannes", "ageSex": "BUNS", "jockey": "Daiwa Scarlet", "odds": 2.0 },
+    { "number": 14, "name": "XV11@CMA", "ageSex": "Falena", "jockey": "Christmas Oguri", "odds": 2.0 },
+    { "number": 15, "name": "Vannes", "ageSex": "BUNS", "jockey": "Daiwa Scarlet", "odds": 2.5 },
     { "number": 16, "name": "Crabpeople", "ageSex": "BUNS", "jockey": "Gold Ship", "odds": 2.5 },  
-    { "number": 17, "name": "KissinDads@DUSK", "ageSex": "BUNS", "jockey": "Copano Rickey", "odds": 2.0 },
+    { "number": 17, "name": "KissinDads@DUSK", "ageSex": "BUNS", "jockey": "Halloween Doto", "odds": 2.5 },
     { "number": 18, "name": "soblessed", "ageSex": "BUNS", "jockey": "Gold City", "odds": 2.5 }
   ]
 }
