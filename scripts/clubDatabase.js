@@ -6,6 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '..', 'data');
 const GUILD_CLUBS_PATH = path.join(DATA_DIR, 'guild-clubs.json');
+const CIRCLE_TARGETS_PATH = path.join(DATA_DIR, 'circle-targets.json');
 const USER_LINKS_PATH = path.join(DATA_DIR, 'user-links.json');
 const LEADERBOARD_CHANNELS_PATH = path.join(DATA_DIR, 'leaderboard-channels.json');
 const PREMIUM_GUILDS_PATH = path.join(DATA_DIR, 'premium-guilds.json');
@@ -93,20 +94,106 @@ export function unregisterGuildClub(guildId, circleId) {
   return true;
 }
 
+function loadCircleTargets() {
+  return readJson(CIRCLE_TARGETS_PATH, {});
+}
+
+function saveCircleTargets(store) {
+  writeJson(CIRCLE_TARGETS_PATH, store);
+}
+
+function normalizeCircleTargetEntry(entry) {
+  const targetTier =
+    entry?.targetTier == null || entry?.targetTier === ''
+      ? null
+      : String(entry.targetTier).trim();
+  const manualRaw = entry?.manualTarget;
+  const manualTarget =
+    typeof manualRaw === 'number' && Number.isFinite(manualRaw) && manualRaw >= 0
+      ? Math.trunc(manualRaw)
+      : null;
+  return { targetTier, manualTarget };
+}
+
+function findGuildTargetForCircle(circleId) {
+  const id = String(circleId);
+  const guildStore = loadGuildClubs();
+  for (const clubs of Object.values(guildStore)) {
+    if (!Array.isArray(clubs)) continue;
+    const club = clubs.find((item) => String(item.circleId) === id);
+    if (!club) continue;
+    if (club.targetTier || club.manualTarget != null) {
+      return normalizeCircleTargetEntry(club);
+    }
+  }
+  return null;
+}
+
+/** Global per-circle target settings (shared across all guilds / DMs). */
+export function getCircleTargetSettings(circleId) {
+  const id = String(circleId ?? '').trim();
+  if (!id) return { targetTier: null, manualTarget: null };
+
+  const store = loadCircleTargets();
+  if (store[id]) return normalizeCircleTargetEntry(store[id]);
+
+  // Lazy-migrate targets previously stored only on guild-clubs entries.
+  const migrated = findGuildTargetForCircle(id);
+  if (migrated && (migrated.targetTier || migrated.manualTarget != null)) {
+    store[id] = migrated;
+    saveCircleTargets(store);
+    return migrated;
+  }
+
+  return { targetTier: null, manualTarget: null };
+}
+
+export function setCircleTargetSettings(circleId, patch = {}) {
+  const id = String(circleId ?? '').trim();
+  if (!id) return false;
+
+  const store = loadCircleTargets();
+  const current = normalizeCircleTargetEntry(store[id] || {});
+  const next = { ...current };
+
+  if (patch.targetTier !== undefined) {
+    next.targetTier =
+      patch.targetTier == null || patch.targetTier === ''
+        ? null
+        : String(patch.targetTier).trim();
+  }
+  if (patch.manualTarget !== undefined) {
+    if (patch.manualTarget == null || patch.manualTarget === '') {
+      next.manualTarget = null;
+    } else {
+      const n = Number(patch.manualTarget);
+      next.manualTarget = Number.isFinite(n) && n >= 0 ? Math.trunc(n) : null;
+    }
+  }
+
+  store[id] = next;
+  saveCircleTargets(store);
+  return true;
+}
+
 export function getGuildClubs(guildId) {
   const store = loadGuildClubs();
   const clubs = store[String(guildId)];
   if (!Array.isArray(clubs)) return [];
 
-  return clubs.map((club) => ({
-    circleId: String(club.circleId),
-    circleName: club.circleName ?? null,
-    targetTier: club.targetTier ?? null,
-    manualTarget: typeof club.manualTarget === 'number' ? club.manualTarget : null,
-    showTotal: club.showTotal !== false,
-    showAvg: club.showAvg !== false,
-    showToday: club.showToday !== false,
-  }));
+  return clubs.map((club) => {
+    // Targets are global (with lazy migrate from guild); column toggles stay guild-local.
+    const globalTarget = getCircleTargetSettings(club.circleId);
+    return {
+      circleId: String(club.circleId),
+      circleName: club.circleName ?? null,
+      targetTier: globalTarget.targetTier,
+      manualTarget: globalTarget.manualTarget,
+      showTotal: club.showTotal !== false,
+      showAvg: club.showAvg !== false,
+      showToday: club.showToday !== false,
+    };
+  });
 }
 
 export function getGuildClubRecord(guildId, circleId) {
@@ -115,9 +202,10 @@ export function getGuildClubRecord(guildId, circleId) {
 
 export function getGuildClubSettings(guildId, circleId) {
   const club = getGuildClubRecord(guildId, circleId);
+  const globalTarget = getCircleTargetSettings(circleId);
   return {
-    targetTier: club?.targetTier ?? null,
-    manualTarget: club?.manualTarget ?? null,
+    targetTier: globalTarget.targetTier,
+    manualTarget: globalTarget.manualTarget,
     showTotal: club?.showTotal !== false,
     showAvg: club?.showAvg !== false,
     showToday: club?.showToday !== false,
@@ -131,19 +219,28 @@ export function updateGuildClubSettings(guildId, circleId, patch = {}) {
   const club = clubs.find((item) => String(item.circleId) === String(circleId));
   if (!club) return false;
 
-  if (patch.targetTier !== undefined) {
-    club.targetTier = patch.targetTier == null || patch.targetTier === ''
-      ? null
-      : String(patch.targetTier).trim();
-  }
-  if (patch.manualTarget !== undefined) {
-    if (patch.manualTarget == null || patch.manualTarget === '') {
-      club.manualTarget = null;
-    } else {
-      const n = Number(patch.manualTarget);
-      club.manualTarget = Number.isFinite(n) && n >= 0 ? Math.trunc(n) : null;
+  const targetPatch = {};
+  if (patch.targetTier !== undefined) targetPatch.targetTier = patch.targetTier;
+  if (patch.manualTarget !== undefined) targetPatch.manualTarget = patch.manualTarget;
+  if (Object.keys(targetPatch).length) {
+    setCircleTargetSettings(circleId, targetPatch);
+    // Keep guild copy in sync for older readers / dashboards.
+    if (targetPatch.targetTier !== undefined) {
+      club.targetTier =
+        targetPatch.targetTier == null || targetPatch.targetTier === ''
+          ? null
+          : String(targetPatch.targetTier).trim();
+    }
+    if (targetPatch.manualTarget !== undefined) {
+      if (targetPatch.manualTarget == null || targetPatch.manualTarget === '') {
+        club.manualTarget = null;
+      } else {
+        const n = Number(targetPatch.manualTarget);
+        club.manualTarget = Number.isFinite(n) && n >= 0 ? Math.trunc(n) : null;
+      }
     }
   }
+
   if (patch.showTotal !== undefined) club.showTotal = Boolean(patch.showTotal);
   if (patch.showAvg !== undefined) club.showAvg = Boolean(patch.showAvg);
   if (patch.showToday !== undefined) club.showToday = Boolean(patch.showToday);
@@ -153,29 +250,36 @@ export function updateGuildClubSettings(guildId, circleId, patch = {}) {
 }
 
 export function setGuildClubTarget(guildId, circleId, targetTier) {
-  return updateGuildClubSettings(guildId, circleId, {
+  setCircleTargetSettings(circleId, {
     targetTier,
     manualTarget: null,
   });
+  // Best-effort guild mirror when this circle is registered there.
+  updateGuildClubSettings(guildId, circleId, {
+    targetTier,
+    manualTarget: null,
+  });
+  return true;
 }
 
 export function setGuildClubManualTarget(guildId, circleId, manualTarget) {
-  return updateGuildClubSettings(guildId, circleId, {
+  setCircleTargetSettings(circleId, {
     manualTarget,
     targetTier: null,
   });
+  updateGuildClubSettings(guildId, circleId, {
+    manualTarget,
+    targetTier: null,
+  });
+  return true;
 }
 
 export function getGuildClubTarget(guildId, circleId) {
-  const clubs = getGuildClubs(guildId);
-  const club = clubs.find((item) => String(item.circleId) === String(circleId));
-  return club?.targetTier ?? null;
+  return getCircleTargetSettings(circleId).targetTier;
 }
 
 export function getGuildClubManualTarget(guildId, circleId) {
-  const clubs = getGuildClubs(guildId);
-  const club = clubs.find((item) => String(item.circleId) === String(circleId));
-  return club?.manualTarget ?? null;
+  return getCircleTargetSettings(circleId).manualTarget;
 }
 
 export function isGuildClubRegistered(guildId, circleId) {

@@ -1,5 +1,5 @@
 import { buildGambleProfileFields } from './eventGambling.js';
-import { buildFestProfileData, getGuildClubSettings, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
+import { buildFestProfileData, getCircleTargetSettings, getGuildClubSettings, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
   dailyFans: [],
@@ -379,12 +379,14 @@ export function findRankThreshold(tiers, tierQuery) {
 }
 
 export function computeMemberDailyTarget(clubFansPerDay) {
+  // Dynamic tier target: uma.moe current_fans_per_day / 30 members.
   if (clubFansPerDay == null || !Number.isFinite(clubFansPerDay)) return null;
   return clubFansPerDay / CLUB_MEMBER_COUNT;
 }
 
 export async function resolveClubTargetInfo(guildId, circleId, circleData) {
-  const settings = getGuildClubSettings(guildId, circleId);
+  // Targets are global per circle so DMs / other guilds see the same values.
+  const settings = getCircleTargetSettings(circleId);
 
   if (settings.manualTarget != null) {
     return {
@@ -1147,7 +1149,7 @@ export function isTop100Circle(circle) {
 export async function buildLeaderboardPackage(circleId, options = {}) {
   const { guildId = null } = options;
   const data = await fetchCircleData(circleId);
-  const targetInfo = guildId ? await resolveClubTargetInfo(guildId, circleId, data) : null;
+  const targetInfo = await resolveClubTargetInfo(guildId, circleId, data);
   const columnVisibility = guildId ? getGuildClubSettings(guildId, circleId) : null;
   const embed = buildLeaderboardEmbed(data, targetInfo, columnVisibility);
   return {
