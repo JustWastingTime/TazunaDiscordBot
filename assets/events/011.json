@@ -1,0 +1,26 @@
+{
+  "id": "011",
+  "name": "Kobe Shimbun Hai 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-09-16T00:00:00+07:00",
+  "endsAt": "2026-09-021T13:40:00+07:00",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Altramuz", "ageSex": "3C", "jockey": "M. Iwata", "odds": 13.2 },
+    { "number": 2, "name": "A Shin In Out", "ageSex": "3C", "jockey": "R. Yokoyama", "odds": 72.3 },
+    { "number": 3, "name": "M's Begin", "ageSex": "3C", "jockey": "Y. Take", "odds": 19.5 },
+    { "number": 4, "name": "Kafuji Emmental", "ageSex": "3C", "jockey": "R. Sakai", "odds": 17.8 },
+    { "number": 5, "name": "Come Up Roses", "ageSex": "3C", "jockey": "Y. Kitamura", "odds": 68.3 },
+    { "number": 6, "name": "Green Energy", "ageSex": "3C", "jockey": "K. Tosaki", "odds": 10.8 },
+    { "number": 7, "name": "Congestus", "ageSex": "3C", "jockey": "A. Nishimura", "odds": 7.2 },
+    { "number": 8, "name": "Go Lucky", "ageSex": "3C", "jockey": "C. Lemaire", "odds": 11.8 },
+    { "number": 9, "name": "Sea to Summit", "ageSex": "3C", "jockey": "M. Sakai", "odds": 77.6 },
+    { "number": 10, "name": "Shonan Hayanami", "ageSex": "3C", "jockey": "K. Ikezoe", "odds": 31.4 },
+    { "number": 11, "name": "Narita Esperanza", "ageSex": "3C", "jockey": "--", "odds": 37.3 },
+    { "number": 12, "name": "Bell Wood Bio", "ageSex": "3C", "jockey": "--", "odds": 342.0 },
+    { "number": 13, "name": "Meisho Narukami", "ageSex": "3C", "jockey": "--", "odds": 129.6 },
+    { "number": 14, "name": "Lovcen", "ageSex": "3C", "jockey": "K. Matsuyama", "odds": 1.6 }
+  ]
+}

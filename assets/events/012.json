@@ -1,0 +1,33 @@
+{
+  "id": "012",
+  "name": "Sprinters Stakes 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-09-16T00:00:00+07:00",
+  "endsAt": "2026-09-027T13:40:00+07:00",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Ai Sansan", "ageSex": "4M", "jockey": "H. Miyuki", "odds": 48.2 },
+    { "number": 2, "name": "Win Carnelian", "ageSex": "9H", "jockey": "K. Miura", "odds": 13.0 },
+    { "number": 3, "name": "A T Makfi", "ageSex": "7H", "jockey": "A. Tomita", "odds": 34.7 },
+    { "number": 4, "name": "Craspedia", "ageSex": "4H", "jockey": "--", "odds": 72.7 },
+    { "number": 5, "name": "Sound Moryana", "ageSex": "4M", "jockey": "H. Yoshida", "odds": 31.1 },
+    { "number": 6, "name": "June Blair", "ageSex": "5M", "jockey": "--", "odds": 31.4 },
+    { "number": 7, "name": "Star Anise", "ageSex": "3F", "jockey": "C. Lemaire", "odds": 4.6 },
+    { "number": 8, "name": "Tamamo Icarus", "ageSex": "3C", "jockey": "--", "odds": 99.0 },
+    { "number": 9, "name": "Panja Tower", "ageSex": "4H", "jockey": "K. Matsuyama", "odds": 4.2 },
+    { "number": 10, "name": "Puro Magic", "ageSex": "5M", "jockey": "M. Iwata", "odds": 15.1 },
+    { "number": 11, "name": "Flicker Jab", "ageSex": "4H", "jockey": "A. Nishimura", "odds": 5.7 },
+    { "number": 12, "name": "From Dusk", "ageSex": "6H", "jockey": "Y. Nakai", "odds": 69.9 },
+    { "number": 13, "name": "Black Chalice", "ageSex": "3F", "jockey": "S. Hamanaka", "odds": 34.2 },
+    { "number": 14, "name": "Pair Pollux", "ageSex": "5H", "jockey": "Y. Iwata", "odds": 46.7 },
+    { "number": 15, "name": "Mama Cocha", "ageSex": "7M", "jockey": "Y. Take", "odds": 21.0 },
+    { "number": 16, "name": "Yoshino Easter", "ageSex": "8H", "jockey": "--", "odds": 97.9 },
+    { "number": 17, "name": "Lily Joie", "ageSex": "3F", "jockey": "--", "odds": 48.7 },
+    { "number": 18, "name": "Lugal", "ageSex": "6H", "jockey": "K. Sameshima", "odds": 19.0 },
+    { "number": 19, "name": "Rapier", "ageSex": "4H", "jockey": "T. Yokoyama", "odds": 23.1 },
+    { "number": 20, "name": "Red Mon Reve", "ageSex": "7H", "jockey": "M. Sakai", "odds": 65.6 },
+    { "number": 21, "name": "World's End", "ageSex": "5H", "jockey": "A. Tsumura", "odds": 12.2 }
+  ]
+}
