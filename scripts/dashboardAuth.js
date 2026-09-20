@@ -3,6 +3,13 @@ import { DiscordRequest } from './utils.js';
 import { isBotOwner, hasTazunaAdminRole } from './adminRole.js';
 import { isPremiumGuild } from './clubDatabase.js';
 import { listStaffExtra } from './dashboardStore.js';
+import {
+  DEFAULT_FEATURES,
+  getManagerEntry,
+  getSite,
+  getStoredFeatureOverrides,
+  listClubsForDiscordUser,
+} from './dashboardStore.js';
 
 export const SESSION_COOKIE = 'tazuna_dashboard_session';
 
@@ -96,28 +103,88 @@ export async function fetchGuildMember(guildId, userId) {
   return res.json();
 }
 
+/**
+ * Who this Discord user is on this network, and which clubs they may see.
+ * `clubIds: null` means every club in the network; an array scopes them.
+ */
 export async function resolveDashboardAccess(guildId, discordId) {
   const id = String(discordId);
   if (isBotOwner(id)) {
-    return { isManager: true, isOwner: true, label: 'Owner', source: 'owner' };
+    return { isManager: true, isOwner: true, label: 'Owner', source: 'owner', clubIds: null };
+  }
+  const entry = getManagerEntry(guildId, id);
+  if (entry) {
+    return {
+      isManager: true,
+      isOwner: entry.role === 'owner',
+      label: entry.label || 'Manager',
+      source: 'manager',
+      clubIds: Array.isArray(entry.clubIds) && entry.clubIds.length ? entry.clubIds.map(String) : null,
+    };
   }
   try {
     const member = await fetchGuildMember(guildId, id);
     if (await hasTazunaAdminRole(guildId, member)) {
-      return { isManager: true, isOwner: false, label: 'Admin', source: 'role' };
+      return { isManager: true, isOwner: false, label: 'Admin', source: 'role', clubIds: null };
     }
   } catch (err) {
     console.warn(`[dashboard] member lookup failed guild=${guildId} user=${id}:`, err.message);
   }
   const extra = listStaffExtra(guildId).find((row) => String(row.discordId) === id);
   if (extra) {
-    return { isManager: true, isOwner: false, label: extra.label || 'Staff', source: 'staff' };
+    return {
+      isManager: true,
+      isOwner: false,
+      label: extra.label || 'Staff',
+      source: 'staff',
+      clubIds: Array.isArray(extra.clubIds) && extra.clubIds.length ? extra.clubIds.map(String) : null,
+    };
   }
-  return { isManager: false, isOwner: false, label: null, source: null };
+  // Regular member: scope to the clubs their linked trainer is currently in.
+  return {
+    isManager: false,
+    isOwner: false,
+    label: null,
+    source: null,
+    clubIds: listClubsForDiscordUser(guildId, id),
+  };
+}
+
+/** Features a network is entitled to. Overview is always on; the rest need premium. */
+export function resolveFeatures(guildId) {
+  const site = guildId ? getSite(guildId) : null;
+  const premium = Boolean(guildId) && (isPremiumGuild(guildId) || site?.premium === true);
+  const stored = guildId ? getStoredFeatureOverrides(guildId) : {};
+  // Overview is always on. Every other feature requires premium, and a premium
+  // network can still switch an individual feature off explicitly.
+  const features = { overview: true };
+  for (const key of Object.keys(DEFAULT_FEATURES)) {
+    if (key === 'overview') continue;
+    features[key] = premium && (typeof stored[key] === 'boolean' ? stored[key] : true);
+  }
+  return features;
+}
+
+export function hasFeature(guildId, feature) {
+  return resolveFeatures(guildId)[feature] === true;
+}
+
+/** Gate a single premium feature without locking the whole dashboard. */
+export function requireFeature(guildId, feature) {
+  if (!guildId || !hasFeature(guildId, feature)) {
+    const err = new Error(
+      feature === 'overview'
+        ? 'This club dashboard is not available.'
+        : 'This feature is part of Tazuna premium.',
+    );
+    err.statusCode = 403;
+    throw err;
+  }
 }
 
 export function requirePremiumGuild(guildId) {
-  if (!guildId || !isPremiumGuild(guildId)) {
+  const entitled = Boolean(guildId) && (isPremiumGuild(guildId) || getSite(guildId).premium === true);
+  if (!entitled) {
     const err = new Error('This club dashboard is a Tazuna premium feature.');
     err.statusCode = 403;
     throw err;

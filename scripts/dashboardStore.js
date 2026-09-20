@@ -7,6 +7,16 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '..', 'data');
 const STORE_PATH = path.join(DATA_DIR, 'dashboard.json');
 
+export const DEFAULT_FEATURES = {
+  overview: true,
+  planner: false,
+  applicants: false,
+  apply: false,
+  tournaments: false,
+};
+
+const FEATURE_KEYS = Object.keys(DEFAULT_FEATURES);
+
 const DEFAULT_SITE = {
   slug: null,
   siteName: 'Tazuna Clubs',
@@ -15,8 +25,13 @@ const DEFAULT_SITE = {
   theme: 'slate',
   applyTitle: 'Apply to a club',
   applyBlocked: 'This trainer cannot apply to this club network.',
-  publicEyebrow: 'Premium dashboard',
+  publicEyebrow: 'Club dashboard',
   tenureNote: 'Time in any club in this network counts as one stay.',
+  premium: false,
+  // Empty means "no overrides": resolveFeatures() decides from the premium entitlement.
+  // Baked-in false values here would be indistinguishable from a deliberate opt-out.
+  features: {},
+  managers: [],
 };
 
 let writeQueue = Promise.resolve();
@@ -69,8 +84,58 @@ export function getDashboardMaxClubs() {
 
 export function getSite(guildId) {
   const store = loadStore();
-  const row = store.sites[String(guildId)];
-  return { ...DEFAULT_SITE, ...(row || {}), guildId: String(guildId) };
+  const row = store.sites[String(guildId)] || {};
+  return {
+    ...DEFAULT_SITE,
+    ...row,
+    guildId: String(guildId),
+    // Nested merge: a stored partial `features` must not drop the defaults.
+    features: { ...DEFAULT_FEATURES, ...(row.features || {}) },
+    managers: Array.isArray(row.managers) ? row.managers : [],
+  };
+}
+
+/** Raw per-network feature overrides, without the defaults merged in. */
+export function getStoredFeatureOverrides(guildId) {
+  const store = loadStore();
+  const row = store.sites[String(guildId)] || {};
+  return row.features && typeof row.features === 'object' ? row.features : {};
+}
+
+/**
+ * Manager entry for one Discord user, with the clubs they may see.
+ * `clubIds: null` means every club in the network (owners).
+ */
+export function getManagerEntry(guildId, discordId) {
+  const id = String(discordId);
+  const site = getSite(guildId);
+  return site.managers.find((row) => String(row.discordId) === id) || null;
+}
+
+export function setSiteManagers(guildId, managers) {
+  return withLock(() => {
+    const store = loadStore();
+    const g = String(guildId);
+    const current = { ...DEFAULT_SITE, ...(store.sites[g] || {}) };
+    const rows = (Array.isArray(managers) ? managers : [])
+      .map((row) => {
+        const discordId = String(row?.discordId || '').trim();
+        if (!/^\d{5,32}$/.test(discordId)) return null;
+        const clubIds = Array.isArray(row?.clubIds) && row.clubIds.length
+          ? row.clubIds.map((id) => String(id))
+          : null;
+        return {
+          discordId,
+          label: String(row?.label || 'Manager'),
+          role: row?.role === 'owner' ? 'owner' : 'manager',
+          clubIds,
+        };
+      })
+      .filter(Boolean);
+    store.sites[g] = { ...current, managers: rows };
+    saveStore(store);
+    return rows;
+  });
 }
 
 export function resolveGuildRef(ref) {
@@ -252,6 +317,26 @@ export function upsertMemberLink(guildId, umaId, discordId) {
 export function listStaffExtra(guildId) {
   const store = loadStore();
   return Array.isArray(store.staffExtra[String(guildId)]) ? store.staffExtra[String(guildId)] : [];
+}
+
+/**
+ * Clubs a Discord user is currently in, derived from managed rosters:
+ * memberLinks maps umaId -> discordId, directory maps umaId -> currentCircleId.
+ * Used to scope what a non-manager sees on the dashboard.
+ */
+export function listClubsForDiscordUser(guildId, discordId) {
+  const store = loadStore();
+  const g = String(guildId);
+  const id = String(discordId);
+  const links = store.memberLinks[g] || {};
+  const directory = store.directory[g] || {};
+  const out = new Set();
+  for (const [umaId, discord] of Object.entries(links)) {
+    if (String(discord) !== id) continue;
+    const circleId = directory[umaId]?.currentCircleId;
+    if (circleId) out.add(String(circleId));
+  }
+  return [...out];
 }
 
 export function addStaffExtra(guildId, { discordId, label }) {
@@ -517,7 +602,15 @@ export function clearTournamentPick(guildId, input) {
   });
 }
 
-export function seedClubSettings(guildId, clubs) {
+/**
+ * Seed a network's club settings (and, on first run, its site record).
+ * Branding is supplied by the caller — nothing here is specific to one community,
+ * so the same command works for any club network.
+ *
+ * options: { branding?: { slug, siteName, networkName, theme, publicEyebrow, description },
+ *            premium?: boolean, features?: object, managers?: [] }
+ */
+export function seedClubSettings(guildId, clubs, options = {}) {
   return withLock(() => {
     const store = loadStore();
     const g = String(guildId);
@@ -534,16 +627,43 @@ export function seedClubSettings(guildId, clubs) {
         rankGrade: club.rankGrade ?? null,
       };
     }
+    // Branding is applied only on first seed; management fields are refreshed on
+    // every run so an admin can add managers or flip premium without editing JSON.
+    const branding = options.branding || {};
+    const current = store.sites[g] || { ...DEFAULT_SITE };
+    const next = { ...current };
     if (!store.sites[g]) {
-      store.sites[g] = {
-        ...DEFAULT_SITE,
-        slug: 'bunny',
-        siteName: 'Bunny Clubs',
-        networkName: 'Bunny',
-        theme: 'blossom',
-        publicEyebrow: 'Dust · Dirt · Damp · Dusk',
-      };
+      next.slug = branding.slug
+        ? String(branding.slug).trim().toLowerCase().replace(/[^a-z0-9-]/g, '') || null
+        : null;
+      next.siteName = branding.siteName || DEFAULT_SITE.siteName;
+      next.networkName = branding.networkName || DEFAULT_SITE.networkName;
+      next.description = branding.description || DEFAULT_SITE.description;
+      next.theme = branding.theme || DEFAULT_SITE.theme;
+      next.publicEyebrow = branding.publicEyebrow || DEFAULT_SITE.publicEyebrow;
     }
+    if (options.premium !== undefined) next.premium = options.premium === true;
+    if (options.features) {
+      next.features = { ...DEFAULT_FEATURES, ...(current.features || {}), ...options.features };
+    }
+    if (Array.isArray(options.managers)) {
+      next.managers = options.managers
+        .map((row) => {
+          const discordId = String(row?.discordId || '').trim();
+          if (!/^\d{5,32}$/.test(discordId)) return null;
+          const clubIds = Array.isArray(row?.clubIds) && row.clubIds.length
+            ? row.clubIds.map((id) => String(id))
+            : null;
+          return {
+            discordId,
+            label: String(row?.label || 'Manager'),
+            role: row?.role === 'owner' ? 'owner' : 'manager',
+            clubIds,
+          };
+        })
+        .filter(Boolean);
+    }
+    store.sites[g] = next;
     saveStore(store);
   });
 }

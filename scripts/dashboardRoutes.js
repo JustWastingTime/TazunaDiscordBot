@@ -57,6 +57,7 @@ import {
   readSession,
   requirePremiumGuild,
   resolveDashboardAccess,
+  resolveFeatures,
   safeReturnTo,
   setSessionCookie,
   signSession,
@@ -86,18 +87,34 @@ async function requirePremiumTenant(req) {
   return guildId;
 }
 
+/** Any known network — used for the always-available public overview. */
+async function requireTenant(req) {
+  const guildId = tenantFromReq(req);
+  if (!guildId) {
+    const err = new Error('Missing guild.');
+    err.statusCode = 400;
+    throw err;
+  }
+  return guildId;
+}
+
 async function buildSessionUser(guildId, base) {
   const access = await resolveDashboardAccess(guildId, base.discordId);
   const clubs = listGuildDashboardClubs(guildId);
+  const visible = access.clubIds == null
+    ? clubs
+    : clubs.filter((club) => access.clubIds.includes(String(club.circleId)));
   return {
     discordId: base.discordId,
     username: base.username,
     globalName: base.globalName ?? null,
     avatar: base.avatar ?? null,
-    clubIds: clubs.map((club) => club.circleId),
+    clubIds: visible.map((club) => club.circleId),
     label: access.label || base.username,
     isManager: access.isManager,
     isOwner: access.isOwner,
+    scope: access.source,
+    features: resolveFeatures(guildId),
   };
 }
 
@@ -123,7 +140,6 @@ async function requireManager(req, res) {
 }
 
 async function publicDashboardPayload(guildId) {
-  requirePremiumGuild(guildId);
   const cached = getMembersCache(guildId);
   if (cached?.payload && Date.now() - Number(cached.savedAt || 0) < cacheTtlMs()) {
     return cached.payload;
@@ -149,9 +165,12 @@ async function publicDashboardPayload(guildId) {
       });
     }
   }
-  const applicants = listGuildApplications(guildId)
-    .filter((app) => app.publishPublicly !== false && ['pending', 'approved', 'waitlisted'].includes(app.status))
-    .map(applicationToDashboard);
+  const features = resolveFeatures(guildId);
+  const applicants = features.applicants
+    ? listGuildApplications(guildId)
+      .filter((app) => app.publishPublicly !== false && ['pending', 'approved', 'waitlisted'].includes(app.status))
+      .map(applicationToDashboard)
+    : [];
   const site = getSite(guildId);
   const payload = {
     schemaVersion: 1,
@@ -161,6 +180,8 @@ async function publicDashboardPayload(guildId) {
     slug: site.slug,
     site,
     theme: site.theme || 'slate',
+    premium: features.overview && (Boolean(site.premium) || isPremiumGuild(guildId)),
+    features,
     clubs: built,
     applicants,
   };
@@ -178,9 +199,17 @@ export function mountDashboard(app) {
   const seedGuild = String(process.env.DASHBOARD_SEED_GUILD_ID || '').trim();
   if (seedGuild) {
     try {
-      const clubsPath = path.resolve(__dirname, '../../UmaClubDashboard/config/clubs.json');
+      const configured = String(process.env.DASHBOARD_SEED_FILE || '').trim();
+      const clubsPath = configured
+        ? path.resolve(configured)
+        : path.resolve(__dirname, '../../UmaClubDashboard/config/clubs.json');
       const payload = JSON.parse(fs.readFileSync(clubsPath, 'utf8'));
-      seedClubSettings(seedGuild, payload.clubs || []);
+      seedClubSettings(seedGuild, payload.clubs || [], {
+        branding: payload.branding || payload.network || {},
+        premium: payload.premium === true || isPremiumGuild(seedGuild),
+        features: payload.features,
+        managers: payload.managers,
+      });
       console.log(`Dashboard seeded club settings for guild ${seedGuild}`);
     } catch (err) {
       console.warn('Dashboard seed skipped:', err.message);
@@ -193,13 +222,14 @@ export function mountDashboard(app) {
   api.get('/health', (_req, res) => res.json({ ok: true, dashboard: true }));
 
   api.get('/public/tenants', (_req, res) => {
-    const tenants = listPublicTenants().filter((row) => isPremiumGuild(row.guildId));
+    // Every network with a slug is publicly reachable; premium only unlocks features.
+    const tenants = listPublicTenants().filter((row) => Boolean(row.slug));
     res.json({ tenants });
   });
 
   api.get('/public/dashboard', async (req, res) => {
     try {
-      const guildId = await requirePremiumTenant(req);
+      const guildId = await requireTenant(req);
       res.json(await publicDashboardPayload(guildId));
     } catch (error) {
       jsonError(res, error);
@@ -363,9 +393,16 @@ export function mountDashboard(app) {
       if (!guildId) {
         return res.json({ authenticated: true, user: session });
       }
-      requirePremiumGuild(guildId);
       const user = await buildSessionUser(guildId, session);
-      res.json({ authenticated: true, user, theme: getSite(guildId).theme });
+      const site = getSite(guildId);
+      res.json({
+        authenticated: true,
+        user,
+        theme: site.theme,
+        slug: site.slug,
+        premium: Boolean(site.premium) || isPremiumGuild(guildId),
+        features: resolveFeatures(guildId),
+      });
     } catch (error) {
       jsonError(res, error);
     }
@@ -731,6 +768,9 @@ export function mountDashboard(app) {
     path.resolve(__dirname, '../web/dashboard'),
     path.resolve(__dirname, '../../UmaClubDashboard/dist'),
   ];
+  const RESERVED_ROOT_SEGMENTS = new Set([
+    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions',
+  ]);
   const dist = distCandidates.find((dir) => fs.existsSync(path.join(dir, 'index.html')));
   if (dist) {
     app.use(express.static(dist));
@@ -743,12 +783,20 @@ export function mountDashboard(app) {
       if (req.path.startsWith('/g/')) {
         return res.sendFile(path.join(dist, 'index.html'));
       }
+      // Root-level network slug, e.g. /bunny. Reserved words always win, so
+      // /staff, /apply and /tourney can never be claimed as a slug.
+      const segments = req.path.split('/').filter(Boolean);
+      if (segments.length === 1 && !RESERVED_ROOT_SEGMENTS.has(segments[0])) {
+        return res.sendFile(path.join(dist, 'index.html'));
+      }
       return next();
     });
     console.log(`Dashboard UI serving from ${dist}`);
   } else {
-    app.get(['/g/:tenant', '/g/:tenant/*'], (req, res) => {
-      const guildId = resolveGuildRef(req.params.tenant);
+    app.get(['/g/:tenant', '/g/:tenant/*', '/:slug'], (req, res) => {
+      const ref = req.params.tenant || req.params.slug;
+      const guildId = resolveGuildRef(ref);
+      if (!guildId) return res.status(404).send('Unknown dashboard.');
       res.type('html').send(`<!doctype html><meta charset="utf-8"><title>Tazuna dashboard</title>
         <p>Premium dashboard API is running for this bot. Build the UmaClubDashboard frontend into <code>web/dashboard</code> (or <code>UmaClubDashboard/dist</code>) and restart.</p>
         <p>API: <a href="/api/public/dashboard?guild=${encodeURIComponent(guildId || '')}">/api/public/dashboard</a></p>`);
