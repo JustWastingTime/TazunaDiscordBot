@@ -365,15 +365,20 @@ const CLUB_COMMAND = {
     {
       type: 1,
       name: 'setpremium',
-      description: 'Enable or disable premium leaderboard refresh (owner only)',
+      description: 'Enable or disable premium (owner only)',
       options: [
         {
           type: 5,
           name: 'enabled',
-          description: 'Grant premium (5-minute top-100 refresh)?',
+          description: 'Grant premium (5-minute top-100, mines, club dashboard)?',
           required: true,
         },
       ],
+    },
+    {
+      type: 1,
+      name: 'dashboard',
+      description: 'Show this server’s premium club dashboard URL (admin)',
     },
   ],
 };

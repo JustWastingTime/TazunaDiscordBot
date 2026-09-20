@@ -43,6 +43,8 @@ import {
 import { hashLeaderboardContent } from './clubLeaderboardCron.js';
 import { DiscordRequest } from './utils.js';
 import { isBotOwner, isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
+import { dashboardPublicUrl } from './dashboardRoutes.js';
+import { saveSite } from './dashboardStore.js';
 
 const ALL_CLUBS_AUTOCOMPLETE = { name: 'All Clubs', value: 'all' };
 const LB_ALL_PAGE_RE = /^lb_all_(prev|next):([^:]+):([^:]+):(\d+)$/;
@@ -712,11 +714,36 @@ export async function handleSetPremium(req) {
   }
 
   setGuildPremium(guildId, enabled);
+  if (enabled) {
+    try {
+      await saveSite(guildId, {});
+    } catch (err) {
+      console.warn('Failed to create dashboard site record:', err.message);
+    }
+  }
+  const dash = dashboardPublicUrl(guildId);
+  const dashLine = dash ? `\nClub dashboard: ${dash}` : '';
   return ephemeral(
     enabled
-      ? '✅ This server now has **premium** leaderboard refresh (top-100 clubs update every 5 minutes).'
-      : '✅ Premium leaderboard refresh removed. Top-100 clubs on this server will update every 15 minutes.',
+      ? `✅ This server now has **premium**: 5-minute top-100 leaderboards, mine alarms, and the club dashboard.${dashLine}`
+      : '✅ Premium removed. Top-100 clubs on this server will update every 15 minutes. The web dashboard is disabled.',
   );
+}
+
+export async function handleClubDashboard(req) {
+  const guildId = req.body.guild_id;
+  if (!guildId) return guildRequiredResponse();
+  if (!(await isTazunaAdmin(guildId, req.body.member, { allowBotOwner: true, userId: req.body.member?.user?.id }))) {
+    return ephemeral(tazunaAdminDenied('view the club dashboard link'));
+  }
+  if (!isPremiumGuild(guildId)) {
+    return ephemeral('The club dashboard is a **premium** feature. Ask the bot owner to run `/club setpremium`.');
+  }
+  const url = dashboardPublicUrl(guildId);
+  if (!url) {
+    return ephemeral('Set `DASHBOARD_PUBLIC_URL` on the bot host (e.g. https://dash.example.com), then restart.');
+  }
+  return ephemeral(`Premium club dashboard for this server:\n${url}\nStaff: ${url}/staff`);
 }
 
 function resolveClubSubcommand(req) {
@@ -746,6 +773,8 @@ export function dispatchClubCommand(name, req) {
       return handleClubSettings(req);
     case 'setpremium':
       return handleSetPremium(req);
+    case 'dashboard':
+      return handleClubDashboard(req);
     default:
       return null;
   }

@@ -75,23 +75,104 @@ export function newApplicationId() {
   return `app_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 }
 
-export function createApplication({ id, guildId, channelId, messageId, applicantId, ign, gameId, club, reason }) {
+export function createApplication({
+  id,
+  guildId,
+  channelId,
+  messageId,
+  applicantId,
+  ign,
+  gameId,
+  club,
+  reason,
+  discordUsername = '',
+  privateNotes = null,
+  publishPublicly = true,
+  targetClubId = null,
+  currentClubId = null,
+  currentClubName = null,
+  lastUpdatedAt = null,
+  totalFans = 0,
+  monthlyGain = 0,
+  dailyAverage = 0,
+  todayGain = 0,
+  dailyGains = [],
+  performanceSyncedAt = null,
+}) {
   const store = loadApplications();
   store[id] = {
     id,
     guildId: String(guildId),
-    channelId: String(channelId),
-    messageId: String(messageId),
-    applicantId: String(applicantId),
+    channelId: channelId != null ? String(channelId) : null,
+    messageId: messageId != null ? String(messageId) : null,
+    applicantId: applicantId != null ? String(applicantId) : null,
     ign,
     gameId: String(gameId),
     club,
     reason: reason || null,
+    discordUsername: String(discordUsername || ''),
+    privateNotes: privateNotes ?? reason ?? '',
+    publishPublicly: publishPublicly !== false,
+    targetClubId: targetClubId != null ? String(targetClubId) : null,
+    currentClubId,
+    currentClubName,
+    lastUpdatedAt,
+    totalFans,
+    monthlyGain,
+    dailyAverage,
+    todayGain,
+    dailyGains: Array.isArray(dailyGains) ? dailyGains : [],
+    performanceSyncedAt,
     status: 'pending',
     createdAt: new Date().toISOString(),
   };
   saveApplications(store);
   return store[id];
+}
+
+export function findGuildApplicationByUmaId(guildId, umaId) {
+  return listGuildApplications(guildId).find((app) => String(app.gameId) === String(umaId)) ?? null;
+}
+
+export function patchApplication(id, patch) {
+  const store = loadApplications();
+  if (!store[id]) return null;
+  Object.assign(store[id], patch, { updatedAt: new Date().toISOString() });
+  saveApplications(store);
+  return store[id];
+}
+
+export function deleteApplication(id) {
+  const store = loadApplications();
+  if (!store[id]) return false;
+  delete store[id];
+  saveApplications(store);
+  return true;
+}
+
+export function applicationToDashboard(app) {
+  if (!app) return null;
+  return {
+    umaId: String(app.gameId),
+    ign: app.ign,
+    discordUsername: String(app.discordUsername || ''),
+    targetClubId: String(app.targetClubId || app.club || ''),
+    status: app.status,
+    privateNotes: String(app.privateNotes || app.reason || ''),
+    publishPublicly: app.publishPublicly !== false,
+    currentClubId: app.currentClubId ?? null,
+    currentClubName: app.currentClubName ?? null,
+    lastUpdatedAt: app.lastUpdatedAt ?? null,
+    totalFans: Number(app.totalFans || 0),
+    monthlyGain: Number(app.monthlyGain || 0),
+    dailyAverage: Number(app.dailyAverage || 0),
+    todayGain: Number(app.todayGain || 0),
+    dailyGains: Array.isArray(app.dailyGains) ? app.dailyGains : [],
+    performanceSyncedAt: app.performanceSyncedAt ?? null,
+    createdAt: app.createdAt ?? null,
+    updatedAt: app.updatedAt ?? null,
+    applicationId: app.id,
+  };
 }
 
 export function getApplication(id) {

@@ -12,6 +12,7 @@
     "start": "node scripts/app.js",
     "register": "node scripts/commands.js",
     "dev": "nodemon scripts/app.js",
+    "dashboard:build": "npm --prefix ../UmaClubDashboard run build && node -e \"const fs=require('fs');const p=require('path');fs.cpSync('../UmaClubDashboard/dist','web/dashboard',{recursive:true});console.log('copied dist -> web/dashboard')\"",
     "render-course-map": "node scripts/courseMapRenderer.js",
     "render-cm-map": "node scripts/renderCmMapPreview.js",
     "render-skill-map": "node scripts/renderSkillMapPreview.js",

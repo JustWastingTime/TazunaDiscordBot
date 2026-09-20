@@ -54,14 +54,29 @@ DigitalOcean pricing page. Ubuntu 24.04 LTS. **Attach a Reserved IP** before you
 touch DNS.
 
 ```bash
-# on the droplet, as root
-adduser tazuna && usermod -aG sudo tazuna
-apt update && apt install -y curl git nginx rsync
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt install -y nodejs
-npm i -g pm2
+# as an existing sudo user — do NOT create a new user if one already exists,
+# and do NOT install nginx if Caddy already owns 80/443 (see section 7).
+sudo apt update && sudo apt install -y curl git rsync
+node -v          # must be >= 18; only install Node 20 if it is missing or older
+sudo npm i -g pm2
+```
 
-# 2 GB swap — sharp/map renders and npm install will OOM without it
-bash deploy/setup-swap.sh 2
+Do **not** run `su root` — Ubuntu ships with no root password, so it always fails.
+Use `sudo`.
+
+`deploy/setup-swap.sh` lives in the repo, so run it right after cloning (section 4):
+
+```bash
+sudo bash deploy/setup-swap.sh 2
+```
+
+If the droplet already has swap, the script detects it via `swapon --show` and exits
+without changes — safe to run either way. Equivalently, inline:
+
+```bash
+sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile
+sudo mkswap /swapfile && sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
 Node 20 because `package.json` requires `>=18` and `dashboard:build` uses
@@ -166,13 +181,54 @@ UMA_API_KEY=                  # also required for /register, /profile, leaderboa
 PREMIUM_GUILD_IDS=            # comma-separated; gates the dashboard per guild
 ```
 
-## 7. Nginx, TLS and cutover
+## 7. Reverse proxy, TLS and cutover
 
-`deploy/nginx-tazuna.conf` already proxies `bot.example.com` and `dash.example.com`
-to `127.0.0.1:3000`. Replace the hostnames, then follow `deploy/cutover.sh`:
+### 7a. Droplet already running Caddy (existing site)
 
-1. Point DNS A records at the Reserved IP.
-2. `certbot --nginx -d bot.example.com -d dash.example.com`
+Skip `deploy/nginx-tazuna.conf` entirely — installing nginx would fight Caddy for
+ports 80/443. Add a site block to the **existing** Caddyfile and reload, so the site
+you already host stays up.
+
+```bash
+cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.bak     # always back up first
+```
+
+Append (same process serves both hostnames). Note the port: **3010**, because a
+droplet that already runs a site often has 3000 occupied by it. Check with
+`sudo ss -tlnp` and use whatever free port matches `PORT` in
+`deploy/ecosystem.config.cjs`:
+
+```caddyfile
+bot.example.com, dash.example.com {
+    encode gzip
+    reverse_proxy 127.0.0.1:3010
+}
+```
+
+Then:
+
+```bash
+caddy validate --config /etc/caddy/Caddyfile
+systemctl reload caddy      # reload, not restart — keeps the existing site served
+```
+
+Caddy issues the certificates automatically once DNS resolves, so **point DNS at the
+droplet before reloading**. Check for a pre-existing catch-all block (`:443` with no
+hostname) if your new hostnames do not pick up a cert.
+
+### 7b. Fresh droplet, no proxy yet
+
+Use the bundled config: `deploy/nginx-tazuna.conf` already proxies
+`bot.example.com` and `dash.example.com` to `127.0.0.1:3000` — change its `upstream`
+port to match `PORT` in `deploy/ecosystem.config.cjs` (3010 by default). Replace the
+hostnames, symlink into `sites-enabled`, then `certbot --nginx -d bot.example.com -d
+dash.example.com`.
+
+### 7c. Cutover (both paths)
+
+1. Point DNS A records at the Reserved IP — add the two subdomains only; do not
+   touch the records for the site you already host.
+2. Ensure TLS is serving both hostnames.
 3. Discord app → **Interactions Endpoint URL** = `https://bot.example.com/interactions`
 4. Discord app → OAuth2 redirect = `https://dash.example.com/api/auth/callback`
 5. `npm run register`

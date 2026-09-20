@@ -57,6 +57,7 @@ import {
 } from './clubSettingsUi.js';
 import { getUmaApiKey } from './clubService.js';
 import { startLeaderboardCron } from './clubLeaderboardCron.js';
+import { mountDashboard } from './dashboardRoutes.js';
 import {
   dispatchQuizCommand,
   handleQuizAnswer,
@@ -731,6 +732,7 @@ const PORT = process.env.PORT || 3000;
 
 // Serve static assets (including guide images)
 app.use('/assets', express.static(path.join(__dirname, '../assets')));
+mountDashboard(app);
 
 
 /**
