@@ -14286,7 +14286,7 @@
                 "inherited": "Increases target speed by 0.15 for 3.6s.",
                 "conditions": [
                     "Precondition is true",
-                    "≤200m of the race remaining"
+                    "≤300m of the race remaining"
                 ]
             }
         ],
@@ -14316,7 +14316,7 @@
                 {
                     "type": "box",
                     "distance_mode": "remaining",
-                    "remaining_start": 200,
+                    "remaining_start": 300,
                     "remaining_end": 0,
                     "trigger_behavior": "asap"
                 }
