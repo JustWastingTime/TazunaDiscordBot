@@ -15041,6 +15041,53 @@
             ]
         }
     },
+    {   "skill_name": "Laugh at the Odds", "description": "Increase velocity when well-positioned with 400m or less remaining after trying to pass another runner on the final corner or later. If unfavored, greatly increase velocity instead.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.45 for 5.0s.",
+                "inherited": "Increases target speed by 0.25 for 3.0s.",
+                "conditions": [
+                    "When ≥4th favorite",
+                    "3rd to 5th (CM), 4th to 6th (TT)",
+                    "≤400m of the race remaining"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.0s.",
+                "conditions": [
+                    "When ≤3th favorite",
+                    "3rd to 5th (CM), 4th to 6th (TT)",
+                    "≤400m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Overtake target exists",
+            "Final corner and beyond"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "laugh at the odds",
+            "nakayama festa original"
+        ],
+        "horse": "Nakayama Festa (Original)",
+        "gametora_id": "100491",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "distance_mode": "remaining",
+                    "remaining_start": 400,
+                    "remaining_end": 0,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
 
 
 
