@@ -15088,6 +15088,49 @@
             ]
         }
     },
+    {   "skill_name": "Never Say Never", "description": "Moderately increase velocity when positioned toward the front with 300m remaining. If it's a dirt race and the skill user is close to the lead, also moderately surge ahead.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 and current speed by 0.25 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 and current speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "Dirt",
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "≤5m behind 1st place",
+                    "300m of the race remaining"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "2nd to 4th (CM), 2nd to 5th (TT)",
+                    "300m of the race remaining"
+                ]
+            }
+        ],
+        "preconditions": [
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "never say never",
+            "wonder acute original"
+        ],
+        "horse": "Wonder Acute (Original)",
+        "gametora_id": "101001",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "line",
+                    "distance_mode": "remaining",
+                    "value": 300
+                }
+            ]
+        }
+    },
 
 
 
