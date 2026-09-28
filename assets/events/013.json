@@ -1,0 +1,30 @@
+{
+  "id": "013",
+  "name": "Bunny DAHBY 7 FINALS",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-09-28T00:00:00+07:00",
+  "endsAt": "2026-09-28T19:30:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1441129742240710678"],
+  "entries": [
+    { "number": 1, "name": "Hi! Im Aru!@BUNS", "ageSex": "BUNS", "jockey": "Narita Taishin", "odds": 2.5 },
+    { "number": 2, "name": "Vannes", "ageSex": "BUNS", "jockey": "Kawakami Princess", "odds": 3.0 },
+    { "number": 3, "name": "mysticnut", "ageSex": "Cap", "jockey": "Yukino Bijin", "odds": 3.0 },
+    { "number": 4, "name": "North", "ageSex": "KITA", "jockey": "Tamamo Cross", "odds": 2.0 },
+    { "number": 5, "name": "legi", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 6, "name": "Flem", "ageSex": "BUNS", "jockey": "Mayano Top Gun", "odds": 2.5 },
+    { "number": 7, "name": "mollusc", "ageSex": "KITA", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 8, "name": "Momoa", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 9, "name": "Est", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 10, "name": "Mozkovic", "ageSex": "BUNS", "jockey": "Valentines Bourbon", "odds": 2.5 },
+    { "number": 11, "name": "Kai Aiya@BUNS", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 12, "name": "Crabpeople", "ageSex": "BUNS", "jockey": "Summer Gold Ship", "odds": 3.0 },
+    { "number": 13, "name": "Flac", "ageSex": "BUNS", "jockey": "Halloween Shower", "odds": 3.0 },
+    { "number": 14, "name": "Lunayon", "ageSex": "BUNS", "jockey": "Steampunk Taishin", "odds": 3.0 },
+    { "number": 15, "name": "osvaldozoso", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 16, "name": "Moobie@BUNS", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 17, "name": "SantaBear@BUNS", "ageSex": "BUNS", "jockey": "Christmas Oguri", "odds": 1.5 },
+    { "number": 18, "name": "Nightfish", "ageSex": "BUNS", "jockey": "Rice Shower", "odds": 3.0 }
+  ]
+}
