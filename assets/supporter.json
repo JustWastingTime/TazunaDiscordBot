@@ -1459,7 +1459,7 @@
             "air shakur tracen"
         ]
     },
-    {   "id": "10038 Eishin Flash",
+    {   "id": "10038 Eishin Flash", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Eishin Flash",
         "unique": "-",
@@ -1486,7 +1486,25 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10038.png",
         "rarity": "r",
         "category": "speed",
-        "aliases": ["eishin flash tracen"]
+        "aliases": ["eishin flash tracen"],
+        "events":[
+        {
+            "name": "Unforeseen Lunch",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Speed +5, Guts +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Responding to the Unforeseen",
+            "type": "event",
+            "results": [
+            "Guts +10, Bond +5",
+            "Bond +5, Target in Sight hint +1"
+            ]
+        }
+        ]
     },
     {   "id": "10039 Smart Falcon",
         "card_name": "Tracen Academy",
@@ -2883,7 +2901,7 @@
         "category": "stamina",
         "aliases": ["mejiro bright tracen"]
     },
-    {   "id": "10077 Narita Top Road",
+    {   "id": "10077 Narita Top Road", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Narita Top Road",
         "unique": "-",
@@ -2913,6 +2931,24 @@
         "category": "speed",
         "aliases": [
             "narita top road tracen"
+        ],
+        "events": [
+        {
+            "name": "A Thorough Inspection",
+            "type": "event",
+            "results": [
+            "Energy +20, Bond +5",
+            "Energy -10, Speed +25, Bond +5"
+            ]
+        },
+        {
+            "name": "A Diligent Effort",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Bond +5, Up-Tempo hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10078 Mr. C.B.",
@@ -3925,7 +3961,7 @@
             }
         ]
     },
-    {   "id": "20013 Eishin Flash",
+    {   "id": "20013 Eishin Flash", "_event": "done",
         "card_name": "5:00 a.m.-Right on Schedule",
         "character_name": "Eishin Flash",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
@@ -3954,7 +3990,39 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20013.png",
         "rarity": "sr",
         "category": "speed",
-        "aliases": ["eishin flash", "5:00 a.m.", "5am right on schedule"]
+        "aliases": ["eishin flash", "5:00 a.m.", "5am right on schedule"],
+        "events":[
+        {
+            "name": "A Good Manager",
+            "type": "chain",
+            "results": [
+            "Maximum Energy +4, Energy +10, Mood +1"
+            ]
+        },
+        {
+            "name": "A Good Friend",
+            "type": "chain",
+            "results": [
+            "Energy +20, Homestretch Haste hint +1"
+            ]
+        },
+        {
+            "name": "Unforeseen Lunch",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Speed +5, Guts +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Responding to the Unforeseen",
+            "type": "event",
+            "results": [
+            "Guts +10, Bond +5",
+            "Bond +5, Target in Sight hint +1"
+            ]
+        }
+        ]
     },
     {   "id": "20014 Narita Taishin",
         "card_name": "Poolside High Tides",
@@ -4804,7 +4872,7 @@
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
         "effects": [
             "Friendship Bonus - 25/26/27/28/30%",
-            "Mood Effect - 20/23/26/30/30",
+            "Mood Effect - 20/23/26/30/30%",
             "Stamina Bonus - 0/0/0/0/1",
             "Initial Stamina - 15/16/18/20/20",
             "Initial Friendship Gauge - 25/26/27/28/30",
@@ -5655,6 +5723,74 @@
         }
         ]
     },
+    {   "id": "20053 Narita Top Road", "_event": "done",
+        "card_name": "Stop, Prez!",
+        "character_name": "Narita Top Road",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases stat gain from races (5%)",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 20/23/26/30/30%",
+            "Power Bonus - 0/0/0/0/1",
+            "Initial Stamina - 0/10/15/20/20",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Non-Standard Distance",
+            "Firm Conditions",
+            "Preferred Position",
+            "Prepared to Pass"
+        ],
+        "event_skills": [
+            "Inner Post Proficiency",
+            "Up-Tempo"
+        ],
+        "url": "https://gametora.com/umamusume/supports/20053-narita-top-road",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20053.png",
+        "rarity": "sr",
+        "category": "power",
+        "aliases": [
+            "narita top road", "ntr", "topro",
+            "stop prez"
+        ],
+        "events": [
+        {
+            "name": "Don't Go Overboard!",
+            "type": "chain",
+            "results": [
+            "Energy -5, Stamina +10, Power +10, Bond +5, Inner Post Proficiency hint +1",
+            "Energy +10, Skill points +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Going Overboard for You!",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Power +10, Skill points +15, Bond +5"
+            ]
+        },
+        {
+            "name": "A Thorough Inspection",
+            "type": "event",
+            "results": [
+            "Energy +20, Bond +5",
+            "Energy -10, Speed +25, Bond +5"
+            ]
+        },
+        {
+            "name": "A Diligent Effort",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Bond +5, Up-Tempo hint +1"
+            ]
+        }
+        ]
+    },
 
     
     {   "id": "30001 Special Week", "_event": "done",
@@ -6364,7 +6500,7 @@
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
         "effects": [
             "Friendship Bonus - 15/16/18/20/20%",
-            "Mood Effect - 20/23/26/30/30",
+            "Mood Effect - 20/23/26/30/30%",
             "Training Effectiveness - 5%",
             "Initial Wit - 0/0/0/15/30",
             "Initial Friendship Gauge - 20/21/23/25/25",
@@ -7046,7 +7182,7 @@
             "Friendship Bonus - 20/21/23/25/25%",
             "Mood Effect - 20/23/26/30/30%",
             "Power Bonus - 0/1/1/1/1",
-            "Training Effectiveness - 5/6/8/10/10",
+            "Training Effectiveness - 5/6/8/10/10%",
             "Initial Friendship Gauge - 25/27/30/32/35",
             "Race Bonus - 5%",
             "Fan Bonus - 10/11/13/15/15%",
@@ -7453,7 +7589,7 @@
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Race Bonus - 0/0/0/5/10%",
             "Fan Bonus - 0/0/0/10/15%",
-            "Hint Levels - 2/2/2/2/2",
+            "Hint Levels - 2",
             "Hint Frequency - 30/33/36/40/40%",
             "Specialty Priority - 20/25/30/35/35"
         ],
@@ -7816,7 +7952,7 @@
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases Stamina gain when training together (1)",
         "effects": [
             "Friendship Bonus - 15/16/18/20/20%",
-            "Mood Effect - 20/23/26/30/30",
+            "Mood Effect - 20/23/26/30/30%",
             "Guts Bonus - 0/1/1/1/1",
             "Initial Friendship Gauge - 25/27/30/32/35",
             "Race Bonus - 0/0/0/5/10%",
@@ -9120,7 +9256,7 @@
         "effects": [
             "Friendship Bonus - 25/27/30/32/35%",
             "Wit Bonus - 0/1/1/1/1",
-            "Training Effectiveness - 5/6/8/10/10",
+            "Training Effectiveness - 5/6/8/10/10%",
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Race Bonus - 5/6/7/8/10%",
             "Fan Bonus - 15/16/17/18/20%",
@@ -9875,7 +10011,7 @@
             "agnes digital", "a fans joy"
         ]
     },
-    {   "id": "30086 Narita Top Road",
+    {   "id": "30086 Narita Top Road", "_event": "done",
         "card_name": "Peachy Silhouette",
         "character_name": "Narita Top Road",
         "unique": "Gain Increased Training (1) per 10000 fans, up to (20) for 200000 fans",
@@ -9911,6 +10047,46 @@
         "category": "speed",
         "aliases": [
             "narita top road", "peachy silhouette", "ntr"
+        ],
+        "events": [
+        {
+            "name": "Anything for My Classmates",
+            "type": "chain",
+            "results": [
+            "Mood +1, Energy -10, Speed +7, Stamina +7, Wit +7, Bond +5, Pace Chaser Savvy hint +1"
+            ]
+        },
+        {
+            "name": "Great Expectations",
+            "type": "chain",
+            "results": [
+            "Energy -10, Speed +15, Stamina +15, Bond +5, Pressure hint +1",
+            "Energy +20, Skill points +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Rivals Know Best",
+            "type": "chain",
+            "results": [
+            "Energy -10, Speed +15, Stamina +15, Skill points +20, Bond +5, Firm Course Menace hint +1"
+            ]
+        },
+        {
+            "name": "A Thorough Inspection",
+            "type": "event",
+            "results": [
+            "Energy +20, Bond +5",
+            "Energy -10, Speed +25, Bond +5"
+            ]
+        },
+        {
+            "name": "A Diligent Effort",
+            "type": "event",
+            "results": [
+            "Stamina +10, Bond +5",
+            "Bond +5, Up-Tempo hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30087 Mejiro Bright",
@@ -12021,7 +12197,84 @@
             }
         ]
     },
-
+    {   "id": "30122 Eishin Flash", "_event": "done",
+        "card_name": "Danke Schön",
+        "character_name": "Eishin Flash",
+        "unique": "Gain Power Bonus (1) and Skill Point Bonus (1) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Speed Bonus - 0/0/0/1/2",
+            "Power Bonus - 0/1/1/1/1",
+            "Training Effectiveness - 5/6/8/10/10%",
+            "Initial Speed - 15/16/18/20/20",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/33/36/40/40%",
+            "Specialty Priority - 50/53/57/61/65"
+        ],
+        "support_skills": [
+            "Standard Distance",
+            "Soft Step",
+            "Late Surger Straightaways",
+            "Late Surger Corners",
+            "Fighter",
+            "Late Surger Savvy",
+            "Take the Chance"
+        ],
+        "event_skills": [
+            "Sharp Streak",
+            "Position Pilfer",
+            "Target in Sight"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30122-eishin-flash",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30122.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "eishin flash"
+        ],
+        "events":[
+        {
+            "name": "One Should Give Gals Their Care",
+            "type": "chain",
+            "results": [
+            "Maximum Energy +4, Energy +10, Skill points +10, Bond +5"
+            ]
+        },
+        {
+            "name": "One Should Show Umadols Their Utmost",
+            "type": "chain",
+            "results": [
+            "Speed +15, Wit +10, Bond +5, Position Pilfer hint +1",
+            "Energy +30/+10, Power +10/+5, Bond +5"
+            ]
+        },
+        {
+            "name": "One Should Share Friends' Hometown Love",
+            "type": "chain",
+            "results": [
+            "Energy +20/10, Speed +10/5, Skill points +10/+5, Bond +5, Sharp Streak hint +3/+1"
+            ]
+        },
+        {
+            "name": "Unforeseen Lunch",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Speed +5, Guts +5, Bond +5"
+            ]
+        },
+        {
+            "name": "Responding to the Unforeseen",
+            "type": "event",
+            "results": [
+            "Guts +10, Bond +5",
+            "Bond +5, Target in Sight hint +1"
+            ]
+        }
+        ]
+    },
 
 
 
