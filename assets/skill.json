@@ -10448,7 +10448,7 @@
     {   "skill_name": "Hot Pursuit", "description": "Increase velocity when trying to pass another runner in the second half of the race. (Pace/Late)",
         "effect": [
             {
-                "description": "Increases target speed by 0.15 for 2.4s.",
+                "description": "Increases target speed by 0.35 for 2.4s.",
                 "conditions": [
                     "Pace Chaser / Late Surger",
                     "Overtake target exists",  
