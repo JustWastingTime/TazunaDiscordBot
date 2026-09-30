@@ -967,7 +967,7 @@
             "hishi amazon tracen"
         ]
     },
-    {   "id": "10025 Air Groove",
+    {   "id": "10025 Air Groove", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Air Groove",
         "unique": "-",
@@ -999,6 +999,24 @@
         "category": "guts",
         "aliases": [
             "air groove tracen"
+        ],
+        "events": [
+        {
+            "name": "Strict but Gracious",
+            "type": "event",
+            "results": [
+            "Bond +5, Go with the Flow hint +1",
+            "Energy +10, Wit +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Agile but Strong",
+            "type": "event",
+            "results": [
+            "Power +15, Bond +5",
+            "Speed +10, Stamina +5, Bond +5"
+            ]
+        }
         ]
     },
     {   "id": "10026 Agnes Digital",
@@ -2749,7 +2767,7 @@
             "sirius symboli tracen"
         ]
     },
-    {   "id": "10072 Narita Brian",
+    {   "id": "10072 Narita Brian", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Narita Brian",
         "unique": "-",
@@ -2782,6 +2800,24 @@
         "category": "speed",
         "aliases": [
             "narita brian tracen"
+        ],
+        "events": [
+            {
+                "name": "Student Council Member!",
+                "type": "event",
+                "results": [
+                "Mood +1, Speed +5, Bond +5",
+                "Maximum Energy +4, Bond +5"
+                ]
+            },
+            {
+                "name": "Lone Wolf",
+                "type": "event",
+                "results": [
+                "Speed +3, Stamina +3, Power +3, Bond +5",
+                "Bond +5, Lone Wolf hint +1"
+                ]
+            }
         ]
     },
     {   "id": "10073 Curren Chan",
@@ -3296,7 +3332,7 @@
             "tanino gimlet tracen"
         ]
     },
-    {   "id": "10085 Sakura Laurel",
+    {   "id": "10085 Sakura Laurel", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Sakura Laurel",
         "unique": "-",
@@ -3331,6 +3367,24 @@
         "category": "stamina",
         "aliases": [
             "sakura laurel tracen"
+        ],
+        "events": [
+        {
+            "name": "Stay Positive at All Times!",
+            "type": "event",
+            "results": [
+            "Stamina +15, Bond +5",
+            "Mood +2, Bond +5"
+            ]
+        },
+        {
+            "name": "Stay Positive in All Situations!",
+            "type": "event",
+            "results": [
+            "Energy +10, Bond +5",
+            "Bond +5, Subdued Pace Chasers hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10086 Yamanin Zephyr",
@@ -3541,7 +3595,7 @@
         "category": "power",
         "aliases": ["hishi amazon", "reach the top"]
     },
-    {   "id": "20004 Air Groove",
+    {   "id": "20004 Air Groove", "_event": "done",
         "card_name": "Nothing Escapes the Vice Prez",
         "character_name": "Air Groove",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases stat gain from races (5%)",
@@ -3573,7 +3627,39 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20004.png",
         "rarity": "sr",
         "category": "guts",
-        "aliases": ["air groove", "nothing escapes the vice prez"]
+        "aliases": ["air groove", "nothing escapes the vice prez"],
+        "events": [
+         {
+            "name": "As Dignified as a Moth Orchid",
+            "type": "chain",
+            "results": [
+            "Power +5, Guts +5"
+            ]
+        },
+        {
+            "name": "Bloom by the Oak",
+            "type": "chain",
+            "results": [
+            "Energy -20, Power +5, Straightaway Acceleration hint +1 OR Energy -20, Power +5, Guts +5, Bond +5, Straightaway Acceleration hint +1 OR Energy -10, Stamina +5, Power +5, Guts +10, Bond +5, Straightaway Acceleration hint +3"
+            ]
+        },
+        {
+            "name": "Strict but Gracious",
+            "type": "event",
+            "results": [
+            "Bond +5, Go with the Flow hint +1",
+            "Energy +10, Wit +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Agile but Strong",
+            "type": "event",
+            "results": [
+            "Power +15, Bond +5",
+            "Speed +10, Stamina +5, Bond +5"
+            ]
+        }
+        ]
     },  
     {   "id": "20005 Agnes Digital",
         "card_name": "Digital's Recharge Station",
@@ -7876,7 +7962,7 @@
         }
         ]
     },
-    {   "id": "30044 Narita Brian",
+    {   "id": "30044 Narita Brian", "_event": "done",
         "card_name": "Two Pieces",
         "character_name": "Narita Brian",
         "unique": "Increases Speed gain when training together (1)\nIncreases initial Speed when beginning a Career playthrough (20)",
@@ -7910,6 +7996,45 @@
         "category": "speed",
         "aliases": [
             "narita brian two pieces, narita brian poverty, narita brian welfare"
+        ],
+        "events": [
+        {
+            "name": "Brian, the Race Planner",
+            "type": "chain",
+            "results": [
+            "Maximum Energy +4, Speed +5"
+            ]
+        },
+        {
+            "name": "Only a Sister Knows",
+            "type": "chain",
+            "results": [
+            "Energy -10, Speed +20"
+            ]
+        },
+        {
+            "name": "Running for the Dream",
+            "type": "chain",
+            "results": [
+            "Energy -10, Speed +20, Shatterproof hint +1"
+            ]
+        },
+        {
+            "name": "Student Council Member!",
+            "type": "event",
+            "results": [
+            "Mood +1, Speed +5, Bond +5",
+            "Maximum Energy +4, Bond +5"
+            ]
+        },
+        {
+            "name": "Lone Wolf",
+            "type": "event",
+            "results": [
+            "Speed +3, Stamina +3, Power +3, Bond +5",
+            "Bond +5, Lone Wolf hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30045 Sweep Tosho",
@@ -9060,7 +9185,7 @@
             "curren chan cutie pie with shining eyes"
         ]
     },
-    {   "id": "30069 Narita Brian",
+    {   "id": "30069 Narita Brian", "_event": "done",
         "card_name": "The Whistling Arrow's Taunt",
         "character_name": "Narita Brian",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases the frequency at which the character participates in their preferred training type (20)",
@@ -9097,6 +9222,46 @@
         "category": "stamina",
         "aliases": [
             "narita brian the whistling arrows taunt"
+        ],
+        "events": [
+        {
+            "name": "Target Across Time",
+            "type": "chain",
+            "results": [
+            "Stamina +10"
+            ]
+        },
+        {
+            "name": "Lord of the Ducks",
+            "type": "chain",
+            "results": [
+            "Maximum Energy +4, Stamina +10, Bond +5, Up-Tempo hint +1 OR Guts +10, Bond -5",
+            "Wit +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Battlefield Experience",
+            "type": "chain",
+            "results": [
+            "Energy -5, Stamina +5, Bond +5, Beeline Burst hint +2"
+            ]
+        },
+        {
+            "name": "Student Council Member!",
+            "type": "event",
+            "results": [
+            "Mood +1, Speed +5, Bond +5",
+            "Maximum Energy +4, Bond +5"
+            ]
+        },
+        {
+            "name": "Lone Wolf",
+            "type": "event",
+            "results": [
+            "Speed +3, Stamina +3, Power +3, Bond +5",
+            "Bond +5, Lone Wolf hint +1"
+            ]
+        }
         ]
     },
     {   "id": "30070 Yukino Bijin",
@@ -10958,7 +11123,7 @@
             "special week", "take hold of our dreams", "special week poverty", "special week welfare", "special week story"
         ]
     },
-    {   "id": "30106 Air Groove",
+    {   "id": "30106 Air Groove", "_event": "done",
         "card_name": "Tailwind to My Goals",
         "character_name": "Air Groove",
         "unique": "Gain Power Bonus (1) and Skill Point Bonus (1) when the bond gauge is at least 80",
@@ -10994,6 +11159,46 @@
         "category": "power",
         "aliases": [
             "air groove", "tailwind to my goals"
+        ],
+        "events": [
+         {
+            "name": "My Source of Admiration",
+            "type": "chain",
+            "results": [
+            "Mood +1, Power +10, Bond +5, Fearless hint +1"
+            ]
+        },
+        {
+            "name": "You Make Me Who I Am",
+            "type": "chain",
+            "results": [
+            "Power +7, Wit +7, Bond +5, Take the Chance hint +1",
+            "Skill points +10, Bond +5, Updrafters hint +1"
+            ]
+        },
+        {
+            "name": "Dynamic Duo",
+            "type": "chain",
+            "results": [
+            "Power +10, Wit +10, Bond +5, Lie in Wait hint +1"
+            ]
+        },
+        {
+            "name": "Strict but Gracious",
+            "type": "event",
+            "results": [
+            "Bond +5, Go with the Flow hint +1",
+            "Energy +10, Wit +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Agile but Strong",
+            "type": "event",
+            "results": [
+            "Power +15, Bond +5",
+            "Speed +10, Stamina +5, Bond +5"
+            ]
+        }
         ]
     },
     {   "id": "30107 Maruzensky", "_event": "done",
@@ -12271,6 +12476,249 @@
             "results": [
             "Guts +10, Bond +5",
             "Bond +5, Target in Sight hint +1"
+            ]
+        }
+        ]
+    },
+    {   "id": "30123 Narita Brian", "_event": "done",
+        "card_name": "Glad Tidings",
+        "character_name": "Narita Brian",
+        "unique": "Gain Training Effectiveness (5) per every level of the current training facility",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Stamina Bonus - 0/0/0/1/2",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Right-Handed",
+            "Firm Conditions",
+            "Winter Runner",
+            "Preferred Position",
+            "Outer Swell",
+            "Long Straightaways",
+            "All Set",
+            "Steady Gait",
+            "Latch On",
+            "My True Strength"
+        ],
+        "event_skills": [
+            "Hot Pursuit",
+            "My True Strength",
+            "Lone Wolf"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30123-narita-brian",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30123.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "narita brian",
+            "glad tidings"
+        ],
+        "events": [
+            {
+                "name": "The Blazing Chaos of the Morning Star",
+                "type": "chain",
+                "results": [
+                "Stamina +10, Power +10, Bond +5",
+                "Energy +15, Mood +1, Bond +5"
+                ]
+            },
+            {
+                "name": "A Yet Unnoticed Light",
+                "type": "chain",
+                "results": [
+                "Stamina +10, Power +10, Bond +5, My True Strength hint +1"
+                ]
+            },
+            {
+                "name": "Clumsy Pair",
+                "type": "chain",
+                "results": [
+                "Stamina +15, Power +15, Bond +5, Hot Pursuit hint +3, OR Stamina +7, Power +7, Bond +5, Hot Pursuit hint +1"
+                ]
+            },
+            {
+                "name": "Student Council Member!",
+                "type": "event",
+                "results": [
+                "Mood +1, Speed +5, Bond +5",
+                "Maximum Energy +4, Bond +5"
+                ]
+            },
+            {
+                "name": "Lone Wolf",
+                "type": "event",
+                "results": [
+                "Speed +3, Stamina +3, Power +3, Bond +5",
+                "Bond +5, Lone Wolf hint +1"
+                ]
+            }
+        ]
+    },
+    {   "id": "30124 Air Groove", "_event": "done",
+        "card_name": "Are You Merry?",
+        "character_name": "Air Groove",
+        "unique": "Gain Speed Bonus (1) and Skill Point Bonus (1) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Speed Bonus - 0/1/1/1/1",
+            "Wit Bonus - 1",
+            "Training Effectiveness - 5%",
+            "Initial Friendship Gauge - 20/21/23/25/25",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Standard Distance",
+            "Winter Runner",
+            "Position Pilfer",
+            "Updrafters",
+            "Late Surger Straightaways",
+            "Late Surger Savvy",
+            "Be Still",
+            "Fearless"
+        ],
+        "event_skills": [
+            "Fast & Furious",
+            "Studious",
+            "Pace Strategy",
+            "Go with the Flow"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30124-air-groove",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30124.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "air groove",
+            "are you merry"
+        ],
+        "events": [
+        {
+            "name": "Great, Another Headache",
+            "type": "chain",
+            "results": [
+            "Speed +7, Wit +7, Bond +5, OR Speed +10, Wit +10, Bond +10"
+            ]
+        },
+        {
+            "name": "A Use for the Blaze",
+            "type": "chain",
+            "results": [
+            "Skill points +20, Bond +5, Studious hint +1, Pace Strategy hint +1",
+            "Energy +20, Wit +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Twinkles of One Wintry Eve",
+            "type": "chain",
+            "results": [
+            "Speed +10, Wit +10, Bond +5, Fast & Furious hint +2"
+            ]
+        },
+        {
+            "name": "Strict but Gracious",
+            "type": "event",
+            "results": [
+            "Bond +5, Go with the Flow hint +1",
+            "Energy +10, Wit +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Agile but Strong",
+            "type": "event",
+            "results": [
+            "Power +15, Bond +5",
+            "Speed +10, Stamina +5, Bond +5"
+            ]
+        }
+        ]
+    },
+    {   "id": "30125 Sakura Laurel", "_event": "done",
+        "card_name": "Don't Stop Anymore!",
+        "character_name": "Sakura Laurel",
+        "unique": "Gain Stamina Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Initial Stamina - 15/16/18/20/20",
+            "Initial Guts - 15/16/18/20/20",
+            "Initial Friendship Gauge - 0/0/0/15/30",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Spring Runner",
+            "Winter Runner",
+            "Sunny Days",
+            "Deep Breaths",
+            "Long Corners",
+            "Stamina Eater",
+            "A Small Breather",
+            "Free-Spirited",
+            "Scramble"
+        ],
+        "event_skills": [
+            "Dauntless",
+            "Be Still",
+            "Subdued Pace Chasers"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30125-sakura-laurel",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30125.png",
+        "rarity": "ssr",
+        "category": "stamina",
+        "aliases": [
+            "sakura laurel",
+            "don't stop anymore",
+            "sakura laurel welfare event poverty"
+        ],
+        "events": [
+        {
+            "name": "Marvelously Grown-Up",
+            "type": "chain",
+            "results": [
+            "Stamina +5, Guts +5, Bond +5"
+            ]
+        },
+        {
+            "name": "The Secret to Staying Positive",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Guts +5, Bond +5",
+            "Bond +5, Be Still hint +2"
+            ]
+        },
+        {
+            "name": "Guess We're Trapped",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Bond +5, Dauntless hint +1"
+            ]
+        },
+        {
+            "name": "Stay Positive at All Times!",
+            "type": "event",
+            "results": [
+            "Stamina +15, Bond +5",
+            "Mood +2, Bond +5"
+            ]
+        },
+        {
+            "name": "Stay Positive in All Situations!",
+            "type": "event",
+            "results": [
+            "Energy +10, Bond +5",
+            "Bond +5, Subdued Pace Chasers hint +1"
             ]
         }
         ]
