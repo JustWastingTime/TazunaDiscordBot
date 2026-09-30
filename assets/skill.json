@@ -9605,7 +9605,6 @@
         "category": "goldenvelocity",
         "aliases": [
             "full of vigor",
-            "unstoppable force",
             "破竹の勢い"
         ],
         "downgrade": "Pumped",
@@ -18999,7 +18998,8 @@
             "ignited spirit wit",
             "ignited spirit wit",
             "aoharu ignition wisdom",
-            "アオハル点火 賢"
+            "アオハル点火 賢",
+            "ignited wit"
         ],
         "upgrade": "Burning Spirit WIT",
         "gametora_id": "210052",
