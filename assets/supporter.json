@@ -3300,7 +3300,7 @@
             }
         ]
     },
-    {   "id": "10084 Tanino Gimlet",
+    {   "id": "10084 Tanino Gimlet", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Tanino Gimlet",
         "unique": "-",
@@ -3330,6 +3330,24 @@
         "category": "power",
         "aliases": [
             "tanino gimlet tracen"
+        ],
+        "events": [
+        {
+            "name": "The Euphoria of Destruction!",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Skill points +30, Bond +5"
+            ]
+        },
+        {
+            "name": "An Electrifying Present!",
+            "type": "event",
+            "results": [
+            "Power +10, Skill points +5, Bond +5",
+            "Bond +5, End Closer Savvy hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10085 Sakura Laurel", "_event": "done",
@@ -12726,6 +12744,84 @@
 
 
 
+
+
+
+    {   "id": "30145 Tanino Gimlet", "_event": "done",
+        "card_name": "Welcome to Umayuru",
+        "character_name": "Tanino Gimlet",
+        "unique": "Gain Power Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Stamina Bonus - 0/1/1/1/1",
+            "Initial Friendship Gauge - 5/6/8/10/10",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1",
+            "Hint Frequency - 10/13/16/20/20%"
+        ],
+        "support_skills": [
+            "Firm Conditions",
+            "Straightaway Spurt",
+            "Updrafters",
+            "Hawkeye",
+            "Take the Chance",
+            "Eager"
+        ],
+        "event_skills": [
+            "Sturm und Drang",
+            "End Closer Savvy"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30145-tanino-gimlet",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30145.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "tanino gimlet",
+            "welcome to umayuru",
+            "tanino gimlet promo"
+        ],
+        "events": [
+        {
+            "name": "As the Great Artists of Yore...",
+            "type": "chain",
+            "results": [
+            "Power +15, Skill points +15, Bond +5 OR Skill points +10, Bond +5"
+            ]
+        },
+        {
+            "name": "As the Criminal from the North...",
+            "type": "chain",
+            "results": [
+            "Stamina +15, Power +15, Bond +5 OR Power +10, Bond +5"
+            ]
+        },
+        {
+            "name": "As Bacchus, God of Wine...",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Power +10, Bond +5, Sturm und Drang hint +1"
+            ]
+        },
+        {
+            "name": "The Euphoria of Destruction!",
+            "type": "event",
+            "results": [
+            "Energy +15, Bond +5",
+            "Skill points +30, Bond +5"
+            ]
+        },
+        {
+            "name": "An Electrifying Present!",
+            "type": "event",
+            "results": [
+            "Power +10, Skill points +5, Bond +5",
+            "Bond +5, End Closer Savvy hint +1"
+            ]
+        }
+        ]
+    },
     {   "id": "30146 Oguri Cap", "_event": "done",
         "card_name": "Run Forth! Dash On! Ever Forward!",
         "character_name": "Oguri Cap",
