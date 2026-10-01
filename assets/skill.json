@@ -15130,6 +15130,112 @@
             ]
         }
     },
+    {   "skill_name": "Into High Gear!", "description": "If positioned midpack on a downhill mid-race or later, increase velocity for a moderate duration after the downhill. If it's at Tokyo Racecourse, also kick into high gear.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 5.0s.",
+                "inherited": "Increases target speed by 0.15 and current speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "Flat or Uphill"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 4.0s.",
+                "inherited": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Flat or Uphill"
+                ]
+            }
+        ],
+        "preconditions": [
+            [
+                "5th to 7th (CM), 6th to 10th (TT)",
+                "Downhill",
+                "Mid race and beyond",
+                "Tokyo Racecourse"
+            ],
+            [
+                "5th to 7th (CM), 6th to 10th (TT)",
+                "Downhill",
+                "Mid race and beyond"
+            ]
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "into high gear",
+            "vodka christmas", "xmas vodka"
+        ],
+        "horse": "Vodka (Christmas)",
+        "gametora_id": "110081",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "phase": "mid_and_beyond",
+                    "trigger_behavior": "precondition"
+                },
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "labels": ["flat", "uphill"],
+                    "phase": "mid_and_beyond",
+                    "after_precondition_start": true,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Queen's Lumination", "description": "Moderately increase velocity continuously when toward the front on a straight in the second half of the race. Effect increases if leading and close to the runner behind.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 6.0s.",
+                "inherited": "Increases target speed by 0.15 for 3.6.s.",
+                "conditions": [
+                    "1st",
+                    "≤1 length ahead",
+                    "Not a corner",
+                    "Second half of the race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 6.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.6s.",
+                "conditions": [
+                    "1st to 2nd",
+                    "Not a corner",
+                    "Second half of the race"
+                ]
+            }
+        ],
+        "preconditions": [
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "queens lumination",
+            "daiwa scarlet christmas", "xmas daiwa", "cdaiwa"
+        ],
+        "horse": "Daiwa Scarlet (Christmas)",
+        "gametora_id": "110091",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "not_a_corner",
+                    "phase": "second_half",
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
 
 
 
@@ -17865,6 +17971,116 @@
             ]
         }
     },
+    {   "skill_name": "Shine On, Tomakomai! ☆", "description": "Very slightly increase acceleration continuously for a long duration when toward the front on the latter half of the final corner after biding time in the race's first half. Effect increases if 2nd.",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.2 for 8.0s.",
+                "inherited": "Increases acceleration by 0.07 for 4.8s.",
+                "conditions": [
+                    "2nd",
+                    "First 50% of the pack (by distance)",
+                    "Second half of final corner"
+                ]
+            },
+            {
+                "description": "Increases acceleration by 0.1 for 8.0s.",
+                "inherited": "Increases acceleration by 0.05 for 4.8s.",
+                "conditions": [
+                    "First 50% of the pack (by distance)",
+                    "Second half of final corner"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Has been 2nd to 9th (CM), 2nd to 12th (TT) the entire race",
+            "Second half of the race"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "sunny breeze",
+            "yamanin zephyr original"
+        ],
+        "horse": "Yamanin Zephyr (Original)",
+        "gametora_id": "100781",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "select": "last",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "phase": "second_half",
+                    "trigger_behavior": "precondition"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Sunny Breeze", "description": "Slightly increase acceleration when well-positioned in the last spurt after engaging in a challenge on a mid-race corner in a dirt race. Effect increases if still going strong.",
+        "effect": [
+            {
+                "description": "Increases acceleration by 0.4 for 4.0s.",
+                "conditions": [
+                    "Dirt",
+                    "3rd to 4th (CM), 4th to 5th (TT)",
+                    "Character is in their last spurt mode",
+                    "Enough stamina to do a full last spurt"
+                ]
+            },
+            {
+                "description": "Increases acceleration by 0.2 for 4.0s.",
+                "inherited": "Increases acceleration by 0.07 for 2.4s.",
+                "conditions": [
+                    "Dirt",
+                    "3rd to 4th (CM), 4th to 5th (TT)",
+                    "Character is in their last spurt mode"
+                ]
+            }
+        ],
+        "preconditions": [
+            "Blocked at the sides for ≥2s",
+            "Any corner",
+            "Mid race"
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowaccel",
+        "aliases": [
+            "shine on tomakomai",
+            "hokko tarumae original"
+        ],
+        "horse": "Hokko Tarumae (Original)",
+        "gametora_id": "100991",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "zones",
+                    "labels": ["last spurt"],
+                    "trigger_behavior": "asap"
+                },
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "phase": "mid",
+                    "trigger_behavior": "precondition",
+                    "disable_auto_phase_clip": true
+                }
+            ]
+        }
+    },
+
+
 
     {   "skill_name": "Corner Acceleration x", "description": "Moderately decrease acceleration on a corner with awkward turning.",
         "effect": [

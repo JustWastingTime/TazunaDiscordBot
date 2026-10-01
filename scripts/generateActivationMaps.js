@@ -8,9 +8,17 @@ function lower(value) {
   return String(value ?? "").toLowerCase();
 }
 
+function flattenTexts(values, out = []) {
+  for (const value of values ?? []) {
+    if (Array.isArray(value)) flattenTexts(value, out);
+    else if (value != null && value !== "") out.push(value);
+  }
+  return out;
+}
+
 function collectTexts(skill) {
   const texts = [];
-  if (Array.isArray(skill.preconditions)) texts.push(...skill.preconditions);
+  if (Array.isArray(skill.preconditions)) texts.push(...flattenTexts(skill.preconditions));
   if (Array.isArray(skill.effect)) {
     for (const effect of skill.effect) {
       if (Array.isArray(effect.conditions)) texts.push(...effect.conditions);

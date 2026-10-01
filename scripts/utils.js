@@ -759,14 +759,26 @@ export function buildSupporterEventEmbed(supporter, event, eventIndex = 0) {
   };
 }
 
+function isGroupedPreconditions(preconditions) {
+  return Array.isArray(preconditions)
+    && preconditions.length > 1
+    && preconditions.every((entry) => Array.isArray(entry));
+}
+
+function formatConditionLines(items) {
+  return items.map((item) => `- ${item}`).join("\n");
+}
+
 export function buildSkillEmbed(skill, supporterList) {
   const fields = [];
+  const groupedPreconditions = isGroupedPreconditions(skill.preconditions);
 
-  // ===== Preconditions =====
-  if (skill.preconditions && skill.preconditions.length > 0) {
+  // A single shared precondition list is shown once. Multiple lists are paired
+  // with each effect (precondition 1 with effect 1, and so on).
+  if (!groupedPreconditions && skill.preconditions && skill.preconditions.length > 0) {
     fields.push({
       name: "Preconditions",
-      value: skill.preconditions.map(p => `- ${p}`).join("\n") + "\n\u200B",
+      value: formatConditionLines(skill.preconditions) + "\n\u200B",
       inline: false
     });
   }
@@ -775,6 +787,11 @@ export function buildSkillEmbed(skill, supporterList) {
   if (skill.effect && skill.effect.length > 0) {
     skill.effect.forEach((effect, index) => {
       let value = "";
+      const effectPreconditions = groupedPreconditions ? skill.preconditions[index] : null;
+
+      if (Array.isArray(effectPreconditions) && effectPreconditions.length > 0) {
+        value += `**Preconditions:**\n${formatConditionLines(effectPreconditions)}\n\n`;
+      }
 
       // Conditions
       if (effect.conditions && effect.conditions.length > 0) {

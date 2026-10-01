@@ -480,10 +480,18 @@ function layoutSegmentMatches(segment, match) {
   return lower(segment?.label).includes(normalizedMatch);
 }
 
+function flattenConditionSources(values, out = []) {
+  for (const value of values ?? []) {
+    if (Array.isArray(value)) flattenConditionSources(value, out);
+    else if (value != null && value !== "") out.push(value);
+  }
+  return out;
+}
+
 function collectSkillConditionText(skill, includeDescriptions = false) {
   const sources = [];
 
-  if (Array.isArray(skill.preconditions)) sources.push(...skill.preconditions);
+  if (Array.isArray(skill.preconditions)) sources.push(...flattenConditionSources(skill.preconditions));
   if (Array.isArray(skill.effect)) {
     for (const effect of skill.effect) {
       if (Array.isArray(effect.conditions)) sources.push(...effect.conditions);
@@ -582,6 +590,12 @@ function inferPhaseWindowFromTexts(texts, mapData) {
   // "Late race and beyond" means from late-race start to race end.
   if (hasLateAndBeyond) {
     const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;
+    return { start, end: mapData.length };
+  }
+
+  // "Mid race and beyond" means from mid-race start to race end.
+  if (texts.some((t) => t.includes("mid race and beyond"))) {
+    const start = midZone?.start ?? mapData.length * 0.5;
     return { start, end: mapData.length };
   }
 
@@ -746,6 +760,10 @@ function phaseWindowFromName(mapData, phaseName) {
     const start = lateZone?.start ?? spurtZone?.start ?? mapData.length * 0.75;
     return { start, end: mapData.length };
   }
+  if (phase === "mid_and_beyond") {
+    const start = midZone?.start ?? mapData.length * 0.5;
+    return { start, end: mapData.length };
+  }
   if (phase === "final_corner_and_beyond") {
     const start = finalCorner?.start ?? (lateZone?.start ?? mapData.length * 0.75);
     return { start, end: mapData.length };
@@ -837,7 +855,12 @@ function markersFromActivationMap(skill, mapData, options = {}) {
   const markers = [];
   const allowAutoPhaseInference = options.allowAutoPhaseInference !== false;
   const autoPhaseWindow = allowAutoPhaseInference ? inferAutoPhaseWindow(skill, mapData) : null;
-  for (const trigger of activationMap.triggers) {
+  const orderedTriggers = [...activationMap.triggers].sort((a, b) => {
+    const aPre = lower(a.trigger_behavior ?? a.behavior) === "precondition" ? 0 : 1;
+    const bPre = lower(b.trigger_behavior ?? b.behavior) === "precondition" ? 0 : 1;
+    return aPre - bPre;
+  });
+  for (const trigger of orderedTriggers) {
     const color = trigger.color ?? "#d11f2a";
     if (trigger.type === "line") {
       if (Number.isFinite(Number(trigger.distance))) {
@@ -911,6 +934,14 @@ function markersFromActivationMap(skill, mapData, options = {}) {
       if (autoPhaseWindow && useAutoPhaseClip) {
         clipStart = Math.max(clipStart, autoPhaseWindow.start);
         clipEnd = Math.min(clipEnd, autoPhaseWindow.end);
+      }
+      // Start at the precondition box, not after it ends, so the condition can overlap it.
+      if (trigger.after_precondition_start === true) {
+        const preconditionStarts = markers
+          .filter((marker) => marker.type === "box" && lower(marker.trigger_behavior) === "precondition")
+          .map((marker) => marker.start);
+        if (!preconditionStarts.length) continue;
+        clipStart = Math.max(clipStart, Math.min(...preconditionStarts));
       }
 
       const pushClippedBox = (start, end) => {

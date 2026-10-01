@@ -1092,6 +1092,10 @@
             "Pedal to the Metal",
             "Nimble Navigator"
         ],
+        "evo_skills": [
+            "A Swig of Strength",
+            "Feet of Fury"
+        ],
         "races": [
             "hanshin juvenile fillies december 1 year 1",
             "tulip sho march 1 year 2",
@@ -1106,6 +1110,88 @@
         "aliases": ["vodka original", "wild top gear"],
         "url": "https://gametora.com/umamusume/characters/100801-vodka",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1008_100801.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Win the Tulip Sho, Oka Sho, Shuka Sho, Queen Elizabeth II Cup (Year 2), Osaka Hai, Tenno Sho (Autumn), Arima Kinen Year 2) and Arima Kinen (Year 3)",
+                "rewards": "Speed +25, Power +25, Stamina +25, Skill points +25, All I've Got hint +2, Slick Surge hint +2, Pedal to the Metal hint +2"
+            },
+            {
+                "conditions": "Win the Yasuda Kinen (Year 3)",
+                "rewards": "Nimble Navigator hint +1"
+            },
+            {
+                "conditions": "Win the Yasuda Kinen twice",
+                "rewards": "All stats +3, Skill points +45, Nimble Navigator hint +1, Get Practice Perfect status, Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "Extraordinary Empress",
+            "condition": "Win 7 G1 races, including the Tokyo Yushun (Japanese Derby), Yasuda Kinen, Japan Cup, Tenno Sho (Autumn), and Victoria Mile"
+        }
+    },
+    {   "id": "100802 - Vodka Christmas",
+        "character_name": "Vodka",
+        "type": "Christmas",
+        "costume": "Fiery Aqua Vitae",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "E"
+            },
+            {
+            "Front": "C",
+            "Pace": "B",
+            "Late": "A",
+            "End": "F"
+            }
+        ],
+        "unique": "Into High Gear!",
+        "unique_explanation": "",
+        "skills": [
+            "Pedal to the Metal",
+            "Nimble Navigator",
+            "Medium Corners"
+        ],
+        "potential": [
+            "Full Throttle",
+            "No Stopping Me!",
+            "Late Surger Straightaways",
+            "Top Gear"
+        ],
+        "event_skills": [
+            "Shifting Gears",
+            "Corner Recovery",
+            "Late Surger Corners",
+            "Winter Runner",
+            "All I've Got",
+            "Slick Surge",
+            "Pedal to the Metal",
+            "Nimble Navigator"
+        ],
+        "evo_skills": [
+            "Cuttin' Through!",
+            "Kick It into Top Gear!"
+        ],
+        "aliases": ["vodka christmas xmas", "fiery aqua vitae", "cvodka"],
+        "url": "https://gametora.com/umamusume/characters/100802-vodka",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1008_100802.png",
         "review": "",
         "secrets": [
             {
@@ -1178,6 +1264,10 @@
             "Head-On",
             "Steadfast"
         ],
+        "evo_skills": [
+            "Perfectly Tuned",
+            "First Place Is MINE!"
+        ],
         "races": [
             "tulip sho march 1 year 2",
             "oka sho april 1 year 2",
@@ -1191,6 +1281,89 @@
         "aliases": ["daiwa scarlet original", "peak blue"],
         "url": "https://gametora.com/umamusume/characters/100901-daiwa-scarlet",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1009_100901.png",
+        "review": "",
+        "secrets": [
+            {
+                "conditions": "Win all G1 races in which Vodka is also participating, Hanshin Juvenile Fillies, Oka Sho, Tokyo Yushun (Japanese Derby), Takarazuka Kinen (Year 2), Shuka Sho, Queen Elizabeth II Cup (Year 2), Japan Cup (Year 2), Osaka Hai, Tenno Sho (Autumn), Japan Cup (Year 3)",
+                "rewards": "All stats +15, Skill points +50, Unyielding Spirit hint +2, Head-On hint +2, Nimble Navigator hint +1"
+            },
+            {
+                "conditions": "Participate in the Japanese Oaks",
+                "rewards": "Mood +1"
+            },
+            {
+                "conditions": "Win the Tenno Sho (Autumn Year 3)",
+                "rewards": "Steadfast hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "Miss Perfect",
+            "condition": "Inherit memories from a parent that won the Satsuki Sho\nFinish 2nd or better in every race you participate in\nWin 10 graded races, including the Oka Sho, Shuka Sho and Queen Elizabeth II Cup"
+        }
+    },
+    {   "id": "100902 - Daiwa Scarlet Christmas",
+        "character_name": "Daiwa Scarlet",
+        "type": "Christmas",
+        "costume": "Nuit Étoilée de Scarlet",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "A",
+            "Pace": "A",
+            "Late": "E",
+            "End": "G"
+            }
+        ],
+        "unique": "Queen's Lumination",
+        "unique_explanation": "",
+        "skills": [
+            "Firm Resolve",
+            "Moxie",
+            "Feature Act"
+        ],
+        "potential": [
+            "Long Straightaways",
+            "Restless",
+            "Long Corners",
+            "Can't Even Catch My Shadow"
+        ],
+        "event_skills": [
+            "Unyielding Spirit",
+            "Shifting Gears",
+            "Corner Recovery",
+            "Front Runner Corners",
+            "Winter Runner",
+            "Head-On",
+            "Nimble Navigator",
+            "Steadfast"
+        ],
+        "evo_skills": [
+            "Rough Queen",
+            "Scarlet Radiance",
+            "Door to My Dream"
+        ],
+        "aliases": ["daiwa scarlet christmas xmas", "nuit etoilee de scarlet", "cdaiwa"],
+        "url": "https://gametora.com/umamusume/characters/100902-daiwa-scarlet",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1009_100902.png",
         "review": "",
         "secrets": [
             {
