@@ -1,0 +1,19 @@
+{
+  "id": "BI02P",
+  "name": "Bunny Invitational 02 Play Ins",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-09-28T00:00:00+07:00",
+  "endsAt": "2026-10-03T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266"],
+  "entries": [
+    { "number": 1, "name": "2OUP", "ageSex": "", "jockey": "", "odds": 2.53 },
+    { "number": 2, "name": "VODKA", "ageSex": "", "jockey": "", "odds": 3.66 },
+    { "number": 3, "name": "BUNS2", "ageSex": "", "jockey": "", "odds": 3.33 },
+    { "number": 4, "name": "HOOVS", "ageSex": "", "jockey": "", "odds": 3.83 },
+    { "number": 5, "name": "KIITA", "ageSex": "", "jockey": "", "odds": 2.83 },
+    { "number": 6, "name": "LOOPA", "ageSex": "", "jockey": "", "odds": 2.86 },
+    { "number": 7, "name": "TETHR", "ageSex": "", "jockey": "", "odds": 3.5 }
+  ]
+}
