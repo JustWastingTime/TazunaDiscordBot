@@ -1,0 +1,33 @@
+{
+  "id": "BI02A",
+  "name": "Bunny Invitational 02 Winner",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-10-08T00:00:00+07:00",
+  "endsAt": "2026-10-09T22:00:00+07:00",
+  "availability": "guilds",
+  "guildIds": ["1518456417412059266", "1441129742240710678"],
+  "entries": [
+    { "number": 1, "name": "LICKY", "ageSex": "", "jockey": "", "odds": 3.32 },
+    { "number": 2, "name": "FLIP", "ageSex": "", "jockey": "", "odds": 1.50 },
+    { "number": 3, "name": "SOUP", "ageSex": "", "jockey": "", "odds": 2.86 },
+    { "number": 4, "name": "DOTO", "ageSex": "", "jockey": "", "odds": 2.26 },
+    { "number": 5, "name": "GLUE", "ageSex": "", "jockey": "", "odds": 5.75 },
+    { "number": 6, "name": "KAKKU", "ageSex": "", "jockey": "", "odds": 4.03},
+    { "number": 7, "name": "KING", "ageSex": "", "jockey": "", "odds": 6.11 }, 
+    { "number": 8, "name": "TRCN", "ageSex": "", "jockey": "", "odds": 6.50 },
+    { "number": 9, "name": "BUNS", "ageSex": "", "jockey": "", "odds": 4.08 },
+    { "number": 10, "name": "YEYA", "ageSex": "", "jockey": "", "odds": 3.77 },
+    { "number": 11, "name": "DOMI", "ageSex": "", "jockey": "", "odds": 5.45 },
+    { "number": 12, "name": "KISS", "ageSex": "", "jockey": "", "odds": 5.9 },
+    { "number": 13, "name": "KIITA", "ageSex": "", "jockey": "", "odds": 6.81 },
+    { "number": 14, "name": "KITA", "ageSex": "", "jockey": "", "odds": 2.36 },
+    { "number": 15, "name": "CABAL", "ageSex": "", "jockey": "", "odds": 8.01 },
+    { "number": 16, "name": "USK", "ageSex": "", "jockey": "", "odds": 6.35 },
+    { "number": 17, "name": "VDL", "ageSex": "", "jockey": "", "odds": 4.08 }, 
+    { "number": 18, "name": "LOVE", "ageSex": "", "jockey": "", "odds": 8.02 }, 
+    { "number": 19, "name": "ROT", "ageSex": "", "jockey": "", "odds": 8.39 }, 
+    { "number": 20, "name": "ALLI", "ageSex": "", "jockey": "", "odds": 4.44 }, 
+    { "number": 21, "name": "FLNA", "ageSex": "", "jockey": "", "odds": 9.01}
+  ]
+}
