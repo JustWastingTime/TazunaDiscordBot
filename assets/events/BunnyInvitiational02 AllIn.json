@@ -6,7 +6,7 @@
   "startsAt": "2026-10-08T00:00:00+07:00",
   "endsAt": "2026-10-09T22:00:00+07:00",
   "availability": "guilds",
-  "guildIds": ["1518456417412059266", "1441129742240710678"],
+  "guildIds": ["1518456417412059266", "1441129742240710678", "1393350000989175949"],
   "entries": [
     { "number": 1, "name": "LICKY", "ageSex": "", "jockey": "", "odds": 3.32 },
     { "number": 2, "name": "FLIP", "ageSex": "", "jockey": "", "odds": 1.50 },
