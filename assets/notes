@@ -1,6 +1,15 @@
 "conditions":
         [
             [
+                "G1s, URA Finals, CM, TT"                                                   grade == 100
+                "G2"                                                                        grade == 200
+                "G3"                                                                        grade == 300
+                "OP"                                                                        grade == 400
+                "Pre-OP"                                                                    grade == 700
+                "Maiden"                                                                    grade == 800
+                "Debut"                                                                     grade == 900
+                "Daily Race"                                                                grade == 999
+
                 "Front Runner/Pace Chaser/Late Surger/End Closer"                           running_style==1/2/3/4
                 "Sprint/Mile/Medium/Long"                                                   distance_type==4
 
