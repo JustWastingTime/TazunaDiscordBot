@@ -246,7 +246,9 @@ function mergeTouchingBoxMarkers(markers, length) {
     const markerColor = marker?.color ?? DEFAULT_COLORS.activationBoxStroke;
     const prevBehavior = String(prev?.trigger_behavior ?? prev?.behavior ?? "random").toLowerCase();
     const markerBehavior = String(marker?.trigger_behavior ?? marker?.behavior ?? "random").toLowerCase();
-    const sameStyle = prev && prevColor === markerColor && prevBehavior === markerBehavior;
+    const prevLabel = String(prev?.label ?? "");
+    const markerLabel = String(marker?.label ?? "");
+    const sameStyle = prev && prevColor === markerColor && prevBehavior === markerBehavior && prevLabel === markerLabel;
     if (prev && sameStyle && marker.start <= prev.end + tolerance) {
       prev.end = Math.max(prev.end, marker.end);
       prev.fillOpacity = Math.max(Number(prev.fillOpacity ?? 0.1), Number(marker.fillOpacity ?? 0.1));
@@ -416,6 +418,8 @@ function buildSvg(mapData, options) {
       const x = xFromDistance(start);
       const w = xFromDistance(end) - x;
       const behavior = String(marker.trigger_behavior ?? marker.behavior ?? "random").toLowerCase();
+      const caption = marker.label
+        || (behavior === "asap" ? "ASAP" : behavior === "precondition" ? "PRECONDITION" : "RANDOM");
       const fillOpacity = clamp(Number(marker.fillOpacity ?? 0.1), 0, 1);
       const strokeWidth = Number(marker.strokeWidth ?? 2.2);
       const boxY = trackTop - 12;
@@ -427,21 +431,21 @@ function buildSvg(mapData, options) {
         parts.push(
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="${color}" fill-opacity="${Math.min(fillOpacity, 0.08)}" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#asapHatch)" fill-opacity="0.4" stroke="${color}" stroke-width="${Math.max(strokeWidth, 2.4)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">ASAP</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#ff7f97" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(caption)}</text>`
         );
       } else if (behavior === "precondition") {
         const preColor = "#d9b84a";
         parts.push(
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#f7e6a4" fill-opacity="0.2" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#preconditionHatch)" fill-opacity="0.45" stroke="${preColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#e5c767" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">PRECONDITION</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#e5c767" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(caption)}</text>`
         );
       } else {
         const randomColor = "#4f88d4";
         parts.push(
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="#bfdcff" fill-opacity="0.24" stroke="none"/>`,
           `<rect x="${x.toFixed(2)}" y="${boxY.toFixed(2)}" width="${w.toFixed(2)}" height="${boxH.toFixed(2)}" rx="4" ry="4" fill="url(#randomStripe)" fill-opacity="0.55" stroke="${randomColor}" stroke-width="${Math.max(2, strokeWidth)}"/>`,
-          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#5f98e3" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">RANDOM</text>`
+          `<text x="${(x + w / 2).toFixed(2)}" y="${(boxY - 6).toFixed(2)}" text-anchor="middle" fill="#5f98e3" font-size="12" font-family="${FONT_FAMILY}" font-weight="700">${escapeXml(caption)}</text>`
         );
       }
       continue;

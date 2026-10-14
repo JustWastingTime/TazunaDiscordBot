@@ -471,12 +471,22 @@ function isLayoutCornerSegment(segment) {
   return lower(segment?.label).includes("corner");
 }
 
+function isUphillSegment(segment) {
+  const label = lower(segment?.label);
+  const type = lower(segment?.type);
+  return type === "uphill" || label.includes("uphill");
+}
+
 function layoutSegmentMatches(segment, match) {
   const normalizedMatch = lower(match);
   if (!normalizedMatch) return true;
   if (normalizedMatch === "not_a_corner" || normalizedMatch === "not_corner" || normalizedMatch === "not corner") {
     return !isLayoutCornerSegment(segment);
   }
+  if (normalizedMatch === "not_uphill" || normalizedMatch === "not uphill" || normalizedMatch === "not_an_uphill" || normalizedMatch === "not an uphill") {
+    return !isUphillSegment(segment);
+  }
+  if (normalizedMatch === "uphill") return isUphillSegment(segment);
   return lower(segment?.label).includes(normalizedMatch);
 }
 
@@ -494,6 +504,7 @@ function collectSkillConditionText(skill, includeDescriptions = false) {
   if (Array.isArray(skill.preconditions)) sources.push(...flattenConditionSources(skill.preconditions));
   if (Array.isArray(skill.effect)) {
     for (const effect of skill.effect) {
+      if (Array.isArray(effect.preconditions)) sources.push(...flattenConditionSources(effect.preconditions));
       if (Array.isArray(effect.conditions)) sources.push(...effect.conditions);
       if (includeDescriptions && effect.description) sources.push(effect.description);
     }
@@ -503,8 +514,12 @@ function collectSkillConditionText(skill, includeDescriptions = false) {
   return sources.map((v) => lower(v)).filter(Boolean);
 }
 
-function pushUniqueBox(markers, start, end, color = "#d11f2a", triggerBehavior) {
-  const exists = markers.some(
+function unionNumbers(left, right) {
+  return [...new Set([...(left ?? []), ...(right ?? [])])].filter((value) => Number.isFinite(value)).sort((a, b) => a - b);
+}
+
+function pushUniqueBox(markers, start, end, color = "#d11f2a", triggerBehavior, meta = {}) {
+  const exists = markers.find(
     (m) =>
       m.type === "box" &&
       m.start === start &&
@@ -512,11 +527,20 @@ function pushUniqueBox(markers, start, end, color = "#d11f2a", triggerBehavior) 
       (m.color ?? "#d11f2a") === (color ?? "#d11f2a") &&
       (m.trigger_behavior ?? "") === (triggerBehavior ?? "")
   );
-  if (!exists) {
-    const marker = { type: "box", start, end, color, fillOpacity: 0.16 };
-    if (triggerBehavior) marker.trigger_behavior = triggerBehavior;
-    markers.push(marker);
+  if (exists) {
+    exists.effects = unionNumbers(exists.effects, meta.effects);
+    exists.requires = unionNumbers(exists.requires, meta.requires);
+    if (meta.preconditionForAll) exists.preconditionForAll = true;
+    if (meta.requireActivation) exists.requireActivation = true;
+    return;
   }
+  const marker = { type: "box", start, end, color, fillOpacity: 0.16 };
+  if (triggerBehavior) marker.trigger_behavior = triggerBehavior;
+  if (meta.effects?.length) marker.effects = [...meta.effects];
+  if (meta.requires?.length) marker.requires = [...meta.requires];
+  if (meta.preconditionForAll) marker.preconditionForAll = true;
+  if (meta.requireActivation) marker.requireActivation = true;
+  markers.push(marker);
 }
 
 function pushUniqueLine(markers, distance, color = "#d11f2a") {
@@ -795,17 +819,70 @@ function resolvePhaseClipFromSpec(mapData, phaseSpec) {
   return { start, end };
 }
 
-function requirementsFromActivationMap(activationMap) {
-  const req = activationMap?.requirements;
-  if (!req) return null;
+const TRIGGER_COURSE_GATES = [
+  { keys: ["distance_types", "distanceTypes"], courseKey: "distanceType", reason: "distance type mismatch" },
+  { keys: ["terrains", "terrain"], courseKey: "terrain", reason: "terrain mismatch" },
+  { keys: ["directions", "direction"], courseKey: "direction", reason: "direction mismatch", normalize: normalizeDirection },
+  { keys: ["racetracks", "racetrack"], courseKey: "racetrack", reason: "racetrack mismatch" },
+  { keys: ["grounds", "ground"], courseKey: "ground", reason: "ground mismatch" },
+  { keys: ["seasons", "season"], courseKey: "season", reason: "season mismatch" },
+  { keys: ["weathers", "weather"], courseKey: "weather", reason: "weather mismatch" },
+];
+
+const TRIGGER_COURSE_EXCLUSIONS = [
+  { keys: ["exclude_racetracks", "exclude_racetrack"], courseKey: "racetrack", reason: "racetrack mismatch" },
+];
+
+function triggerAllowList(trigger, gate) {
+  for (const key of gate.keys) {
+    const raw = trigger?.[key];
+    const values = Array.isArray(raw) ? raw : typeof raw === "string" && raw.trim() ? [raw] : null;
+    if (!values || values.length === 0) continue;
+    return new Set(values.map((value) => {
+      const normalized = gate.normalize ? gate.normalize(value) : value;
+      return lower(normalized);
+    }));
+  }
+  return null;
+}
+
+function triggerHasCourseGate(trigger) {
+  return TRIGGER_COURSE_GATES.some((gate) => triggerAllowList(trigger, gate))
+    || TRIGGER_COURSE_EXCLUSIONS.some((gate) => triggerAllowList(trigger, gate));
+}
+
+function triggerCourseMismatches(trigger, course) {
+  const reasons = [];
+  for (const gate of TRIGGER_COURSE_GATES) {
+    const allowed = triggerAllowList(trigger, gate);
+    if (!allowed) continue;
+    const raw = course?.[gate.courseKey];
+    const value = lower(gate.normalize ? gate.normalize(raw) : raw);
+    if (!value || !allowed.has(value)) reasons.push(gate.reason);
+  }
+  for (const gate of TRIGGER_COURSE_EXCLUSIONS) {
+    const blocked = triggerAllowList(trigger, gate);
+    if (!blocked) continue;
+    const raw = course?.[gate.courseKey];
+    const value = lower(gate.normalize ? gate.normalize(raw) : raw);
+    if (value && blocked.has(value)) reasons.push(gate.reason);
+  }
+  return reasons;
+}
+
+function triggerMatchesCourse(trigger, course) {
+  return triggerCourseMismatches(trigger, course).length === 0;
+}
+
+function courseContextFromCm(cm) {
   return {
-    distanceTypes: new Set((req.distance_types ?? req.distanceTypes ?? []).map((v) => lower(v))),
-    terrains: new Set((req.terrains ?? req.terrain ?? []).map((v) => lower(v))),
-    directions: new Set((req.directions ?? req.direction ?? []).map((v) => lower(v))),
-    racetracks: new Set((req.racetracks ?? req.racetrack ?? []).map((v) => lower(v))),
-    grounds: new Set((req.grounds ?? req.ground ?? []).map((v) => lower(v))),
-    seasons: new Set((req.seasons ?? req.season ?? []).map((v) => lower(v))),
-    weathers: new Set((req.weathers ?? req.weather ?? []).map((v) => lower(v))),
+    distanceType: lower(cm?.track?.distance_type ?? inferDistanceTypeFromMeters(cm?.track?.distance_meters)),
+    terrain: lower(cm?.track?.terrain),
+    direction: lower(normalizeDirection(cm?.track?.direction)),
+    racetrack: lower(cm?.track?.racetrack),
+    ground: lower(cm?.track?.ground),
+    season: lower(cm?.track?.season),
+    weather: lower(cm?.track?.weather),
   };
 }
 
@@ -813,7 +890,6 @@ function evaluateTrackCompatibility(cmTrack, requirements) {
   if (!requirements) return { doesNotWork: false, reasons: [] };
 
   const track = {
-    distanceType: lower(cmTrack?.distance_type ?? inferDistanceTypeFromMeters(cmTrack?.distance_meters)),
     terrain: lower(cmTrack?.terrain),
     direction: normalizeDirection(cmTrack?.direction),
     racetrack: lower(cmTrack?.racetrack),
@@ -823,9 +899,6 @@ function evaluateTrackCompatibility(cmTrack, requirements) {
   };
 
   const reasons = [];
-  if (requirements.distanceTypes?.size && !requirements.distanceTypes.has(track.distanceType)) {
-    reasons.push("distance type mismatch");
-  }
   if (requirements.terrains?.size && !requirements.terrains.has(track.terrain)) {
     reasons.push("terrain mismatch");
   }
@@ -848,6 +921,126 @@ function evaluateTrackCompatibility(cmTrack, requirements) {
   return { doesNotWork: reasons.length > 0, reasons };
 }
 
+function triggerBehaviorName(trigger) {
+  return lower(trigger?.trigger_behavior ?? trigger?.behavior);
+}
+
+function isPreconditionTrigger(trigger) {
+  return triggerBehaviorName(trigger) === "precondition";
+}
+
+function effectNumbersFrom(value) {
+  const raw = Array.isArray(value) ? value : value == null || value === "" ? [] : [value];
+  const numbers = raw.map((item) => Number(item)).filter((item) => Number.isFinite(item) && item > 0);
+  return numbers.length ? numbers : null;
+}
+
+function activationEffectNumbers(trigger) {
+  return effectNumbersFrom(trigger?.effect ?? trigger?.effects) ?? [];
+}
+
+function preconditionEffectNumbers(trigger) {
+  const explicit = trigger?.effects ?? trigger?.for_effects ?? trigger?.for;
+  if (explicit == null) return null;
+  return effectNumbersFrom(explicit) ?? [];
+}
+
+function requiresEffectNumbers(trigger) {
+  return effectNumbersFrom(trigger?.requires ?? trigger?.requires_effects) ?? [];
+}
+
+function prepareActivationTriggers(triggers, course) {
+  const copies = triggers.map((trigger) => ({ ...trigger }));
+  const explicitTaken = new Set();
+  for (const trigger of copies) {
+    if (isPreconditionTrigger(trigger)) continue;
+    for (const number of activationEffectNumbers(trigger)) explicitTaken.add(number);
+  }
+
+  let auto = 1;
+  const seen = new Set();
+  const activationEffects = [];
+  for (const trigger of copies) {
+    if (isPreconditionTrigger(trigger)) continue;
+    const explicit = activationEffectNumbers(trigger);
+    if (explicit.length) {
+      trigger._effects = explicit;
+    } else {
+      while (explicitTaken.has(auto)) auto += 1;
+      trigger._effects = [auto];
+      explicitTaken.add(auto);
+      auto += 1;
+    }
+    trigger._requires = requiresEffectNumbers(trigger);
+    for (const number of trigger._effects) {
+      if (seen.has(number)) continue;
+      seen.add(number);
+      activationEffects.push(number);
+    }
+  }
+  activationEffects.sort((a, b) => a - b);
+
+  const hasActivation = copies.some((trigger) => !isPreconditionTrigger(trigger));
+  for (const trigger of copies) {
+    trigger._courseOk = !course || triggerMatchesCourse(trigger, course);
+    if (!isPreconditionTrigger(trigger)) continue;
+    const explicit = preconditionEffectNumbers(trigger);
+    trigger._preconditionForAll = explicit == null;
+    trigger._effects = explicit ?? [...activationEffects];
+  }
+
+  const activeEffects = new Set();
+  for (const trigger of copies) {
+    if (isPreconditionTrigger(trigger) || !trigger._courseOk) continue;
+    for (const number of trigger._effects) activeEffects.add(number);
+  }
+  for (const trigger of copies) {
+    if (!isPreconditionTrigger(trigger)) {
+      trigger._active = trigger._courseOk;
+      continue;
+    }
+    if (!hasActivation) {
+      trigger._active = trigger._courseOk;
+      continue;
+    }
+    const linkedActive = (trigger._effects ?? []).filter((number) => activeEffects.has(number));
+    trigger._active = trigger._courseOk && linkedActive.length > 0;
+    if (!trigger._preconditionForAll) trigger._effects = linkedActive;
+  }
+
+  const numberLabels = activationEffects.length > 1 || copies.some((trigger) => trigger._requires?.length);
+  return { triggers: copies, activationEffects, numberLabels };
+}
+
+function behaviorWord(behavior) {
+  const name = lower(behavior);
+  if (name === "asap") return "ASAP";
+  if (name === "precondition") return "PRECONDITION";
+  return "RANDOM";
+}
+
+function annotateActivationLabels(markers, { numberLabels, activationEffects }) {
+  const all = new Set(activationEffects ?? []);
+  for (const marker of markers) {
+    if (marker.type !== "box") continue;
+    const word = behaviorWord(marker.trigger_behavior);
+    const effects = unionNumbers(marker.effects, []);
+    const isPrecondition = lower(marker.trigger_behavior) === "precondition";
+    const coversAll = isPrecondition && (
+      marker.preconditionForAll
+      || (all.size > 0 && effects.length === all.size && effects.every((number) => all.has(number)))
+    );
+    let label = word;
+    if (numberLabels && effects.length && !coversAll) {
+      label = `${word} ${effects.join(", ")}`;
+    }
+    if (marker.requires?.length) {
+      label += ` (after ${marker.requires.join(", ")})`;
+    }
+    marker.label = label;
+  }
+}
+
 function markersFromActivationMap(skill, mapData, options = {}) {
   const activationMap = skill?.activation_map;
   if (!activationMap || !Array.isArray(activationMap.triggers)) return [];
@@ -855,12 +1048,34 @@ function markersFromActivationMap(skill, mapData, options = {}) {
   const markers = [];
   const allowAutoPhaseInference = options.allowAutoPhaseInference !== false;
   const autoPhaseWindow = allowAutoPhaseInference ? inferAutoPhaseWindow(skill, mapData) : null;
-  const orderedTriggers = [...activationMap.triggers].sort((a, b) => {
-    const aPre = lower(a.trigger_behavior ?? a.behavior) === "precondition" ? 0 : 1;
-    const bPre = lower(b.trigger_behavior ?? b.behavior) === "precondition" ? 0 : 1;
-    return aPre - bPre;
+  const prepared = prepareActivationTriggers(activationMap.triggers, options.course);
+  const orderedTriggers = [...prepared.triggers].sort((a, b) => {
+    const aPre = isPreconditionTrigger(a) ? 0 : 1;
+    const bPre = isPreconditionTrigger(b) ? 0 : 1;
+    if (aPre !== bPre) return aPre - bPre;
+    const aEffect = Math.min(...(a._effects?.length ? a._effects : [Number.MAX_SAFE_INTEGER]));
+    const bEffect = Math.min(...(b._effects?.length ? b._effects : [Number.MAX_SAFE_INTEGER]));
+    return aEffect - bEffect;
   });
   for (const trigger of orderedTriggers) {
+    if (!trigger._active) continue;
+    if (trigger.requires_precondition === true) {
+      const wanted = new Set(trigger._effects ?? []);
+      const ready = markers.some((marker) =>
+        marker.type === "box"
+        && lower(marker.trigger_behavior) === "precondition"
+        && (marker.effects ?? []).some((number) => wanted.has(number))
+      );
+      if (!ready) continue;
+    }
+    const unlessEffects = effectNumbersFrom(trigger.unless_effect ?? trigger.unless_effects) ?? [];
+    if (unlessEffects.some((number) => markers.some((marker) =>
+      marker.type === "box"
+      && lower(marker.trigger_behavior) !== "precondition"
+      && (marker.effects ?? []).includes(number)
+    ))) {
+      continue;
+    }
     const color = trigger.color ?? "#d11f2a";
     if (trigger.type === "line") {
       if (Number.isFinite(Number(trigger.distance))) {
@@ -902,6 +1117,12 @@ function markersFromActivationMap(skill, mapData, options = {}) {
 
     if (trigger.type === "box") {
       const triggerBehavior = trigger.trigger_behavior ?? trigger.behavior;
+      const boxMeta = {
+        effects: trigger._effects,
+        requires: trigger._requires,
+        preconditionForAll: trigger._preconditionForAll,
+        requireActivation: trigger.require_activation === true,
+      };
       const ratioStart = Number(trigger.clip_start_ratio ?? trigger.start_ratio);
       const ratioEnd = Number(trigger.clip_end_ratio ?? trigger.end_ratio);
       const absoluteStart = Number(trigger.clip_start ?? trigger.start_m ?? trigger.range_start);
@@ -935,10 +1156,12 @@ function markersFromActivationMap(skill, mapData, options = {}) {
         clipStart = Math.max(clipStart, autoPhaseWindow.start);
         clipEnd = Math.min(clipEnd, autoPhaseWindow.end);
       }
-      // Start at the precondition box, not after it ends, so the condition can overlap it.
+      // Start at this trigger's precondition box, not after it ends, so the condition can overlap it.
       if (trigger.after_precondition_start === true) {
+        const wanted = new Set(trigger._effects ?? []);
         const preconditionStarts = markers
           .filter((marker) => marker.type === "box" && lower(marker.trigger_behavior) === "precondition")
+          .filter((marker) => (marker.effects ?? []).some((number) => wanted.has(number)))
           .map((marker) => marker.start);
         if (!preconditionStarts.length) continue;
         clipStart = Math.max(clipStart, Math.min(...preconditionStarts));
@@ -948,7 +1171,7 @@ function markersFromActivationMap(skill, mapData, options = {}) {
         const clippedStart = Math.max(start, clipStart);
         const clippedEnd = Math.min(end, clipEnd);
         if (clippedEnd > clippedStart) {
-          pushUniqueBox(markers, clippedStart, clippedEnd, color, triggerBehavior);
+          pushUniqueBox(markers, clippedStart, clippedEnd, color, triggerBehavior, boxMeta);
         }
       };
 
@@ -970,13 +1193,21 @@ function markersFromActivationMap(skill, mapData, options = {}) {
         trigger.remaining_end ??
         trigger.value
       );
+      const selectsSegments = Boolean(
+        trigger.target || trigger.match || (Array.isArray(trigger.labels) && trigger.labels.length)
+      );
       if (Number.isFinite(rawStart) && Number.isFinite(rawEnd)) {
         const startDistance = directRangeMode === "remaining" ? mapData.length - rawStart : rawStart;
         const endDistance = directRangeMode === "remaining" ? mapData.length - rawEnd : rawEnd;
         const normalizedStart = Math.min(startDistance, endDistance);
         const normalizedEnd = Math.max(startDistance, endDistance);
-        pushClippedBox(normalizedStart, normalizedEnd);
-        continue;
+        if (!selectsSegments) {
+          pushClippedBox(normalizedStart, normalizedEnd);
+          continue;
+        }
+        clipStart = Math.max(clipStart, normalizedStart);
+        clipEnd = Math.min(clipEnd, normalizedEnd);
+        if (clipEnd <= clipStart) continue;
       }
 
       const target = lower(trigger.target ?? "layout");
@@ -1057,7 +1288,7 @@ function markersFromActivationMap(skill, mapData, options = {}) {
       }
 
       if (autoPhaseWindow?.forceFullRange && filteredSegments.length > 0 && useAutoPhaseClip && !hasExplicitSelection) {
-        pushUniqueBox(markers, clipStart, clipEnd, color, triggerBehavior);
+        pushUniqueBox(markers, clipStart, clipEnd, color, triggerBehavior, boxMeta);
         continue;
       }
 
@@ -1074,6 +1305,19 @@ function markersFromActivationMap(skill, mapData, options = {}) {
     }
   }
 
+  const activatedEffects = new Set();
+  for (const marker of markers) {
+    if (marker.type !== "box" || lower(marker.trigger_behavior) === "precondition") continue;
+    for (const effect of marker.effects ?? []) activatedEffects.add(effect);
+  }
+  for (let index = markers.length - 1; index >= 0; index--) {
+    const marker = markers[index];
+    if (!marker.requireActivation) continue;
+    const effects = marker.effects ?? [];
+    if (!effects.some((effect) => activatedEffects.has(effect))) markers.splice(index, 1);
+  }
+
+  annotateActivationLabels(markers, prepared);
   return markers;
 }
 
@@ -1108,15 +1352,23 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
 
   const activationMap = skill.activation_map;
   const hasActivationMapConfig = Boolean(activationMap && typeof activationMap === "object");
-  const explicitRequirements = requirementsFromActivationMap(activationMap);
   const fallbackRequirements = hasActivationMapConfig ? null : inferTextTrackRequirements(skill);
-  const requirements = explicitRequirements ?? fallbackRequirements;
-  const compatibility = evaluateTrackCompatibility(cm?.track, requirements);
+  const compatibility = evaluateTrackCompatibility(cm?.track, fallbackRequirements);
 
   const hasExplicitActivationMap = Boolean(activationMap && Array.isArray(activationMap.triggers));
+  const course = courseContextFromCm(cm);
+  const markerOptions = { allowAutoPhaseInference: false, course };
   const explicitMarkers = hasExplicitActivationMap
+    ? markersFromActivationMap(skill, mapData, markerOptions)
+    : [];
+  const unfilteredMarkers = hasExplicitActivationMap
     ? markersFromActivationMap(skill, mapData, { allowAutoPhaseInference: false })
     : [];
+  const triggers = hasExplicitActivationMap ? activationMap.triggers : [];
+  const courseMismatches = [...new Set(triggers.flatMap((trigger) => triggerCourseMismatches(trigger, course)))];
+  const hasCourseGate = triggers.some((trigger) => triggerHasCourseGate(trigger));
+  const anyCourseMatch = triggers.some((trigger) => triggerMatchesCourse(trigger, course));
+  const courseBlocked = hasCourseGate && !anyCourseMatch && unfilteredMarkers.length > 0;
   const markers = hasExplicitActivationMap
     ? explicitMarkers
     : hasActivationMapConfig
@@ -1130,10 +1382,10 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
       ? { ...marker, trigger_behavior: defaultBehavior }
       : marker
   ));
-  const hasActivationWindow = markers.length > 0;
+  const hasActivationWindow = (hasExplicitActivationMap ? unfilteredMarkers : markers).length > 0;
 
   const explicitShow = activationMap?.show_chart;
-  if (compatibility.doesNotWork) {
+  if (compatibility.doesNotWork || courseBlocked) {
     if (!hasActivationWindow) {
       // Passive/always-on or non-spatial skills should not show map warnings.
       return {
@@ -1148,7 +1400,7 @@ export function resolveSkillActivationOverlay(skill, cm, mapData) {
       shouldShowChart: true,
       markers: [],
       doesNotWork: true,
-      reasons: compatibility.reasons,
+      reasons: courseBlocked ? courseMismatches : compatibility.reasons,
       usedActivationMap: Boolean(activationMap),
     };
   }
