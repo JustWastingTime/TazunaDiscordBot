@@ -792,16 +792,15 @@ export function buildSkillEmbed(skill, supporterList) {
       let value = "";
       const effectPreconditions = preconditionsForEffect(skill, effect, index);
 
-      if (effectPreconditions.length > 0) {
-        value += `**Preconditions:**\n${formatConditionLines(effectPreconditions)}\n\n`;
-      }
-
-      // Conditions
       if (effect.conditions && effect.conditions.length > 0) {
         value += effect.conditions.map(c => `- ${c}`).join("\n");
       }
 
-      // Effect description
+      if (effectPreconditions.length > 0) {
+        if (value) value += "\n\n";
+        value += `**Preconditions:**\n${formatConditionLines(effectPreconditions)}`;
+      }
+
       value += `\n\n**Effect:**\n${effect.description}`;
 
       if (effect.scale) {
