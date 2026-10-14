@@ -2285,6 +2285,10 @@
         "event_skills": [
             "Passing Pro"
         ],
+        "evo_skills": [
+            "Decisive Strike",
+            "In the Wolf's Maw"
+        ],
         "races": [
             "asahi hai futurity stakes december 1 year 1",
             "satsuki sho april 1 year 2",
@@ -2300,6 +2304,83 @@
         "aliases": ["narita brian original", "maverick"],
         "url": "https://gametora.com/umamusume/characters/101601-narita-brian",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1016_101601.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho) or win at least 5 G1 races before the third year.",
+            "rewards": "Increased difficulty and rewards of future training goals || Nothing happens"
+            },
+            {
+            "conditions": "Participate in the Takarazuka Kinen (Year 2) and beat Biwa Hayahide",
+            "rewards": "Energy -15, 1 random stat +10, Skill points +45"
+            },
+            {
+            "conditions": "Participate in the Takarazuka Kinen (Year 2) and lose to Biwa Hayahide",
+            "rewards": "Energy -15, 1 random stat +8, Skill points +45"
+            }
+        ],
+        "epithet": {
+            "name": "Monster in the Shadows",
+            "condition": "Win the Satsuki Sho with a difference of at least 3 1/2 lengths\nWin the Tokyo Yushun (Japanese Derby) with a difference of at least 5 lengths\nWin the Kikuka Sho with a difference of at least 7 lengths\nWin the Arima Kinen twice"
+        }
+    },
+    {   "id": "101602 - Narita Brian Blaze",
+        "character_name": "Narita Brian",
+        "type": "BLAZE",
+        "costume": "Ravenous Wolf",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "10%",
+            "power": "",
+            "guts": "10%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "B",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Free From the Ashes",
+        "unique_explanation": "",
+        "skills": [
+            "Spring Runner",
+            "Latch On",
+            "My True Strength"
+        ],
+        "potential": [
+            "Deep Breaths",
+            "Hot Pursuit",
+            "All Set",
+            "Beast Mode"
+        ],
+        "event_skills": [
+            "Passing Pro",
+            "Stamina to Spare",
+            "Feature Act"
+        ],
+        "evo_skills": [
+            "Blazing Wolf",
+            "Ravenous Beast"
+        ],
+        "aliases": ["narita brian blaze", "blaze brian"],
+        "url": "https://gametora.com/umamusume/characters/101602-narita-brian",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1016_101602.png",
         "review": "",
         "secrets": [
             {
@@ -5983,6 +6064,99 @@
         }
     },
 
+    {   "id": "104701 - Zenno Rob Roy",
+        "character_name": "Zenno Rob Roy",
+        "type": "Original",
+        "costume": "Heroic Author",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "",
+            "stamina": "10%",
+            "power": "",
+            "guts": "",
+            "wit": "20%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "E",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "A",
+            "Late": "A",
+            "End": "E"
+            }
+        ],
+        "unique": "Raise My Soul's Blade!",
+        "unique_explanation": "",
+        "skills": [
+            "Fall Runner",
+            "Preferred Position",
+            "Medium Corners"
+        ],
+        "potential": [
+            "Pace Chaser Corners",
+            "Race Planner",
+            "Long Straightaways",
+            "Refraction Arc"
+        ],
+        "event_skills": [
+            "Right-Handed",
+            "Left-Handed",
+            "Aspire"
+        ],
+        "evo_skills": [
+            "Halfway to Heroism",
+            "Story Weaver",
+            "Shining Sword"
+        ],
+        "races": [
+            "aoba sho april 2 year 2",
+            "japanese derby may 2 year 2",
+            "kikuka sho october 2 year 2",
+            "arima kinen december 2 year 2",
+            "tenno sho spring april 2 year 3",
+            "takarazuka kinen june 2 year 3",
+            "tenno sho autumn october 2 year 3",
+            "japan cup november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["zenno rob roy original", "heroic author"],
+        "url": "https://gametora.com/umamusume/characters/104701-zenno-rob-roy",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1047_104701.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Random event",
+            "rewards": "Get Fan Promise (Hokkaido/Hokuto/Nakayama/Kansai/Kokura/Kawasaki) status"
+            },
+            {
+            "conditions": "Finish the Fan Promise by winning a race in that region",
+            "rewards": "Mood +1, 2 stats +10, Skill points +10, Relevant track skill hint +5"
+            },
+            {
+            "conditions": "Have at least 120000 fans before the finals",
+            "rewards": "Mood +1, Guts +20, Top Pick hint +3"
+            },
+            {
+            "conditions": "Win the Kawasaki Kinen",
+            "rewards": "Energy -15, Power +20, 1 random stat +10, Skill points +45, Kawasaki Racecourse hint +1, Sunny Sign hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "Hero of Great Talent",
+            "condition": "Win the Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and Arima Kinen (Year 3), all while being the most popular\nEarn a total of at least 320,000 fans"
+        }
+    },
 
     {   "id": "104801 - Tosen Jordan",
         "character_name": "Tosen Jordan",
@@ -7623,20 +7797,85 @@
             "Deep Breaths",
             "Fall Runner"
         ],
-        "races": [
-            "satsuki sho april 1 year 2",
-            "japanese derby may 2 year 2",
-            "kikuka sho october 2 year 2",
-            "arima kinen december 2 year 2",
-            "osaka hai march 2 year 3",
-            "tenno sho spring april 2 year 3",
-            "kyoto daishoten october 1 year 3",
-            "tenno sho autumn october 2 year 3",
-            "arima kinen december 2 year 3"
+        "evo_skills": [
+            "Indestructable",
+            "Unconcealed Brilliance",
+            "Rondo to the Right"
         ],
         "aliases": ["satono diamond original", "natural brilliance"],
         "url": "https://gametora.com/umamusume/characters/106701-satono-diamond",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1067_106701.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the senior Autumn Triple Crown (Tenno Sho (Autumn Year 3), Japan Cup (Year 3), Arima Kinen (Year 3))",
+            "rewards": "Speed +10, Stamina +10, Guts +10, Skill points +10, Fall Runner hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Gem of Dreams",
+            "condition": "Inherit memories of a parent with training rank S or higher\nWin the Kikuka Sho\nWin the Tenno Sho (Spring)\nWin the Japan Cup (Year 3)\nWin the Arima Kinen twice"
+        }
+    },
+    {   "id": "106701 - Satono Diamond New Year",
+        "character_name": "Satono Diamond",
+        "type": "New Year",
+        "costume": "Jade's Prosperity",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "15%",
+            "stamina": "15%",
+            "power": "",
+            "guts": "",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "G",
+            "Pace": "B",
+            "Late": "A",
+            "End": "D"
+            }
+        ],
+        "unique": "Rain Cloud Bolt",
+        "unique_explanation": "",
+        "skills": [
+            "Scramble",
+            "Stamina Eater",
+            "Fearless"
+        ],
+        "potential": [
+            "Late Surger Straightaways",
+            "Claw Forward",
+            "Pedal to the Metal",
+            "Stamina Siphon"
+        ],
+        "event_skills": [
+            "Straightaway Adept",
+            "Deep Breaths",
+            "Be Still",
+            "Spring Runner",
+            "Fall Runner"
+        ],
+        "evo_skills": [
+            "Beyond My Station",
+            "The Dawn Always Comes!"
+        ],
+        "aliases": ["satono diamond new year", "jades prosperity", "satono white"],
+        "url": "https://gametora.com/umamusume/characters/106702-satono-diamond",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1067_106702.png",
         "review": "",
         "secrets": [
             {
@@ -7701,7 +7940,13 @@
             "Spring Runner",
             "Soft Step",
             "Keeping the Lead",
+            "Firm Resolve",
             "Prudent Positioning"
+        ],
+        "evo_skills": [
+            "Get the Festival Going!",
+            "Bright Blast",
+            "Festive Dance on Hanamichi"
         ],
         "races": [
             "st lite kinen september 2 year 2",
@@ -7716,6 +7961,89 @@
         "aliases": ["kitasan black original", "gilded shrine to glory"],
         "url": "https://gametora.com/umamusume/characters/106801-kitasan-black",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1068_106801.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Spring Triple Crown (Osaka Hai, Tenno Sho (Spring) and Takarazuka Kinen Year 3)",
+            "rewards": "Spring Runner hint +2, Soft Step hint +2"
+            },
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "All stats +13, Skill points +54, Mood +1, Keeping the Lead hint +2, Firm Resolve hint +1, Yayoi Akikawa bond +4"
+            },
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho) and Arima Kinen (Year 3)",
+            "rewards": "All stats +3, Skill points +45, Prudent Positioning hint +2, Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "Bring Down the House",
+            "condition": "Win 7 or more G1 races, including the Kikuka Sho, Tenno Sho (Spring), Takarazuka Kinen, Tenno Sho (Autumn Year 3) and Arima Kinen (Year 3)\nEarn a total of at least 480,000 fans"
+        }
+    },
+    {   "id": "106802 - Kitasan Black New Year",
+        "character_name": "Kitasan Black",
+        "type": "New Year",
+        "costume": "Crane's Ambition",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "",
+            "power": "10%",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "A"
+            },
+            {
+            "Front": "A",
+            "Pace": "B",
+            "Late": "C",
+            "End": "G"
+            }
+        ],
+        "unique": "Bring on the Banquet!",
+        "unique_explanation": "",
+        "skills": [
+            "Dodging Danger",
+            "Early Lead",
+            "Fast-Paced"
+        ],
+        "potential": [
+            "Rosy Outlook",
+            "Escape Artist",
+            "Groundwork",
+            "Taking the Lead"
+        ],
+        "event_skills": [
+            "Corner Adept",
+            "Corner Recovery",
+            "Leader's Pride",
+            "Medium Straightaways",
+            "Spring Runner",
+            "Soft Step",
+            "Keeping the Lead",
+            "Firm Resolve",
+            "Prudent Positioning"
+        ],
+        "evo_skills": [
+            "Leap Ahead to the Future",
+            "Introducing the Victor!"
+        ],
+        "aliases": ["kitasan black new year", "kita white new year", "cranes ambition"],
+        "url": "https://gametora.com/umamusume/characters/106802-kitasan-black",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1068_106802.png",
         "review": "",
         "secrets": [
             {
