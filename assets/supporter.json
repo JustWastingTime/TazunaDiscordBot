@@ -544,7 +544,7 @@
             }
         ]
     },
-    {   "id": "10012 TM Opera O",
+    {   "id": "10012 TM Opera O", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "TM Opera O",
         "unique": "-",
@@ -575,6 +575,24 @@
         "category": "stamina",
         "aliases": [
             "tm opera o tracen"
+        ],
+        "events": [
+        {
+            "name": "Etude to Victory",
+            "type": "event",
+            "results": [
+            "Speed +5, Skill points +30, Mood -1, Bond +5",
+            "Power +5, Skill points +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Beyond Our Limited Time",
+            "type": "event",
+            "results": [
+            "Energy +10, Skill points +15, Bond +5",
+            "Bond +5, Non-Standard Distance hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10013 Symboli Rudolf",
@@ -3405,7 +3423,7 @@
         }
         ]
     },
-    {   "id": "10086 Yamanin Zephyr",
+    {   "id": "10086 Yamanin Zephyr", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Yamanin Zephyr",
         "unique": "-",
@@ -3441,6 +3459,24 @@
         "category": "guts",
         "aliases": [
             "yamanin zephyr tracen"
+        ],
+        "events": [
+        {
+            "name": "Free and Unconstrained",
+            "type": "event",
+            "results": [
+            "Speed +10, Guts +5, Bond +5",
+            "Maximum Energy +4, Bond +5"
+            ]
+        },
+        {
+            "name": "A Gale that Blows Endlessly",
+            "type": "event",
+            "results": [
+            "Speed +3, Power +3, Guts +3, Bond +5",
+            "Bond +5, Aspire hint +1"
+            ]
+        }
         ]
     },
     {   "id": "10087 Aston Machan",
@@ -5895,7 +5931,7 @@
         }
         ]
     },
-    {   "id": "20054 TM Opera O",
+    {   "id": "20054 TM Opera O", "_event": "done",
         "card_name": "Mighty Fotografia",
         "character_name": "TM Opera O",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Stamina gain when training together (1)",
@@ -5929,8 +5965,41 @@
         "rarity": "sr",
         "category": "stamina",
         "aliases": [
-            "tm opera o",
+            "tm opera o", "t m opera o", "t.m. opera o",
             "mighty fotografia"
+        ],
+        "events": [
+        {
+            "name": "The Ever-Prepared T.M. Opera O",
+            "type": "chain",
+            "results": [
+            "Stamina +10, Skill points +10, Bond +5"
+            ]
+        },
+        {
+            "name": "Everyone's T.M. Opera O",
+            "type": "chain",
+            "results": [
+            "Mood +1, Bond +15",
+            "Stamina +15, Bond +5, Preferred Position hint +1"
+            ]
+        },
+        {
+            "name": "Etude to Victory",
+            "type": "event",
+            "results": [
+            "Speed +5, Skill points +30, Mood -1, Bond +5",
+            "Power +5, Skill points +15, Bond +5"
+            ]
+        },
+        {
+            "name": "Beyond Our Limited Time",
+            "type": "event",
+            "results": [
+            "Energy +10, Skill points +15, Bond +5",
+            "Bond +5, Non-Standard Distance hint +1"
+            ]
+        }
         ]
     },
 
@@ -12779,7 +12848,7 @@
         }
         ]
     },
-    {   "id": "30126 Yamanin Zephyr",
+    {   "id": "30126 Yamanin Zephyr", "_event": "done",
         "card_name": "To Winds Untraveled",
         "character_name": "Yamanin Zephyr",
         "unique": "Gain Skill Point Bonus (2) when the bond gauge is at least 80",
@@ -12820,6 +12889,46 @@
         "aliases": [
             "yamanin zephyr",
             "to winds untraveled"
+        ],
+        "events": [
+        {
+            "name": "Where the Wind Calls",
+            "type": "chain",
+            "results": [
+            "Guts +10, Bond +5 OR Speed +5, Guts +15, Bond +10"
+            ]
+        },
+        {
+            "name": "An Evocative Flavor",
+            "type": "chain",
+            "results": [
+            "Energy +20, Bond +5",
+            "Speed +5, Guts +5, Bond +5, Slipstream hint +1"
+            ]
+        },
+        {
+            "name": "The Dream I Saw",
+            "type": "chain",
+            "results": [
+            "Speed +3/+7, Power +3/+7, Guts +10/+15, Bond +5, Ambitious Breeze hint +1/+3"
+            ]
+        },
+        {
+            "name": "Free and Unconstrained",
+            "type": "event",
+            "results": [
+            "Speed +10, Guts +5, Bond +5",
+            "Maximum Energy +4, Bond +5"
+            ]
+        },
+        {
+            "name": "A Gale that Blows Endlessly",
+            "type": "event",
+            "results": [
+            "Speed +3, Power +3, Guts +3, Bond +5",
+            "Bond +5, Aspire hint +1"
+            ]
+        }
         ]
     },
 
