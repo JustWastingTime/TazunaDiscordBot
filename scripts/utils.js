@@ -793,6 +793,20 @@ function formatRequirementEntry(entry) {
   return `${options[0]}\n${options.slice(1).map((option) => `**or** ${option}`).join("\n")}`;
 }
 
+function evolutionNamesForSkill(skill) {
+  const raw = skill?.evolutions;
+  const names = Array.isArray(raw) ? raw : raw ? [raw] : [];
+  return names.filter((name) => name && name !== skill?.upgrade);
+}
+
+export function evolvedSkillNamesForUma(uma, skills) {
+  if (!uma || !Array.isArray(skills)) return [];
+  const horse = `${uma.character_name} (${uma.type})`;
+  return skills
+    .filter((skill) => String(skill?.rarity ?? "").toLowerCase() === "evo" && skill.horse === horse)
+    .map((skill) => skill.skill_name);
+}
+
 function formatSkillRequirements(requirements) {
   if (!Array.isArray(requirements) || requirements.length === 0) return "";
   return requirements
@@ -938,16 +952,24 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters,
     });
   }
 
-  const evolutionNames = Array.isArray(skill.evolutions)
-    ? skill.evolutions
-    : skill.evolutions ? [skill.evolutions] : [];
-  for (const evolutionName of evolutionNames) {
-    if (!evolutionName || evolutionName === skill.upgrade) continue;
-    buttonComponents.push({
-      type: 2,
-      style: 1,
-      label: truncate(`Evolve → ${evolutionName}`, 80),
-      custom_id: appendMapOverrideToSkillNavId(`upgrade_${evolutionName}`, mapOverrideKey),
+  const evolutionNames = evolutionNamesForSkill(skill);
+  if (evolutionNames.length > 0) {
+    const customId = mapOverrideKey
+      ? `skill_evolution_select::${mapOverrideKey}`.slice(0, 100)
+      : "skill_evolution_select";
+    rows.push({
+      type: 1,
+      components: [
+        {
+          type: 3,
+          custom_id: customId,
+          placeholder: "Select an evolution",
+          options: evolutionNames.slice(0, 25).map((name) => ({
+            label: truncate(name, 100),
+            value: truncate(name, 100),
+          }))
+        }
+      ]
     });
   }
 
@@ -1087,6 +1109,15 @@ export function buildUmaEmbed(uma, skills) {
         value: uma.event_skills?.length ? uma.event_skills.map(e => formatCardSkill(e, skills)).join("\n ") : "—",
         inline: true
       },
+      ...(() => {
+        const evolved = evolvedSkillNamesForUma(uma, skills);
+        if (!evolved.length) return [];
+        return [{
+          name: "Evolved Skills",
+          value: evolved.map((name) => formatCardSkill(name, skills)).join("\n ") + "\n \u200B",
+          inline: false
+        }];
+      })(),
       ...(uma.secrets?.length
         ? [
             {
@@ -1103,7 +1134,7 @@ export function buildUmaEmbed(uma, skills) {
   };
 }
 
-export function buildUmaComponents(uma, includeDropdown = false, charactersJSON) {
+export function buildUmaComponents(uma, includeDropdown = false, charactersJSON, skills = []) {
   const rows = [];
 
   // 🔎 Find variants by character_name
@@ -1127,9 +1158,10 @@ export function buildUmaComponents(uma, includeDropdown = false, charactersJSON)
     });
   }
 
-  // Collect all skills
+  // Unique first, then evolved skills, then the rest of the kit.
   const allSkills = [
     ...(uma.unique ? [uma.unique] : []),
+    ...evolvedSkillNamesForUma(uma, skills),
     ...(uma.skills || []),
     ...(uma.potential || []),
     ...(uma.event_skills || [])
