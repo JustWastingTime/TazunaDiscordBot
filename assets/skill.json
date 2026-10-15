@@ -1059,6 +1059,40 @@
         }
     },
 
+    {   "note": "================= START OF EVO SPEED ==================",
+        "skill_name": "Autumn Grace", "description": "Increase performance in autumn races, greatly increasing Speed and Power.",
+        "effect": [
+            {
+                "description": "Speed and Power stat +80.",
+                "conditions": [
+                    "Fall"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "evo",
+        "category": "speed",
+        "aliases": [
+            "fall",
+            "autumn grace",
+            "festival rudolf evo", "festi rudolf evo"
+        ],
+        "horse": "Symboli Rudolf (Festival)",
+        "requirements": [
+            {
+                "description": ["Have at least 800 Speed", "Have at least 800 Power"]
+            },
+            {
+                "description": "Get at least 2 Green skills"
+            }
+        ],
+        "downgrade": "Fall Frenzy",
+        "gametora_id": "101702211",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+
 
 
     {   "note": "================= START OF WHITE STAMINA ==================",
@@ -14755,6 +14789,74 @@
                     "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "asap",
                     "effect": 2
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Rain Cloud Bolt", "description": "Shine brilliantly, increasing velocity and moderately recovering endurance when positioned midpack around halfway through the race.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 for 5.0s. Recover HP by 3.5%.",
+                "inherited": "Increases target speed by 0.15 for 3.0s. Recover HP by 0.5%.",
+                "conditions": [
+                    "4th to 7th (CM), 5th to 10th (TT)",
+                    "Between 40% to 50% of the race"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "rain cloud bolt",
+            "satono diamond white new year", "dia white"
+        ],
+        "horse": "Satono Diamond (New Year)",
+        "gametora_id": "110671",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "clip_start_ratio": 0.40,
+                    "clip_end_ratio": 0.50,
+                    "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Bring on the Banquet!", "description": "Surge ahead for a moderate duration and very slightly increase acceleration when positioned toward the front on a late-race corner far from the finish.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 4.0s.",
+                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 2.4s.",
+                "conditions": [
+                    "1st to 3rd",
+                    "Any corner",
+                    "Late race and beyond",
+                    "≥600m of the race remaining"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "bring on the banquet",
+            "kitasan black white new year", "kita white"
+        ],
+        "horse": "Kitasan Black (New Year)",
+        "gametora_id": "110681",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "layout",
+                    "match": "corner",
+                    "phase": "late_and_beyond",
+                    "remaining_gte": 600,
+                    "trigger_behavior": "asap"
                 }
             ]
         }
