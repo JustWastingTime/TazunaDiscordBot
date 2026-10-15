@@ -303,13 +303,40 @@ export function getCardColor(str)
   }
 }
 
-// Returns Color for the Skills Embed
+const SKILL_CATEGORY_COLORS = {
+  speed: "green",
+  stamina: "green",
+  power: "green",
+  guts: "green",
+  wit: "green",
+  gate: "green",
+  super7: "green",
+  recovery: "blue",
+  velocity: "yellow",
+  accel: "yellow",
+  flow: "yellow",
+  focus: "yellow",
+  vision: "red",
+  frenzy: "red",
+  runaway: "green",
+};
+
+function baseSkillCategory(category) {
+  let key = String(category ?? "").toLowerCase();
+  for (const prefix of ["golden", "rainbow", "evo"]) {
+    if (key.startsWith(prefix) && key.length > prefix.length) {
+      key = key.slice(prefix.length);
+      break;
+    }
+  }
+  return key;
+}
+
+// Returns Color for the Skills Embed. Golden, rainbow, and evolved variants use the base category color.
 export function getSkillColor(str)
 {
-  if (str === 'speed')
-  {
-    return getColor('green');
-  }
+  const colorName = SKILL_CATEGORY_COLORS[baseSkillCategory(str)];
+  return colorName ? getColor(colorName) : undefined;
 }
 
 // Get Gametora's thumbnail for the skill
@@ -543,6 +570,11 @@ export function getSkillThumbnail(str)
   if (str === 'runaway')
   {
     return 'https://gametora.com/images/umamusume/skill_icons/utx_ico_skill_40012.png';
+  }
+
+  const base = baseSkillCategory(str);
+  if (base && base !== String(str ?? "").toLowerCase()) {
+    return getSkillThumbnail(base);
   }
 }
 
