@@ -783,6 +783,27 @@ function formatConditionLines(items) {
   return items.map((item) => `- ${item}`).join("\n");
 }
 
+function formatRequirementEntry(entry) {
+  const description = entry?.description ?? entry;
+  const options = (Array.isArray(description) ? description : [description])
+    .map((item) => String(item ?? "").trim())
+    .filter(Boolean);
+  if (options.length === 0) return "";
+  if (options.length === 1) return options[0];
+  return `${options[0]}\n${options.slice(1).map((option) => `**or** ${option}`).join("\n")}`;
+}
+
+function formatSkillRequirements(requirements) {
+  if (!Array.isArray(requirements) || requirements.length === 0) return "";
+  return requirements
+    .map((entry, index) => {
+      const text = formatRequirementEntry(entry);
+      return text ? `**${index + 1}.** ${text}` : "";
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
+
 export function buildSkillEmbed(skill, supporterList) {
   const fields = [];
 
@@ -820,9 +841,18 @@ export function buildSkillEmbed(skill, supporterList) {
     });
   }
 
+  const requirementText = formatSkillRequirements(skill.requirements);
+  if (requirementText) {
+    fields.push({
+      name: "Requirements",
+      value: requirementText + "\n\u200B",
+      inline: false
+    });
+  }
+
   if (skill.horse) {
     fields.push({
-      name: "Inherited from",
+      name: String(skill.rarity).toLowerCase() === "evo" ? "Available On" : "Inherited from",
       value: skill.horse,
       inline: false
     });
@@ -908,6 +938,19 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters,
     });
   }
 
+  const evolutionNames = Array.isArray(skill.evolutions)
+    ? skill.evolutions
+    : skill.evolutions ? [skill.evolutions] : [];
+  for (const evolutionName of evolutionNames) {
+    if (!evolutionName || evolutionName === skill.upgrade) continue;
+    buttonComponents.push({
+      type: 2,
+      style: 1,
+      label: truncate(`Evolve → ${evolutionName}`, 80),
+      custom_id: appendMapOverrideToSkillNavId(`upgrade_${evolutionName}`, mapOverrideKey),
+    });
+  }
+
   const umalatorUrl = buildUmalatorSkillVisualizerUrl(mapCid, skill.gametora_id);
   if (umalatorUrl) {
     buttonComponents.push({
@@ -918,11 +961,10 @@ export function buildSkillComponents(skill, includeDropdown = false, supporters,
     });
   }
 
-  // Only push row if buttons exist
-  if (buttonComponents.length > 0) {
+  while (buttonComponents.length > 0) {
     rows.push({
       type: 1,
-      components: buttonComponents
+      components: buttonComponents.splice(0, 5)
     });
   }
 
