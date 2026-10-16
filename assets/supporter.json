@@ -5350,7 +5350,7 @@
             "sakura bakushin o", "perfect morning greeting"
         ]
     },
-    {   "id": "20043 Special Week",
+    {   "id": "20043 Special Week", "_event": "done",
         "card_name": "At the End of the Day",
         "character_name": "Special Week",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases initial Power when beginning a Career playthrough (20)",
@@ -5386,29 +5386,17 @@
         ],
         "events":[
             {
-                "name": "Someday, I'll Be Just Like Her!",
+                "name": "Unspoken Feelings",
                 "type": "chain",
-                "results": 
-                [
-                    "Energy +10, Speed +5"
+                "results": [
+                "Energy +15, Mood +1, Bond +5"
                 ]
             },
             {
-                "name": "Just a Little Closer",
+                "name": "A Small Thank You",
                 "type": "chain",
-                "results": 
-                [
-                    "Energy +10, Speed +15, Bond +5",
-                    "Energy -10, Skill points +20, Bond +5",
-                    "Energy -10, Bond +5, Shake It Out hint +1"
-                ]
-            },
-            {
-                "name": "Forms of Aspiration",
-                "type": "chain",
-                "results": 
-                [
-                    "Energy +10, Speed +5/+10, Skill points +0/+10, Hydrate hint +1/+3/ Gourmand hint +3"
+                "results": [
+                "Energy +10, Bond +5, Head-On hint +3 OR Energy +10"
                 ]
             },
             {
@@ -7337,7 +7325,7 @@
             }
         ]
     },
-    {   "id": "30025 Special Week",
+    {   "id": "30025 Special Week","_event": "done",
         "card_name": "The Setting Sun and Rising Stars",
         "character_name": "Special Week",
         "unique": "Increases the effectiveness of training performed together (5%)\nIncreases stat gain from races (5%)",
@@ -7369,7 +7357,48 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30025.png",
         "rarity": "ssr",
         "category": "speed",
-        "aliases": ["special week", "the setting sun and rising stars", "poverty spe", "welfare spe", "event spe", "spechan"]
+        "aliases": ["special week", "the setting sun and rising stars", "poverty spe", "welfare spe", "event spe", "spechan"],
+        "events": [
+        {
+            "name": "Someday, I'll Be Just Like Her!",
+            "type": "chain",
+            "results": [
+            "Energy +10, Speed +5"
+            ]
+        },
+        {
+            "name": "Just a Little Closer",
+            "type": "chain",
+            "results": [
+            "Energy -10, Speed +15, Bond +5",
+            "Energy -10, Skill points +20, Bond +5",
+            "Energy -10, Bond +5, Shake It Out hint +1"
+            ]
+        },
+        {
+            "name": "Forms of Aspiration",
+            "type": "chain",
+            "results": [
+            "Energy +10, Speed +5, Hydrate hint +1/+3 OR Energy +10, Speed +10, Skill points +10, Gourmand hint +3"
+            ]
+        },
+        {
+            "name": "Watch Where You're Going!",
+            "type": "event",
+            "results": [
+            "Bond +5, Extra Tank hint +1",
+            "Guts +15, Bond +5"
+            ]
+        },
+        {
+            "name": "So Many Options!",
+            "type": "event",
+            "results": [
+            "Energy +10, Mood +1, Bond +5",
+            "Energy -10, Stamina +15, Skill points +15, Bond +5"
+            ]
+        }
+        ]
     },
     {   "id": "30026 Twin Turbo", "_event": "done",
         "card_name": "Turbo Booooost!",
@@ -11393,7 +11422,7 @@
             "zenno rob roy", "rhodonite and the dreamstone", "zenno rob roy welfare", "zenno rob roy poverty", "zenno rob roy event"
         ]
     },
-    {   "id": "30105 Special Week",
+    {   "id": "30105 Special Week", "_event": "done",
         "card_name": "Take Hold of Our Dreams!",
         "character_name": "Special Week",
         "unique": "Increases Power gain when training together (1)\nIncreases initial Friendship Gauge when beginning a Career playthrough (15)",
@@ -11430,6 +11459,46 @@
         "category": "guts",
         "aliases": [
             "special week", "take hold of our dreams", "special week poverty", "special week welfare", "special week story"
+        ],
+        "events": [
+        {
+            "name": "I'm Gonna Buckle Down 'n' Work Hard!",
+            "type": "chain",
+            "results": [
+            "All stats +3, Bond +5"
+            ]
+        },
+        {
+            "name": "I'm Gonna Run with Everyone!",
+            "type": "chain",
+            "results": [
+            "Speed +10, Bond +5, Feature Act hint +2",
+            "Stamina +10, Bond +5, Straightaway Recovery hint +2"
+            ]
+        },
+        {
+            "name": "I'm Gonna Visit Home!",
+            "type": "chain",
+            "results": [
+            "Energy -10, All stats +7, Bond +7, Overwhelming Pressure hint +1"
+            ]
+        },
+        {
+            "name": "Watch Where You're Going!",
+            "type": "event",
+            "results": [
+            "Bond +5, Extra Tank hint +1",
+            "Guts +15, Bond +5"
+            ]
+        },
+        {
+            "name": "So Many Options!",
+            "type": "event",
+            "results": [
+            "Energy +10, Mood +1, Bond +5",
+            "Energy -10, Stamina +15, Skill points +15, Bond +5"
+            ]
+        }
         ]
     },
     {   "id": "30106 Air Groove", "_event": "done",
