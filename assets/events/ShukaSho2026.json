@@ -1,0 +1,29 @@
+{
+  "id": "ShukaSho2026",
+  "name": "Shuka Sho 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-10-16T00:00:00+07:00",
+  "endsAt": "2026-10-18T13:40:00+07:00",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Garavogue", "ageSex": "3F", "jockey": "K. Yokoyama", "odds": 37.0 },
+    { "number": 2, "name": "T M I Run", "ageSex": "3F", "jockey": "A. Tomita", "odds": 57.5 },
+    { "number": 3, "name": "Master Soarer", "ageSex": "3F", "jockey": "Y. Take", "odds": 16.5 },
+    { "number": 4, "name": "Enne", "ageSex": "3F", "jockey": "R. Sakai", "odds": 22.4 },
+    { "number": 5, "name": "Taisei Vogue", "ageSex": "3F", "jockey": "A. Nishimura", "odds": 92.8 },
+    { "number": 6, "name": "La Belle Scene", "ageSex": "3F", "jockey": "K. Ogino", "odds": 11.7 },
+    { "number": 7, "name": "Birthday Flight", "ageSex": "3F", "jockey": "O. Tayama", "odds": 178.9 },
+    { "number": 8, "name": "Monroe Walk", "ageSex": "3F", "jockey": "K. Tosaki", "odds": 1.4 },
+    { "number": 9, "name": "Sweet Happiness", "ageSex": "3F", "jockey": "D. Sasaki", "odds": 96.0 },
+    { "number": 10, "name": "Nice Play Ask", "ageSex": "3F", "jockey": "Y. Iwata", "odds": 271.2 },
+    { "number": 11, "name": "Garnet Flare", "ageSex": "3F", "jockey": "Y. Kitamura", "odds": 47.9 },
+    { "number": 12, "name": "Canal Saint Martin", "ageSex": "3F", "jockey": "M. Iwata", "odds": 21.0 },
+    { "number": 13, "name": "Dream Core", "ageSex": "3F", "jockey": "C. Lemaire", "odds": 7.4 },
+    { "number": 14, "name": "Something Sweet", "ageSex": "3F", "jockey": "K. Matsuyama", "odds": 39.6 },
+    { "number": 15, "name": "Festival Hill", "ageSex": "3F", "jockey": "S. Hamanaka", "odds": 138.3 },
+    { "number": 16, "name": "Hayabusa Sakichan", "ageSex": "3F", "jockey": "H. Yoshida", "odds": 36.7 },
+    { "number": 17, "name": "Losange", "ageSex": "3F", "jockey": "S. Imamura", "odds": 64.3 }
+  ]
+}
