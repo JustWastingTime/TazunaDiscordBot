@@ -25,6 +25,8 @@ const ENTRY_DATASETS = {
         rarity: entry.rarity || '',
         category: entry.category || '',
         description: entry.description || '',
+        gametora_id: entry.gametora_id || '',
+        upcoming: entry.upcoming ? '1' : '',
       };
     },
   },
@@ -41,6 +43,7 @@ const ENTRY_DATASETS = {
         character_name: entry.character_name || '',
         rarity: entry.rarity || '',
         category: entry.category || '',
+        thumbnail: entry.thumbnail || '',
       };
     },
   },
@@ -57,6 +60,7 @@ const ENTRY_DATASETS = {
         type: entry.type || '',
         costume: entry.costume || '',
         rarity: entry.rarity || '',
+        thumbnail: entry.thumbnail || '',
       };
     },
   },

@@ -137,7 +137,7 @@ export function mountAdmin(app) {
       const spec = publicDataset(req.params.dataset);
       if (!spec) return res.status(404).json({ error: 'Unknown dataset.' });
       const entries = listCachedEntries(req.params.dataset, req.query.q);
-      const limit = Math.max(1, Math.min(200, Number(req.query.limit) || 80));
+      const limit = Math.max(1, Math.min(5000, Number(req.query.limit) || 80));
       const offset = Math.max(0, Number(req.query.offset) || 0);
       res.json({ total: entries.length, entries: entries.slice(offset, offset + limit) });
     } catch (error) {
