@@ -4475,29 +4475,29 @@
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
             {
-            "speed": "10%",
-            "stamina": "",
-            "power": "20%",
-            "guts": "",
-            "wit": ""
+                "speed": "10%",
+                "stamina": "",
+                "power": "20%",
+                "guts": "",
+                "wit": ""
             }
         ],
         "aptitudes": [
             {
-            "Turf": "A",
-            "Dirt": "G"
+                "Turf": "A",
+                "Dirt": "G"
             },
             {
-            "Sprint": "F",
-            "Mile": "C",
-            "Medium": "A",
-            "Long": "C"
+                "Sprint": "F",
+                "Mile": "C",
+                "Medium": "A",
+                "Long": "C"
             },
             {
-            "Front": "G",
-            "Pace": "C",
-            "Late": "B",
-            "End": "A"
+                "Front": "G",
+                "Pace": "C",
+                "Late": "B",
+                "End": "A"
             }
         ],
         "unique": "Shooting Star of Dioskouroi",
@@ -4523,22 +4523,27 @@
             "End Closer Corners"
         ],
         "races": [
-            "hopeful stakes december 1 year 1",
+            "hopeful stakes december 2 year 1",
             "satsuki sho april 1 year 2",
             "japanese derby may 2 year 2",
             "kikuka sho october 2 year 2",
             "takarazuka kinen june 2 year 3",
-            "tenno sho autumn october 2 year 3",
+            "tenno sho (autumn) october 2 year 3",
             "japan cup november 2 year 3"
         ],
-        "aliases": ["admire vega original", "starry nocturne", "ayabe", "adobe"],
+        "aliases": [
+            "admire vega original",
+            "starry nocturne",
+            "ayabe",
+            "adobe"
+        ],
         "url": "https://gametora.com/umamusume/characters/103301-admire-vega",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1033_103301.png",
         "review": "",
         "secrets": [
             {
-            "conditions": "Win against any of the following characters: TM Opera O, Meisho Doto, Narita Top Road",
-            "rewards": "8+\nSpeed +15, Power +15, Skill points +20, End Closer Straightaways hint +2, End Closer Corners hint +2\n\n6-7\nSpeed +10, Power +10, End Closer Corners hint +2\n\n0-5\nPower +10, End Closer Corners hint +1"
+                "conditions": "Win against any of the following characters: TM Opera O, Meisho Doto, Narita Top Road",
+                "rewards": "8+\nSpeed +15, Power +15, Skill points +20, End Closer Straightaways hint +2, End Closer Corners hint +2\n\n6-7\nSpeed +10, Power +10, End Closer Corners hint +2\n\n0-5\nPower +10, End Closer Corners hint +1"
             }
         ],
         "epithet": {
