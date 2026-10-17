@@ -84,6 +84,16 @@ async function loadCacheEntry(key, useLocalAssets) {
 }
 
 let updateInFlight = null;
+const pinnedUntil = new Map();
+
+/** Swap one cache array in place so existing imports see the new rows immediately. */
+export function replaceCacheEntry(key, data, pinMs = 15 * 60 * 1000) {
+  if (!Array.isArray(data)) throw new Error(`Cache "${key}" must be an array.`);
+  if (!Array.isArray(cache[key])) cache[key] = [];
+  cache[key].length = 0;
+  cache[key].push(...data);
+  pinnedUntil.set(key, Date.now() + pinMs);
+}
 
 // Function to update all cached data
 async function updateCache() {
@@ -97,7 +107,8 @@ async function updateCache() {
     const nextData = {};
     for (const key of Object.keys(urls)) {
       try {
-        nextData[key] = await loadCacheEntry(key, useLocalAssets);
+        const pinned = (pinnedUntil.get(key) || 0) > Date.now();
+        nextData[key] = await loadCacheEntry(key, useLocalAssets || pinned);
       } catch (err) {
         const src = useLocalAssets ? localFiles[key] : urls[key];
         throw new Error(`[CacheUpdater] Failed loading "${key}" from ${src}: ${err.message}`);
@@ -129,5 +140,5 @@ await updateCache();
 // Refresh every day
 setInterval(updateCache, 1000 * 60 * 60 * 24); // 1 day
 
-export { updateCache };
+export { updateCache, localFiles };
 export default cache;

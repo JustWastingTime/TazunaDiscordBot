@@ -1075,7 +1075,7 @@
         "aliases": [
             "fall",
             "autumn grace",
-            "festival rudolf evo", "festi rudolf evo"
+            "festival rudolf evo", "festi rudolf evo", "symboli rudolf festival evo", "festirudo evo"
         ],
         "horse": "Symboli Rudolf (Festival)",
         "requirements": [
@@ -1088,6 +1088,77 @@
         ],
         "downgrade": "Fall Frenzy",
         "gametora_id": "101702211",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Mischevious Maestro", "description": "Increase performance on soft and heavy ground, greatly increasing Speed and Power. (Dirt)",
+        "effect": [
+            {
+                "description": "Speed and Power stat +80.",
+                "conditions": [
+                    "Dirt",
+                    "Track condition is soft or heavy"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "evo",
+        "category": "evospeed",
+        "aliases": [
+            "mischievious maestro",
+            "shinko windy original evo"
+        ],
+        "horse": "Shinko Windy (Original)",
+        "requirements": [
+            {
+                "description": ["Have at least 800 Power", "Have at least 600 Guts"]
+            },
+            {
+                "description": "Get at least 2 Green skills"
+            }
+        ],
+        "downgrade": "Maestro of the Mud",
+        "gametora_id": "104301211",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
+    {   "skill_name": "Takin' Each Gamble", "description": "Occasionally tap into untold inner strength, massively increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
+        "effect": [
+            {
+                "description": "Speed stat, power stat and guts stat +100.",
+                "conditions": [
+                    "When ≤3rd favorite",
+                    "30% chance to activate"
+                ]
+            },
+            {
+                "description": "Speed stat, power stat and guts stat +100.",
+                "conditions": [
+                    "When ≥4th favorite",
+                    "60% chance to activate"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "evo",
+        "category": "evospeed",
+        "aliases": [
+            "takin each gamble",
+            "nakayama festa original evo"
+        ],
+        "horse": "Nakayama Festa (Original)",
+        "requirements": [
+            {
+                "description": ["In the 「A Silly Game」 training event, get the good outcome after selecting choice #1", "Get at least 2 Green skills"]
+            },
+            {
+                "description": "Have at least 800 Wit"
+            }
+        ],
+        "downgrade": "Risk-Maker",
+        "gametora_id": "104901211",
         "activation_map": {
             "show_chart": false
         }

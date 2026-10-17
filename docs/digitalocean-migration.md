@@ -344,7 +344,17 @@ DASHBOARD_MAX_CLUBS=8
 DASHBOARD_CACHE_MS=300000
 UMA_API_KEY=                  # also required for /register, /profile, leaderboards
 PREMIUM_GUILD_IDS=            # comma-separated; gates the dashboard per guild
+BOT_OWNER_ID=                 # your Discord user ID; required for /admin edits
+GITHUB_TOKEN=                 # fine-grained PAT, Contents read/write on this repo only
+GITHUB_REPO=JustWastingTime/TazunaDiscordBot
+GITHUB_BRANCH=main
 ```
+
+`/admin` is served by the same process. Only Discord users listed in `BOT_OWNER_ID`
+(or `BOT_OWNER_IDS`) can save. Each save commits the asset file through the GitHub
+Git Data API and updates the copy on disk, so pull on your PC before editing those
+JSON files locally. Public visitors can browse skills, supporters, and characters;
+clubs and premium toggles stay owner-only.
 
 ## 7. Reverse proxy, TLS and cutover
 

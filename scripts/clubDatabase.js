@@ -429,6 +429,22 @@ export function updateLeaderboardChannelState(guildId, circleId, patch) {
   return true;
 }
 
+export function listAllGuildClubs() {
+  const store = loadGuildClubs();
+  return Object.keys(store).map((guildId) => ({
+    guildId: String(guildId),
+    clubs: getGuildClubs(guildId),
+  }));
+}
+
+export function premiumGuildStatus() {
+  const store = loadPremiumGuildStore();
+  return {
+    envIds: [...PREMIUM_GUILD_IDS_ENV],
+    storedIds: store.guildIds.map(String),
+  };
+}
+
 export function isPremiumGuild(guildId) {
   const id = String(guildId);
   if (PREMIUM_GUILD_IDS_ENV.has(id)) return true;

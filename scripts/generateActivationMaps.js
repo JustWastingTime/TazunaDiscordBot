@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const SKILLS_PATH = path.resolve("assets", "skill.json");
 const START_SKILL = "Introduction to Physiology";
@@ -49,7 +50,7 @@ function extractRemainingDistanceMeters(text) {
   return null;
 }
 
-function buildActivationMapForSkill(skill) {
+export function buildActivationMapForSkill(skill) {
   const texts = collectTexts(skill);
   const allText = texts.join(" | ");
   const triggers = [];
@@ -204,7 +205,12 @@ async function main() {
   console.log(`Generated activation_map for ${changed} skills (starting from "${START_SKILL}").`);
 }
 
-main().catch((error) => {
-  console.error(error.message || error);
-  process.exit(1);
-});
+const isDirect = process.argv[1]
+  && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (isDirect) {
+  main().catch((error) => {
+    console.error(error.message || error);
+    process.exit(1);
+  });
+}

@@ -63,6 +63,7 @@ import {
   signSession,
   siteUrl,
 } from './dashboardAuth.js';
+import { mountAdmin } from './adminRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -196,6 +197,7 @@ function findCharacter(characterId) {
 }
 
 export function mountDashboard(app) {
+  mountAdmin(app);
   const seedGuild = String(process.env.DASHBOARD_SEED_GUILD_ID || '').trim();
   if (seedGuild) {
     try {
@@ -769,18 +771,18 @@ export function mountDashboard(app) {
     path.resolve(__dirname, '../../UmaClubDashboard/dist'),
   ];
   const RESERVED_ROOT_SEGMENTS = new Set([
-    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions',
+    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions', 'admin',
   ]);
   const dist = distCandidates.find((dir) => fs.existsSync(path.join(dir, 'index.html')));
   if (dist) {
     app.use(express.static(dist));
-    app.get(['/g/:tenant', '/staff', '/tourney', '/apply'], (_req, res) => {
+    app.get(['/g/:tenant', '/staff', '/tourney', '/apply', '/admin', '/admin/*'], (_req, res) => {
       res.sendFile(path.join(dist, 'index.html'));
     });
     app.use((req, res, next) => {
       if (req.method !== 'GET') return next();
       if (req.path.startsWith('/api') || req.path.startsWith('/assets') || req.path === '/interactions') return next();
-      if (req.path.startsWith('/g/')) {
+      if (req.path.startsWith('/g/') || req.path === '/admin' || req.path.startsWith('/admin/')) {
         return res.sendFile(path.join(dist, 'index.html'));
       }
       // Root-level network slug, e.g. /bunny. Reserved words always win, so
@@ -795,6 +797,9 @@ export function mountDashboard(app) {
   } else {
     app.get(['/g/:tenant', '/g/:tenant/*', '/:slug'], (req, res) => {
       const ref = req.params.tenant || req.params.slug;
+      if (ref === 'admin') {
+        return res.type('html').send('<p>Build the dashboard frontend into <code>web/dashboard</code> to use /admin.</p>');
+      }
       const guildId = resolveGuildRef(ref);
       if (!guildId) return res.status(404).send('Unknown dashboard.');
       res.type('html').send(`<!doctype html><meta charset="utf-8"><title>Tazuna dashboard</title>

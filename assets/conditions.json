@@ -1,0 +1,508 @@
+{
+  "operators": [">=", "<=", "==", "!=", ">", "<"],
+  "joiners": {
+    "&": "AND",
+    "@": "OR",
+    "|": "OR"
+  },
+  "fields": {
+    "phase": {
+      "values": {
+        "0": "Early race",
+        "1": "Mid race",
+        "2": "Late race",
+        "3": "Last spurt"
+      },
+      "ops": {
+        ">=": "{value} and beyond",
+        "<=": "Early race through {value}",
+        "==": "{value}",
+        "!=": "Not {value}"
+      }
+    },
+    "phase_random": {
+      "values": {
+        "0": "Random point in early race",
+        "1": "Random point in mid race",
+        "2": "Random point in late race",
+        "3": "Random point in last spurt phase"
+      }
+    },
+    "phase_laterhalf_random": {
+      "values": {
+        "0": "Random point in the second half of early race",
+        "1": "Random point in the second half of mid race",
+        "2": "Random point in the second half of late race",
+        "3": "Random point in the second half of last spurt phase"
+      }
+    },
+    "phase_firsthalf_random": {
+      "values": {
+        "0": "Random point in the first half of early race",
+        "1": "Random point in the first half of mid race",
+        "2": "Random point in the first half of late race",
+        "3": "Random point in the first half of last spurt phase"
+      }
+    },
+    "distance_type": {
+      "values": {
+        "1": "Sprint",
+        "2": "Mile",
+        "3": "Medium",
+        "4": "Long"
+      }
+    },
+    "running_style": {
+      "values": {
+        "1": "Front Runner",
+        "2": "Pace Chaser",
+        "3": "Late Surger",
+        "4": "End Closer"
+      }
+    },
+    "rotation": {
+      "values": {
+        "1": "Clockwise",
+        "2": "Counterclockwise"
+      }
+    },
+    "ground_type": {
+      "values": {
+        "1": "Turf",
+        "2": "Dirt"
+      }
+    },
+    "track_id": { "label": "Track ID {value}" },
+    "weather": {
+      "values": {
+        "1": "Sunny",
+        "2": "Cloudy",
+        "3": "Rainy",
+        "4": "Snow"
+      }
+    },
+    "ground_condition": {
+      "values": {
+        "1": "Firm",
+        "2": "Good",
+        "3": "Yielding",
+        "4": "Soft"
+      }
+    },
+    "season": {
+      "values": {
+        "1": "Spring",
+        "2": "Summer",
+        "3": "Autumn",
+        "4": "Winter"
+      }
+    },
+    "time": {
+      "values": {
+        "0": "Any time",
+        "1": "Morning time",
+        "2": "Day time",
+        "3": "Evening time",
+        "4": "Night time"
+      }
+    },
+    "corner": {
+      "values": {
+        "0": "Not a corner",
+        "1": "Corner 1",
+        "2": "Corner 2",
+        "3": "Corner 3",
+        "4": "Corner 4"
+      },
+      "ops": {
+        "!=": {
+          "0": "Any corner"
+        }
+      }
+    },
+    "corner_random": {
+      "values": {
+        "1": "Random point on corner 1",
+        "2": "Random point on corner 2",
+        "3": "Random point on corner 3",
+        "4": "Random point on corner 4"
+      }
+    },
+    "slope": {
+      "values": {
+        "0": "Flat",
+        "1": "Uphill",
+        "2": "Downhill"
+      }
+    },
+    "lane_type": {
+      "ops": {
+        "==": { "0": "Right beside the inner fence" },
+        "<=": { "0.2": "Inner lane" },
+        ">=": {
+          "0.2": "Middle lane or outer",
+          "0.4": "Outer lane or outside",
+          "0.6": "Outside lane"
+        },
+        ">": { "0.6": "Outside lane" }
+      }
+    },
+    "straight_front_type": {
+      "values": {
+        "1": "Straight in front of the audience",
+        "2": "Straight on the opposite of the audience"
+      }
+    },
+    "straight_random": {
+      "values": { "1": "Random point on a random straight" }
+    },
+    "all_corner_random": {
+      "values": { "1": "Random point on a random corner" }
+    },
+    "up_slope_random": {
+      "values": { "1": "Random point on a random uphill" }
+    },
+    "is_finalcorner": {
+      "values": { "1": "Final corner and beyond", "0": "Not final corner and beyond" }
+    },
+    "is_finalcorner_laterhalf": {
+      "values": { "1": "Second half of final corner" }
+    },
+    "is_finalcorner_random": {
+      "values": { "1": "Random point in the final corner" }
+    },
+    "is_last_straight_onetime": {
+      "values": { "1": "Just entered final straight" }
+    },
+    "is_lastspurt": {
+      "values": { "1": "Character is in their last spurt mode" }
+    },
+    "lastspurt": {
+      "values": {
+        "0": "Not enough stamina to do a last spurt",
+        "1": "Enough stamina to do a non-full last spurt",
+        "2": "Enough stamina to do a full last spurt"
+      }
+    },
+    "is_dirtgrade": {
+      "values": { "1": "Kawasaki, Funabashi, Morioka or Ooi Racecourse" }
+    },
+    "is_tight_track": {
+      "values": { "1": "Sapporo, Hakodate, Fukushima, Kokura, Kawasaki, or Funabashi Racecourse" }
+    },
+    "is_badstart": {
+      "values": { "0": "No 'Late Start'", "1": "Has 'Late Start'" }
+    },
+    "is_temptation": {
+      "values": { "0": "Currently not 'Rushed'", "1": "Currently 'Rushed'" }
+    },
+    "temptation_count": {
+      "ops": {
+        "==": { "0": "No 'Rushed'" }
+      },
+      "label": "'Rushed' count {op} {value}"
+    },
+    "temptation_count_behind": {
+      "label": "≥{value} enemy umas currently 'Rushed' behind you",
+      "ops": { ">=": "≥{value} enemy umas currently 'Rushed' behind you" }
+    },
+    "running_style_temptation_count_nige": {
+      "label": "≥{value} Front Runner currently 'Rushed'"
+    },
+    "is_overtake": {
+      "values": { "1": "Overtake target exists" }
+    },
+    "is_behind_in": {
+      "values": { "1": "The uma behind is closer to the inner fence" }
+    },
+    "is_move_lane": {
+      "values": {
+        "1": "Moved closer to the fence",
+        "2": "Moved further from the fence"
+      }
+    },
+    "blocked_front": {
+      "values": { "1": "Blocked in front" }
+    },
+    "blocked_front_continuetime": {
+      "label": "Blocked in front for ≥{value}s"
+    },
+    "blocked_side_continuetime": {
+      "label": "Blocked at the sides for ≥{value}s"
+    },
+    "surrounded": {
+      "values": { "1": "Surrounded" }
+    },
+    "near_count": {
+      "label": "≥{value} uma within 3m or 3 lanes"
+    },
+                "bashin_diff_behind": {
+      "ops": {
+        ">=": "≥{value} length ahead",
+        "<=": "≤{value} length ahead",
+        ">": ">{value} length ahead",
+        "<": "<{value} length ahead",
+        "==": "Exactly {value} length ahead"
+      }
+    },
+    "bashin_diff_infront": {
+      "ops": {
+        ">=": "≥{value} length behind",
+        "<=": "≤{value} length behind",
+        ">": ">{value} length behind",
+        "<": "<{value} length behind",
+        "==": "Exactly {value} length behind"
+      }
+    },
+    "distance_diff_top": {
+      "ops": {
+        "<=": "≤{value}m behind 1st place",
+        ">=": "≥{value}m behind 1st place",
+        "<": "<{value}m behind 1st place",
+        ">": ">{value}m behind 1st place",
+        "==": "{value}m behind 1st place"
+      }
+    },
+    "distance_diff_rate": {
+      "ops": {
+        "<=": "First {value}% of the pack (by distance)",
+        ">=": "Last {inv}% of the pack (by distance)"
+      }
+    },
+    "distance_rate": {
+      "ops": {
+        ">=": "After {value}% of the race",
+        "<=": "Before {value}% of the race",
+        ">": "After {value}% of the race",
+        "<": "Before {value}% of the race"
+      }
+    },
+    "distance_rate_after_random": {
+      "values": { "50": "Randomly in the second half of the race" },
+      "label": "Randomly after {value}% of the race"
+    },
+    "remain_distance": {
+      "ops": {
+        "<=": "≤{value}m of the race remaining",
+        ">=": "≥{value}m of the race remaining",
+        "==": "Exactly {value}m remaining"
+      }
+    },
+    "remain_distance_viewer_id": {
+      "label": "Viewer remaining distance {op} {value}m"
+    },
+    "accumulatetime": {
+      "label": "After ≥{value}s into a race"
+    },
+    "hp_per": {
+      "ops": {
+        "<=": "≤{value}% HP remaining",
+        ">=": "≥{value}% HP remaining",
+        ">": ">{value}% HP remaining",
+        "<": "<{value}% HP remaining"
+      }
+    },
+    "order": {
+      "label": "Position {op} {value}"
+    },
+    "order_rate": {
+      "special": "order_rate",
+      "label": "Order rate {op} {value}"
+    },
+    "order_rate_in40_continue": {
+      "values": { "1": "Has been 1st to 4th (CM), 1st to 5th (TT) the entire race" }
+    },
+    "order_rate_out70_continue": {
+      "values": { "1": "Has been 6th to 9th (CM), 8th to 12th (TT) the entire race" }
+    },
+    "change_order_onetime": {
+      "ops": {
+        "<": "Overtake another uma",
+        ">": "Be overtaken by another uma"
+      }
+    },
+    "change_order_up_end_after": {
+      "label": "Overtake ≥{value} times since late race"
+    },
+    "change_order_up_finalcorner_after": {
+      "label": "Overtake ≥{value} times on the final corner and beyond"
+    },
+    "overtake_target_no_order_up_time": {
+      "label": "Overtake target exists for ≥{value}s"
+    },
+    "overtake_target_time": {
+      "label": "Be an overtake target for ≥{value}s"
+    },
+    "behind_near_lane_time_set1": {
+      "label": "≤5m ahead of another uma for ≥{value}s"
+    },
+    "front_near_lane_time": {
+      "label": "Right behind another uma for ≥{value}s"
+    },
+    "infront_near_lane_time": {
+      "label": "Right behind another uma for ≥{value}s"
+    },
+    "behind_near_lane_time": {
+      "label": "Right in front of another uma for ≥{value}s"
+    },
+    "activate_count_all": {
+      "ops": {
+        ">=": "Activated ≥{value} skills",
+        "<=": "Activated ≤{value} skills"
+      }
+    },
+    "activate_count_heal": {
+      "label": "Activated ≥{value} recovery skills"
+    },
+    "activate_count_start": {
+      "label": "Activated ≥{value} skills during the early race"
+    },
+    "activate_count_middle": {
+      "label": "Activated ≥{value} skills during the mid race"
+    },
+    "activate_count_end_after": {
+      "label": "Activated ≥{value} skills during the late race and beyond"
+    },
+    "activate_count_later_half": {
+      "label": "Activated ≥{value} skills during the second half of the race"
+    },
+    "is_activate_any_skill": {
+      "values": { "1": "Activated any other skill" },
+      "bare": "Activated any other skill"
+    },
+    "base_power": {
+      "label": "Base Power {op} {value}"
+    },
+    "base_speed": {
+      "label": "Base Speed {op} {value}"
+    },
+    "base_stamina": {
+      "label": "Base Stamina {op} {value}"
+    },
+    "base_guts": {
+      "label": "Base Guts {op} {value}"
+    },
+    "base_wiz": {
+      "label": "Base Wit {op} {value}"
+    },
+    "popularity": {
+      "ops": {
+        ">=": "When ≥{value}th favorite",
+        "<": "When ≤{prev}th favorite",
+        "<=": "When ≤{value}th favorite"
+      }
+    },
+    "motivation": {
+      "ops": {
+        ">": "Mood is good or better",
+        ">=": "Mood ≥ {value}"
+      }
+    },
+    "compete_fight_count": {
+      "label": ">0 Showdowns during the final straight",
+      "ops": {
+        ">": ">0 Showdowns during the final straight"
+      }
+    }
+  },
+  "compounds": [
+    {
+      "match": ["is_finalcorner==1", "corner!=0"],
+      "text": "Final corner"
+    },
+    {
+      "match": ["is_finalcorner==1", "corner==0"],
+      "text": "Final non-corner"
+    }
+  ],
+  "order_rate_notes": {
+    ">=": {
+      "50": "50% or worse, exclusive (6th or worse in CM, 7th or worse in TT)"
+    },
+    "<=": {
+      "50": "Front half of the pack (order rate)"
+    }
+  },
+  "fieldOrder": [
+    "running_style",
+    "distance_type",
+    "is_dirtgrade",
+    "is_tight_track",
+    "time",
+    "order",
+    "order_rate",
+    "order_rate_in40_continue",
+    "order_rate_out70_continue",
+    "base_power",
+    "base_speed",
+    "base_stamina",
+    "base_guts",
+    "base_wiz",
+    "bashin_diff_behind",
+    "bashin_diff_infront",
+    "behind_near_lane_time_set1",
+    "front_near_lane_time",
+    "infront_near_lane_time",
+    "behind_near_lane_time",
+    "blocked_front",
+    "blocked_front_continuetime",
+    "blocked_side_continuetime",
+    "near_count",
+    "surrounded",
+    "is_overtake",
+    "overtake_target_no_order_up_time",
+    "overtake_target_time",
+    "change_order_onetime",
+    "is_behind_in",
+    "distance_diff_top",
+    "distance_diff_rate",
+    "change_order_up_end_after",
+    "change_order_up_finalcorner_after",
+    "activate_count_all",
+    "activate_count_heal",
+    "activate_count_start",
+    "activate_count_middle",
+    "activate_count_end_after",
+    "activate_count_later_half",
+    "is_activate_any_skill",
+    "lane_type",
+    "straight_front_type",
+    "corner",
+    "slope",
+    "corner_random",
+    "all_corner_random",
+    "straight_random",
+    "up_slope_random",
+    "is_finalcorner",
+    "is_finalcorner_laterhalf",
+    "is_finalcorner_random",
+    "is_last_straight_onetime",
+    "is_move_lane",
+    "hp_per",
+    "is_badstart",
+    "temptation_count",
+    "is_temptation",
+    "running_style_temptation_count_nige",
+    "temptation_count_behind",
+    "is_lastspurt",
+    "lastspurt",
+    "phase",
+    "phase_random",
+    "phase_laterhalf_random",
+    "phase_firsthalf_random",
+    "accumulatetime",
+    "distance_rate",
+    "remain_distance",
+    "remain_distance_viewer_id",
+    "distance_rate_after_random",
+    "rotation",
+    "ground_type",
+    "track_id",
+    "weather",
+    "ground_condition",
+    "season",
+    "popularity",
+    "compete_fight_count",
+    "motivation"
+  ]
+}
