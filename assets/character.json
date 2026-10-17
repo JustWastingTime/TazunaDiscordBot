@@ -6299,9 +6299,17 @@
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1049_104901.png",
         "review": "",
         "secrets": [
+            {
+                "conditions": "Win the Kikuka Sho, Tenno Sho (Spring Year 3), Takarazuka Kinen (Year 3), Tenno Sho (Autumn Year 3), Japan Cup (Year 3) and the Arima Kinen (Year 3)",
+                "rewards": "Speed +30, Stamina +30, Skill points +35, Nimble Navigator hint +2, Be Still hint +2"
+            },
+            {
+                "conditions": "Win the Takarazuka Kinen (Year 3)",
+                "rewards": "Sliock Surge hint +1"
+            }
         ],
         "epithet": {
-            "name": "Thoroughbred Gambler",
+            "name": "Trueborn Gambler",
             "condition": "Win both the Takarazuka Kinen and the Japan Cup (Senior)\nSucceed a training that has a failure rate of at least 30%\nNever fail a training during the entire run\nComplete the Career"
         }
     },
@@ -7305,7 +7313,7 @@
         "aliases": [
             "nice nature original",
             "oisuu",
-            "nn",
+            "nn", "neicha", "necha",
             "poinsettia ribbon"
         ],
         "url": "https://gametora.com/umamusume/characters/106001-nice-nature",
@@ -7396,7 +7404,7 @@
         "aliases": [
             "nice nature cheerleader",
             "oisuu",
-            "nn",
+            "nn", "neicha", "necha",
             "run and win"
         ],
         "url": "https://gametora.com/umamusume/characters/106002-nice-nature",
