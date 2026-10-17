@@ -172,6 +172,16 @@ export function mountAdmin(app) {
     res.json({ maps, meets });
   });
 
+  router.get('/public/catalog/races', (_req, res) => {
+    const races = (cache.races || []).map((race) => ({
+      id: race.id,
+      name: race.race_name || race.id,
+      grade: race.grade || '',
+      date: race.date || '',
+    }));
+    res.json({ races });
+  });
+
   router.post('/public/skill-preview', async (req, res) => {
     try {
       const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'local').split(',')[0].trim();
