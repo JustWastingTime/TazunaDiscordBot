@@ -25,6 +25,7 @@ import {
   listAllGuildClubs,
   premiumGuildStatus,
   setGuildPremium,
+  updatePremiumGuild,
 } from './clubDatabase.js';
 import cache, { updateCache } from './githubCache.js';
 import { reloadEventsFromDisk } from './eventService.js';
@@ -308,7 +309,7 @@ export function mountAdmin(app) {
 
   router.get('/premium', (_req, res) => {
     const status = premiumGuildStatus();
-    const ids = [...new Set([...status.envIds, ...status.storedIds])].sort();
+    const ids = [...new Set([...status.envIds, ...status.storedIds, ...Object.keys(status.records || {})])].sort();
     res.json({
       ...status,
       guilds: ids.map((guildId) => ({
@@ -316,6 +317,8 @@ export function mountAdmin(app) {
         premium: isPremiumGuild(guildId),
         fromEnv: status.envIds.includes(guildId),
         stored: status.storedIds.includes(guildId),
+        note: status.records?.[guildId]?.note || '',
+        endsAt: status.records?.[guildId]?.endsAt || null,
       })),
     });
   });
@@ -324,13 +327,29 @@ export function mountAdmin(app) {
     try {
       const guildId = String(req.params.guildId || '').trim();
       if (!/^\d+$/.test(guildId)) return res.status(400).json({ error: 'Guild ID must be digits.' });
-      const enabled = req.body?.enabled === true;
+      const enabled = req.body?.enabled;
       const status = premiumGuildStatus();
-      if (!enabled && status.envIds.includes(guildId)) {
+      if (enabled === false && status.envIds.includes(guildId)) {
         return res.status(400).json({ error: 'This guild is pinned by PREMIUM_GUILD_IDS. Remove it from the environment to turn premium off.' });
       }
-      setGuildPremium(guildId, enabled);
-      res.json({ guildId, premium: isPremiumGuild(guildId), stored: enabled });
+      if (req.body && (req.body.note != null || req.body.endsAt !== undefined || req.body.extendMonth === true)) {
+        updatePremiumGuild(guildId, {
+          note: req.body.note,
+          endsAt: req.body.endsAt,
+          extendMonth: req.body.extendMonth === true,
+          enabled,
+        });
+      } else if (typeof enabled === 'boolean') {
+        setGuildPremium(guildId, enabled);
+      }
+      const next = premiumGuildStatus();
+      res.json({
+        guildId,
+        premium: isPremiumGuild(guildId),
+        stored: next.storedIds.includes(guildId),
+        note: next.records?.[guildId]?.note || '',
+        endsAt: next.records?.[guildId]?.endsAt || null,
+      });
     } catch (error) {
       jsonError(res, error);
     }

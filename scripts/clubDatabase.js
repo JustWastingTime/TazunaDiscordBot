@@ -356,8 +356,29 @@ function saveLeaderboardChannels(channels) {
 }
 
 function loadPremiumGuildStore() {
-  const data = readJson(PREMIUM_GUILDS_PATH, { guildIds: [] });
-  return Array.isArray(data?.guildIds) ? data : { guildIds: [] };
+  const data = readJson(PREMIUM_GUILDS_PATH, { guildIds: [], records: {} });
+  const guildIds = Array.isArray(data?.guildIds) ? data.guildIds.map(String) : [];
+  const records = data?.records && typeof data.records === 'object' && !Array.isArray(data.records)
+    ? { ...data.records }
+    : {};
+  for (const id of guildIds) {
+    const current = records[id];
+    records[id] = {
+      note: current && typeof current === 'object' ? String(current.note || '') : '',
+      endsAt: current && typeof current === 'object' && current.endsAt ? String(current.endsAt) : null,
+    };
+  }
+  const store = { guildIds, records };
+  const now = Date.now();
+  const active = guildIds.filter((id) => {
+    const endsAt = records[id]?.endsAt;
+    return !endsAt || Date.parse(endsAt) > now;
+  });
+  if (active.length !== guildIds.length) {
+    store.guildIds = active;
+    savePremiumGuildStore(store);
+  }
+  return store;
 }
 
 function savePremiumGuildStore(store) {
@@ -442,6 +463,7 @@ export function premiumGuildStatus() {
   return {
     envIds: [...PREMIUM_GUILD_IDS_ENV],
     storedIds: store.guildIds.map(String),
+    records: store.records,
   };
 }
 
@@ -456,11 +478,38 @@ export function setGuildPremium(guildId, enabled) {
   const store = loadPremiumGuildStore();
   const id = String(guildId);
   const ids = new Set(store.guildIds.map(String));
-  if (enabled) ids.add(id);
-  else ids.delete(id);
+  if (enabled) {
+    ids.add(id);
+    if (!store.records[id]) store.records[id] = { note: '', endsAt: null };
+    if (store.records[id].endsAt && Date.parse(store.records[id].endsAt) <= Date.now()) {
+      store.records[id].endsAt = null;
+    }
+  } else ids.delete(id);
   store.guildIds = [...ids].sort();
   savePremiumGuildStore(store);
   return enabled;
+}
+
+export function updatePremiumGuild(guildId, patch = {}) {
+  const store = loadPremiumGuildStore();
+  const id = String(guildId);
+  const current = store.records[id] || { note: '', endsAt: null };
+  if (patch.note != null) current.note = String(patch.note);
+  if (patch.endsAt !== undefined) current.endsAt = patch.endsAt ? new Date(patch.endsAt).toISOString() : null;
+  if (patch.extendMonth) {
+    const now = new Date();
+    const base = current.endsAt && Date.parse(current.endsAt) > now.getTime() ? new Date(current.endsAt) : now;
+    base.setMonth(base.getMonth() + 1);
+    current.endsAt = base.toISOString();
+    patch.enabled = true;
+  }
+  store.records[id] = current;
+  const ids = new Set(store.guildIds.map(String));
+  if (patch.enabled === true) ids.add(id);
+  if (patch.enabled === false) ids.delete(id);
+  store.guildIds = [...ids].sort();
+  savePremiumGuildStore(store);
+  return loadPremiumGuildStore().records[id];
 }
 
 function formatQuizAccuracy(correct, wrong) {
