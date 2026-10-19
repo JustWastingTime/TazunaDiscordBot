@@ -22,7 +22,7 @@ export function listGuildDashboardClubs(guildId) {
   const registered = getGuildClubs(guildId);
   const extras = getClubSettingsMap(guildId);
   const max = getDashboardMaxClubs();
-  return registered.slice(0, max).map((club) => {
+  return registered.map((club) => {
     const extra = extras[String(club.circleId)] || {};
     const dailyTarget = extra.dailyTarget != null
       ? Number(extra.dailyTarget)
@@ -36,8 +36,9 @@ export function listGuildDashboardClubs(guildId) {
       inactiveDays: extra.inactiveDays ?? 3,
       promotionEnabled: extra.promotionEnabled !== false,
       rankGrade: extra.rankGrade ?? null,
+      sortOrder: Number.isFinite(Number(extra.sortOrder)) ? Number(extra.sortOrder) : 9999,
     };
-  });
+  }).sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name)).slice(0, max);
 }
 
 export async function hydrateClubTargets(guildId, clubs) {

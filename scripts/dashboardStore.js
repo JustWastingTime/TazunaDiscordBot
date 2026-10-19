@@ -26,7 +26,7 @@ const DEFAULT_SITE = {
   applyTitle: 'Apply to a club',
   applyBlocked: 'This trainer cannot apply to this club network.',
   publicEyebrow: 'Club dashboard',
-  tenureNote: 'Time in any club in this network counts as one stay.',
+  tenureNote: 'Months in any registered club count together. uma.moe monthly history is the source, so months before it was tracking are missing.',
   premium: false,
   // Empty means "no overrides": resolveFeatures() decides from the premium entitlement.
   // Baked-in false values here would be indistinguishable from a deliberate opt-out.
@@ -54,6 +54,7 @@ function emptyStore() {
     staffExtra: {},
     tournaments: {},
     membersCache: {},
+    tenureCache: {},
   };
 }
 
@@ -174,6 +175,7 @@ export function saveSite(guildId, patch) {
       }
     }
     store.sites[key] = next;
+    if (store.membersCache) delete store.membersCache[key];
     saveStore(store);
     return getSite(key);
   });
@@ -413,21 +415,65 @@ export function listMemberDirectory(guildId) {
   const store = loadStore();
   const g = String(guildId);
   const links = store.memberLinks[g] || {};
-  const sightings = store.sightings[g] || {};
+  const tenure = store.tenureCache?.[g] || {};
   return Object.values(store.directory[g] || {}).map((row) => {
-    const observedDays = Object.keys(sightings).filter((key) => key.startsWith(`${row.umaId}:`)).length;
+    const cached = tenure[row.umaId] || null;
     return {
       ...row,
-      observedDays,
+      networkMonths: cached && Number.isFinite(Number(cached.networkMonths)) ? Number(cached.networkMonths) : null,
+      historyIncomplete: Boolean(cached?.historyIncomplete),
+      firstNetworkMonth: cached?.firstNetworkMonth || null,
       status: row.currentCircleId ? 'current' : 'former',
       discordId: links[row.umaId] || null,
     };
   });
 }
 
+const TENURE_CACHE_MS = 7 * 24 * 60 * 60 * 1000;
+
+export function getTenureCache(guildId, umaId) {
+  const store = loadStore();
+  const row = store.tenureCache?.[String(guildId)]?.[String(umaId)];
+  if (!row?.savedAt || Date.now() - Number(row.savedAt) > TENURE_CACHE_MS) return null;
+  return row;
+}
+
+export function saveTenureCache(guildId, umaId, summary) {
+  return withLock(() => {
+    const store = loadStore();
+    const g = String(guildId);
+    const id = String(umaId);
+    if (!store.tenureCache) store.tenureCache = {};
+    if (!store.tenureCache[g]) store.tenureCache[g] = {};
+    store.tenureCache[g][id] = {
+      networkMonths: summary.networkMonths,
+      firstNetworkMonth: summary.firstNetworkMonth,
+      lastNetworkMonth: summary.lastNetworkMonth,
+      historyIncomplete: summary.historyIncomplete,
+      savedAt: Date.now(),
+    };
+    saveStore(store);
+    return store.tenureCache[g][id];
+  });
+}
+
 export function getMembersCache(guildId) {
   const store = loadStore();
   return store.membersCache[String(guildId)] || null;
+}
+
+export function setClubOrder(guildId, circleIds) {
+  return withLock(() => {
+    const store = loadStore();
+    const g = String(guildId);
+    if (!store.clubSettings[g]) store.clubSettings[g] = {};
+    circleIds.map(String).forEach((id, index) => {
+      store.clubSettings[g][id] = { ...(store.clubSettings[g][id] || {}), sortOrder: index };
+    });
+    if (store.membersCache) delete store.membersCache[g];
+    saveStore(store);
+    return circleIds.map(String);
+  });
 }
 
 export function setMembersCache(guildId, payload) {

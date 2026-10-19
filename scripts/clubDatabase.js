@@ -176,6 +176,10 @@ export function setCircleTargetSettings(circleId, patch = {}) {
   return true;
 }
 
+export function listRegisteredGuildIds() {
+  return Object.keys(loadGuildClubs());
+}
+
 export function getGuildClubs(guildId) {
   const store = loadGuildClubs();
   const clubs = store[String(guildId)];

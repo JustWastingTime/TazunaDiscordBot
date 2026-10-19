@@ -2,45 +2,39 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import { fileURLToPath } from 'url';
+import { DiscordRequest } from './utils.js';
 import {
   applicationToDashboard,
   createApplication,
   deleteApplication,
   findGuildApplicationByUmaId,
+  getApplicationChannel,
   listGuildApplications,
   newApplicationId,
   patchApplication,
 } from './applicationStorage.js';
-import { isPremiumGuild } from './clubDatabase.js';
+import { isPremiumGuild, listRegisteredGuildIds } from './clubDatabase.js';
 import {
   addBlacklist,
   addStaffExtra,
-  clearTournamentPick,
   confirmPlanning,
-  createTournament,
   deleteBlacklist,
-  deleteTournament,
   findBlacklistMatch,
   getMembersCache,
   getPlanning,
   getSite,
-  getTournamentBoard,
   listBlacklist,
   listMemberDirectory,
   listMemberLinks,
   listPublicTenants,
   listStaffExtra,
-  listTournaments,
-  listTournamentsForUser,
   removeStaffExtra,
-  replaceTournamentRoster,
   resolveGuildRef,
   savePlanning,
   saveSite,
-  saveTournamentPick,
   seedClubSettings,
+  setClubOrder,
   setMembersCache,
-  updateTournament,
   upsertClubSettings,
   upsertMemberLink,
 } from './dashboardStore.js';
@@ -64,6 +58,7 @@ import {
   siteUrl,
 } from './dashboardAuth.js';
 import { mountAdmin } from './adminRoutes.js';
+import { buildMemberProfile, warmNetworkTenure } from './clubTenure.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -75,6 +70,38 @@ function tenantFromReq(req) {
 function tenantPath(guildId) {
   const site = getSite(guildId);
   return `/g/${site.slug || guildId}`;
+}
+
+const GENERIC_SITE_NAMES = new Set([
+  'Tazuna Clubs',
+  'Tazuna Club',
+  'Bunny clubs',
+  'Bunny Clubs',
+  'Club network',
+]);
+
+function genericSiteName(name) {
+  const value = String(name || '').trim();
+  return !value || GENERIC_SITE_NAMES.has(value);
+}
+
+function tenantLabel(siteName, guildName, slug) {
+  const name = String(siteName || '').trim();
+  if (name && !GENERIC_SITE_NAMES.has(name)) return name;
+  if (guildName) return guildName;
+  return slug || name || 'Club network';
+}
+
+async function lookupGuildName(guildId) {
+  const stored = getApplicationChannel(guildId)?.guildName;
+  if (stored && stored !== 'this server') return stored;
+  try {
+    const res = await DiscordRequest(`guilds/${guildId}`, { method: 'GET' });
+    const guild = await res.json();
+    return guild?.name || null;
+  } catch {
+    return null;
+  }
 }
 
 async function requirePremiumTenant(req) {
@@ -143,7 +170,8 @@ async function requireManager(req, res) {
 async function publicDashboardPayload(guildId) {
   const cached = getMembersCache(guildId);
   if (cached?.payload && Date.now() - Number(cached.savedAt || 0) < cacheTtlMs()) {
-    return cached.payload;
+    const site = getSite(guildId);
+    return { ...cached.payload, site, theme: site.theme || 'slate', slug: site.slug };
   }
   const clubs = await hydrateClubTargets(guildId, listGuildDashboardClubs(guildId));
   const built = [];
@@ -190,12 +218,6 @@ async function publicDashboardPayload(guildId) {
   return payload;
 }
 
-function findCharacter(characterId) {
-  const id = String(characterId || '').trim();
-  if (!id) return null;
-  return { id, characterName: id.split(' - ').slice(1).join(' - ') || id };
-}
-
 export function mountDashboard(app) {
   mountAdmin(app);
   const seedGuild = String(process.env.DASHBOARD_SEED_GUILD_ID || '').trim();
@@ -223,10 +245,34 @@ export function mountDashboard(app) {
 
   api.get('/health', (_req, res) => res.json({ ok: true, dashboard: true }));
 
-  api.get('/public/tenants', (_req, res) => {
-    // Every network with a slug is publicly reachable; premium only unlocks features.
-    const tenants = listPublicTenants().filter((row) => Boolean(row.slug));
-    res.json({ tenants });
+  api.get('/public/tenants', async (_req, res) => {
+    try {
+      const known = new Map();
+      for (const row of listPublicTenants()) {
+        if (row.slug) known.set(String(row.guildId), row);
+      }
+      for (const guildId of listRegisteredGuildIds()) {
+        if (known.has(String(guildId))) continue;
+        const site = getSite(guildId);
+        known.set(String(guildId), {
+          guildId: String(guildId),
+          slug: site.slug || String(guildId),
+          siteName: site.siteName,
+        });
+      }
+      const tenants = [];
+      for (const row of known.values()) {
+        const guildName = genericSiteName(row.siteName) ? await lookupGuildName(row.guildId) : null;
+        tenants.push({
+          guildId: row.guildId,
+          slug: row.slug,
+          siteName: tenantLabel(row.siteName, guildName, row.slug),
+        });
+      }
+      res.json({ tenants });
+    } catch (error) {
+      jsonError(res, error);
+    }
   });
 
   api.get('/public/dashboard', async (req, res) => {
@@ -516,10 +562,12 @@ export function mountDashboard(app) {
       const ctx = await requireManager(req, res);
       if (!ctx) return;
       if (req.query.profile) {
-        const profile = await resolveUmaProfile(String(req.query.profile));
+        const profile = await buildMemberProfile(ctx.guildId, String(req.query.profile));
         return res.json(profile);
       }
       const clubs = await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId));
+      const directoryIds = listMemberDirectory(ctx.guildId).map((row) => row.umaId);
+      await warmNetworkTenure(ctx.guildId, directoryIds);
       res.json({
         clubs,
         memberLinks: listMemberLinks(ctx.guildId),
@@ -544,6 +592,11 @@ export function mountDashboard(app) {
       if (req.body?.site === true) {
         const site = await saveSite(ctx.guildId, { theme: req.body.theme });
         return res.json({ theme: site.theme });
+      }
+      if (req.body?.order === true && Array.isArray(req.body.circleIds)) {
+        await setClubOrder(ctx.guildId, req.body.circleIds);
+        const clubs = await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId));
+        return res.json({ clubs });
       }
       if (req.body?.staff === true) {
         if (req.body.remove) {
@@ -642,123 +695,6 @@ export function mountDashboard(app) {
       if (!ctx) return;
       const ok = await deleteBlacklist(ctx.guildId, req.query.id);
       res.status(ok ? 204 : 404).end();
-    } catch (error) {
-      jsonError(res, error);
-    }
-  });
-
-  api.get('/tournaments', async (req, res) => {
-    try {
-      const ctx = await requireManager(req, res);
-      if (!ctx) return;
-      const id = Number(req.query.id);
-      if (Number.isInteger(id) && id > 0) {
-        const board = getTournamentBoard(ctx.guildId, id);
-        if (!board) return res.status(404).json({ error: 'Tournament not found.' });
-        return res.json({ ...board, user: ctx.user });
-      }
-      res.json({ tournaments: listTournaments(ctx.guildId), user: ctx.user });
-    } catch (error) {
-      jsonError(res, error);
-    }
-  });
-
-  api.post('/tournaments', async (req, res) => {
-    try {
-      const ctx = await requireManager(req, res);
-      if (!ctx) return;
-      const tournament = await createTournament(ctx.guildId, req.body);
-      res.status(201).json(tournament);
-    } catch (error) {
-      jsonError(res, error);
-    }
-  });
-
-  api.put('/tournaments', async (req, res) => {
-    try {
-      const ctx = await requireManager(req, res);
-      if (!ctx) return;
-      const id = Number(req.query.id || req.body?.id);
-      if (req.query.roster === '1' || req.body?.roster === true) {
-        const players = await replaceTournamentRoster(ctx.guildId, id, req.body.players || []);
-        return res.json({ players });
-      }
-      const tournament = await updateTournament(ctx.guildId, id, req.body);
-      if (!tournament) return res.status(404).json({ error: 'Tournament not found.' });
-      res.json(tournament);
-    } catch (error) {
-      jsonError(res, error);
-    }
-  });
-
-  api.delete('/tournaments', async (req, res) => {
-    try {
-      const ctx = await requireManager(req, res);
-      if (!ctx) return;
-      const ok = await deleteTournament(ctx.guildId, req.query.id);
-      res.status(ok ? 204 : 404).end();
-    } catch (error) {
-      jsonError(res, error);
-    }
-  });
-
-  api.get('/tourney', async (req, res) => {
-    try {
-      const ctx = await requireUser(req, res);
-      if (!ctx) return;
-      const id = Number(req.query.id);
-      if (Number.isInteger(id) && id > 0) {
-        const board = getTournamentBoard(ctx.guildId, id);
-        if (!board) return res.status(404).json({ error: 'Tournament not found.' });
-        const onRoster = board.players.some((player) => player.discordId === ctx.user.discordId);
-        if (!ctx.user.isManager && !onRoster) {
-          return res.status(403).json({ error: 'You are not on this tournament roster.' });
-        }
-        return res.json({
-          ...board,
-          canEditAll: Boolean(ctx.user.isManager),
-          locked: board.tournament.locked,
-          user: ctx.user,
-        });
-      }
-      res.json({
-        tournaments: listTournamentsForUser(ctx.guildId, ctx.user.discordId, ctx.user.isManager),
-        user: ctx.user,
-      });
-    } catch (error) {
-      jsonError(res, error);
-    }
-  });
-
-  api.put('/tourney', async (req, res) => {
-    try {
-      const ctx = await requireUser(req, res);
-      if (!ctx) return;
-      const input = req.body || {};
-      const updatedBy = ctx.user.label || ctx.user.globalName || ctx.user.username;
-      if (input.characterId == null || input.characterId === '') {
-        await clearTournamentPick(ctx.guildId, {
-          tournamentId: input.tournamentId,
-          playerId: input.playerId,
-          round: input.round,
-          actorDiscordId: ctx.user.discordId,
-          isManager: Boolean(ctx.user.isManager),
-        });
-        return res.json({ ok: true, cleared: true });
-      }
-      const character = findCharacter(input.characterId);
-      if (!character) return res.status(400).json({ error: 'Unknown character selection.' });
-      const pick = await saveTournamentPick(ctx.guildId, {
-        tournamentId: input.tournamentId,
-        playerId: input.playerId,
-        round: input.round,
-        characterId: character.id,
-        characterName: character.characterName,
-        updatedBy,
-        actorDiscordId: ctx.user.discordId,
-        isManager: Boolean(ctx.user.isManager),
-      });
-      res.json({ ok: true, pick: { ...pick, label: character.characterName } });
     } catch (error) {
       jsonError(res, error);
     }
