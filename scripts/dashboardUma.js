@@ -1,4 +1,4 @@
-import { fetchUmaJson, fetchCircleData, resolveClubTargetInfo } from './clubService.js';
+import { fetchUmaJson, fetchCircleData, resolveClubTargetInfo, getRankThresholds, findRankThreshold, computeMemberDailyTarget } from './clubService.js';
 import { getGuildClubs } from './clubDatabase.js';
 import {
   applicantCircleCandidates,
@@ -36,9 +36,131 @@ export function listGuildDashboardClubs(guildId) {
       inactiveDays: extra.inactiveDays ?? 3,
       promotionEnabled: extra.promotionEnabled !== false,
       rankGrade: extra.rankGrade ?? null,
+      cardColor: extra.cardColor || null,
+      cardColor2: extra.cardColor2 || null,
+      dynamicRequirement: extra.dynamicRequirement === true,
+      storedDailyTarget: Number.isFinite(dailyTarget) ? dailyTarget : 0,
+      showTotal: club.showTotal !== false,
+      showAvg: club.showAvg !== false,
+      showToday: club.showToday !== false,
       sortOrder: Number.isFinite(Number(extra.sortOrder)) ? Number(extra.sortOrder) : 9999,
     };
   }).sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name)).slice(0, max);
+}
+
+const RANK_GRADE_TO_TIER = {
+  ss: 'SS',
+  splus: 'S+',
+  s: 'S',
+  aplus: 'A+',
+  a: 'A',
+  bplus: 'B+',
+  b: 'B',
+};
+
+export async function applyDynamicDailyTargets(clubs) {
+  const next = clubs.map((club) => ({
+    ...club,
+    dynamicRequirement: club.dynamicRequirement === true,
+    storedDailyTarget: Number.isFinite(Number(club.storedDailyTarget))
+      ? Number(club.storedDailyTarget)
+      : club.dailyTarget,
+  }));
+  if (!next.some((club) => club.dynamicRequirement)) return next;
+  try {
+    const tiers = await getRankThresholds();
+    return next.map((club) => {
+      if (!club.dynamicRequirement) return club;
+      const tierName = RANK_GRADE_TO_TIER[String(club.rankGrade || '').toLowerCase()];
+      const threshold = tierName ? findRankThreshold(tiers, tierName) : null;
+      const live = threshold ? computeMemberDailyTarget(threshold.clubFansPerDay) : null;
+      const dailyTarget = live != null && live > 0
+        ? Math.max(1, Math.round(live))
+        : club.storedDailyTarget;
+      return { ...club, dailyTarget };
+    });
+  } catch (error) {
+    console.warn('Rank thresholds unavailable; using stored daily targets.', error.message);
+    return next;
+  }
+}
+
+const RANK_LADDER = ['b', 'bplus', 'a', 'aplus', 's', 'splus', 'ss'];
+
+function nextRankGrade(grade) {
+  const index = RANK_LADDER.indexOf(String(grade || '').toLowerCase());
+  if (index < 0 || index >= RANK_LADDER.length - 1) return null;
+  return RANK_LADDER[index + 1];
+}
+
+async function thresholdDailyTarget(grade) {
+  const tierName = RANK_GRADE_TO_TIER[grade];
+  if (!tierName) return null;
+  const tiers = await getRankThresholds();
+  const threshold = findRankThreshold(tiers, tierName);
+  const live = threshold ? computeMemberDailyTarget(threshold.clubFansPerDay) : null;
+  return live != null && live > 0 ? Math.max(1, Math.round(live)) : null;
+}
+
+export async function attachPromotionTargets(clubs) {
+  const resolved = new Map();
+  return Promise.all(clubs.map(async (club) => {
+    if (club.promotionEnabled === false) {
+      return { ...club, promotionTarget: null, promotionTier: null };
+    }
+    const next = nextRankGrade(club.rankGrade);
+    if (!next) return { ...club, promotionTarget: null, promotionTier: null };
+    const peerTargets = clubs
+      .filter((other) => String(other.rankGrade || '').toLowerCase() === next && Number(other.dailyTarget) > 0)
+      .map((other) => Number(other.dailyTarget));
+    let promotionTarget = peerTargets.length ? Math.min(...peerTargets) : null;
+    if (promotionTarget == null) {
+      if (!resolved.has(next)) {
+        try {
+          resolved.set(next, await thresholdDailyTarget(next));
+        } catch (error) {
+          console.warn(`Promotion threshold unavailable for ${next}.`, error.message);
+          resolved.set(next, null);
+        }
+      }
+      promotionTarget = resolved.get(next);
+    }
+    return {
+      ...club,
+      promotionTarget,
+      promotionTier: promotionTarget ? RANK_GRADE_TO_TIER[next] : null,
+    };
+  }));
+}
+
+export function withPlannedMemberCounts(clubs, assignments) {
+  const clubIds = new Set(clubs.map((club) => String(club.circleId)));
+  const rosters = new Map(clubs.map((club) => [
+    String(club.circleId),
+    new Set((club.members || []).map((member) => String(member.umaId))),
+  ]));
+  const home = new Map();
+  for (const [circleId, roster] of rosters) {
+    for (const umaId of roster) {
+      if (!home.has(umaId)) home.set(umaId, circleId);
+    }
+  }
+  for (const item of assignments || []) {
+    const id = String(item?.entityId || '').trim();
+    if (!id) continue;
+    const dest = item.destination === 'unassigned' ? 'applicants' : String(item.destination || '');
+    if (item.entityType === 'member') {
+      const from = home.get(id);
+      if (from && dest !== from) rosters.get(from)?.delete(id);
+      if (clubIds.has(dest)) rosters.get(dest)?.add(id);
+    } else if (item.entityType === 'applicant' && clubIds.has(dest)) {
+      rosters.get(dest)?.add(id);
+    }
+  }
+  return clubs.map((club) => ({
+    ...club,
+    plannedMembers: Math.min(30, rosters.get(String(club.circleId))?.size || 0),
+  }));
 }
 
 export async function hydrateClubTargets(guildId, clubs) {
@@ -109,6 +231,8 @@ export async function buildPublicClub(guildId, club) {
         dailyTarget: club.dailyTarget,
         lastUpdatedAt: member.last_updated,
         promotionRatio: club.promotionRatio,
+        promotionTarget: club.promotionTarget,
+        promotionTier: club.promotionTier,
         severeRatio: club.severeRatio,
         inactiveDays: club.inactiveDays,
         promotionEnabled: club.promotionEnabled !== false,

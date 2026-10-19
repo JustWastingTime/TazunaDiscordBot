@@ -13,7 +13,7 @@ import {
   newApplicationId,
   patchApplication,
 } from './applicationStorage.js';
-import { isPremiumGuild, listRegisteredGuildIds } from './clubDatabase.js';
+import { isPremiumGuild, listRegisteredGuildIds, updateGuildClubSettings, getAllLeaderboardChannels } from './clubDatabase.js';
 import {
   addBlacklist,
   addStaffExtra,
@@ -39,11 +39,14 @@ import {
   upsertMemberLink,
 } from './dashboardStore.js';
 import {
+  applyDynamicDailyTargets,
+  attachPromotionTargets,
   cacheTtlMs,
   buildPublicClub,
   hydrateClubTargets,
   listGuildDashboardClubs,
   resolveUmaProfile,
+  withPlannedMemberCounts,
 } from './dashboardUma.js';
 import {
   clearSessionCookie,
@@ -59,12 +62,28 @@ import {
 } from './dashboardAuth.js';
 import { mountAdmin } from './adminRoutes.js';
 import { buildMemberProfile, warmNetworkTenure } from './clubTenure.js';
+import { isDiscordWebhookUrl, notifyApplicationWebhook } from './applyNotify.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function tenantFromReq(req) {
   return resolveGuildRef(req.query.guild || req.headers['x-tazuna-guild'] || req.body?.guild);
+}
+
+function publicSite(site) {
+  if (!site || typeof site !== 'object') return site;
+  const next = { ...site };
+  delete next.applyWebhookUrl;
+  return next;
+}
+
+function withLeaderboardChannels(guildId, clubs) {
+  const channels = getAllLeaderboardChannels().filter((entry) => String(entry.guildId) === String(guildId));
+  return clubs.map((club) => ({
+    ...club,
+    leaderboardChannelId: channels.find((entry) => String(entry.circleId) === String(club.circleId))?.channelId || null,
+  }));
 }
 
 function tenantPath(guildId) {
@@ -170,10 +189,12 @@ async function requireManager(req, res) {
 async function publicDashboardPayload(guildId) {
   const cached = getMembersCache(guildId);
   if (cached?.payload && Date.now() - Number(cached.savedAt || 0) < cacheTtlMs()) {
-    const site = getSite(guildId);
+    const site = publicSite(getSite(guildId));
     return { ...cached.payload, site, theme: site.theme || 'slate', slug: site.slug };
   }
-  const clubs = await hydrateClubTargets(guildId, listGuildDashboardClubs(guildId));
+  const clubs = await attachPromotionTargets(await applyDynamicDailyTargets(
+    await hydrateClubTargets(guildId, listGuildDashboardClubs(guildId)),
+  ));
   const built = [];
   for (const club of clubs) {
     try {
@@ -194,13 +215,14 @@ async function publicDashboardPayload(guildId) {
       });
     }
   }
+  const plannedClubs = withPlannedMemberCounts(built, getPlanning(guildId).assignments);
   const features = resolveFeatures(guildId);
   const applicants = features.applicants
     ? listGuildApplications(guildId)
       .filter((app) => app.publishPublicly !== false && ['pending', 'approved', 'waitlisted'].includes(app.status))
       .map(applicationToDashboard)
     : [];
-  const site = getSite(guildId);
+  const site = publicSite(getSite(guildId));
   const payload = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
@@ -211,7 +233,7 @@ async function publicDashboardPayload(guildId) {
     theme: site.theme || 'slate',
     premium: features.overview && (Boolean(site.premium) || isPremiumGuild(guildId)),
     features,
-    clubs: built,
+    clubs: plannedClubs,
     applicants,
   };
   await setMembersCache(guildId, payload);
@@ -304,7 +326,13 @@ export function mountDashboard(app) {
       if (!/^\d+$/.test(umaId)) return res.status(400).json({ error: 'Uma ID must contain only digits.' });
       if (discordUsername.length < 2) return res.status(400).json({ error: 'Discord username is required.' });
       const clubs = listGuildDashboardClubs(guildId);
-      const club = clubs.find((item) => item.circleId === targetClubId);
+      const requested = Array.isArray(req.body?.targetClubIds) && req.body.targetClubIds.length
+        ? req.body.targetClubIds.map((id) => String(id))
+        : [targetClubId];
+      const selected = requested
+        .map((id) => clubs.find((item) => item.circleId === id))
+        .filter(Boolean);
+      const club = selected[0];
       if (!club) return res.status(400).json({ error: 'Selected club is not accepting applications.' });
       if (findBlacklistMatch(guildId, umaId, discordUsername)) {
         return res.status(403).json({ error: getSite(guildId).applyBlocked });
@@ -315,7 +343,7 @@ export function mountDashboard(app) {
       const record = existing
         ? patchApplication(id, {
           ign: profile.ign,
-          club: club.name,
+          club: selected.map((item) => item.name).join(', '),
           targetClubId: club.circleId,
           discordUsername,
           privateNotes: notes,
@@ -333,7 +361,7 @@ export function mountDashboard(app) {
           applicantId: null,
           ign: profile.ign,
           gameId: umaId,
-          club: club.name,
+          club: selected.map((item) => item.name).join(', '),
           reason: notes || null,
           discordUsername,
           privateNotes: notes,
@@ -341,6 +369,19 @@ export function mountDashboard(app) {
           ...profile,
           performanceSyncedAt: new Date().toISOString(),
         });
+      const webhook = getSite(guildId).applyWebhookUrl;
+      if (webhook) {
+        await notifyApplicationWebhook(webhook, {
+          ign: record.ign,
+          umaId: record.gameId,
+          discordUsername,
+          clubNames: selected.map((item) => item.name),
+          dailyAverage: record.dailyAverage,
+          monthlyGain: record.monthlyGain,
+          currentClubName: record.currentClubName,
+          notes,
+        });
+      }
       res.status(201).json({
         ok: true,
         applicant: {
@@ -565,20 +606,24 @@ export function mountDashboard(app) {
         const profile = await buildMemberProfile(ctx.guildId, String(req.query.profile));
         return res.json(profile);
       }
-      const clubs = await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId));
+      const clubs = withLeaderboardChannels(ctx.guildId, await attachPromotionTargets(await applyDynamicDailyTargets(
+        await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId)),
+      )));
       const directoryIds = listMemberDirectory(ctx.guildId).map((row) => row.umaId);
       await warmNetworkTenure(ctx.guildId, directoryIds);
+      const site = getSite(ctx.guildId);
       res.json({
         clubs,
         memberLinks: listMemberLinks(ctx.guildId),
         directory: listMemberDirectory(ctx.guildId),
         user: ctx.user,
-        theme: getSite(ctx.guildId).theme,
+        theme: site.theme,
+        applyWebhookUrl: site.applyWebhookUrl || '',
         staff: [
           ...(ctx.user.isOwner ? [{ discordId: ctx.user.discordId, label: ctx.user.label, source: 'owner', clubIds: ctx.user.clubIds }] : []),
           ...listStaffExtra(ctx.guildId).map((row) => ({ ...row, source: 'staff', clubIds: ctx.user.clubIds })),
         ],
-        site: getSite(ctx.guildId),
+        site,
       });
     } catch (error) {
       jsonError(res, error);
@@ -590,12 +635,38 @@ export function mountDashboard(app) {
       const ctx = await requireManager(req, res);
       if (!ctx) return;
       if (req.body?.site === true) {
-        const site = await saveSite(ctx.guildId, { theme: req.body.theme });
-        return res.json({ theme: site.theme });
+        const patch = {};
+        if (req.body.theme !== undefined) patch.theme = req.body.theme;
+        if (req.body.applyWebhookUrl !== undefined) {
+          const url = String(req.body.applyWebhookUrl || '').trim();
+          if (url && !isDiscordWebhookUrl(url)) {
+            return res.status(400).json({ error: 'Paste a Discord webhook URL from the applications channel.' });
+          }
+          patch.applyWebhookUrl = url;
+        }
+        const site = await saveSite(ctx.guildId, patch);
+        return res.json({ theme: site.theme, applyWebhookUrl: site.applyWebhookUrl || '' });
+      }
+      if (req.body?.leaderboard === true) {
+        const circleId = String(req.body.circleId || '');
+        const saved = updateGuildClubSettings(ctx.guildId, circleId, {
+          showTotal: req.body.showTotal !== false,
+          showAvg: req.body.showAvg !== false,
+          showToday: req.body.showToday !== false,
+        });
+        if (!saved) return res.status(404).json({ error: 'Club not found.' });
+        return res.json({
+          circleId,
+          showTotal: req.body.showTotal !== false,
+          showAvg: req.body.showAvg !== false,
+          showToday: req.body.showToday !== false,
+        });
       }
       if (req.body?.order === true && Array.isArray(req.body.circleIds)) {
         await setClubOrder(ctx.guildId, req.body.circleIds);
-        const clubs = await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId));
+        const clubs = await applyDynamicDailyTargets(
+          await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId)),
+        );
         return res.json({ clubs });
       }
       if (req.body?.staff === true) {
@@ -613,11 +684,13 @@ export function mountDashboard(app) {
       const circleId = String(req.query.circleId || req.body.circleId || '');
       const settings = await upsertClubSettings(ctx.guildId, circleId, {
         dailyTarget: req.body.dailyTarget,
-        promotionRatio: req.body.promotionRatio,
         severeRatio: req.body.severeRatio,
         inactiveDays: req.body.inactiveDays,
         promotionEnabled: req.body.promotionEnabled,
+        dynamicRequirement: req.body.dynamicRequirement === true,
         rankGrade: req.body.rankGrade ?? null,
+        cardColor: req.body.cardColor || null,
+        cardColor2: req.body.cardColor2 || null,
         name: req.body.name,
       });
       res.json({ circleId, ...settings, name: req.body.name });

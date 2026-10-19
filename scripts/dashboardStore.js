@@ -193,6 +193,7 @@ export function upsertClubSettings(guildId, circleId, patch) {
     const c = String(circleId);
     if (!store.clubSettings[g]) store.clubSettings[g] = {};
     store.clubSettings[g][c] = { ...(store.clubSettings[g][c] || {}), ...patch };
+    if (store.membersCache) delete store.membersCache[g];
     saveStore(store);
     return store.clubSettings[g][c];
   });
@@ -217,6 +218,7 @@ export function savePlanning(guildId, assignments) {
       board: { status: 'draft', updatedAt: new Date().toISOString(), confirmedAt: null },
       assignments: [...unique.values()],
     };
+    if (store.membersCache) delete store.membersCache[g];
     saveStore(store);
     return getPlanning(g);
   });

@@ -149,6 +149,8 @@ export function classifyPerformance(input) {
     dailyTarget,
     lastUpdatedAt,
     promotionRatio = 1.25,
+    promotionTarget = null,
+    promotionTier = null,
     meetingRatio = 0.9,
     severeRatio = 0.5,
     inactiveDays = 3,
@@ -162,7 +164,14 @@ export function classifyPerformance(input) {
   }
   const ratio = dailyTarget > 0 ? dailyAverage / dailyTarget : 1;
   const reason = `${Math.round(ratio * 100)}% of daily requirement`;
-  if (promotionEnabled && ratio >= promotionRatio) return { band: 'promotion', reason, ratio };
+  if (promotionEnabled && Number(promotionTarget) > 0 && dailyAverage >= Number(promotionTarget)) {
+    const tier = String(promotionTier || '').trim();
+    return {
+      band: 'promotion',
+      reason: tier ? `Meets ${tier} requirement` : 'Meets next tier requirement',
+      ratio,
+    };
+  }
   if (ratio >= meetingRatio) return { band: 'meeting', reason, ratio };
   if (ratio < severeRatio) return { band: 'severe', reason, ratio };
   return { band: 'under', reason, ratio };
