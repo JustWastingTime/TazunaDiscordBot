@@ -12,6 +12,47 @@
         ["Oguri Cap", "$uma"]]
       ]
     },
+    {
+      "promptTemplate": "Who's that uma? It's ...",
+      "difficulty": "hard",
+      "entries": [
+        ["https://i.ibb.co.com/rf4WXtD8/CROP-01.png",
+        ["Curren Chan", "Special Week", "Nishino Flower", "Daiichi Ruby"]],
+        ["https://i.ibb.co.com/M5fQvwWh/CROP-01.png",
+        ["Nishino Flower", "Curren Chan", "Special Week", "Daiichi Ruby"]],
+        [
+          "https://i.ibb.co.com/jZPhTZzf/CROP-01.png",
+          ["Daiichi Ruby", "Nishino Flower", "Special Week", "Curren Chan"]
+        ],
+        [
+          "https://i.ibb.co/21BPX7SY/CROP-01.png",
+          [
+            "Special Week",
+            "Nishino Flower",
+            "Curren Chan",
+            "Daiichi Ruby"
+          ]
+        ],
+        [
+          "https://i.ibb.co/p8ZQ7SW/CROP-01.png",
+          [
+            "Matikanefukukitaru",
+            "Marvelous Sunday",
+            "$uma",
+            "$uma"
+          ]
+        ],
+        [
+          "https://i.ibb.co/5WR9bWSQ/CROP-01.png",
+          [
+            "Marvelous Sunday",
+            "Matikanefukukitaru",
+            "$uma",
+            "$uma"
+          ]
+        ]
+      ]
+    },
     { "promptTemplate": "Whose winning pose is this?", "difficulty": "hard",
       "entries": [
         ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",

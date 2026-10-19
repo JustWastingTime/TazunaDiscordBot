@@ -1,8 +1,7 @@
 {
   "name": "Umaguesser",
   "questions": [
-    { "promptTemplate": "Who's that uma? It's ...",
-      "difficulty": "easy",
+    { "promptTemplate": "Who's that uma? It's ...", "difficulty": "easy",
       "entries": [
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-silhouette/admire_vega_original.png",
         ["Admire Vega", "Air Groove", "Admire Groove", "Rice Shower", "Admire Vage", "$uma"]],
@@ -210,8 +209,7 @@
         ["Zenno Rob Roy", "$uma", "$uma", "$uma", "$uma", "$uma"]]
       ]
     },
-    { "promptTemplate": "Who's that uma? It's ...", "version": "easy but unreleased",
-      "difficulty": "expert",
+    { "promptTemplate": "Who's that uma? It's ...", "version": "easy but unreleased", "difficulty": "expert",
       "entries": [
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-silhouette/admire_groove_original.png",
         ["Admire Groove", "$uma", "$uma", "$uma", "$uma", "$uma"]],
@@ -539,8 +537,7 @@
         ["Zenno Rob Roy", "$uma", "$uma", "$uma", "$uma", "$uma"]]
       ]
     },
-    { "promptTemplate": "Who's that uma? It's ...",
-      "difficulty": "hard",
+    { "promptTemplate": "Who's that uma? It's ...", "difficulty": "hard",
       "entries": [
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-medium/agnes_digital_original.png",
         ["Agnes Digital", "Copano Rickey", "Nishino Flower", "Mayano Top Gun", "Mejiro Palmer", "$uma"]],
@@ -744,8 +741,7 @@
         ["Zenno Rob Roy", "$uma", "$uma", "$uma", "$uma", "$uma"]]
       ]
     },
-    { "promptTemplate": "Who's that uma? It's ...", "version": "medium but unreleased",
-      "difficulty": "expert",
+    { "promptTemplate": "Who's that uma? It's ...", "version": "medium but unreleased", "difficulty": "expert",
       "entries": [
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-medium/admire_groove_original.png",
         ["Admire Groove", "$uma", "$uma", "$uma", "$uma", "$uma"]],
@@ -1069,8 +1065,8 @@
         ["Zenno Rob Roy", "$uma", "$uma", "$uma", "$uma", "$uma"]]
       ]
     },
-    { "promptTemplate": "Who's that uma? It's ...", "difficulty": "expert",
-      "entries": [
+    { "promptTemplate": "Who's that uma? It's ...", "difficulty": "expert", 
+    "entries": [
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-hard/admire_groove_original.png",
         ["Admire Groove (Original)", "$uma", "$uma", "$uma", "$uma", "$uma"]],
         ["https://cdn.fujikiseki.xyz/uma-assets/stand-hard/admire_vega_christmas.png",
@@ -1595,8 +1591,7 @@
         ["Zenno Rob Roy (Original)", "$uma", "$uma", "$uma", "$uma", "$uma"]]
       ]
     },
-    { "promptTemplate": "Whose shoe is this?",
-      "difficulty": "hard",
+    { "promptTemplate": "Whose shoe is this?", "difficulty": "hard",
       "entries": [
         ["https://static.snep.pw/uma/games/shoematch/5338ba814.png",
         ["Narita Brian", "TM Opera O", "Narita Top Road", "Inari One", "Mejiro McQueen"]],
@@ -1652,8 +1647,51 @@
         ["Hishi Akebono", "Oguri Cap", "Mihono Bourbon (Valentines)", "Curren Chan", "Nishino Flower"]]
       ]
     },
-    { "promptTemplate": "Whose winning pose is this?",
-      "difficulty": "hard",
+
+    { "promptTemplate": "Whose winning pose is this?", "difficulty": "medium",
+      "entries": [
+        
+        ["https://i.ibb.co.com/Q77ZprBr/Uma-Viewer-2026-06-20-13-36-10-709.gif",
+        ["Special Week", "Winning Ticket", "Dantsu Flame", "Curren Chan", "Daiwa Scarlet"]],
+        ["https://i.ibb.co.com/zH5Kbg6R/ezgif-com-optimize.gif",
+        ["Silence Suzuka", "Grass Wonder", "Mejiro Dober", "Mejiro Bright", "Super Creek", "Admire Vega"]],
+        ["https://i.ibb.co.com/kVpH4K27/Uma-Viewer-2026-06-21-15-39-29-020.gif",
+        ["Oguri Cap", "$uma"]]
+      ]
+    },
+    { "promptTemplate": "Whose winning pose is this?", "difficulty": "hard",
+      "entries": [
+        ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",
+        ["Special Week", "Winning Ticket", "Dantsu Flame", "Curren Chan", "El Condor Pasa"]],
+        ["https://i.ibb.co.com/4RZKSPdZ/ezgif-46856c9d87c40e92.gif",
+        ["Special Week", "Meisho Doto", "Matikanetannhauser", "Fine Motion", "Grass Wonder"]],
+        ["https://i.ibb.co.com/4nMK3v4H/Uma-Viewer-2026-06-20-15-01-21-019.gif",
+        ["Silence Suzuka", "Grass Wonder", "Matikanetannhauser", "Mejiro Bright", "Super Creek"]],
+        ["https://i.ibb.co.com/67H26c01/Uma-Viewer-2026-06-21-15-26-27-440.gif",
+        ["Tokai Teio", "Maruzensky", "Twin Turbo", "Taiki Shuttle", "Vodka"]],
+        ["https://i.ibb.co.com/YBrhyPLb/ezgif-com-optimize-2.gif",
+        ["Tokai Teio", "Daiwa Scarlet", "El Condor Pasa", "$uma"]],
+        ["https://i.ibb.co.com/rRWzPZhd/ezgif-com-optimize-1.gif",
+        ["Tokai Teio", "Daiwa Scarlet", "El Condor Pasa", "$uma"]],
+        ["https://i.ibb.co.com/C5hbCBft/Uma-Viewer-2026-06-21-15-28-31-381.gif",
+        ["Maruzensky", "Grass Wonder", "$uma"]],
+        ["https://i.ibb.co.com/vFsnmt6/Uma-Viewer-2026-06-21-15-29-04-795.gif",
+        ["Maruzensky", "Gold City", "$uma"]],
+        ["https://i.ibb.co.com/6cN7PN4v/ezgif-com-optimize.gif",
+        ["Maruzensky", "Curren Chan", "Satono Diamond", "Sakura Chiyono O", "Smart Falcon"]],
+        ["https://i.ibb.co.com/6Rn77Pf0/Uma-Viewer-2026-06-21-15-34-49-657.gif",
+        ["Fuji Kiseki", "Mr. C.B.", "Mejiro Palmer", "Sirius Symboli", "Symboli Rudolf"]],
+        ["https://i.ibb.co.com/JFzWhZgQ/Uma-Viewer-2026-06-21-15-34-01-453.gif",
+        ["Fuji Kiseki", "TM Opera O", "Tap Dance City", "Sirius Symboli", "$uma"]],
+        ["https://i.ibb.co.com/JW95NGTf/Uma-Viewer-2026-06-21-15-34-57-769.gif",
+        ["Fuji Kiseki", "TM Opera O", "Tap Dance City", "Sakura Bakushin O", "$uma"]],
+        ["https://i.ibb.co.com/NnLxf81Z/ezgif-com-optimize-1.gif",
+        ["Oguri Cap", "Silence Suzuka", "Grass Wonder", "Admire Vega", "$uma"]],
+        ["https://i.ibb.co.com/xSvqpkX7/ezgif-com-optimize-2.gif",
+        ["Oguri Cap", "Yaeno Muteki", "Bamboo Memory", "$uma"]]
+      ]
+    },
+    { "promptTemplate": "Whose winning pose is this?", "difficulty": "expert",
       "entries": [
         ["https://i.ibb.co.com/kgvtGgm9/92050ba596076fa9fb8a0ae5ae9a96f3.gif",
         ["Katsuragi Ace", "TM Opera O", "Orfevre", "Inari One", "Symboli Rudolf"]],
@@ -1667,8 +1705,6 @@
         ["Winning Ticket", "Tamamo Cross", "Shinko Windy", "Haru Urara", "Daitaku Helios"]],
         ["https://i.ibb.co.com/1JdbRDdJ/tosen.gif",
         ["Tosen Jordan", "Maruzensky", "Gold City", "Mejiro Palmer", "Daitaku Helios"]],
-        ["https://i.ibb.co.com/5XYtJcys/silence.gif",
-        ["Silence Suzuka", "Admire Vega", "Rice Shower", "Zenno Rob Roy", "Mejiro Ardan"]],
         ["https://i.ibb.co.com/9Hv0B83k/mrcb.gif",
         ["Mr. C.B.", "Fine Motion", "Air Groove", "Symboli Rudolf", "Maruzensky"]],
         ["https://i.ibb.co.com/QjYkWvtW/mambo.gif",
@@ -1725,8 +1761,7 @@
         ["Smart Falcon", "Special Week", "Super Creek", "Mejiro Dober", "Sakura Chiyono O"]],
         ["https://i.ibb.co.com/5hhFtXZB/a23fe66a611a414a1083c129f359dd3c.gif",
         ["Mayano Top Gun", "Haru Urara", "Nishino Flower", "Curren Chan", "Taiki Shuttle"]],
-        ["https://i.ibb.co.com/Xk6vFDWB/9756fb87d4ae79b87438bb77765f2908.gif",
-        ["Fuji Kiseki", "Mr. C.B.", "Mejiro Palmer", "Sirius Symboli", "Symboli Rudolf"]],
+
         ["https://i.ibb.co.com/hFfDSkKb/7f0bdb6a0bf5e81785460bc6ce6996b3.gif",
         ["Fine Motion", "Kawakami Princess", "Mejiro Dober", "Fuji Kiseki", "Silence Suzuka"]],
         ["https://i.ibb.co.com/RMc4w2c/18ed3593d2784f126938b128b0bb40dd.gif",
@@ -1747,8 +1782,7 @@
         ["Twin Turbo", "Tokai Teio", "Shinko Windy", "Gold Ship", "Vodka"]],
         ["https://i.ibb.co.com/fRRPFs2/1e5339af0b6aa798bc23142348819e2b.gif",
         ["Mejiro Bright", "Silence Suzuka", "Manhattan Cafe", "Seeking the Pearl", "Cheval Grand"]],
-        ["https://i.ibb.co.com/8Dyv3RcQ/6f53a67644d84f728c278aeb31cef4e5.gif",
-        ["Maruzensky", "Curren Chan", "Satono Diamond", "Sakura Chiyono O", "Smart Falcon"]],
+
         ["https://i.ibb.co.com/Myk74hZG/f145b16fcceb0330ea1552fd0c54809f.gif",
         ["Mejiro Dober", "Silence Suzuka", "Mejiro Bright", "Nice Nature", "Mejiro Ardan"]],
         ["https://i.ibb.co.com/ympmQB3H/f3aa2e18b9a4e916347428a3ece52be8.gif",
