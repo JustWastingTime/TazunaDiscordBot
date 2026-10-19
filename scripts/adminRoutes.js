@@ -27,6 +27,8 @@ import {
   setGuildPremium,
 } from './clubDatabase.js';
 import cache, { updateCache } from './githubCache.js';
+import { reloadEventsFromDisk } from './eventService.js';
+import { deleteGambaEvent, listGambaEvents, readGambaEvent, saveGambaEvent } from './gambaEventAdmin.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
   getCourseMapDataFromCm,
@@ -351,10 +353,53 @@ export function mountAdmin(app) {
     res.json({ guilds });
   });
 
+  router.get('/gamba-events', (_req, res) => {
+    res.json({ events: listGambaEvents() });
+  });
+
+  router.get('/gamba-events/entry', async (req, res) => {
+    try {
+      const key = entryKey(req);
+      if (!key) return res.status(400).json({ error: 'Missing key.' });
+      res.json(await readGambaEvent(key));
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.put('/gamba-events/entry', async (req, res) => {
+    try {
+      res.json(await saveGambaEvent({
+        event: req.body?.event,
+        file: req.body?.file,
+        creating: req.body?.creating === true,
+        message: req.body?.message,
+        baseBlobSha: req.body?.baseBlobSha,
+        actor: req.adminUser,
+      }));
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.delete('/gamba-events/entry', async (req, res) => {
+    try {
+      res.json(await deleteGambaEvent({
+        key: entryKey(req),
+        message: req.body?.message || req.query.message,
+        baseBlobSha: req.body?.baseBlobSha || req.query.baseBlobSha,
+        actor: req.adminUser,
+      }));
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
   router.post('/cache/refresh', async (_req, res) => {
     try {
+      const events = reloadEventsFromDisk();
       await updateCache();
-      res.json({ ok: true });
+      res.json({ ok: true, events: events.length });
     } catch (error) {
       jsonError(res, error);
     }

@@ -937,19 +937,26 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       });
 
       (async () => {
+        let eventNote = '';
+        try {
+          const loaded = reloadEventsFromDisk();
+          eventNote = `${loaded.length} gamba events loaded.`;
+        } catch (err) {
+          console.error('Gamba event reload failed:', err);
+          eventNote = `Gamba events failed to reload: ${String(err?.message || err).slice(0, 120)}`;
+        }
         try {
           await updateCache();
-          reloadEventsFromDisk();
           await sendFollowup(token, {
             flags: InteractionResponseFlags.EPHEMERAL,
-            content: '✅ Cache refreshed. Event JSON definitions reloaded — use `/gamba event refresh` to push odds changes.',
+            content: `✅ Cache refreshed. ${eventNote} Use \`/gamba event refresh\` to push odds changes.`,
           });
         } catch (err) {
           console.error('Manual cache refresh failed:', err);
           const detail = String(err?.message || err).slice(0, 180);
           await sendFollowup(token, {
             flags: InteractionResponseFlags.EPHEMERAL,
-            content: `❌ Cache refresh failed.\n\`${detail}\``
+            content: `❌ Asset cache refresh failed.\n\`${detail}\`\n${eventNote}`
           });
         }
       })();

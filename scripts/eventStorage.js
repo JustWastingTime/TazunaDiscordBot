@@ -11,7 +11,8 @@ const CHANNELS_PATH = path.join(DATA_DIR, 'event-channels.json');
 const POSTS_PATH = path.join(DATA_DIR, 'event-posts.json');
 
 let definitionCache = null;
-let definitionCacheMtime = 0;
+let definitionSignature = '';
+let definitionSources = [];
 
 function ensureDataDir() {
   fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -85,32 +86,46 @@ function mergeEvent(definition, runtime = {}) {
 }
 
 function loadDefinitionFiles() {
-  if (!fs.existsSync(EVENTS_DIR)) return [];
+  if (!fs.existsSync(EVENTS_DIR)) {
+    definitionCache = [];
+    definitionSources = [];
+    definitionSignature = '';
+    return definitionCache;
+  }
 
-  const files = fs.readdirSync(EVENTS_DIR).filter((file) => file.endsWith('.json'));
-  let latestMtime = 0;
+  const files = fs.readdirSync(EVENTS_DIR).filter((file) => file.endsWith('.json')).sort();
+  const signature = files.map((file) => {
+    const stat = fs.statSync(path.join(EVENTS_DIR, file));
+    return `${file}:${stat.mtimeMs}:${stat.size}`;
+  }).join('\n');
+  if (definitionCache && signature === definitionSignature) return definitionCache;
+
   const definitions = [];
-
+  const sources = [];
   for (const file of files) {
-    const filePath = path.join(EVENTS_DIR, file);
-    const stat = fs.statSync(filePath);
-    latestMtime = Math.max(latestMtime, stat.mtimeMs);
-    const raw = readJson(filePath, null);
-    const definition = normalizeDefinition(raw);
-    if (definition) definitions.push(definition);
+    const definition = normalizeDefinition(readJson(path.join(EVENTS_DIR, file), null));
+    if (!definition) continue;
+    definitions.push(definition);
+    sources.push({ file, id: definition.id });
   }
 
-  if (!definitionCache || latestMtime !== definitionCacheMtime) {
-    definitionCache = definitions.sort((a, b) => a.id.localeCompare(b.id));
-    definitionCacheMtime = latestMtime;
-  }
-
+  definitionCache = definitions.sort((a, b) => a.id.localeCompare(b.id));
+  definitionSources = sources;
+  definitionSignature = signature;
   return definitionCache;
+}
+
+export function listEventSources() {
+  loadDefinitionFiles();
+  return definitionSources.map((source) => ({
+    file: source.file,
+    definition: definitionCache.find((event) => event.id === source.id) || null,
+  })).filter((source) => source.definition);
 }
 
 export function reloadEventDefinitions() {
   definitionCache = null;
-  definitionCacheMtime = 0;
+  definitionSignature = '';
   return loadDefinitionFiles();
 }
 

@@ -301,7 +301,11 @@ export async function settleEventEverywhere(eventId, winningEntryNumber) {
 
 export function buildEventAutocompleteChoices(query) {
   const q = String(query || '').trim().toLowerCase();
-  const events = listSettleableEvents();
+  const events = listSettleableEvents().slice().sort((a, b) => {
+    const at = Date.parse(a.startsAt || '') || 0;
+    const bt = Date.parse(b.startsAt || '') || 0;
+    return bt - at || a.name.localeCompare(b.name);
+  });
   const matches = q
     ? events.filter(
         (event) =>

@@ -204,6 +204,10 @@ async function invalidateSkillMaps(skillName) {
     .map((name) => fs.unlink(path.join(dir, name)).catch(() => {})));
 }
 
+export async function recordAdminAudit(row) {
+  return appendAudit(row);
+}
+
 async function appendAudit(row) {
   await fs.mkdir(DATA_DIR, { recursive: true });
   let rows = [];

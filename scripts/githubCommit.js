@@ -95,6 +95,10 @@ export async function commitFiles(files, message) {
 
   const tree = [];
   for (const file of files) {
+    if (file.deleted) {
+      tree.push({ path: file.path, mode: '100644', type: 'blob', sha: null });
+      continue;
+    }
     const blob = await gh(`/repos/${repo}/git/blobs`, {
       method: 'POST',
       body: { content: file.content, encoding: 'utf-8' },
