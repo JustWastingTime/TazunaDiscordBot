@@ -14237,6 +14237,7 @@
                     "target": "layout",
                     "match": "not_a_corner",
                     "select": "last",
+                    "phase":"late_and_beyond",
                     "trigger_behavior": "asap"
                 }
             ]
@@ -17674,7 +17675,7 @@
                 {
                     "type": "box",
                     "target": "zones",
-                    "labels": ["last spurt"],
+                    "phase":"late_and_beyond",
                     "trigger_behavior": "asap"
                 },
                 {
