@@ -277,6 +277,82 @@ export async function getCurrentMonthEventById(eventId, now = new Date()) {
   return { ...view, selected };
 }
 
+function cupName(value) {
+  return String(value || '')
+    .replace(/\s+20\d{2}\s*$/, '')
+    .trim()
+    .toLowerCase();
+}
+
+function isoToUnix(iso) {
+  const ms = Date.parse(String(iso || ''));
+  if (!Number.isFinite(ms)) return null;
+  return Math.floor(ms / 1000);
+}
+
+/** Discord timestamp line used by /cm, built from a schedule window. */
+export function formatCmScheduleDate(startAt, endAt) {
+  const startTs = isoToUnix(startAt);
+  const endTs = isoToUnix(endAt);
+  if (!startTs) return '';
+  if (endTs && endTs !== startTs) {
+    return `<t:${startTs}:F> - <t:${endTs}:F>, <t:${startTs}:R>`;
+  }
+  return `<t:${startTs}:F>, <t:${startTs}:R>`;
+}
+
+/**
+ * Match a champsmeet entry to a champions-meeting row from the schedule timeline.
+ * Track and distance break ties when the same cup name appears more than once.
+ */
+export function matchChampionsScheduleEvent(cm, events) {
+  if (!cm || !Array.isArray(events)) return null;
+  const key = cupName(cm.name);
+  if (!key) return null;
+
+  const candidates = events.filter((event) =>
+    (event?.source === 'champions' || event?.type === 'champions_meeting') &&
+    cupName(event.title) === key
+  );
+  if (!candidates.length) return null;
+
+  const track = cm.track || {};
+  const wantMeters = parseInt(String(track.distance_meters || '').replace(/[^\d]/g, ''), 10);
+  const wantTrack = String(track.racetrack || '').toLowerCase();
+  const yearMatch = String(cm.name).match(/(20\d{2})\s*$/);
+  const year = yearMatch ? Number(yearMatch[1]) : null;
+
+  const ranked = candidates
+    .map((event) => {
+      const desc = String(event.description || '').toLowerCase();
+      let score = 0;
+      if (wantTrack && desc.includes(wantTrack)) score += 5;
+      if (Number.isFinite(wantMeters) && desc.includes(`${wantMeters}m`)) score += 5;
+      const startYear = Number(String(event.startAt || '').slice(0, 4));
+      if (year && startYear === year) score += 1;
+      return { event, score, start: Date.parse(event.startAt) || 0 };
+    })
+    .sort((a, b) => b.score - a.score || b.start - a.start);
+
+  const best = ranked[0];
+  if (!best) return null;
+  if (candidates.length > 1 && best.score < 5) return null;
+  return best.event;
+}
+
+export function applyScheduleCmDate(cm, events) {
+  const event = matchChampionsScheduleEvent(cm, events);
+  if (!event?.startAt) return cm;
+  const date = formatCmScheduleDate(event.startAt, event.endAt);
+  if (!date || date === cm.date) return cm;
+  return { ...cm, date };
+}
+
+export async function listScheduleEvents() {
+  const state = await refreshScheduleCacheIfNeeded(false);
+  return state.events;
+}
+
 export async function buildScheduleAutocompleteChoices(query = '', limit = 25) {
   const view = await getCurrentMonthSchedule(query);
   const source = view.matches.length > 0

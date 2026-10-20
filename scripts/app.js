@@ -86,9 +86,11 @@ import { reloadEventsFromDisk } from './eventService.js';
 import { resumeActiveQuizzes } from './quizRunner.js';
 import { startQuizRemoteSync } from './quizStorage.js';
 import {
+  applyScheduleCmDate,
   buildScheduleAutocompleteChoices,
   getCurrentMonthEventById,
   getCurrentMonthSchedule,
+  listScheduleEvents,
 } from './scheduleService.js';
 import {
   buildGuideAutocompleteChoices,
@@ -477,6 +479,16 @@ function parseSchedulePickupValue(rawValue) {
   return { eventId, kind, pickupId };
 }
 
+async function datedChampionsMeets() {
+  try {
+    const events = await listScheduleEvents();
+    return champsmeets.map((cm) => applyScheduleCmDate(cm, events));
+  } catch (err) {
+    console.warn('[CM] Could not load schedule dates:', err.message);
+    return champsmeets;
+  }
+}
+
 function normalizeSkillMapOptions(options) {
   if (options == null) return {};
   if (typeof options === 'number') return { selectedCmNumber: options };
@@ -528,10 +540,11 @@ async function buildSkillEmbedWithMap(skill, supporterList, req, options = {}) {
     mapContextKey = override.key;
     result.mapCid = override.rawMap?.cid ?? null;
   } else {
-    const upcomingCm = getUpcomingChampionsMeet(champsmeets);
+    const datedCms = await datedChampionsMeets();
+    const upcomingCm = getUpcomingChampionsMeet(datedCms);
     const { min: skillCmMin, max: skillCmMax } = getSkillCmRange();
 
-    const selectableCms = getSelectableChampionsMeets(champsmeets, {
+    const selectableCms = getSelectableChampionsMeets(datedCms, {
       fromCmNumber: skillCmMin,
       maxCmNumber: skillCmMax,
       mapsCatalog: cache.maps,
@@ -1291,9 +1304,10 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
     // "cm" command
     if (name === 'cm') {
       const cupQuery = data.options?.find(opt => opt.name === "name")?.value?.toLowerCase();
+      const datedCms = await datedChampionsMeets();
 
       // Find matches
-      const matches = champsmeets.filter(c => {
+      const matches = datedCms.filter(c => {
         if (!cupQuery) return true;
 
         return (
@@ -2680,7 +2694,8 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
 
     if (custom_id === "cm_select") {
       const selectedId = values[0];
-      const cm = champsmeets.find(c => c.name === selectedId);
+      const datedCms = await datedChampionsMeets();
+      const cm = datedCms.find(c => c.name === selectedId);
 
       if (!cm) {
         return res.send({

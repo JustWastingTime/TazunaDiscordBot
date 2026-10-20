@@ -37,6 +37,7 @@ import {
   getUpcomingChampionsMeet,
   resolveSkillActivationOverlay,
 } from './skillCourseMap.js';
+import { applyScheduleCmDate, listScheduleEvents } from './scheduleService.js';
 
 const previewHits = new Map();
 
@@ -55,9 +56,16 @@ function entryKey(req) {
   return (fromQuery || fromParam || '').trim();
 }
 
-function findCm(cmNumber) {
-  if (cmNumber == null || cmNumber === '') return getUpcomingChampionsMeet(cache.champsmeets);
-  return (cache.champsmeets || []).find((cm) => String(cm.number) === String(cmNumber)) || null;
+async function findCm(cmNumber) {
+  let meets = cache.champsmeets || [];
+  try {
+    const events = await listScheduleEvents();
+    meets = meets.map((cm) => applyScheduleCmDate(cm, events));
+  } catch (err) {
+    console.warn('[CM] Could not load schedule dates:', err.message);
+  }
+  if (cmNumber == null || cmNumber === '') return getUpcomingChampionsMeet(meets);
+  return meets.find((cm) => String(cm.number) === String(cmNumber)) || null;
 }
 
 function findMap(query) {
@@ -79,7 +87,7 @@ async function renderPreview(skill, { cmNumber, mapQuery }) {
     mapData = getCourseMapDataFromMap(raw, null);
     label = raw.name || mapQuery;
   } else {
-    cm = findCm(cmNumber);
+    cm = await findCm(cmNumber);
     if (!cm) throw httpError(404, 'No Champions Meet found.');
     mapData = getCourseMapDataFromCm(cm, cache.maps);
     label = cm.name ? `${cm.name} (${cm.number})` : `CM ${cm.number}`;

@@ -11,7 +11,7 @@
             "weather": "Sunny",
             "similar": "Japanese Derby (Tokyo Yushun), Japanese Oaks, Japan Cup"
         },
-        "date": "<t:1778450400:F> - <t:1779314400:F>, <t:1778450400:R>",
+        "date": "<t:1778450400:F> - <t:1779055200:F>, <t:1778450400:R>",
         "image": "https://uma.guide/img/guides/article/cm13/cm13-track.png",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA",
         "map_id": "Tokyo 2400m (counterclockwise)"
@@ -28,7 +28,7 @@
             "weather": "Sunny",
             "similar": "NHK Mile Cup, Yasuda Kinen"
         },
-        "date": "<t:1780264800:F> - <t:1781128800:F>, <t:1780264800:R>",
+        "date": "<t:1780264800:F> - <t:1780869600:F>, <t:1780264800:R>",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA",
         "map_id": "Tokyo 1600m (counterclockwise)"
@@ -45,7 +45,7 @@
             "weather": "Cloudy",
             "similar": "Takarazuka Kinen"
         },
-        "date": "<t:1782079200:F> - <t:1782856800:F>, <t:1782079200:R>",
+        "date": "<t:1782079200:F> - <t:1782684000:F>, <t:1782079200:R>",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PQU7EMAxF7%2FLXWXQqQJDdLNkhzRKxiBq3WNPEVeyoQlXvjtIBITgCu%2B9n61l%2FwyC1KD1H%2BFP31D04TEVqjvC9w0rB3qkcWSmo5CMaJ7qxkJaZFP6%2B6xxqCif4DVJtZGtGwEEXoibv24laSJzD97jI2uyPLU%2FVFP6uxZU1Svoa1Eowmj7gcaF8lQqHyGohD3RejK1Garv2qpYx%2FKJn%2FAj%2B4CRyK6lXnmeFf31zGKUMFC%2BNvIiysWSF3%2Fb9aNf%2F13b7J%2BdYrPwHAgAA",
         "map_id": "Hanshin 2200m (inner) (clockwise)"
@@ -79,7 +79,7 @@
             "weather": "Sunny",
             "similar": "Japan Dirt Derby, Tokyo Daishoten"
         },
-        "date": "<t:1786140000:F> - <t:1786744800:F>, <t:1786140000:R>",
+        "date": "<t:1785967200:F> - <t:1786572000:F>, <t:1785967200:R>",
         "image": "",
         "umalator": "https://dev.umalator.app/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbY3gTDdlukCW4YthDV2xFoaoxlhgvHdgzYJITlCuvczfMPbMUotys8B1Pd9d3KYi9QcQIPDxt7euIB6B2WvkkEnB4uJ7736tC6soMeuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0Z%2Banqsp6KHJLWqQ9GXUijee30G4cL5JhUOIaj6PfF4tWg3cuvaqlsn%2FSs%2F4AfyJk8jnSL3FZVHQ69VhkjJyuLTkRTRalKyg%2FTju64b%2Fuu74AIpADhkHAgAA",
         "map_id": "Ooi 2000m (clockwise) (dirt)"
@@ -96,7 +96,7 @@
             "weather": "Cloudy",
             "similar": "Asahi Hai Futurity Stakes, Hanshin Juvenile Fillies, Oka Sho"
         },
-        "date": "",
+        "date": "<t:1787695200:F> - <t:1788300000:F>, <t:1787695200:R>",
         "image": "",
         "umalator": "",
         "map_id": "Hanshin 1600m (outer) (clockwise)"
@@ -113,7 +113,7 @@
             "weather": "Sunny",
             "similar": "Queen Elizabeth II Cup"
         },
-        "date": "",
+        "date": "<t:1789509600:F> - <t:1790114400:F>, <t:1789509600:R>",
         "image": "",
         "umalator": "",
         "map_id": "Kyoto 2200m (outer) (clockwise)"
@@ -130,7 +130,7 @@
             "weather": "Cloudy",
             "similar": "Arima Kinen"
         },
-        "date": "",
+        "date": "<t:1791410400:F> - <t:1792015200:F>, <t:1791410400:R>",
         "image": "",
         "umalator": "",
         "map_id": "Nakayama 2500m (inner) (clockwise)"
@@ -147,7 +147,7 @@
             "weather": "Sunny",
             "similar": "Takamatsunomiya Kinen"
         },
-        "date": "",
+        "date": "<t:1793138400:F> - <t:1793916000:F>, <t:1793138400:R>",
         "image": "",
         "umalator": "",
         "map_id": "Chukyo 1200m (counterclockwise)"
@@ -164,7 +164,7 @@
             "weather": "Snow",
             "similar": "February Stakes"
         },
-        "date": "",
+        "date": "<t:1795039200:F> - <t:1795816800:F>, <t:1795039200:R>",
         "image": "",
         "umalator": "",
         "map_id": "Tokyo 1600m (counterclockwise) (dirt)"
@@ -181,7 +181,7 @@
             "weather": "Sunny",
             "similar": "Hopeful Stakes, Satsuki Sho"
         },
-        "date": "",
+        "date": "<t:1796508000:F> - <t:1797285600:F>, <t:1796508000:R>",
         "image": "",
         "umalator": "",
         "map_id": "Nakayama 2000m (inner) (clockwise)"
@@ -198,7 +198,7 @@
             "weather": "Sunny",
             "similar": "Tenno Sho Spring"
         },
-        "date": "",
+        "date": "<t:1798236000:F> - <t:1799013600:F>, <t:1798236000:R>",
         "image": "",
         "umalator": "",
         "map_id": "Kyoto 3200m (outer) (clockwise)"
