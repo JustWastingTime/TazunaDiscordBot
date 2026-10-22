@@ -4,7 +4,7 @@
   "type": "horse_race",
   "status": "scheduled",
   "startsAt": "2026-10-22T01:00:00+07:00",
-  "endsAt": "2026-10-23T01:40:00+07:00",
+  "endsAt": "2026-10-23T13:40:00+07:00",
   "availability": "all",
   "guildIds": [],
   "entries": [
