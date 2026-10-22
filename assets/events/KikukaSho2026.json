@@ -1,0 +1,30 @@
+{
+  "id": "KikukaSho2026",
+  "name": "Kikuka Sho 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-10-22T01:00:00+07:00",
+  "endsAt": null,
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "M's Begin", "ageSex": "3C", "jockey": "M.Iwata", "odds": 64 },
+    { "number": 2, "name": "Congestus", "ageSex": "3C", "jockey": "A.Nishimura", "odds": 41.2 },
+    { "number": 3, "name": "Audacia", "ageSex": "3C", "jockey": "A.Tsumura", "odds": 16 },
+    { "number": 4, "name": "Shonan Gulf", "ageSex": "3C", "jockey": "O.Tayama", "odds": 290.9 },
+    { "number": 5, "name": "Justin Chicago", "ageSex": "3C", "jockey": "Y.Hara", "odds": 18.2 },
+    { "number": 6, "name": "Basse Terre", "ageSex": "3C", "jockey": "Y.Kawada", "odds": 25.9 },
+    { "number": 7, "name": "Large Ensemble", "ageSex": "3C", "jockey": "R.Sakai", "odds": 172.3 },
+    { "number": 8, "name": "Lovcen", "ageSex": "3C", "jockey": "K.Matsuyama", "odds": 1.4 },
+    { "number": 9, "name": "Going to Sky", "ageSex": "3C", "jockey": "Y.Take", "odds": 11.9 },
+    { "number": 10, "name": "Danon History", "ageSex": "3C", "jockey": "C.Lemaire", "odds": 3.8 },
+    { "number": 11, "name": "Ask Edinburgh", "ageSex": "3C", "jockey": "Y.Iwata", "odds": 31.9 },
+    { "number": 12, "name": "Sanono Greater", "ageSex": "3C", "jockey": "H.Tanabe", "odds": 137.7 },
+    { "number": 13, "name": "King Glory", "ageSex": "3C", "jockey": "Y.Tannai", "odds": 185.7 },
+    { "number": 14, "name": "Majorelle Bleu", "ageSex": "3C", "jockey": "K.Tosaki", "odds": 61.3 },
+    { "number": 15, "name": "Sea to Summit", "ageSex": "3C", "jockey": "M.Sakai", "odds": 67.3 },
+    { "number": 16, "name": "Shonan Hayanami", "ageSex": "3C", "jockey": "K.Ikezoe", "odds": 57.9 },
+    { "number": 17, "name": "Charing Cross", "ageSex": "3C", "jockey": "Y.Ishikawa", "odds": 198.5 },
+    { "number": 18, "name": "Narita Esperanza", "ageSex": "3C", "jockey": "Y.Kitamura", "odds": 193.2 }
+  ]
+}
