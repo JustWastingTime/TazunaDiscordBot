@@ -12773,11 +12773,13 @@
                 {
                     "type": "box",
                     "target": "layout",
-                    "phase": [
-                        "final_corner_and_beyond",
-                        "late_race_and_beyond"
-                    ],
-                    "trigger_behavior": "asap"
+                    "trigger_behavior": "precondition",
+                    "phase": "late_and_beyond"
+                },
+                {
+                    "type": "box",
+                    "trigger_behavior": "asap",
+                    "phase": "final_corner_and_beyond"
                 }
             ]
         }
