@@ -766,8 +766,12 @@ function inferMarkersFromConditionSet(conditionTexts, mapData) {
   return markers;
 }
 
+function canonicalPhaseName(phaseName) {
+  return lower(phaseName).replace(/[\s-]+/g, "_").replace(/_race(?=_|$)/g, "");
+}
+
 function phaseWindowFromName(mapData, phaseName) {
-  const phase = lower(phaseName);
+  const phase = canonicalPhaseName(phaseName);
   const earlyZone = findZoneByLabel(mapData, ["opening", "early"]);
   const midZone = findZoneByLabel(mapData, ["middle", "mid"]);
   const lateZone = findZoneByLabel(mapData, ["late", "final"]);
@@ -1012,6 +1016,23 @@ function prepareActivationTriggers(triggers, course) {
   return { triggers: copies, activationEffects, numberLabels };
 }
 
+function addMissingPreconditionBoxes(markers, skill, mapData, prepared) {
+  const covered = new Set();
+  for (const trigger of prepared.triggers) {
+    if (!isPreconditionTrigger(trigger)) continue;
+    const numbers = trigger._preconditionForAll
+      ? prepared.activationEffects
+      : (preconditionEffectNumbers(trigger) ?? trigger._effects ?? []);
+    for (const number of numbers) covered.add(number);
+  }
+  for (const number of prepared.activationEffects) {
+    if (covered.has(number)) continue;
+    const window = inferPhaseWindowFromTexts(effectPreconditionTexts(skill, number - 1), mapData);
+    if (!window) continue;
+    pushUniqueBox(markers, window.start, window.end, "#d9b84a", "precondition", { effects: [number] });
+  }
+}
+
 function behaviorWord(behavior) {
   const name = lower(behavior);
   if (name === "asap") return "ASAP";
@@ -1041,6 +1062,24 @@ function annotateActivationLabels(markers, { numberLabels, activationEffects }) 
   }
 }
 
+function preconditionLines(value) {
+  if (!Array.isArray(value) || !value.length) return [];
+  const rows = value.every((entry) => Array.isArray(entry)) ? value.flat() : value;
+  return rows.map((item) => lower(item)).filter(Boolean);
+}
+
+function effectPreconditionTexts(skill, effectIndex) {
+  const effects = Array.isArray(skill?.effect) ? skill.effect : [];
+  const effect = effects[effectIndex];
+  if (Array.isArray(effect?.preconditions)) return preconditionLines(effect.preconditions);
+  const shared = skill?.preconditions;
+  if (!Array.isArray(shared) || !shared.length) return [];
+  if (shared.length > 1 && shared.every((entry) => Array.isArray(entry))) {
+    return preconditionLines(shared[effectIndex] ?? []);
+  }
+  return preconditionLines(shared);
+}
+
 function markersFromActivationMap(skill, mapData, options = {}) {
   const activationMap = skill?.activation_map;
   if (!activationMap || !Array.isArray(activationMap.triggers)) return [];
@@ -1057,6 +1096,7 @@ function markersFromActivationMap(skill, mapData, options = {}) {
     const bEffect = Math.min(...(b._effects?.length ? b._effects : [Number.MAX_SAFE_INTEGER]));
     return aEffect - bEffect;
   });
+  addMissingPreconditionBoxes(markers, skill, mapData, prepared);
   for (const trigger of orderedTriggers) {
     if (!trigger._active) continue;
     if (trigger.requires_precondition === true) {
@@ -1156,15 +1196,18 @@ function markersFromActivationMap(skill, mapData, options = {}) {
         clipStart = Math.max(clipStart, autoPhaseWindow.start);
         clipEnd = Math.min(clipEnd, autoPhaseWindow.end);
       }
-      // Start at this trigger's precondition box, not after it ends, so the condition can overlap it.
-      if (trigger.after_precondition_start === true) {
+      // The effect can overlap its precondition, but it cannot start before that box.
+      if (!isPreconditionTrigger(trigger) && trigger.after_precondition_start !== false) {
         const wanted = new Set(trigger._effects ?? []);
         const preconditionStarts = markers
           .filter((marker) => marker.type === "box" && lower(marker.trigger_behavior) === "precondition")
           .filter((marker) => (marker.effects ?? []).some((number) => wanted.has(number)))
           .map((marker) => marker.start);
-        if (!preconditionStarts.length) continue;
-        clipStart = Math.max(clipStart, Math.min(...preconditionStarts));
+        if (preconditionStarts.length) {
+          clipStart = Math.max(clipStart, Math.min(...preconditionStarts));
+        } else if (trigger.after_precondition_start === true) {
+          continue;
+        }
       }
 
       const pushClippedBox = (start, end) => {
