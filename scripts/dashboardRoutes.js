@@ -61,6 +61,7 @@ import {
   siteUrl,
 } from './dashboardAuth.js';
 import { mountAdmin } from './adminRoutes.js';
+import { mountGamba } from './gambaRoutes.js';
 import { buildMemberProfile, warmNetworkTenure } from './clubTenure.js';
 import { isDiscordWebhookUrl, notifyApplicationWebhook } from './applyNotify.js';
 
@@ -242,6 +243,7 @@ async function publicDashboardPayload(guildId) {
 
 export function mountDashboard(app) {
   mountAdmin(app);
+  mountGamba(app);
   const seedGuild = String(process.env.DASHBOARD_SEED_GUILD_ID || '').trim();
   if (seedGuild) {
     try {
@@ -780,18 +782,18 @@ export function mountDashboard(app) {
     path.resolve(__dirname, '../../UmaClubDashboard/dist'),
   ];
   const RESERVED_ROOT_SEGMENTS = new Set([
-    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions', 'admin',
+    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions', 'admin', 'gamba',
   ]);
   const dist = distCandidates.find((dir) => fs.existsSync(path.join(dir, 'index.html')));
   if (dist) {
     app.use(express.static(dist));
-    app.get(['/g/:tenant', '/staff', '/tourney', '/apply', '/admin', '/admin/*'], (_req, res) => {
+    app.get(['/g/:tenant', '/staff', '/tourney', '/apply', '/admin', '/admin/*', '/gamba', '/gamba/*'], (_req, res) => {
       res.sendFile(path.join(dist, 'index.html'));
     });
     app.use((req, res, next) => {
       if (req.method !== 'GET') return next();
       if (req.path.startsWith('/api') || req.path.startsWith('/assets') || req.path === '/interactions') return next();
-      if (req.path.startsWith('/g/') || req.path === '/admin' || req.path.startsWith('/admin/')) {
+      if (req.path.startsWith('/g/') || req.path === '/admin' || req.path.startsWith('/admin/') || req.path === '/gamba' || req.path.startsWith('/gamba/')) {
         return res.sendFile(path.join(dist, 'index.html'));
       }
       // Root-level network slug, e.g. /bunny. Reserved words always win, so
@@ -806,8 +808,8 @@ export function mountDashboard(app) {
   } else {
     app.get(['/g/:tenant', '/g/:tenant/*', '/:slug'], (req, res) => {
       const ref = req.params.tenant || req.params.slug;
-      if (ref === 'admin') {
-        return res.type('html').send('<p>Build the dashboard frontend into <code>web/dashboard</code> to use /admin.</p>');
+      if (ref === 'admin' || ref === 'gamba') {
+        return res.type('html').send(`<p>Build the dashboard frontend into <code>web/dashboard</code> to use /${ref}.</p>`);
       }
       const guildId = resolveGuildRef(ref);
       if (!guildId) return res.status(404).send('Unknown dashboard.');

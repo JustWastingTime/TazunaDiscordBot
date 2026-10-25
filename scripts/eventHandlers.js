@@ -6,6 +6,7 @@ import { isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
 import {
   getUserLink,
   updateUserBettingState,
+  withWalletLock,
 } from './clubDatabase.js';
 import {
   BET_AMOUNTS,
@@ -247,44 +248,50 @@ export async function handleGambaWagerClick(req, eventId, entryNumber, amount) {
 
   const userId = req.body.member?.user?.id || req.body.user?.id;
   const displayName = req.body.member?.display_name || req.body.member?.user?.username || 'Trainer';
-  const wallet = requireWallet(userId, displayName, guildId);
-  if (!wallet.ok) return ephemeral(wallet.error);
-
   const event = getEvent(eventId);
   const entry = getEntry(event, entryNumber);
 
-  const user = {
-    trainerName: wallet.link.trainerName || displayName,
-    gambaCoins: wallet.link.gambaCoins ?? 0,
-    openTickets: [...(wallet.link.openTickets || [])],
-    betHistory: [...(wallet.link.betHistory || [])],
-  };
-
-  function wagerUpdate(content) {
+  function wagerUpdate(content, user) {
     return {
       type: InteractionResponseType.UPDATE_MESSAGE,
       data: {
         content,
-        embeds: event && entry ? [buildWagerEmbed(event, entry, user)] : [],
+        embeds: event && entry ? [buildWagerEmbed(event, entry, user || { gambaCoins: 0, openTickets: [] })] : [],
         components: event && entry ? buildWagerButtons(event.id, entry.number) : [],
       },
     };
   }
 
-  if (!event) return wagerUpdate('❌ This event is outdated.');
-  if (!isEventBettable(event)) return wagerUpdate('❌ Betting is closed for this event.');
   if (!BET_AMOUNTS.includes(amount)) return wagerUpdate('❌ Invalid bet amount.');
-  if (!entry) return wagerUpdate('❌ Entry not found.');
 
-  const result = placeBet(user, event, entryNumber, amount);
-  if (!result.ok) return wagerUpdate(`❌ ${result.error}`);
-
-  updateUserBettingState(userId, {
-    trainerName: user.trainerName,
-    gambaCoins: user.gambaCoins,
-    openTickets: user.openTickets,
-    betHistory: user.betHistory,
+  const placed = await withWalletLock(() => {
+    const link = getUserLink(userId);
+    if (!link) return { ok: false, missingWallet: true };
+    const user = {
+      trainerName: link.trainerName || displayName,
+      gambaCoins: link.gambaCoins ?? 0,
+      openTickets: [...(link.openTickets || [])],
+      openParlays: [...(link.openParlays || [])],
+      betHistory: [...(link.betHistory || [])],
+    };
+    if (!event) return { ok: false, user, error: 'This event is outdated.' };
+    if (!isEventBettable(event)) return { ok: false, user, error: 'Betting is closed for this event.' };
+    if (!entry) return { ok: false, user, error: 'Entry not found.' };
+    const result = placeBet(user, event, entryNumber, amount);
+    if (!result.ok) return { ok: false, user, error: result.error };
+    updateUserBettingState(userId, {
+      trainerName: user.trainerName,
+      gambaCoins: user.gambaCoins,
+      openTickets: user.openTickets,
+      betHistory: user.betHistory,
+    });
+    return { ok: true, user: result.user, entry: result.entry };
   });
+
+  if (placed.missingWallet) {
+    return ephemeral('❌ You need a GambaCoin wallet first. Use `/register` or join a quiz to get one.');
+  }
+  if (!placed.ok) return wagerUpdate(`❌ ${placed.error}`, placed.user);
 
   refreshBetsBoardForEvent(event.id).catch((err) => {
     console.error('Failed to refresh bets board:', err.message);
@@ -293,8 +300,8 @@ export async function handleGambaWagerClick(req, eventId, entryNumber, amount) {
   return {
     type: InteractionResponseType.UPDATE_MESSAGE,
     data: {
-      content: `✅ Placed **${formatCoins(amount)}** GambaCoins on **#${entryNumber} ${result.entry.name}** @ ${result.entry.odds}.`,
-      embeds: [buildWagerEmbed(event, result.entry, result.user)],
+      content: `✅ Placed **${formatCoins(amount)}** GambaCoins on **#${entryNumber} ${placed.entry.name}** @ ${placed.entry.odds}.`,
+      embeds: [buildWagerEmbed(event, placed.entry, placed.user)],
       components: buildWagerButtons(event.id, entry.number),
     },
   };

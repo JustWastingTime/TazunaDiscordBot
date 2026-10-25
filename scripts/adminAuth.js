@@ -11,6 +11,10 @@ export function httpError(statusCode, message) {
   return err;
 }
 
+export function assertWriteOrigin(req) {
+  if (!originAllowed(req)) throw httpError(403, 'Origin rejected.');
+}
+
 function originAllowed(req) {
   const origin = String(req.headers.origin || '').trim();
   if (!origin) return true;

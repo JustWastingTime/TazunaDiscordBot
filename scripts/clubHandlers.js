@@ -433,6 +433,7 @@ async function sendLinkedProfileFollowup(sendFollowup, {
       gambaWr: link.gambaWr,
       quizAccuracy: link.quizAccuracy,
       openTickets: link.openTickets,
+      openParlays: link.openParlays,
       betHistory: link.betHistory,
     },
   });

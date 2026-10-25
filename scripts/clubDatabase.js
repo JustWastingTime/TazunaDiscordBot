@@ -53,6 +53,15 @@ function saveUserLinks(store) {
   writeJson(USER_LINKS_PATH, store);
 }
 
+let walletQueue = Promise.resolve();
+
+/** Serializes bet and settlement read-modify-writes on user-links.json. */
+export function withWalletLock(fn) {
+  const run = walletQueue.then(() => fn());
+  walletQueue = run.then(() => undefined, () => undefined);
+  return run;
+}
+
 export function registerGuildClub(guildId, circleId, circleName) {
   const store = loadGuildClubs();
   const key = String(guildId);
@@ -341,6 +350,7 @@ export function upsertUserLink({
     gambaWins: existing?.gambaWins ?? 0,
     gambaLosses: existing?.gambaLosses ?? 0,
     openTickets: existing?.openTickets ?? [],
+    openParlays: existing?.openParlays ?? [],
     betHistory: existing?.betHistory ?? [],
     quizCorrect: existing?.quizCorrect ?? 0,
     quizWrong: existing?.quizWrong ?? 0,
@@ -548,6 +558,7 @@ function normalizeUserRecord(link, discordUserId) {
     gambaWins: link.gambaWins ?? 0,
     gambaLosses: link.gambaLosses ?? 0,
     openTickets: Array.isArray(link.openTickets) ? link.openTickets : [],
+    openParlays: Array.isArray(link.openParlays) ? link.openParlays : [],
     betHistory: Array.isArray(link.betHistory) ? link.betHistory : [],
     quizCorrect: link.quizCorrect ?? 0,
     quizWrong: link.quizWrong ?? 0,
@@ -586,6 +597,7 @@ export function buildFestProfileData(link) {
     gambaWr: link.gambaWr,
     quizAccuracy: link.quizAccuracy,
     openTickets: link.openTickets,
+    openParlays: link.openParlays,
     betHistory: link.betHistory,
   };
 }
@@ -631,6 +643,7 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
       gambaWins: 0,
       gambaLosses: 0,
       openTickets: [],
+      openParlays: [],
       betHistory: [],
       quizCorrect: 0,
       quizWrong: 0,
@@ -645,6 +658,7 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
     if (existing.gambaWins == null) existing.gambaWins = 0;
     if (existing.gambaLosses == null) existing.gambaLosses = 0;
     if (!Array.isArray(existing.openTickets)) existing.openTickets = [];
+    if (!Array.isArray(existing.openParlays)) existing.openParlays = [];
     if (!Array.isArray(existing.betHistory)) existing.betHistory = [];
   }
 
@@ -817,6 +831,7 @@ export function updateUserBettingState(discordUserId, patch) {
   if (patch.trainerName) user.trainerName = patch.trainerName;
   if (patch.gambaCoins != null) user.gambaCoins = patch.gambaCoins;
   if (patch.openTickets) user.openTickets = patch.openTickets;
+  if (patch.openParlays != null) user.openParlays = patch.openParlays;
   if (patch.betHistory) user.betHistory = patch.betHistory;
 
   saveUserLinks(store);
@@ -839,6 +854,7 @@ export function saveAllUsersFromSettlement(usersById) {
     if (!store[discordUserId]) continue;
     store[discordUserId].gambaCoins = user.gambaCoins;
     store[discordUserId].openTickets = user.openTickets || [];
+    store[discordUserId].openParlays = user.openParlays || [];
     store[discordUserId].betHistory = user.betHistory || [];
     store[discordUserId].gambaWins = user.gambaWins ?? 0;
     store[discordUserId].gambaLosses = user.gambaLosses ?? 0;

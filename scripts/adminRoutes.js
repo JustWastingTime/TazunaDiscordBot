@@ -30,6 +30,7 @@ import {
 import cache, { updateCache } from './githubCache.js';
 import { reloadEventsFromDisk } from './eventService.js';
 import { deleteGambaEvent, listGambaEvents, readGambaEvent, saveGambaEvent } from './gambaEventAdmin.js';
+import { deleteChain, listChains, saveChain } from './gambaChains.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
   getCourseMapDataFromCm,
@@ -382,6 +383,26 @@ export function mountAdmin(app) {
 
   router.get('/gamba-events', (_req, res) => {
     res.json({ events: listGambaEvents() });
+  });
+
+  router.get('/gamba-chains', (_req, res) => {
+    res.json({ chains: listChains() });
+  });
+
+  router.put('/gamba-chains', (req, res) => {
+    try {
+      res.json({ chain: saveChain(req.body?.chain) });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.delete('/gamba-chains/:id', (req, res) => {
+    try {
+      res.json(deleteChain(req.params.id));
+    } catch (error) {
+      jsonError(res, error);
+    }
   });
 
   router.get('/gamba-events/entry', async (req, res) => {

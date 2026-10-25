@@ -691,6 +691,7 @@ export function buildUnlinkedProfileEmbed(link) {
       },
       ...buildGambleProfileFields({
         openTickets: link?.openTickets,
+        openParlays: link?.openParlays,
         betHistory: link?.betHistory,
       }),
     ],
@@ -748,6 +749,7 @@ export function buildProfileEmbed({ member, circle, ranks = {}, festa = null }) 
       ...(festa
         ? buildGambleProfileFields({
             openTickets: festa.openTickets,
+            openParlays: festa.openParlays,
             betHistory: festa.betHistory,
           })
         : []),

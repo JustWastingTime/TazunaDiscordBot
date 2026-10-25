@@ -2,6 +2,10 @@ import { randomUUID } from 'crypto';
 import { formatGambaWr, getUserLink, listGambaWalletUsers } from './clubDatabase.js';
 
 export const BET_AMOUNTS = [10, 50, 100, 500];
+export const WEB_BET_MIN = 10;
+export const WEB_BET_MAX = 10000;
+export const PARLAY_MIN_LEGS = 2;
+export const PARLAY_MAX_LEGS = 6;
 export const BET_HISTORY_LIMIT = 50;
 export const PROFILE_HISTORY = 5;
 
@@ -11,6 +15,26 @@ export function formatCoins(amount) {
 
 export function payout(amount, odds) {
   return Math.floor(amount * odds);
+}
+
+export function formatOdds(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return '—';
+  return String(Math.round(n * 100) / 100);
+}
+
+export function combinedOddsOf(legs) {
+  return (legs || []).reduce((product, leg) => product * Number(leg.oddsAtBet), 1);
+}
+
+export function parlayPayout(stake, legs) {
+  return Math.floor(Number(stake) * combinedOddsOf(legs));
+}
+
+function parlayUsingEvent(user, eventId) {
+  return (user?.openParlays || []).find((parlay) =>
+    (parlay.legs || []).some((leg) => leg.eventId === eventId && leg.status !== 'skipped'),
+  ) || null;
 }
 
 export function formatCutoff(isoString) {
@@ -54,13 +78,21 @@ function trimHistory(history) {
   return history.slice(-BET_HISTORY_LIMIT);
 }
 
-export function placeBet(user, event, entryNumber, amount) {
+export function placeBet(user, event, entryNumber, amount, { custom = false } = {}) {
   const entry = getEntry(event, entryNumber);
   if (!entry) return { ok: false, error: 'Entry not found.' };
 
   const delta = Math.trunc(amount);
-  if (!BET_AMOUNTS.includes(delta)) {
+  if (custom) {
+    if (!Number.isFinite(delta) || delta < WEB_BET_MIN || delta > WEB_BET_MAX) {
+      return { ok: false, error: `Use a whole number from ${WEB_BET_MIN} to ${formatCoins(WEB_BET_MAX)} carrots.` };
+    }
+  } else if (!BET_AMOUNTS.includes(delta)) {
     return { ok: false, error: 'Invalid bet amount.' };
+  }
+
+  if (parlayUsingEvent(user, event.id)) {
+    return { ok: false, error: 'This race is already on another ticket.' };
   }
 
   const lockedEntry = getUserEventHorse(user, event.id);
@@ -68,9 +100,9 @@ export function placeBet(user, event, entryNumber, amount) {
     const locked = getEntry(event, lockedEntry);
     return {
       ok: false,
-      error:
-        `You already bet on **#${lockedEntry} ${locked?.name || '?'}** for this event. ` +
-        'You can only pick **one** horse per event.',
+      error: custom
+        ? `You already picked #${lockedEntry} ${locked?.name || '?'} in this race.`
+        : `You already bet on **#${lockedEntry} ${locked?.name || '?'}** for this event. You can only pick **one** horse per event.`,
     };
   }
 
@@ -78,7 +110,9 @@ export function placeBet(user, event, entryNumber, amount) {
   if (delta > balance) {
     return {
       ok: false,
-      error: `Not enough GambaCoins. You have **${formatCoins(balance)}** but tried **${formatCoins(delta)}**.`,
+      error: custom
+        ? `Not enough carrots. You have ${formatCoins(balance)}.`
+        : `Not enough GambaCoins. You have **${formatCoins(balance)}** but tried **${formatCoins(delta)}**.`,
     };
   }
 
@@ -96,6 +130,132 @@ export function placeBet(user, event, entryNumber, amount) {
   user.openTickets = [...(user.openTickets || []), ticket];
 
   return { ok: true, ticket, entry, user };
+}
+
+export function placeParlay(user, picks, stake, { chain = null } = {}) {
+  const legs = Array.isArray(picks) ? picks : [];
+  if (chain) {
+    const stages = chain.stages || [];
+    if (legs.length !== stages.length) {
+      return { ok: false, error: 'Pick one horse in each stage.' };
+    }
+    const seenStages = new Set();
+    for (const pick of legs) {
+      const stage = stages.find((item) => (item.eventIds || []).map(String).includes(String(pick.event?.id)));
+      if (!stage) return { ok: false, error: 'That race is not in this meet.' };
+      if (seenStages.has(stage.id)) return { ok: false, error: 'Pick one race in each stage.' };
+      seenStages.add(stage.id);
+    }
+    if (seenStages.size !== stages.length) {
+      return { ok: false, error: 'Pick one horse in each stage.' };
+    }
+  } else if (legs.length < PARLAY_MIN_LEGS || legs.length > PARLAY_MAX_LEGS) {
+    return { ok: false, error: `A parlay needs ${PARLAY_MIN_LEGS} to ${PARLAY_MAX_LEGS} races.` };
+  }
+
+  const seenEvents = new Set();
+  const built = [];
+  for (const pick of legs) {
+    const event = pick.event;
+    if (!event) return { ok: false, error: 'That race is gone.' };
+    if (!isEventBettable(event)) return { ok: false, error: 'That race already closed.' };
+    if (seenEvents.has(event.id)) return { ok: false, error: 'Pick one horse in each race.' };
+    seenEvents.add(event.id);
+    const entry = getEntry(event, pick.entryNumber);
+    if (!entry) return { ok: false, error: 'Entry not found.' };
+    const odds = Number(entry.odds);
+    if (!Number.isFinite(odds) || odds <= 0) return { ok: false, error: 'That horse has no payout.' };
+    if ((user.openTickets || []).some((ticket) => ticket.eventId === event.id)) {
+      return { ok: false, error: `${event.name} is already on a single ticket.` };
+    }
+    if (parlayUsingEvent(user, event.id)) {
+      return { ok: false, error: `${event.name} is already on another ticket.` };
+    }
+    built.push({
+      eventId: event.id,
+      eventName: event.name,
+      entryNumber: entry.number,
+      entryName: entry.name,
+      oddsAtBet: odds,
+      status: 'open',
+    });
+  }
+
+  const delta = Math.trunc(stake);
+  if (!Number.isFinite(delta) || delta < WEB_BET_MIN || delta > WEB_BET_MAX) {
+    return { ok: false, error: `Use a whole number from ${WEB_BET_MIN} to ${formatCoins(WEB_BET_MAX)} carrots.` };
+  }
+  const balance = user.gambaCoins ?? 0;
+  if (delta > balance) {
+    return { ok: false, error: `Not enough carrots. You have ${formatCoins(balance)}.` };
+  }
+
+  const parlay = {
+    parlayId: randomUUID(),
+    chainId: chain?.id || null,
+    chainName: chain?.name || null,
+    stake: delta,
+    combinedOdds: combinedOddsOf(built),
+    legs: built,
+    placedAt: new Date().toISOString(),
+  };
+  user.gambaCoins = balance - delta;
+  user.openParlays = [...(user.openParlays || []), parlay];
+  return { ok: true, parlay, payoutIfHit: parlayPayout(delta, built), user };
+}
+
+function parlayHistoryRow(parlay, won, pay) {
+  const names = parlay.legs.map((leg) => `#${leg.entryNumber} ${leg.entryName}`).join(', ');
+  return {
+    kind: 'parlay',
+    parlayId: parlay.parlayId,
+    chainId: parlay.chainId || null,
+    chainName: parlay.chainName || null,
+    eventId: `parlay:${parlay.parlayId}`,
+    eventName: parlay.chainName || `${parlay.legs.length}-pick ticket`,
+    entryNumber: null,
+    entryName: names,
+    legs: parlay.legs,
+    amount: parlay.stake,
+    oddsAtBet: parlay.combinedOdds,
+    result: won ? 'win' : 'loss',
+    payout: pay,
+    settledAt: new Date().toISOString(),
+  };
+}
+
+export function settleParlaysForEvent(usersById, event, winningEntryNumber) {
+  let settled = 0;
+  for (const user of Object.values(usersById || {})) {
+    const remaining = [];
+    for (const parlay of user.openParlays || []) {
+      const leg = (parlay.legs || []).find((item) => item.eventId === event.id && item.status === 'open');
+      if (!leg) {
+        remaining.push(parlay);
+        continue;
+      }
+      leg.status = leg.entryNumber === winningEntryNumber ? 'won' : 'lost';
+      leg.settledAt = new Date().toISOString();
+      const lost = parlay.legs.some((item) => item.status === 'lost');
+      const allWon = parlay.legs.every((item) => item.status === 'won');
+      if (!lost && !allWon) {
+        remaining.push(parlay);
+        continue;
+      }
+      for (const other of parlay.legs) {
+        if (other.status === 'open') other.status = 'skipped';
+      }
+      const pay = allWon ? parlayPayout(parlay.stake, parlay.legs) : 0;
+      if (allWon) user.gambaCoins = (user.gambaCoins ?? 0) + pay;
+      if (allWon) user.gambaWins = (user.gambaWins || 0) + 1;
+      else user.gambaLosses = (user.gambaLosses || 0) + 1;
+      user.gambaWr = formatGambaWr(user.gambaWins, user.gambaLosses);
+      user.betHistory = trimHistory([...(user.betHistory || []), parlayHistoryRow(parlay, allWon, pay)]);
+      settled += 1;
+    }
+    user.openParlays = remaining;
+  }
+  return { settled };
 }
 
 export function settleEvent(usersById, event, winningEntryNumber) {
@@ -215,6 +375,7 @@ export function collectAllUsersForBets() {
       trainerName: link.trainerName,
       gambaCoins: link.gambaCoins,
       openTickets: link.openTickets || [],
+      openParlays: link.openParlays || [],
       betHistory: link.betHistory || [],
     };
   }
@@ -228,6 +389,7 @@ export function getWalletUser(discordUserId) {
     trainerName: link.trainerName,
     gambaCoins: link.gambaCoins,
     openTickets: link.openTickets || [],
+    openParlays: link.openParlays || [],
     betHistory: link.betHistory || [],
   };
 }
@@ -252,6 +414,20 @@ export function groupTicketsByEvent(tickets) {
 export function groupHistoryByEvent(history) {
   const groups = new Map();
   for (const entry of history || []) {
+    if (entry.kind === 'parlay') {
+      const key = `parlay:${entry.parlayId || entry.settledAt}`;
+      groups.set(key, {
+        kind: 'parlay',
+        eventName: entry.eventName,
+        entryNumber: null,
+        entryName: entry.entryName,
+        amount: entry.amount || 0,
+        payout: entry.payout || 0,
+        result: entry.result,
+        settledAt: entry.settledAt,
+      });
+      continue;
+    }
     const key = entry.eventId || entry.eventName;
     if (!groups.has(key)) {
       groups.set(key, {
@@ -276,16 +452,18 @@ export function groupHistoryByEvent(history) {
   );
 }
 
-export function buildGambleProfileFields({ openTickets = [], betHistory = [] } = {}) {
+export function buildGambleProfileFields({ openTickets = [], betHistory = [], openParlays = [] } = {}) {
   const groupedOpen = groupTicketsByEvent(openTickets);
-  const openValue = groupedOpen.length
-    ? groupedOpen
-        .map(
-          (ticket) =>
-            `• ${ticket.eventName} — #${ticket.entryNumber} ${ticket.entryName}: ${formatCoins(ticket.amount)}`,
-        )
-        .join('\n')
-    : '_None_';
+  const lines = groupedOpen.map(
+    (ticket) =>
+      `• ${ticket.eventName} — #${ticket.entryNumber} ${ticket.entryName}: ${formatCoins(ticket.amount)}`,
+  );
+  for (const parlay of openParlays || []) {
+    const names = (parlay.legs || []).map((leg) => `#${leg.entryNumber} ${leg.entryName}`).join(', ');
+    const title = parlay.chainName || `${(parlay.legs || []).length}-pick ticket`;
+    lines.push(`• 🎟️ ${title} — ${names}: ${formatCoins(parlay.stake)} (×${formatOdds(parlay.combinedOdds)})`);
+  }
+  const openValue = lines.length ? lines.join('\n') : '_None_';
 
   const history = groupHistoryByEvent(betHistory).slice(0, PROFILE_HISTORY);
   const historyValue = history.length
@@ -296,6 +474,9 @@ export function buildGambleProfileFields({ openTickets = [], betHistory = [] } =
             entry.result === 'win'
               ? `+${formatCoins(entry.payout)}`
               : `-${formatCoins(entry.amount)}`;
+          if (entry.kind === 'parlay') {
+            return `${icon} ${entry.eventName} — ${entry.entryName} — ${pay}`;
+          }
           return `${icon} ${entry.eventName} #${entry.entryNumber} ${entry.entryName} — ${pay}`;
         })
         .join('\n')

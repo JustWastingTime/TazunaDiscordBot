@@ -1,6 +1,6 @@
-import { saveAllUsersFromSettlement, loadAllUsersForSettlement } from './clubDatabase.js';
+import { saveAllUsersFromSettlement, loadAllUsersForSettlement, withWalletLock } from './clubDatabase.js';
 import { buildEventBetsEmbed } from './eventBetsBoard.js';
-import { collectAllUsersForBets, settleEvent } from './eventGambling.js';
+import { collectAllUsersForBets, settleEvent, settleParlaysForEvent } from './eventGambling.js';
 import {
   deleteChannelMessage,
   editChannelMessage,
@@ -279,24 +279,28 @@ export async function closeDueEvents() {
 }
 
 export async function settleEventEverywhere(eventId, winningEntryNumber) {
-  const event = getEvent(eventId);
-  if (!event) return { ok: false, error: 'Event not found.' };
-  if (event.status === 'settled') return { ok: false, error: 'Event already settled.' };
+  const outcome = await withWalletLock(() => {
+    const event = getEvent(eventId);
+    if (!event) return { ok: false, error: 'Event not found.' };
+    if (event.status === 'settled') return { ok: false, error: 'Event already settled.' };
 
-  const users = loadAllUsersForSettlement();
-  const result = settleEvent(users, event, winningEntryNumber);
-  if (!result.ok) return result;
+    const users = loadAllUsersForSettlement();
+    const result = settleEvent(users, event, winningEntryNumber);
+    if (!result.ok) return result;
+    settleParlaysForEvent(users, event, winningEntryNumber);
 
-  saveAllUsersFromSettlement(users);
-  const settled = patchEventRuntime(event.id, {
-    status: 'settled',
-    winner: winningEntryNumber,
-    settledAt: new Date().toISOString(),
-    settlementResults: result.results,
+    saveAllUsersFromSettlement(users);
+    const settled = patchEventRuntime(event.id, {
+      status: 'settled',
+      winner: winningEntryNumber,
+      settledAt: new Date().toISOString(),
+      settlementResults: result.results,
+    });
+    return { ok: true, event: settled, result };
   });
-  await refreshEventEverywhere(event.id);
-
-  return { ok: true, event: settled, result };
+  if (!outcome.ok) return outcome;
+  await refreshEventEverywhere(eventId);
+  return outcome;
 }
 
 export function buildEventAutocompleteChoices(query) {
