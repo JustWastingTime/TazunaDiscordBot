@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { httpError } from './adminAuth.js';
 import { recordAdminAudit } from './assetStore.js';
 import { getEvent, listEventSources, reloadEventDefinitions } from './eventStorage.js';
-import { commitFiles, getFileAtHead } from './githubCommit.js';
+import { commitFiles, fastForwardLocalCheckout, getFileAtHead } from './githubCommit.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const EVENTS_DIR = path.resolve(__dirname, '..', 'assets', 'events');
@@ -148,7 +148,11 @@ export async function saveGambaEvent({ event, file, creating, message, baseBlobS
     [{ path: repoPath, content, baseBlobSha: headSha }],
     message || `admin: ${creating ? 'add' : 'update'} gamba event ${cleaned.id}`,
   );
-  await writeEventFile(repoPath, content);
+  const sync = await fastForwardLocalCheckout([repoPath]);
+  if (!sync.synced) {
+    console.warn(`Saved ${repoPath} on GitHub, but the local checkout was not fast-forwarded: ${sync.reason}`);
+    await writeEventFile(repoPath, content);
+  }
   reloadEventDefinitions();
   await recordAdminAudit({
     at: new Date().toISOString(),
@@ -180,9 +184,13 @@ export async function deleteGambaEvent({ key, message, baseBlobSha, actor }) {
       message || `admin: delete gamba event ${source.definition.id}`,
     )
     : null;
-  await fs.unlink(path.join(EVENTS_DIR, source.file)).catch((error) => {
-    if (error.code !== 'ENOENT') throw error;
-  });
+  const sync = commit ? await fastForwardLocalCheckout([repoPath]) : { synced: false };
+  if (!sync.synced) {
+    if (commit) console.warn(`Deleted ${repoPath} on GitHub, but the local checkout was not fast-forwarded: ${sync.reason}`);
+    await fs.unlink(path.join(EVENTS_DIR, source.file)).catch((error) => {
+      if (error.code !== 'ENOENT') throw error;
+    });
+  }
   reloadEventDefinitions();
   if (commit) {
     await recordAdminAudit({

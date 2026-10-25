@@ -1,4 +1,11 @@
+import { execFile } from 'node:child_process';
+import path from 'node:path';
+import { promisify } from 'node:util';
+import { fileURLToPath } from 'node:url';
 import { httpError } from './adminAuth.js';
+
+const execFileAsync = promisify(execFile);
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const API = 'https://api.github.com';
 
@@ -131,4 +138,78 @@ export async function commitFiles(files, message) {
     commitSha: commit.sha,
     blobShas: Object.fromEntries(tree.map((item) => [item.path, item.sha])),
   };
+}
+
+function gitEnv() {
+  return {
+    ...process.env,
+    GIT_TERMINAL_PROMPT: '0',
+  };
+}
+
+async function git(args) {
+  try {
+    const { stdout, stderr } = await execFileAsync('git', args, {
+      cwd: repoRoot,
+      windowsHide: true,
+      timeout: 60_000,
+      env: gitEnv(),
+    });
+    return { ok: true, stdout: String(stdout || '').trim(), stderr: String(stderr || '').trim() };
+  } catch (error) {
+    if (error.code === 'ENOENT') throw error;
+    return {
+      ok: false,
+      stdout: String(error.stdout || '').trim(),
+      stderr: String(error.stderr || '').trim(),
+    };
+  }
+}
+
+async function dropLocalCopy(file) {
+  const restored = await git(['checkout', 'HEAD', '--', file]);
+  if (restored.ok) return;
+  await git(['clean', '-f', '--', file]);
+}
+
+/**
+ * Move this checkout forward to the commit just pushed.
+ * Writing the file in place leaves it modified, and the next pull refuses to merge.
+ * Falls back quietly when this folder is not a fast-forward of the branch.
+ */
+export async function fastForwardLocalCheckout(paths) {
+  const files = [...new Set((paths || []).map((file) => String(file || '').replace(/\\/g, '/')).filter(Boolean))];
+  const { branch } = config();
+  try {
+    const fetched = await git(['fetch', 'origin', branch]);
+    if (!fetched.ok) {
+      return { synced: false, reason: fetched.stderr || 'git fetch failed' };
+    }
+    const head = await git(['rev-parse', 'HEAD']);
+    const remote = await git(['rev-parse', `origin/${branch}`]);
+    if (!head.ok || !remote.ok) {
+      return { synced: false, reason: 'Could not read the local or remote commit.' };
+    }
+    if (head.stdout === remote.stdout) return { synced: true };
+
+    const ancestor = await git(['merge-base', '--is-ancestor', 'HEAD', `origin/${branch}`]);
+    if (!ancestor.ok) {
+      return { synced: false, reason: 'Local checkout has commits that are not on GitHub.' };
+    }
+
+    const merged = await git(['merge', '--ff-only', `origin/${branch}`]);
+    if (merged.ok) return { synced: true };
+
+    const output = `${merged.stdout}\n${merged.stderr}`;
+    const blocked = files.filter((file) => output.includes(file));
+    if (!blocked.length) {
+      return { synced: false, reason: merged.stderr || 'Local checkout has other changes.' };
+    }
+    for (const file of blocked) await dropLocalCopy(file);
+    const retried = await git(['merge', '--ff-only', `origin/${branch}`]);
+    if (retried.ok) return { synced: true };
+    return { synced: false, reason: retried.stderr || 'Fast-forward failed.' };
+  } catch (error) {
+    return { synced: false, reason: error.code === 'ENOENT' ? 'git is not installed' : error.message };
+  }
 }

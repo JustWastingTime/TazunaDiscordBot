@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { httpError } from './adminAuth.js';
-import { commitFiles, getFileAtHead } from './githubCommit.js';
+import { commitFiles, fastForwardLocalCheckout, getFileAtHead } from './githubCommit.js';
 import cache, { localFiles, replaceCacheEntry } from './githubCache.js';
 import { applyEntryChange } from './jsonEntrySplice.js';
 
@@ -226,7 +226,11 @@ async function appendAudit(row) {
 
 async function publish({ repoPath, content, baseBlobSha, message, cacheKey, actor, summary }) {
   const commit = await commitFiles([{ path: repoPath, content, baseBlobSha }], message);
-  await writeLocal(repoPath, content);
+  const sync = await fastForwardLocalCheckout([repoPath]);
+  if (!sync.synced) {
+    console.warn(`Saved ${repoPath} on GitHub, but the local checkout was not fast-forwarded: ${sync.reason}`);
+    await writeLocal(repoPath, content);
+  }
   replaceCacheEntry(cacheKey, JSON.parse(content));
   await appendAudit({
     at: new Date().toISOString(),
