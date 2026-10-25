@@ -13184,7 +13184,7 @@
         }
         ]
     },
-    {   "id": "30127 Special Week",
+    {   "id": "30127 Special Week", "_event": "done",
         "card_name": "Outrunning Misfortune",
         "character_name": "Special Week",
         "unique": "Gain Mood Effect (60) when participating in a friendship (rainbow) training",
@@ -13228,14 +13228,14 @@
         ],
         "events": [
         {
-            "name": "おなじ気持ちで、夢中に",
+            "name": "Engrossed in Enjoyment",
             "type": "chain",
             "results": [
             "Energy +15, Mood +1, Bond +5"
             ]
         },
         {
-            "name": "おなじ気持ちで、真心を",
+            "name": "Sharing in Sincerity",
             "type": "chain",
             "results": [
             "Speed +7, Stamina +7, Guts +7, Bond +5, Free-Spirited hint +1",
@@ -13243,7 +13243,7 @@
             ]
         },
         {
-            "name": "おなじ気持ちで、願いを",
+            "name": "Driven in Desire",
             "type": "chain",
             "results": [
             "Speed +4/+8, Stamina +10/+15, Guts +4/+8, Bond +5, No Stopping Me! hint +1/+3"
@@ -13267,7 +13267,7 @@
         }
         ]
     },
-    {   "id": "30128 Sweep Tosho",
+    {   "id": "30128 Sweep Tosho", "_event": "done",
         "card_name": "Capricious Excellence",
         "character_name": "Sweep Tosho",
         "unique": "Gain Specialty Priority (40) when the bond gauge is at least 80",
@@ -13309,7 +13309,7 @@
         ],
         "events": [
             {
-                "name": "むかし、袖を通した着物",
+                "name": "Past: A Kimono Worn Long Ago",
                 "type": "chain",
                 "results": [
                 "Wit +10, Bond +5, Intense Gaze hint +1 OR Wit +15, Bond +10, Intense Gaze hint +3, Restraint hint +1",
@@ -13317,14 +13317,14 @@
                 ]
             },
             {
-                "name": "いま、帯をしめる",
+                "name": "Present: Tying the Obi",
                 "type": "chain",
                 "results": [
                 "Skill points +25, Bond +5"
                 ]
             },
             {
-                "name": "みらい、鼻緒はきりりと",
+                "name": "Future: Taut Sandal Straps",
                 "type": "chain",
                 "results": [
                 "Power +7/+15, Wit +7/+15, Bond +5, Razor-Sharp Steps hint +1/+3"
@@ -13348,7 +13348,7 @@
             }
         ]
     },
-    {   "id": "30129 Grass Wonder",
+    {   "id": "30129 Grass Wonder", "_event": "done",
         "card_name": "From Icy Blues to Verdant Hues",
         "character_name": "Grass Wonder",
         "unique": "Gain Training Effectiveness (10) when the bond gauge is at least 80",
@@ -13386,14 +13386,14 @@
         ],
         "events": [
         {
-            "name": "導き手の憂い",
+            "name": "Woe of a Guiding Hand",
             "type": "chain",
             "results": [
             "Power +10, Bond +5, Pressure hint +1"
             ]
         },
         {
-            "name": "あの日の背比べ",
+            "name": "Sizing Up to the Past",
             "type": "chain",
             "results": [
             "Energy +15, Bond +5",
@@ -13401,7 +13401,7 @@
             ]
         },
         {
-            "name": "背中合わせ",
+            "name": "A Rivalry Renewed",
             "type": "chain",
             "results": [
             "Stamina +5, Power +10, Bond +5, Cooldown hint +1"
