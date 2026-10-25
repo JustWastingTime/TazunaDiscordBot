@@ -23,6 +23,7 @@ import {
 import { refreshBetsBoardForEvent } from './eventService.js';
 import { getEvent, listEvents } from './eventStorage.js';
 import { getChain, listChains } from './gambaChains.js';
+import { isBotOwner } from './adminRole.js';
 
 const writes = new Map();
 const WRITE_LIMIT = 20;
@@ -45,6 +46,12 @@ function limitWrites(discordId) {
   if (recent.length >= WRITE_LIMIT) throw httpError(429, 'Too many tickets. Wait a minute and try again.');
   recent.push(now);
   writes.set(discordId, recent);
+}
+
+function publicName(name) {
+  const value = String(name || '').trim();
+  if (!value || value.toLowerCase() === 'trainer') return 'Anonymous Trainer';
+  return value;
 }
 
 function publicEntry(entry) {
@@ -78,7 +85,7 @@ function publicEvent(event, users = null) {
 
 function resultRows(event, users) {
   const rows = collectEventSettlementResults(users, event.id, event.settlementResults).map((row) => ({
-    name: row.displayName || 'Trainer',
+    name: publicName(row.displayName),
     won: Boolean(row.won),
     netGain: row.netGain ?? 0,
     payout: row.totalPayout || 0,
@@ -95,7 +102,7 @@ function resultRows(event, users) {
       const wagered = item.amount || 0;
       const payout = item.payout || 0;
       rows.push({
-        name: user.trainerName || 'Trainer',
+        name: publicName(user.trainerName),
         won,
         netGain: won ? payout - wagered : -wagered,
         payout,
@@ -169,14 +176,14 @@ function publicTrainer(link) {
   const history = Array.isArray(link.betHistory) ? link.betHistory : [];
   return {
     discordId: link.discordUserId,
-    name: getGambaDisplayName(link),
+    name: publicName(getGambaDisplayName(link)),
     carrots: link.gambaCoins ?? 0,
     wins: link.gambaWins || 0,
     losses: link.gambaLosses || 0,
     record: link.gambaWr || null,
     openTickets: link.openTickets || [],
     openParlays: (link.openParlays || []).map(publicParlay),
-    history: history.slice(-50).reverse().map(publicHistory),
+    history: history.slice(-200).reverse().map(publicHistory),
   };
 }
 
@@ -258,7 +265,8 @@ export function mountGamba(app) {
         globalName: req.gambaSession.globalName || null,
         avatar: req.gambaSession.avatar || null,
         ...trainer,
-        name: req.gambaSession.globalName || req.gambaSession.username || trainer.name,
+        name: publicName(req.gambaSession.globalName || req.gambaSession.username || trainer.name),
+        owner: isBotOwner(req.gambaSession.discordId),
       });
     } catch (error) {
       jsonError(res, error);
@@ -289,7 +297,7 @@ export function mountGamba(app) {
       const rows = getGambaLeaderboard({ limit: 50 }).map((entry, index) => ({
         rank: index + 1,
         discordId: entry.discordUserId,
-        name: getGambaDisplayName(entry),
+        name: publicName(getGambaDisplayName(entry)),
         carrots: entry.gambaCoins ?? 0,
         wins: entry.gambaWins || 0,
         losses: entry.gambaLosses || 0,
