@@ -6,10 +6,12 @@ import {
   getGambaDisplayName,
   getGambaLeaderboard,
   getUserLink,
+  loadAllUsersForSettlement,
   updateUserBettingState,
   withWalletLock,
 } from './clubDatabase.js';
 import {
+  collectEventSettlementResults,
   formatOdds,
   getEntry,
   getEventPhase,
@@ -55,19 +57,66 @@ function publicEntry(entry) {
   };
 }
 
-function publicEvent(event) {
+function publicEvent(event, users = null) {
   if (!event) return null;
   const winner = event.winner != null ? getEntry(event, event.winner) : null;
+  const phase = getEventPhase(event);
+  const results = phase === 'settled' && users ? resultRows(event, users) : [];
   return {
     id: event.id,
     name: event.name,
-    phase: getEventPhase(event),
+    phase,
     startsAt: event.startsAt || null,
     endsAt: event.endsAt || null,
     winner: event.winner ?? null,
     winnerName: winner?.name || null,
+    winnerOdds: winner?.odds ?? null,
     entries: (event.entries || []).map(publicEntry),
+    results,
   };
+}
+
+function resultRows(event, users) {
+  const rows = collectEventSettlementResults(users, event.id, event.settlementResults).map((row) => ({
+    name: row.displayName || 'Trainer',
+    won: Boolean(row.won),
+    netGain: row.netGain ?? 0,
+    payout: row.totalPayout || 0,
+    wagered: row.totalWagered || 0,
+    entryNumber: row.entryNumber ?? null,
+    entryName: row.entryName || '',
+  }));
+  for (const user of Object.values(users || {})) {
+    for (const item of user.betHistory || []) {
+      if (item.kind !== 'parlay') continue;
+      const leg = (item.legs || []).find((entry) => entry.eventId === event.id);
+      if (!leg) continue;
+      const won = item.result === 'win';
+      const wagered = item.amount || 0;
+      const payout = item.payout || 0;
+      rows.push({
+        name: user.trainerName || 'Trainer',
+        won,
+        netGain: won ? payout - wagered : -wagered,
+        payout,
+        wagered,
+        entryNumber: leg.entryNumber ?? null,
+        entryName: leg.entryName || '',
+      });
+    }
+  }
+  rows.sort((a, b) => Number(b.won) - Number(a.won) || b.netGain - a.netGain);
+  return rows;
+}
+
+function publishedEvents() {
+  const events = listEvents().filter(listedEvent);
+  const users = events.some((event) => getEventPhase(event) === 'settled')
+    ? loadAllUsersForSettlement()
+    : null;
+  return events
+    .map((event) => publicEvent(event, users))
+    .sort((a, b) => phaseRank(a.phase) - phaseRank(b.phase) || String(a.name).localeCompare(String(b.name)));
 }
 
 function listedEvent(event) {
@@ -184,7 +233,7 @@ function publicChainDetail(chain) {
         const event = getEvent(eventId);
         return event
           ? publicEvent(event)
-          : { id: eventId, name: 'That race is gone', phase: 'closed', startsAt: null, endsAt: null, winner: null, winnerName: null, entries: [] };
+          : { id: eventId, name: 'That race is gone', phase: 'closed', startsAt: null, endsAt: null, winner: null, winnerName: null, winnerOdds: null, entries: [], results: [] };
       }),
     })),
   };
@@ -218,11 +267,18 @@ export function mountGamba(app) {
 
   router.get('/events', (_req, res) => {
     try {
-      const events = listEvents()
-        .filter(listedEvent)
-        .map(publicEvent)
-        .sort((a, b) => phaseRank(a.phase) - phaseRank(b.phase) || String(a.name).localeCompare(String(b.name)));
-      res.json({ events });
+      res.json({ events: publishedEvents() });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.get('/events/:id', (req, res) => {
+    try {
+      const event = getEvent(req.params.id);
+      if (!event || !listedEvent(event)) return res.status(404).json({ error: 'That race is gone.' });
+      const users = getEventPhase(event) === 'settled' ? loadAllUsersForSettlement() : null;
+      res.json({ event: publicEvent(event, users) });
     } catch (error) {
       jsonError(res, error);
     }
