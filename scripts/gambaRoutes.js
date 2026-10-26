@@ -28,7 +28,6 @@ import { isBotOwner } from './adminRole.js';
 const writes = new Map();
 const WRITE_LIMIT = 20;
 const WRITE_WINDOW_MS = 60_000;
-const SETTLED_WINDOW_MS = 21 * 24 * 60 * 60 * 1000;
 
 function sessionName(session) {
   return session.globalName || session.username || 'Trainer';
@@ -127,11 +126,7 @@ function publishedEvents() {
 }
 
 function listedEvent(event) {
-  const phase = getEventPhase(event);
-  if (phase !== 'settled') return true;
-  const at = Date.parse(event.settledAt || '');
-  if (!Number.isFinite(at)) return true;
-  return Date.now() - at < SETTLED_WINDOW_MS;
+  return Boolean(event && event.id);
 }
 
 function publicHistory(entry) {

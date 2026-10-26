@@ -31,6 +31,7 @@ import cache, { updateCache } from './githubCache.js';
 import { reloadEventsFromDisk } from './eventService.js';
 import { deleteGambaEvent, listGambaEvents, readGambaEvent, saveGambaEvent } from './gambaEventAdmin.js';
 import { deleteChain, listChains, saveChain } from './gambaChains.js';
+import { deleteGuildLabel, listGuildLabels, saveGuildLabels } from './gambaGuilds.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
   getCourseMapDataFromCm,
@@ -383,6 +384,26 @@ export function mountAdmin(app) {
 
   router.get('/gamba-events', (_req, res) => {
     res.json({ events: listGambaEvents() });
+  });
+
+  router.get('/gamba-guilds', (_req, res) => {
+    res.json({ guilds: listGuildLabels() });
+  });
+
+  router.put('/gamba-guilds', (req, res) => {
+    try {
+      res.json({ guilds: saveGuildLabels(req.body?.guilds) });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.delete('/gamba-guilds/:id', (req, res) => {
+    try {
+      res.json(deleteGuildLabel(req.params.id));
+    } catch (error) {
+      jsonError(res, error);
+    }
   });
 
   router.get('/gamba-chains', (_req, res) => {
