@@ -1,0 +1,29 @@
+{
+  "id": "tenno-sho-autumn-2026",
+  "name": "Tenno Sho (Autumn) 2026",
+  "type": "horse_race",
+  "status": "scheduled",
+  "startsAt": "2026-10-30T06:40:00.000Z",
+  "endsAt": "2026-11-01T06:40:00.000Z",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Croix du Nord", "ageSex": "", "jockey": "C.Demuro", "odds": 1.8 },
+    { "number": 2, "name": "Masquerade Ball", "ageSex": "", "jockey": "C.Lemaire", "odds": 2.3 },
+    { "number": 3, "name": "Danon Decile", "ageSex": "", "jockey": "K.Tosaki", "odds": 8.3 },
+    { "number": 4, "name": "Shake Your Heart", "ageSex": "", "jockey": "Y.Furukawa", "odds": 14 },
+    { "number": 5, "name": "Regaleira", "ageSex": "", "jockey": "M.Iwata", "odds": 20.5 },
+    { "number": 6, "name": "Realize Sirius", "ageSex": "", "jockey": "A.Tsumura", "odds": 33.7 },
+    { "number": 7, "name": "Seiun Hades", "ageSex": "", "jockey": "H.Miyuki", "odds": 42 },
+    { "number": 8, "name": "Giovanni", "ageSex": "", "jockey": "K.Matsuyama", "odds": 56.7 },
+    { "number": 9, "name": "Nebra Disk", "ageSex": "", "jockey": "Y.Kawada", "odds": 88.7 },
+    { "number": 10, "name": "Sakura Farrel", "ageSex": "", "jockey": "D.Sasaki", "odds": 97.9 },
+    { "number": 11, "name": "Ho O Biscuits", "ageSex": "", "jockey": "Y.Iwata", "odds": 100 },
+    { "number": 12, "name": "Cosmo Kuranda", "ageSex": "", "jockey": "Y.Tannai", "odds": 103.2 },
+    { "number": 13, "name": "Tagano Dude", "ageSex": "", "jockey": "M.Demuro", "odds": 121.9 },
+    { "number": 14, "name": "Readiness", "ageSex": "", "jockey": "N.Yokoyama", "odds": 130.4 },
+    { "number": 15, "name": "Elton Barows", "ageSex": "", "jockey": "F.Matsuwaka", "odds": 217.6 },
+    { "number": 16, "name": "Champagne Color", "ageSex": "", "jockey": "H.Uchida", "odds": 233.8 },
+    { "number": 17, "name": "Jun Blossom", "ageSex": "", "jockey": "M.Sugihara", "odds": 246.1 }
+  ]
+}
