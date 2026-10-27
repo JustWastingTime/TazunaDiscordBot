@@ -1,6 +1,6 @@
 import { saveAllUsersFromSettlement, loadAllUsersForSettlement, withWalletLock } from './clubDatabase.js';
 import { buildEventBetsEmbed } from './eventBetsBoard.js';
-import { collectAllUsersForBets, settleEvent, settleParlaysForEvent } from './eventGambling.js';
+import { collectAllUsersForBets, settleEvent, settleParlaysForEvent, settlePickemsForEvent } from './eventGambling.js';
 import {
   deleteChannelMessage,
   editChannelMessage,
@@ -21,6 +21,7 @@ import {
   upsertEventPost,
 } from './eventStorage.js';
 import { buildAllEventMessagePayloads, buildEventMessagePayload } from './eventUi.js';
+import { refreshTournamentsForEvent } from './tournamentPosts.js';
 
 function isChannelUnavailableError(err) {
   const message = String(err?.message || err || '');
@@ -272,6 +273,7 @@ export async function closeDueEvents() {
       closedAt: new Date().toISOString(),
     });
     await refreshEventEverywhere(event.id);
+    await refreshTournamentsForEvent(updated.id);
     closed.push(updated);
   }
 
@@ -288,6 +290,7 @@ export async function settleEventEverywhere(eventId, winningEntryNumber) {
     const result = settleEvent(users, event, winningEntryNumber);
     if (!result.ok) return result;
     settleParlaysForEvent(users, event, winningEntryNumber);
+    settlePickemsForEvent(users, event, winningEntryNumber);
 
     saveAllUsersFromSettlement(users);
     const settled = patchEventRuntime(event.id, {
@@ -300,6 +303,7 @@ export async function settleEventEverywhere(eventId, winningEntryNumber) {
   });
   if (!outcome.ok) return outcome;
   await refreshEventEverywhere(eventId);
+  await refreshTournamentsForEvent(eventId);
   return outcome;
 }
 

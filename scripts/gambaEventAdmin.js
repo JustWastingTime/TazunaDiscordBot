@@ -33,6 +33,8 @@ export function listGambaEvents() {
         endsAt: source.definition.endsAt,
         file: source.file,
         entryCount: source.definition.entries.length,
+        availability: source.definition.availability,
+        listing: source.definition.listing || 'board',
       };
     })
     .sort((a, b) => (Date.parse(b.startsAt || '') || 0) - (Date.parse(a.startsAt || '') || 0) || a.name.localeCompare(b.name));
@@ -60,7 +62,10 @@ function cleanEvent(raw) {
   const entries = Array.isArray(raw.entries) ? raw.entries : [];
   if (!entries.length) throw httpError(400, 'Add at least one entry.');
   const availability = String(raw.availability || 'all');
-  if (availability !== 'all' && availability !== 'guilds') throw httpError(400, 'Availability must be all or guilds.');
+  if (availability !== 'all' && availability !== 'guilds' && availability !== 'web') {
+    throw httpError(400, 'Availability must be all, guilds, or web.');
+  }
+  const listing = availability === 'web' ? 'tournament' : 'board';
   return {
     id,
     name,
@@ -69,7 +74,8 @@ function cleanEvent(raw) {
     startsAt: raw.startsAt ? String(raw.startsAt).trim() : null,
     endsAt: raw.endsAt ? String(raw.endsAt).trim() : null,
     availability,
-    guildIds: Array.isArray(raw.guildIds) ? raw.guildIds.map((id) => String(id).trim()).filter(Boolean) : [],
+    listing,
+    guildIds: availability === 'guilds' && Array.isArray(raw.guildIds) ? raw.guildIds.map((id) => String(id).trim()).filter(Boolean) : [],
     threadId: raw.threadId ? String(raw.threadId).trim() : null,
     entries: entries.map((entry, index) => {
       const odds = Number(entry?.odds);
@@ -99,6 +105,7 @@ function formatEvent(event) {
   "startsAt": ${JSON.stringify(event.startsAt)},
   "endsAt": ${JSON.stringify(event.endsAt)},
   "availability": ${JSON.stringify(event.availability)},
+  "listing": ${JSON.stringify(event.listing || 'board')},
   "guildIds": ${JSON.stringify(event.guildIds)},${thread}
   "entries": [
 ${lines.join(',\n')}
@@ -119,6 +126,13 @@ async function writeEventFile(repoPath, content) {
 export async function saveGambaEvent({ event, file, creating, message, baseBlobSha, actor }) {
   const cleaned = cleanEvent(event);
   const existing = sourceById(cleaned.id);
+  if (existing) {
+    const wasWeb = existing.definition.availability === 'web' || existing.definition.listing === 'tournament';
+    const nowWeb = cleaned.availability === 'web';
+    if (wasWeb !== nowWeb) {
+      throw httpError(400, 'A board race stays on the board, and a tournament race stays in its tournament.');
+    }
+  }
   if (creating && existing) throw httpError(409, `An event with id ${cleaned.id} already exists.`);
   if (!creating && existing && file && existing.file !== file) {
     throw httpError(409, 'Event file does not match this id.');

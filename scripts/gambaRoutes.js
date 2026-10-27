@@ -19,10 +19,13 @@ import {
   parlayPayout,
   placeBet,
   placeParlay,
+  placePickem,
+  placeTournamentParlay,
 } from './eventGambling.js';
 import { refreshBetsBoardForEvent } from './eventService.js';
 import { getEvent, listEvents } from './eventStorage.js';
 import { getChain, listChains } from './gambaChains.js';
+import { getTournament, listTournaments } from './gambaTournaments.js';
 import { isBotOwner } from './adminRole.js';
 
 const writes = new Map();
@@ -116,7 +119,7 @@ function resultRows(event, users) {
 }
 
 function publishedEvents() {
-  const events = listEvents().filter(listedEvent);
+  const events = listEvents().filter((event) => listedEvent(event) && event.listing !== 'tournament');
   const users = events.some((event) => getEventPhase(event) === 'settled')
     ? loadAllUsersForSettlement()
     : null;
@@ -178,6 +181,7 @@ function publicTrainer(link) {
     record: link.gambaWr || null,
     openTickets: link.openTickets || [],
     openParlays: (link.openParlays || []).map(publicParlay),
+    openPickems: (link.openPickems || []).map(publicPickem),
     history: history.slice(-200).reverse().map(publicHistory),
   };
 }
@@ -198,6 +202,11 @@ function cloneWallet(link) {
       ...parlay,
       legs: (parlay.legs || []).map((leg) => ({ ...leg })),
     })),
+    openPickems: (link.openPickems || []).map((card) => ({
+      ...card,
+      legs: (card.legs || []).map((leg) => ({ ...leg })),
+      payouts: [...(card.payouts || [])],
+    })),
     betHistory: [...(link.betHistory || [])],
   };
 }
@@ -208,8 +217,78 @@ function saveWallet(discordId, user) {
     gambaCoins: user.gambaCoins,
     openTickets: user.openTickets,
     openParlays: user.openParlays,
+    openPickems: user.openPickems,
     betHistory: user.betHistory,
   });
+}
+
+function publicPickem(card) {
+  const correct = (card.legs || []).filter((leg) => leg.status === 'won').length;
+  const pending = (card.legs || []).some((leg) => leg.status === 'open');
+  const multiplier = pending ? Number(card.payouts?.[card.legs.length]) || 0 : Number(card.payouts?.[correct]) || 0;
+  return {
+    pickemId: card.pickemId,
+    tournamentId: card.tournamentId || null,
+    tournamentName: card.tournamentName || null,
+    roundId: card.roundId || null,
+    roundLabel: card.roundLabel || '',
+    stake: card.stake,
+    payouts: card.payouts || [],
+    payoutIfPerfect: Math.floor((card.stake || 0) * (Number(card.payouts?.[card.legs?.length]) || 0)),
+    multiplier,
+    placedAt: card.placedAt,
+    legs: (card.legs || []).map((leg) => ({
+      eventId: leg.eventId,
+      eventName: leg.eventName,
+      entryNumber: leg.entryNumber,
+      entryName: leg.entryName,
+      status: leg.status || 'open',
+    })),
+  };
+}
+
+function publicRound(round, withEvents) {
+  const events = withEvents
+    ? (round.eventIds || []).map((eventId) => {
+      const event = getEvent(eventId);
+      return event
+        ? publicEvent(event)
+        : { id: eventId, name: 'That race is gone', phase: 'closed', startsAt: null, endsAt: null, winner: null, winnerName: null, winnerOdds: null, entries: [], results: [] };
+    })
+    : undefined;
+  const phases = (events || (round.eventIds || []).map((eventId) => getEvent(eventId)).filter(Boolean).map((event) => ({ phase: getEventPhase(event) })))
+    .map((event) => event.phase);
+  const state = !phases.length
+    ? 'empty'
+    : phases.every((phase) => phase === 'settled')
+      ? 'settled'
+      : phases.some((phase) => phase === 'open')
+        ? 'open'
+        : 'waiting';
+  return {
+    id: round.id,
+    label: round.label,
+    eventIds: round.eventIds || [],
+    pickemPayouts: round.pickemPayouts || [],
+    state,
+    ...(events ? { events } : {}),
+  };
+}
+
+function publicTournamentSummary(tournament) {
+  return {
+    id: tournament.id,
+    name: tournament.name,
+    rounds: (tournament.rounds || []).map((round) => publicRound(round, false)),
+  };
+}
+
+function publicTournamentDetail(tournament) {
+  return {
+    id: tournament.id,
+    name: tournament.name,
+    rounds: (tournament.rounds || []).map((round) => publicRound(round, true)),
+  };
 }
 
 function publicChainSummary(chain) {
@@ -327,6 +406,79 @@ export function mountGamba(app) {
       const chain = getChain(req.params.id);
       if (!chain) return res.status(404).json({ error: 'That meet is gone.' });
       res.json({ chain: publicChainDetail(chain) });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.get('/tournaments', (_req, res) => {
+    try {
+      res.json({ tournaments: listTournaments().map(publicTournamentSummary) });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.get('/tournaments/:id', (req, res) => {
+    try {
+      const tournament = getTournament(req.params.id);
+      if (!tournament) return res.status(404).json({ error: 'That tournament is gone.' });
+      res.json({ tournament: publicTournamentDetail(tournament) });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.post('/tournaments/:id/chain', async (req, res) => {
+    try {
+      assertWriteOrigin(req);
+      limitWrites(req.gambaSession.discordId);
+      const stake = Number(req.body?.stake);
+      const rawLegs = Array.isArray(req.body?.legs) ? req.body.legs : [];
+      const placed = await withWalletLock(() => {
+        const tournament = getTournament(req.params.id);
+        if (!tournament) return { ok: false, error: 'That tournament is gone.' };
+        const picks = rawLegs.map((leg) => ({
+          event: getEvent(leg?.eventId),
+          entryNumber: Number(leg?.entryNumber),
+        }));
+        const user = cloneWallet(walletFrom(req.gambaSession));
+        const result = placeTournamentParlay(user, tournament, picks, stake);
+        if (!result.ok) return result;
+        saveWallet(req.gambaSession.discordId, user);
+        return { ok: true, carrots: user.gambaCoins, parlay: publicParlay(result.parlay) };
+      });
+      if (!placed.ok) return res.status(400).json({ error: placed.error });
+      res.json(placed);
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.post('/tournaments/:id/pickem', async (req, res) => {
+    try {
+      assertWriteOrigin(req);
+      limitWrites(req.gambaSession.discordId);
+      const roundId = String(req.body?.roundId || '');
+      const stake = Number(req.body?.stake);
+      const rawLegs = Array.isArray(req.body?.legs) ? req.body.legs : [];
+      const placed = await withWalletLock(() => {
+        const tournament = getTournament(req.params.id);
+        if (!tournament) return { ok: false, error: 'That tournament is gone.' };
+        const round = (tournament.rounds || []).find((item) => item.id === roundId);
+        if (!round) return { ok: false, error: 'That round is gone.' };
+        const picks = rawLegs.map((leg) => ({
+          event: getEvent(leg?.eventId),
+          entryNumber: Number(leg?.entryNumber),
+        }));
+        const user = cloneWallet(walletFrom(req.gambaSession));
+        const result = placePickem(user, tournament, round, picks, stake);
+        if (!result.ok) return result;
+        saveWallet(req.gambaSession.discordId, user);
+        return { ok: true, carrots: user.gambaCoins, pickem: publicPickem(result.pickem) };
+      });
+      if (!placed.ok) return res.status(400).json({ error: placed.error });
+      res.json(placed);
     } catch (error) {
       jsonError(res, error);
     }

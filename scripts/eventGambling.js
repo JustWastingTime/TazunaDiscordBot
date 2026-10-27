@@ -1,11 +1,13 @@
 import { randomUUID } from 'crypto';
 import { formatGambaWr, getUserLink, listGambaWalletUsers } from './clubDatabase.js';
+import { getEvent } from './eventStorage.js';
 
 export const BET_AMOUNTS = [10, 50, 100, 500];
 export const WEB_BET_MIN = 10;
 export const WEB_BET_MAX = 10000;
 export const PARLAY_MIN_LEGS = 2;
 export const PARLAY_MAX_LEGS = 6;
+export const PICKEM_MAX_MULTIPLIER = 20;
 export const BET_HISTORY_LIMIT = 50;
 export const PROFILE_HISTORY = 5;
 
@@ -35,6 +37,21 @@ function parlayUsingEvent(user, eventId) {
   return (user?.openParlays || []).find((parlay) =>
     (parlay.legs || []).some((leg) => leg.eventId === eventId && leg.status !== 'skipped'),
   ) || null;
+}
+
+function pickemUsingEvent(user, eventId) {
+  return (user?.openPickems || []).find((card) =>
+    (card.legs || []).some((leg) => leg.eventId === eventId && leg.status === 'open'),
+  ) || null;
+}
+
+function raceAlreadyCommitted(user, eventId) {
+  if ((user.openTickets || []).some((ticket) => ticket.eventId === eventId)) {
+    return 'That race is already on a single ticket.';
+  }
+  if (parlayUsingEvent(user, eventId)) return 'That race is already on another ticket.';
+  if (pickemUsingEvent(user, eventId)) return 'That race is already on a pick\'em card.';
+  return '';
 }
 
 export function formatCutoff(isoString) {
@@ -91,8 +108,9 @@ export function placeBet(user, event, entryNumber, amount, { custom = false } = 
     return { ok: false, error: 'Invalid bet amount.' };
   }
 
-  if (parlayUsingEvent(user, event.id)) {
-    return { ok: false, error: 'This race is already on another ticket.' };
+  const committed = raceAlreadyCommitted(user, event.id);
+  if (committed && getUserEventHorse(user, event.id) == null) {
+    return { ok: false, error: committed };
   }
 
   const lockedEntry = getUserEventHorse(user, event.id);
@@ -165,12 +183,8 @@ export function placeParlay(user, picks, stake, { chain = null } = {}) {
     if (!entry) return { ok: false, error: 'Entry not found.' };
     const odds = Number(entry.odds);
     if (!Number.isFinite(odds) || odds <= 0) return { ok: false, error: 'That horse has no payout.' };
-    if ((user.openTickets || []).some((ticket) => ticket.eventId === event.id)) {
-      return { ok: false, error: `${event.name} is already on a single ticket.` };
-    }
-    if (parlayUsingEvent(user, event.id)) {
-      return { ok: false, error: `${event.name} is already on another ticket.` };
-    }
+    const committed = raceAlreadyCommitted(user, event.id);
+    if (committed) return { ok: false, error: `${event.name}: ${committed}` };
     built.push({
       eventId: event.id,
       eventName: event.name,
@@ -202,6 +216,85 @@ export function placeParlay(user, picks, stake, { chain = null } = {}) {
   user.gambaCoins = balance - delta;
   user.openParlays = [...(user.openParlays || []), parlay];
   return { ok: true, parlay, payoutIfHit: parlayPayout(delta, built), user };
+}
+
+export function placeTournamentParlay(user, tournament, picks, stake) {
+  const rounds = tournament?.rounds || [];
+  const openRounds = rounds.filter((round) =>
+    (round.eventIds || []).some((eventId) => isEventBettable(getEvent(eventId))),
+  );
+  if (openRounds.length < PARLAY_MIN_LEGS || openRounds.length > PARLAY_MAX_LEGS) {
+    return { ok: false, error: `A chain needs ${PARLAY_MIN_LEGS} to ${PARLAY_MAX_LEGS} open rounds.` };
+  }
+  const chain = {
+    id: tournament.id,
+    name: tournament.name,
+    stages: openRounds.map((round) => ({
+      id: round.id,
+      label: round.label,
+      eventIds: (round.eventIds || []).filter((eventId) => isEventBettable(getEvent(eventId))),
+    })),
+  };
+  return placeParlay(user, picks, stake, { chain });
+}
+
+export function placePickem(user, tournament, round, picks, stake) {
+  const eventIds = (round?.eventIds || []).map(String);
+  if (!eventIds.length) return { ok: false, error: 'That round has no matches.' };
+  const legs = Array.isArray(picks) ? picks : [];
+  if (legs.length !== eventIds.length) return { ok: false, error: 'Pick one horse in every match.' };
+  const seen = new Set();
+  const built = [];
+  for (const pick of legs) {
+    const event = pick.event;
+    if (!event || !eventIds.includes(String(event.id))) return { ok: false, error: 'That race is not in this round.' };
+    if (!isEventBettable(event)) return { ok: false, error: 'Every match in the round has to be open.' };
+    if (seen.has(event.id)) return { ok: false, error: 'Pick one horse in each match.' };
+    seen.add(event.id);
+    const entry = getEntry(event, pick.entryNumber);
+    if (!entry) return { ok: false, error: 'Entry not found.' };
+    const committed = raceAlreadyCommitted(user, event.id);
+    if (committed) return { ok: false, error: `${event.name}: ${committed}` };
+    built.push({
+      eventId: event.id,
+      eventName: event.name,
+      entryNumber: entry.number,
+      entryName: entry.name,
+      status: 'open',
+    });
+  }
+  if (seen.size !== eventIds.length) return { ok: false, error: 'Pick one horse in every match.' };
+  for (const eventId of eventIds) {
+    if (!isEventBettable(getEvent(eventId))) return { ok: false, error: 'Every match in the round has to be open.' };
+  }
+
+  const delta = Math.trunc(stake);
+  if (!Number.isFinite(delta) || delta < WEB_BET_MIN || delta > WEB_BET_MAX) {
+    return { ok: false, error: `Use a whole number from ${WEB_BET_MIN} to ${formatCoins(WEB_BET_MAX)} carrots.` };
+  }
+  const balance = user.gambaCoins ?? 0;
+  if (delta > balance) return { ok: false, error: `Not enough carrots. You have ${formatCoins(balance)}.` };
+
+  const payouts = (round.pickemPayouts || []).slice(0, eventIds.length + 1).map((value) => {
+    const number = Number(value);
+    return Number.isFinite(number) && number > 0 ? Math.min(PICKEM_MAX_MULTIPLIER, number) : 0;
+  });
+  while (payouts.length <= eventIds.length) payouts.push(0);
+
+  user.gambaCoins = balance - delta;
+  const pickem = {
+    pickemId: randomUUID(),
+    tournamentId: tournament.id,
+    tournamentName: tournament.name,
+    roundId: round.id,
+    roundLabel: round.label,
+    stake: delta,
+    payouts,
+    legs: built,
+    placedAt: new Date().toISOString(),
+  };
+  user.openPickems = [...(user.openPickems || []), pickem];
+  return { ok: true, pickem, user };
 }
 
 function parlayHistoryRow(parlay, won, pay) {
@@ -254,6 +347,57 @@ export function settleParlaysForEvent(usersById, event, winningEntryNumber) {
       settled += 1;
     }
     user.openParlays = remaining;
+  }
+  return { settled };
+}
+
+function pickemHistoryRow(card, pay) {
+  const names = card.legs.map((leg) => `#${leg.entryNumber} ${leg.entryName}`).join(', ');
+  const correct = card.legs.filter((leg) => leg.status === 'won').length;
+  return {
+    kind: 'pickem',
+    pickemId: card.pickemId,
+    tournamentId: card.tournamentId || null,
+    eventId: `pickem:${card.pickemId}`,
+    eventName: `${card.tournamentName || 'Tournament'} · ${card.roundLabel || 'Pick\'em'}`,
+    entryNumber: null,
+    entryName: names,
+    legs: card.legs,
+    amount: card.stake,
+    oddsAtBet: Number(card.payouts?.[correct]) || 0,
+    result: pay > 0 ? 'win' : 'loss',
+    payout: pay,
+    settledAt: new Date().toISOString(),
+  };
+}
+
+export function settlePickemsForEvent(usersById, event, winningEntryNumber) {
+  let settled = 0;
+  for (const user of Object.values(usersById || {})) {
+    const remaining = [];
+    for (const card of user.openPickems || []) {
+      const leg = (card.legs || []).find((item) => item.eventId === event.id && item.status === 'open');
+      if (!leg) {
+        remaining.push(card);
+        continue;
+      }
+      leg.status = leg.entryNumber === winningEntryNumber ? 'won' : 'lost';
+      leg.settledAt = new Date().toISOString();
+      if (card.legs.some((item) => item.status === 'open')) {
+        remaining.push(card);
+        continue;
+      }
+      const correct = card.legs.filter((item) => item.status === 'won').length;
+      const multiplier = Number(card.payouts?.[correct]) || 0;
+      const pay = Math.floor(card.stake * multiplier);
+      if (pay > 0) user.gambaCoins = (user.gambaCoins ?? 0) + pay;
+      if (pay > 0) user.gambaWins = (user.gambaWins || 0) + 1;
+      else user.gambaLosses = (user.gambaLosses || 0) + 1;
+      user.gambaWr = formatGambaWr(user.gambaWins, user.gambaLosses);
+      user.betHistory = trimHistory([...(user.betHistory || []), pickemHistoryRow(card, pay)]);
+      settled += 1;
+    }
+    user.openPickems = remaining;
   }
   return { settled };
 }

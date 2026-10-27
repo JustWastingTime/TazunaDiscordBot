@@ -351,6 +351,7 @@ export function upsertUserLink({
     gambaLosses: existing?.gambaLosses ?? 0,
     openTickets: existing?.openTickets ?? [],
     openParlays: existing?.openParlays ?? [],
+    openPickems: existing?.openPickems ?? [],
     betHistory: existing?.betHistory ?? [],
     quizCorrect: existing?.quizCorrect ?? 0,
     quizWrong: existing?.quizWrong ?? 0,
@@ -559,6 +560,7 @@ function normalizeUserRecord(link, discordUserId) {
     gambaLosses: link.gambaLosses ?? 0,
     openTickets: Array.isArray(link.openTickets) ? link.openTickets : [],
     openParlays: Array.isArray(link.openParlays) ? link.openParlays : [],
+    openPickems: Array.isArray(link.openPickems) ? link.openPickems : [],
     betHistory: Array.isArray(link.betHistory) ? link.betHistory : [],
     quizCorrect: link.quizCorrect ?? 0,
     quizWrong: link.quizWrong ?? 0,
@@ -644,6 +646,7 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
       gambaLosses: 0,
       openTickets: [],
       openParlays: [],
+      openPickems: [],
       betHistory: [],
       quizCorrect: 0,
       quizWrong: 0,
@@ -659,6 +662,7 @@ export function ensureQuizUser(discordUserId, displayName, guildId = null) {
     if (existing.gambaLosses == null) existing.gambaLosses = 0;
     if (!Array.isArray(existing.openTickets)) existing.openTickets = [];
     if (!Array.isArray(existing.openParlays)) existing.openParlays = [];
+    if (!Array.isArray(existing.openPickems)) existing.openPickems = [];
     if (!Array.isArray(existing.betHistory)) existing.betHistory = [];
   }
 
@@ -832,6 +836,7 @@ export function updateUserBettingState(discordUserId, patch) {
   if (patch.gambaCoins != null) user.gambaCoins = patch.gambaCoins;
   if (patch.openTickets) user.openTickets = patch.openTickets;
   if (patch.openParlays != null) user.openParlays = patch.openParlays;
+  if (patch.openPickems != null) user.openPickems = patch.openPickems;
   if (patch.betHistory) user.betHistory = patch.betHistory;
 
   saveUserLinks(store);
@@ -855,6 +860,7 @@ export function saveAllUsersFromSettlement(usersById) {
     store[discordUserId].gambaCoins = user.gambaCoins;
     store[discordUserId].openTickets = user.openTickets || [];
     store[discordUserId].openParlays = user.openParlays || [];
+    store[discordUserId].openPickems = user.openPickems || [];
     store[discordUserId].betHistory = user.betHistory || [];
     store[discordUserId].gambaWins = user.gambaWins ?? 0;
     store[discordUserId].gambaLosses = user.gambaLosses ?? 0;

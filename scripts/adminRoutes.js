@@ -31,6 +31,8 @@ import cache, { updateCache } from './githubCache.js';
 import { reloadEventsFromDisk } from './eventService.js';
 import { deleteGambaEvent, listGambaEvents, readGambaEvent, saveGambaEvent } from './gambaEventAdmin.js';
 import { deleteChain, listChains, saveChain } from './gambaChains.js';
+import { deleteTournament, listTournaments, saveTournament } from './gambaTournaments.js';
+import { refreshTournamentById } from './tournamentPosts.js';
 import { deleteGuildLabel, listGuildLabels, saveGuildLabels } from './gambaGuilds.js';
 import { renderCourseMapPng } from './courseMapRenderer.js';
 import {
@@ -421,6 +423,33 @@ export function mountAdmin(app) {
   router.delete('/gamba-chains/:id', (req, res) => {
     try {
       res.json(deleteChain(req.params.id));
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.get('/gamba-tournaments', (_req, res) => {
+    res.json({ tournaments: listTournaments() });
+  });
+
+  router.put('/gamba-tournaments', async (req, res) => {
+    try {
+      const saved = saveTournament(req.body?.tournament);
+      let tournament = saved;
+      try {
+        tournament = await refreshTournamentById(saved.id);
+      } catch (error) {
+        console.error('Tournament post failed:', error.message);
+      }
+      res.json({ tournament });
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.delete('/gamba-tournaments/:id', (req, res) => {
+    try {
+      res.json(deleteTournament(req.params.id));
     } catch (error) {
       jsonError(res, error);
     }

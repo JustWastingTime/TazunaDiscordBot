@@ -59,6 +59,7 @@ function normalizeDefinition(raw) {
     startsAt: raw.startsAt || raw.cutoffAt || null,
     endsAt: raw.endsAt || raw.cutoffAt || null,
     availability: String(raw.availability || 'all'),
+    listing: String(raw.listing || 'board'),
     guildIds: Array.isArray(raw.guildIds) ? raw.guildIds.map(String) : [],
     threadId,
     entries: entries.map((entry) => ({
@@ -179,11 +180,14 @@ export function listSettleableEvents() {
 }
 
 export function listCatchUpEvents() {
-  return listUnsettledEvents().filter((event) => ['open', 'closed'].includes(event.status));
+  return listUnsettledEvents().filter((event) =>
+    ['open', 'closed'].includes(event.status) && event.availability !== 'web',
+  );
 }
 
 export function isEventAvailableToGuild(event, guildId) {
   if (!event) return false;
+  if (event.availability === 'web') return false;
   if (event.availability === 'all') return true;
   if (event.availability === 'guilds') {
     return event.guildIds.map(String).includes(String(guildId));
