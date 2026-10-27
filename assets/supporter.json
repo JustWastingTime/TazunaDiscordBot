@@ -2508,7 +2508,7 @@
         "category": "speed",
         "aliases": ["kawakami princess tracen"]
     },
-    {   "id": "10064 Hishi Akebono",
+    {   "id": "10064 Hishi Akebono", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Hishi Akebono",
         "unique": "-",
@@ -2538,6 +2538,26 @@
         "category": "guts",
         "aliases": [
             "hishi akebono tracen"
+        ],
+        "events": [
+            {
+                "name": "Eat Up ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Bond +5",
+                    "Energy -5, Power +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Leave It to Me ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +10, Bond +5",
+                    "Energy -15, Bond +5, Sprinting Gear hint +2"
+                ]
+            }
         ]
     },
     {   "id": "10065 Bamboo Memory",
@@ -8075,7 +8095,7 @@
         "category": "speed",
         "aliases": ["kawakami princess", "princess bride"]
     },
-    {   "id": "30040 Hishi Akebono",
+    {   "id": "30040 Hishi Akebono", "_event": "done",
         "card_name": "Who Wants the First Bite?",
         "character_name": "Hishi Akebono",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases the frequency at which the character participates in their preferred training type (20)",
@@ -8087,7 +8107,7 @@
             "Initial Friendship Gauge - 20/21/23/25/25",
             "Hint Levels - 2/2/3/3/4",
             "Hint Frequency - 40/45/50/55/60%",
-            "Specialty Priority - 10/13/16/20/20"  
+            "Specialty Priority - 10/13/16/20/20"
         ],
         "support_skills": [
             "Sunny Days",
@@ -8109,7 +8129,56 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30040.png",
         "rarity": "ssr",
         "category": "guts",
-        "aliases": ["hishi akebono", "who wants the first bite", "akebono"]
+        "aliases": [
+            "hishi akebono",
+            "who wants the first bite",
+            "akebono"
+        ],
+        "events": [
+            {
+                "name": "I'm Buono Just the Way I Am ♪",
+                "type": "chain",
+                "results": 
+                [
+                    "Maximum Energy +8, Guts +5, Bond +5, Sunny Days hint +1"
+                ]
+            },
+            {
+                "name": "Let's Go... Buono ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +30, Guts +5, Bond +5, Hydrate hint +2, (random) Get Slow Metabolism status",
+                    "Stamina +5, Power +5, Bond +5, Gap Closer hint +2"
+                ]
+            },
+            {
+                "name": "Buono For You, Buono For Me ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Stamina +10, Guts +20, Sixth Sense hint +3 or Dodging Danger hint +3"
+                ]
+            },
+            {
+                "name": "Eat Up ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Bond +5",
+                    "Energy -5, Power +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Leave It to Me ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +10, Bond +5",
+                    "Energy -15, Bond +5, Sprinting Gear hint +2"
+                ]
+            }
+        ]
     },
     {   "id": "30041 Mejiro Dober",
         "card_name": "My Thoughts, My Desires",
