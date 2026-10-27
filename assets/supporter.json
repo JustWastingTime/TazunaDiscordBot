@@ -1686,7 +1686,9 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10042.png",
         "rarity": "r",
         "category": "speed",
-        "aliases": ["biko pegasus tracen"]
+        "aliases": [
+            "biko pegasus tracen"
+        ]
     },
     {   "id": "10043 Marvelous Sunday",
         "card_name": "Tracen Academy",
