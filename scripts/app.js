@@ -715,26 +715,83 @@ function formatErrorForEmbed(errorLike) {
   return String(errorLike);
 }
 
-async function postOpsNotice(title, description, color = 0xE74C3C) {
+const OPS_STATUS_PATH = path.join(PROJECT_ROOT, 'data', 'ops-status.json');
+const OPS_COLOR_ERROR = 0xE74C3C;
+const OPS_COLOR_STARTED = 0x2ECC71;
+const BUG_REPORT_COLOR = 0xF1C40F;
+
+function readOpsStatusMessageId() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(OPS_STATUS_PATH, 'utf8'));
+    const id = String(parsed.statusMessageId || '').trim();
+    return id || null;
+  } catch (err) {
+    if (err?.code !== 'ENOENT') {
+      console.warn('[ops] Failed to read status message id:', err.message);
+    }
+    return null;
+  }
+}
+
+function writeOpsStatusMessageId(messageId) {
+  fs.mkdirSync(path.dirname(OPS_STATUS_PATH), { recursive: true });
+  fs.writeFileSync(
+    OPS_STATUS_PATH,
+    `${JSON.stringify({ statusMessageId: String(messageId) }, null, 2)}\n`,
+    'utf8',
+  );
+}
+
+function buildOpsEmbed(title, description, color) {
   const text = String(description || 'No details').slice(0, 3900);
+  return {
+    title,
+    description: `\`\`\`\n${text}\n\`\`\``,
+    color,
+    fields: [
+      { name: 'Host', value: process.env.HOSTNAME || 'unknown', inline: true },
+      { name: 'Node', value: process.version, inline: true },
+      { name: 'Time', value: new Date().toISOString(), inline: true },
+    ],
+  };
+}
+
+async function postOpsNotice(title, description, color = OPS_COLOR_ERROR) {
   try {
     await DiscordRequest(`channels/${BUG_REPORT_CHANNEL_ID}/messages`, {
       method: 'POST',
-      body: {
-        embeds: [{
-          title,
-          description: `\`\`\`\n${text}\n\`\`\``,
-          color,
-          fields: [
-            { name: 'Host', value: process.env.HOSTNAME || 'unknown', inline: true },
-            { name: 'Node', value: process.version, inline: true },
-            { name: 'Time', value: new Date().toISOString(), inline: true }
-          ]
-        }]
-      }
+      body: { embeds: [buildOpsEmbed(title, description, color)] },
     });
   } catch (notifyErr) {
     console.error('Failed to post ops notice:', notifyErr);
+  }
+}
+
+async function upsertStartupNotice() {
+  const embed = buildOpsEmbed('✅ Tazuna bot started', `Listening on port ${PORT}`, OPS_COLOR_STARTED);
+  const existingId = readOpsStatusMessageId();
+
+  if (existingId) {
+    try {
+      await DiscordRequest(`channels/${BUG_REPORT_CHANNEL_ID}/messages/${existingId}`, {
+        method: 'PATCH',
+        body: { embeds: [embed] },
+      });
+      return;
+    } catch (err) {
+      console.warn('[ops] Could not edit startup message, posting a new one:', err.message);
+    }
+  }
+
+  try {
+    const res = await DiscordRequest(`channels/${BUG_REPORT_CHANNEL_ID}/messages`, {
+      method: 'POST',
+      body: { embeds: [embed] },
+    });
+    const message = await res.json();
+    if (message?.id) writeOpsStatusMessageId(message.id);
+  } catch (notifyErr) {
+    console.error('Failed to post startup notice:', notifyErr);
   }
 }
 
@@ -1682,7 +1739,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
             description: descriptionText.length > 4000
               ? descriptionText.slice(0, 3997) + '...'
               : descriptionText,
-            color: 0xE74C3C,
+            color: BUG_REPORT_COLOR,
             fields: [
               { name: 'Reporter', value: `${userTag} (<@${userId}>)`, inline: false },
               { name: 'User ID', value: userId, inline: true },
@@ -2962,5 +3019,5 @@ app.listen(PORT, () => {
   resumeMineAlarmsOnBoot().catch((err) => {
     console.error('Failed to resume mine alarms:', err.message);
   });
-  postOpsNotice('✅ Tazuna bot started', `Listening on port ${PORT}`, 0x2ECC71);
+  upsertStartupNotice();
 });

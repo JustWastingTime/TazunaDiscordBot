@@ -44,6 +44,7 @@ const ENTRY_DATASETS = {
         rarity: entry.rarity || '',
         category: entry.category || '',
         thumbnail: entry.thumbnail || '',
+        _event: entry._event || 'todo',
       };
     },
   },
