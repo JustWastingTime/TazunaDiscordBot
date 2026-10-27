@@ -7151,7 +7151,7 @@
             "Event Recovery - 40/45/50/55/60%",
             "Event Effectiveness - 25/27/30/32/35%",
             "Failure Protection - 20/22/25/27/30%",
-            "Energy Cost Reduction - 15/17/20/22/25%"         
+            "Energy Cost Reduction - 15/17/20/22/25%"
         ],
         "support_skills": [],
         "event_skills": [
@@ -7163,8 +7163,11 @@
         "url": "https://gametora.com/umamusume/supports/30021-hayakawa-tazuna",
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30021.png",
         "rarity": "ssr",
-        "category": "support",
-        "aliases": ["hayakawa tazuna", "tracen reception"]
+        "category": "pal",
+        "aliases": [
+            "hayakawa tazuna",
+            "tracen reception"
+        ]
     },
     {   "id": "30022 Mejiro McQueen",
         "card_name": "Your Team Ace",
@@ -10114,7 +10117,7 @@
             "Running Idle",
             "Uma Stan"
         ],
-        "url": "https://gametora.com/umamusume/supports/30080-anshinzawa-sasami",
+        "url": "https://gametora.com/umamusume/supports/30080-sasami-anshinzawa",
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30080.png",
         "rarity": "ssr",
         "category": "pal",
