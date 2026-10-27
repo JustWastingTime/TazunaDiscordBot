@@ -13594,7 +13594,7 @@
             "garçon form"
         ]
     },
-    {   "id": "30133 Hishi Akebono",
+    {   "id": "30133 Hishi Akebono", "_event": "partial",
         "card_name": "Fondente Smile",
         "character_name": "Hishi Akebono",
         "unique": "Gain Wit Bonus (2) when the bond gauge is at least 80",
@@ -13630,6 +13630,51 @@
         "aliases": [
             "hishi akebono story event welfare poverty",
             "fondente smile"
+        ],
+        "events": [
+            {
+                "name": "なんでもあります、ボノ食堂",
+                "type": "chain",
+                "results": 
+                [
+                    "Power +5, Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "ほっとひと息、ボノ食堂",
+                "type": "chain",
+                "results": 
+                [
+                    "Bond +5, Sunny Days hint +2",
+                    "Energy +10, Wit +5, Bond +5"
+                ]
+            },
+            {
+                "name": "あなたのそばに、ボノ食堂",
+                "type": "chain",
+                "results": 
+                [
+                    "Power +5, Wit +5, Skill points +10, Bond +5, Plan X hint +1"
+                ]
+            },
+            {
+                "name": "Eat Up ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Bond +5",
+                    "Energy -5, Power +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Leave It to Me ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +10, Bond +5",
+                    "Energy -15, Bond +5, Sprinting Gear hint +2"
+                ]
+            }
         ]
     },
     {   "id": "30134 Mejiro Ramonu", "_event": "partial",
