@@ -13664,6 +13664,51 @@
         "aliases": [
             "katsuragi ace story event welfare poverty",
             "hold aloft the blazing torch"
+        ],
+        "events": [
+            {
+                "name": "By the People",
+                "type": "chain",
+                "results": 
+                [
+                    "Skill points +20, Bond +5"
+                ]
+            },
+            {
+                "name": "No Way Home",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Bond +5, Final Push hint +1",
+                    "Energy -5, Guts +15, Bond +10"
+                ]
+            },
+            {
+                "name": "Through Telepathy",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Guts +10, Bond +5, Unyielding hint +1"
+                ]
+            },
+            {
+                "name": "エースVSスピーチ！",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +2, Bond +5",
+                    "Guts +15, Bond +5"
+                ]
+            },
+            {
+                "name": "エースVSクレーマー！",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +15, Bond +5",
+                    "Bond +5, Groundwork hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30136 Symboli Kris S",
