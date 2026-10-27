@@ -2508,7 +2508,7 @@
         "category": "speed",
         "aliases": ["kawakami princess tracen"]
     },
-    {   "id": "10064 Hishi Akebono",
+    {   "id": "10064 Hishi Akebono", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Hishi Akebono",
         "unique": "-",
@@ -2538,6 +2538,26 @@
         "category": "guts",
         "aliases": [
             "hishi akebono tracen"
+        ],
+        "events": [
+            {
+                "name": "Eat Up ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Bond +5",
+                    "Energy -5, Power +15, Bond +5"
+                ]
+            },
+            {
+                "name": "Leave It to Me ♪",
+                "type": "event",
+                "results": 
+                [
+                    "Stamina +10, Bond +5",
+                    "Energy -15, Bond +5, Sprinting Gear hint +2"
+                ]
+            }
         ]
     },
     {   "id": "10065 Bamboo Memory",
