@@ -13428,7 +13428,7 @@
         }
         ]
     },
-    {   "id": "30130 K. S. Miracle",
+    {   "id": "30130 K. S. Miracle", "_event": "partial",
         "card_name": "To You",
         "character_name": "K. S. Miracle",
         "unique": "Gain Power Bonus (2) when the bond gauge is at least 80",
@@ -13466,6 +13466,51 @@
             "k s miracle",
             "ks miracle",
             "to you"
+        ],
+        "events": [
+            {
+                "name": "できること",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Guts +10, Bond +5"
+                ]
+            },
+            {
+                "name": "やってみたこと",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +15, Skill points +15, Bond +5",
+                    "Speed +7, Power +7, Guts +7, Bond +5, Corner Acceleration hint +1"
+                ]
+            },
+            {
+                "name": "やりたいこと",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +7, Power +7, Guts +7, Bond +5, Neck and Neck hint +2"
+                ]
+            },
+            {
+                "name": "Spreading Kindness",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +5, Power +5, Guts +5, Bond +5",
+                    "Mood +2, Bond +5"
+                ]
+            },
+            {
+                "name": "Come Rain or River",
+                "type": "event",
+                "results": 
+                [
+                    "Wit +20, Bond +5",
+                    "Bond +5, Light as a Feather hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30131 Marvelous Sunday",
