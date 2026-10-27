@@ -1,0 +1,15 @@
+{
+  "id": "test-tourney",
+  "name": "Test Tourney",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-10-27T19:57:00.000Z",
+  "endsAt": "2026-10-28T19:57:00.000Z",
+  "availability": "web",
+  "listing": "tournament",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Team A", "ageSex": "", "jockey": "", "odds": 1 },
+    { "number": 2, "name": "Team B", "ageSex": "", "jockey": "", "odds": 1 }
+  ]
+}
