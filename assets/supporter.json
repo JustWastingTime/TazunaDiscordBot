@@ -13629,7 +13629,7 @@
             "radiant"
         ]
     },
-    {   "id": "30135 Katsuragi Ace",
+    {   "id": "30135 Katsuragi Ace", "_event": "partial",
         "card_name": "Hold Aloft the Blazing Torch",
         "character_name": "Katsuragi Ace",
         "unique": "Gain Speed Bonus (2) when the bond gauge is at least 80",
