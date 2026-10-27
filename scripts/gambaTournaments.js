@@ -126,7 +126,6 @@ function cleanTournament(input, existing) {
     const label = String(round?.label || '').trim();
     if (!label) throw httpError(400, 'Each round needs a name.');
     const eventIds = [...new Set((Array.isArray(round?.eventIds) ? round.eventIds : []).map((eventId) => String(eventId).trim()).filter(Boolean))];
-    if (!eventIds.length) throw httpError(400, `${label} needs at least one race.`);
     if (eventIds.length > MAX_RACES) throw httpError(400, `${label} can hold ${MAX_RACES} races.`);
     for (const eventId of eventIds) {
       const event = getEvent(eventId);
@@ -142,7 +141,7 @@ function cleanTournament(input, existing) {
       id: slugify(round?.id || label, `round-${index + 1}`),
       label,
       eventIds,
-      pickemPayouts: cleanPayouts(round?.pickemPayouts, eventIds.length),
+      pickemPayouts: eventIds.length ? cleanPayouts(round?.pickemPayouts, eventIds.length) : [0],
     };
   });
   const roundIds = new Set(rounds.map((round) => round.id));
