@@ -13714,7 +13714,7 @@
             }
         ]
     },
-    {   "id": "30136 Symboli Kris S",
+    {   "id": "30136 Symboli Kris S", "_event": "partial",
         "card_name": "Unyielding Resolve",
         "character_name": "Symboli Kris S",
         "unique": "Gain Guts Bonus (2) when the bond gauge is at least 80",
@@ -13749,6 +13749,51 @@
             "symboli kris s event anniversary welfare poverty",
             "kris s",
             "unyielding resolve"
+        ],
+        "events": [
+            {
+                "name": "できること",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Guts +10, Bond +5"
+                ]
+            },
+            {
+                "name": "やってみたこと",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +15, Skill points +15, Bond +5",
+                    "Speed +7, Power +7, Guts +7, Bond +5, Corner Acceleration hint +1"
+                ]
+            },
+            {
+                "name": "やりたいこと",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +7, Power +7, Guts +7, Bond +5, Neck and Neck hint +2"
+                ]
+            },
+            {
+                "name": "Spreading Kindness",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +5, Power +5, Guts +5, Bond +5",
+                    "Mood +2, Bond +5"
+                ]
+            },
+            {
+                "name": "Come Rain or River",
+                "type": "event",
+                "results": 
+                [
+                    "Wit +20, Bond +5",
+                    "Bond +5, Light as a Feather hint +1"
+                ]
+            }
         ]
     },
 
