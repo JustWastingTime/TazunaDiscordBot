@@ -1,6 +1,6 @@
 # TazunaBot
 
-A Discord bot for looking up uma information such as skills, races and support cards. Club and leaderboard features have been moved to a new bot.
+A Discord bot for looking up uma information such as skills, races and support cards.
 Any questions? Join the discord [https://discord.gg/5BW4gSUVSz](https://discord.gg/5BW4gSUVSz)
 
 The bot is currently hosted on a $15 per month server. Please consider donating to help keep it online.
