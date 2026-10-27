@@ -13623,7 +13623,7 @@
             "marvelous chocolate show"
         ]
     },
-    {   "id": "30132 Biko Pegasus",
+    {   "id": "30132 Biko Pegasus", "_event": "partial",
         "card_name": "Transform! Garçon Form!",
         "character_name": "Biko Pegasus",
         "unique": "Gain Training Effectiveness (5%); gain additional 3% Training Effectiveness for every 4 points of maximum Energy above 100, up to (20%) at 120",
@@ -13661,6 +13661,51 @@
             "biko pegasus",
             "transform garcon form",
             "garçon form"
+        ],
+        "events": [
+            {
+                "name": "熱い絆！ボノとヒーローに！",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10, Power +10, Bond +5, Frenzied Late Surgers hint +1",
+                    "Maximum Energy +4, Bond +10"
+                ]
+            },
+            {
+                "name": "まっすぐに！心通わすお菓子作り",
+                "type": "chain",
+                "results": 
+                [
+                    "Maximum Energy +4, Skill points +10, Bond +5, Slick Surge hint +1"
+                ]
+            },
+            {
+                "name": "変身！ネイチャはプリファイ！？",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +7, Power +7, Guts +7, Bond +5, Sharp Arc hint +2"
+                ]
+            },
+            {
+                "name": "A Hero's Woes",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +15, Bond +5",
+                    "Energy +5, Power +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Preparing My Special Move!",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Sprint Straightaways hint +1",
+                    "Energy +30, Bond +5"
+                ]
+            }
         ]
     },
     {   "id": "30133 Hishi Akebono", "_event": "partial",
