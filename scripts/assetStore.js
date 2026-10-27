@@ -144,7 +144,6 @@ export function validateEntry(datasetName, entry, { previousKey = null } = {}) {
     if (!String(entry.character_name || '').trim()) throw httpError(400, 'character_name is required.');
     unknownSkills(entry.support_skills, 'support_skills', warnings, known);
     unknownSkills(entry.event_skills, 'event_skills', warnings, known);
-    if (entry.unique && entry.unique !== '-') unknownSkills([entry.unique], 'unique', warnings, known);
   }
 
   if (datasetName === 'characters') {
