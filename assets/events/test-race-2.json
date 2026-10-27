@@ -1,0 +1,15 @@
+{
+  "id": "test-race-2",
+  "name": "Test Race 2",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-10-27T21:27:00.000Z",
+  "endsAt": "2026-10-27T22:27:00.000Z",
+  "availability": "web",
+  "listing": "tournament",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "A", "ageSex": "", "jockey": "", "odds": 1 },
+    { "number": 2, "name": "B", "ageSex": "", "jockey": "", "odds": 1 }
+  ]
+}
