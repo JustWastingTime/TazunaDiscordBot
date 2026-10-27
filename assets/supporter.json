@@ -13797,46 +13797,46 @@
         ],
         "events": [
             {
-                "name": "できること",
+                "name": "トレセン学園の奇妙な日常",
                 "type": "chain",
                 "results": 
                 [
-                    "Speed +10, Guts +10, Bond +5"
+                    "Energy +10, Bond +5",
+                    "Stamina +5, Guts +10, Bond +5"
                 ]
             },
             {
-                "name": "やってみたこと",
+                "name": "トレセン学園の非日常",
                 "type": "chain",
                 "results": 
                 [
-                    "Energy +15, Skill points +15, Bond +5",
-                    "Speed +7, Power +7, Guts +7, Bond +5, Corner Acceleration hint +1"
+                    "Stamina +7, Guts +7, Bond +5, Hawkeye hint +1"
                 ]
             },
             {
-                "name": "やりたいこと",
+                "name": "ようこそトレセン学園へ",
                 "type": "chain",
                 "results": 
                 [
-                    "Speed +7, Power +7, Guts +7, Bond +5, Neck and Neck hint +2"
+                    "Stamina +7, Guts +7, Skill points +10, Bond +5, Burning Soul hint +1"
                 ]
             },
             {
-                "name": "Spreading Kindness",
+                "name": "A Professional's Feelings",
                 "type": "event",
                 "results": 
                 [
-                    "Speed +5, Power +5, Guts +5, Bond +5",
-                    "Mood +2, Bond +5"
+                    "Guts +25, Bond +5",
+                    "Energy +15, Bond +5"
                 ]
             },
             {
-                "name": "Come Rain or River",
+                "name": "A Professional's Creed",
                 "type": "event",
                 "results": 
                 [
-                    "Wit +20, Bond +5",
-                    "Bond +5, Light as a Feather hint +1"
+                    "Stamina +15, Bond +5",
+                    "Bond +5, Cloudy Days hint +1"
                 ]
             }
         ]
