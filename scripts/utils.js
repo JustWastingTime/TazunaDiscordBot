@@ -154,6 +154,14 @@ function getCardTypeImageLink(str) {
   {
     return 'https://gametora.com/images/umamusume/icons/utx_ico_obtain_04.png';
   }
+  if (str === 'pal' || str === 'friend')
+  {
+    return 'https://gametora.com/images/umamusume/icons/utx_ico_obtain_05.png';
+  }
+  if (str === 'group')
+  {
+    return 'https://gametora.com/images/umamusume/icons/utx_ico_obtain_06.png';
+  }
 }
 
 // Emoji for the Card Type Dropdown
