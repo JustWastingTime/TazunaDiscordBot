@@ -13425,6 +13425,284 @@
         }
         ]
     },
+    {   "id": "30130 K. S. Miracle",
+        "card_name": "To You",
+        "character_name": "K. S. Miracle",
+        "unique": "Gain Power Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 25/26/27/28/30%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Guts Bonus - 0/1/1/1/1",
+            "Initial Power - 0/0/0/15/30",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 5%",
+            "Fan Bonus - 10/11/13/15/15%",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/33/36/40/40%",
+            "Specialty Priority - 50/53/57/61/65"
+        ],
+        "support_skills": [
+            "Updrafters",
+            "Sprint Corners",
+            "Countermeasure",
+            "Pace Chaser Straightaways",
+            "Pace Chaser Savvy",
+            "On the Attack"
+        ],
+        "event_skills": [
+            "Neck and Neck",
+            "Corner Acceleration",
+            "Light as a Feather"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30130-ksmiracle",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30130.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "k. s. miracle",
+            "k s miracle",
+            "ks miracle",
+            "to you"
+        ]
+    },
+    {   "id": "30131 Marvelous Sunday",
+        "card_name": "Marvelous☆Chocolate Show",
+        "character_name": "Marvelous Sunday",
+        "unique": "Gain Training Effectiveness (15) when the bond gauge is full",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Speed Bonus - 1",
+            "Power Bonus - 1",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Pace Strategy",
+            "Long Straightaways",
+            "Stamina Eater",
+            "Tail Held High",
+            "All I've Got",
+            "Take the Chance",
+            "Eager",
+            "Scramble"
+        ],
+        "event_skills": [
+            "Indomitable",
+            "Straightaway Recovery",
+            "Hanshin Racecourse"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30131-marvelous-sunday",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30131.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "marvelous sunday",
+            "marvelous chocolate show"
+        ]
+    },
+    {   "id": "30132 Biko Pegasus",
+        "card_name": "Transform! Garçon Form!",
+        "character_name": "Biko Pegasus",
+        "unique": "Gain Training Effectiveness (5%); gain additional 3% Training Effectiveness for every 4 points of maximum Energy above 100, up to (20%) at 120",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Mood Effect - 40/42/45/47/50%",
+            "Power Bonus - 1",
+            "Initial Power - 25/27/30/32/35",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Race Bonus - 0/0/0/5/10%",
+            "Fan Bonus - 0/0/0/10/15%",
+            "Specialty Priority - 35/40/45/50/50",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Rainy Days",
+            "Nimble Navigator",
+            "Position Pilfer",
+            "Sprinting Gear",
+            "Late Surger Corners",
+            "Fearless",
+            "Leap Forward"
+        ],
+        "event_skills": [
+            "Sharp Arc",
+            "Frenzied Late Surgers",
+            "Slick Surge",
+            "Sprint Straightaways"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30132-biko-pegasus",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30132.png",
+        "rarity": "ssr",
+        "category": "power",
+        "aliases": [
+            "biko pegasus",
+            "transform garcon form",
+            "garçon form"
+        ]
+    },
+    {   "id": "30133 Hishi Akebono",
+        "card_name": "Fondente Smile",
+        "character_name": "Hishi Akebono",
+        "unique": "Gain Wit Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Initial Speed - 25/26/27/28/30",
+            "Initial Wit - 25/26/27/28/30",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/1/1/1/1",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Sunny Days",
+            "Final Push",
+            "Sprint Corners",
+            "Countermeasure",
+            "Meticulous Measures",
+            "Hydrate"
+        ],
+        "event_skills": [
+            "Plan X",
+            "Sunny Days",
+            "Sprinting Gear"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30133-hishi-akebono",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30133.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "hishi akebono story event welfare poverty",
+            "fondente smile"
+        ]
+    },
+    {   "id": "30134 Mejiro Ramonu",
+        "card_name": "Radiant",
+        "character_name": "Mejiro Ramonu",
+        "unique": "Gain Training Effectiveness (4) for every Speed-increasing skill, up to (20) for 5 skills",
+        "effects": [
+            "Friendship Bonus - 25/27/30/32/35%",
+            "Wit Bonus - 0/0/0/1/2",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 2/2/3/3/4",
+            "Hint Frequency - 40/45/50/55/60%",
+            "Specialty Priority - 35/40/45/50/50",
+            "Skill Point Bonus - 0/1/1/1/1",
+            "Wit Friendship Recovery - 3/3/4/4/5"
+        ],
+        "support_skills": [
+            "Straightaway Adept",
+            "Focus",
+            "Mile Straightaways",
+            "Mile Corners",
+            "Shifting Gears",
+            "Medium Straightaways",
+            "All I've Got",
+            "Steady Gait",
+            "Graceful Gait"
+        ],
+        "event_skills": [
+            "Superb Gait",
+            "Unyielding Spirit",
+            "Fighting Spirit",
+            "Medium Corners"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30134-mejiro-ramonu",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30134.png",
+        "rarity": "ssr",
+        "category": "wit",
+        "aliases": [
+            "mejiro ramonu",
+            "radiant"
+        ]
+    },
+    {   "id": "30135 Katsuragi Ace",
+        "card_name": "Hold Aloft the Blazing Torch",
+        "character_name": "Katsuragi Ace",
+        "unique": "Gain Speed Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 20/21/23/25/25%",
+            "Mood Effect - 0/0/0/15/30%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1",
+            "Hint Frequency - 20%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Tokyo Racecourse",
+            "Fast-Paced",
+            "Steadfast",
+            "Medium Straightaways",
+            "Front Runner Corners",
+            "Leader's Pride",
+            "Aspire",
+            "Steady Gait",
+            "Firm Resolve"
+        ],
+        "event_skills": [
+            "Unyielding",
+            "Final Push",
+            "Groundwork"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30135-katsuragi-ace",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30135.png",
+        "rarity": "ssr",
+        "category": "speed",
+        "aliases": [
+            "katsuragi ace story event welfare poverty",
+            "hold aloft the blazing torch"
+        ]
+    },
+    {   "id": "30136 Symboli Kris S",
+        "card_name": "Unyielding Resolve",
+        "character_name": "Symboli Kris S",
+        "unique": "Gain Guts Bonus (2) when the bond gauge is at least 80",
+        "effects": [
+            "Friendship Bonus - 15/16/18/20/20%",
+            "Training Effectiveness - 0/0/0/5/10%",
+            "Initial Guts - 25/26/27/28/30",
+            "Initial Friendship Gauge - 25/26/27/28/30",
+            "Hint Levels - 2",
+            "Hint Frequency - 30/33/36/40/40%",
+            "Specialty Priority - 50/53/57/61/65",
+            "Skill Point Bonus - 0/1/1/1/1"
+        ],
+        "support_skills": [
+            "Medium Corners",
+            "Late Surger Corners",
+            "1,500,000 CC",
+            "All I've Got",
+            "Fighting Spirit",
+            "Fearless"
+        ],
+        "event_skills": [
+            "Burning Soul",
+            "Hawkeye",
+            "Cloudy Days"
+        ],
+        "url": "https://gametora.com/umamusume/supports/30136-symboli-kris-s",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30136.png",
+        "rarity": "ssr",
+        "category": "guts",
+        "aliases": [
+            "symboli kris s event anniversary welfare poverty",
+            "kris s",
+            "unyielding resolve"
+        ]
+    },
 
 
 
