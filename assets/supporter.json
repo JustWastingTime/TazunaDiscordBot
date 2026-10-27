@@ -7148,7 +7148,7 @@
             "Productive Plan",
             "Updrafters",
             "Meticulous Measures",
-            "Stop Right There!" 
+            "Stop Right There!"
         ],
         "event_skills": [
             "Plan X",
@@ -7158,7 +7158,54 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_30020.png",
         "rarity": "ssr",
         "category": "speed",
-        "aliases": ["biko pegasus", "double carrot punch!"]
+        "aliases": [
+            "biko pegasus",
+            "double carrot punch!"
+        ],
+        "events": [
+            {
+                "name": "Passionate Promises, Heroic Ambitions!",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +5, Guts +5"
+                ]
+            },
+            {
+                "name": "Brace Yourself: Training with Carrot Ranger!",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +5, Guts +5"
+                ]
+            },
+            {
+                "name": "Showdown! Glorious Victory!",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +5, Power +5, Guts +5, Plan X hint +1"
+                ]
+            },
+            {
+                "name": "A Hero's Woes",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +15, Bond +5",
+                    "Energy +5, Power +5, Bond +5"
+                ]
+            },
+            {
+                "name": "Preparing My Special Move!",
+                "type": "event",
+                "results": 
+                [
+                    "Bond +5, Sprint Straightaways hint +1",
+                    "Energy +30, Bond +5"
+                ]
+            }
+        ]
     },
     {   "id": "30021 Tazuna Hayakawa",
         "card_name": "Tracen Reception",
