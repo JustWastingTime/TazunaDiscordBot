@@ -1,0 +1,20 @@
+{
+  "id": "breeders-cup-classic-2026",
+  "name": "Breeders' Cup Classic 2026",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-10-27T15:50:00.000Z",
+  "endsAt": "2026-10-31T11:15:00.000Z",
+  "availability": "all",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "T O Password", "ageSex": "", "jockey": "Kazushi Kimura", "odds": 31 },
+    { "number": 2, "name": "Sovereignty", "ageSex": "", "jockey": "Junior Alvarado", "odds": 3.5 },
+    { "number": 3, "name": "Golden Tempo", "ageSex": "", "jockey": "Jose Ortiz", "odds": 6 },
+    { "number": 4, "name": "The Puma", "ageSex": "", "jockey": "Javier Castellano", "odds": 11 },
+    { "number": 5, "name": "Forever Young", "ageSex": "", "jockey": "Ryusei Sakai", "odds": 3 },
+    { "number": 6, "name": "Magnitude", "ageSex": "", "jockey": "Flavien Prat", "odds": 4 },
+    { "number": 7, "name": "Knightsbridge", "ageSex": "", "jockey": "Luis Saez", "odds": 5.5 },
+    { "number": 8, "name": "Napoleon Solo", "ageSex": "", "jockey": "John Velazquez", "odds": 16 }
+  ]
+}
