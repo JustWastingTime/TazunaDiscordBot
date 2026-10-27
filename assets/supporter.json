@@ -13632,7 +13632,7 @@
             "fondente smile"
         ]
     },
-    {   "id": "30134 Mejiro Ramonu",
+    {   "id": "30134 Mejiro Ramonu", "_event": "partial",
         "card_name": "Radiant",
         "character_name": "Mejiro Ramonu",
         "unique": "Gain Training Effectiveness (4) for every Speed-increasing skill, up to (20) for 5 skills",
@@ -13672,6 +13672,52 @@
         "aliases": [
             "mejiro ramonu",
             "radiant"
+        ],
+        "events": [
+            {
+                "name": "灰簾石の瞳",
+                "type": "chain",
+                "results": 
+                [
+                    "Mood +1, Energy +15, Speed +5, Bond +5",
+                    "Skill points +30, Bond +5, Unyielding Spirit hint +1, Fighting Spirit hint +1",
+                    "Wit +15, Bond +15 OR Wit +10, Bond +5"
+                ]
+            },
+            {
+                "name": "水晶越しに覗く",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +5, Stamina +5, Wit +5, Skill points +15, Bond +5"
+                ]
+            },
+            {
+                "name": "金剛石を履き潰して",
+                "type": "chain",
+                "results": 
+                [
+                    "Wit +10, Speed +7, Stamina +7, Bond +5, Superb Gait hint +1"
+                ]
+            },
+            {
+                "name": "一瞥にて",
+                "type": "event",
+                "results": 
+                [
+                    "Mood +1, Skill points +10, Bond +5",
+                    "Wit +15, Bond +5"
+                ]
+            },
+            {
+                "name": "傅いて",
+                "type": "event",
+                "results": 
+                [
+                    "Speed +10, Stamina +5, Bond +5",
+                    "Bond +5, Medium Corners hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30135 Katsuragi Ace", "_event": "partial",
