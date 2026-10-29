@@ -13631,7 +13631,7 @@
             }
         ]
     },
-    {   "id": "30131 Marvelous Sunday",
+    {   "id": "30131 Marvelous Sunday", "_event": "partial",
         "card_name": "Marvelous☆Chocolate Show",
         "character_name": "Marvelous Sunday",
         "unique": "Gain Training Effectiveness (15) when the bond gauge is full",
@@ -13670,6 +13670,52 @@
         "aliases": [
             "marvelous sunday",
             "marvelous chocolate show"
+        ],
+        "events": [
+            {
+                "name": "マーベラス的異文化交流",
+                "type": "chain",
+                "results": 
+                [
+                    "Mood +1, Skill points +10, Bond +5"
+                ]
+            },
+            {
+                "name": "マーベラス無限チャージ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Skill points +30, Bond +5, Straightaway Recovery hint +1",
+                    "Mood +1, Energy +15, Heal a negative status effect, Bond +5",
+                    "All stats +7, Get Practice Perfect status, Bond +5"
+                ]
+            },
+            {
+                "name": "マーベラス枯渇問題",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +5/+10, Stamina +5/+10, Power +5/+10, Bond +5, Indomitable hint +1/+3"
+                ]
+            },
+            {
+                "name": "Marvelous, No Question ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Speed +5, Bond +5",
+                    "Mood +1, Speed +5, Bond +5"
+                ]
+            },
+            {
+                "name": "How To Be More Marvelous ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30132 Biko Pegasus", "_event": "partial",
