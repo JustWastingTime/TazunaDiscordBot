@@ -4257,7 +4257,7 @@
         "category": "speed",
         "aliases": ["narita taishin", "poolside high tides"]
     },
-    {   "id": "20015 Marvelous Sunday",
+    {   "id": "20015 Marvelous Sunday", "_event": "done",
         "card_name": "A Marvelous ☆ Plan",
         "character_name": "Marvelous Sunday",
         "unique": "Amplifies the effect of mood when training together (15%)\nIncreases initial Wit when beginning a Career playthrough (20)",
@@ -4288,7 +4288,46 @@
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20015.png",
         "rarity": "sr",
         "category": "wit",
-        "aliases": ["marvelous sunday", "a marvelous plan"]
+        "aliases": [
+            "marvelous sunday",
+            "a marvelous plan"
+        ],
+        "events": [
+            {
+                "name": "Marvelous World Plan ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Guts +5, Wit +5"
+                ]
+            },
+            {
+                "name": "Marvelously Marvelous ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Guts +15, Wit +15"
+                ]
+            },
+            {
+                "name": "Marvelous, No Question ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Speed +5, Bond +5",
+                    "Mood +1, Speed +5, Bond +5"
+                ]
+            },
+            {
+                "name": "How To Be More Marvelous ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
+        ]
     },
     {   "id": "20016 Matikanefukukitaru",
         "card_name": "Fate's Forecast",
