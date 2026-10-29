@@ -77,20 +77,22 @@ function cleanEvent(raw) {
     listing,
     guildIds: availability === 'guilds' && Array.isArray(raw.guildIds) ? raw.guildIds.map((id) => String(id).trim()).filter(Boolean) : [],
     threadId: raw.threadId ? String(raw.threadId).trim() : null,
-    entries: entries.map((entry, index) => {
-      const odds = Number(entry?.odds);
-      const number = Number(entry?.number);
-      if (!entry?.name || !Number.isFinite(number) || !Number.isFinite(odds)) {
-        throw httpError(400, `Entry ${index + 1} needs a number, name, and odds.`);
-      }
-      return {
-        number,
-        name: String(entry.name).trim(),
-        ageSex: entry.ageSex ? String(entry.ageSex).trim() : '',
-        jockey: entry.jockey ? String(entry.jockey).trim() : '',
-        odds,
-      };
-    }),
+    entries: entries
+      .map((entry, index) => {
+        const odds = Number(entry?.odds);
+        const number = Number(entry?.number);
+        if (!entry?.name || !Number.isFinite(number) || !Number.isFinite(odds)) {
+          throw httpError(400, `Entry ${index + 1} needs a number, name, and odds.`);
+        }
+        return {
+          number,
+          name: String(entry.name).trim(),
+          ageSex: entry.ageSex ? String(entry.ageSex).trim() : '',
+          jockey: entry.jockey ? String(entry.jockey).trim() : '',
+          odds,
+        };
+      })
+      .sort((a, b) => a.number - b.number),
   };
 }
 

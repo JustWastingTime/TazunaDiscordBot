@@ -21,7 +21,6 @@ import {
   upsertEventPost,
 } from './eventStorage.js';
 import { buildAllEventMessagePayloads, buildEventMessagePayload } from './eventUi.js';
-import { refreshTournamentsForEvent } from './tournamentPosts.js';
 
 function isChannelUnavailableError(err) {
   const message = String(err?.message || err || '');
@@ -273,7 +272,6 @@ export async function closeDueEvents() {
       closedAt: new Date().toISOString(),
     });
     await refreshEventEverywhere(event.id);
-    await refreshTournamentsForEvent(updated.id);
     closed.push(updated);
   }
 
@@ -303,7 +301,6 @@ export async function settleEventEverywhere(eventId, winningEntryNumber) {
   });
   if (!outcome.ok) return outcome;
   await refreshEventEverywhere(eventId);
-  await refreshTournamentsForEvent(eventId);
   return outcome;
 }
 

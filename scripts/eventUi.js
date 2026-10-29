@@ -43,7 +43,7 @@ export function getEventChunkCount(event) {
 }
 
 function getEventChunkEntries(event, chunk) {
-  const entries = event.entries || [];
+  const entries = [...(event.entries || [])].sort((a, b) => a.number - b.number);
   const chunkCount = getEventChunkCount(event);
   const safeChunk = Math.min(Math.max(0, chunk), chunkCount - 1);
   const start = safeChunk * HORSES_PER_MESSAGE;

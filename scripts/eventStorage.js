@@ -62,13 +62,15 @@ function normalizeDefinition(raw) {
     listing: String(raw.listing || 'board'),
     guildIds: Array.isArray(raw.guildIds) ? raw.guildIds.map(String) : [],
     threadId,
-    entries: entries.map((entry) => ({
-      number: Number(entry.number),
-      name: String(entry.name),
-      ageSex: entry.ageSex ? String(entry.ageSex) : '',
-      jockey: entry.jockey ? String(entry.jockey) : '',
-      odds: Number(entry.odds),
-    })),
+    entries: entries
+      .map((entry) => ({
+        number: Number(entry.number),
+        name: String(entry.name),
+        ageSex: entry.ageSex ? String(entry.ageSex) : '',
+        jockey: entry.jockey ? String(entry.jockey) : '',
+        odds: Number(entry.odds),
+      }))
+      .sort((a, b) => a.number - b.number),
   };
 }
 
