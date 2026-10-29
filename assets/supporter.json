@@ -1690,7 +1690,7 @@
             "biko pegasus tracen"
         ]
     },
-    {   "id": "10043 Marvelous Sunday",
+    {   "id": "10043 Marvelous Sunday", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Marvelous Sunday",
         "unique": "-",
@@ -1721,6 +1721,26 @@
         "category": "wit",
         "aliases": [
             "marvelous sunday tracen"
+        ],
+        "events": [
+            {
+                "name": "Marvelous, No Question ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Speed +5, Bond +5",
+                    "Mood +1, Speed +5, Bond +5"
+                ]
+            },
+            {
+                "name": "How To Be More Marvelous ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
         ]
     },
     {   "id": "10044 Matikanefukukitaru",
