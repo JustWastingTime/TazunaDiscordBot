@@ -9910,7 +9910,7 @@
             "narita taishin strict shopper", "christmas xmas taishin"
         ]
     },
-    {   "id": "30074 Marvelous Sunday",
+    {   "id": "30074 Marvelous Sunday", "_event": "done",
         "card_name": "Dazzling Day in the Snow",
         "character_name": "Marvelous Sunday",
         "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases stat gain from races (5%)",
@@ -9929,7 +9929,7 @@
             "Hesitant Front Runners",
             "Hesitant Pace Chasers",
             "Tail Held High"
-        ],  
+        ],
         "event_skills": [
             "Fast & Furious",
             "Position Pilfer",
@@ -9941,7 +9941,55 @@
         "rarity": "ssr",
         "category": "power",
         "aliases": [
-            "marvelous sunday dazzling day in the snow", "marvelous sunday welfare", "marvelous sunday poverty", "marvelous sunday event"
+            "marvelous sunday dazzling day in the snow",
+            "marvelous sunday welfare",
+            "marvelous sunday poverty",
+            "marvelous sunday event"
+        ],
+        "events": [
+            {
+                "name": "Marvelous Guidance ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +10"
+                ]
+            },
+            {
+                "name": "Dazzling and Marvelous ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy +10, Bond +5",
+                    "Bond +5, Cloudy Days hint +2, Event chain ended"
+                ]
+            },
+            {
+                "name": "Pure White Marvelousness ☆",
+                "type": "chain",
+                "results": 
+                [
+                    "Speed +5, Skill points +5, Bond +5, Fast & Furious hint +3 OR Speed +5, Skill points +10, Bond +5, Position Pilfer hint +3"
+                ]
+            },
+            {
+                "name": "Marvelous, No Question ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Speed +5, Bond +5",
+                    "Mood +1, Speed +5, Bond +5"
+                ]
+            },
+            {
+                "name": "How To Be More Marvelous ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30075 Manhattan Cafe", "_event": "done",
