@@ -10786,7 +10786,7 @@
         ]
     },
 
-    {   "id": "30089 Marvelous Sunday",
+    {   "id": "30089 Marvelous Sunday", "_event": "done",
         "card_name": "A MORE MARVELOUS WORLD! ☆",
         "character_name": "Marvelous Sunday",
         "unique": "Gain Mood Effect (60) when the bond gauge is full",
@@ -10817,7 +10817,53 @@
         "rarity": "ssr",
         "category": "guts",
         "aliases": [
-            "marvelous sunday", "a more marvelous world"
+            "marvelous sunday",
+            "a more marvelous world"
+        ],
+        "events": [
+            {
+                "name": "Marvelous☆Dive!",
+                "type": "chain",
+                "results": 
+                [
+                    "Wit +10, Skill points +10, Bond +5",
+                    "Energy -10, Guts +25, Bond +5"
+                ]
+            },
+            {
+                "name": "Marvelous☆School!",
+                "type": "chain",
+                "results": 
+                [
+                    "Skill points +30, Bond +5"
+                ]
+            },
+            {
+                "name": "Marvelous☆Victory!",
+                "type": "chain",
+                "results": 
+                [
+                    "Energy -10, Guts +10, Wit +10, Skill points +20, Bond +5, Adrenaline Rush hint +3"
+                ]
+            },
+            {
+                "name": "Marvelous, No Question ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Speed +5, Bond +5",
+                    "Mood +1, Speed +5, Bond +5"
+                ]
+            },
+            {
+                "name": "How To Be More Marvelous ☆",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +10, Mood +1, Bond +5",
+                    "Bond +5, Hanshin Racecourse hint +1"
+                ]
+            }
         ]
     },
     {   "id": "30090 Symboli Rudolf",
