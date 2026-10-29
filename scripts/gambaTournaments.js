@@ -83,15 +83,81 @@ export function deleteTournament(id) {
   return { ok: true };
 }
 
-function cleanPayouts(values, raceCount) {
+function cleanPayouts(values, slotCount) {
   const source = Array.isArray(values) ? values : [];
   const payouts = [];
-  for (let correct = 0; correct <= raceCount; correct += 1) {
+  for (let correct = 0; correct <= slotCount; correct += 1) {
     const value = Number(source[correct]);
     payouts.push(Number.isFinite(value) && value > 0 ? Math.min(PICKEM_MAX_MULTIPLIER, value) : 0);
   }
-  if (payouts.every((value) => value === 0)) payouts[raceCount] = 5;
+  if (payouts.every((value) => value === 0) && slotCount > 0) payouts[slotCount] = 5;
   return payouts;
+}
+
+function cleanAdvanceSlots(raw, eventIds) {
+  const slotsIn = Array.isArray(raw) ? raw : [];
+  if (slotsIn.length > MAX_RACES) throw httpError(400, `A round can have ${MAX_RACES} advance slots.`);
+  const seen = new Set();
+  return slotsIn.map((slot, index) => {
+    const label = String(slot?.label || '').trim();
+    if (!label) throw httpError(400, 'Each advance slot needs a name.');
+    const pool = [...new Set((Array.isArray(slot?.eventIds) ? slot.eventIds : []).map((eventId) => String(eventId).trim()).filter(Boolean))];
+    if (!pool.length) throw httpError(400, `${label} needs at least one race in its pool.`);
+    for (const eventId of pool) {
+      if (!eventIds.includes(eventId)) throw httpError(400, `${label} can only use races in this round.`);
+    }
+    let id = slugify(slot?.id || label, `advance-${index + 1}`);
+    const root = id.slice(0, 32);
+    let n = 2;
+    while (seen.has(id)) {
+      id = `${root}-${n}`;
+      n += 1;
+    }
+    seen.add(id);
+    return {
+      id,
+      label,
+      eventIds: pool,
+      hint: String(slot?.hint || '').trim().slice(0, 120),
+    };
+  });
+}
+
+function cleanAdvanceResults(raw, slots) {
+  const source = raw && typeof raw === 'object' ? raw : {};
+  const results = {};
+  for (const slot of slots) {
+    const row = source[slot.id];
+    if (!row || typeof row !== 'object') continue;
+    const eventId = String(row.eventId || '');
+    const entryNumber = Number(row.entryNumber);
+    if (!slot.eventIds.includes(eventId) || !Number.isFinite(entryNumber)) continue;
+    const event = getEvent(eventId);
+    const entry = (event?.entries || []).find((item) => item.number === entryNumber);
+    if (!entry) continue;
+    results[slot.id] = { eventId, entryNumber, entryName: entry.name };
+  }
+  return results;
+}
+
+export function setAdvanceResults(tournamentId, roundId, results) {
+  const store = readStore();
+  const index = store.tournaments.findIndex((tournament) => tournament.id === String(tournamentId || ''));
+  if (index < 0) throw httpError(404, 'Tournament not found.');
+  const tournament = store.tournaments[index];
+  const roundIndex = (tournament.rounds || []).findIndex((round) => round.id === String(roundId || ''));
+  if (roundIndex < 0) throw httpError(404, 'That round is gone.');
+  const round = tournament.rounds[roundIndex];
+  const slots = round.advanceSlots || [];
+  if (!slots.length) throw httpError(400, 'That round has no advance slots.');
+  const cleaned = cleanAdvanceResults(results, slots);
+  if (Object.keys(cleaned).length !== slots.length) {
+    throw httpError(400, 'Pick the horse that filled every advance slot.');
+  }
+  tournament.rounds[roundIndex] = { ...round, advanceResults: cleaned };
+  store.tournaments[index] = tournament;
+  writeStore(store);
+  return store.tournaments[index];
 }
 
 function cleanTournament(input, existing) {
@@ -122,9 +188,11 @@ function cleanTournament(input, existing) {
       for (const eventId of round.eventIds || []) claimedElsewhere.add(String(eventId));
     }
   }
+  const previous = existing.find((tournament) => tournament.id === id);
   const rounds = roundsIn.map((round, index) => {
     const label = String(round?.label || '').trim();
     if (!label) throw httpError(400, 'Each round needs a name.');
+    const roundId = slugify(round?.id || label, `round-${index + 1}`);
     const eventIds = [...new Set((Array.isArray(round?.eventIds) ? round.eventIds : []).map((eventId) => String(eventId).trim()).filter(Boolean))];
     if (eventIds.length > MAX_RACES) throw httpError(400, `${label} can hold ${MAX_RACES} races.`);
     for (const eventId of eventIds) {
@@ -137,16 +205,21 @@ function cleanTournament(input, existing) {
       if (claimedElsewhere.has(eventId)) throw httpError(400, `${event.name} is already in another tournament.`);
       usedEvents.add(eventId);
     }
+    const advanceSlots = cleanAdvanceSlots(round?.advanceSlots, eventIds);
+    const previousRound = (previous?.rounds || []).find((item) => item.id === roundId);
+    const incomingResults = round?.advanceResults !== undefined ? round.advanceResults : previousRound?.advanceResults;
+    const slotCount = eventIds.length + advanceSlots.length;
     return {
-      id: slugify(round?.id || label, `round-${index + 1}`),
+      id: roundId,
       label,
       eventIds,
-      pickemPayouts: eventIds.length ? cleanPayouts(round?.pickemPayouts, eventIds.length) : [0],
+      advanceSlots,
+      advanceResults: cleanAdvanceResults(incomingResults, advanceSlots),
+      pickemPayouts: slotCount ? cleanPayouts(round?.pickemPayouts, slotCount) : [0],
     };
   });
   const roundIds = new Set(rounds.map((round) => round.id));
   if (roundIds.size !== rounds.length) throw httpError(400, 'Round names need to be different.');
-  const previous = existing.find((tournament) => tournament.id === id);
   return {
     id,
     name,

@@ -7,6 +7,7 @@ import {
   getGambaLeaderboard,
   getUserLink,
   loadAllUsersForSettlement,
+  saveAllUsersFromSettlement,
   updateUserBettingState,
   withWalletLock,
 } from './clubDatabase.js';
@@ -21,11 +22,12 @@ import {
   placeParlay,
   placePickem,
   placeTournamentParlay,
+  settleAdvancePickems,
 } from './eventGambling.js';
 import { refreshBetsBoardForEvent } from './eventService.js';
 import { getEvent, listEvents } from './eventStorage.js';
 import { getChain, listChains } from './gambaChains.js';
-import { getTournament, listTournaments } from './gambaTournaments.js';
+import { getTournament, listTournaments, setAdvanceResults } from './gambaTournaments.js';
 import { isBotOwner } from './adminRole.js';
 
 const writes = new Map();
@@ -238,6 +240,9 @@ function publicPickem(card) {
     multiplier,
     placedAt: card.placedAt,
     legs: (card.legs || []).map((leg) => ({
+      kind: leg.kind || 'match',
+      slotId: leg.slotId || null,
+      slotLabel: leg.slotLabel || '',
       eventId: leg.eventId,
       eventName: leg.eventName,
       entryNumber: leg.entryNumber,
@@ -270,6 +275,13 @@ function publicRound(round, withEvents) {
     label: round.label,
     eventIds: round.eventIds || [],
     pickemPayouts: round.pickemPayouts || [],
+    advanceSlots: (round.advanceSlots || []).map((slot) => ({
+      id: slot.id,
+      label: slot.label,
+      eventIds: slot.eventIds || [],
+      hint: slot.hint || '',
+    })),
+    advanceResults: round.advanceResults || {},
     state,
     ...(events ? { events } : {}),
   };
@@ -467,10 +479,20 @@ export function mountGamba(app) {
         if (!tournament) return { ok: false, error: 'That tournament is gone.' };
         const round = (tournament.rounds || []).find((item) => item.id === roundId);
         if (!round) return { ok: false, error: 'That round is gone.' };
-        const picks = rawLegs.map((leg) => ({
-          event: getEvent(leg?.eventId),
-          entryNumber: Number(leg?.entryNumber),
-        }));
+        const picks = rawLegs.map((leg) => (
+          leg?.kind === 'advance' || leg?.slotId
+            ? {
+              kind: 'advance',
+              slotId: String(leg.slotId || ''),
+              eventId: String(leg.eventId || ''),
+              entryNumber: Number(leg.entryNumber),
+            }
+            : {
+              kind: 'match',
+              event: getEvent(leg?.eventId),
+              entryNumber: Number(leg?.entryNumber),
+            }
+        ));
         const user = cloneWallet(walletFrom(req.gambaSession));
         const result = placePickem(user, tournament, round, picks, stake);
         if (!result.ok) return result;
@@ -479,6 +501,29 @@ export function mountGamba(app) {
       });
       if (!placed.ok) return res.status(400).json({ error: placed.error });
       res.json(placed);
+    } catch (error) {
+      jsonError(res, error);
+    }
+  });
+
+  router.post('/tournaments/:id/advances', async (req, res) => {
+    try {
+      assertWriteOrigin(req);
+      if (!isBotOwner(req.gambaSession.discordId)) return res.status(403).json({ error: 'Only the owner can confirm advances.' });
+      const roundId = String(req.body?.roundId || '');
+      const results = req.body?.results && typeof req.body.results === 'object' ? req.body.results : {};
+      const tournament = setAdvanceResults(req.params.id, roundId, results);
+      const round = (tournament.rounds || []).find((item) => item.id === roundId);
+      await withWalletLock(() => {
+        const users = loadAllUsersForSettlement();
+        settleAdvancePickems(users, {
+          tournamentId: tournament.id,
+          roundId,
+          advanceResults: round?.advanceResults || {},
+        });
+        saveAllUsersFromSettlement(users);
+      });
+      res.json({ tournament: publicTournamentDetail(tournament) });
     } catch (error) {
       jsonError(res, error);
     }

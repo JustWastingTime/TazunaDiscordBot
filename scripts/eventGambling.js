@@ -41,7 +41,7 @@ function parlayUsingEvent(user, eventId) {
 
 function pickemUsingEvent(user, eventId) {
   return (user?.openPickems || []).find((card) =>
-    (card.legs || []).some((leg) => leg.eventId === eventId && leg.status === 'open'),
+    (card.legs || []).some((leg) => (leg.kind || 'match') === 'match' && leg.eventId === eventId && leg.status === 'open'),
   ) || null;
 }
 
@@ -240,13 +240,16 @@ export function placeTournamentParlay(user, tournament, picks, stake) {
 
 export function placePickem(user, tournament, round, picks, stake) {
   const eventIds = (round?.eventIds || []).map(String);
+  const slots = Array.isArray(round?.advanceSlots) ? round.advanceSlots : [];
   if (!eventIds.length) return { ok: false, error: 'That round has no matches.' };
   const legs = Array.isArray(picks) ? picks : [];
-  if (legs.length !== eventIds.length) return { ok: false, error: 'Pick one horse in every match.' };
+  const slotCount = eventIds.length + slots.length;
+  if (legs.length !== slotCount) return { ok: false, error: 'Fill every match and every advance slot.' };
   const seen = new Set();
   const built = [];
   for (const pick of legs) {
-    const event = pick.event;
+    if (pick.kind === 'advance') continue;
+    const event = pick.event || getEvent(pick.eventId);
     if (!event || !eventIds.includes(String(event.id))) return { ok: false, error: 'That race is not in this round.' };
     if (!isEventBettable(event)) return { ok: false, error: 'Every match in the round has to be open.' };
     if (seen.has(event.id)) return { ok: false, error: 'Pick one horse in each match.' };
@@ -256,6 +259,7 @@ export function placePickem(user, tournament, round, picks, stake) {
     const committed = raceAlreadyCommitted(user, event.id);
     if (committed) return { ok: false, error: `${event.name}: ${committed}` };
     built.push({
+      kind: 'match',
       eventId: event.id,
       eventName: event.name,
       entryNumber: entry.number,
@@ -264,6 +268,27 @@ export function placePickem(user, tournament, round, picks, stake) {
     });
   }
   if (seen.size !== eventIds.length) return { ok: false, error: 'Pick one horse in every match.' };
+  for (const slot of slots) {
+    const pick = legs.find((item) => item.kind === 'advance' && String(item.slotId) === slot.id);
+    if (!pick) return { ok: false, error: `Pick who fills ${slot.label}.` };
+    const event = getEvent(pick.eventId);
+    if (!event || !(slot.eventIds || []).map(String).includes(String(event.id))) {
+      return { ok: false, error: `${slot.label} has to come from its listed races.` };
+    }
+    if (!isEventBettable(event)) return { ok: false, error: 'Every match in the round has to be open.' };
+    const entry = getEntry(event, pick.entryNumber);
+    if (!entry) return { ok: false, error: 'Entry not found.' };
+    built.push({
+      kind: 'advance',
+      slotId: slot.id,
+      slotLabel: slot.label,
+      eventId: event.id,
+      eventName: event.name,
+      entryNumber: entry.number,
+      entryName: entry.name,
+      status: 'open',
+    });
+  }
   for (const eventId of eventIds) {
     if (!isEventBettable(getEvent(eventId))) return { ok: false, error: 'Every match in the round has to be open.' };
   }
@@ -275,11 +300,11 @@ export function placePickem(user, tournament, round, picks, stake) {
   const balance = user.gambaCoins ?? 0;
   if (delta > balance) return { ok: false, error: `Not enough carrots. You have ${formatCoins(balance)}.` };
 
-  const payouts = (round.pickemPayouts || []).slice(0, eventIds.length + 1).map((value) => {
+  const payouts = (round.pickemPayouts || []).slice(0, slotCount + 1).map((value) => {
     const number = Number(value);
     return Number.isFinite(number) && number > 0 ? Math.min(PICKEM_MAX_MULTIPLIER, number) : 0;
   });
-  while (payouts.length <= eventIds.length) payouts.push(0);
+  while (payouts.length <= slotCount) payouts.push(0);
 
   user.gambaCoins = balance - delta;
   const pickem = {
@@ -371,12 +396,25 @@ function pickemHistoryRow(card, pay) {
   };
 }
 
+function payPickem(user, card) {
+  const correct = card.legs.filter((item) => item.status === 'won').length;
+  const multiplier = Number(card.payouts?.[correct]) || 0;
+  const pay = Math.floor(card.stake * multiplier);
+  if (pay > 0) user.gambaCoins = (user.gambaCoins ?? 0) + pay;
+  if (pay > 0) user.gambaWins = (user.gambaWins || 0) + 1;
+  else user.gambaLosses = (user.gambaLosses || 0) + 1;
+  user.gambaWr = formatGambaWr(user.gambaWins, user.gambaLosses);
+  user.betHistory = trimHistory([...(user.betHistory || []), pickemHistoryRow(card, pay)]);
+}
+
 export function settlePickemsForEvent(usersById, event, winningEntryNumber) {
   let settled = 0;
   for (const user of Object.values(usersById || {})) {
     const remaining = [];
     for (const card of user.openPickems || []) {
-      const leg = (card.legs || []).find((item) => item.eventId === event.id && item.status === 'open');
+      const leg = (card.legs || []).find((item) =>
+        (item.kind || 'match') === 'match' && item.eventId === event.id && item.status === 'open',
+      );
       if (!leg) {
         remaining.push(card);
         continue;
@@ -387,14 +425,37 @@ export function settlePickemsForEvent(usersById, event, winningEntryNumber) {
         remaining.push(card);
         continue;
       }
-      const correct = card.legs.filter((item) => item.status === 'won').length;
-      const multiplier = Number(card.payouts?.[correct]) || 0;
-      const pay = Math.floor(card.stake * multiplier);
-      if (pay > 0) user.gambaCoins = (user.gambaCoins ?? 0) + pay;
-      if (pay > 0) user.gambaWins = (user.gambaWins || 0) + 1;
-      else user.gambaLosses = (user.gambaLosses || 0) + 1;
-      user.gambaWr = formatGambaWr(user.gambaWins, user.gambaLosses);
-      user.betHistory = trimHistory([...(user.betHistory || []), pickemHistoryRow(card, pay)]);
+      payPickem(user, card);
+      settled += 1;
+    }
+    user.openPickems = remaining;
+  }
+  return { settled };
+}
+
+export function settleAdvancePickems(usersById, { tournamentId, roundId, advanceResults }) {
+  const results = advanceResults && typeof advanceResults === 'object' ? advanceResults : {};
+  let settled = 0;
+  for (const user of Object.values(usersById || {})) {
+    const remaining = [];
+    for (const card of user.openPickems || []) {
+      if (card.tournamentId !== tournamentId || card.roundId !== roundId) {
+        remaining.push(card);
+        continue;
+      }
+      for (const leg of card.legs || []) {
+        if (leg.kind !== 'advance' || leg.status !== 'open') continue;
+        const result = results[leg.slotId];
+        if (!result) continue;
+        const hit = String(result.eventId) === String(leg.eventId) && Number(result.entryNumber) === Number(leg.entryNumber);
+        leg.status = hit ? 'won' : 'lost';
+        leg.settledAt = new Date().toISOString();
+      }
+      if (card.legs.some((item) => item.status === 'open')) {
+        remaining.push(card);
+        continue;
+      }
+      payPickem(user, card);
       settled += 1;
     }
     user.openPickems = remaining;
