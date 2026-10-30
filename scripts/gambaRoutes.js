@@ -79,6 +79,7 @@ function publicEvent(event, users = null) {
     phase,
     startsAt: event.startsAt || null,
     endsAt: event.endsAt || null,
+    settledAt: event.settledAt || null,
     winner: event.winner ?? null,
     winnerName: winner?.name || null,
     winnerOdds: winner?.odds ?? null,
