@@ -3,3 +3,6 @@ node_modules/
 /data/
 /assets/generated/skill-maps
 /.cursor
+# Dashboard build output: built on the server with `npm run dashboard:build`
+/web/dashboard/*
+!/web/dashboard/.gitkeep
