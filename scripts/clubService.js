@@ -1,4 +1,5 @@
 import { buildGambleProfileFields } from './eventGambling.js';
+import { getCurrentJstDayIndex, hasTodayAndYesterdayZeroDailyFans } from './dashboardPerformance.js';
 import { buildFestProfileData, getCircleTargetSettings, getGuildClubSettings, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
@@ -477,20 +478,6 @@ function getMemberLastUpdatedMs(member) {
   if (!member?.last_updated) return null;
   const t = new Date(member.last_updated).getTime();
   return Number.isFinite(t) ? t : null;
-}
-
-function getCurrentJstDayIndex(now = new Date()) {
-  const jstNow = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
-  const day = jstNow.getDate();
-  return Number.isFinite(day) ? Math.max(0, day - 1) : null;
-}
-
-function hasTodayAndYesterdayZeroDailyFans(member, now = new Date()) {
-  const fans = Array.isArray(member?.daily_fans) ? member.daily_fans : [];
-  if (!fans.length) return false;
-  const dayIdx = getCurrentJstDayIndex(now);
-  if (dayIdx == null || dayIdx <= 0 || dayIdx >= fans.length) return false;
-  return fans[dayIdx] === 0 && fans[dayIdx - 1] === 0;
 }
 
 function resolveDailyFansValueAt(rawFans, dayIdx) {

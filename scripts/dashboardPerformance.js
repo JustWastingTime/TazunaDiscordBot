@@ -1,4 +1,4 @@
-export function getEffectiveJstPeriod(now = new Date()) {
+function getJstDateParts(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Tokyo',
     year: 'numeric',
@@ -6,9 +6,15 @@ export function getEffectiveJstPeriod(now = new Date()) {
     day: '2-digit',
   }).formatToParts(now);
   const value = (type) => Number(parts.find((part) => part.type === type)?.value);
-  let year = value('year');
-  let month = value('month') - 1;
-  if (value('day') < 2) {
+  return { year: value('year'), month: value('month'), day: value('day') };
+}
+
+// The club month resets on day 2 at 00:00 JST, so the 1st still belongs to the previous month.
+export function getEffectiveJstPeriod(now = new Date()) {
+  const jst = getJstDateParts(now);
+  let year = jst.year;
+  let month = jst.month - 1;
+  if (jst.day < 2) {
     month -= 1;
     if (month < 0) {
       month = 11;
@@ -102,9 +108,24 @@ export function getFullPeriodFanStats(rawFans) {
   return getMemberFanStats(fans.map((value) => (value < 0 ? Math.abs(value) : value)));
 }
 
-function getCurrentJstDayIndex(now = new Date()) {
-  const day = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Tokyo', day: 'numeric' }).format(now));
-  return Number.isFinite(day) ? Math.max(0, day - 1) : null;
+// Index into a month record's daily_fans array (slot 0 = calendar day 1). On the 1st JST the
+// previous month's period is still running, so "today" is the slot after its last calendar day.
+export function getCurrentJstDayIndex(now = new Date()) {
+  const { year, month, day } = getJstDateParts(now);
+  if (!Number.isFinite(day)) return null;
+  if (day >= 2) return day - 1;
+  return new Date(Date.UTC(year, month - 1, 0)).getUTCDate();
+}
+
+// Slot to compare for "today": clamped to the array when uma.moe has no slot for it yet.
+export function hasTodayAndYesterdayZeroDailyFans(member, now = new Date()) {
+  const fans = Array.isArray(member?.daily_fans) ? member.daily_fans : [];
+  if (!fans.length) return false;
+  const dayIdx = getCurrentJstDayIndex(now);
+  if (dayIdx == null) return false;
+  const idx = Math.min(dayIdx, fans.length - 1);
+  if (idx <= 0) return false;
+  return fans[idx] === 0 && fans[idx - 1] === 0;
 }
 
 function resolveDailyFansValueAt(rawFans, dayIdx) {
@@ -125,14 +146,6 @@ export function getTodayFanGain(rawFans, now = new Date()) {
   const yesterday = resolveDailyFansValueAt(rawFans, dayIdx - 1);
   if (today == null || yesterday == null) return 0;
   return Math.max(0, today - yesterday);
-}
-
-function hasTodayAndYesterdayZeroDailyFans(member, now = new Date()) {
-  const fans = Array.isArray(member.daily_fans) ? member.daily_fans : [];
-  if (!fans.length) return false;
-  const dayIdx = getCurrentJstDayIndex(now);
-  if (dayIdx == null || dayIdx <= 0 || dayIdx >= fans.length) return false;
-  return fans[dayIdx] === 0 && fans[dayIdx - 1] === 0;
 }
 
 export function isMemberActive(member, cutoffMs, now = new Date()) {
