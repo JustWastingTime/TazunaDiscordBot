@@ -3626,6 +3626,41 @@
             "mejiro ramonu tracen"
         ]
     },
+    {   "id": "10091 Katsuragi Ace",
+        "card_name": "Tracen Academy",
+        "character_name": "Katsuragi Ace",
+        "unique": "-",
+        "effects": [
+            "Friendship Bonus - 10/11/13/15/15%",
+            "Initial Friendship Gauge - 15/16/18/20/20",
+            "Race Bonus - 1/2/3/5/5%",
+            "Fan Bonus - 5/6/8/10/10%",
+            "Hint Levels - 1/1/1/2/2",
+            "Hint Frequency - 20/23/26/30/30%",
+            "Specialty Priority - 20/25/30/35/35",
+            "Skill Point Bonus - 0/0/0/0/1"
+        ],
+        "support_skills": [
+            "Tokyo Racecourse",
+            "Fast-Paced",
+            "Steadfast",
+            "Medium Straightaways",
+            "Front Runner Corners",
+            "Leader's Pride",
+            "Aspire",
+            "Steady Gait",
+            "Firm Resolve"
+        ],
+        "event_skills": [],
+        "url": "https://gametora.com/umamusume/supports/10091-katsuragi-ace",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_10091.png",
+        "rarity": "r",
+        "category": "speed",
+        "aliases": [
+            "katsuragi ace tracen"
+        ],
+        "events": []
+    },
 
 
 
@@ -6173,6 +6208,40 @@
             ]
         }
         ]
+    },
+    {   "id": "20055 Aston Machan",
+        "card_name": "A Clip to Keep Your Heart Warm",
+        "character_name": "Aston Machan",
+        "unique": "Increases the effectiveness of Friendship Training (10%)\nIncreases Speed gain when training together (1)",
+        "effects": [
+            "Friendship Bonus - 25/26/28/30/30%",
+            "Speed Bonus - 0/0/0/0/1",
+            "Training Effectiveness - 5%",
+            "Initial Speed - 0/10/15/20/20",
+            "Initial Power - 15/16/18/20/20",
+            "Initial Friendship Gauge - 5/6/8/10/10",
+            "Hint Levels - 2/2/2/2/3",
+            "Hint Frequency - 40/42/45/47/50%",
+            "Specialty Priority - 20/25/30/35/35"
+        ],
+        "support_skills": [
+            "Wet Conditions",
+            "Early Lead",
+            "Sprint Straightaways",
+            "Stop Right There!",
+            "Dodging Danger",
+            "Restart",
+            "Groundwork"
+        ],
+        "event_skills": [],
+        "url": "https://gametora.com/umamusume/supports/20055-aston-machan",
+        "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20055.png",
+        "rarity": "sr",
+        "category": "speed",
+        "aliases": [
+            "aston machan", "a clip to keep your heart warm"
+        ],
+        "events": []
     },
 
     

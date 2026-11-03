@@ -1,7 +1,7 @@
 import { fetchUmaJson, getUserProfileUrl } from './clubService.js';
 import { getGuildClubs } from './clubDatabase.js';
 import { getEffectiveJstPeriod } from './dashboardPerformance.js';
-import { getTenureCache, listMemberDirectory, saveTenureCache } from './dashboardStore.js';
+import { getTenureCache, listMemberDirectory, saveTenureCache, saveTenureCacheMany } from './dashboardStore.js';
 
 function monthIndex(year, month) {
   return year * 12 + (month - 1);
@@ -117,27 +117,54 @@ async function tenureForTrainer(umaId, registered) {
   };
 }
 
-export async function warmNetworkTenure(guildId, umaIds) {
+const SAVE_EVERY = 20;
+const warming = new Map();
+
+async function runTenureWarm(guildId, umaIds) {
   const registered = getGuildClubs(guildId).map((club) => ({
     id: String(club.circleId),
     name: club.circleName || String(club.circleId),
   }));
   const pending = [...new Set((umaIds || []).map((id) => String(id || '').trim()).filter(Boolean))]
     .filter((umaId) => !getTenureCache(guildId, umaId));
+  if (!pending.length) return;
+  console.log(`[tenure] refreshing ${pending.length} trainer(s) for guild ${guildId}`);
   let cursor = 0;
+  let batch = [];
+  const flush = async () => {
+    if (!batch.length) return;
+    const entries = batch;
+    batch = [];
+    await saveTenureCacheMany(guildId, entries);
+  };
   const workers = Array.from({ length: Math.min(4, pending.length) }, async () => {
     while (cursor < pending.length) {
       const umaId = pending[cursor];
       cursor += 1;
       try {
-        const summary = await tenureForTrainer(umaId, registered);
-        await saveTenureCache(guildId, umaId, summary);
+        batch.push([umaId, await tenureForTrainer(umaId, registered)]);
+        if (batch.length >= SAVE_EVERY) await flush();
       } catch (error) {
         console.warn(`[tenure] ${umaId}: ${error.message}`);
       }
     }
   });
   await Promise.all(workers);
+  await flush();
+}
+
+/**
+ * Refreshes expired tenure entries in the background. Callers do not wait for it: the
+ * directory is served from whatever is cached, and fills in on later loads.
+ */
+export function warmNetworkTenure(guildId, umaIds) {
+  const key = String(guildId);
+  if (warming.has(key)) return warming.get(key);
+  const run = runTenureWarm(guildId, umaIds)
+    .catch((error) => console.warn(`[tenure] warm failed for guild ${key}: ${error.message}`))
+    .finally(() => warming.delete(key));
+  warming.set(key, run);
+  return run;
 }
 
 export async function buildMemberProfile(guildId, umaId) {

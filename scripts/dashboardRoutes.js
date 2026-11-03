@@ -612,7 +612,7 @@ export function mountDashboard(app) {
         await hydrateClubTargets(ctx.guildId, listGuildDashboardClubs(ctx.guildId)),
       )));
       const directoryIds = listMemberDirectory(ctx.guildId).map((row) => row.umaId);
-      await warmNetworkTenure(ctx.guildId, directoryIds);
+      void warmNetworkTenure(ctx.guildId, directoryIds);
       const site = getSite(ctx.guildId);
       res.json({
         clubs,

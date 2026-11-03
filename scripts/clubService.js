@@ -15,6 +15,8 @@ const EMPTY_FAN_STATS = {
 const ACTIVE_LAG_TOLERANCE_MS = 2 * 60 * 60 * 1000;
 const MIN_ACTIVE_RATIO_FOR_FILTER = 0.75;
 
+const UMA_FETCH_TIMEOUT_MS = Math.max(1000, Number(process.env.UMA_FETCH_TIMEOUT_MS || 15_000));
+
 export function getUmaApiKey() {
   return String(process.env.UMA_API_KEY || process.env.UMA_MOE_API_KEY || '').trim();
 }
@@ -36,7 +38,15 @@ export async function fetchUmaJson(url) {
     );
   }
 
-  const res = await fetch(url, { headers: getUmaHeaders() });
+  let res;
+  try {
+    res = await fetch(url, { headers: getUmaHeaders(), signal: AbortSignal.timeout(UMA_FETCH_TIMEOUT_MS) });
+  } catch (error) {
+    if (error?.name === 'TimeoutError' || error?.name === 'AbortError') {
+      throw new Error(`uma.moe did not respond within ${UMA_FETCH_TIMEOUT_MS / 1000}s.`);
+    }
+    throw error;
+  }
   if (!res.ok) {
     if (res.status === 404) throw new Error('Not found on uma.moe.');
     if (res.status === 401) {

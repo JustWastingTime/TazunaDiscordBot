@@ -2,6 +2,8 @@ import {
   InteractionResponseFlags,
   InteractionResponseType,
 } from 'discord-interactions';
+import { isBotOwner, isTazunaAdmin, tazunaAdminDenied } from './adminRole.js';
+import { isPremiumGuild } from './clubDatabase.js';
 import { editChannelMessage, sendChannelMessage } from './quizDiscord.js';
 import {
   closeSignup,
@@ -10,13 +12,6 @@ import {
   newSignupId,
   toggleRegistrant,
 } from './signupStorage.js';
-
-const BOT_OWNER_IDS = new Set(
-  String(process.env.BOT_OWNER_IDS || process.env.BOT_OWNER_ID || '')
-    .split(',')
-    .map((id) => id.trim())
-    .filter(Boolean),
-);
 
 const SIGNUP_CUSTOM_ID_PREFIX = 'signup-toggle:';
 
@@ -27,10 +22,8 @@ function ephemeral(content) {
   };
 }
 
-function isOwnerGuild(guildId) {
-  const ownerGuildId = String(process.env.BOT_OWNER_GUILD_ID || '').trim();
-  return Boolean(guildId && ownerGuildId && String(guildId) === ownerGuildId);
-}
+/** Signups may stay open for at most 31 days. */
+export const SIGNUP_MAX_HOURS = 31 * 24;
 
 function getOptionValue(req, name) {
   const value = req.body.data.options?.find((opt) => opt.name === name)?.value;
@@ -105,11 +98,19 @@ export async function handleSignupCommand(req) {
   const guildId = req.body.guild_id;
   const userId = req.body.member?.user?.id || req.body.user?.id;
 
-  if (!isOwnerGuild(guildId)) {
-    return ephemeral('❌ This command is not available in this server.');
+  if (!guildId) {
+    return ephemeral('❌ This command can only be used in a server.');
   }
-  if (!userId || !BOT_OWNER_IDS.has(userId)) {
-    return ephemeral('❌ Only the bot owner can use `/signup`.');
+  if (!userId) return ephemeral('❌ Could not identify you.');
+
+  // Bot owner bypasses the premium + role checks.
+  if (!isBotOwner(userId)) {
+    if (!isPremiumGuild(guildId)) {
+      return ephemeral('Only available on premium servers.');
+    }
+    if (!(await isTazunaAdmin(guildId, req.body.member))) {
+      return ephemeral(tazunaAdminDenied('use `/signup`'));
+    }
   }
 
   const name = String(getOptionValue(req, 'name') || '').trim();
@@ -120,6 +121,9 @@ export async function handleSignupCommand(req) {
   if (!channelId) return ephemeral('❌ Pick a channel to post in.');
   if (!Number.isFinite(hours) || hours < 1) {
     return ephemeral('❌ Hours must be at least 1.');
+  }
+  if (hours > SIGNUP_MAX_HOURS) {
+    return ephemeral(`❌ Signups can stay open for at most 31 days (${SIGNUP_MAX_HOURS} hours).`);
   }
 
   return {

@@ -50,7 +50,6 @@ function emptyStore() {
     blacklist: {},
     memberLinks: {},
     directory: {},
-    sightings: {},
     staffExtra: {},
     tournaments: {},
     membersCache: {},
@@ -66,6 +65,8 @@ function loadStore() {
   ensureDataDir();
   try {
     const parsed = JSON.parse(fs.readFileSync(STORE_PATH, 'utf8'));
+    // `sightings` was a write-only daily log that grew forever; drop it on the next save.
+    delete parsed.sightings;
     return { ...emptyStore(), ...parsed };
   } catch (err) {
     if (err.code === 'ENOENT') return emptyStore();
@@ -75,7 +76,7 @@ function loadStore() {
 
 function saveStore(store) {
   ensureDataDir();
-  fs.writeFileSync(STORE_PATH, `${JSON.stringify(store, null, 2)}\n`, 'utf8');
+  fs.writeFileSync(STORE_PATH, `${JSON.stringify(store)}\n`, 'utf8');
 }
 
 export function getDashboardMaxClubs() {
@@ -384,7 +385,6 @@ export function recordManagedRoster(guildId, circleId, members) {
     const club = String(circleId);
     const today = jstDate();
     if (!store.directory[g]) store.directory[g] = {};
-    if (!store.sightings[g]) store.sightings[g] = {};
     const present = (members || [])
       .map((member) => ({
         umaId: String(member.umaId || '').trim(),
@@ -393,7 +393,6 @@ export function recordManagedRoster(guildId, circleId, members) {
       .filter((member) => member.umaId);
     const presentIds = new Set(present.map((member) => member.umaId));
     for (const member of present) {
-      store.sightings[g][`${member.umaId}:${club}:${today}`] = true;
       const existing = store.directory[g][member.umaId] || {};
       store.directory[g][member.umaId] = {
         umaId: member.umaId,
@@ -440,23 +439,31 @@ export function getTenureCache(guildId, umaId) {
   return row;
 }
 
-export function saveTenureCache(guildId, umaId, summary) {
+/** Saves several trainers' tenure in one write. `entries` is [[umaId, summary], ...]. */
+export function saveTenureCacheMany(guildId, entries) {
   return withLock(() => {
     const store = loadStore();
     const g = String(guildId);
-    const id = String(umaId);
     if (!store.tenureCache) store.tenureCache = {};
     if (!store.tenureCache[g]) store.tenureCache[g] = {};
-    store.tenureCache[g][id] = {
-      networkMonths: summary.networkMonths,
-      firstNetworkMonth: summary.firstNetworkMonth,
-      lastNetworkMonth: summary.lastNetworkMonth,
-      historyIncomplete: summary.historyIncomplete,
-      savedAt: Date.now(),
-    };
+    const savedAt = Date.now();
+    for (const [umaId, summary] of entries || []) {
+      store.tenureCache[g][String(umaId)] = {
+        networkMonths: summary.networkMonths,
+        firstNetworkMonth: summary.firstNetworkMonth,
+        lastNetworkMonth: summary.lastNetworkMonth,
+        historyIncomplete: summary.historyIncomplete,
+        savedAt,
+      };
+    }
     saveStore(store);
-    return store.tenureCache[g][id];
+    return store.tenureCache[g];
   });
+}
+
+export async function saveTenureCache(guildId, umaId, summary) {
+  const rows = await saveTenureCacheMany(guildId, [[umaId, summary]]);
+  return rows[String(umaId)];
 }
 
 export function getMembersCache(guildId) {
