@@ -19,6 +19,9 @@ const EDIT_STAGGER_MS = 2500;
 const CIRCLE_CACHE_TTL_MS = 3 * 60 * 1000;
 
 const circleCache = new Map();
+const fetchFailures = new Map();
+const FAILURE_BACKOFF_BASE_MS = 2 * 60 * 1000;
+const FAILURE_BACKOFF_MAX_MS = 15 * 60 * 1000;
 let tickInFlight = false;
 let tickStartedAt = 0;
 const TICK_STUCK_MS = 10 * 60 * 1000;
@@ -71,7 +74,24 @@ async function getCachedLeaderboardPackage(circleId, guildId = null) {
     return cached;
   }
 
-  const pkg = await buildLeaderboardPackage(circleId, { guildId });
+  const failure = fetchFailures.get(key);
+  if (failure && now < failure.retryAt) {
+    const skipped = new Error(`skipped after ${failure.count} failure(s): ${failure.message}`);
+    skipped.backoff = true;
+    throw skipped;
+  }
+
+  let pkg;
+  try {
+    pkg = await buildLeaderboardPackage(circleId, { guildId });
+  } catch (error) {
+    // Back off per club while uma.moe is down instead of re-requesting every circle every minute.
+    const count = (failure?.count || 0) + 1;
+    const delay = Math.min(FAILURE_BACKOFF_MAX_MS, FAILURE_BACKOFF_BASE_MS * 2 ** (count - 1));
+    fetchFailures.set(key, { count, retryAt: now + delay, message: error.message });
+    throw error;
+  }
+  fetchFailures.delete(key);
   const cachedPkg = {
     ...pkg,
     contentHash: hashLeaderboardContent(pkg.embed),
@@ -191,8 +211,9 @@ async function processDueChannel(entry, pkg, now) {
     });
   } catch (err) {
     const message = String(err?.message || err);
-    if (message.includes('10008') || message.includes('Unknown Message')) {
-      console.warn(`Leaderboard message missing for guild ${entry.guildId} club ${entry.circleId}, removing channel.`);
+    // 10008 Unknown Message / 10003 Unknown Channel: the board was deleted, so stop retrying it every tick.
+    if (/"code":\s*1000[38]\b/.test(message) || message.includes('Unknown Message') || message.includes('Unknown Channel')) {
+      console.warn(`Leaderboard message or channel missing for guild ${entry.guildId} club ${entry.circleId}, removing channel.`);
       removeLeaderboardChannel(entry.guildId, entry.circleId);
       return;
     }
@@ -237,7 +258,7 @@ export async function runLeaderboardTick() {
           const pkg = await getCachedLeaderboardPackage(circleId, guildId);
           packagesByCircle.set(cacheKey, pkg);
         } catch (err) {
-          console.error(`Leaderboard fetch failed for circle ${circleId}:`, err.message);
+          if (!err.backoff) console.error(`Leaderboard fetch failed for circle ${circleId}:`, err.message);
         }
       }),
     );
