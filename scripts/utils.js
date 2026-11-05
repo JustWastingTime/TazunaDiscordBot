@@ -62,20 +62,31 @@ export const scheduleColors = {
 };
 
 
+const DISCORD_REQUEST_TIMEOUT_MS = Math.max(1000, Number(process.env.DISCORD_REQUEST_TIMEOUT_MS || 30_000));
+
 export async function DiscordRequest(endpoint, options) {
   // append endpoint to root API URL
   const url = 'https://discord.com/api/v10/' + endpoint;
   // Stringify payloads
   if (options.body) options.body = JSON.stringify(options.body);
-  // Use fetch to make requests
-  const res = await fetch(url, {
-    headers: {
-      Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
-      'Content-Type': 'application/json; charset=UTF-8',
-      'User-Agent': 'DiscordBot (https://github.com/discord/discord-example-app, 1.0.0)',
-    },
-    ...options
-  });
+  // Use fetch to make requests. A timeout keeps one stuck request from blocking callers forever.
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: {
+        Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
+        'Content-Type': 'application/json; charset=UTF-8',
+        'User-Agent': 'DiscordBot (https://github.com/discord/discord-example-app, 1.0.0)',
+      },
+      signal: AbortSignal.timeout(DISCORD_REQUEST_TIMEOUT_MS),
+      ...options
+    });
+  } catch (error) {
+    if (error?.name === 'TimeoutError') {
+      throw new Error(`Discord did not respond within ${DISCORD_REQUEST_TIMEOUT_MS / 1000}s (${options.method || 'GET'} ${endpoint})`);
+    }
+    throw error;
+  }
   // throw API errors
   if (!res.ok) {
     const data = await res.json();

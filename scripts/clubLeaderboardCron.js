@@ -20,6 +20,8 @@ const CIRCLE_CACHE_TTL_MS = 3 * 60 * 1000;
 
 const circleCache = new Map();
 let tickInFlight = false;
+let tickStartedAt = 0;
+const TICK_STUCK_MS = 10 * 60 * 1000;
 
 export function hashLeaderboardContent(embed) {
   const stable = {
@@ -206,8 +208,15 @@ function sleep(ms) {
 }
 
 export async function runLeaderboardTick() {
-  if (tickInFlight) return;
+  if (tickInFlight) {
+    const stuckMs = Date.now() - tickStartedAt;
+    if (stuckMs < TICK_STUCK_MS) return;
+    // Every request has a timeout, so this should not happen; recover instead of freezing all boards.
+    console.warn(`Leaderboard tick has been running for ${Math.round(stuckMs / 60000)} min; starting a new one.`);
+  }
   tickInFlight = true;
+  const startedAt = Date.now();
+  tickStartedAt = startedAt;
 
   try {
     const channels = getAllLeaderboardChannels();
@@ -245,7 +254,7 @@ export async function runLeaderboardTick() {
       await processDueChannel(entry, pkg, Date.now());
     }
   } finally {
-    tickInFlight = false;
+    if (tickStartedAt === startedAt) tickInFlight = false;
   }
 }
 
