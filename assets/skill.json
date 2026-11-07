@@ -10120,7 +10120,7 @@
             "triggers": [
                 {
                     "type": "box",
-                    "phase": "med",
+                    "phase": "mid",
                     "clip_within_segment_start_ratio": 0.5,
                     "trigger_behavior": "random",
                     "distance_types": [
