@@ -3860,9 +3860,9 @@
             "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, and Tokyo Yushun (Japanese Derby) while being undefeated and the most popular as a Front Runner\nReach 1200 or more Stamina"
         }
     },
-    {   "id": "102602 - Mihono Bourbon Valentines",
+    {   "id": "102602 - Mihono Bourbon Valentine",
         "character_name": "Mihono Bourbon",
-        "type": "Valentines",
+        "type": "Valentine",
         "costume": "CODE: ICING",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -3981,6 +3981,10 @@
             "Wet Conditions",
             "Slick Surge"
         ],
+        "evo_skills": [
+            "Let Those Muscles SING!",
+            "Bulk Up & Away!"
+        ],
         "races": [
             "satsuki sho april 1 year 2",
             "japanese derby may 2 year 2",
@@ -3993,6 +3997,77 @@
         "aliases": ["mejiro ryan original", "down the line"],
         "url": "https://gametora.com/umamusume/characters/102701-mejiro-ryan",
         "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1027_102701.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Triple Crown (Satsuki Sho, Tokyo Yushun (Japanese Derby), Kikuka Sho)",
+            "rewards": "Power +15, Slick Surge hint +2"
+            }
+        ],
+        "epithet": {
+            "name": "Mesmerizing Muscle",
+            "condition": "Win a G1 race against a Mejiro at least once\nWin the Kikuka Sho\nWin the Takarazuka Kinen\nWin the Arima Kinen\nEarn a total of at least 240,000 fans"
+        }
+    },
+    {   "id": "102702 - Mejiro Ryan Valentine",
+        "character_name": "Mejiro Ryan",
+        "type": "Valentine",
+        "costume": "Marguerite Latte",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "20%",
+            "stamina": "",
+            "power": "",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "E",
+            "Mile": "C",
+            "Medium": "A",
+            "Long": "B"
+            },
+            {
+            "Front": "F",
+            "Pace": "A",
+            "Late": "A",
+            "End": "F"
+            }
+        ],
+        "unique": "A Warm Cup for You",
+        "unique_explanation": "",
+        "skills": [
+            "Downhill Speedster",
+            "Straight Descent",
+            "Target in Sight"
+        ],
+        "potential": [
+            "Medium Corners",
+            "Determined Descent",
+            "Pace Chaser Corners",
+            "Master of Declines"
+        ],
+        "event_skills": [
+            "Wet Conditions",
+            "Up-Tempo",
+            "All I've Got",
+            "Slick Surge"
+        ],
+        "evo_skills": [
+            "Helping Grant Your Dream",
+            "Give You a Taste of Glory",
+            "Behold My Courageous Advance"
+        ],
+        "aliases": ["mejiro ryan valentines", "marguerite latte"],
+        "url": "https://gametora.com/umamusume/characters/102702-mejiro-ryan",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1027_102702.png",
         "review": "",
         "secrets": [
             {
@@ -4362,6 +4437,10 @@
             "Early Lead",
             "Front Runner Straightaways"
         ],
+        "evo_skills": [
+            "Stubborn Sis",
+            "Wind God's Wrath"
+        ],
         "races": [
             "asahi hai futurity stakes december 1 year 1",
             "satsuki sho april 1 year 2",
@@ -4388,6 +4467,79 @@
             "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, Tokyo Yushun (Japanese Derby) and Japan Cup (Year 3) as a Front Runner\nReach 1200 or more Speed\nReach 1200 or more Guts"
         }
     },
+    {   "id": "103102 - Ines Fujin Valentine",
+        "character_name": "Ines Fujin",
+        "type": "Valentine",
+        "costume": "Melt Your Heart",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "14%",
+            "stamina": "",
+            "power": "",
+            "guts": "8%",
+            "wit": "8%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "G",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "C"
+            },
+            {
+            "Front": "A",
+            "Pace": "C",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "Fresh☆Parlor",
+        "unique_explanation": "",
+        "skills": [
+            "Groundwork",
+            "Focus",
+            "Front Runner Corners"
+        ],
+        "potential": [
+            "Front Runner Savvy",
+            "Concentraion",
+            "Speed Eater",
+            "Crescent Gale"
+        ],
+        "event_skills": [
+            "Playtime's Over!",
+            "Dodging Danger",
+            "Firm Resolve",
+            "Triple 7s",
+            "Early Lead",
+            "Front Runner Straightaways"
+        ],
+        "evo_skills": [
+            "Perfect ♪ Order Up!",
+            "Slick Serving"
+        ],
+        "aliases": ["ines fujin valentines", "melt your heart"],
+        "url": "https://gametora.com/umamusume/characters/103102-ines-fujin",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1031_103102.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Get a win streak of G1 races as Front Runner",
+            "rewards": "7+ \nSpeed +15, Guts +15, Early Lead hint +2, Front Runner Straightaways hint +2 \n\n4+ \nSpeed +10, Guts +10\n\n1+ \nSpeed +10"
+            }
+        ],
+        "epithet": {
+            "name": "God of Wind",
+            "condition": "Win the Asahi Hai Futurity Stakes, Satsuki Sho, Tokyo Yushun (Japanese Derby) and Japan Cup (Year 3) as a Front Runner\nReach 1200 or more Speed\nReach 1200 or more Guts"
+        }
+    },
+
 
     {   "id": "103201 - Agnes Tachyon",
         "character_name": "Agnes Tachyon",
@@ -5041,9 +5193,9 @@
             "condition": "Win the Tokyo Yushun (Japanese Derby) as a Late Surger\nWin the Tenno Sho (Autumn) as a Late Surger\nComplete the Career with the Fast Learner condition"
         }
     },
-    {   "id": "103702 - Eishin Flash Valentines",
+    {   "id": "103702 - Eishin Flash Valentine",
         "character_name": "Eishin Flash",   
-        "type": "Valentines",
+        "type": "Valentine",
         "costume": "Precise Chocolatier",
         "rarity": "⭐⭐⭐",
         "stat_bonuses": [
@@ -7760,6 +7912,101 @@
         }
     },
 
+    {   "id": "106501 - Daitaku Helios",
+        "character_name": "Daitaku Helios",
+        "type": "Original",
+        "costume": "Fun☆Fun☆Party Night",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "15%",
+            "stamina": "",
+            "power": "",
+            "guts": "15%",
+            "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "A",
+            "Dirt": "G"
+            },
+            {
+            "Sprint": "B",
+            "Mile": "A",
+            "Medium": "B",
+            "Long": "E"
+            },
+            {
+            "Front": "A",
+            "Pace": "A",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "Hands in the Air Like Ya Don't Care!",
+        "unique_explanation": "",
+        "skills": [
+            "No Looking Back",
+            "Long Shot",
+            "Shifting Gears"
+        ],
+        "potential": [
+            "Mile Straightaways",
+            "Changing Gears",
+            "Slipstream",
+            "Reckless Charge"
+        ],
+        "event_skills": [
+            "Speed Eater",
+            "Mile Corners",
+            "Productive Plan",
+            "Unyielding Spirit",
+            "Gonna Be Ur #1 FRFR",
+            "Runaway"
+        ],
+        "evo_skills": [
+            "LOL I'm on FIRE!",
+            "DW I'm on It!"
+        ],
+        "races": [
+            "hanshin juvenile fillies december 1 year 1",
+            "aoi stakes may 2 year 2",
+            "mile championship november 2 year 2",
+            "takamatsunomiya kinen march 2 year 3",
+            "milers cup april 2 year 3",
+            "yasuda kinen june 1 year 3",
+            "mile championship november 2 year 3",
+            "arima kinen december 2 year 3"
+        ],
+        "aliases": ["daitaku helios original og", "fun fun party night"],
+        "url": "https://gametora.com/umamusume/characters/106501-daitaku-helios",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1065_106501.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win the Yasuda Kinen (Year 2), Yasuda Kinen (Year 3), the Mile Championship (Year 2) and the Mile Championship (Year 3)",
+            "rewards": "Speed +30, Productive Plan hint +1, Unyielding Spirit hint +1"
+            },
+            {
+            "conditions": "Be the #1 favorite for the current race",
+            "rewards": "Mood +1, Obtain Gonna Be Ur #1 FRFR skill"
+            },
+            {
+            "conditions": "Win the Arima Kinen (Year 3) using Front Runner strategy",
+            "rewards": "Runaway hint +1"
+            },
+            {
+            "conditions": "Win the Yasuda Kinen and the Mile Championship twice. Lose in the Arima Kinen (Year 3) using Front Runner strategy",
+            "rewards": "Runaway hint +1"
+            }
+        ],
+        "epithet": {
+            "name": "Ultra-Hyped Partyer",
+            "condition": "Win the Milers Cup\nWin the Mile Championship twice\nHave a Mood level of Perfect in all races\nReach 1200 or more Power"
+        }
+    },
+
     {   "id": "106701 - Satono Diamond",
         "character_name": "Satono Diamond",
         "type": "Original",
@@ -8669,8 +8916,91 @@
         }
     },
 
-
-
+    {   "id": "109901 - Hokko Tarumae",
+        "character_name": "Hokko Tarumae",
+        "type": "Original",
+        "costume": "Starry Lightship",
+        "rarity": "⭐⭐⭐",
+        "stat_bonuses": [
+            {
+            "speed": "10%",
+            "stamina": "10%",
+            "power": "",
+            "guts": "",
+            "wit": "10%"
+            }
+        ],
+        "aptitudes": [
+            {
+            "Turf": "G",
+            "Dirt": "A"
+            },
+            {
+            "Sprint": "F",
+            "Mile": "A",
+            "Medium": "A",
+            "Long": "E"
+            },
+            {
+            "Front": "B",
+            "Pace": "A",
+            "Late": "G",
+            "End": "G"
+            }
+        ],
+        "unique": "Shine On, Tomakomai! ☆",
+        "unique_explanation": "",
+        "skills": [
+            "Kawasaki Racecourse",
+            "Top Pick",
+            "Stamina to Spare"
+        ],
+        "potential": [
+            "Shrewd Step",
+            "Calm and Collected",
+            "Subdued Pace Chasers",
+            "Trending in the Charts!"
+        ],
+        "event_skills": [
+            "Got the Spirit!",
+            "Highlander",
+            "Forward, March!",
+            "Sunny Sign"
+        ],
+        "evo_skills": [
+            "Thinkin' About Tomakomai Food",
+            "Be a Good Ambassador!",
+            "Give Your All, Star of Tomakomai!"
+        ],
+        "races": [
+            "leopard stakes august 1 year 2",
+            "champions cup december 1 year 2",
+            "kawasaki kinen february 1 year 3",
+            "kashiwa kinen may 1 year 3",
+            "teio sho june 2 year 3",
+            "jbc classic november 1 year 3",
+            "champions cup december 1 year 3",
+            "tokyo daishoten december 2 year 3"
+        ],
+        "aliases": ["hokko tarumae original", "starry lightship"],
+        "url": "https://gametora.com/umamusume/characters/109901-hokko-tarumae",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1099_109901.png",
+        "review": "",
+        "secrets": [
+            {
+            "conditions": "Win any G1 Dirt race 10 times",
+            "rewards": "All stats +10, Speed +20, Forward, March! hint +2"
+            },
+            {
+            "conditions": "Win any G1 race 9 times and the Tokyo Daishoten",
+            "rewards": "All stats +3, Speed +45, Sunny Sign hint +2, Yayoi Akikawa bond +4"
+            }
+        ],
+        "epithet": {
+            "name": "The Star of Tomakomai",
+            "condition": "Win at least 10 dirt G1 races\nEarn a total of at least 320,000 fans"
+        }
+    },
 
     {   "id": "110001 - Wonder Acute",
         "character_name": "Wonder Acute",
