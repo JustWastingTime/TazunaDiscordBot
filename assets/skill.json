@@ -2719,6 +2719,27 @@
             "show_chart": false
         }
     },
+    {   "skill_name": "Sharp Turns x", "description": "Moderately decrease performance on tracks with sharp turns.",
+        "effect": [
+            {
+                "description": "Wit stat -40.",
+                "conditions": [
+                    "Sapporo, Hakodate, Fukushima, Kokura, Kawasaki, or Funabashi Racecourse"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "normal",
+        "category": "gatenegative",
+        "aliases": [
+            "sharp turns x",
+            "tight turns x"
+        ],
+        "gametora_id": "202243",
+        "activation_map": {
+            "show_chart": false
+        }
+    },
     {   "skill_name": "Gonna Be Ur #1 FRFR", "description": "Press coverage goes to the skill user's head, moderately increasing chance of rushing.",
         "effect": [
             {
@@ -2743,7 +2764,7 @@
 
 
 
-    {   "note": "================= START OF PURPLE GATE ==================", 
+    {   "note": "================= START OF LUCKY SEVEN ==================", 
         "skill_name": "Lucky Seven", "description": "Moderately good things may happen when in bracket 7.",
         "effect": [
             {
@@ -13187,7 +13208,7 @@
             "mihono bourbon valentines",
             "オペレーションcacao"
         ],
-        "horse": "Mihono Bourbon (Valentines)",
+        "horse": "Mihono Bourbon (Valentine)",
         "gametora_id": "110261",
         "activation_map": {
             "show_chart": true,
@@ -13220,7 +13241,7 @@
             "guten appetit ♪",
             "eishin flash valentines"
         ],
-        "horse": "Eishin Flash (Valentines)",
+        "horse": "Eishin Flash (Valentine)",
         "gametora_id": "110371",
         "activation_map": {
             "show_chart": true,
@@ -14934,6 +14955,160 @@
                     "phase": "late_and_beyond",
                     "remaining_gte": 600,
                     "trigger_behavior": "asap"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Hands in the Air Like Ya Don't Care!", "description": "Moderately crank the velocity when vibing toward the front sometime upon approaching late-race. If it's like a sprint or mile race or smth, moderately crank the velocity CONTINUOUSLY!",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 6.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.6s.",
+                "conditions": [
+                    "Sprint or Mile",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the second half of mid race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.25 for 5.0s.",
+                "inherited": "Increases target speed by 0.05 for 3.0s.",
+                "conditions": [
+                    "Medium or Long",
+                    "1st to 5th (CM), 1st to 6th (TT)",
+                    "Random point in the second half of mid race"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "hands in the air like ya dont care",
+            "daitaku helios original og"
+        ],
+        "horse": "Daitaku Helios (Original)",
+        "gametora_id": "100651",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random",
+                    "distance_types": [
+                        "sprint",
+                        "mile"
+                    ]
+                },
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_start_ratio": 0.5,
+                    "trigger_behavior": "random",
+                    "distance_types": [
+                        "medium",
+                        "long"
+                    ]
+                }
+            ]
+        }
+    },
+    {   "skill_name": "Fresh☆Parlor", "description": "Moderately increase velocity continuously when positioned toward the front in the early part of mid-race. Oh, and have a dollop of moderate endurance recovery too!",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.25 for 6.0s. Recover HP by 3.5%.",
+                "inherited": "Increases target speed by 0.05 for 3.6s. Recover HP by 0.5%.",
+                "conditions": [
+                    "1st to 3rd (CM), 1st to 4th (TT)",
+                    "Random point in the first half of mid race"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "fresh parlor",
+            "ines fujin valentines"
+        ],
+        "horse": "Ines Fujin (Valentine)",
+        "gametora_id": "110311",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "phase": "mid",
+                    "clip_within_segment_end_ratio": 0.5,
+                    "trigger_behavior": "random"
+                }
+            ]
+        }
+    },
+    {   "skill_name": "A Warm Cup for You", "description": "Increase velocity for a moderate duration when 2nd or worse and within 4 lengths of the lead on a downhill just before late-race. If the race is medium, also very slightly increase acceleration.",
+        "effect": [
+            {
+                "description": "Increases target speed by 0.35 and increase acceleration by 0.1 for 4.0s.",
+                "inherited": "Increases target speed by 0.15 and increase acceleration by 0.05 for 2.4s.",
+                "conditions": [
+                    "Medium",
+                    "2nd or worse",
+                    "≤10m behind 1st place",
+                    "Downhill",
+                    "Mid race",
+                    "After 60% of the race"
+                ]
+            },
+            {
+                "description": "Increases target speed by 0.35 for 4.0s.",
+                "inherited": "Increases target speed by 0.15 for 2.4s.",
+                "conditions": [
+                    "Not Medium",
+                    "Position >= 2",
+                    "≤10m behind 1st place",
+                    "Downhill",
+                    "Mid race",
+                    "After 60% of the race"
+                ]
+            }
+        ],
+        "review": "",
+        "rarity": "unique",
+        "category": "rainbowvelocity",
+        "aliases": [
+            "a warm cup for you",
+            "mejiro ryan valentines"
+        ],
+        "horse": "Mejiro Ryan (Valentine)",
+        "gametora_id": "110271",
+        "activation_map": {
+            "show_chart": true,
+            "triggers": [
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.6,
+                    "trigger_behavior": "asap",
+                    "distance_types": [
+                        "medium"
+                    ]
+                },
+                {
+                    "type": "box",
+                    "target": "elevation",
+                    "match": "downhill",
+                    "phase": "mid",
+                    "clip_start_ratio": 0.6,
+                    "trigger_behavior": "asap",
+                    "distance_types": [
+                        "sprint",
+                        "mile",
+                        "long"
+                    ]
                 }
             ]
         }
