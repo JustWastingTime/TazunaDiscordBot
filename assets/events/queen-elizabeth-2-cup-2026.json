@@ -1,0 +1,31 @@
+{
+  "id": "queen-elizabeth-2-cup-2026",
+  "name": "Queen Elizabeth 2 Cup 2026",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-11-13T17:51:00.000Z",
+  "endsAt": "2026-11-15T08:40:00.000Z",
+  "availability": "all",
+  "listing": "board",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Lavanda", "ageSex": "5M", "jockey": "M.Iwata", "odds": 40.2 },
+    { "number": 2, "name": "Lay Classic", "ageSex": "3F", "jockey": "A.Nishimura", "odds": 74.4 },
+    { "number": 3, "name": "Stellenbosch", "ageSex": "5M", "jockey": "K.Ikezoe", "odds": 64.9 },
+    { "number": 4, "name": "Estupenda", "ageSex": "4M", "jockey": "K.Ogino", "odds": 62.5 },
+    { "number": 5, "name": "Nishino Ti Amo", "ageSex": "5M", "jockey": "A.Tsumura", "odds": 77.6 },
+    { "number": 6, "name": "Voulezvous", "ageSex": "4M", "jockey": "H.Yoshida", "odds": 15.3 },
+    { "number": 7, "name": "Kamunyak", "ageSex": "4M", "jockey": "Y.Kawada", "odds": 6.3 },
+    { "number": 8, "name": "Lesedrama", "ageSex": "4M", "jockey": "F.Matsuwaka", "odds": 73.8 },
+    { "number": 9, "name": "Queen's Walk", "ageSex": "5M", "jockey": "C.Demuro", "odds": 8.2 },
+    { "number": 10, "name": "Sekitoba East", "ageSex": "5M", "jockey": "S.Hamanaka", "odds": 21.1 },
+    { "number": 11, "name": "Juryoku Pierrot", "ageSex": "3F", "jockey": "S.Imamura", "odds": 3.6 },
+    { "number": 12, "name": "Shadow Meteor", "ageSex": "4M", "jockey": "K.Miura", "odds": 18.5 },
+    { "number": 13, "name": "Jocelyn", "ageSex": "4M", "jockey": "C.Lemaire", "odds": 11.7 },
+    { "number": 14, "name": "Cervinia", "ageSex": "5M", "jockey": "T.Marquand", "odds": 30.8 },
+    { "number": 15, "name": "Laughterlines", "ageSex": "3F", "jockey": "Y.Take", "odds": 9.2 },
+    { "number": 16, "name": "Aqua Vernal", "ageSex": "5M", "jockey": "K.Matsuyama", "odds": 8.2 },
+    { "number": 17, "name": "Kelly Fled Ask", "ageSex": "4M", "jockey": "Y.Kitamura", "odds": 74.4 },
+    { "number": 18, "name": "Koganeno Sora", "ageSex": "5M", "jockey": "Y.Tannai", "odds": 13.7 }
+  ]
+}
