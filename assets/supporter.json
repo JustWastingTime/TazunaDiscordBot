@@ -3589,6 +3589,26 @@
         "category": "speed",
         "aliases": [
             "aston machan tracen"
+        ],
+        "events": [
+            {
+                "name": "At Your Side, Always Watching You",
+                "type": "event",
+                "results": 
+                [
+                    "Energy +15, Bond +5",
+                    "Energy -5, Speed +20, Bond +5"
+                ]
+            },
+            {
+                "name": "In Your Photos, Always Watching You",
+                "type": "event",
+                "results": 
+                [
+                    "Skill points +30, Bond +5",
+                    "Bond +5, Light as a Feather hint +2"
+                ]
+            }
         ]
     },
     {   "id": "10088 Mejiro Ramonu",
