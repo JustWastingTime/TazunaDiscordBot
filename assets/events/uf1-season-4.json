@@ -1,0 +1,21 @@
+{
+  "id": "uf1-season-4",
+  "name": "UF1 Season 4",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-11-14T12:23:00.000Z",
+  "endsAt": null,
+  "availability": "guilds",
+  "listing": "board",
+  "guildIds": ["1434218293916336150"],
+  "entries": [
+    { "number": 1, "name": "Mercedes-DOTOIDF F1 Team", "ageSex": "", "jockey": "Rendi Enzo", "odds": 3 },
+    { "number": 2, "name": "Wonderrari", "ageSex": "", "jockey": "Thanh Nha Giao", "odds": 3 },
+    { "number": 3, "name": "Red Bull Warriors Of The West", "ageSex": "", "jockey": "Js", "odds": 3 },
+    { "number": 4, "name": "Aston Haru's Good Little Boy", "ageSex": "", "jockey": "Haru", "odds": 3 },
+    { "number": 5, "name": "Cadillac Tsu BJ Seekers", "ageSex": "", "jockey": "Ultra", "odds": 3 },
+    { "number": 6, "name": "UmAudi PitsMasters", "ageSex": "", "jockey": "Cyndexv", "odds": 3 },
+    { "number": 7, "name": "McLaren McQueen Desuwa Team", "ageSex": "", "jockey": "Hurricane", "odds": 3 },
+    { "number": 8, "name": "Alpine Saints Racing", "ageSex": "", "jockey": "Contrail1399", "odds": 3 }
+  ]
+}
