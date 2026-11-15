@@ -4,7 +4,7 @@
   "type": "horse_race",
   "status": "open",
   "startsAt": "2026-11-14T12:23:00.000Z",
-  "endsAt": null,
+  "endsAt": "2026-11-17T13:59:00.000Z",
   "availability": "guilds",
   "listing": "board",
   "guildIds": ["1434218293916336150"],
