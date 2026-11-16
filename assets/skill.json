@@ -387,7 +387,7 @@
             "show_chart": false
         }
     },
-    {   "skill_name": "Risk Taker", "description": "Very occasionally tap into untold inner strength, moderately increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
+    {   "skill_name": "Risk-Taker", "description": "Very occasionally tap into untold inner strength, moderately increasing Speed, Power, and Guts. More likely to activate when skill user is unfavored.",
         "effect": [
             {
                 "description": "Speed stat, power stat and guts stat +40.",
@@ -4884,7 +4884,7 @@
             ]
         }
     },
-    {   "skill_name": "Free Spirited", "description": "Slightly decrease velocity and moderately recover endurance when positioned midpack in the early part of mid-race. (Long)",
+    {   "skill_name": "Free-Spirited", "description": "Slightly decrease velocity and moderately recover endurance when positioned midpack in the early part of mid-race. (Long)",
         "effect": [
             {
                 "description": "Recover HP by 3.5%. Reduces speed by 0.15 for 1.2s.",
