@@ -3189,7 +3189,7 @@
             "Countermeasure",
             "Pace Chaser Straightaways",
             "Pace Chaser Savvy",
-            "Attack Stance"
+            "On the Attack"
         ],
         "event_skills": [
             "Light as a Feather"
@@ -3291,7 +3291,7 @@
             "Late Surger Corners",
             "1,500,000 CC",
             "Fearless",
-            "Devil-May-Care"
+            "Scramble"
         ],
         "event_skills": [
             "Cloudy Days"
@@ -3470,7 +3470,7 @@
             "Stamina Eater",
             "A Small Breather",
             "Free-Spirited",
-            "Devil-May-Care"
+            "Scramble"
         ],
         "event_skills": [
             "Subdued Pace Chasers"
@@ -3557,7 +3557,7 @@
         }
         ]
     },
-    {   "id": "10087 Aston Machan",
+    {   "id": "10087 Aston Machan", "_event": "done",
         "card_name": "Tracen Academy",
         "character_name": "Aston Machan",
         "unique": "-",
@@ -3632,8 +3632,8 @@
             "Mile Corners",
             "Medium Straightaways",
             "All I've Got",
-            "Firm Step",
-            "Graceful Step"
+            "Sterady Gait",
+            "Graceful Gait"
         ],
         "event_skills": [
             "Medium Corners"
@@ -6253,7 +6253,14 @@
             "Restart",
             "Groundwork"
         ],
-        "event_skills": [],
+        "event_skills": [
+            "Meticulous Measures",
+            "Countermeasure",
+            "Maverick",
+            "Intimidate",
+            "Mad Dash",
+            "Light as a Feather"
+        ],
         "url": "https://gametora.com/umamusume/supports/20055-aston-machan",
         "thumbnail": "https://gametora.com/images/umamusume/supports/support_card_s_20055.png",
         "rarity": "sr",
@@ -13827,7 +13834,7 @@
         }
         ]
     },
-    {   "id": "30130 K. S. Miracle", "_event": "partial",
+    {   "id": "30130 K. S. Miracle", "_event": "done",
         "card_name": "To You",
         "character_name": "K. S. Miracle",
         "unique": "Gain Power Bonus (2) when the bond gauge is at least 80",
@@ -13868,7 +13875,7 @@
         ],
         "events": [
             {
-                "name": "できること",
+                "name": "What I Can Do",
                 "type": "chain",
                 "results": 
                 [
@@ -13876,7 +13883,7 @@
                 ]
             },
             {
-                "name": "やってみたこと",
+                "name": "What I Can Try",
                 "type": "chain",
                 "results": 
                 [
@@ -13885,7 +13892,7 @@
                 ]
             },
             {
-                "name": "やりたいこと",
+                "name": "What I Want to Do",
                 "type": "chain",
                 "results": 
                 [
@@ -13912,7 +13919,7 @@
             }
         ]
     },
-    {   "id": "30131 Marvelous Sunday", "_event": "partial",
+    {   "id": "30131 Marvelous Sunday", "_event": "done",
         "card_name": "Marvelous☆Chocolate Show",
         "character_name": "Marvelous Sunday",
         "unique": "Gain Training Effectiveness (15) when the bond gauge is full",
@@ -13954,7 +13961,7 @@
         ],
         "events": [
             {
-                "name": "マーベラス的異文化交流",
+                "name": "A Marvelous Cultural Exchange",
                 "type": "chain",
                 "results": 
                 [
@@ -13962,7 +13969,7 @@
                 ]
             },
             {
-                "name": "マーベラス無限チャージ☆",
+                "name": "Marvelously Limitless Energy! ☆",
                 "type": "chain",
                 "results": 
                 [
@@ -13972,7 +13979,7 @@
                 ]
             },
             {
-                "name": "マーベラス枯渇問題",
+                "name": "Out of Marvelousness",
                 "type": "chain",
                 "results": 
                 [
@@ -13999,7 +14006,7 @@
             }
         ]
     },
-    {   "id": "30132 Biko Pegasus", "_event": "partial",
+    {   "id": "30132 Biko Pegasus", "_event": "done",
         "card_name": "Transform! Garçon Form!",
         "character_name": "Biko Pegasus",
         "unique": "Gain Training Effectiveness (5%); gain additional 3% Training Effectiveness for every 4 points of maximum Energy above 100, up to (20%) at 120",
@@ -14040,7 +14047,7 @@
         ],
         "events": [
             {
-                "name": "熱い絆！ボノとヒーローに！",
+                "name": "Our Everlasting Bond! Becoming Heroes with Bono!",
                 "type": "chain",
                 "results": 
                 [
@@ -14049,7 +14056,7 @@
                 ]
             },
             {
-                "name": "まっすぐに！心通わすお菓子作り",
+                "name": "A Recipe for Communication",
                 "type": "chain",
                 "results": 
                 [
@@ -14057,7 +14064,7 @@
                 ]
             },
             {
-                "name": "変身！ネイチャはプリファイ！？",
+                "name": "Nature Transforms Into... Princess Fighter?!",
                 "type": "chain",
                 "results": 
                 [
@@ -14084,7 +14091,7 @@
             }
         ]
     },
-    {   "id": "30133 Hishi Akebono", "_event": "partial",
+    {   "id": "30133 Hishi Akebono", "_event": "done",
         "card_name": "Fondente Smile",
         "character_name": "Hishi Akebono",
         "unique": "Gain Wit Bonus (2) when the bond gauge is at least 80",
@@ -14123,7 +14130,7 @@
         ],
         "events": [
             {
-                "name": "なんでもあります、ボノ食堂",
+                "name": "Bono's Eatery: Everything's On the Menu!",
                 "type": "chain",
                 "results": 
                 [
@@ -14131,7 +14138,7 @@
                 ]
             },
             {
-                "name": "ほっとひと息、ボノ食堂",
+                "name": "Bono's Eatery: A Place to Relax",
                 "type": "chain",
                 "results": 
                 [
@@ -14140,7 +14147,7 @@
                 ]
             },
             {
-                "name": "あなたのそばに、ボノ食堂",
+                "name": "Bono's Eatery: Always with You",
                 "type": "chain",
                 "results": 
                 [
