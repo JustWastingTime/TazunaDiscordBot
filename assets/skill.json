@@ -14926,8 +14926,8 @@
     {   "skill_name": "Bring on the Banquet!", "description": "Surge ahead for a moderate duration and very slightly increase acceleration when positioned toward the front on a late-race corner far from the finish.",
         "effect": [
             {
-                "description": "Increases target speed by 0.35 and acceleration by 0.1 for 4.0s.",
-                "inherited": "Increases target speed by 0.15 and acceleration by 0.05 for 2.4s.",
+                "description": "Increases current speed by 0.35 and acceleration by 0.1 for 4.0s.",
+                "inherited": "Increases current speed by 0.15 and acceleration by 0.05 for 2.4s.",
                 "conditions": [
                     "1st to 3rd",
                     "Any corner",
