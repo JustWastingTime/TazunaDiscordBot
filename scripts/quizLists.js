@@ -19,6 +19,11 @@ function loadQuizLists() {
   return cachedLists;
 }
 
+/** Drop the cached lists.json so the next quiz round reads the saved file. */
+export function reloadQuizLists() {
+  cachedLists = null;
+}
+
 function getQuizList(name) {
   const list = loadQuizLists()[name];
   return Array.isArray(list) ? list.map((item) => String(item)) : [];

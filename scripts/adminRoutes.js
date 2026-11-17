@@ -41,6 +41,7 @@ import {
   resolveSkillActivationOverlay,
 } from './skillCourseMap.js';
 import { applyScheduleCmDate, listScheduleEvents } from './scheduleService.js';
+import { mountQuizAdmin, quizAccessFor } from './quizAdmin.js';
 
 const previewHits = new Map();
 
@@ -125,12 +126,13 @@ export function mountAdmin(app) {
   const router = express.Router();
   router.use(express.json({ limit: '2mb' }));
 
-  router.get('/me', (req, res) => {
+  router.get('/me', async (req, res) => {
     const session = readSession(req);
-    if (!session?.discordId) return res.json({ authenticated: false, isOwner: false });
+    if (!session?.discordId) return res.json({ authenticated: false, isOwner: false, quiz: null });
     res.json({
       authenticated: true,
       isOwner: isBotOwner(session.discordId),
+      quiz: await quizAccessFor(session.discordId).catch(() => null),
       user: {
         discordId: session.discordId,
         username: session.username,
@@ -219,6 +221,9 @@ export function mountAdmin(app) {
   router.post('/tools/activation-map', (req, res) => {
     res.json({ activation_map: suggestActivationMap(req.body?.input || '') });
   });
+
+  // Quiz editing has its own roles (owner, reviewer, editor), so it mounts before the owner gate.
+  mountQuizAdmin(router);
 
   router.use(requireOwner);
 

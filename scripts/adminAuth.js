@@ -49,6 +49,31 @@ function rateLimit(discordId) {
   writes.set(discordId, recent);
 }
 
+/**
+ * Any signed-in Discord session. Mutations need the CSRF header, a matching Origin,
+ * and pass the shared write rate limit. Callers decide what the user may do.
+ */
+export function requireSignedIn(req, _res, next) {
+  try {
+    const mutating = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method);
+    if (mutating) {
+      if (String(req.headers['x-tazuna-admin'] || '') !== '1') {
+        throw httpError(403, 'Missing admin header.');
+      }
+      if (!originAllowed(req)) {
+        throw httpError(403, 'Origin rejected.');
+      }
+    }
+    const session = readSession(req);
+    if (!session?.discordId) throw httpError(401, 'Discord login required.');
+    if (mutating) rateLimit(session.discordId);
+    req.adminUser = session;
+    next();
+  } catch (error) {
+    next(error);
+  }
+}
+
 /** Owner session required. Mutations also need the CSRF header and a matching Origin. */
 export function requireOwner(req, _res, next) {
   try {
