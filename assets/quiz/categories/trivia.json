@@ -322,6 +322,20 @@
         ["When she's bringing up the rear, she wishes she at least had an \"End of the Line\" sign.",["Agnes Digital","$uma"],"hard"],
         ["She really, really, really cannot handle hot food.",["Seiun Sky","$uma"]]
       ]
+    },
+    { "promptTemplate": "This uma's ears __{0}__.", "difficulty": "expert",
+      "entries": [
+        ["sometimes don't hear anything when she thinks about running",["Silence Suzuka","$uma"]],
+        ["never fail to hear praise or the Prez's voice",["Tokai Teio","$uma"]],
+        ["can tell apart people from her hometown just from their cheers",["Oguri Cap","$uma"]],
+        ["completely betray her true feelings",["Daiwa Scarlet","$uma"]],
+        ["make her come running the second she hears \"party\"",["Taiki Shuttle","$uma"]],
+        ["do not tremble in the slightest when she's doing a tea ceremony",["Grass Wonder","$uma"]],
+        ["can hear someone say \"one-on-one\" from a mile away",["Hishi Amazon","$uma"]],
+        ["tend to stand very straight when she's around others",["Mejiro McQueen","$uma"]],
+        ["hear everything as a compliment",["TM Opera O","$uma"]],
+        ["twitch noticeably whenever she comes up with a pun",["Symboli Rudolf","$uma"]]
+      ]
     }
   ]
 }

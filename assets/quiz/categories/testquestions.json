@@ -75,20 +75,6 @@
         ["https://i.ibb.co.com/Myk74hZG/f145b16fcceb0330ea1552fd0c54809f.gif",["Mejiro Dober","Silence Suzuka","Mejiro Bright","Nice Nature","Mejiro Ardan"]],
         ["https://i.ibb.co.com/ympmQB3H/f3aa2e18b9a4e916347428a3ece52be8.gif",["Kitasan Black","Haru Urara","Biko Pegasus","Satono Diamond","North Flight"]]
       ]
-    },
-    { "promptTemplate": "This uma's ears __{0}__.", "difficulty": "expert", "submission": {"target":"trivia","by":"dnhckch","byId":"666696450469527563","at":"2026-11-17T18:25:54.501Z","note":""},
-      "entries": [
-        ["sometimes don't hear anything when she thinks about running",["Silence Suzuka","$uma"]],
-        ["never fail to hear praise or the Prez's voice",["Tokai Teio","$uma"]],
-        ["can tell apart people from her hometown just from their cheers",["Oguri Cap","$uma"]],
-        ["completely betray her true feelings",["Daiwa Scarlet","$uma"]],
-        ["make her come running the second she hears \"party\"",["Taiki Shuttle","$uma"]],
-        ["do not tremble in the slightest when she's doing a tea ceremony",["Grass Wonder","$uma"]],
-        ["can hear someone say \"one-on-one\" from a mile away",["Hishi Amazon","$uma"]],
-        ["tend to stand very straight when she's around others",["Mejiro McQueen","$uma"]],
-        ["hear everything as a compliment",["TM Opera O","$uma"]],
-        ["twitch noticeably whenever she comes up with a pun",["Symboli Rudolf","$uma"]]
-      ]
     }
   ]
 }
