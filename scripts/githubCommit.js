@@ -78,6 +78,12 @@ export async function getFileAtHead(filePath) {
   return { path: filePath, content, blobSha: item.sha, commitSha: head.commitSha };
 }
 
+/** Raw text of a blob by SHA, e.g. an older version of a file. */
+export async function getBlob(blobSha) {
+  const { repo } = config();
+  return gh(`/repos/${repo}/git/blobs/${encodeURIComponent(blobSha)}`, { raw: true });
+}
+
 /**
  * Commit one or more file replacements onto the branch.
  * Rejects when baseBlobSha no longer matches head, or when head moved (no force).

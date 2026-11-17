@@ -7,7 +7,7 @@ import { isBotOwner } from './adminRole.js';
 import { httpError, requireSignedIn } from './adminAuth.js';
 import { recordAdminAudit } from './assetStore.js';
 import { jsonError } from './dashboardAuth.js';
-import { commitFiles, fastForwardLocalCheckout, getFileAtHead } from './githubCommit.js';
+import { commitFiles, fastForwardLocalCheckout, getBlob, getFileAtHead } from './githubCommit.js';
 import cache from './githubCache.js';
 import { reloadQuizLists } from './quizLists.js';
 
@@ -17,7 +17,6 @@ const QUIZ_DIR = path.join(ROOT, 'assets', 'quiz');
 const CATEGORIES_DIR = path.join(QUIZ_DIR, 'categories');
 const DATA_DIR = path.join(ROOT, 'data');
 const ACCESS_PATH = path.join(DATA_DIR, 'quiz-access.json');
-const DRAFTS_PATH = path.join(DATA_DIR, 'quiz-drafts.json');
 
 const SETTINGS_REPO_PATH = 'assets/quiz/settings.json';
 const LISTS_REPO_PATH = 'assets/quiz/lists.json';
@@ -25,7 +24,12 @@ const DIFFICULTIES = ['easy', 'medium', 'hard', 'expert'];
 const ROLES = ['editor', 'reviewer'];
 const ID_RE = /^[a-z0-9_-]{1,40}$/;
 const LIST_NAME_RE = /^[a-z][a-z0-9_]{0,30}$/i;
-const MAX_DRAFTS_PER_USER = 20;
+const MAX_PENDING_PER_USER = 30;
+/** Drafts from the old review queue, before new questions went through Test. */
+const OLD_DRAFTS_PATH = path.join(DATA_DIR, 'quiz-drafts.json');
+
+/** New questions land here first, tagged with the category they are meant for. */
+export const TEST_CATEGORY = 'testquestions';
 
 // ---------------------------------------------------------------------------
 // Small local state files (data/ is gitignored and lives on the server only).
@@ -76,7 +80,12 @@ export async function quizAccessFor(discordId) {
 }
 
 function inScope(access, categoryId) {
-  return Boolean(access && (access.categories.includes('*') || access.categories.includes(categoryId)));
+  return Boolean(access && (access.categories.includes('*') || (categoryId && access.categories.includes(categoryId))));
+}
+
+/** Owner, reviewers, and editors allowed to publish can approve Test questions and edit live categories. */
+function canPublishTo(access, categoryId) {
+  return Boolean(access?.canPublish && inScope(access, categoryId));
 }
 
 function cleanEditor(raw, actor) {
@@ -139,13 +148,6 @@ function entryCount(data) {
 
 function isUrl(value) {
   return typeof value === 'string' && /^https?:\/\//i.test(value);
-}
-
-function mediaKind(question) {
-  const subjects = Array.isArray(question?.entries) ? question.entries.map((e) => (Array.isArray(e) ? e[0] : e?.imageUrl || e?.audioUrl)) : [];
-  const url = subjects.find(isUrl);
-  if (!url) return 'text';
-  return /\.(png|jpe?g|gif|webp|bmp|svg)(?:[?#].*)?$/i.test(url) ? 'image' : 'audio';
 }
 
 function categoryStats(id, data, settings) {
@@ -548,16 +550,7 @@ export function runRecipe(recipeId, keys) {
 }
 
 // ---------------------------------------------------------------------------
-// Drafts.
-
-async function listDrafts() {
-  return readState(DRAFTS_PATH, []);
-}
-
-function draftSummary(draft) {
-  const { data: _data, ...rest } = draft;
-  return rest;
-}
+// Test category submissions.
 
 async function publishCategory({ categoryId, data, baseBlobSha, message, actor, summary }) {
   const repoPath = categoryRepoPath(categoryId);
@@ -566,6 +559,112 @@ async function publishCategory({ categoryId, data, baseBlobSha, message, actor, 
     actor,
     summary: `quiz ${categoryId}: ${summary}`,
   });
+}
+
+/** Questions have no ids in the files, so address them by position plus a content hash. */
+function questionId(question, index) {
+  const hash = crypto.createHash('sha1').update(JSON.stringify(question)).digest('hex').slice(0, 10);
+  return `${index}-${hash}`;
+}
+
+function findSubmission(data, id) {
+  const index = Number(String(id || '').split('-')[0]);
+  const question = Number.isInteger(index) ? data.questions?.[index] : null;
+  if (!question || questionId(question, index) !== id) {
+    const error = httpError(409, 'This Test question changed since you loaded it. Reload and try again.');
+    error.noRetry = true;
+    throw error;
+  }
+  return { index, question };
+}
+
+/**
+ * Test changes re-read the files and only add, edit, or remove one question, so a commit that loses a race
+ * (someone else saved, or GitHub served a slightly old head) is safe to replay on fresh data.
+ */
+async function withRetry(fn, attempts = 3) {
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (error.statusCode !== 409 || error.noRetry || attempt >= attempts) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+    }
+  }
+}
+
+function submissionMeta(question) {
+  return question?.submission && typeof question.submission === 'object' ? question.submission : null;
+}
+
+function submissionView(question, index) {
+  const meta = submissionMeta(question);
+  return {
+    id: questionId(question, index),
+    index,
+    prompt: String(question.promptTemplate || question.prompt || ''),
+    difficulty: question.difficulty || null,
+    shape: Array.isArray(question.entries) ? 'template' : 'fixed',
+    entries: Array.isArray(question.entries) ? question.entries.length : 1,
+    target: meta?.target || null,
+    note: meta?.note || '',
+    by: meta?.by || null,
+    byId: meta?.byId || null,
+    at: meta?.at || null,
+  };
+}
+
+async function readTest() {
+  const file = await headOrNull(categoryRepoPath(TEST_CATEGORY));
+  if (!file) throw httpError(404, 'The Test category file is missing on GitHub.');
+  return { file, data: JSON.parse(file.content) };
+}
+
+async function checkTarget(access, target) {
+  const id = String(target || '');
+  categoryRepoPath(id);
+  if (id === TEST_CATEGORY) throw httpError(400, 'Pick the category this question is meant for.');
+  if (!(await localCategoryIds()).includes(id)) throw httpError(404, `No category named ${id}.`);
+  if (!inScope(access, id)) throw httpError(403, 'You cannot add questions to that category.');
+  return id;
+}
+
+/**
+ * An old draft held a whole category file. Pull out what it actually changed:
+ * new questions, entries added to an existing question, or an edited question.
+ */
+function draftQuestions(draft, base) {
+  const before = base?.questions || [];
+  const after = draft.data?.questions || [];
+  const meta = { target: draft.categoryId, by: draft.authorName || null, byId: draft.authorId || null, at: draft.createdAt || new Date().toISOString() };
+  const out = [];
+  const strip = (q) => JSON.stringify({ ...q, entries: undefined });
+  after.forEach((question, i) => {
+    const prev = before[i];
+    if (prev && JSON.stringify(prev) === JSON.stringify(question)) return;
+    if (prev && Array.isArray(prev.entries) && Array.isArray(question.entries) && strip(prev) === strip(question)) {
+      const had = new Set(prev.entries.map((e) => JSON.stringify(e)));
+      const kept = prev.entries.every((e) => question.entries.some((x) => JSON.stringify(x) === JSON.stringify(e)));
+      const added = question.entries.filter((e) => !had.has(JSON.stringify(e)));
+      if (kept && added.length) {
+        out.push({ ...question, entries: added, submission: { ...meta, note: `New entries for question ${i + 1}` } });
+        return;
+      }
+    }
+    out.push({ ...question, submission: { ...meta, note: prev ? `Edited version of question ${i + 1}` : '' } });
+  });
+  return out;
+}
+
+function cleanSubmission(raw, meta) {
+  if (raw && typeof raw === 'object') delete raw.submission;
+  const question = cleanQuestion(raw, 0);
+  return { ...question, submission: meta };
+}
+
+function canChangeSubmission(access, question, discordId) {
+  const meta = submissionMeta(question);
+  return meta?.byId === discordId || canPublishTo(access, meta?.target || null);
 }
 
 // ---------------------------------------------------------------------------
@@ -604,19 +703,25 @@ export function mountQuizAdmin(parent) {
   router.get('/categories', wrap(async (req, res) => {
     const access = await needAccess(req);
     const settings = await readLocalSettings();
-    const drafts = (await listDrafts()).filter((d) => d.status === 'pending');
     const categories = [];
+    let test = null;
     for (const id of await localCategoryIds()) {
       const data = await readLocalJson(path.join(CATEGORIES_DIR, `${id}.json`), null);
       if (!data) continue;
-      categories.push({
-        ...categoryStats(id, data, settings),
-        canEdit: inScope(access, id),
-        pendingDrafts: drafts.filter((d) => d.categoryId === id).length,
-      });
+      if (id === TEST_CATEGORY) {
+        const views = (data.questions || []).map(submissionView);
+        test = {
+          id,
+          name: data.name || id,
+          total: views.length,
+          waiting: views.filter((v) => v.target && canPublishTo(access, v.target)).length,
+          mine: views.filter((v) => v.byId === req.adminUser.discordId).length,
+        };
+        continue;
+      }
+      categories.push({ ...categoryStats(id, data, settings), canEdit: canPublishTo(access, id), canSubmit: inScope(access, id) });
     }
-    const visible = drafts.filter((d) => (access.role === 'editor' ? d.authorId === req.adminUser.discordId : inScope(access, d.categoryId)));
-    res.json({ categories, pendingDrafts: visible.length });
+    res.json({ categories, test });
   }));
 
   router.get('/categories/:id', wrap(async (req, res) => {
@@ -647,57 +752,201 @@ export function mountQuizAdmin(parent) {
     const access = await needAccess(req);
     const categoryId = String(req.params.id);
     categoryRepoPath(categoryId);
-    if (!inScope(access, categoryId)) throw httpError(403, 'You cannot edit this category.');
+    if (categoryId === TEST_CATEGORY) throw httpError(400, 'Edit Test questions from the Test board.');
+    if (!canPublishTo(access, categoryId)) throw httpError(403, 'You cannot publish to this category. New questions go to Test.');
     const data = cleanCategory(req.body?.data);
     const head = await headOrNull(categoryRepoPath(categoryId));
     if (!head) throw httpError(404, 'Category not found on GitHub.');
-    const before = JSON.parse(head.content);
-    const summary = summarizeChange(before, data);
+    const summary = summarizeChange(JSON.parse(head.content), data);
     const baseBlobSha = String(req.body?.baseBlobSha || '');
     if (!baseBlobSha) throw httpError(400, 'Missing baseBlobSha. Reload the category.');
-    const draftId = req.body?.draftId ? String(req.body.draftId) : null;
+    const result = await publishCategory({ categoryId, data, baseBlobSha, message: req.body?.message, actor: req.adminUser, summary: summary.text });
+    res.json({ summary, ...result });
+  }));
 
-    if (access.canPublish) {
-      const result = await publishCategory({ categoryId, data, baseBlobSha, message: req.body?.message, actor: req.adminUser, summary: summary.text });
-      if (draftId) await locked(async () => writeState(DRAFTS_PATH, (await listDrafts()).filter((d) => d.id !== draftId)));
-      return res.json({ published: true, summary, ...result });
+  router.get('/test', wrap(async (req, res) => {
+    const access = await needAccess(req);
+    const { file, data } = await readTest();
+    const me = req.adminUser.discordId;
+    const oldDrafts = access.role === 'owner' ? (await readState(OLD_DRAFTS_PATH, [])).filter((d) => d?.data?.questions).length : 0;
+    res.json({
+      name: data.name || TEST_CATEGORY,
+      blobSha: file.blobSha,
+      oldDrafts,
+      submissions: (data.questions || []).map((question, index) => {
+        const view = submissionView(question, index);
+        return { ...view, canApprove: Boolean(view.target) && canPublishTo(access, view.target), canEdit: canChangeSubmission(access, question, me) };
+      }),
+    });
+  }));
+
+  router.get('/test/:id', wrap(async (req, res) => {
+    const access = await needAccess(req);
+    const { data } = await readTest();
+    const { index, question } = findSubmission(data, req.params.id);
+    const view = submissionView(question, index);
+    res.json({
+      question,
+      submission: { ...view, canApprove: Boolean(view.target) && canPublishTo(access, view.target), canEdit: canChangeSubmission(access, question, req.adminUser.discordId) },
+    });
+  }));
+
+  router.post('/test', wrap(async (req, res) => {
+    const access = await needAccess(req);
+    const target = await checkTarget(access, req.body?.target);
+    const actor = req.adminUser;
+    const out = await withRetry(async () => {
+    const { file, data } = await readTest();
+    const mine = (data.questions || []).filter((q) => submissionMeta(q)?.byId === actor.discordId).length;
+    if (!canPublishTo(access, target) && mine >= MAX_PENDING_PER_USER) {
+      throw httpError(429, `You already have ${MAX_PENDING_PER_USER} questions in Test. Wait for some to be approved.`);
     }
-
-    const draft = await locked(async () => {
-      const drafts = await listDrafts();
-      const actor = req.adminUser;
-      const existing = draftId ? drafts.find((d) => d.id === draftId) : null;
-      if (existing && existing.authorId !== actor.discordId) throw httpError(403, 'That draft belongs to someone else.');
-      if (!existing && drafts.filter((d) => d.authorId === actor.discordId && d.status === 'pending').length >= MAX_DRAFTS_PER_USER) {
-        throw httpError(429, `You already have ${MAX_DRAFTS_PER_USER} drafts waiting. Wait for a review first.`);
-      }
-      const row = {
-        id: existing?.id || crypto.randomUUID(),
-        categoryId,
-        categoryName: data.name,
-        authorId: actor.discordId,
-        authorName: actor.globalName || actor.username || actor.discordId,
-        createdAt: existing?.createdAt || new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-        baseBlobSha,
-        message: String(req.body?.message || '').trim().slice(0, 200),
-        summary,
-        status: 'pending',
-        note: '',
-        data,
-      };
-      await writeState(DRAFTS_PATH, [...drafts.filter((d) => d.id !== row.id), row]);
-      return row;
-    });
-    await recordAdminAudit({
+    const question = cleanSubmission(req.body?.question, {
+      target,
+      by: actor.globalName || actor.username || actor.discordId,
+      byId: actor.discordId,
       at: new Date().toISOString(),
-      actor: req.adminUser.discordId,
-      username: req.adminUser.username || null,
-      file: categoryRepoPath(categoryId),
-      summary: `quiz draft ${categoryId}: ${summary.text}`,
-      commitSha: '',
     });
-    res.json({ published: false, draft: draftSummary(draft) });
+    data.questions = [...(data.questions || []), question];
+    const index = data.questions.length - 1;
+    const prompt = String(question.promptTemplate || question.prompt).slice(0, 60);
+    const content = formatCategory(data);
+    const written = JSON.parse(content).questions[index];
+    const result = await publishFiles([{ path: categoryRepoPath(TEST_CATEGORY), content, baseBlobSha: file.blobSha }], {
+      message: `quiz: submit "${prompt}" for ${target}`,
+      actor,
+      summary: `quiz test: submitted "${prompt}" for ${target}`,
+    });
+    return { id: questionId(written, index), ...result };
+    });
+    res.status(201).json(out);
+  }));
+
+  router.put('/test/:id', wrap(async (req, res) => {
+    const access = await needAccess(req);
+    const out = await withRetry(async () => {
+    const { file, data } = await readTest();
+    const { index, question: before } = findSubmission(data, req.params.id);
+    if (!canChangeSubmission(access, before, req.adminUser.discordId)) throw httpError(403, 'Only the author or a reviewer can change this question.');
+    const target = await checkTarget(access, req.body?.target);
+    const meta = submissionMeta(before) || { by: null, byId: null, at: new Date().toISOString() };
+    const question = cleanSubmission(req.body?.question, { ...meta, target });
+    data.questions[index] = question;
+    const prompt = String(question.promptTemplate || question.prompt).slice(0, 60);
+    const content = formatCategory(data);
+    const written = JSON.parse(content).questions[index];
+    const result = await publishFiles([{ path: categoryRepoPath(TEST_CATEGORY), content, baseBlobSha: file.blobSha }], {
+      message: req.body?.message || `quiz: edit test question "${prompt}"`,
+      actor: req.adminUser,
+      summary: `quiz test: edited "${prompt}"`,
+    });
+    return { id: questionId(written, index), ...result };
+    });
+    res.json(out);
+  }));
+
+  router.delete('/test/:id', wrap(async (req, res) => {
+    const access = await needAccess(req);
+    const out = await withRetry(async () => {
+    const { file, data } = await readTest();
+    const { index, question } = findSubmission(data, req.params.id);
+    if (!canChangeSubmission(access, question, req.adminUser.discordId)) throw httpError(403, 'Only the author or a reviewer can remove this question.');
+    data.questions.splice(index, 1);
+    const prompt = String(question.promptTemplate || question.prompt || '').slice(0, 60);
+    const result = await publishFiles([{ path: categoryRepoPath(TEST_CATEGORY), content: formatCategory(data), baseBlobSha: file.blobSha }], {
+      message: `quiz: remove test question "${prompt}"`,
+      actor: req.adminUser,
+      summary: `quiz test: removed "${prompt}"`,
+    });
+    return { ok: true, ...result };
+    });
+    res.json(out);
+  }));
+
+  router.post('/test/:id/approve', wrap(async (req, res) => {
+    const access = await needAccess(req);
+    const target = await checkTarget(access, req.body?.target);
+    if (!canPublishTo(access, target)) throw httpError(403, 'Only reviewers and the owner can approve into this category.');
+    const keep = req.body?.keep === true;
+    const mode = ['merge', 'replace'].includes(req.body?.mode) ? req.body.mode : 'new';
+    const out = await withRetry(async () => {
+    const { file: testFile, data: testData } = await readTest();
+    const { index, question } = findSubmission(testData, req.params.id);
+    const targetPath = categoryRepoPath(target);
+    const targetFile = await headOrNull(targetPath);
+    if (!targetFile) throw httpError(404, 'Target category not found on GitHub.');
+    const targetData = JSON.parse(targetFile.content);
+    const { submission: _meta, ...approved } = question;
+    const live = cleanQuestion(approved, 0);
+    let questionIndex;
+    if (mode === 'merge') {
+      questionIndex = Number(req.body?.questionIndex);
+      const into = targetData.questions?.[questionIndex];
+      if (!into || !Array.isArray(into.entries) || !Array.isArray(live.entries)) {
+        throw httpError(400, 'Merging needs a template question on both sides. Add it as a new question instead.');
+      }
+      into.entries = [...into.entries, ...live.entries];
+    } else if (mode === 'replace') {
+      questionIndex = Number(req.body?.questionIndex);
+      if (!targetData.questions?.[questionIndex]) throw httpError(400, 'That question no longer exists. Pick another one.');
+      targetData.questions[questionIndex] = live;
+    } else {
+      targetData.questions = [...(targetData.questions || []), live];
+      questionIndex = targetData.questions.length - 1;
+    }
+    const files = [{ path: targetPath, content: formatCategory(cleanCategory(targetData)), baseBlobSha: targetFile.blobSha }];
+    if (!keep) {
+      testData.questions.splice(index, 1);
+      files.push({ path: categoryRepoPath(TEST_CATEGORY), content: formatCategory(testData), baseBlobSha: testFile.blobSha });
+    }
+    const prompt = String(live.promptTemplate || live.prompt || '').slice(0, 60);
+    const by = submissionMeta(question)?.by;
+    const what = mode === 'merge'
+      ? `${live.entries.length} entries into question ${questionIndex + 1}`
+      : mode === 'replace' ? `replacing question ${questionIndex + 1}` : `as question ${questionIndex + 1}`;
+    const result = await publishFiles(files, {
+      message: `quiz: approve "${prompt}"${by ? ` by ${by}` : ''} into ${target} (${what})`,
+      actor: req.adminUser,
+      summary: `quiz: approved "${prompt}"${by ? ` by ${by}` : ''} → ${target} ${what}`,
+    });
+    return { categoryId: target, questionIndex, ...result };
+    });
+    res.json(out);
+  }));
+
+  router.post('/test/import-drafts', wrap(async (req, res) => {
+    await needOwner(req);
+    const drafts = (await readState(OLD_DRAFTS_PATH, [])).filter((draft) => draft?.data?.questions);
+    if (!drafts.length) return res.json({ imported: 0, skipped: [] });
+    const questions = [];
+    const skipped = [];
+    for (const draft of drafts) {
+      let base = null;
+      try {
+        base = JSON.parse(await getBlob(draft.baseBlobSha));
+      } catch {
+        // The old version is gone; compare against the file as it is now.
+        base = await readLocalJson(path.join(CATEGORIES_DIR, `${draft.categoryId}.json`), null);
+      }
+      const found = draftQuestions(draft, base);
+      if (!found.length) skipped.push({ id: draft.id, by: draft.authorName, reason: 'no new or changed questions' });
+      questions.push(...found);
+    }
+    let result = null;
+    if (questions.length) {
+      result = await withRetry(async () => {
+        const { file, data } = await readTest();
+        data.questions = [...(data.questions || []), ...questions.map(({ submission, ...rest }) => cleanSubmission({ ...rest }, submission))];
+        return publishFiles([{ path: categoryRepoPath(TEST_CATEGORY), content: formatCategory(data), baseBlobSha: file.blobSha }], {
+          message: `quiz: move ${questions.length} old draft question${questions.length === 1 ? '' : 's'} into Test`,
+          actor: req.adminUser,
+          summary: `quiz test: imported ${questions.length} question(s) from ${drafts.length} old draft(s)`,
+        });
+      });
+    }
+    // Keep the old file as a backup instead of deleting it.
+    await fs.rename(OLD_DRAFTS_PATH, `${OLD_DRAFTS_PATH.replace(/\.json$/, '')}.imported-${Date.now()}.json`).catch(() => {});
+    res.json({ imported: questions.length, skipped, ...(result || {}) });
   }));
 
   router.put('/settings', wrap(async (req, res) => {
@@ -752,77 +1001,6 @@ export function mountQuizAdmin(parent) {
   router.post('/generate', wrap(async (req, res) => {
     await needAccess(req);
     res.json(runRecipe(String(req.body?.recipe || ''), req.body?.keys));
-  }));
-
-  router.get('/drafts', wrap(async (req, res) => {
-    const access = await needAccess(req);
-    const me = req.adminUser.discordId;
-    const drafts = (await listDrafts())
-      .filter((d) => d.authorId === me || (access.role !== 'editor' && inScope(access, d.categoryId)))
-      .sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)))
-      .map(draftSummary);
-    res.json({ drafts });
-  }));
-
-  router.get('/drafts/:id', wrap(async (req, res) => {
-    const access = await needAccess(req);
-    const draft = (await listDrafts()).find((d) => d.id === req.params.id);
-    if (!draft) throw httpError(404, 'Draft not found.');
-    const reviewer = access.role !== 'editor' && inScope(access, draft.categoryId);
-    if (!reviewer && draft.authorId !== req.adminUser.discordId) throw httpError(403, 'Not your draft.');
-    res.json({ draft });
-  }));
-
-  router.post('/drafts/:id/approve', wrap(async (req, res) => {
-    const access = await needAccess(req);
-    const draft = (await listDrafts()).find((d) => d.id === req.params.id);
-    if (!draft) throw httpError(404, 'Draft not found.');
-    if (access.role === 'editor' || !inScope(access, draft.categoryId)) throw httpError(403, 'Only reviewers and the owner can approve drafts.');
-    let result;
-    try {
-      result = await publishCategory({
-        categoryId: draft.categoryId,
-        data: cleanCategory(draft.data),
-        baseBlobSha: draft.baseBlobSha,
-        message: `quiz: update ${draft.categoryId} by ${draft.authorName} (${draft.summary?.text || 'draft'})`,
-        actor: req.adminUser,
-        summary: `approved draft by ${draft.authorName}: ${draft.summary?.text || ''}`,
-      });
-    } catch (error) {
-      if (error.statusCode === 409) throw httpError(409, 'The category changed after this draft was made. Open the draft in the editor and save it to merge.');
-      throw error;
-    }
-    await locked(async () => writeState(DRAFTS_PATH, (await listDrafts()).filter((d) => d.id !== draft.id)));
-    res.json({ ok: true, ...result });
-  }));
-
-  router.post('/drafts/:id/reject', wrap(async (req, res) => {
-    const access = await needAccess(req);
-    const note = String(req.body?.note || '').trim().slice(0, 500);
-    const updated = await locked(async () => {
-      const drafts = await listDrafts();
-      const draft = drafts.find((d) => d.id === req.params.id);
-      if (!draft) throw httpError(404, 'Draft not found.');
-      if (access.role === 'editor' || !inScope(access, draft.categoryId)) throw httpError(403, 'Only reviewers and the owner can send drafts back.');
-      draft.status = 'changes_requested';
-      draft.note = note;
-      draft.reviewedBy = req.adminUser.globalName || req.adminUser.username || req.adminUser.discordId;
-      await writeState(DRAFTS_PATH, drafts);
-      return draft;
-    });
-    res.json({ draft: draftSummary(updated) });
-  }));
-
-  router.delete('/drafts/:id', wrap(async (req, res) => {
-    const access = await needAccess(req);
-    await locked(async () => {
-      const drafts = await listDrafts();
-      const draft = drafts.find((d) => d.id === req.params.id);
-      if (!draft) throw httpError(404, 'Draft not found.');
-      if (draft.authorId !== req.adminUser.discordId && access.role !== 'owner') throw httpError(403, 'Not your draft.');
-      await writeState(DRAFTS_PATH, drafts.filter((d) => d.id !== draft.id));
-    });
-    res.json({ ok: true });
   }));
 
   router.get('/editors', wrap(async (req, res) => {
