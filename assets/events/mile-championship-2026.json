@@ -1,0 +1,31 @@
+{
+  "id": "mile-championship-2026",
+  "name": "Mile Championship 2026",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-11-21T04:17:00.000Z",
+  "endsAt": "2026-11-22T06:40:00.000Z",
+  "availability": "all",
+  "listing": "board",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Erdenali", "ageSex": "3G", "jockey": "M.Barzalona", "odds": 4.1 },
+    { "number": 2, "name": "Embroidery", "ageSex": "4M", "jockey": "C.Lemaire", "odds": 6.6 },
+    { "number": 3, "name": "Dragon Boost", "ageSex": "4H", "jockey": "S.Hamanaka", "odds": 111.2 },
+    { "number": 4, "name": "Sixpence", "ageSex": "5H", "jockey": "A.Pouchin", "odds": 41.8 },
+    { "number": 5, "name": "Admire Zoom", "ageSex": "4H", "jockey": "Y.Take", "odds": 8 },
+    { "number": 6, "name": "Piko Rose", "ageSex": "4M", "jockey": "K.Miura", "odds": 79.9 },
+    { "number": 7, "name": "Coconuts Brown", "ageSex": "6M", "jockey": "Y.Kitamura", "odds": 34.1 },
+    { "number": 8, "name": "Rodeo Drive", "ageSex": "3C", "jockey": "J.Moreira", "odds": 7.9 },
+    { "number": 9, "name": "June Take", "ageSex": "5H", "jockey": "Y.Kawada", "odds": 75.7 },
+    { "number": 10, "name": "Water Licht", "ageSex": "5H", "jockey": "H.Miyuki", "odds": 70.5 },
+    { "number": 11, "name": "Gaia Force", "ageSex": "7H", "jockey": "A.Nishimura", "odds": 9.3 },
+    { "number": 12, "name": "World's End", "ageSex": "5H", "jockey": "C.Demuro", "odds": 14.3 },
+    { "number": 13, "name": "Reservation", "ageSex": "3C", "jockey": "K.Taguchi", "odds": 139.7 },
+    { "number": 14, "name": "Star Anise", "ageSex": "3F", "jockey": "K.Matsuyama", "odds": 5.1 },
+    { "number": 15, "name": "Ecoro Bloom", "ageSex": "5H", "jockey": "R.Sakai", "odds": 75.6 },
+    { "number": 16, "name": "Suzu Khalom", "ageSex": "6H", "jockey": "T.Fujikake", "odds": 28.5 },
+    { "number": 17, "name": "Ampadu", "ageSex": "5H", "jockey": "M.Iwata", "odds": 21 },
+    { "number": 18, "name": "Off Trail", "ageSex": "5H", "jockey": "A.Sugawara", "odds": 31.7 }
+  ]
+}
