@@ -30,6 +30,51 @@ function getUmaHeaders() {
   };
 }
 
+// --- uma.moe request pacing -------------------------------------------------
+// Every uma.moe call in the bot goes through fetchUmaJson, so this is where the rate limit is
+// respected: at most UMA_MAX_CONCURRENT requests at once, and after a 429 no requests at all
+// until uma.moe's Retry-After has passed (one 429 means every caller would get one).
+const UMA_MAX_CONCURRENT = Math.max(1, Number(process.env.UMA_MAX_CONCURRENT || 3));
+const UMA_DEFAULT_COOLDOWN_MS = 60_000;
+let umaActive = 0;
+const umaWaiting = [];
+let umaRateLimitedUntil = 0;
+
+function acquireUmaSlot() {
+  if (umaActive < UMA_MAX_CONCURRENT) {
+    umaActive += 1;
+    return Promise.resolve();
+  }
+  return new Promise((resolve) => umaWaiting.push(resolve));
+}
+
+function releaseUmaSlot() {
+  const next = umaWaiting.shift();
+  if (next) next();
+  else umaActive -= 1;
+}
+
+function rateLimitedError() {
+  const seconds = Math.ceil((umaRateLimitedUntil - Date.now()) / 1000);
+  const error = new Error(`uma.moe rate limit: pausing requests for another ${seconds}s.`);
+  error.rateLimited = true;
+  return error;
+}
+
+function retryAfterMs(res) {
+  const header = res.headers?.get?.('retry-after');
+  if (!header) return UMA_DEFAULT_COOLDOWN_MS;
+  const seconds = Number(header);
+  if (Number.isFinite(seconds)) return Math.max(1000, seconds * 1000);
+  const at = Date.parse(header);
+  return Number.isFinite(at) ? Math.max(1000, at - Date.now()) : UMA_DEFAULT_COOLDOWN_MS;
+}
+
+/** True while the bot is backing off after a uma.moe 429. */
+export function isUmaRateLimited() {
+  return Date.now() < umaRateLimitedUntil;
+}
+
 export async function fetchUmaJson(url) {
   const apiKey = getUmaApiKey();
   if (!apiKey) {
@@ -37,7 +82,18 @@ export async function fetchUmaJson(url) {
       'UMA_API_KEY is not set on the bot server. Create an API key at uma.moe, add it to your environment, and restart the bot.',
     );
   }
+  if (isUmaRateLimited()) throw rateLimitedError();
+  await acquireUmaSlot();
+  try {
+    // Re-check: the limit may have been hit while this request waited for a slot.
+    if (isUmaRateLimited()) throw rateLimitedError();
+    return await requestUmaJson(url);
+  } finally {
+    releaseUmaSlot();
+  }
+}
 
+async function requestUmaJson(url) {
   let res;
   for (let attempt = 1; ; attempt += 1) {
     try {
@@ -66,6 +122,20 @@ export async function fetchUmaJson(url) {
     if (res.status === 403) {
       throw new Error('uma.moe API access denied (403). Your API key may lack permission for this endpoint.');
     }
+    if (res.status === 429) {
+      const wait = retryAfterMs(res);
+      const until = Date.now() + wait;
+      if (until > umaRateLimitedUntil) {
+        umaRateLimitedUntil = until;
+        const limitHeaders = ['retry-after', 'x-ratelimit-limit', 'x-ratelimit-remaining', 'x-ratelimit-reset']
+          .map((name) => [name, res.headers?.get?.(name)])
+          .filter(([, value]) => value != null)
+          .map(([name, value]) => `${name}=${value}`)
+          .join(' ');
+        console.warn(`[uma.moe] rate limited (429); pausing all requests for ${Math.ceil(wait / 1000)}s. ${limitHeaders}`);
+      }
+      throw rateLimitedError();
+    }
     throw new Error(`uma.moe API returned ${res.status}`);
   }
   return res.json();
@@ -79,8 +149,29 @@ export function getUserProfileUrl(accountId) {
   return `https://uma.moe/api/v4/user/profile/${encodeURIComponent(accountId)}`;
 }
 
-export async function fetchCircleData(circleId) {
-  return fetchUmaJson(getCircleApiUrl(circleId));
+// One short-lived copy per circle, shared by the dashboard, every guild's leaderboard and
+// slash commands, so the same circle is not requested several times a minute.
+const CIRCLE_DATA_TTL_MS = Math.max(0, Number(process.env.UMA_CIRCLE_CACHE_MS || 2 * 60 * 1000));
+const circleDataCache = new Map();
+
+export async function fetchCircleData(circleId, options = {}) {
+  const id = String(circleId);
+  const maxAgeMs = options.maxAgeMs ?? CIRCLE_DATA_TTL_MS;
+  const cached = circleDataCache.get(id);
+  if (cached?.data && Date.now() - cached.fetchedAt < maxAgeMs) return cached.data;
+  if (cached?.pending) return cached.pending;
+  const pending = fetchUmaJson(getCircleApiUrl(id))
+    .then((data) => {
+      circleDataCache.set(id, { data, fetchedAt: Date.now() });
+      return data;
+    })
+    .catch((error) => {
+      if (cached?.data) circleDataCache.set(id, cached);
+      else circleDataCache.delete(id);
+      throw error;
+    });
+  circleDataCache.set(id, { ...(cached || {}), pending });
+  return pending;
 }
 
 function pickObject(...candidates) {

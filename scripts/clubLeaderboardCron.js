@@ -17,6 +17,7 @@ const HOURLY_UPDATE_MINUTE_UTC = 15;
 const TICK_MS = 60 * 1000;
 const EDIT_STAGGER_MS = 2500;
 const CIRCLE_CACHE_TTL_MS = 3 * 60 * 1000;
+const NON_TOP100_CACHE_TTL_MS = 30 * 60 * 1000;
 
 const circleCache = new Map();
 const fetchFailures = new Map();
@@ -66,11 +67,29 @@ function leaderboardCacheKey(guildId, circleId) {
   return guildId ? `${guildId}:${circleId}` : String(circleId);
 }
 
+function lastHourlySlotMs(now) {
+  const slot = new Date(now);
+  slot.setUTCMinutes(HOURLY_UPDATE_MINUTE_UTC, 0, 0);
+  if (slot.getTime() > now) slot.setUTCHours(slot.getUTCHours() - 1);
+  return slot.getTime();
+}
+
+/**
+ * Re-fetch a circle only as often as its board can change, to stay inside uma.moe's rate limit:
+ * top-100 clubs every few minutes, ranks 101-10000 once per hourly slot, the rest twice an hour.
+ */
+function isPackageFresh(cached, now) {
+  const age = now - cached.fetchedAt;
+  if (cached.isTop100) return age < CIRCLE_CACHE_TTL_MS;
+  if (isHourlyRankBandCircle(cached.data?.circle)) return cached.fetchedAt >= lastHourlySlotMs(now);
+  return age < NON_TOP100_CACHE_TTL_MS;
+}
+
 async function getCachedLeaderboardPackage(circleId, guildId = null) {
   const key = leaderboardCacheKey(guildId, circleId);
   const cached = circleCache.get(key);
   const now = Date.now();
-  if (cached && now - cached.fetchedAt < CIRCLE_CACHE_TTL_MS) {
+  if (cached && isPackageFresh(cached, now)) {
     return cached;
   }
 
@@ -85,6 +104,11 @@ async function getCachedLeaderboardPackage(circleId, guildId = null) {
   try {
     pkg = await buildLeaderboardPackage(circleId, { guildId });
   } catch (error) {
+    // A 429 pauses every uma.moe request globally (logged once in fetchUmaJson); just wait it out.
+    if (error.rateLimited) {
+      error.backoff = true;
+      throw error;
+    }
     // Back off per club while uma.moe is down instead of re-requesting every circle every minute.
     const count = (failure?.count || 0) + 1;
     const delay = Math.min(FAILURE_BACKOFF_MAX_MS, FAILURE_BACKOFF_BASE_MS * 2 ** (count - 1));

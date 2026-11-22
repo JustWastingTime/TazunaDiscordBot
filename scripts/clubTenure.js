@@ -118,6 +118,7 @@ async function tenureForTrainer(umaId, registered) {
 }
 
 const SAVE_EVERY = 20;
+const TENURE_SPACING_MS = 1500;
 const warming = new Map();
 
 async function runTenureWarm(guildId, umaIds) {
@@ -137,16 +138,25 @@ async function runTenureWarm(guildId, umaIds) {
     batch = [];
     await saveTenureCacheMany(guildId, entries);
   };
-  const workers = Array.from({ length: Math.min(4, pending.length) }, async () => {
-    while (cursor < pending.length) {
+  // Tenure is nice-to-have, so it runs one profile at a time and gives way to the dashboard and
+  // leaderboards: it stops as soon as uma.moe rate-limits, and resumes on a later page load.
+  let stopped = false;
+  const workers = Array.from({ length: Math.min(1, pending.length) }, async () => {
+    while (cursor < pending.length && !stopped) {
       const umaId = pending[cursor];
       cursor += 1;
       try {
         batch.push([umaId, await tenureForTrainer(umaId, registered)]);
         if (batch.length >= SAVE_EVERY) await flush();
       } catch (error) {
+        if (error.rateLimited) {
+          stopped = true;
+          console.warn(`[tenure] stopped after ${cursor - 1} of ${pending.length}: ${error.message}`);
+          break;
+        }
         console.warn(`[tenure] ${umaId}: ${error.message}`);
       }
+      await new Promise((resolve) => setTimeout(resolve, TENURE_SPACING_MS));
     }
   });
   await Promise.all(workers);

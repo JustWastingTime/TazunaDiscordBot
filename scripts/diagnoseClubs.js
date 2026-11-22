@@ -36,7 +36,13 @@ for (const [circleId, savedName] of circles) {
     }
   } catch (error) {
     console.log(`${circleId} "${savedName}" -> FAILED: ${error.message}`);
+    if (error.rateLimited) {
+      console.log('\nStopping: uma.moe is rate-limiting this API key. Try again later.');
+      break;
+    }
   }
   console.log('');
+  // Space requests out: this shares the API key's rate limit with the running bot.
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 }
 process.exit(0);
