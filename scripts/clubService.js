@@ -39,13 +39,22 @@ export async function fetchUmaJson(url) {
   }
 
   let res;
-  try {
-    res = await fetch(url, { headers: getUmaHeaders(), signal: AbortSignal.timeout(UMA_FETCH_TIMEOUT_MS) });
-  } catch (error) {
-    if (error?.name === 'TimeoutError' || error?.name === 'AbortError') {
-      throw new Error(`uma.moe did not respond within ${UMA_FETCH_TIMEOUT_MS / 1000}s.`);
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      res = await fetch(url, { headers: getUmaHeaders(), signal: AbortSignal.timeout(UMA_FETCH_TIMEOUT_MS) });
+      break;
+    } catch (error) {
+      if (error?.name === 'TimeoutError' || error?.name === 'AbortError') {
+        throw new Error(`uma.moe did not respond within ${UMA_FETCH_TIMEOUT_MS / 1000}s.`);
+      }
+      // "fetch failed" is a dropped connection (reset, DNS, TLS) with no response; these are usually
+      // momentary, so retry once after a short pause before giving up.
+      if (attempt >= 2) {
+        const cause = error?.cause?.code || error?.cause?.message;
+        throw new Error(`Could not reach uma.moe${cause ? ` (${cause})` : ''}: ${error.message}`);
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
     }
-    throw error;
   }
   if (!res.ok) {
     if (res.status === 404) throw new Error('Not found on uma.moe.');
