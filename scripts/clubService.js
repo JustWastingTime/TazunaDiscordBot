@@ -32,26 +32,98 @@ function getUmaHeaders() {
 
 // --- uma.moe request pacing -------------------------------------------------
 // Every uma.moe call in the bot goes through fetchUmaJson, so this is where the rate limit is
-// respected: at most UMA_MAX_CONCURRENT requests at once, and after a 429 no requests at all
-// until uma.moe's Retry-After has passed (one 429 means every caller would get one).
+// respected. uma.moe publishes no limit and sends no quota headers, and it lengthens the
+// Retry-After for repeat offenders, so the bot paces itself under a budget instead of reacting:
+//   - at most UMA_REQUESTS_PER_MINUTE requests in any rolling 60 seconds,
+//   - at most UMA_MAX_CONCURRENT at once,
+//   - queued requests start by priority: 'high' (dashboard, staff actions) before 'normal'
+//     (leaderboards, slash commands) before 'low' (background tenure),
+//   - after a 429, nothing is sent until Retry-After has passed, and everything queued fails fast.
 const UMA_MAX_CONCURRENT = Math.max(1, Number(process.env.UMA_MAX_CONCURRENT || 3));
+const UMA_REQUESTS_PER_MINUTE = Math.max(1, Number(process.env.UMA_REQUESTS_PER_MINUTE || 30));
+const UMA_WINDOW_MS = Math.max(1000, Number(process.env.UMA_WINDOW_MS || 60_000));
 const UMA_DEFAULT_COOLDOWN_MS = 60_000;
+const PRIORITIES = ['high', 'normal', 'low'];
+const umaQueues = { high: [], normal: [], low: [] };
+const umaRecentStarts = [];
 let umaActive = 0;
-const umaWaiting = [];
+let umaPumpTimer = null;
 let umaRateLimitedUntil = 0;
 
-function acquireUmaSlot() {
-  if (umaActive < UMA_MAX_CONCURRENT) {
-    umaActive += 1;
-    return Promise.resolve();
+function pruneRecentStarts(now) {
+  while (umaRecentStarts.length && now - umaRecentStarts[0] >= UMA_WINDOW_MS) umaRecentStarts.shift();
+}
+
+/** Requests started in the last 60 seconds (shown in the 429 log to reveal uma.moe's real limit). */
+function recentRequestCount(now = Date.now()) {
+  pruneRecentStarts(now);
+  return umaRecentStarts.length;
+}
+
+// Part of each minute's budget is kept for dashboard requests, so a page load never waits
+// behind the leaderboard loop: 'normal' may use all but the reserve, 'low' only half.
+const UMA_HIGH_RESERVE = Math.min(UMA_REQUESTS_PER_MINUTE - 1, Math.max(1, Math.round(UMA_REQUESTS_PER_MINUTE / 5)));
+const PRIORITY_CAPS = {
+  high: UMA_REQUESTS_PER_MINUTE,
+  normal: Math.max(1, UMA_REQUESTS_PER_MINUTE - UMA_HIGH_RESERVE),
+  low: Math.max(1, Math.floor(UMA_REQUESTS_PER_MINUTE / 2)),
+};
+
+function nextQueued(usedInWindow) {
+  for (const priority of PRIORITIES) {
+    if (umaQueues[priority].length && usedInWindow < PRIORITY_CAPS[priority]) {
+      return umaQueues[priority].shift();
+    }
   }
-  return new Promise((resolve) => umaWaiting.push(resolve));
+  return null;
+}
+
+function failQueued() {
+  for (const priority of PRIORITIES) {
+    for (const waiter of umaQueues[priority].splice(0)) waiter.reject(rateLimitedError());
+  }
+}
+
+function schedulePump(delayMs) {
+  if (umaPumpTimer) return;
+  umaPumpTimer = setTimeout(() => {
+    umaPumpTimer = null;
+    pumpUmaQueue();
+  }, Math.max(10, delayMs));
+}
+
+function pumpUmaQueue() {
+  const now = Date.now();
+  if (isUmaRateLimited()) {
+    failQueued();
+    return;
+  }
+  pruneRecentStarts(now);
+  while (umaActive < UMA_MAX_CONCURRENT) {
+    const waiter = nextQueued(umaRecentStarts.length);
+    if (!waiter) break;
+    umaActive += 1;
+    umaRecentStarts.push(now);
+    waiter.resolve();
+  }
+  // Anything still queued is waiting for budget (not for a free slot, which release() handles):
+  // wake up when the oldest start leaves the 60-second window.
+  const queued = PRIORITIES.some((priority) => umaQueues[priority].length);
+  if (queued && umaActive < UMA_MAX_CONCURRENT && umaRecentStarts.length) {
+    schedulePump(umaRecentStarts[0] + UMA_WINDOW_MS - now);
+  }
+}
+
+function acquireUmaSlot(priority) {
+  return new Promise((resolve, reject) => {
+    umaQueues[PRIORITIES.includes(priority) ? priority : 'normal'].push({ resolve, reject });
+    pumpUmaQueue();
+  });
 }
 
 function releaseUmaSlot() {
-  const next = umaWaiting.shift();
-  if (next) next();
-  else umaActive -= 1;
+  umaActive -= 1;
+  pumpUmaQueue();
 }
 
 function rateLimitedError() {
@@ -75,7 +147,7 @@ export function isUmaRateLimited() {
   return Date.now() < umaRateLimitedUntil;
 }
 
-export async function fetchUmaJson(url) {
+export async function fetchUmaJson(url, options = {}) {
   const apiKey = getUmaApiKey();
   if (!apiKey) {
     throw new Error(
@@ -83,10 +155,8 @@ export async function fetchUmaJson(url) {
     );
   }
   if (isUmaRateLimited()) throw rateLimitedError();
-  await acquireUmaSlot();
+  await acquireUmaSlot(options.priority);
   try {
-    // Re-check: the limit may have been hit while this request waited for a slot.
-    if (isUmaRateLimited()) throw rateLimitedError();
     return await requestUmaJson(url);
   } finally {
     releaseUmaSlot();
@@ -124,16 +194,20 @@ async function requestUmaJson(url) {
     }
     if (res.status === 429) {
       const wait = retryAfterMs(res);
-      const until = Date.now() + wait;
-      if (until > umaRateLimitedUntil) {
-        umaRateLimitedUntil = until;
+      const alreadyPaused = isUmaRateLimited();
+      umaRateLimitedUntil = Math.max(umaRateLimitedUntil, Date.now() + wait);
+      if (!alreadyPaused) {
         const limitHeaders = ['retry-after', 'x-ratelimit-limit', 'x-ratelimit-remaining', 'x-ratelimit-reset']
           .map((name) => [name, res.headers?.get?.(name)])
           .filter(([, value]) => value != null)
           .map(([name, value]) => `${name}=${value}`)
           .join(' ');
-        console.warn(`[uma.moe] rate limited (429); pausing all requests for ${Math.ceil(wait / 1000)}s. ${limitHeaders}`);
+        console.warn(
+          `[uma.moe] rate limited (429) after ${recentRequestCount()} request(s) in the last ${UMA_WINDOW_MS / 1000}s `
+            + `(budget ${UMA_REQUESTS_PER_MINUTE}/min); pausing all requests for ${Math.ceil(wait / 1000)}s. ${limitHeaders}`,
+        );
       }
+      failQueued();
       throw rateLimitedError();
     }
     throw new Error(`uma.moe API returned ${res.status}`);
@@ -160,7 +234,7 @@ export async function fetchCircleData(circleId, options = {}) {
   const cached = circleDataCache.get(id);
   if (cached?.data && Date.now() - cached.fetchedAt < maxAgeMs) return cached.data;
   if (cached?.pending) return cached.pending;
-  const pending = fetchUmaJson(getCircleApiUrl(id))
+  const pending = fetchUmaJson(getCircleApiUrl(id), { priority: options.priority })
     .then((data) => {
       circleDataCache.set(id, { data, fetchedAt: Date.now() });
       return data;

@@ -184,7 +184,7 @@ export async function hydrateClubTargets(guildId, clubs) {
 }
 
 export async function resolveUmaProfile(umaId) {
-  const root = await fetchUmaJson(`https://uma.moe/api/v4/user/profile/${encodeURIComponent(umaId)}`);
+  const root = await fetchUmaJson(`https://uma.moe/api/v4/user/profile/${encodeURIComponent(umaId)}`, { priority: 'high' });
   const trainer = root?.trainer ?? root?.user ?? root?.profile ?? root;
   const month = pickCurrentMonthRecord(root?.fan_history?.monthly);
   const circle = root?.circle ?? trainer?.circle ?? root?.club;
@@ -194,7 +194,7 @@ export async function resolveUmaProfile(umaId) {
   let loadedClubName = null;
   let currentClubId = null;
   for (const circleId of applicantCircleCandidates(root)) {
-    const circleData = await fetchCircleData(circleId);
+    const circleData = await fetchCircleData(circleId, { priority: 'high' });
     const found = (circleData?.members || []).find((item) => String(item.viewer_id) === String(umaId));
     if (found) {
       member = found;
@@ -222,7 +222,7 @@ export async function resolveUmaProfile(umaId) {
 const DASHBOARD_CIRCLE_MAX_AGE_MS = Math.max(0, Number(process.env.DASHBOARD_CIRCLE_MAX_AGE_MS || 15 * 60 * 1000));
 
 export async function buildPublicClub(guildId, club) {
-  const data = await fetchCircleData(club.circleId, { maxAgeMs: DASHBOARD_CIRCLE_MAX_AGE_MS });
+  const data = await fetchCircleData(club.circleId, { maxAgeMs: DASHBOARD_CIRCLE_MAX_AGE_MS, priority: 'high' });
   const circle = data?.circle || {};
   const roster = data?.members || [];
   if (!roster.length) throw new Error(`uma.moe returned an empty roster for club ${club.circleId}.`);

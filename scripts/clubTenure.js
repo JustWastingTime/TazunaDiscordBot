@@ -102,8 +102,8 @@ export function summarizeNetworkTenure(monthly, registered, options = {}) {
   };
 }
 
-async function tenureForTrainer(umaId, registered) {
-  const root = await fetchUmaJson(getUserProfileUrl(umaId));
+async function tenureForTrainer(umaId, registered, priority = 'normal') {
+  const root = await fetchUmaJson(getUserProfileUrl(umaId), { priority });
   const trainer = root?.trainer ?? root?.user ?? root?.profile ?? root;
   const circle = root?.circle ?? trainer?.circle ?? null;
   const currentCircleId = circle?.circle_id ?? circle?.id ?? null;
@@ -146,7 +146,7 @@ async function runTenureWarm(guildId, umaIds) {
       const umaId = pending[cursor];
       cursor += 1;
       try {
-        batch.push([umaId, await tenureForTrainer(umaId, registered)]);
+        batch.push([umaId, await tenureForTrainer(umaId, registered, 'low')]);
         if (batch.length >= SAVE_EVERY) await flush();
       } catch (error) {
         if (error.rateLimited) {
@@ -183,7 +183,7 @@ export async function buildMemberProfile(guildId, umaId) {
     id: String(club.circleId),
     name: club.circleName || String(club.circleId),
   }));
-  const summary = await tenureForTrainer(id, registered);
+  const summary = await tenureForTrainer(id, registered, 'high');
   await saveTenureCache(guildId, id, summary);
   const directory = listMemberDirectory(guildId).find((row) => row.umaId === id);
   const current = registered.find((club) => club.id === summary.currentCircleId) || null;
