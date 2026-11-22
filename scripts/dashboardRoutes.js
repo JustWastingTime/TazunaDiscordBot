@@ -187,9 +187,14 @@ async function requireManager(req, res) {
   return ctx;
 }
 
+const PARTIAL_PAYLOAD_TTL_MS = 60 * 1000;
+
 async function publicDashboardPayload(guildId) {
   const cached = getMembersCache(guildId);
-  if (cached?.payload && Date.now() - Number(cached.savedAt || 0) < cacheTtlMs()) {
+  // A payload where some club failed with nothing to fall back on is retried soon, not after the
+  // full TTL; clubs that did load come from the in-memory circle cache, so only failures refetch.
+  const ttl = cached?.payload?.partial ? Math.min(PARTIAL_PAYLOAD_TTL_MS, cacheTtlMs()) : cacheTtlMs();
+  if (cached?.payload && Date.now() - Number(cached.savedAt || 0) < ttl) {
     const site = publicSite(getSite(guildId));
     return { ...cached.payload, site, theme: site.theme || 'slate', slug: site.slug };
   }
@@ -201,6 +206,7 @@ async function publicDashboardPayload(guildId) {
     (cached?.payload?.clubs || []).map((row) => [String(row.circleId), row]),
   );
   const built = [];
+  let partial = false;
   for (const club of clubs) {
     try {
       built.push(await buildPublicClub(guildId, club));
@@ -224,6 +230,7 @@ async function publicDashboardPayload(guildId) {
         });
         continue;
       }
+      partial = true;
       built.push({
         ...club,
         members: [],
@@ -258,6 +265,7 @@ async function publicDashboardPayload(guildId) {
     features,
     clubs: plannedClubs,
     applicants,
+    partial,
   };
   await setMembersCache(guildId, payload);
   return payload;
