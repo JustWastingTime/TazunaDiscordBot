@@ -196,12 +196,34 @@ async function publicDashboardPayload(guildId) {
   const clubs = await attachPromotionTargets(await applyDynamicDailyTargets(
     await hydrateClubTargets(guildId, listGuildDashboardClubs(guildId)),
   ));
+  // Last good data per club, whatever its age, so one failed uma.moe fetch doesn't blank a club.
+  const previousClubs = new Map(
+    (cached?.payload?.clubs || []).map((row) => [String(row.circleId), row]),
+  );
   const built = [];
   for (const club of clubs) {
     try {
       built.push(await buildPublicClub(guildId, club));
     } catch (error) {
-      console.error(`Failed to load club ${club.circleId}`, error);
+      console.error(`Failed to load club ${club.circleId}: ${error.message}`);
+      const previous = previousClubs.get(String(club.circleId));
+      if (previous?.members?.length) {
+        built.push({
+          ...club,
+          name: previous.name || club.name,
+          members: previous.members,
+          rank: previous.rank ?? null,
+          yesterdayRank: previous.yesterdayRank ?? null,
+          rankDelta: previous.rankDelta ?? null,
+          lastMonthRank: previous.lastMonthRank ?? null,
+          monthlyFans: previous.monthlyFans ?? null,
+          fansSinceYesterday: previous.fansSinceYesterday ?? null,
+          rankGrade: club.rankGrade || previous.rankGrade || null,
+          sourceUpdatedAt: previous.sourceUpdatedAt ?? null,
+          stale: true,
+        });
+        continue;
+      }
       built.push({
         ...club,
         members: [],

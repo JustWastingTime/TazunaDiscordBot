@@ -87,6 +87,30 @@ export function registerGuildClub(guildId, circleId, circleName) {
   saveGuildClubs(store);
 }
 
+/**
+ * Keeps registered club names in step with uma.moe after an in-game rename.
+ * Updates every guild that registered this circle; writes only when a name changed.
+ */
+export function syncGuildClubName(circleId, liveName) {
+  const name = String(liveName ?? '').trim();
+  if (!name) return false;
+  const id = String(circleId);
+  const store = loadGuildClubs();
+  let changed = false;
+  for (const clubs of Object.values(store)) {
+    if (!Array.isArray(clubs)) continue;
+    for (const club of clubs) {
+      if (String(club.circleId) === id && club.circleName !== name) {
+        console.log(`Club ${id} renamed on uma.moe: "${club.circleName ?? ''}" -> "${name}"`);
+        club.circleName = name;
+        changed = true;
+      }
+    }
+  }
+  if (changed) saveGuildClubs(store);
+  return changed;
+}
+
 export function unregisterGuildClub(guildId, circleId) {
   const store = loadGuildClubs();
   const key = String(guildId);

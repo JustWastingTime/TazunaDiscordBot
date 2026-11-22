@@ -1,6 +1,6 @@
 import { buildGambleProfileFields } from './eventGambling.js';
 import { getCurrentJstDayIndex, hasTodayAndYesterdayZeroDailyFans } from './dashboardPerformance.js';
-import { buildFestProfileData, getCircleTargetSettings, getGuildClubSettings, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
+import { buildFestProfileData, syncGuildClubName, getCircleTargetSettings, getGuildClubSettings, getUserLinkByViewerId, setUmaTrainerName } from './clubDatabase.js';
 
 const EMPTY_FAN_STATS = {
   dailyFans: [],
@@ -1148,6 +1148,13 @@ export function isTop100Circle(circle) {
 export async function buildLeaderboardPackage(circleId, options = {}) {
   const { guildId = null } = options;
   const data = await fetchCircleData(circleId);
+  const roster = data?.members || [];
+  const cutoff = getActiveCutoffMs(roster);
+  if (roster.length && !roster.some((member) => isMemberActive(member, cutoff))) {
+    // Every member filtered out is a uma.moe data glitch, not a real empty club: keep the previous board.
+    throw new Error('uma.moe returned no active members; keeping the previous leaderboard.');
+  }
+  syncGuildClubName(circleId, data?.circle?.name);
   const targetInfo = await resolveClubTargetInfo(guildId, circleId, data);
   const columnVisibility = guildId ? getGuildClubSettings(guildId, circleId) : null;
   const embed = buildLeaderboardEmbed(data, targetInfo, columnVisibility);

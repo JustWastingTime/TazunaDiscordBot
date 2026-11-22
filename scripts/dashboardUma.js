@@ -1,5 +1,5 @@
 import { fetchUmaJson, fetchCircleData, resolveClubTargetInfo, getRankThresholds, findRankThreshold, computeMemberDailyTarget } from './clubService.js';
-import { getGuildClubs } from './clubDatabase.js';
+import { getGuildClubs, syncGuildClubName } from './clubDatabase.js';
 import {
   applicantCircleCandidates,
   applicantClubName,
@@ -221,6 +221,7 @@ export async function buildPublicClub(guildId, club) {
   const data = await fetchCircleData(club.circleId);
   const circle = data?.circle || {};
   const roster = data?.members || [];
+  if (!roster.length) throw new Error(`uma.moe returned an empty roster for club ${club.circleId}.`);
   const cutoff = getActiveCutoffMs(roster);
   const members = roster
     .filter((member) => isMemberActive(member, cutoff))
@@ -251,6 +252,12 @@ export async function buildPublicClub(guildId, club) {
       };
     });
 
+  // Throw before recordManagedRoster: an empty list would mark the whole club as former members.
+  if (!members.length) {
+    throw new Error(`uma.moe data for club ${club.circleId} left no active members (${roster.length} on roster).`);
+  }
+  syncGuildClubName(club.circleId, circle.name);
+
   const liveRank = circle.live_rank ?? circle.monthly_rank ?? null;
   const yesterdayRank = circle.yesterday_rank ?? null;
   const livePoints = typeof circle.live_points === 'number' ? circle.live_points : null;
@@ -265,6 +272,7 @@ export async function buildPublicClub(guildId, club) {
 
   return {
     ...club,
+    name: String(circle.name || '').trim() || club.name,
     rank: liveRank,
     yesterdayRank,
     rankDelta,
