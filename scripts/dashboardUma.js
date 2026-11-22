@@ -217,8 +217,12 @@ export async function resolveUmaProfile(umaId) {
   };
 }
 
+// The leaderboard cron keeps circle data warm; reuse anything it fetched within this window
+// instead of asking uma.moe again, so the dashboard adds almost no requests of its own.
+const DASHBOARD_CIRCLE_MAX_AGE_MS = Math.max(0, Number(process.env.DASHBOARD_CIRCLE_MAX_AGE_MS || 15 * 60 * 1000));
+
 export async function buildPublicClub(guildId, club) {
-  const data = await fetchCircleData(club.circleId);
+  const data = await fetchCircleData(club.circleId, { maxAgeMs: DASHBOARD_CIRCLE_MAX_AGE_MS });
   const circle = data?.circle || {};
   const roster = data?.members || [];
   if (!roster.length) throw new Error(`uma.moe returned an empty roster for club ${club.circleId}.`);
