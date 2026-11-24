@@ -9076,5 +9076,79 @@
             "name": "Veteran of Indomitable Perseverance",
             "condition": "Win the Tokyo Daishoten (Year 2), Kashiwa Kinen, Teio Sho and JBC Classic (Year 3)\nReach 1200 or more Guts"
         }
+    },
+    {   "id": "104301 - Shinko Windy",
+        "character_name": "Shinko Windy",
+        "type": "Original",
+        "costume": "Wicked Punk",
+        "stat_bonuses": [
+            {
+                "speed": "10%",
+                "stamina": "",
+                "power": "10%",
+                "guts": "10%",
+                "wit": ""
+            }
+        ],
+        "aptitudes": [
+            {
+                "Turf": "F",
+                "Dirt": "A"
+            },
+            {
+                "Sprint": "C",
+                "Mile": "A",
+                "Medium": "B",
+                "Long": "G"
+            },
+            {
+                "Front": "G",
+                "Pace": "A",
+                "Late": "B",
+                "End": "F"
+            }
+        ],
+        "unique": "Ding Dong, Boo!",
+        "skills": [
+            "Muddy",
+            "Wet Conditions",
+            "Full Tilt"
+        ],
+        "potential": [
+            "Shifting Gears",
+            "Full Speed!",
+            "Unyielding Spirit",
+            "Maestro of the Mud"
+        ],
+        "event_skills": [
+            "Latch On",
+            "Top Pick",
+            "Forward, March!",
+            "Highlander"
+        ],
+        "evo_skills": [
+            "Just Run Like Crazy!",
+            "Mischevious Maestro",
+            "Mud Demon Lord"
+        ],
+        "races": [
+            "unicorn stakes june 2 year 2",
+            "japan dirt derby july 1 year 2",
+            "tokai stakes january 2 year 3",
+            "february stakes february 2 year 3",
+            "teio sho june 2 year 3",
+            "champions cup december 1 year 3"
+        ],
+        "aliases": [
+            "shinko windy"
+        ],
+        "url": "https://gametora.com/umamusume/characters/104301-shinko-windy",
+        "thumbnail": "https://gametora.com/images/umamusume/characters/chara_stand_1043_104301.png",
+        "secrets": [
+            {
+                "conditions": "Win the Zen-Nippon Junior Yushun, M.C. Nambu Hai,  February Stakes and Kashiwa Kinen",
+                "rewards": "Speed +20, Power +20, Skill points +30, Top Pick hint +2"
+            }
+        ]
     }
 ]
