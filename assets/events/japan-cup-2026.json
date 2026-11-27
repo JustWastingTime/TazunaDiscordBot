@@ -1,0 +1,31 @@
+{
+  "id": "japan-cup-2026",
+  "name": "Japan Cup 2026",
+  "type": "horse_race",
+  "status": "open",
+  "startsAt": "2026-11-27T09:56:00.000Z",
+  "endsAt": "2026-11-29T06:40:00.000Z",
+  "availability": "all",
+  "listing": "board",
+  "guildIds": [],
+  "entries": [
+    { "number": 1, "name": "Redentor", "ageSex": "5H", "jockey": "T.Marquand", "odds": 78.3 },
+    { "number": 2, "name": "Cosmo Kuranda", "ageSex": "5H", "jockey": "Y.Tannai", "odds": 274.2 },
+    { "number": 3, "name": "Meisho Tabaru", "ageSex": "5H", "jockey": "Y.Take", "odds": 8.7 },
+    { "number": 4, "name": "Croix du Nord", "ageSex": "4H", "jockey": "C.Demuro", "odds": 8.2 },
+    { "number": 5, "name": "Shake Your Heart", "ageSex": "6H", "jockey": "Y.Furukawa", "odds": 58.1 },
+    { "number": 6, "name": "Masquerade Ball", "ageSex": "4H", "jockey": "C.Lemaire", "odds": 2.7 },
+    { "number": 7, "name": "Feiern Kranz", "ageSex": "4H", "jockey": "J.Moreira", "odds": 274.2 },
+    { "number": 8, "name": "Ombudsman", "ageSex": "5H", "jockey": "W.Buick", "odds": 4.9 },
+    { "number": 9, "name": "Calandagan", "ageSex": "5G", "jockey": "M.Barzalona", "odds": 13.8 },
+    { "number": 10, "name": "Minnie Hauk", "ageSex": "4M", "jockey": "R.Moore", "odds": 35.2 },
+    { "number": 11, "name": "Wurttemberg", "ageSex": "6H", "jockey": "N.Yokoyama", "odds": 87.9 },
+    { "number": 12, "name": "Teao", "ageSex": "4H", "jockey": "--", "odds": 67.7 },
+    { "number": 13, "name": "Urban Chic", "ageSex": "5H", "jockey": "A.Pouchin", "odds": 209.3 },
+    { "number": 14, "name": "Tagano Dude", "ageSex": "5H", "jockey": "M.Demuro", "odds": 106.6 },
+    { "number": 15, "name": "Excite Bio", "ageSex": "4H", "jockey": "K.Ogino", "odds": 311.2 },
+    { "number": 16, "name": "Danon Decile", "ageSex": "5H", "jockey": "K.Tosaki", "odds": 4 },
+    { "number": 17, "name": "Goliath", "ageSex": "6G", "jockey": "C.Soumillon", "odds": 87.2 },
+    { "number": 18, "name": "Ethical Diamond", "ageSex": "6G", "jockey": "R.Sakai", "odds": 108.6 }
+  ]
+}
