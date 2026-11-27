@@ -20,6 +20,7 @@ import {
 import { convertConditions, parseEvents, suggestActivationMap } from './adminTools.js';
 import { jsonError, readSession } from './dashboardAuth.js';
 import { listPublicTenants } from './dashboardStore.js';
+import { guildNames } from './guildNames.js';
 import {
   isPremiumGuild,
   listAllGuildClubs,
@@ -323,20 +324,30 @@ export function mountAdmin(app) {
     }
   });
 
-  router.get('/premium', (_req, res) => {
-    const status = premiumGuildStatus();
-    const ids = [...new Set([...status.envIds, ...status.storedIds, ...Object.keys(status.records || {})])].sort();
-    res.json({
-      ...status,
-      guilds: ids.map((guildId) => ({
-        guildId,
-        premium: isPremiumGuild(guildId),
-        fromEnv: status.envIds.includes(guildId),
-        stored: status.storedIds.includes(guildId),
-        note: status.records?.[guildId]?.note || '',
-        endsAt: status.records?.[guildId]?.endsAt || null,
-      })),
-    });
+  router.get('/premium', async (_req, res) => {
+    try {
+      const status = premiumGuildStatus();
+      const ids = [...new Set([...status.envIds, ...status.storedIds, ...Object.keys(status.records || {})])].sort();
+      const tenants = new Map(listPublicTenants().map((row) => [String(row.guildId), row]));
+      const clubCounts = new Map(listAllGuildClubs().map((row) => [String(row.guildId), row.clubs.length]));
+      const names = await guildNames(ids);
+      res.json({
+        ...status,
+        guilds: ids.map((guildId) => ({
+          guildId,
+          name: names.get(guildId) || null,
+          premium: isPremiumGuild(guildId),
+          fromEnv: status.envIds.includes(guildId),
+          stored: status.storedIds.includes(guildId),
+          note: status.records?.[guildId]?.note || '',
+          endsAt: status.records?.[guildId]?.endsAt || null,
+          slug: tenants.get(guildId)?.slug || null,
+          clubCount: clubCounts.get(guildId) || 0,
+        })),
+      });
+    } catch (error) {
+      jsonError(res, error);
+    }
   });
 
   router.put('/premium/:guildId', (req, res) => {
@@ -371,21 +382,28 @@ export function mountAdmin(app) {
     }
   });
 
-  router.get('/clubs', (_req, res) => {
-    const tenants = new Map(listPublicTenants().map((row) => [String(row.guildId), row]));
-    const premium = premiumGuildStatus();
-    const guilds = listAllGuildClubs().map((row) => {
-      const site = tenants.get(row.guildId);
-      return {
-        guildId: row.guildId,
-        slug: site?.slug || null,
-        siteName: site?.siteName || null,
-        premium: isPremiumGuild(row.guildId),
-        fromEnv: premium.envIds.includes(row.guildId),
-        clubs: row.clubs,
-      };
-    });
-    res.json({ guilds });
+  router.get('/clubs', async (_req, res) => {
+    try {
+      const tenants = new Map(listPublicTenants().map((row) => [String(row.guildId), row]));
+      const premium = premiumGuildStatus();
+      const rows = listAllGuildClubs();
+      const names = await guildNames(rows.map((row) => row.guildId));
+      const guilds = rows.map((row) => {
+        const site = tenants.get(row.guildId);
+        return {
+          guildId: row.guildId,
+          name: names.get(String(row.guildId)) || null,
+          slug: site?.slug || null,
+          siteName: site?.siteName || null,
+          premium: isPremiumGuild(row.guildId),
+          fromEnv: premium.envIds.includes(row.guildId),
+          clubs: row.clubs,
+        };
+      });
+      res.json({ guilds });
+    } catch (error) {
+      jsonError(res, error);
+    }
   });
 
   router.get('/gamba-events', (_req, res) => {

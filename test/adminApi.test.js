@@ -106,6 +106,22 @@ describe('/api/admin owner gate', () => {
     assert.equal((await put(false)).premium, false);
   });
 
+  test('premium list names a server from what the bot already knows', async () => {
+    const headers = { ...owner, 'content-type': 'application/json', 'x-tazuna-admin': '1' };
+    await t.request('/api/admin/premium/600000000000000007', { method: 'PUT', headers, body: JSON.stringify({ enabled: true }) });
+    // Discord is stubbed out in tests, so the name has to come from the saved gamba label.
+    await t.request('/api/admin/gamba-guilds', {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify({ guilds: [{ id: '600000000000000007', label: 'Bunny Hutch' }] }),
+    });
+    const list = await getJson('/api/admin/premium', owner);
+    const row = list.body.guilds.find((g) => g.guildId === '600000000000000007');
+    assert.equal(row.name, 'Bunny Hutch');
+    assert.equal(row.clubCount, 0);
+    assert.equal(row.slug, null);
+  });
+
   test('rejects a non-numeric guild id', async () => {
     const res = await t.request('/api/admin/premium/abc', {
       method: 'PUT',
