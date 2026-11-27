@@ -5,10 +5,11 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { fetchCircleData } from './clubService.js';
+import { DATA_DIR } from './dataDir.js';
 import { getActiveCutoffMs, getCurrentJstDayIndex, isMemberActive } from './dashboardPerformance.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const clubsPath = path.resolve(__dirname, '..', 'data', 'guild-clubs.json');
+const clubsPath = path.join(DATA_DIR, 'guild-clubs.json');
 const store = JSON.parse(fs.readFileSync(clubsPath, 'utf8'));
 const circles = new Map();
 for (const clubs of Object.values(store)) {

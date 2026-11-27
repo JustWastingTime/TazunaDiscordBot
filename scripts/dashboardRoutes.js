@@ -855,6 +855,8 @@ export function mountDashboard(app) {
   ];
   const RESERVED_ROOT_SEGMENTS = new Set([
     'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions', 'admin', 'gamba',
+    // Served by app.js after the dashboard mounts; a slug must never shadow them.
+    'terms', 'privacy',
   ]);
   const dist = distCandidates.find((dir) => fs.existsSync(path.join(dir, 'index.html')));
   if (dist) {
@@ -878,11 +880,12 @@ export function mountDashboard(app) {
     });
     console.log(`Dashboard UI serving from ${dist}`);
   } else {
-    app.get(['/g/:tenant', '/g/:tenant/*', '/:slug'], (req, res) => {
+    app.get(['/g/:tenant', '/g/:tenant/*', '/:slug'], (req, res, next) => {
       const ref = req.params.tenant || req.params.slug;
       if (ref === 'admin' || ref === 'gamba') {
         return res.type('html').send(`<p>Build the dashboard frontend into <code>web/dashboard</code> to use /${ref}.</p>`);
       }
+      if (req.params.slug && RESERVED_ROOT_SEGMENTS.has(req.params.slug)) return next();
       const guildId = resolveGuildRef(ref);
       if (!guildId) return res.status(404).send('Unknown dashboard.');
       res.type('html').send(`<!doctype html><meta charset="utf-8"><title>Tazuna dashboard</title>

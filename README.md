@@ -35,3 +35,18 @@ Accepts am image as a parameter
 
 `/qp` - Shows a quick picture guide on a specific topic such as race bonus and hammers value or racing penalty in trackblazer.
 
+
+## 🧪 Tests
+
+Needs Node 22 or newer.
+
+```sh
+npm ci
+npm test        # slash command handlers + the /api endpoints the dashboard uses
+npm run check   # syntax-check every file in scripts/
+```
+
+The tests start the bot in-process on a random port with a throwaway data folder
+(`TAZUNA_DATA_DIR`), local assets, a generated Discord signing key, and all outbound
+network calls blocked, so they never touch your `.env`, `data/`, or real services.
+GitHub Actions runs both on every push to `main` and on pull requests.

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const RANGE_PATH = path.join(DATA_DIR, 'skill-cm-range.json');
 
 const DEFAULT_MIN = Number(process.env.SKILL_MAP_MIN_CM_NUMBER ?? 18);

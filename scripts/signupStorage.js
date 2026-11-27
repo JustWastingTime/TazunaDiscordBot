@@ -5,7 +5,7 @@ import crypto from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const SIGNUPS_PATH = path.join(DATA_DIR, 'signups.json');
 
 function ensureDataDir() {

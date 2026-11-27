@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const APP_CHANNEL_PATH = path.join(DATA_DIR, 'application-channels.json');
 const APPLICATIONS_PATH = path.join(DATA_DIR, 'applications.json');
 

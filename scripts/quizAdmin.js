@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const QUIZ_DIR = path.join(ROOT, 'assets', 'quiz');
 const CATEGORIES_DIR = path.join(QUIZ_DIR, 'categories');
-const DATA_DIR = path.join(ROOT, 'data');
+import { DATA_DIR } from './dataDir.js';
 const ACCESS_PATH = path.join(DATA_DIR, 'quiz-access.json');
 
 const SETTINGS_REPO_PATH = 'assets/quiz/settings.json';

@@ -1,3 +1,4 @@
+import { DATA_DIR } from './dataDir.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -5,7 +6,7 @@ import { httpError } from './adminAuth.js';
 import { getEvent } from './eventStorage.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const TOURNAMENTS_PATH = path.resolve(__dirname, '..', 'data', 'gamba-tournaments.json');
+const TOURNAMENTS_PATH = path.join(DATA_DIR, 'gamba-tournaments.json');
 const MAX_ROUNDS = 8;
 const MAX_RACES = 12;
 const PICKEM_MAX_MULTIPLIER = 20;

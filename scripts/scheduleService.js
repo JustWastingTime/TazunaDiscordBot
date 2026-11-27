@@ -5,7 +5,7 @@ import { getUmaApiKey } from './clubService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const CACHE_PATH = path.join(DATA_DIR, 'schedule-cache.json');
 const UMA_BASE_URL = 'https://uma.moe';
 const RESOURCES_ENDPOINT = `${UMA_BASE_URL}/resources`;
