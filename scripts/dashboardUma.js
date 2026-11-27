@@ -234,6 +234,7 @@ export async function buildPublicClub(guildId, club) {
       const decision = classifyPerformance({
         dailyAverage: stats.dailyAverage,
         dailyTarget: club.dailyTarget,
+        dailyGains: stats.dailyGains,
         lastUpdatedAt: member.last_updated,
         promotionRatio: club.promotionRatio,
         promotionTarget: club.promotionTarget,

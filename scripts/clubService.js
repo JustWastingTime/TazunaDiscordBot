@@ -183,14 +183,24 @@ async function requestUmaJson(url) {
     }
   }
   if (!res.ok) {
-    if (res.status === 404) throw new Error('Not found on uma.moe.');
+    if (res.status === 404) {
+      const notFound = new Error('Not found on uma.moe.');
+      notFound.status = 404;
+      throw notFound;
+    }
     if (res.status === 401) {
       throw new Error(
         'uma.moe rejected the API key (401). Check that UMA_API_KEY on the server is correct and starts with uma_k_.',
       );
     }
     if (res.status === 403) {
-      throw new Error('uma.moe API access denied (403). Your API key may lack permission for this endpoint.');
+      // uma.moe explains the refusal in the body (e.g. browser_proof_required); keep it for the logs.
+      const body = await res.json().catch(() => null);
+      const reason = [body?.error, body?.message].filter((part) => typeof part === 'string' && part).join(': ');
+      const path = (() => { try { return new URL(url).pathname; } catch { return url; } })();
+      const denied = new Error(`uma.moe refused ${path} (403)${reason ? ` - ${reason}` : ''}`);
+      denied.status = 403;
+      throw denied;
     }
     if (res.status === 429) {
       const wait = retryAfterMs(res);

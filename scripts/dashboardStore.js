@@ -485,6 +485,21 @@ export function setClubOrder(guildId, circleIds) {
   });
 }
 
+/**
+ * Swaps the applicant list inside the cached public payload without touching savedAt, so a
+ * staff approve/delete shows on the overview at once without forcing a uma.moe rebuild.
+ */
+export function replaceCachedApplicants(guildId, applicants) {
+  return withLock(() => {
+    const store = loadStore();
+    const row = store.membersCache?.[String(guildId)];
+    if (!row?.payload) return false;
+    row.payload = { ...row.payload, applicants };
+    saveStore(store);
+    return true;
+  });
+}
+
 export function setMembersCache(guildId, payload) {
   return withLock(() => {
     const store = loadStore();

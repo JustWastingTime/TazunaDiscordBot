@@ -156,24 +156,31 @@ export function isMemberActive(member, cutoffMs, now = new Date()) {
   return ts >= cutoffMs;
 }
 
+/**
+ * Inactive = no fans gained on each of the last `days` days of uma.moe data (same rule as the
+ * dashboard's assess.ts). Needs at least that many days this month to judge.
+ */
+export function isInactive(dailyGains, days) {
+  const gains = Array.isArray(dailyGains) ? dailyGains : [];
+  const window = Math.max(1, Math.round(Number(days) || 3));
+  if (gains.length < window) return false;
+  return gains.slice(-window).every((gain) => !(Number(gain) > 0));
+}
+
 export function classifyPerformance(input) {
   const {
     dailyAverage,
     dailyTarget,
-    lastUpdatedAt,
-    promotionRatio = 1.25,
+    dailyGains,
     promotionTarget = null,
     promotionTier = null,
     meetingRatio = 0.9,
     severeRatio = 0.5,
     inactiveDays = 3,
     promotionEnabled = true,
-    now = new Date(),
   } = input;
-  const updatedMs = lastUpdatedAt ? new Date(lastUpdatedAt).getTime() : Number.NaN;
-  const staleDays = Number.isFinite(updatedMs) ? Math.max(0, (now.getTime() - updatedMs) / 86_400_000) : Number.POSITIVE_INFINITY;
-  if (staleDays >= inactiveDays) {
-    return { band: 'inactive', reason: `No update for ${Math.floor(staleDays)} days`, ratio: null };
+  if (isInactive(dailyGains, inactiveDays)) {
+    return { band: 'inactive', reason: `No fans gained in the last ${inactiveDays} days`, ratio: null };
   }
   const ratio = dailyTarget > 0 ? dailyAverage / dailyTarget : 1;
   const reason = `${Math.round(ratio * 100)}% of daily requirement`;

@@ -149,7 +149,8 @@ async function runTenureWarm(guildId, umaIds) {
         batch.push([umaId, await tenureForTrainer(umaId, registered, 'low')]);
         if (batch.length >= SAVE_EVERY) await flush();
       } catch (error) {
-        if (error.rateLimited) {
+        // A rate limit or a refused profile endpoint (403) applies to every trainer, not just this one.
+        if (error.rateLimited || error.status === 403) {
           stopped = true;
           console.warn(`[tenure] stopped after ${cursor - 1} of ${pending.length}: ${error.message}`);
           break;

@@ -107,6 +107,34 @@ export async function fetchGuildMember(guildId, userId) {
  * Who this Discord user is on this network, and which clubs they may see.
  * `clubIds: null` means every club in the network; an array scopes them.
  */
+// Every staff API request checks access, and the role check costs two Discord calls (member +
+// roles), so one page load made a dozen. Remember the answer briefly; a role removed in Discord
+// takes effect within this window. Failed lookups are not remembered.
+const ROLE_CHECK_TTL_MS = 60 * 1000;
+const roleChecks = new Map();
+
+async function hasAdminRoleCached(guildId, discordId) {
+  const key = `${guildId}:${discordId}`;
+  const cached = roleChecks.get(key);
+  if (cached && Date.now() - cached.at < ROLE_CHECK_TTL_MS) {
+    return cached.pending ? cached.pending.catch(() => false) : cached.value;
+  }
+  const pending = (async () => {
+    const member = await fetchGuildMember(guildId, discordId);
+    return hasTazunaAdminRole(guildId, member);
+  })();
+  roleChecks.set(key, { at: Date.now(), pending });
+  try {
+    const value = await pending;
+    roleChecks.set(key, { at: Date.now(), value });
+    return value;
+  } catch (err) {
+    roleChecks.delete(key);
+    console.warn(`[dashboard] member lookup failed guild=${guildId} user=${discordId}:`, err.message);
+    return false;
+  }
+}
+
 export async function resolveDashboardAccess(guildId, discordId) {
   const id = String(discordId);
   if (isBotOwner(id)) {
@@ -122,13 +150,8 @@ export async function resolveDashboardAccess(guildId, discordId) {
       clubIds: Array.isArray(entry.clubIds) && entry.clubIds.length ? entry.clubIds.map(String) : null,
     };
   }
-  try {
-    const member = await fetchGuildMember(guildId, id);
-    if (await hasTazunaAdminRole(guildId, member)) {
-      return { isManager: true, isOwner: false, label: 'Admin', source: 'role', clubIds: null };
-    }
-  } catch (err) {
-    console.warn(`[dashboard] member lookup failed guild=${guildId} user=${id}:`, err.message);
+  if (await hasAdminRoleCached(guildId, id)) {
+    return { isManager: true, isOwner: false, label: 'Admin', source: 'role', clubIds: null };
   }
   const extra = listStaffExtra(guildId).find((row) => String(row.discordId) === id);
   if (extra) {

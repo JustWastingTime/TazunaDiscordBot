@@ -21,6 +21,7 @@ import {
   deleteBlacklist,
   findBlacklistMatch,
   getMembersCache,
+  replaceCachedApplicants,
   getPlanning,
   getSite,
   listBlacklist,
@@ -189,6 +190,47 @@ async function requireManager(req, res) {
 
 const PARTIAL_PAYLOAD_TTL_MS = 60 * 1000;
 
+/**
+ * Looks the trainer up on uma.moe for stats. A trainer uma.moe doesn't know (404) is a real
+ * input error, but any other failure (refused, rate-limited, down) must not stop someone from
+ * applying: save the application with whatever is already known and fill the stats in later.
+ */
+async function resolveProfileOrFallback(umaId, existing = null) {
+  try {
+    return await resolveUmaProfile(umaId);
+  } catch (error) {
+    if (error.status === 404 || /was not found on uma\.moe/i.test(error.message)) throw error;
+    console.warn(`[apply] uma.moe profile lookup failed for ${umaId}; saving without stats: ${error.message}`);
+    return {
+      ign: existing?.ign || `Trainer ${umaId}`,
+      currentClubId: existing?.currentClubId ?? null,
+      currentClubName: existing?.currentClubName ?? null,
+      lastUpdatedAt: existing?.lastUpdatedAt ?? null,
+      totalFans: existing?.totalFans ?? 0,
+      monthlyGain: existing?.monthlyGain ?? 0,
+      dailyAverage: existing?.dailyAverage ?? 0,
+      todayGain: existing?.todayGain ?? 0,
+      dailyGains: existing?.dailyGains ?? [],
+    };
+  }
+}
+
+function publicApplicants(guildId) {
+  if (!resolveFeatures(guildId).applicants) return [];
+  return listGuildApplications(guildId)
+    .filter((app) => app.publishPublicly !== false && ['pending', 'approved', 'waitlisted'].includes(app.status))
+    .map(applicationToDashboard);
+}
+
+/** After a staff applicant change, update the cached overview in place (no uma.moe rebuild). */
+async function syncCachedApplicants(guildId) {
+  try {
+    await replaceCachedApplicants(guildId, publicApplicants(guildId));
+  } catch (error) {
+    console.warn(`[dashboard] could not update cached applicants for ${guildId}: ${error.message}`);
+  }
+}
+
 async function publicDashboardPayload(guildId) {
   const cached = getMembersCache(guildId);
   // A payload where some club failed with nothing to fall back on is retried soon, not after the
@@ -247,11 +289,7 @@ async function publicDashboardPayload(guildId) {
   }
   const plannedClubs = withPlannedMemberCounts(built, getPlanning(guildId).assignments);
   const features = resolveFeatures(guildId);
-  const applicants = features.applicants
-    ? listGuildApplications(guildId)
-      .filter((app) => app.publishPublicly !== false && ['pending', 'approved', 'waitlisted'].includes(app.status))
-      .map(applicationToDashboard)
-    : [];
+  const applicants = publicApplicants(guildId);
   const site = publicSite(getSite(guildId));
   const payload = {
     schemaVersion: 1,
@@ -369,8 +407,8 @@ export function mountDashboard(app) {
       if (findBlacklistMatch(guildId, umaId, discordUsername)) {
         return res.status(403).json({ error: getSite(guildId).applyBlocked });
       }
-      const profile = await resolveUmaProfile(umaId);
       const existing = findGuildApplicationByUmaId(guildId, umaId);
+      const profile = await resolveProfileOrFallback(umaId, existing);
       const id = existing?.id || newApplicationId();
       const record = existing
         ? patchApplication(id, {
@@ -401,6 +439,7 @@ export function mountDashboard(app) {
           ...profile,
           performanceSyncedAt: new Date().toISOString(),
         });
+      await syncCachedApplicants(guildId);
       const webhook = getSite(guildId).applyWebhookUrl;
       if (webhook) {
         await notifyApplicationWebhook(webhook, {
@@ -562,8 +601,8 @@ export function mountDashboard(app) {
       const clubs = listGuildDashboardClubs(ctx.guildId);
       const club = clubs.find((item) => item.circleId === targetClubId);
       if (!club) return res.status(400).json({ error: 'Target club does not exist.' });
-      const profile = await resolveUmaProfile(umaId);
       const existing = findGuildApplicationByUmaId(ctx.guildId, umaId);
+      const profile = await resolveProfileOrFallback(umaId, existing);
       const id = existing?.id || newApplicationId();
       const record = existing
         ? patchApplication(id, {
@@ -590,6 +629,7 @@ export function mountDashboard(app) {
           ...profile,
           performanceSyncedAt: new Date().toISOString(),
         });
+      await syncCachedApplicants(ctx.guildId);
       res.status(201).json(applicationToDashboard(record));
     } catch (error) {
       jsonError(res, error);
@@ -611,6 +651,7 @@ export function mountDashboard(app) {
         ign: req.body.ign ?? existing.ign,
         discordUsername: req.body.discordUsername ?? existing.discordUsername,
       });
+      await syncCachedApplicants(ctx.guildId);
       res.json(applicationToDashboard(patched));
     } catch (error) {
       jsonError(res, error);
@@ -624,6 +665,7 @@ export function mountDashboard(app) {
       const existing = findGuildApplicationByUmaId(ctx.guildId, req.query.umaId);
       if (!existing) return res.status(404).end();
       deleteApplication(existing.id);
+      await syncCachedApplicants(ctx.guildId);
       res.status(204).end();
     } catch (error) {
       jsonError(res, error);
