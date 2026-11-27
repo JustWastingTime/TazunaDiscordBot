@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { httpError } from './adminAuth.js';
 import { recordAdminAudit } from './assetStore.js';
+import { getEventPhase } from './eventGambling.js';
 import { getEvent, listEventSources, reloadEventDefinitions } from './eventStorage.js';
 import { commitFiles, fastForwardLocalCheckout, getFileAtHead } from './githubCommit.js';
 
@@ -29,6 +30,8 @@ export function listGambaEvents() {
         id: source.definition.id,
         name: source.definition.name,
         status: live?.status || source.definition.status,
+        // What players see on /gamba: an "open" race past its close time is closed.
+        phase: live ? getEventPhase(live) : source.definition.status,
         startsAt: source.definition.startsAt,
         endsAt: source.definition.endsAt,
         file: source.file,
