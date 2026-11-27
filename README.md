@@ -26,9 +26,6 @@ Accepts name, year and grade as a parameter
 `/cm` - Looks up information on a specific Champion's Meeting  
 Accepts name as a parameter
 
-`/parse` - Parses an image of your uma's final result page and tries to generate an umalator link (This will be deprecated soon for Moomoolator's OCR)  
-Accepts am image as a parameter
-
 `/resource` - Shows the links to nifty uma tools such as stamina calculator, banner timeline, etc.
 
 `/epithet` - Lists specific epithets and their conditions. For example, use `/epithet mile` to see only mile related epithets. Can also do `/epithet mant mile` to filter the epithet list to Trackblazer scenario only.

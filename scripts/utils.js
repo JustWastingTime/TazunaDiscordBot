@@ -1236,49 +1236,6 @@ export function buildUmaComponents(uma, includeDropdown = false, charactersJSON,
   return rows;
 }
 
-export function buildUmaParsedEmbed(parsed) {
-  return {
-    title: parsed.name || "Unknown Uma",
-    description: parsed.epithet || "",
-    fields: [
-      {
-        name: "Stats",
-        value: Object.entries(parsed.stats)
-          .map(([k, v]) => `${k}: ${v.rank || ""} ${v.value}`)
-          .join("\n"),
-        inline: true
-      },
-      {
-        name: "Track",
-        value: Object.entries(parsed.track)
-          .map(([k, v]) => `${k}: ${v}`)
-          .join("\n"),
-        inline: true
-      },
-      {
-        name: "Distance",
-        value: Object.entries(parsed.distance)
-          .map(([k, v]) => `${k}: ${v}`)
-          .join("\n"),
-        inline: true
-      },
-      {
-        name: "Style",
-        value: Object.entries(parsed.style)
-          .map(([k, v]) => `${k}: ${v}`)
-          .join("\n"),
-        inline: true
-      },
-      {
-        name: "Skills",
-        value: parsed.skills.length > 0
-          ? parsed.skills.map(s => `• ${s}`).join("\n")
-          : "—"
-      }
-    ]
-  };
-}
-
 export function buildRaceEmbed(race, charactersJSON) {
   // find all horses that must run this race
   const participants = charactersJSON

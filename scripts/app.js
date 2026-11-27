@@ -1421,96 +1421,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async function (req, 
       });
     }
 
-    // "parse" command
-    if (name === "parse") {
-      const attachmentId = data.options?.find(opt => opt.name === "image")?.value;
-      const attachment = data.resolved?.attachments?.[attachmentId];
-
-      if (!attachment) {
-        return res.send({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: { content: "❌ Please upload an image to scan." }
-        });
-      }
-
-      // Step 1: Defer right away
-      res.send({
-        type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE,
-        data: { content: "Tazuna is scrutinizing your uma." }
-      });
-
-      (async () => {
-        try {
-          // Step 2: Run OCR
-          const ocrResult = await parseWithOcrSpace(attachment.url);
-
-          const requiredWords = ["Turf", "Dirt", "Sprint", "Mile", "Medium", "Long", "Front", "Pace", "Late", "End"];
-          const missingWords = requiredWords.filter(word => !ocrResult.text.includes(word));
-          if (missingWords.length > 0) {
-            return await sendFollowup(token, {
-              content: `❌ OCR failed: the image is missing these required fields: ${missingWords.join(', ')}`
-            });
-          }
-
-          // Step 3: Parse Uma profile
-          const parsed = await parseUmaProfile(
-            ocrResult.text, 
-            ocrResult.overlayLines, 
-            attachment.url,
-            ocrResult.rawData,
-            ocrResult.info
-          );
-
-          // Step 4: Generate Umalator link
-          let umalatorUrl = null;
-          try {
-            umalatorUrl = await generateUmaLatorLink(parsed);
-
-            // Shorten the URL for Discord button
-            //if (umalatorUrl) {
-              //umalatorUrl = await shortenUrl(umalatorUrl);
-            //}
-          } catch (umalatorError) {
-            console.warn("Failed to generate or shorten UmaLator URL:", umalatorError.message);
-          }
-
-          // Step 5: Build embed with Umalator link
-          const embed = buildUmaParsedEmbed(parsed, false);
-
-          // Step 6: Add Umalator link button
-          let components = [];
-          if (umalatorUrl) {
-            components = [
-              {
-                type: 1, // Action row
-                components: [
-                  {
-                    type: 2,      // Button
-                    style: 5,     // Link button
-                    label: "Open in Umalator",
-                    url: umalatorUrl
-                  }
-                ]
-              }
-            ];
-          }
-          
-          await sendFollowup(token, {
-            content: `✅ Parsed Uma data for **${parsed.name || "Unknown"}**`,
-            embeds: [embed], components
-          });
-
-        } catch (err) {
-          console.error("OCR Error:", err);
-          await sendFollowup(token, { 
-            content: "❌ Error processing image with OCR.space. " + err.message 
-          });
-        }
-      })();
-
-      return; // <- important to prevent falling through to unknown command handler
-    }
-
     if (name === "schedule") {
       res.send({
         type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE
@@ -2961,10 +2871,9 @@ const privacyHtml = `
     <li><strong>Discord data:</strong> User IDs, usernames, server (guild) IDs, and channel IDs when you use commands or when your server uses leaderboard/sheets features.</li>
     <li><strong>Saved data:</strong> If you use the save command, we store the labels and URLs (e.g. Umalator links) you provide, associated with your Discord user ID.</li>
     <li><strong>Server data:</strong> For servers that use leaderboards or Google Sheets sync, we store server configuration (e.g. sheet IDs, channel IDs) and fan/rank data synced from your sheet.</li>
-    <li><strong>Images:</strong> Images you upload for profile parsing are sent to a third-party OCR service for text extraction; we do not store the image content long-term.</li>
   </ul>
   <h2>How we use it</h2>
-  <p>Data is used to provide Bot features (leaderboards, trainer lookups, saved links, sheet sync, image parsing) and to operate the service.</p>
+  <p>Data is used to provide Bot features (leaderboards, trainer lookups, saved links, sheet sync) and to operate the service.</p>
   <h2>Storage & sharing</h2>
   <p>Data is stored on the Bot’s hosting infrastructure and, where configured, in Google Sheets. We do not sell your data. We may share data only as required by law or to protect the service.</p>
   <h2>Your rights</h2>
