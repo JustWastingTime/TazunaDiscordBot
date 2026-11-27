@@ -138,7 +138,8 @@ async function updateCache() {
 await updateCache();
 
 // Refresh every day
-setInterval(updateCache, 1000 * 60 * 60 * 24); // 1 day
+// unref() so a script or test that imports the cache can still exit; the web server keeps the bot alive.
+setInterval(updateCache, 1000 * 60 * 60 * 24).unref(); // 1 day
 
 export { updateCache, localFiles };
 export default cache;

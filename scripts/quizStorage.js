@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const QUIZ_DIR = path.resolve(__dirname, '..', 'assets', 'quiz');
 const QUIZ_STATE_PATH = path.join(DATA_DIR, 'quiz-state.json');
 const QUIZ_GUILD_PATH = path.join(DATA_DIR, 'quiz-guilds.json');

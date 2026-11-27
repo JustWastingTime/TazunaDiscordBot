@@ -1,3 +1,4 @@
+import { DATA_DIR } from './dataDir.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -5,7 +6,7 @@ import { httpError } from './adminAuth.js';
 import { getEvent } from './eventStorage.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CHAINS_PATH = path.resolve(__dirname, '..', 'data', 'gamba-chains.json');
+const CHAINS_PATH = path.join(DATA_DIR, 'gamba-chains.json');
 
 function readStore() {
   try {

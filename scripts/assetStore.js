@@ -8,7 +8,7 @@ import { applyEntryChange } from './jsonEntrySplice.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ASSETS_DIR = path.resolve(__dirname, '..', 'assets');
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const AUDIT_PATH = path.join(DATA_DIR, 'admin-audit.json');
 const AUDIT_LIMIT = 500;
 

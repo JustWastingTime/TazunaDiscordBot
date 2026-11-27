@@ -125,6 +125,7 @@ import { startMineAlarmCron } from './mineAlarmCron.js';
 import { resumeMineAlarmsOnBoot } from './mineAlarmService.js';
 
 import path from 'path';
+import { DATA_DIR } from './dataDir.js';
 import { fileURLToPath } from "url";
 
 // ESM-friendly __dirname
@@ -715,7 +716,7 @@ function formatErrorForEmbed(errorLike) {
   return String(errorLike);
 }
 
-const OPS_STATUS_PATH = path.join(PROJECT_ROOT, 'data', 'ops-status.json');
+const OPS_STATUS_PATH = path.join(DATA_DIR, 'ops-status.json');
 const OPS_COLOR_ERROR = 0xE74C3C;
 const OPS_COLOR_STARTED = 0x2ECC71;
 const BUG_REPORT_COLOR = 0xF1C40F;
@@ -2983,41 +2984,51 @@ app.get('/privacy', (req, res) => {
   res.type('html').send(privacyHtml);
 });
 
-let shuttingDownFromFatal = false;
+/**
+ * Start the HTTP server, background crons and crash reporting.
+ * Tests import `app` with TAZUNA_SKIP_LISTEN=1 so none of this runs there.
+ */
+export function startServer() {
+  let shuttingDownFromFatal = false;
 
-process.on('uncaughtException', (err) => {
-  console.error('Uncaught exception:', err);
-  if (shuttingDownFromFatal) return;
-  shuttingDownFromFatal = true;
-  postOpsNotice('🚨 Tazuna fatal crash (uncaughtException)', formatErrorForEmbed(err))
-    .finally(() => process.exit(1));
-});
-
-process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled rejection:', reason);
-  if (shuttingDownFromFatal) return;
-  shuttingDownFromFatal = true;
-  postOpsNotice('🚨 Tazuna fatal crash (unhandledRejection)', formatErrorForEmbed(reason))
-    .finally(() => process.exit(1));
-});
-
-app.listen(PORT, () => {
-  console.log('Listening on port', PORT);
-  if (getUmaApiKey()) {
-    console.log('UMA_API_KEY is configured.');
-    startLeaderboardCron();
-  } else {
-    console.warn('UMA_API_KEY is missing — /register, /profile, and club leaderboards will fail until it is set.');
-  }
-  startQuizRemoteSync();
-  resumeActiveQuizzes().catch((err) => {
-    console.error('Failed to resume active quizzes:', err.message);
+  process.on('uncaughtException', (err) => {
+    console.error('Uncaught exception:', err);
+    if (shuttingDownFromFatal) return;
+    shuttingDownFromFatal = true;
+    postOpsNotice('🚨 Tazuna fatal crash (uncaughtException)', formatErrorForEmbed(err))
+      .finally(() => process.exit(1));
   });
-  startEventCron();
-  startSignupCron();
-  startMineAlarmCron();
-  resumeMineAlarmsOnBoot().catch((err) => {
-    console.error('Failed to resume mine alarms:', err.message);
+
+  process.on('unhandledRejection', (reason) => {
+    console.error('Unhandled rejection:', reason);
+    if (shuttingDownFromFatal) return;
+    shuttingDownFromFatal = true;
+    postOpsNotice('🚨 Tazuna fatal crash (unhandledRejection)', formatErrorForEmbed(reason))
+      .finally(() => process.exit(1));
   });
-  upsertStartupNotice();
-});
+
+  app.listen(PORT, () => {
+    console.log('Listening on port', PORT);
+    if (getUmaApiKey()) {
+      console.log('UMA_API_KEY is configured.');
+      startLeaderboardCron();
+    } else {
+      console.warn('UMA_API_KEY is missing — /register, /profile, and club leaderboards will fail until it is set.');
+    }
+    startQuizRemoteSync();
+    resumeActiveQuizzes().catch((err) => {
+      console.error('Failed to resume active quizzes:', err.message);
+    });
+    startEventCron();
+    startSignupCron();
+    startMineAlarmCron();
+    resumeMineAlarmsOnBoot().catch((err) => {
+      console.error('Failed to resume mine alarms:', err.message);
+    });
+    upsertStartupNotice();
+  });
+}
+
+if (process.env.TAZUNA_SKIP_LISTEN !== '1') startServer();
+
+export { app };

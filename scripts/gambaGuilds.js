@@ -1,10 +1,11 @@
+import { DATA_DIR } from './dataDir.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { httpError } from './adminAuth.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const GUILDS_PATH = path.resolve(__dirname, '..', 'data', 'gamba-guilds.json');
+const GUILDS_PATH = path.join(DATA_DIR, 'gamba-guilds.json');
 
 function readStore() {
   try {

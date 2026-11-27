@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
+import { DATA_DIR } from './dataDir.js';
 const GUILD_CLUBS_PATH = path.join(DATA_DIR, 'guild-clubs.json');
 const CIRCLE_TARGETS_PATH = path.join(DATA_DIR, 'circle-targets.json');
 const USER_LINKS_PATH = path.join(DATA_DIR, 'user-links.json');
