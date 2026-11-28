@@ -63,6 +63,7 @@ import {
 } from './dashboardAuth.js';
 import { mountAdmin } from './adminRoutes.js';
 import { mountGamba } from './gambaRoutes.js';
+import { mountBrackets } from './bracketRoutes.js';
 import { buildMemberProfile, warmNetworkTenure } from './clubTenure.js';
 import { isDiscordWebhookUrl, notifyApplicationWebhook } from './applyNotify.js';
 
@@ -312,6 +313,7 @@ async function publicDashboardPayload(guildId) {
 export function mountDashboard(app) {
   mountAdmin(app);
   mountGamba(app);
+  mountBrackets(app);
   const seedGuild = String(process.env.DASHBOARD_SEED_GUILD_ID || '').trim();
   if (seedGuild) {
     try {
