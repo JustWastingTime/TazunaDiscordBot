@@ -185,11 +185,4 @@ describe('/api/brackets', () => {
     assert.equal(reopen.status, 400);
     assert.equal(outboundRequests.filter((req) => req.url.includes('discord')).length, 0);
   });
-
-  test('the bracket page is served by the dashboard routes, not taken as a club slug', async () => {
-    const res = await t.request('/brackets');
-    assert.notEqual(res.status, 500);
-    const body = await res.text();
-    assert.doesNotMatch(body, /Unknown dashboard/);
-  });
 });

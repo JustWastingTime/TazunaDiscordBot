@@ -856,20 +856,20 @@ export function mountDashboard(app) {
     path.resolve(__dirname, '../../UmaClubDashboard/dist'),
   ];
   const RESERVED_ROOT_SEGMENTS = new Set([
-    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions', 'admin', 'gamba', 'brackets',
+    'api', 'assets', 'g', 'staff', 'apply', 'tourney', 'interactions', 'admin', 'gamba',
     // Served by app.js after the dashboard mounts; a slug must never shadow them.
     'terms', 'privacy',
   ]);
   const dist = distCandidates.find((dir) => fs.existsSync(path.join(dir, 'index.html')));
   if (dist) {
     app.use(express.static(dist));
-    app.get(['/g/:tenant', '/staff', '/tourney', '/apply', '/admin', '/admin/*', '/gamba', '/gamba/*', '/brackets', '/brackets/*'], (_req, res) => {
+    app.get(['/g/:tenant', '/staff', '/tourney', '/apply', '/admin', '/admin/*', '/gamba', '/gamba/*'], (_req, res) => {
       res.sendFile(path.join(dist, 'index.html'));
     });
     app.use((req, res, next) => {
       if (req.method !== 'GET') return next();
       if (req.path.startsWith('/api') || req.path.startsWith('/assets') || req.path === '/interactions') return next();
-      if (req.path.startsWith('/g/') || req.path === '/admin' || req.path.startsWith('/admin/') || req.path === '/gamba' || req.path.startsWith('/gamba/') || req.path === '/brackets' || req.path.startsWith('/brackets/')) {
+      if (req.path.startsWith('/g/') || req.path === '/admin' || req.path.startsWith('/admin/') || req.path === '/gamba' || req.path.startsWith('/gamba/')) {
         return res.sendFile(path.join(dist, 'index.html'));
       }
       // Root-level network slug, e.g. /bunny. Reserved words always win, so
@@ -884,7 +884,7 @@ export function mountDashboard(app) {
   } else {
     app.get(['/g/:tenant', '/g/:tenant/*', '/:slug'], (req, res, next) => {
       const ref = req.params.tenant || req.params.slug;
-      if (ref === 'admin' || ref === 'gamba' || ref === 'brackets') {
+      if (ref === 'admin' || ref === 'gamba') {
         return res.type('html').send(`<p>Build the dashboard frontend into <code>web/dashboard</code> to use /${ref}.</p>`);
       }
       if (req.params.slug && RESERVED_ROOT_SEGMENTS.has(req.params.slug)) return next();

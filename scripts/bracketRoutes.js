@@ -1,4 +1,4 @@
-// /api/brackets: bracket pick'em for the dashboard. Kept apart from
+// /api/brackets: bracket pick'em for the Paddock's Brackets tab. Kept apart from
 // /api/gamba so it never mixes with race betting. Nothing here talks to Discord.
 import express from 'express';
 import { assertWriteOrigin, httpError } from './adminAuth.js';

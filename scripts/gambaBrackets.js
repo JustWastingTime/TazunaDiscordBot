@@ -1,4 +1,4 @@
-// Bracket pick'em: a free game that lives only on the dashboard (/brackets).
+// Bracket pick'em: a free game that lives only on the dashboard (/gamba/brackets).
 // Players fill in a whole double-elimination bracket before it locks; owners
 // enter results match by match and everyone is scored per correct pick.
 // Nothing here posts to Discord.
